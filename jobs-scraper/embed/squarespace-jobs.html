@@ -1,0 +1,220 @@
+<!--
+  MOPs & MOEs — tactical human performance job board embed
+  ========================================================
+
+  Drop this into a Squarespace **Code Block** on the page you want the board
+  to appear (Edit page -> Add Block -> Code -> paste -> Save).
+
+  WHY AN EMBED AND NOT A CMS POST
+  Squarespace has no public content-write API for pages or blog posts, so
+  nothing can POST a job into the site directly. Rendering a JSON feed
+  client-side is the approach that actually works, and it is better anyway:
+  the board is always live, so a role that drops out of the feed disappears
+  from the page with no stale-post cleanup.
+
+  SETUP
+  1. Host output/jobs.json anywhere with CORS enabled and HTTPS. GitHub Pages
+     works and is free; an S3/R2 bucket or Cloudflare Worker is equally fine.
+  2. Set FEED_URL below to that URL.
+  3. If the feed is on a different origin, it must send
+     `Access-Control-Allow-Origin: *` (GitHub Pages does by default).
+
+  The markup is deliberately dependency-free and inherits the site's fonts so
+  it picks up your Squarespace typography rather than fighting it.
+-->
+
+<div id="mm-jobs" class="mm-jobs">
+  <div class="mm-jobs__controls" hidden>
+    <input
+      type="search"
+      id="mm-jobs-search"
+      class="mm-jobs__search"
+      placeholder="Search roles, employers, locations…"
+      aria-label="Search jobs"
+    />
+    <div id="mm-jobs-filters" class="mm-jobs__filters" role="group" aria-label="Filter by category"></div>
+  </div>
+  <p id="mm-jobs-status" class="mm-jobs__status">Loading open roles…</p>
+  <ul id="mm-jobs-list" class="mm-jobs__list"></ul>
+</div>
+
+<style>
+  .mm-jobs { font-family: inherit; color: inherit; max-width: 860px; margin: 0 auto; }
+  .mm-jobs__controls { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .mm-jobs__search {
+    flex: 1 1 260px; padding: 0.6rem 0.8rem; font: inherit; font-size: 0.95rem;
+    border: 1px solid currentColor; border-radius: 6px; background: transparent;
+    color: inherit; opacity: 0.9;
+  }
+  .mm-jobs__filters { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .mm-jobs__chip {
+    font: inherit; font-size: 0.78rem; letter-spacing: 0.02em; text-transform: uppercase;
+    padding: 0.35rem 0.7rem; border: 1px solid currentColor; border-radius: 999px;
+    background: transparent; color: inherit; cursor: pointer; opacity: 0.65;
+  }
+  .mm-jobs__chip[aria-pressed="true"] { opacity: 1; background: currentColor; }
+  .mm-jobs__chip[aria-pressed="true"] span { color: #fff; mix-blend-mode: difference; }
+  .mm-jobs__status { opacity: 0.7; font-size: 0.95rem; }
+  .mm-jobs__list { list-style: none; margin: 0; padding: 0; }
+  .mm-jobs__item { padding: 1.1rem 0; border-top: 1px solid currentColor; border-color: rgba(128,128,128,0.3); }
+  .mm-jobs__item:last-child { border-bottom: 1px solid rgba(128,128,128,0.3); }
+  .mm-jobs__title { font-size: 1.08rem; font-weight: 600; margin: 0 0 0.25rem; line-height: 1.35; }
+  .mm-jobs__title a { color: inherit; text-decoration: none; }
+  .mm-jobs__title a:hover, .mm-jobs__title a:focus { text-decoration: underline; }
+  .mm-jobs__meta { font-size: 0.88rem; opacity: 0.75; margin: 0 0 0.4rem; }
+  .mm-jobs__excerpt { font-size: 0.9rem; opacity: 0.85; margin: 0 0 0.5rem; line-height: 1.5; }
+  .mm-jobs__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .mm-jobs__tag {
+    font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(128,128,128,0.18);
+  }
+  @media (max-width: 600px) { .mm-jobs__controls { flex-direction: column; } }
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- CONFIGURE ME --------------------------------------------------------
+  var FEED_URL = "https://YOUR-USERNAME.github.io/YOUR-REPO/jobs.json";
+  // --------------------------------------------------------------------------
+
+  var TAG_LABELS = {
+    "strength-conditioning": "Strength & Conditioning",
+    "sports-medicine": "Sports Medicine",
+    "nutrition": "Nutrition",
+    "cognitive": "Cognitive",
+    "research": "Research",
+    "leadership": "Leadership",
+    "military": "Military",
+    "sof": "SOF",
+    "first-responder": "First Responder",
+    "remote": "Remote"
+  };
+
+  var listEl = document.getElementById("mm-jobs-list");
+  var statusEl = document.getElementById("mm-jobs-status");
+  var searchEl = document.getElementById("mm-jobs-search");
+  var filtersEl = document.getElementById("mm-jobs-filters");
+  var controlsEl = document.querySelector(".mm-jobs__controls");
+
+  var jobs = [];
+  var activeTags = new Set();
+
+  // Never inject feed text as HTML. The feed is ours, but a job description
+  // is still third-party content and this page runs on the live site.
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function daysAgo(iso) {
+    if (!iso) return "";
+    var then = new Date(iso);
+    if (isNaN(then)) return "";
+    var days = Math.floor((Date.now() - then.getTime()) / 86400000);
+    if (days <= 0) return "today";
+    if (days === 1) return "yesterday";
+    if (days < 30) return days + " days ago";
+    return Math.floor(days / 30) + " mo ago";
+  }
+
+  function matches(job) {
+    if (activeTags.size) {
+      var tags = job.tags || [];
+      var hit = false;
+      activeTags.forEach(function (t) { if (tags.indexOf(t) !== -1) hit = true; });
+      if (!hit) return false;
+    }
+    var query = (searchEl.value || "").trim().toLowerCase();
+    if (!query) return true;
+    return [job.title, job.employer, job.location, (job.tags || []).join(" ")]
+      .join(" ").toLowerCase().indexOf(query) !== -1;
+  }
+
+  function render() {
+    var visible = jobs.filter(matches);
+    listEl.textContent = "";
+
+    if (!visible.length) {
+      statusEl.textContent = jobs.length
+        ? "No roles match those filters."
+        : "No open roles right now — check back soon.";
+      statusEl.hidden = false;
+      return;
+    }
+    statusEl.hidden = true;
+
+    visible.forEach(function (job) {
+      var item = el("li", "mm-jobs__item");
+
+      var title = el("h3", "mm-jobs__title");
+      var link = el("a", null, job.title || "Untitled role");
+      link.href = job.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      title.appendChild(link);
+      item.appendChild(title);
+
+      var bits = [job.employer, job.location || (job.remote ? "Remote" : "")];
+      var age = daysAgo(job.posted_at || job.listed_at);
+      if (age) bits.push(age);
+      item.appendChild(el("p", "mm-jobs__meta", bits.filter(Boolean).join(" · ")));
+
+      if (job.description) {
+        item.appendChild(el("p", "mm-jobs__excerpt", job.description));
+      }
+
+      if (job.tags && job.tags.length) {
+        var tagWrap = el("div", "mm-jobs__tags");
+        job.tags.forEach(function (tag) {
+          tagWrap.appendChild(el("span", "mm-jobs__tag", TAG_LABELS[tag] || tag));
+        });
+        item.appendChild(tagWrap);
+      }
+
+      listEl.appendChild(item);
+    });
+  }
+
+  function buildFilters() {
+    var counts = {};
+    jobs.forEach(function (job) {
+      (job.tags || []).forEach(function (tag) { counts[tag] = (counts[tag] || 0) + 1; });
+    });
+    Object.keys(counts)
+      .sort(function (a, b) { return counts[b] - counts[a]; })
+      .forEach(function (tag) {
+        var chip = el("button", "mm-jobs__chip");
+        chip.type = "button";
+        chip.setAttribute("aria-pressed", "false");
+        chip.appendChild(el("span", null, (TAG_LABELS[tag] || tag) + " (" + counts[tag] + ")"));
+        chip.addEventListener("click", function () {
+          if (activeTags.has(tag)) { activeTags.delete(tag); chip.setAttribute("aria-pressed", "false"); }
+          else { activeTags.add(tag); chip.setAttribute("aria-pressed", "true"); }
+          render();
+        });
+        filtersEl.appendChild(chip);
+      });
+  }
+
+  fetch(FEED_URL, { cache: "no-cache" })
+    .then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
+    })
+    .then(function (data) {
+      jobs = (data && data.jobs) || [];
+      controlsEl.hidden = jobs.length === 0;
+      buildFilters();
+      render();
+      searchEl.addEventListener("input", render);
+    })
+    .catch(function (error) {
+      statusEl.textContent = "Could not load open roles right now.";
+      if (window.console) console.error("[mm-jobs]", error);
+    });
+})();
+</script>

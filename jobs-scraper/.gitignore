@@ -1,0 +1,14 @@
+# Local config may name real employers and env vars; keep the example as the
+# committed reference and let operators decide whether to commit their own.
+# (The scheduled workflow falls back to sources.example.toml if this is absent.)
+sources.toml
+
+# Atomic-write leftovers from an interrupted run.
+*.json.tmp
+
+.pytest_cache/
+__pycache__/
+
+# NOTE: output/ and state/ are intentionally NOT ignored -- the scheduled
+# workflow commits them so the board and dedupe history are reviewable in a
+# diff, with no database to operate.

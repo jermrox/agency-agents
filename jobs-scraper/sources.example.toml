@@ -1,0 +1,174 @@
+# -----------------------------------------------------------------------------
+# Example configuration. Copy to sources.toml and edit.
+#
+#   cp sources.example.toml sources.toml
+#   python3 -m tactical_jobs run --config sources.toml --dry-run
+#
+# Secrets are never written here. Use ${ENV_VAR} and set the variable in the
+# environment (or in GitHub Actions secrets). A referenced-but-unset variable
+# is a hard error at startup rather than a silent empty string.
+#
+# !! THE BOARD TOKENS BELOW ARE UNVERIFIED PLACEHOLDERS !!
+# Each employer's real token has to be confirmed before it will return
+# anything. See "Adding an employer" in README.md for the 30-second check.
+# `run --dry-run` reports each source that fails, so a wrong token is loud,
+# not silent.
+# -----------------------------------------------------------------------------
+
+[runtime]
+state_path = "state/seen.json"
+output_dir = "output"
+
+# Drop postings older than this many days. Stale listings are worse than none.
+max_age_days = 45
+
+# When false, NOTHING is published automatically -- every match lands in the
+# review queue for a human to approve. Leave it false until you have watched
+# the queue for a week or two and trust the scoring.
+auto_publish = false
+
+
+# -----------------------------------------------------------------------------
+# Scoring thresholds
+#
+# Scoring runs on two axes and a posting must clear the floor on BOTH:
+#   domain     -- is the population tactical? (military, SOF, LE, fire)
+#   discipline -- is the work human performance? (S&C, ATC, RD, cognitive)
+#
+# That is what keeps "Strength Coach, Ohio State" and "Performance Engineer,
+# Lockheed" off the board. Tune with:
+#   python3 -m tactical_jobs classify --title "..." --description "..."
+# -----------------------------------------------------------------------------
+[thresholds]
+publish = 14.0        # at/above this, good enough to publish
+review = 8.0          # at/above this, worth a human look
+min_domain = 1.5      # floor on the tactical axis
+min_discipline = 3.0  # floor on the human-performance axis
+
+
+# -----------------------------------------------------------------------------
+# Sources
+#
+# Every adapter here talks to a vendor's documented public job-board API --
+# the same JSON that powers the employer's own careers page.
+#
+# Deliberately absent: Indeed, ZipRecruiter, LinkedIn, Glassdoor. Their terms
+# prohibit automated collection and they actively block it. Do not add them.
+# -----------------------------------------------------------------------------
+
+# --- USAJOBS: the single highest-value source for this niche -----------------
+# Army H2F, Navy/Air Force human performance billets, and DoD sports-medicine
+# roles post here first and often nowhere else.
+# Free API key: https://developer.usajobs.gov/apirequest/
+[[source]]
+kind = "usajobs"
+name = "federal"
+api_key = "${USAJOBS_API_KEY}"
+user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
+max_pages = 4
+keywords = [
+  "human performance",
+  "strength and conditioning",
+  "athletic trainer",
+  "exercise physiologist",
+  "performance dietitian",
+  "cognitive performance",
+  "holistic health and fitness",
+]
+
+# --- Employer ATS boards -----------------------------------------------------
+# Contractors holding H2F / POTFF / THOR3 work are where most non-federal
+# tactical human performance hiring happens.
+
+[[source]]
+kind = "greenhouse"
+name = "o2x"
+board_token = "o2x"          # UNVERIFIED -- confirm before relying on it
+employer = "O2X Human Performance"
+
+[[source]]
+kind = "lever"
+name = "exos"
+board_token = "teamexos"     # UNVERIFIED -- confirm before relying on it
+employer = "EXOS"
+
+# [[source]]
+# kind = "ashby"
+# name = "example-ashby"
+# board_token = "your-token"
+# employer = "Example Employer"
+
+# [[source]]
+# kind = "workable"
+# name = "example-workable"
+# board_token = "your-token"
+# employer = "Example Employer"
+
+# [[source]]
+# kind = "smartrecruiters"
+# name = "example-sr"
+# company_id = "YourCompanyId"
+# employer = "Example Employer"
+# detail_limit = 100          # bounds the per-posting detail fetch
+
+# [[source]]
+# kind = "recruitee"
+# name = "example-recruitee"
+# board_token = "your-subdomain"
+# employer = "Example Employer"
+
+# --- Generic RSS: escape hatch for boards with no supported adapter ----------
+# Feeds carry less structure than an ATS API, so these tend to score lower and
+# land in review. That is correct behavior, not a bug.
+# [[source]]
+# kind = "rss"
+# name = "example-feed"
+# url = "https://example.com/careers/feed"
+# employer = "Example Employer"
+
+
+# -----------------------------------------------------------------------------
+# Publishers
+#
+# The review publisher receives everything needing human eyes. Every other
+# publisher receives only APPROVED postings -- and with auto_publish = false,
+# nothing is ever approved, so the live sinks stay silent until you flip it.
+# -----------------------------------------------------------------------------
+
+# Always keep this on. It is the audit trail.
+[[publisher]]
+kind = "review"
+path = "output/review-queue.md"
+
+# The feed the Squarespace page reads. See embed/squarespace-jobs.html.
+[[publisher]]
+kind = "jsonfeed"
+path = "output/jobs.json"
+retain_days = 45
+
+# Renders the whole live board (read from source_feed), not just this run's
+# new arrivals -- otherwise a quiet run would blank the feed. Keep this
+# AFTER the jsonfeed publisher so it reads a freshly written board.
+[[publisher]]
+kind = "rss"
+path = "output/jobs.xml"
+source_feed = "output/jobs.json"
+limit = 50
+title = "MOPs & MOEs — Tactical Human Performance Jobs"
+link = "https://www.mopsnmoes.com/jobs"
+
+# Discord already carries job traffic for this community, and it needs no site
+# changes at all. Server Settings -> Integrations -> Webhooks.
+# [[publisher]]
+# kind = "discord"
+# webhook_url = "${DISCORD_WEBHOOK_URL}"
+# username = "MOPs & MOEs Job Bot"
+
+# Generic JSON POST -- drives a Zapier/Make scenario, a Cloudflare Worker, or
+# any CMS that does accept writes.
+# [[publisher]]
+# kind = "webhook"
+# url = "${JOBS_WEBHOOK_URL}"
+# batch_size = 25
+# [publisher.headers]
+# Authorization = "Bearer ${JOBS_WEBHOOK_TOKEN}"
