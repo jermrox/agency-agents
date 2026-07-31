@@ -57,13 +57,42 @@ min_discipline = 3.0
 # jobs. Every [[source]] enabled in this file must state when and how it was
 # verified live. Candidates without that line stay commented out below.
 
-# [[source]]                       # CANDIDATE -- tenant/site/data_center are
-# kind = "workday"                 # unverified guesses. Confirm from the real
-# name = "example-prime"           # careers URL before enabling:
-# tenant = "example"               #   https://{tenant}.{dc}.myworkdayjobs.com/{site}
-# site = "External"
-# data_center = "wd1"
-# employer = "Example Prime"
+# --- VERIFIED LIVE 2026-07-31 -----------------------------------------------
+# KBR's Workday tenant, confirmed by fetching the Workday CXS JSON endpoint
+# directly. Two POTFF requisitions returned "canApply":true and "posted":true:
+#   R2127121  Special Operations Strength and Conditioning Specialist,
+#             HQ AFSOC, Hurlburt Field FL
+#   R2122466  Special Operations Certified Athletic Trainer,
+#             AFSOC GSU Southern Pines NC (req located Fort Liberty NC)
+# Coordinates read off those live responses, not guessed:
+#   tenant=kbr  data_center=wd5  site=KBR_Careers
+# Note the public HTML URL 403s to non-browser fetchers; the cxs JSON path
+# is what the adapter uses, which is why this resolves where a browser fetch
+# would not.
+[[source]]
+kind = "workday"
+name = "kbr"
+tenant = "kbr"
+site = "KBR_Careers"
+data_center = "wd5"
+employer = "KBR"
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+]
+
+# [[source]]                     # CANDIDATE -- The Geneva Foundation, H2F at
+# kind = "workday"               # Ft Drum NY (req JR100450). Tenant coordinates
+# name = "geneva"                # genevausa/wd5/CareersAtGeneva were read from a
+# tenant = "genevausa"           # real posting URL, but liveness could NOT be
+# site = "CareersAtGeneva"       # confirmed: this sandbox's proxy 403s that host,
+# data_center = "wd5"            # and the content came from a mirror showing
+# employer = "The Geneva Foundation"   # "Posted: 6 months ago". Enable only after
+                                 # the CXS JSON answers from a networked run.
 
 # [[source]]
 # kind = "workday"
