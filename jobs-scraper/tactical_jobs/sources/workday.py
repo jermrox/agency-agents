@@ -73,11 +73,59 @@ def _descriptor(value: Any) -> str:
             inner = value.get(key)
             if isinstance(inner, str) and inner.strip():
                 return inner.strip()
+            # Pay ranges in particular nest a bare number under "value".
+            if isinstance(inner, (int, float)) and not isinstance(inner, bool):
+                return str(inner)
         return ""
     if isinstance(value, (list, tuple)):
         parts = [_descriptor(item) for item in value]
         return ", ".join(part for part in parts if part)
     return ""
+
+
+def _html_source(value: Any) -> str:
+    """Coerce whatever a tenant put in an HTML field into markup text.
+
+    ``jobDescription`` is usually an HTML string, but tenants also emit it as
+    ``{"descriptor": "<p>..."}`` or as a list of HTML chunks. Passing those
+    straight to :func:`html_to_text` raises, and because the caller treats a
+    raising record as unusable that would silently discard a perfectly good
+    posting -- exactly the description text this project exists to mine.
+    """
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict):
+        for key in ("descriptor", "value", "text", "html", "content"):
+            inner = value.get(key)
+            if isinstance(inner, str) and inner.strip():
+                return inner
+        return ""
+    if isinstance(value, (list, tuple)):
+        return " ".join(part for part in (_html_source(item) for item in value) if part)
+    return ""
+
+
+def _int_option(options: dict[str, Any], key: str, default: int) -> int:
+    """Read an int option, falling back to the default on junk.
+
+    Config is hand-edited TOML. One mistyped value must degrade to the default
+    rather than take a whole defense prime's board out of the nightly run.
+    """
+    value = options.get(key, default)
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        log.warning("workday: ignoring non-numeric %s=%r, using %r", key, value, default)
+        return default
+
+
+def _float_option(options: dict[str, Any], key: str, default: float) -> float:
+    value = options.get(key, default)
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        log.warning("workday: ignoring non-numeric %s=%r, using %r", key, value, default)
+        return default
 
 
 def _external_path(record: Any) -> str | None:
@@ -231,10 +279,10 @@ class WorkdaySource(Source):
         site = str(self.require("site")).strip().strip("/")
         data_center = str(self.options.get("data_center") or "wd1").strip().strip(".")
         employer = self.options.get("employer") or tenant
-        limit = max(1, int(self.options.get("limit", 20)))
-        max_pages = max(1, int(self.options.get("max_pages", 5)))
-        detail_limit = int(self.options.get("detail_limit", 50))
-        delay = float(self.options.get("delay_seconds", 0.0))
+        limit = max(1, _int_option(self.options, "limit", 20))
+        max_pages = max(1, _int_option(self.options, "max_pages", 5))
+        detail_limit = max(0, _int_option(self.options, "detail_limit", 50))
+        delay = max(0.0, _float_option(self.options, "delay_seconds", 0.0))
 
         base_url = f"https://{tenant}.{data_center}.myworkdayjobs.com"
         api_url = f"{base_url}/wday/cxs/{tenant}/{site}"
@@ -266,7 +314,20 @@ class WorkdaySource(Source):
             return list(DEFAULT_SEARCH_TERMS)
         if isinstance(configured, str):
             return [configured]
-        terms = [str(term) for term in configured]
+        if not isinstance(configured, (list, tuple, set, frozenset)):
+            log.warning("workday: search_terms=%r is not a list, using defaults", configured)
+            return list(DEFAULT_SEARCH_TERMS)
+
+        terms: list[str] = []
+        for term in configured:
+            # ``None`` in the list is a config slip, not a request to search
+            # for the literal string "None".
+            if term is None or isinstance(term, bool):
+                continue
+            text = term if isinstance(term, str) else str(term)
+            # A repeated term would double the request count for no new jobs.
+            if text not in terms:
+                terms.append(text)
         return terms or [""]
 
     def _collect(
@@ -285,27 +346,26 @@ class WorkdaySource(Source):
         the detail budget is spent on the earliest, most relevant terms.
         """
         listings: dict[str, dict[str, Any]] = {}
-        first_request = True
+        requests_made = 0
+        failures: list[Exception] = []
 
         for term in terms:
             offset = 0
             for _ in range(max_pages):
-                if delay and not first_request:
+                if delay and requests_made:
                     time.sleep(delay)
+                requests_made += 1
                 try:
                     payload = self._search(f"{api_url}/jobs", term, offset, limit)
                 except Exception as exc:
-                    # A board that is unreachable on the very first request is a
-                    # broken config, not a flaky page: report it rather than
-                    # returning zero jobs and calling that success.
-                    if first_request:
-                        raise
+                    # A failed page costs that term the rest of its pages, but
+                    # never the terms around it: a flaky 503 on the first
+                    # request must not throw away six healthy searches.
                     log.warning(
                         "workday search failed for %r at offset %d: %s", term, offset, exc
                     )
+                    failures.append(exc)
                     break
-                finally:
-                    first_request = False
 
                 records = payload.get("jobPostings")
                 if not isinstance(records, list) or not records:
@@ -325,6 +385,13 @@ class WorkdaySource(Source):
                         break
                 if len(records) < limit:
                     break
+
+        if not listings and failures:
+            # Every search that ran either errored or found nothing, and at
+            # least one errored. That is a broken tenant/site config or a dead
+            # host, so surface it as a SourceError instead of reporting a
+            # zero-job run as a success.
+            raise failures[0]
 
         return listings
 
@@ -363,7 +430,7 @@ class WorkdaySource(Source):
         remote_type = _descriptor(info.get("remoteType"))
         req_id = _descriptor(info.get("jobReqId"))
 
-        description = html_to_text(info.get("jobDescription"))
+        description = html_to_text(_html_source(info.get("jobDescription")))
         if not description:
             description = _list_summary(listing)
 

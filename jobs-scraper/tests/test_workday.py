@@ -582,3 +582,302 @@ def test_delay_seconds_throttles_requests(monkeypatch):
 def test_kind_and_export_tuple():
     assert WorkdaySource.kind == "workday"
     assert WORKDAY_SOURCES == (WorkdaySource,)
+
+
+# --------------------------------------------------------------------------
+# regression: description fields that are not plain HTML strings
+#
+# Tenants emit ``jobDescription`` as a bare HTML string, as
+# ``{"descriptor": "<p>..."}``, or as a list of HTML chunks. Handing a
+# non-string to html_to_text raises, and a raising record used to be dropped
+# outright -- losing the exact text this project exists to mine.
+# --------------------------------------------------------------------------
+
+
+def test_job_description_wrapped_in_a_descriptor_is_still_mined(monkeypatch):
+    posting = _mapped(monkeypatch, {"jobDescription": {"descriptor": DESCRIPTION_HTML}})
+
+    assert "H2F Performance Readiness Team" in posting.description
+    assert "CSCS or TSAC-F required" in posting.description
+
+
+def test_job_description_split_into_a_list_of_chunks_is_joined(monkeypatch):
+    posting = _mapped(
+        monkeypatch,
+        {
+            "jobDescription": [
+                "<p>Embedded with 3rd Special Forces Group (THOR3).</p>",
+                "<ul><li>TSAC-F preferred</li><li>TS/SCI clearance</li></ul>",
+            ]
+        },
+    )
+
+    assert "THOR3" in posting.description
+    assert "TSAC-F preferred" in posting.description
+    assert "TS/SCI clearance" in posting.description
+
+
+def test_an_unusable_job_description_falls_back_instead_of_dropping_the_job(monkeypatch):
+    posting = _mapped(monkeypatch, {"jobDescription": 12345})
+
+    assert posting.source_id == "R-00123456", "the posting must survive"
+    assert "Human Performance Coach" in posting.description
+
+
+def test_description_is_plain_text_never_raw_markup(monkeypatch):
+    posting = _mapped(
+        monkeypatch,
+        {"jobDescription": "<div>CSCS required</div><script>track();</script><style>a{}</style>"},
+    )
+
+    assert "CSCS required" in posting.description
+    for markup in ("<div", "<script", "<style", "</div>"):
+        assert markup not in posting.description
+    assert "track()" not in posting.description
+
+
+def test_unicode_survives_the_round_trip(monkeypatch):
+    posting = _mapped(
+        monkeypatch,
+        {"jobDescription": "<p>Café — Fußball readiness – CSCS</p>"},
+        {"title": "Coach — Fort Cavazos"},
+    )
+
+    assert "Café" in posting.description
+    assert "Fußball" in posting.description
+    assert posting.title == "Coach — Fort Cavazos"
+
+
+# --------------------------------------------------------------------------
+# regression: one flaky page must not cost the other search terms
+# --------------------------------------------------------------------------
+
+
+def test_a_failure_on_the_very_first_term_keeps_the_later_terms(monkeypatch):
+    """A transient 503 on request #1 used to throw away every other search."""
+    api = FakeAPI(
+        {
+            ("human performance", 0): FetchError("HTTP 503"),
+            ("athletic trainer", 0): _page([_listing("/job/Good_R1")]),
+        }
+    )
+    postings = _run(
+        monkeypatch,
+        api,
+        {"search_terms": ["human performance", "athletic trainer"], "detail_limit": 0},
+    )
+
+    assert [posting.source_id for posting in postings] == ["/job/Good_R1"]
+
+
+def test_every_term_failing_is_still_reported_as_an_error(monkeypatch):
+    api = FakeAPI(
+        {
+            ("human performance", 0): FetchError("HTTP 503"),
+            ("athletic trainer", 0): FetchError("HTTP 503"),
+        }
+    )
+    with pytest.raises(FetchError):
+        _run(
+            monkeypatch,
+            api,
+            {"search_terms": ["human performance", "athletic trainer"]},
+        )
+
+
+def test_a_failure_with_no_results_anywhere_is_not_reported_as_success(monkeypatch):
+    """Empty-but-healthy terms must not mask a broken tenant/site config."""
+    api = FakeAPI(
+        {
+            ("human performance", 0): _page([]),
+            ("athletic trainer", 0): FetchError("HTTP 404"),
+        }
+    )
+    with pytest.raises(FetchError):
+        _run(
+            monkeypatch,
+            api,
+            {"search_terms": ["human performance", "athletic trainer"]},
+        )
+
+
+def test_max_pages_is_applied_per_search_term(monkeypatch):
+    def endless(payload):
+        term, start = payload["searchText"], payload["offset"]
+        return _page(
+            [_listing(f"/job/{term}{start + i}_R{start + i}") for i in range(payload["limit"])],
+            total=1000,
+        )
+
+    api = FakeAPI(endless)
+    postings = _run(
+        monkeypatch,
+        api,
+        {"search_terms": ["alpha", "bravo"], "limit": 2, "max_pages": 2, "detail_limit": 0},
+    )
+
+    assert [(payload["searchText"], payload["offset"]) for _, payload in api.search_calls] == [
+        ("alpha", 0),
+        ("alpha", 2),
+        ("bravo", 0),
+        ("bravo", 2),
+    ]
+    assert len(postings) == 8
+
+
+def test_a_non_list_job_postings_value_terminates_cleanly(monkeypatch):
+    api = FakeAPI({("human performance", 0): {"total": 5, "jobPostings": "nope"}})
+    postings = _run(monkeypatch, api)
+
+    assert postings == []
+    assert len(api.search_calls) == 1, "a junk page must not be paginated forever"
+
+
+# --------------------------------------------------------------------------
+# regression: option coercion. Config is hand-edited TOML; one bad value must
+# degrade to the documented default, not abort the source.
+# --------------------------------------------------------------------------
+
+
+def test_junk_limit_falls_back_to_the_default_page_size(monkeypatch):
+    api = FakeAPI({("human performance", 0): _page([_listing("/job/A_R1")])})
+    postings = _run(monkeypatch, api, {"limit": None, "detail_limit": 0})
+
+    assert api.search_calls[0][1]["limit"] == 20
+    assert len(postings) == 1
+
+
+def test_junk_max_pages_falls_back_to_the_default(monkeypatch):
+    def endless(payload):
+        start = payload["offset"]
+        return _page(
+            [_listing(f"/job/J{start + i}_R{start + i}") for i in range(payload["limit"])],
+            total=1000,
+        )
+
+    api = FakeAPI(endless)
+    _run(monkeypatch, api, {"limit": 2, "max_pages": "many", "detail_limit": 0})
+
+    assert len(api.search_calls) == 5
+
+
+def test_junk_detail_limit_falls_back_to_the_default(monkeypatch):
+    listings = [_listing(f"/job/J{i}_R{i}") for i in range(60)]
+    api = FakeAPI(
+        {("human performance", 0): _page(listings)}, details=lambda url: _detail()
+    )
+    postings = _run(monkeypatch, api, {"limit": 60, "detail_limit": None})
+
+    assert len(api.detail_calls) == 50
+    assert len(postings) == 60
+
+
+def test_default_detail_limit_is_fifty(monkeypatch):
+    listings = [_listing(f"/job/J{i}_R{i}") for i in range(60)]
+    api = FakeAPI(
+        {("human performance", 0): _page(listings)}, details=lambda url: _detail()
+    )
+    _run(monkeypatch, api, {"limit": 60})
+
+    assert len(api.detail_calls) == 50
+
+
+def test_junk_delay_seconds_does_not_sleep(monkeypatch):
+    slept: list[float] = []
+    monkeypatch.setattr("tactical_jobs.sources.workday.time.sleep", lambda s: slept.append(s))
+    api = FakeAPI(
+        {("human performance", 0): _page([_listing("/job/A_R1")])},
+        details=lambda url: _detail(),
+    )
+    postings = _run(monkeypatch, api, {"delay_seconds": "fast"})
+
+    assert slept == []
+    assert len(postings) == 1
+
+
+def test_delay_is_skipped_before_the_first_request_and_applied_between_pages(monkeypatch):
+    slept: list[float] = []
+    monkeypatch.setattr("tactical_jobs.sources.workday.time.sleep", lambda s: slept.append(s))
+    api = FakeAPI(
+        {
+            ("human performance", 0): _page([_listing("/job/A_R1")], total=3),
+            ("human performance", 1): _page([_listing("/job/B_R2")], total=3),
+            ("human performance", 2): _page([_listing("/job/C_R3")], total=3),
+        }
+    )
+    _run(monkeypatch, api, {"limit": 1, "detail_limit": 0, "delay_seconds": 0.5})
+
+    assert len(api.search_calls) == 3
+    assert slept == [0.5, 0.5], "no pause before request one, one pause between each pair"
+
+
+def test_default_data_center_is_wd1(monkeypatch):
+    api = FakeAPI({("human performance", 0): _page([_listing("/job/A_R1")])})
+    api.install(monkeypatch)
+    posting = list(
+        WorkdaySource(
+            "kbr",
+            {"tenant": "kbr", "site": "External", "search_terms": ["human performance"],
+             "detail_limit": 0},
+        ).fetch()
+    )[0]
+
+    assert posting.url == "https://kbr.wd1.myworkdayjobs.com/External/job/A_R1"
+
+
+def test_none_entries_in_search_terms_are_dropped_not_searched_for(monkeypatch):
+    api = FakeAPI({("wanted", 0): _page([_listing("/job/A_R1")])})
+    postings = _run(
+        monkeypatch, api, {"search_terms": [None, "wanted"], "detail_limit": 0}
+    )
+
+    assert [payload["searchText"] for _, payload in api.search_calls] == ["wanted"]
+    assert len(postings) == 1
+
+
+def test_repeated_search_terms_are_only_requested_once(monkeypatch):
+    api = FakeAPI({("human performance", 0): _page([_listing("/job/A_R1")])})
+    _run(
+        monkeypatch,
+        api,
+        {"search_terms": ["human performance", "human performance"], "detail_limit": 0},
+    )
+
+    assert len(api.search_calls) == 1
+
+
+def test_a_non_list_search_terms_value_falls_back_to_the_defaults(monkeypatch):
+    api = FakeAPI({})
+    api.install(monkeypatch)
+    list(
+        WorkdaySource(
+            "leidos", {"tenant": "leidos", "site": "External", "search_terms": 7}
+        ).fetch()
+    )
+
+    assert {payload["searchText"] for _, payload in api.search_calls} == set(
+        DEFAULT_SEARCH_TERMS
+    )
+
+
+# --------------------------------------------------------------------------
+# remaining mapping details
+# --------------------------------------------------------------------------
+
+
+def test_pay_range_with_numeric_values_is_rendered(monkeypatch):
+    posting = _mapped(
+        monkeypatch,
+        {"payRange": {"minimum": {"value": 78000}, "maximum": {"value": 104000}}},
+    )
+    assert posting.compensation == "78000 - 104000"
+
+
+def test_job_req_id_is_folded_into_the_description_text(monkeypatch):
+    posting = _mapped(monkeypatch)
+    assert "Job requisition id: R-00123456." in posting.description
+
+
+def test_remote_is_false_when_nothing_indicates_remote(monkeypatch):
+    posting = _mapped(monkeypatch)
+    assert posting.remote is False

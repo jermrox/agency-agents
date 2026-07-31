@@ -32,6 +32,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tactical_jobs.report import (  # noqa: E402
     DISCIPLINE_LABELS,
     RECENT_MONTHS,
+    SERIES_DARK,
+    SERIES_LIGHT,
     render_html,
     render_markdown,
 )
@@ -413,6 +415,35 @@ def test_no_remote_capable_elements_exist():
     assert tags.isdisjoint({"script", "link", "iframe", "img", "object", "embed", "video", "audio", "form"})
 
 
+def test_a_url_inside_feed_text_stays_inert_text():
+    """Feeds do put URLs in titles. Text is not a fetch -- but it must stay text.
+
+    The blanket "no http:// in the document" assertion cannot apply here, so
+    this checks the guarantee that actually matters: nothing in the document
+    resolves, whatever the feed put in it.
+    """
+    linky = insights(
+        top_titles=[{"title": "Coach - apply at https://evil.example/x", "count": 4}],
+        by_employer=[
+            {
+                "name": '<a href="https://evil.example">O2X</a>',
+                "count": 3,
+                "disciplines": [],
+                "median_salary": None,
+            }
+        ],
+    )
+    markup = render_html(linky)
+    root = element_tree(markup)
+    assert "a" not in parsed(markup).tags
+    assert [
+        (tag, name)
+        for tag, name, _ in all_attrs(root)
+        if name.split("}")[-1].lower() in {"src", "href", "action", "poster", "ping"}
+    ] == []
+    assert "&lt;a href=&quot;https://evil.example&quot;&gt;" in markup
+
+
 def test_stylesheet_has_no_imports_or_url_references():
     markup = render_html(insights())
     assert "@import" not in markup
@@ -439,11 +470,46 @@ def test_dark_mode_is_supported_by_media_query_and_theme_attribute():
     assert '[data-theme="light"]' in css
 
 
+def hex_tokens(css: str) -> list[str]:
+    """Every hex color in the stylesheet, expanded to six digits.
+
+    Matching on ``#000\\b`` misses ``#0000`` -- a digit is a word character, so
+    the boundary never fires -- which is exactly the shape a careless edit
+    produces. Tokenize and normalize instead of pattern-matching a prefix.
+    """
+    out = []
+    for token in re.findall(r"#([0-9a-fA-F]{3,8})\b", css):
+        digits = token.lower()
+        if len(digits) in (3, 4):
+            digits = "".join(char * 2 for char in digits)
+        out.append(digits[:6])
+    return out
+
+
 def test_no_pure_black_or_pure_white_in_the_palette():
     """Pure #000 on #fff is the harshest possible pairing; the brief forbids it."""
     css = element_tree(render_html(insights())).find(".//style").text or ""
-    for banned in ("#000", "#fff", "#000000", "#ffffff"):
-        assert not re.search(rf"{banned}\b", css, re.IGNORECASE), banned
+    tokens = hex_tokens(css)
+    assert tokens, "no colors found -- the tokenizer, not the palette, is broken"
+    assert "000000" not in tokens
+    assert "ffffff" not in tokens
+
+
+def test_palette_css_is_generated_from_the_python_constants():
+    """The validated palette and the shipped stylesheet must not be able to drift.
+
+    Hand-copying the hues into the CSS is how a palette that passed the
+    colorblind checks once stops being the palette that ships.
+    """
+    css = element_tree(render_html(insights())).find(".//style").text or ""
+    light = css.split("@media", 1)[0]
+    dark = css.split(':root[data-theme="dark"]', 1)[1]
+    for index, value in enumerate(SERIES_LIGHT, 1):
+        assert f"--s{index}: {value};" in light
+    for index, value in enumerate(SERIES_DARK, 1):
+        assert f"--s{index}: {value};" in dark
+    # And the count matches: no orphan slot the constants no longer define.
+    assert len(re.findall(r"--s\d+:", light)) == len(SERIES_LIGHT)
 
 
 def test_wide_table_scrolls_in_its_own_container():
@@ -653,12 +719,209 @@ def test_partial_insights_without_totals_still_renders_its_sections():
         {"totals": "wrong type", "by_employer": "wrong type", "timeline": 7},
         {"by_discipline": [None, 42, {"name": None}], "salary": None},
         {"totals": {"postings": "many", "unique_jobs": float("nan")}},
+        # An integer with more magnitude than a float can hold. json.load
+        # produces these happily, and math.isfinite raises rather than
+        # returning False on them.
+        {"totals": {"postings": 10**400, "unique_jobs": 3}},
+        {"by_employer": [{"name": "X", "count": 10**400, "disciplines": []}]},
+        {"timeline": [{"month": "2026-01", "count": 10**400}]},
+        {"by_discipline": [{"name": "nutrition", "count": 1, "share": 10**400}]},
+        # ``disciplines`` arriving as something that is not a list of slugs.
+        {"by_employer": [{"name": "X", "count": 2, "disciplines": 5}]},
+        {"by_employer": [{"name": "X", "count": 2, "disciplines": None}]},
+        {"by_employer": [{"name": "X", "count": 2, "disciplines": [["a"], 3, None]}]},
+        {"salary": {"count": 2, "by_discipline": {7: {"p25": 1, "median": 2, "p75": 3}}}},
+        {"salary": {"count": 2, "by_discipline": [1, 2, 3]}},
+        {"remote": {"count": "lots", "share": "some"}},
+        {"trends": {"window_days": -5, "fastest_growing_employers": "nope"}},
     ],
 )
 def test_junk_input_never_raises(junk: Any):
     markup = render_html(junk)
     assert element_tree(markup).tag == "html"
     assert render_markdown(junk).startswith("# ")
+
+
+def test_astronomical_integers_are_dropped_rather_than_crashing():
+    """json.load returns unbounded ints; float() cannot hold them."""
+    huge = insights(totals={"postings": 10**400, "unique_jobs": 10**400, "employers": 4})
+    markup = render_html(huge)
+    assert element_tree(markup).tag == "html"
+    # Unreadable totals fall back to zero, but the rest of the corpus survives.
+    assert "O2X Human Performance" in markup
+
+
+def test_a_bare_string_of_disciplines_is_one_slug_not_a_list_of_letters():
+    """``str`` is iterable; iterating it yields characters, not slugs."""
+    text = render_markdown(
+        insights(
+            by_employer=[
+                {
+                    "name": "POTFF",
+                    "count": 2,
+                    "disciplines": "strength-conditioning",
+                    "median_salary": None,
+                }
+            ]
+        )
+    )
+    row = next(line for line in text.splitlines() if line.startswith("| POTFF"))
+    assert "Strength &amp; Conditioning" not in row
+    assert "Strength & Conditioning" in row
+    assert ", T" not in row  # "S, T" is what per-character iteration produces
+
+
+def test_negative_counts_never_draw_outside_the_chart():
+    """A negative tally is corrupt input, not a small number."""
+    corrupt = insights(
+        by_discipline=[{"name": "nutrition", "count": -5, "share": -0.2}],
+        timeline=[{"month": f"2026-{m:02d}", "count": -m} for m in range(1, 14)],
+    )
+    markup = render_html(corrupt)
+    root = element_tree(markup)
+    for value in [v for _, name, v in all_attrs(root) if name == "style"]:
+        for number in re.findall(r"(?:width|height|left):\s*(-?[\d.]+)%", value):
+            assert 0.0 <= float(number) <= 100.0, value
+    for points in [
+        element.get("points") or "" for element in root.iter("polyline")
+    ]:
+        for pair in points.split():
+            x, y = (float(part) for part in pair.split(","))
+            assert 0.0 <= x <= 100.0 and 0.0 <= y <= 30.0, pair
+
+
+def test_bar_widths_stay_within_the_track_on_ordinary_data():
+    root = element_tree(render_html(insights()))
+    widths = [
+        float(match.group(1))
+        for _, name, value in all_attrs(root)
+        if name == "style"
+        for match in [re.search(r"width:\s*([\d.]+)%", value)]
+        if match
+    ]
+    assert widths
+    assert all(0.0 <= width <= 100.0 for width in widths)
+    assert max(widths) == pytest.approx(100.0)  # the peak fills its track
+
+
+def test_pay_section_survives_a_corpus_with_no_per_discipline_bands():
+    """by_discipline is empty whenever salaried postings carry no discipline tag.
+
+    Dropping the whole section then hides the only pay evidence there is.
+    """
+    no_bands = insights(
+        salary={
+            "count": 190,
+            "min": 42000.0,
+            "max": 185000.0,
+            "median": 89000.0,
+            "p25": 76000.0,
+            "p75": 104000.0,
+            "by_discipline": {},
+        }
+    )
+    markup = render_html(no_bands)
+    ids = {element.get("id") for element in element_tree(markup).iter("section")}
+    assert "salary" in ids
+    for figure in ("$42,000", "$76,000", "$89,000", "$104,000", "$185,000"):
+        assert figure in markup
+
+
+def test_html_and_markdown_agree_on_the_pay_spread():
+    """One corpus, two renderings: they must not state different distributions."""
+    data = insights()
+    text, markup = render_markdown(data), render_html(data)
+    for figure in ("$42,000", "$76,000", "$89,000", "$104,000", "$185,000"):
+        assert figure in text, figure
+        assert figure in markup, figure
+
+
+def test_a_corpus_with_only_salary_data_is_not_called_empty():
+    only_pay = {
+        "salary": {
+            "count": 5,
+            "min": 30000,
+            "max": 90000,
+            "median": 50000,
+            "p25": 40000,
+            "p75": 60000,
+            "by_discipline": {},
+        }
+    }
+    markup = render_html(only_pay)
+    assert "No data yet" not in markup
+    assert "$50,000" in markup
+    assert "No data yet" not in render_markdown(only_pay)
+
+
+def test_a_corpus_with_only_remote_data_is_not_called_empty():
+    markup = render_html({"remote": {"count": 4, "share": 0.5}})
+    assert "No data yet" not in markup
+    assert "50%" in markup
+
+
+def test_salary_band_without_a_usable_name_is_dropped():
+    """A colored stripe a reader cannot attribute to anything is worse than none."""
+    nameless = insights(
+        salary={
+            "count": 4,
+            "median": 90000,
+            "p25": 80000,
+            "p75": 100000,
+            "by_discipline": {
+                "   ": {"count": 4, "p25": 80000, "median": 90000, "p75": 100000}
+            },
+        }
+    )
+    root = element_tree(render_html(nameless))
+    assert [
+        element
+        for element in root.iter("span")
+        if "band-range" in (element.get("class") or "")
+    ] == []
+
+
+def test_month_caption_names_the_span_the_column_labels_omit():
+    """Columns are labeled "07"; without a year a window across New Year is unreadable."""
+    markup = render_html(insights())
+    blurbs = [
+        element.text or ""
+        for element in element_tree(markup).iter("p")
+        if "blurb" in (element.get("class") or "")
+    ]
+    caption = next(blurb for blurb in blurbs if "calendar month" in blurb)
+    assert "2025-08" in caption and "2026-07" in caption
+
+
+def test_unicode_names_round_trip_intact():
+    exotic = insights(
+        by_employer=[
+            {
+                "name": "Fördé Tactisk Ytelse — Пример",
+                "count": 3,
+                "disciplines": ["nutrition"],
+                "median_salary": None,
+            }
+        ]
+    )
+    markup = render_html(exotic)
+    root = element_tree(markup)
+    texts = [element.text or "" for element in root.iter()]
+    assert any("Fördé Tactisk Ytelse" in text for text in texts)
+    assert "Fördé Tactisk Ytelse" in render_markdown(exotic)
+
+
+def test_very_long_names_do_not_break_the_document():
+    monster = "Strength " * 4000
+    huge = insights(
+        by_employer=[
+            {"name": monster, "count": 3, "disciplines": [], "median_salary": None}
+        ],
+        top_titles=[{"title": monster, "count": 1}],
+    )
+    markup = render_html(huge)
+    assert element_tree(markup).tag == "html"
+    assert render_markdown(huge).count("\n") > 10
 
 
 def test_salary_band_with_scrambled_percentiles_is_dropped():
@@ -709,8 +972,21 @@ def test_all_zero_timeline_renders_without_dividing_by_zero():
         timeline=[{"month": f"2026-{m:02d}", "count": 0} for m in range(1, 8)]
     )
     markup = render_html(flat)
-    assert element_tree(markup).tag == "html"
-    assert "%" in markup  # widths were still computed
+    root = element_tree(markup)
+    columns = [
+        element
+        for element in root.iter("div")
+        if (element.get("class") or "") == "month"
+    ]
+    assert len(columns) == 7
+    # Every bar computes to a real zero height rather than a NaN or a crash.
+    heights = [
+        element.get("style")
+        for element in root.iter("span")
+        if "month-fill" in (element.get("class") or "")
+    ]
+    assert heights == ["height:0.00%"] * 7
+    assert "nan" not in markup.lower()
 
 
 # --------------------------------------------------------------------------
@@ -823,6 +1099,33 @@ def test_markdown_omits_sections_with_no_data():
     assert "## Most common titles" not in text
     assert "## Credentials in demand" not in text
     assert "## Who is hiring" in text
+
+
+def test_markdown_collapses_newlines_inside_a_table_cell():
+    """A newline in a scraped employer name would end the table row early."""
+    wrapped = insights(
+        by_employer=[
+            {
+                "name": "O2X\nHuman\r\nPerformance",
+                "count": 3,
+                "disciplines": [],
+                "median_salary": None,
+            }
+        ]
+    )
+    text = render_markdown(wrapped)
+    row = next(
+        line for line in text.splitlines() if line.startswith("| O2X")
+    )
+    assert row == "| O2X Human Performance | 3 | - | - |"
+
+
+def test_hostile_strings_do_not_corrupt_markdown_table_structure():
+    """Brackets and quotes stay literal in Markdown, but must not shift columns."""
+    text = render_markdown(hostile_insights())
+    assert HOSTILE_EMPLOYER in text
+    row = next(line for line in text.splitlines() if "Smith & Sons" in line)
+    assert row.count("|") - row.count(r"\|") - 1 == 4
 
 
 def test_markdown_reports_the_syndication_gap():

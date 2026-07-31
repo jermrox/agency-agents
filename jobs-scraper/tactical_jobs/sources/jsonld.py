@@ -26,12 +26,15 @@ attribute, and these pages are written by hundreds of different vendors.
 
 from __future__ import annotations
 
+import html
 import json
 import logging
+import re
 import time
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from typing import Any, Iterable
+from urllib.parse import urljoin, urlparse
 
 from ..http import fetch
 from ..models import JobPosting
@@ -119,6 +122,24 @@ def _clean_block(text: str) -> str:
     return cleaned
 
 
+def _decode_block(text: str) -> Any:
+    """Decode one script block, tolerating the two common breakages.
+
+    ``strict=False`` lets raw newlines inside hand-templated strings through,
+    and a second pass through :func:`html.unescape` recovers the blocks that
+    template engines HTML-escape wholesale (``&quot;@type&quot;: ...``), which
+    is a surprisingly common CMS bug.
+    """
+    cleaned = _clean_block(text)
+    try:
+        return json.loads(cleaned, strict=False)
+    except (ValueError, TypeError):
+        unescaped = html.unescape(cleaned)
+        if unescaped == cleaned:
+            raise
+        return json.loads(unescaped, strict=False)
+
+
 def _iter_ld_nodes(payload: Any, depth: int = 0) -> Iterable[dict[str, Any]]:
     """Walk a decoded JSON-LD document and yield every object node.
 
@@ -154,6 +175,74 @@ def _type_names(node: dict[str, Any]) -> list[str]:
 def is_job_posting(node: Any) -> bool:
     """True when a JSON-LD node declares itself a schema.org JobPosting."""
     return isinstance(node, dict) and "jobposting" in _type_names(node)
+
+
+# -- option coercion ------------------------------------------------------
+#
+# Config arrives from YAML/JSON written by hand, so an option can plausibly be
+# a bare string, a null, or a number. None of those should be a traceback.
+
+
+def _as_list(value: Any) -> list[str]:
+    """Coerce a list-ish option into a clean list of non-empty strings."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        items: list[Any] = [value]
+    elif isinstance(value, (list, tuple)):
+        items = list(value)
+    else:
+        items = [value]
+    return [str(item).strip() for item in items if str(item).strip()]
+
+
+def _as_int(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _as_float(value: Any, default: float) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+# -- URL handling ---------------------------------------------------------
+
+_SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*:")
+_SLUG_STRIP = re.compile(r"[^a-z0-9]+")
+
+
+def _slug(text: str, limit: int = 80) -> str:
+    return _SLUG_STRIP.sub("-", text.lower()).strip("-")[:limit]
+
+
+def _absolute_url(candidate: str, base: str, fallback: str | None = None) -> str:
+    """Resolve a JSON-LD/sitemap URL against the document it came from.
+
+    Career pages routinely emit ``/careers/job/123`` or ``//host/job/123``,
+    and ``@id`` is just as often an opaque URN or a blank node rather than a
+    link. A posting whose ``url`` cannot be clicked is worse than useless
+    downstream, so anything that does not resolve to http(s) falls back.
+    """
+    if fallback is None:
+        fallback = base
+    text = (candidate or "").strip()
+    if not text or text.startswith(("#", "_:")):
+        return fallback
+    if text.startswith("//"):
+        text = f"{urlparse(base).scheme or 'https'}:{text}"
+    if _SCHEME.match(text) and not text.lower().startswith(("http://", "https://")):
+        # urn:, mailto:, javascript:, tag: ... not a job page.
+        return fallback
+    try:
+        resolved = urljoin(base, text)
+    except ValueError:
+        return fallback
+    return resolved if urlparse(resolved).scheme in ("http", "https") else fallback
 
 
 def _plain(value: Any) -> str:
@@ -214,6 +303,8 @@ def _place_text(node: Any) -> str:
     if not isinstance(node, dict):
         return ""
     address = node.get("address")
+    if isinstance(address, list):
+        address = next((item for item in address if item), None)
     if isinstance(address, str):
         return address.strip()
     if isinstance(address, dict):
@@ -249,19 +340,25 @@ def _is_telecommute(node: dict[str, Any]) -> bool:
     )
 
 
-def _salary(node: dict[str, Any]) -> str | None:
-    """Render ``baseSalary`` as a human-readable compensation string."""
-    base = node.get("baseSalary")
+def _one_salary(base: Any) -> str | None:
+    """Render a single ``MonetaryAmount`` (or bare number) as text."""
     if isinstance(base, (int, float)) and not isinstance(base, bool):
         return f"${_number(base)}"
+    if isinstance(base, str) and base.strip():
+        return base.strip()
     if not isinstance(base, dict):
         return None
 
     value = base.get("value")
+    if isinstance(value, list):
+        # Some feeds publish one QuantitativeValue per pay period.
+        value = next((item for item in value if item not in (None, "", {}, [])), None)
     currency = _plain(base.get("currency")) or _plain(base.get("currencyCode"))
+
     if isinstance(value, (int, float, str)) and not isinstance(value, bool):
-        amounts = [_number(value)]
-        unit = ""
+        amount = _number(value)
+        amounts = [amount] if amount else []
+        unit = _plain(base.get("unitText"))
     elif isinstance(value, dict):
         currency = currency or _plain(value.get("currency"))
         minimum = _number(value.get("minValue"))
@@ -270,7 +367,7 @@ def _salary(node: dict[str, Any]) -> str | None:
         amounts = [part for part in (minimum, maximum) if part] or (
             [single] if single else []
         )
-        unit = _plain(value.get("unitText"))
+        unit = _plain(value.get("unitText")) or _plain(base.get("unitText"))
     else:
         return None
 
@@ -283,6 +380,21 @@ def _salary(node: dict[str, Any]) -> str | None:
     else:
         rendered = " - ".join(f"${amount}" for amount in amounts)
     return f"{rendered} per {unit}".strip() if unit else rendered
+
+
+def _salary(node: dict[str, Any]) -> str | None:
+    """Render ``baseSalary`` as a human-readable compensation string.
+
+    ``baseSalary`` is occasionally a list (one entry per pay period), so the
+    first entry that renders wins rather than the whole field being dropped.
+    """
+    base = node.get("baseSalary")
+    candidates = base if isinstance(base, list) else [base]
+    for candidate in candidates:
+        rendered = _one_salary(candidate)
+        if rendered:
+            return rendered
+    return None
 
 
 class JSONLDSource(Source):
@@ -309,7 +421,7 @@ class JSONLDSource(Source):
 
     def fetch(self) -> Iterable[JobPosting]:
         employer_default = self.options.get("employer") or self.name
-        delay = float(self.options.get("delay_seconds", 0.0) or 0.0)
+        delay = _as_float(self.options.get("delay_seconds"), 0.0)
 
         seen_ids: set[str] = set()
         for index, page_url in enumerate(self._target_urls()):
@@ -327,24 +439,23 @@ class JSONLDSource(Source):
     # -- URL selection ----------------------------------------------------
 
     def _target_urls(self) -> list[str]:
-        if "urls" not in self.options and "sitemap" not in self.options:
-            # Produces the standard "requires option" message.
-            self.require("urls")
+        configured = _as_list(self.options.get("urls"))
+        sitemap = str(self.options.get("sitemap") or "").strip()
 
-        configured = self.options.get("urls") or []
-        if isinstance(configured, str):
-            configured = [configured]
+        if not configured and not sitemap:
+            if "urls" not in self.options:
+                # Produces the standard "requires option" message.
+                self.require("urls")
+            raise KeyError(
+                f"source '{self.name}' ({self.kind}) requires a non-empty "
+                "'urls' or 'sitemap' option"
+            )
 
-        candidates = [str(url).strip() for url in configured if str(url).strip()]
-
-        sitemap = self.options.get("sitemap")
+        candidates = list(configured)
         if sitemap:
-            candidates.extend(self._sitemap_urls(str(sitemap)))
+            candidates.extend(self._sitemap_urls(sitemap))
 
-        includes = self.options.get("url_include") or []
-        if isinstance(includes, str):
-            includes = [includes]
-        includes = [str(fragment) for fragment in includes if str(fragment)]
+        includes = _as_list(self.options.get("url_include"))
         if includes:
             candidates = [
                 url for url in candidates if any(fragment in url for fragment in includes)
@@ -355,15 +466,25 @@ class JSONLDSource(Source):
             if url not in ordered:
                 ordered.append(url)
 
-        max_urls = int(self.options.get("max_urls", DEFAULT_MAX_URLS))
-        return ordered[:max_urls]
+        max_urls = _as_int(self.options.get("max_urls"), DEFAULT_MAX_URLS)
+        return ordered[:max_urls] if max_urls >= 0 else ordered
 
     def _sitemap_urls(self, sitemap_url: str) -> list[str]:
         """Collect page URLs from a sitemap, following an index one level."""
         pages, children = self._read_sitemap(sitemap_url)
         if children:
-            limit = int(self.options.get("max_sitemaps", DEFAULT_MAX_SITEMAPS))
-            for child in children[:limit]:
+            limit = _as_int(self.options.get("max_sitemaps"), DEFAULT_MAX_SITEMAPS)
+            visited = {sitemap_url}
+            fetched = 0
+            for child in children:
+                if fetched >= limit:
+                    break
+                if child in visited:
+                    # An index that repeats (or self-references) a shard must
+                    # not cost a second request.
+                    continue
+                visited.add(child)
+                fetched += 1
                 child_pages, _ = self._read_sitemap(child)
                 pages.extend(child_pages)
         return pages
@@ -377,7 +498,7 @@ class JSONLDSource(Source):
             return [], []
         try:
             root = ET.fromstring(body)
-        except ET.ParseError as exc:
+        except (ET.ParseError, ValueError, TypeError) as exc:
             log.warning("%s: sitemap %s is not valid XML: %s", self.name, sitemap_url, exc)
             return [], []
 
@@ -391,7 +512,9 @@ class JSONLDSource(Source):
         for element in root.iter():
             if element.tag.rsplit("}", 1)[-1] != "loc":
                 continue
-            location = (element.text or "").strip()
+            # <loc> is required to be absolute, but plenty of generators emit
+            # a site-root path anyway.
+            location = _absolute_url((element.text or "").strip(), sitemap_url, "")
             if not location:
                 continue
             (children if is_index else pages).append(location)
@@ -422,7 +545,7 @@ class JSONLDSource(Source):
 
         for block in collector.blocks:
             try:
-                payload = json.loads(_clean_block(block), strict=False)
+                payload = _decode_block(block)
             except (ValueError, TypeError) as exc:
                 # Hand-templated JSON-LD is frequently invalid. One bad block
                 # must not cost us the valid blocks on the same page.
@@ -450,39 +573,27 @@ class JSONLDSource(Source):
             log.debug("%s: JobPosting without a title on %s", self.name, page_url)
             return None
 
-        url = _plain(node.get("url")) or _plain(node.get("@id")) or page_url
-
-        identifier = node.get("identifier")
-        if isinstance(identifier, list):
-            identifier = next((item for item in identifier if _plain(item)), None)
-        source_id = ""
-        if isinstance(identifier, dict):
-            source_id = _plain(identifier.get("value")) or _plain(identifier.get("name"))
-        else:
-            source_id = _plain(identifier)
-        source_id = source_id or url or page_url
-
-        employer = _plain(node.get("hiringOrganization")) or employer_default
+        # The human-facing link, never a relative path or a bare URN.
+        declared_url = _plain(node.get("url")) or _plain(node.get("@id"))
+        url = _absolute_url(declared_url, page_url)
 
         location = _locations(node)
         telecommute = _is_telecommute(node)
         applicant_requirements = node.get("applicantLocationRequirements")
-        if applicant_requirements:
+        if applicant_requirements is not None:
             telecommute = True
         if telecommute and not location:
             scope = _plain(applicant_requirements)
             location = f"Remote - {scope}" if scope else "Remote"
 
-        description = self._description(node)
-
         return JobPosting(
             source=f"{self.kind}:{self.name}",
-            source_id=source_id,
+            source_id=self._source_id(node, title, location, url, page_url),
             url=url,
             title=title,
-            employer=employer,
+            employer=_plain(node.get("hiringOrganization")) or employer_default,
             location=location,
-            description=description,
+            description=self._description(node),
             posted_at=parse_timestamp(
                 node.get("datePosted") or node.get("dateCreated") or node.get("dateModified")
             ),
@@ -498,6 +609,37 @@ class JSONLDSource(Source):
             # vendor's own extensions stay available for debugging.
             raw={**node, "sourcePageUrl": page_url},
         )
+
+    def _source_id(
+        self,
+        node: dict[str, Any],
+        title: str,
+        location: str,
+        url: str,
+        page_url: str,
+    ) -> str:
+        """Stable per-job id.
+
+        The last fallback deliberately mixes in the title and location: a
+        listing page routinely embeds several JobPosting nodes that carry
+        neither ``identifier`` nor a per-job ``url``, and keying those on the
+        page URL alone would collapse every one of them into a single record.
+        """
+        identifier = node.get("identifier")
+        if isinstance(identifier, list):
+            identifier = next((item for item in identifier if _plain(item)), None)
+        if isinstance(identifier, dict):
+            found = _plain(identifier.get("value")) or _plain(identifier.get("name"))
+        else:
+            found = _plain(identifier)
+        if found:
+            return found
+
+        if url and url != page_url:
+            return url
+
+        suffix = _slug(f"{title} {location}".strip())
+        return f"{page_url}#{suffix}" if suffix else page_url
 
     def _description(self, node: dict[str, Any]) -> str:
         parts = [_blob(node.get(key)) for key in _NARRATIVE_KEYS]

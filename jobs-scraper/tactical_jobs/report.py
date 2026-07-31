@@ -117,11 +117,21 @@ SERIES_DARK: tuple[str, ...] = (
 )
 """Categorical hues, stepped separately for each surface rather than flipped.
 
-Validated as a set on both surfaces: every adjacent pair clears the
-colorblind-separation and normal-vision floors. Three of the light steps sit
-below 3:1 against the light surface, which is why every colored mark in this
-report carries a visible text label beside it -- color is never the only channel
-identifying a bar.
+Validated as a set on both surfaces: every step sits inside the lightness band
+and above the chroma floor, and every adjacent pair clears the
+colorblind-separation and normal-vision floors.
+
+Four of the light steps fall below 3:1 against ``--track``, which is the
+contrast that actually matters -- a bar fill is read against the track it sits
+in, not against the card behind it. That is legal only with a second channel,
+which is why every colored mark in this report carries a visible text label
+beside it: the discipline name to its left and the exact count to its right.
+Color is never the only thing identifying a bar. Darkening those steps enough to
+clear 3:1 would push them out of the lightness band the categorical scheme
+depends on, so the label is the fix, not a heavier hue.
+
+These are the single source of truth for the shipped CSS: :func:`_tokens` writes
+them into the stylesheet rather than the stylesheet repeating them.
 """
 
 RECENT_MONTHS = 12
@@ -157,15 +167,22 @@ def _clean(value: Any) -> str:
 
 
 def _as_float(value: Any) -> float | None:
-    """Read a finite number, refusing bools (a flag is not a count)."""
+    """Read a finite number, refusing bools (a flag is not a count).
+
+    ``float()`` is called inside the guard rather than trusted: a JSON document
+    can hold an integer with more magnitude than a float can represent, and
+    ``math.isfinite(10 ** 400)`` raises ``OverflowError`` rather than returning
+    ``False``. A number nothing can represent is an unreadable value, which is
+    the case this whole layer exists to swallow.
+    """
     if isinstance(value, bool):
         return None
-    if isinstance(value, (int, float)):
-        return float(value) if math.isfinite(value) else None
-    if isinstance(value, str):
+    if isinstance(value, (int, float, str)):
+        if isinstance(value, str):
+            value = value.replace(",", "").replace("$", "").strip()
         try:
-            parsed = float(value.replace(",", "").replace("$", "").strip())
-        except ValueError:
+            parsed = float(value)
+        except (ValueError, OverflowError):
             return None
         return parsed if math.isfinite(parsed) else None
     return None
@@ -174,6 +191,18 @@ def _as_float(value: Any) -> float | None:
 def _as_int(value: Any) -> int:
     number = _as_float(value)
     return int(number) if number is not None else 0
+
+
+def _as_count(value: Any) -> int:
+    """Read a count: a whole number that cannot be negative.
+
+    Every ``count`` in the insights dict is a tally, so a negative one is
+    corrupt input rather than a small number. Clamping here rather than at each
+    use site keeps the arithmetic downstream honest: a negative count would
+    otherwise produce a bar wider than its track and, in the sparkline, a path
+    drawn outside the ``viewBox`` entirely.
+    """
+    return max(0, _as_int(value))
 
 
 def _as_mapping(value: Any) -> Mapping[str, Any]:
@@ -185,6 +214,23 @@ def _rows(value: Any) -> list[Mapping[str, Any]]:
     if not isinstance(value, (list, tuple)):
         return []
     return [entry for entry in value if isinstance(entry, Mapping)]
+
+
+def _slugs(value: Any) -> list[str]:
+    """Read a list of slugs out of a field that may not be a list at all.
+
+    A bare string has to be special-cased before the generic iteration: ``str``
+    is iterable, so a field holding ``"strength-conditioning"`` instead of
+    ``["strength-conditioning"]`` would otherwise be read as twenty-two
+    single-letter slugs and rendered as "S, T". Anything not iterable at all
+    (an int, ``None``) is dropped rather than raising.
+    """
+    if isinstance(value, str):
+        cleaned = _clean(value)
+        return [cleaned] if cleaned else []
+    if not isinstance(value, (list, tuple, set, frozenset)):
+        return []
+    return [cleaned for cleaned in (_clean(item) for item in value) if cleaned]
 
 
 def _label(slug: str, table: Mapping[str, str]) -> str:
@@ -329,6 +375,12 @@ class _Digest:
         """
         if self.postings > 0 or self.unique_jobs > 0:
             return True
+        # Salary and remote counts are corpus facts in their own right. A dict
+        # carrying a pay distribution and nothing else is a thin report, not an
+        # empty one, and printing "no data yet" over it would throw away the
+        # only thing it knows.
+        if _as_count(self.salary.get("count")) or self.remote_count:
+            return True
         return any(
             (
                 self.disciplines,
@@ -341,6 +393,7 @@ class _Digest:
                 self.branches,
                 self.titles,
                 self.timeline,
+                self.bands,
             )
         )
 
@@ -392,7 +445,7 @@ def _entries(
         result.append(
             _Entry(
                 label=_label(raw, labels) if labels is not None else raw,
-                count=_as_int(row.get("count")),
+                count=_as_count(row.get("count")),
                 share=_as_float(row.get("share")),
                 color_index=_color_index(raw) if color else None,
             )
@@ -409,7 +462,9 @@ def _growth_pairs(value: Any, limit: int = 5) -> list[tuple[str, int, int]]:
         name = _clean(row.get("name"))
         if not name:
             continue
-        pairs.append((name, _as_int(row.get("previous")), _as_int(row.get("recent"))))
+        pairs.append(
+            (name, _as_count(row.get("previous")), _as_count(row.get("recent")))
+        )
     return pairs
 
 
@@ -426,7 +481,7 @@ def _read(insights: Any) -> _Digest:
     for row in _rows(data.get("timeline")):
         month = _clean(row.get("month"))
         if month:
-            timeline.append((month, _as_int(row.get("count"))))
+            timeline.append((month, _as_count(row.get("count"))))
 
     employer_rows: list[_Employer] = []
     for row in _rows(data.get("by_employer"))[:TOP_ROWS]:
@@ -435,13 +490,12 @@ def _read(insights: Any) -> _Digest:
             continue
         focus = [
             _label(slug, DISCIPLINE_LABELS)
-            for slug in row.get("disciplines", [])
-            if _clean(slug)
+            for slug in _slugs(row.get("disciplines"))
         ]
         employer_rows.append(
             _Employer(
                 name=name,
-                count=_as_int(row.get("count")),
+                count=_as_count(row.get("count")),
                 median_salary=_as_float(row.get("median_salary")),
                 focus=", ".join(focus[:2]),
             )
@@ -449,13 +503,13 @@ def _read(insights: Any) -> _Digest:
 
     return _Digest(
         generated_at=_clean(data.get("generated_at")),
-        postings=_as_int(totals.get("postings")),
-        unique_jobs=_as_int(totals.get("unique_jobs")),
-        employers=_as_int(totals.get("employers")),
-        with_salary=_as_int(totals.get("with_salary")),
+        postings=_as_count(totals.get("postings")),
+        unique_jobs=_as_count(totals.get("unique_jobs")),
+        employers=_as_count(totals.get("employers")),
+        with_salary=_as_count(totals.get("with_salary")),
         earliest=_day(span.get("earliest")),
         latest=_day(span.get("latest")),
-        remote_count=_as_int(remote.get("count")),
+        remote_count=_as_count(remote.get("count")),
         remote_share=_as_float(remote.get("share")),
         salary=salary,
         bands=_salary_bands(salary),
@@ -473,7 +527,7 @@ def _read(insights: Any) -> _Digest:
         timeline=timeline,
         growing=_growth_pairs(trends.get("fastest_growing_employers")),
         emerging=_growth_pairs(trends.get("emerging_certifications")),
-        window_days=_as_int(trends.get("window_days")),
+        window_days=_as_count(trends.get("window_days")),
     )
 
 
@@ -483,11 +537,15 @@ def _salary_bands(salary: Mapping[str, Any]) -> list[_Band]:
     A band needs p25, median, and p75 to mean anything. A discipline that
     published only a median is dropped rather than drawn as a zero-width band
     at an arbitrary position, which would read as certainty the data does not
-    have.
+    have. It also needs a name: an unnamed band is a colored stripe a reader
+    cannot attribute to anything, which is worse than one fewer row.
     """
     bands: list[_Band] = []
     for slug, stats in _as_mapping(salary.get("by_discipline")).items():
         values = _as_mapping(stats)
+        label = _label(slug, DISCIPLINE_LABELS)
+        if not label:
+            continue
         low = _as_float(values.get("p25"))
         mid = _as_float(values.get("median"))
         high = _as_float(values.get("p75"))
@@ -497,11 +555,11 @@ def _salary_bands(salary: Mapping[str, Any]) -> list[_Band]:
             continue  # a scrambled record, not a distribution
         bands.append(
             _Band(
-                label=_label(slug, DISCIPLINE_LABELS),
+                label=label,
                 low=low,
                 mid=mid,
                 high=high,
-                count=_as_int(values.get("count")),
+                count=_as_count(values.get("count")),
                 color_index=_color_index(slug),
             )
         )
@@ -604,7 +662,7 @@ def _md_headline(digest: _Digest) -> list[str]:
             f"- Posted between **{digest.earliest or 'unknown'}** and "
             f"**{digest.latest or 'unknown'}**."
         )
-    salary_count = _as_int(digest.salary.get("count"))
+    salary_count = _as_count(digest.salary.get("count"))
     if salary_count:
         lines.append(
             f"- **{_money(digest.salary.get('median'))} median** annualized pay "
@@ -721,7 +779,7 @@ def _md_credentials(digest: _Digest) -> list[str]:
 
 
 def _md_salary(digest: _Digest) -> list[str]:
-    if not _as_int(digest.salary.get("count")):
+    if not _as_count(digest.salary.get("count")):
         return []
     lines = ["## What it pays", ""]
     lines += [
@@ -998,6 +1056,47 @@ def _band_rows(bands: Sequence[_Band]) -> list[str]:
     return out
 
 
+def _salary_figures(digest: _Digest) -> list[str]:
+    """The corpus-wide pay distribution as five labeled figures.
+
+    The per-discipline bands below only exist for disciplines that had salaried
+    postings, and a corpus can easily publish pay without publishing a
+    discipline tag alongside it. Rendering the bands alone therefore threw away
+    the whole pay section exactly when it was the only pay evidence there was --
+    and made the HTML say less than the Markdown about the same corpus, which
+    the single-read ``_Digest`` exists to prevent.
+
+    Five numbers are not a chart. A distribution this small is read faster as
+    figures than as a shape, and the shape is drawn per discipline below anyway.
+    """
+    if not _as_count(digest.salary.get("count")):
+        return []
+    wanted = (
+        ("Lowest", "min"),
+        ("25th", "p25"),
+        ("Median", "median"),
+        ("75th", "p75"),
+        ("Highest", "max"),
+    )
+    cells = [
+        (label, _money(digest.salary.get(key)))
+        for label, key in wanted
+        if _as_float(digest.salary.get(key)) is not None
+    ]
+    if not cells:
+        return []
+    out = ['<ul class="figures">']
+    for label, value in cells:
+        out.append(
+            '<li class="figure">'
+            f'<span class="figure-value">{_esc(value)}</span>'
+            f'<span class="figure-label">{_esc(label)}</span>'
+            "</li>"
+        )
+    out.append("</ul>")
+    return out
+
+
 def _chips(entries: Sequence[_Entry]) -> list[str]:
     if not entries:
         return []
@@ -1079,7 +1178,7 @@ def _headline_tiles(digest: _Digest) -> list[str]:
             f"{digest.syndicated:,} records are re-posts" if digest.syndicated else "",
         ),
     ]
-    salary_count = _as_int(digest.salary.get("count"))
+    salary_count = _as_count(digest.salary.get("count"))
     if salary_count:
         tiles.append(
             _tile(
@@ -1127,8 +1226,7 @@ def _trend_lists(digest: _Digest) -> list[str]:
     return out
 
 
-_STYLESHEET = """
-:root {
+_LIGHT_TOKENS = """\
   color-scheme: light dark;
   --plane: #f4f4f1;
   --surface: #fcfcfb;
@@ -1140,36 +1238,9 @@ _STYLESHEET = """
   --edge: rgba(27, 27, 25, 0.10);
   --accent: #2a78d6;
   --up: #006300;
-  --down: #a3241f;
-  --s1: #2a78d6;
-  --s2: #eb6834;
-  --s3: #1baf7a;
-  --s4: #eda100;
-  --s5: #e87ba4;
-  --s6: #008300;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --plane: #101012;
-    --surface: #17171a;
-    --ink: #f2f1ec;
-    --ink-2: #c3c2b7;
-    --muted: #93918a;
-    --rule: #2c2c2e;
-    --track: #26262a;
-    --edge: rgba(242, 241, 236, 0.12);
-    --accent: #3987e5;
-    --up: #0ca30c;
-    --down: #f08b8b;
-    --s1: #3987e5;
-    --s2: #d95926;
-    --s3: #199e70;
-    --s4: #c98500;
-    --s5: #d55181;
-    --s6: #008300;
-  }
-}
-:root[data-theme="dark"] {
+  --down: #a3241f;"""
+
+_DARK_TOKENS = """\
   --plane: #101012;
   --surface: #17171a;
   --ink: #f2f1ec;
@@ -1180,14 +1251,41 @@ _STYLESHEET = """
   --edge: rgba(242, 241, 236, 0.12);
   --accent: #3987e5;
   --up: #0ca30c;
-  --down: #f08b8b;
-  --s1: #3987e5;
-  --s2: #d95926;
-  --s3: #199e70;
-  --s4: #c98500;
-  --s5: #d55181;
-  --s6: #008300;
-}
+  --down: #f08b8b;"""
+
+
+def _tokens(base: str, series: Sequence[str], indent: str = "  ") -> str:
+    """One custom-property block: the surface tokens plus the series hues.
+
+    The series steps are written out of :data:`SERIES_LIGHT` and
+    :data:`SERIES_DARK` rather than hand-copied into the CSS. Hand-copying is
+    how a palette that was validated once stops matching the palette that ships:
+    the constants and the stylesheet drift, and nothing fails until somebody
+    notices two charts disagreeing about which hue means sports medicine.
+    """
+    lines = [line.strip() for line in base.splitlines()]
+    lines += [f"--s{index}: {value};" for index, value in enumerate(series, 1)]
+    return "\n".join(indent + line for line in lines)
+
+
+# Dark mode is declared twice on purpose. The media query serves the reader's
+# own system preference; the ``[data-theme]`` attribute lets a host page force
+# either mode and win, in both directions -- hence the ``:not`` guard on the
+# media-query rule, without which a host forcing light would still be overridden
+# by a dark system preference.
+_PALETTE = (
+    ":root {\n"
+    + _tokens(_LIGHT_TOKENS, SERIES_LIGHT)
+    + "\n}\n"
+    '@media (prefers-color-scheme: dark) {\n  :root:not([data-theme="light"]) {\n'
+    + _tokens(_DARK_TOKENS, SERIES_DARK, "    ")
+    + "\n  }\n}\n"
+    ':root[data-theme="dark"] {\n'
+    + _tokens(_DARK_TOKENS, SERIES_DARK)
+    + "\n}\n"
+)
+
+_RULES = """\
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -1355,6 +1453,22 @@ table.grid .muted { color: var(--muted); }
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
+.figures {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: .5rem .75rem;
+}
+.figure { display: flex; flex-direction: column; min-width: 0; }
+.figure-value { font-size: 1.02rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.figure-label {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
 .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
 .chip {
   border: 1px solid var(--edge);
@@ -1404,6 +1518,8 @@ table.grid .muted { color: var(--muted); }
   .card, .tile { break-inside: avoid; }
 }
 """
+
+_STYLESHEET = "\n" + _PALETTE + _RULES
 
 
 def render_html(
@@ -1483,7 +1599,7 @@ def render_html(
             "salary",
             "What it pays",
             _salary_blurb(digest),
-            _band_rows(digest.bands),
+            _salary_figures(digest) + _band_rows(digest.bands),
         )
         body += _section(
             "geography",
@@ -1540,19 +1656,28 @@ def _movement_blurb(digest: _Digest) -> str:
     against which month. Repeating it here would spend the one line a reader
     gives a caption on something they read four seconds ago.
     """
-    shown = len(digest.recent_months)
-    if not shown:
+    recent = digest.recent_months
+    if not recent:
         return "No dated postings yet, so there is no month-over-month view."
-    parts = [f"Postings per calendar month, most recent {shown} shown."]
+    # The columns are labeled with the month number only -- twelve four-digit
+    # years collide on a phone -- so the caption has to carry the year, or a
+    # window that straddles a new year is unreadable.
+    span = (
+        f"{recent[0][0]} to {recent[-1][0]}"
+        if len(recent) > 1
+        else str(recent[0][0])
+    )
+    parts = [f"Postings per calendar month, {span}."]
     if len(digest.timeline) > RECENT_MONTHS:
         parts.append(
-            f"The line above spans all {len(digest.timeline):,} archived months."
+            f"The line above spans all {len(digest.timeline):,} archived months, "
+            f"from {digest.timeline[0][0]}."
         )
     return " ".join(parts)
 
 
 def _salary_blurb(digest: _Digest) -> str:
-    count = _as_int(digest.salary.get("count"))
+    count = _as_count(digest.salary.get("count"))
     if not count:
         return ""
     return (

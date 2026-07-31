@@ -312,7 +312,9 @@ def test_source_id_falls_back_to_the_job_url_then_the_page_url(monkeypatch):
     pages = {PAGE_URL: _page(with_url), other: _page(bare)}
     postings = _run(monkeypatch, pages, {"urls": [PAGE_URL, other]})
     assert postings[0].source_id == "https://x.test/job/1"
-    assert postings[1].source_id == other
+    # No identifier and no per-job url: the page URL plus a title slug, so two
+    # jobs on one page cannot collide.
+    assert postings[1].source_id == f"{other}#b"
     assert postings[1].url == other
 
 
@@ -478,3 +480,298 @@ def test_structured_requirement_objects_reach_the_description(monkeypatch):
 def test_module_exports_the_source_tuple():
     assert JSONLD_SOURCES == (JSONLDSource,)
     assert JSONLDSource.kind == "jsonld"
+
+
+# ---------------------------------------------------------------------------
+# Regressions found in adversarial review.
+# ---------------------------------------------------------------------------
+
+
+def test_several_postings_on_one_listing_page_are_all_kept(monkeypatch):
+    """A listing page embeds an array of JobPosting nodes with no identifier
+    and no per-job url. Keying those on the page URL alone collapsed all of
+    them into a single record."""
+    block = """
+    [
+      {"@type": "JobPosting", "title": "Strength and Conditioning Coach",
+       "jobLocation": {"address": {"addressLocality": "Fort Bragg", "addressRegion": "NC"}}},
+      {"@type": "JobPosting", "title": "Athletic Trainer",
+       "jobLocation": {"address": {"addressLocality": "Fort Campbell", "addressRegion": "KY"}}},
+      {"@type": "JobPosting", "title": "Performance Dietitian",
+       "jobLocation": {"address": {"addressLocality": "Coronado", "addressRegion": "CA"}}}
+    ]
+    """
+    postings = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})
+    assert [p.title for p in postings] == [
+        "Strength and Conditioning Coach",
+        "Athletic Trainer",
+        "Performance Dietitian",
+    ]
+    assert len({p.source_id for p in postings}) == 3
+
+
+def test_same_title_at_two_installations_stays_two_records(monkeypatch):
+    block = """
+    [
+      {"@type": "JobPosting", "title": "Tactical Strength Coach",
+       "jobLocation": {"address": {"addressLocality": "Fort Carson", "addressRegion": "CO"}}},
+      {"@type": "JobPosting", "title": "Tactical Strength Coach",
+       "jobLocation": {"address": {"addressLocality": "Fort Stewart", "addressRegion": "GA"}}}
+    ]
+    """
+    postings = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})
+    assert len(postings) == 2
+    assert postings[0].source_id != postings[1].source_id
+
+
+def test_relative_job_url_is_resolved_against_the_page(monkeypatch):
+    """A relative url shipped verbatim is an unclickable link downstream."""
+    block = '{"@type": "JobPosting", "title": "Coach", "url": "/careers/job/999"}'
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.url == "https://careers.example.com/careers/job/999"
+    assert posting.source_id == "https://careers.example.com/careers/job/999"
+
+
+def test_protocol_relative_job_url_is_resolved(monkeypatch):
+    block = '{"@type": "JobPosting", "title": "Coach", "url": "//jobs.leidos.com/x/1"}'
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.url == "https://jobs.leidos.com/x/1"
+
+
+@pytest.mark.parametrize("bogus", ["urn:job:5", "_:b0", "mailto:hr@example.com", "#job"])
+def test_non_http_at_id_falls_back_to_the_page_url(monkeypatch, bogus):
+    """``@id`` is frequently a URN or a blank node, not a link."""
+    block = '{"@type": "JobPosting", "title": "Coach", "@id": "%s"}' % bogus
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.url == PAGE_URL
+
+
+def test_relative_sitemap_loc_is_resolved_against_the_sitemap(monkeypatch):
+    sitemap = (
+        '<?xml version="1.0"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<url><loc>/job/12345</loc></url></urlset>"
+    ).encode()
+    pages = {
+        "https://careers.example.com/sitemap.xml": sitemap,
+        PAGE_URL: _page(BARE_JOB),
+    }
+    requested: list[str] = []
+    postings = _run(
+        monkeypatch,
+        pages,
+        {"sitemap": "https://careers.example.com/sitemap.xml"},
+        log=requested,
+    )
+    assert PAGE_URL in requested
+    assert [p.source_id for p in postings] == ["REQ-9981"]
+
+
+def test_repeated_child_sitemaps_are_fetched_once(monkeypatch):
+    index = (
+        '<?xml version="1.0"?>'
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<sitemap><loc>https://careers.example.com/sitemap-jobs.xml</loc></sitemap>"
+        "<sitemap><loc>https://careers.example.com/sitemap-jobs.xml</loc></sitemap>"
+        "</sitemapindex>"
+    ).encode()
+    pages = {
+        "https://careers.example.com/sitemap.xml": index,
+        "https://careers.example.com/sitemap-jobs.xml": SITEMAP,
+        PAGE_URL: _page(BARE_JOB),
+        "https://careers.example.com/about": b"<html><body>About</body></html>",
+    }
+    requested: list[str] = []
+    _run(
+        monkeypatch,
+        pages,
+        {"sitemap": "https://careers.example.com/sitemap.xml"},
+        log=requested,
+    )
+    assert requested.count("https://careers.example.com/sitemap-jobs.xml") == 1
+
+
+def test_max_sitemaps_bounds_an_index_fan_out(monkeypatch):
+    shards = [f"https://careers.example.com/sitemap-{n}.xml" for n in range(5)]
+    index = (
+        '<?xml version="1.0"?>'
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        + "".join(f"<sitemap><loc>{u}</loc></sitemap>" for u in shards)
+        + "</sitemapindex>"
+    ).encode()
+    pages = {"https://careers.example.com/sitemap.xml": index}
+    for n, shard in enumerate(shards):
+        job = f"https://careers.example.com/job/{n}"
+        pages[shard] = (
+            '<?xml version="1.0"?>'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            f"<url><loc>{job}</loc></url></urlset>"
+        ).encode()
+        pages[job] = _page(
+            '{"@type": "JobPosting", "title": "Coach", "identifier": "J%d"}' % n
+        )
+    requested: list[str] = []
+    postings = _run(
+        monkeypatch,
+        pages,
+        {"sitemap": "https://careers.example.com/sitemap.xml", "max_sitemaps": 2},
+        log=requested,
+    )
+    assert len([u for u in requested if "sitemap-" in u]) == 2
+    assert [p.source_id for p in postings] == ["J0", "J1"]
+
+
+def test_base_salary_as_a_list_still_maps(monkeypatch):
+    block = """
+    {"@type": "JobPosting", "title": "Athletic Trainer",
+     "baseSalary": [{"@type": "MonetaryAmount", "currency": "USD",
+                     "value": {"minValue": 70000, "maxValue": 90000, "unitText": "YEAR"}}]}
+    """
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.compensation == "$70000 - $90000 per YEAR"
+
+
+def test_base_salary_value_as_a_list_still_maps(monkeypatch):
+    block = """
+    {"@type": "JobPosting", "title": "Athletic Trainer",
+     "baseSalary": {"@type": "MonetaryAmount", "currency": "USD",
+                    "value": [{"minValue": 45, "maxValue": 60, "unitText": "HOUR"}]}}
+    """
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.compensation == "$45 - $60 per HOUR"
+
+
+def test_unit_text_on_the_monetary_amount_is_used(monkeypatch):
+    block = """
+    {"@type": "JobPosting", "title": "Coach",
+     "baseSalary": {"@type": "MonetaryAmount", "currency": "USD",
+                    "value": 52.75, "unitText": "HOUR"}}
+    """
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.compensation == "$52.75 per HOUR"
+
+
+def test_html_escaped_json_ld_block_is_recovered(monkeypatch):
+    """Some CMS templates escape the whole block; a raw json.loads dies."""
+    escaped = (
+        "{&quot;@type&quot;: &quot;JobPosting&quot;, "
+        "&quot;title&quot;: &quot;Human Performance Coach&quot;}"
+    )
+    postings = _run(monkeypatch, {PAGE_URL: _page(escaped)}, {"urls": [PAGE_URL]})
+    assert [p.title for p in postings] == ["Human Performance Coach"]
+
+
+@pytest.mark.parametrize(
+    "options",
+    [
+        {"urls": [PAGE_URL], "max_urls": None},
+        {"urls": [PAGE_URL], "max_urls": "not-a-number"},
+        {"urls": [PAGE_URL], "delay_seconds": None},
+        {"urls": [PAGE_URL], "delay_seconds": "fast"},
+        {"urls": [PAGE_URL], "url_include": None},
+    ],
+)
+def test_junk_numeric_options_fall_back_to_defaults(monkeypatch, options):
+    postings = _run(monkeypatch, {PAGE_URL: _page(BARE_JOB)}, options)
+    assert [p.source_id for p in postings] == ["REQ-9981"]
+
+
+def test_urls_given_as_a_non_list_scalar_does_not_crash(monkeypatch):
+    """Hand-written config can put anything here; a TypeError is not a plan."""
+    postings = _run(monkeypatch, {PAGE_URL: _page(BARE_JOB)}, {"urls": 12345})
+    assert postings == []
+
+
+def test_none_entries_in_urls_are_dropped(monkeypatch):
+    postings = _run(monkeypatch, {PAGE_URL: _page(BARE_JOB)}, {"urls": [None, "", PAGE_URL]})
+    assert [p.source_id for p in postings] == ["REQ-9981"]
+
+
+def test_empty_urls_and_sitemap_still_raises(monkeypatch):
+    with pytest.raises(KeyError) as excinfo:
+        list(JSONLDSource("example", {"urls": [], "sitemap": None}).fetch())
+    assert "sitemap" in str(excinfo.value)
+
+
+def test_every_field_none_does_not_crash(monkeypatch):
+    block = """
+    {"@type": "JobPosting", "title": "Human Performance Coach",
+     "description": null, "hiringOrganization": null, "jobLocation": null,
+     "baseSalary": null, "datePosted": null, "identifier": null,
+     "occupationalCategory": null, "employmentType": null,
+     "applicantLocationRequirements": null, "jobLocationType": null}
+    """
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.location == ""
+    assert posting.compensation is None
+    assert posting.posted_at is None
+    assert posting.department is None
+    assert posting.remote is False
+
+
+def test_explicit_null_applicant_requirements_is_not_remote(monkeypatch):
+    block = '{"@type": "JobPosting", "title": "Coach", "applicantLocationRequirements": null}'
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.remote is False
+
+
+def test_empty_applicant_requirements_list_is_still_remote(monkeypatch):
+    """Present-but-empty is still a declaration that the job is not on site."""
+    block = '{"@type": "JobPosting", "title": "Coach", "applicantLocationRequirements": []}'
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.remote is True
+    assert posting.location == "Remote"
+
+
+def test_non_dict_json_ld_documents_are_ignored(monkeypatch):
+    for raw in ('"hello"', "42", "null", "[]", "[1, 2, 3]"):
+        assert _run(monkeypatch, {PAGE_URL: _page(raw)}, {"urls": [PAGE_URL]}) == []
+
+
+def test_unicode_survives_the_round_trip(monkeypatch):
+    block = (
+        '{"@type": "JobPosting", "title": "Entra\\u00eeneur \\u2014 Fort Br\\u00e4gg", '
+        '"description": "Caf\\u00e9 \\u2713 pr\\u00e9paration physique"}'
+    )
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.title == "Entraîneur — Fort Brägg"
+    assert "préparation physique" in posting.description
+
+
+def test_a_script_tag_inside_an_attribute_does_not_confuse_the_parser(monkeypatch):
+    markup = (
+        "<html><body>"
+        "<div data-tpl=\"<script type='application/ld+json'>garbage</script>\">x</div>"
+        '<script type="application/ld+json">'
+        '{"@type": "JobPosting", "title": "Real Coach"}'
+        "</script></body></html>"
+    ).encode()
+    postings = _run(monkeypatch, {PAGE_URL: markup}, {"urls": [PAGE_URL]})
+    assert [p.title for p in postings] == ["Real Coach"]
+
+
+def test_untyped_script_block_is_ignored(monkeypatch):
+    markup = (
+        "<html><head>"
+        '<script>{"@type": "JobPosting", "title": "Not structured data"}</script>'
+        "</head></html>"
+    ).encode()
+    assert _run(monkeypatch, {PAGE_URL: markup}, {"urls": [PAGE_URL]}) == []
+
+
+def test_address_given_as_a_list_is_flattened(monkeypatch):
+    block = """
+    {"@type": "JobPosting", "title": "Coach",
+     "jobLocation": {"@type": "Place",
+                     "address": [{"addressLocality": "Fort Benning", "addressRegion": "GA"}]}}
+    """
+    posting = _run(monkeypatch, {PAGE_URL: _page(block)}, {"urls": [PAGE_URL]})[0]
+    assert posting.location == "Fort Benning, GA"
+
+
+def test_page_body_returned_as_text_is_handled(monkeypatch):
+    """A caching fetch wrapper may hand back str rather than bytes."""
+    postings = _run(
+        monkeypatch, {PAGE_URL: _page(BARE_JOB).decode()}, {"urls": [PAGE_URL]}
+    )
+    assert [p.source_id for p in postings] == ["REQ-9981"]

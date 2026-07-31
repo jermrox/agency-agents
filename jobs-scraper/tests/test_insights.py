@@ -21,6 +21,8 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tactical_jobs.insights import (  # noqa: E402
+    DISCIPLINE_TAGS,
+    DOMAIN_TAGS,
     annualized_salary,
     build_insights,
     render_summary,
@@ -1023,3 +1025,193 @@ def test_non_list_corpus_is_an_empty_corpus_not_a_crash():
     for value in (None, {}, "not a corpus", 42):
         insights = build_insights(value)
         assert insights["totals"]["postings"] == 0
+
+
+def test_discipline_and_domain_vocabularies_match_the_classifier():
+    """Regression: the tag lists here had drifted from ``classify.py``.
+
+    ``sport-science`` and ``training-pipeline`` were missing, and a missing slug
+    does not merely omit a row -- it drops those jobs out of the *denominator*
+    every share in that facet is taken over, silently inflating every other
+    number. Driving ``_derive_tags`` with the classifier's full term vocabulary
+    yields every tag it can ever emit, which is the only honest way to assert
+    the two modules still agree.
+    """
+    from tactical_jobs import classify
+
+    posting = JobPosting(
+        source="s",
+        source_id="1",
+        url="https://example.invalid/1",
+        title="t",
+        employer="e",
+        location="l",
+        description="d",
+    )
+    emitted = set(
+        classify._derive_tags(
+            list(classify.DOMAIN_TERMS), list(classify.DISCIPLINE_TERMS), posting
+        )
+    )
+    # "remote" is a work arrangement, not a facet; it has its own section.
+    assert emitted - {"remote"} == set(DISCIPLINE_TAGS) | set(DOMAIN_TAGS)
+
+
+def test_sport_science_jobs_are_counted_and_dilute_the_discipline_shares():
+    rows = [
+        record(title="A", source_id="1", tags=("sport-science",)),
+        record(title="B", source_id="2", tags=("strength-conditioning",)),
+    ]
+    by_discipline = {e["name"]: e for e in build_insights(rows)["by_discipline"]}
+    assert by_discipline["sport-science"]["count"] == 1
+    # The bug: with sport-science absent from the vocabulary, strength
+    # conditioning was 1-of-1 and reported a 100% share of the field.
+    assert by_discipline["strength-conditioning"]["share"] == 0.5
+
+
+def test_training_pipeline_jobs_are_counted_as_a_population():
+    rows = [record(title="A", source_id="1", tags=("training-pipeline",))]
+    assert build_insights(rows)["by_domain"] == [
+        {"name": "training-pipeline", "count": 1, "share": 1.0}
+    ]
+
+
+def test_sport_science_gets_its_own_salary_breakout():
+    rows = [salaried(88_000, tags=("sport-science",))]
+    assert build_insights(rows)["salary"]["by_discipline"]["sport-science"]["count"] == 1
+
+
+# --------------------------------------------------------------------------
+# Period labels that contain other period labels.
+# --------------------------------------------------------------------------
+
+
+def test_biweekly_is_twenty_six_periods_not_fifty_two():
+    """Regression: "bi-weekly" contains "weekly", and a left-to-right scan for
+    the first recognizable word doubled every biweekly figure."""
+    assert annualized_salary({"salary_min": 4_000, "salary_period": "bi-weekly"}) == 104_000.0
+    assert annualized_salary({"salary_min": 4_000, "salary_period": "Bi-Weekly"}) == 104_000.0
+    # The term it contains still has to read correctly on its own.
+    assert annualized_salary({"salary_min": 2_000, "salary_period": "weekly"}) == 104_000.0
+
+
+def test_semimonthly_is_twenty_four_periods_not_twelve():
+    assert annualized_salary({"salary_min": 4_000, "salary_period": "semi-monthly"}) == 96_000.0
+    assert annualized_salary({"salary_min": 8_000, "salary_period": "monthly"}) == 96_000.0
+
+
+def test_a_period_naming_both_salary_and_hour_is_hourly():
+    """Regression: "salary per hour" hit the generic "salary" first and read a
+    $50 wage as a $50 annual salary, which then vanished as an artifact."""
+    assert annualized_salary({"salary_min": 50, "salary_period": "salary per hour"}) == 104_000.0
+    assert annualized_salary({"salary_min": 104_000, "salary_period": "salary"}) == 104_000.0
+
+
+def test_plural_and_latinate_period_spellings_are_understood():
+    assert annualized_salary({"salary_min": 50, "salary_period": "hours"}) == 104_000.0
+    assert annualized_salary({"salary_min": 50, "salary_period": "USD / hr"}) == 104_000.0
+    assert annualized_salary({"salary_min": 104_000, "salary_period": "per annum"}) == 104_000.0
+
+
+# --------------------------------------------------------------------------
+# Dates that cannot be moved into UTC.
+# --------------------------------------------------------------------------
+
+
+def test_an_extreme_dated_offset_does_not_take_down_the_run():
+    """Regression: shifting a year-1 or year-9999 stamp to UTC raises
+    OverflowError -- not ValueError -- and it escaped the parser entirely."""
+    rows = [
+        record(title="A", source_id="1", posted_at="0001-01-01T00:00:00+05:00"),
+        record(title="B", source_id="2", posted_at="9999-12-31T23:59:59-05:00"),
+        record(title="C", source_id="3", posted_at="2026-05-01T00:00:00+00:00"),
+    ]
+    insights = build_insights(rows)
+    assert insights["totals"]["unique_jobs"] == 3
+    # The two unusable dates drop out; the readable one still anchors the span.
+    assert insights["timeline"] == [{"month": "2026-05", "count": 1}]
+    assert insights["totals"]["date_span"]["earliest"].startswith("2026-05")
+
+
+def test_an_extreme_archived_at_does_not_take_down_the_run():
+    row = record(archived_at="0001-01-01T00:00:00+05:00")
+    assert build_insights([row])["totals"]["unique_jobs"] == 1
+
+
+# --------------------------------------------------------------------------
+# State parsing: which segment the name is read out of.
+# --------------------------------------------------------------------------
+
+
+def test_the_trailing_segment_wins_over_a_longer_name_earlier_in_the_string():
+    """Regression: longest-name-first across the whole string read "New York
+    Life, Dallas, Texas" as New York, because "new york" is the longer token."""
+    assert state_code("New York Life, Dallas, Texas") == "TX"
+    assert state_code("Indiana Avenue, Chicago, Illinois") == "IL"
+    assert state_code("Nevada, Iowa") == "IA"
+
+
+def test_longest_name_still_wins_inside_one_segment():
+    assert state_code("Morgantown, West Virginia") == "WV"
+    assert state_code("Camp Lejeune, North Carolina, United States") == "NC"
+
+
+def test_a_code_followed_only_by_a_country_or_zip_is_a_state():
+    assert state_code("Fort Bragg NC USA") == "NC"
+    assert state_code("Fort Carson CO 80913") == "CO"
+
+
+def test_a_two_letter_code_leading_a_company_name_is_not_a_state():
+    """"CA Fitness Center" is a business, not California."""
+    assert state_code("CA Fitness Center") is None
+
+
+# --------------------------------------------------------------------------
+# Credential labels and the trend join.
+# --------------------------------------------------------------------------
+
+
+def test_canonical_credential_spelling_survives_the_report():
+    """Regression: certifications were upper-cased, printing "PHD" for PhD."""
+    rows = [record(enrichment={"certifications": ["PhD", "NSCA-CPT", "phd"]})]
+    assert names(build_insights(rows)["certifications"]) == ["NSCA-CPT", "PhD"]
+
+
+def test_a_case_variant_employer_is_not_reported_as_growing():
+    """Regression: the two trend windows were joined on the spelling ``_tally``
+    displayed, so a board that changed its capitalization between quarters was
+    reported as the fastest-growing employer on completely flat headcount."""
+    rows = [
+        record(employer="US Army H2F", title="A", source_id="1", posted_at="2026-06-01T00:00:00+00:00"),
+        record(employer="US Army H2F", title="B", source_id="2", posted_at="2026-06-02T00:00:00+00:00"),
+        record(employer="US ARMY H2F", title="C", source_id="3", posted_at="2026-02-01T00:00:00+00:00"),
+        record(employer="US ARMY H2F", title="D", source_id="4", posted_at="2026-02-02T00:00:00+00:00"),
+    ]
+    assert build_insights(rows)["trends"]["fastest_growing_employers"] == []
+
+
+def test_a_case_variant_credential_is_not_reported_as_emerging():
+    rows = [
+        record(title="A", source_id="1", posted_at="2026-06-01T00:00:00+00:00",
+               enrichment={"certifications": ["CSCS"]}),
+        record(title="B", source_id="2", posted_at="2026-06-02T00:00:00+00:00",
+               enrichment={"certifications": ["CSCS"]}),
+        record(title="C", source_id="3", posted_at="2026-02-01T00:00:00+00:00",
+               enrichment={"certifications": ["cscs"]}),
+        record(title="D", source_id="4", posted_at="2026-02-02T00:00:00+00:00",
+               enrichment={"certifications": ["cscs"]}),
+    ]
+    assert build_insights(rows)["trends"]["emerging_certifications"] == []
+
+
+def test_genuine_employer_growth_still_registers_after_the_case_fix():
+    """The join fix must not suppress the signal it was protecting."""
+    rows = [
+        record(employer="Surge", title="A", source_id="1", posted_at="2026-06-01T00:00:00+00:00"),
+        record(employer="Surge", title="B", source_id="2", posted_at="2026-06-02T00:00:00+00:00"),
+        record(employer="SURGE", title="C", source_id="3", posted_at="2026-06-03T00:00:00+00:00"),
+        record(employer="Surge", title="D", source_id="4", posted_at="2026-02-01T00:00:00+00:00"),
+    ]
+    growing = build_insights(rows)["trends"]["fastest_growing_employers"]
+    assert growing[0]["recent"] == 3
+    assert growing[0]["previous"] == 1

@@ -12,6 +12,7 @@ periods of performance, and "SMART goals".
 from __future__ import annotations
 
 import sys
+import time
 from pathlib import Path
 
 import pytest
@@ -898,3 +899,253 @@ def test_federal_grade_prefix_does_not_become_the_salary():
 
 def test_zero_pay_is_rejected():
     assert enrich_text("Coach", "", compensation="$0.00 - $0.00").salary_min is None
+
+
+# --------------------------------------------------------------------------
+# Typography from HTML extraction
+# --------------------------------------------------------------------------
+# Descriptions reach us as text pulled out of HTML, so they are full of the
+# characters a CMS substitutes automatically. Every one of these previously
+# produced a *wrong* answer rather than a missing one.
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("Master’s degree in exercise physiology required.", "Master"),
+        ("Associate’s degree in a health science field.", "Associate"),
+        ("Bachelor’s degree in exercise science required.", "Bachelor"),
+    ],
+)
+def test_curly_apostrophe_does_not_hide_the_degree(text, expected):
+    """U+2019 is what a CMS writes; the ASCII apostrophe is the exception."""
+    assert enrich_text("Coach", text).education == expected
+
+
+def test_curly_apostrophe_still_reports_the_floor():
+    result = enrich_text(
+        "Strength Coach",
+        "Bachelor’s degree required. Master’s degree preferred.",
+    )
+    assert result.education == "Bachelor"
+
+
+def test_curly_apostrophe_in_years_of_experience():
+    assert enrich_text("Coach", "Requires 5 years’ experience.").years_experience_min == 5
+
+
+@pytest.mark.parametrize("dash", ["-", "‐", "‒", "–", "—", "−"])
+def test_every_dash_variant_is_a_range_separator(dash):
+    result = enrich_text("Coach", "", compensation=f"$75,000 {dash} $95,000 per year")
+    assert (result.salary_min, result.salary_max) == (75000.0, 95000.0)
+
+
+@pytest.mark.parametrize("dash", ["-", "–", "—"])
+def test_every_dash_variant_works_in_a_years_range(dash):
+    text = f"Requires {dash.join('35')} years of experience."
+    assert enrich_text("Coach", text).years_experience_min == 3
+
+
+def test_non_breaking_space_does_not_break_a_range():
+    result = enrich_text("Coach", "", compensation="$75,000 - $95,000 per year")
+    assert (result.salary_min, result.salary_max) == (75000.0, 95000.0)
+
+
+def test_curly_quotes_do_not_hide_the_program():
+    assert enrich_text("Coach", "Assigned to the “SMART Center”.").program == "SMART"
+
+
+# --------------------------------------------------------------------------
+# Salary -- range formats that must not collapse to their floor
+# --------------------------------------------------------------------------
+# Reporting min == max when a real band was stated is worse than reporting
+# nothing: it publishes a ceiling that is tens of thousands too low, and it
+# looks entirely plausible in an aggregate.
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        # Prose states a band with "and", not a dash.
+        ("between $80,000 and $95,000 per year", (80000.0, 95000.0)),
+        # The currency marker sits on the near side of the separator.
+        ("90,000.00 USD - 115,000.00 USD", (90000.0, 115000.0)),
+        # Each endpoint carries its own period label.
+        ("$75,000/yr - $95,000/yr", (75000.0, 95000.0)),
+        ("$75,000 annually - $95,000 annually", (75000.0, 95000.0)),
+        ("$32.50/hr - $48.75/hr", (32.5, 48.75)),
+    ],
+)
+def test_range_formats_do_not_collapse_to_one_endpoint(text, expected):
+    result = enrich_text("Coach", "", compensation=text)
+    assert (result.salary_min, result.salary_max) == expected
+
+
+def test_between_and_range_in_description_prose():
+    result = enrich_text(
+        "Strength Coach",
+        "The advertised salary range is between $80,000 and $95,000 per year.",
+    )
+    assert (result.salary_min, result.salary_max) == (80000.0, 95000.0)
+
+
+def test_and_is_only_a_separator_when_it_is_the_whole_gap():
+    """"$85,000 and relocation of $10,000" is two facts, not a band."""
+    result = enrich_text(
+        "Strength Coach",
+        "Salary is $85,000 per year and relocation of $10,000 is available.",
+    )
+    assert (result.salary_min, result.salary_max) == (85000.0, 85000.0)
+
+
+# --------------------------------------------------------------------------
+# Salary -- one-time payments are not the pay rate
+# --------------------------------------------------------------------------
+# A sign-on bonus stated as a band is range-shaped, so it outranks the real
+# salary and wins outright unless it is vetoed.
+
+def test_a_bonus_range_does_not_become_the_salary():
+    result = enrich_text(
+        "Strength Coach",
+        "Sign-on bonus of $10,000 - $15,000. Salary is $85,000 per year.",
+    )
+    assert (result.salary_min, result.salary_max) == (85000.0, 85000.0)
+
+
+def test_a_relocation_range_does_not_become_the_salary():
+    result = enrich_text(
+        "Strength Coach",
+        "Relocation assistance of $12,000 - $20,000. Salary: $85,000 - $110,000 per year.",
+    )
+    assert (result.salary_min, result.salary_max) == (85000.0, 110000.0)
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "A signing bonus of $15,000 is offered. Compensation is competitive.",
+        "Relocation reimbursement of $20,000 is available. Pay is negotiable.",
+        "Retention bonus of $12,000 after two years. Salary is competitive.",
+        "$18,000 severance is provided on contract completion. Pay varies.",
+    ],
+)
+def test_one_time_payments_are_never_the_salary(text):
+    result = enrich_text("Strength Coach", text)
+    assert result.salary_min is None
+    assert result.salary_max is None
+
+
+def test_a_bonus_mentioned_after_the_salary_does_not_veto_it():
+    """"bonus" trails a real salary constantly; only the labels veto."""
+    result = enrich_text("Coach", "Salary is $85,000 per year plus an annual bonus.")
+    assert (result.salary_min, result.salary_max) == (85000.0, 85000.0)
+
+
+def test_hiring_range_is_the_salary_not_a_hiring_bonus():
+    """"Hiring range" is standard ATS phrasing for the actual band."""
+    result = enrich_text("Coach", "The hiring range is $85,000 - $95,000 per year.")
+    assert (result.salary_min, result.salary_max) == (85000.0, 95000.0)
+
+
+def test_a_hiring_bonus_touching_the_figure_is_still_vetoed():
+    result = enrich_text("Coach", "A $15,000 hiring bonus is offered. Pay is competitive.")
+    assert result.salary_min is None
+
+
+# --------------------------------------------------------------------------
+# Certifications -- "RD" is a road as often as it is a dietitian
+# --------------------------------------------------------------------------
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        # Federal postings print facility addresses in full capitals, which
+        # defeats the uppercase-only rule on its own.
+        "Report to BLDG 4-2817 REILLY RD, FORT BRAGG, NC 28310.",
+        "Facility is at 2175 REILLY RD near the airfield.",
+        "Parking is available off SOUTHGATE RD.",
+    ],
+)
+def test_an_address_does_not_produce_an_rd_credential(text):
+    assert enrich_text("Human Performance Coach", text).certifications == []
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "RD required.",
+        "RD credential in dietetics required.",
+        "Registered Dietitian (RD/RDN) wanted.",
+        "Must hold an active RD certification.",
+        "RD or RDN preferred.",
+    ],
+)
+def test_rd_still_counts_when_credential_vocabulary_is_present(text):
+    assert "RD" in enrich_text("Performance Dietitian", text).certifications
+
+
+def test_rdn_needs_no_supporting_context():
+    """"RDN" has no ordinary-English meaning, so it stands on its own."""
+    assert enrich_text("Coach", "RDN.").certifications == ["RD"]
+
+
+# --------------------------------------------------------------------------
+# Pathological input must not hang the run
+# --------------------------------------------------------------------------
+# A description pulled out of pretty-printed HTML routinely carries runs of
+# hundreds of whitespace characters. Several patterns here stack optional
+# groups separated by ``\s*``, which lets the engine redistribute one run
+# across every gap -- polynomial backtracking. A 400-space run took fifteen
+# seconds to reject and an 800-space run never finished, which is a hung
+# nightly run, not a slow one.
+
+_REDOS_BUDGET_SECONDS = 5.0
+
+
+@pytest.mark.parametrize(
+    "description",
+    [
+        "5" + " " * 20000 + "q",
+        "Requires 5" + " " * 20000 + "of experience",
+        "401" + " " * 20000 + "z",
+        "three" + " " * 20000 + "x",
+        "5 (5) to 7" + " " * 20000 + "y",
+        " " * 20000,
+        ("5   ( ) + - to  " * 2000),
+    ],
+)
+def test_whitespace_runs_do_not_blow_up_the_matcher(description):
+    start = time.monotonic()
+    enrich_text("Human Performance Coach", description)
+    assert time.monotonic() - start < _REDOS_BUDGET_SECONDS
+
+
+def test_a_huge_whitespace_gap_between_two_figures_does_not_hang():
+    """The gap between two numbers is matched whole, so it is unbounded."""
+    start = time.monotonic()
+    result = enrich_text("Coach", "", compensation="$75,000" + " " * 40000 + "$95,000")
+    assert time.monotonic() - start < _REDOS_BUDGET_SECONDS
+    # Not a range: the separator never matched, so only the first figure reads.
+    assert result.salary_max == 75000.0
+
+
+def test_a_long_realistic_description_stays_fast():
+    body = "Requires 5 years of experience. Salary $85,000 per year. " * 5000
+    start = time.monotonic()
+    enrich_text("Strength and Conditioning Coach", body)
+    assert time.monotonic() - start < _REDOS_BUDGET_SECONDS
+
+
+# --------------------------------------------------------------------------
+# None-valued fields, which is what a thin source adapter actually hands over
+# --------------------------------------------------------------------------
+
+def test_none_arguments_are_treated_as_absent():
+    result = enrich_text(None, None, None, None)  # type: ignore[arg-type]
+    assert result.to_dict() == Enrichment().to_dict()
+
+
+def test_enrich_survives_none_valued_posting_fields():
+    posting = make("Strength Coach", "CSCS required.")
+    posting.compensation = None
+    posting.department = None
+    result = enrich(posting)
+    assert result.certifications == ["CSCS"]

@@ -242,10 +242,21 @@ _AMOUNT_RE = re.compile(
 # "and" is here for "between $80,000 and $95,000", which is how prose states a
 # band. It is safe because the separator has to be the *entire* gap between two
 # money-shaped numbers, so "$85,000 and relocation of $10,000" is not a range.
+#
+# The gaps are possessive for the same reason they are in ``_YEARS_RE``: this
+# pattern is matched against the *whole* span between two numbers, which can be
+# thousands of characters of whitespace in a badly extracted description, and
+# two plain ``\s*`` either side of an optional token is quadratic.
+#
+# The optional period suffix covers "$75,000/yr - $95,000/yr", where each
+# endpoint carries its own label. Without it the separator does not match and
+# the band collapses to its floor -- which is worse than finding nothing,
+# because it reports a real-looking ceiling that is 20k too low.
 _RANGE_SEP_RE = re.compile(
-    r"^\s*(?:USD|CAD|EUR|GBP)?"
-    r"\s*(?:-|--|–|—|to|through|up\s+to|and)"
-    r"\s*(?:USD|CAD|EUR|GBP)?\s*$",
+    rf"^{_GAP}(?:USD|CAD|EUR|GBP)?"
+    rf"{_GAP}(?:/\s*(?:yr|year|hr|hour)|per\s+(?:year|annum|hour)|annually|yearly|hourly)?"
+    rf"{_GAP}(?:-|--|–|—|to|through|up\s+to|and)"
+    rf"{_GAP}(?:USD|CAD|EUR|GBP)?{_GAP}$",
     re.I,
 )
 
@@ -270,17 +281,28 @@ _VETO_WORDS = (
 # vetoes above do not catch them, but they are not the pay rate -- and a
 # "sign-on bonus of $10,000 - $15,000" is *range*-shaped, so it outranks the
 # real salary and wins outright unless it is vetoed here.
-_ONE_TIME_WORDS = r"relocation|signing|sign[\s-]?on|severance|referral|retention|hiring"
+_ONE_TIME_WORDS = r"relocation|signing|sign[\s-]?on|severance|referral|retention"
 
+# "hiring" labels a payment only when it is touching the figure. It is absent
+# from the *before* list on purpose: "hiring range is $85,000 - $95,000" is
+# real ATS phrasing for the actual salary band.
 _VETO_BEFORE_RE = re.compile(
     rf"\b(?:{_VETO_WORDS}|{_ONE_TIME_WORDS}|bonus(?:es)?|"
     rf"manages?|managing|oversees?|supervis\w+)\b[^.\n]{{0,20}}$",
     re.I,
 )
-# "bonus" is deliberately absent from the *after* list: it trails a genuine
-# salary all the time ("$85,000 per year plus an annual bonus"), whereas
-# "relocation" and "signing" only ever precede or label the payment itself.
-_VETO_AFTER_RE = re.compile(rf"^[^.\n]{{0,15}}\b(?:{_VETO_WORDS}|{_ONE_TIME_WORDS})\b", re.I)
+
+# Two distances, for two different reasons. An org-money noun can sit a few
+# words past the figure ("$250,000 renovation grant for the center"), but a
+# one-time-payment label has to be touching it: "$15,000 relocation bonus" is
+# a bonus, while "$85,000 per year and relocation of $10,000" is a salary that
+# merely mentions one. "bonus" itself is in neither after-list -- it trails a
+# genuine salary constantly ("$85,000 per year plus an annual bonus").
+_VETO_AFTER_RE = re.compile(
+    rf"^(?:[^.\n]{{0,15}}\b(?:{_VETO_WORDS})\b"
+    rf"|[\s(]{{0,3}}(?:{_ONE_TIME_WORDS}|hiring)\b)",
+    re.I,
+)
 
 # Retirement plans are the single worst salary false positive: "401k" parses
 # as $401,000 a year and "401(k)" as $401 an hour, and both sit right next to
