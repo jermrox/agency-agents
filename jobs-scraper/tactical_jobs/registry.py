@@ -137,6 +137,7 @@ SOURCE_KINDS: frozenset[str] = frozenset(
         "recruitee",
         "rippling",
         "rss",
+        "searchresults",
         "sitemapjobs",
         "smartrecruiters",
         "teamtailor",

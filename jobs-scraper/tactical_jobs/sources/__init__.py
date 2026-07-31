@@ -13,6 +13,7 @@ from .capture import CAPTURE_SOURCES
 from .feeds import RSSSource
 from .govjobs import GOV_SOURCES
 from .jsonld import JSONLD_SOURCES
+from .searchresults import SEARCH_SOURCES
 from .usajobs import USAJobsSource
 from .workday import WORKDAY_SOURCES
 
@@ -26,6 +27,7 @@ _REGISTRY: dict[str, type[Source]] = {
         *CAPTURE_SOURCES,
         *GOV_SOURCES,
         *JSONLD_SOURCES,
+        *SEARCH_SOURCES,
         *WORKDAY_SOURCES,
         USAJobsSource,
         RSSSource,
