@@ -73,6 +73,20 @@ class Config:
     thresholds: Thresholds = field(default_factory=Thresholds)
     state_path: Path = Path("state/seen.json")
     output_dir: Path = Path("output")
+
+    archive_path: Path | None = Path("state/corpus.jsonl")
+    """Full-fidelity corpus. Set to "" to disable archiving entirely.
+
+    Distinct from ``state_path``: that file only remembers *that* we saw a job,
+    while this keeps the whole posting at full text so the analysis layer has
+    something to mine and history survives a listing being taken down.
+    """
+
+    insights_dir: Path | None = Path("output/insights")
+    """Where the digest, dashboard, and insights JSON are written."""
+
+    insights_title: str = "Tactical Human Performance Job Market"
+
     max_age_days: int = 45
     """Drop postings older than this. Stale listings are worse than none."""
 
@@ -121,12 +135,23 @@ class Config:
         )
 
         runtime = data.get("runtime", {})
+
+        def optional_path(key: str, default: str) -> Path | None:
+            """An empty string switches the feature off; absent means default."""
+            raw = runtime.get(key, default)
+            return Path(raw) if raw else None
+
         return cls(
             sources=sources,
             publishers=publishers,
             thresholds=thresholds,
             state_path=Path(runtime.get("state_path", "state/seen.json")),
             output_dir=Path(runtime.get("output_dir", "output")),
+            archive_path=optional_path("archive_path", "state/corpus.jsonl"),
+            insights_dir=optional_path("insights_dir", "output/insights"),
+            insights_title=str(
+                runtime.get("insights_title", "Tactical Human Performance Job Market")
+            ),
             max_age_days=int(runtime.get("max_age_days", 45)),
             auto_publish=bool(runtime.get("auto_publish", False)),
         )

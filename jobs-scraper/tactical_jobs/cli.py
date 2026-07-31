@@ -12,13 +12,19 @@ import argparse
 import json
 import logging
 import sys
+from pathlib import Path
 
+from .archive import Archive
 from .classify import Thresholds, classify
 from .config import Config, ConfigError
+from .discover import discover, render_watchlist
+from .insights import build_insights, render_summary
 from .models import JobPosting
 from .pipeline import run
 from .publishers import available_kinds as publisher_kinds
+from .report import render_html, render_markdown
 from .sources import available_kinds as source_kinds
+from .sources import keyless_kinds
 
 
 def _configure_logging(verbose: bool) -> None:
@@ -72,8 +78,67 @@ def _cmd_classify(args: argparse.Namespace) -> int:
 
 
 def _cmd_sources(_: argparse.Namespace) -> int:
-    print("source kinds:    " + ", ".join(source_kinds()))
+    keyless = set(keyless_kinds())
+    print("source kinds (* = needs an API key):")
+    for kind in source_kinds():
+        print(f"  {kind}{'' if kind in keyless else ' *'}")
+    print(f"\n{len(keyless)}/{len(source_kinds())} usable with no credentials.")
     print("publisher kinds: " + ", ".join(publisher_kinds()))
+    return 0
+
+
+def _cmd_insights(args: argparse.Namespace) -> int:
+    """Rebuild the digest and dashboard from the archive without re-fetching."""
+    archive = Archive.load(args.archive)
+    records = archive.records()
+    if not records:
+        print(f"no records in {args.archive}", file=sys.stderr)
+        return 1
+
+    insights = build_insights(records)
+    if args.json:
+        print(json.dumps(insights, indent=2))
+        return 0
+
+    print(render_summary(insights))
+    if args.out:
+        out = Path(args.out)
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "insights.json").write_text(json.dumps(insights, indent=2) + "\n")
+        (out / "digest.md").write_text(render_markdown(insights))
+        (out / "dashboard.html").write_text(render_html(insights))
+        print(f"\nwrote digest.md, dashboard.html, insights.json -> {out}", file=sys.stderr)
+    return 0
+
+
+def _cmd_discover(args: argparse.Namespace) -> int:
+    """Mine text for candidate employers and unknown vocabulary.
+
+    Point it at podcast show notes, newsletters, or any corpus describing this
+    industry -- the output is a watchlist worksheet, never a live config.
+    """
+    texts: list[str] = []
+    for path in args.paths:
+        target = Path(path)
+        if target.is_dir():
+            texts.extend(
+                child.read_text(errors="replace")
+                for child in sorted(target.rglob("*"))
+                if child.is_file()
+            )
+        elif target.exists():
+            texts.append(target.read_text(errors="replace"))
+        else:
+            print(f"skipping missing path: {path}", file=sys.stderr)
+
+    if not texts and not sys.stdin.isatty():
+        texts.append(sys.stdin.read())
+    if not texts:
+        print("nothing to analyze: pass file paths or pipe text on stdin", file=sys.stderr)
+        return 2
+
+    result = discover(texts, min_mentions=args.min_mentions)
+    print(render_watchlist(result, limit=args.limit))
     return 0
 
 
@@ -105,6 +170,28 @@ def build_parser() -> argparse.ArgumentParser:
 
     sources_parser = subparsers.add_parser("sources", help="list available adapters")
     sources_parser.set_defaults(func=_cmd_sources)
+
+    insights_parser = subparsers.add_parser(
+        "insights", help="rebuild the digest and dashboard from the archive"
+    )
+    insights_parser.add_argument("--archive", default="state/corpus.jsonl")
+    insights_parser.add_argument(
+        "--out", help="directory to write digest.md, dashboard.html, insights.json"
+    )
+    insights_parser.add_argument(
+        "--json", action="store_true", help="print the raw insights JSON instead"
+    )
+    insights_parser.set_defaults(func=_cmd_insights)
+
+    discover_parser = subparsers.add_parser(
+        "discover", help="mine text for candidate employers and vocabulary"
+    )
+    discover_parser.add_argument(
+        "paths", nargs="*", help="files or directories; reads stdin when omitted"
+    )
+    discover_parser.add_argument("--min-mentions", type=int, default=2)
+    discover_parser.add_argument("--limit", type=int, default=40)
+    discover_parser.set_defaults(func=_cmd_discover)
 
     return parser
 

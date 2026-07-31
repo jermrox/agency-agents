@@ -60,6 +60,14 @@ _ORG_SUFFIXES = (
     "company", "international", "global", "federal", "defense", "tactical",
     "athletics", "training", "research", "center", "centre", "foundation",
     "association", "society", "council", "network", "alliance", "team",
+    # Added after the Serco/H2F research surfaced real employers this list
+    # was missing -- "Hyperion Biotechnology" scored nothing without them.
+    "biotechnology", "biosciences", "sciences", "science", "medical",
+    "healthcare", "therapeutics", "pharmaceuticals", "diagnostics",
+    "industries", "enterprises", "holdings", "ventures", "staffing",
+    "resources", "management", "logistics", "engineering", "analytics",
+    "informatics", "dynamics", "innovations", "worldwide", "national",
+    "agency", "bureau", "command", "office", "division", "brigade",
 )
 
 _ORG_LEGAL = (" inc", " llc", " ltd", " corp", " co", " plc", " gmbh", " l3")
@@ -82,6 +90,10 @@ _ORG_ACRONYMS = {
     "USUHS", "CHAMP", "NHRC", "USARIEM", "WRAIR", "NAMRU",
     "DHA", "DOD", "VA", "TRADOC", "FORSCOM", "AETC", "USAREC",
     "O2X", "EXOS", "NFL", "NBA", "NCAA",
+    # Contractors that actually hold tactical human performance work. KBR holds
+    # the USSOCOM POTFF contract; the rest are common primes in this space.
+    # See EMPLOYERS.md for the cited awards.
+    "KBR", "SAIC", "CACI", "ICF", "GAP", "PSI", "BAH", "MITRE", "RAND",
 }
 
 # Relevance gate for mining, deliberately SEPARATE from the classifier's
@@ -161,17 +173,33 @@ def _looks_like_org(name: str) -> bool:
     useless and it gets ignored.
     """
     lowered = name.lower()
-    if lowered in _STOPLIST or len(name) < 4:
+    if lowered in _STOPLIST:
+        return False
+
+    # A known acronym qualifies regardless of length. The general minimum below
+    # is 4 characters, which silently rejected every three-letter contractor in
+    # this industry -- KBR (POTFF), ICF, GAP, PSI, DHA, NSW.
+    if name.upper() in _ORG_ACRONYMS:
+        return True
+
+    if len(name) < 4:
         return False
     words = name.split()
     if len(words) > 7:
         return False
 
-    # A lone acronym is only an organization if we know it to be one. Without
-    # this, every instrument and test in the corpus (ACFT, DEXA, OPAT, BodPod)
-    # lands in the employer watchlist and buries the real leads.
     if len(words) == 1:
-        return name.upper() in _ORG_ACRONYMS
+        # A lone acronym is only an organization if we know it to be one.
+        # Without this, every instrument in the corpus (ACFT, DEXA, OPAT,
+        # BodPod) lands in the watchlist and buries the real leads.
+        if name.isupper():
+            return name in _ORG_ACRONYMS
+        # ...but an internal capital in a single long token is a brand-name
+        # tell, not an acronym: HigherEchelon, TrainHeroic, BodPod-style
+        # company names are common in this industry and were being dropped.
+        # Instruments are almost always all-caps, so the two rules do not
+        # collide.
+        return len(name) >= 8 and any(ch.isupper() for ch in name[1:])
 
     if any(lowered.endswith(suffix) for suffix in _ORG_LEGAL):
         return True
@@ -180,6 +208,42 @@ def _looks_like_org(name: str) -> bool:
     # A multi-word run containing a known org acronym, e.g. "USASOC Human
     # Performance" or "MARSOC Preservation of the Force".
     return any(w.upper() in _ORG_ACRONYMS for w in words)
+
+
+def _strictly_an_org(name: str) -> bool:
+    """A high-confidence org test, used only when splitting a conjoined run.
+
+    Stricter than :func:`_looks_like_org` on purpose. Splitting "Institute for
+    Human and Machine Cognition" on "and" produces "Institute for Human", which
+    the generic suffix rule would happily accept as an organization. Requiring a
+    known acronym, a legal suffix, or a brand-shaped token keeps the split from
+    manufacturing fragments while still recovering "TrainHeroic and
+    HigherEchelon" as two real companies.
+    """
+    words = name.split()
+    if not words:
+        return False
+    if any(w.upper() in _ORG_ACRONYMS for w in words):
+        return True
+    if any(name.lower().endswith(suffix) for suffix in _ORG_LEGAL):
+        return True
+    return len(words) == 1 and len(name) >= 8 and any(c.isupper() for c in name[1:])
+
+
+def _candidate_names(run: str) -> list[str]:
+    """Every organization name a capitalized run might contain.
+
+    "and" has to stay a connector -- plenty of real names use it ("Naval Health
+    and Research Center") -- but it also glues list items together. So the whole
+    run is kept AND each side of an "and" is offered up, gated on the stricter
+    test above.
+    """
+    names = [run]
+    if " and " in run:
+        names.extend(
+            part.strip() for part in run.split(" and ") if _strictly_an_org(part.strip())
+        )
+    return names
 
 
 def _context(text: str, index: int, width: int = 90) -> str:
@@ -206,16 +270,17 @@ def extract_employers(text: str) -> list[Candidate]:
     found: dict[str, Candidate] = {}
 
     for match in _CAP_RUN.finditer(text):
-        name = _normalize(match.group(1))
-        if not _looks_like_org(name):
-            continue
-        key = name.lower()
-        if key in found:
-            found[key].mentions += 1
-        else:
-            found[key] = Candidate(
-                value=name, kind="employer", contexts=[_context(text, match.start())]
-            )
+        for name in _candidate_names(_normalize(match.group(1))):
+            name = _normalize(name)
+            if not _looks_like_org(name):
+                continue
+            key = name.lower()
+            if key in found:
+                found[key].mentions += 1
+            else:
+                found[key] = Candidate(
+                    value=name, kind="employer", contexts=[_context(text, match.start())]
+                )
 
     for match in _DOMAIN.finditer(text):
         domain = match.group(1).lower()

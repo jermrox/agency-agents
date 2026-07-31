@@ -2,14 +2,21 @@
 
 from __future__ import annotations
 
+import json
 import logging
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any
 
+from .archive import Archive
 from .classify import Verdict, classify
 from .config import Config
+from .enrich import enrich
+from .insights import build_insights
 from .models import JobPosting, SourceError
 from .publishers import build_publisher
+from .report import render_html, render_markdown
 from .sources import build_source
 from .store import Store
 
@@ -27,6 +34,8 @@ class RunReport:
     errors: list[SourceError] = field(default_factory=list)
     published: list[str] = field(default_factory=list)
     pruned: int = 0
+    archived: int = 0
+    insights: dict[str, Any] = field(default_factory=dict)
 
     def summary(self) -> str:
         lines = [
@@ -37,6 +46,8 @@ class RunReport:
             f"approved    {len(self.approved)}",
             f"review      {len(self.review)}",
         ]
+        if self.archived:
+            lines.append(f"archived    {self.archived} new corpus record(s)")
         if self.pruned:
             lines.append(f"pruned      {self.pruned} state record(s)")
         for entry in self.published:
@@ -98,6 +109,15 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         if verdict == Verdict.REJECT:
             report.rejected += 1
             continue
+
+        # Enrich everything that survives classification, including postings
+        # that turn out to be duplicates. The archive is a corpus, and a
+        # re-post whose salary or clearance changed is signal worth keeping.
+        try:
+            enrich(posting)
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("enrichment failed for %s: %s", posting.url, exc)
+
         verdicts[posting.identity] = verdict
         scored.append(posting)
 
@@ -114,8 +134,12 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
             report.review.append(posting)
 
     if dry_run:
-        log.info("dry run: skipping publishers and state write")
+        log.info("dry run: skipping archive, publishers, and state write")
         return report
+
+    # Archive BEFORE publishing. The corpus is the durable asset -- a publisher
+    # failing should never cost us the record of what we saw.
+    _archive(config, report, scored)
 
     _publish(config, report)
 
@@ -125,7 +149,50 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         store.mark(posting, "review")
     report.pruned = store.prune(config.max_age_days * 3)
     store.save()
+
+    _analyze(config, report)
     return report
+
+
+def _archive(config: Config, report: RunReport, scored: list[JobPosting]) -> None:
+    """Append every relevant posting to the full-fidelity corpus."""
+    if not config.archive_path:
+        return
+    try:
+        archive = Archive.load(config.archive_path)
+        report.archived = archive.append(scored)
+    except Exception as exc:
+        log.warning("archive append failed: %s", exc)
+        report.errors.append(SourceError("archive", str(exc)))
+
+
+def _analyze(config: Config, report: RunReport) -> None:
+    """Rebuild the insights digest and dashboard from the whole corpus.
+
+    Runs over the archive rather than this run's postings, because a report
+    built from one night's fetch would say almost nothing -- the interesting
+    questions (who is hiring, what do they pay, which credentials) are only
+    answerable across the accumulated corpus.
+    """
+    if not config.archive_path or not config.insights_dir:
+        return
+    try:
+        records = Archive.load(config.archive_path).records()
+        if not records:
+            return
+        insights = build_insights(records)
+        output = Path(config.insights_dir)
+        output.mkdir(parents=True, exist_ok=True)
+        (output / "insights.json").write_text(json.dumps(insights, indent=2) + "\n")
+        (output / "digest.md").write_text(render_markdown(insights))
+        (output / "dashboard.html").write_text(
+            render_html(insights, title=config.insights_title)
+        )
+        report.insights = insights
+        report.published.append(f"insights: {len(records)} records -> {output}")
+    except Exception as exc:
+        log.warning("insights build failed: %s", exc)
+        report.errors.append(SourceError("insights", str(exc)))
 
 
 def _publish(config: Config, report: RunReport) -> None:

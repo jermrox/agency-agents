@@ -203,3 +203,59 @@ def test_discover_returns_wellformed_empty_structure():
     for key in ("documents", "employers", "domains", "ats_boards", "vocabulary"):
         assert key in result
     assert result["documents"] == 0
+
+
+# --------------------------------------------------------------------------
+# Ground truth: the real H2F/POTFF employer landscape (see EMPLOYERS.md)
+# --------------------------------------------------------------------------
+
+SERCO_AWARD_TEXT = """
+Serco was awarded a $247M U.S. Army Holistic Health and Fitness (H2F) contract.
+Team Serco includes HigherEchelon, Hyperion Biotechnology, Resolution Think, and
+The Geneva Foundation. They will hire over 350 certified strength and conditioning
+coaches supporting soldiers across 45 brigades. GAP Solutions also received an H2F
+award. KBR supports POTFF for special operations, staffing athletic trainers and
+performance dietitians.
+"""
+
+
+def test_finds_the_real_h2f_contract_winners():
+    """Regression against researched ground truth.
+
+    These are the employers who actually hold H2F/POTFF work. An earlier
+    version of the heuristics found only "Team Serco" and dropped the rest --
+    a single-token brand name like HigherEchelon had no org suffix to match,
+    and "Biotechnology" was missing from the suffix list entirely.
+    """
+    found = {c.value for c in extract_employers(SERCO_AWARD_TEXT)}
+    for expected in (
+        "HigherEchelon",
+        "Hyperion Biotechnology",
+        "GAP Solutions",
+        "The Geneva Foundation",
+    ):
+        assert expected in found, f"missed real employer {expected!r}: {sorted(found)}"
+
+
+def test_finds_known_contractor_acronyms():
+    assert "KBR" in {c.value for c in extract_employers(SERCO_AWARD_TEXT)}
+
+
+def test_camelcase_brand_names_are_employers():
+    text = "Military human performance coaches use TrainHeroic and HigherEchelon tools."
+    found = {c.value for c in extract_employers(text)}
+    assert "TrainHeroic" in found and "HigherEchelon" in found
+
+
+def test_camelcase_rule_does_not_admit_instruments():
+    """All-caps instruments must still be excluded by the acronym rule."""
+    text = "Soldiers complete the ACFT and OPAT with DEXA scans for human performance."
+    found = {c.value.upper() for c in extract_employers(text)}
+    assert not ({"ACFT", "OPAT", "DEXA"} & found)
+
+
+def test_short_capitalized_words_are_not_employers():
+    """The camelCase rule requires length, or every sentence start qualifies."""
+    text = "Soldiers train hard. Coaches help. Military human performance matters."
+    found = {c.value for c in extract_employers(text)}
+    assert "Soldiers" not in found and "Coaches" not in found
