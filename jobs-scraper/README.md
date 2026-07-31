@@ -138,6 +138,16 @@ hiring in this space happens, so they are the highest-yield boards to add.
 
 ## Publishing to the site
 
+mopsnmoes.com runs on **Squarespace** — confirmed, not assumed. Any Squarespace
+page returns its own config as JSON:
+
+```bash
+curl -s "https://www.mopsnmoes.com/about?format=json-pretty" | head -40
+# "primaryDomain": "www.mopsnmoes.com"
+# "internalUrl":   "https://puma-lizard-mnxz.squarespace.com"
+# "timeZone":      "America/Chicago"
+```
+
 **Squarespace has no public content-write API for pages or blog posts.**
 Nothing can POST a job directly into the site — so the working approach is a
 static feed plus a client-side embed:
@@ -166,11 +176,21 @@ cleanup.
 Order matters for one pair: put `jsonfeed` **before** `rss`, since `rss`
 renders the board that `jsonfeed` writes.
 
-### Discord is the fastest path to value
+### Start with Discord
 
-MOPs & MOEs already runs job traffic through Discord, and that route needs no
-site changes at all. Create a webhook under **Server Settings → Integrations →
-Webhooks**, set `DISCORD_WEBHOOK_URL`, and uncomment the `discord` publisher.
+The MOPs & MOEs homepage already points people to Discord for "the latest
+news, **job openings**, and network opportunities across tactical human
+performance" — so that channel is the established destination, and it needs no
+site changes at all.
+
+Create a webhook under **Server Settings → Integrations → Webhooks**, set
+`DISCORD_WEBHOOK_URL`, and uncomment the `discord` publisher. That is the
+shortest path from this repo to something the community actually sees; the
+Squarespace embed is the follow-on once the scoring has been watched for a
+week or two.
+
+Note that an uncommented publisher whose `${VAR}` is unset is a hard startup
+error, not a silent no-op — so enable it and set the secret together.
 
 ---
 

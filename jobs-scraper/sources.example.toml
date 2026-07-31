@@ -157,8 +157,14 @@ limit = 50
 title = "MOPs & MOEs — Tactical Human Performance Jobs"
 link = "https://www.mopsnmoes.com/jobs"
 
-# Discord already carries job traffic for this community, and it needs no site
-# changes at all. Server Settings -> Integrations -> Webhooks.
+# RECOMMENDED FIRST DESTINATION.
+# The mopsnmoes.com homepage already sends people to Discord for "the latest
+# news, job openings, and network opportunities across tactical human
+# performance", so that channel is the established home for this and needs no
+# site changes at all.
+# Server Settings -> Integrations -> Webhooks.
+# Uncomment and set DISCORD_WEBHOOK_URL together: an enabled publisher whose
+# ${VAR} is unset is a hard startup error, not a silent no-op.
 # [[publisher]]
 # kind = "discord"
 # webhook_url = "${DISCORD_WEBHOOK_URL}"
