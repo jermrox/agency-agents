@@ -651,11 +651,42 @@ def _element_text(element: ET.Element | None) -> str:
     return "".join(element.itertext()).strip()
 
 
-def _find_text(element: ET.Element, *paths: str) -> str:
-    for path in paths:
-        text = _element_text(element.find(path, _NAMESPACES))
-        if text:
-            return text
+def local_name(tag: Any) -> str:
+    """The tag with any XML namespace stripped, lowercased.
+
+    Feeds are read by local name rather than by namespace-qualified path
+    because the namespace is the least stable thing about them. RSS 1.0 puts
+    ``item`` in ``http://purl.org/rss/1.0/``, Atom 0.3 and Atom 1.0 use two
+    different namespaces for ``entry``, and a tenant that wraps RSS 2.0 in a
+    default namespace changes every path in the document without changing a
+    single element name. Matching on the qualified path means those feeds find
+    zero items and the board reports a clean run with no jobs -- forever, and
+    with nothing in the log to notice.
+    """
+    if not isinstance(tag, str):  # comments and processing instructions
+        return ""
+    return tag.rsplit("}", 1)[-1].lower()
+
+
+def _children(element: ET.Element) -> dict[str, list[ET.Element]]:
+    grouped: dict[str, list[ET.Element]] = {}
+    for node in element:
+        grouped.setdefault(local_name(node.tag), []).append(node)
+    return grouped
+
+
+def _child_text(element: ET.Element, *names: str) -> str:
+    """Text of the first direct child matching one of ``names`` by local name.
+
+    ``names`` are local names, so ``"date"`` matches ``<dc:date>`` and
+    ``"pubdate"`` matches ``<pubDate>``.
+    """
+    grouped = _children(element)
+    for name in names:
+        for node in grouped.get(name.lower(), ()):
+            text = _element_text(node)
+            if text:
+                return text
     return ""
 
 
@@ -673,21 +704,21 @@ def _resolve(value: str, base: str) -> str:
 
 
 def _entry_link(element: ET.Element, base: str) -> str:
-    for path in ("link", "atom:link"):
-        for node in element.findall(path, _NAMESPACES):
-            href = (node.get("href") or "").strip()
-            rel = (node.get("rel") or "alternate").strip().lower()
-            if href and rel == "alternate":
-                resolved = _resolve(href, base)
-                if resolved:
-                    return resolved
-            text = "".join(node.itertext()).strip()
-            if text:
-                resolved = _resolve(text, base)
-                if resolved:
-                    return resolved
-    for path in ("guid", "atom:id"):
-        value = _find_text(element, path)
+    grouped = _children(element)
+    for node in grouped.get("link", ()):
+        href = (node.get("href") or "").strip()
+        rel = (node.get("rel") or "alternate").strip().lower()
+        if href and rel == "alternate":
+            resolved = _resolve(href, base)
+            if resolved:
+                return resolved
+        text = "".join(node.itertext()).strip()
+        if text:
+            resolved = _resolve(text, base)
+            if resolved:
+                return resolved
+    for name in ("guid", "id"):
+        value = _child_text(element, name)
         if value.startswith(("http://", "https://")):
             return value
     return ""
@@ -743,6 +774,8 @@ class AssociationBoardSource(Source):
     detail_min_chars
         A feed body at least this long is treated as the complete posting and
         skips its detail request. Default 600.
+    location
+        Fallback location for a listing whose title encodes none.
     """
 
     kind = "assocboard"
@@ -794,14 +827,18 @@ class AssociationBoardSource(Source):
         converge on one loop.
         """
         detected = detect_payload_kind(body)
+        # Both parsers choke on a leading byte-order mark, and these tenants
+        # emit one often enough that it has to be stripped rather than sniffed
+        # past. Leading blank lines come from templated feed wrappers.
+        text = body.lstrip(_LEADING)
         order = ("json", "xml") if detected == "json" else ("xml", "json")
 
         first_error: Exception | None = None
         for attempt in order:
             try:
                 if attempt == "json":
-                    return "json", self._json_listings(json.loads(body), url)
-                return "xml", self._xml_listings(ET.fromstring(body))
+                    return "json", self._json_listings(json.loads(text), url)
+                return "xml", self._xml_listings(ET.fromstring(text))
             except (ValueError, TypeError, ET.ParseError) as exc:
                 # A tenant that serves JSON under an XML content type (or the
                 # reverse) is common enough that one failure is not an answer.
@@ -810,13 +847,20 @@ class AssociationBoardSource(Source):
                 log.debug("%s: %s parse of %s failed: %s", self.name, attempt, url, exc)
 
         raise RuntimeError(
-            f"{url} returned neither JSON nor XML (detected {detected!r}): {first_error}"
+            f"{url} returned neither JSON nor a readable RSS/Atom feed "
+            f"(detected {detected!r}): {first_error}"
         )
 
     # -- RSS / Atom -------------------------------------------------------
 
     @staticmethod
     def _xml_listings(root: ET.Element) -> list[ET.Element]:
+        # An HTML error page or login wall is frequently well-formed enough to
+        # parse as XML, and it contains no <item> elements -- so without this
+        # check a dead board reports a clean run with zero jobs, which is the
+        # single most expensive failure mode this project has.
+        if root.tag.rsplit("}", 1)[-1].lower() == "html":
+            raise ValueError("response is an HTML page, not an RSS/Atom feed")
         entries = root.findall(".//item")
         if not entries:
             entries = root.findall(".//atom:entry", _NAMESPACES) or root.findall(".//entry")

@@ -26,11 +26,14 @@ from tactical_jobs.contracts import (  # noqa: E402
     AWARD_TYPE_CODES,
     CONTEXT_CAP,
     DEFAULT_KEYWORDS,
+    MAX_WINDOW_DAYS,
     REQUEST_FIELDS,
     USASPENDING_ENDPOINT,
     ContractAward,
+    build_request,
     fetch_awards,
     flatten,
+    keyword_list,
     normalize_key,
     parse_amount,
     pick_field,
@@ -163,6 +166,15 @@ def test_picker_returns_default_when_field_absent():
     assert pick_field({"Recipient Name": "x"}, "Award ID", default="none") == "none"
 
 
+def test_picker_returns_a_default_instead_of_raising_on_a_non_dict():
+    """The resolver is handed whatever the API sent. None of it may raise."""
+    for record in (None, "a bare string", 42, [1, 2, 3], True):
+        assert pick_field(record, "Award ID", default="none") == "none"
+    assert flatten(None) == ""
+    assert flatten(object()) == ""
+    assert flatten({"nested": {"deeper": {}}}) == ""
+
+
 def test_picker_skips_present_but_empty_key():
     """A key that exists with an empty value must not shadow the next candidate."""
     record = {"Award ID": "", "piid": "W911-REAL"}
@@ -178,6 +190,60 @@ def test_flatten_reads_a_nested_agency_object():
 def test_start_date_is_normalized_to_iso_day():
     """The column shape carries a full timestamp; the briefing prints a day."""
     assert to_award(COLUMN_NAME_RECORD).start_date == "2026-03-01"
+
+
+def test_an_empty_spelling_does_not_shadow_a_populated_one():
+    """Both keys normalize to 'awardid'; the one with a value has to win.
+
+    This is what a payload mid-rename looks like. First-occurrence-wins let the
+    blank key claim the normalized slot and made the real value unreachable.
+    """
+    record = {"Award ID": "", "award_id": "W911SF24F0123"}
+    assert pick_field(record, "Award ID") == "W911SF24F0123"
+
+
+def test_an_empty_recipient_spelling_does_not_drop_the_whole_award():
+    """Same collision on the recipient field cost the entire record."""
+    record = {
+        "Recipient Name": "",
+        "recipient_name": "Tactical Performance Group LLC",
+        "Description": "H2F PERFORMANCE TEAM STAFFING",
+    }
+    award = to_award(record)
+    assert award is not None
+    assert award.recipient == "Tactical Performance Group LLC"
+
+
+def test_a_nested_recipient_object_still_yields_a_name():
+    """A recipient block spells its display field 'recipient_name', not 'name'.
+
+    Flattening it to "" dropped the award, silently, as if it did not exist.
+    """
+    record = {
+        "recipient": {"recipient_name": "Tactical Performance Group LLC", "recipient_hash": "x"},
+        "Description": "H2F PERFORMANCE TEAM STAFFING",
+    }
+    assert to_award(record).recipient == "Tactical Performance Group LLC"
+
+
+def test_a_zero_value_is_kept_not_treated_as_missing():
+    """A zero-dollar modification is a published figure, not an absent one."""
+    award = to_award(dict(HUMAN_LABEL_RECORD, **{"Award Amount": 0}))
+    assert award.amount == 0.0
+
+
+def test_total_outlays_is_not_read_as_the_award_amount():
+    """Outlays are money already paid, not the value of the award.
+
+    Substituting one for the other silently reorders a briefing that ranks
+    employers by dollars. 'not published' is the honest answer.
+    """
+    record = {
+        "Recipient Name": "Tactical Performance Group LLC",
+        "Description": "H2F PERFORMANCE TEAM STAFFING",
+        "Total Outlays": 12345.0,
+    }
+    assert to_award(record).amount is None
 
 
 # --------------------------------------------------------------------------
@@ -213,6 +279,35 @@ def test_amount_keeps_negative_deobligation():
     assert parse_amount("-$250,000") == -250000.0
 
 
+def test_amount_reads_scientific_notation_as_written():
+    """Deleting every non-digit turned "1.5e6" into 1.56 -- six orders of
+    magnitude off, no error, in the one number the briefing ranks on."""
+    assert parse_amount("1.5e6") == 1_500_000.0
+    assert parse_amount("$1.845e7") == 18_450_000.0
+
+
+def test_amount_refuses_a_string_with_two_numbers_in_it():
+    """A range or a malformed figure is not a dollar value; do not guess one."""
+    assert parse_amount("12.5.3") is None
+    assert parse_amount("$100,000 - $250,000") is None
+    assert parse_amount("W911SF24F0123") is None
+
+
+def test_amount_refuses_a_parenthesised_figure():
+    """Accounting notation for a negative. Reporting a deobligation as a
+    quarter-million-dollar win is the expensive direction to be wrong in."""
+    assert parse_amount("(250,000)") is None
+
+
+def test_amount_tolerates_a_trailing_currency_word():
+    assert parse_amount("18450000.00 USD") == 18450000.0
+
+
+def test_amount_rejects_non_finite_numbers():
+    assert parse_amount(float("inf")) is None
+    assert parse_amount(float("nan")) is None
+
+
 # --------------------------------------------------------------------------
 # Scoring
 # --------------------------------------------------------------------------
@@ -228,8 +323,44 @@ def generic_discipline() -> ContractAward:
     return ContractAward(recipient="B", description="ATHLETIC TRAINING SERVICES")
 
 
-def test_named_program_far_outscores_a_generic_discipline():
-    assert score_award(named_program()) > score_award(generic_discipline()) * 1.5
+def test_named_program_outscores_a_generic_discipline_by_a_clear_margin():
+    """Rewritten: the old form asserted ``named > generic * 1.5`` and only held
+    because "H2F HOLISTIC HEALTH AND FITNESS" banked the acronym and its own
+    expansion as two separate 6-point signals. Once aliases collapse, a named
+    program is worth 6.0 against a discipline's 4.0 -- still a clear ordering,
+    but exactly 1.5x, so the multiplicative form was measuring the bug.
+    """
+    assert score_award(named_program()) > score_award(generic_discipline())
+    assert score_award(named_program()) - score_award(generic_discipline()) >= 2.0
+
+
+def test_an_acronym_and_its_expansion_score_once():
+    """"H2F HOLISTIC HEALTH AND FITNESS" is a program named twice, not two."""
+    spelled_out = score_award(ContractAward(description="HOLISTIC HEALTH AND FITNESS SUPPORT"))
+    both = score_award(ContractAward(description="H2F HOLISTIC HEALTH AND FITNESS SUPPORT"))
+    assert both == spelled_out
+    # ... and so a wordier H2F award cannot leapfrog an equally strong THOR3 one.
+    assert both == score_award(ContractAward(description="THOR3 SUPPORT"))
+
+
+def test_potff_and_its_expansion_score_once():
+    assert score_award(
+        ContractAward(description="POTFF PRESERVATION OF THE FORCE AND FAMILY")
+    ) == score_award(ContractAward(description="PRESERVATION OF THE FORCE AND FAMILY"))
+
+
+def test_context_cannot_lift_a_bare_discipline_over_a_named_program():
+    """The invariant CONTEXT_CAP exists for, asserted at the boundary.
+
+    At the original cap of 3.0 this failed: 4.0 + 3.0 beat a clean 6.0 program.
+    """
+    stacked = ContractAward(
+        description="ATHLETIC TRAINING SERVICES FOR ARMY SOLDIER BRIGADE READINESS "
+        "SPECIAL OPERATIONS SOCOM WARFIGHTER INSTALLATION"
+    )
+    assert score_award(stacked) < score_award(
+        ContractAward(description="HOLISTIC HEALTH AND FITNESS SUPPORT")
+    )
 
 
 def test_thor3_and_potff_are_top_signals():
@@ -411,6 +542,50 @@ def test_fetch_uses_custom_keywords(monkeypatch):
     assert fake.calls[0]["filters"]["keywords"] == ["THOR3"]
 
 
+def test_fetch_treats_a_bare_string_as_one_keyword(monkeypatch):
+    """``list("THOR3")`` is ['T','H','O','R','3'] -- a query that returns tens
+    of thousands of unrelated awards while looking like it worked."""
+    fake = install(monkeypatch, FakePost(page([])))
+    fetch_awards(keywords="THOR3")
+    assert fake.calls[0]["filters"]["keywords"] == ["THOR3"]
+
+
+def test_fetch_falls_back_to_defaults_on_empty_keywords(monkeypatch):
+    """An empty keywords filter matches the entire federal contract corpus."""
+    fake = install(monkeypatch, FakePost(page([])))
+    fetch_awards(keywords=[])
+    assert fake.calls[0]["filters"]["keywords"] == list(DEFAULT_KEYWORDS)
+    fake2 = install(monkeypatch, FakePost(page([])))
+    fetch_awards(keywords=["   ", ""])
+    assert fake2.calls[0]["filters"]["keywords"] == list(DEFAULT_KEYWORDS)
+
+
+def test_build_request_never_sends_an_empty_keyword_filter():
+    assert build_request([], since_days=30, limit=10, page=1)["filters"]["keywords"] == list(
+        DEFAULT_KEYWORDS
+    )
+    assert build_request("H2F", since_days=30, limit=10, page=1)["filters"]["keywords"] == ["H2F"]
+
+
+def test_an_absurd_since_days_is_clamped_not_fatal(monkeypatch):
+    """``date.today() - timedelta(days=10**8)`` raises OverflowError.
+
+    A window from a config file or a CLI flag should widen the search, not end
+    the run with a traceback.
+    """
+    fake = install(monkeypatch, FakePost(page([])))
+    fetch_awards(since_days=10**8)
+    window = fake.calls[0]["filters"]["time_period"][0]
+    assert window["start_date"] == (date.today() - timedelta(days=MAX_WINDOW_DAYS)).isoformat()
+
+
+def test_a_non_numeric_paging_argument_does_not_crash(monkeypatch):
+    fake = install(monkeypatch, FakePost(page([]), page([])))
+    fetch_awards(limit=None, max_pages=None, since_days=None)
+    assert fake.calls[0]["limit"] == 100
+    assert len(fake.calls) == 1
+
+
 def test_fetch_clamps_limit_to_the_api_maximum(monkeypatch):
     fake = install(monkeypatch, FakePost(page([])))
     fetch_awards(limit=5000)
@@ -436,6 +611,39 @@ def test_fetch_posts_to_the_keyless_endpoint(monkeypatch):
     monkeypatch.setattr("tactical_jobs.contracts.post_json", fake)
     fetch_awards()
     assert seen == [USASPENDING_ENDPOINT]
+
+
+def test_fetch_sends_no_credential_of_any_kind(monkeypatch):
+    """The operator has no key and cannot get one. Nothing may ask for one."""
+    seen: list[tuple] = []
+
+    def fake(url, payload, **kwargs):
+        seen.append((url, payload, kwargs))
+        return page([])
+
+    monkeypatch.setattr("tactical_jobs.contracts.post_json", fake)
+    fetch_awards()
+    url, payload, kwargs = seen[0]
+    blob = json.dumps([url, payload, kwargs], default=str).lower()
+    for secret in ("api_key", "apikey", "authorization", "bearer", "token", "x-api", "oauth"):
+        assert secret not in blob
+
+
+def test_fetch_stops_when_page_metadata_is_missing_entirely(monkeypatch):
+    """No metadata is not a licence to keep walking."""
+    fake = install(monkeypatch, FakePost(json.dumps({"results": [HUMAN_LABEL_RECORD]}).encode()))
+    fetch_awards(max_pages=5)
+    assert len(fake.calls) == 1
+
+
+def test_fetch_stops_on_a_string_has_next(monkeypatch):
+    """Some payloads write their booleans as text; "false" is not true."""
+    body = json.dumps(
+        {"results": [HUMAN_LABEL_RECORD], "page_metadata": {"hasNext": "false"}}
+    ).encode()
+    fake = install(monkeypatch, FakePost(body))
+    fetch_awards(max_pages=5)
+    assert len(fake.calls) == 1
 
 
 def test_fetch_propagates_a_first_page_failure(monkeypatch):
@@ -578,6 +786,51 @@ def test_rank_skips_awards_with_no_recipient():
     assert rank_recipients([ContractAward(description="H2F SUPPORT")]) == []
 
 
+def test_rank_tolerates_an_amount_that_is_not_a_number():
+    """These functions are public; an award replayed from an archive can carry
+    "$5" in that slot, and ``float("$5")`` ended the whole briefing."""
+    ranked = rank_recipients(
+        [
+            ContractAward(recipient="Odd Co", amount="$5", description="H2F SUPPORT"),
+            ContractAward(recipient="Odd Co", amount="not published", description="H2F SUPPORT"),
+        ]
+    )
+    assert ranked[0]["total_amount"] == 5.0
+    assert ranked[0]["awards_missing_amount"] == 1
+
+
+def test_rank_tolerates_a_relevance_that_is_not_a_number():
+    ranked = rank_recipients(
+        [ContractAward(recipient="Odd Co", description="H2F SUPPORT", relevance="high")]
+    )
+    assert ranked[0]["top_relevance"] == 0.0
+
+
+def test_rank_keeps_a_free_text_date_when_it_is_the_only_one():
+    """Printing 'not published' next to a date we were handed is a lie."""
+    entry = rank_recipients(
+        [ContractAward(recipient="Odd Co", description="H2F SUPPORT", start_date="March 2026")]
+    )[0]
+    assert entry["latest_award_date"] == "March 2026"
+
+
+def test_rank_prefers_a_comparable_date_over_free_text():
+    entry = rank_recipients(
+        [
+            ContractAward(recipient="Odd Co", description="H2F", start_date="March 2026"),
+            ContractAward(recipient="Odd Co", description="H2F", start_date="2026-01-04"),
+        ]
+    )[0]
+    assert entry["latest_award_date"] == "2026-01-04"
+
+
+def test_keyword_list_coerces_what_callers_actually_pass():
+    assert keyword_list("H2F") == ["H2F"]
+    assert keyword_list(["H2F", " ", ""]) == ["H2F"]
+    assert keyword_list(None) == list(DEFAULT_KEYWORDS)
+    assert keyword_list([]) == list(DEFAULT_KEYWORDS)
+
+
 # --------------------------------------------------------------------------
 # render_leads
 # --------------------------------------------------------------------------
@@ -619,6 +872,51 @@ def test_render_escapes_table_pipes():
         relevance=6.0,
     )
     assert "Pipe \\| Co" in render_leads([award])
+
+
+def test_render_summary_counts_only_the_recipients_it_shows():
+    """The summary line used to contradict itself under ``top_n``: it counted
+    every award but totalled only the shown ones."""
+    text = render_leads(sample_awards(), top_n=1)
+    assert "**2 relevant award(s)** across **1 recipient(s)**" in text
+    assert "$15,000,000" in text
+    assert "$15,250,000" not in text
+
+
+def test_render_lists_every_award_behind_a_shown_recipient():
+    """``top_n`` counts recipients; slicing the award table with it hid rows
+    the block above had already promised ("across 2 award(s)")."""
+    text = render_leads(sample_awards(), top_n=1)
+    assert "| A1 |" in text
+    assert "| A2 |" in text
+    assert "| B1 |" not in text
+
+
+def test_render_survives_an_award_with_junk_in_every_slot():
+    award = ContractAward(
+        award_id="A1",
+        recipient="Odd Co",
+        amount="not published",
+        description="H2F SUPPORT",
+        relevance="high",
+    )
+    text = render_leads([award])
+    assert "Odd Co" in text
+    assert text.endswith("\n")
+
+
+def test_render_survives_unicode_and_very_long_text():
+    award = ContractAward(
+        award_id="W911" + "0" * 400,
+        recipient="Ünïcødé Performance Ω " + "x" * 300,
+        amount=1000.0,
+        description="H2F HOLISTIC HEALTH AND FITNESS " + "ü" * 4000,
+        relevance=6.0,
+    )
+    text = render_leads([award])
+    assert "Ünïcødé Performance Ω" in text
+    # Table cells are truncated, so one absurd record cannot blow up a row.
+    assert max(len(line) for line in text.splitlines()) < 600
 
 
 def test_render_labels_an_unpublished_amount():

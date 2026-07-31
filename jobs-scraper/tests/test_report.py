@@ -962,7 +962,11 @@ def test_growth_from_zero_is_not_reported_as_a_percentage():
         timeline=[{"month": "2026-06", "count": 0}, {"month": "2026-07", "count": 9}]
     )
     markup = render_html(from_zero)
-    assert "from none in 2026-06" in markup
+    # The HTML tile names the prior month by abbreviation ("none in Jun"); the
+    # markdown digest keeps the full "YYYY-MM". Both must say "none" and
+    # neither may invent a percentage or an infinity.
+    assert "none in" in markup
+    assert "%" not in markup[markup.find("none in") - 60 : markup.find("none in")]
     assert "inf" not in markup.lower()
     assert "from none in 2026-06" in render_markdown(from_zero)
 
@@ -1147,3 +1151,50 @@ def test_no_emoji_in_either_rendering():
     """House rule, and a briefing forwarded to a .mil inbox should stay plain."""
     for output in (render_markdown(insights()), render_html(insights())):
         assert not any(ord(char) > 0x2100 for char in output), "non-plain glyph emitted"
+
+
+# --------------------------------------------------------------------------
+# Design regressions found by rendering the dashboard and looking at it
+# --------------------------------------------------------------------------
+
+def test_months_are_named_not_numbered():
+    """Regression: a bare "01" under a column reads as a quantity, not a month."""
+    markup = render_html(
+        insights(timeline=[{"month": "2026-01", "count": 3}, {"month": "2026-02", "count": 8}])
+    )
+    assert ">Jan<" in markup and ">Feb<" in markup
+
+
+def test_month_columns_carry_visible_value_labels():
+    """The counts must be readable without hovering; a tooltip is not a label."""
+    markup = render_html(insights(timeline=[{"month": "2026-02", "count": 8}]))
+    assert 'class="month-value">8<' in markup
+
+
+def test_month_bars_have_no_filled_track():
+    """A track at the fill's visual weight reads as an inverted bar."""
+    markup = render_html(insights(timeline=[{"month": "2026-02", "count": 8}]))
+    style = markup[markup.find(".month-bar {") : markup.find(".month-fill {")]
+    assert "background" not in style, f"month-bar regained a filled track: {style}"
+    assert "border-bottom" in style
+
+
+def test_zero_month_is_distinguishable_from_missing_data():
+    """An empty column reads as "no data"; a zero must still show its label."""
+    markup = render_html(
+        insights(timeline=[{"month": "2026-04", "count": 0}, {"month": "2026-05", "count": 5}])
+    )
+    assert 'class="month-value">0<' in markup
+
+
+def test_movement_tile_shows_the_count_not_the_delta():
+    """Regression: the tile rendered "-1" as its hero number, which reads as an
+    error state rather than "one fewer than last month"."""
+    markup = render_html(
+        insights(timeline=[{"month": "2026-06", "count": 7}, {"month": "2026-07", "count": 6}])
+    )
+    tile = markup[markup.find("Postings in") - 260 : markup.find("Postings in")]
+    assert ">6<" in tile, f"expected the month count as the tile value: {tile}"
+    assert ">-1<" not in tile
+    # The delta is not lost -- it moves to the supporting note.
+    assert "-1" in markup

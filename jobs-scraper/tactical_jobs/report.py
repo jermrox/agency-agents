@@ -975,26 +975,51 @@ def _sparkline(timeline: Sequence[tuple[str, int]]) -> list[str]:
     ]
 
 
-def _month_columns(months: Sequence[tuple[str, int]]) -> list[str]:
-    """Vertical CSS bars for the recent months, labeled by month number.
+_MONTH_NAMES = (
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+)
 
-    Only the month number is printed under each column: twelve four-digit years
-    collide on a phone, and the year is already stated in the caption above.
+
+def _month_label(month: str) -> str:
+    """"2026-01" -> "Jan". A bare "01" is unreadable as a month."""
+    part = month.split("-")[-1] if "-" in month else month
+    try:
+        return _MONTH_NAMES[int(part) - 1]
+    except (ValueError, IndexError):
+        return part
+
+
+def _month_columns(months: Sequence[tuple[str, int]]) -> list[str]:
+    """Vertical bars for the recent months, value-labeled above each column.
+
+    Three things this deliberately does NOT do, each learned from looking at
+    the rendered chart rather than the markup:
+
+    * It does not print a bare month number. "01" reads as a quantity, not a
+      month; the abbreviated name does not. The year stays in the caption
+      because four-digit years collide on a phone.
+    * It does not draw a heavy track behind each bar. A track at the same
+      visual weight as the fill reads as an inverted bar, so the chart looks
+      like it is measuring the wrong thing. The scale is carried by a single
+      recessive baseline instead.
+    * It does not leave a zero month blank. An empty column is
+      indistinguishable from missing data, so zero gets an explicit label.
     """
     if not months:
         return []
     peak = max((count for _, count in months), default=0) or 1
-    out = ['<div class="months">']
+    out = ['<div class="months" role="img" aria-label="Postings per month">']
     for month, count in months:
         height = max(MIN_BAR_PERCENT, _pct(count, peak)) if count else 0.0
-        short = month.split("-")[-1] if "-" in month else month
         out.append(
             f'<div class="month" title="{_esc(month)}: {count:,} '
             f'{_plural(count, "posting")}">'
+            f'<span class="month-value">{count:,}</span>'
             '<span class="month-bar">'
             f'<span class="month-fill" style="height:{height:.2f}%"></span>'
             "</span>"
-            f'<span class="month-label">{_esc(short)}</span>'
+            f'<span class="month-label">{_esc(_month_label(month))}</span>'
             "</div>"
         )
     out.append("</div>")
@@ -1157,12 +1182,18 @@ def _movement_tile(digest: _Digest) -> str:
     tone = {"up": "up", "down": "down", "flat": ""}[movement.direction]
     ratio = movement.ratio
     if ratio is None:
-        note = f"from none in {movement.previous_month}"
+        note = f"{movement.change:+d} — none in {_month_label(movement.previous_month)}"
     else:
-        note = f"{ratio * 100:+.0f}% vs {movement.previous_month}"
+        note = (
+            f"{movement.change:+d} · {ratio * 100:+.0f}% "
+            f"vs {_month_label(movement.previous_month)}"
+        )
+    # The VALUE is the month's count; the delta belongs in the note. A signed
+    # delta as the hero number ("-1") reads as an error state rather than as
+    # "one fewer than last month", which is what it means.
     return _tile(
-        f"{movement.change:+d}",
-        f"Postings in {movement.month}",
+        f"{movement.count:,}",
+        f"Postings in {_month_label(movement.month)}",
         note,
         tone=tone,
     )
@@ -1430,28 +1461,36 @@ table.grid .muted { color: var(--muted); }
   color: var(--muted);
   gap: .5rem;
 }
-.months { display: flex; align-items: stretch; gap: .3rem; }
-.month { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: .25rem; }
+.months { display: flex; align-items: flex-end; gap: .35rem; }
+.month { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: .2rem; }
+.month-value {
+  font-size: .7rem;
+  text-align: center;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
 .month-bar {
+  /* No filled track: at equal visual weight it reads as an inverted bar.
+     A single recessive baseline carries the scale instead. */
   position: relative;
   display: block;
   height: 4rem;
-  background: var(--track);
-  border-radius: .2rem;
+  border-bottom: 1px solid var(--rule);
 }
 .month-fill {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  min-height: 2px;              /* a zero month still shows the baseline tick */
   background: var(--accent);
-  border-radius: .2rem;
+  border-radius: .2rem .2rem 0 0;  /* rounded data-end, square at the baseline */
 }
 .month-label {
-  font-size: .66rem;
+  font-size: .68rem;
   color: var(--muted);
   text-align: center;
-  font-variant-numeric: tabular-nums;
 }
 .figures {
   list-style: none;

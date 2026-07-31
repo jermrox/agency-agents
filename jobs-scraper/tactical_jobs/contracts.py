@@ -33,17 +33,29 @@ it is deliberately not used here.
 
 WHY THE FIELD PICKER IS TOLERANT
 The v2 search endpoint takes a list of human-readable field *labels* ("Award
-ID", "Recipient Name") and echoes them back as the result keys. Across versions
-and across mirrors of that payload, those keys have come back as the labels
-themselves, as snake_case (``recipient_name``), and as camelCase
-(``recipientName``) -- and the underlying award record exposes several of the
-same values under entirely different names (``piid``, ``total_obligation``,
-``period_of_performance_start_date``). A single hard-coded key spelling means
-the module returns a list of empty awards the day the casing changes, with no
-error to notice. So :func:`pick_field` takes several candidate keys per field,
-compares them with case and punctuation normalized away, and returns the first
-present non-empty one. Casing variants collapse to one normalized key; the
-genuinely different names are listed out.
+ID", "Recipient Name") and echoes them back as the result keys. That -- the
+labels in :data:`REQUEST_FIELDS` coming back verbatim -- is the only shape this
+module treats as known. Everything else the picker accepts is a defensive
+guess, and is marked as such below.
+
+UNVERIFIED, ON PURPOSE: the alternate spellings in the ``_*_KEYS`` tuples
+(``piid``, ``total_obligation``, ``prime_award_base_transaction_description``,
+``pop_state_code``, and the snake_case/camelCase forms) are NOT confirmed
+responses from this endpoint. They are names USAspending uses on adjacent
+surfaces -- the award-detail endpoint and the bulk download columns -- written
+down here as fallbacks in case the search payload ever speaks that dialect.
+Nothing depends on them: if the endpoint keeps echoing the labels, every
+fallback is dead weight that costs one dict lookup. The reason to carry them is
+asymmetric cost. A hard-coded single spelling that goes stale returns a list of
+*empty* awards with no exception to notice, and a briefing that says "no awards
+this quarter" looks exactly like a quiet quarter. A fallback that never fires
+costs nothing. Do not read the presence of a key in those tuples as evidence
+the API emits it.
+
+So :func:`pick_field` takes several candidate keys per field, compares them
+with case and punctuation normalized away, and returns the first present
+non-empty one. Casing variants collapse to one normalized key; the genuinely
+different names are listed out.
 
 WHAT IS DELIBERATELY THROWN AWAY
 A defense prime wins hundreds of contracts a year and almost none of them are
@@ -203,15 +215,37 @@ CONTEXT_TERMS: dict[str, float] = {
     "first responder": 1.0,
 }
 
-CONTEXT_CAP = 3.0
-"""Ceiling on the context bonus.
+CONTEXT_CAP = 1.5
+"""Ceiling on the context bonus: at most one strong population term.
 
 Federal descriptions stack population words ("ARMY SOLDIER READINESS BRIGADE
 INSTALLATION SUPPORT") in a way that has nothing to do with how much human
 performance work the contract buys. Without a cap, a verbose vehicle mentioning
 one discipline in passing outranks a named H2F award, which inverts the entire
 point of the briefing.
+
+The cap has to be smaller than the gap between the tiers it sits on top of, or
+it does not actually deliver that promise. At 3.0 it did not: a bare "ATHLETIC
+TRAINING SERVICES" (4.0) wearing a wall of population words reached 7.0 and
+outranked a clean "HOLISTIC HEALTH AND FITNESS" award (6.0) -- exactly the
+inversion this constant exists to prevent. Context is a tiebreaker between
+awards that already qualified; it is never allowed to restate the tiering.
 """
+
+ALIAS_GROUPS: tuple[frozenset[str], ...] = (
+    # Terms that name the same thing. Only the strongest member of a group
+    # scores: "H2F HOLISTIC HEALTH AND FITNESS" is a program named twice in one
+    # breath, not two independent pieces of evidence. Substring subsumption in
+    # :func:`_axis` cannot catch this -- an acronym is not a substring of what
+    # it abbreviates -- so the families are written out.
+    frozenset({"h2f", "holistic health and fitness"}),
+    frozenset({"potff", "preservation of the force", "preservation of the force and family"}),
+    frozenset({"thor3", "thor 3"}),
+)
+
+_ALIAS_OF: dict[str, int] = {
+    term: index for index, group in enumerate(ALIAS_GROUPS) for term in group
+}
 
 
 # ---------------------------------------------------------------------------
@@ -228,17 +262,61 @@ def normalize_key(key: Any) -> str:
     return re.sub(r"[^a-z0-9]", "", str(key).lower())
 
 
+def _is_empty(value: Any) -> bool:
+    """Nothing worth reporting: null, blank text, or an empty container.
+
+    Note what is *not* empty: ``0`` and ``False``. A zero-dollar modification is
+    a real published figure, and losing it would be a silent data change.
+    """
+    if value is None:
+        return True
+    if isinstance(value, str):
+        return not value.strip()
+    if isinstance(value, (list, tuple, set, dict)):
+        return not value
+    return False
+
+
 def _index(record: Any) -> dict[str, Any]:
-    """Map a record's keys to their normalized form, first occurrence wins."""
+    """Map a record's keys to their normalized form; first *non-empty* wins.
+
+    First-occurrence-wins was a trap. A record carrying both ``"Award ID": ""``
+    and ``"award_id": "W911SF24F0123"`` -- which is exactly what a payload mid-
+    rename looks like -- collapsed to the empty one, and the real value became
+    unreachable because the picker had already spent that normalized key. On the
+    recipient field that dropped the entire award, since :func:`to_award`
+    requires a recipient. So an empty value holds the slot only until a
+    non-empty spelling of the same key turns up.
+    """
     if not isinstance(record, dict):
         return {}
     index: dict[str, Any] = {}
     for key, value in record.items():
-        index.setdefault(normalize_key(key), value)
+        normalized = normalize_key(key)
+        if normalized not in index:
+            index[normalized] = value
+        elif _is_empty(index[normalized]) and not _is_empty(value):
+            index[normalized] = value
     return index
 
 
-_DISPLAY_KEYS = ("name", "value", "label", "text", "code", "abbreviation", "toptier_name")
+_DISPLAY_KEYS = (
+    "name",
+    "value",
+    "label",
+    "text",
+    "code",
+    "abbreviation",
+    "toptier_name",
+    # The nested objects this payload has been seen to use do not always call
+    # their display field "name": a recipient block spells it "recipient_name",
+    # an agency block "agency_name". Without these a nested recipient flattens
+    # to "" and the whole award is dropped as unusable.
+    "recipient_name",
+    "agency_name",
+    "state_code",
+    "display_name",
+)
 
 
 def flatten(value: Any) -> str:
@@ -291,23 +369,33 @@ def pick_raw(record: Any, *candidates: str) -> Any:
         key = normalize_key(candidate)
         if key in index:
             value = index[key]
-            if value not in (None, "", [], {}):
+            if not _is_empty(value):
                 return value
     return None
 
 
-# Candidate keys per field. Casing variants collapse under ``normalize_key``,
-# so what is listed here are the genuinely different names the same value has
-# appeared under: the request label, and the underlying award record's own
-# column name.
+# Candidate keys per field, most trusted first. Casing variants collapse under
+# ``normalize_key``, so what is listed here are the genuinely different names.
+#
+# ONLY THE FIRST ENTRY OF EACH TUPLE IS VERIFIED. It is the label from
+# ``REQUEST_FIELDS`` that we asked the endpoint for and that it documents itself
+# as echoing back. Every later entry is an UNVERIFIED fallback borrowed from
+# another USAspending surface (award detail, bulk download columns); none has
+# been observed in a response from this endpoint. See the module docstring for
+# why they are carried anyway.
 _AWARD_ID_KEYS = ("Award ID", "piid", "generated_internal_id", "internal_id", "id")
 _RECIPIENT_KEYS = ("Recipient Name", "recipient", "recipient_name_raw", "Recipient")
 _AMOUNT_KEYS = (
     "Award Amount",
     "total_obligation",
     "obligated_amount",
-    "Total Outlays",
     "base_and_all_options_value",
+    # "Total Outlays" is deliberately NOT here. Outlays are money already
+    # disbursed, not the value of the award, and on a contract that just
+    # started they are usually near zero. Ranking employers by dollars means
+    # the number has to mean one thing; quietly substituting a different
+    # measure would reorder the briefing with nothing to show for it. An award
+    # with no obligated value reads "not published", which is true.
 )
 _DESCRIPTION_KEYS = (
     "Description",
@@ -347,6 +435,9 @@ _HAS_NEXT_KEYS = ("hasNext", "has_next", "hasNextPage", "next")
 _ISO_DATE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})")
 
 
+_NUMERIC_TOKEN = re.compile(r"[-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?")
+
+
 def parse_amount(value: Any) -> float | None:
     """Read a dollar figure out of a number or a string like ``"$1,234,567"``.
 
@@ -354,22 +445,41 @@ def parse_amount(value: Any) -> float | None:
     as ``null`` for awards whose value is not published. All three are normal,
     so none of them raises. A bool is rejected outright: ``bool`` is an ``int``
     subclass, and a flag is not an amount.
+
+    Strings are read by pulling numeric *tokens* out rather than by deleting
+    every character that is not a digit. Deleting characters is what silently
+    turns ``"1.5e6"`` into ``1.56`` -- off by six orders of magnitude, with no
+    error, in the one number the whole briefing ranks on. Exactly one token has
+    to be present: zero tokens means there is no figure here ("not published"),
+    and two or more means the string is something this function does not
+    understand ("12.5.3", a date, a range), where ``None`` is honest and a
+    guess is not.
+
+    A parenthesised figure returns ``None``. It is the accounting notation for
+    a negative, but this feed writes deobligations with a leading minus, so
+    reading ``"(250,000)"`` as either sign would be a guess -- and reporting a
+    deobligation as a quarter-million-dollar *win* is the expensive direction
+    to be wrong in.
     """
     if value is None or isinstance(value, bool):
         return None
     if isinstance(value, (int, float)):
         return float(value) if math.isfinite(float(value)) else None
     if isinstance(value, str):
-        # Strip currency symbols, thousands separators, and stray whitespace.
-        # Parentheses are dropped rather than read as a negative -- this feed
-        # writes deobligations with a leading minus, and guessing the
-        # accounting convention on a scraped string is worse than not.
-        stripped = re.sub(r"[^0-9.\-]", "", value)
-        if not stripped or stripped in {"-", ".", "-.", "."}:
+        text = value.strip()
+        if not text:
+            return None
+        if "(" in text or ")" in text:
+            return None
+        # Drop currency symbols, thousands separators, and stray whitespace,
+        # but never the exponent or the sign.
+        compact = re.sub(r"[,\s $€£¥]", "", text)
+        tokens = _NUMERIC_TOKEN.findall(compact)
+        if len(tokens) != 1:
             return None
         try:
-            parsed = float(stripped)
-        except ValueError:
+            parsed = float(tokens[0])
+        except (ValueError, OverflowError):
             return None
         return parsed if math.isfinite(parsed) else None
     return None
@@ -496,6 +606,14 @@ def _axis(terms: dict[str, float], haystack: str) -> tuple[float, list[str]]:
     H2F award, which defeats the ranking. Subsumption is deliberately *not*
     applied across axes -- ``human performance program`` naming the program and
     ``human performance`` naming the work really are two different facts.
+
+    :data:`ALIAS_GROUPS` finishes the same job for names that are the same
+    signal without being substrings of each other. "H2F HOLISTIC HEALTH AND
+    FITNESS" is the ordinary way that program is written out, and scoring the
+    acronym and its expansion separately made a description's *style* worth
+    more than its content: an H2F award that spelled itself out twice scored
+    11.5 while an equally strong THOR3 award scored 6.0. Only the strongest
+    member of a group counts.
     """
     matched: list[tuple[str, str, float]] = []
     for term, weight in terms.items():
@@ -503,14 +621,15 @@ def _axis(terms: dict[str, float], haystack: str) -> tuple[float, list[str]]:
         if needle in haystack:
             matched.append((term, needle, weight))
 
-    total = 0.0
+    families: dict[Any, float] = {}
     hits: list[str] = []
     for term, needle, weight in matched:
         if any(needle in other and needle != other for _, other, _ in matched):
             continue
         hits.append(term)
-        total += weight
-    return total, hits
+        family = _ALIAS_OF.get(term, term)
+        families[family] = max(families.get(family, 0.0), weight)
+    return sum(families.values()), hits
 
 
 def score_award(award: ContractAward) -> float:
@@ -557,6 +676,47 @@ def _decode(body: Any) -> Any:
     return body
 
 
+MAX_WINDOW_DAYS = 365 * 25
+"""Longest search window we will ask for.
+
+USAspending's contract data starts in FY2008, so a longer window buys nothing.
+It is a clamp rather than a nicety: ``date.today() - timedelta(days=10**8)``
+raises ``OverflowError``, and a caller passing ``since_days`` from a config
+file or a CLI flag should get a wide search, not a traceback.
+"""
+
+
+def keyword_list(keywords: Any) -> list[str]:
+    """Coerce whatever a caller passed into a usable keyword list.
+
+    A bare string is one keyword, not a sequence of letters. ``list("THOR3")``
+    is ``["T", "H", "O", "R", "3"]``, and that query returns tens of thousands
+    of unrelated awards while looking like it worked -- the single worst
+    failure mode available here, because nothing about it raises.
+
+    Empty in means the defaults: an empty ``keywords`` filter matches the
+    entire federal contract corpus.
+    """
+    if keywords is None:
+        return list(DEFAULT_KEYWORDS)
+    if isinstance(keywords, str):
+        candidates: list[Any] = [keywords]
+    elif isinstance(keywords, (list, tuple, set, frozenset)):
+        candidates = list(keywords)
+    else:
+        candidates = [keywords]
+    terms = [str(term).strip() for term in candidates if str(term).strip()]
+    return terms or list(DEFAULT_KEYWORDS)
+
+
+def _as_int(value: Any, default: int) -> int:
+    """An int from a config file, a CLI string, or nothing at all."""
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
 def build_request(
     keywords: Sequence[str], *, since_days: int, limit: int, page: int
 ) -> dict[str, Any]:
@@ -566,10 +726,11 @@ def build_request(
     module sees -- the endpoint takes no key, so that reproduction is free.
     """
     end = date.today()
-    start = end - timedelta(days=max(1, since_days))
+    window = max(1, min(_as_int(since_days, 365), MAX_WINDOW_DAYS))
+    start = end - timedelta(days=window)
     return {
         "filters": {
-            "keywords": list(keywords),
+            "keywords": keyword_list(keywords),
             "award_type_codes": list(AWARD_TYPE_CODES),
             "time_period": [
                 {"start_date": start.isoformat(), "end_date": end.isoformat()}
@@ -603,11 +764,9 @@ def fetch_awards(
     look exactly like a quiet quarter. A failure on a later page is logged and
     ends the walk with the awards already collected, which are real.
     """
-    terms = [str(term) for term in (keywords if keywords else DEFAULT_KEYWORDS) if str(term).strip()]
-    if not terms:
-        terms = list(DEFAULT_KEYWORDS)
-    page_size = max(1, min(int(limit), MAX_API_LIMIT))
-    pages = max(1, int(max_pages))
+    terms = keyword_list(keywords)
+    page_size = max(1, min(_as_int(limit, MAX_API_LIMIT), MAX_API_LIMIT))
+    pages = max(1, _as_int(max_pages, 1))
 
     awards: list[ContractAward] = []
     seen: set[str] = set()
@@ -670,9 +829,19 @@ def _as_bool(value: Any) -> bool:
 # ---------------------------------------------------------------------------
 
 
-def _agency_label(award: ContractAward) -> str:
-    parts = [_clean(award.agency), _clean(award.sub_agency)]
+def _agency_label(award: Any) -> str:
+    parts = [_clean(getattr(award, "agency", "")), _clean(getattr(award, "sub_agency", ""))]
     return " / ".join(part for part in parts if part)
+
+
+def _score_of(award: Any) -> float:
+    """A sortable relevance, whatever the caller put in that slot.
+
+    ``float(award.relevance)`` raises on a string, and these functions are
+    public: an award rebuilt from an archived JSON row is a normal input. A
+    junk score sorts last instead of ending the run.
+    """
+    return parse_amount(getattr(award, "relevance", 0.0)) or 0.0
 
 
 def rank_recipients(
@@ -715,11 +884,15 @@ def rank_recipients(
             groups[key] = entry
 
         entry["awards"] += 1
-        amount = getattr(award, "amount", None)
+        # Through ``parse_amount`` rather than ``float()``: this function is
+        # public, and an award assembled by hand or replayed from an archive
+        # can carry "$5" in that slot. A briefing that raises ValueError on one
+        # odd row is worth less than one that reports that row as unpublished.
+        amount = parse_amount(getattr(award, "amount", None))
         if amount is None:
             entry["awards_missing_amount"] += 1
         else:
-            entry["total_amount"] += float(amount)
+            entry["total_amount"] += amount
 
         agency = _agency_label(award)
         if agency and agency not in entry["agencies"]:
@@ -731,11 +904,18 @@ def rank_recipients(
         if award_id and award_id not in entry["award_ids"]:
             entry["award_ids"].append(award_id)
 
-        start = getattr(award, "start_date", None)
-        if _sortable_date(start) > _sortable_date(entry["latest_award_date"]):
-            entry["latest_award_date"] = _clean(start) or None
+        # An ISO date always wins. A date the API wrote as free text ("March
+        # 2026") cannot be compared, but it is still the only date this
+        # recipient has, so it fills the slot until a comparable one arrives --
+        # printing "not published" next to a date we were handed is a lie.
+        start = _clean(getattr(award, "start_date", None))
+        if start and (
+            entry["latest_award_date"] is None
+            or _sortable_date(start) > _sortable_date(entry["latest_award_date"])
+        ):
+            entry["latest_award_date"] = start
 
-        relevance = float(getattr(award, "relevance", 0.0) or 0.0)
+        relevance = _score_of(award)
         if relevance > entry["top_relevance"] or not entry["top_description"]:
             entry["top_relevance"] = max(relevance, entry["top_relevance"])
             entry["top_description"] = _clean(getattr(award, "description", ""))
@@ -781,7 +961,17 @@ def render_leads(awards: Sequence[ContractAward], *, top_n: int = 25) -> str:
     thirty-second lookup.
     """
     recipients = rank_recipients(awards, top_n=top_n)
-    usable = [award for award in awards if _clean(getattr(award, "recipient", ""))]
+    # Count and total only the awards behind the recipients actually shown.
+    # Counting all of them made the summary line contradict itself -- "2
+    # relevant award(s) across 1 recipient(s) shown, worth $10" where the $10
+    # was one award's value and the 2 counted an award belonging to a
+    # recipient the reader cannot see anywhere on the page.
+    shown_names = {entry["recipient"].casefold() for entry in recipients}
+    usable = [
+        award
+        for award in awards
+        if _clean(getattr(award, "recipient", "")).casefold() in shown_names
+    ]
 
     lines = [
         "# Contract award leads — who is about to hire",
@@ -851,13 +1041,17 @@ def render_leads(awards: Sequence[ContractAward], *, top_n: int = 25) -> str:
             "",
         ]
 
+    # Every award behind a shown recipient, not a ``top_n`` slice: ``top_n``
+    # counts recipients, and slicing a list of awards with it hid rows that the
+    # block above had already promised ("across 3 award(s)").
     shown_awards = sorted(
         usable,
         key=lambda award: (
-            -float(getattr(award, "relevance", 0.0) or 0.0),
-            -(getattr(award, "amount", None) or 0.0),
+            -_score_of(award),
+            -(parse_amount(getattr(award, "amount", None)) or 0.0),
+            _clean(getattr(award, "recipient", "")).casefold(),
         ),
-    )[: top_n if top_n > 0 else len(usable)]
+    )
 
     lines += [
         "---",
@@ -870,13 +1064,13 @@ def render_leads(awards: Sequence[ContractAward], *, top_n: int = 25) -> str:
     for award in shown_awards:
         lines.append(
             "| {award_id} | {recipient} | {amount} | {agency} | {start} | {state} | {score:.1f} |".format(
-                award_id=_cell(award.award_id, 24) or "—",
-                recipient=_cell(award.recipient, 40),
-                amount=_money(award.amount),
+                award_id=_cell(getattr(award, "award_id", ""), 24) or "—",
+                recipient=_cell(getattr(award, "recipient", ""), 40),
+                amount=_money(getattr(award, "amount", None)),
                 agency=_cell(_agency_label(award), 40) or "—",
-                start=_cell(award.start_date, 12) or "—",
-                state=_cell(award.state, 8) or "—",
-                score=float(getattr(award, "relevance", 0.0) or 0.0),
+                start=_cell(getattr(award, "start_date", ""), 12) or "—",
+                state=_cell(getattr(award, "state", ""), 8) or "—",
+                score=_score_of(award),
             )
         )
     lines.append("")
