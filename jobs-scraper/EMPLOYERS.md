@@ -38,15 +38,32 @@ no API key, no account**.
 
 These won the contracts. They do the hiring.
 
-| Employer | Program | Award | Evidence |
-|---|---|---:|---|
-| **Serco** | Army H2F | $247M ceiling | [Serco press release][^serco] |
-| **KBR** (KBRwyle) | USSOCOM POTFF | $500M | [KBR][^kbr] |
-| **GAP Solutions** | Army H2F | $100M+ | [GAP Solutions][^gap] |
-| **HigherEchelon** | Army H2F (Team Serco) | subcontract | [^serco] |
-| **Hyperion Biotechnology** | Army H2F (Team Serco) | subcontract | [^serco] |
-| **Resolution Think** | Army H2F (Team Serco) | subcontract | [^serco] |
-| **The Geneva Foundation** | Army H2F (Team Serco) | subcontract | [^serco] |
+| Employer | Program | Award | Announced | Status | Evidence |
+|---|---|---:|---|---|---|
+| **Serco** | Army H2F | $247M ceiling | **Jan 2025** | Current | [Serco][^serco] |
+| **KBR** (KBRwyle) | USSOCOM POTFF | $500M | **Dec 2018** | ⚠ Dated | [KBR][^kbr] |
+| **GAP Solutions** | Army H2F | $100M+ | **Aug 2021** | ⚠ Expired | [GAP Solutions][^gap] |
+| **HigherEchelon** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
+| **Hyperion Biotechnology** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
+| **Resolution Think** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
+| **The Geneva Foundation** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
+
+> **Read the dates.** An earlier version of this file listed these awards without
+> them, which implied all three were live contracts. Opening the primary sources
+> corrected that:
+>
+> * **KBR's POTFF award is from December 2018** — a five-year base plus a
+>   three-year option, so roughly 2018–2026. POTFF has since gone to recompete
+>   (POTFF III), which makes KBR an incumbent and likely bidder rather than a
+>   confirmed current holder.
+> * **GAP Solutions' H2F award is from August 2021** — one base year plus two
+>   option years from September 2021, so it ran to about late 2024.
+>
+> Only the Serco award is recent. All three still identify *who competes for
+> this work*, which is what the watchlist needs — but "who won in 2018" and
+> "who is hiring now" are different claims, and this table previously blurred
+> them. This is exactly the gap `contracts.py` closes by querying live award
+> data instead of relying on press releases.
 
 **Note how wrong a guess would have been.** Before this research the registry was
 seeded with the usual defense primes — Leidos, Booz Allen, CACI. Those are
@@ -103,6 +120,33 @@ All keyless except where noted.
 | [SAM.gov](https://sam.gov/) | Open solicitations — who is *about* to win | Key for API; web UI free |
 | [GovTribe](https://govtribe.com/) | Award and opportunity tracking | Commercial |
 | [HigherGov](https://www.highergov.com/) | Award and opportunity tracking | Commercial |
+
+USASpending publishes under the **DATA Act**, the law requiring federal spending
+information to be publicly accessible — which is why award reads need no account
+and the weekly watch costs nothing to run.
+
+---
+
+## Why board tokens are not secrets
+
+The claim that an ATS "board token" is a public slug rather than a credential is
+load-bearing for the whole keyless design, so here is the vendor stating it.
+
+Greenhouse's Job Board API documentation describes the endpoint's purpose as
+giving third parties "a simple JSON representation of your company's offices,
+departments, and published jobs" so they can "build careers pages", and says
+plainly:
+
+> Only the application submission endpoint … requires Basic Auth.
+
+Reading jobs is unauthenticated **by design**; only *writing* an application
+needs a key. — [Greenhouse Job Board API](https://developers.greenhouse.io/job-board.html),
+[Lever Postings API](https://github.com/lever/postings-api)
+
+By contrast, [USAJOBS](https://developer.usajobs.gov/tutorials/search-jobs)
+requires `Host`, `User-Agent`, and `Authorization-Key` headers plus a key
+obtained by application — which is why it is one of only three credentialed
+adapters out of 23.
 
 `contracts.py` targets USASpending precisely because it is the one with a fully open
 API — consistent with the no-credentials constraint.
