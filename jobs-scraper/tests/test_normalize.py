@@ -175,6 +175,8 @@ def test_pipeline_routes_to_review_when_auto_publish_off(tmp_path, monkeypatch):
         publishers=[],
         thresholds=Thresholds(),
         state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
         auto_publish=False,
     )
     report = run(config)
@@ -188,6 +190,8 @@ def test_pipeline_auto_publishes_when_enabled(tmp_path, monkeypatch):
         sources=[SourceConfig(kind="stub", name="stub")],
         publishers=[],
         state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
         auto_publish=True,
     )
     report = run(config)
@@ -200,6 +204,8 @@ def test_pipeline_second_run_finds_no_new_jobs(tmp_path, monkeypatch):
     config = Config(
         sources=[SourceConfig(kind="stub", name="stub")],
         state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
     )
     assert len(run(config).review) == 1
     second = run(config)
@@ -215,6 +221,8 @@ def test_pipeline_survives_a_broken_source(tmp_path, monkeypatch):
             SourceConfig(kind="stub", name="stub"),
         ],
         state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
     )
     report = run(config)
     assert len(report.review) == 1
@@ -229,6 +237,8 @@ def test_pipeline_drops_stale_postings(tmp_path, monkeypatch):
     config = Config(
         sources=[SourceConfig(kind="stub", name="stub")],
         state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
         max_age_days=45,
     )
     report = run(config)
@@ -249,7 +259,46 @@ def test_pipeline_skips_postings_without_a_url(tmp_path, monkeypatch):
     broken.url = ""
     _register_stubs(monkeypatch, [broken])
     config = Config(
-        sources=[SourceConfig(kind="stub", name="stub")], state_path=tmp_path / "seen.json"
+        sources=[SourceConfig(kind="stub", name="stub")],
+        state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
     )
     report = run(config)
     assert report.rejected == 1 and report.review == []
+
+
+def test_pipeline_writes_nothing_outside_its_configured_paths(tmp_path, monkeypatch):
+    """Regression: archive_path and insights_dir default to REPO-RELATIVE paths.
+
+    A test that overrode only state_path left the pipeline writing a synthetic
+    corpus and dashboard into the working tree, and those artifacts were then
+    committed as if they were real scraped data.
+    """
+    _register_stubs(monkeypatch, [_tactical_posting()])
+    scratch = tmp_path / "run"
+    scratch.mkdir()
+    monkeypatch.chdir(scratch)
+
+    config = Config(
+        sources=[SourceConfig(kind="stub", name="stub")],
+        state_path=tmp_path / "seen.json",
+        archive_path=tmp_path / "corpus.jsonl",
+        insights_dir=tmp_path / "insights",
+    )
+    run(config)
+
+    assert list(scratch.iterdir()) == [], f"leaked into cwd: {list(scratch.iterdir())}"
+
+
+def test_archiving_can_be_disabled(tmp_path, monkeypatch):
+    _register_stubs(monkeypatch, [_tactical_posting()])
+    config = Config(
+        sources=[SourceConfig(kind="stub", name="stub")],
+        state_path=tmp_path / "seen.json",
+        archive_path=None,
+        insights_dir=None,
+    )
+    report = run(config)
+    assert report.archived == 0
+    assert not (tmp_path / "corpus.jsonl").exists()

@@ -266,7 +266,15 @@ def test_context_bonus_is_capped():
         "SPECIAL OPERATIONS SOCOM USASOC MARSOC AFSOC LAW ENFORCEMENT FIREFIGHTER"
     )
     assert score_award(stacked) <= score_award(generic_discipline()) + CONTEXT_CAP
-    assert score_award(stacked) < score_award(named_program()) + CONTEXT_CAP + 1
+    assert score_award(stacked) < score_award(named_program())
+
+
+def test_overlapping_terms_in_one_axis_count_once():
+    """'athletic training services' must not also bank 'athletic training'."""
+    assert score_award(ContractAward(description="ATHLETIC TRAINING SERVICES")) == score_award(
+        ContractAward(description="AWARD FOR ATHLETIC TRAINING SERVICES ON SITE")
+    )
+    assert score_award(ContractAward(description="ATHLETIC TRAINING SERVICES")) == 4.0
 
 
 def test_empty_description_scores_zero():

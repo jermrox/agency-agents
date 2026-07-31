@@ -488,14 +488,28 @@ def _axis(terms: dict[str, float], haystack: str) -> tuple[float, list[str]]:
     A term counts once no matter how often it appears. Contract descriptions
     are one terse line, so repetition carries no extra information -- unlike a
     job ad, where ``classify.py`` counts up to :data:`classify.DESCRIPTION_CAP`.
+
+    Within one axis, a term subsumed by a longer hit is dropped: "ATHLETIC
+    TRAINING SERVICES" fires both ``athletic training services`` and ``athletic
+    training``, which is one signal written two ways, not two signals. Summing
+    both let a single generic services line accumulate enough to rival a named
+    H2F award, which defeats the ranking. Subsumption is deliberately *not*
+    applied across axes -- ``human performance program`` naming the program and
+    ``human performance`` naming the work really are two different facts.
     """
-    total = 0.0
-    hits: list[str] = []
+    matched: list[tuple[str, str, float]] = []
     for term, weight in terms.items():
         needle = f" {re.sub(r'[^a-z0-9]+', ' ', term).strip()} "
         if needle in haystack:
-            hits.append(term)
-            total += weight
+            matched.append((term, needle, weight))
+
+    total = 0.0
+    hits: list[str] = []
+    for term, needle, weight in matched:
+        if any(needle in other and needle != other for _, other, _ in matched):
+            continue
+        hits.append(term)
+        total += weight
     return total, hits
 
 
@@ -829,7 +843,7 @@ def render_leads(awards: Sequence[ContractAward], *, top_n: int = 25) -> str:
             lines.append(f"- **Award IDs:** {shown}")
         lines += [
             "",
-            f"- **Next step: find this employer's ATS board.** Search "
+            f"**Next step: find this employer's ATS board.** Search "
             f"`\"{name}\" careers greenhouse OR lever OR workday OR icims`, confirm the "
             "board token, then add it to `sources.toml` and to the discovery "
             "watchlist. Do not guess the token — a wrong one returns nothing, "

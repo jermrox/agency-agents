@@ -94,7 +94,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output state
+          # Force-add: output/ and state/ are gitignored so a local run cannot
+          # commit synthetic data, but the scheduled run's real artifacts are
+          # exactly what must persist.
+          git add -f output state
           # Only commit when something actually changed.
           if git diff --staged --quiet; then
             echo "No changes to commit."
