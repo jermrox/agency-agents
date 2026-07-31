@@ -22,10 +22,11 @@ output_dir = "output"
 # Drop postings older than this many days. Stale listings are worse than none.
 max_age_days = 45
 
-# When false, NOTHING is published automatically -- every match lands in the
-# review queue for a human to approve. Leave it false until you have watched
-# the queue for a week or two and trust the scoring.
-auto_publish = false
+# Postings scoring at/above the `publish` threshold go live on their own.
+# Anything between `review` and `publish` still lands in the review queue, so
+# the borderline cases get eyes without holding up the clear matches.
+# Set false to gate everything behind manual approval instead.
+auto_publish = true
 
 
 # -----------------------------------------------------------------------------
@@ -130,21 +131,25 @@ employer = "EXOS"
 # -----------------------------------------------------------------------------
 # Publishers
 #
-# The review publisher receives everything needing human eyes. Every other
-# publisher receives only APPROVED postings -- and with auto_publish = false,
-# nothing is ever approved, so the live sinks stay silent until you flip it.
+# Clear matches (score >= thresholds.publish) go to the live publishers.
+# Borderline matches go to the review publisher. Both happen in the same run.
 # -----------------------------------------------------------------------------
 
-# Always keep this on. It is the audit trail.
-[[publisher]]
-kind = "review"
-path = "output/review-queue.md"
-
-# The feed the Squarespace page reads. See embed/squarespace-jobs.html.
+# THE WEBSITE. This is the primary destination.
+# Writes the board that the Squarespace page renders. Host this file somewhere
+# with CORS + HTTPS (GitHub Pages is free), then paste
+# embed/squarespace-jobs.html into a Code Block on the jobs page and point its
+# FEED_URL at it. Squarespace has no content-write API, so this is how a job
+# gets onto mopsnmoes.com without anyone touching the site.
 [[publisher]]
 kind = "jsonfeed"
 path = "output/jobs.json"
 retain_days = 45
+
+# Borderline matches only -- the audit trail. Keep this on.
+[[publisher]]
+kind = "review"
+path = "output/review-queue.md"
 
 # Renders the whole live board (read from source_feed), not just this run's
 # new arrivals -- otherwise a quiet run would blank the feed. Keep this
@@ -157,11 +162,9 @@ limit = 50
 title = "MOPs & MOEs — Tactical Human Performance Jobs"
 link = "https://www.mopsnmoes.com/jobs"
 
-# RECOMMENDED FIRST DESTINATION.
-# The mopsnmoes.com homepage already sends people to Discord for "the latest
-# news, job openings, and network opportunities across tactical human
-# performance", so that channel is the established home for this and needs no
-# site changes at all.
+# Optional second destination, on top of the website -- not instead of it.
+# The mopsnmoes.com homepage already points people to Discord for job
+# openings, so mirroring there costs nothing once the site board is live.
 # Server Settings -> Integrations -> Webhooks.
 # Uncomment and set DISCORD_WEBHOOK_URL together: an enabled publisher whose
 # ${VAR} is unset is a hard startup error, not a silent no-op.

@@ -1,17 +1,18 @@
 name: Tactical Jobs Scraper
 
-# Collects tactical human performance roles, scores them, and commits the
-# updated board + dedupe state back to the branch.
+# Collects tactical human performance roles, scores them, publishes the clear
+# matches to the website feed, and commits the updated board + dedupe state.
 #
-# Manual-first on purpose: run it from the Actions tab and read the summary
-# before trusting the schedule.
+# The scheduled run always publishes for real. The manual trigger exposes a
+# dry-run checkbox for when you want to inspect scoring without touching the
+# board.
 on:
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Score and report without publishing or writing state"
         type: boolean
-        default: true
+        default: false
   schedule:
     # 07:00 UTC daily = 02:00 in the site's timezone (America/Chicago, per
     # Squarespace config) — quiet hours, and after overnight postings land.

@@ -176,37 +176,42 @@ cleanup.
 Order matters for one pair: put `jsonfeed` **before** `rss`, since `rss`
 renders the board that `jsonfeed` writes.
 
-### Start with Discord
+### Discord, optionally, on top
 
 The MOPs & MOEs homepage already points people to Discord for "the latest
 news, **job openings**, and network opportunities across tactical human
-performance" — so that channel is the established destination, and it needs no
-site changes at all.
+performance," so mirroring the board there costs nothing once the site is
+live. Create a webhook under **Server Settings → Integrations → Webhooks**,
+set `DISCORD_WEBHOOK_URL`, and uncomment the `discord` publisher.
 
-Create a webhook under **Server Settings → Integrations → Webhooks**, set
-`DISCORD_WEBHOOK_URL`, and uncomment the `discord` publisher. That is the
-shortest path from this repo to something the community actually sees; the
-Squarespace embed is the follow-on once the scoring has been watched for a
-week or two.
+That is an addition to the website, not a substitute for it.
 
 Note that an uncommented publisher whose `${VAR}` is unset is a hard startup
 error, not a silent no-op — so enable it and set the secret together.
 
 ---
 
-## Nothing publishes without you
+## What publishes automatically
 
-`auto_publish` defaults to **false**. Every match lands in
-`output/review-queue.md` with its score, matched terms, and an approve/reject
-checkbox. The live publishers stay silent until you flip it.
+`auto_publish` is **on** in the example config — clear matches go live on
+their own, which is the point of the thing.
 
-Leave it off until you have watched the queue for a week or two. Publishing to
-a public brand site is outward-facing and hard to walk back, and a classifier
-regression is much cheaper to catch in a Markdown file than on the site.
+The scoring splits into three buckets, so "automatic" does not mean
+"unfiltered":
 
-When you do turn it on, only postings scoring at or above the `publish`
-threshold go out; anything between `review` and `publish` still goes to the
-queue.
+| Score | What happens |
+|---|---|
+| ≥ `publish` (14.0) | Goes live to the website feed automatically |
+| ≥ `review` (8.0) | Lands in `output/review-queue.md` for a human call |
+| below, or vetoed | Dropped |
+
+Every published run is still fully auditable: the review queue records the
+borderline calls, `state/seen.json` records everything ever published, and
+both are committed by the workflow so the history shows up in a diff.
+
+If you want a manual gate while you calibrate, set `auto_publish = false` and
+*everything* routes to the review queue instead. Raising `thresholds.publish`
+is the softer dial — it tightens what goes live without stopping the flow.
 
 ---
 
@@ -239,8 +244,9 @@ Add these repository secrets before enabling it:
 | `USAJOBS_USER_AGENT` | the `usajobs` source (your registered email) |
 | `DISCORD_WEBHOOK_URL` | the `discord` publisher, if enabled |
 
-The workflow is `workflow_dispatch` + `schedule`, so you can trigger a manual
-run from the Actions tab before trusting the schedule.
+The scheduled run publishes for real. The manual trigger from the Actions tab
+exposes a dry-run checkbox for when you want to inspect scoring without
+touching the board.
 
 ---
 
