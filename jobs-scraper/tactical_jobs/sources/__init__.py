@@ -9,6 +9,7 @@ from .ats import ATS_SOURCES
 from .ats_extra import ATS_EXTRA_SOURCES
 from .base import Source, html_to_text, looks_remote, parse_timestamp
 from .boards import BOARD_SOURCES
+from .capture import CAPTURE_SOURCES
 from .feeds import RSSSource
 from .govjobs import GOV_SOURCES
 from .jsonld import JSONLD_SOURCES
@@ -22,6 +23,7 @@ _REGISTRY: dict[str, type[Source]] = {
         *ATS_SOURCES,
         *ATS_EXTRA_SOURCES,
         *BOARD_SOURCES,
+        *CAPTURE_SOURCES,
         *GOV_SOURCES,
         *JSONLD_SOURCES,
         *WORKDAY_SOURCES,
