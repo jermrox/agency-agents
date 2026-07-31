@@ -4,21 +4,29 @@ WHY THIS EXISTS
 USAJOBS is not the whole federal picture, and a project that stops there
 misses a large share of the tactical human performance market:
 
+UNVERIFIED, ON PURPOSE: everything in the list below is the *reason* this
+adapter exists, not a checked claim. This module was written with no outbound
+network, so no board named here was opened, no coverage overlap with USAJOBS
+was measured, and no endpoint was confirmed to exist. Treat each line as a
+lead to check, not as fact.
+
 ``Non-appropriated fund (NAF) hiring``
-    Every installation's MWR / Fitness, Sports and Aquatics program staffs
-    fitness specialists, sports directors, aquatics coordinators, and
-    personal trainers through NAF, and NAF vacancies run on service-run
-    boards -- Army NAF, Navy MWR, Air Force NAF, MCCS -- not on USAJOBS.
-    This is the single biggest pool of installation-level fitness work that
-    is invisible to a USAJOBS-only scraper.
+    Installation MWR / Fitness, Sports and Aquatics programs staff fitness
+    specialists, sports directors, aquatics coordinators, and personal
+    trainers through NAF. Some NAF vacancies are also cross-posted to
+    USAJOBS and some appear only on service-run boards (Army NAF, Navy MWR,
+    Air Force NAF, MCCS); which way any given installation goes was not
+    verified here. The overlap is the thing worth measuring first.
 ``Service civilian career sites``
     Army, Navy, Air Force and DoD components each front their own civilian
-    careers site over the same requisitions, and several publish JSON the
-    front end already calls.
+    careers site. Whether any given one exposes a JSON endpoint its own
+    front end calls is exactly what the operator has to check in the browser
+    network tab -- it is assumed nowhere in this code.
 ``Defense Health Agency and VA``
     DHA staffs the military treatment facilities where physical therapists,
-    athletic trainers, and dietitians assigned to operational units actually
-    sit. VA runs its own recruitment site alongside its USAJOBS listings.
+    athletic trainers, and dietitians assigned to operational units are
+    likely to sit. VA runs its own recruitment site alongside its USAJOBS
+    listings. Neither was inspected.
 ``State and territorial guard / emergency management boards``
     Same pattern, smaller scale.
 
@@ -78,7 +86,7 @@ import logging
 import re
 import xml.etree.ElementTree as ET
 from typing import Any, Iterable
-from urllib.parse import unquote, urljoin, urlparse
+from urllib.parse import unquote, urlencode, urljoin, urlparse
 
 from ..http import FetchError, fetch, fetch_json, post_json
 from ..models import JobPosting
@@ -107,6 +115,26 @@ DEFAULT_MAX_SITEMAPS = 10
 
 MAP_TOKEN = "[]"
 """Path segment meaning "apply the rest of this path to every list element"."""
+
+
+def _require_text(source: Source, key: str) -> str:
+    """A required option that must be a non-empty string.
+
+    ``Source.require`` only checks that the key is present, so ``url = ""``
+    or a key whose value came back ``None`` used to survive ``str(...)`` as
+    the literal text ``"None"``. The board then "worked": it made a request
+    that failed to resolve, every record's relative link failed to join, and
+    the source reported zero jobs forever with no error anywhere. A silent
+    zero is the one failure mode this project cannot afford, so a blank
+    required option is an error.
+    """
+    value = source.require(key)
+    text = "" if value is None else str(value).strip()
+    if not text:
+        raise KeyError(
+            f"source '{source.name}' ({source.kind}) requires a non-empty '{key}'"
+        )
+    return text
 
 
 # ---------------------------------------------------------------------------
@@ -242,6 +270,35 @@ def _blob(value: Any, depth: int = 0) -> str:
     return ""
 
 
+def _with_query(url: str, params: dict[str, Any]) -> str:
+    """Append ``params`` to ``url``'s query string, preserving what is there."""
+    if not params:
+        return url
+    separator = "&" if urlparse(url).query else "?"
+    return f"{url}{separator}{urlencode(params)}"
+
+
+def _mapping(value: Any, source: str, kind: str, option: str) -> dict[str, Any]:
+    """Validate that a table-shaped option really is a table.
+
+    ``params = "page=1"`` or ``detail_field_map = ["title", "url"]`` are easy
+    things to type into TOML. Left unchecked they either blow up deep inside
+    ``urlencode`` with ``dictionary update sequence element #0 has length 1``
+    -- which names neither the source nor the option -- or, worse, raise
+    ``AttributeError`` once per record inside the per-record guard, so the
+    board reports zero jobs and no error at all. Failing here names the
+    source and the option.
+    """
+    if value is None:
+        return {}
+    if not isinstance(value, dict):
+        raise TypeError(
+            f"source '{source}' ({kind}) needs option '{option}' to be a table, "
+            f"got {type(value).__name__}"
+        )
+    return dict(value)
+
+
 def _absolute(candidate: Any, base: str) -> str:
     """Resolve a possibly relative link against ``base``.
 
@@ -327,7 +384,11 @@ class AgencyBoardSource(Source):
         Request body for POST mode. The page value is written into a copy of
         it, so the configured table is never mutated between pages.
     params / headers
-        Passed through to the request.
+        Passed through to the request. In POST mode ``params`` still goes on
+        the query string, since boards that POST a search body often want
+        both. Both must be tables; so must ``json_body`` and
+        ``detail_field_map``, and all four are checked before the first
+        request rather than failing per-record later.
     records_path
         Dot path to the array of records. ``""`` (the default) means the root
         of the response is itself the array. A single object resolves as a
@@ -362,8 +423,13 @@ class AgencyBoardSource(Source):
     kind = "agencyboard"
 
     def fetch(self) -> Iterable[JobPosting]:
-        url = str(self.require("url"))
+        url = _require_text(self, "url")
         field_map = self._field_map()
+        # Validated up front, before a single request: a mistyped table option
+        # must name itself here rather than fail per-record later, where the
+        # per-record guard would turn it into a silent zero-job run.
+        for option in ("params", "headers", "json_body", "detail_field_map"):
+            _mapping(self.options.get(option), self.name, self.kind, option)
         employer_default = self.options.get("employer") or self.name
         records_path = self.options.get("records_path", "")
         base_url = str(self.options.get("base_url") or "").strip() or url
@@ -451,26 +517,32 @@ class AgencyBoardSource(Source):
 
     def _request(self, url: str, page_param: str, page: int) -> Any:
         method = str(self.options.get("method") or "GET").strip().upper()
-        headers = self.options.get("headers") or None
+        headers = _mapping(self.options.get("headers"), self.name, self.kind, "headers")
+        params = _mapping(self.options.get("params"), self.name, self.kind, "params")
 
         if method == "POST":
-            body = dict(self.options.get("json_body") or {})
+            body = _mapping(
+                self.options.get("json_body"), self.name, self.kind, "json_body"
+            )
             if page_param:
                 body[page_param] = page
+            # ``post_json`` takes no params argument, but boards that POST a
+            # search body routinely still want query-string parameters (a
+            # locale, a tenant id). Dropping them silently would send a
+            # request the operator did not configure, so they go on the URL.
             return _decode(
                 post_json(
-                    url,
+                    _with_query(url, params),
                     body,
-                    headers={"Accept": "application/json", **(headers or {})},
+                    headers={"Accept": "application/json", **headers},
                 )
             )
 
         if method != "GET":
             log.warning("%s: unsupported method %r, using GET", self.name, method)
-        params = dict(self.options.get("params") or {})
         if page_param:
             params[page_param] = page
-        return fetch_json(url, params=params or None, headers=headers)
+        return fetch_json(url, params=params or None, headers=headers or None)
 
     def _records(self, payload: Any, records_path: Any) -> list[Any]:
         records = resolve_path(payload, records_path)
@@ -587,25 +659,39 @@ class AgencyBoardSource(Source):
 
         detail_record: Any = None
         spent_detail = False
+        # The detail pass is an enrichment, never a precondition. Anything it
+        # raises -- a template that will not render, a detail_field_map the
+        # board does not match, a payload shaped unlike the list -- must cost
+        # the extra text and nothing else. Before this guard, one bad
+        # detail_field_map made every posting on the board disappear with no
+        # error: the enrichment failed inside the caller's per-record
+        # try/except, which dropped the already-valid posting with it.
         if may_fetch_detail and len(description) < min_chars:
-            detail_url = self._detail_url(record, field_map, base_url)
-            if detail_url:
-                # The attempt is what costs a request, so the attempt is what
-                # the budget counts -- otherwise a board whose detail pages all
-                # 404 would fan out without limit.
-                spent_detail = True
-                detail_record = self._detail_record(self._detail(detail_url))
+            try:
+                detail_url = self._detail_url(record, field_map, base_url)
+                if detail_url:
+                    # The attempt is what costs a request, so the attempt is
+                    # what the budget counts -- otherwise a board whose detail
+                    # pages all 404 would fan out without limit.
+                    spent_detail = True
+                    detail_record = self._detail_record(self._detail(detail_url))
+            except Exception as exc:
+                log.warning("%s: detail pass failed, keeping list record: %s", self.name, exc)
+                detail_record = None
 
         if detail_record is not None:
-            detail_map = self.options.get("detail_field_map") or field_map
-            detail_text = self._describe(detail_record, detail_map)
-            if len(detail_text) > len(description):
-                description = detail_text
-            for field in _FIELDS:
-                if field in ("title", "url", "description"):
-                    continue
-                if not values.get(field):
-                    values[field] = self._resolve(detail_record, detail_map, field)
+            try:
+                detail_map = self.options.get("detail_field_map") or field_map
+                detail_text = self._describe(detail_record, detail_map)
+                if len(detail_text) > len(description):
+                    description = detail_text
+                for field in _FIELDS:
+                    if field in ("title", "url", "description"):
+                        continue
+                    if not values.get(field):
+                        values[field] = self._resolve(detail_record, detail_map, field)
+            except Exception as exc:
+                log.warning("%s: detail merge failed, keeping list record: %s", self.name, exc)
 
         location = flatten(values["location"])
         job_type = flatten(values["job_type"])
@@ -690,17 +776,44 @@ def _gunzip(body: Any) -> Any:
 _EXTENSION = re.compile(r"\.(?:html?|aspx?|php|jsp|do|xml|json)$", re.IGNORECASE)
 _SEPARATORS = re.compile(r"[-_+]+")
 
+_ACRONYMS = frozenset(
+    {
+        # Programs and commands this project exists to track.
+        "h2f", "thor3", "potff", "usasoc", "socom", "marsoc", "afsoc", "jsoc",
+        "sof", "nsw", "mwr", "naf", "mccs", "dha", "dod", "va", "ems", "emt",
+        # Credentials that show up in slugs.
+        "cscs", "tsac", "atc", "nsca", "acsm",
+    }
+)
+"""Slug tokens rendered in full caps rather than title case.
+
+Real career-site slugs are lowercase, so the "leave words that already carry
+an uppercase letter alone" rule never fires on them: ``athletic-trainer-h2f``
+came out as "Athletic Trainer H2f". This is presentation only -- the
+classifier lowercases before matching, so nothing about scoring depends on
+it -- but the review queue is read by a human, and "H2f" and "Potff" read as
+typos in the one column that is supposed to say what the job is.
+"""
+
+_GENERIC_SEGMENTS = frozenset(
+    {
+        "job", "jobs", "career", "careers", "vacancy", "vacancies",
+        "position", "positions", "opening", "openings", "listing", "listings",
+        "posting", "postings", "opportunity", "opportunities",
+        "detail", "details", "view", "search", "apply", "index", "home",
+        "page", "en", "en us", "us en", "content",
+    }
+)
+"""Path segments that describe the site's routing, never the job."""
+
 
 def _titleize(text: str) -> str:
-    """Capitalize a de-slugified string without flattening acronyms.
-
-    ``str.title()`` would turn "USASOC" into "Usasoc" and "H2F" into "H2f",
-    and those tokens are exactly the ones the classifier keys on, so a word
-    that already carries an uppercase letter is left alone.
-    """
+    """Capitalize a de-slugified string without flattening acronyms."""
     words = []
     for word in text.split():
-        if any(character.isupper() for character in word):
+        if word.lower() in _ACRONYMS:
+            words.append(word.upper())
+        elif any(character.isupper() for character in word):
             words.append(word)
         else:
             words.append(word[:1].upper() + word[1:])
@@ -708,13 +821,21 @@ def _titleize(text: str) -> str:
 
 
 def deslugify(url: str) -> str:
-    """Derive a display title from a job URL's final path segment.
+    """Derive a display title from a job URL's path.
 
     ``/careers/jobs/tactical-strength-and-conditioning-coach-fort-bragg`` is
     a perfectly readable title once the hyphens come out. A purely numeric
-    final segment (``/vacancy/948213``) is not, so the last segment carrying
-    letters wins instead -- which is what recovers a usable title from the
+    final segment (``/vacancy/948213``) is not, so an earlier *descriptive*
+    segment wins instead -- which recovers a usable title from the
     ``/jobs/athletic-trainer/948213`` shape many boards use.
+
+    "Descriptive" has to exclude the site's own routing words. Scanning back
+    for merely "the last segment containing letters" turned every URL on a
+    ``/jobs/<id>`` board into the title "Jobs" -- one identical, meaningless
+    title for the entire board, which is strictly worse than the id, because
+    the id at least distinguishes the rows in the review queue. So a generic
+    segment is skipped too, and if nothing descriptive is left the final
+    segment is used verbatim, number and all.
     """
     path = urlparse(str(url or "")).path
     segments = [segment for segment in path.split("/") if segment.strip()]
@@ -732,7 +853,9 @@ def deslugify(url: str) -> str:
         (
             text
             for text in reversed(cleaned)
-            if text and any(character.isalpha() for character in text)
+            if text
+            and any(character.isalpha() for character in text)
+            and text.lower() not in _GENERIC_SEGMENTS
         ),
         "",
     )
@@ -787,15 +910,15 @@ class SitemapJobsSource(Source):
     kind = "sitemapjobs"
 
     def fetch(self) -> Iterable[JobPosting]:
-        sitemap = str(self.require("sitemap")).strip()
-        if not sitemap:
-            raise KeyError(
-                f"source '{self.name}' ({self.kind}) requires a non-empty 'sitemap'"
-            )
+        sitemap = _require_text(self, "sitemap")
         employer = self.options.get("employer") or self.name
         includes = _as_list(self.options.get("url_include"))
         excludes = _as_list(self.options.get("url_exclude"))
-        max_urls = as_int(self.options.get("max_urls"), DEFAULT_MAX_URLS)
+        # Clamped, not just coerced. A negative value used to switch the cap
+        # off entirely, which is the opposite of what an option named
+        # "max_urls" should ever do on an adapter that walks a stranger's
+        # whole sitemap.
+        max_urls = max(0, as_int(self.options.get("max_urls"), DEFAULT_MAX_URLS))
         max_sitemaps = max(0, as_int(self.options.get("max_sitemaps"), DEFAULT_MAX_SITEMAPS))
 
         entries, children = self._read_sitemap(sitemap, required=True)
@@ -828,7 +951,7 @@ class SitemapJobsSource(Source):
                 continue
             if excludes and any(fragment in url for fragment in excludes):
                 continue
-            if max_urls >= 0 and emitted >= max_urls:
+            if emitted >= max_urls:
                 break
             posting = self._to_posting(url, lastmod, employer)
             if posting is None:

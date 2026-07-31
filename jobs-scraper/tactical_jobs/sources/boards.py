@@ -89,6 +89,17 @@ actually needs one.
 MIN_REGION_CHARS = 120
 """Below this a "description" region on a detail page is a label, not a body."""
 
+DETAIL_RETRIES = 1
+"""Detail pages get one attempt; the feed keeps the full retry budget.
+
+The feed request is load-bearing -- lose it and the board contributes nothing,
+so it is worth retrying. A detail page is enrichment on a record we already
+have. At the default budget of 40 detail pages, letting each one exhaust the
+three attempts and backoff that :func:`~tactical_jobs.http.fetch` defaults to
+means a single unresponsive host can hold a nightly run for the better part of
+an hour, and the reward for winning that wait is one description.
+"""
+
 # ---------------------------------------------------------------------------
 # option coercion
 #
@@ -1037,7 +1048,7 @@ class AssociationBoardSource(Source):
         if detail_budget <= 0 or not link or len(description) >= min_chars:
             return description, False
         try:
-            body = fetch(link)
+            body = fetch(link, retries=DETAIL_RETRIES)
         except Exception as exc:
             log.debug("%s: detail fetch failed for %s: %s", self.name, link, exc)
             return description, True

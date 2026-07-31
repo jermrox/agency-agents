@@ -28,10 +28,19 @@ module was written in an environment with **no outbound network**, so nothing
 here has been asked. Every single entry therefore carries ``verified=False``,
 and :func:`to_toml` emits unverified entries **commented out**.
 
-That last part is the load-bearing design decision. A wrong board token is the
-worst failure mode this project has: it does not crash, it returns an empty list
-forever, and an empty list is indistinguishable from "that employer is not
-hiring right now". Comment-by-default converts a silent, permanent miss into a
+That last part is the load-bearing design decision, and it is worth being precise
+about why, because the obvious justification is only half true. A *nonexistent*
+token is loud: ``boards-api.greenhouse.io`` answers 404, :func:`tactical_jobs.http.fetch`
+raises ``FetchError``, and ``pipeline`` records an ``ERROR`` line in the run
+summary. That case takes care of itself.
+
+The dangerous case is the token that is wrong but alive. A NEOGOV agency slug
+belonging to a different city, a USAJOBS export URL whose filters exclude the
+roles you wanted, a careers sitemap whose ``url_include`` pattern matches nothing,
+a Workday tenant that resolves but serves a different business unit -- every one
+of those returns HTTP 200 and zero postings, or worse, somebody else's postings.
+Zero is indistinguishable from "that employer is not hiring right now", so nobody
+investigates. Comment-by-default converts a silent, permanent miss into a
 thirty-second copy-paste a human performs while looking at the endpoint's actual
 response. The cost of that friction is one minute per employer. The cost of
 skipping it is not noticing for six months.
@@ -63,9 +72,10 @@ registry should never blur them.
 
 from __future__ import annotations
 
+import copy
 import re
 import textwrap
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Iterator, Sequence
 
 __all__ = [
@@ -109,6 +119,7 @@ of relevant listings anywhere in this niche.
 
 SOURCE_KINDS: frozenset[str] = frozenset(
     {
+        "agencyboard",
         "ashby",
         "assocboard",
         "bamboohr",
@@ -125,6 +136,7 @@ SOURCE_KINDS: frozenset[str] = frozenset(
         "recruitee",
         "rippling",
         "rss",
+        "sitemapjobs",
         "smartrecruiters",
         "teamtailor",
         "usajobs",
@@ -137,7 +149,12 @@ SOURCE_KINDS: frozenset[str] = frozenset(
 Duplicated deliberately rather than imported from ``sources``: this module is a
 data file about the outside world and importing the adapter registry would make
 every employer lookup drag in urllib, the HTML parsers, and every adapter class.
-The test suite cross-checks the two so the duplication cannot drift silently.
+
+Duplication rots, so ``test_source_kinds_matches_the_shipped_adapters`` asserts
+set *equality* against ``sources.available_kinds()`` rather than mere containment.
+Containment was the original check and it silently tolerated this constant
+missing ``agencyboard`` and ``sitemapjobs`` -- two adapters an employer entry
+might legitimately want, invisible to anyone reading only this file.
 """
 
 CREDENTIALED_KINDS: frozenset[str] = frozenset({"usajobs", "jazzhr", "teamtailor"})
@@ -265,6 +282,13 @@ class Employer:
         Raises ``ValueError`` when :attr:`ats` is ``None``. There is no
         defensible default kind, and picking one would manufacture exactly the
         false confidence this module exists to prevent.
+
+        The returned table is a *deep* copy. A shallow one looks safe and is not:
+        several entries carry list options (``search_terms``, ``url_include``),
+        and with a shallow copy ``cfg["search_terms"].append(...)`` reaches
+        through and edits the module-level :data:`REGISTRY` for the rest of the
+        process, which would make one caller's tweak leak into every later
+        lookup.
         """
         if self.ats is None:
             raise ValueError(
@@ -274,7 +298,7 @@ class Employer:
                 f"to, then set 'ats' to the matching adapter kind."
             )
         config: dict[str, Any] = {"kind": self.ats, "name": self.slug}
-        config.update(self.options)
+        config.update(copy.deepcopy(self.options))
         config.setdefault("employer", self.name)
         return config
 
@@ -317,8 +341,16 @@ VERIFICATION_HINTS: dict[str, str] = {
         "open one job detail page, view source, and confirm a "
         '<script type="application/ld+json"> block with "@type": "JobPosting"'
     ),
-    "rss": "fetch the feed URL in a browser and confirm it returns XML with recent items",
-    "jobsrss": "fetch the feed URL in a browser and confirm it returns XML with recent items",
+    "rss": (
+        "run the search in a browser first and confirm it offers a feed or export "
+        "URL at all, then fetch that URL and confirm it returns XML with recent "
+        "items rather than an HTML page"
+    ),
+    "jobsrss": (
+        "fetch the feed URL and confirm it returns XML listing items; check that a "
+        "title parses into role and employer, since employer_from='title' depends "
+        "on that format"
+    ),
     "assocboard": "fetch the board URL and confirm it returns JSON or RSS, not an HTML login wall",
     "knownboards": "run with --dry-run and read which of the bundled boards answered",
     "genericjson": "fetch the URL and confirm the JSON shape still matches field_map",
@@ -335,6 +367,24 @@ def verification_hint(ats: str | None) -> str:
     return VERIFICATION_HINTS.get(
         ats, "confirm the endpoint answers before enabling this source"
     )
+
+
+_USAJOBS_FEED_CAVEAT = (
+    " Read the vendor guess here strictly: the federal entries assume USAJOBS "
+    "still publishes a keyless feed or export URL alongside its credentialed "
+    "REST API, which sources.keyless.toml already flags as unverified from this "
+    "sandbox. That assumption is itself the thing to check first. If no feed "
+    "exists, the alternatives are the announcement pages via jsonld or the "
+    "usajobs adapter -- and the usajobs adapter needs an API key, which puts it "
+    "out of scope for this deployment, so it is not a fallback here."
+)
+"""Appended to every entry whose route depends on a USAJOBS feed existing.
+
+The original notes described that route as settled fact ("the keyless route is
+the RSS/export link that a USAJOBS search offers"). Eleven entries rest on it,
+and nobody has confirmed the feed exists, so the assumption is stated where
+somebody working the list will trip over it.
+"""
 
 
 def placeholder_options(employer: Employer) -> tuple[str, ...]:
@@ -570,13 +620,17 @@ REGISTRY: tuple[Employer, ...] = (
         notes=(
             "One of the longest-running providers of military human performance and "
             "resilience staffing, which makes it a high-value target. Complicated by "
-            "corporate history: Magellan Federal was acquired into Acuity "
-            "International, so postings may live on either careers site. Vendor is a "
-            "guess and the tenant is genuinely unknown, hence the placeholder. "
-            "Confirm by checking both the Magellan Federal and Acuity International "
-            "careers pages and reading the tenant out of whichever is Workday."
+            "corporate history: Magellan Federal is reported to have been acquired "
+            "into Acuity International, so postings may live on either careers "
+            "site. That reporting is not sourced in EMPLOYERS.md and Acuity is "
+            "kept out of aliases regardless -- it is a larger parent with "
+            "unrelated business lines, and matching its name here would attribute "
+            "all of it to this entry. Vendor is a guess and the tenant is "
+            "genuinely unknown, hence the placeholder. Confirm by checking both "
+            "the Magellan Federal and Acuity International careers pages and "
+            "reading the tenant out of whichever is Workday."
         ),
-        aliases=("Magellan Health Federal", "Acuity International"),
+        aliases=("Magellan Health Federal",),
     ),
     Employer(
         slug="icf",
@@ -622,12 +676,16 @@ REGISTRY: tuple[Employer, ...] = (
             "max_urls": 300,
         },
         notes=(
-            "Alaska Native Corporation (Afognak family) with DoD services and "
-            "training support contracts. Vendor is unconfirmed and likely iCIMS, so "
-            "jsonld is the assumed route. Confirm by checking a job detail page for "
-            "JobPosting ld+json markup and then locating the sitemap."
+            "Alaska Native Corporation with DoD services and training support "
+            "contracts; part of the Afognak Native Corporation family. Afognak is "
+            "the parent, not another name for Alutiiq, so it is recorded here "
+            "rather than in aliases -- a lookup that resolved 'Afognak' to this "
+            "entry would mis-attribute every sibling subsidiary's postings. Vendor "
+            "is unconfirmed and likely iCIMS, so jsonld is the assumed route. "
+            "Confirm by checking a job detail page for JobPosting ld+json markup "
+            "and then locating the sitemap."
         ),
-        aliases=("Afognak Native Corporation", "Alutiiq LLC"),
+        aliases=("Alutiiq LLC",),
     ),
     Employer(
         slug="akima",
@@ -642,11 +700,14 @@ REGISTRY: tuple[Employer, ...] = (
         notes=(
             "Alaska Native Corporation operating many subsidiaries across DoD "
             "services; postings are frequently branded by subsidiary rather than by "
-            "Akima, which is worth knowing before judging the employer field. "
-            "Vendor unconfirmed, jsonld assumed. Confirm by inspecting a job detail "
-            "page for ld+json markup."
+            "Akima, which is worth knowing before judging the employer field. Its "
+            "parent is NANA Regional Corporation; that stays in this note and out "
+            "of aliases, because NANA owns a great deal that has nothing to do "
+            "with Akima and resolving its name here would attribute those postings "
+            "to the wrong employer. Vendor unconfirmed, jsonld assumed. Confirm by "
+            "inspecting a job detail page for ld+json markup."
         ),
-        aliases=("Akima LLC", "NANA Regional Corporation"),
+        aliases=("Akima LLC",),
     ),
     Employer(
         slug="aptive",
@@ -706,13 +767,16 @@ REGISTRY: tuple[Employer, ...] = (
         notes=(
             "Places athletic trainers directly with US military units and posts "
             "through athletictrainerjob.com, which makes it unusually concentrated "
-            "for this niche. The site is not a known JSON ATS, so jsonld is the "
-            "assumed route and the sitemap URL is unknown. Confirm by opening a "
-            "posting on athletictrainerjob.com and checking for JobPosting ld+json "
-            "markup; if absent, the rss adapter against any feed the site offers is "
-            "the fallback."
+            "for this niche (EMPLOYERS.md). What the acronym stands for is not "
+            "recorded there and is deliberately not guessed here -- an invented "
+            "expansion in aliases would resolve real postings to an organization "
+            "that may not exist under that name. The site is not a known JSON ATS, "
+            "so jsonld is the assumed route and the sitemap URL is unknown. "
+            "Confirm by opening a posting on athletictrainerjob.com and checking "
+            "for JobPosting ld+json markup; if absent, the rss adapter against any "
+            "feed the site offers is the fallback."
         ),
-        aliases=("Professional Sports Institute", "athletictrainerjob.com"),
+        aliases=("athletictrainerjob.com",),
     ),
     Employer(
         slug="sword-performance",
@@ -786,10 +850,11 @@ REGISTRY: tuple[Employer, ...] = (
             "trainers, physical therapists, dietitians, and cognitive performance "
             "specialists, and a share of those billets are government civilian "
             "rather than contractor. The structured USAJOBS API needs a key this "
-            "project will not use, so the keyless route is the RSS/export link that "
-            "a USAJOBS search offers. Confirm by running the search in a browser "
-            "-- keyword 'Holistic Health and Fitness', agency Department of the "
-            "Army -- and pasting the export URL over the placeholder."
+            "project will not use, so the assumed keyless route is an RSS or "
+            "export link off a USAJOBS search. Confirm by running the search in a "
+            "browser -- keyword 'Holistic Health and Fitness', agency Department "
+            "of the Army -- and pasting the export URL over the placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("H2F", "Holistic Health and Fitness", "Department of the Army", "U.S. Army"),
     ),
@@ -805,6 +870,7 @@ REGISTRY: tuple[Employer, ...] = (
             "federal entries: build the search on USAJOBS and paste its RSS/export "
             "link over the placeholder. Confirm the feed returns recent items "
             "before enabling."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("DHA", "Military Health System"),
     ),
@@ -820,6 +886,7 @@ REGISTRY: tuple[Employer, ...] = (
             "so expect the classifier to reject much of the volume -- that is the "
             "correct outcome, not a broken source. Confirm the USAJOBS export URL "
             "in a browser before pasting it over the placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("VA", "Veterans Affairs", "Veterans Health Administration", "VHA"),
     ),
@@ -836,6 +903,7 @@ REGISTRY: tuple[Employer, ...] = (
             "billets are contractor-held and will surface through the primes "
             "instead. Confirm the USAJOBS export URL and paste it over the "
             "placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("NSW", "WARCOM", "Naval Special Warfare", "NSWC"),
     ),
@@ -850,6 +918,7 @@ REGISTRY: tuple[Employer, ...] = (
             "and set much of its template. Search THOR3 as well as the spelled-out "
             "command name -- postings use both. Confirm the USAJOBS export URL "
             "before pasting it over the placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("USASOC", "THOR3", "Army Special Operations Command"),
     ),
@@ -863,6 +932,7 @@ REGISTRY: tuple[Employer, ...] = (
             "Fields human performance teams supporting special tactics and aircrew "
             "populations. Confirm the USAJOBS export URL in a browser and paste it "
             "over the placeholder before enabling."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("AFSOC", "Air Force Special Operations"),
     ),
@@ -876,6 +946,7 @@ REGISTRY: tuple[Employer, ...] = (
             "Fields performance and human optimization staff for Marine Raider "
             "units. Confirm the USAJOBS export URL before pasting it over the "
             "placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("MARSOC", "Marine Raider Regiment", "MARSOC HP"),
     ),
@@ -891,6 +962,7 @@ REGISTRY: tuple[Employer, ...] = (
             "billets also exist. Search 'Preservation of the Force' as well as the "
             "acronym. Confirm the USAJOBS export URL before pasting it over the "
             "placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("POTFF", "USSOCOM", "SOCOM", "Preservation of the Force and Family"),
     ),
@@ -1096,6 +1168,7 @@ REGISTRY: tuple[Employer, ...] = (
             "through federal channels. Confirm the USAJOBS export URL in a browser "
             "before pasting it over the placeholder; some USU roles run through "
             "affiliated foundations instead, so check the HJF entry too."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("USU", "USUHS", "CHAMP", "HPRC", "Consortium for Health and Military Performance"),
     ),
@@ -1110,6 +1183,7 @@ REGISTRY: tuple[Employer, ...] = (
             "and hires exercise physiologists and research scientists. Federal "
             "hiring, so the same keyless USAJOBS export route applies. Confirm the "
             "URL before pasting it over the placeholder."
+            + _USAJOBS_FEED_CAVEAT
         ),
         aliases=("USARIEM", "Army Research Institute of Environmental Medicine"),
     ),
@@ -1139,11 +1213,11 @@ REGISTRY: tuple[Employer, ...] = (
         notes=(
             "Team Serco subcontractor on the Army H2F award and a long-running "
             "military medical research nonprofit that places research and clinical "
-            "staff at military treatment facilities. ATS not identified and not "
-            "guessed. Confirm by opening the foundation's careers page and noting "
-            "the platform."
+            "staff at military treatment facilities (EMPLOYERS.md lists it in Team "
+            "Serco). ATS not identified and not guessed. Confirm by opening the "
+            "foundation's careers page and noting the platform."
         ),
-        aliases=("Geneva Foundation", "Geneva USA"),
+        aliases=("Geneva Foundation",),
     ),
     Employer(
         slug="henry-jackson-foundation",
@@ -1173,7 +1247,7 @@ REGISTRY: tuple[Employer, ...] = (
 # ---------------------------------------------------------------------------
 
 
-def _build_index() -> dict[str, Employer]:
+def _build_index(registry: Sequence[Employer]) -> dict[str, Employer]:
     """Map every recognizable spelling to its employer.
 
     Strict keys are inserted before loose ones so an exact name always beats a
@@ -1182,10 +1256,12 @@ def _build_index() -> dict[str, Employer]:
     regardless of how the table grows.
     """
     index: dict[str, Employer] = {}
-    for employer in REGISTRY:
+    for employer in registry:
         for key in employer.search_keys():
-            index.setdefault(_normalize(key), employer)
-    for employer in REGISTRY:
+            strict = _normalize(key)
+            if strict:
+                index.setdefault(strict, employer)
+    for employer in registry:
         for key in employer.search_keys():
             loose = _loose(key)
             if loose:
@@ -1193,7 +1269,31 @@ def _build_index() -> dict[str, Employer]:
     return index
 
 
-_INDEX: dict[str, Employer] = _build_index()
+_INDEX_CACHE: tuple[Sequence[Employer], dict[str, Employer]] | None = None
+
+
+def _index() -> dict[str, Employer]:
+    """The name index for whatever :data:`REGISTRY` currently is.
+
+    Built once and cached, but keyed on the identity of the registry tuple
+    rather than computed at import. :func:`by_slug` and :func:`by_category`
+    read ``REGISTRY`` live, so an index frozen at import time would make
+    :func:`match_employer` disagree with them the moment a test (or a caller
+    assembling an alternate registry) swapped the tuple out -- one lookup
+    answering from the new table and another from the old one is the kind of
+    inconsistency that takes an afternoon to spot.
+
+    The cache holds the registry object itself rather than its ``id()``: keeping
+    a reference is what makes the identity check sound, since a freed tuple's
+    address can be handed to a later one and a bare id comparison would then
+    serve a stale index.
+    """
+    global _INDEX_CACHE
+    cached = _INDEX_CACHE
+    if cached is None or cached[0] is not REGISTRY:
+        cached = (REGISTRY, _build_index(REGISTRY))
+        _INDEX_CACHE = cached
+    return cached[1]
 
 
 def all_employers() -> tuple[Employer, ...]:
@@ -1202,14 +1302,25 @@ def all_employers() -> tuple[Employer, ...]:
 
 
 def by_category(category: str) -> tuple[Employer, ...]:
-    """Entries in one category. An unknown category yields an empty tuple."""
+    """Entries in one category. An unknown category yields an empty tuple.
+
+    A non-string argument is a miss, not a crash: these lookups are fed by
+    scraped and config-supplied values, and callers reconciling a posting
+    against the registry should not have to pre-validate types.
+    """
+    if not isinstance(category, str):
+        return ()
     wanted = category.strip().lower()
     return tuple(e for e in REGISTRY if e.category == wanted)
 
 
 def by_slug(slug: str) -> Employer | None:
-    """Exact slug lookup."""
+    """Exact slug lookup. ``None``, a non-string, or an unknown slug all miss."""
+    if not isinstance(slug, str):
+        return None
     target = slug.strip().lower()
+    if not target:
+        return None
     return next((e for e in REGISTRY if e.slug == target), None)
 
 
@@ -1226,14 +1337,22 @@ def match_employer(name: str) -> Employer | None:
     resolve to "U.S. Army Holistic Health and Fitness", because a wrong match
     here attributes a posting to the wrong organization, which is worse than no
     match at all.
+
+    For the same reason a parent company is not an alias. "NANA Regional
+    Corporation" must not resolve to Akima and "Afognak" must not resolve to
+    Alutiiq: the parent has many subsidiaries doing unrelated work, so folding
+    it in would mis-attribute their postings. Those relationships live in
+    ``notes``, where a human reads them, rather than in ``aliases``, where a
+    lookup would act on them.
     """
-    if not name or not name.strip():
+    if not isinstance(name, str) or not name.strip():
         return None
-    found = _INDEX.get(_normalize(name))
+    index = _index()
+    found = index.get(_normalize(name))
     if found is not None:
         return found
     loose = _loose(name)
-    return _INDEX.get(loose) if loose else None
+    return index.get(loose) if loose else None
 
 
 def verified_count() -> tuple[int, int]:
@@ -1263,10 +1382,15 @@ _HEADER = """\
 # !! EVERY UNVERIFIED ENTRY BELOW IS COMMENTED OUT ON PURPOSE !!
 #
 # None of these board tokens, tenants, agency slugs, or feed URLs has been
-# confirmed against a live endpoint. They are researched guesses. A wrong token
-# does not raise -- it returns an empty list forever, which is indistinguishable
-# from "this employer is not hiring". So nothing goes live until a human has
-# looked at an actual response.
+# confirmed against a live endpoint. They are researched guesses.
+#
+# A token that does not exist is loud: the fetch 404s and the run summary shows
+# an ERROR line. The one to worry about is the token that is wrong but alive --
+# another city's NEOGOV slug, a search URL whose filters exclude the roles you
+# wanted, a sitemap whose url_include matches nothing. Those return HTTP 200 and
+# zero postings, which reads exactly like "this employer is not hiring", so
+# nobody ever investigates. Hence: nothing goes live until a human has looked at
+# an actual response.
 #
 # TO ENABLE ONE ENTRY
 #   1. Run the check printed above its block.
@@ -1281,15 +1405,72 @@ _HEADER = """\
 #            https://{tenant}.{data_center}.myworkdayjobs.com/{site}
 #   NEOGOV:  read the slug out of
 #            https://www.governmentjobs.com/careers/<agency>
+#
+# All four checks are anonymous: no API key, no account, no signup. Any entry
+# that needed one would not be in this registry at all.
 # =============================================================================
 """
 
 
+_SIMPLE_ESCAPES = {
+    "\\": "\\\\",
+    '"': '\\"',
+    "\n": "\\n",
+    "\r": "\\r",
+    "\t": "\\t",
+    "\b": "\\b",
+    "\f": "\\f",
+}
+
+
+_EXTRA_LINE_BOUNDARIES = frozenset("\x85  ")
+"""Line boundaries to :meth:`str.splitlines` that are not C0 control characters.
+
+NEL and the Unicode line/paragraph separators. TOML itself is happy to carry them
+inside a basic string, but every Python reader of the rendered file -- including
+this module's own guard -- splits on them, so an unescaped one puts the tail of a
+value on what looks like its own unprefixed line. The remaining ``splitlines``
+boundaries (``\\x1c``-``\\x1e``) are C0 and already covered.
+"""
+
+
+def _escape(text: str) -> str:
+    r"""Escape a TOML basic string, control characters included.
+
+    Every C0 control character has to go, not just the three that look like
+    whitespace. A stray ``\r`` used to survive verbatim, and a carriage return
+    is a line boundary to ``str.splitlines()`` -- which is how the rendered file
+    is read back and how the comment-out guard reasons about it. The result was
+    that a value containing ``\r`` split into a second physical line carrying no
+    ``#`` prefix, i.e. live TOML inside a block that was supposed to be inert.
+    That is precisely the failure this module exists to make impossible, so the
+    escape table is exhaustive rather than convenient -- "exhaustive" being what
+    the parametrized breakout test in tests/test_registry.py holds it to.
+    """
+    out: list[str] = []
+    for char in text:
+        escape = _SIMPLE_ESCAPES.get(char)
+        if escape is not None:
+            out.append(escape)
+        elif char < "\x20" or char == "\x7f" or char in _EXTRA_LINE_BOUNDARIES:
+            out.append(f"\\u{ord(char):04X}")
+        else:
+            out.append(char)
+    return "".join(out)
+
+
 def _toml_value(value: Any) -> str:
-    """Render a Python value as a TOML scalar or array.
+    """Render a Python value as a TOML scalar, array, or inline table.
 
     ``bool`` is checked before ``int`` because ``True`` is an ``int`` in Python
     and would otherwise render as ``1``, which TOML reads back as a number.
+
+    ``dict`` becomes an inline table. It used to fall through to ``str()`` and
+    emit a quoted Python repr -- ``"{'title': 'name'}"`` -- which parses as a
+    *string*, so the ``field_map`` that ``genericjson`` and ``agencyboard``
+    require would have been silently mangled into nonsense the adapter cannot
+    use. No seeded entry needs one today; the renderer should not be waiting to
+    corrupt the first one that does.
     """
     if isinstance(value, bool):
         return "true" if value else "false"
@@ -1297,27 +1478,53 @@ def _toml_value(value: Any) -> str:
         return repr(value)
     if isinstance(value, (list, tuple)):
         return "[" + ", ".join(_toml_value(item) for item in value) + "]"
-    text = (
-        str(value)
-        .replace("\\", "\\\\")
-        .replace('"', '\\"')
-        .replace("\n", "\\n")
-        .replace("\t", "\\t")
-    )
-    return f'"{text}"'
+    if isinstance(value, dict):
+        inner = ", ".join(
+            f"{_toml_key(str(key))} = {_toml_value(item)}" for key, item in value.items()
+        )
+        return "{ " + inner + " }" if inner else "{}"
+    return f'"{_escape(str(value))}"'
+
+
+_BARE_KEY = re.compile(r"^[A-Za-z0-9_-]+$")
+
+
+def _toml_key(key: str) -> str:
+    """A bare key where TOML allows one, a quoted key otherwise."""
+    return key if _BARE_KEY.match(key) else f'"{_escape(key)}"'
+
+
+_CONTROL = re.compile(r"[\x00-\x08\x0b-\x1f\x7f]")
 
 
 def _comment_lines(text: str, *, width: int = 74) -> Iterator[str]:
-    for paragraph in text.split("\n"):
-        wrapped = textwrap.wrap(paragraph.strip(), width=width) or [""]
+    """Wrap arbitrary prose into ``#`` comment lines that cannot escape.
+
+    ``splitlines`` rather than ``split("\\n")``: it also breaks on ``\\r``,
+    ``\\x0b``, ``\\x0c``, ``\\x85`` and the Unicode separators, every one of
+    which a downstream reader would treat as a new line. Splitting on them here
+    guarantees each fragment gets its own ``#``. Whatever control characters
+    remain inside a fragment are replaced, since TOML forbids them in comments.
+    """
+    for paragraph in str(text).splitlines() or [""]:
+        cleaned = _CONTROL.sub(" ", paragraph).strip()
+        wrapped = textwrap.wrap(cleaned, width=width) or [""]
         for line in wrapped:
             yield f"# {line}".rstrip()
 
 
 def _render(employer: Employer) -> list[str]:
-    """One employer as TOML lines, commented out unless verified."""
+    """One employer as TOML lines, commented out unless verified.
+
+    The title line goes through :func:`_comment_lines` like everything else.
+    Formatting it directly was a hole: a name carrying a newline or carriage
+    return would have put its tail on an unprefixed line, and the display name
+    is the field most likely to arrive from somewhere other than this file.
+    """
     status = "VERIFIED" if employer.verified else "UNVERIFIED -- confirm before enabling"
-    lines = [f"# {employer.name}  [{employer.category}]  {status}"]
+    lines = list(
+        _comment_lines(f"{employer.name}  [{employer.category}]  {status}", width=90)
+    )
 
     if employer.aliases:
         lines.extend(_comment_lines(f"also known as: {', '.join(employer.aliases)}"))
@@ -1344,13 +1551,33 @@ def _render(employer: Employer) -> list[str]:
     body = ["[[source]]"]
     body.append(f"kind = {_toml_value(config['kind'])}")
     body.append(f"name = {_toml_value(config['name'])}")
-    body.extend(
-        f"{key} = {_toml_value(value)}"
-        for key, value in config.items()
-        if key not in ("kind", "name")
-    )
+    for key, value in config.items():
+        if key in ("kind", "name"):
+            continue
+        if value is None:
+            # TOML has no null. Emitting one used to produce the string "None",
+            # which an adapter would dutifully use as a board token.
+            lines.extend(
+                _comment_lines(f"omitted (no TOML null): option {key!r} was None")
+            )
+            continue
+        body.append(f"{_toml_key(str(key))} = {_toml_value(value)}")
 
-    prefix = "" if employer.verified else "# "
+    # Verified plus an unfilled placeholder is a contradiction, and the naive
+    # rule ("verified goes live") would resolve it by shipping
+    # board_token = "PASTE_..." as live config. Refuse: keep it commented and
+    # say why. The flag asserts somebody checked; a placeholder proves nobody
+    # finished.
+    if employer.verified and missing:
+        lines.extend(
+            _comment_lines(
+                "NOT EMITTED LIVE: this entry is marked verified but still holds "
+                f"{PLACEHOLDER_PREFIX} placeholders ({', '.join(missing)}). Fill "
+                "them in, re-run the check above, then uncomment."
+            )
+        )
+
+    prefix = "" if (employer.verified and not missing) else "# "
     lines.extend(prefix + line for line in body)
     return lines
 

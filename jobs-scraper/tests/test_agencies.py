@@ -251,6 +251,59 @@ def test_field_map_that_is_not_a_table_is_rejected():
         list(source.fetch())
 
 
+# -- blank required options ------------------------------------------------
+#
+# Regression: ``str(self.require("url"))`` turned a None or blank option into
+# the literal text "None", so the source made a doomed request, failed to
+# join every relative link against it, and reported zero jobs with no error.
+# A board that is silently empty forever is the worst outcome this project
+# has, so a blank required option has to be loud.
+
+
+@pytest.mark.parametrize("bad", [None, "", "   "])
+def test_blank_url_option_is_rejected_rather_than_stringified(bad, monkeypatch):
+    install_json(monkeypatch, static(BOARD_PAYLOAD))
+
+    source = AgencyBoardSource("naf", _board(url=bad))
+    with pytest.raises(KeyError, match="requires a non-empty 'url'"):
+        list(source.fetch())
+
+
+@pytest.mark.parametrize("bad", [None, "", "   "])
+def test_blank_sitemap_option_is_rejected_rather_than_stringified(bad):
+    source = SitemapJobsSource("example", {"sitemap": bad})
+    with pytest.raises(KeyError, match="requires a non-empty 'sitemap'"):
+        list(source.fetch())
+
+
+# -- table-shaped options --------------------------------------------------
+#
+# Regression: a non-table ``detail_field_map`` raised AttributeError inside
+# the per-record guard, which swallowed it and dropped the already-valid
+# posting with it -- the board returned zero jobs and logged only a per-record
+# warning. ``params``/``json_body`` failed later with "dictionary update
+# sequence element #0 has length 1", which names neither source nor option.
+
+
+@pytest.mark.parametrize("option", ["params", "headers", "json_body", "detail_field_map"])
+def test_table_options_must_be_tables(option, monkeypatch):
+    install_json(monkeypatch, static(BOARD_PAYLOAD))
+
+    source = AgencyBoardSource("naf", _board(**{option: ["not", "a", "table"]}))
+    with pytest.raises(TypeError, match=f"option '{option}' to be a table"):
+        list(source.fetch())
+
+
+def test_bad_table_option_is_caught_before_any_request(monkeypatch):
+    calls: list[dict] = []
+    install_json(monkeypatch, static(BOARD_PAYLOAD), calls=calls)
+
+    with pytest.raises(TypeError):
+        list(AgencyBoardSource("naf", _board(params="page=1")).fetch())
+
+    assert calls == []
+
+
 # ---------------------------------------------------------------------------
 # AgencyBoardSource -- GET mapping
 # ---------------------------------------------------------------------------
@@ -504,6 +557,45 @@ def test_post_mode_non_json_body_raises(monkeypatch):
     options = _board(method="POST", records_path="results", field_map={"title": "t", "url": "u"})
     with pytest.raises(FetchError):
         list(AgencyBoardSource("naf", options).fetch())
+
+
+def test_post_mode_still_sends_query_params(monkeypatch):
+    """Regression: ``params`` was documented as passthrough but POST dropped it.
+
+    ``post_json`` takes no params argument, so a POST board configured with a
+    locale or tenant parameter silently sent a request the operator never
+    configured.
+    """
+    calls: list[dict] = []
+    install_post(monkeypatch, lambda url, payload: {"results": [{"t": "Coach", "u": "/job/1"}]}, calls=calls)
+
+    options = _board(
+        method="POST",
+        json_body={"limit": 20},
+        params={"locale": "en_US"},
+        records_path="results",
+        field_map={"title": "t", "url": "u"},
+    )
+    list(AgencyBoardSource("naf", options).fetch())
+
+    assert calls[0]["url"] == f"{LIST_URL}?locale=en_US"
+    assert calls[0]["payload"] == {"limit": 20}
+
+
+def test_post_mode_query_params_append_to_an_existing_query_string(monkeypatch):
+    calls: list[dict] = []
+    install_post(monkeypatch, lambda url, payload: {"results": []}, calls=calls)
+
+    options = _board(
+        url=f"{LIST_URL}?v=2",
+        method="POST",
+        params={"locale": "en_US"},
+        records_path="results",
+        field_map={"title": "t", "url": "u"},
+    )
+    list(AgencyBoardSource("naf", options).fetch())
+
+    assert calls[0]["url"] == f"{LIST_URL}?v=2&locale=en_US"
 
 
 def test_post_mode_paginates_through_the_body(monkeypatch):
@@ -824,6 +916,77 @@ def test_detail_template_can_use_a_record_key_directly(monkeypatch):
     assert "TSAC-F required" in postings[0].description
 
 
+def test_detail_payload_the_map_cannot_read_degrades_to_the_list_record(monkeypatch):
+    def responder(url, params=None, headers=None):
+        if url == LIST_URL:
+            return TEASER_PAYLOAD
+        # A detail body whose records_path resolves to scalars, not a record.
+        return {"vacancy": ["not", "a", "record"]}
+
+    install_json(monkeypatch, responder)
+
+    options = _detail_options(
+        detail_records_path="vacancy",
+        detail_field_map={"title": "t", "url": "u", "description": "body"},
+    )
+    postings = list(AgencyBoardSource("naf", options).fetch())
+
+    assert [job.title for job in postings] == [
+        "Strength and Conditioning Coach",
+        "Athletic Trainer",
+    ]
+    assert postings[0].description.startswith("Apply now.")
+
+
+def test_detail_merge_exception_never_drops_the_posting(monkeypatch):
+    """Regression: the detail pass is enrichment, never a precondition.
+
+    Anything raised while merging detail text used to escape into the
+    caller's per-record guard, which discarded the posting that had already
+    been built successfully from the list record -- so a board whose detail
+    stage was misconfigured reported *zero* jobs rather than teaser-quality
+    ones. This drives the failure through the merge itself; asserting on a
+    detail payload alone would not reach it.
+    """
+    real_describe = AgencyBoardSource._describe
+    seen: list[object] = []
+
+    def exploding_describe(self, record, field_map):
+        seen.append(record)
+        if len(seen) > 1:  # the detail record, not the list record
+            raise RuntimeError("detail schema changed under us")
+        return real_describe(self, record, field_map)
+
+    monkeypatch.setattr(AgencyBoardSource, "_describe", exploding_describe)
+
+    def responder(url, params=None, headers=None):
+        if url == LIST_URL:
+            return {"results": [{"id": "118", "t": "Coach", "u": "/job/118", "teaser": "Apply now."}]}
+        return {"body": LONG_TEXT}
+
+    install_json(monkeypatch, responder)
+
+    options = _detail_options(detail_field_map={"description": "body"})
+    postings = list(AgencyBoardSource("naf", options).fetch())
+
+    # The merge blew up and the posting survived on its list-level fields.
+    assert len(seen) == 2
+    assert [job.title for job in postings] == ["Coach"]
+    assert postings[0].description.startswith("Apply now.")
+
+
+def test_unrenderable_detail_template_keeps_the_list_record(monkeypatch):
+    calls: list[dict] = []
+    install_json(monkeypatch, static(TEASER_PAYLOAD), calls=calls)
+
+    # A malformed format spec is an operator typo, not a reason to lose jobs.
+    options = _detail_options(detail_url_template="https://x.gov/{id:!bad}")
+    postings = list(AgencyBoardSource("naf", options).fetch())
+
+    assert len(postings) == 2
+    assert len(calls) == 1
+
+
 def test_detail_response_may_be_a_one_element_array(monkeypatch):
     def responder(url, params=None, headers=None):
         if url == LIST_URL:
@@ -900,7 +1063,8 @@ def test_sitemap_titles_are_deslugified(monkeypatch):
 
     assert titles[0] == "Tactical Strength And Conditioning Coach"
     assert titles[1] == "Human Performance Specialist"
-    assert titles[3] == "Naf Fitness Specialist"
+    # "naf" is a domain acronym, not a word: it renders NAF, not "Naf".
+    assert titles[3] == "NAF Fitness Specialist"
 
 
 def test_sitemap_resolves_relative_locations(monkeypatch):
@@ -947,6 +1111,25 @@ def test_max_urls_caps_the_run(monkeypatch):
     assert len(list(SitemapJobsSource("example", options).fetch())) == 2
 
 
+def test_negative_max_urls_does_not_disable_the_cap(monkeypatch):
+    """Regression: ``max_urls = -1`` used to mean "no limit at all".
+
+    An option named max_urls must never be the switch that removes the bound
+    on how much of a stranger's sitemap this adapter walks.
+    """
+    install_fetch(monkeypatch, {SITEMAP_URL: URLSET})
+
+    options = {"sitemap": SITEMAP_URL, "max_urls": -1}
+    assert list(SitemapJobsSource("example", options).fetch()) == []
+
+
+def test_zero_max_urls_emits_nothing(monkeypatch):
+    install_fetch(monkeypatch, {SITEMAP_URL: URLSET})
+
+    options = {"sitemap": SITEMAP_URL, "max_urls": 0}
+    assert list(SitemapJobsSource("example", options).fetch()) == []
+
+
 def test_sitemap_index_is_followed_one_level(monkeypatch):
     documents = {
         SITEMAP_URL: INDEX,
@@ -963,7 +1146,7 @@ def test_sitemap_index_is_followed_one_level(monkeypatch):
     postings = list(SitemapJobsSource("example", {"sitemap": SITEMAP_URL}).fetch())
 
     assert [job.title for job in postings] == [
-        "Athletic Trainer H2f",
+        "Athletic Trainer H2F",
         "Cognitive Performance Specialist",
     ]
     assert len(calls) == 3
@@ -1064,6 +1247,45 @@ def test_deslugify_of_a_bare_host_is_empty():
 
 def test_numeric_only_path_falls_back_to_the_number():
     assert deslugify("https://x.gov/948213") == "948213"
+
+
+def test_deslugify_does_not_title_every_job_on_a_board_the_same(monkeypatch):
+    """Regression: ``/jobs/<id>`` produced the title "Jobs" for every URL.
+
+    Scanning back for "the last segment containing letters" hit the site's
+    own routing word, so an entire board arrived in the review queue as one
+    identical, meaningless title. The id at least tells the rows apart.
+    """
+    assert deslugify("https://x.gov/jobs/948213") == "948213"
+    assert deslugify("https://x.gov/careers/job/12345") == "12345"
+    assert deslugify("https://x.gov/en-us/search/position/77") == "77"
+
+
+def test_deslugify_still_prefers_a_descriptive_segment_over_an_id():
+    assert deslugify("https://x.gov/jobs/athletic-trainer/948213") == "Athletic Trainer"
+    assert (
+        deslugify("https://x.gov/careers/job/performance-dietitian/5")
+        == "Performance Dietitian"
+    )
+
+
+def test_deslugify_uppercases_acronyms_in_lowercase_slugs():
+    """Regression: real slugs are lowercase, so the acronym rule never fired.
+
+    The previous rule only spared words that already carried an uppercase
+    letter, which no real career-site slug does -- ``h2f`` came out "H2f".
+    """
+    assert deslugify("https://x.gov/jobs/athletic-trainer-h2f") == "Athletic Trainer H2F"
+    assert deslugify("https://x.gov/jobs/thor3-strength-coach") == "THOR3 Strength Coach"
+    assert deslugify("https://x.gov/jobs/potff-dietitian") == "POTFF Dietitian"
+    assert deslugify("https://x.gov/jobs/mwr-fitness-specialist") == "MWR Fitness Specialist"
+
+
+def test_deslugify_leaves_ordinary_words_title_cased():
+    # The acronym list must not swallow normal vocabulary.
+    assert deslugify("https://x.gov/jobs/strength-and-conditioning-coach") == (
+        "Strength And Conditioning Coach"
+    )
 
 
 # ---------------------------------------------------------------------------

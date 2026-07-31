@@ -230,6 +230,43 @@ repo — no database to operate, and the history is reviewable in a diff.
 
 ---
 
+## The two workflows
+
+### Nightly — [`tactical-jobs.yml`](../.github/workflows/tactical-jobs.yml)
+
+Runs the pipeline, commits the board and corpus, and **deploys to GitHub Pages**.
+That deploy is the mechanism by which a job reaches mopsnmoes.com: Squarespace
+has no content-write API, so the workflow publishes `jobs.json` and the Code
+Block on the site renders it.
+
+After the first successful run, the job summary prints the exact URL to paste
+into the embed's `FEED_URL`:
+
+```
+https://<owner>.github.io/<repo>/jobs.json
+```
+
+Published alongside it: `dashboard.html`, `jobs.xml` (RSS), and `insights.json`.
+
+**One-time setup:** enable Pages under *Settings → Pages → Source: GitHub
+Actions*. The deploy job only runs from the default branch — a feature branch
+must never repoint the live feed the website reads.
+
+Defaults to `sources.keyless.toml`, so it works with no secrets at all. Set
+`USAJOBS_API_KEY`, `USAJOBS_USER_AGENT`, or `DISCORD_WEBHOOK_URL` only if you
+have them.
+
+### Weekly — [`tactical-contracts.yml`](../.github/workflows/tactical-contracts.yml)
+
+Scans USASpending for human performance contract awards and opens an issue
+naming who just won one — see [EMPLOYERS.md](EMPLOYERS.md) for why this is the
+highest-value signal in the whole system. Keyless.
+
+The issue is gated on the award **count**, not on the rendered text, so a quiet
+week or a failed scan produces no issue rather than an empty one.
+
+---
+
 ## Scheduled runs
 
 [`.github/workflows/tactical-jobs.yml`](../.github/workflows/tactical-jobs.yml)

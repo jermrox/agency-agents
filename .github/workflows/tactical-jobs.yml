@@ -1,11 +1,13 @@
-name: Tactical Jobs Scraper
+name: Tactical Jobs — nightly
 
-# Collects tactical human performance roles, scores them, publishes the clear
-# matches to the website feed, and commits the updated board + dedupe state.
+# Collects tactical human performance roles, scores them, enriches and archives
+# them, publishes the live board, and deploys the board + dashboard to GitHub
+# Pages so the Squarespace embed has something to fetch.
 #
-# The scheduled run always publishes for real. The manual trigger exposes a
-# dry-run checkbox for when you want to inspect scoring without touching the
-# board.
+# Squarespace has no content-write API, so this is the mechanism by which a job
+# reaches mopsnmoes.com: this workflow publishes jobs.json, and the Code Block
+# on the site renders it. See jobs-scraper/embed/squarespace-jobs.html.
+
 on:
   workflow_dispatch:
     inputs:
@@ -13,27 +15,38 @@ on:
         description: "Score and report without publishing or writing state"
         type: boolean
         default: false
+      config:
+        description: "Config file to run"
+        type: choice
+        default: sources.keyless.toml
+        options:
+          - sources.keyless.toml
+          - sources.toml
+          - sources.example.toml
   schedule:
-    # 07:00 UTC daily = 02:00 in the site's timezone (America/Chicago, per
-    # Squarespace config) — quiet hours, and after overnight postings land.
+    # 07:00 UTC = 02:00 America/Chicago, the site's timezone. Quiet hours, and
+    # after overnight US postings land.
     - cron: "0 7 * * *"
 
-# Prevent two runs from racing on the same state file.
 concurrency:
   group: tactical-jobs
   cancel-in-progress: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    working-directory: jobs-scraper
 
 jobs:
   scrape:
-    name: Collect and publish
+    name: Collect, score, publish
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: jobs-scraper
-
+    outputs:
+      published: ${{ steps.run.outputs.published }}
     steps:
       - uses: actions/checkout@v4
 
@@ -41,44 +54,62 @@ jobs:
         with:
           python-version: "3.11"
 
-      # The package itself has no dependencies; pytest is dev-only.
+      # The package has no runtime dependencies; pytest is dev-only. Tests run
+      # first because a broken classifier publishing to a public site is worse
+      # than a night with no update.
       - name: Run tests
         run: |
           python -m pip install --quiet pytest
           python -m pytest tests/ -q
 
-      - name: Prepare config
+      - name: Select config
+        id: cfg
         run: |
-          if [ ! -f sources.toml ]; then
-            echo "No sources.toml committed; using the example config."
-            cp sources.example.toml sources.toml
+          CONFIG="${{ inputs.config || 'sources.keyless.toml' }}"
+          if [ ! -f "$CONFIG" ]; then
+            echo "::warning::$CONFIG not found; falling back to sources.keyless.toml"
+            CONFIG=sources.keyless.toml
           fi
+          echo "path=$CONFIG" >> "$GITHUB_OUTPUT"
+          echo "Using $CONFIG"
 
       - name: Run scraper
+        id: run
         env:
+          # Only set if the operator has them. Every source in the keyless
+          # config runs without any of these.
           USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
           USAJOBS_USER_AGENT: ${{ secrets.USAJOBS_USER_AGENT }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           set -o pipefail
           DRY=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            DRY="--dry-run"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run"; fi
+          python -m tactical_jobs run --config "${{ steps.cfg.outputs.path }}" $DRY 2>&1 | tee run.log
+          if grep -q "^approved" run.log; then
+            echo "published=$(grep '^approved' run.log | awk '{print $2}')" >> "$GITHUB_OUTPUT"
           fi
-          python -m tactical_jobs run --config sources.toml $DRY 2>&1 | tee run.log
 
-      - name: Write job summary
+      - name: Job summary
         if: always()
         run: |
           {
-            echo "## Tactical jobs run"
+            echo "## Nightly run"
             echo ""
             echo '```'
             cat run.log 2>/dev/null || echo "no run log produced"
             echo '```'
+            if [ -f output/insights/digest.md ]; then
+              echo ""
+              echo "<details><summary>Market digest</summary>"
+              echo ""
+              cat output/insights/digest.md
+              echo ""
+              echo "</details>"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload review queue
+      - name: Upload review queue and logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -89,28 +120,86 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
-      - name: Commit board and state
+      - name: Commit board, corpus, and state
         if: ${{ inputs.dry_run != true }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Force-add: output/ and state/ are gitignored so a local run cannot
           # commit synthetic data, but the scheduled run's real artifacts are
-          # exactly what must persist.
+          # exactly what must persist between runs.
           git add -f output state
-          # Only commit when something actually changed.
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "chore(jobs): update tactical jobs board [skip ci]"
+          git commit -m "chore(jobs): nightly board update [skip ci]"
           for attempt in 1 2 3 4; do
-            if git push; then
-              exit 0
-            fi
+            if git push; then exit 0; fi
             echo "Push failed; refreshing and retrying (attempt $attempt)."
             git pull --rebase origin "${GITHUB_REF_NAME}" || true
             sleep $((2 ** attempt))
           done
-          echo "::error::Could not push updated board after 4 attempts."
+          echo "::error::Could not push the updated board after 4 attempts."
           exit 1
+
+      - name: Assemble the published site
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          mkdir -p ../site
+          # The feed the Squarespace embed fetches, plus the dashboard.
+          cp -f output/jobs.json          ../site/ 2>/dev/null || echo '{"version":1,"count":0,"jobs":[]}' > ../site/jobs.json
+          cp -f output/jobs.xml           ../site/ 2>/dev/null || true
+          cp -f output/insights/dashboard.html ../site/ 2>/dev/null || true
+          cp -f output/insights/insights.json  ../site/ 2>/dev/null || true
+          cp -f embed/squarespace-jobs.html    ../site/embed.html 2>/dev/null || true
+          # A landing page so the Pages root is not a 404.
+          cat > ../site/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8">
+          <title>MOPs &amp; MOEs — Tactical Human Performance Jobs</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <style>
+            body{font:16px/1.6 system-ui,sans-serif;max-width:44rem;margin:3rem auto;padding:0 1.25rem;
+                 background:#fcfcfb;color:#1b1b19}
+            @media (prefers-color-scheme:dark){body{background:#17171a;color:#f2f1ec}}
+            a{color:#2a78d6} li{margin:.4rem 0}
+          </style>
+          <h1>Tactical Human Performance Jobs</h1>
+          <p>Machine-readable endpoints published nightly.</p>
+          <ul>
+            <li><a href="dashboard.html">Market dashboard</a></li>
+            <li><a href="jobs.json">jobs.json</a> — the feed the site embed reads</li>
+            <li><a href="jobs.xml">jobs.xml</a> — RSS</li>
+            <li><a href="insights.json">insights.json</a> — aggregate analysis</li>
+          </ul>
+          HTML
+          ls -la ../site
+
+      - name: Upload Pages artifact
+        if: ${{ inputs.dry_run != true }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: Deploy board to GitHub Pages
+    # Only from the default branch: a feature branch must never repoint the
+    # live feed the website reads.
+    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Point the embed at this URL
+        run: |
+          echo "### Board published" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Set \`FEED_URL\` in the Squarespace Code Block to:" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "${{ steps.deployment.outputs.page_url }}jobs.json" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"

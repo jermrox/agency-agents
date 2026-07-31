@@ -8,7 +8,9 @@ the NSCA, NATA, ACSM, CSCCa, AASP, APTA and SCAN boards run on.
 
 from __future__ import annotations
 
+import io
 import sys
+import tokenize
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -18,10 +20,15 @@ import pytest  # noqa: E402
 from tactical_jobs.sources.boards import (  # noqa: E402
     ASSOCIATION_BOARDS,
     BOARD_SOURCES,
+    DEFAULT_DETAIL_LIMIT,
+    DEFAULT_MAX_ITEMS,
+    DETAIL_RETRIES,
     AssociationBoardSource,
     KnownBoardsSource,
     detect_payload_kind,
     extract_detail_text,
+    json_records,
+    local_name,
     looks_like_location,
     parse_listing_title,
 )
@@ -844,3 +851,356 @@ def test_module_exports_the_source_tuple():
     assert AssociationBoardSource.kind == "assocboard"
     assert KnownBoardsSource.kind == "knownboards"
     assert len({cls.kind for cls in BOARD_SOURCES}) == len(BOARD_SOURCES)
+
+
+# ---------------------------------------------------------------------------
+# namespaced feeds
+#
+# The vendors serve more than one feed dialect, and a namespace-qualified
+# lookup finds nothing in most of them. That failure is silent -- zero items,
+# no exception -- which is indistinguishable from a board with no openings, so
+# each dialect gets a test.
+# ---------------------------------------------------------------------------
+
+
+RSS1 = (
+    '<?xml version="1.0"?>'
+    '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" '
+    'xmlns="http://purl.org/rss/1.0/" '
+    'xmlns:dc="http://purl.org/dc/elements/1.1/">'
+    '<channel rdf:about="https://careers.nsca.com/jobs"><title>NSCA</title></channel>'
+    '<item rdf:about="https://careers.nsca.com/job/1">'
+    "<title>Strength Coach - Austin Fire - Austin, TX</title>"
+    "<link>https://careers.nsca.com/job/1</link>"
+    "<description>CSCS and TSAC-F required for this tactical role.</description>"
+    "<dc:date>2026-07-20</dc:date>"
+    "</item>"
+    "</rdf:RDF>"
+).encode()
+
+
+def test_rss_1_0_namespaced_items_are_parsed(monkeypatch):
+    """An RSS 1.0 board must not read as an empty board."""
+    posting = _run(monkeypatch, {FEED_URL: RSS1}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert posting.title == "Strength Coach"
+    assert posting.employer == "Austin Fire"
+    assert posting.location == "Austin, TX"
+    assert posting.url == "https://careers.nsca.com/job/1"
+    assert "TSAC-F" in posting.description
+    assert posting.posted_at is not None and posting.posted_at.day == 20
+
+
+def test_rss_2_0_under_a_default_namespace_is_parsed(monkeypatch):
+    feed = (
+        '<rss xmlns="http://backend.userland.com/rss2" version="2.0"><channel><item>'
+        "<title>Athletic Trainer - Denver Fire - Denver, CO</title>"
+        "<link>https://x.test/1</link><guid>g1</guid>"
+        "<description>BOC certification required.</description>"
+        "</item></channel></rss>"
+    ).encode()
+    posting = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert posting.employer == "Denver Fire"
+    assert posting.source_id == "g1"
+    assert "BOC certification" in posting.description
+
+
+def test_atom_0_3_namespace_is_parsed(monkeypatch):
+    feed = (
+        '<feed xmlns="http://purl.org/atom/ns#"><entry>'
+        "<title>Coach - Fort Carson Garrison - Colorado Springs, CO</title>"
+        '<link rel="alternate" href="https://x.test/a3"/>'
+        "<id>urn:aasp:a3</id><summary>H2F cohort support.</summary>"
+        "</entry></feed>"
+    ).encode()
+    posting = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert posting.url == "https://x.test/a3"
+    assert posting.source_id == "urn:aasp:a3"
+    assert posting.employer == "Fort Carson Garrison"
+
+
+def test_a_namespaced_atom_link_rel_self_is_not_used_as_the_job_url(monkeypatch):
+    feed = (
+        '<feed xmlns="http://www.w3.org/2005/Atom"><entry>'
+        "<title>Coach - Unit - Austin, TX</title>"
+        '<link rel="self" href="https://x.test/feed"/>'
+        '<link rel="alternate" href="https://x.test/job/7"/>'
+        "<id>7</id></entry></feed>"
+    ).encode()
+    posting = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert posting.url == "https://x.test/job/7"
+
+
+@pytest.mark.parametrize(
+    "tag, expected",
+    [
+        ("item", "item"),
+        ("{http://purl.org/rss/1.0/}item", "item"),
+        ("{http://www.w3.org/2005/Atom}Entry", "entry"),
+        (None, ""),
+        (object, ""),
+    ],
+)
+def test_local_name(tag, expected):
+    assert local_name(tag) == expected
+
+
+# ---------------------------------------------------------------------------
+# silent-emptiness guards
+# ---------------------------------------------------------------------------
+
+
+def test_a_populated_envelope_beats_an_empty_one(monkeypatch):
+    """``{"results": [], "jobs": [...]}`` must not report an empty board."""
+    body = (
+        b'{"results": [], "jobs": [{"jobId": 4, "title": "Strength Coach", '
+        b'"jobUrl": "https://x.test/4"}]}'
+    )
+    postings = _run(monkeypatch, {JSON_URL: body}, {"url": JSON_URL, **NO_DETAIL})
+    assert [p.source_id for p in postings] == ["4"]
+
+
+def test_json_records_prefers_the_populated_envelope():
+    assert json_records({"results": [], "jobs": [{"title": "Coach"}]}) == [{"title": "Coach"}]
+    assert json_records({"results": [], "jobs": []}) == []
+    assert json_records({"nothing": "here"}) == []
+
+
+def test_two_id_less_records_at_different_employers_both_survive(monkeypatch):
+    """A board with no ids and no links must not collapse onto the title."""
+    body = (
+        b'{"results": ['
+        b'{"title": "Athletic Trainer", "employer": "Alpha Fire", "location": "Austin, TX"},'
+        b'{"title": "Athletic Trainer", "employer": "Bravo Fire", "location": "Dallas, TX"}]}'
+    )
+    postings = _run(monkeypatch, {JSON_URL: body}, {"url": JSON_URL, **NO_DETAIL})
+    assert [p.employer for p in postings] == ["Alpha Fire", "Bravo Fire"]
+    assert len({p.source_id for p in postings}) == 2
+
+
+def test_a_truly_repeated_id_less_record_is_still_deduped(monkeypatch):
+    body = (
+        b'{"results": ['
+        b'{"title": "Athletic Trainer", "employer": "Alpha Fire", "location": "Austin, TX"},'
+        b'{"title": "Athletic Trainer", "employer": "Alpha Fire", "location": "Austin, TX"}]}'
+    )
+    assert len(_run(monkeypatch, {JSON_URL: body}, {"url": JSON_URL, **NO_DETAIL})) == 1
+
+
+# ---------------------------------------------------------------------------
+# option bounds
+# ---------------------------------------------------------------------------
+
+
+def test_a_negative_max_items_falls_back_to_the_default(monkeypatch, caplog):
+    """``max_items = -1`` yielding nothing would look exactly like a quiet board."""
+    items = [_item(f"Coach {n} - Unit - Austin, TX", guid=f"g{n}") for n in range(4)]
+    with caplog.at_level("WARNING"):
+        postings = _run(
+            monkeypatch, {FEED_URL: _rss(*items)}, {"url": FEED_URL, "max_items": -1, **NO_DETAIL}
+        )
+    assert len(postings) == 4
+    assert "negative option value" in caplog.text
+
+
+def test_a_negative_detail_limit_falls_back_to_the_default(monkeypatch):
+    feed = _rss(_item("Coach - Unit - Austin, TX", guid="g1"))
+    pages = {FEED_URL: feed, DETAIL_URL: _detail_page(FULL_BODY)}
+    posting = _run(monkeypatch, pages, {"url": FEED_URL, "detail_limit": -5})[0]
+    assert "CSCS and TSAC-F required" in posting.description
+
+
+def test_an_explicit_zero_max_items_is_still_honoured(monkeypatch):
+    """Zero is a deliberate "off"; only a negative value is treated as a typo."""
+    feed = _rss(_item("Coach - Unit - Austin, TX", guid="g1"))
+    assert _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, "max_items": 0, **NO_DETAIL}) == []
+
+
+def test_documented_defaults_match_the_spec():
+    assert (DEFAULT_MAX_ITEMS, DEFAULT_DETAIL_LIMIT) == (200, 40)
+
+
+def test_the_default_max_items_actually_bounds_the_run(monkeypatch):
+    items = [
+        _item(f"Coach {n} - Unit - Austin, TX", guid=f"g{n}")
+        for n in range(DEFAULT_MAX_ITEMS + 25)
+    ]
+    postings = _run(monkeypatch, {FEED_URL: _rss(*items)}, {"url": FEED_URL, **NO_DETAIL})
+    assert len(postings) == DEFAULT_MAX_ITEMS
+
+
+def test_the_default_detail_limit_actually_bounds_the_fan_out(monkeypatch):
+    items = [
+        _item(f"Coach {n} - Unit - Austin, TX", link=f"https://x.test/{n}", guid=f"g{n}")
+        for n in range(DEFAULT_DETAIL_LIMIT + 15)
+    ]
+    pages = {FEED_URL: _rss(*items)}
+    for n in range(DEFAULT_DETAIL_LIMIT + 15):
+        pages[f"https://x.test/{n}"] = _detail_page(FULL_BODY)
+    requested = []
+    _run(monkeypatch, pages, {"url": FEED_URL}, log=requested)
+    assert len([u for u in requested if u.startswith("https://x.test/")]) == DEFAULT_DETAIL_LIMIT
+
+
+def test_detail_pages_do_not_get_the_full_retry_budget(monkeypatch):
+    """40 dead detail pages at three attempts each would stall a nightly run."""
+    feed = _rss(_item("Coach - Unit - Austin, TX", guid="g1"))
+    seen = {}
+
+    def fake_fetch(url, **kwargs):
+        seen[url] = kwargs
+        return feed if url == FEED_URL else _detail_page(FULL_BODY)
+
+    monkeypatch.setattr("tactical_jobs.sources.boards.fetch", fake_fetch)
+    list(AssociationBoardSource("nsca", {"url": FEED_URL}).fetch())
+    assert seen[DETAIL_URL]["retries"] == DETAIL_RETRIES
+    assert DETAIL_RETRIES < 3
+    # The feed itself keeps the default budget -- losing it costs the board.
+    assert "retries" not in seen[FEED_URL]
+
+
+# ---------------------------------------------------------------------------
+# hostile and empty records
+# ---------------------------------------------------------------------------
+
+
+def test_records_full_of_nulls_do_not_crash(monkeypatch):
+    body = (
+        b'{"results": [{"jobId": null, "title": null, "employer": null, "location": null, '
+        b'"description": null, "postedDate": null, "url": null}, '
+        b'{"jobId": 6, "title": "Coach", "employer": null, "location": null, '
+        b'"description": null, "postedDate": null, "url": "https://x.test/6"}]}'
+    )
+    postings = _run(monkeypatch, {JSON_URL: body}, {"url": JSON_URL, **NO_DETAIL})
+    assert [p.source_id for p in postings] == ["6"]
+    assert postings[0].location == ""
+    assert postings[0].posted_at is None
+
+
+def test_a_nested_json_shape_is_flattened(monkeypatch):
+    body = (
+        b'{"results": [{"id": "z1", "title": "Coach", "employer": {"name": "Leidos"}, '
+        b'"location": {"city": "Fort Bragg", "state": "NC"}, '
+        b'"url": "https://x.test/z1", '
+        b'"description": {"sections": {"body": "CSCS required"}}}]}'
+    )
+    posting = _run(monkeypatch, {JSON_URL: body}, {"url": JSON_URL, **NO_DETAIL})[0]
+    assert posting.employer == "Leidos"
+    assert posting.location == "Fort Bragg, NC"
+    assert "CSCS required" in posting.description
+
+
+def test_unicode_survives_the_round_trip(monkeypatch):
+    feed = _rss(
+        _item(
+            "Entraîneur — Pompiers de Montréal — Austin, TX",
+            guid="u1",
+            description="Préparation physique. Certification requise — CSCS.",
+        )
+    )
+    posting = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert posting.title == "Entraîneur"
+    assert posting.employer == "Pompiers de Montréal"
+    assert "Préparation physique" in posting.description
+
+
+def test_a_very_long_description_is_kept_whole(monkeypatch):
+    """The analysis layer mines the complete text, so nothing is truncated."""
+    long_body = "Requirement sentence naming CSCS. " * 5000
+    feed = _rss(_item("Coach - Unit - Austin, TX", guid="g1", description=long_body))
+    posting = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL, **NO_DETAIL})[0]
+    assert len(posting.description) > 100_000
+
+
+def test_a_non_http_item_link_is_not_followed(monkeypatch):
+    """A feed must not be able to steer the fetcher at a non-web scheme."""
+    feed = _rss(_item("Coach - Unit - Austin, TX", link="javascript:alert(1)", guid="g1"))
+    requested = []
+    postings = _run(monkeypatch, {FEED_URL: feed}, {"url": FEED_URL}, log=requested)
+    assert requested == [FEED_URL]
+    assert postings == []
+
+
+# ---------------------------------------------------------------------------
+# KnownBoardsSource slug handling
+# ---------------------------------------------------------------------------
+
+
+def test_an_explicitly_empty_boards_list_runs_nothing(monkeypatch):
+    """Naming no boards must not quietly fan out to all eight hosts."""
+    pages = {entry["url"]: _rss() for entry in ASSOCIATION_BOARDS.values()}
+    requested = []
+    postings = _known(monkeypatch, pages, {"boards": [], "fetch_details": False}, log=requested)
+    assert postings == []
+    assert requested == []
+
+
+def test_a_repeated_slug_is_fetched_once(monkeypatch):
+    pages = {_board_url("nsca"): _rss(_item("Coach - Austin Fire - Austin, TX", guid="n1"))}
+    requested = []
+    postings = _known(
+        monkeypatch,
+        pages,
+        {"boards": ["nsca", "NSCA", "nsca"], "fetch_details": False},
+        log=requested,
+    )
+    assert [p.source_id for p in postings] == ["n1"]
+    assert requested == [_board_url("nsca")]
+
+
+# ---------------------------------------------------------------------------
+# keyless and unverified-claim guards
+# ---------------------------------------------------------------------------
+
+
+_MODULE_PATH = Path(__file__).resolve().parents[1] / "tactical_jobs" / "sources" / "boards.py"
+_MODULE_SOURCE = _MODULE_PATH.read_text(encoding="utf-8")
+
+
+def _executable_source(text):
+    """The module's code with comments and string literals removed.
+
+    Prose is allowed to say "no OAuth"; code is not allowed to do OAuth. The
+    scan below would otherwise be defeated by its own documentation.
+    """
+    kept = []
+    for token in tokenize.generate_tokens(io.StringIO(text).readline):
+        if token.type in (tokenize.COMMENT, tokenize.STRING):
+            continue
+        kept.append(token.string)
+    return " ".join(kept).lower()
+
+
+def test_every_seeded_board_url_is_marked_unverified():
+    """These URLs could not be confirmed without network access.
+
+    A confidently wrong URL is the worst failure this source can have: it is
+    logged and skipped, which reads as a quiet board rather than a broken one.
+    The marker is what tells the next reader to check before trusting it.
+    """
+    lines = _MODULE_SOURCE.splitlines()
+    for slug, entry in ASSOCIATION_BOARDS.items():
+        index = next(i for i, line in enumerate(lines) if f'"{entry["url"]}"' in line)
+        preceding = " ".join(lines[max(0, index - 3):index]).upper()
+        assert "UNVERIFIED" in preceding, slug
+
+
+def test_the_source_needs_no_credential_of_any_kind(monkeypatch):
+    """No key, no account, no OAuth -- the operator has none and can get none."""
+    feed = _rss(_item("Coach - Austin Fire - Austin, TX", guid="n1"))
+    sent = {}
+
+    def fake_fetch(url, **kwargs):
+        sent.update(kwargs)
+        return feed
+
+    monkeypatch.setattr("tactical_jobs.sources.boards.fetch", fake_fetch)
+    postings = list(AssociationBoardSource("nsca", {"url": FEED_URL, **NO_DETAIL}).fetch())
+    assert len(postings) == 1
+    assert "headers" not in sent
+    code = _executable_source(_MODULE_SOURCE)
+    for forbidden in ("api_key", "apikey", "authorization", "bearer", "oauth", "client_secret"):
+        assert forbidden not in code, forbidden
+    # Only ``url`` is required; nothing credential-shaped is.
+    with pytest.raises(KeyError) as excinfo:
+        list(AssociationBoardSource("nsca", {}).fetch())
+    assert "'url'" in str(excinfo.value)
