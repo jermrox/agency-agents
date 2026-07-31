@@ -10,16 +10,25 @@ Army H2F brigades, USASOC THOR3, SOCOM POTFF, Naval Special Warfare, and the
 larger fire and police departments. Signal per fetched byte is the highest of
 any source this project has.
 
-THE PLATFORMS
+THE PLATFORMS -- **UNVERIFIED**
 Associations do not build job boards; they rent them. Three vendors cover
-almost the whole field, and all three are keyless -- no account, no OAuth, no
-API key of any kind:
+almost the whole field. Nothing in this section was confirmed against a live
+server -- this module was written with no outbound network -- so read the
+vendor names, the hostnames and especially the paths as the starting
+hypothesis they are, not as observed fact:
 
-* YourMembership / Community Brands (``careers.<association>.org``). Serves
-  RSS at ``/jobs/feed`` or ``/jobseeker/search/results/rss`` and JSON at
+* YourMembership / Community Brands (``careers.<association>.org``).
+  Understood to serve RSS at ``/jobs/feed`` or
+  ``/jobseeker/search/results/rss`` and JSON at
   ``/jobs/search/results?format=json``.
 * Naylor CareerHub.
 * Boxwood / CareerWebsite.
+
+What is *not* a guess: none of these vendors requires a key, an account, an
+OAuth grant, or a signup for the public listing feed, and this module sends no
+credential of any kind. The adapter is also written not to care which vendor
+answers -- it sniffs the payload and reads feeds by element local name -- so a
+wrong guess above costs a corrected URL, not a rewrite.
 
 WHY AUTO-DETECTION RATHER THAN A FORMAT OPTION
 Those vendors serve *both* formats from confusingly similar paths, tenants
@@ -981,7 +990,16 @@ class AssociationBoardSource(Source):
             description, link, detail_budget, min_chars
         )
 
-        identifier = _pick(record, *_ID_KEYS) or link or title
+        # The last-resort identifier carries the employer and the location as
+        # well as the title. :meth:`fetch` suppresses repeated ``source_id``
+        # values, and a board that publishes no ids and no links would
+        # otherwise collapse every "Athletic Trainer" on it into one posting --
+        # dropping real jobs at different employers with no error anywhere.
+        identifier = (
+            _pick(record, *_ID_KEYS)
+            or link
+            or "|".join(part for part in (title, employer, location) if part)
+        )
         category = _pick(record, *_CATEGORY_KEYS)
         compensation = _pick(record, *_SALARY_KEYS)
 
@@ -1115,9 +1133,12 @@ class KnownBoardsSource(Source):
     Options
     -------
     boards
-        Slugs from :data:`ASSOCIATION_BOARDS`. Omit to run every board.
-        Unknown slugs are logged and skipped rather than raising, because a
-        typo in one slug must not cost the operator the other seven.
+        Slugs from :data:`ASSOCIATION_BOARDS`. Omit the option entirely to run
+        every board; setting it to an empty list runs none, since that is an
+        operator naming no boards rather than asking for all of them. Repeated
+        slugs are fetched once. Unknown slugs are logged and skipped rather
+        than raising, because a typo in one slug must not cost the operator
+        the other seven.
     employer / association
         Override the per-board defaults for every board in the set.
     max_items / detail_limit / fetch_details / detail_min_chars / location
@@ -1131,10 +1152,28 @@ class KnownBoardsSource(Source):
     kind = "knownboards"
 
     def fetch(self) -> Iterable[JobPosting]:
-        slugs = _as_list(self.options.get("boards")) or list(ASSOCIATION_BOARDS)
+        # Only an *absent* ``boards`` key means "every board". A key that is
+        # present but empty is an operator naming no boards, and quietly
+        # fanning out to all eight hosts instead would be the opposite of what
+        # was asked for.
+        if "boards" in self.options:
+            requested = _as_list(self.options["boards"])
+            if not requested:
+                log.warning("%s: 'boards' is set but names no board; nothing to do", self.name)
+                return
+        else:
+            requested = list(ASSOCIATION_BOARDS)
+
         shared = {
             key: self.options[key] for key in _SHARED_OPTIONS if key in self.options
         }
+
+        # Listing a board twice must not fetch it twice; order is preserved so
+        # the run reads the way the operator wrote it.
+        slugs: list[str] = []
+        for slug in requested:
+            if slug.strip().lower() not in {s.strip().lower() for s in slugs}:
+                slugs.append(slug)
 
         for slug in slugs:
             key = slug.strip().lower()
