@@ -196,14 +196,20 @@ class PhenomSource(Source):
                 log.warning("skipping malformed phenom posting %s: %s", job_id, exc)
 
     def _origin(self) -> str:
-        """Reduce the configured URL to its origin (scheme + host)."""
+        """Reduce the configured URL to its origin (scheme + host).
+
+        Scheme and host are lowercased to match the upstream recipe, which
+        goes through ``new URL(raw).origin`` (case-normalized) in
+        santifer/career-ops providers/phenom.mjs (MIT).
+        """
         raw = str(self.require("url")).strip()
         parts = urllib.parse.urlsplit(raw)
-        if parts.scheme not in ("http", "https") or not parts.netloc:
+        scheme = parts.scheme.lower()
+        if scheme not in ("http", "https") or not parts.netloc:
             raise ValueError(
                 f"source '{self.name}' ({self.kind}) cannot resolve an origin from url={raw!r}"
             )
-        return f"{parts.scheme}://{parts.netloc}"
+        return f"{scheme}://{parts.netloc.lower()}"
 
     def _keywords(self) -> list[str]:
         """Configured search keywords; the default is one unfiltered search.
@@ -376,7 +382,10 @@ class PhenomSource(Source):
         if not isinstance(refine, dict):
             raise FetchError(f"phenom {origin}/widgets response has no refineSearch block")
         status = refine.get("status")
-        if status is not None and status != 200:
+        # The recipe documents status as the number 200; a tenant emitting the
+        # numeric string "200" is still a healthy response, so only genuinely
+        # non-200 statuses fail the page.
+        if status not in (None, 200, "200"):
             raise FetchError(f"phenom {origin}/widgets reported refineSearch status {status}")
         return refine
 

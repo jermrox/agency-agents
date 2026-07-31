@@ -52,13 +52,16 @@ __all__ = [
 # /^[A-Za-z0-9._-]+$/ -- a tampered or malformed company name can never inject
 # unexpected characters ('/', '?', '#', '@', spaces...) into a URL. Mixed case
 # is intentional: Ashby boards are case-sensitive (AlephAlpha, DeepL).
-SLUG_RE = re.compile(r"[A-Za-z0-9._-]+")
+# Anchored with \A...\Z like the JS original so the guard holds even for a
+# caller using .match()/.search() instead of .fullmatch().
+SLUG_RE = re.compile(r"\A[A-Za-z0-9._-]+\Z")
 
 # Coordinate token guard for the Workday tenant/instance/site segments.
 # Ported from santifer/career-ops discover-ats.mjs WORKDAY_SEGMENT_RE (MIT):
 # /^[A-Za-z0-9_-]+$/ -- site names contain letters, digits, '_' and '-'
 # (NVIDIAExternalCareerSite, External_Career_Site); instances are wdNN.
-WORKDAY_SEGMENT_RE = re.compile(r"[A-Za-z0-9_-]+")
+# Anchored with \A...\Z for the same fail-safe reason as SLUG_RE.
+WORKDAY_SEGMENT_RE = re.compile(r"\A[A-Za-z0-9_-]+\Z")
 
 # Workday instance subdomains, most common first. Reference list for a human
 # hunting the data center of a known tenant+site -- NOT probed here. Ported
@@ -141,10 +144,33 @@ def derive_slugs(company_name: str) -> list[str]:
     return candidates
 
 
+# TOML basic-string escapes with shorthand forms; every other control
+# character (U+0000..U+001F, U+007F) gets a \uXXXX escape below. Without
+# this a company name carrying an interior newline or tab would render an
+# invalid snippet that tomllib rejects -- breaking the module's contract
+# that every config_snippet round-trips through tomllib.loads.
+_TOML_ESCAPES = {
+    "\\": "\\\\",
+    '"': '\\"',
+    "\b": "\\b",
+    "\t": "\\t",
+    "\n": "\\n",
+    "\f": "\\f",
+    "\r": "\\r",
+}
+
+
 def _toml_string(value: str) -> str:
-    """Quote a value as a TOML basic string (escape backslash and quote)."""
-    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    """Quote a value as a TOML basic string (escaping controls too)."""
+    out: list[str] = []
+    for ch in value:
+        if ch in _TOML_ESCAPES:
+            out.append(_TOML_ESCAPES[ch])
+        elif ord(ch) < 0x20 or ord(ch) == 0x7F:
+            out.append(f"\\u{ord(ch):04X}")
+        else:
+            out.append(ch)
+    return '"' + "".join(out) + '"'
 
 
 def _snippet(

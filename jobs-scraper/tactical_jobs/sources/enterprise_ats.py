@@ -675,7 +675,7 @@ class SuccessFactorsSource(Source):
 
 # Endpoint recipe ported from santifer/career-ops providers/csod.mjs (MIT).
 
-_CSOD_PAGE_SIZE = 25  # server default; verified live at exactly 25/page
+_CSOD_PAGE_SIZE = 25  # server default; csod.mjs verified its tenant serves 25/page
 _CSOD_MAX_PAGES = 40
 _CSOD_MAX_JOBS = 1000
 _CSOD_TOKEN = re.compile(r'"token"\s*:\s*"([A-Za-z0-9._-]+)"')
@@ -1173,7 +1173,7 @@ class JobviteSource(Source):
 
 _RADANCY_MAX_PAGES = 200
 _RADANCY_DEFAULT_MAX_JOBS = 2000
-_RADANCY_RECORDS_PER_PAGE = 100  # honored live by the JSON fragment endpoint
+_RADANCY_RECORDS_PER_PAGE = 100  # radancy.mjs verified the fragment endpoint honors 100
 _RADANCY_FRAGMENT_HEADERS = {"Accept": "application/json", "X-Requested-With": "XMLHttpRequest"}
 
 _RADANCY_MODERN_LINK = re.compile(
@@ -1381,7 +1381,10 @@ class RadancySource(Source):
         total_results, total_pages = _radancy_totals(first_html)
         # Bound by the server's own page count when it gives one; the local
         # caps still apply so a bogus total can't drive an unbounded walk.
-        last_page = min(total_pages if total_pages else max_pages, max_pages)
+        # radancy.mjs uses `totalPages ?? maxPages`: only a MISSING total
+        # falls back to the cap -- a stated total of 0 means "no more pages",
+        # so the falsy-0 case must not restart an unbounded walk.
+        last_page = min(total_pages if total_pages is not None else max_pages, max_pages)
 
         rows: list[dict[str, Any]] = []
         seen: set[str] = set()

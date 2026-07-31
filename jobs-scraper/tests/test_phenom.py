@@ -150,6 +150,17 @@ def test_origin_is_reduced_from_a_full_careers_url(monkeypatch):
     assert postings[0].url.startswith("https://careers.serco-na.com/global/en/job/")
 
 
+def test_origin_scheme_and_host_are_case_normalized(monkeypatch):
+    # phenom.mjs resolveConfig goes through new URL(raw).origin, which
+    # lowercases scheme and hostname; a hand-typed mixed-case config entry
+    # must not leak mixed case into the widget or job URLs.
+    api = FakeAPI({("", 0): _page([_job("1")])})
+    postings = _run(monkeypatch, api, {"url": "HTTPS://Careers.Serco-NA.com"})
+
+    assert api.calls[0][0] == WIDGETS_URL
+    assert postings[0].url.startswith("https://careers.serco-na.com/")
+
+
 def test_unresolvable_url_raises(monkeypatch):
     api = FakeAPI()
     api.install(monkeypatch)
@@ -558,6 +569,14 @@ def test_non_json_body_raises_a_fetch_error(monkeypatch):
     monkeypatch.setattr("tactical_jobs.sources.phenom.post_json", broken_post)
     with pytest.raises(FetchError):
         list(PhenomSource("serco", OPTIONS).fetch())
+
+
+def test_a_numeric_string_status_200_is_not_an_error(monkeypatch):
+    # The upstream recipe never checks status at all; our added non-200 guard
+    # must not fail a healthy board whose tenant emits "200" as a string.
+    api = FakeAPI({("", 0): _page([_job("1")], status="200")})
+    postings = _run(monkeypatch, api)
+    assert len(postings) == 1
 
 
 def test_a_status_free_refine_search_block_is_accepted(monkeypatch):
