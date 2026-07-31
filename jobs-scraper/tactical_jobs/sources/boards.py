@@ -80,13 +80,6 @@ actually needs one.
 MIN_REGION_CHARS = 120
 """Below this a "description" region on a detail page is a label, not a body."""
 
-_NAMESPACES = {
-    "atom": "http://www.w3.org/2005/Atom",
-    "content": "http://purl.org/rss/1.0/modules/content/",
-    "dc": "http://purl.org/dc/elements/1.1/",
-}
-
-
 # ---------------------------------------------------------------------------
 # option coercion
 #
@@ -96,13 +89,24 @@ _NAMESPACES = {
 
 
 def _as_int(value: Any, default: int) -> int:
+    """A non-negative bound, or ``default``.
+
+    A negative bound is always a typo, and it is the expensive kind: a
+    ``max_items = -1`` makes the source yield nothing while reporting a clean
+    run, which is indistinguishable from a quiet board. Falling back to the
+    documented default and saying so in the log is the only safe reading.
+    """
     if isinstance(value, bool) or value is None:
         return default
     try:
-        return int(value)
+        number = int(value)
     except (TypeError, ValueError):
         log.warning("ignoring non-numeric option value %r, using %d", value, default)
         return default
+    if number < 0:
+        log.warning("ignoring negative option value %r, using %d", value, default)
+        return default
+    return number
 
 
 _FALSEY = {"", "0", "false", "no", "n", "off", "none", "null"}
@@ -308,6 +312,12 @@ def json_records(payload: Any, depth: int = 0) -> list[Any]:
     and the wrapped ``{"data": {"jobs": [...]}}`` case. Only arrays sitting
     under a known envelope key count, so a stray list of facet values is never
     mistaken for the listings.
+
+    A *populated* envelope always beats an empty one. Several of these tenants
+    answer with more than one known key -- ``{"results": [], "jobs": [...]}``
+    from a saved-search wrapper, for instance -- and returning the first key
+    that happens to be a list would report the board as empty while the
+    listings sat in the next key along.
     """
     if isinstance(payload, list):
         return payload
@@ -316,7 +326,7 @@ def json_records(payload: Any, depth: int = 0) -> list[Any]:
     index = _index(payload)
     for key in _ENVELOPE_KEYS:
         value = index.get(key)
-        if isinstance(value, list):
+        if isinstance(value, list) and value:
             return value
     for value in payload.values():
         if isinstance(value, dict):
@@ -731,13 +741,11 @@ def _entry_description(entry: ET.Element) -> str:
     holds a teaser -- but not always, and some tenants populate only one.
     Taking whichever renders longer avoids guessing which the platform chose.
     """
+    grouped = _children(entry)
     candidates = [
         html_to_text(_element_text(node))
-        for path in (
-            "content:encoded", "description", "atom:content", "atom:summary",
-            "content", "summary",
-        )
-        for node in entry.findall(path, _NAMESPACES)
+        for name in ("encoded", "description", "content", "summary")
+        for node in grouped.get(name, ())
     ]
     return max(candidates, key=len, default="")
 
@@ -859,12 +867,24 @@ class AssociationBoardSource(Source):
         # parse as XML, and it contains no <item> elements -- so without this
         # check a dead board reports a clean run with zero jobs, which is the
         # single most expensive failure mode this project has.
-        if root.tag.rsplit("}", 1)[-1].lower() == "html":
+        if local_name(root.tag) == "html":
             raise ValueError("response is an HTML page, not an RSS/Atom feed")
-        entries = root.findall(".//item")
-        if not entries:
-            entries = root.findall(".//atom:entry", _NAMESPACES) or root.findall(".//entry")
-        return entries
+        # Matched by local name, not by namespace-qualified path. RSS 1.0
+        # (``<rdf:RDF>`` with items in the RSS 1.0 namespace), Atom 0.3, and
+        # any RSS 2.0 served under a default namespace all carry ordinary
+        # ``item``/``entry`` elements that a qualified ``.//item`` misses
+        # completely -- and missing them looks exactly like an empty board.
+        items: list[ET.Element] = []
+        entries: list[ET.Element] = []
+        for node in root.iter():
+            if node is root:
+                continue
+            name = local_name(node.tag)
+            if name == "item":
+                items.append(node)
+            elif name == "entry":
+                entries.append(node)
+        return items or entries
 
     def _from_entry(
         self,
@@ -875,7 +895,7 @@ class AssociationBoardSource(Source):
         detail_budget: int,
         min_chars: int,
     ) -> tuple[JobPosting | None, bool]:
-        raw_title = _find_text(entry, "title", "atom:title")
+        raw_title = _child_text(entry, "title")
         link = _entry_link(entry, feed_url)
         if not (raw_title and link):
             log.debug("%s: feed item without a title or link", self.name)
@@ -893,11 +913,8 @@ class AssociationBoardSource(Source):
         if title != raw_title.strip():
             description = f"{description}\n\nListed as: {raw_title.strip()}".strip()
 
-        posted = _find_text(
-            entry, "pubDate", "dc:date", "atom:published", "atom:updated",
-            "published", "updated",
-        )
-        identifier = _find_text(entry, "guid", "atom:id", "id") or link
+        posted = _child_text(entry, "pubdate", "date", "published", "updated")
+        identifier = _child_text(entry, "guid", "id") or link
 
         return (
             JobPosting(
