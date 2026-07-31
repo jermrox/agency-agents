@@ -81,11 +81,56 @@ class USAJobsSource(Source):
             return None
 
         details = (descriptor.get("UserArea") or {}).get("Details") or {}
-        summary_parts = [
-            descriptor.get("QualificationSummary") or "",
-            details.get("JobSummary") or "",
-            details.get("MajorDuties") and " ".join(details["MajorDuties"]) or "",
-        ]
+
+        # Capture every narrative block USAJOBS exposes, not just the summary.
+        # Education, Requirements, and Evaluations are where the certification,
+        # degree, and clearance language actually lives -- dropping them would
+        # blind the enrichment layer to most of what it exists to extract.
+        def _join(value: Any) -> str:
+            if isinstance(value, list):
+                return " ".join(str(item) for item in value if item)
+            return str(value) if value else ""
+
+        narrative_keys = (
+            "JobSummary",
+            "MajorDuties",
+            "Education",
+            "Requirements",
+            "Evaluations",
+            "Benefits",
+            "OtherInformation",
+            "AgencyMarketingStatement",
+        )
+        summary_parts = [descriptor.get("QualificationSummary") or ""]
+        summary_parts.extend(_join(details.get(key)) for key in narrative_keys)
+
+        # Fold the structured facts into the text too, so classification and
+        # enrichment see them without every consumer having to special-case
+        # this one source's schema.
+        for label, key in (
+            ("Security clearance:", "SecurityClearanceRequired"),
+            ("Telework eligible:", "TeleworkEligible"),
+            ("Travel:", "TravelCode"),
+            ("Promotion potential:", "PromotionPotential"),
+            ("Who may apply:", "WhoMayApply"),
+            ("Drug test required:", "DrugTestRequired"),
+        ):
+            value = _join(details.get(key))
+            if value:
+                summary_parts.append(f"{label} {value}.")
+
+        for label, key in (
+            ("Job category:", "JobCategory"),
+            ("Position schedule:", "PositionSchedule"),
+            ("Offering type:", "PositionOfferingType"),
+        ):
+            entries = descriptor.get(key) or []
+            names = " ".join(
+                str(entry.get("Name")) for entry in entries if isinstance(entry, dict) and entry.get("Name")
+            )
+            if names:
+                summary_parts.append(f"{label} {names}.")
+
         description = html_to_text(" ".join(part for part in summary_parts if part))
 
         compensation = None

@@ -74,6 +74,11 @@ class JSONFeedPublisher(Publisher):
     def publish(self, postings: Sequence[JobPosting]) -> str:
         path = Path(self.options.get("path", "output/jobs.json"))
         retain_days = int(self.options.get("retain_days", 45))
+        # 0 (or negative) keeps the complete description. The board excerpts by
+        # default because a card on the site only needs a teaser and the
+        # employer wants the click -- but the full text is always preserved in
+        # the archive, and set excerpt_chars = 0 to carry it into the feed too.
+        excerpt_chars = int(self.options.get("excerpt_chars", EXCERPT_CHARS))
         path.parent.mkdir(parents=True, exist_ok=True)
 
         existing = load_board(path)
@@ -81,7 +86,8 @@ class JSONFeedPublisher(Publisher):
         now = datetime.now(timezone.utc)
         for posting in postings:
             entry = posting.to_public_dict()
-            entry["description"] = _excerpt(entry["description"])
+            if excerpt_chars > 0:
+                entry["description"] = _excerpt(entry["description"], excerpt_chars)
             entry["listed_at"] = now.isoformat()
             merged[entry["id"]] = entry
 

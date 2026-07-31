@@ -141,3 +141,19 @@ def test_review_queue_handles_an_empty_run(tmp_path):
     path = tmp_path / "review.md"
     ReviewQueuePublisher({"path": str(path)}).publish([])
     assert "No new postings" in path.read_text()
+
+
+def test_jsonfeed_excerpt_chars_zero_keeps_full_description(tmp_path):
+    """"We need all the information" -- excerpt_chars = 0 disables truncation."""
+    path = tmp_path / "jobs.json"
+    posting = make("1")
+    JSONFeedPublisher({"path": str(path), "excerpt_chars": 0}).publish([posting])
+    entry = json.loads(path.read_text())["jobs"][0]
+    assert len(entry["description"]) == len(posting.description)
+
+
+def test_jsonfeed_excerpt_chars_is_configurable(tmp_path):
+    path = tmp_path / "jobs.json"
+    JSONFeedPublisher({"path": str(path), "excerpt_chars": 50}).publish([make("1")])
+    entry = json.loads(path.read_text())["jobs"][0]
+    assert len(entry["description"]) <= 51

@@ -66,6 +66,12 @@ class JobPosting:
     exclusion_hits: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
 
+    # Populated by enrich.py: structured facts pulled out of the description
+    # (certifications, clearance, salary, installation, branch, program...).
+    # Kept as a plain dict so the analytics layer can consume archived JSON
+    # and live postings through exactly the same shape.
+    enrichment: dict[str, Any] = field(default_factory=dict)
+
     @property
     def identity(self) -> str:
         """Exact identity: the same posting re-fetched from the same source.
@@ -95,6 +101,19 @@ class JobPosting:
             stamp = stamp.replace(tzinfo=timezone.utc)
         return stamp.astimezone(timezone.utc).isoformat()
 
+    def to_archive_dict(self) -> dict[str, Any]:
+        """Full-fidelity record for the archive.
+
+        Unlike :meth:`to_public_dict` this keeps the **complete** description
+        rather than an excerpt, because the analytics layer mines the full
+        text for certifications, clearances, and salary language.
+        """
+        record = self.to_public_dict()
+        record["description"] = self.description
+        record["description_chars"] = len(self.description)
+        record["source_id"] = self.source_id
+        return record
+
     def to_public_dict(self) -> dict[str, Any]:
         """The shape that leaves the system. Excludes ``raw`` on purpose."""
         return {
@@ -112,6 +131,7 @@ class JobPosting:
             "description": self.description,
             "score": round(self.score, 2),
             "tags": sorted(self.tags),
+            "enrichment": self.enrichment,
             "matched": {
                 "domain": sorted(set(self.domain_hits)),
                 "discipline": sorted(set(self.discipline_hits)),
