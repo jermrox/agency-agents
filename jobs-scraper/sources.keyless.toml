@@ -49,23 +49,21 @@ min_discipline = 3.0
 #                ^tenant  ^data_center      ^site
 # -----------------------------------------------------------------------------
 
-[[source]]
-kind = "workday"
-name = "leidos"
-tenant = "leidos"
-site = "External"
-data_center = "wd5"
-employer = "Leidos"
-search_terms = ["human performance", "strength and conditioning", "athletic trainer"]
+# NO GUESSED TENANTS RUN LIVE. Earlier versions of this file enabled Workday
+# sources for "leidos" and "boozallen" -- tenant slugs typed from convention,
+# never verified, for companies that research later showed are not even the
+# H2F contract holders. A guessed tenant either 404s every night or, worse,
+# resolves to a different business unit and quietly serves someone else's
+# jobs. Every [[source]] enabled in this file must state when and how it was
+# verified live. Candidates without that line stay commented out below.
 
-[[source]]
-kind = "workday"
-name = "bah"
-tenant = "boozallen"
-site = "BoozAllen"
-data_center = "wd1"
-employer = "Booz Allen Hamilton"
-search_terms = ["human performance", "athletic trainer", "physical therapist"]
+# [[source]]                       # CANDIDATE -- tenant/site/data_center are
+# kind = "workday"                 # unverified guesses. Confirm from the real
+# name = "example-prime"           # careers URL before enabling:
+# tenant = "example"               #   https://{tenant}.{dc}.myworkdayjobs.com/{site}
+# site = "External"
+# data_center = "wd1"
+# employer = "Example Prime"
 
 # [[source]]
 # kind = "workday"
@@ -142,17 +140,22 @@ search_terms = ["human performance", "athletic trainer", "physical therapist"]
 # 5. SPECIALIST EMPLOYERS -- standard ATS boards, all keyless
 # -----------------------------------------------------------------------------
 
-[[source]]
-kind = "greenhouse"
-name = "o2x"
-board_token = "o2x"
-employer = "O2X Human Performance"
+# The tokens that used to be enabled here -- greenhouse "o2x" and lever
+# "teamexos" -- were checked against the live APIs on 2026-07-31 and DO NOT
+# EXIST (both endpoints return not-found). They were guesses that sat in this
+# file as if they were configuration. Removed rather than kept as comments a
+# copy-paste could resurrect.
 
+# --- VERIFIED LIVE ----------------------------------------------------------
+# Fetched 2026-07-31: returned a well-formed feed of current postings (items
+# dated the same day). Aggregates coaching, S&C, and athletic-training roles,
+# including tactical/H2F contractor listings; the classifier separates the
+# tactical roles from the collegiate majority.
 [[source]]
-kind = "lever"
-name = "exos"
-board_token = "teamexos"
-employer = "EXOS"
+kind = "rss"
+name = "simplifaster"
+url = "https://jobboard.simplifaster.com/jobs/feed/"
+employer = ""
 
 # Other keyless ATS adapters, ready when you have a token:
 #   ashby           board_token
