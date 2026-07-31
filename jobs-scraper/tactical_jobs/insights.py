@@ -232,14 +232,25 @@ STATE_CODES: frozenset[str] = frozenset(US_STATES.values())
 
 # Longest first, so "west virginia" is not read as "virginia" and
 # "district of columbia" is not read as "columbia".
-_STATE_NAMES_LONGEST_FIRST: tuple[str, ...] = tuple(
-    sorted(US_STATES, key=lambda name: (-len(name), name))
+_STATE_NAME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
+    (re.compile(rf"\b{re.escape(name)}\b"), US_STATES[name])
+    for name in sorted(US_STATES, key=lambda name: (-len(name), name))
 )
 
 # Two uppercase letters standing alone. Case matters: matching case-insensitively
 # anywhere in the string turns "Remote in US" into Indiana and "hiring or not"
 # into Oregon, because half the state codes are also English words.
 _UPPER_CODE = re.compile(r"\b[A-Z]{2}\b")
+
+# What may legitimately follow a state code: end of field, the next comma, a ZIP,
+# or a country. This is what separates "Fort Bragg NC USA" from the "OR" in
+# "REMOTE - US OR CANADA" -- an all-caps field makes every English preposition
+# look like a state code, so position, not just casing, has to carry the weight.
+_TRAILING_NOISE = re.compile(r"^(?:,|\d{5}(?:-\d{4})?\b|USA?\b|United\s+States\b)", re.I)
+
+# Strings that mean "no" when a scraper writes a boolean as text. Bare bool()
+# would read "false" as True, which would report the entire corpus as remote.
+_FALSEY_TEXT: frozenset[str] = frozenset({"", "false", "f", "no", "n", "0", "none", "null", "off"})
 
 # Sorts before any real timestamp, so an undated record loses to a dated one
 # instead of poisoning the comparison.
@@ -291,6 +302,39 @@ def _as_mapping(value: Any) -> Mapping[str, Any]:
     return value if isinstance(value, Mapping) else {}
 
 
+def _as_records(value: Any) -> Sequence[Any]:
+    """A corpus is a sequence of rows; anything else is an empty corpus.
+
+    ``Archive.records()`` returns a list, but a caller reading a status file
+    that failed to parse holds ``None``, and "the report is empty" is a far more
+    useful answer there than a ``TypeError`` out of a loop header.
+    """
+    return value if isinstance(value, (list, tuple)) else []
+
+
+def _as_bool(value: Any) -> bool:
+    """Truthiness that survives a scraper writing its booleans as strings."""
+    if isinstance(value, str):
+        return _clean(value).casefold() not in _FALSEY_TEXT
+    return bool(value)
+
+
+def _unique_labels(values: Iterable[str]) -> tuple[str, ...]:
+    """Dedupe labels case-insensitively, keeping the first spelling seen.
+
+    Upper-casing instead would be simpler and wrong: ``enrich.py`` emits
+    canonical, deliberately mixed-case credentials -- ``PhD``, ``TSAC-F``,
+    ``NSCA-CPT`` -- and normalizing them here would print ``PHD`` in every
+    report the module feeds. The comparison still has to ignore case, because a
+    description naming "CSCS" in the requirements and "cscs" in the preferred
+    section is asking for one credential, not two.
+    """
+    seen: dict[str, str] = {}
+    for value in values:
+        seen.setdefault(value.casefold(), value)
+    return tuple(sorted(seen.values(), key=lambda label: (label.casefold(), label)))
+
+
 def _parse_when(value: Any) -> datetime | None:
     """Parse an ISO timestamp to UTC, returning None for anything unusable."""
     if not isinstance(value, str) or not value.strip():
@@ -309,7 +353,15 @@ def _parse_when(value: Any) -> datetime | None:
             return None
     if stamp.tzinfo is None:
         stamp = stamp.replace(tzinfo=timezone.utc)
-    return stamp.astimezone(timezone.utc)
+    try:
+        return stamp.astimezone(timezone.utc)
+    except (OverflowError, OSError):
+        # A year-1 or year-9999 stamp carrying a UTC offset cannot be shifted
+        # into UTC without leaving the representable range, and the error it
+        # raises is OverflowError rather than ValueError. ``archive.py`` guards
+        # the identical call; one absurd date in one feed row must not be able
+        # to take down the whole report.
+        return None
 
 
 # --------------------------------------------------------------------------
@@ -345,14 +397,20 @@ def annualized_salary(enrichment: Mapping[str, Any] | None) -> float | None:
 
 
 def _period_factor(period: Any, midpoint: float) -> float:
-    """Multiplier to annualize ``midpoint``, inferring the period if unlabeled."""
+    """Multiplier to annualize ``midpoint``, inferring the period if unlabeled.
+
+    Exact spelling first, then :data:`_PERIOD_PATTERNS` most-specific-first.
+    Scanning left to right for the first recognizable *word* -- the obvious
+    implementation -- gets "salary per hour" wrong by a factor of 2080 and
+    "bi-weekly" wrong by a factor of two, because in both the misleading term
+    comes first.
+    """
     text = _clean(period).lower()
     if text in PERIOD_FACTORS:
         return PERIOD_FACTORS[text]
-    # "per hour", "Per Year", "USD/hour" -- take the first word we recognize.
-    for word in re.findall(r"[a-z]+", text):
-        if word in PERIOD_FACTORS:
-            return PERIOD_FACTORS[word]
+    for pattern, factor in _PERIOD_PATTERNS:
+        if pattern.search(text):
+            return factor
     return HOURS_PER_YEAR if midpoint < HOURLY_CEILING else 1.0
 
 
@@ -413,24 +471,53 @@ def state_code(location: Any) -> str | None:
     if not text:
         return None
 
-    # 1. An uppercase code, rightmost first: "Fort Bragg, NC 28310, US" is NC,
-    #    and a leading "JB Lewis-McChord" must not beat the real state.
-    for token in reversed(_UPPER_CODE.findall(text)):
-        if token in STATE_CODES:
-            return token
+    # 1. An uppercase code in a position a state code actually occupies,
+    #    rightmost first: "Fort Bragg, NC 28310, US" is NC, and a leading
+    #    "JB Lewis-McChord" must not beat the real state. Position is required
+    #    as well as casing because an all-caps field ("REMOTE - US OR CANADA")
+    #    turns every English preposition into a candidate.
+    anchored = _anchored_codes(text)
+    if anchored:
+        return anchored[-1]
 
-    # 2. A spelled-out state name anywhere in the string.
-    lowered = text.lower()
-    for name in _STATE_NAMES_LONGEST_FIRST:
-        if re.search(rf"\b{re.escape(name)}\b", lowered):
-            return US_STATES[name]
+    # 2. A spelled-out state name, searching comma segments right to left. The
+    #    trailing segment is where a location puts its state, and taking the
+    #    longest name found anywhere instead reads "New York Life, Dallas,
+    #    Texas" as New York. Within a segment the longest name still wins, so
+    #    "West Virginia" is not read as Virginia.
+    segments = [segment for segment in text.lower().split(",") if segment.strip()]
+    for segment in reversed(segments):
+        for pattern, code in _STATE_NAME_PATTERNS:
+            if pattern.search(segment):
+                return code
 
     # 3. A lowercase code, but only as the final word of the final segment.
     #    Scanning further left would read "remote in us" as Indiana.
-    words = re.findall(r"[a-z]+", lowered.rsplit(",", 1)[-1])
+    words = re.findall(r"[a-z]+", segments[-1]) if segments else []
     if words and len(words[-1]) == 2 and words[-1].upper() in STATE_CODES:
         return words[-1].upper()
     return None
+
+
+def _anchored_codes(text: str) -> list[str]:
+    """Uppercase state codes sitting where a state code belongs, in order.
+
+    A code qualifies when a comma introduces it ("Fort Bragg, NC") or when only
+    a ZIP, a country, or nothing at all follows it ("Fort Bragg NC 28310").
+    Everything else is a two-letter word that happens to be spelled like a
+    state, which is most of them: OR, IN, ME, HI, OK, AS, DE and PA are all
+    ordinary English or abbreviations of something else.
+    """
+    codes: list[str] = []
+    for match in _UPPER_CODE.finditer(text):
+        token = match.group()
+        if token not in STATE_CODES:
+            continue
+        before = text[: match.start()].rstrip()
+        after = text[match.end() :].strip()
+        if before.endswith(",") or not after or _TRAILING_NOISE.match(after):
+            codes.append(token)
+    return codes
 
 
 # --------------------------------------------------------------------------
@@ -483,19 +570,19 @@ def _to_job(record: Mapping[str, Any], key: str) -> _Job:
     location = _clean(record.get("location"))
     # Certifications are deduped inside one job: a description listing "CSCS"
     # in the requirements and again in the preferred section is one job asking
-    # for CSCS, not two.
-    certifications = sorted({cert.upper() for cert in _as_strings(enrichment.get("certifications"))})
+    # for CSCS, not two. Spelling is left as enrich.py canonicalized it.
+    certifications = _unique_labels(_as_strings(enrichment.get("certifications")))
     return _Job(
         key=key,
         employer=_clean(record.get("employer")),
         title=_clean(record.get("title")),
         location=location,
         state=state_code(location),
-        remote=bool(record.get("remote")),
+        remote=_as_bool(record.get("remote")),
         posted_at=_parse_when(record.get("posted_at")),
         disciplines=tuple(tag for tag in DISCIPLINE_TAGS if tag in tags),
         domains=tuple(tag for tag in DOMAIN_TAGS if tag in tags),
-        certifications=tuple(certifications),
+        certifications=certifications,
         clearance=_clean(enrichment.get("clearance")),
         installation=_clean(enrichment.get("installation")),
         branch=_clean(enrichment.get("service_branch")),
@@ -595,7 +682,7 @@ def build_insights(records: list[dict[str, Any]], *, top_n: int = 15) -> dict[st
     pass 0 or less for untrimmed. The timeline is never trimmed -- a truncated
     time series is a misleading one.
     """
-    usable = [record for record in records if isinstance(record, Mapping)]
+    usable = [record for record in _as_records(records) if isinstance(record, Mapping)]
     jobs = _unique_jobs(usable)
 
     salaries = [job.salary for job in jobs if job.salary is not None]
@@ -799,18 +886,25 @@ def _trends(dated: Sequence[_Job], top_n: int) -> dict[str, Any]:
 
 
 def _growth(recent: Iterable[str], prior: Iterable[str], top_n: int) -> list[dict[str, Any]]:
-    """Names that appear more in ``recent`` than in ``prior``, biggest gain first."""
-    now = dict(_tally(recent))
-    before = dict(_tally(prior))
+    """Names that appear more in ``recent`` than in ``prior``, biggest gain first.
+
+    The two windows are joined on the casefolded name, not on the spelling
+    ``_tally`` chose to display. Joining on the display spelling looks correct
+    and quietly invents growth: a board that wrote "US ARMY H2F" in February and
+    "US Army H2F" in June would find no prior row for the June spelling and be
+    reported as the fastest-growing employer in the corpus on a flat headcount.
+    """
+    now = _tally(recent)
+    before = {name.casefold(): count for name, count in _tally(prior)}
     entries = [
         {
             "name": name,
             "recent": count,
-            "previous": before.get(name, 0),
-            "change": count - before.get(name, 0),
+            "previous": before.get(name.casefold(), 0),
+            "change": count - before.get(name.casefold(), 0),
         }
-        for name, count in now.items()
-        if count > before.get(name, 0)
+        for name, count in now
+        if count > before.get(name.casefold(), 0)
     ]
     entries.sort(key=lambda entry: (-entry["change"], -entry["recent"], entry["name"]))
     return _top(entries, top_n)

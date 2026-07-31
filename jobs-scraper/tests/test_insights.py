@@ -946,3 +946,80 @@ def test_a_real_enriched_hourly_posting_annualizes_end_to_end():
     assert names(insights["certifications"]) == ["CSCS", "TSAC-F"]
     assert insights["clearances"] == [{"name": "Secret", "count": 1}]
     assert insights["by_state"] == [{"code": "KY", "count": 1}]
+
+
+# --------------------------------------------------------------------------
+# Regressions found during adversarial review
+# --------------------------------------------------------------------------
+
+def _record(**overrides):
+    """Minimal archive-shaped record; override just what a test cares about."""
+    base = {
+        "id": "a1",
+        "fingerprint": "f1",
+        "source": "test",
+        "url": "https://example.invalid/1",
+        "title": "Strength and Conditioning Coach",
+        "employer": "USASOC",
+        "location": "Fort Bragg, NC",
+        "remote": False,
+        "posted_at": "2026-05-01T00:00:00+00:00",
+        "archived_at": "2026-05-01T00:00:00+00:00",
+        "description": "THOR3 program.",
+        "score": 20.0,
+        "tags": ["sof"],
+        "enrichment": {},
+        "matched": {"domain": [], "discipline": [], "excluded_by": []},
+    }
+    base.update(overrides)
+    return base
+
+
+def test_preposition_in_an_allcaps_location_is_not_a_state():
+    """Regression: 'REMOTE - US OR CANADA' parsed OR as Oregon.
+
+    An all-caps location field makes every English preposition look like a
+    state code, so position -- not just casing -- has to carry the weight.
+    """
+    insights = build_insights([_record(location="REMOTE - US OR CANADA")])
+    codes = {entry["code"] for entry in insights["by_state"]}
+    assert "OR" not in codes
+
+
+def test_genuine_trailing_state_code_still_parses():
+    """The fix above must not break the common case it sits next to."""
+    insights = build_insights(
+        [
+            _record(location="Fort Bragg, NC"),
+            _record(id="a2", fingerprint="f2", location="Coronado, CA 92118"),
+            _record(id="a3", fingerprint="f3", location="Fort Carson CO USA"),
+        ]
+    )
+    codes = {entry["code"] for entry in insights["by_state"]}
+    assert {"NC", "CA", "CO"} <= codes
+
+
+def test_string_false_is_not_treated_as_remote():
+    """Regression: bare bool("false") is True, which would report the whole
+    corpus as remote the moment any source wrote its booleans as text."""
+    insights = build_insights(
+        [
+            _record(remote="false"),
+            _record(id="a2", fingerprint="f2", remote="no"),
+            _record(id="a3", fingerprint="f3", remote=""),
+        ]
+    )
+    assert insights["remote"]["count"] == 0
+
+
+def test_string_true_is_treated_as_remote():
+    insights = build_insights([_record(remote="true")])
+    assert insights["remote"]["count"] == 1
+
+
+def test_non_list_corpus_is_an_empty_corpus_not_a_crash():
+    """A caller holding None from a status file that failed to parse should
+    get an empty report, not a TypeError out of a loop header."""
+    for value in (None, {}, "not a corpus", 42):
+        insights = build_insights(value)
+        assert insights["totals"]["postings"] == 0

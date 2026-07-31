@@ -88,56 +88,82 @@ _GAP = r"(?>\s*)"
 # Every credential normalizes to one label so that counting them is possible.
 # "RDN", "RD", and "Registered Dietitian Nutritionist" are one credential with
 # three spellings; if they stay distinct the demand signal is split three ways.
-#
-# ``veto`` is a same-neighborhood disqualifier for acronyms that collide with
-# unrelated military vocabulary (ATC is also Air Traffic Control).
-_CERT_RULES: tuple[tuple[str, re.Pattern[str], re.Pattern[str] | None], ...] = (
+@dataclass(frozen=True, slots=True)
+class _CertRule:
+    """One spelling of one credential, plus the evidence it needs.
+
+    ``veto`` is a same-neighborhood disqualifier for acronyms that collide with
+    unrelated military vocabulary (ATC is also Air Traffic Control).
+    ``require`` is the opposite and is reserved for acronyms that are also
+    ordinary text: the match is discarded *unless* supporting vocabulary sits
+    beside it.
+    """
+
+    label: str
+    pattern: re.Pattern[str]
+    veto: re.Pattern[str] | None = None
+    require: re.Pattern[str] | None = None
+
+
+# Bare "RD" is a road as often as it is a dietitian. Upper-casing is not the
+# defense it looks like, because federal postings print facility addresses in
+# full capitals ("BLDG 4-2817 REILLY RD, FORT BRAGG"). So the two-letter form
+# -- and only the two-letter form; "RDN" is unambiguous -- has to be standing
+# next to nutrition or credentialing vocabulary to count.
+_RD_CONTEXT_RE = re.compile(
+    r"\b(?:dietitian|dietician|dietetics?|nutrition\w*|credential\w*|certif\w+|"
+    r"registered|licens\w+|eligib\w+|required|require|preferred|prefer|CDR)\b",
+    re.I,
+)
+
+_CERT_RULES: tuple[_CertRule, ...] = (
     # Strength and conditioning.
-    ("CSCS", re.compile(r"\bCSCS\b", re.I), None),
-    (
+    _CertRule("CSCS", re.compile(r"\bCSCS\b", re.I)),
+    _CertRule(
         "CSCS",
         re.compile(r"\bcertified\s+strength\s+(?:and|&)\s+conditioning\s+specialist\b", re.I),
-        None,
     ),
     # TSAC-F only -- bare "TSAC" is the NSCA's program and journal name, not a
     # credential, and it shows up in postings that require nothing at all.
-    ("TSAC-F", re.compile(r"\bTSAC[\s\-]?F\b", re.I), None),
-    ("TSAC-F", re.compile(r"\bTSAC[\s\-]?Facilitator\b", re.I), None),
-    (
+    _CertRule("TSAC-F", re.compile(r"\bTSAC[\s\-]?F\b", re.I)),
+    _CertRule("TSAC-F", re.compile(r"\bTSAC[\s\-]?Facilitator\b", re.I)),
+    _CertRule(
         "TSAC-F",
         re.compile(r"\btactical\s+strength\s+(?:and|&)\s+conditioning\s+facilitator\b", re.I),
-        None,
     ),
     # Athletic training. BOC is the certifying body; "BOC certified" is how
     # half the market writes ATC, so it normalizes to the same label.
-    ("ATC", re.compile(r"\bATC\b"), re.compile(r"\bair\s+traffic\b", re.I)),
-    ("ATC", re.compile(r"\bBOC\b"), None),
-    ("ATC", re.compile(r"\bboard\s+of\s+certification\b", re.I), None),
-    ("ATC", re.compile(r"\bcertified\s+athletic\s+trainer\b", re.I), None),
-    ("ATC", re.compile(r"\bathletic\s+trainer[,\s]+certified\b", re.I), None),
-    ("LAT", re.compile(r"\bLAT\b"), None),
-    ("LAT", re.compile(r"\blicensed\s+athletic\s+trainer\b", re.I), None),
+    _CertRule("ATC", re.compile(r"\bATC\b"), veto=re.compile(r"\bair\s+traffic\b", re.I)),
+    _CertRule("ATC", re.compile(r"\bBOC\b")),
+    _CertRule("ATC", re.compile(r"\bboard\s+of\s+certification\b", re.I)),
+    _CertRule("ATC", re.compile(r"\bcertified\s+athletic\s+trainer\b", re.I)),
+    _CertRule("ATC", re.compile(r"\bathletic\s+trainer[,\s]+certified\b", re.I)),
+    _CertRule("LAT", re.compile(r"\bLAT\b")),
+    _CertRule("LAT", re.compile(r"\blicensed\s+athletic\s+trainer\b", re.I)),
     # Nutrition.
-    ("RD", re.compile(r"\bRDN?\b"), None),
-    ("RD", re.compile(r"\bregistered\s+dietitian(?:\s+nutritionist)?\b", re.I), None),
-    ("CISSN", re.compile(r"\bCISSN\b", re.I), None),
-    ("CISSN", re.compile(r"\bcertified\s+sports\s+nutritionist\b", re.I), None),
+    _CertRule("RD", re.compile(r"\bRDN\b")),
+    _CertRule("RD", re.compile(r"\bRD\b"), require=_RD_CONTEXT_RE),
+    _CertRule("RD", re.compile(r"\bregistered\s+dietitian(?:\s+nutritionist)?\b", re.I)),
+    _CertRule("CISSN", re.compile(r"\bCISSN\b", re.I)),
+    _CertRule("CISSN", re.compile(r"\bcertified\s+sports\s+nutritionist\b", re.I)),
     # Rehab.
-    ("DPT", re.compile(r"\bDPT\b", re.I), None),
-    ("DPT", re.compile(r"\bdoctor(?:ate)?\s+of\s+physical\s+therapy\b", re.I), None),
+    _CertRule("DPT", re.compile(r"\bDPT\b", re.I)),
+    _CertRule("DPT", re.compile(r"\bdoctor(?:ate)?\s+of\s+physical\s+therapy\b", re.I)),
     # Other NSCA credentials. Bare "CPT" is never matched: in this domain it is
     # far more often a Captain than a Certified Personal Trainer.
-    ("NSCA-CPT", re.compile(r"\bNSCA[\s\-]?CPT\b", re.I), None),
-    ("NSCA-CPT", re.compile(r"\bNSCA\s+certified\s+personal\s+trainer\b", re.I), None),
-    ("CSPS", re.compile(r"\bCSPS\b", re.I), None),
-    ("CSPS", re.compile(r"\bcertified\s+special\s+population\s+specialist\b", re.I), None),
+    _CertRule("NSCA-CPT", re.compile(r"\bNSCA[\s\-]?CPT\b", re.I)),
+    _CertRule("NSCA-CPT", re.compile(r"\bNSCA\s+certified\s+personal\s+trainer\b", re.I)),
+    _CertRule("CSPS", re.compile(r"\bCSPS\b", re.I)),
+    _CertRule("CSPS", re.compile(r"\bcertified\s+special\s+population\s+specialist\b", re.I)),
     # Research credential -- distinct from the *education* level, because a
     # posting can require a doctorate without wanting a PhD specifically.
-    ("PhD", re.compile(r"\bPh\.?\s?D\.?\b", re.I), None),
-    ("PhD", re.compile(r"\bdoctor\s+of\s+philosophy\b", re.I), None),
+    _CertRule("PhD", re.compile(r"\bPh\.?\s?D\.?\b", re.I)),
+    _CertRule("PhD", re.compile(r"\bdoctor\s+of\s+philosophy\b", re.I)),
 )
 
 _CERT_VETO_WINDOW = 40
+_CERT_CONTEXT_WINDOW = 60
+"""Wider than the veto window: supporting vocabulary is often a clause away."""
 
 # --------------------------------------------------------------------------
 # Security clearance
@@ -208,9 +234,20 @@ _AMOUNT_RE = re.compile(
     r"(?P<k>\s?[Kk])?\b"
 )
 
-# The trailing currency token catches "USD 90,000 - USD 115,000", where the
-# second endpoint's marker sits in the separator instead of on the number.
-_RANGE_SEP_RE = re.compile(r"^\s*(?:-|--|–|—|to|through|up\s+to)\s*(?:USD|CAD|EUR|GBP)?\s*$", re.I)
+# The currency tokens on both sides catch the two ways an ATS renders the same
+# band: "USD 90,000 - USD 115,000" hangs the second marker off the separator,
+# "90,000 USD - 115,000 USD" hangs the first one there. Missing the leading
+# form cost the whole ceiling -- the range collapsed to its floor.
+#
+# "and" is here for "between $80,000 and $95,000", which is how prose states a
+# band. It is safe because the separator has to be the *entire* gap between two
+# money-shaped numbers, so "$85,000 and relocation of $10,000" is not a range.
+_RANGE_SEP_RE = re.compile(
+    r"^\s*(?:USD|CAD|EUR|GBP)?"
+    r"\s*(?:-|--|–|—|to|through|up\s+to|and)"
+    r"\s*(?:USD|CAD|EUR|GBP)?\s*$",
+    re.I,
+)
 
 # Number immediately followed by a counting noun: a headcount, a duration, a
 # distance. Never money.
@@ -228,15 +265,27 @@ _VETO_WORDS = (
     r"budget|grant|award|endowment|equipment|facility|renovation|donation|"
     r"scholarship|prize|revenue|portfolio|inventory|deficit|debt|fundraising"
 )
+
+# One-time payments. These are money paid to a person, which is why the org
+# vetoes above do not catch them, but they are not the pay rate -- and a
+# "sign-on bonus of $10,000 - $15,000" is *range*-shaped, so it outranks the
+# real salary and wins outright unless it is vetoed here.
+_ONE_TIME_WORDS = r"relocation|signing|sign[\s-]?on|severance|referral|retention|hiring"
+
 _VETO_BEFORE_RE = re.compile(
-    rf"\b(?:{_VETO_WORDS}|manages?|managing|oversees?|supervis\w+)\b[^.\n]{{0,20}}$", re.I
+    rf"\b(?:{_VETO_WORDS}|{_ONE_TIME_WORDS}|bonus(?:es)?|"
+    rf"manages?|managing|oversees?|supervis\w+)\b[^.\n]{{0,20}}$",
+    re.I,
 )
-_VETO_AFTER_RE = re.compile(rf"^[^.\n]{{0,15}}\b(?:{_VETO_WORDS})\b", re.I)
+# "bonus" is deliberately absent from the *after* list: it trails a genuine
+# salary all the time ("$85,000 per year plus an annual bonus"), whereas
+# "relocation" and "signing" only ever precede or label the payment itself.
+_VETO_AFTER_RE = re.compile(rf"^[^.\n]{{0,15}}\b(?:{_VETO_WORDS}|{_ONE_TIME_WORDS})\b", re.I)
 
 # Retirement plans are the single worst salary false positive: "401k" parses
 # as $401,000 a year and "401(k)" as $401 an hour, and both sit right next to
 # the word "compensation" in the benefits paragraph.
-_RETIREMENT_RE = re.compile(r"\b(?:401|403|457)\s*\(?\s*[kb]\s*\)?", re.I)
+_RETIREMENT_RE = re.compile(rf"\b(?:401|403|457){_GAP}\(?{_GAP}[kb]{_GAP}\)?", re.I)
 
 _SALARY_CUE_RE = re.compile(
     r"\b(?:salary|salaries|salaried|pay|pays|paid|wage|wages|compensation|"
@@ -365,13 +414,17 @@ _WORD_ALT = "|".join(_NUMBER_WORDS)
 # "5-7 years", and "three (3) to five (5) years" with one pass. The leading
 # number is always the one captured, because a range's floor is the
 # requirement and its ceiling is a wish.
+#
+# Every gap is possessive. Six optional groups separated by plain ``\s*`` gave
+# the engine six places to split one run of whitespace, and "5" followed by a
+# few hundred spaces and no "years" took minutes to reject.
 _YEARS_RE = re.compile(
     rf"\b(?:(?P<word>{_WORD_ALT})|(?P<num>\d{{1,2}}))"
-    r"\s*(?:\(\s*\d{1,2}\s*\))?"
-    r"\s*(?:\+|plus)?"
-    rf"\s*(?:(?:-|--|–|—|to|through)\s*(?:{_WORD_ALT}|\d{{1,2}})"
-    r"\s*(?:\(\s*\d{1,2}\s*\))?\s*)?"
-    r"(?:\+|plus)?\s*"
+    rf"{_GAP}(?:\({_GAP}\d{{1,2}}{_GAP}\))?"
+    rf"{_GAP}(?:\+|plus)?"
+    rf"{_GAP}(?:(?:-|--|–|—|to|through){_GAP}(?:{_WORD_ALT}|\d{{1,2}})"
+    rf"{_GAP}(?:\({_GAP}\d{{1,2}}{_GAP}\))?{_GAP})?"
+    rf"(?:\+|plus)?{_GAP}"
     r"(?:years?|yrs?)\b",
     re.I,
 )
@@ -673,10 +726,12 @@ def enrich_text(
     :class:`JobPosting` (a re-analysis pass over the archive, for instance)
     do not have to fabricate one.
     """
-    title = title or ""
-    description = description or ""
-    location = location or ""
-    compensation = compensation or ""
+    # ``or ""`` rather than a type check: a source that hands us ``None`` for a
+    # missing field is normal, and enrichment is never the place to raise.
+    title = (title or "").translate(_NORMALIZE)
+    description = (description or "").translate(_NORMALIZE)
+    location = (location or "").translate(_NORMALIZE)
+    compensation = (compensation or "").translate(_NORMALIZE)
 
     body = f"{title}\n{description}"
     salary_min, salary_max, salary_period = _extract_salary(compensation, description, title)
@@ -706,17 +761,26 @@ def enrich_text(
 def _extract_certifications(text: str) -> list[str]:
     """Every credential named anywhere in the posting, normalized and deduped."""
     found: set[str] = set()
-    for label, pattern, veto in _CERT_RULES:
-        if label in found:
+    for rule in _CERT_RULES:
+        if rule.label in found:
             continue
-        for match in pattern.finditer(text):
-            if veto is not None and veto.search(
-                text[max(0, match.start() - _CERT_VETO_WINDOW) : match.end() + _CERT_VETO_WINDOW]
+        for match in rule.pattern.finditer(text):
+            if rule.veto is not None and rule.veto.search(
+                _window(text, match, _CERT_VETO_WINDOW)
             ):
                 continue
-            found.add(label)
+            if rule.require is not None and not rule.require.search(
+                _window(text, match, _CERT_CONTEXT_WINDOW)
+            ):
+                continue
+            found.add(rule.label)
             break
     return sorted(found)
+
+
+def _window(text: str, match: re.Match[str], radius: int) -> str:
+    """The neighbourhood a match has to justify itself in."""
+    return text[max(0, match.start() - radius) : match.end() + radius]
 
 
 def _extract_clearance(text: str) -> str | None:
