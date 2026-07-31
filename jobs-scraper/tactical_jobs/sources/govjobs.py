@@ -75,12 +75,26 @@ def _index(record: Any) -> dict[str, Any]:
     return index
 
 
+_DISPLAY_KEYS = (
+    "name", "value", "label", "text", "descriptor", "title", "display",
+    "displayName",
+    # Link objects (``{"href": "/careers/x/jobs/1"}``) are how several tenants
+    # emit the detail link. Without these a record whose only link is an
+    # object resolves to no url at all, and the posting is dropped outright.
+    "href", "url", "link", "uri",
+)
+
+_CITY_KEYS = ("city", "cityName", "locality", "town")
+_REGION_KEYS = ("state", "stateProvince", "stateCode", "region", "province")
+
+
 def flatten(value: Any) -> str:
     """Flatten a scalar-ish value to display text.
 
     Vendors emit the same logical field as a bare string, as a small object
-    (``{"name": ...}``), or as a list of either. One flattener here keeps
-    that mess out of the mapping code.
+    (``{"name": ...}``), as an address object (``{"city": ..., "state": ...}``),
+    as a link object (``{"href": ...}``), or as a list of any of those. One
+    flattener here keeps that mess out of the mapping code.
     """
     if value is None or isinstance(value, bool):
         return ""
@@ -89,15 +103,43 @@ def flatten(value: Any) -> str:
     if isinstance(value, (int, float)):
         return str(value)
     if isinstance(value, dict):
-        for key in ("name", "value", "label", "text", "descriptor", "title", "display"):
-            inner = flatten(value.get(key))
+        index = _index(value)
+        for key in _DISPLAY_KEYS:
+            inner = flatten(index.get(normalize_key(key)))
             if inner:
                 return inner
-        return ""
+        # An address object carries no single display key, so compose one.
+        # Location drives the location filter and the remote heuristic, and a
+        # silently empty location reads downstream as "location unknown".
+        city = next(
+            (t for t in (flatten(index.get(normalize_key(k))) for k in _CITY_KEYS) if t),
+            "",
+        )
+        region = next(
+            (t for t in (flatten(index.get(normalize_key(k))) for k in _REGION_KEYS) if t),
+            "",
+        )
+        return ", ".join(part for part in (city, region) if part)
     if isinstance(value, (list, tuple)):
         parts = [flatten(item) for item in value]
         return ", ".join(part for part in parts if part)
     return ""
+
+
+def as_int(value: Any, default: int) -> int:
+    """Coerce a config option to an int, falling back to ``default``.
+
+    Options arrive from TOML, from JSON, and from operators editing by hand,
+    so a blank or mistyped numeric option is normal. Aborting the whole
+    source over it -- which ``int(None)`` does -- is not.
+    """
+    if isinstance(value, bool) or value is None:
+        return default
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        log.warning("ignoring non-numeric option value %r, using %d", value, default)
+        return default
 
 
 def pick_field(record: Any, *candidates: str, default: str = "") -> str:
@@ -267,6 +309,11 @@ def envelope_records(payload: Any, depth: int = 0) -> list[Any]:
 
 def _detail_record(payload: Any) -> dict[str, Any]:
     """Unwrap a detail response, merging any wrapper object into the root."""
+    if isinstance(payload, list):
+        # Some tenants answer a detail request with a one-element array. The
+        # request has already been made and the budget already spent, so
+        # throwing the body away would ship a title-only record for no reason.
+        payload = next((item for item in payload if isinstance(item, dict)), None)
     if not isinstance(payload, dict):
         return {}
     merged = dict(payload)
@@ -289,17 +336,45 @@ def _narrative(record: Any) -> str:
     return "\n\n".join(parts)
 
 
-def _compensation(record: Any) -> str:
-    """A rendered pay string, from either a display field or min/max fields."""
-    display = pick_field(record, *_SALARY_KEYS)
-    if display:
-        return display
-    low = pick_field(record, *_SALARY_MIN_KEYS)
-    high = pick_field(record, *_SALARY_MAX_KEYS)
-    unit = pick_field(record, *_SALARY_UNIT_KEYS)
+def _range(scope: Any, extra_min: tuple[str, ...] = (), extra_max: tuple[str, ...] = (),
+           extra_unit: tuple[str, ...] = ()) -> str:
+    low = pick_field(scope, *_SALARY_MIN_KEYS, *extra_min)
+    high = pick_field(scope, *_SALARY_MAX_KEYS, *extra_max)
+    unit = pick_field(scope, *_SALARY_UNIT_KEYS, *extra_unit)
     if low and high:
         return f"{low} - {high} {unit}".strip()
     return (low or high or "").strip()
+
+
+def _compensation(record: Any) -> str:
+    """A rendered pay string, from a display field, min/max fields, or an object.
+
+    Pay is the field operators most often ask about, and the third shape --
+    ``{"salary": {"min": 62000, "max": 78000, "frequency": "Annually"}}`` --
+    has no display key at all, so reading only the flat fields loses it
+    entirely for those tenants.
+    """
+    display = pick_field(record, *_SALARY_KEYS)
+    if display:
+        return display
+
+    flat = _range(record)
+    if flat:
+        return flat
+
+    container = pick_raw(record, *_SALARY_KEYS)
+    if isinstance(container, dict):
+        # Inside a salary object the bare keys are unambiguous; at the top
+        # level of a record they are not, which is why they live only here.
+        nested = _range(
+            container,
+            extra_min=("min", "from", "low", "start", "amount"),
+            extra_max=("max", "to", "high", "end"),
+            extra_unit=("frequency", "unit", "per", "period", "interval"),
+        )
+        if nested:
+            return nested
+    return ""
 
 
 def _absolute(url: str, base: str = GOVERNMENTJOBS_HOST) -> str:
@@ -342,9 +417,14 @@ class GovernmentJobsSource(Source):
         list_url = self._list_url()
         agency = str(self.options.get("agency") or "").strip().strip("/")
         employer = self.options.get("employer") or agency or self.name
-        max_pages = max(1, int(self.options.get("max_pages", 5)))
-        detail_budget = int(self.options.get("detail_limit", 50))
-        min_chars = int(self.options.get("detail_min_chars", 400))
+        max_pages = max(1, as_int(self.options.get("max_pages"), 5))
+        detail_budget = as_int(self.options.get("detail_limit"), 50)
+        min_chars = as_int(self.options.get("detail_min_chars"), 400)
+        # Relative tenant links resolve against the endpoint actually in use.
+        # With a ``url`` override that is a different host entirely, resolving
+        # them against governmentjobs.com would point the detail fetch -- and
+        # the fallback public url -- at the wrong site.
+        link_base = list_url
 
         seen: set[str] = set()
         for page in range(1, max_pages + 1):
@@ -370,7 +450,7 @@ class GovernmentJobsSource(Source):
                     continue
                 try:
                     posting, spent = self._to_posting(
-                        record, employer, detail_budget > 0, min_chars
+                        record, employer, detail_budget > 0, min_chars, link_base
                     )
                 except Exception as exc:  # pragma: no cover - defensive
                     # One unusable record must never cost us the rest of the board.
@@ -387,8 +467,13 @@ class GovernmentJobsSource(Source):
             if not fresh:
                 # A tenant that ignores ``page`` returns page 1 forever.
                 break
-            total_pages = pick_raw(payload, "totalPages", "pageCount", "pages", "numberOfPages")
-            if isinstance(total_pages, (int, float)) and page >= total_pages:
+            # ``totalPages`` arrives as a JSON number from some tenants and as
+            # a string from others; honouring only the number would keep
+            # requesting pages the tenant already said do not exist.
+            total_pages = as_int(
+                pick_raw(payload, "totalPages", "pageCount", "pages", "numberOfPages"), 0
+            )
+            if total_pages > 0 and page >= total_pages:
                 break
 
     # -- request construction --------------------------------------------
@@ -427,10 +512,11 @@ class GovernmentJobsSource(Source):
         employer: str,
         may_fetch_detail: bool,
         min_chars: int,
+        link_base: str = GOVERNMENTJOBS_HOST,
     ) -> tuple[JobPosting | None, bool]:
         job_id = pick_field(record, *_ID_KEYS)
         title = pick_field(record, *_TITLE_KEYS)
-        link = _absolute(pick_field(record, *_LINK_KEYS))
+        link = _absolute(pick_field(record, *_LINK_KEYS), link_base)
         # The canonical public permalink; the tenant's own link is only a
         # fallback for records that carry no id.
         url = f"{GOVERNMENTJOBS_HOST}/jobs/{job_id}" if job_id else link
@@ -541,8 +627,43 @@ honest and lets it fail closed.
 """
 
 _REMOTE_LOCATION_HINTS = (
-    "remote", "nationwide", "virtual", "telework", "anywhere", "multiple locations",
+    "work from home", "work at home", "multiple locations", "remote", "nationwide",
+    "virtual", "telework", "telecommute", "anywhere",
 )
+_REMOTE_QUALIFIERS = frozenset(
+    {
+        "", "us", "usa", "u s a", "united states", "national", "nationwide",
+        "conus", "oconus", "statewide", "anywhere", "worldwide", "global",
+        "various", "various locations", "multiple locations", "any location",
+        "location flexible", "flexible", "hybrid", "optional", "eligible",
+        "or hybrid", "work", "position", "based",
+    }
+)
+
+
+def _is_remote_label(candidate: str) -> bool:
+    """True only when the fragment *is* a remote label, not merely contains one.
+
+    Substring matching here was a trap: "Coach - Virtual Reality Program"
+    would be read as a location, which both loses the employer and mislabels
+    the posting as remote. The hint has to open the fragment and whatever
+    follows has to be a recognizable qualifier or a real state.
+    """
+    tokens = re.sub(r"[^a-z0-9]+", " ", (candidate or "").lower()).strip()
+    if not tokens:
+        return False
+    for hint in _REMOTE_LOCATION_HINTS:
+        if tokens == hint:
+            return True
+        if tokens.startswith(f"{hint} "):
+            rest = tokens[len(hint) :].strip()
+            if (
+                rest in _REMOTE_QUALIFIERS
+                or rest.upper() in _STATE_ABBREVIATIONS
+                or rest in _STATE_NAMES
+            ):
+                return True
+    return False
 
 _SEPARATOR = re.compile(r"\s+[-–—|]\s+")
 _PARENTHETICAL = re.compile(r"\(([^()]+)\)\s*$")
@@ -565,8 +686,7 @@ def looks_like_location(text: str) -> bool:
     candidate = (text or "").strip().rstrip(".").strip()
     if not candidate or len(candidate) > 80:
         return False
-    lowered = candidate.lower()
-    if any(hint in lowered for hint in _REMOTE_LOCATION_HINTS):
+    if _is_remote_label(candidate):
         return True
     candidate = _COUNTRY_SUFFIX.sub("", candidate).strip()
     if "," not in candidate:
@@ -636,22 +756,41 @@ def _find_text(element: ET.Element, *paths: str) -> str:
     return ""
 
 
-def _entry_link(element: ET.Element) -> str:
-    """The human-facing URL, across RSS ``<link>`` and Atom ``<link href>``."""
+def _entry_link(element: ET.Element, base: str = "") -> str:
+    """The human-facing URL, across RSS ``<link>`` and Atom ``<link href>``.
+
+    ``base`` is the feed's own URL. Several association platforms publish
+    root-relative or protocol-relative item links; resolving them is the
+    difference between importing those postings and dropping every one of
+    them for having "no link".
+    """
     for path in ("link", "atom:link"):
         for node in element.findall(path, _NAMESPACES):
             href = (node.get("href") or "").strip()
             rel = (node.get("rel") or "alternate").strip().lower()
             if href and rel == "alternate":
-                return href
-            text = (node.text or "").strip()
-            if text.startswith("http"):
-                return text
+                return _resolve_link(href, base)
+            text = "".join(node.itertext()).strip()
+            if text:
+                resolved = _resolve_link(text, base)
+                if resolved:
+                    return resolved
     for path in ("guid", "atom:id"):
         value = _find_text(element, path)
-        if value.startswith("http"):
+        if value.startswith(("http://", "https://")):
             return value
     return ""
+
+
+def _resolve_link(value: str, base: str) -> str:
+    """Absolutize a feed link, or return "" when it is not a link at all."""
+    value = (value or "").strip()
+    if value.startswith(("http://", "https://")):
+        return value
+    if not base or not value.startswith(("/", "./", "../")):
+        # A bare ``guid`` such as "nsca-8891" is an identifier, not a URL.
+        return ""
+    return urljoin(base, value)
 
 
 class JobsRSSSource(Source):
@@ -704,7 +843,7 @@ class JobsRSSSource(Source):
 
         for entry in entries:
             try:
-                posting = self._to_posting(entry, mode)
+                posting = self._to_posting(entry, mode, str(url))
             except Exception as exc:  # pragma: no cover - defensive
                 log.warning("%s: skipping malformed feed item: %s", self.name, exc)
                 continue
@@ -713,9 +852,11 @@ class JobsRSSSource(Source):
 
     # -- mapping ----------------------------------------------------------
 
-    def _to_posting(self, entry: ET.Element, mode: str) -> JobPosting | None:
+    def _to_posting(
+        self, entry: ET.Element, mode: str, feed_url: str = ""
+    ) -> JobPosting | None:
         raw_title = _find_text(entry, "title", "atom:title")
-        link = _entry_link(entry)
+        link = _entry_link(entry, feed_url)
         if not (raw_title and link):
             log.debug("%s: feed item without a title or link", self.name)
             return None
@@ -867,7 +1008,7 @@ class GenericJSONSource(Source):
         field_map = self._field_map()
         records_path = self.options.get("records_path", "")
         employer_default = self.options.get("employer") or self.name
-        detail_budget = int(self.options.get("detail_limit", 25))
+        detail_budget = as_int(self.options.get("detail_limit"), 25)
 
         payload = fetch_json(
             url,

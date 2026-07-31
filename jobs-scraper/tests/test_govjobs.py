@@ -21,13 +21,34 @@ from tactical_jobs.sources.govjobs import (  # noqa: E402
     GenericJSONSource,
     GovernmentJobsSource,
     JobsRSSSource,
+    as_int,
     envelope_records,
+    flatten,
     looks_like_location,
     normalize_key,
     pick_field,
     resolve_path,
     split_listing_title,
 )
+
+
+@pytest.fixture(autouse=True)
+def block_the_network(monkeypatch):
+    """No test may reach the network, including by accident.
+
+    There is no outbound network in CI, so a test that quietly started making
+    a real request would fail as a timeout somewhere unrelated. Replacing both
+    transport symbols by default means an unpatched call names itself.
+    """
+
+    def blocked(*args, **kwargs):
+        raise AssertionError(
+            "test reached the network; monkeypatch fetch/fetch_json as imported "
+            "into tactical_jobs.sources.govjobs"
+        )
+
+    monkeypatch.setattr("tactical_jobs.sources.govjobs.fetch", blocked)
+    monkeypatch.setattr("tactical_jobs.sources.govjobs.fetch_json", blocked)
 
 LIST_URL = "https://www.governmentjobs.com/careers/austintx"
 
@@ -1069,3 +1090,276 @@ def test_kinds_are_unique_and_exported():
     assert GenericJSONSource.kind == "genericjson"
     assert GOV_SOURCES == (GovernmentJobsSource, JobsRSSSource, GenericJSONSource)
     assert len({cls.kind for cls in GOV_SOURCES}) == 3
+
+
+def test_module_imports_only_the_standard_library_and_the_project():
+    """No third-party dependency may creep in: this project ships stdlib only."""
+    import ast
+
+    module = Path(__file__).resolve().parents[1] / "tactical_jobs" / "sources" / "govjobs.py"
+    tree = ast.parse(module.read_text(encoding="utf-8"))
+    roots: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            roots.update(alias.name.split(".")[0] for alias in node.names)
+        elif isinstance(node, ast.ImportFrom) and not node.level:
+            roots.add((node.module or "").split(".")[0])
+
+    assert roots <= {"logging", "re", "xml", "typing", "urllib", "__future__"}, roots
+
+
+# ==========================================================================
+# regressions found in adversarial review
+# ==========================================================================
+
+
+def test_flatten_reads_link_objects():
+    """A link emitted as ``{"href": ...}`` must still produce a url."""
+    assert flatten({"href": "/careers/austintx/jobs/1"}) == "/careers/austintx/jobs/1"
+    assert flatten({"url": "https://x/1"}) == "https://x/1"
+    # An explicit display key still wins over the link.
+    assert flatten({"name": "Fire", "href": "/x"}) == "Fire"
+
+
+def test_flatten_composes_an_address_object():
+    assert flatten({"city": "Austin", "state": "TX"}) == "Austin, TX"
+    assert flatten({"City": "Mesa", "StateProvince": "AZ"}) == "Mesa, AZ"
+    assert flatten({"city": "Austin"}) == "Austin"
+    assert flatten({"unrelated": 1}) == ""
+
+
+def test_a_record_whose_only_link_is_an_object_is_not_dropped(monkeypatch):
+    """Regression: an object-shaped link flattened to "" and lost the record."""
+    api = FakeGov(
+        {
+            1: {
+                "items": [
+                    {"title": "Peer Fitness Trainer", "link": {"href": "/careers/austintx/jobs/1"}}
+                ]
+            }
+        }
+    )
+    posting = run_gov(monkeypatch, api, {"detail_limit": 0})[0]
+    assert posting.url == "https://www.governmentjobs.com/careers/austintx/jobs/1"
+
+
+def test_a_nested_location_object_is_composed(monkeypatch):
+    """Regression: ``{"location": {"city": ..., "state": ...}}`` mapped to ""."""
+    api = FakeGov(
+        {
+            1: {
+                "items": [
+                    {
+                        "id": 1,
+                        "title": "Wellness Coordinator",
+                        "location": {"city": "Austin", "state": "TX"},
+                    }
+                ]
+            }
+        }
+    )
+    posting = run_gov(monkeypatch, api, {"detail_limit": 0})[0]
+    assert posting.location == "Austin, TX"
+
+
+def test_total_pages_as_a_string_still_stops_pagination(monkeypatch):
+    """Regression: a stringified page count was ignored and pages kept loading."""
+    api = FakeGov(
+        {
+            1: {"items": [{"id": 1, "title": "Coach"}], "totalPages": "1"},
+            2: {"items": [{"id": 2, "title": "Coach"}]},
+        }
+    )
+    postings = run_gov(monkeypatch, api, {"detail_limit": 0})
+
+    assert len(api.list_calls) == 1
+    assert [posting.source_id for posting in postings] == ["1"]
+
+
+def test_a_detail_payload_wrapped_in_an_array_is_still_read(monkeypatch):
+    """Regression: a one-element array detail body was discarded after fetching."""
+    api = FakeGov(
+        {1: {"items": [{"id": 4412, "title": "Coach", "description": "Teaser."}]}},
+        details={
+            "https://www.governmentjobs.com/jobs/4412": [
+                {"definition": f"<p>{LONG_BODY}</p>"}
+            ]
+        },
+    )
+    posting = run_gov(monkeypatch, api)[0]
+    assert "Austin Fire Department Wellness Division" in posting.description
+
+
+def test_relative_tenant_links_resolve_against_a_url_override(monkeypatch):
+    """Regression: an override host's relative links pointed at governmentjobs.com."""
+    override = "https://agency.jobs.example.gov/api/openings?format=json"
+    api = FakeGov(
+        {1: {"items": [{"title": "Coach", "detailUrl": "/jobs/1"}]}},
+        details={"https://agency.jobs.example.gov/jobs/1": {"description": LONG_BODY}},
+        list_url=override,
+    )
+    posting = run_gov(monkeypatch, api, {"url": override})[0]
+
+    assert posting.url == "https://agency.jobs.example.gov/jobs/1"
+    assert api.detail_calls[0][0] == "https://agency.jobs.example.gov/jobs/1"
+    assert LONG_BODY[:40] in posting.description
+
+
+def test_as_int_falls_back_instead_of_raising():
+    assert as_int(None, 5) == 5
+    assert as_int("", 5) == 5
+    assert as_int("3", 5) == 3
+    assert as_int(7, 5) == 7
+    assert as_int("many", 5) == 5
+    assert as_int(True, 5) == 5
+
+
+def test_blank_numeric_options_do_not_abort_the_source(monkeypatch):
+    """Regression: ``int(None)`` on a blank option killed the whole source."""
+    api = FakeGov({1: {"items": [{"id": 1, "title": "Coach", "description": LONG_BODY}]}})
+    postings = run_gov(
+        monkeypatch,
+        api,
+        {"detail_limit": None, "max_pages": "", "detail_min_chars": "nope"},
+    )
+    assert [posting.source_id for posting in postings] == ["1"]
+
+
+def test_generic_blank_detail_limit_does_not_abort(monkeypatch):
+    postings = run_generic(
+        monkeypatch,
+        {API_URL: [RECORD]},
+        {"field_map": FIELD_MAP, "detail_limit": None},
+    )
+    assert len(postings) == 1
+
+
+def test_looks_like_location_rejects_a_phrase_that_merely_contains_a_hint():
+    """Regression: substring matching read "Virtual Reality Program" as remote."""
+    assert looks_like_location("Virtual Reality Program") is False
+    assert looks_like_location("Remote Sensing Analyst") is False
+    assert looks_like_location("Anywhere Fitness Company") is False
+    # Genuine remote labels, with and without a qualifier, still pass.
+    assert looks_like_location("Remote") is True
+    assert looks_like_location("Remote - Statewide") is True
+    assert looks_like_location("Remote, US") is True
+    assert looks_like_location("Telework (CONUS)") is True
+    assert looks_like_location("Remote, Texas") is True
+
+
+def test_split_keeps_the_employer_when_the_tail_is_not_a_location():
+    title, employer, location = split_listing_title("Coach - Virtual Reality Program")
+    assert (title, employer, location) == ("Coach", "Virtual Reality Program", "")
+
+
+def test_rss_relative_item_link_resolves_against_the_feed_url(monkeypatch):
+    """Regression: a root-relative <link> dropped the item entirely."""
+    item = """
+    <item><title>Athletic Trainer</title>
+    <link>/jobs/8891</link></item>
+    """
+    monkeypatch.setattr(
+        "tactical_jobs.sources.govjobs.fetch", lambda url, **kw: rss_feed(item)
+    )
+    postings = list(
+        JobsRSSSource("nsca", {"url": "https://careers.nsca.com/feeds/jobs.rss"}).fetch()
+    )
+    assert postings[0].url == "https://careers.nsca.com/jobs/8891"
+
+
+def test_rss_protocol_relative_item_link_resolves(monkeypatch):
+    item = """
+    <item><title>Athletic Trainer</title>
+    <link>//cdn.nsca.com/jobs/8891</link></item>
+    """
+    posting = run_rss(monkeypatch, rss_feed(item))[0]
+    assert posting.url == "https://cdn.nsca.com/jobs/8891"
+
+
+def test_rss_non_url_guid_is_not_mistaken_for_a_link(monkeypatch):
+    """An opaque guid is an identifier, not a URL, so the item has no link."""
+    item = """
+    <item><title>Athletic Trainer</title>
+    <guid isPermaLink="false">nsca-8891</guid></item>
+    """
+    assert run_rss(monkeypatch, rss_feed(item)) == []
+
+
+def test_unicode_survives_every_adapter(monkeypatch):
+    api = FakeGov(
+        {1: {"items": [{"id": 1, "title": "Entraîneur – Pôle", "location": "Québec, QC"}]}}
+    )
+    assert run_gov(monkeypatch, api, {"detail_limit": 0})[0].title == "Entraîneur – Pôle"
+
+    item = (
+        "<item><title>Kraftrainer - Feuerwehr München - Austin, TX</title>"
+        "<link>https://x/1</link>"
+        "<description>Fußball und Ernährung.</description></item>"
+    )
+    posting = run_rss(monkeypatch, rss_feed(item))[0]
+    assert posting.employer == "Feuerwehr München"
+    assert "Fußball" in posting.description
+
+    posting = run_generic(
+        monkeypatch,
+        {API_URL: [{"name": "Entraîneur", "link": "/1", "d": "<p>Fußball</p>"}]},
+        {"field_map": {"title": "name", "url": "link", "description": "d"}},
+    )[0]
+    assert posting.title == "Entraîneur"
+    assert posting.description == "Fußball"
+
+
+def test_empty_and_none_payloads_never_crash(monkeypatch):
+    assert run_gov(monkeypatch, FakeGov({1: {}}), {"detail_limit": 0}) == []
+    assert run_gov(monkeypatch, FakeGov({1: "unexpected string"}), {"detail_limit": 0}) == []
+    assert run_gov(monkeypatch, FakeGov({1: {"items": [None, 7]}}), {"detail_limit": 0}) == []
+    assert run_generic(monkeypatch, {API_URL: []}, {"field_map": FIELD_MAP}) == []
+    assert run_generic(monkeypatch, {API_URL: [None, 7]}, {"field_map": FIELD_MAP}) == []
+
+
+def test_a_salary_object_is_rendered(monkeypatch):
+    """Regression: an object-shaped salary flattened to "" and pay was lost."""
+    api = FakeGov(
+        {
+            1: {
+                "items": [
+                    {
+                        "id": 1,
+                        "title": "Coach",
+                        "salary": {"min": 62000, "max": 78000, "frequency": "Annually"},
+                    }
+                ]
+            }
+        }
+    )
+    posting = run_gov(monkeypatch, api, {"detail_limit": 0})[0]
+    assert posting.compensation == "62000 - 78000 Annually"
+    assert "Salary: 62000 - 78000 Annually." in posting.description
+
+
+def test_a_one_sided_salary_object_is_rendered(monkeypatch):
+    api = FakeGov({1: {"items": [{"id": 1, "title": "Coach", "payRange": {"from": "$34.00"}}]}})
+    assert run_gov(monkeypatch, api, {"detail_limit": 0})[0].compensation == "$34.00"
+
+
+def test_none_valued_fields_do_not_crash_the_mapping(monkeypatch):
+    api = FakeGov(
+        {
+            1: {
+                "items": [
+                    {
+                        "id": 1,
+                        "title": "Coach",
+                        "location": None,
+                        "salary": None,
+                        "department": None,
+                        "datePosted": None,
+                        "detailUrl": None,
+                    }
+                ]
+            }
+        }
+    )
+    posting = run_gov(monkeypatch, api, {"detail_limit": 0})[0]
+    assert (posting.location, posting.compensation, posting.department) == ("", None, None)
+    assert posting.posted_at is None

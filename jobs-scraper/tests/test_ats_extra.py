@@ -1002,6 +1002,22 @@ def test_kinds_are_unique_and_non_empty():
     assert len(set(kinds)) == len(kinds)
 
 
+def test_each_kind_resolves_back_to_its_own_class_in_the_registry():
+    """A kind shadowed by another module would route config to the wrong adapter."""
+    from tactical_jobs.sources import build_source
+
+    for cls, options in (
+        (BambooHRSource, {"subdomain": "acme"}),
+        (BreezySource, {"company": "acme"}),
+        (JazzHRSource, {"api_key": "k"}),
+        (TeamtailorSource, {"api_key": "k"}),
+        (PersonioSource, {"company": "acme"}),
+        (RipplingSource, {"board_token": "acme"}),
+    ):
+        built = build_source(cls.kind, "cfg", options)
+        assert isinstance(built, cls), cls.kind
+
+
 def test_kinds_do_not_collide_with_the_first_tier_adapters():
     """A duplicate ``kind`` would silently shadow an adapter in the registry."""
     from tactical_jobs.sources.ats import ATS_SOURCES
