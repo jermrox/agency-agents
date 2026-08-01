@@ -230,6 +230,68 @@ repo — no database to operate, and the history is reviewable in a diff.
 
 ---
 
+## Putting it on a domain that updates itself
+
+The nightly workflow already publishes to GitHub Pages. Two ways to point a
+domain at it — pick by whether you want a **page** or a **section of an
+existing page**.
+
+### Option A — a subdomain of your own (`jobs.mopsnmoes.com`)
+
+You get a real URL you control, updating nightly, with no Squarespace edits.
+
+1. **Enable Pages**: repo *Settings → Pages → Source: GitHub Actions*.
+2. **Set the domain**: *Settings → Secrets and variables → Actions → Variables*,
+   add `JOBS_DOMAIN` = `jobs.mopsnmoes.com`. Every deploy rewrites the `CNAME`
+   file from it — necessary because Pages otherwise drops a custom domain the
+   first time a workflow publishes a fresh artifact.
+3. **Add one DNS record** at whoever hosts mopsnmoes.com's DNS:
+
+   | Type | Host | Value |
+   |---|---|---|
+   | `CNAME` | `jobs` | `<your-github-username>.github.io` |
+
+   Use a **subdomain**, not the apex. The apex would need A records to
+   GitHub's IPs and would fight Squarespace for the root domain.
+4. Run the workflow once from the Actions tab. Pages issues the TLS
+   certificate automatically (a few minutes).
+
+Live at `https://jobs.mopsnmoes.com`, refreshed every night at 07:00 UTC.
+
+### Option B — inside the existing Squarespace page
+
+Squarespace has no content-write API, so nothing can POST a job into it. The
+working pattern is a static feed plus a client-side embed, which is what
+`embed/squarespace-jobs.html` is for.
+
+1. Do steps 1–4 above (the domain is optional here — the default
+   `username.github.io/repo` URL works fine).
+2. On the Squarespace page: *Edit → Add Block → Code*, paste the contents of
+   [`embed/squarespace-jobs.html`](embed/squarespace-jobs.html).
+3. Set `FEED_URL` at the top of its script to your `jobs.json`:
+   `https://jobs.mopsnmoes.com/jobs.json` (or the `github.io` URL).
+
+The board then updates on the site with no further edits: the workflow
+rewrites `jobs.json` nightly and the page renders whatever is in it. A role
+that drops out of the feed disappears from the page — no stale-post cleanup.
+
+**Both options publish the same four files**, so you can start with B and add
+A later without changing anything:
+
+| File | What it is |
+|---|---|
+| `jobs.json` | the feed the embed reads |
+| `dashboard.html` | the full market dashboard |
+| `jobs.xml` | RSS, for a Squarespace Summary Block or subscribers |
+| `insights.json` | the aggregate analysis, if you want to build on it |
+
+**One constraint worth knowing:** the deploy job only runs from the default
+branch. This work is on a feature branch, so the first live deploy happens
+when the PR merges — a feature branch must never repoint the feed the public
+site is reading.
+
+---
+
 ## The two workflows
 
 ### Nightly — [`tactical-jobs.yml`](../.github/workflows/tactical-jobs.yml)

@@ -147,6 +147,20 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         run: |
           mkdir -p ../site
+          # Custom domain. Set the repository VARIABLE JOBS_DOMAIN (Settings ->
+          # Secrets and variables -> Actions -> Variables) to e.g.
+          # jobs.mopsnmoes.com and every deploy re-writes the CNAME file.
+          # Without the CNAME on each deploy GitHub Pages drops the custom
+          # domain the first time a workflow publishes a fresh artifact.
+          if [ -n "${{ vars.JOBS_DOMAIN }}" ]; then
+            echo "${{ vars.JOBS_DOMAIN }}" > ../site/CNAME
+            echo "Custom domain: ${{ vars.JOBS_DOMAIN }}"
+          fi
+          # Serve the feed with permissive CORS. GitHub Pages already sends
+          # Access-Control-Allow-Origin: *, but this keeps the intent explicit
+          # for any other static host the site directory gets copied to.
+          echo '/*' > ../site/_headers
+          echo '  Access-Control-Allow-Origin: *' >> ../site/_headers
           # The feed the Squarespace embed fetches, plus the dashboard.
           cp -f output/jobs.json          ../site/ 2>/dev/null || echo '{"version":1,"count":0,"jobs":[]}' > ../site/jobs.json
           cp -f output/jobs.xml           ../site/ 2>/dev/null || true
