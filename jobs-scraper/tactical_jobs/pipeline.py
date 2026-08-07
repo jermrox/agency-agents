@@ -129,8 +129,6 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         except Exception as exc:  # pragma: no cover - defensive
             log.warning("enrichment failed for %s: %s", posting.url, exc)
 
-        # Facets run after enrichment because the salary facet reads what
-        # enrichment extracted rather than re-parsing the description.
         try:
             posting.facets = facets_for(posting)
         except Exception as exc:  # pragma: no cover - defensive
@@ -159,19 +157,8 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
     # failing should never cost us the record of what we saw.
     _archive(config, report, scored)
 
-    # Retire dead listings BEFORE the publishers run. The JSON feed publisher
-    # merges new postings into whatever is already on disk, so pruning first
-    # means the board is written exactly once, with the dead rows already
-    # gone. Postings collected in *this* run are not re-checked -- a source
-    # returning them a minute ago is better evidence than a second fetch.
     _retire_dead(config, report)
-
     _publish(config, report)
-
-    # Stamp confidence badges and the badge definitions onto the feed the site
-    # reads. Done here rather than in the workflow so a local run produces a
-    # byte-identical artifact to CI -- a board that only renders correctly
-    # after a CI-only step is a board nobody can debug locally.
     _finalize_feeds(config, report)
 
     for posting in report.approved:
@@ -207,12 +194,7 @@ def _feed_paths(config: Config) -> list[Path]:
 
 
 def _retire_dead(config: Config, report: RunReport) -> None:
-    """Walk the published board and drop postings that no longer exist.
-
-    This is the loop that keeps the board honest. Everything about how a
-    verdict is reached -- and why only two signals are trusted to remove a
-    job -- lives in ``liveness.py``.
-    """
+    """Walk the published board and drop postings that no longer exist."""
     if not config.liveness_check:
         return
     for path in _feed_paths(config):
@@ -242,18 +224,9 @@ def _retire_dead(config: Config, report: RunReport) -> None:
                 continue
             if verdict.state != "live":
                 report.unverifiable += 1
-            # Stamp the verdict onto the row so the board can show the
-            # candidate when this link was last confirmed, rather than asking
-            # them to take "verified" on faith.
             job["liveness"] = verdict.as_dict()
             kept.append(job)
 
-        # Rewrite whenever the sweep produced any verdict at all, not only
-        # when something was retired. The common case is that every posting is
-        # still live -- and that is precisely the case whose evidence has to be
-        # written down, because the "verified" badge and its date are read off
-        # these stamps. Gating on change meant a healthy board never recorded
-        # that it had been checked, so nothing was ever badged verified.
         if verdicts:
             try:
                 payload = json.loads(path.read_text())
@@ -265,14 +238,7 @@ def _retire_dead(config: Config, report: RunReport) -> None:
 
 
 def _finalize_feeds(config: Config, report: RunReport) -> None:
-    """Normalize every published feed so the board has what it renders.
-
-    Adds the ``confidence`` badge (derived from the liveness verdict and the
-    source kind) and the ``definitions`` block the board shows under "What the
-    badges mean". Keeping the definitions inside the feed means the words a
-    candidate reads and the value they describe ship from the same place and
-    cannot drift apart.
-    """
+    """Normalize every published feed so the board has what it renders."""
     for path in _feed_paths(config):
         if not path.exists():
             continue

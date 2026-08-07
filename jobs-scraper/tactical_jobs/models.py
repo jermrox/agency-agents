@@ -72,10 +72,7 @@ class JobPosting:
     # and live postings through exactly the same shape.
     enrichment: dict[str, Any] = field(default_factory=dict)
 
-    # Populated by facets.py: the four questions the board filters on
-    # (discipline, location class, contingency, salary floor). Kept separate
-    # from ``enrichment`` because these are a stable published contract that
-    # the board's filter UI depends on, while enrichment is free-form analysis.
+    # Populated by facets.py: discipline, location class, contingency, salary floor.
     facets: dict[str, Any] = field(default_factory=dict)
 
     @property

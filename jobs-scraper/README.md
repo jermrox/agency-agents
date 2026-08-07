@@ -330,8 +330,11 @@ workflow publishes it both ways (`embed.html` and as the Pages `index.html`).
 
 - Every card links **straight to the employer's posting**. No rewritten
   summary, no interstitial.
-- Rebrand by editing the custom properties in the `:root` block. Nothing else
-  carries a colour.
+- Colours and type are pulled from mopsnmoes.com's own Squarespace tokens
+  (bronze accent, Poppins headings, black/white sections front and back).
+  Both light and dark render correctly regardless of OS setting or the host
+  page's own toggle. Re-theme by editing the custom properties in the
+  `:root` block — nothing else carries a colour.
 - Repoint by editing `FEED_URL` at the bottom of the file.
 
 To upgrade a feed that predates facets — including a hand-curated one — run:

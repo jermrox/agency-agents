@@ -1,113 +1,109 @@
-<!-- ===========================================================================
-     MOPs & MOEs — Tactical Human Performance Jobs
-     Drop-in board. Paste into a Squarespace Code Block, or serve standalone.
-
-     Self-contained: no build step, no framework, no external requests except
-     the one fetch for the feed.
-
-     TO REBRAND: every colour and the two fonts are custom properties in the
-     :root block below. Change those and nothing else.
-
-     TO REPOINT: set FEED_URL at the bottom of this file.
-
-     WHAT IT EXPECTS
-     A feed produced by `python -m tactical_jobs feed`, i.e. rows carrying a
-     `facets` object. It renders no filter it cannot derive from the data, so
-     a feed missing facets degrades to a plain list rather than to a broken
-     filter bar.
-     =========================================================================== -->
-
 <div id="mm-jobs" class="mm-root">
   <style>
     #mm-jobs {
-      /* --- BRAND ------------------------------------------------------- */
-      --mm-accent: #2f7fd4;
-      --mm-accent-ink: #ffffff;
-      --mm-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mm-font-display: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mm-font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       --mm-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-      /* --- SURFACES (light) -------------------------------------------- */
       --mm-bg: transparent;
       --mm-card: #ffffff;
-      --mm-card-2: #f5f6f8;
-      --mm-border: #dfe3e8;
-      --mm-ink: #16191d;
-      --mm-muted: #5b636d;
+      --mm-card-2: #f6f2ea;
+      --mm-border: #e3dbc9;
+      --mm-ink: #16130f;
+      --mm-muted: #6b6151;
 
-      /* --- SEMANTIC ----------------------------------------------------- */
-      --mm-good: #1a7f4b;
-      --mm-good-bg: #e6f4ec;
-      --mm-warn: #8a5a00;
-      --mm-warn-bg: #fdf1dc;
-      --mm-flag: #a33223;
-      --mm-flag-bg: #fbe9e6;
+      --mm-accent: #b18a45;
+      --mm-accent-text: #8a6829;
+      --mm-accent-ink: #171310;
+      --mm-accent-soft: #efe8d9;
+
+      --mm-good: #235c34;
+      --mm-good-bg: #e3f1e6;
+      --mm-warn: #a1550c;
+      --mm-warn-bg: #fdf0dd;
+      --mm-flag: #9c2f27;
+      --mm-flag-bg: #fbe8e5;
 
       --mm-radius: 10px;
+      --mm-ease: cubic-bezier(.2,.7,.3,1);
+
       color: var(--mm-ink);
       font-family: var(--mm-font);
-      line-height: 1.5;
-      max-width: 62rem;
+      line-height: 1.55;
+      max-width: 64rem;
       margin: 0 auto;
-      /* Contain the reset so the board cannot restyle the page it is embedded
-         in — a Squarespace Code Block shares the document with the theme. */
       box-sizing: border-box;
     }
 
     @media (prefers-color-scheme: dark) {
       #mm-jobs {
-        --mm-card: #161b22;
-        --mm-card-2: #1c222b;
-        --mm-border: #303740;
-        --mm-ink: #e6edf3;
-        --mm-muted: #98a2ae;
-        --mm-accent: #58a6ff;
-        --mm-accent-ink: #0b1017;
-        --mm-good: #58d68a;
-        --mm-good-bg: #14301f;
-        --mm-warn: #e3b341;
-        --mm-warn-bg: #33280c;
-        --mm-flag: #ff8b7a;
-        --mm-flag-bg: #3a1a15;
+        --mm-card: #131110; --mm-card-2: #1c1815; --mm-border: #34302a;
+        --mm-ink: #f4efe6; --mm-muted: #a89f8d;
+        --mm-accent: #d3a862; --mm-accent-text: #e6bd7c; --mm-accent-ink: #171310;
+        --mm-accent-soft: #332a1c;
+        --mm-good: #6fc283; --mm-good-bg: #16261a;
+        --mm-warn: #e2a24c; --mm-warn-bg: #2c2210;
+        --mm-flag: #ef7167; --mm-flag-bg: #2f1613;
       }
+    }
+    :root[data-theme="dark"] #mm-jobs {
+      --mm-card: #131110; --mm-card-2: #1c1815; --mm-border: #34302a;
+      --mm-ink: #f4efe6; --mm-muted: #a89f8d;
+      --mm-accent: #d3a862; --mm-accent-text: #e6bd7c; --mm-accent-ink: #171310;
+      --mm-accent-soft: #332a1c;
+      --mm-good: #6fc283; --mm-good-bg: #16261a;
+      --mm-warn: #e2a24c; --mm-warn-bg: #2c2210;
+      --mm-flag: #ef7167; --mm-flag-bg: #2f1613;
+    }
+    :root[data-theme="light"] #mm-jobs {
+      --mm-card: #ffffff; --mm-card-2: #f6f2ea; --mm-border: #e3dbc9;
+      --mm-ink: #16130f; --mm-muted: #6b6151;
+      --mm-accent: #b18a45; --mm-accent-text: #8a6829; --mm-accent-ink: #171310;
+      --mm-accent-soft: #efe8d9;
+      --mm-good: #235c34; --mm-good-bg: #e3f1e6;
+      --mm-warn: #a1550c; --mm-warn-bg: #fdf0dd;
+      --mm-flag: #9c2f27; --mm-flag-bg: #fbe8e5;
     }
 
     #mm-jobs *, #mm-jobs *::before, #mm-jobs *::after { box-sizing: border-box; }
-    #mm-jobs p, #mm-jobs h1, #mm-jobs h2, #mm-jobs h3, #mm-jobs ul, #mm-jobs li { margin: 0; padding: 0; }
+    #mm-jobs p, #mm-jobs h1, #mm-jobs h2, #mm-jobs h3, #mm-jobs ul, #mm-jobs li, #mm-jobs dl { margin: 0; padding: 0; }
     #mm-jobs ul { list-style: none; }
     #mm-jobs button { font: inherit; color: inherit; }
+    #mm-jobs svg { display: block; flex: none; }
 
-    /* --- header ------------------------------------------------------- */
-    .mm-head { margin-bottom: 1rem; }
-    .mm-head h2 { font-size: 1.35rem; letter-spacing: -0.01em; }
-    .mm-sub { color: var(--mm-muted); font-size: .875rem; margin-top: .25rem; }
-
-    /* --- filters ------------------------------------------------------- */
-    .mm-filters {
-      background: var(--mm-card);
-      border: 1px solid var(--mm-border);
-      border-radius: var(--mm-radius);
-      padding: .875rem;
-      margin-bottom: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 5;
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
     }
-    /* Sticky filters are a liability on a short phone screen — they can eat
-       half the viewport. Only stick where there is room. */
+
+    .mm-head { margin-bottom: 1.1rem; }
+    .mm-eyebrow {
+      font-family: var(--mm-font-display); font-weight: 600; font-size: .7rem;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--mm-accent-text);
+      margin-bottom: .3rem;
+    }
+    .mm-head h2 {
+      font-family: var(--mm-font-display); font-weight: 500; font-size: 1.5rem;
+      letter-spacing: 0; text-wrap: balance;
+    }
+    .mm-sub { color: var(--mm-muted); font-size: .875rem; margin-top: .35rem; }
+    .mm-sub .mm-stamp { font-family: var(--mm-font-mono); font-size: .78rem; }
+
+    .mm-filters {
+      background: var(--mm-card); border: 1px solid var(--mm-border);
+      border-radius: var(--mm-radius); padding: .875rem;
+      margin-bottom: .85rem; position: sticky; top: 0; z-index: 5;
+    }
     @media (max-height: 700px) { .mm-filters { position: static; } }
 
     .mm-group + .mm-group { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--mm-border); }
     .mm-legend {
-      font-size: .7rem; text-transform: uppercase; letter-spacing: .06em;
-      color: var(--mm-muted); font-weight: 600; margin-bottom: .4rem;
+      font-family: var(--mm-font-display); font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600; margin-bottom: .45rem;
       display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap;
     }
-    .mm-legend .mm-hint { text-transform: none; letter-spacing: 0; font-weight: 400; }
+    .mm-legend .mm-hint { text-transform: none; letter-spacing: 0; font-weight: 400; font-family: var(--mm-font); }
 
     .mm-chips { display: flex; flex-wrap: wrap; gap: .375rem; }
-    /* On a phone the discipline list is 7 chips, which wraps to six rows and
-       pushes every job below the fold. One scrollable row keeps the filters
-       to a strip and the jobs on screen. */
     @media (max-width: 640px) {
       .mm-chips {
         flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity;
@@ -115,121 +111,163 @@
         -webkit-overflow-scrolling: touch; scrollbar-width: thin;
       }
       .mm-chips > .mm-chip { flex: 0 0 auto; scroll-snap-align: start; }
-      /* Fade the right edge so a row with more chips off-screen reads as
-         scrollable. Without it the primary filter looks like it has two
-         options. Removed once scrolled to the end. */
       .mm-chips:not(.is-end) {
         -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent);
         mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent);
       }
     }
+
     .mm-chip {
       display: inline-flex; align-items: center; gap: .35rem;
       border: 1px solid var(--mm-border); background: var(--mm-card-2);
-      border-radius: 999px; padding: .35rem .7rem;
-      font-size: .8125rem; cursor: pointer;
-      /* 40px min target: this is used one-handed on a phone. */
-      min-height: 2.25rem;
+      border-radius: 999px; padding: .35rem .7rem; color: var(--mm-ink);
+      font-size: .8125rem; cursor: pointer; min-height: 2.25rem;
+      transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
     .mm-chip:hover { border-color: var(--mm-accent); }
+    .mm-chip:active:not(:disabled) { transform: scale(.97); }
     .mm-chip[aria-pressed="true"] {
       background: var(--mm-accent); border-color: var(--mm-accent);
       color: var(--mm-accent-ink); font-weight: 600;
     }
     .mm-chip .mm-n { opacity: .65; font-variant-numeric: tabular-nums; font-size: .75rem; }
-    .mm-chip[aria-pressed="true"] .mm-n { opacity: .85; }
+    .mm-chip[aria-pressed="true"] .mm-n { opacity: .8; }
     .mm-chip:disabled { opacity: .38; cursor: default; }
-    .mm-chip:focus-visible, .mm-root :focus-visible {
-      outline: 2px solid var(--mm-accent); outline-offset: 2px;
-    }
+    .mm-chip:focus-visible, .mm-root :focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 2px; }
 
     .mm-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    .mm-field { position: relative; flex: 1 1 12rem; min-width: 0; }
+    .mm-field svg { position: absolute; left: .6rem; top: 50%; transform: translateY(-50%); color: var(--mm-muted); }
     .mm-search {
-      flex: 1 1 12rem; min-width: 0;
-      border: 1px solid var(--mm-border); border-radius: 8px;
+      width: 100%; border: 1px solid var(--mm-border); border-radius: 8px;
       background: var(--mm-card-2); color: var(--mm-ink);
-      padding: .5rem .7rem; font: inherit; font-size: .875rem;
+      padding: .5rem .7rem .5rem 2.1rem; font: inherit; font-size: .875rem;
+      transition: border-color .15s var(--mm-ease);
     }
+    .mm-search:focus-visible { border-color: var(--mm-accent); }
     .mm-select {
       border: 1px solid var(--mm-border); border-radius: 8px;
       background: var(--mm-card-2); color: var(--mm-ink);
       padding: .5rem .6rem; font: inherit; font-size: .8125rem;
     }
     .mm-check { display: inline-flex; align-items: center; gap: .4rem; font-size: .8125rem; cursor: pointer; }
-    /* An explicit display value beats the [hidden] attribute's UA rule, so
-       hiding the no-pay toggle needs its own selector or it never hides. */
     .mm-check[hidden] { display: none; }
     .mm-check input { width: 1rem; height: 1rem; accent-color: var(--mm-accent); }
+
+    .mm-active {
+      display: flex; flex-wrap: wrap; gap: .4rem; margin: .75rem 0 0;
+      padding-top: .75rem; border-top: 1px solid var(--mm-border);
+    }
+    .mm-active[hidden] { display: none; }
+    .mm-active-chip {
+      display: inline-flex; align-items: center; gap: .3rem;
+      background: var(--mm-accent-soft); color: var(--mm-accent-text);
+      border-radius: 999px; padding: .25rem .5rem .25rem .65rem;
+      font-size: .75rem; font-weight: 600; border: none; cursor: pointer;
+    }
+    .mm-active-chip svg { width: 12px; height: 12px; }
+    .mm-active-chip:hover { filter: brightness(.92); }
 
     .mm-bar {
       display: flex; justify-content: space-between; align-items: center;
       gap: .75rem; flex-wrap: wrap; margin-bottom: .75rem;
     }
     .mm-count { font-size: .875rem; color: var(--mm-muted); }
-    .mm-count strong { color: var(--mm-ink); font-variant-numeric: tabular-nums; }
+    .mm-count strong { color: var(--mm-ink); font-variant-numeric: tabular-nums; font-weight: 600; }
     .mm-clear {
       background: none; border: 1px solid var(--mm-border); border-radius: 8px;
       padding: .35rem .7rem; font-size: .8125rem; cursor: pointer; color: var(--mm-muted);
+      transition: border-color .15s var(--mm-ease), color .15s var(--mm-ease);
     }
     .mm-clear:hover { border-color: var(--mm-accent); color: var(--mm-ink); }
 
-    /* --- cards ---------------------------------------------------------- */
     .mm-list { display: grid; gap: .75rem; }
+    .mm-list.is-updating { opacity: .5; transition: opacity .12s var(--mm-ease); }
+
     .mm-job {
       background: var(--mm-card); border: 1px solid var(--mm-border);
-      border-radius: var(--mm-radius); padding: .9rem 1rem;
+      border-radius: var(--mm-radius); padding: .95rem 1.05rem;
+      transition: border-color .15s var(--mm-ease), transform .15s var(--mm-ease), box-shadow .15s var(--mm-ease);
+      animation: mm-in .2s var(--mm-ease) both;
     }
-    .mm-job h3 { font-size: 1.02rem; line-height: 1.35; }
+    @keyframes mm-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+    @media (hover: hover) {
+      .mm-job:hover { border-color: var(--mm-accent); transform: translateY(-1px); box-shadow: 0 4px 16px -8px rgba(0,0,0,.18); }
+    }
+
+    .mm-job h3 { font-family: var(--mm-font-display); font-weight: 500; font-size: 1.03rem; line-height: 1.4; text-wrap: balance; }
     .mm-job h3 a { color: var(--mm-ink); text-decoration: none; }
-    .mm-job h3 a:hover { color: var(--mm-accent); text-decoration: underline; }
-    .mm-emp { font-size: .9rem; margin-top: .15rem; }
-    .mm-emp b { font-weight: 600; }
-    .mm-meta {
-      display: flex; flex-wrap: wrap; gap: .35rem .9rem;
-      font-size: .8125rem; color: var(--mm-muted); margin-top: .45rem;
-    }
-    .mm-meta span { display: inline-flex; align-items: center; gap: .3rem; }
-    .mm-notes { font-size: .8125rem; color: var(--mm-muted); margin-top: .55rem; }
-    .mm-badges { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
+    .mm-job h3 a:hover { color: var(--mm-accent-text); text-decoration: underline; }
+    .mm-emp { font-size: .9rem; margin-top: .2rem; color: var(--mm-muted); }
+    .mm-emp b { font-weight: 600; color: var(--mm-ink); }
+
+    .mm-meta { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .8125rem; color: var(--mm-muted); margin-top: .5rem; }
+    .mm-meta span { display: inline-flex; align-items: center; gap: .35rem; }
+    .mm-meta svg { color: var(--mm-accent-text); width: 14px; height: 14px; }
+
+    .mm-notes { font-size: .8125rem; color: var(--mm-muted); margin-top: .6rem; }
+
+    .mm-badges { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .65rem; }
     .mm-badge {
-      font-size: .7rem; font-weight: 600; letter-spacing: .02em;
-      padding: .2rem .5rem; border-radius: 5px;
-      background: var(--mm-card-2); color: var(--mm-muted);
-      border: 1px solid var(--mm-border);
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-size: .7rem; font-weight: 600; letter-spacing: .01em;
+      padding: .22rem .55rem; border-radius: 5px;
+      background: var(--mm-card-2); color: var(--mm-muted); border: 1px solid var(--mm-border);
     }
+    .mm-badge svg { width: 11px; height: 11px; }
     .mm-badge.is-verified { background: var(--mm-good-bg); color: var(--mm-good); border-color: transparent; }
     .mm-badge.is-listed   { background: var(--mm-warn-bg); color: var(--mm-warn); border-color: transparent; }
     .mm-badge.is-contingent { background: var(--mm-flag-bg); color: var(--mm-flag); border-color: transparent; }
+
     .mm-apply {
-      display: inline-block; margin-top: .7rem;
+      display: inline-flex; align-items: center; gap: .4rem; margin-top: .75rem;
       background: var(--mm-accent); color: var(--mm-accent-ink);
       text-decoration: none; font-size: .8125rem; font-weight: 600;
       padding: .5rem .9rem; border-radius: 8px;
+      transition: background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    .mm-apply:hover { filter: brightness(1.08); }
+    .mm-apply:hover { background: var(--mm-accent-text); color: #fff; }
+    .mm-apply:active { transform: scale(.98); }
+    .mm-apply svg { width: 13px; height: 13px; }
 
-    /* --- explainer ------------------------------------------------------ */
-    .mm-why { margin-top: 1.25rem; font-size: .8125rem; color: var(--mm-muted); }
-    .mm-why summary { cursor: pointer; font-weight: 600; color: var(--mm-ink); padding: .4rem 0; }
-    .mm-why dl { margin: .5rem 0 0; display: grid; gap: .6rem; }
+    .mm-skel { display: grid; gap: .75rem; }
+    .mm-skel-card {
+      height: 7.5rem; border-radius: var(--mm-radius);
+      background: linear-gradient(100deg, var(--mm-card) 30%, var(--mm-card-2) 45%, var(--mm-card) 60%);
+      background-size: 250% 100%; border: 1px solid var(--mm-border);
+      animation: mm-shimmer 1.4s ease-in-out infinite;
+    }
+    @keyframes mm-shimmer { from { background-position: 120% 0; } to { background-position: -20% 0; } }
+    @media (prefers-reduced-motion: reduce) { .mm-skel-card { animation: none; background: var(--mm-card-2); } }
+
+    .mm-why { margin-top: 1.4rem; font-size: .8125rem; color: var(--mm-muted); }
+    .mm-why summary {
+      cursor: pointer; font-family: var(--mm-font-display); font-weight: 500;
+      color: var(--mm-ink); padding: .4rem 0; list-style: none;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .mm-why summary::-webkit-details-marker { display: none; }
+    .mm-why summary svg { transition: transform .15s var(--mm-ease); color: var(--mm-accent-text); }
+    .mm-why[open] summary svg { transform: rotate(90deg); }
+    .mm-why dl { margin: .6rem 0 0; display: grid; gap: .65rem; }
     .mm-why dt { font-weight: 600; color: var(--mm-ink); }
     .mm-why dd { margin: .15rem 0 0; }
 
     .mm-empty {
-      text-align: center; padding: 2.5rem 1rem; color: var(--mm-muted);
+      text-align: center; padding: 2.75rem 1.25rem; color: var(--mm-muted);
       border: 1px dashed var(--mm-border); border-radius: var(--mm-radius);
+      display: grid; gap: .75rem; justify-items: center;
     }
-    .mm-stamp { font-family: var(--mm-font-mono); font-size: .75rem; }
-    /* Screen-reader-only, for the live region that announces result counts. */
-    .mm-sr {
-      position: absolute; width: 1px; height: 1px; overflow: hidden;
-      clip: rect(0 0 0 0); white-space: nowrap;
-    }
+    .mm-empty svg { color: var(--mm-border); }
+    .mm-empty .mm-clear { background: var(--mm-card); }
+
+    .mm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   </style>
 
   <div class="mm-head">
-    <h2>Tactical Human Performance Jobs</h2>
-    <p class="mm-sub" id="mm-sub">Loading…</p>
+    <p class="mm-eyebrow">Tactical Human Performance</p>
+    <h2>Open roles, checked daily</h2>
+    <p class="mm-sub" id="mm-sub">Loading current postings…</p>
   </div>
 
   <div class="mm-filters" role="region" aria-label="Filter jobs">
@@ -248,8 +286,10 @@
 
     <div class="mm-group">
       <div class="mm-row">
-        <input class="mm-search" id="mm-q" type="search"
-               placeholder="Search title, employer, base…" aria-label="Search jobs">
+        <div class="mm-field">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input class="mm-search" id="mm-q" type="search" placeholder="Search title, employer, base…" aria-label="Search jobs">
+        </div>
         <label class="mm-check">
           <span class="mm-sr">Minimum salary</span>
           <select class="mm-select" id="mm-salary" aria-label="Minimum salary">
@@ -273,6 +313,8 @@
         </label>
       </div>
     </div>
+
+    <div class="mm-active" id="mm-active" hidden></div>
   </div>
 
   <div class="mm-bar">
@@ -284,7 +326,10 @@
   <p class="mm-sr" role="status" aria-live="polite" id="mm-live"></p>
 
   <details class="mm-why">
-    <summary>What the badges mean</summary>
+    <summary>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      What the badges mean
+    </summary>
     <dl id="mm-defs"></dl>
   </details>
 </div>
@@ -293,12 +338,19 @@
 (function () {
   "use strict";
 
-  // ---- CONFIGURE -------------------------------------------------------
-  // Point this at the published feed.
   var FEED_URL = "jobs.json";
-  // ----------------------------------------------------------------------
 
-  var root = document.getElementById("mm-jobs");
+  var ICONS = {
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+    target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></svg>',
+    cash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v0M18 14v0"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+    flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+    empty: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
+  };
+
   var els = {
     sub: document.getElementById("mm-sub"),
     discipline: document.getElementById("mm-f-discipline"),
@@ -308,6 +360,7 @@
     hideContingent: document.getElementById("mm-hide-contingent"),
     noPay: document.getElementById("mm-nopay"),
     noPayWrap: document.getElementById("mm-nopay-wrap"),
+    active: document.getElementById("mm-active"),
     count: document.getElementById("mm-count"),
     clear: document.getElementById("mm-clear"),
     list: document.getElementById("mm-list"),
@@ -320,82 +373,49 @@
   var selected = { discipline: new Set(), location: new Set() };
 
   var LOCATION_LABELS = { remote: "Remote", conus: "CONUS", oconus: "OCONUS" };
-  // Confidence drives the sort. Verified first is the only ordering that is
-  // useful to someone deciding where to spend an evening writing applications.
   var CONFIDENCE_RANK = { verified: 0, listed: 1, aggregator: 2 };
-  var CONFIDENCE_LABELS = {
-    verified: "Verified live",
-    listed: "Listed by employer",
-    aggregator: "Aggregator lead"
-  };
+  var CONFIDENCE_LABELS = { verified: "Verified live", listed: "Listed by employer", aggregator: "Aggregator lead" };
 
   function esc(value) {
     return String(value == null ? "" : value)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function facetsOf(job) { return job.facets || {}; }
-
-  function money(n) {
-    if (!n) return "";
-    return "$" + Math.round(n / 1000) + "k";
-  }
-
+  function money(n) { return n ? "$" + Math.round(n / 1000) + "k" : ""; }
   function shortDate(iso) {
     if (!iso) return "";
     var d = new Date(iso);
-    if (isNaN(d)) return "";
-    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
   }
 
-  // --- filtering --------------------------------------------------------
-  // Each predicate is written so an UNKNOWN facet passes. A job we could not
-  // classify must never be hidden by a filter — the candidate would never
-  // know it existed, and being invisible is the one failure mode that has no
-  // feedback loop.
   function matches(job, ignore) {
     var f = facetsOf(job);
 
     if (ignore !== "discipline" && selected.discipline.size) {
       if (!selected.discipline.has(f.discipline || "other")) return false;
     }
-
     if (ignore !== "location" && selected.location.size) {
       var classes = f.location_classes || [];
-      if (classes.length) {
-        var hit = classes.some(function (c) { return selected.location.has(c); });
-        if (!hit) return false;
-      }
-      // classes.length === 0 → location unknown → always shown.
+      if (classes.length && !classes.some(function (c) { return selected.location.has(c); })) return false;
     }
-
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
     var floor = parseInt(els.salary.value, 10) || 0;
     if (floor > 0) {
       var pay = f.salary_floor_annual;
-      if (pay == null) {
-        if (!els.noPay.checked) return false;
-      } else if (pay < floor) {
-        return false;
-      }
+      if (pay == null) { if (!els.noPay.checked) return false; }
+      else if (pay < floor) return false;
     }
 
     var q = els.q.value.trim().toLowerCase();
     if (q) {
-      var haystack = [
-        job.title, job.employer, job.location, job.program, job.notes
-      ].join(" ").toLowerCase();
+      var haystack = [job.title, job.employer, job.location, job.program, job.notes].join(" ").toLowerCase();
       if (haystack.indexOf(q) === -1) return false;
     }
     return true;
   }
 
-  // --- chips ------------------------------------------------------------
-  // Counts are computed with the chip's own group excluded, so the number on
-  // "Athletic Training" answers "how many if I picked this" rather than
-  // collapsing to zero the moment another discipline is selected.
   function renderChips(container, group, options) {
     container.innerHTML = "";
     options.forEach(function (opt) {
@@ -425,7 +445,6 @@
     markScrollEnd(container);
   }
 
-  // Drop the edge fade once the row is scrolled to the end (or never scrolls).
   function markScrollEnd(container) {
     var atEnd = container.scrollWidth - container.clientWidth - container.scrollLeft < 4;
     container.classList.toggle("is-end", atEnd);
@@ -437,14 +456,11 @@
   function disciplineOptions() {
     var seen = {};
     JOBS.forEach(function (job) {
-      var f = facetsOf(job);
-      var slug = f.discipline || "other";
+      var f = facetsOf(job), slug = f.discipline || "other";
       if (!seen[slug]) seen[slug] = f.discipline_label || "Other";
     });
     return Object.keys(seen)
       .map(function (slug) { return { value: slug, label: seen[slug] }; })
-      // "Other" last; everything else alphabetical. A bucket named Other
-      // sitting first reads as the default, which it is not.
       .sort(function (a, b) {
         if (a.value === "other") return 1;
         if (b.value === "other") return -1;
@@ -457,31 +473,58 @@
     JOBS.forEach(function (job) {
       (facetsOf(job).location_classes || []).forEach(function (c) { present[c] = true; });
     });
-    return ["remote", "conus", "oconus"]
-      .filter(function (c) { return present[c]; })
+    return ["remote", "conus", "oconus"].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
   }
 
-  // --- cards ------------------------------------------------------------
+  function renderActiveFilters() {
+    var pills = [];
+    selected.discipline.forEach(function (slug) {
+      var job = JOBS.find(function (j) { return (facetsOf(j).discipline || "other") === slug; });
+      var label = job ? facetsOf(job).discipline_label : slug;
+      pills.push({ label: label, onRemove: function () { selected.discipline.delete(slug); render(); } });
+    });
+    selected.location.forEach(function (loc) {
+      pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
+    });
+    if (els.hideContingent.checked) {
+      pills.push({ label: "No contingent", onRemove: function () { els.hideContingent.checked = false; render(); } });
+    }
+    var floor = parseInt(els.salary.value, 10) || 0;
+    if (floor > 0) {
+      pills.push({ label: money(floor) + "+", onRemove: function () { els.salary.value = "0"; render(); } });
+    }
+    if (els.q.value.trim()) {
+      var q = els.q.value.trim();
+      pills.push({ label: '"' + q + '"', onRemove: function () { els.q.value = ""; render(); } });
+    }
+
+    els.active.hidden = pills.length === 0;
+    els.active.innerHTML = "";
+    pills.forEach(function (pill) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "mm-active-chip";
+      btn.innerHTML = esc(pill.label) + " " + ICONS.close;
+      btn.addEventListener("click", pill.onRemove);
+      els.active.appendChild(btn);
+    });
+  }
+
   function card(job) {
     var f = facetsOf(job);
     var li = document.createElement("li");
     li.className = "mm-job";
 
     var bits = [];
-    // The title links straight to the employer's posting. No intermediate
-    // page, no rewritten summary — the source is always one tap away.
-    bits.push(
-      '<h3><a href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">' +
-      esc(job.title) + "</a></h3>"
-    );
+    bits.push('<h3><a href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">' + esc(job.title) + "</a></h3>");
     if (job.employer) bits.push('<p class="mm-emp"><b>' + esc(job.employer) + "</b></p>");
 
     var meta = [];
-    if (job.location) meta.push("<span>📍 " + esc(job.location) + "</span>");
-    if (job.program) meta.push("<span>🎯 " + esc(job.program) + "</span>");
-    if (job.compensation) meta.push("<span>💵" + esc(job.compensation) + "</span>");
-    else if (f.salary_floor_annual) meta.push("<span>💵from " + money(f.salary_floor_annual) + "</span>");
+    if (job.location) meta.push('<span>' + ICONS.pin + esc(job.location) + "</span>");
+    if (job.program) meta.push('<span>' + ICONS.target + esc(job.program) + "</span>");
+    if (job.compensation) meta.push('<span>' + ICONS.cash + esc(job.compensation) + "</span>");
+    else if (f.salary_floor_annual) meta.push('<span>' + ICONS.cash + "from " + money(f.salary_floor_annual) + "</span>");
     if (meta.length) bits.push('<div class="mm-meta">' + meta.join("") + "</div>");
 
     var note = job.notes || job.description || "";
@@ -492,28 +535,40 @@
     var confClass = conf === "verified" ? "is-verified" : (conf === "listed" ? "is-listed" : "");
     var checked = job.liveness && job.liveness.checked_at ? shortDate(job.liveness.checked_at) : "";
     badges.push(
-      '<span class="mm-badge ' + confClass + '">' + esc(CONFIDENCE_LABELS[conf] || conf) +
+      '<span class="mm-badge ' + confClass + '">' +
+      (conf === "verified" ? ICONS.check : "") +
+      esc(CONFIDENCE_LABELS[conf] || conf) +
       (conf === "verified" && checked ? " · " + esc(checked) : "") + "</span>"
     );
     if (f.contingency === "contingent") {
-      badges.push('<span class="mm-badge is-contingent">Contingent — may not exist yet</span>');
+      badges.push('<span class="mm-badge is-contingent">' + ICONS.flag + "Contingent — may not exist yet</span>");
     }
     if (f.lead) badges.push('<span class="mm-badge">Lead / senior</span>');
     bits.push('<div class="mm-badges">' + badges.join("") + "</div>");
 
-    bits.push(
-      '<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">' +
-      "View posting →</a>"
-    );
+    bits.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting ' + ICONS.arrow + "</a>");
 
     li.innerHTML = bits.join("");
     return li;
   }
 
-  // --- render -----------------------------------------------------------
+  function skeleton() {
+    els.list.innerHTML = "";
+    var wrap = document.createElement("li");
+    wrap.className = "mm-skel";
+    for (var i = 0; i < 4; i++) {
+      var d = document.createElement("div");
+      d.className = "mm-skel-card";
+      d.style.animationDelay = (i * .08) + "s";
+      wrap.appendChild(d);
+    }
+    els.list.appendChild(wrap);
+  }
+
   function render() {
     renderChips(els.discipline, "discipline", disciplineOptions());
     renderChips(els.location, "location", locationOptions());
+    renderActiveFilters();
 
     els.noPayWrap.hidden = (parseInt(els.salary.value, 10) || 0) === 0;
 
@@ -522,8 +577,6 @@
       var ra = CONFIDENCE_RANK[a.confidence] != null ? CONFIDENCE_RANK[a.confidence] : 3;
       var rb = CONFIDENCE_RANK[b.confidence] != null ? CONFIDENCE_RANK[b.confidence] : 3;
       if (ra !== rb) return ra - rb;
-      // Then curated rank where the feed supplies one; unranked rows go last
-      // rather than jumping the queue with an implicit zero.
       var ka = typeof a.rank === "number" ? a.rank : Infinity;
       var kb = typeof b.rank === "number" ? b.rank : Infinity;
       if (ka !== kb) return ka - kb;
@@ -534,35 +587,38 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      empty.textContent = JOBS.length
-        ? "No jobs match these filters."
-        : "No jobs in the feed right now.";
+      var hasFilters = selected.discipline.size || selected.location.size || els.hideContingent.checked ||
+        (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
+      empty.innerHTML = ICONS.empty +
+        "<span>" + (JOBS.length
+          ? (hasFilters ? "No jobs match these filters." : "No jobs match right now.")
+          : "No jobs in the feed right now.") + "</span>" +
+        (hasFilters ? '<button type="button" class="mm-clear" id="mm-clear-empty">Clear filters</button>' : "");
       els.list.appendChild(empty);
+      var clearBtn = document.getElementById("mm-clear-empty");
+      if (clearBtn) clearBtn.addEventListener("click", clearAll);
     } else {
       var frag = document.createDocumentFragment();
-      shown.forEach(function (job) { frag.appendChild(card(job)); });
+      shown.forEach(function (job, i) {
+        var c = card(job);
+        c.style.animationDelay = Math.min(i * .02, .3) + "s";
+        frag.appendChild(c);
+      });
       els.list.appendChild(frag);
     }
 
-    var msg = "<strong>" + shown.length + "</strong> of " + JOBS.length + " job" +
-              (JOBS.length === 1 ? "" : "s");
-    var hidden = JOBS.filter(function (j) {
-      return facetsOf(j).contingency === "contingent";
-    }).length;
-    if (els.hideContingent.checked && hidden) {
-      msg += " · " + hidden + " contingent hidden";
-    }
+    var msg = "<strong>" + shown.length + "</strong> of " + JOBS.length + " job" + (JOBS.length === 1 ? "" : "s");
+    var hidden = JOBS.filter(function (j) { return facetsOf(j).contingency === "contingent"; }).length;
+    if (els.hideContingent.checked && hidden) msg += " · " + hidden + " contingent hidden";
     els.count.innerHTML = msg;
     els.live.textContent = shown.length + " jobs shown";
   }
 
   function renderDefinitions() {
     var out = [];
-    var order = ["verified", "listed", "aggregator"];
-    order.forEach(function (key) {
+    ["verified", "listed", "aggregator"].forEach(function (key) {
       if (!DEFS.confidence || !DEFS.confidence[key]) return;
-      out.push("<dt>" + esc(CONFIDENCE_LABELS[key] || key) + "</dt><dd>" +
-               esc(DEFS.confidence[key]) + "</dd>");
+      out.push("<dt>" + esc(CONFIDENCE_LABELS[key] || key) + "</dt><dd>" + esc(DEFS.confidence[key]) + "</dd>");
     });
     if (DEFS.contingency && DEFS.contingency.contingent) {
       out.push("<dt>Contingent</dt><dd>" + esc(DEFS.contingency.contingent) + "</dd>");
@@ -570,23 +626,24 @@
     els.defs.innerHTML = out.join("");
   }
 
+  function clearAll() {
+    selected.discipline.clear();
+    selected.location.clear();
+    els.q.value = "";
+    els.salary.value = "0";
+    els.hideContingent.checked = false;
+    els.noPay.checked = true;
+    render();
+  }
+
   function bind() {
     [els.q, els.salary].forEach(function (el) { el.addEventListener("input", render); });
     [els.hideContingent, els.noPay].forEach(function (el) { el.addEventListener("change", render); });
-    els.clear.addEventListener("click", function () {
-      selected.discipline.clear();
-      selected.location.clear();
-      els.q.value = "";
-      els.salary.value = "0";
-      els.hideContingent.checked = false;
-      els.noPay.checked = true;
-      render();
-    });
+    els.clear.addEventListener("click", clearAll);
   }
 
-  // A preview build inlines the feed as window.MM_JOBS_DATA so the page can be
-  // opened from a file or pasted somewhere with no network. Live deploys leave
-  // it undefined and fetch normally.
+  skeleton();
+
   var load = window.MM_JOBS_DATA
     ? Promise.resolve(window.MM_JOBS_DATA)
     : fetch(FEED_URL, { cache: "no-store" }).then(function (r) {
@@ -600,8 +657,7 @@
       DEFS = data.definitions || {};
       var stamp = data.generated_at || data.generated;
       els.sub.innerHTML =
-        "Army H2F · SOCOM POTFF · Air Force HPO · first responder. " +
-        "Every listing links straight to the employer's posting." +
+        "Army H2F · SOCOM POTFF · Air Force HPO · first responder. Every listing links straight to the employer's posting." +
         (stamp ? ' <span class="mm-stamp">Updated ' + esc(shortDate(stamp) || stamp) + ".</span>" : "");
       renderDefinitions();
       bind();
@@ -609,8 +665,8 @@
     })
     .catch(function (err) {
       els.sub.textContent = "Could not load the job feed (" + err.message + ").";
-      els.list.innerHTML = '<li class="mm-empty">The feed is unavailable right now.</li>';
-      if (root && window.console) console.error("[mm-jobs]", err);
+      els.list.innerHTML = '<li class="mm-empty">' + ICONS.empty + "<span>The feed is unavailable right now.</span></li>";
+      if (window.console) console.error("[mm-jobs]", err);
     });
 })();
 </script>

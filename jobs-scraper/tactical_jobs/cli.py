@@ -114,12 +114,7 @@ def _cmd_insights(args: argparse.Namespace) -> int:
 
 
 def _cmd_feed(args: argparse.Namespace) -> int:
-    """Normalize a board feed and add filter facets to every row.
-
-    Exists so a feed produced before facets -- including the hand-curated
-    sweeps already publishing to the live site -- can be upgraded in place
-    instead of the board reimplementing the facet rules in JavaScript.
-    """
+    """Normalize a board feed and add filter facets to every row."""
     source = Path(args.source)
     if not source.exists():
         print(f"feed not found: {source}", file=sys.stderr)

@@ -1,27 +1,11 @@
 """Normalize any board feed into the one shape the site renders.
 
-Two feed shapes exist in the wild:
-
-    LEGACY  the hand-curated sweeps that have been publishing to the live site
-            -- rows of {rank, validity, title, employer, program, location,
-            salary, notes, url}
-    NATIVE  what this pipeline writes -- rows of to_public_dict(), carrying
-            enrichment and facets
-
-The board must not have to know the difference, and the facet rules must not
-be reimplemented in JavaScript to cope with the legacy shape. So the
-conversion happens here, in Python, using the same ``enrich`` and ``facets``
-code the pipeline uses. Run it over a legacy feed and the board gets working
-filters without a single row being retyped.
+Handles both the legacy hand-curated sweep shape (rows of rank/validity/
+title/employer/...) and the native pipeline shape (JobPosting.to_public_dict),
+deriving facets and a confidence badge for either via the same enrich/facets
+code the pipeline uses.
 
     python -m tactical_jobs feed --in jobs.json --out jobs.json
-
-CONFIDENCE IS MECHANICAL, NOT EDITORIAL
-    "Verified" has to mean something a candidate can check, or it is just
-    decoration. Here it means exactly one thing: we fetched this posting's own
-    URL and the employer's system answered with the posting still up, on the
-    date shown. Nothing about the quality of the job, the employer, or the
-    pay is implied.
 """
 
 from __future__ import annotations
@@ -38,8 +22,6 @@ from .models import JobPosting
 
 FEED_VERSION = 2
 
-# What each badge means, published inside the feed so the board renders the
-# definition from the same place the value comes from and the two cannot drift.
 CONFIDENCE_DEFINITIONS: dict[str, str] = {
     "verified": (
         "We fetched this posting's own URL and the employer's system returned "
@@ -67,7 +49,6 @@ CONTINGENCY_DEFINITIONS: dict[str, str] = {
     "unknown": "The posting does not say either way.",
 }
 
-# Legacy sweeps used "high" for "on the employer's own site but not re-fetched".
 _LEGACY_VALIDITY = {
     "verified": "verified",
     "high": "listed",
@@ -75,8 +56,6 @@ _LEGACY_VALIDITY = {
     "aggregator": "aggregator",
 }
 
-# Sources that read an employer's own ATS rather than a third-party board.
-# Used to decide between "listed" and "aggregator" when liveness is unknown.
 _FIRST_PARTY_PREFIXES = (
     "workday", "greenhouse", "lever", "ashby", "workable", "smartrecruiters",
     "recruitee", "bamboohr", "breezy", "personio", "rippling", "icims",
@@ -89,17 +68,14 @@ def _stable_id(url: str, title: str) -> str:
 
 
 def _is_legacy(row: dict[str, Any]) -> bool:
-    """Legacy rows carry ``validity`` and never carry an ``id``."""
     return "validity" in row and "id" not in row
 
 
 def confidence_of(row: dict[str, Any]) -> str:
-    """Decide the badge from evidence, never from an editorial judgement."""
     liveness = row.get("liveness") or {}
     if liveness.get("state") == "live":
         return "verified"
 
-    # No successful re-fetch. Fall back to how we found it in the first place.
     if _is_legacy(row):
         return _LEGACY_VALIDITY.get(str(row.get("validity", "")).lower(), "aggregator")
 
@@ -110,12 +86,6 @@ def confidence_of(row: dict[str, Any]) -> str:
 
 
 def _posting_from_legacy(row: dict[str, Any]) -> JobPosting:
-    """Rebuild a JobPosting from a hand-curated row so enrich/facets can run.
-
-    The notes and salary strings are concatenated into ``description`` because
-    that is the only text these rows carry, and it is where the certification,
-    clearance, and contingency language lives.
-    """
     notes = str(row.get("notes") or "")
     salary = str(row.get("salary") or "")
     program = str(row.get("program") or "")
@@ -150,16 +120,13 @@ def _posting_from_native(row: dict[str, Any]) -> JobPosting:
 
 
 def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
-    """One feed row, in either shape, converted to the published shape."""
     legacy = _is_legacy(row)
     posting = _posting_from_legacy(row) if legacy else _posting_from_native(row)
 
-    # Re-derive rather than trust: a legacy row has no enrichment at all, and
-    # a native row written before facets existed has none either.
     if not posting.enrichment:
         try:
             enrich(posting)
-        except Exception:  # pragma: no cover - defensive
+        except Exception:  # pragma: no cover
             posting.enrichment = {}
     posting.facets = facets_for(posting)
 
@@ -168,14 +135,7 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     entry["confidence"] = confidence_of(row)
     entry["program"] = row.get("program") or posting.enrichment.get("program")
     entry["compensation"] = row.get("salary") or row.get("compensation")
-    # Legacy "notes" are a curator's summary and worth showing; a native row's
-    # description is the employer's own text and the board excerpts it.
     entry["notes"] = row.get("notes") or ""
-    # A curated feed carries a hand-assigned rank. Preserving it lets the board
-    # break ties within a confidence tier by relevance instead of alphabetically
-    # by employer, which otherwise floats whichever employer sorts first --
-    # "Army West Point Athletic Association", the least tactical row on the
-    # board -- to the top of the page.
     if isinstance(row.get("rank"), (int, float)) and not isinstance(row.get("rank"), bool):
         entry["rank"] = row["rank"]
     if row.get("liveness"):
@@ -186,7 +146,6 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def normalize_feed(payload: dict[str, Any]) -> dict[str, Any]:
-    """Convert a whole feed document, preserving its generated timestamp."""
     rows = payload.get("jobs") or []
     jobs = [normalize_row(row) for row in rows if isinstance(row, dict)]
 
@@ -205,7 +164,6 @@ def normalize_feed(payload: dict[str, Any]) -> dict[str, Any]:
             "contingency": CONTINGENCY_DEFINITIONS,
         },
     }
-    # Carry through anything the legacy sweeps published that the board can use.
     for key in ("live_feeds", "notes_on_closed"):
         if payload.get(key):
             out[key] = payload[key]
@@ -213,7 +171,6 @@ def normalize_feed(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def normalize_file(source: Path, destination: Path) -> dict[str, Any]:
-    """Read, normalize, write. Returns the normalized document."""
     payload = json.loads(Path(source).read_text())
     normalized = normalize_feed(payload)
     destination = Path(destination)

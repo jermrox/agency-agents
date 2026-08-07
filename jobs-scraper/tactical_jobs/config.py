@@ -98,16 +98,10 @@ class Config:
     """
 
     liveness_check: bool = True
-    """Re-fetch every already-published posting and retire the dead ones.
-
-    ``max_age_days`` alone cannot do this: it retires a listing on a timer,
-    so a job that closed on day 2 stays on the board until day 45. This walks
-    the board and asks each posting's own URL. See ``liveness.py`` for why the
-    answer is only ever trusted in one direction.
-    """
+    """Re-fetch every already-published posting and retire the dead ones."""
 
     liveness_workers: int = 8
-    """Concurrent liveness checks. Deliberately modest -- see liveness.py."""
+    """Concurrent liveness checks."""
 
     liveness_timeout: int = 20
 
