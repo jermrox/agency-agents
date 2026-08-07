@@ -18,7 +18,9 @@ from .archive import Archive
 from .classify import Thresholds, classify
 from .config import Config, ConfigError
 from .discover import discover, render_watchlist
+from .feed import normalize_file as feed_normalize_file
 from .insights import build_insights, render_summary
+from .liveness import check_all
 from .models import JobPosting
 from .pipeline import run
 from .publishers import available_kinds as publisher_kinds
@@ -111,6 +113,73 @@ def _cmd_insights(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_feed(args: argparse.Namespace) -> int:
+    """Normalize a board feed and add filter facets to every row.
+
+    Exists so a feed produced before facets -- including the hand-curated
+    sweeps already publishing to the live site -- can be upgraded in place
+    instead of the board reimplementing the facet rules in JavaScript.
+    """
+    source = Path(args.source)
+    if not source.exists():
+        print(f"feed not found: {source}", file=sys.stderr)
+        return 1
+    destination = Path(args.out or args.source)
+    normalized = feed_normalize_file(source, destination)
+
+    counts: dict[str, int] = {}
+    for job in normalized["jobs"]:
+        slug = (job.get("facets") or {}).get("discipline", "other")
+        counts[slug] = counts.get(slug, 0) + 1
+    print(f"normalized {normalized['count']} job(s) -> {destination}")
+    for slug, count in sorted(counts.items(), key=lambda kv: -kv[1]):
+        print(f"  {count:4d}  {slug}")
+    contingent = sum(
+        1 for j in normalized["jobs"]
+        if (j.get("facets") or {}).get("contingency") == "contingent"
+    )
+    if contingent:
+        print(f"  {contingent} flagged contingent (contract-award dependent)")
+    return 0
+
+
+def _cmd_recheck(args: argparse.Namespace) -> int:
+    """Re-fetch every posting URL in a feed and drop the dead ones."""
+    path = Path(args.feed)
+    if not path.exists():
+        print(f"feed not found: {path}", file=sys.stderr)
+        return 1
+    payload = json.loads(path.read_text())
+    jobs = payload.get("jobs") or []
+    verdicts = check_all(
+        (job.get("url", "") for job in jobs),
+        workers=args.workers,
+        timeout=args.timeout,
+    )
+
+    kept, retired = [], []
+    for job in jobs:
+        verdict = verdicts.get(job.get("url", ""))
+        if verdict is not None and verdict.is_gone:
+            retired.append((job.get("title", "?"), job.get("employer", "?"), verdict.reason))
+            continue
+        if verdict is not None:
+            job["liveness"] = verdict.as_dict()
+        kept.append(job)
+
+    for title, employer, reason in retired:
+        print(f"  retired: {title} ({employer}) -- {reason}")
+    print(f"{len(kept)} live, {len(retired)} retired")
+
+    if args.dry_run:
+        print("dry run: feed not rewritten", file=sys.stderr)
+        return 0
+    payload["jobs"] = kept
+    payload["count"] = len(kept)
+    path.write_text(json.dumps(payload, indent=2) + "\n")
+    return 0
+
+
 def _cmd_discover(args: argparse.Namespace) -> int:
     """Mine text for candidate employers and unknown vocabulary.
 
@@ -192,6 +261,24 @@ def build_parser() -> argparse.ArgumentParser:
     discover_parser.add_argument("--min-mentions", type=int, default=2)
     discover_parser.add_argument("--limit", type=int, default=40)
     discover_parser.set_defaults(func=_cmd_discover)
+
+    feed_parser = subparsers.add_parser(
+        "feed", help="normalize a board feed and add filter facets to every row"
+    )
+    feed_parser.add_argument("--in", dest="source", required=True, help="feed to read")
+    feed_parser.add_argument("--out", help="where to write (defaults to in place)")
+    feed_parser.set_defaults(func=_cmd_feed)
+
+    recheck_parser = subparsers.add_parser(
+        "recheck", help="re-fetch every posting in a feed and drop the dead ones"
+    )
+    recheck_parser.add_argument("--feed", default="output/jobs.json")
+    recheck_parser.add_argument("--workers", type=int, default=8)
+    recheck_parser.add_argument("--timeout", type=int, default=20)
+    recheck_parser.add_argument(
+        "--dry-run", action="store_true", help="report without rewriting the feed"
+    )
+    recheck_parser.set_defaults(func=_cmd_recheck)
 
     return parser
 

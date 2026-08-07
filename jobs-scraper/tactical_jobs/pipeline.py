@@ -13,9 +13,13 @@ from .archive import Archive
 from .classify import Verdict, classify
 from .config import Config
 from .enrich import enrich
+from .facets import facets_for
+from .feed import normalize_file
 from .insights import build_insights
+from .liveness import check_all
 from .models import JobPosting, SourceError
 from .publishers import build_publisher
+from .publishers.files import load_board
 from .report import render_html, render_markdown
 from .sources import build_source
 from .store import Store
@@ -35,6 +39,8 @@ class RunReport:
     published: list[str] = field(default_factory=list)
     pruned: int = 0
     archived: int = 0
+    retired: int = 0
+    unverifiable: int = 0
     insights: dict[str, Any] = field(default_factory=dict)
 
     def summary(self) -> str:
@@ -46,6 +52,11 @@ class RunReport:
             f"approved    {len(self.approved)}",
             f"review      {len(self.review)}",
         ]
+        if self.retired or self.unverifiable:
+            lines.append(
+                f"retired     {self.retired} dead listing(s) "
+                f"({self.unverifiable} unverifiable, kept)"
+            )
         if self.archived:
             lines.append(f"archived    {self.archived} new corpus record(s)")
         if self.pruned:
@@ -118,6 +129,13 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         except Exception as exc:  # pragma: no cover - defensive
             log.warning("enrichment failed for %s: %s", posting.url, exc)
 
+        # Facets run after enrichment because the salary facet reads what
+        # enrichment extracted rather than re-parsing the description.
+        try:
+            posting.facets = facets_for(posting)
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("facets failed for %s: %s", posting.url, exc)
+
         verdicts[posting.identity] = verdict
         scored.append(posting)
 
@@ -141,7 +159,20 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
     # failing should never cost us the record of what we saw.
     _archive(config, report, scored)
 
+    # Retire dead listings BEFORE the publishers run. The JSON feed publisher
+    # merges new postings into whatever is already on disk, so pruning first
+    # means the board is written exactly once, with the dead rows already
+    # gone. Postings collected in *this* run are not re-checked -- a source
+    # returning them a minute ago is better evidence than a second fetch.
+    _retire_dead(config, report)
+
     _publish(config, report)
+
+    # Stamp confidence badges and the badge definitions onto the feed the site
+    # reads. Done here rather than in the workflow so a local run produces a
+    # byte-identical artifact to CI -- a board that only renders correctly
+    # after a CI-only step is a board nobody can debug locally.
+    _finalize_feeds(config, report)
 
     for posting in report.approved:
         store.mark(posting, "published")
@@ -164,6 +195,92 @@ def _archive(config: Config, report: RunReport, scored: list[JobPosting]) -> Non
     except Exception as exc:
         log.warning("archive append failed: %s", exc)
         report.errors.append(SourceError("archive", str(exc)))
+
+
+def _feed_paths(config: Config) -> list[Path]:
+    """Every jsonfeed file this config writes."""
+    return [
+        Path(p.options.get("path", "output/jobs.json"))
+        for p in config.publishers
+        if p.kind == "jsonfeed"
+    ]
+
+
+def _retire_dead(config: Config, report: RunReport) -> None:
+    """Walk the published board and drop postings that no longer exist.
+
+    This is the loop that keeps the board honest. Everything about how a
+    verdict is reached -- and why only two signals are trusted to remove a
+    job -- lives in ``liveness.py``.
+    """
+    if not config.liveness_check:
+        return
+    for path in _feed_paths(config):
+        board = load_board(path)
+        if not board:
+            continue
+        try:
+            verdicts = check_all(
+                (job.get("url", "") for job in board),
+                workers=config.liveness_workers,
+                timeout=config.liveness_timeout,
+            )
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("liveness sweep failed for %s: %s", path, exc)
+            report.errors.append(SourceError("liveness", str(exc)))
+            continue
+
+        kept: list[dict] = []
+        for job in board:
+            verdict = verdicts.get(job.get("url", ""))
+            if verdict is None:
+                kept.append(job)
+                continue
+            if verdict.is_gone:
+                report.retired += 1
+                log.info("retiring %s (%s)", job.get("url"), verdict.reason)
+                continue
+            if verdict.state != "live":
+                report.unverifiable += 1
+            # Stamp the verdict onto the row so the board can show the
+            # candidate when this link was last confirmed, rather than asking
+            # them to take "verified" on faith.
+            job["liveness"] = verdict.as_dict()
+            kept.append(job)
+
+        # Rewrite whenever the sweep produced any verdict at all, not only
+        # when something was retired. The common case is that every posting is
+        # still live -- and that is precisely the case whose evidence has to be
+        # written down, because the "verified" badge and its date are read off
+        # these stamps. Gating on change meant a healthy board never recorded
+        # that it had been checked, so nothing was ever badged verified.
+        if verdicts:
+            try:
+                payload = json.loads(path.read_text())
+                payload["jobs"] = kept
+                payload["count"] = len(kept)
+                path.write_text(json.dumps(payload, indent=2) + "\n")
+            except (OSError, json.JSONDecodeError) as exc:  # pragma: no cover
+                log.warning("could not rewrite %s after liveness sweep: %s", path, exc)
+
+
+def _finalize_feeds(config: Config, report: RunReport) -> None:
+    """Normalize every published feed so the board has what it renders.
+
+    Adds the ``confidence`` badge (derived from the liveness verdict and the
+    source kind) and the ``definitions`` block the board shows under "What the
+    badges mean". Keeping the definitions inside the feed means the words a
+    candidate reads and the value they describe ship from the same place and
+    cannot drift apart.
+    """
+    for path in _feed_paths(config):
+        if not path.exists():
+            continue
+        try:
+            normalize_file(path, path)
+        except Exception as exc:
+            log.warning("feed normalize failed for %s: %s", path, exc)
+            report.errors.append(SourceError("feed", str(exc)))
 
 
 def _analyze(config: Config, report: RunReport) -> None:

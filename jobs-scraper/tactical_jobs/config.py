@@ -97,6 +97,20 @@ class Config:
     so the safe mode is the default and turning it on is an explicit choice.
     """
 
+    liveness_check: bool = True
+    """Re-fetch every already-published posting and retire the dead ones.
+
+    ``max_age_days`` alone cannot do this: it retires a listing on a timer,
+    so a job that closed on day 2 stays on the board until day 45. This walks
+    the board and asks each posting's own URL. See ``liveness.py`` for why the
+    answer is only ever trusted in one direction.
+    """
+
+    liveness_workers: int = 8
+    """Concurrent liveness checks. Deliberately modest -- see liveness.py."""
+
+    liveness_timeout: int = 20
+
     @classmethod
     def load(cls, path: str | Path) -> "Config":
         path = Path(path)
@@ -154,4 +168,7 @@ class Config:
             ),
             max_age_days=int(runtime.get("max_age_days", 45)),
             auto_publish=bool(runtime.get("auto_publish", False)),
+            liveness_check=bool(runtime.get("liveness_check", True)),
+            liveness_workers=int(runtime.get("liveness_workers", 8)),
+            liveness_timeout=int(runtime.get("liveness_timeout", 20)),
         )

@@ -72,6 +72,12 @@ class JobPosting:
     # and live postings through exactly the same shape.
     enrichment: dict[str, Any] = field(default_factory=dict)
 
+    # Populated by facets.py: the four questions the board filters on
+    # (discipline, location class, contingency, salary floor). Kept separate
+    # from ``enrichment`` because these are a stable published contract that
+    # the board's filter UI depends on, while enrichment is free-form analysis.
+    facets: dict[str, Any] = field(default_factory=dict)
+
     @property
     def identity(self) -> str:
         """Exact identity: the same posting re-fetched from the same source.
@@ -132,6 +138,7 @@ class JobPosting:
             "score": round(self.score, 2),
             "tags": sorted(self.tags),
             "enrichment": self.enrichment,
+            "facets": self.facets,
             "matched": {
                 "domain": sorted(set(self.domain_hits)),
                 "discipline": sorted(set(self.discipline_hits)),

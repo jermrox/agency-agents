@@ -30,6 +30,14 @@ output_dir = "output"
 max_age_days = 45
 auto_publish = true
 
+# Re-fetch every already-published posting each run and retire the dead ones.
+# max_age_days alone cannot do this -- it retires a listing on a 45-day timer,
+# so a requisition that closed on day 2 sits on the board for six more weeks.
+# See liveness.py for why a job is only ever removed on unambiguous evidence.
+liveness_check = true
+liveness_workers = 8
+liveness_timeout = 20
+
 [thresholds]
 publish = 14.0
 review = 8.0
@@ -204,11 +212,26 @@ employer = ""
 # this niche. Most expose RSS. Keyless.
 # -----------------------------------------------------------------------------
 
-# [[source]]
-# kind = "jobsrss"
-# name = "nsca"
-# url = "https://careers.nsca.com/jobs/feed"
-# employer_from = "title"
+# --- VERIFIED LIVE 2026-08-07 -----------------------------------------------
+# NSCA Career Center (nsca.careerwebsite.com). Checked end to end on this date:
+#   * The board publishes NO RSS. /jobs/rss/, /jobs/feed/, ?format=rss and
+#     /rss/ all return the ordinary HTML page (or 403), so the `jobsrss`
+#     adapter -- which an earlier version of this file guessed at with the URL
+#     https://careers.nsca.com/jobs/feed -- cannot work here.
+#   * /sitemap.xml DOES resolve and lists the job detail pages.
+#   * Each detail page carries schema.org JobPosting markup nested inside an
+#     @graph container, which the jsonld adapter already unwraps.
+# A live run over the sitemap fetched 21 postings; the classifier rejected 20
+# collegiate/commercial roles and approved one tactical role -- Serco's H2FIT
+# Strength and Conditioning Coaches, scoring 83.5. That ratio is the point:
+# this board is mostly collegiate strength jobs, and the two-axis classifier
+# is what separates the tactical minority from them.
+[[source]]
+kind = "jsonld"
+name = "nsca"
+sitemap = "https://nsca.careerwebsite.com/sitemap.xml"
+url_include = ["/job/"]
+max_urls = 60
 
 
 # -----------------------------------------------------------------------------

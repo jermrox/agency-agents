@@ -215,6 +215,137 @@ is the softer dial — it tightens what goes live without stopping the flow.
 
 ---
 
+## Retiring dead listings
+
+A job board that shows closed requisitions is worse than no board: someone
+spends an evening on an application for a role that closed weeks ago and only
+finds out after they submit.
+
+Sources cannot solve this. They report what is on a board *today*; a posting
+that came down simply stops appearing, and "stopped appearing" is
+indistinguishable from "the source errored" or "the ATS paginated
+differently". So every run walks the already-published board and asks each
+posting's own URL whether it still exists (`liveness.py`).
+
+**The bias is one-way and deliberate.** A listing is removed only on
+unambiguous evidence:
+
+| Signal | Verdict |
+|---|---|
+| HTTP 404 / 410 | **gone** — removed |
+| Page says "no longer accepting applications", "this job has expired", … | **gone** — removed |
+| HTTP 403, 401, 5xx, timeout, connection reset | unknown — **kept** |
+| Redirected off the posting to a search page | live, flagged in the reason |
+| Anything else that answers | live |
+
+403 is explicitly *not* a removal signal: KBR's public job HTML 403s every
+non-browser fetcher while the requisition is perfectly live, so treating it as
+"gone" would empty the board of the employers that matter most.
+
+Wrongly dropping a live job is invisible to us and expensive for the
+candidate. Wrongly keeping a dead one is visible and self-corrects on the next
+pass. That asymmetry is why every ambiguous answer keeps the job.
+
+Two schedules run this: 07:00 and 19:00 UTC, so a requisition that closes
+during the US working day comes off the board the same day.
+
+Run it by hand against any feed:
+
+```bash
+python -m tactical_jobs recheck --feed output/jobs.json --dry-run
+```
+
+---
+
+## Filter facets
+
+`classify.py` decides whether a job belongs on the board. `facets.py` answers
+the four questions a candidate standing in front of the board actually asks,
+and they become the filter controls in `embed/board.html`.
+
+| Facet | Values | Notes |
+|---|---|---|
+| `discipline` | `strength-conditioning`, `athletic-training`, `physical-therapy`, `occupational-therapy`, `nutrition`, `cognitive-performance`, `behavioral-health`, `sport-science`, `human-performance`, `other` | The primary filter — a PT does not care what strength jobs exist |
+| `location_classes` | any of `remote`, `conus`, `oconus` | A **set**: these reqs routinely span both |
+| `contingency` | `contingent`, `funded`, `unknown` | Whether the seat depends on winning work |
+| `lead` | boolean | Seniority, kept off the discipline axis |
+| `salary_floor_annual` | number or null | Read from enrichment, hourly annualized at 2080h |
+
+Three rules keep it honest:
+
+- **The title decides the discipline.** Descriptions on these contracts list
+  the whole embedded team ("works alongside the ATC, RD, and CPS"), so scoring
+  the description hands every job every label. The description is a fallback
+  that only runs when the title is silent, and only reads its first 400
+  characters.
+- **Seniority is not a discipline.** "Installation Lead Strength &
+  Conditioning Coach" is a strength job. Filing it under "leadership" would
+  hide it from every strength coach browsing the board.
+- **Unknown always shows.** Every facet returns an explicit unknown rather
+  than a plausible default, and the board treats unknown as "always show". A
+  filtered-out posting is invisible, and the candidate never learns they were
+  filtered.
+
+`contingency` deserves its own note, because it is the one that costs people
+real time. A contingent posting is a resume collector: the employer has bid on
+work and is building a pipeline in case they win it. The word "contingent",
+though, also appears in near-universal offer boilerplate — "employment is
+contingent upon a background check" — so matching it bare would flag the
+entire board. The rule instead splits on grammar:
+
+- `contingent <noun>` ("contingent posting", "contingency hire") → **contingent**.
+  Term of art in government contracting; conclusive on its own.
+- `contingent upon <X>` → depends on X. Award, funding, task order, or
+  *vacancy* → contingent. Background check, drug screen, E-Verify → ignored.
+- Pipeline language with no such word at all ("talent pipeline for anticipated
+  openings", "if awarded") → **contingent**.
+
+CONUS/OCONUS use the DoD definition: CONUS is the 48 contiguous states, so
+Alaska, Hawaii, and the territories are **OCONUS**. The board states this next
+to the filter rather than assuming everyone reads it that way.
+
+---
+
+## What "verified" means
+
+Badges are mechanical, never editorial — a badge a candidate cannot check is
+decoration. The definitions ship *inside* the feed (`definitions.confidence`)
+so the words shown and the value described cannot drift apart.
+
+| Badge | Means |
+|---|---|
+| **Verified live** | We fetched this posting's own URL and the employer's system returned it as open, on the date shown |
+| **Listed by employer** | From the employer's own careers system, but the link could not be re-checked (some sites block automated requests) |
+| **Aggregator lead** | Found on a third-party board, not confirmed against the employer |
+
+Nothing about job quality, employer, or pay is implied by any of them.
+
+---
+
+## The board
+
+`embed/board.html` is the filterable board — no build step, no framework, one
+fetch. Paste it into a Squarespace Code Block, or serve it standalone; the
+workflow publishes it both ways (`embed.html` and as the Pages `index.html`).
+
+- Every card links **straight to the employer's posting**. No rewritten
+  summary, no interstitial.
+- Rebrand by editing the custom properties in the `:root` block. Nothing else
+  carries a colour.
+- Repoint by editing `FEED_URL` at the bottom of the file.
+
+To upgrade a feed that predates facets — including a hand-curated one — run:
+
+```bash
+python -m tactical_jobs feed --in jobs.json --out jobs.json
+```
+
+That adds facets, confidence, and the definitions block using the same
+`enrich` and `facets` code the pipeline uses, so the rules never get
+reimplemented in JavaScript and never drift.
+
+---
+
 ## Deduplication
 
 Two levels, both persisted in `state/seen.json`:

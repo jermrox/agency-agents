@@ -27,6 +27,11 @@ on:
     # 07:00 UTC = 02:00 America/Chicago, the site's timezone. Quiet hours, and
     # after overnight US postings land.
     - cron: "0 7 * * *"
+    # 19:00 UTC = 14:00 America/Chicago. A second pass so a requisition that
+    # closes during the US working day comes off the board the same day rather
+    # than the next morning. The run is the same either way -- collecting is
+    # cheap, and the liveness sweep is the reason to run it twice.
+    - cron: "0 19 * * *"
 
 concurrency:
   group: tactical-jobs
@@ -166,27 +171,25 @@ jobs:
           cp -f output/jobs.xml           ../site/ 2>/dev/null || true
           cp -f output/insights/dashboard.html ../site/ 2>/dev/null || true
           cp -f output/insights/insights.json  ../site/ 2>/dev/null || true
-          cp -f embed/squarespace-jobs.html    ../site/embed.html 2>/dev/null || true
-          # A landing page so the Pages root is not a 404.
-          cat > ../site/index.html <<'HTML'
-          <!doctype html><meta charset="utf-8">
-          <title>MOPs &amp; MOEs — Tactical Human Performance Jobs</title>
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <style>
-            body{font:16px/1.6 system-ui,sans-serif;max-width:44rem;margin:3rem auto;padding:0 1.25rem;
-                 background:#fcfcfb;color:#1b1b19}
-            @media (prefers-color-scheme:dark){body{background:#17171a;color:#f2f1ec}}
-            a{color:#2a78d6} li{margin:.4rem 0}
-          </style>
-          <h1>Tactical Human Performance Jobs</h1>
-          <p>Machine-readable endpoints published nightly.</p>
-          <ul>
-            <li><a href="dashboard.html">Market dashboard</a></li>
-            <li><a href="jobs.json">jobs.json</a> — the feed the site embed reads</li>
-            <li><a href="jobs.xml">jobs.xml</a> — RSS</li>
-            <li><a href="insights.json">insights.json</a> — aggregate analysis</li>
-          </ul>
-          HTML
+          # The filterable board. Shipped twice: as embed.html for pasting into
+          # a Squarespace Code Block, and wrapped in a document as index.html
+          # so the Pages root is the board itself rather than a link list.
+          cp -f embed/board.html ../site/embed.html
+          {
+            echo '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            echo '<title>MOPs &amp; MOEs — Tactical Human Performance Jobs</title>'
+            echo '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            echo '<style>body{margin:0;padding:1.25rem;background:#fcfcfb;'
+            echo 'font:16px/1.6 system-ui,sans-serif}'
+            echo '@media(prefers-color-scheme:dark){body{background:#0d1117}}</style>'
+            echo '</head><body>'
+            cat embed/board.html
+            echo '<p style="max-width:62rem;margin:2rem auto 0;font:13px/1.6 system-ui,sans-serif;color:#6b7280">'
+            echo 'Machine-readable: <a href="jobs.json">jobs.json</a> ·'
+            echo '<a href="jobs.xml">RSS</a> · <a href="insights.json">insights.json</a> ·'
+            echo '<a href="dashboard.html">market dashboard</a></p>'
+            echo '</body></html>'
+          } > ../site/index.html
           ls -la ../site
 
       - name: Upload Pages artifact
