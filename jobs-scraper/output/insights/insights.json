@@ -1,0 +1,275 @@
+{
+  "generated_at": "2026-08-07T09:39:08.021423+00:00",
+  "totals": {
+    "postings": 11,
+    "employers": 1,
+    "unique_jobs": 10,
+    "with_salary": 1,
+    "date_span": {
+      "earliest": "2026-07-02T00:00:00+00:00",
+      "latest": "2026-08-04T00:00:00+00:00"
+    }
+  },
+  "by_employer": [
+    {
+      "name": "KBR",
+      "count": 10,
+      "disciplines": [
+        "strength-conditioning",
+        "nutrition",
+        "sports-medicine",
+        "cognitive",
+        "research"
+      ],
+      "median_salary": 91950.0
+    }
+  ],
+  "by_discipline": [
+    {
+      "name": "strength-conditioning",
+      "count": 8,
+      "share": 1.0,
+      "median_salary": 91950.0
+    },
+    {
+      "name": "nutrition",
+      "count": 3,
+      "share": 0.375,
+      "median_salary": 91950.0
+    },
+    {
+      "name": "sports-medicine",
+      "count": 3,
+      "share": 0.375,
+      "median_salary": null
+    },
+    {
+      "name": "cognitive",
+      "count": 2,
+      "share": 0.25,
+      "median_salary": null
+    },
+    {
+      "name": "research",
+      "count": 1,
+      "share": 0.125,
+      "median_salary": null
+    }
+  ],
+  "by_domain": [
+    {
+      "name": "military",
+      "count": 10,
+      "share": 1.0
+    },
+    {
+      "name": "sof",
+      "count": 9,
+      "share": 0.9
+    },
+    {
+      "name": "training-pipeline",
+      "count": 1,
+      "share": 0.1
+    }
+  ],
+  "by_branch": [
+    {
+      "name": "Joint",
+      "count": 8
+    },
+    {
+      "name": "Air Force",
+      "count": 1
+    },
+    {
+      "name": "Army",
+      "count": 1
+    }
+  ],
+  "by_installation": [
+    {
+      "name": "Fort Bragg",
+      "count": 4
+    },
+    {
+      "name": "Cannon AFB",
+      "count": 1
+    },
+    {
+      "name": "Fort Stewart",
+      "count": 1
+    },
+    {
+      "name": "Hurlburt Field",
+      "count": 1
+    },
+    {
+      "name": "JBLM",
+      "count": 1
+    }
+  ],
+  "by_state": [
+    {
+      "code": "NC",
+      "count": 4
+    },
+    {
+      "code": "FL",
+      "count": 2
+    },
+    {
+      "code": "GA",
+      "count": 1
+    },
+    {
+      "code": "NM",
+      "count": 1
+    },
+    {
+      "code": "WA",
+      "count": 1
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CSCS",
+      "count": 6,
+      "share": 0.8571
+    },
+    {
+      "name": "ATC",
+      "count": 3,
+      "share": 0.4286
+    },
+    {
+      "name": "RD",
+      "count": 2,
+      "share": 0.2857
+    }
+  ],
+  "clearances": [
+    {
+      "name": "Secret",
+      "count": 7
+    },
+    {
+      "name": "Top Secret",
+      "count": 2
+    }
+  ],
+  "salary": {
+    "count": 1,
+    "min": 91950.0,
+    "max": 91950.0,
+    "median": 91950.0,
+    "p25": 91950.0,
+    "p75": 91950.0,
+    "by_discipline": {
+      "strength-conditioning": {
+        "count": 1,
+        "min": 91950.0,
+        "max": 91950.0,
+        "median": 91950.0,
+        "p25": 91950.0,
+        "p75": 91950.0
+      },
+      "nutrition": {
+        "count": 1,
+        "min": 91950.0,
+        "max": 91950.0,
+        "median": 91950.0,
+        "p25": 91950.0,
+        "p75": 91950.0
+      }
+    }
+  },
+  "remote": {
+    "count": 1,
+    "share": 0.1
+  },
+  "timeline": [
+    {
+      "month": "2026-07",
+      "count": 9
+    },
+    {
+      "month": "2026-08",
+      "count": 1
+    }
+  ],
+  "trends": {
+    "window_days": 90,
+    "pivot": "2026-05-06T00:00:00+00:00",
+    "fastest_growing_employers": [
+      {
+        "name": "KBR",
+        "recent": 10,
+        "previous": 0,
+        "change": 10
+      }
+    ],
+    "emerging_certifications": [
+      {
+        "name": "CSCS",
+        "recent": 6,
+        "previous": 0,
+        "change": 6
+      },
+      {
+        "name": "ATC",
+        "recent": 3,
+        "previous": 0,
+        "change": 3
+      },
+      {
+        "name": "RD",
+        "recent": 2,
+        "previous": 0,
+        "change": 2
+      }
+    ]
+  },
+  "top_titles": [
+    {
+      "title": "Performance Expert (R2PC) - Fort Stewart, Georgia",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Certified Athletic Trainer (SOCSOUTH, Homestead ARB, FL)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Human Performance Advisor (353 SOW Kadena, Japan)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Licensed Clinical Social Worker (AFSOC Unit / Fort Bragg,NC)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Licensed Clinical Social Worker (Southern Pines, NC)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Performance Dietitian (4/ 160 SOAR JBLM, WA)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Physical Therapist 528th (Fort Bragg, NC)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Strength and Conditioning Specialist (27 SOW, Cannon AFB, NM)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Strength and Conditioning Specialist (HQ AFSOC/Hurlburt Field, FL)",
+      "count": 1
+    }
+  ]
+}
