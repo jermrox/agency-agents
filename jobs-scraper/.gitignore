@@ -1,0 +1,25 @@
+# Local config may name real employers and env vars; keep the example as the
+# committed reference and let operators decide whether to commit their own.
+# (The scheduled workflow falls back to sources.example.toml if this is absent.)
+sources.toml
+
+# Atomic-write leftovers from an interrupted run.
+*.json.tmp
+
+.pytest_cache/
+__pycache__/
+
+# Runtime artifacts: the live board, the dedupe state, the corpus, and the
+# generated dashboard.
+#
+# These ARE meant to persist between scheduled runs -- that is how the board
+# survives with no database -- but they are ignored here so that a local
+# `run` or a manual experiment cannot commit synthetic data into the repo.
+# That already happened once: a test run's fabricated postings landed in
+# state/corpus.jsonl and the dashboard built from them was committed as if it
+# were real.
+#
+# The scheduled workflow force-adds them (`git add -f output state`), so the
+# intended persistence still works while accidents stay local.
+output/
+state/

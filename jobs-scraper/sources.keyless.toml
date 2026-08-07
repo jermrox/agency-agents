@@ -1,0 +1,282 @@
+# =============================================================================
+# ZERO-CREDENTIAL CONFIGURATION
+#
+#   cp sources.keyless.toml sources.toml
+#   python3 -m tactical_jobs run --config sources.toml --dry-run
+#
+# Every source below runs on a public board token or a plain URL. No API key,
+# no OAuth, no account, no signup. Nothing here reads an environment variable.
+#
+# WHAT THIS COSTS YOU
+# Of 19 adapters, exactly three need a credential: usajobs, jazzhr, teamtailor.
+# None appear here. The only meaningful loss is the USAJOBS *structured* API --
+# and there are two keyless routes at federal jobs anyway, both noted below.
+#
+# WHY THIS WORKS
+# ATS vendors publish the job board that powers an employer's own careers page
+# as open JSON. That is not a loophole; it is the product. The "token" is just
+# the employer's public slug -- the same string that appears in the careers-page
+# URL your candidates already click.
+#
+# !! BOARD TOKENS BELOW ARE UNVERIFIED PLACEHOLDERS !!
+# Confirm each before relying on it (see "Adding an employer" in README.md).
+# A wrong token surfaces as an ERROR line in the run summary, never a silent
+# zero, so start with --dry-run and read the output.
+# =============================================================================
+
+[runtime]
+state_path = "state/seen.json"
+output_dir = "output"
+max_age_days = 45
+auto_publish = true
+
+# Re-fetch every already-published posting each run and retire the dead ones.
+# max_age_days alone cannot do this -- it retires a listing on a 45-day timer,
+# so a requisition that closed on day 2 sits on the board for six more weeks.
+# See liveness.py for why a job is only ever removed on unambiguous evidence.
+liveness_check = true
+liveness_workers = 8
+liveness_timeout = 20
+
+[thresholds]
+publish = 14.0
+review = 8.0
+min_domain = 1.5
+min_discipline = 3.0
+
+
+# -----------------------------------------------------------------------------
+# 1. WORKDAY -- the highest-value keyless source
+#
+# Nearly every large defense prime holding H2F, POTFF, and THOR3 work recruits
+# through Workday: Leidos, Booz Allen, Amentum, KBR, CACI, SAIC, Parsons. Their
+# career sites are backed by a public JSON endpoint that needs no credential.
+#
+# Find tenant/site from the careers URL:
+#   https://{tenant}.wd1.myworkdayjobs.com/{site}
+#                ^tenant  ^data_center      ^site
+# -----------------------------------------------------------------------------
+
+# NO GUESSED TENANTS RUN LIVE. Earlier versions of this file enabled Workday
+# sources for "leidos" and "boozallen" -- tenant slugs typed from convention,
+# never verified, for companies that research later showed are not even the
+# H2F contract holders. A guessed tenant either 404s every night or, worse,
+# resolves to a different business unit and quietly serves someone else's
+# jobs. Every [[source]] enabled in this file must state when and how it was
+# verified live. Candidates without that line stay commented out below.
+
+# --- VERIFIED LIVE 2026-07-31 -----------------------------------------------
+# KBR's Workday tenant, confirmed by fetching the Workday CXS JSON endpoint
+# directly. Two POTFF requisitions returned "canApply":true and "posted":true:
+#   R2127121  Special Operations Strength and Conditioning Specialist,
+#             HQ AFSOC, Hurlburt Field FL
+#   R2122466  Special Operations Certified Athletic Trainer,
+#             AFSOC GSU Southern Pines NC (req located Fort Liberty NC)
+# Coordinates read off those live responses, not guessed:
+#   tenant=kbr  data_center=wd5  site=KBR_Careers
+# Note the public HTML URL 403s to non-browser fetchers; the cxs JSON path
+# is what the adapter uses, which is why this resolves where a browser fetch
+# would not.
+[[source]]
+kind = "workday"
+name = "kbr"
+tenant = "kbr"
+site = "KBR_Careers"
+data_center = "wd5"
+employer = "KBR"
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+]
+
+# [[source]]                     # CANDIDATE -- The Geneva Foundation, H2F at
+# kind = "workday"               # Ft Drum NY (req JR100450). Tenant coordinates
+# name = "geneva"                # genevausa/wd5/CareersAtGeneva were read from a
+# tenant = "genevausa"           # real posting URL, but liveness could NOT be
+# site = "CareersAtGeneva"       # confirmed: this sandbox's proxy 403s that host,
+# data_center = "wd5"            # and the content came from a mirror showing
+# employer = "The Geneva Foundation"   # "Posted: 6 months ago". Enable only after
+                                 # the CXS JSON answers from a networked run.
+
+# [[source]]
+# kind = "workday"
+# name = "amentum"
+# tenant = "amentum"
+# site = "Amentum"
+# employer = "Amentum"
+
+
+# -----------------------------------------------------------------------------
+# 2. JSON-LD -- the "tap into everything" adapter
+#
+# Google requires schema.org JobPosting markup for a job to surface in Google
+# Jobs, so a very large share of career pages embed it -- including iCIMS,
+# Taleo, and SuccessFactors sites that have no usable JSON API of their own.
+# Point this at a sitemap and it reads whatever is there.
+#
+# This is also a keyless route at federal listings: USAJOBS announcement pages
+# are public HTML, so if they carry JobPosting markup this reaches them with no
+# API key. Verify with --dry-run before trusting it.
+# -----------------------------------------------------------------------------
+
+# [[source]]
+# kind = "jsonld"
+# name = "example-careers"
+# sitemap = "https://example.com/sitemap.xml"
+# url_include = ["/job/", "/careers/"]
+# max_urls = 200
+# employer = "Example Employer"
+
+# [[source]]
+# kind = "jsonld"
+# name = "handpicked"
+# urls = [
+#   "https://example.com/careers/tactical-strength-coach",
+#   "https://example.com/careers/performance-dietitian",
+# ]
+
+
+# -----------------------------------------------------------------------------
+# 3. FEDERAL -- USAJOBS, the ONE source in this file that needs a credential
+#
+# CHECKED 2026-08-07: USAJOBS has no keyless route. /Search/ResultsRss (the
+# legacy RSS export) 404s -- it was retired. The site's own search results
+# are rendered client-side by POSTing to /Search/ExecuteSearch with a
+# same-origin CSRF token and session cookie, behind Akamai bot detection --
+# not something a scheduled script should be built to fight through.
+#
+# The correct route is USAJOBS's own public Search API. It costs nothing and
+# takes a couple of minutes to register for, but it is a credential, so it
+# cannot live in a "zero-credential" file. The adapter is already built and
+# tested (tactical_jobs/sources/usajobs.py, tests/test_usajobs.py) and wired
+# into sources.example.toml with the block below -- to turn it on:
+#
+#   1. Register: https://developer.usajobs.gov/apirequest/ (free, uses the
+#      email you register with as the required User-Agent header)
+#   2. Add USAJOBS_API_KEY and USAJOBS_USER_AGENT as repository secrets
+#      (Settings -> Secrets and variables -> Actions)
+#   3. cp sources.keyless.toml sources.toml, uncomment the block below, and
+#      switch the nightly workflow's `config` input to sources.toml
+#
+# This is the highest-value source not yet enabled: Army H2F, Navy and Air
+# Force human performance billets post here first and often nowhere else.
+# -----------------------------------------------------------------------------
+
+# [[source]]
+# kind = "usajobs"
+# name = "federal"
+# api_key = "${USAJOBS_API_KEY}"
+# user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
+# max_pages = 4
+# keywords = [
+#   "human performance",
+#   "strength and conditioning",
+#   "athletic trainer",
+#   "exercise physiologist",
+#   "performance dietitian",
+#   "cognitive performance",
+#   "holistic health and fitness",
+# ]
+
+
+# -----------------------------------------------------------------------------
+# 4. FIRE / POLICE / MUNICIPAL -- NEOGOV
+#
+# Fire departments, sheriff's offices, and state agencies hire wellness
+# coordinators, peer fitness trainers, and embedded athletic trainers, and post
+# almost exclusively to governmentjobs.com rather than to any ATS. Keyless.
+# -----------------------------------------------------------------------------
+
+# [[source]]
+# kind = "governmentjobs"
+# name = "example-city"
+# agency = "cityofexample"
+# employer = "City of Example"
+
+
+# -----------------------------------------------------------------------------
+# 5. SPECIALIST EMPLOYERS -- standard ATS boards, all keyless
+# -----------------------------------------------------------------------------
+
+# The tokens that used to be enabled here -- greenhouse "o2x" and lever
+# "teamexos" -- were checked against the live APIs on 2026-07-31 and DO NOT
+# EXIST (both endpoints return not-found). They were guesses that sat in this
+# file as if they were configuration. Removed rather than kept as comments a
+# copy-paste could resurrect.
+
+# --- VERIFIED LIVE ----------------------------------------------------------
+# Fetched 2026-07-31: returned a well-formed feed of current postings (items
+# dated the same day). Aggregates coaching, S&C, and athletic-training roles,
+# including tactical/H2F contractor listings; the classifier separates the
+# tactical roles from the collegiate majority.
+[[source]]
+kind = "rss"
+name = "simplifaster"
+url = "https://jobboard.simplifaster.com/jobs/feed/"
+employer = ""
+
+# Other keyless ATS adapters, ready when you have a token:
+#   ashby           board_token
+#   workable        board_token
+#   smartrecruiters company_id
+#   recruitee       board_token
+#   bamboohr        subdomain
+#   breezy          company
+#   personio        company
+#   rippling        board_token
+
+
+# -----------------------------------------------------------------------------
+# 6. ASSOCIATION CAREER CENTERS
+#
+# NSCA, NATA, ACSM, CSCCa, and AASP run job boards that are pure signal for
+# this niche. Most expose RSS. Keyless.
+# -----------------------------------------------------------------------------
+
+# --- VERIFIED LIVE 2026-08-07 -----------------------------------------------
+# NSCA Career Center (nsca.careerwebsite.com). Checked end to end on this date:
+#   * The board publishes NO RSS. /jobs/rss/, /jobs/feed/, ?format=rss and
+#     /rss/ all return the ordinary HTML page (or 403), so the `jobsrss`
+#     adapter -- which an earlier version of this file guessed at with the URL
+#     https://careers.nsca.com/jobs/feed -- cannot work here.
+#   * /sitemap.xml DOES resolve and lists the job detail pages.
+#   * Each detail page carries schema.org JobPosting markup nested inside an
+#     @graph container, which the jsonld adapter already unwraps.
+# A live run over the sitemap fetched 21 postings; the classifier rejected 20
+# collegiate/commercial roles and approved one tactical role -- Serco's H2FIT
+# Strength and Conditioning Coaches, scoring 83.5. That ratio is the point:
+# this board is mostly collegiate strength jobs, and the two-axis classifier
+# is what separates the tactical minority from them.
+[[source]]
+kind = "jsonld"
+name = "nsca"
+sitemap = "https://nsca.careerwebsite.com/sitemap.xml"
+url_include = ["/job/"]
+max_urls = 60
+
+
+# -----------------------------------------------------------------------------
+# PUBLISHERS -- all keyless. Discord is the only one that would need a secret,
+# and it is a webhook URL rather than an API key.
+# -----------------------------------------------------------------------------
+
+[[publisher]]
+kind = "jsonfeed"
+path = "output/jobs.json"
+retain_days = 45
+
+[[publisher]]
+kind = "review"
+path = "output/review-queue.md"
+
+[[publisher]]
+kind = "rss"
+path = "output/jobs.xml"
+source_feed = "output/jobs.json"
+limit = 50
+title = "MOPs & MOEs — Tactical Human Performance Jobs"
+link = "https://www.mopsnmoes.com/jobs"
