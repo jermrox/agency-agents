@@ -141,21 +141,46 @@ search_terms = [
 
 
 # -----------------------------------------------------------------------------
-# 3. FEDERAL, WITHOUT A KEY
+# 3. FEDERAL -- USAJOBS, the ONE source in this file that needs a credential
 #
-# USAJOBS publishes RSS alongside its credentialed REST API. The generic `rss`
-# adapter consumes it with no new code -- this is config, not engineering.
+# CHECKED 2026-08-07: USAJOBS has no keyless route. /Search/ResultsRss (the
+# legacy RSS export) 404s -- it was retired. The site's own search results
+# are rendered client-side by POSTing to /Search/ExecuteSearch with a
+# same-origin CSRF token and session cookie, behind Akamai bot detection --
+# not something a scheduled script should be built to fight through.
 #
-# UNVERIFIED: the exact export URL and query parameters were not confirmable
-# from the build sandbox (no outbound network). Before enabling, run a USAJOBS
-# search in a browser, take the RSS/export link it offers, and paste it here.
+# The correct route is USAJOBS's own public Search API. It costs nothing and
+# takes a couple of minutes to register for, but it is a credential, so it
+# cannot live in a "zero-credential" file. The adapter is already built and
+# tested (tactical_jobs/sources/usajobs.py, tests/test_usajobs.py) and wired
+# into sources.example.toml with the block below -- to turn it on:
+#
+#   1. Register: https://developer.usajobs.gov/apirequest/ (free, uses the
+#      email you register with as the required User-Agent header)
+#   2. Add USAJOBS_API_KEY and USAJOBS_USER_AGENT as repository secrets
+#      (Settings -> Secrets and variables -> Actions)
+#   3. cp sources.keyless.toml sources.toml, uncomment the block below, and
+#      switch the nightly workflow's `config` input to sources.toml
+#
+# This is the highest-value source not yet enabled: Army H2F, Navy and Air
+# Force human performance billets post here first and often nowhere else.
 # -----------------------------------------------------------------------------
 
 # [[source]]
-# kind = "rss"
-# name = "usajobs-hp"
-# url = "PASTE_THE_RSS_URL_FROM_A_USAJOBS_SEARCH_HERE"
-# employer = "U.S. Federal Government"
+# kind = "usajobs"
+# name = "federal"
+# api_key = "${USAJOBS_API_KEY}"
+# user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
+# max_pages = 4
+# keywords = [
+#   "human performance",
+#   "strength and conditioning",
+#   "athletic trainer",
+#   "exercise physiologist",
+#   "performance dietitian",
+#   "cognitive performance",
+#   "holistic health and fitness",
+# ]
 
 
 # -----------------------------------------------------------------------------
