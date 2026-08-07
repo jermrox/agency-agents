@@ -196,12 +196,14 @@
     }
     #mm-jobs .mm-clear:hover { border-color: var(--mm-accent); color: var(--mm-ink); }
 
-    #mm-jobs .mm-list { display: grid; gap: .85rem; margin: 0 !important; }
+    #mm-jobs .mm-list { display: grid; gap: 1rem; margin: 0 !important; }
     #mm-jobs .mm-list.is-updating { opacity: .5; transition: opacity .12s var(--mm-ease); }
 
     #mm-jobs .mm-job {
+      display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;
+      gap: 1.1rem 1.75rem;
       background: var(--mm-card); border: 1px solid var(--mm-border);
-      border-radius: var(--mm-radius); padding: 1.1rem 1.2rem !important;
+      border-radius: var(--mm-radius); padding: 1.5rem 1.65rem !important;
       transition: border-color .15s var(--mm-ease), transform .15s var(--mm-ease), box-shadow .15s var(--mm-ease);
       animation: mm-in .2s var(--mm-ease) both;
     }
@@ -210,23 +212,34 @@
       #mm-jobs .mm-job:hover { border-color: var(--mm-accent); transform: translateY(-1px); box-shadow: 0 4px 16px -8px rgba(0,0,0,.18); }
     }
 
-    #mm-jobs .mm-job h3 { font-family: var(--mm-font-display); font-weight: 500; font-size: 1.1rem !important; line-height: 1.4 !important; text-wrap: balance; margin: 0 !important; }
+    /* Main content is capped to a comfortable reading measure -- on a wide
+       embed a full-bleed card otherwise stretches the description across the
+       whole container, which reads as a dense wall of text. Actions (badges +
+       apply) form their own column so the wide remainder is used on purpose
+       instead of sitting empty beside a single stretched block. */
+    #mm-jobs .mm-job-main { flex: 1 1 20rem; min-width: 0; max-width: 40rem; }
+    #mm-jobs .mm-job-actions {
+      flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start;
+      gap: .8rem !important; max-width: 16rem;
+    }
+
+    #mm-jobs .mm-job h3 { font-family: var(--mm-font-display); font-weight: 500; font-size: 1.15rem !important; line-height: 1.4 !important; text-wrap: balance; margin: 0 !important; }
     #mm-jobs .mm-job h3 a { color: var(--mm-ink); text-decoration: none; }
     #mm-jobs .mm-job h3 a:hover { color: var(--mm-accent-text); text-decoration: underline; }
-    #mm-jobs .mm-emp { font-family: var(--mm-font); font-size: .9rem !important; line-height: 1.4 !important; margin: .25rem 0 0 !important; color: var(--mm-muted); }
+    #mm-jobs .mm-emp { font-family: var(--mm-font); font-size: .9rem !important; line-height: 1.4 !important; margin: .35rem 0 0 !important; color: var(--mm-muted); }
     #mm-jobs .mm-emp b { font-weight: 600; color: var(--mm-ink); }
 
-    #mm-jobs .mm-meta { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.4 !important; color: var(--mm-muted); margin: .6rem 0 0 !important; }
+    #mm-jobs .mm-meta { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.4 !important; color: var(--mm-muted); margin: .85rem 0 0 !important; }
     #mm-jobs .mm-meta span { display: inline-flex; align-items: center; gap: .4rem; }
     #mm-jobs .mm-meta svg { color: var(--mm-accent-text); width: 14px; height: 14px; }
 
-    #mm-jobs .mm-notes { font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.55 !important; color: var(--mm-muted); margin: .7rem 0 0 !important; }
+    #mm-jobs .mm-notes { font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.6 !important; color: var(--mm-muted); margin: .9rem 0 0 !important; }
 
-    #mm-jobs .mm-badges { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem !important; }
+    #mm-jobs .mm-badges { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 !important; }
     #mm-jobs .mm-badge {
       display: inline-flex; align-items: center; gap: .3rem;
       font-family: var(--mm-font); font-size: .7rem !important; font-weight: 600; letter-spacing: .01em; line-height: 1.3 !important;
-      padding: .3rem .6rem !important; border-radius: 5px !important; margin: 0 !important;
+      padding: .32rem .6rem !important; border-radius: 5px !important; margin: 0 !important;
       background: var(--mm-card-2); color: var(--mm-muted); border: 1px solid var(--mm-border);
     }
     #mm-jobs .mm-badge svg { width: 11px; height: 11px; }
@@ -235,10 +248,10 @@
     #mm-jobs .mm-badge.is-contingent { background: var(--mm-flag-bg); color: var(--mm-flag); border-color: transparent; }
 
     #mm-jobs .mm-apply {
-      display: inline-flex; align-items: center; gap: .45rem; margin-top: .85rem !important;
+      display: inline-flex; align-items: center; gap: .45rem; margin: 0 !important;
       background: var(--mm-accent); color: var(--mm-accent-ink); box-shadow: none !important;
       text-decoration: none; font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; line-height: 1.3 !important;
-      padding: .6rem 1rem !important; border-radius: 8px !important; border: none;
+      padding: .65rem 1.05rem !important; border-radius: 8px !important; border: none; white-space: nowrap;
       transition: background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
     #mm-jobs .mm-apply:hover { background: var(--mm-accent-text); color: #fff; }
@@ -531,19 +544,19 @@
     var li = document.createElement("li");
     li.className = "mm-job";
 
-    var bits = [];
-    bits.push('<h3><a href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">' + esc(job.title) + "</a></h3>");
-    if (job.employer) bits.push('<p class="mm-emp"><b>' + esc(job.employer) + "</b></p>");
+    var main = [];
+    main.push('<h3><a href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">' + esc(job.title) + "</a></h3>");
+    if (job.employer) main.push('<p class="mm-emp"><b>' + esc(job.employer) + "</b></p>");
 
     var meta = [];
     if (job.location) meta.push('<span>' + ICONS.pin + esc(job.location) + "</span>");
     if (job.program) meta.push('<span>' + ICONS.target + esc(job.program) + "</span>");
     if (job.compensation) meta.push('<span>' + ICONS.cash + esc(job.compensation) + "</span>");
     else if (f.salary_floor_annual) meta.push('<span>' + ICONS.cash + "from " + money(f.salary_floor_annual) + "</span>");
-    if (meta.length) bits.push('<div class="mm-meta">' + meta.join("") + "</div>");
+    if (meta.length) main.push('<div class="mm-meta">' + meta.join("") + "</div>");
 
     var note = job.notes || job.description || "";
-    if (note) bits.push('<p class="mm-notes">' + esc(note.slice(0, 260)) + (note.length > 260 ? "…" : "") + "</p>");
+    if (note) main.push('<p class="mm-notes">' + esc(note.slice(0, 260)) + (note.length > 260 ? "…" : "") + "</p>");
 
     var badges = [];
     var conf = job.confidence || "aggregator";
@@ -559,11 +572,14 @@
       badges.push('<span class="mm-badge is-contingent">' + ICONS.flag + "Contingent — may not exist yet</span>");
     }
     if (f.lead) badges.push('<span class="mm-badge">Lead / senior</span>');
-    bits.push('<div class="mm-badges">' + badges.join("") + "</div>");
 
-    bits.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting ' + ICONS.arrow + "</a>");
+    var actions = [];
+    actions.push('<div class="mm-badges">' + badges.join("") + "</div>");
+    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting ' + ICONS.arrow + "</a>");
 
-    li.innerHTML = bits.join("");
+    li.innerHTML =
+      '<div class="mm-job-main">' + main.join("") + "</div>" +
+      '<div class="mm-job-actions">' + actions.join("") + "</div>";
     return li;
   }
 
