@@ -1,8 +1,110 @@
 {
   "version": 2,
-  "generated_at": "2026-08-07T09:39:08.014436+00:00",
-  "count": 10,
+  "generated_at": "2026-08-07T19:48:38.173260+00:00",
+  "count": 12,
   "jobs": [
+    {
+      "id": "b8fbf7418551e4bd53ad",
+      "fingerprint": "7986954b1348913d4181",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Suffolk-England/Special-Operations-Performance-Dietitian--ONSITE-at-352-SOW-Mildenhall--UK-_R2125745",
+      "title": "Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK)",
+      "employer": "KBR",
+      "location": "Suffolk, England",
+      "remote": false,
+      "department": null,
+      "compensation": null,
+      "posted_at": null,
+      "description": "Title: Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK) ***THIS POSITION IS ONSITE*** ***THIS POSITION OFFERS RELOCATION*** Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS",
+          "RD"
+        ],
+        "clearance": "Top Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Master",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "location_classes": [
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "POTFF",
+      "notes": "",
+      "listed_at": "2026-08-07T19:48:38.173260+00:00"
+    },
+    {
+      "id": "3ef8629c003027ce639c",
+      "fingerprint": "cae84810419ed1f763ee",
+      "source": "jsonld:nsca",
+      "url": "https://nsca.careerwebsite.com/job/h2fit-strength-and-conditioning-coaches/80404193/",
+      "title": "H2FIT: Strength and Conditioning Coaches",
+      "employer": "Serco",
+      "location": "JP; IT; DE; KY, US; AZ, US; CO, US; CA, US; GA, US; VA, US; KS, US; HI, US; MO, US; SC, US; OK, US; TX, US; WA, US",
+      "remote": false,
+      "department": null,
+      "compensation": null,
+      "posted_at": null,
+      "description": "ASK US ABOUT OUR HIRING INCENTIVES!! Are you looking to travel to a new exciting location? If so, Serco has several opportunities for you! Our Army Holistic Health and Fitness (H2FIT) contract is rapidly growing. This contract represents the US Army's premier initiative to enhance soldier readiness, optimize physical and non-physical performance, significantly reduce injury rates, and streamline\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": null,
+        "salary_min": 50226.03,
+        "salary_max": 75339.58,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Joint Base Langley-Eustis",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "location_classes": [
+          "conus",
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 50226.03
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-08-07T19:48:38.173260+00:00"
+    },
     {
       "id": "b92b3e30ca346da4b67f",
       "fingerprint": "f78870babdad98dee3f7",
@@ -49,9 +151,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -100,9 +208,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -150,9 +264,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -202,9 +322,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -253,9 +379,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -303,9 +435,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -353,9 +491,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -401,9 +545,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -449,9 +599,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
     {
@@ -497,9 +653,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": null,
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-07T19:48:38+00:00"
+      },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }
   ],

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-07T09:39:08.021423+00:00",
+  "generated_at": "2026-08-07T19:48:38.180873+00:00",
   "totals": {
-    "postings": 11,
-    "employers": 1,
-    "unique_jobs": 10,
-    "with_salary": 1,
+    "postings": 13,
+    "employers": 2,
+    "unique_jobs": 12,
+    "with_salary": 2,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-04T00:00:00+00:00"
+      "latest": "2026-08-07T00:00:00+00:00"
     }
   },
   "by_employer": [
     {
       "name": "KBR",
-      "count": 10,
+      "count": 11,
       "disciplines": [
         "strength-conditioning",
         "nutrition",
@@ -22,68 +22,83 @@
         "research"
       ],
       "median_salary": 91950.0
+    },
+    {
+      "name": "Serco",
+      "count": 1,
+      "disciplines": [
+        "leadership",
+        "strength-conditioning"
+      ],
+      "median_salary": 62782.81
     }
   ],
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 8,
+      "count": 10,
       "share": 1.0,
-      "median_salary": 91950.0
+      "median_salary": 77366.4
     },
     {
       "name": "nutrition",
-      "count": 3,
-      "share": 0.375,
+      "count": 4,
+      "share": 0.4,
       "median_salary": 91950.0
     },
     {
       "name": "sports-medicine",
       "count": 3,
-      "share": 0.375,
+      "share": 0.3,
       "median_salary": null
     },
     {
       "name": "cognitive",
       "count": 2,
-      "share": 0.25,
+      "share": 0.2,
       "median_salary": null
+    },
+    {
+      "name": "leadership",
+      "count": 1,
+      "share": 0.1,
+      "median_salary": 62782.81
     },
     {
       "name": "research",
       "count": 1,
-      "share": 0.125,
+      "share": 0.1,
       "median_salary": null
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 10,
+      "count": 12,
       "share": 1.0
     },
     {
       "name": "sof",
-      "count": 9,
-      "share": 0.9
+      "count": 10,
+      "share": 0.8333
     },
     {
       "name": "training-pipeline",
-      "count": 1,
-      "share": 0.1
+      "count": 2,
+      "share": 0.1667
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 8
-    },
-    {
-      "name": "Air Force",
-      "count": 1
+      "count": 9
     },
     {
       "name": "Army",
+      "count": 2
+    },
+    {
+      "name": "Air Force",
       "count": 1
     }
   ],
@@ -107,6 +122,10 @@
     {
       "name": "JBLM",
       "count": 1
+    },
+    {
+      "name": "Joint Base Langley-Eustis",
+      "count": 1
     }
   ],
   "by_state": [
@@ -119,33 +138,33 @@
       "count": 2
     },
     {
+      "code": "WA",
+      "count": 2
+    },
+    {
       "code": "GA",
       "count": 1
     },
     {
       "code": "NM",
       "count": 1
-    },
-    {
-      "code": "WA",
-      "count": 1
     }
   ],
   "certifications": [
     {
       "name": "CSCS",
-      "count": 6,
-      "share": 0.8571
+      "count": 8,
+      "share": 0.8889
     },
     {
       "name": "ATC",
       "count": 3,
-      "share": 0.4286
+      "share": 0.3333
     },
     {
       "name": "RD",
-      "count": 2,
-      "share": 0.2857
+      "count": 3,
+      "share": 0.3333
     }
   ],
   "clearances": [
@@ -155,24 +174,24 @@
     },
     {
       "name": "Top Secret",
-      "count": 2
+      "count": 3
     }
   ],
   "salary": {
-    "count": 1,
-    "min": 91950.0,
+    "count": 2,
+    "min": 62782.81,
     "max": 91950.0,
-    "median": 91950.0,
-    "p25": 91950.0,
-    "p75": 91950.0,
+    "median": 77366.4,
+    "p25": 70074.61,
+    "p75": 84658.2,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 1,
-        "min": 91950.0,
+        "count": 2,
+        "min": 62782.81,
         "max": 91950.0,
-        "median": 91950.0,
-        "p25": 91950.0,
-        "p75": 91950.0
+        "median": 77366.4,
+        "p25": 70074.61,
+        "p75": 84658.2
       },
       "nutrition": {
         "count": 1,
@@ -181,40 +200,54 @@
         "median": 91950.0,
         "p25": 91950.0,
         "p75": 91950.0
+      },
+      "leadership": {
+        "count": 1,
+        "min": 62782.81,
+        "max": 62782.81,
+        "median": 62782.81,
+        "p25": 62782.81,
+        "p75": 62782.81
       }
     }
   },
   "remote": {
     "count": 1,
-    "share": 0.1
+    "share": 0.0833
   },
   "timeline": [
     {
       "month": "2026-07",
-      "count": 9
+      "count": 10
     },
     {
       "month": "2026-08",
-      "count": 1
+      "count": 2
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-05-06T00:00:00+00:00",
+    "pivot": "2026-05-09T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 10,
+        "recent": 11,
         "previous": 0,
-        "change": 10
+        "change": 11
+      },
+      {
+        "name": "Serco",
+        "recent": 1,
+        "previous": 0,
+        "change": 1
       }
     ],
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 6,
+        "recent": 8,
         "previous": 0,
-        "change": 6
+        "change": 8
       },
       {
         "name": "ATC",
@@ -224,13 +257,17 @@
       },
       {
         "name": "RD",
-        "recent": 2,
+        "recent": 3,
         "previous": 0,
-        "change": 2
+        "change": 3
       }
     ]
   },
   "top_titles": [
+    {
+      "title": "H2FIT: Strength and Conditioning Coaches",
+      "count": 1
+    },
     {
       "title": "Performance Expert (R2PC) - Fort Stewart, Georgia",
       "count": 1
@@ -253,6 +290,10 @@
     },
     {
       "title": "Special Operations Performance Dietitian (4/ 160 SOAR JBLM, WA)",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK)",
       "count": 1
     },
     {
