@@ -1,28 +1,28 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-08-10.*
+*Briefing generated 2026-08-11.*
 
 ## Headline
 
-- **13 open jobs** from **2 employers**.
+- **14 open jobs** from **2 employers**.
 - Posted between **2026-07-02** and **2026-08-10**.
 - **$77,366 median** annualized pay across the 2 postings that publish one -- $70,075 to $84,658 covers the middle half.
-- **15% remote-friendly** (2 jobs).
-- 3 of 16 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 13, Special Operations 11, Training Pipeline 2.
+- **14% remote-friendly** (2 jobs).
+- 3 of 17 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 14, Special Operations 11, Training Pipeline 2.
 
 ## Month over month
 
-Postings are **down -3** in 2026-08 (8 to 5), 38% against 2026-07.
+Postings are **down -2** in 2026-08 (8 to 6), 25% against 2026-07.
 
 ```
 2026-07     8  ############################
-2026-08     5  ##################
+2026-08     6  #####################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- KBR: 0 to 12
+- KBR: 0 to 13
 - Serco: 0 to 1
 
 **Credentials appearing more often:**
@@ -35,7 +35,7 @@ Postings are **down -3** in 2026-08 (8 to 5), 38% against 2026-07.
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| KBR | 12 | $91,950 | Strength & Conditioning, Performance Nutrition |
+| KBR | 13 | $91,950 | Strength & Conditioning, Performance Nutrition |
 | Serco | 1 | $62,783 | Program Leadership, Strength & Conditioning |
 
 ## Discipline mix
@@ -80,7 +80,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** NC (5), FL (2), WA (2), GA (1), NM (1)
+**States:** NC (5), FL (2), WA (2), GA (1), NM (1), TX (1)
 
 | Installation | Jobs |
 |---|---|
@@ -97,6 +97,7 @@ annual contractor bands are not otherwise comparable.
 
 | Title | Jobs |
 |---|---|
+| *SKILLBRIDGE* Electrical Engineer | 1 |
 | H2FIT: Strength and Conditioning Coaches | 1 |
 | Performance Expert (R2PC) - Fort Stewart, Georgia | 1 |
 | Special Operations Certified Athletic Trainer (SOCSOUTH, Homestead ARB, FL) | 1 |
@@ -106,4 +107,3 @@ annual contractor bands are not otherwise comparable.
 | Special Operations Performance Dietitian (4/160 SOAR. JBLM, WA) | 1 |
 | Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK) | 1 |
 | Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC | 1 |
-| Special Operations Physical Therapist 528th (Fort Bragg, NC) | 1 |

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-10T19:52:19.159750+00:00",
+  "generated_at": "2026-08-11T08:01:48.526589+00:00",
   "totals": {
-    "postings": 16,
+    "postings": 17,
     "employers": 2,
-    "unique_jobs": 13,
+    "unique_jobs": 14,
     "with_salary": 2,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
@@ -13,7 +13,7 @@
   "by_employer": [
     {
       "name": "KBR",
-      "count": 12,
+      "count": 13,
       "disciplines": [
         "strength-conditioning",
         "nutrition",
@@ -74,18 +74,18 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 13,
+      "count": 14,
       "share": 1.0
     },
     {
       "name": "sof",
       "count": 11,
-      "share": 0.8462
+      "share": 0.7857
     },
     {
       "name": "training-pipeline",
       "count": 2,
-      "share": 0.1538
+      "share": 0.1429
     }
   ],
   "by_branch": [
@@ -147,6 +147,10 @@
     },
     {
       "code": "NM",
+      "count": 1
+    },
+    {
+      "code": "TX",
       "count": 1
     }
   ],
@@ -213,7 +217,7 @@
   },
   "remote": {
     "count": 2,
-    "share": 0.1538
+    "share": 0.1429
   },
   "timeline": [
     {
@@ -222,7 +226,7 @@
     },
     {
       "month": "2026-08",
-      "count": 5
+      "count": 6
     }
   ],
   "trends": {
@@ -231,9 +235,9 @@
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 12,
+        "recent": 13,
         "previous": 0,
-        "change": 12
+        "change": 13
       },
       {
         "name": "Serco",
@@ -264,6 +268,10 @@
     ]
   },
   "top_titles": [
+    {
+      "title": "*SKILLBRIDGE* Electrical Engineer",
+      "count": 1
+    },
     {
       "title": "H2FIT: Strength and Conditioning Coaches",
       "count": 1

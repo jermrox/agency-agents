@@ -1,8 +1,56 @@
 {
   "version": 2,
-  "generated_at": "2026-08-10T19:52:19.072166+00:00",
-  "count": 13,
+  "generated_at": "2026-08-11T08:01:48.517216+00:00",
+  "count": 14,
   "jobs": [
+    {
+      "id": "1f65e9ab1d5a9a1aec17",
+      "fingerprint": "d15e0b981d2d0e626cf2",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Houston-Texas/XMLNAME--SKILLBRIDGE--Electrical-Engineer_R2127632",
+      "title": "*SKILLBRIDGE* Electrical Engineer",
+      "employer": "KBR",
+      "location": "Houston, Texas",
+      "remote": false,
+      "department": null,
+      "compensation": null,
+      "posted_at": null,
+      "description": "Title: *SKILLBRIDGE* Electrical Engineer *MUST BE ACTIVE DUTY MILITARY ELIGIBLE FOR THE DOD SKILLBRIDGE PROGRAM TO APPLY* Belong. Connect. Grow. with KBR! Around here, we define the future. At KBR we are committed to our Nation\u2019s Military and Veteran\u2019s through our partnerships with Hiring our Hero\u2019s and DoD Skillbridge. We attract the best minds in the world because our expertise thrives on\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-08-11T08:01:48.517216+00:00"
+    },
     {
       "id": "c0eba146a955a7b238bc",
       "fingerprint": "4f3c009027f47bb6a4d3",
@@ -50,9 +98,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-11T08:01:48+00:00"
+      },
       "listed_at": "2026-08-10T19:52:19.072166+00:00"
     },
     {
@@ -108,7 +162,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -165,7 +219,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-10T19:52:19+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -222,7 +276,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -279,7 +333,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -335,7 +389,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:19+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -393,7 +447,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -450,7 +504,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -506,7 +560,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -562,7 +616,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -616,7 +670,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -670,7 +724,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -724,7 +778,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-10T19:52:18+00:00"
+        "checked_at": "2026-08-11T08:01:48+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }
