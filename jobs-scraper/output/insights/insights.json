@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-08-12T08:09:49.534795+00:00",
+  "generated_at": "2026-08-12T19:58:53.673317+00:00",
   "totals": {
-    "postings": 17,
+    "postings": 18,
     "employers": 2,
-    "unique_jobs": 14,
+    "unique_jobs": 15,
     "with_salary": 2,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-10T00:00:00+00:00"
+      "latest": "2026-08-12T00:00:00+00:00"
     }
   },
   "by_employer": [
     {
       "name": "KBR",
-      "count": 13,
+      "count": 14,
       "disciplines": [
         "strength-conditioning",
-        "nutrition",
         "sports-medicine",
+        "nutrition",
         "cognitive",
         "research"
       ],
@@ -36,62 +36,62 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 11,
+      "count": 12,
       "share": 1.0,
       "median_salary": 77366.4
     },
     {
-      "name": "nutrition",
-      "count": 4,
-      "share": 0.3636,
-      "median_salary": 91950.0
+      "name": "sports-medicine",
+      "count": 5,
+      "share": 0.4167,
+      "median_salary": null
     },
     {
-      "name": "sports-medicine",
+      "name": "nutrition",
       "count": 4,
-      "share": 0.3636,
-      "median_salary": null
+      "share": 0.3333,
+      "median_salary": 91950.0
     },
     {
       "name": "cognitive",
       "count": 2,
-      "share": 0.1818,
+      "share": 0.1667,
       "median_salary": null
     },
     {
       "name": "leadership",
       "count": 1,
-      "share": 0.0909,
+      "share": 0.0833,
       "median_salary": 62782.81
     },
     {
       "name": "research",
       "count": 1,
-      "share": 0.0909,
+      "share": 0.0833,
       "median_salary": null
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 14,
+      "count": 15,
       "share": 1.0
     },
     {
       "name": "sof",
-      "count": 11,
-      "share": 0.7857
+      "count": 12,
+      "share": 0.8
     },
     {
       "name": "training-pipeline",
       "count": 2,
-      "share": 0.1429
+      "share": 0.1333
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Army",
@@ -109,6 +109,10 @@
     },
     {
       "name": "Cannon AFB",
+      "count": 1
+    },
+    {
+      "name": "Fort Campbell",
       "count": 1
     },
     {
@@ -146,6 +150,10 @@
       "count": 1
     },
     {
+      "code": "KY",
+      "count": 1
+    },
+    {
       "code": "NM",
       "count": 1
     },
@@ -157,18 +165,18 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 9,
-      "share": 0.9
+      "count": 10,
+      "share": 0.9091
     },
     {
       "name": "ATC",
-      "count": 4,
-      "share": 0.4
+      "count": 5,
+      "share": 0.4545
     },
     {
       "name": "RD",
       "count": 3,
-      "share": 0.3
+      "share": 0.2727
     }
   ],
   "clearances": [
@@ -178,7 +186,7 @@
     },
     {
       "name": "Top Secret",
-      "count": 4
+      "count": 5
     }
   ],
   "salary": {
@@ -217,7 +225,7 @@
   },
   "remote": {
     "count": 2,
-    "share": 0.1429
+    "share": 0.1333
   },
   "timeline": [
     {
@@ -226,18 +234,18 @@
     },
     {
       "month": "2026-08",
-      "count": 6
+      "count": 7
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-05-12T00:00:00+00:00",
+    "pivot": "2026-05-14T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 13,
+        "recent": 14,
         "previous": 0,
-        "change": 13
+        "change": 14
       },
       {
         "name": "Serco",
@@ -249,15 +257,15 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 9,
+        "recent": 10,
         "previous": 0,
-        "change": 9
+        "change": 10
       },
       {
         "name": "ATC",
-        "recent": 4,
+        "recent": 5,
         "previous": 0,
-        "change": 4
+        "change": 5
       },
       {
         "name": "RD",
@@ -306,6 +314,10 @@
     },
     {
       "title": "Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC",
+      "count": 1
+    },
+    {
+      "title": "Special Operations Physical Therapist (5th SFG(A), Ft. Campbell, KY)",
       "count": 1
     },
     {
