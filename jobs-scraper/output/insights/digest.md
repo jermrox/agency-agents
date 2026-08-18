@@ -1,6 +1,6 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-08-17.*
+*Briefing generated 2026-08-18.*
 
 ## Headline
 
