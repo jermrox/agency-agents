@@ -1,8 +1,64 @@
 {
   "version": 2,
-  "generated_at": "2026-08-18T07:28:22.094818+00:00",
+  "generated_at": "2026-08-18T19:23:17.451248+00:00",
   "count": 16,
   "jobs": [
+    {
+      "id": "82790b73e5987567552e",
+      "fingerprint": "e1cd9d4c998b6e77e820",
+      "source": "usajobs:manual",
+      "url": "https://www.usajobs.gov/job/879859900",
+      "title": "Performance Dietitian / NF4",
+      "employer": "U.S. Marine Corps",
+      "location": "Oceanside, CA (Camp Pendleton MCCS)",
+      "remote": false,
+      "department": null,
+      "compensation": "$85,300 - $95,300 per year",
+      "posted_at": null,
+      "description": "Marine Corps Community Services (MCCS) is looking for the best and brightest to join our Team! MCCS is a comprehensive program that supports and enhances the quality of life for Marines, their families, and others in the Marine Corps Community.\n\nThis position serves as a Performance Dietitian for the Semper Fit, Warrior Athlete Readiness and Resilience (WARR) portfolio to improve readiness, lethality, and resilience of total force in all domains of fitness-physical, mental, spiritual, and social and foundational building blocks of Marine Corps Total Fitness (MCTF). The incumbent ensures that sport and performance based dietetic modalities are provided to active duty, families, and all authorized users aboard the base in support of military readiness. Utilizes skills in the theory and practice of sport and non-clinical performance dietetics to enhance health, wellness, performance in support of Marine Corps integrated holistic primary prevention. Implements and follows Department of Defense (DoD), Department of the Navy (DON), and Marine Corps policy, applying evidence-based nutrition knowledge in operational readiness, exercise, and sports. The incumbent assesses, educates, and counsels Marines and implements and manages safe and effective nutrition strategies that enhance lifelong health, fitness, and optimize performance. Supports Marine Corps sports programs such as installation sports and all-Marine sports teams.\n\nMINIMUM QUALIFICATIONS: Master's degree or higher in Nutrition, Dietetics, Sports Nutrition, and Food and Nutrition Sciences is required AND one year's experience in an athletic or military performance environment. Registered Dietitian Nutritionist (RDN) required, ACEND-accredited coursework. Knowledge of sports and performance dietetic and the implementation of performance-based nutrition practices in athletic, military, or first responder environments. Ability to assess body composition using anthropometry screening tools. Security clearance: Not Required. Drug test: No. Travel: 25% or less.",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "RD"
+        ],
+        "clearance": null,
+        "salary_min": 85300.0,
+        "salary_max": 95300.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Camp Pendleton",
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 85300.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-18T19:23:17+00:00"
+      },
+      "listed_at": "2026-08-18T14:23:57+00:00"
+    },
     {
       "id": "5cbde695934c37c22761",
       "fingerprint": "9e2e4cd2185d3c587ddd",
@@ -56,7 +112,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-12T19:58:53.663445+00:00"
     },
@@ -110,7 +166,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-11T08:01:48.517216+00:00"
     },
@@ -168,7 +224,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-10T19:52:19.072166+00:00"
     },
@@ -225,7 +281,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -282,7 +338,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-18T07:28:22+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -339,7 +395,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -396,7 +452,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -452,7 +508,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -510,7 +566,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -567,7 +623,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -623,7 +679,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -679,7 +735,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -733,7 +789,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -787,7 +843,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -841,65 +897,9 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-18T07:28:21+00:00"
+        "checked_at": "2026-08-18T19:23:17+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
-    },
-    {
-      "id": "82790b73e5987567552e",
-      "fingerprint": "e1cd9d4c998b6e77e820",
-      "source": "usajobs:manual",
-      "url": "https://www.usajobs.gov/job/879859900",
-      "title": "Performance Dietitian / NF4",
-      "employer": "U.S. Marine Corps",
-      "location": "Oceanside, CA (Camp Pendleton MCCS)",
-      "remote": false,
-      "department": null,
-      "compensation": "$85,300 - $95,300 per year",
-      "posted_at": null,
-      "description": "Marine Corps Community Services (MCCS) is looking for the best and brightest to join our Team! MCCS is a comprehensive program that supports and enhances the quality of life for Marines, their families, and others in the Marine Corps Community.\n\nThis position serves as a Performance Dietitian for the Semper Fit, Warrior Athlete Readiness and Resilience (WARR) portfolio to improve readiness, lethality, and resilience of total force in all domains of fitness-physical, mental, spiritual, and social and foundational building blocks of Marine Corps Total Fitness (MCTF). The incumbent ensures that sport and performance based dietetic modalities are provided to active duty, families, and all authorized users aboard the base in support of military readiness. Utilizes skills in the theory and practice of sport and non-clinical performance dietetics to enhance health, wellness, performance in support of Marine Corps integrated holistic primary prevention. Implements and follows Department of Defense (DoD), Department of the Navy (DON), and Marine Corps policy, applying evidence-based nutrition knowledge in operational readiness, exercise, and sports. The incumbent assesses, educates, and counsels Marines and implements and manages safe and effective nutrition strategies that enhance lifelong health, fitness, and optimize performance. Supports Marine Corps sports programs such as installation sports and all-Marine sports teams.\n\nMINIMUM QUALIFICATIONS: Master's degree or higher in Nutrition, Dietetics, Sports Nutrition, and Food and Nutrition Sciences is required AND one year's experience in an athletic or military performance environment. Registered Dietitian Nutritionist (RDN) required, ACEND-accredited coursework. Knowledge of sports and performance dietetic and the implementation of performance-based nutrition practices in athletic, military, or first responder environments. Ability to assess body composition using anthropometry screening tools. Security clearance: Not Required. Drug test: No. Travel: 25% or less.",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "RD"
-        ],
-        "clearance": null,
-        "salary_min": 85300.0,
-        "salary_max": 95300.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": "Camp Pendleton",
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "nutrition",
-        "discipline_label": "Performance Nutrition",
-        "lead": false,
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 85300.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "verified",
-      "program": null,
-      "notes": "",
-      "liveness": {
-        "state": "live",
-        "reason": "reachable",
-        "http_status": 200,
-        "checked_at": "2026-08-18T14:23:57+00:00"
-      },
-      "listed_at": "2026-08-18T14:23:57+00:00"
     }
   ],
   "definitions": {
