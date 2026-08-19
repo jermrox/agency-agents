@@ -4,48 +4,48 @@
 
 ## Headline
 
-- **15 open jobs** from **2 employers**.
-- Posted between **2026-07-02** and **2026-08-12**.
+- **16 open jobs** from **2 employers**.
+- Posted between **2026-07-02** and **2026-08-19**.
 - **$77,366 median** annualized pay across the 2 postings that publish one -- $70,075 to $84,658 covers the middle half.
-- **13% remote-friendly** (2 jobs).
-- 3 of 18 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 15, Special Operations 12, Training Pipeline 2.
+- **12% remote-friendly** (2 jobs).
+- 3 of 19 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 16, Special Operations 13, Training Pipeline 2.
 
 ## Month over month
 
-Postings are **down -1** in 2026-08 (8 to 7), 12% against 2026-07.
+Postings held flat at **8** in 2026-08, the same as 2026-07.
 
 ```
 2026-07     8  ############################
-2026-08     7  ########################
+2026-08     8  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- KBR: 0 to 14
+- KBR: 0 to 15
 - Serco: 0 to 1
 
 **Credentials appearing more often:**
 
-- CSCS: 0 to 10
+- CSCS: 0 to 11
 - ATC: 0 to 5
-- RD: 0 to 3
+- RD: 0 to 4
 
 ## Who is hiring
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| KBR | 14 | $91,950 | Strength & Conditioning, Sports Medicine |
+| KBR | 15 | $91,950 | Strength & Conditioning, Performance Nutrition |
 | Serco | 1 | $62,783 | Program Leadership, Strength & Conditioning |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 12 | 100% |
-| Sports Medicine | 5 | 42% |
-| Performance Nutrition | 4 | 33% |
-| Cognitive Performance | 2 | 17% |
+| Strength & Conditioning | 13 | 100% |
+| Performance Nutrition | 5 | 38% |
+| Sports Medicine | 5 | 38% |
+| Cognitive Performance | 2 | 15% |
 | Program Leadership | 1 | 8% |
 | Research & Analytics | 1 | 8% |
 
@@ -56,13 +56,13 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 10 | 91% |
-| ATC | 5 | 45% |
-| RD | 3 | 27% |
+| CSCS | 11 | 92% |
+| ATC | 5 | 42% |
+| RD | 4 | 33% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (7), Top Secret (5)
+**Clearances requested:** Secret (7), Top Secret (6)
 
 ## What it pays
 
@@ -80,7 +80,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** NC (5), FL (2), WA (2), GA (1), KY (1), NM (1), TX (1)
+**States:** NC (5), FL (3), WA (2), GA (1), KY (1), NM (1), TX (1)
 
 | Installation | Jobs |
 |---|---|
@@ -91,8 +91,9 @@ annual contractor bands are not otherwise comparable.
 | Hurlburt Field | 1 |
 | JBLM | 1 |
 | Joint Base Langley-Eustis | 1 |
+| MacDill AFB | 1 |
 
-**Branches and services:** Joint (11), Army (2), Air Force (1)
+**Branches and services:** Joint (12), Army (2), Air Force (1)
 
 ## Most common titles
 
@@ -106,5 +107,5 @@ annual contractor bands are not otherwise comparable.
 | Special Operations Licensed Clinical Social Worker (AFSOC Unit / Fort Bragg,NC) | 1 |
 | Special Operations Licensed Clinical Social Worker (Southern Pines, NC) | 1 |
 | Special Operations Performance Dietitian (4/160 SOAR. JBLM, WA) | 1 |
+| Special Operations Performance Dietitian (MacDill AFB, Florida) | 1 |
 | Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK) | 1 |
-| Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC | 1 |
