@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-19T19:20:32.047746+00:00",
+  "generated_at": "2026-08-20T07:31:21.964120+00:00",
   "totals": {
-    "postings": 19,
+    "postings": 20,
     "employers": 2,
-    "unique_jobs": 16,
-    "with_salary": 2,
+    "unique_jobs": 17,
+    "with_salary": 3,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
       "latest": "2026-08-19T00:00:00+00:00"
@@ -13,15 +13,15 @@
   "by_employer": [
     {
       "name": "KBR",
-      "count": 15,
+      "count": 16,
       "disciplines": [
         "strength-conditioning",
-        "nutrition",
         "sports-medicine",
+        "nutrition",
         "cognitive",
         "research"
       ],
-      "median_salary": 91950.0
+      "median_salary": 87975.0
     },
     {
       "name": "Serco",
@@ -36,62 +36,62 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 13,
+      "count": 14,
       "share": 1.0,
-      "median_salary": 77366.4
+      "median_salary": 84000.0
+    },
+    {
+      "name": "sports-medicine",
+      "count": 6,
+      "share": 0.4286,
+      "median_salary": 84000.0
     },
     {
       "name": "nutrition",
       "count": 5,
-      "share": 0.3846,
+      "share": 0.3571,
       "median_salary": 91950.0
     },
     {
-      "name": "sports-medicine",
-      "count": 5,
-      "share": 0.3846,
-      "median_salary": null
-    },
-    {
       "name": "cognitive",
-      "count": 2,
-      "share": 0.1538,
-      "median_salary": null
+      "count": 3,
+      "share": 0.2143,
+      "median_salary": 84000.0
     },
     {
       "name": "leadership",
       "count": 1,
-      "share": 0.0769,
+      "share": 0.0714,
       "median_salary": 62782.81
     },
     {
       "name": "research",
       "count": 1,
-      "share": 0.0769,
+      "share": 0.0714,
       "median_salary": null
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 16,
+      "count": 17,
       "share": 1.0
     },
     {
       "name": "sof",
-      "count": 13,
-      "share": 0.8125
+      "count": 14,
+      "share": 0.8235
     },
     {
       "name": "training-pipeline",
       "count": 2,
-      "share": 0.125
+      "share": 0.1176
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 12
+      "count": 13
     },
     {
       "name": "Army",
@@ -109,6 +109,10 @@
     },
     {
       "name": "Cannon AFB",
+      "count": 1
+    },
+    {
+      "name": "Coronado",
       "count": 1
     },
     {
@@ -150,6 +154,10 @@
       "count": 2
     },
     {
+      "code": "CA",
+      "count": 1
+    },
+    {
       "code": "GA",
       "count": 1
     },
@@ -169,24 +177,24 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 11,
-      "share": 0.9167
+      "count": 12,
+      "share": 0.9231
     },
     {
       "name": "ATC",
       "count": 5,
-      "share": 0.4167
+      "share": 0.3846
     },
     {
       "name": "RD",
       "count": 4,
-      "share": 0.3333
+      "share": 0.3077
     }
   ],
   "clearances": [
     {
       "name": "Secret",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Top Secret",
@@ -194,20 +202,28 @@
     }
   ],
   "salary": {
-    "count": 2,
+    "count": 3,
     "min": 62782.81,
     "max": 91950.0,
-    "median": 77366.4,
-    "p25": 70074.61,
-    "p75": 84658.2,
+    "median": 84000.0,
+    "p25": 73391.4,
+    "p75": 87975.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 2,
+        "count": 3,
         "min": 62782.81,
         "max": 91950.0,
-        "median": 77366.4,
-        "p25": 70074.61,
-        "p75": 84658.2
+        "median": 84000.0,
+        "p25": 73391.4,
+        "p75": 87975.0
+      },
+      "sports-medicine": {
+        "count": 1,
+        "min": 84000.0,
+        "max": 84000.0,
+        "median": 84000.0,
+        "p25": 84000.0,
+        "p75": 84000.0
       },
       "nutrition": {
         "count": 1,
@@ -216,6 +232,14 @@
         "median": 91950.0,
         "p25": 91950.0,
         "p75": 91950.0
+      },
+      "cognitive": {
+        "count": 1,
+        "min": 84000.0,
+        "max": 84000.0,
+        "median": 84000.0,
+        "p25": 84000.0,
+        "p75": 84000.0
       },
       "leadership": {
         "count": 1,
@@ -229,7 +253,7 @@
   },
   "remote": {
     "count": 2,
-    "share": 0.125
+    "share": 0.1176
   },
   "timeline": [
     {
@@ -238,7 +262,7 @@
     },
     {
       "month": "2026-08",
-      "count": 8
+      "count": 9
     }
   ],
   "trends": {
@@ -247,9 +271,9 @@
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 15,
+        "recent": 16,
         "previous": 0,
-        "change": 15
+        "change": 16
       },
       {
         "name": "Serco",
@@ -261,9 +285,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 11,
+        "recent": 12,
         "previous": 0,
-        "change": 11
+        "change": 12
       },
       {
         "name": "ATC",

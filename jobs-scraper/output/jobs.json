@@ -1,8 +1,58 @@
 {
   "version": 2,
-  "generated_at": "2026-08-19T19:20:32.037154+00:00",
-  "count": 17,
+  "generated_at": "2026-08-20T07:31:21.954197+00:00",
+  "count": 18,
   "jobs": [
+    {
+      "id": "e413f245db4faa744ac1",
+      "fingerprint": "723fef4eac8b05e45897",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/San-Diego-California/Special-Operations-Strength-and-Conditioning-Specialist--Coronado--CA-_R2128595",
+      "title": "Special Operations Strength and Conditioning Specialist (Coronado, CA)",
+      "employer": "KBR",
+      "location": "San Diego, California",
+      "remote": false,
+      "department": null,
+      "compensation": null,
+      "posted_at": null,
+      "description": "Title: Special Operations Strength and Conditioning Specialist (Coronado, CA) Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts across the world. We attract the best\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": "Secret",
+        "salary_min": 76000.0,
+        "salary_max": 92000.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Coronado",
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 76000.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "POTFF",
+      "notes": "",
+      "listed_at": "2026-08-20T07:31:21.954197+00:00"
+    },
     {
       "id": "6507ce3e05663729bdd2",
       "fingerprint": "9d17e1944990d9bc2f09",
@@ -49,9 +99,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-20T07:31:21+00:00"
+      },
       "listed_at": "2026-08-19T19:20:32.037154+00:00"
     },
     {
@@ -106,7 +162,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -163,7 +219,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-12T19:58:53.663445+00:00"
     },
@@ -217,7 +273,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-11T08:01:48.517216+00:00"
     },
@@ -275,7 +331,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-10T19:52:19.072166+00:00"
     },
@@ -332,7 +388,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:32+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -389,7 +445,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -446,7 +502,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -503,7 +559,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -559,7 +615,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -617,7 +673,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -674,7 +730,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -730,7 +786,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:32+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -786,7 +842,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -840,7 +896,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -894,7 +950,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -948,7 +1004,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-19T19:20:31+00:00"
+        "checked_at": "2026-08-20T07:31:21+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }
