@@ -1,8 +1,59 @@
 {
   "version": 2,
-  "generated_at": "2026-08-20T07:31:21.954197+00:00",
-  "count": 18,
+  "generated_at": "2026-08-20T19:25:47.810619+00:00",
+  "count": 19,
   "jobs": [
+    {
+      "id": "ca3d993f373e0fde42f7",
+      "fingerprint": "e3e2c70d8068d98f2e66",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Tampa-Florida/Special-Operations-Performance-Dietitian--MacDill-AFB--FL-_R2128644",
+      "title": "Special Operations Performance Dietitian (MacDill AFB, FL)",
+      "employer": "KBR",
+      "location": "Tampa, Florida",
+      "remote": false,
+      "department": null,
+      "compensation": null,
+      "posted_at": null,
+      "description": "Title: Special Operations Performance Dietitian (MacDill AFB, FL) THIS POSITION OFFERS RELOCATION. We attract the best minds in the world because our expertise thrives on creativity, resourcefulness and collaboration. That is how we supply our clients with cutting-edge solutions and services. We are seeking a stellar Special Operations Performance Dietitian that will provide guidance and\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS",
+          "RD"
+        ],
+        "clearance": "Secret",
+        "salary_min": 73600.0,
+        "salary_max": 110300.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": "MacDill AFB",
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 73600.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "POTFF",
+      "notes": "",
+      "listed_at": "2026-08-20T19:25:47.810619+00:00"
+    },
     {
       "id": "e413f245db4faa744ac1",
       "fingerprint": "723fef4eac8b05e45897",
@@ -48,9 +99,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-20T19:25:47+00:00"
+      },
       "listed_at": "2026-08-20T07:31:21.954197+00:00"
     },
     {
@@ -106,7 +163,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-19T19:20:32.037154+00:00"
     },
@@ -162,7 +219,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -219,7 +276,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-12T19:58:53.663445+00:00"
     },
@@ -273,7 +330,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-11T08:01:48.517216+00:00"
     },
@@ -331,7 +388,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-10T19:52:19.072166+00:00"
     },
@@ -388,7 +445,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -445,7 +502,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -502,7 +559,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -559,7 +616,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -615,7 +672,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -673,7 +730,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -730,7 +787,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -786,7 +843,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -842,7 +899,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -896,7 +953,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -950,7 +1007,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -1004,7 +1061,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-20T07:31:21+00:00"
+        "checked_at": "2026-08-20T19:25:47+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }

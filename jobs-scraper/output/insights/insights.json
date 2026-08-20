@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-20T07:31:21.964120+00:00",
+  "generated_at": "2026-08-20T19:25:47.822276+00:00",
   "totals": {
-    "postings": 20,
+    "postings": 21,
     "employers": 2,
-    "unique_jobs": 17,
-    "with_salary": 3,
+    "unique_jobs": 18,
+    "with_salary": 4,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-19T00:00:00+00:00"
+      "latest": "2026-08-20T00:00:00+00:00"
     }
   },
   "by_employer": [
     {
       "name": "KBR",
-      "count": 16,
+      "count": 17,
       "disciplines": [
         "strength-conditioning",
-        "sports-medicine",
         "nutrition",
+        "sports-medicine",
         "cognitive",
         "research"
       ],
-      "median_salary": 87975.0
+      "median_salary": 91950.0
     },
     {
       "name": "Serco",
@@ -36,62 +36,62 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 14,
+      "count": 15,
       "share": 1.0,
-      "median_salary": 84000.0
+      "median_salary": 87975.0
+    },
+    {
+      "name": "nutrition",
+      "count": 6,
+      "share": 0.4,
+      "median_salary": 91950.0
     },
     {
       "name": "sports-medicine",
       "count": 6,
-      "share": 0.4286,
+      "share": 0.4,
       "median_salary": 84000.0
-    },
-    {
-      "name": "nutrition",
-      "count": 5,
-      "share": 0.3571,
-      "median_salary": 91950.0
     },
     {
       "name": "cognitive",
       "count": 3,
-      "share": 0.2143,
+      "share": 0.2,
       "median_salary": 84000.0
     },
     {
       "name": "leadership",
       "count": 1,
-      "share": 0.0714,
+      "share": 0.0667,
       "median_salary": 62782.81
     },
     {
       "name": "research",
       "count": 1,
-      "share": 0.0714,
+      "share": 0.0667,
       "median_salary": null
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 17,
+      "count": 18,
       "share": 1.0
     },
     {
       "name": "sof",
-      "count": 14,
-      "share": 0.8235
+      "count": 15,
+      "share": 0.8333
     },
     {
       "name": "training-pipeline",
       "count": 2,
-      "share": 0.1176
+      "share": 0.1111
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Army",
@@ -106,6 +106,10 @@
     {
       "name": "Fort Bragg",
       "count": 5
+    },
+    {
+      "name": "MacDill AFB",
+      "count": 2
     },
     {
       "name": "Cannon AFB",
@@ -134,10 +138,6 @@
     {
       "name": "Joint Base Langley-Eustis",
       "count": 1
-    },
-    {
-      "name": "MacDill AFB",
-      "count": 1
     }
   ],
   "by_state": [
@@ -147,7 +147,7 @@
     },
     {
       "code": "FL",
-      "count": 3
+      "count": 4
     },
     {
       "code": "WA",
@@ -177,24 +177,24 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 12,
-      "share": 0.9231
+      "count": 13,
+      "share": 0.9286
     },
     {
       "name": "ATC",
       "count": 5,
-      "share": 0.3846
+      "share": 0.3571
     },
     {
       "name": "RD",
-      "count": 4,
-      "share": 0.3077
+      "count": 5,
+      "share": 0.3571
     }
   ],
   "clearances": [
     {
       "name": "Secret",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Top Secret",
@@ -202,20 +202,20 @@
     }
   ],
   "salary": {
-    "count": 3,
+    "count": 4,
     "min": 62782.81,
     "max": 91950.0,
-    "median": 84000.0,
-    "p25": 73391.4,
-    "p75": 87975.0,
+    "median": 87975.0,
+    "p25": 78695.7,
+    "p75": 91950.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 3,
+        "count": 4,
         "min": 62782.81,
         "max": 91950.0,
-        "median": 84000.0,
-        "p25": 73391.4,
-        "p75": 87975.0
+        "median": 87975.0,
+        "p25": 78695.7,
+        "p75": 91950.0
       },
       "sports-medicine": {
         "count": 1,
@@ -226,7 +226,7 @@
         "p75": 84000.0
       },
       "nutrition": {
-        "count": 1,
+        "count": 2,
         "min": 91950.0,
         "max": 91950.0,
         "median": 91950.0,
@@ -253,7 +253,7 @@
   },
   "remote": {
     "count": 2,
-    "share": 0.1176
+    "share": 0.1111
   },
   "timeline": [
     {
@@ -262,18 +262,18 @@
     },
     {
       "month": "2026-08",
-      "count": 9
+      "count": 10
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-05-21T00:00:00+00:00",
+    "pivot": "2026-05-22T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 16,
+        "recent": 17,
         "previous": 0,
-        "change": 16
+        "change": 17
       },
       {
         "name": "Serco",
@@ -285,9 +285,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 12,
+        "recent": 13,
         "previous": 0,
-        "change": 12
+        "change": 13
       },
       {
         "name": "ATC",
@@ -297,9 +297,9 @@
       },
       {
         "name": "RD",
-        "recent": 4,
+        "recent": 5,
         "previous": 0,
-        "change": 4
+        "change": 5
       }
     ]
   },
@@ -337,6 +337,10 @@
       "count": 1
     },
     {
+      "title": "Special Operations Performance Dietitian (MacDill AFB, FL)",
+      "count": 1
+    },
+    {
       "title": "Special Operations Performance Dietitian (MacDill AFB, Florida)",
       "count": 1
     },
@@ -358,10 +362,6 @@
     },
     {
       "title": "Special Operations Physical Therapist-TEMP POSITION, (Onsite - Fort Bragg, NC)",
-      "count": 1
-    },
-    {
-      "title": "Special Operations Strength and Conditioning Specialist (27 SOW, Cannon AFB, NM)",
       "count": 1
     }
   ]
