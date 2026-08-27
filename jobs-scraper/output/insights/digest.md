@@ -1,14 +1,14 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-08-26.*
+*Briefing generated 2026-08-27.*
 
 ## Headline
 
 - **18 open jobs** from **2 employers**.
-- Posted between **2026-07-02** and **2026-08-20**.
-- **$87,975 median** annualized pay across the 4 postings that publish one -- $78,696 to $91,950 covers the middle half.
+- Posted between **2026-07-02** and **2026-08-27**.
+- **$84,000 median** annualized pay across the 3 postings that publish one -- $73,391 to $87,975 covers the middle half.
 - **11% remote-friendly** (2 jobs).
-- 3 of 21 archived records are cross-board copies or re-posts, not separate jobs.
+- 4 of 22 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 18, Special Operations 15, Training Pipeline 2.
 
 ## Month over month
@@ -35,7 +35,7 @@ Postings are **up +2** in 2026-08 (8 to 10), 25% against 2026-07.
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| KBR | 17 | $91,950 | Strength & Conditioning, Performance Nutrition |
+| KBR | 17 | $87,975 | Strength & Conditioning, Performance Nutrition |
 | Serco | 1 | $62,783 | Program Leadership, Strength & Conditioning |
 
 ## Discipline mix
@@ -66,15 +66,15 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$87,975**, middle half $78,696 to $91,950.
+- Median **$84,000**, middle half $73,391 to $87,975.
 - Full range $62,783 to $91,950.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Performance Nutrition | 2 | $91,950 | $91,950 | $91,950 |
-| Strength & Conditioning | 4 | $78,696 | $87,975 | $91,950 |
+| Performance Nutrition | 1 | $91,950 | $91,950 | $91,950 |
 | Cognitive Performance | 1 | $84,000 | $84,000 | $84,000 |
 | Sports Medicine | 1 | $84,000 | $84,000 | $84,000 |
+| Strength & Conditioning | 3 | $73,391 | $84,000 | $87,975 |
 | Program Leadership | 1 | $62,783 | $62,783 | $62,783 |
 
 Every figure is annualized before comparison -- hourly federal rates and

@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-26T21:33:20.286724+00:00",
+  "generated_at": "2026-08-27T17:57:53.299897+00:00",
   "totals": {
-    "postings": 21,
+    "postings": 22,
     "employers": 2,
     "unique_jobs": 18,
-    "with_salary": 4,
+    "with_salary": 3,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-20T00:00:00+00:00"
+      "latest": "2026-08-27T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -21,7 +21,7 @@
         "cognitive",
         "research"
       ],
-      "median_salary": 91950.0
+      "median_salary": 87975.0
     },
     {
       "name": "Serco",
@@ -38,7 +38,7 @@
       "name": "strength-conditioning",
       "count": 15,
       "share": 1.0,
-      "median_salary": 87975.0
+      "median_salary": 84000.0
     },
     {
       "name": "nutrition",
@@ -202,20 +202,20 @@
     }
   ],
   "salary": {
-    "count": 4,
+    "count": 3,
     "min": 62782.81,
     "max": 91950.0,
-    "median": 87975.0,
-    "p25": 78695.7,
-    "p75": 91950.0,
+    "median": 84000.0,
+    "p25": 73391.4,
+    "p75": 87975.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 4,
+        "count": 3,
         "min": 62782.81,
         "max": 91950.0,
-        "median": 87975.0,
-        "p25": 78695.7,
-        "p75": 91950.0
+        "median": 84000.0,
+        "p25": 73391.4,
+        "p75": 87975.0
       },
       "sports-medicine": {
         "count": 1,
@@ -226,7 +226,7 @@
         "p75": 84000.0
       },
       "nutrition": {
-        "count": 2,
+        "count": 1,
         "min": 91950.0,
         "max": 91950.0,
         "median": 91950.0,
@@ -267,7 +267,7 @@
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-05-22T00:00:00+00:00",
+    "pivot": "2026-05-29T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
