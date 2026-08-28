@@ -320,7 +320,43 @@ def _place_text(node: Any) -> str:
     return _plain(node.get("name"))
 
 
-def _locations(node: dict[str, Any]) -> str:
+DEFAULT_MAX_LOCATIONS = 8
+"""Above this many ``jobLocation`` entries, the list is SEO padding, not truth.
+
+Some career platforms pad ``jobLocation`` with every city in a recruiting
+radius so the posting ranks for all of them. Serco's H2F postings are the case
+this was written against: "H2Fit: Strength & Conditioning Coach - Fort Bragg,
+NC" carries **120** entries, running from Alexandria VA to Buffalo NY, and the
+very first one is an empty locality with a Washington DC postal code. There is
+no in-band marker for which entry is real, so no amount of picking-the-first
+recovers it -- and publishing all 120 would put a screenful of wrong cities on
+a board whose whole value is telling a candidate where the job is.
+
+So past the cap the enumeration is discarded rather than trusted or sampled.
+The title is then the honest remaining source, and for this shape of posting it
+is the reliable one: the place is right there in the title text.
+"""
+
+_TITLE_PLACE_RE = re.compile(
+    # A trailing " - Fort Bragg, NC" / " - Camp Casey, Korea" / " (Ft. Drum, NY)".
+    #
+    # The comma is required: it is what separates a real place from a trailing
+    # qualifier like "- Level II" or "- Full Time", which have no comma.
+    #
+    # The dash must be surrounded by space. Without that guard the hyphen
+    # inside a hyphenated place name splits it, and "Joint Base
+    # Langley-Eustis, VA" is published as "Eustis, VA".
+    r"(?:\s[-–—]\s*|\(\s*)([A-Z][A-Za-z.'\s-]{2,40},\s*[A-Z][A-Za-z.\s]{1,20})\s*\)?\s*$"
+)
+
+
+def _location_from_title(title: str) -> str:
+    """Recover a place from a title that ends with one. '' when it does not."""
+    match = _TITLE_PLACE_RE.search((title or "").strip())
+    return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
+
+
+def _locations(node: dict[str, Any], max_locations: int = DEFAULT_MAX_LOCATIONS) -> str:
     raw = node.get("jobLocation")
     entries = raw if isinstance(raw, list) else [raw]
     seen: list[str] = []
@@ -328,6 +364,8 @@ def _locations(node: dict[str, Any]) -> str:
         text = _place_text(entry)
         if text and text not in seen:
             seen.append(text)
+    if max_locations >= 0 and len(seen) > max_locations:
+        return ""
     return "; ".join(seen)
 
 
@@ -577,7 +615,11 @@ class JSONLDSource(Source):
         declared_url = _plain(node.get("url")) or _plain(node.get("@id"))
         url = _absolute_url(declared_url, page_url)
 
-        location = _locations(node)
+        location = _locations(
+            node, _as_int(self.options.get("max_locations"), DEFAULT_MAX_LOCATIONS)
+        )
+        if not location:
+            location = _location_from_title(title)
         telecommute = _is_telecommute(node)
         applicant_requirements = node.get("applicantLocationRequirements")
         if applicant_requirements is not None:

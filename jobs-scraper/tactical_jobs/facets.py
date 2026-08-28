@@ -226,6 +226,165 @@ def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]
     return frozenset(found)
 
 
+# --- Service branch ---------------------------------------------------------
+#
+# Which service a candidate would actually be embedded with. It is the question
+# behind "is this an H2F job or a SEAL job", and nothing in a posting states it
+# as a field -- it has to be read out of the employer name, the program name,
+# or the installation.
+#
+# Returned as a SET, not one value, because plenty of these postings genuinely
+# serve more than one service. GDIT lists a single strength-and-conditioning
+# requisition across Fort Bragg, Coronado, Fort Campbell, Hurlburt Field and
+# JBLM in one go -- Army, Navy, and Air Force in the same req. Collapsing that
+# to a single branch would be a lie in whichever direction it fell.
+#
+# Ordered most-specific evidence first within each branch. Every pattern below
+# was chosen against postings actually seen from Serco, GDIT, KBR, Geneva and
+# USAJOBS, not from a general list of bases.
+BRANCHES: tuple[tuple[str, str], ...] = (
+    ("army", "Army"),
+    ("navy", "Navy"),
+    ("air-force", "Air Force"),
+    ("marine-corps", "Marine Corps"),
+    ("space-force", "Space Force"),
+    ("coast-guard", "Coast Guard"),
+    ("joint", "Joint / DoD-wide"),
+)
+
+BRANCH_LABELS: dict[str, str] = dict(BRANCHES)
+
+_BRANCH_RES: tuple[tuple[str, re.Pattern[str]], ...] = (
+    (
+        "army",
+        re.compile(
+            # Service and command names.
+            r"\b(?:U\.?S\.?\s*)?Army\b|\bDepartment\s+of\s+the\s+Army\b|"
+            r"\bUSARPAC\b|\bFORSCOM\b|\bUSASOC\b|\bTRADOC\b|\bAMEDD\b|"
+            r"\bSFAB\b|\bSWCS\b|\b75th\s+Ranger\b|\bSpecial\s+Forces\s+Group\b|"
+            # Programs that exist only in the Army.
+            r"\bH2F\b|\bH2FIT\b|\bHolistic\s+Health\s+and\s+Fitness\b|"
+            r"\bTHOR3\b|\bR2PC\b|\bReady\s+and\s+Resilient\b|"
+            r"\bMaster\s+Resilience\s+Trainer\b|\bSoldier\b|\bSoldiers\b|"
+            # "Fort X" is an Army post; the Air Force and Navy do not use it.
+            # Fort Meade and Fort Belvoir are joint tenants, but the Army is
+            # the host in both cases, so this stays correct there too.
+            r"\bFort\s+[A-Z][a-z]+|\bFt\.?\s+[A-Z][a-z]+|"
+            r"\bSchofield\s+Barracks\b|\bCamp\s+Casey\b|\bCamp\s+Humphreys\b|"
+            r"\bGrafenwoehr\b|\bVilseck\b|\bHohenfels\b|\bAnsbach\b",
+            re.I,
+        ),
+    ),
+    (
+        "navy",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Navy\b|\bNaval\b|\bDepartment\s+of\s+the\s+Navy\b|"
+            r"\bCNIC\b|\bNavy\s+Installations\s+Command\b|\bBUMED\b|"
+            r"\bNSW\b|\bNaval\s+Special\s+Warfare\b|\bSEAL\b|\bSWCC\b|"
+            r"\bNAVSTA\b|\bNAS\s+[A-Z]|\bNSA\s+[A-Z][a-z]+|"
+            r"\bSailor\b|\bSailors\b|\bMWR\b|"
+            r"\bCoronado\b|\bDam\s+Neck\b|\bLittle\s+Creek\b|\bGreat\s+Lakes\b|"
+            r"\bPoint\s+Mugu\b|\bSigonella\b|\bRota\b",
+            re.I,
+        ),
+    ),
+    (
+        "air-force",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Air\s+Force\b|\bUSAF\b|\bAFSOC\b|\bACC\b|"
+            r"\bAir\s+Force\s+Base\b|\bAFB\b|\bAir\s+Base\b|\bAirman\b|"
+            r"\bAirmen\b|\bAFCENT\b|\bAMC\b|"
+            r"\bHurlburt\s+Field\b|\bCannon\s+AFB\b|\bEglin\b|\bMacDill\b|"
+            r"\bKadena\b|\bYokota\b|\bMisawa\b|\bOsan\b|\bRamstein\b|"
+            r"\bAviano\b|\bLakenheath\b|\bMildenhall\b|\bRAF\s+\w+",
+            re.I,
+        ),
+    ),
+    (
+        "marine-corps",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Marine\s+Corps\b|\bUSMC\b|\bMARSOC\b|"
+            r"\bMarine\s+Raider\b|\bMarines\b|\bMCB\b|\bMCAS\b|\bMCRD\b|"
+            # HITT is the Marine Corps' own human performance program, and it
+            # is the single strongest tell in this whole table.
+            r"\bHITT\b|\bHigh\s+Intensity\s+Tactical\s+Training\b|"
+            r"\bForce\s+Fitness\b|"
+            r"\bCamp\s+Lejeune\b|\bCamp\s+Pendleton\b|\bQuantico\b|"
+            r"\bTwentynine\s+Palms\b|\b29\s+Palms\b|\bCamp\s+Foster\b|"
+            r"\bCamp\s+Schwab\b|\bCamp\s+Courtney\b|\bOkinawa\b|"
+            r"\bCherry\s+Point\b|\bParris\s+Island\b",
+            re.I,
+        ),
+    ),
+    (
+        "space-force",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Space\s+Force\b|\bUSSF\b|\bGuardian\s+Resilience\b|"
+            r"\bSpace\s+Systems\s+Command\b|\bSchriever\b|\bBuckley\s+(?:AFB|SFB)\b|"
+            r"\bPeterson\s+(?:AFB|SFB)\b|\bPatrick\s+(?:AFB|SFB)\b|\bVandenberg\b",
+            re.I,
+        ),
+    ),
+    (
+        "coast-guard",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Coast\s+Guard\b|\bUSCG\b|\bCoast\s+Guardsman\b",
+            re.I,
+        ),
+    ),
+    (
+        "joint",
+        re.compile(
+            r"\bUSSOCOM\b|\bSOCOM\b|\bJSOC\b|\bSOF\b|\bPOTFF\b|"
+            r"\bSpecial\s+Operations\s+Command\b|"
+            r"\bPreservation\s+of\s+the\s+Force\b|"
+            r"\bJoint\s+Base\b|\bJoint\s+Task\s+Force\b|"
+            r"\bDefense\s+Health\s+Agency\b|\bDHA\b|\bDoD\b|"
+            r"\bDepartment\s+of\s+Defense\b|\bTri-?Service\b",
+            re.I,
+        ),
+    ),
+)
+
+# A description is long and full of incidental mentions -- a Serco H2F posting
+# names the Air Force once in a benefits paragraph. Title, employer and
+# location are declarative about who the job serves; the description is only
+# consulted when those three say nothing at all.
+_BRANCH_BODY_CAP = 600
+
+
+def branches_of(
+    title: str, employer: str = "", location: str = "", description: str = ""
+) -> frozenset[str]:
+    """Which service branches a posting serves. Empty means undetermined."""
+    # An employer that names a service IS the answer, and it outranks the
+    # installation. USAJOBS posts these as "United States Space Force" at
+    # "Schriever AFB" -- a base the Space Force inherited and whose legacy name
+    # still says Air Force. Reading both would file a Space Force job under
+    # Air Force. Contractors (Serco, GDIT, KBR) match nothing here, so they
+    # fall through to the combined read below, which is what they need.
+    by_employer = {slug for slug, pattern in _BRANCH_RES if pattern.search(employer or "")}
+    if by_employer:
+        return frozenset(by_employer)
+
+    strong = " \n".join(part for part in (title, employer, location) if part)
+    found = {slug for slug, pattern in _BRANCH_RES if pattern.search(strong)}
+    if found:
+        return frozenset(found)
+
+    body = (description or "")[:_BRANCH_BODY_CAP]
+    if not body:
+        return frozenset()
+    return frozenset(
+        slug for slug, pattern in _BRANCH_RES if pattern.search(body)
+    )
+
+
+def branch_labels(slugs: "frozenset[str] | set[str] | list[str]") -> list[str]:
+    """Display labels for branch slugs, in the canonical BRANCHES order."""
+    return [label for slug, label in BRANCHES if slug in set(slugs)]
+
+
 _CONTINGENT_WINDOW = 80
 
 _AWARD_CONTEXT_RE = re.compile(
@@ -316,10 +475,15 @@ def salary_floor_annual(enrichment: dict[str, Any]) -> float | None:
 def facets_for(posting: JobPosting) -> dict[str, Any]:
     """Every facet for one posting, in the shape the feed publishes."""
     slug = discipline_of(posting.title, posting.description)
+    branches = branches_of(
+        posting.title, posting.employer, posting.location, posting.description
+    )
     return {
         "discipline": slug,
         "discipline_label": discipline_label(slug),
         "lead": is_lead(posting.title),
+        "branches": sorted(branches),
+        "branch_labels": branch_labels(branches),
         "location_classes": sorted(
             location_classes(posting.location, posting.remote)
         ),

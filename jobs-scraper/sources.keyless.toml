@@ -9,8 +9,10 @@
 #
 # WHAT THIS COSTS YOU
 # Of 19 adapters, exactly three need a credential: usajobs, jazzhr, teamtailor.
-# None appear here. The only meaningful loss is the USAJOBS *structured* API --
-# and there are two keyless routes at federal jobs anyway, both noted below.
+# Only usajobs appears here, and it is marked `optional = true`, which means it
+# disables itself with a warning when its key is absent instead of failing the
+# run. So this file still starts and still works with no credentials at all --
+# you simply get every source except the federal one.
 #
 # WHY THIS WORKS
 # ATS vendors publish the job board that powers an employer's own careers page
@@ -93,21 +95,85 @@ search_terms = [
   "physical therapist",
 ]
 
-# [[source]]                     # CANDIDATE -- The Geneva Foundation, H2F at
-# kind = "workday"               # Ft Drum NY (req JR100450). Tenant coordinates
-# name = "geneva"                # genevausa/wd5/CareersAtGeneva were read from a
-# tenant = "genevausa"           # real posting URL, but liveness could NOT be
-# site = "CareersAtGeneva"       # confirmed: this sandbox's proxy 403s that host,
-# data_center = "wd5"            # and the content came from a mirror showing
-# employer = "The Geneva Foundation"   # "Posted: 6 months ago". Enable only after
-                                 # the CXS JSON answers from a networked run.
+# --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
+# General Dynamics Information Technology. GDIT was missing from this file AND
+# from EMPLOYERS.md entirely, which was a real gap: it is one of the densest
+# single sources of tactical human performance work anywhere on this list.
+# Coordinates read off the careers page's own Workday hostname:
+#   tenant=gdit  data_center=wd5  site=External_Career_Site
+# A live CXS search for "strength and conditioning" returned total=15, and the
+# tactical share of that page was near total -- every one of these was open and
+# dated "Posted 2 Days Ago":
+#   RQ223663  Strength and Conditioning Specialists .... Fort Bragg NC (5 locs)
+#   RQ223541  Senior Strength & Conditioning Specialist  Fort Bragg NC (5 locs)
+#   RQ204547  Physical Therapist ..................... Fort Campbell KY (4 locs)
+#   RQ223291  Certified Athletic Trainer ............. Hurlburt Field FL
+#   RQ223545  Human Performance Advisor .............. Fort Bragg NC (4 locs)
+#   RQ219851  Performance Dietitian .................. Fort Bragg NC (5 locs)
+#   RQ222747  Occupational Therapist ................. Fort Bragg NC (5 locs)
+# The detail endpoint was checked too, not just search: RQ223663 returned
+# "canApply":true, "posted":true, and a 10,248-character jobDescription
+# carrying the clearance and certification text the classifier scores on.
+[[source]]
+kind = "workday"
+name = "gdit"
+tenant = "gdit"
+site = "External_Career_Site"
+data_center = "wd5"
+employer = "General Dynamics Information Technology"
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+  "occupational therapist",
+]
 
-# [[source]]
-# kind = "workday"
-# name = "amentum"
-# tenant = "amentum"
-# site = "Amentum"
-# employer = "Amentum"
+# --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
+# The Geneva Foundation, an H2F subcontractor on Team Serco. This block sat
+# commented out as a CANDIDATE because an earlier check could not reach the
+# host and the only evidence was a mirror showing "Posted: 6 months ago".
+# Re-checked today and it now answers: the coordinates that were read off a
+# real posting URL are correct, and the CXS JSON returned two currently open
+# H2F requisitions, one of them recent:
+#   JR100485  Strength and Conditioning Coach - H2F, Ft. Drum NY  (30+ days)
+#   JR100503  Strength and Conditioning Coach - H2F, Ft. Stewart GA (8 days)
+[[source]]
+kind = "workday"
+name = "geneva"
+tenant = "genevausa"
+site = "CareersAtGeneva"
+data_center = "wd5"
+employer = "The Geneva Foundation"
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+]
+
+# CHECKED 2026-08-28 -- primes whose Workday tenants are now CONFIRMED to
+# resolve, but which are carrying no tactical human performance work today.
+# Recorded here so nobody re-guesses these coordinates, and so enabling one is
+# a one-line uncomment on the day a recompete lands. They are left OFF because
+# a Workday keyword search is fuzzy: "strength and conditioning" against Booz
+# Allen returned seven hits, all of them engineering roles, and each hit costs
+# a detail fetch the classifier then throws away.
+#   bah/wd1/BAH_Jobs           HTTP 200 -- 0 tactical across all six terms
+#   caci/wd1/External          HTTP 200 -- 0 tactical across all six terms
+#   parsons/wd5/Search         HTTP 200 -- 0 tactical across all six terms
+#   leidos/wd5/External        HTTP 200 -- 1 marginal hit, "Health and Fitness
+#                              Specialist" in McLean VA, posted 30+ days ago;
+#                              reads as a corporate-campus gym role, not
+#                              tactical, and the classifier would reject it.
+# Amentum and SAIC are NOT listed above on purpose: amentum/wd1/Amentum and
+# saic/wd1/External both return HTTP 422, meaning the site slug is wrong. The
+# tenant may well exist -- do not enable either until the real slug is read
+# off their careers page, the same way GDIT's was.
 
 
 # -----------------------------------------------------------------------------
@@ -122,6 +188,63 @@ search_terms = [
 # are public HTML, so if they carry JobPosting markup this reaches them with no
 # API key. Verify with --dry-run before trusting it.
 # -----------------------------------------------------------------------------
+
+# --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
+# SERCO -- the current Army H2F prime ($247M ceiling, awarded Jan 2025) and,
+# until today, missing from this file entirely. That was the single largest
+# gap in the configuration: EMPLOYERS.md names Serco as the one employer on
+# the watchlist whose award is actually recent, and nothing was fetching it.
+#
+# Serco runs its North America careers site on Phenom People, which has no
+# JSON API but does publish schema.org JobPosting markup on every detail page
+# -- exactly what this adapter is for. Confirmed end to end today:
+#   * careers.serco-na.com/sitemap.xml is a sitemap INDEX with two children
+#     (the adapter follows an index one level, so this resolves). lastmod was
+#     the same day it was fetched.
+#   * Those two children list 590 job URLs between them.
+#   * A detail page carries a real JobPosting node: "H2Fit: Strength &
+#     Conditioning Coach - Fort Bragg, NC", hiringOrganization "Serco USA",
+#     datePosted 2026-08-23, with a 10,662-character description.
+#
+# NOTE THE HOSTNAME. careers.serco.com is the UK board -- every US path on it
+# redirects to /gb/en. The North America site is a different host entirely.
+#
+# On url_include: the fragments below select 68 of the 590 URLs, and all 68
+# are tactical -- H2F strength and conditioning coaches and cognitive
+# performance specialists across 20+ installations, including OCONUS at Camp
+# Casey Korea, Schofield Barracks HI, and Fort Wainwright AK. Fetching all 590
+# would cost roughly 165MB a night to reach the same 68. Matching is a plain
+# case-sensitive substring test, and "H2F" alone covers the H2F/H2Fit/H2FIT
+# spellings Serco mixes. The discipline fragments after it currently add
+# nothing; they are there so a future Serco athletic-trainer or dietitian
+# posting is caught even if it never says H2F in the title.
+#
+# On locations: Serco's markup pads jobLocation with a whole recruiting radius
+# -- the Fort Bragg posting lists 120 cities, from Alexandria VA to Buffalo NY,
+# and the first entry is an empty locality with a Washington DC postal code.
+# The adapter's max_locations guard (default 8) discards a list that long as
+# padding and recovers the real place from the title instead, which is where
+# Serco actually puts it. Left at the default deliberately: raising it here
+# would put a screenful of wrong cities on the board.
+[[source]]
+kind = "jsonld"
+name = "serco"
+sitemap = "https://careers.serco-na.com/sitemap.xml"
+employer = "Serco"
+max_urls = 120
+url_include = [
+  "H2F",
+  "Strength",
+  "Conditioning",
+  "Athletic-Train",
+  "Dietitian",
+  "Dietician",
+  "Physical-Therapist",
+  "Occupational-Therapist",
+  "Human-Performance",
+  "Cognitive-Performance",
+  "Exercise-Physiolog",
+]
 
 # [[source]]
 # kind = "jsonld"
@@ -149,38 +272,62 @@ search_terms = [
 # same-origin CSRF token and session cookie, behind Akamai bot detection --
 # not something a scheduled script should be built to fight through.
 #
-# The correct route is USAJOBS's own public Search API. It costs nothing and
-# takes a couple of minutes to register for, but it is a credential, so it
-# cannot live in a "zero-credential" file. The adapter is already built and
-# tested (tactical_jobs/sources/usajobs.py, tests/test_usajobs.py) and wired
-# into sources.example.toml with the block below -- to turn it on:
+# The correct route is USAJOBS's own public Search API, and as of 2026-08-28
+# it is REGISTERED AND ENABLED (see the block below). It costs nothing and
+# takes a couple of minutes to sign up for.
 #
-#   1. Register: https://developer.usajobs.gov/apirequest/ (free, uses the
-#      email you register with as the required User-Agent header)
-#   2. Add USAJOBS_API_KEY and USAJOBS_USER_AGENT as repository secrets
-#      (Settings -> Secrets and variables -> Actions)
-#   3. cp sources.keyless.toml sources.toml, uncomment the block below, and
-#      switch the nightly workflow's `config` input to sources.toml
+# The two secrets the nightly workflow already passes through must be set for
+# it to run in CI -- Settings -> Secrets and variables -> Actions:
+#     USAJOBS_API_KEY      the key from developer.usajobs.gov
+#     USAJOBS_USER_AGENT   the email the key was registered with
+# Until both exist, the source disables itself with a warning and the rest of
+# the run proceeds normally; it does not fail the build. Check a run's log for
+# "source 'federal' disabled" to tell "no secret" apart from "no results".
 #
-# This is the highest-value source not yet enabled: Army H2F, Navy and Air
+# This was the highest-value source not yet enabled: Army H2F, Navy and Air
 # Force human performance billets post here first and often nowhere else.
 # -----------------------------------------------------------------------------
 
-# [[source]]
-# kind = "usajobs"
-# name = "federal"
-# api_key = "${USAJOBS_API_KEY}"
-# user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
-# max_pages = 4
-# keywords = [
-#   "human performance",
-#   "strength and conditioning",
-#   "athletic trainer",
-#   "exercise physiologist",
-#   "performance dietitian",
-#   "cognitive performance",
-#   "holistic health and fitness",
-# ]
+# --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
+# ENABLED. The API key exists now, so this source is on.
+#
+# `optional = true` is what lets a credentialed source live in a file whose
+# whole promise is that it runs with no credentials. When USAJOBS_API_KEY is
+# unset the source is dropped with a warning and every other source still
+# runs; the "zero-credential" guarantee at the top of this file therefore
+# still holds exactly as written. Nothing else in the config gets that
+# leniency -- an unset variable anywhere else is still a hard startup error.
+#
+# Verified against the live API today with the real key: HTTP 200,
+# SearchResultCountAll=16 for "strength and conditioning" alone, returning
+# work that appears on NO other source in this file --
+#   HITT Instructor Level I ............... U.S. Marine Corps, Jacksonville NC
+#   WARR Technician, Health Promotion ..... U.S. Marine Corps, Camp Schwab JP
+#   Supervisory Performance Education Spec  U.S. Marine Corps, 29 Palms CA
+#   Fitness Specialist .................... Navy Installations Cmd, Norfolk VA
+#   Recreation Assistant (Fitness Center) . U.S. Space Force, Schriever AFB CO
+# That Marine Corps HITT and Navy MWR layer is the point: it is government-
+# civilian and NAF hiring that never reaches a contractor's ATS, which is
+# exactly the gap every other source in this file leaves open.
+[[source]]
+kind = "usajobs"
+name = "federal"
+optional = true
+api_key = "${USAJOBS_API_KEY}"
+user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
+max_pages = 4
+keywords = [
+  "human performance",
+  "strength and conditioning",
+  "athletic trainer",
+  "exercise physiologist",
+  "performance dietitian",
+  "cognitive performance",
+  "holistic health and fitness",
+  "tactical fitness",
+  "sports medicine",
+  "physical therapist",
+]
 
 
 # -----------------------------------------------------------------------------
@@ -207,6 +354,15 @@ search_terms = [
 # EXIST (both endpoints return not-found). They were guesses that sat in this
 # file as if they were configuration. Removed rather than kept as comments a
 # copy-paste could resurrect.
+#
+# RE-CHECKED 2026-08-28, and the specialist firms are still not reachable. Each
+# careers page was fetched and read: O2X, Magellan Federal, and Resolution Think
+# serve ordinary marketing pages with no JobPosting markup (only BreadcrumbList
+# and LocalBusiness nodes) and no link to any ATS host; HigherEchelon, Hyperion
+# Biotechnology, GAP Solutions, and EXOS all 404 at their published careers
+# paths. These are small firms running careers pages by hand, which is exactly
+# what a scraper cannot generalize over. Each needs its own verified route
+# before it can be a [[source]]. See "Specialist firms" in EMPLOYERS.md.
 
 # --- VERIFIED LIVE ----------------------------------------------------------
 # Fetched 2026-07-31: returned a well-formed feed of current postings (items

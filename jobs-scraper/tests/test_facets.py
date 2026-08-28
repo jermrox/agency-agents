@@ -9,6 +9,8 @@ jobs from the person who wanted them.
 from __future__ import annotations
 
 from tactical_jobs.facets import (
+    branch_labels,
+    branches_of,
     contingency_of,
     discipline_of,
     facets_for,
@@ -294,3 +296,99 @@ def test_sport_psychology_stays_with_cognitive_performance():
 def test_r2pc_routes_to_cognitive_performance_but_a_bare_title_does_not():
     assert discipline_of("Performance Expert (R2PC) - Fort Stewart, Georgia") == "cognitive-performance"
     assert discipline_of("Performance Expert - Fort Stewart, Georgia") == "human-performance"
+
+
+# --- service branch ---------------------------------------------------------
+#
+# Every case below is a real posting pulled from a live board on 2026-08-28,
+# not an invented string.
+
+
+def test_employer_that_names_a_service_wins_over_the_installation():
+    # USAJOBS posts this as Space Force at Schriever AFB -- a base the Space
+    # Force inherited under its old Air Force name. Reading both fields would
+    # file a Space Force job under Air Force.
+    assert branches_of(
+        "RECREATION ASSISTANT (FITNESS CENTER)",
+        "United States Space Force",
+        "Schriever AFB, Colorado",
+    ) == frozenset({"space-force"})
+
+
+def test_usajobs_organization_names_resolve_to_their_service():
+    cases = {
+        "U.S. Marine Corps": "marine-corps",
+        "Commander, Navy Installations Command": "navy",
+        "Department of the Army": "army",
+        "United States Space Force": "space-force",
+    }
+    for employer, expected in cases.items():
+        assert branches_of("Fitness Specialist", employer) == frozenset({expected}), employer
+
+
+def test_h2f_is_an_army_program_even_without_the_word_army():
+    # Serco's H2F postings never say "Army" in the title or location.
+    assert branches_of(
+        "H2Fit: Strength & Conditioning Coach - Fort Bragg, NC",
+        "Serco USA",
+        "Fort Bragg, North Carolina, USA",
+    ) == frozenset({"army"})
+
+
+def test_hitt_is_the_marine_corps_tell():
+    assert "marine-corps" in branches_of("HITT INSTRUCTOR-LEVEL I, NF-0189-02", "", "")
+
+
+def test_a_multi_service_requisition_reports_every_branch_it_serves():
+    # One real GDIT req spanning an Army post, an Air Force field, and a joint
+    # base. Collapsing this to a single branch would be wrong either way.
+    found = branches_of(
+        "Strength and Conditioning Specialists",
+        "General Dynamics Information Technology",
+        "USA NC Fort Bragg; USA CA San Diego; USA KY Fort Campbell; "
+        "USA FL Hurlburt Field; USA WA Joint Base Lewis-McChord",
+    )
+    assert found == frozenset({"army", "air-force", "joint"})
+
+
+def test_sof_requisition_across_three_services():
+    assert branches_of(
+        "Psychometrist",
+        "General Dynamics Information Technology",
+        "USA NC Fort Bragg; USA CA Coronado; USA NC Camp Lejeune",
+    ) == frozenset({"army", "navy", "marine-corps"})
+
+
+def test_fort_means_army_and_afb_means_air_force():
+    assert branches_of("Athletic Trainer", "", "Fort Campbell, KY") == frozenset({"army"})
+    assert branches_of("Athletic Trainer", "", "MacDill AFB, FL") == frozenset({"air-force"})
+
+
+def test_potff_is_joint_not_a_single_service():
+    assert "joint" in branches_of("Physical Therapist, POTFF", "", "")
+
+
+def test_a_collegiate_role_has_no_branch_at_all():
+    # The point of an empty set: the board treats unknown as "always show",
+    # so guessing a branch here would hide the job from every filter.
+    assert branches_of("Head Strength Coach", "State University", "Columbus, Ohio") == frozenset()
+
+
+def test_description_is_only_consulted_when_the_strong_fields_are_silent():
+    # A Serco H2F posting mentions the Air Force once, deep in boilerplate.
+    # That must not add air-force to an Army job.
+    army = branches_of(
+        "H2Fit: Strength & Conditioning Coach - Fort Sill, OK",
+        "Serco USA",
+        "Fort Sill, Oklahoma, USA",
+        "Serco supports the Army, Navy, Air Force and Marine Corps worldwide.",
+    )
+    assert army == frozenset({"army"})
+    # With nothing in title/employer/location, the description is all there is.
+    assert branches_of("Athletic Trainer", "", "", "Embedded with AFSOC aircrew.") == frozenset(
+        {"air-force"}
+    )
+
+
+def test_branch_labels_come_back_in_canonical_order():
+    assert branch_labels({"joint", "army", "navy"}) == ["Army", "Navy", "Joint / DoD-wide"]

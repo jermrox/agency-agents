@@ -311,6 +311,14 @@
 
     <div class="mm-group">
       <div class="mm-legend">
+        Service branch
+        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each.</span>
+      </div>
+      <div class="mm-chips" id="mm-f-branch"></div>
+    </div>
+
+    <div class="mm-group">
+      <div class="mm-legend">
         Location
         <span class="mm-hint">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS.</span>
       </div>
@@ -387,6 +395,7 @@
   var els = {
     sub: document.getElementById("mm-sub"),
     discipline: document.getElementById("mm-f-discipline"),
+    branch: document.getElementById("mm-f-branch"),
     location: document.getElementById("mm-f-location"),
     q: document.getElementById("mm-q"),
     salary: document.getElementById("mm-salary"),
@@ -403,9 +412,14 @@
 
   var JOBS = [];
   var DEFS = {};
-  var selected = { discipline: new Set(), location: new Set() };
+  var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
 
   var LOCATION_LABELS = { remote: "Remote", conus: "CONUS", oconus: "OCONUS" };
+  var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint"];
+  var BRANCH_LABELS = {
+    "army": "Army", "navy": "Navy", "air-force": "Air Force", "marine-corps": "Marine Corps",
+    "space-force": "Space Force", "coast-guard": "Coast Guard", "joint": "Joint / DoD-wide"
+  };
   var CONFIDENCE_RANK = { verified: 0, listed: 1, aggregator: 2 };
   var CONFIDENCE_LABELS = { verified: "Verified live", listed: "Listed by employer", aggregator: "Aggregator lead" };
 
@@ -427,6 +441,12 @@
 
     if (ignore !== "discipline" && selected.discipline.size) {
       if (!selected.discipline.has(f.discipline || "other")) return false;
+    }
+    if (ignore !== "branch" && selected.branch.size) {
+      var bs = f.branches || [];
+      // A posting whose branch could not be determined stays visible. Hiding
+      // it would punish the candidate for a gap in the source data.
+      if (bs.length && !bs.some(function (b) { return selected.branch.has(b); })) return false;
     }
     if (ignore !== "location" && selected.location.size) {
       var classes = f.location_classes || [];
@@ -456,7 +476,7 @@
         if (group === "discipline") {
           if ((facetsOf(job).discipline || "other") !== opt.value) return false;
         } else {
-          var cs = facetsOf(job).location_classes || [];
+          var cs = (group === "branch" ? facetsOf(job).branches : facetsOf(job).location_classes) || [];
           if (cs.length && cs.indexOf(opt.value) === -1) return false;
         }
         return matches(job, group);
@@ -501,6 +521,15 @@
       });
   }
 
+  function branchOptions() {
+    var present = {};
+    JOBS.forEach(function (job) {
+      (facetsOf(job).branches || []).forEach(function (b) { present[b] = true; });
+    });
+    return BRANCH_ORDER.filter(function (b) { return present[b]; })
+      .map(function (b) { return { value: b, label: BRANCH_LABELS[b] }; });
+  }
+
   function locationOptions() {
     var present = {};
     JOBS.forEach(function (job) {
@@ -516,6 +545,9 @@
       var job = JOBS.find(function (j) { return (facetsOf(j).discipline || "other") === slug; });
       var label = job ? facetsOf(job).discipline_label : slug;
       pills.push({ label: label, onRemove: function () { selected.discipline.delete(slug); render(); } });
+    });
+    selected.branch.forEach(function (b) {
+      pills.push({ label: BRANCH_LABELS[b] || b, onRemove: function () { selected.branch.delete(b); render(); } });
     });
     selected.location.forEach(function (loc) {
       pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
@@ -614,6 +646,7 @@
 
   function render() {
     renderChips(els.discipline, "discipline", disciplineOptions());
+    renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
     renderActiveFilters();
 
@@ -634,7 +667,7 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      var hasFilters = selected.discipline.size || selected.location.size || els.hideContingent.checked ||
+      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size || els.hideContingent.checked ||
         (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
       empty.innerHTML = ICONS.empty +
         "<span>" + (JOBS.length
@@ -675,6 +708,7 @@
 
   function clearAll() {
     selected.discipline.clear();
+    selected.branch.clear();
     selected.location.clear();
     els.q.value = "";
     els.salary.value = "0";

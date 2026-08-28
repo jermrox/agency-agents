@@ -9,6 +9,7 @@ silently posting nowhere.
 
 from __future__ import annotations
 
+import logging
 import os
 import re
 import tomllib
@@ -17,6 +18,8 @@ from pathlib import Path
 from typing import Any
 
 from .classify import Thresholds
+
+log = logging.getLogger(__name__)
 
 _ENV_REF = re.compile(r"\$\{([A-Z0-9_]+)\}")
 
@@ -112,14 +115,33 @@ class Config:
             raise ConfigError(f"config file not found: {path}")
         with path.open("rb") as handle:
             raw = tomllib.load(handle)
-        data = _expand(raw)
+        raw_sources = raw.get("source", [])
+        data = _expand({k: v for k, v in raw.items() if k != "source"})
 
         sources: list[SourceConfig] = []
-        for index, entry in enumerate(data.get("source", [])):
+        for index, entry in enumerate(raw_sources):
             if "kind" not in entry:
                 raise ConfigError(f"[[source]] #{index + 1} is missing 'kind'")
-            options = {k: v for k, v in entry.items() if k not in {"kind", "name"}}
             name = entry.get("name") or f"{entry['kind']}:{index + 1}"
+            # Sources expand one at a time so that a source marked `optional`
+            # can be dropped for a missing credential without taking the whole
+            # config with it. That is what lets ONE committed config serve both
+            # an operator who has a USAJOBS key and one who does not: without
+            # it, adding any credentialed source to sources.keyless.toml would
+            # make every keyless run fail at startup. Unset variables stay
+            # fatal everywhere else, which is the behaviour that matters --
+            # a publisher silently posting nowhere is the bug this guards.
+            optional = bool(entry.get("optional", False))
+            try:
+                entry = _expand(entry, f"source.{name}")
+            except ConfigError as exc:
+                if not optional:
+                    raise
+                log.warning("source '%s' disabled: %s", name, exc)
+                continue
+            options = {
+                k: v for k, v in entry.items() if k not in {"kind", "name", "optional"}
+            }
             sources.append(SourceConfig(kind=entry["kind"], name=name, options=options))
 
         publishers: list[PublisherConfig] = []

@@ -47,6 +47,22 @@ These won the contracts. They do the hiring.
 | **Hyperion Biotechnology** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
 | **Resolution Think** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
 | **The Geneva Foundation** | Army H2F (Team Serco) | subcontract | Jan 2025 | Current | [^serco] |
+| **GDIT** (General Dynamics IT) | SOF / installation human performance | — | — | **Hiring now** | live board, 2026-08-28 |
+
+> **GDIT was missing from this table until 2026-08-28**, and the omission was
+> costly. This file was built from contract-award research, which is good at
+> finding who *won* a named program and blind to an employer that simply staffs
+> a lot of this work without a headline award attached to its name. GDIT is the
+> latter. A single search of its live board returned open, two-day-old
+> requisitions for strength and conditioning specialists, a physical therapist,
+> a certified athletic trainer, a human performance advisor, a performance
+> dietitian, and an occupational therapist — Fort Bragg, Fort Campbell,
+> Hurlburt Field. That is a wider spread of disciplines than any other single
+> employer here.
+>
+> The lesson generalizes: **award research and board checks find different
+> employers, and this project needs both.** Anything discovered only by reading
+> a live board belongs in this table too.
 
 > **Read the dates.** An earlier version of this file listed these awards without
 > them, which implied all three were live contracts. Opening the primary sources
@@ -85,6 +101,23 @@ Human performance is their whole business, so nearly every posting is relevant.
 | **PSI** | Places athletic trainers with US military units (`athletictrainerjob.com`) |
 | **Sword Performance** | Tactical performance |
 | **Magellan Federal** | Long-running military HP and resilience staffing |
+
+**None of these is scrapable yet, checked 2026-08-28.** Every one of these
+careers pages was fetched and inspected. O2X, Magellan Federal, and Resolution
+Think all return a normal marketing page with no JobPosting markup — the only
+schema.org nodes present are `BreadcrumbList` and `LocalBusiness` — and none
+links out to a recognizable ATS host. HigherEchelon, Hyperion Biotechnology,
+GAP Solutions, and EXOS all 404 at their published careers paths.
+
+That is a finding, not a gap to paper over: **being a well-known name in this
+niche does not make an employer reachable.** The specialist firms are small
+enough to run careers pages by hand, which is precisely what defeats a scraper.
+Reaching them needs per-employer work — finding a real ATS, or an `agencyboard`
+adapter aimed at each page's own markup — and until that work is done and
+verified live, none of them belongs in a `[[source]]` block. The one exception
+already proved the rule: KBR's dedicated POTFF page at `careers.kbr.com/us/en/potff2`
+resolves but carries only `WebPage` markup, so KBR is reached through its
+Workday tenant instead.
 
 ## Federal, direct
 
