@@ -4,50 +4,50 @@
 
 ## Headline
 
-- **18 open jobs** from **2 employers**.
-- Posted between **2026-07-02** and **2026-08-27**.
+- **19 open jobs** from **2 employers**.
+- Posted between **2026-07-02** and **2026-08-28**.
 - **$84,000 median** annualized pay across the 3 postings that publish one -- $73,391 to $87,975 covers the middle half.
-- **11% remote-friendly** (2 jobs).
-- 4 of 22 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 18, Special Operations 15, Training Pipeline 2.
+- **16% remote-friendly** (3 jobs).
+- 4 of 23 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 19, Special Operations 16, Training Pipeline 2.
 
 ## Month over month
 
-Postings are **up +2** in 2026-08 (8 to 10), 25% against 2026-07.
+Postings are **up +3** in 2026-08 (8 to 11), 38% against 2026-07.
 
 ```
-2026-07     8  ######################
-2026-08    10  ############################
+2026-07     8  ####################
+2026-08    11  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- KBR: 0 to 17
+- KBR: 0 to 18
 - Serco: 0 to 1
 
 **Credentials appearing more often:**
 
-- CSCS: 0 to 13
-- ATC: 0 to 5
+- CSCS: 0 to 14
+- ATC: 0 to 6
 - RD: 0 to 5
 
 ## Who is hiring
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| KBR | 17 | $87,975 | Strength & Conditioning, Performance Nutrition |
+| KBR | 18 | $87,975 | Strength & Conditioning, Sports Medicine |
 | Serco | 1 | $62,783 | Program Leadership, Strength & Conditioning |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 15 | 100% |
-| Performance Nutrition | 6 | 40% |
-| Sports Medicine | 6 | 40% |
-| Cognitive Performance | 3 | 20% |
-| Program Leadership | 1 | 7% |
-| Research & Analytics | 1 | 7% |
+| Strength & Conditioning | 16 | 100% |
+| Sports Medicine | 7 | 44% |
+| Performance Nutrition | 6 | 38% |
+| Cognitive Performance | 3 | 19% |
+| Program Leadership | 1 | 6% |
+| Research & Analytics | 1 | 6% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -56,13 +56,13 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 13 | 93% |
-| ATC | 5 | 36% |
-| RD | 5 | 36% |
+| CSCS | 14 | 93% |
+| ATC | 6 | 40% |
+| RD | 5 | 33% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (9), Top Secret (6)
+**Clearances requested:** Secret (10), Top Secret (6)
 
 ## What it pays
 
@@ -82,13 +82,13 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** NC (5), FL (4), WA (2), CA (1), GA (1), KY (1), NM (1), TX (1)
+**States:** NC (5), FL (4), NM (2), WA (2), CA (1), GA (1), KY (1), TX (1)
 
 | Installation | Jobs |
 |---|---|
 | Fort Bragg | 5 |
+| Cannon AFB | 2 |
 | MacDill AFB | 2 |
-| Cannon AFB | 1 |
 | Coronado | 1 |
 | Fort Campbell | 1 |
 | Fort Stewart | 1 |
@@ -96,7 +96,7 @@ annual contractor bands are not otherwise comparable.
 | JBLM | 1 |
 | Joint Base Langley-Eustis | 1 |
 
-**Branches and services:** Joint (14), Army (2), Air Force (1)
+**Branches and services:** Joint (15), Army (2), Air Force (1)
 
 ## Most common titles
 
