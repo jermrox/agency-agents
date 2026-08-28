@@ -214,15 +214,44 @@ def test_job_category_and_schedule_are_folded_in(monkeypatch):
     assert "Offering type: Permanent." in posting.description
 
 
-def test_telework_eligible_true_marks_the_posting_remote(monkeypatch):
+def test_remote_indicator_marks_the_posting_remote(monkeypatch):
     monkeypatch.setattr(
         "tactical_jobs.sources.usajobs.fetch_json",
         lambda *a, **k: _page(
-            [_item(descriptor={"UserArea": {"Details": {"TeleworkEligible": True}}})]
+            [_item(descriptor={"UserArea": {"Details": {"RemoteIndicator": True}}})]
         ),
     )
     posting = next(iter(_source(keywords=["x"]).fetch()))
     assert posting.remote is True
+
+
+def test_telework_eligible_alone_does_not_mark_a_posting_remote(monkeypatch):
+    """TeleworkEligible and RemoteIndicator are different claims.
+
+    TeleworkEligible means the postholder may be approved for occasional
+    telework from a job that is otherwise on the installation. Measured on 25
+    live federal social-worker announcements, it was true on 10 of them and
+    RemoteIndicator on none. Conflating the two put a Social Worker at Cannon
+    AFB and a SOF human performance role at MacDill in front of candidates
+    filtering for work from home.
+    """
+    monkeypatch.setattr(
+        "tactical_jobs.sources.usajobs.fetch_json",
+        lambda *a, **k: _page(
+            [
+                _item(
+                    descriptor={
+                        "PositionLocationDisplay": "Cannon AFB, New Mexico",
+                        "UserArea": {
+                            "Details": {"TeleworkEligible": True, "RemoteIndicator": False}
+                        },
+                    }
+                )
+            ]
+        ),
+    )
+    posting = next(iter(_source(keywords=["x"]).fetch()))
+    assert posting.remote is False
 
 
 def test_missing_remuneration_leaves_compensation_none(monkeypatch):

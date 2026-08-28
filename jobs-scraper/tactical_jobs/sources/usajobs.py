@@ -172,7 +172,18 @@ class USAJobsSource(Source):
             location=location,
             description=description,
             posted_at=parse_timestamp(descriptor.get("PublicationStartDate")),
-            remote=looks_remote(location, details.get("TeleworkEligible") and "telework"),
+            # RemoteIndicator, NOT TeleworkEligible. USAJOBS publishes both and
+            # they mean very different things: TeleworkEligible says the
+            # postholder may be approved for occasional telework -- a day a week
+            # from a job that is otherwise on the installation -- while
+            # RemoteIndicator is the actual "this position is remote" flag.
+            # Measured on 25 live federal social-worker announcements:
+            # TeleworkEligible was true on 10, RemoteIndicator on none.
+            # Reading the wrong one put a Social Worker at Cannon AFB, a SOF
+            # human performance role at MacDill and a health system specialist
+            # at Camp Murray under the board's Remote filter -- on-base jobs
+            # offered to someone who filtered for work from home.
+            remote=looks_remote(location, details.get("RemoteIndicator") and "remote"),
             department=department,
             compensation=compensation,
             raw=descriptor,

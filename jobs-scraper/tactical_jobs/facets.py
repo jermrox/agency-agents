@@ -178,7 +178,13 @@ _OCONUS_RE = re.compile(
     r"singapore|australia|new\s+zealand|"
     r"kuwait|qatar|bahrain|\bUAE\b|united\s+arab\s+emirates|saudi|jordan|"
     r"iraq|afghanistan|djibouti|kenya|somalia|"
-    r"colombia|honduras|panama|"
+    # Country NAMES are only safe here when they are not also American place
+    # names, which rules out most of Latin America: Peru, Lima, Panama City and
+    # Cairo are all US towns. Only distinctive or multi-word ones go in.
+    # "panama" needs the guard because Panama City and Panama City Beach are
+    # both in Florida, and one of them is on this board.
+    r"colombia|honduras|el\s+salvador|guatemala|costa\s+rica|belize|"
+    r"panama(?!\s+city)|"
     r"guam|puerto\s+rico|virgin\s+islands|american\s+samoa|"
     r"alaska|hawaii|"
     r"\bRAF\s+\w+|\bAPO\b|\bFPO\b|\bAE\b\s*\d|"
@@ -191,14 +197,35 @@ _OCONUS_RE = re.compile(
     re.I,
 )
 
-# Bare ISO-2 codes in a delimited list ("JP; IT; DE; KY, US"). DE collides
+# Bare country codes in a delimited list ("JP; IT; DE; KY, US"). DE collides
 # with Delaware; a US state code is always written "DE, US" so the negative
 # lookahead resolves it.
+#
+# Both ISO-2 and ISO-3 are needed. Workday tenants write ISO-3: GDIT's Korea
+# postings arrive as "Camp Casey, KOR", which matched nothing here and left
+# the posting unclassified -- and an unclassified location used to show under
+# every location chip, including Remote. No ISO-3 code below collides with a
+# US state abbreviation, so no lookahead is needed for them.
 _OCONUS_COUNTRY_CODE_RE = re.compile(
     r"(?:^|[;,]\s*|\s)"
     r"(?:JP|KR|DE|IT|GB|ES|PT|BE|NL|PL|RO|BG|GR|TR|NO|QA|KW|BH|AE|SA|JO|IQ|"
-    r"AF|DJ|KE|AU|NZ|PH|TH|SG|CO|HN|PA)"
+    r"AF|DJ|KE|AU|NZ|PH|TH|SG|HN)"
     r"(?!\s*,\s*(?:US|USA)\b)(?![A-Za-z])"
+)
+# CO (Colombia) and PA (Panama) are deliberately absent above. Both are US
+# state abbreviations first -- "Colorado Springs, CO" and "Indiana, PA" were
+# being published as OCONUS -- and the ", US" lookahead does not save them,
+# because a bare "City, ST" string is how nearly every US location on this
+# board is written. Colombia and Panama are reached by name instead. DE stays
+# only because Delaware is always written "DE, US" in the one feed that uses
+# the delimited form.
+
+_OCONUS_COUNTRY_CODE3_RE = re.compile(
+    r"(?:^|[;,]\s*|\s)"
+    r"(?:JPN|KOR|DEU|ITA|GBR|ESP|PRT|BEL|NLD|POL|ROU|BGR|GRC|TUR|NOR|QAT|"
+    r"KWT|BHR|ARE|SAU|JOR|IRQ|AFG|DJI|KEN|AUS|NZL|PHL|THA|SGP|COL|HND|PAN|"
+    r"SLV|GTM|CRI|PER|CHL|BRA|ARG|EGY|ISR|OMN|CYP|GRL|ISL)"
+    r"(?![A-Za-z])"
 )
 
 _REMOTE_RE = re.compile(
@@ -219,7 +246,11 @@ def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]
 
     if remote_flag or (_REMOTE_RE.search(text) and not _REMOTE_VETO_RE.search(text)):
         found.add("remote")
-    if _OCONUS_RE.search(text) or _OCONUS_COUNTRY_CODE_RE.search(text):
+    if (
+        _OCONUS_RE.search(text)
+        or _OCONUS_COUNTRY_CODE_RE.search(text)
+        or _OCONUS_COUNTRY_CODE3_RE.search(text)
+    ):
         found.add("oconus")
     if _CONUS_STATE_RE.search(text) or _CONUS_STATE_NAMES_RE.search(text):
         found.add("conus")

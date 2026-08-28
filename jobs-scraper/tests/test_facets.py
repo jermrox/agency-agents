@@ -418,3 +418,42 @@ def test_real_army_posts_still_resolve():
         "Fort Belvoir, VA",
     ):
         assert branches_of("Athletic Trainer", "", post) == frozenset({"army"}), post
+
+
+def test_iso3_country_codes_are_oconus():
+    # GDIT's Workday tenant writes ISO-3: "Camp Casey, KOR". That matched
+    # nothing, and an unclassified location used to show under every location
+    # chip on the board -- including Remote.
+    assert location_classes("Camp Casey, KOR") == frozenset({"oconus"})
+    assert location_classes("Camp Arifjan, KWT") == frozenset({"oconus"})
+    assert location_classes("Vicenza, ITA") == frozenset({"oconus"})
+
+
+def test_a_us_state_code_is_never_read_as_a_country():
+    # CO and PA are Colombia and Panama in ISO-2 and Colorado and Pennsylvania
+    # on nearly every posting this board sees. "Colorado Springs, CO" and
+    # "Indiana, PA" were being published as OCONUS.
+    for loc in (
+        "Colorado Springs, CO",
+        "Denver, CO",
+        "Philadelphia, PA",
+        "Indiana, PA",
+        "DE, US",
+    ):
+        assert location_classes(loc) == frozenset({"conus"}), loc
+
+
+def test_the_countries_behind_those_codes_are_still_reached_by_name():
+    assert location_classes("Bogota, Colombia") == frozenset({"oconus"})
+    assert location_classes("Panama City, Panama") == frozenset({"oconus"})
+    assert location_classes("San Salvador, El Salvador") == frozenset({"oconus"})
+    assert location_classes("Soto Cano, Honduras") == frozenset({"oconus"})
+
+
+def test_an_american_town_named_after_a_country_stays_conus():
+    # Panama City and Panama City Beach are both in Florida, and one of them
+    # is on this board.
+    assert location_classes("Panama City Beach, Florida") == frozenset({"conus"})
+    assert location_classes("Panama City, Florida") == frozenset({"conus"})
+    assert location_classes("Peru, Indiana") == frozenset({"conus"})
+    assert location_classes("Lima, Ohio") == frozenset({"conus"})

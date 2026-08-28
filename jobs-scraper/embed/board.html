@@ -458,7 +458,16 @@
     }
     if (ignore !== "location" && selected.location.size) {
       var classes = f.location_classes || [];
-      if (classes.length && !classes.some(function (c) { return selected.location.has(c); })) return false;
+      if (classes.length) {
+        if (!classes.some(function (c) { return selected.location.has(c); })) return false;
+      } else if (!selected.location.has("conus") && !selected.location.has("oconus")) {
+        // An unplaced posting is admitted by the geography chips but never by
+        // Remote. "We could not read the location" honestly means it could be
+        // anywhere on a map; it does not mean the job might be work-from-home.
+        // Remote is the one filter people use to rule jobs OUT, so a false
+        // positive there costs an application.
+        return false;
+      }
     }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
@@ -489,7 +498,8 @@
           else if (bs.indexOf(opt.value) === -1) return false;
         } else {
           var cs = facetsOf(job).location_classes || [];
-          if (cs.length && cs.indexOf(opt.value) === -1) return false;
+          if (cs.length) { if (cs.indexOf(opt.value) === -1) return false; }
+          else if (opt.value === "remote") return false;
         }
         return matches(job, group);
       }).length;
