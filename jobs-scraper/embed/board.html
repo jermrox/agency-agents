@@ -312,7 +312,7 @@
     <div class="mm-group">
       <div class="mm-legend">
         Service branch
-        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each.</span>
+        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</span>
       </div>
       <div class="mm-chips" id="mm-f-branch"></div>
     </div>
@@ -415,10 +415,12 @@
   var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
 
   var LOCATION_LABELS = { remote: "Remote", conus: "CONUS", oconus: "OCONUS" };
-  var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint"];
+  var UNATTRIBUTED = "none";
+  var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
   var BRANCH_LABELS = {
     "army": "Army", "navy": "Navy", "air-force": "Air Force", "marine-corps": "Marine Corps",
-    "space-force": "Space Force", "coast-guard": "Coast Guard", "joint": "Joint / DoD-wide"
+    "space-force": "Space Force", "coast-guard": "Coast Guard", "joint": "Joint / DoD-wide",
+    "none": "Not service-specific"
   };
   var CONFIDENCE_RANK = { verified: 0, listed: 1, aggregator: 2 };
   var CONFIDENCE_LABELS = { verified: "Verified live", listed: "Listed by employer", aggregator: "Aggregator lead" };
@@ -444,9 +446,15 @@
     }
     if (ignore !== "branch" && selected.branch.size) {
       var bs = f.branches || [];
-      // A posting whose branch could not be determined stays visible. Hiding
-      // it would punish the candidate for a gap in the source data.
-      if (bs.length && !bs.some(function (b) { return selected.branch.has(b); })) return false;
+      // Branch does NOT follow the "unknown matches everything" rule that
+      // location uses, because here an empty set usually is not missing data --
+      // a CBP officer or Bureau of Prisons role genuinely has no service
+      // branch. Letting those float into every chip put CBP Officers under
+      // "Marine Corps" and inflated every count. They get their own bucket.
+      var hit = bs.length
+        ? bs.some(function (b) { return selected.branch.has(b); })
+        : selected.branch.has(UNATTRIBUTED);
+      if (!hit) return false;
     }
     if (ignore !== "location" && selected.location.size) {
       var classes = f.location_classes || [];
@@ -475,8 +483,12 @@
       var n = JOBS.filter(function (job) {
         if (group === "discipline") {
           if ((facetsOf(job).discipline || "other") !== opt.value) return false;
+        } else if (group === "branch") {
+          var bs = facetsOf(job).branches || [];
+          if (opt.value === UNATTRIBUTED) { if (bs.length) return false; }
+          else if (bs.indexOf(opt.value) === -1) return false;
         } else {
-          var cs = (group === "branch" ? facetsOf(job).branches : facetsOf(job).location_classes) || [];
+          var cs = facetsOf(job).location_classes || [];
           if (cs.length && cs.indexOf(opt.value) === -1) return false;
         }
         return matches(job, group);
@@ -524,7 +536,9 @@
   function branchOptions() {
     var present = {};
     JOBS.forEach(function (job) {
-      (facetsOf(job).branches || []).forEach(function (b) { present[b] = true; });
+      var bs = facetsOf(job).branches || [];
+      if (!bs.length) present[UNATTRIBUTED] = true;
+      bs.forEach(function (b) { present[b] = true; });
     });
     return BRANCH_ORDER.filter(function (b) { return present[b]; })
       .map(function (b) { return { value: b, label: BRANCH_LABELS[b] }; });
