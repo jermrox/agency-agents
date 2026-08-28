@@ -100,6 +100,11 @@
       margin-bottom: .85rem !important; position: sticky; top: 0; z-index: 5;
     }
     @media (max-height: 700px) { #mm-jobs .mm-filters { position: static; } }
+    /* A sticky panel that stays pinned for the entire scroll through a long
+       result list eats most of a phone screen. Desktop has room to spare;
+       mobile needs the vertical space for cards, so it drops to normal flow
+       there and relies on the visible active-filter pills instead. */
+    @media (max-width: 640px) { #mm-jobs .mm-filters { position: static; } }
 
     #mm-jobs .mm-group + .mm-group { margin-top: .9rem !important; padding-top: .9rem !important; border-top: 1px solid var(--mm-border); }
     #mm-jobs .mm-legend {
@@ -556,6 +561,17 @@
     if (meta.length) main.push('<div class="mm-meta">' + meta.join("") + "</div>");
 
     var note = job.notes || job.description || "";
+    if (note && job.title) {
+      // Some employers' own posting templates literally open with "Title: X"
+      // repeating the title verbatim -- pure duplication of the h3 right
+      // above it. Strip only that exact echo, never a generic prefix: the
+      // full text is untouched everywhere except this one display trim.
+      var titleEcho = new RegExp(
+        "^Title:\\s*" + job.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*",
+        "i"
+      );
+      note = note.replace(titleEcho, "");
+    }
     if (note) main.push('<p class="mm-notes">' + esc(note.slice(0, 260)) + (note.length > 260 ? "…" : "") + "</p>");
 
     var badges = [];
