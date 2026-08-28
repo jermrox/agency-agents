@@ -82,24 +82,37 @@ class USAJobsSource(Source):
 
         details = (descriptor.get("UserArea") or {}).get("Details") or {}
 
-        # Capture every narrative block USAJOBS exposes, not just the summary.
-        # Education, Requirements, and Evaluations are where the certification,
-        # degree, and clearance language actually lives -- dropping them would
-        # blind the enrichment layer to most of what it exists to extract.
+        # Capture the narrative blocks that describe the JOB. Education and
+        # Requirements are where the certification, degree, and clearance
+        # language actually lives -- dropping them would blind the enrichment
+        # layer to most of what it exists to extract.
         def _join(value: Any) -> str:
             if isinstance(value, list):
                 return " ".join(str(item) for item in value if item)
             return str(value) if value else ""
 
+        # Evaluations, Benefits, OtherInformation and AgencyMarketingStatement
+        # are deliberately NOT here. They are HR and recruiting boilerplate --
+        # identical across every posting an agency publishes, and about applying
+        # rather than about the work -- and including them was putting 67
+        # ordinary VA hospital jobs on a tactical human performance board.
+        #
+        # Measured on a live VA physical therapist posting: MajorDuties,
+        # Education and Requirements contain the word "military" zero times.
+        # All three occurrences sit in the blocks above -- the "VA for Vets"
+        # career-search blurb in Evaluations, an annual-leave accrual rule in
+        # OtherInformation, and the Lincoln mission statement in
+        # AgencyMarketingStatement. That incidental vocabulary was enough to
+        # clear the domain axis for a clinic job in Cody, Wyoming.
+        #
+        # Dropping them costs nothing a candidate would miss: the same text is
+        # on the posting itself, one click away, and it never carried a
+        # certification, a clearance, or a duty.
         narrative_keys = (
             "JobSummary",
             "MajorDuties",
             "Education",
             "Requirements",
-            "Evaluations",
-            "Benefits",
-            "OtherInformation",
-            "AgencyMarketingStatement",
         )
         summary_parts = [descriptor.get("QualificationSummary") or ""]
         summary_parts.extend(_join(details.get(key)) for key in narrative_keys)

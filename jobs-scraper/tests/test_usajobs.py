@@ -288,3 +288,53 @@ def test_empty_result_set_yields_nothing(monkeypatch):
         lambda *a, **k: _page([]),
     )
     assert list(_source(keywords=["obscure query"]).fetch()) == []
+
+
+def test_hr_boilerplate_blocks_are_kept_out_of_the_description(monkeypatch):
+    # Measured against a live VA physical therapist posting: MajorDuties,
+    # Education and Requirements never say "military", while Evaluations,
+    # OtherInformation and AgencyMarketingStatement all do -- in a careers
+    # blurb, a leave-accrual rule, and a mission statement respectively.
+    # That incidental vocabulary was clearing the domain axis and putting
+    # ordinary VA clinic jobs on a tactical human performance board.
+    monkeypatch.setattr(
+        "tactical_jobs.sources.usajobs.fetch_json",
+        lambda *a, **k: _page(
+            [
+                _item(
+                    descriptor={
+                        "QualificationSummary": "Provides outpatient physical therapy.",
+                        "UserArea": {
+                            "Details": {
+                                "MajorDuties": ["Evaluates and treats patients."],
+                                "Education": "DPT required.",
+                                "Requirements": "State licensure required.",
+                                "Evaluations": (
+                                    "Please visit the VA for Vets site for career-search "
+                                    "tools and reintegration support for military service members."
+                                ),
+                                "Benefits": "Federal employees earn annual leave.",
+                                "OtherInformation": (
+                                    "Applicants may qualify for credit based on military "
+                                    "service experience."
+                                ),
+                                "AgencyMarketingStatement": (
+                                    "To care for those who have served in our nation's military."
+                                ),
+                            }
+                        },
+                    }
+                )
+            ]
+        ),
+    )
+    posting = next(iter(_source(keywords=["x"]).fetch()))
+    # The job itself survives in full.
+    assert "outpatient physical therapy" in posting.description
+    assert "Evaluates and treats patients" in posting.description
+    assert "DPT required" in posting.description
+    assert "State licensure required" in posting.description
+    # The boilerplate, and the stray domain vocabulary it carries, does not.
+    assert "military" not in posting.description.lower()
+    assert "VA for Vets" not in posting.description
+    assert "annual leave" not in posting.description
