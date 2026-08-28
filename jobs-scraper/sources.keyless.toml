@@ -43,7 +43,16 @@ liveness_timeout = 20
 [thresholds]
 publish = 14.0
 review = 8.0
-min_domain = 1.5
+# Raised from 1.5 on 2026-08-28, when USAJOBS went live. Federal health-care
+# announcements list "graduate of military physical therapy assistant programs"
+# among the qualifying credentials, and at 1.5 that one sentence about
+# schooling was enough to put 21 outpatient VA clinic jobs -- Toms River,
+# Panama City Beach, Montgomery -- on a tactical human performance board.
+# See SERVICE_CONTEXT_WEIGHT in classify.py for the other half of the fix:
+# a posting whose service branch can be identified from its installation earns
+# domain credit, so Fort Gordon and Camp Lejeune clear this comfortably while
+# a civilian clinic does not.
+min_domain = 3.5
 min_discipline = 3.0
 
 

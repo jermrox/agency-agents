@@ -43,7 +43,7 @@ auto_publish = true
 [thresholds]
 publish = 14.0        # at/above this, good enough to publish
 review = 8.0          # at/above this, worth a human look
-min_domain = 1.5      # floor on the tactical axis
+min_domain = 3.5      # floor on the tactical axis
 min_discipline = 3.0  # floor on the human-performance axis
 
 
