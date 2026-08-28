@@ -269,7 +269,17 @@ _BRANCH_RES: tuple[tuple[str, re.Pattern[str]], ...] = (
             # "Fort X" is an Army post; the Air Force and Navy do not use it.
             # Fort Meade and Fort Belvoir are joint tenants, but the Army is
             # the host in both cases, so this stays correct there too.
-            r"\bFort\s+[A-Z][a-z]+|\bFt\.?\s+[A-Z][a-z]+|"
+            #
+            # The lookahead is not optional. A good few American cities are
+            # named Fort-something and have no post in them at all, and a VA
+            # hospital in Fort Lauderdale was being labelled Army because of
+            # it. These are the populous ones, which is where the health-care
+            # postings that reach this board actually are.
+            r"\bFort\s+(?!Worth|Lauderdale|Collins|Myers|Wayne|Smith|Pierce|"
+            r"Dodge|Walton|Payne|Mill|Madison|Scott|Atkinson|Thomas|Washington)"
+            r"[A-Za-z]+|"
+            r"\bFt\.?\s+(?!Worth|Lauderdale|Collins|Myers|Wayne|Smith|Pierce)"
+            r"[A-Za-z]+|"
             r"\bSchofield\s+Barracks\b|\bCamp\s+Casey\b|\bCamp\s+Humphreys\b|"
             r"\bGrafenwoehr\b|\bVilseck\b|\bHohenfels\b|\bAnsbach\b",
             re.I,

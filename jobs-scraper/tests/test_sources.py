@@ -42,8 +42,30 @@ USAJOBS_ITEM = {
                     "Conduct movement screens.",
                 ],
                 "Education": "Master's degree in Exercise Science required.",
-                "Requirements": "Must obtain and maintain a Secret security clearance.",
-                "Evaluations": "Candidates rated on TSAC-F experience.",
+                "Requirements": (
+                    "Must obtain and maintain a Secret security clearance. "
+                    "TSAC-F experience preferred."
+                ),
+                # HR blocks. Checked against live postings on 2026-08-28: on a
+                # real Army H2F announcement, Evaluations is entirely
+                # application-process text and carries no certification at all,
+                # while on VA announcements it carries the "VA for Vets" blurb
+                # whose stray "military" was clearing the domain axis for
+                # ordinary hospital jobs. The adapter drops these on purpose.
+                "Evaluations": (
+                    "Once the announcement has closed, a review of your application "
+                    "package will be used to determine whether you meet the "
+                    "qualification requirements. Veterans and Transitioning Service "
+                    "Members: please visit the VA for Vets site for coaching and "
+                    "reintegration support for military service members."
+                ),
+                "OtherInformation": (
+                    "Selected applicants may qualify for credit toward annual leave "
+                    "accrual based on prior military service experience."
+                ),
+                "AgencyMarketingStatement": (
+                    "To care for those who have served in our nation's military."
+                ),
                 "SecurityClearanceRequired": "Secret",
                 "TeleworkEligible": "No",
                 "WhoMayApply": "United States Citizens",
@@ -80,8 +102,8 @@ def test_usajobs_prefers_hiring_org_over_parent_department():
     assert posting.employer != posting.department
 
 
-def test_usajobs_captures_every_narrative_block():
-    """Education/Requirements/Evaluations carry the cert and clearance language.
+def test_usajobs_captures_every_block_that_describes_the_job():
+    """Education and Requirements carry the cert and clearance language.
 
     Dropping them would blind the enrichment layer to most of what it exists
     to extract, so this asserts each block reaches the description.
@@ -93,9 +115,27 @@ def test_usajobs_captures_every_narrative_block():
         "movement screens",  # MajorDuties
         "Master's degree",  # Education
         "Secret security clearance",  # Requirements
-        "TSAC-F",  # Evaluations
+        "TSAC-F",  # Requirements
     ):
         assert needle in description, f"missing {needle!r}"
+
+
+def test_usajobs_leaves_the_hr_blocks_out():
+    """Evaluations/OtherInformation/AgencyMarketingStatement are boilerplate.
+
+    They describe applying to the agency, not doing the job, and the military
+    vocabulary they carry incidentally was enough to clear the domain axis for
+    ordinary VA hospital postings.
+    """
+    description = _usajobs_posting().description
+    for needle in (
+        "VA for Vets",
+        "annual leave",
+        "care for those who have served",
+        "announcement has closed",
+    ):
+        assert needle not in description, f"boilerplate leaked: {needle!r}"
+    assert "military" not in description.lower()
 
 
 def test_usajobs_folds_structured_facts_into_the_text():

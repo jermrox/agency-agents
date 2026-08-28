@@ -392,3 +392,29 @@ def test_description_is_only_consulted_when_the_strong_fields_are_silent():
 
 def test_branch_labels_come_back_in_canonical_order():
     assert branch_labels({"joint", "army", "navy"}) == ["Army", "Navy", "Joint / DoD-wide"]
+
+
+def test_a_civilian_fort_city_is_not_an_army_post():
+    # Fort Worth, Fort Lauderdale and Fort Collins are cities, not installations.
+    # A VA hospital in Fort Lauderdale was being labelled Army because of this.
+    for city in (
+        "Fort Worth, Texas",
+        "Fort Lauderdale, Florida",
+        "Fort Collins, Colorado",
+        "Fort Myers, Florida",
+        "Fort Wayne, Indiana",
+        "Fort Smith, Arkansas",
+    ):
+        assert branches_of("Physical Therapist", "", city) == frozenset(), city
+
+
+def test_real_army_posts_still_resolve():
+    for post in (
+        "Fort Bragg, North Carolina",
+        "Fort Campbell, Kentucky",
+        "Fort Leonard Wood, Missouri",
+        "Ft. Drum, NY",
+        "Fort Wainwright",
+        "Fort Belvoir, VA",
+    ):
+        assert branches_of("Athletic Trainer", "", post) == frozenset({"army"}), post
