@@ -35,6 +35,7 @@ class RunReport:
     duplicates: int = 0
     approved: list[JobPosting] = field(default_factory=list)
     review: list[JobPosting] = field(default_factory=list)
+    refreshed: list[JobPosting] = field(default_factory=list)
     errors: list[SourceError] = field(default_factory=list)
     published: list[str] = field(default_factory=list)
     pruned: int = 0
@@ -140,6 +141,20 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
     before = len(scored)
     fresh = store.filter_new(scored)
     report.duplicates = before - len(fresh)
+
+    # A posting already on the board is re-fetched and re-derived on every run,
+    # then dropped here as a duplicate -- so the board kept whatever it was
+    # first published with, forever. That made every classifier or extraction
+    # fix apply only to jobs the board had never seen: three KBR SOF postings
+    # stayed flagged Remote after the fix that corrected them, because they
+    # were already listed. Carry the re-derived version through so the entry
+    # reflects the posting as it is now, not as it was first read.
+    fresh_ids = {p.identity for p in fresh}
+    report.refreshed = [
+        p
+        for p in scored
+        if p.identity not in fresh_ids and verdicts[p.identity] == Verdict.PUBLISH
+    ]
 
     # Auto-publish is opt-in. With it off, even a high scorer goes to review --
     # a public brand site is not the place to discover a classifier regression.
@@ -292,7 +307,15 @@ def _publish(config: Config, report: RunReport) -> None:
             report.errors.append(SourceError(publisher_config.kind, str(exc)))
             continue
 
-        batch = report.review if publisher_config.kind == "review" else report.approved
+        # Only the board takes refreshed entries. RSS and webhooks announce, and
+        # re-announcing a job because its location string was corrected would
+        # be a lie to every subscriber.
+        if publisher_config.kind == "review":
+            batch = report.review
+        elif publisher_config.kind == "jsonfeed":
+            batch = report.approved + report.refreshed
+        else:
+            batch = report.approved
 
         try:
             report.published.append(publisher.publish(batch))

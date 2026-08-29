@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import sys
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -157,3 +157,54 @@ def test_jsonfeed_excerpt_chars_is_configurable(tmp_path):
     JSONFeedPublisher({"path": str(path), "excerpt_chars": 50}).publish([make("1")])
     entry = json.loads(path.read_text())["jobs"][0]
     assert len(entry["description"]) <= 51
+
+
+def test_a_posting_already_on_the_board_is_refreshed_not_frozen(tmp_path):
+    """The board used to keep whatever a posting was FIRST published with.
+
+    A job already listed is re-fetched and re-derived on every run, then
+    dropped at the dedupe step, so its published entry never changed again.
+    That made every extraction fix apply only to jobs the board had never
+    seen: three KBR SOF postings stayed flagged Remote after the fix that
+    corrected them, purely because they were already listed.
+    """
+    path = tmp_path / "jobs.json"
+    first = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+
+    title = "Special Operations Physical Therapist (Onsite - Fort Bragg, NC)"
+    corrected = JobPosting(
+        source="workday:kbr",
+        source_id="R2128061",
+        url="https://kbr.example/job/R2128061",
+        title=title,
+        employer="KBR",
+        location="Fayetteville, North Carolina",
+    )
+    # Same identity, published earlier with the wrong location.
+    stale = corrected.to_public_dict()
+    stale["location"] = "Fayetteville, North Carolina; Remote - U.S."
+    stale["listed_at"] = first
+    path.write_text(json.dumps({"version": 1, "count": 1, "jobs": [stale]}))
+    JSONFeedPublisher({"path": str(path)}).publish([corrected])
+
+    board = json.loads(path.read_text())["jobs"]
+    entry = next(j for j in board if j["location"].startswith("Fayetteville"))
+    assert "Remote" not in entry["location"]
+    # The retention clock must not restart, or a refreshed job never ages out.
+    assert entry["listed_at"] == first
+
+
+def test_refreshing_does_not_duplicate_the_entry(tmp_path):
+    path = tmp_path / "jobs.json"
+    posting = JobPosting(
+        source="workday:kbr",
+        source_id="R1",
+        url="https://kbr.example/job/R1",
+        title="Coach",
+        employer="KBR",
+        location="Fort Bragg, NC",
+    )
+    publisher = JSONFeedPublisher({"path": str(path)})
+    publisher.publish([posting])
+    publisher.publish([posting])
+    assert len(json.loads(path.read_text())["jobs"]) == 1
