@@ -1149,3 +1149,85 @@ def test_enrich_survives_none_valued_posting_fields():
     posting.department = None
     result = enrich(posting)
     assert result.certifications == ["CSCS"]
+
+
+def test_a_compound_hour_unit_is_not_a_pay_rate():
+    """Serco's H2F postings advertise the SCHEDULE, not a wage.
+
+    "Enjoy a predictable daily work schedule and 80-hour pay periods
+    (generally 40-hour work weeks)."
+
+    The unit-noun veto only skipped whitespace before the noun, so "80 hours"
+    was rejected while the compound adjective "80-hour" sailed past. "pay" two
+    words later satisfied the salary cue, and 22 of the 91 jobs on the board
+    published a floor of $80/hr -> $166,400 a year, roughly a hundred thousand
+    above what an H2F strength and conditioning coach actually earns.
+    """
+    result = enrich_text(
+        "H2Fit: Strength & Conditioning Coach - Fort Bragg, NC",
+        "Enjoy a predictable daily work schedule and 80-hour pay periods "
+        "(generally 40-hour work weeks). No away games and no weekend work.",
+    )
+    assert (result.salary_min, result.salary_max, result.salary_period) == (None, None, None)
+
+
+@pytest.mark.parametrize(
+    "sentence",
+    [
+        "Supports a 12-hour shift rotation with paid overtime.",
+        "Requires 40-hour work weeks and occasional travel.",
+        "A 90-day probationary period applies before benefits begin.",
+        "Salaried role managing a 250-soldier population.",
+    ],
+)
+def test_other_compound_units_are_not_pay_either(sentence):
+    result = enrich_text("Coach", sentence)
+    assert (result.salary_min, result.salary_max, result.salary_period) == (None, None, None)
+
+
+@pytest.mark.parametrize(
+    "sentence,expected",
+    [
+        ("The salary range is $75,000 - $95,000 per year.", (75000.0, 95000.0, "year")),
+        ("Compensation: $38.50 per hour.", (38.5, 38.5, "hour")),
+        ("Pay range $60k-$80k annually.", (60000.0, 80000.0, "year")),
+        ("This position pays $45/hr.", (45.0, 45.0, "hour")),
+    ],
+)
+def test_real_pay_statements_still_parse(sentence, expected):
+    """The other half of the guard: tightening must not silently empty salary."""
+    result = enrich_text("Coach", sentence)
+    assert (result.salary_min, result.salary_max, result.salary_period) == expected
+
+
+def test_benefits_prose_is_not_a_salary_cue():
+    """The bare words "paid", "pay", "rate" and "range" are everywhere.
+
+    Both of these sat in one real Serco H2F posting, and between them
+    published a strength and conditioning coach at $80/hr ($166,400) and then
+    at $10/hr. The cue list is the only gate on a number carrying neither a
+    currency symbol nor a "k" suffix, so it must not contain a word a benefits
+    section says in passing.
+    """
+    for sentence in (
+        "Support your work/life balance with 10 paid Federal Holidays and paid time off.",
+        "Enjoy a predictable daily work schedule and 80-hour pay periods.",
+        "Ability to travel up to 10%, as required, to support dispersed units.",
+        "This role has a wide range of 15 responsibilities.",
+    ):
+        result = enrich_text("H2Fit: Strength & Conditioning Coach", sentence)
+        assert result.salary_min is None, sentence
+
+
+@pytest.mark.parametrize(
+    "sentence,expected",
+    [
+        ("Salary: 78,000 annually.", (78000.0, 78000.0, "year")),
+        ("The hourly rate is 32.50.", (32.5, 32.5, "hour")),
+        ("Compensation of 85,000 per year.", (85000.0, 85000.0, "year")),
+    ],
+)
+def test_a_bare_number_with_a_real_cue_still_parses(sentence, expected):
+    """Tightening the cue list must not cost the unsymbolled real cases."""
+    result = enrich_text("Coach", sentence)
+    assert (result.salary_min, result.salary_max, result.salary_period) == expected
