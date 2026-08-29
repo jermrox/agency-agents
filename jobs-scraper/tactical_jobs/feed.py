@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -119,6 +120,99 @@ def _posting_from_native(row: dict[str, Any]) -> JobPosting:
     )
 
 
+# --- Salary, as a candidate reads it -----------------------------------------
+#
+# Three states, and the board must be able to tell them apart:
+#
+#   a real figure          "$89,508 - $116,362 /yr"
+#   a floor we derived     "from $63,312"
+#   nothing in the posting "Salary Unavailable: Click View posting for more
+#                           information"
+#
+# The third one is the point. A blank line reads as "the board did not bother",
+# which is indistinguishable from "this employer does not publish pay" -- and
+# the second is the truth for 81 of the postings on this board. Saying so, and
+# pointing at the employer's own listing, is the honest answer.
+#
+# This is a DISPLAY concern and lives here, at the feed boundary, on purpose.
+# to_archive_dict is built from to_public_dict, so formatting any earlier would
+# rewrite the corpus and lose what the source actually said.
+
+SALARY_UNAVAILABLE = "Salary Unavailable: Click View posting for more information"
+
+# USAJOBS ships its rate interval as a two-letter code: PA per annum, PH per
+# hour. It is not something to put in front of a candidate.
+_RATE_SUFFIX = {
+    "PA": "/yr", "PH": "/hr", "PD": "/day", "PW": "/wk", "PM": "/mo",
+    "PB": "/biweekly", "WC": "", "SY": "/yr", "FY": "/yr",
+}
+
+# The interval arrives either as USAJOBS' two-letter code or spelled out --
+# the same field carries "PA" on one announcement and "Per Year" on another.
+_RATE_WORDS = {
+    "per year": "/yr", "peryear": "/yr", "annually": "/yr", "annual": "/yr",
+    "per annum": "/yr", "yearly": "/yr",
+    "per hour": "/hr", "perhour": "/hr", "hourly": "/hr",
+    "per day": "/day", "daily": "/day",
+    "per week": "/wk", "weekly": "/wk",
+    "per month": "/mo", "monthly": "/mo",
+    "without compensation": "",
+}
+
+_MONEY_RANGE_RE = re.compile(
+    r"^\s*\$?\s*([\d,]+(?:\.\d+)?)"
+    r"(?:\s*(?:-|--|–|—|to)\s*\$?\s*([\d,]+(?:\.\d+)?))?"
+    r"\s*([A-Za-z][A-Za-z\s]*)?\s*$"
+)
+
+
+def _money(value: float, hourly: bool) -> str:
+    """Thousands separators always; cents only where cents are the unit."""
+    if hourly:
+        return f"${value:,.2f}"
+    return f"${value:,.0f}"
+
+
+def salary_display(compensation: Any, floor_annual: Any) -> str:
+    """What the card shows. Never blank, never a number the posting lacks."""
+    text = str(compensation or "").strip()
+    if text:
+        match = _MONEY_RANGE_RE.match(text)
+        if not match:
+            # An unrecognised shape is still the employer's own words; showing
+            # it verbatim beats discarding a real figure we simply cannot parse.
+            return text
+        low_raw, high_raw, interval = match.group(1), match.group(2), match.group(3)
+        token = (interval or "").strip()
+        if len(token) == 2:
+            suffix = _RATE_SUFFIX.get(token.upper(), "")
+        else:
+            suffix = _RATE_WORDS.get(token.lower(), "")
+            if token and not suffix:
+                # An interval we do not recognise is still meaningful to a
+                # candidate; keep the employer's own wording rather than drop it.
+                return text
+        hourly = suffix == "/hr"
+        try:
+            low = float(low_raw.replace(",", ""))
+            high = float(high_raw.replace(",", "")) if high_raw else None
+        except ValueError:  # pragma: no cover - regex cannot produce this
+            return text
+        # USAJOBS states a flat rate as an identical pair. "$16.92 - $16.92"
+        # is noise; a candidate reads one number faster than two.
+        if high is None or abs(high - low) < 0.005:
+            body = _money(low, hourly)
+        else:
+            body = f"{_money(low, hourly)} - {_money(high, hourly)}"
+        return f"{body} {suffix}".strip()
+
+    if isinstance(floor_annual, (int, float)) and not isinstance(floor_annual, bool):
+        if floor_annual > 0:
+            return f"from {_money(float(floor_annual), False)}"
+
+    return SALARY_UNAVAILABLE
+
+
 def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     legacy = _is_legacy(row)
     posting = _posting_from_legacy(row) if legacy else _posting_from_native(row)
@@ -134,7 +228,10 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     entry["id"] = str(row.get("id") or posting.source_id)
     entry["confidence"] = confidence_of(row)
     entry["program"] = row.get("program") or posting.enrichment.get("program")
-    entry["compensation"] = row.get("salary") or row.get("compensation")
+    entry["compensation"] = salary_display(
+        row.get("salary") or row.get("compensation"),
+        (entry.get("facets") or {}).get("salary_floor_annual"),
+    )
     entry["notes"] = row.get("notes") or ""
     if isinstance(row.get("rank"), (int, float)) and not isinstance(row.get("rank"), bool):
         entry["rank"] = row["rank"]
