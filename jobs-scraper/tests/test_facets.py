@@ -131,8 +131,8 @@ def test_a_bare_us_state_list_is_not_dragged_oconus():
 def test_travel_and_tbd_placement_are_not_remote():
     # Both are real O2X location strings. Calling them remote would put a
     # traveling instructor in front of someone who needs work-from-home.
-    assert location_classes("Various (travel)") == frozenset()
-    assert location_classes("Placement determined after hire (relocation)") == frozenset()
+    assert location_classes("Various (travel)") == frozenset({"unspecified"})
+    assert location_classes("Placement determined after hire (relocation)") == frozenset({"unspecified"})
 
 
 def test_remote_is_detected_from_flag_or_text():
@@ -141,8 +141,23 @@ def test_remote_is_detected_from_flag_or_text():
     assert "remote" not in location_classes("On-site; remote work is not available")
 
 
-def test_unclassifiable_location_returns_empty_so_the_board_shows_it():
-    assert location_classes("TBD") == frozenset()
+def test_an_unplaceable_location_is_named_unspecified_never_left_empty():
+    """The empty set was read as "matches every filter", which is backwards.
+
+    A Serco requisition spanning many installations and a GDIT pipeline req
+    with no site assigned both carry a blank location. Returning an empty set
+    let a board conclude they were unconstrained and show them under Remote,
+    to candidates who had filtered for work from home. Naming the gap makes
+    that misreading impossible and gives the board an honest chip to render.
+    """
+    for text in ("TBD", "", "Various (travel)", "To be determined"):
+        assert location_classes(text) == frozenset({"unspecified"}), text
+    assert location_classes("") != frozenset()
+
+
+def test_unspecified_is_never_mixed_with_a_real_class():
+    for text in ("Fort Bragg, NC", "Camp Casey, KOR", "Remote - U.S."):
+        assert "unspecified" not in location_classes(text), text
 
 
 # --------------------------------------------------------------------------
@@ -457,3 +472,41 @@ def test_an_american_town_named_after_a_country_stays_conus():
     assert location_classes("Panama City, Florida") == frozenset({"conus"})
     assert location_classes("Peru, Indiana") == frozenset({"conus"})
     assert location_classes("Lima, Ohio") == frozenset({"conus"})
+
+
+def test_no_posting_is_remote_without_positive_evidence():
+    """The regression guard for the whole class of bug.
+
+    Every string below appeared on, or is representative of, a real posting
+    that was published under Remote while being firmly on an installation.
+    None of them may ever read as remote again.
+    """
+    never_remote = (
+        "Cannon AFB, New Mexico",
+        "MacDill AFB, Florida",
+        "Camp Murray, Washington",
+        "Mobile County, Alabama",
+        "Washington, DC (telework eligible)",
+        "Telework eligible - Fort Meade, MD",
+        "Situational telework may be approved",
+        "Fort Bragg, NC",
+        "Camp Casey, KOR",
+    )
+    for text in never_remote:
+        assert "remote" not in location_classes(text), text
+
+
+def test_genuine_remote_language_still_reads_as_remote():
+    # The other half of the guard: tightening must not silently empty the
+    # filter. Each of these is a real way a posting says the job is remote.
+    for text in (
+        "Remote - U.S.",
+        "Fayetteville, North Carolina; Remote - U.S.",
+        "Fully Remote",
+        "Work from home",
+        "Telecommute",
+        "Telecommuting",
+        "Virtual",
+    ):
+        assert "remote" in location_classes(text), text
+    assert "remote" in location_classes("", remote_flag=True)

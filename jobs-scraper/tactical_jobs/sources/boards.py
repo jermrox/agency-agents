@@ -397,6 +397,11 @@ and treating every one of them as a city/state pair would fill the location
 column with nonsense and mislabel the employer at the same time.
 """
 
+# "telework" belongs here and nowhere else. These lists answer "does this
+# fragment read as a LOCATION?" for title parsing -- "Coach - Telework (CONUS)"
+# has a location in the tail, not an employer. Whether the job is actually
+# remote is a different question, answered by REMOTE_HINTS in base.py and
+# _REMOTE_RE in facets.py, and telework is deliberately absent from both.
 _REMOTE_LABELS = frozenset(
     {
         "remote", "fully remote", "remote us", "remote usa", "us remote",

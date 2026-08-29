@@ -414,7 +414,11 @@
   var DEFS = {};
   var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
 
-  var LOCATION_LABELS = { remote: "Remote", conus: "CONUS", oconus: "OCONUS" };
+  var UNPLACED = "unspecified";
+  var LOCATION_LABELS = {
+    remote: "Remote", conus: "CONUS", oconus: "OCONUS",
+    unspecified: "Location not stated"
+  };
   var UNATTRIBUTED = "none";
   var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
   var BRANCH_LABELS = {
@@ -457,17 +461,14 @@
       if (!hit) return false;
     }
     if (ignore !== "location" && selected.location.size) {
-      var classes = f.location_classes || [];
-      if (classes.length) {
-        if (!classes.some(function (c) { return selected.location.has(c); })) return false;
-      } else if (!selected.location.has("conus") && !selected.location.has("oconus")) {
-        // An unplaced posting is admitted by the geography chips but never by
-        // Remote. "We could not read the location" honestly means it could be
-        // anywhere on a map; it does not mean the job might be work-from-home.
-        // Remote is the one filter people use to rule jobs OUT, so a false
-        // positive there costs an application.
-        return false;
-      }
+      // Plain membership. The feed names every posting's location class --
+      // "unspecified" when it cannot be placed -- so there is no empty set to
+      // interpret, and the old reading of one ("no constraint, matches every
+      // chip") cannot come back. That reading is what put a Serco multi-site
+      // requisition and a GDIT pipeline req under Remote.
+      var classes = f.location_classes || [UNPLACED];
+      if (!classes.length) classes = [UNPLACED];
+      if (!classes.some(function (c) { return selected.location.has(c); })) return false;
     }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
@@ -498,8 +499,8 @@
           else if (bs.indexOf(opt.value) === -1) return false;
         } else {
           var cs = facetsOf(job).location_classes || [];
-          if (cs.length) { if (cs.indexOf(opt.value) === -1) return false; }
-          else if (opt.value === "remote") return false;
+          if (!cs.length) cs = [UNPLACED];
+          if (cs.indexOf(opt.value) === -1) return false;
         }
         return matches(job, group);
       }).length;
@@ -559,7 +560,10 @@
     JOBS.forEach(function (job) {
       (facetsOf(job).location_classes || []).forEach(function (c) { present[c] = true; });
     });
-    return ["remote", "conus", "oconus"].filter(function (c) { return present[c]; })
+    JOBS.forEach(function (job) {
+      if (!(facetsOf(job).location_classes || []).length) present[UNPLACED] = true;
+    });
+    return ["remote", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
   }
 

@@ -229,7 +229,12 @@ _OCONUS_COUNTRY_CODE3_RE = re.compile(
 )
 
 _REMOTE_RE = re.compile(
-    r"\b(?:remote|work\s+from\s+home|telework|telecommut|virtual|anywhere)\b",
+    # No "telework" -- see REMOTE_HINTS in sources/base.py. It means occasional
+    # work from home from an on-base job, not a remote position.
+    # telecommut\w* rather than a bare stem: the trailing \b in this pattern
+    # can never match between the "t" of "telecommut" and the "e" of
+    # "telecommute", so the bare stem matched nothing at all.
+    r"\b(?:remote|work\s+from\s+home|telecommut\w*|virtual|anywhere)\b",
     re.I,
 )
 _REMOTE_VETO_RE = re.compile(
@@ -239,8 +244,24 @@ _REMOTE_VETO_RE = re.compile(
 )
 
 
+UNSPECIFIED_LOCATION = "unspecified"
+
+
 def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]:
-    """Any of ``remote`` / ``conus`` / ``oconus``. Empty means unknown."""
+    """Any of ``remote`` / ``conus`` / ``oconus``, else ``{unspecified}``.
+
+    Never returns an empty set. That is deliberate and load-bearing: a board
+    reading this feed has to decide what to do with a posting it cannot place,
+    and the obvious reading of an empty set -- "no constraint, so it matches
+    every filter" -- is the wrong one. It put a Serco requisition spanning many
+    installations and a GDIT pipeline req with no site yet under **Remote**, in
+    front of candidates who had filtered for work from home.
+
+    Naming the gap instead of leaving a hole means a consumer cannot fall into
+    that reading by accident, and it gives the board an honest chip to render:
+    "location not stated" is a real answer a candidate can act on, where a
+    silent guess of CONUS is not.
+    """
     found: set[str] = set()
     text = location or ""
 
@@ -254,7 +275,7 @@ def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]
         found.add("oconus")
     if _CONUS_STATE_RE.search(text) or _CONUS_STATE_NAMES_RE.search(text):
         found.add("conus")
-    return frozenset(found)
+    return frozenset(found) or frozenset({UNSPECIFIED_LOCATION})
 
 
 # --- Service branch ---------------------------------------------------------

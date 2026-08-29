@@ -86,7 +86,14 @@ def test_parse_timestamp_always_timezone_aware():
 
 def test_looks_remote():
     assert looks_remote("Remote - US")
-    assert looks_remote(None, "Telework eligible")
+    # "Telework eligible" must NOT read as remote: in federal usage it means
+    # occasional work from home from a job that is otherwise on the
+    # installation. Across 25 live USAJOBS announcements it was true on 10
+    # while the actual remote flag was true on none, so treating it as a
+    # synonym put on-base jobs in front of people filtering for remote work.
+    assert not looks_remote(None, "Telework eligible")
+    assert not looks_remote("Cannon AFB, New Mexico", "telework eligible")
+    assert looks_remote(None, "Fully remote")
     assert not looks_remote("Fort Bragg, NC")
 
 
