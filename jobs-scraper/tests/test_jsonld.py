@@ -810,21 +810,59 @@ def test_a_normal_location_list_is_published_in_full():
     )
 
 
-def test_an_seo_padded_location_list_is_discarded_not_sampled():
+def test_an_seo_padded_location_list_is_not_sampled():
     # Serco's real H2F postings carry 120 jobLocation entries covering an
     # entire recruiting radius, and the first is an empty locality with a
     # Washington DC postal code -- so picking the first is as wrong as
-    # publishing all of them.
+    # publishing all of them. The title names the one real site.
     from tactical_jobs.sources.jsonld import _locations
 
-    assert _locations(_posting_node(120)) == ""
+    assert _locations(_posting_node(120), title="Coach - Fort Bragg, NC") == "Fort Bragg, NC"
+
+
+def test_an_over_cap_list_collapses_to_regions_rather_than_to_nothing():
+    """Discarding the list outright threw away sixteen real locations.
+
+    Serco publishes one Army H2FIT requisition across sixteen installations as
+    bare region codes -- KS, HI, MO, SC, OK, TX, WA, JP, IT, DE and more --
+    with no locality on any entry and no place in the title. The old rule read
+    that as SEO padding and returned nothing, leaving the posting unplaceable,
+    which is what put it in front of candidates filtering for remote work.
+    A long list is not automatically noise.
+    """
+    from tactical_jobs.sources.jsonld import _locations
+
+    node = {
+        "@type": "JobPosting",
+        "title": "H2FIT: Strength and Conditioning Coaches",
+        "jobLocation": [
+            {"address": {"addressLocality": "", "addressRegion": r, "addressCountry": "US"}}
+            for r in ("KS", "HI", "MO", "SC", "OK", "TX", "WA", "JP", "IT", "DE")
+        ],
+    }
+    result = _locations(node, title=node["title"])
+    assert result, "an unplaceable posting is worse than a broad one"
+    assert "KS" in result and "HI" in result and "JP" in result
+
+
+def test_collapsing_to_regions_keeps_the_state_not_the_country():
+    # Taking the last comma-separated segment collapses every US entry to the
+    # useless token "US" instead of naming the state.
+    from tactical_jobs.sources.jsonld import _locations
+
+    assert _locations(_posting_node(120), title="Coach") == "Virginia"
 
 
 def test_the_cap_is_configurable():
     from tactical_jobs.sources.jsonld import _locations
 
-    assert _locations(_posting_node(3), max_locations=2) == ""
-    assert _locations(_posting_node(3), max_locations=3) != ""
+    # At or under the cap the full enumeration is published verbatim; over it
+    # the entry falls back to the title, then to the collapsed regions.
+    assert "City0" in _locations(_posting_node(3), max_locations=3, title="Coach")
+    assert "City0" not in _locations(_posting_node(3), max_locations=2, title="Coach")
+    assert _locations(_posting_node(3), max_locations=2, title="Coach - Fort Sill, OK") == (
+        "Fort Sill, OK"
+    )
 
 
 def test_a_negative_cap_disables_the_check():
