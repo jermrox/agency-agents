@@ -4,50 +4,58 @@
 
 ## Headline
 
-- **19 open jobs** from **2 employers**.
+- **71 open jobs** from **5 employers**.
 - Posted between **2026-07-02** and **2026-08-28**.
-- **$84,000 median** annualized pay across the 3 postings that publish one -- $73,391 to $87,975 covers the middle half.
-- **16% remote-friendly** (3 jobs).
-- 4 of 23 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 19, Special Operations 16, Training Pipeline 2.
+- **$130,770 median** annualized pay across the 49 postings that publish one -- $91,950 to $166,400 covers the middle half.
+- **4% remote-friendly** (3 jobs).
+- 59 of 130 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 71, Special Operations 34, Training Pipeline 21.
 
 ## Month over month
 
-Postings are **up +3** in 2026-08 (8 to 11), 38% against 2026-07.
+Postings are **up +53** in 2026-08 (9 to 62), 589% against 2026-07.
 
 ```
-2026-07     8  ####################
-2026-08    11  ############################
+2026-07     9  ####
+2026-08    62  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- KBR: 0 to 18
-- Serco: 0 to 1
+- Serco USA: 0 to 26
+- KBR: 0 to 21
+- General Dynamics Information Technology: 0 to 19
+- The Geneva Foundation: 0 to 3
+- Serco: 0 to 2
 
 **Credentials appearing more often:**
 
-- CSCS: 0 to 14
-- ATC: 0 to 6
-- RD: 0 to 5
+- CSCS: 0 to 42
+- ATC: 0 to 12
+- RD: 0 to 8
+- PhD: 0 to 1
 
 ## Who is hiring
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| KBR | 18 | $87,975 | Strength & Conditioning, Sports Medicine |
-| Serco | 1 | $62,783 | Program Leadership, Strength & Conditioning |
+| Serco USA | 26 | $166,400 | Strength & Conditioning, Cognitive Performance |
+| KBR | 21 | $91,950 | Strength & Conditioning, Sports Medicine |
+| General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
+| The Geneva Foundation | 3 | $61,994 | Sports Medicine, Strength & Conditioning |
+| Serco | 2 | $62,783 | Program Leadership, Strength & Conditioning |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 16 | 100% |
-| Sports Medicine | 7 | 44% |
-| Performance Nutrition | 6 | 38% |
-| Cognitive Performance | 3 | 19% |
-| Program Leadership | 1 | 6% |
-| Research & Analytics | 1 | 6% |
+| Strength & Conditioning | 47 | 72% |
+| Sports Medicine | 22 | 34% |
+| Cognitive Performance | 20 | 31% |
+| Research & Analytics | 11 | 17% |
+| Performance Nutrition | 10 | 15% |
+| Program Leadership | 5 | 8% |
+| Sport Science | 1 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -56,59 +64,63 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 14 | 93% |
-| ATC | 6 | 40% |
-| RD | 5 | 33% |
+| CSCS | 42 | 88% |
+| ATC | 12 | 25% |
+| RD | 8 | 17% |
+| PhD | 1 | 2% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (10), Top Secret (6)
+**Clearances requested:** TS/SCI (15), Secret (12), Top Secret (11)
 
 ## What it pays
 
-- Median **$84,000**, middle half $73,391 to $87,975.
-- Full range $62,783 to $91,950.
+- Median **$130,770**, middle half $91,950 to $166,400.
+- Full range $58,490 to $166,400.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Performance Nutrition | 1 | $91,950 | $91,950 | $91,950 |
-| Cognitive Performance | 1 | $84,000 | $84,000 | $84,000 |
-| Sports Medicine | 1 | $84,000 | $84,000 | $84,000 |
-| Strength & Conditioning | 3 | $73,391 | $84,000 | $87,975 |
-| Program Leadership | 1 | $62,783 | $62,783 | $62,783 |
+| Program Leadership | 5 | $62,783 | $166,400 | $166,400 |
+| Strength & Conditioning | 32 | $90,397 | $166,400 | $166,400 |
+| Research & Analytics | 6 | $106,746 | $148,585 | $166,400 |
+| Cognitive Performance | 14 | $98,738 | $130,770 | $130,770 |
+| Sports Medicine | 14 | $84,434 | $106,174 | $157,492 |
+| Performance Nutrition | 5 | $85,738 | $91,950 | $91,950 |
+| Sport Science | 1 | $85,738 | $85,738 | $85,738 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** NC (5), FL (4), NM (2), WA (2), CA (1), GA (1), KY (1), TX (1)
+**States:** NC (8), FL (5), GA (4), TX (4), VA (4), MO (3), NM (3), OK (3), WA (3), CA (2)
 
 | Installation | Jobs |
 |---|---|
-| Fort Bragg | 5 |
-| Cannon AFB | 2 |
-| MacDill AFB | 2 |
-| Coronado | 1 |
-| Fort Campbell | 1 |
-| Fort Stewart | 1 |
-| Hurlburt Field | 1 |
-| JBLM | 1 |
-| Joint Base Langley-Eustis | 1 |
+| Fort Bragg | 19 |
+| Hurlburt Field | 4 |
+| Cannon AFB | 3 |
+| Fort Campbell | 3 |
+| Fort Leonard Wood | 3 |
+| Fort Sill | 3 |
+| Joint Base Langley-Eustis | 3 |
+| MacDill AFB | 3 |
+| Fort Benning | 2 |
+| Fort Bliss | 2 |
 
-**Branches and services:** Joint (15), Army (2), Air Force (1)
+**Branches and services:** Army (34), Joint (31), Air Force (5)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
+| Human Performance Operations Manager | 4 |
+| Cognitive Performance Specialist | 2 |
+| H2FIT: Strength and Conditioning Coaches | 2 |
+| Performance Dietitian | 2 |
+| Physical Therapist | 2 |
+| Special Operations Performance Dietitian (4/160 SOAR. JBLM, WA) | 2 |
+| Special Operations Physical Therapist-TEMP POSITION, (Onsite - Fort Bragg, NC) | 2 |
+| Special Ops Physical Therapist Part-Time (27 SOW/Cannon AFB, NM) | 2 |
 | *SKILLBRIDGE* Electrical Engineer | 1 |
-| H2FIT: Strength and Conditioning Coaches | 1 |
-| Performance Expert (R2PC) - Fort Stewart, Georgia | 1 |
-| Special Operations Certified Athletic Trainer (SOCSOUTH, Homestead ARB, FL) | 1 |
-| Special Operations Human Performance Advisor (353 SOW Kadena, Japan) | 1 |
-| Special Operations Licensed Clinical Social Worker (AFSOC Unit / Fort Bragg,NC) | 1 |
-| Special Operations Licensed Clinical Social Worker (Southern Pines, NC) | 1 |
-| Special Operations Performance Dietitian (4/160 SOAR. JBLM, WA) | 1 |
-| Special Operations Performance Dietitian (MacDill AFB, FL) | 1 |
-| Special Operations Performance Dietitian (MacDill AFB, Florida) | 1 |
+| Biostatistician | 1 |
