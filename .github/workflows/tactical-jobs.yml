@@ -1,12 +1,16 @@
 name: Tactical Jobs — nightly
 
 # Collects tactical human performance roles, scores them, enriches and archives
-# them, publishes the live board, and deploys the board + dashboard to GitHub
-# Pages so the Squarespace embed has something to fetch.
+# them, and publishes the live board.
 #
 # Squarespace has no content-write API, so this is the mechanism by which a job
-# reaches mopsnmoes.com: this workflow publishes jobs.json, and the Code Block
-# on the site renders it. See jobs-scraper/embed/squarespace-jobs.html.
+# reaches mopsnmoes.com: this workflow publishes jobs.json and the Code Block on
+# the site fetches it. The feed is served from a separate static-host repository
+# that the "Mirror the board to the live static host" step pushes to -- that is
+# the path the public site actually reads.
+#
+# GitHub Pages is an opt-in second destination, off by default. See the deploy
+# job at the bottom for why.
 
 on:
   workflow_dispatch:
@@ -256,17 +260,33 @@ jobs:
           echo "::error::Could not mirror the board to ${MIRROR_REPO} after 4 attempts. The live site is now stale."
           exit 1
 
+      # Only worth producing when something will deploy it -- see the deploy
+      # job below for why that is opt-in.
       - name: Upload Pages artifact
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && vars.ENABLE_PAGES == 'true' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
     name: Deploy board to GitHub Pages
-    # Only from the default branch: a feature branch must never repoint the
-    # live feed the website reads.
-    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
+    # OPT-IN. This job failed every one of the first 45 nightly runs at
+    # actions/configure-pages, because GitHub Pages was never enabled for the
+    # repository (Settings -> Pages -> Source: GitHub Actions). Nothing else in
+    # the workflow was ever wrong: the scrape job collected, scored, committed
+    # and published normally on every one of those runs. But the run as a whole
+    # reported failure, which trains everyone to ignore the only alarm this
+    # pipeline has -- so a genuine scrape failure would have looked identical
+    # to the noise.
+    #
+    # Pages is also no longer the route to the public board. The site people
+    # actually read is served from a separate repository, which the mirror step
+    # in the scrape job pushes to directly.
+    #
+    # So this deploys only when asked. To turn it back on: enable Pages in
+    # Settings, then set the repository VARIABLE ENABLE_PAGES to "true".
+    # Left in place rather than deleted so that stays a one-line change.
+    if: ${{ vars.ENABLE_PAGES == 'true' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
     needs: scrape
     runs-on: ubuntu-latest
     environment:
