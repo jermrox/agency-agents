@@ -17,7 +17,9 @@ from tactical_jobs.facets import (
     is_lead,
     location_classes,
     location_regions,
+    looks_telework,
     salary_floor_annual,
+    UNSPECIFIED_LOCATION,
 )
 from tactical_jobs.models import JobPosting
 
@@ -579,3 +581,55 @@ class TestLocationRegions:
         assert location_regions("Fort Bragg, NC (supports Germany)", {"conus"}) == {
             "conus": ["North Carolina"]
         }
+
+
+class TestTelework:
+    """Telework is its own answer, never folded into Remote.
+
+    The numbers in these cases are from 271 live federal postings matching this
+    board's keywords: 124 were TeleworkEligible with a real duty station, and
+    exactly one was actually remote.
+    """
+
+    def test_structured_flag_true(self):
+        assert looks_telework("", "Telework eligible: True.") is True
+
+    def test_structured_flag_false_is_not_telework(self):
+        # The adapter folds this sentence in whether the value is true or
+        # false, so a naive text match would read the denial as a positive.
+        assert looks_telework("", "Telework eligible: False.") is False
+
+    def test_structured_flag_beats_free_text(self):
+        assert looks_telework(
+            "Fort Knox, Kentucky", "Telework eligible: False. Telework may be discussed."
+        ) is False
+
+    def test_free_text_when_no_flag(self):
+        assert looks_telework("", "This position is 100% teleworking.") is True
+        assert looks_telework("", "Telecommuting is available.") is True
+        assert looks_telework("", "On-site at Fort Bragg every day.") is False
+
+    def test_telework_does_not_make_a_job_remote(self):
+        # The Fort Knox shape: telework eligible, real duty station. It must
+        # stay CONUS and must NOT appear under Remote.
+        classes = location_classes(
+            "Fort Knox, Kentucky", remote_flag=False, telework_flag=True
+        )
+        assert "conus" in classes
+        assert "telework" in classes
+        assert "remote" not in classes
+
+    def test_telework_is_additive_only(self):
+        # Same location, with and without the flag: the placement is identical.
+        without = location_classes("Bethesda, Maryland", False, False)
+        with_tw = location_classes("Bethesda, Maryland", False, True)
+        assert with_tw - {"telework"} == without
+
+    def test_telework_alone_does_not_place_a_job(self):
+        # Telework says how you work, not where the job is.
+        classes = location_classes("", remote_flag=False, telework_flag=True)
+        assert classes == frozenset({UNSPECIFIED_LOCATION, "telework"})
+
+    def test_genuinely_remote_still_reads_remote(self):
+        classes = location_classes("Anywhere in the U.S. (remote job)", True, False)
+        assert "remote" in classes

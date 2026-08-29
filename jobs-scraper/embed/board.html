@@ -456,8 +456,13 @@
   };
 
   var UNPLACED = "unspecified";
+  // Telework sits next to Remote rather than inside it. "Telework eligible" on
+  // a federal posting means a day a week from home from a job that is still on
+  // the installation -- 124 of 271 live federal postings carry it, every one
+  // with a real duty station. A candidate filtering Remote must not be shown
+  // those; a candidate who wants flexibility should still find them.
   var LOCATION_LABELS = {
-    remote: "Remote", conus: "CONUS", oconus: "OCONUS",
+    remote: "Remote", telework: "Telework", conus: "CONUS", oconus: "OCONUS",
     unspecified: "Location not stated"
   };
   // The drill-down under CONUS/OCONUS. Two legends rather than one because
@@ -627,7 +632,7 @@
     JOBS.forEach(function (job) {
       if (!(facetsOf(job).location_classes || []).length) present[UNPLACED] = true;
     });
-    return ["remote", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
+    return ["remote", "telework", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
   }
 

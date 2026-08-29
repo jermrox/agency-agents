@@ -245,9 +245,51 @@ _REMOTE_VETO_RE = re.compile(
 
 
 UNSPECIFIED_LOCATION = "unspecified"
+TELEWORK_LOCATION = "telework"
+
+# Telework is its own answer, deliberately NOT folded into ``remote``.
+#
+# Measured against 271 live federal postings matching this board's keywords:
+#
+#     RemoteIndicator=True,  TeleworkEligible=False  ->    1
+#     RemoteIndicator=False, TeleworkEligible=True   ->  124
+#     RemoteIndicator=False, TeleworkEligible=False  ->  146
+#
+# Every one of those 124 has a real duty station -- a nurse at Fort Knox, an HR
+# administrator in Grand Rapids. Telework-eligible means the postholder may be
+# approved for a day a week at home, from a job that is otherwise on the
+# installation. Calling that "Remote" is what put a Cannon AFB social worker in
+# front of candidates filtering for work from home, and folding it in now would
+# do the same thing to 124 postings instead of three.
+#
+# So a candidate who wants flexibility can find these, and a candidate who wants
+# an actually-remote job is not lied to. The value is ADDITIVE: a telework post
+# at Fort Knox stays CONUS, and no posting's existing remote/CONUS/OCONUS
+# answer changes because of it.
+_TELEWORK_FLAG_RE = re.compile(r"telework\s+eligible:\s*(true|yes|false|no)\b", re.I)
+_TELEWORK_TEXT_RE = re.compile(r"\b(?:telework(?:ing|able)?|telecommut\w*)\b", re.I)
 
 
-def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]:
+def looks_telework(location: str, description: str = "") -> bool:
+    """Whether a posting offers telework.
+
+    The structured flag wins when the source states one, because it is the
+    field the agency actually filled in; free text is only consulted when there
+    is no flag to read. Without that precedence a posting carrying the literal
+    sentence "Telework eligible: False." would be read as telework by its own
+    denial -- the USAJOBS adapter folds that line into the description whether
+    the value is true or false.
+    """
+    blob = f"{location or ''} {description or ''}"
+    flag = _TELEWORK_FLAG_RE.search(blob)
+    if flag:
+        return flag.group(1).lower() in {"true", "yes"}
+    return bool(_TELEWORK_TEXT_RE.search(blob))
+
+
+def location_classes(
+    location: str, remote_flag: bool = False, telework_flag: bool = False
+) -> frozenset[str]:
     """Any of ``remote`` / ``conus`` / ``oconus``, else ``{unspecified}``.
 
     Never returns an empty set. That is deliberate and load-bearing: a board
@@ -275,7 +317,13 @@ def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]
         found.add("oconus")
     if _CONUS_STATE_RE.search(text) or _CONUS_STATE_NAMES_RE.search(text):
         found.add("conus")
-    return frozenset(found) or frozenset({UNSPECIFIED_LOCATION})
+    # Added last, and never on its own account: telework says how you work, not
+    # where the job is. A telework post still has to earn CONUS/OCONUS from its
+    # location, and a posting with nothing but telework is still unplaced.
+    placed = frozenset(found) or frozenset({UNSPECIFIED_LOCATION})
+    if telework_flag:
+        return placed | {TELEWORK_LOCATION}
+    return placed
 
 
 # --- Region: the second level of the location filter -------------------------
@@ -666,7 +714,11 @@ def facets_for(posting: JobPosting) -> dict[str, Any]:
     branches = branches_of(
         posting.title, posting.employer, posting.location, posting.description
     )
-    classes = location_classes(posting.location, posting.remote)
+    classes = location_classes(
+        posting.location,
+        posting.remote,
+        looks_telework(posting.location, posting.description),
+    )
     return {
         "discipline": slug,
         "discipline_label": discipline_label(slug),
