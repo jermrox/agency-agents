@@ -278,6 +278,132 @@ def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]
     return frozenset(found) or frozenset({UNSPECIFIED_LOCATION})
 
 
+# --- Region: the second level of the location filter -------------------------
+#
+# CONUS/OCONUS answers "roughly where", and the next question is always "where
+# exactly". These are the labels behind that second click: a US state for a
+# CONUS posting, a country or non-contiguous state for an OCONUS one.
+#
+# The five shapes below are all real strings from the live board, which is why
+# nothing here assumes a format:
+#
+#     "Fort Sill, Oklahoma, USA; Oklahoma, USA"      state spelled out
+#     "USA NC Fort Bragg; USA CA San Diego"          GDIT: country, code, place
+#     "Bethesda, Maryland"                           plain
+#     "KS; HI; MO; SC; OK; TX; WA; JP"               bare codes
+#     "Camp Casey, KOR"                              ISO-3
+#
+# Alaska and Hawaii appear as OCONUS regions rather than states, because that
+# is what they are under the DoD definition this board already uses, and it is
+# the answer a candidate filtering OCONUS is looking for.
+
+_STATE_NAME_BY_CODE = {
+    "AL": "Alabama", "AR": "Arkansas", "AZ": "Arizona", "CA": "California",
+    "CO": "Colorado", "CT": "Connecticut", "DC": "District of Columbia",
+    "DE": "Delaware", "FL": "Florida", "GA": "Georgia", "IA": "Iowa",
+    "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "KS": "Kansas",
+    "KY": "Kentucky", "LA": "Louisiana", "MA": "Massachusetts",
+    "MD": "Maryland", "ME": "Maine", "MI": "Michigan", "MN": "Minnesota",
+    "MO": "Missouri", "MS": "Mississippi", "MT": "Montana",
+    "NC": "North Carolina", "ND": "North Dakota", "NE": "Nebraska",
+    "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico",
+    "NV": "Nevada", "NY": "New York", "OH": "Ohio", "OK": "Oklahoma",
+    "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island",
+    "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee",
+    "TX": "Texas", "UT": "Utah", "VA": "Virginia", "VT": "Vermont",
+    "WA": "Washington", "WI": "Wisconsin", "WV": "West Virginia",
+    "WY": "Wyoming",
+}
+_STATE_CODE_BY_NAME = {v.lower(): k for k, v in _STATE_NAME_BY_CODE.items()}
+
+_STATE_NAME_RE = re.compile(
+    r"\b(" + "|".join(re.escape(n) for n in sorted(_STATE_NAME_BY_CODE.values(), key=len, reverse=True)) + r")\b",
+    re.I,
+)
+
+def _region_pattern(names: str, *codes: str) -> re.Pattern[str]:
+    """A region matcher: place names case-insensitively, codes exactly.
+
+    The two halves need different sensitivity. Place names arrive in every
+    casing a recruiter felt like using ("Hawaii", "HAWAII", "hawaii"), so they
+    have to be folded. Country and state codes must NOT be -- ``IT``, ``ES``,
+    ``PR`` and ``BE`` are also the ordinary English words "it", "es", "pr" and
+    "be", and a case-insensitive code would file a job in Italy on the strength
+    of the word "it" appearing in its location line.
+    """
+    parts = [f"(?i:{names})"]
+    if codes:
+        parts.append(r"(?:^|[;,]\s*|\s)(?:" + "|".join(codes) + r")(?![A-Za-z])")
+    return re.compile("|".join(parts))
+
+
+# Ordered longest-first so "South Korea" is not read as "Korea" twice, and so
+# a country name wins over a bare code sitting inside it.
+_OCONUS_REGIONS: tuple[tuple[str, re.Pattern[str]], ...] = (
+    ("Alaska", _region_pattern(r"\balaska\b|\bfort\s+wainwright\b|\belmendorf\b", "AK")),
+    ("Hawaii", _region_pattern(r"\bhawaii\b|\bschofield\b|\bpearl\s+harbor\b|\bwahiawa\b", "HI")),
+    ("Japan", _region_pattern(r"\bjapan\b|\bokinawa\b|\bkadena\b|\byokota\b|\bmisawa\b|\bcamp\s+zama\b", "JP", "JPN")),
+    ("South Korea", _region_pattern(r"\bkorea\b|\bcamp\s+humphreys\b|\bcamp\s+casey\b|\bosan\b|\byongsan\b", "KR", "KOR", "ROK")),
+    ("Germany", _region_pattern(r"\bgermany\b|\bdeutschland\b|\bramstein\b|\bstuttgart\b|\bgrafenw|\bvilseck\b|\bbaumholder\b|\bwiesbaden\b|\bansbach\b|\bhohenfels\b", "DEU")),
+    ("Italy", _region_pattern(r"\bitaly\b|\bitalia\b|\bvicenza\b|\baviano\b|\bsigonella\b|\bnaples\b", "IT", "ITA")),
+    ("United Kingdom", _region_pattern(r"\bengland\b|\bscotland\b|\bwales\b|\bunited\s+kingdom\b|\blakenheath\b|\bmildenhall\b|\bsuffolk\b", "UK", "GBR")),
+    ("El Salvador", _region_pattern(r"\bel\s+salvador\b", "SLV")),
+    ("Guam", _region_pattern(r"\bguam\b", "GU", "GUM")),
+    ("Puerto Rico", _region_pattern(r"\bpuerto\s+rico\b", "PR", "PRI")),
+    ("Kuwait", _region_pattern(r"\bkuwait\b|\barifjan\b", "KW", "KWT")),
+    ("Qatar", _region_pattern(r"\bqatar\b|\bal\s+udeid\b", "QA", "QAT")),
+    ("Spain", _region_pattern(r"\bspain\b|\brota\b|\bmoron\b", "ES", "ESP")),
+    ("Belgium", _region_pattern(r"\bbelgium\b|\bchievres\b", "BE", "BEL")),
+    ("Poland", _region_pattern(r"\bpoland\b", "PL", "POL")),
+    ("Honduras", _region_pattern(r"\bhonduras\b|\bsoto\s+cano\b", "HN", "HND")),
+    ("Colombia", _region_pattern(r"\bcolombia\b", "COL")),
+)
+
+_STATE_CODE_RE = re.compile(
+    r"(?:^|[;,]\s*|\s)(" + "|".join(_CONUS_STATES) + r")(?![A-Za-z])"
+)
+
+
+def location_regions(
+    location: str, classes: frozenset[str] | set[str]
+) -> dict[str, list[str]]:
+    """The state and country labels behind a CONUS/OCONUS pill.
+
+    Grouped by the class they belong to, because the board draws them as a
+    second level under whichever pill was clicked and a flat list could not say
+    which pill a label sits beneath. A posting can appear under both: one GDIT
+    requisition covers "KS; HI; MO; SC; OK; TX; WA; JP", which is five states
+    under CONUS and Hawaii plus Japan under OCONUS.
+
+    A class with nothing resolvable is left out entirely rather than mapped to
+    an empty list, which is the honest answer -- a second-level filter that
+    invents a state is worse than one that admits it cannot place the job.
+    """
+    text = location or ""
+    out: dict[str, list[str]] = {}
+
+    if "oconus" in classes:
+        found = [label for label, pattern in _OCONUS_REGIONS if pattern.search(text)]
+        if found:
+            out["oconus"] = sorted(set(found))
+
+    if "conus" in classes:
+        codes: list[str] = []
+        for match in _STATE_NAME_RE.finditer(text):
+            code = _STATE_CODE_BY_NAME.get(match.group(1).lower())
+            if code and code not in codes:
+                codes.append(code)
+        for match in _STATE_CODE_RE.finditer(text):
+            code = match.group(1).upper()
+            if code not in codes:
+                codes.append(code)
+        names = sorted({_STATE_NAME_BY_CODE[c] for c in codes if c in _STATE_NAME_BY_CODE})
+        if names:
+            out["conus"] = names
+
+    return out
+
+
 # --- Service branch ---------------------------------------------------------
 #
 # Which service a candidate would actually be embedded with. It is the question
@@ -540,15 +666,15 @@ def facets_for(posting: JobPosting) -> dict[str, Any]:
     branches = branches_of(
         posting.title, posting.employer, posting.location, posting.description
     )
+    classes = location_classes(posting.location, posting.remote)
     return {
         "discipline": slug,
         "discipline_label": discipline_label(slug),
         "lead": is_lead(posting.title),
         "branches": sorted(branches),
         "branch_labels": branch_labels(branches),
-        "location_classes": sorted(
-            location_classes(posting.location, posting.remote)
-        ),
+        "location_classes": sorted(classes),
+        "location_regions": location_regions(posting.location, classes),
         "contingency": contingency_of(
             posting.title, posting.description, posting.compensation or ""
         ),

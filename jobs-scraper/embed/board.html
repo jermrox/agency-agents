@@ -149,6 +149,46 @@
     #mm-jobs .mm-chip:focus-visible,
     #mm-jobs :focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 2px; }
 
+    /* Second level under Location. Reads as a drill-down, not a peer row:
+       indented behind a rule in the accent colour, on a tinted ground, with
+       smaller pills. It only exists while CONUS or OCONUS is selected. */
+    #mm-jobs .mm-sublevel {
+      margin-top: .6rem !important;
+      padding: .6rem 0 .1rem .75rem !important;
+      border-left: 2px solid var(--mm-accent);
+      display: grid; gap: .9rem;
+      animation: mm-sublevel-in .18s var(--mm-ease) both;
+    }
+    /* The `display: grid` above outranks the plain [hidden] rule, so the
+       closed state has to be spelled out -- without it an empty container
+       still paints its left rule as a stray gold tick under the pills. */
+    #mm-jobs .mm-sublevel[hidden] { display: none; }
+    @keyframes mm-sublevel-in {
+      from { opacity: 0; transform: translateY(-.25rem); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-sublevel { animation: none; }
+    }
+    #mm-jobs .mm-sublegend {
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .4rem !important; line-height: 1.2 !important;
+    }
+    #mm-jobs .mm-sublegend .mm-sub-clear {
+      border: 0; background: none; padding: 0 !important; margin-left: .5rem !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-chip.is-sub {
+      padding: .3rem .6rem !important; min-height: 1.9rem !important;
+      font-size: .75rem !important; gap: .3rem;
+      background: var(--mm-card);
+    }
+    #mm-jobs .mm-chip.is-sub .mm-n { font-size: .7rem; }
+    #mm-jobs .mm-chip.is-sub[aria-pressed="true"] { background: var(--mm-accent); }
+
     #mm-jobs .mm-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     #mm-jobs .mm-field { position: relative; flex: 1 1 12rem; min-width: 0; }
     #mm-jobs .mm-field svg { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--mm-muted); pointer-events: none; }
@@ -318,11 +358,9 @@
     </div>
 
     <div class="mm-group">
-      <div class="mm-legend">
-        Location
-        <span class="mm-hint">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS.</span>
-      </div>
+      <div class="mm-legend">Location</div>
       <div class="mm-chips" id="mm-f-location"></div>
+      <div class="mm-sublevel" id="mm-f-region" hidden></div>
     </div>
 
     <div class="mm-group">
@@ -405,6 +443,7 @@
     active: document.getElementById("mm-active"),
     count: document.getElementById("mm-count"),
     clear: document.getElementById("mm-clear"),
+    region: document.getElementById("mm-f-region"),
     list: document.getElementById("mm-list"),
     live: document.getElementById("mm-live"),
     defs: document.getElementById("mm-defs")
@@ -412,13 +451,23 @@
 
   var JOBS = [];
   var DEFS = {};
-  var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
+  var selected = {
+    discipline: new Set(), branch: new Set(), location: new Set(), region: new Set()
+  };
 
   var UNPLACED = "unspecified";
   var LOCATION_LABELS = {
     remote: "Remote", conus: "CONUS", oconus: "OCONUS",
     unspecified: "Location not stated"
   };
+  // The drill-down under CONUS/OCONUS. Two legends rather than one because
+  // the answer differs: inside the contiguous states a candidate is choosing a
+  // state, outside them they are choosing between Alaska, Hawaii and a list of
+  // countries -- "state" would be wrong for Germany and "country" wrong for
+  // Hawaii.
+  var REGION_CLASSES = ["conus", "oconus"];
+  var REGION_LEGENDS = { conus: "Narrow by state", oconus: "Narrow by region" };
+
   var UNATTRIBUTED = "none";
   var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
   var BRANCH_LABELS = {
@@ -469,6 +518,21 @@
       var classes = f.location_classes || [UNPLACED];
       if (!classes.length) classes = [UNPLACED];
       if (!classes.some(function (c) { return selected.location.has(c); })) return false;
+    }
+    // "location" ignores the region level too, so the CONUS and OCONUS counts
+    // keep describing the whole class. Without this, picking two states drops
+    // the parent pill from "CONUS 125" to "CONUS 45", which reads as jobs
+    // disappearing rather than as a narrowing the user just asked for.
+    if (ignore !== "region" && ignore !== "location" && selected.region.size) {
+      // Only regions sitting under a selected class count. Without that guard a
+      // requisition covering "TX; JP" would answer a Japan filter through its
+      // Texas half once the user had narrowed to CONUS.
+      var regions = f.location_regions || {};
+      var hitRegion = REGION_CLASSES.some(function (cls) {
+        if (!selected.location.has(cls)) return false;
+        return (regions[cls] || []).some(function (r) { return selected.region.has(r); });
+      });
+      if (!hitRegion) return false;
     }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
@@ -567,6 +631,94 @@
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
   }
 
+  function regionsOf(job, cls) {
+    return (facetsOf(job).location_regions || {})[cls] || [];
+  }
+
+  function regionOptions(cls) {
+    var present = {};
+    JOBS.forEach(function (job) {
+      regionsOf(job, cls).forEach(function (name) { present[name] = true; });
+    });
+    return Object.keys(present).sort();
+  }
+
+  function pruneRegions() {
+    // A region is only reachable while its parent pill is on. Deselecting
+    // OCONUS has to take Germany with it, or the board would go on filtering by
+    // a country the user can no longer see or switch off.
+    if (!selected.region.size) return;
+    var reachable = {};
+    REGION_CLASSES.forEach(function (cls) {
+      if (!selected.location.has(cls)) return;
+      regionOptions(cls).forEach(function (name) { reachable[name] = true; });
+    });
+    var stale = [];
+    selected.region.forEach(function (name) { if (!reachable[name]) stale.push(name); });
+    stale.forEach(function (name) { selected.region.delete(name); });
+  }
+
+  function renderRegionFilters() {
+    els.region.innerHTML = "";
+    var groups = REGION_CLASSES
+      .filter(function (cls) { return selected.location.has(cls); })
+      .map(function (cls) { return { cls: cls, names: regionOptions(cls) }; })
+      .filter(function (g) { return g.names.length; });
+
+    els.region.hidden = groups.length === 0;
+    if (!groups.length) return;
+
+    groups.forEach(function (group) {
+      var wrap = document.createElement("div");
+      wrap.setAttribute("role", "group");
+      wrap.setAttribute("aria-label", REGION_LEGENDS[group.cls]);
+
+      var legend = document.createElement("div");
+      legend.className = "mm-sublegend";
+      // Trailing space so a screen reader does not read the legend and the
+      // Clear button as one word ("narrow by stateclear").
+      legend.appendChild(document.createTextNode(REGION_LEGENDS[group.cls] + " "));
+      var chosen = group.names.filter(function (n) { return selected.region.has(n); });
+      if (chosen.length) {
+        var clear = document.createElement("button");
+        clear.type = "button";
+        clear.className = "mm-sub-clear";
+        clear.textContent = "Clear";
+        clear.setAttribute("aria-label", "Clear " + REGION_LEGENDS[group.cls].toLowerCase().replace("narrow by ", "") + " filters");
+        clear.addEventListener("click", function () {
+          chosen.forEach(function (n) { selected.region.delete(n); });
+          render();
+        });
+        legend.appendChild(clear);
+      }
+      wrap.appendChild(legend);
+
+      var chips = document.createElement("div");
+      chips.className = "mm-chips";
+      group.names.forEach(function (name) {
+        var n = JOBS.filter(function (job) {
+          return regionsOf(job, group.cls).indexOf(name) !== -1 && matches(job, "region");
+        }).length;
+
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mm-chip is-sub";
+        btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
+        btn.disabled = n === 0 && !selected.region.has(name);
+        btn.innerHTML = esc(name) + ' <span class="mm-n">' + n + "</span>";
+        btn.addEventListener("click", function () {
+          if (selected.region.has(name)) selected.region.delete(name);
+          else selected.region.add(name);
+          render();
+        });
+        chips.appendChild(btn);
+      });
+      wrap.appendChild(chips);
+      els.region.appendChild(wrap);
+      markScrollEnd(chips);
+    });
+  }
+
   function renderActiveFilters() {
     var pills = [];
     selected.discipline.forEach(function (slug) {
@@ -579,6 +731,9 @@
     });
     selected.location.forEach(function (loc) {
       pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
+    });
+    selected.region.forEach(function (name) {
+      pills.push({ label: name, onRemove: function () { selected.region.delete(name); render(); } });
     });
     if (els.hideContingent.checked) {
       pills.push({ label: "No contingent", onRemove: function () { els.hideContingent.checked = false; render(); } });
@@ -673,9 +828,11 @@
   }
 
   function render() {
+    pruneRegions();
     renderChips(els.discipline, "discipline", disciplineOptions());
     renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
+    renderRegionFilters();
     renderActiveFilters();
 
     els.noPayWrap.hidden = (parseInt(els.salary.value, 10) || 0) === 0;
@@ -695,7 +852,8 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size || els.hideContingent.checked ||
+      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size ||
+        selected.region.size || els.hideContingent.checked ||
         (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
       empty.innerHTML = ICONS.empty +
         "<span>" + (JOBS.length
@@ -738,6 +896,7 @@
     selected.discipline.clear();
     selected.branch.clear();
     selected.location.clear();
+    selected.region.clear();
     els.q.value = "";
     els.salary.value = "0";
     els.hideContingent.checked = false;

@@ -16,6 +16,7 @@ from tactical_jobs.facets import (
     facets_for,
     is_lead,
     location_classes,
+    location_regions,
     salary_floor_annual,
 )
 from tactical_jobs.models import JobPosting
@@ -510,3 +511,71 @@ def test_genuine_remote_language_still_reads_as_remote():
     ):
         assert "remote" in location_classes(text), text
     assert "remote" in location_classes("", remote_flag=True)
+
+
+class TestLocationRegions:
+    """The second level behind a CONUS/OCONUS pill.
+
+    Every string below is a location line taken verbatim from the live feed,
+    because the failures that matter here are shape failures -- a pattern that
+    reads "Alaska" but not "Ketchikan, Alaska".
+    """
+
+    def test_state_spelled_out(self):
+        assert location_regions(
+            "Fort Sill, Oklahoma, USA; Oklahoma, USA", {"conus"}
+        ) == {"conus": ["Oklahoma"]}
+
+    def test_gdit_country_code_place_order(self):
+        assert location_regions("USA NC Fort Bragg; USA CA San Diego", {"conus"}) == {
+            "conus": ["California", "North Carolina"]
+        }
+
+    def test_bare_state_codes(self):
+        assert location_regions("KS; MO; SC; OK; TX; WA", {"conus"}) == {
+            "conus": [
+                "Kansas", "Missouri", "Oklahoma", "South Carolina", "Texas", "Washington",
+            ]
+        }
+
+    def test_alaska_and_hawaii_are_oconus_regions(self):
+        # Capitalised, which is how they actually arrive. A case-sensitive
+        # pattern here matched nothing and left both pills empty.
+        assert location_regions("Ketchikan, Alaska", {"oconus"}) == {"oconus": ["Alaska"]}
+        assert location_regions(
+            "Hawaii, USA; Schofield Barracks, Hawaii, USA", {"oconus"}
+        ) == {"oconus": ["Hawaii"]}
+
+    def test_iso3_country_code(self):
+        assert location_regions("Camp Casey, KOR", {"oconus"}) == {
+            "oconus": ["South Korea"]
+        }
+
+    def test_installation_implies_country(self):
+        assert location_regions("Ramstein AB; RAF Lakenheath", {"oconus"}) == {
+            "oconus": ["Germany", "United Kingdom"]
+        }
+
+    def test_mixed_location_is_grouped_under_both_classes(self):
+        assert location_regions("KS; HI; TX; JP", {"conus", "oconus"}) == {
+            "conus": ["Kansas", "Texas"],
+            "oconus": ["Hawaii", "Japan"],
+        }
+
+    def test_country_codes_are_case_sensitive(self):
+        # IT, ES, PR and BE are also ordinary English words. Folding case on
+        # the code half would file a remote job in Italy.
+        assert location_regions("it is a remote role", {"oconus"}) == {}
+        assert location_regions("Position is open, be advised", {"oconus"}) == {}
+
+    def test_unplaceable_location_yields_no_group(self):
+        # Better an absent second level than an invented state.
+        assert location_regions("Multiple Locations", {"unspecified"}) == {}
+        assert location_regions("", {"remote"}) == {}
+
+    def test_regions_only_drawn_from_the_matching_class(self):
+        # A posting classed CONUS only must not surface a country pill even if
+        # the string mentions one.
+        assert location_regions("Fort Bragg, NC (supports Germany)", {"conus"}) == {
+            "conus": ["North Carolina"]
+        }
