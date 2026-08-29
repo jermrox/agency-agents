@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import time
 from typing import Any, Iterable
 
@@ -159,12 +160,35 @@ def _decode(body: Any) -> dict[str, Any]:
     return body if isinstance(body, dict) else {}
 
 
+_BARE_REMOTE_LOCATION_RE = re.compile(
+    r"^\s*(?:fully\s+)?(?:remote|virtual|telework|work\s+from\s+home)"
+    r"(?:\s*[-–—,]\s*(?:u\.?s\.?a?\.?|united\s+states|nationwide|anywhere|"
+    r"conus|any\s+location))?\s*$",
+    re.I,
+)
+
+
+def _is_bare_remote_location(text: str) -> bool:
+    """True for an entry that names no place, only a work arrangement."""
+    return bool(_BARE_REMOTE_LOCATION_RE.match(text or ""))
+
+
 def _location(listing: dict[str, Any], info: dict[str, Any]) -> str:
     """Prefer the detail location; the list only has a display string.
 
     ``locationsText`` collapses multi-site reqs to things like "2 Locations",
     which is useless for a location filter. The detail endpoint names them.
+
+    A bare "Remote - U.S." in ``additionalLocations`` is dropped when Workday's
+    own ``remoteType`` is empty. KBR appends that string to postings whose
+    title says **Onsite** and whose primary location is a named installation:
+    R2128061 is "(Onsite - Fort Bragg, NC)" at Fayetteville, North Carolina
+    with additionalLocations ["Remote - U.S."] and remoteType null. It is
+    posting-template boilerplate, not a second place the job can be done, and
+    concatenating it produced both a false Remote classification and a
+    published location that was simply wrong about where the job is.
     """
+    remote_type = _descriptor(info.get("remoteType"))
     candidates: list[Any] = [info.get("location")]
     extra = info.get("additionalLocations")
     if isinstance(extra, (list, tuple)):
@@ -175,6 +199,14 @@ def _location(listing: dict[str, Any], info: dict[str, Any]) -> str:
         text = _descriptor(candidate)
         if text and text not in names:
             names.append(text)
+
+    # Keep a bare remote label only when it is all we have, or when Workday
+    # actually declares the job remote. Never as a tail on a real place.
+    if not remote_type:
+        placed = [n for n in names if not _is_bare_remote_location(n)]
+        if placed:
+            names = placed
+
     if names:
         return "; ".join(names)
     return _descriptor(listing.get("locationsText"))
@@ -464,7 +496,12 @@ class WorkdaySource(Source):
             location=location,
             description=description,
             posted_at=_posted_at(listing, info),
-            remote=looks_remote(location, remote_type, _descriptor(listing.get("locationsText"))),
+            # Reads the CLEANED location: _location has already dropped a bare
+            # "Remote - U.S." that KBR tacks onto postings which are explicitly
+            # onsite at a named base, so a remote hint surviving here is the
+            # posting genuinely saying the job is remote. locationsText is not
+            # consulted separately -- _location already falls back to it.
+            remote=looks_remote(location, remote_type),
             department=_department(info) or None,
             compensation=_compensation(info) or None,
             raw=raw,

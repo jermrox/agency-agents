@@ -881,3 +881,51 @@ def test_job_req_id_is_folded_into_the_description_text(monkeypatch):
 def test_remote_is_false_when_nothing_indicates_remote(monkeypatch):
     posting = _mapped(monkeypatch)
     assert posting.remote is False
+
+
+def test_a_bare_remote_additional_location_never_makes_an_onsite_job_remote():
+    """KBR requisition R2128061, fetched live from its Workday CXS endpoint.
+
+    Its own title is "Special Operations Physical Therapist-TEMP POSITION,
+    (Onsite - Fort Bragg, NC)". Workday's remoteType is null. Yet
+    additionalLocations carries ["Remote - U.S."], which the adapter used to
+    concatenate onto the real location -- producing both a false Remote
+    classification and a published location that was wrong about where the job
+    is. All three of KBR's SOF postings on the board carried this boilerplate.
+    """
+    from tactical_jobs.sources.workday import _location
+
+    info = {
+        "location": "Fayetteville, North Carolina",
+        "additionalLocations": ["Remote - U.S."],
+        "remoteType": None,
+    }
+    assert _location({"locationsText": "2 Locations"}, info) == "Fayetteville, North Carolina"
+
+
+def test_a_declared_remote_type_keeps_the_remote_location():
+    from tactical_jobs.sources.workday import _location
+
+    info = {
+        "location": "Remote - U.S.",
+        "additionalLocations": [],
+        "remoteType": "Fully Remote",
+    }
+    assert _location({}, info) == "Remote - U.S."
+
+
+def test_a_bare_remote_entry_survives_when_it_is_the_only_location():
+    # Dropping it would leave the posting unplaceable, which is worse.
+    from tactical_jobs.sources.workday import _location
+
+    info = {"location": "Remote - U.S.", "additionalLocations": [], "remoteType": None}
+    assert _location({}, info) == "Remote - U.S."
+
+
+def test_bare_remote_detection_does_not_swallow_a_real_place():
+    from tactical_jobs.sources.workday import _is_bare_remote_location
+
+    for text in ("Remote - U.S.", "Remote", "Fully Remote", "Virtual", "Remote - USA"):
+        assert _is_bare_remote_location(text), text
+    for text in ("Remote, Texas", "Fort Bragg, NC", "Fayetteville, North Carolina"):
+        assert not _is_bare_remote_location(text), text
