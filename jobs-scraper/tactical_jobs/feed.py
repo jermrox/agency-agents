@@ -115,6 +115,7 @@ def _posting_from_native(row: dict[str, Any]) -> JobPosting:
         location=str(row.get("location") or ""),
         description=str(row.get("description") or ""),
         remote=bool(row.get("remote")),
+        telework=bool(row.get("telework")),
         compensation=row.get("compensation"),
         enrichment=row.get("enrichment") or {},
     )

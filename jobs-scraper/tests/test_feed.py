@@ -7,6 +7,7 @@ against real data rather than a convenient invention.
 from __future__ import annotations
 
 import pytest
+from tactical_jobs import feed
 
 import json
 
@@ -200,3 +201,53 @@ def test_wording_we_cannot_parse_is_kept_verbatim(compensation):
     from tactical_jobs.feed import salary_display
 
     assert salary_display(compensation, None) == compensation
+
+
+class TestTeleworkSurvivesTheFeed:
+    """Telework must survive the trip through the published board.
+
+    This is the bug that made the first telework build inert: the board stores
+    a ~400 character excerpt, ``normalize_row`` recomputes facets from it, and
+    USAJOBS appends "Telework eligible:" to the END of the description -- so
+    the evidence was always past the cut. Three real postings were affected
+    (an AFSOC social worker, an Army National Guard health system specialist,
+    and a Coast Guard marine investigator).
+    """
+
+    def _row(self, description: str, telework: bool) -> dict:
+        return {
+            "id": "abc123",
+            "url": "https://www.usajobs.gov/job/881700600",
+            "title": "SOCIAL WORKER",
+            "employer": "Air Force Special Operations Command",
+            "location": "Cannon AFB, New Mexico",
+            "description": description,
+            "remote": False,
+            "telework": telework,
+        }
+
+    def test_flag_survives_a_truncated_description(self):
+        # 400 characters with no telework word anywhere -- exactly what the
+        # board stores. Only the carried flag can save it.
+        excerpt = "Duties. " + ("The incumbent performs clinical work. " * 12)
+        assert "telework" not in excerpt.lower()
+        entry = feed.normalize_row(self._row(excerpt, telework=True))
+        assert "telework" in entry["facets"]["location_classes"]
+        assert entry["telework"] is True
+
+    def test_absent_flag_stays_absent(self):
+        entry = feed.normalize_row(self._row("Duties. On site daily.", telework=False))
+        assert "telework" not in entry["facets"]["location_classes"]
+
+    def test_telework_never_implies_remote(self):
+        entry = feed.normalize_row(self._row("Duties.", telework=True))
+        classes = entry["facets"]["location_classes"]
+        assert "remote" not in classes
+        assert "conus" in classes
+
+    def test_full_text_still_works_without_the_flag(self):
+        # A posting built by hand, or one not yet trimmed, must still resolve.
+        entry = feed.normalize_row(
+            self._row("Telework eligible: True.", telework=False)
+        )
+        assert "telework" in entry["facets"]["location_classes"]

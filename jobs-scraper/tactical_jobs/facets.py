@@ -717,7 +717,11 @@ def facets_for(posting: JobPosting) -> dict[str, Any]:
     classes = location_classes(
         posting.location,
         posting.remote,
-        looks_telework(posting.location, posting.description),
+        # The field is authoritative -- it was decided upstream against the
+        # full posting. The text check only still runs so a posting built by
+        # hand, or one whose description has not been trimmed yet, is not
+        # silently read as non-telework.
+        posting.telework or looks_telework(posting.location, posting.description),
     )
     return {
         "discipline": slug,
