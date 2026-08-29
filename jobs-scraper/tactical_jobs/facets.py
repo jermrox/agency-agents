@@ -267,24 +267,26 @@ TELEWORK_LOCATION = "telework"
 # at Fort Knox stays CONUS, and no posting's existing remote/CONUS/OCONUS
 # answer changes because of it.
 _TELEWORK_FLAG_RE = re.compile(r"telework\s+eligible:\s*(true|yes|false|no)\b", re.I)
-_TELEWORK_TEXT_RE = re.compile(r"\b(?:telework(?:ing|able)?|telecommut\w*)\b", re.I)
 
 
 def looks_telework(location: str, description: str = "") -> bool:
-    """Whether a posting offers telework.
+    """Whether the POSTING SAYS it offers telework. Nothing inferred.
 
-    The structured flag wins when the source states one, because it is the
-    field the agency actually filled in; free text is only consulted when there
-    is no flag to read. Without that precedence a posting carrying the literal
-    sentence "Telework eligible: False." would be read as telework by its own
-    denial -- the USAJOBS adapter folds that line into the description whether
-    the value is true or false.
+    Only an explicit statement counts -- the agency's own telework-eligible
+    field, or a posting writing that field out in words. A bare mention of the
+    word somewhere in the text does not, and used to: the first version matched
+    "telework" or "telecommute" anywhere in a description, so a job that merely
+    listed telework among an agency's general benefits was published as a
+    telework job it never claimed to be. Deciding that a posting "is really"
+    telework on evidence it did not state is a guess, and a guess here is a
+    candidate applying for something that does not exist.
+
+    The value is read from the statement, so a posting saying "Telework
+    eligible: False." answers False rather than being caught by its own denial.
     """
     blob = f"{location or ''} {description or ''}"
     flag = _TELEWORK_FLAG_RE.search(blob)
-    if flag:
-        return flag.group(1).lower() in {"true", "yes"}
-    return bool(_TELEWORK_TEXT_RE.search(blob))
+    return bool(flag) and flag.group(1).lower() in {"true", "yes"}
 
 
 def location_classes(

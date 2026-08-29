@@ -604,10 +604,19 @@ class TestTelework:
             "Fort Knox, Kentucky", "Telework eligible: False. Telework may be discussed."
         ) is False
 
-    def test_free_text_when_no_flag(self):
-        assert looks_telework("", "This position is 100% teleworking.") is True
-        assert looks_telework("", "Telecommuting is available.") is True
+    def test_only_an_explicit_statement_counts(self):
+        # The posting has to say it. A bare mention is not the job claiming to
+        # be telework -- the first version matched any occurrence of the word,
+        # so a benefits paragraph listing telework among an agency's perks
+        # published an on-site job as telework.
+        assert looks_telework("", "This position is 100% teleworking.") is False
+        assert looks_telework("", "Telecommuting is available to some staff.") is False
+        assert looks_telework("", "Benefits include telework, transit, and childcare.") is False
         assert looks_telework("", "On-site at Fort Bragg every day.") is False
+
+    def test_the_stated_value_is_what_is_read(self):
+        assert looks_telework("", "Telework eligible: Yes.") is True
+        assert looks_telework("", "Telework eligible: No.") is False
 
     def test_telework_does_not_make_a_job_remote(self):
         # The Fort Knox shape: telework eligible, real duty station. It must
