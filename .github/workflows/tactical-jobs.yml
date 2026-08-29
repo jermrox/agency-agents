@@ -189,17 +189,31 @@ jobs:
           } > ../site/index.html
           ls -la ../site
 
+      # Only worth producing when something will deploy it -- see the deploy
+      # job below for why that is opt-in.
       - name: Upload Pages artifact
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && vars.ENABLE_PAGES == 'true' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
     name: Deploy board to GitHub Pages
-    # Only from the default branch: a feature branch must never repoint the
+    # OPT-IN. This job failed every one of the first 45 nightly runs at
+    # actions/configure-pages, because GitHub Pages was never enabled for the
+    # repository (Settings -> Pages -> Source: GitHub Actions). Nothing else was
+    # ever wrong: the scrape job collected, scored, committed and published
+    # normally on every one of those runs. But the run as a whole reported
+    # failure, which trains everyone to ignore the only alarm this pipeline has,
+    # so a genuine scrape failure would have looked identical to the noise.
+    #
+    # To turn it back on: enable Pages in Settings, then set the repository
+    # VARIABLE ENABLE_PAGES to "true". Left in place rather than deleted so that
+    # stays a one-line change.
+    #
+    # Also only from the default branch: a feature branch must never repoint the
     # live feed the website reads.
-    if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
+    if: ${{ vars.ENABLE_PAGES == 'true' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
     needs: scrape
     runs-on: ubuntu-latest
     environment:
