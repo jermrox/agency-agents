@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-29T14:09:45.662222+00:00",
+  "generated_at": "2026-08-29T18:21:50.207319+00:00",
   "totals": {
-    "postings": 130,
+    "postings": 195,
     "employers": 5,
     "unique_jobs": 71,
-    "with_salary": 49,
+    "with_salary": 27,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
       "latest": "2026-08-28T00:00:00+00:00"
@@ -21,7 +21,7 @@
         "sports-medicine",
         "leadership"
       ],
-      "median_salary": 166400.0
+      "median_salary": null
     },
     {
       "name": "KBR",
@@ -72,25 +72,25 @@
       "name": "strength-conditioning",
       "count": 47,
       "share": 0.7231,
-      "median_salary": 166400.0
+      "median_salary": 85738.0
     },
     {
       "name": "sports-medicine",
       "count": 22,
       "share": 0.3385,
-      "median_salary": 106174.0
+      "median_salary": 90369.0
     },
     {
       "name": "cognitive",
       "count": 20,
       "share": 0.3077,
-      "median_salary": 130770.0
+      "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 11,
       "share": 0.1692,
-      "median_salary": 148585.0
+      "median_salary": 98738.0
     },
     {
       "name": "nutrition",
@@ -102,7 +102,7 @@
       "name": "leadership",
       "count": 5,
       "share": 0.0769,
-      "median_salary": 166400.0
+      "median_salary": 62782.81
     },
     {
       "name": "sport-science",
@@ -303,28 +303,28 @@
     }
   ],
   "salary": {
-    "count": 49,
+    "count": 27,
     "min": 58489.6,
-    "max": 166400.0,
-    "median": 130770.0,
-    "p25": 91950.0,
-    "p75": 166400.0,
+    "max": 130770.0,
+    "median": 91950.0,
+    "p25": 79242.5,
+    "p75": 130770.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 32,
+        "count": 13,
         "min": 58489.6,
-        "max": 166400.0,
-        "median": 166400.0,
-        "p25": 90397.0,
-        "p75": 166400.0
+        "max": 130770.0,
+        "median": 85738.0,
+        "p25": 62782.81,
+        "p75": 91950.0
       },
       "sports-medicine": {
-        "count": 14,
+        "count": 10,
         "min": 58489.6,
-        "max": 166400.0,
-        "median": 106174.0,
-        "p25": 84434.5,
-        "p75": 157492.5
+        "max": 130770.0,
+        "median": 90369.0,
+        "p25": 76863.75,
+        "p75": 109892.0
       },
       "nutrition": {
         "count": 5,
@@ -335,10 +335,10 @@
         "p75": 91950.0
       },
       "cognitive": {
-        "count": 14,
+        "count": 11,
         "min": 74485.0,
-        "max": 166400.0,
-        "median": 130770.0,
+        "max": 130770.0,
+        "median": 113610.0,
         "p25": 98738.0,
         "p75": 130770.0
       },
@@ -351,20 +351,20 @@
         "p75": 85738.0
       },
       "research": {
-        "count": 6,
+        "count": 3,
         "min": 98738.0,
-        "max": 166400.0,
-        "median": 148585.0,
-        "p25": 106746.0,
-        "p75": 166400.0
+        "max": 130770.0,
+        "median": 98738.0,
+        "p25": 98738.0,
+        "p75": 114754.0
       },
       "leadership": {
-        "count": 5,
+        "count": 2,
         "min": 62782.81,
-        "max": 166400.0,
-        "median": 166400.0,
+        "max": 62782.81,
+        "median": 62782.81,
         "p25": 62782.81,
-        "p75": 166400.0
+        "p75": 62782.81
       }
     }
   },

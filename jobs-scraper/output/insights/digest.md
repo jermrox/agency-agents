@@ -6,9 +6,9 @@
 
 - **71 open jobs** from **5 employers**.
 - Posted between **2026-07-02** and **2026-08-28**.
-- **$130,770 median** annualized pay across the 49 postings that publish one -- $91,950 to $166,400 covers the middle half.
+- **$91,950 median** annualized pay across the 27 postings that publish one -- $79,242 to $130,770 covers the middle half.
 - **4% remote-friendly** (3 jobs).
-- 59 of 130 archived records are cross-board copies or re-posts, not separate jobs.
+- 124 of 195 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 71, Special Operations 34, Training Pipeline 21.
 
 ## Month over month
@@ -39,7 +39,7 @@ Postings are **up +53** in 2026-08 (9 to 62), 589% against 2026-07.
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| Serco USA | 26 | $166,400 | Strength & Conditioning, Cognitive Performance |
+| Serco USA | 26 | - | Strength & Conditioning, Cognitive Performance |
 | KBR | 21 | $91,950 | Strength & Conditioning, Sports Medicine |
 | General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
 | The Geneva Foundation | 3 | $61,994 | Sports Medicine, Strength & Conditioning |
@@ -75,18 +75,18 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$130,770**, middle half $91,950 to $166,400.
-- Full range $58,490 to $166,400.
+- Median **$91,950**, middle half $79,242 to $130,770.
+- Full range $58,490 to $130,770.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Program Leadership | 5 | $62,783 | $166,400 | $166,400 |
-| Strength & Conditioning | 32 | $90,397 | $166,400 | $166,400 |
-| Research & Analytics | 6 | $106,746 | $148,585 | $166,400 |
-| Cognitive Performance | 14 | $98,738 | $130,770 | $130,770 |
-| Sports Medicine | 14 | $84,434 | $106,174 | $157,492 |
+| Cognitive Performance | 11 | $98,738 | $113,610 | $130,770 |
+| Research & Analytics | 3 | $98,738 | $98,738 | $114,754 |
 | Performance Nutrition | 5 | $85,738 | $91,950 | $91,950 |
+| Sports Medicine | 10 | $76,864 | $90,369 | $109,892 |
 | Sport Science | 1 | $85,738 | $85,738 | $85,738 |
+| Strength & Conditioning | 13 | $62,783 | $85,738 | $91,950 |
+| Program Leadership | 2 | $62,783 | $62,783 | $62,783 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
