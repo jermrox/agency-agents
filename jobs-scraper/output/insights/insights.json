@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-08-28T02:24:25.401948+00:00",
+  "generated_at": "2026-08-29T12:52:11.901173+00:00",
   "totals": {
-    "postings": 22,
+    "postings": 23,
     "employers": 2,
-    "unique_jobs": 18,
+    "unique_jobs": 19,
     "with_salary": 3,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-27T00:00:00+00:00"
+      "latest": "2026-08-28T00:00:00+00:00"
     }
   },
   "by_employer": [
     {
       "name": "KBR",
-      "count": 17,
+      "count": 18,
       "disciplines": [
         "strength-conditioning",
-        "nutrition",
         "sports-medicine",
+        "nutrition",
         "cognitive",
         "research"
       ],
@@ -36,62 +36,62 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 15,
+      "count": 16,
       "share": 1.0,
+      "median_salary": 84000.0
+    },
+    {
+      "name": "sports-medicine",
+      "count": 7,
+      "share": 0.4375,
       "median_salary": 84000.0
     },
     {
       "name": "nutrition",
       "count": 6,
-      "share": 0.4,
+      "share": 0.375,
       "median_salary": 91950.0
-    },
-    {
-      "name": "sports-medicine",
-      "count": 6,
-      "share": 0.4,
-      "median_salary": 84000.0
     },
     {
       "name": "cognitive",
       "count": 3,
-      "share": 0.2,
+      "share": 0.1875,
       "median_salary": 84000.0
     },
     {
       "name": "leadership",
       "count": 1,
-      "share": 0.0667,
+      "share": 0.0625,
       "median_salary": 62782.81
     },
     {
       "name": "research",
       "count": 1,
-      "share": 0.0667,
+      "share": 0.0625,
       "median_salary": null
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 18,
+      "count": 19,
       "share": 1.0
     },
     {
       "name": "sof",
-      "count": 15,
-      "share": 0.8333
+      "count": 16,
+      "share": 0.8421
     },
     {
       "name": "training-pipeline",
       "count": 2,
-      "share": 0.1111
+      "share": 0.1053
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 14
+      "count": 15
     },
     {
       "name": "Army",
@@ -108,12 +108,12 @@
       "count": 5
     },
     {
-      "name": "MacDill AFB",
+      "name": "Cannon AFB",
       "count": 2
     },
     {
-      "name": "Cannon AFB",
-      "count": 1
+      "name": "MacDill AFB",
+      "count": 2
     },
     {
       "name": "Coronado",
@@ -150,6 +150,10 @@
       "count": 4
     },
     {
+      "code": "NM",
+      "count": 2
+    },
+    {
       "code": "WA",
       "count": 2
     },
@@ -166,10 +170,6 @@
       "count": 1
     },
     {
-      "code": "NM",
-      "count": 1
-    },
-    {
       "code": "TX",
       "count": 1
     }
@@ -177,24 +177,24 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 13,
-      "share": 0.9286
+      "count": 14,
+      "share": 0.9333
     },
     {
       "name": "ATC",
-      "count": 5,
-      "share": 0.3571
+      "count": 6,
+      "share": 0.4
     },
     {
       "name": "RD",
       "count": 5,
-      "share": 0.3571
+      "share": 0.3333
     }
   ],
   "clearances": [
     {
       "name": "Secret",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Top Secret",
@@ -252,8 +252,8 @@
     }
   },
   "remote": {
-    "count": 2,
-    "share": 0.1111
+    "count": 3,
+    "share": 0.1579
   },
   "timeline": [
     {
@@ -262,18 +262,18 @@
     },
     {
       "month": "2026-08",
-      "count": 10
+      "count": 11
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-05-29T00:00:00+00:00",
+    "pivot": "2026-05-30T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
-        "recent": 17,
+        "recent": 18,
         "previous": 0,
-        "change": 17
+        "change": 18
       },
       {
         "name": "Serco",
@@ -285,15 +285,15 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 13,
+        "recent": 14,
         "previous": 0,
-        "change": 13
+        "change": 14
       },
       {
         "name": "ATC",
-        "recent": 5,
+        "recent": 6,
         "previous": 0,
-        "change": 5
+        "change": 6
       },
       {
         "name": "RD",
