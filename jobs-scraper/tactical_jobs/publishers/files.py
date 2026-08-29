@@ -84,12 +84,53 @@ class JSONFeedPublisher(Publisher):
         existing = load_board(path)
         merged: dict[str, dict] = {job["id"]: job for job in existing if "id" in job}
         now = datetime.now(timezone.utc)
+        added = 0
         for posting in postings:
             entry = posting.to_public_dict()
             if excerpt_chars > 0:
                 entry["description"] = _excerpt(entry["description"], excerpt_chars)
-            entry["listed_at"] = now.isoformat()
+            previous = merged.get(entry["id"])
+            # Keep the ORIGINAL listing date when refreshing an entry that is
+            # already on the board. Stamping it with now would restart the
+            # retention clock every run, and a posting would never age out.
+            if previous and previous.get("listed_at"):
+                entry["listed_at"] = previous["listed_at"]
+            else:
+                entry["listed_at"] = now.isoformat()
+                added += 1
             merged[entry["id"]] = entry
+
+        # Collapse entries that are the same posting under two ids.
+        #
+        # identity is sha256(source + source_id), and source_id can drift for
+        # the same job: the Workday adapter falls back to the URL path when a
+        # detail fetch fails, so one flaky night gives a posting a second id.
+        # The board then carries it twice, and a refresh can only ever reach
+        # one of them -- a KBR requisition sat on the board under an August 7
+        # id showing "Remote - U.S." next to its own corrected August 29 twin.
+        #
+        # A URL is the posting, so two entries sharing one are one job. Keep
+        # the most recently listed entry's DATA, but the earliest listed_at,
+        # so collapsing never resets the retention clock.
+        by_url: dict[str, dict] = {}
+        for job in merged.values():
+            key = (job.get("url") or "").strip().rstrip("/")
+            if not key:
+                by_url[f"__no-url__{job.get('id')}"] = job
+                continue
+            previous = by_url.get(key)
+            if previous is None:
+                by_url[key] = job
+                continue
+            newer, older = (
+                (job, previous)
+                if (job.get("listed_at") or "") >= (previous.get("listed_at") or "")
+                else (previous, job)
+            )
+            newer = dict(newer)
+            newer["listed_at"] = older.get("listed_at") or newer.get("listed_at")
+            by_url[key] = newer
+        merged = {job["id"]: job for job in by_url.values()}
 
         # Age out old entries so the board does not accumulate dead links.
         cutoff = now.timestamp() - retain_days * 86400
@@ -110,7 +151,11 @@ class JSONFeedPublisher(Publisher):
             "jobs": kept,
         }
         path.write_text(json.dumps(payload, indent=2) + "\n")
-        return f"jsonfeed: +{len(postings)} new, {len(kept)} live -> {path}"
+        refreshed = len(postings) - added
+        return (
+            f"jsonfeed: +{added} new, {refreshed} refreshed, "
+            f"{len(kept)} live -> {path}"
+        )
 
 
 class RSSPublisher(Publisher):

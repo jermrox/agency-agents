@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import sys
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -157,3 +157,121 @@ def test_jsonfeed_excerpt_chars_is_configurable(tmp_path):
     JSONFeedPublisher({"path": str(path), "excerpt_chars": 50}).publish([make("1")])
     entry = json.loads(path.read_text())["jobs"][0]
     assert len(entry["description"]) <= 51
+
+
+def test_a_posting_already_on_the_board_is_refreshed_not_frozen(tmp_path):
+    """The board used to keep whatever a posting was FIRST published with.
+
+    A job already listed is re-fetched and re-derived on every run, then
+    dropped at the dedupe step, so its published entry never changed again.
+    That made every extraction fix apply only to jobs the board had never
+    seen: three KBR SOF postings stayed flagged Remote after the fix that
+    corrected them, purely because they were already listed.
+    """
+    path = tmp_path / "jobs.json"
+    first = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+
+    title = "Special Operations Physical Therapist (Onsite - Fort Bragg, NC)"
+    corrected = JobPosting(
+        source="workday:kbr",
+        source_id="R2128061",
+        url="https://kbr.example/job/R2128061",
+        title=title,
+        employer="KBR",
+        location="Fayetteville, North Carolina",
+    )
+    # Same identity, published earlier with the wrong location.
+    stale = corrected.to_public_dict()
+    stale["location"] = "Fayetteville, North Carolina; Remote - U.S."
+    stale["listed_at"] = first
+    path.write_text(json.dumps({"version": 1, "count": 1, "jobs": [stale]}))
+    JSONFeedPublisher({"path": str(path)}).publish([corrected])
+
+    board = json.loads(path.read_text())["jobs"]
+    entry = next(j for j in board if j["location"].startswith("Fayetteville"))
+    assert "Remote" not in entry["location"]
+    # The retention clock must not restart, or a refreshed job never ages out.
+    assert entry["listed_at"] == first
+
+
+def test_refreshing_does_not_duplicate_the_entry(tmp_path):
+    path = tmp_path / "jobs.json"
+    posting = JobPosting(
+        source="workday:kbr",
+        source_id="R1",
+        url="https://kbr.example/job/R1",
+        title="Coach",
+        employer="KBR",
+        location="Fort Bragg, NC",
+    )
+    publisher = JSONFeedPublisher({"path": str(path)})
+    publisher.publish([posting])
+    publisher.publish([posting])
+    assert len(json.loads(path.read_text())["jobs"]) == 1
+
+
+def test_the_same_posting_under_two_ids_is_collapsed(tmp_path):
+    """identity is sha256(source + source_id), and source_id can drift.
+
+    The Workday adapter falls back to the URL path when a detail fetch fails,
+    so one flaky night gives a posting a second id. The board then carried it
+    twice and a refresh could only ever reach one of them: a real KBR
+    requisition sat on the board under an August 7 id still reading
+    "Joint Base Lewis-McChord, Washington; Remote - U.S." right next to its
+    own corrected August 29 twin, and would have stayed for the full 45-day
+    retention window.
+    """
+    path = tmp_path / "jobs.json"
+    url = "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/JBLM/Dietitian_R2128060"
+    old_listed = (datetime.now(timezone.utc) - timedelta(days=22)).isoformat()
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 1,
+                "jobs": [
+                    {
+                        "id": "1d05eb08ff68ccdf4d9d",
+                        "title": "Special Operations Performance Dietitian",
+                        "location": "Joint Base Lewis-McChord, Washington; Remote - U.S.",
+                        "url": url,
+                        "listed_at": old_listed,
+                    }
+                ],
+            }
+        )
+    )
+
+    corrected = JobPosting(
+        source="workday:kbr",
+        source_id="R2128060",
+        url=url,
+        title="Special Operations Performance Dietitian",
+        employer="KBR",
+        location="Joint Base Lewis-McChord, Washington",
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([corrected])
+
+    board = json.loads(path.read_text())["jobs"]
+    assert len(board) == 1, "one URL is one job"
+    assert "Remote" not in board[0]["location"]
+    # Collapsing keeps the EARLIEST listing date, so retention is not reset.
+    assert board[0]["listed_at"] == old_listed
+
+
+def test_entries_without_a_url_are_never_collapsed_together(tmp_path):
+    path = tmp_path / "jobs.json"
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 2,
+                "jobs": [
+                    {"id": "a", "title": "One", "url": "", "listed_at": "2026-08-01T00:00:00+00:00"},
+                    {"id": "b", "title": "Two", "url": "", "listed_at": "2026-08-02T00:00:00+00:00"},
+                ],
+            }
+        )
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([])
+    assert len(json.loads(path.read_text())["jobs"]) == 2

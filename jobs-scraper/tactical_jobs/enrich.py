@@ -262,8 +262,14 @@ _RANGE_SEP_RE = re.compile(
 
 # Number immediately followed by a counting noun: a headcount, a duration, a
 # distance. Never money.
+# The separator is optional AND may be a hyphen, because a compound adjective
+# writes the unit without a space: Serco's H2F postings advertise "80-hour pay
+# periods (generally 40-hour work weeks)". With only "\s*" here, the 80 sailed
+# past this veto, "pay" two words later satisfied the salary cue, and every one
+# of those coaching jobs published a floor of $80/hr -> $166,400 a year, about
+# a hundred thousand above what the role actually pays.
 _UNIT_NOUN_RE = re.compile(
-    r"^\s*(?:%|percent|hours?|hrs?|days?|weeks?|months?|years?|yrs?|minutes?|"
+    r"^[\s\-\u2010-\u2015]*(?:%|percent|hours?|hrs?|days?|weeks?|months?|years?|yrs?|minutes?|"
     r"mins?|miles?|lbs?|pounds?|kgs?|kilograms?|reps?|sets?|sessions?|clients?|"
     r"patients?|athletes?|soldiers?|sailors?|airmen|marines?|operators?|"
     r"personnel|people|employees?|students?|staff|members?|participants?|"
@@ -309,11 +315,26 @@ _VETO_AFTER_RE = re.compile(
 # the word "compensation" in the benefits paragraph.
 _RETIREMENT_RE = re.compile(rf"\b(?:401|403|457){_GAP}\(?{_GAP}[kb]{_GAP}\)?", re.I)
 
+# This is the ONLY gate on a number carrying neither a currency symbol nor a
+# "k" suffix, so every word in it has to be one that does not appear in
+# ordinary benefits prose. The earlier list included bare "pay", "paid",
+# "rate", "range" and "band", which a benefits section says constantly:
+#
+#     "Support your work/life balance with 10 paid Federal Holidays"
+#     "...and 80-hour pay periods (generally 40-hour work weeks)"
+#
+# Both sat in the same Serco H2F posting, and between them published a
+# strength and conditioning coach at $80/hr and then $10/hr. A missing salary
+# is an admitted gap; a wrong one is the number a candidate negotiates
+# against, so this list is deliberately narrow.
+#
+# "pay" and "rate" survive only bound to an explicit money phrase -- "rate of
+# pay", "pay of", "hourly rate" -- never standing alone.
 _SALARY_CUE_RE = re.compile(
-    r"\b(?:salary|salaries|salaried|pay|pays|paid|wage|wages|compensation|"
-    r"compensated|stipend|earn|earns|earning|earnings|remuneration|"
+    r"\b(?:salary|salaries|salaried|wage|wages|compensation|remuneration|"
+    r"stipend|earnings|"
     r"hourly|annually|annualized|yearly|per\s+year|per\s+hour|per\s+annum|"
-    r"rate|range|band|starting\s+at)\b",
+    r"rate\s+of\s+pay|pay\s+rate|hourly\s+rate|pay\s+of|salary\s+of)\b",
     re.I,
 )
 _SALARY_CUE_BEFORE = 120

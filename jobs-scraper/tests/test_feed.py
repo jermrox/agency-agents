@@ -6,6 +6,8 @@ against real data rather than a convenient invention.
 
 from __future__ import annotations
 
+import pytest
+
 import json
 
 from tactical_jobs.feed import (
@@ -137,3 +139,64 @@ def test_normalize_file_round_trips(tmp_path):
     written = json.loads(destination.read_text())
     assert written["count"] == 1
     assert written["jobs"][0]["facets"]["contingency"] == "contingent"
+
+
+# --- salary display ---------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "compensation,expected",
+    [
+        # The two shapes that actually appear on the board, both USAJOBS.
+        ("$102415 - $133142 PA", "$102,415 - $133,142 /yr"),
+        ("$89508 - $116362 PA", "$89,508 - $116,362 /yr"),
+        # A flat rate arrives as an identical pair; one number reads faster.
+        ("$16.92 - $16.92 PH", "$16.92 /hr"),
+        # Hourly keeps cents, and pads them: "$19.5" is not a price.
+        ("$19.5 - $21 PH", "$19.50 - $21.00 /hr"),
+        # The same field spells the interval out on some announcements.
+        ("$63312 - $85658 Per Year", "$63,312 - $85,658 /yr"),
+        ("$45.00 - $45.00 Per Hour", "$45.00 /hr"),
+        ("$88,520 - $115,079 Annually", "$88,520 - $115,079 /yr"),
+        ("$75000", "$75,000"),
+    ],
+)
+def test_a_real_salary_is_formatted_for_a_human(compensation, expected):
+    """PA and PH are USAJOBS rate-interval codes, not something to publish."""
+    from tactical_jobs.feed import salary_display
+
+    assert salary_display(compensation, None) == expected
+
+
+def test_a_derived_floor_says_it_is_a_floor():
+    from tactical_jobs.feed import salary_display
+
+    assert salary_display(None, 63312.0) == "from $63,312"
+    assert salary_display("", 50226.03) == "from $50,226"
+
+
+def test_no_salary_says_so_rather_than_going_blank():
+    """A blank line cannot be told apart from "the board did not bother".
+
+    81 of the 137 postings on the board state no pay at all. Saying that, and
+    pointing at the employer's own listing, is the honest answer -- and it is
+    the one thing that must never be filled in with a guess.
+    """
+    from tactical_jobs.feed import SALARY_UNAVAILABLE, salary_display
+
+    assert SALARY_UNAVAILABLE == (
+        "Salary Unavailable: Click View posting for more information"
+    )
+    for compensation, floor in ((None, None), ("", None), (None, 0), ("", False)):
+        assert salary_display(compensation, floor) == SALARY_UNAVAILABLE
+
+
+@pytest.mark.parametrize(
+    "compensation",
+    ["Competitive DOE", "$120000 Without Compensation", "Negotiable, DOE"],
+)
+def test_wording_we_cannot_parse_is_kept_verbatim(compensation):
+    """The employer's own words beat discarding a figure we cannot read."""
+    from tactical_jobs.feed import salary_display
+
+    assert salary_display(compensation, None) == compensation

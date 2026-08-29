@@ -250,3 +250,67 @@ def test_sweep_is_skipped_when_disabled(tmp_path, monkeypatch):
         pipeline, "check_all", lambda *a, **k: pytest.fail("should not run")
     )
     pipeline._retire_dead(config, pipeline.RunReport())
+
+
+def test_workday_cxs_url_is_derived_from_a_posting_url():
+    from tactical_jobs.liveness import workday_cxs_url
+
+    assert workday_cxs_url(
+        "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Clovis-New-Mexico/PT_R2129095"
+    ) == (
+        "https://kbr.wd5.myworkdayjobs.com/wday/cxs/kbr/KBR_Careers/job/"
+        "Clovis-New-Mexico/PT_R2129095"
+    )
+    # A locale prefix is part of the shell's routing, not the site name.
+    assert workday_cxs_url(
+        "https://gdit.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Site/HP_RQ1"
+    ) == (
+        "https://gdit.wd5.myworkdayjobs.com/wday/cxs/gdit/External_Career_Site/job/"
+        "Site/HP_RQ1"
+    )
+
+
+def test_non_workday_urls_are_left_alone():
+    from tactical_jobs.liveness import workday_cxs_url
+
+    for url in (
+        "https://www.usajobs.gov/job/123456700",
+        "https://nsca.careerwebsite.com/job/coach/8040/",
+        "https://myworkdayjobs.com/not-a-tenant/job/x",
+        "",
+    ):
+        assert workday_cxs_url(url) is None, url
+
+
+def test_a_workday_403_before_any_success_is_not_treated_as_removal(monkeypatch):
+    """The guard against reading a wholesale block as an empty job market.
+
+    Workday answers 403 for a requisition that no longer exists -- but it
+    would also answer 403 if it started blocking us. Without this guard a
+    single bad night would retire every Workday posting on the board at once.
+    """
+    import urllib.error
+    from tactical_jobs import liveness
+
+    liveness._WORKDAY_REACHABLE.clear()
+
+    def blocked(request, timeout=None):
+        raise urllib.error.HTTPError(request.full_url, 403, "denied", {}, None)
+
+    monkeypatch.setattr(liveness.urllib.request, "urlopen", blocked)
+    assert (
+        liveness._workday_requisition_state(
+            "https://kbr.wd5.myworkdayjobs.com/wday/cxs/kbr/S/job/x_R1", timeout=5
+        )
+        is None
+    )
+
+    # Once something has answered 200 this run, a 403 is about the requisition.
+    liveness._WORKDAY_REACHABLE.add(True)
+    assert (
+        liveness._workday_requisition_state(
+            "https://kbr.wd5.myworkdayjobs.com/wday/cxs/kbr/S/job/x_R1", timeout=5
+        )
+        == liveness.GONE
+    )
+    liveness._WORKDAY_REACHABLE.clear()

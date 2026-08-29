@@ -29,6 +29,10 @@ _MAX_BODY_BYTES = 400_000
 _DEFAULT_TIMEOUT = 20
 _DEFAULT_WORKERS = 8
 
+# Set once any Workday JSON endpoint answers 200 in this process. Guards
+# against reading a wholesale block as "every requisition is closed".
+_WORKDAY_REACHABLE: set[bool] = set()
+
 _EXPIRED_MARKERS = (
     "no longer accepting applications",
     "no longer accepting application",
@@ -96,6 +100,44 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+# --- Workday ---------------------------------------------------------------
+#
+# A Workday careers site is a React shell: EVERY /job/... path returns HTTP 200
+# with the same HTML, whether or not the requisition still exists. So the
+# ordinary check can never retire a closed Workday posting, and Workday is the
+# largest source on this board -- KBR, GDIT and Geneva between them. A closed
+# requisition sat published for weeks purely because its shell still answered.
+#
+# The JSON endpoint the shell itself calls does distinguish them. Measured
+# against five real KBR requisitions from one client, same headers, same run:
+#
+#     R2128060  R2128061  R2129095   still open    -> CXS 200, HTML 200
+#     R2122577  R2120241  reposted under a new id  -> CXS 403, HTML 200
+#
+# So a 403 there is Workday saying the requisition is unpublished. It is not
+# the generic 403 that check_url deliberately treats as unknown.
+
+_WORKDAY_HOST_RE = re.compile(r"^[a-z0-9-]+\.wd\d+\.myworkdayjobs\.com$", re.I)
+_WORKDAY_PATH_RE = re.compile(r"^/(?:[a-z]{2}-[A-Z]{2}/)?([^/]+)/job/(.+)$")
+
+
+def workday_cxs_url(url: str) -> str | None:
+    """The JSON endpoint behind a Workday posting URL, or None."""
+    try:
+        parts = urllib.parse.urlsplit(url)
+    except ValueError:
+        return None
+    host = (parts.hostname or "").lower()
+    if not _WORKDAY_HOST_RE.match(host):
+        return None
+    match = _WORKDAY_PATH_RE.match(parts.path)
+    if not match:
+        return None
+    site, rest = match.group(1), match.group(2)
+    tenant = host.split(".", 1)[0]
+    return f"{parts.scheme}://{host}/wday/cxs/{tenant}/{site}/job/{rest}"
+
+
 def check_url(url: str, *, timeout: int = _DEFAULT_TIMEOUT) -> Liveness:
     """Never raises; anything it cannot interpret becomes ``unknown``."""
     if not url or not url.lower().startswith(("http://", "https://")):
@@ -123,6 +165,14 @@ def check_url(url: str, *, timeout: int = _DEFAULT_TIMEOUT) -> Liveness:
         )
     except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
         return Liveness(url, UNKNOWN, f"unreachable: {exc}", checked_at=_now())
+
+    # Workday's shell answers 200 for a requisition that no longer exists, so
+    # the body below can never say otherwise. Ask the endpoint that knows.
+    cxs = workday_cxs_url(url)
+    if cxs is not None:
+        verdict = _workday_requisition_state(cxs, timeout=timeout)
+        if verdict is not None:
+            return Liveness(url, verdict, f"workday cxs: {verdict}", status, final_url, _now())
 
     text = _visible_text(body)
     for marker in _EXPIRED_MARKERS:
@@ -187,3 +237,38 @@ def check_all(
         len(results) - gone - unknown, gone, unknown,
     )
     return results
+
+
+def _workday_requisition_state(cxs_url: str, *, timeout: int) -> str | None:
+    """``gone`` / ``live`` from Workday's own JSON endpoint, or None if unclear.
+
+    Returns None rather than guessing whenever the answer could be about us
+    instead of the requisition -- a timeout, a 5xx, anything unparseable.
+    """
+    request = urllib.request.Request(
+        cxs_url,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            status = getattr(response, "status", None) or response.getcode()
+            if status == 200:
+                _WORKDAY_REACHABLE.add(True)
+                return LIVE
+            return None
+    except urllib.error.HTTPError as exc:
+        if exc.code in (403, 404, 410):
+            # Only trust this as a removal once something in this run has come
+            # back 200 from a Workday endpoint. Without that check, Workday
+            # rate-limiting or blocking us wholesale would read as "every
+            # requisition closed" and empty the board in one sweep.
+            if _WORKDAY_REACHABLE:
+                return GONE
+            log.warning(
+                "workday cxs %s returned %s before any 200 this run; "
+                "treating as unknown rather than risking a mass retire",
+                cxs_url, exc.code,
+            )
+        return None
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError):
+        return None
