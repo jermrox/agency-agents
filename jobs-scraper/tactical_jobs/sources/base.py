@@ -104,7 +104,14 @@ def parse_timestamp(value: Any) -> datetime | None:
     return None
 
 
-REMOTE_HINTS = ("remote", "telework", "work from home", "virtual", "anywhere")
+# "telework" is deliberately absent. In federal usage it means the postholder
+# may be approved for OCCASIONAL work from home from a job that is otherwise
+# on the installation -- measured across 25 live USAJOBS announcements it was
+# true on 10 while the actual remote flag was true on none. Treating it as a
+# synonym for remote put on-base jobs in front of people filtering for work
+# from home. "telecommut" stays a hint elsewhere: that one really does mean
+# the duty station is your home.
+REMOTE_HINTS = ("remote", "work from home", "virtual", "anywhere")
 
 
 def looks_remote(*fields: str | None) -> bool:

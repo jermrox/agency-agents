@@ -626,6 +626,11 @@ location column with nonsense. Requiring a genuine state keeps the parser
 honest and lets it fail closed.
 """
 
+# "telework" belongs here and nowhere else. These lists answer "does this
+# fragment read as a LOCATION?" for title parsing -- "Coach - Telework (CONUS)"
+# has a location in the tail, not an employer. Whether the job is actually
+# remote is a different question, answered by REMOTE_HINTS in base.py and
+# _REMOTE_RE in facets.py, and telework is deliberately absent from both.
 _REMOTE_LOCATION_HINTS = (
     "work from home", "work at home", "multiple locations", "remote", "nationwide",
     "virtual", "telework", "telecommute", "anywhere",
@@ -953,7 +958,7 @@ _GENERIC_FIELDS = (
     "detail_url",
 )
 
-_TRUTHY = {"true", "yes", "y", "1", "remote", "telework", "virtual"}
+_TRUTHY = {"true", "yes", "y", "1", "remote", "virtual"}  # not "telework"
 
 
 def _truthy(value: Any) -> bool:

@@ -178,7 +178,13 @@ _OCONUS_RE = re.compile(
     r"singapore|australia|new\s+zealand|"
     r"kuwait|qatar|bahrain|\bUAE\b|united\s+arab\s+emirates|saudi|jordan|"
     r"iraq|afghanistan|djibouti|kenya|somalia|"
-    r"colombia|honduras|panama|"
+    # Country NAMES are only safe here when they are not also American place
+    # names, which rules out most of Latin America: Peru, Lima, Panama City and
+    # Cairo are all US towns. Only distinctive or multi-word ones go in.
+    # "panama" needs the guard because Panama City and Panama City Beach are
+    # both in Florida, and one of them is on this board.
+    r"colombia|honduras|el\s+salvador|guatemala|costa\s+rica|belize|"
+    r"panama(?!\s+city)|"
     r"guam|puerto\s+rico|virgin\s+islands|american\s+samoa|"
     r"alaska|hawaii|"
     r"\bRAF\s+\w+|\bAPO\b|\bFPO\b|\bAE\b\s*\d|"
@@ -191,18 +197,44 @@ _OCONUS_RE = re.compile(
     re.I,
 )
 
-# Bare ISO-2 codes in a delimited list ("JP; IT; DE; KY, US"). DE collides
+# Bare country codes in a delimited list ("JP; IT; DE; KY, US"). DE collides
 # with Delaware; a US state code is always written "DE, US" so the negative
 # lookahead resolves it.
+#
+# Both ISO-2 and ISO-3 are needed. Workday tenants write ISO-3: GDIT's Korea
+# postings arrive as "Camp Casey, KOR", which matched nothing here and left
+# the posting unclassified -- and an unclassified location used to show under
+# every location chip, including Remote. No ISO-3 code below collides with a
+# US state abbreviation, so no lookahead is needed for them.
 _OCONUS_COUNTRY_CODE_RE = re.compile(
     r"(?:^|[;,]\s*|\s)"
     r"(?:JP|KR|DE|IT|GB|ES|PT|BE|NL|PL|RO|BG|GR|TR|NO|QA|KW|BH|AE|SA|JO|IQ|"
-    r"AF|DJ|KE|AU|NZ|PH|TH|SG|CO|HN|PA)"
+    r"AF|DJ|KE|AU|NZ|PH|TH|SG|HN)"
     r"(?!\s*,\s*(?:US|USA)\b)(?![A-Za-z])"
+)
+# CO (Colombia) and PA (Panama) are deliberately absent above. Both are US
+# state abbreviations first -- "Colorado Springs, CO" and "Indiana, PA" were
+# being published as OCONUS -- and the ", US" lookahead does not save them,
+# because a bare "City, ST" string is how nearly every US location on this
+# board is written. Colombia and Panama are reached by name instead. DE stays
+# only because Delaware is always written "DE, US" in the one feed that uses
+# the delimited form.
+
+_OCONUS_COUNTRY_CODE3_RE = re.compile(
+    r"(?:^|[;,]\s*|\s)"
+    r"(?:JPN|KOR|DEU|ITA|GBR|ESP|PRT|BEL|NLD|POL|ROU|BGR|GRC|TUR|NOR|QAT|"
+    r"KWT|BHR|ARE|SAU|JOR|IRQ|AFG|DJI|KEN|AUS|NZL|PHL|THA|SGP|COL|HND|PAN|"
+    r"SLV|GTM|CRI|PER|CHL|BRA|ARG|EGY|ISR|OMN|CYP|GRL|ISL)"
+    r"(?![A-Za-z])"
 )
 
 _REMOTE_RE = re.compile(
-    r"\b(?:remote|work\s+from\s+home|telework|telecommut|virtual|anywhere)\b",
+    # No "telework" -- see REMOTE_HINTS in sources/base.py. It means occasional
+    # work from home from an on-base job, not a remote position.
+    # telecommut\w* rather than a bare stem: the trailing \b in this pattern
+    # can never match between the "t" of "telecommut" and the "e" of
+    # "telecommute", so the bare stem matched nothing at all.
+    r"\b(?:remote|work\s+from\s+home|telecommut\w*|virtual|anywhere)\b",
     re.I,
 )
 _REMOTE_VETO_RE = re.compile(
@@ -212,18 +244,207 @@ _REMOTE_VETO_RE = re.compile(
 )
 
 
+UNSPECIFIED_LOCATION = "unspecified"
+
+
 def location_classes(location: str, remote_flag: bool = False) -> frozenset[str]:
-    """Any of ``remote`` / ``conus`` / ``oconus``. Empty means unknown."""
+    """Any of ``remote`` / ``conus`` / ``oconus``, else ``{unspecified}``.
+
+    Never returns an empty set. That is deliberate and load-bearing: a board
+    reading this feed has to decide what to do with a posting it cannot place,
+    and the obvious reading of an empty set -- "no constraint, so it matches
+    every filter" -- is the wrong one. It put a Serco requisition spanning many
+    installations and a GDIT pipeline req with no site yet under **Remote**, in
+    front of candidates who had filtered for work from home.
+
+    Naming the gap instead of leaving a hole means a consumer cannot fall into
+    that reading by accident, and it gives the board an honest chip to render:
+    "location not stated" is a real answer a candidate can act on, where a
+    silent guess of CONUS is not.
+    """
     found: set[str] = set()
     text = location or ""
 
     if remote_flag or (_REMOTE_RE.search(text) and not _REMOTE_VETO_RE.search(text)):
         found.add("remote")
-    if _OCONUS_RE.search(text) or _OCONUS_COUNTRY_CODE_RE.search(text):
+    if (
+        _OCONUS_RE.search(text)
+        or _OCONUS_COUNTRY_CODE_RE.search(text)
+        or _OCONUS_COUNTRY_CODE3_RE.search(text)
+    ):
         found.add("oconus")
     if _CONUS_STATE_RE.search(text) or _CONUS_STATE_NAMES_RE.search(text):
         found.add("conus")
-    return frozenset(found)
+    return frozenset(found) or frozenset({UNSPECIFIED_LOCATION})
+
+
+# --- Service branch ---------------------------------------------------------
+#
+# Which service a candidate would actually be embedded with. It is the question
+# behind "is this an H2F job or a SEAL job", and nothing in a posting states it
+# as a field -- it has to be read out of the employer name, the program name,
+# or the installation.
+#
+# Returned as a SET, not one value, because plenty of these postings genuinely
+# serve more than one service. GDIT lists a single strength-and-conditioning
+# requisition across Fort Bragg, Coronado, Fort Campbell, Hurlburt Field and
+# JBLM in one go -- Army, Navy, and Air Force in the same req. Collapsing that
+# to a single branch would be a lie in whichever direction it fell.
+#
+# Ordered most-specific evidence first within each branch. Every pattern below
+# was chosen against postings actually seen from Serco, GDIT, KBR, Geneva and
+# USAJOBS, not from a general list of bases.
+BRANCHES: tuple[tuple[str, str], ...] = (
+    ("army", "Army"),
+    ("navy", "Navy"),
+    ("air-force", "Air Force"),
+    ("marine-corps", "Marine Corps"),
+    ("space-force", "Space Force"),
+    ("coast-guard", "Coast Guard"),
+    ("joint", "Joint / DoD-wide"),
+)
+
+BRANCH_LABELS: dict[str, str] = dict(BRANCHES)
+
+_BRANCH_RES: tuple[tuple[str, re.Pattern[str]], ...] = (
+    (
+        "army",
+        re.compile(
+            # Service and command names.
+            r"\b(?:U\.?S\.?\s*)?Army\b|\bDepartment\s+of\s+the\s+Army\b|"
+            r"\bUSARPAC\b|\bFORSCOM\b|\bUSASOC\b|\bTRADOC\b|\bAMEDD\b|"
+            r"\bSFAB\b|\bSWCS\b|\b75th\s+Ranger\b|\bSpecial\s+Forces\s+Group\b|"
+            # Programs that exist only in the Army.
+            r"\bH2F\b|\bH2FIT\b|\bHolistic\s+Health\s+and\s+Fitness\b|"
+            r"\bTHOR3\b|\bR2PC\b|\bReady\s+and\s+Resilient\b|"
+            r"\bMaster\s+Resilience\s+Trainer\b|\bSoldier\b|\bSoldiers\b|"
+            # "Fort X" is an Army post; the Air Force and Navy do not use it.
+            # Fort Meade and Fort Belvoir are joint tenants, but the Army is
+            # the host in both cases, so this stays correct there too.
+            #
+            # The lookahead is not optional. A good few American cities are
+            # named Fort-something and have no post in them at all, and a VA
+            # hospital in Fort Lauderdale was being labelled Army because of
+            # it. These are the populous ones, which is where the health-care
+            # postings that reach this board actually are.
+            r"\bFort\s+(?!Worth|Lauderdale|Collins|Myers|Wayne|Smith|Pierce|"
+            r"Dodge|Walton|Payne|Mill|Madison|Scott|Atkinson|Thomas|Washington)"
+            r"[A-Za-z]+|"
+            r"\bFt\.?\s+(?!Worth|Lauderdale|Collins|Myers|Wayne|Smith|Pierce)"
+            r"[A-Za-z]+|"
+            r"\bSchofield\s+Barracks\b|\bCamp\s+Casey\b|\bCamp\s+Humphreys\b|"
+            r"\bGrafenwoehr\b|\bVilseck\b|\bHohenfels\b|\bAnsbach\b",
+            re.I,
+        ),
+    ),
+    (
+        "navy",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Navy\b|\bNaval\b|\bDepartment\s+of\s+the\s+Navy\b|"
+            r"\bCNIC\b|\bNavy\s+Installations\s+Command\b|\bBUMED\b|"
+            r"\bNSW\b|\bNaval\s+Special\s+Warfare\b|\bSEAL\b|\bSWCC\b|"
+            r"\bNAVSTA\b|\bNAS\s+[A-Z]|\bNSA\s+[A-Z][a-z]+|"
+            r"\bSailor\b|\bSailors\b|\bMWR\b|"
+            r"\bCoronado\b|\bDam\s+Neck\b|\bLittle\s+Creek\b|\bGreat\s+Lakes\b|"
+            r"\bPoint\s+Mugu\b|\bSigonella\b|\bRota\b",
+            re.I,
+        ),
+    ),
+    (
+        "air-force",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Air\s+Force\b|\bUSAF\b|\bAFSOC\b|\bACC\b|"
+            r"\bAir\s+Force\s+Base\b|\bAFB\b|\bAir\s+Base\b|\bAirman\b|"
+            r"\bAirmen\b|\bAFCENT\b|\bAMC\b|"
+            r"\bHurlburt\s+Field\b|\bCannon\s+AFB\b|\bEglin\b|\bMacDill\b|"
+            r"\bKadena\b|\bYokota\b|\bMisawa\b|\bOsan\b|\bRamstein\b|"
+            r"\bAviano\b|\bLakenheath\b|\bMildenhall\b|\bRAF\s+\w+",
+            re.I,
+        ),
+    ),
+    (
+        "marine-corps",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Marine\s+Corps\b|\bUSMC\b|\bMARSOC\b|"
+            r"\bMarine\s+Raider\b|\bMarines\b|\bMCB\b|\bMCAS\b|\bMCRD\b|"
+            # HITT is the Marine Corps' own human performance program, and it
+            # is the single strongest tell in this whole table.
+            r"\bHITT\b|\bHigh\s+Intensity\s+Tactical\s+Training\b|"
+            r"\bForce\s+Fitness\b|"
+            r"\bCamp\s+Lejeune\b|\bCamp\s+Pendleton\b|\bQuantico\b|"
+            r"\bTwentynine\s+Palms\b|\b29\s+Palms\b|\bCamp\s+Foster\b|"
+            r"\bCamp\s+Schwab\b|\bCamp\s+Courtney\b|\bOkinawa\b|"
+            r"\bCherry\s+Point\b|\bParris\s+Island\b",
+            re.I,
+        ),
+    ),
+    (
+        "space-force",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Space\s+Force\b|\bUSSF\b|\bGuardian\s+Resilience\b|"
+            r"\bSpace\s+Systems\s+Command\b|\bSchriever\b|\bBuckley\s+(?:AFB|SFB)\b|"
+            r"\bPeterson\s+(?:AFB|SFB)\b|\bPatrick\s+(?:AFB|SFB)\b|\bVandenberg\b",
+            re.I,
+        ),
+    ),
+    (
+        "coast-guard",
+        re.compile(
+            r"\b(?:U\.?S\.?\s*)?Coast\s+Guard\b|\bUSCG\b|\bCoast\s+Guardsman\b",
+            re.I,
+        ),
+    ),
+    (
+        "joint",
+        re.compile(
+            r"\bUSSOCOM\b|\bSOCOM\b|\bJSOC\b|\bSOF\b|\bPOTFF\b|"
+            r"\bSpecial\s+Operations\s+Command\b|"
+            r"\bPreservation\s+of\s+the\s+Force\b|"
+            r"\bJoint\s+Base\b|\bJoint\s+Task\s+Force\b|"
+            r"\bDefense\s+Health\s+Agency\b|\bDHA\b|\bDoD\b|"
+            r"\bDepartment\s+of\s+Defense\b|\bTri-?Service\b",
+            re.I,
+        ),
+    ),
+)
+
+# A description is long and full of incidental mentions -- a Serco H2F posting
+# names the Air Force once in a benefits paragraph. Title, employer and
+# location are declarative about who the job serves; the description is only
+# consulted when those three say nothing at all.
+_BRANCH_BODY_CAP = 600
+
+
+def branches_of(
+    title: str, employer: str = "", location: str = "", description: str = ""
+) -> frozenset[str]:
+    """Which service branches a posting serves. Empty means undetermined."""
+    # An employer that names a service IS the answer, and it outranks the
+    # installation. USAJOBS posts these as "United States Space Force" at
+    # "Schriever AFB" -- a base the Space Force inherited and whose legacy name
+    # still says Air Force. Reading both would file a Space Force job under
+    # Air Force. Contractors (Serco, GDIT, KBR) match nothing here, so they
+    # fall through to the combined read below, which is what they need.
+    by_employer = {slug for slug, pattern in _BRANCH_RES if pattern.search(employer or "")}
+    if by_employer:
+        return frozenset(by_employer)
+
+    strong = " \n".join(part for part in (title, employer, location) if part)
+    found = {slug for slug, pattern in _BRANCH_RES if pattern.search(strong)}
+    if found:
+        return frozenset(found)
+
+    body = (description or "")[:_BRANCH_BODY_CAP]
+    if not body:
+        return frozenset()
+    return frozenset(
+        slug for slug, pattern in _BRANCH_RES if pattern.search(body)
+    )
+
+
+def branch_labels(slugs: "frozenset[str] | set[str] | list[str]") -> list[str]:
+    """Display labels for branch slugs, in the canonical BRANCHES order."""
+    return [label for slug, label in BRANCHES if slug in set(slugs)]
 
 
 _CONTINGENT_WINDOW = 80
@@ -316,10 +537,15 @@ def salary_floor_annual(enrichment: dict[str, Any]) -> float | None:
 def facets_for(posting: JobPosting) -> dict[str, Any]:
     """Every facet for one posting, in the shape the feed publishes."""
     slug = discipline_of(posting.title, posting.description)
+    branches = branches_of(
+        posting.title, posting.employer, posting.location, posting.description
+    )
     return {
         "discipline": slug,
         "discipline_label": discipline_label(slug),
         "lead": is_lead(posting.title),
+        "branches": sorted(branches),
+        "branch_labels": branch_labels(branches),
         "location_classes": sorted(
             location_classes(posting.location, posting.remote)
         ),

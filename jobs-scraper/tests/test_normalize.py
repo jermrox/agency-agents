@@ -6,6 +6,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tactical_jobs.classify import Thresholds  # noqa: E402
@@ -84,7 +86,14 @@ def test_parse_timestamp_always_timezone_aware():
 
 def test_looks_remote():
     assert looks_remote("Remote - US")
-    assert looks_remote(None, "Telework eligible")
+    # "Telework eligible" must NOT read as remote: in federal usage it means
+    # occasional work from home from a job that is otherwise on the
+    # installation. Across 25 live USAJOBS announcements it was true on 10
+    # while the actual remote flag was true on none, so treating it as a
+    # synonym put on-base jobs in front of people filtering for remote work.
+    assert not looks_remote(None, "Telework eligible")
+    assert not looks_remote("Cannon AFB, New Mexico", "telework eligible")
+    assert looks_remote(None, "Fully remote")
     assert not looks_remote("Fort Bragg, NC")
 
 
@@ -112,6 +121,57 @@ def test_config_missing_env_var_fails_loudly(tmp_path, monkeypatch):
         assert "ABSENT_TOKEN" in str(exc)
     else:  # pragma: no cover
         raise AssertionError("expected ConfigError")
+
+
+def test_an_optional_source_is_dropped_when_its_credential_is_absent(tmp_path, monkeypatch):
+    # This is what lets the USAJOBS source live in sources.keyless.toml: an
+    # operator with no key still gets every other source, instead of a run
+    # that dies at startup.
+    monkeypatch.delenv("ABSENT_TOKEN", raising=False)
+    config_file = tmp_path / "sources.toml"
+    config_file.write_text(
+        '[[source]]\nkind = "usajobs"\nname = "federal"\noptional = true\n'
+        'api_key = "${ABSENT_TOKEN}"\n\n'
+        '[[source]]\nkind = "rss"\nname = "keyless"\nurl = "https://example.invalid/feed"\n'
+    )
+    config = Config.load(config_file)
+    assert [source.name for source in config.sources] == ["keyless"]
+
+
+def test_an_optional_source_still_loads_when_its_credential_is_present(tmp_path, monkeypatch):
+    monkeypatch.setenv("PRESENT_TOKEN", "real-key")
+    config_file = tmp_path / "sources.toml"
+    config_file.write_text(
+        '[[source]]\nkind = "usajobs"\nname = "federal"\noptional = true\n'
+        'api_key = "${PRESENT_TOKEN}"\n'
+    )
+    config = Config.load(config_file)
+    assert config.sources[0].options["api_key"] == "real-key"
+    # `optional` is loader bookkeeping and must not reach the adapter.
+    assert "optional" not in config.sources[0].options
+
+
+def test_a_source_without_optional_still_fails_loudly(tmp_path, monkeypatch):
+    # The leniency above is opt-in only. Everything else keeps the old
+    # behaviour, because a publisher silently posting nowhere is the bug the
+    # loud failure exists to prevent.
+    monkeypatch.delenv("ABSENT_TOKEN", raising=False)
+    config_file = tmp_path / "sources.toml"
+    config_file.write_text(
+        '[[source]]\nkind = "greenhouse"\nname = "x"\nboard_token = "${ABSENT_TOKEN}"\n'
+    )
+    with pytest.raises(ConfigError):
+        Config.load(config_file)
+
+
+def test_a_publisher_is_never_made_optional(tmp_path, monkeypatch):
+    monkeypatch.delenv("ABSENT_TOKEN", raising=False)
+    config_file = tmp_path / "sources.toml"
+    config_file.write_text(
+        '[[publisher]]\nkind = "webhook"\noptional = true\nurl = "${ABSENT_TOKEN}"\n'
+    )
+    with pytest.raises(ConfigError):
+        Config.load(config_file)
 
 
 def test_config_auto_publish_defaults_to_off(tmp_path):

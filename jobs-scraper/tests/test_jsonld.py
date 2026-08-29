@@ -775,3 +775,121 @@ def test_page_body_returned_as_text_is_handled(monkeypatch):
         monkeypatch, {PAGE_URL: _page(BARE_JOB).decode()}, {"urls": [PAGE_URL]}
     )
     assert [p.source_id for p in postings] == ["REQ-9981"]
+
+
+# --- SEO location padding ---------------------------------------------------
+
+
+def _posting_node(count, title="Coach - Fort Bragg, NC"):
+    return {
+        "@type": "JobPosting",
+        "title": title,
+        "url": "https://careers.example.com/job/1",
+        "description": "<p>Trains soldiers.</p>",
+        "hiringOrganization": {"name": "Serco USA"},
+        "jobLocation": [
+            {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": f"City{i}",
+                    "addressRegion": "Virginia",
+                    "addressCountry": "USA",
+                },
+            }
+            for i in range(count)
+        ],
+    }
+
+
+def test_a_normal_location_list_is_published_in_full():
+    from tactical_jobs.sources.jsonld import _locations
+
+    assert _locations(_posting_node(3)) == (
+        "City0, Virginia, USA; City1, Virginia, USA; City2, Virginia, USA"
+    )
+
+
+def test_an_seo_padded_location_list_is_not_sampled():
+    # Serco's real H2F postings carry 120 jobLocation entries covering an
+    # entire recruiting radius, and the first is an empty locality with a
+    # Washington DC postal code -- so picking the first is as wrong as
+    # publishing all of them. The title names the one real site.
+    from tactical_jobs.sources.jsonld import _locations
+
+    assert _locations(_posting_node(120), title="Coach - Fort Bragg, NC") == "Fort Bragg, NC"
+
+
+def test_an_over_cap_list_collapses_to_regions_rather_than_to_nothing():
+    """Discarding the list outright threw away sixteen real locations.
+
+    Serco publishes one Army H2FIT requisition across sixteen installations as
+    bare region codes -- KS, HI, MO, SC, OK, TX, WA, JP, IT, DE and more --
+    with no locality on any entry and no place in the title. The old rule read
+    that as SEO padding and returned nothing, leaving the posting unplaceable,
+    which is what put it in front of candidates filtering for remote work.
+    A long list is not automatically noise.
+    """
+    from tactical_jobs.sources.jsonld import _locations
+
+    node = {
+        "@type": "JobPosting",
+        "title": "H2FIT: Strength and Conditioning Coaches",
+        "jobLocation": [
+            {"address": {"addressLocality": "", "addressRegion": r, "addressCountry": "US"}}
+            for r in ("KS", "HI", "MO", "SC", "OK", "TX", "WA", "JP", "IT", "DE")
+        ],
+    }
+    result = _locations(node, title=node["title"])
+    assert result, "an unplaceable posting is worse than a broad one"
+    assert "KS" in result and "HI" in result and "JP" in result
+
+
+def test_collapsing_to_regions_keeps_the_state_not_the_country():
+    # Taking the last comma-separated segment collapses every US entry to the
+    # useless token "US" instead of naming the state.
+    from tactical_jobs.sources.jsonld import _locations
+
+    assert _locations(_posting_node(120), title="Coach") == "Virginia"
+
+
+def test_the_cap_is_configurable():
+    from tactical_jobs.sources.jsonld import _locations
+
+    # At or under the cap the full enumeration is published verbatim; over it
+    # the entry falls back to the title, then to the collapsed regions.
+    assert "City0" in _locations(_posting_node(3), max_locations=3, title="Coach")
+    assert "City0" not in _locations(_posting_node(3), max_locations=2, title="Coach")
+    assert _locations(_posting_node(3), max_locations=2, title="Coach - Fort Sill, OK") == (
+        "Fort Sill, OK"
+    )
+
+
+def test_a_negative_cap_disables_the_check():
+    from tactical_jobs.sources.jsonld import _locations
+
+    assert _locations(_posting_node(120), max_locations=-1) != ""
+
+
+def test_title_recovers_the_place_when_the_list_is_discarded(monkeypatch):
+    from tactical_jobs.sources.jsonld import _location_from_title
+
+    assert _location_from_title("H2Fit: S&C Coach - Fort Bragg, NC") == "Fort Bragg, NC"
+    assert _location_from_title("H2Fit: S&C Coach - Camp Casey, Korea") == "Camp Casey, Korea"
+    assert _location_from_title("S&C Coach - H2F (Ft. Drum, NY)") == "Ft. Drum, NY"
+
+
+def test_a_hyphenated_place_name_is_not_split_at_its_own_hyphen():
+    from tactical_jobs.sources.jsonld import _location_from_title
+
+    assert (
+        _location_from_title("H2Fit: S&C Coach - Joint Base Langley-Eustis, VA")
+        == "Joint Base Langley-Eustis, VA"
+    )
+
+
+def test_a_trailing_qualifier_is_not_mistaken_for_a_place():
+    from tactical_jobs.sources.jsonld import _location_from_title
+
+    for title in ("HITT Instructor - Level I", "Athletic Trainer - Full Time", "Physical Therapist"):
+        assert _location_from_title(title) == "", title

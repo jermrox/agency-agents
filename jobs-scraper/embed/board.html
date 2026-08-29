@@ -311,6 +311,14 @@
 
     <div class="mm-group">
       <div class="mm-legend">
+        Service branch
+        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</span>
+      </div>
+      <div class="mm-chips" id="mm-f-branch"></div>
+    </div>
+
+    <div class="mm-group">
+      <div class="mm-legend">
         Location
         <span class="mm-hint">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS.</span>
       </div>
@@ -387,6 +395,7 @@
   var els = {
     sub: document.getElementById("mm-sub"),
     discipline: document.getElementById("mm-f-discipline"),
+    branch: document.getElementById("mm-f-branch"),
     location: document.getElementById("mm-f-location"),
     q: document.getElementById("mm-q"),
     salary: document.getElementById("mm-salary"),
@@ -403,9 +412,20 @@
 
   var JOBS = [];
   var DEFS = {};
-  var selected = { discipline: new Set(), location: new Set() };
+  var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
 
-  var LOCATION_LABELS = { remote: "Remote", conus: "CONUS", oconus: "OCONUS" };
+  var UNPLACED = "unspecified";
+  var LOCATION_LABELS = {
+    remote: "Remote", conus: "CONUS", oconus: "OCONUS",
+    unspecified: "Location not stated"
+  };
+  var UNATTRIBUTED = "none";
+  var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
+  var BRANCH_LABELS = {
+    "army": "Army", "navy": "Navy", "air-force": "Air Force", "marine-corps": "Marine Corps",
+    "space-force": "Space Force", "coast-guard": "Coast Guard", "joint": "Joint / DoD-wide",
+    "none": "Not service-specific"
+  };
   var CONFIDENCE_RANK = { verified: 0, listed: 1, aggregator: 2 };
   var CONFIDENCE_LABELS = { verified: "Verified live", listed: "Listed by employer", aggregator: "Aggregator lead" };
 
@@ -428,9 +448,27 @@
     if (ignore !== "discipline" && selected.discipline.size) {
       if (!selected.discipline.has(f.discipline || "other")) return false;
     }
+    if (ignore !== "branch" && selected.branch.size) {
+      var bs = f.branches || [];
+      // Branch does NOT follow the "unknown matches everything" rule that
+      // location uses, because here an empty set usually is not missing data --
+      // a CBP officer or Bureau of Prisons role genuinely has no service
+      // branch. Letting those float into every chip put CBP Officers under
+      // "Marine Corps" and inflated every count. They get their own bucket.
+      var hit = bs.length
+        ? bs.some(function (b) { return selected.branch.has(b); })
+        : selected.branch.has(UNATTRIBUTED);
+      if (!hit) return false;
+    }
     if (ignore !== "location" && selected.location.size) {
-      var classes = f.location_classes || [];
-      if (classes.length && !classes.some(function (c) { return selected.location.has(c); })) return false;
+      // Plain membership. The feed names every posting's location class --
+      // "unspecified" when it cannot be placed -- so there is no empty set to
+      // interpret, and the old reading of one ("no constraint, matches every
+      // chip") cannot come back. That reading is what put a Serco multi-site
+      // requisition and a GDIT pipeline req under Remote.
+      var classes = f.location_classes || [UNPLACED];
+      if (!classes.length) classes = [UNPLACED];
+      if (!classes.some(function (c) { return selected.location.has(c); })) return false;
     }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
@@ -455,9 +493,14 @@
       var n = JOBS.filter(function (job) {
         if (group === "discipline") {
           if ((facetsOf(job).discipline || "other") !== opt.value) return false;
+        } else if (group === "branch") {
+          var bs = facetsOf(job).branches || [];
+          if (opt.value === UNATTRIBUTED) { if (bs.length) return false; }
+          else if (bs.indexOf(opt.value) === -1) return false;
         } else {
           var cs = facetsOf(job).location_classes || [];
-          if (cs.length && cs.indexOf(opt.value) === -1) return false;
+          if (!cs.length) cs = [UNPLACED];
+          if (cs.indexOf(opt.value) === -1) return false;
         }
         return matches(job, group);
       }).length;
@@ -501,12 +544,26 @@
       });
   }
 
+  function branchOptions() {
+    var present = {};
+    JOBS.forEach(function (job) {
+      var bs = facetsOf(job).branches || [];
+      if (!bs.length) present[UNATTRIBUTED] = true;
+      bs.forEach(function (b) { present[b] = true; });
+    });
+    return BRANCH_ORDER.filter(function (b) { return present[b]; })
+      .map(function (b) { return { value: b, label: BRANCH_LABELS[b] }; });
+  }
+
   function locationOptions() {
     var present = {};
     JOBS.forEach(function (job) {
       (facetsOf(job).location_classes || []).forEach(function (c) { present[c] = true; });
     });
-    return ["remote", "conus", "oconus"].filter(function (c) { return present[c]; })
+    JOBS.forEach(function (job) {
+      if (!(facetsOf(job).location_classes || []).length) present[UNPLACED] = true;
+    });
+    return ["remote", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
   }
 
@@ -516,6 +573,9 @@
       var job = JOBS.find(function (j) { return (facetsOf(j).discipline || "other") === slug; });
       var label = job ? facetsOf(job).discipline_label : slug;
       pills.push({ label: label, onRemove: function () { selected.discipline.delete(slug); render(); } });
+    });
+    selected.branch.forEach(function (b) {
+      pills.push({ label: BRANCH_LABELS[b] || b, onRemove: function () { selected.branch.delete(b); render(); } });
     });
     selected.location.forEach(function (loc) {
       pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
@@ -614,6 +674,7 @@
 
   function render() {
     renderChips(els.discipline, "discipline", disciplineOptions());
+    renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
     renderActiveFilters();
 
@@ -634,7 +695,7 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      var hasFilters = selected.discipline.size || selected.location.size || els.hideContingent.checked ||
+      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size || els.hideContingent.checked ||
         (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
       empty.innerHTML = ICONS.empty +
         "<span>" + (JOBS.length
@@ -675,6 +736,7 @@
 
   function clearAll() {
     selected.discipline.clear();
+    selected.branch.clear();
     selected.location.clear();
     els.q.value = "";
     els.salary.value = "0";

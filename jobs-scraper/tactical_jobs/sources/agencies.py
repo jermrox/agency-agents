@@ -224,7 +224,7 @@ def resolve_path(payload: Any, path: str | None) -> Any:
 # small coercions
 # ---------------------------------------------------------------------------
 
-_TRUTHY = {"true", "yes", "y", "1", "remote", "telework", "virtual"}
+_TRUTHY = {"true", "yes", "y", "1", "remote", "virtual"}  # not "telework"
 
 
 def _truthy(value: Any) -> bool:

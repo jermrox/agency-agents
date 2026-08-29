@@ -214,3 +214,62 @@ def test_punctuation_does_not_break_matching():
         "Supporting military special operations soldiers.",
     )
     assert classify(posting) in {Verdict.PUBLISH, Verdict.REVIEW}
+
+
+# --- service context: the classifier reads the location ---------------------
+#
+# Every string below is from a real posting pulled on 2026-08-28.
+
+
+def _posting(title, employer="", location="", description=""):
+    return JobPosting(
+        source="test", source_id="1", url="https://example.invalid/j",
+        title=title, employer=employer, location=location, description=description,
+    )
+
+
+def test_the_installation_is_domain_evidence():
+    # A Defense Health Agency physical therapist at Camp Lejeune. Before the
+    # location was read, its strongest tactical signal sat in a field the
+    # classifier never opened.
+    posting = _posting(
+        "Physical Therapist",
+        "Military Treatment Facilities under DHA",
+        "Camp Lejeune, North Carolina",
+        "Provides outpatient physical therapy and return-to-duty rehabilitation.",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+    assert "service context" in posting.domain_hits
+
+
+def test_a_credential_pathway_is_not_a_tactical_posting():
+    # Federal health-care announcements list military training among the
+    # qualifying routes into the profession. That sentence is about the
+    # applicant's schooling, not about the work, and it was putting outpatient
+    # VA clinic jobs on the board.
+    posting = _posting(
+        "Physical Therapy Assistant",
+        "Veterans Health Administration",
+        "Montgomery, Alabama",
+        "Graduate of military physical therapy assistant programs that meet the "
+        "educational requirement and have successfully passed the NPTE for PTAs.",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "service context" not in (posting.domain_hits or [])
+
+
+def test_service_context_alone_does_not_carry_a_posting():
+    # Branch context is evidence, not a free pass. A job on a base still has
+    # to be a human performance job.
+    posting = _posting("Contract Specialist", "", "Fort Bragg, North Carolina")
+    assert classify(posting) == Verdict.REJECT
+
+
+def test_a_civilian_clinic_in_a_fort_named_city_stays_off_the_board():
+    posting = _posting(
+        "Physical Therapist",
+        "Veterans Health Administration",
+        "Fort Lauderdale, Florida",
+        "Outpatient physical therapy in a community clinic setting.",
+    )
+    assert classify(posting) == Verdict.REJECT

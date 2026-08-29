@@ -1,12 +1,16 @@
 name: Tactical Jobs — nightly
 
 # Collects tactical human performance roles, scores them, enriches and archives
-# them, publishes the live board, and deploys the board + dashboard to GitHub
-# Pages so the Squarespace embed has something to fetch.
+# them, and publishes the live board.
 #
 # Squarespace has no content-write API, so this is the mechanism by which a job
-# reaches mopsnmoes.com: this workflow publishes jobs.json, and the Code Block
-# on the site renders it. See jobs-scraper/embed/squarespace-jobs.html.
+# reaches mopsnmoes.com: this workflow publishes jobs.json and the Code Block on
+# the site fetches it. The feed is served from a separate static-host repository
+# that the "Mirror the board to the live static host" step pushes to -- that is
+# the path the public site actually reads.
+#
+# GitHub Pages is an opt-in second destination, off by default. See the deploy
+# job at the bottom for why.
 
 on:
   workflow_dispatch:
@@ -187,7 +191,74 @@ jobs:
             echo '<a href="dashboard.html" style="color:#b18a45">market dashboard</a></p>'
             echo '</body></html>'
           } > ../site/index.html
+          # A cross-origin copy for the Squarespace Code Block. embed.html
+          # fetches "jobs.json" relatively, which is right when the board is
+          # served from the same host and broken when it is pasted into
+          # mopsnmoes.com, where a relative path resolves against Squarespace.
+          # This variant hard-codes the absolute feed URL instead.
+          if [ -n "${{ vars.JOBS_FEED_ORIGIN }}" ]; then
+            sed 's|var FEED_URL = "jobs.json";|var FEED_URL = "${{ vars.JOBS_FEED_ORIGIN }}/jobs.json";|' \
+              embed/board.html > ../site/squarespace-embed.html
+            if ! grep -q "${{ vars.JOBS_FEED_ORIGIN }}/jobs.json" ../site/squarespace-embed.html; then
+              echo "::error::FEED_URL rewrite did not apply; embed/board.html no longer matches the expected line."
+              exit 1
+            fi
+          fi
           ls -la ../site
+
+      # ---------------------------------------------------------------------
+      # Mirror to the static host that actually serves the live site.
+      #
+      # mopsnmoes.com/jobs fetches the feed from a Netlify site, and Netlify
+      # deploys from its OWN repository -- not this one. So without this step
+      # the nightly run updates a board nobody reads: the site directory is
+      # published to GitHub Pages, and the live board silently goes stale at
+      # whatever was last copied across by hand.
+      #
+      # Needs two repository settings; the step no-ops loudly when they are
+      # missing, so a fork or an unconfigured clone is unaffected:
+      #   variable JOBS_MIRROR_REPO   owner/name of the Netlify-backed repo
+      #   secret   JOBS_MIRROR_TOKEN  a token with contents:write on it
+      # ---------------------------------------------------------------------
+      - name: Mirror the board to the live static host
+        if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
+        env:
+          MIRROR_REPO: ${{ vars.JOBS_MIRROR_REPO }}
+          MIRROR_TOKEN: ${{ secrets.JOBS_MIRROR_TOKEN }}
+        run: |
+          if [ -z "$MIRROR_REPO" ] || [ -z "$MIRROR_TOKEN" ]; then
+            echo "::warning::Live board NOT refreshed. Set the JOBS_MIRROR_REPO variable and the JOBS_MIRROR_TOKEN secret to keep the public site in sync; without them the nightly run only updates this repository."
+            exit 0
+          fi
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --depth 1 "https://x-access-token:${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" ../mirror
+          # Copy the assembled site over the mirror's tree. Only the files this
+          # workflow owns are replaced; anything else in that repo is left be.
+          for f in jobs.json jobs.xml insights.json dashboard.html index.html embed.html squarespace-embed.html _headers CNAME; do
+            [ -f "../site/$f" ] && cp -f "../site/$f" "../mirror/$f"
+          done
+          # tactical-jobs-board.html is a second entry point some pages link to.
+          [ -f ../site/index.html ] && cp -f ../site/index.html ../mirror/tactical-jobs-board.html
+          cd ../mirror
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Live board already current; nothing to mirror."
+            exit 0
+          fi
+          COUNT=$(python3 -c "import json;print(json.load(open('jobs.json'))['count'])" 2>/dev/null || echo "?")
+          git commit -m "Nightly board update — ${COUNT} jobs"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              echo "Mirrored ${COUNT} jobs to ${MIRROR_REPO}."
+              exit 0
+            fi
+            echo "Mirror push failed; retrying (attempt $attempt)."
+            git pull --rebase || true
+            sleep $((2 ** attempt))
+          done
+          echo "::error::Could not mirror the board to ${MIRROR_REPO} after 4 attempts. The live site is now stale."
+          exit 1
 
       # Only worth producing when something will deploy it -- see the deploy
       # job below for why that is opt-in.
@@ -201,18 +272,20 @@ jobs:
     name: Deploy board to GitHub Pages
     # OPT-IN. This job failed every one of the first 45 nightly runs at
     # actions/configure-pages, because GitHub Pages was never enabled for the
-    # repository (Settings -> Pages -> Source: GitHub Actions). Nothing else was
-    # ever wrong: the scrape job collected, scored, committed and published
-    # normally on every one of those runs. But the run as a whole reported
-    # failure, which trains everyone to ignore the only alarm this pipeline has,
-    # so a genuine scrape failure would have looked identical to the noise.
+    # repository (Settings -> Pages -> Source: GitHub Actions). Nothing else in
+    # the workflow was ever wrong: the scrape job collected, scored, committed
+    # and published normally on every one of those runs. But the run as a whole
+    # reported failure, which trains everyone to ignore the only alarm this
+    # pipeline has -- so a genuine scrape failure would have looked identical
+    # to the noise.
     #
-    # To turn it back on: enable Pages in Settings, then set the repository
-    # VARIABLE ENABLE_PAGES to "true". Left in place rather than deleted so that
-    # stays a one-line change.
+    # Pages is also no longer the route to the public board. The site people
+    # actually read is served from a separate repository, which the mirror step
+    # in the scrape job pushes to directly.
     #
-    # Also only from the default branch: a feature branch must never repoint the
-    # live feed the website reads.
+    # So this deploys only when asked. To turn it back on: enable Pages in
+    # Settings, then set the repository VARIABLE ENABLE_PAGES to "true".
+    # Left in place rather than deleted so that stays a one-line change.
     if: ${{ vars.ENABLE_PAGES == 'true' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && inputs.dry_run != true }}
     needs: scrape
     runs-on: ubuntu-latest

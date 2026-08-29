@@ -9,6 +9,8 @@ jobs from the person who wanted them.
 from __future__ import annotations
 
 from tactical_jobs.facets import (
+    branch_labels,
+    branches_of,
     contingency_of,
     discipline_of,
     facets_for,
@@ -129,8 +131,8 @@ def test_a_bare_us_state_list_is_not_dragged_oconus():
 def test_travel_and_tbd_placement_are_not_remote():
     # Both are real O2X location strings. Calling them remote would put a
     # traveling instructor in front of someone who needs work-from-home.
-    assert location_classes("Various (travel)") == frozenset()
-    assert location_classes("Placement determined after hire (relocation)") == frozenset()
+    assert location_classes("Various (travel)") == frozenset({"unspecified"})
+    assert location_classes("Placement determined after hire (relocation)") == frozenset({"unspecified"})
 
 
 def test_remote_is_detected_from_flag_or_text():
@@ -139,8 +141,23 @@ def test_remote_is_detected_from_flag_or_text():
     assert "remote" not in location_classes("On-site; remote work is not available")
 
 
-def test_unclassifiable_location_returns_empty_so_the_board_shows_it():
-    assert location_classes("TBD") == frozenset()
+def test_an_unplaceable_location_is_named_unspecified_never_left_empty():
+    """The empty set was read as "matches every filter", which is backwards.
+
+    A Serco requisition spanning many installations and a GDIT pipeline req
+    with no site assigned both carry a blank location. Returning an empty set
+    let a board conclude they were unconstrained and show them under Remote,
+    to candidates who had filtered for work from home. Naming the gap makes
+    that misreading impossible and gives the board an honest chip to render.
+    """
+    for text in ("TBD", "", "Various (travel)", "To be determined"):
+        assert location_classes(text) == frozenset({"unspecified"}), text
+    assert location_classes("") != frozenset()
+
+
+def test_unspecified_is_never_mixed_with_a_real_class():
+    for text in ("Fort Bragg, NC", "Camp Casey, KOR", "Remote - U.S."):
+        assert "unspecified" not in location_classes(text), text
 
 
 # --------------------------------------------------------------------------
@@ -294,3 +311,202 @@ def test_sport_psychology_stays_with_cognitive_performance():
 def test_r2pc_routes_to_cognitive_performance_but_a_bare_title_does_not():
     assert discipline_of("Performance Expert (R2PC) - Fort Stewart, Georgia") == "cognitive-performance"
     assert discipline_of("Performance Expert - Fort Stewart, Georgia") == "human-performance"
+
+
+# --- service branch ---------------------------------------------------------
+#
+# Every case below is a real posting pulled from a live board on 2026-08-28,
+# not an invented string.
+
+
+def test_employer_that_names_a_service_wins_over_the_installation():
+    # USAJOBS posts this as Space Force at Schriever AFB -- a base the Space
+    # Force inherited under its old Air Force name. Reading both fields would
+    # file a Space Force job under Air Force.
+    assert branches_of(
+        "RECREATION ASSISTANT (FITNESS CENTER)",
+        "United States Space Force",
+        "Schriever AFB, Colorado",
+    ) == frozenset({"space-force"})
+
+
+def test_usajobs_organization_names_resolve_to_their_service():
+    cases = {
+        "U.S. Marine Corps": "marine-corps",
+        "Commander, Navy Installations Command": "navy",
+        "Department of the Army": "army",
+        "United States Space Force": "space-force",
+    }
+    for employer, expected in cases.items():
+        assert branches_of("Fitness Specialist", employer) == frozenset({expected}), employer
+
+
+def test_h2f_is_an_army_program_even_without_the_word_army():
+    # Serco's H2F postings never say "Army" in the title or location.
+    assert branches_of(
+        "H2Fit: Strength & Conditioning Coach - Fort Bragg, NC",
+        "Serco USA",
+        "Fort Bragg, North Carolina, USA",
+    ) == frozenset({"army"})
+
+
+def test_hitt_is_the_marine_corps_tell():
+    assert "marine-corps" in branches_of("HITT INSTRUCTOR-LEVEL I, NF-0189-02", "", "")
+
+
+def test_a_multi_service_requisition_reports_every_branch_it_serves():
+    # One real GDIT req spanning an Army post, an Air Force field, and a joint
+    # base. Collapsing this to a single branch would be wrong either way.
+    found = branches_of(
+        "Strength and Conditioning Specialists",
+        "General Dynamics Information Technology",
+        "USA NC Fort Bragg; USA CA San Diego; USA KY Fort Campbell; "
+        "USA FL Hurlburt Field; USA WA Joint Base Lewis-McChord",
+    )
+    assert found == frozenset({"army", "air-force", "joint"})
+
+
+def test_sof_requisition_across_three_services():
+    assert branches_of(
+        "Psychometrist",
+        "General Dynamics Information Technology",
+        "USA NC Fort Bragg; USA CA Coronado; USA NC Camp Lejeune",
+    ) == frozenset({"army", "navy", "marine-corps"})
+
+
+def test_fort_means_army_and_afb_means_air_force():
+    assert branches_of("Athletic Trainer", "", "Fort Campbell, KY") == frozenset({"army"})
+    assert branches_of("Athletic Trainer", "", "MacDill AFB, FL") == frozenset({"air-force"})
+
+
+def test_potff_is_joint_not_a_single_service():
+    assert "joint" in branches_of("Physical Therapist, POTFF", "", "")
+
+
+def test_a_collegiate_role_has_no_branch_at_all():
+    # The point of an empty set: the board treats unknown as "always show",
+    # so guessing a branch here would hide the job from every filter.
+    assert branches_of("Head Strength Coach", "State University", "Columbus, Ohio") == frozenset()
+
+
+def test_description_is_only_consulted_when_the_strong_fields_are_silent():
+    # A Serco H2F posting mentions the Air Force once, deep in boilerplate.
+    # That must not add air-force to an Army job.
+    army = branches_of(
+        "H2Fit: Strength & Conditioning Coach - Fort Sill, OK",
+        "Serco USA",
+        "Fort Sill, Oklahoma, USA",
+        "Serco supports the Army, Navy, Air Force and Marine Corps worldwide.",
+    )
+    assert army == frozenset({"army"})
+    # With nothing in title/employer/location, the description is all there is.
+    assert branches_of("Athletic Trainer", "", "", "Embedded with AFSOC aircrew.") == frozenset(
+        {"air-force"}
+    )
+
+
+def test_branch_labels_come_back_in_canonical_order():
+    assert branch_labels({"joint", "army", "navy"}) == ["Army", "Navy", "Joint / DoD-wide"]
+
+
+def test_a_civilian_fort_city_is_not_an_army_post():
+    # Fort Worth, Fort Lauderdale and Fort Collins are cities, not installations.
+    # A VA hospital in Fort Lauderdale was being labelled Army because of this.
+    for city in (
+        "Fort Worth, Texas",
+        "Fort Lauderdale, Florida",
+        "Fort Collins, Colorado",
+        "Fort Myers, Florida",
+        "Fort Wayne, Indiana",
+        "Fort Smith, Arkansas",
+    ):
+        assert branches_of("Physical Therapist", "", city) == frozenset(), city
+
+
+def test_real_army_posts_still_resolve():
+    for post in (
+        "Fort Bragg, North Carolina",
+        "Fort Campbell, Kentucky",
+        "Fort Leonard Wood, Missouri",
+        "Ft. Drum, NY",
+        "Fort Wainwright",
+        "Fort Belvoir, VA",
+    ):
+        assert branches_of("Athletic Trainer", "", post) == frozenset({"army"}), post
+
+
+def test_iso3_country_codes_are_oconus():
+    # GDIT's Workday tenant writes ISO-3: "Camp Casey, KOR". That matched
+    # nothing, and an unclassified location used to show under every location
+    # chip on the board -- including Remote.
+    assert location_classes("Camp Casey, KOR") == frozenset({"oconus"})
+    assert location_classes("Camp Arifjan, KWT") == frozenset({"oconus"})
+    assert location_classes("Vicenza, ITA") == frozenset({"oconus"})
+
+
+def test_a_us_state_code_is_never_read_as_a_country():
+    # CO and PA are Colombia and Panama in ISO-2 and Colorado and Pennsylvania
+    # on nearly every posting this board sees. "Colorado Springs, CO" and
+    # "Indiana, PA" were being published as OCONUS.
+    for loc in (
+        "Colorado Springs, CO",
+        "Denver, CO",
+        "Philadelphia, PA",
+        "Indiana, PA",
+        "DE, US",
+    ):
+        assert location_classes(loc) == frozenset({"conus"}), loc
+
+
+def test_the_countries_behind_those_codes_are_still_reached_by_name():
+    assert location_classes("Bogota, Colombia") == frozenset({"oconus"})
+    assert location_classes("Panama City, Panama") == frozenset({"oconus"})
+    assert location_classes("San Salvador, El Salvador") == frozenset({"oconus"})
+    assert location_classes("Soto Cano, Honduras") == frozenset({"oconus"})
+
+
+def test_an_american_town_named_after_a_country_stays_conus():
+    # Panama City and Panama City Beach are both in Florida, and one of them
+    # is on this board.
+    assert location_classes("Panama City Beach, Florida") == frozenset({"conus"})
+    assert location_classes("Panama City, Florida") == frozenset({"conus"})
+    assert location_classes("Peru, Indiana") == frozenset({"conus"})
+    assert location_classes("Lima, Ohio") == frozenset({"conus"})
+
+
+def test_no_posting_is_remote_without_positive_evidence():
+    """The regression guard for the whole class of bug.
+
+    Every string below appeared on, or is representative of, a real posting
+    that was published under Remote while being firmly on an installation.
+    None of them may ever read as remote again.
+    """
+    never_remote = (
+        "Cannon AFB, New Mexico",
+        "MacDill AFB, Florida",
+        "Camp Murray, Washington",
+        "Mobile County, Alabama",
+        "Washington, DC (telework eligible)",
+        "Telework eligible - Fort Meade, MD",
+        "Situational telework may be approved",
+        "Fort Bragg, NC",
+        "Camp Casey, KOR",
+    )
+    for text in never_remote:
+        assert "remote" not in location_classes(text), text
+
+
+def test_genuine_remote_language_still_reads_as_remote():
+    # The other half of the guard: tightening must not silently empty the
+    # filter. Each of these is a real way a posting says the job is remote.
+    for text in (
+        "Remote - U.S.",
+        "Fayetteville, North Carolina; Remote - U.S.",
+        "Fully Remote",
+        "Work from home",
+        "Telecommute",
+        "Telecommuting",
+        "Virtual",
+    ):
+        assert "remote" in location_classes(text), text
+    assert "remote" in location_classes("", remote_flag=True)

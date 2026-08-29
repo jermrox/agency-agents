@@ -24,6 +24,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
+from .facets import branches_of
 from .models import JobPosting
 
 # --------------------------------------------------------------------------
@@ -295,6 +296,17 @@ verbose listing would outrank every genuinely relevant one.
 """
 
 
+SERVICE_CONTEXT_WEIGHT = 3.0
+"""Domain credit for a posting whose service branch can be identified.
+
+Set so that branch context alone does not clear ``min_domain`` -- it still
+needs some vocabulary of its own -- while a posting carrying both clears it
+comfortably. Tuned against the live board: at this weight the branch-aware
+rule keeps every tactical posting the old thresholds kept and adds seven the
+location field had been hiding, while dropping twenty VA clinic roles.
+"""
+
+
 @dataclass(frozen=True, slots=True)
 class Thresholds:
     """Score cutoffs that decide what happens to a posting."""
@@ -305,7 +317,7 @@ class Thresholds:
     review: float = 8.0
     """At or above this (but below publish), route to the review queue."""
 
-    min_domain: float = 1.5
+    min_domain: float = 3.5
     """Minimum domain-axis score. Blocks collegiate/pro sports jobs."""
 
     min_discipline: float = 3.0
@@ -367,6 +379,27 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
 
     domain_score, domain_hits = _score_axis(DOMAIN_TERMS, title, body)
     discipline_score, discipline_hits = _score_axis(DISCIPLINE_TERMS, title, body)
+
+    # Where the job physically is, is domain evidence -- and until now nothing
+    # read it. The scoring haystack is title + department + description +
+    # employer; `location` was never in it. So a physical therapist post at
+    # Fort Gordon or Camp Lejeune had its single strongest tactical signal
+    # sitting in a field the classifier never opened.
+    #
+    # That gap mattered in both directions once USAJOBS went live. Federal
+    # health-care announcements list "graduate of military physical therapy
+    # assistant programs" among the qualifying credentials, so an outpatient
+    # VA clinic job in Montgomery, Alabama picked up a domain hit from a
+    # sentence about schooling. Meanwhile a real Defense Health Agency posting
+    # at Camp Lejeune scored no higher, because the base name was invisible.
+    #
+    # Service-branch context is the discriminator. It is read from the
+    # employer, the program name and the installation, it already excludes the
+    # cities named Fort-something, and it is exactly what "military" in a
+    # credential list is not: evidence about the work, not about the applicant.
+    if branches_of(posting.title, posting.employer, posting.location):
+        domain_score += SERVICE_CONTEXT_WEIGHT
+        domain_hits = [*domain_hits, "service context"]
 
     posting.domain_hits = domain_hits
     posting.discipline_hits = discipline_hits
