@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-29T21:29:39.815055+00:00",
+  "generated_at": "2026-08-30T12:23:41.130014+00:00",
   "count": 139,
   "jobs": [
     {
@@ -1283,60 +1283,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "2ea54ca98a3d18e98fb1",
-      "fingerprint": "3ac85cc684e3d60669cf",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881208600",
-      "title": "Marine Investigator",
-      "employer": "U.S. Coast Guard",
-      "location": "Mobile County, Alabama",
-      "remote": false,
-      "department": null,
-      "compensation": "$89,508 - $116,362 /yr",
-      "posted_at": null,
-      "description": "To qualify at the GS-12 grade level, your resume must demonstrate at least one (1) full year of specialized experience equivalent to at least the GS-11 grade level in the federal sector. Specialized experience is experience that has equipped you with the ability, skill, and knowledge to successfully perform the duties of this position and is typically in or related to this line of work. Examples\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Secret",
-        "salary_min": 89508.0,
-        "salary_max": 116362.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Coast Guard",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "coast-guard"
-        ],
-        "branch_labels": [
-          "Coast Guard"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 89508.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "af14b08fa3c8b2ff7eb7",
       "fingerprint": "55bb06beee101a2c5d17",
       "source": "usajobs:federal",
@@ -1596,6 +1542,66 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "2ea54ca98a3d18e98fb1",
+      "fingerprint": "3ac85cc684e3d60669cf",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881208600",
+      "title": "Marine Investigator",
+      "employer": "U.S. Coast Guard",
+      "location": "Mobile County, Alabama",
+      "remote": false,
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "To qualify at the GS-12 grade level, your resume must demonstrate at least one (1) full year of specialized experience equivalent to at least the GS-11 grade level in the federal sector. Specialized experience is experience that has equipped you with the ability, skill, and knowledge to successfully perform the duties of this position and is typically in or related to this line of work. Examples\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Secret",
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Coast Guard",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "coast-guard"
+        ],
+        "branch_labels": [
+          "Coast Guard"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-08-30T12:23:40+00:00"
+      },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
@@ -7145,7 +7151,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-29T21:29:39+00:00"
+        "checked_at": "2026-08-30T12:23:39+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -7433,7 +7439,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-29T21:29:39+00:00"
+        "checked_at": "2026-08-30T12:23:39+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -7717,7 +7723,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-08-29T21:29:39+00:00"
+        "checked_at": "2026-08-30T12:23:39+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }
