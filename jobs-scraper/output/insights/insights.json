@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-31T14:34:05.993741+00:00",
+  "generated_at": "2026-08-31T23:07:07.535980+00:00",
   "totals": {
-    "postings": 240,
+    "postings": 247,
     "employers": 17,
-    "unique_jobs": 107,
-    "with_salary": 63,
+    "unique_jobs": 109,
+    "with_salary": 65,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-31T00:00:00+00:00"
+      "latest": "2026-08-31T10:45:52.117000+00:00"
     }
   },
   "by_employer": [
@@ -50,7 +50,7 @@
     },
     {
       "name": "Military Treatment Facilities under DHA",
-      "count": 9,
+      "count": 10,
       "disciplines": [
         "sports-medicine",
         "research"
@@ -75,6 +75,15 @@
       "median_salary": 125791.0
     },
     {
+      "name": "The Geneva Foundation",
+      "count": 4,
+      "disciplines": [
+        "sports-medicine",
+        "strength-conditioning"
+      ],
+      "median_salary": 62197.2
+    },
+    {
       "name": "U.S. Marine Corps",
       "count": 4,
       "disciplines": [
@@ -84,15 +93,6 @@
         "research"
       ],
       "median_salary": 35276.8
-    },
-    {
-      "name": "The Geneva Foundation",
-      "count": 3,
-      "disciplines": [
-        "sports-medicine",
-        "strength-conditioning"
-      ],
-      "median_salary": 61994.4
     },
     {
       "name": "Veterans Health Administration",
@@ -150,72 +150,72 @@
     {
       "name": "strength-conditioning",
       "count": 51,
-      "share": 0.593,
+      "share": 0.5795,
       "median_salary": 74485.0
     },
     {
       "name": "sports-medicine",
-      "count": 38,
-      "share": 0.4419,
+      "count": 40,
+      "share": 0.4545,
       "median_salary": 81815.0
     },
     {
       "name": "cognitive",
       "count": 20,
-      "share": 0.2326,
+      "share": 0.2273,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1628,
+      "share": 0.1591,
       "median_salary": 90457.0
     },
     {
       "name": "leadership",
       "count": 11,
-      "share": 0.1279,
+      "share": 0.125,
       "median_salary": 65375.15
     },
     {
       "name": "nutrition",
       "count": 10,
-      "share": 0.1163,
+      "share": 0.1136,
       "median_salary": 91950.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0116,
+      "share": 0.0114,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 103,
-      "share": 0.9626
+      "count": 105,
+      "share": 0.9633
     },
     {
       "name": "sof",
       "count": 35,
-      "share": 0.3271
+      "share": 0.3211
     },
     {
       "name": "training-pipeline",
       "count": 21,
-      "share": 0.1963
+      "share": 0.1927
     },
     {
       "name": "first-responder",
       "count": 9,
-      "share": 0.0841
+      "share": 0.0826
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 41
+      "count": 43
     },
     {
       "name": "Joint",
@@ -288,15 +288,15 @@
       "count": 2
     },
     {
+      "name": "Fort Gordon",
+      "count": 2
+    },
+    {
       "name": "Fort Riley",
       "count": 2
     },
     {
       "name": "Fort Stewart",
-      "count": 2
-    },
-    {
-      "name": "JBLM",
       "count": 2
     }
   ],
@@ -314,15 +314,15 @@
       "count": 8
     },
     {
+      "code": "GA",
+      "count": 6
+    },
+    {
       "code": "CA",
       "count": 5
     },
     {
       "code": "FL",
-      "count": 5
-    },
-    {
-      "code": "GA",
       "count": 5
     },
     {
@@ -354,11 +354,11 @@
       "count": 2
     },
     {
-      "code": "KS",
+      "code": "HI",
       "count": 2
     },
     {
-      "code": "KY",
+      "code": "KS",
       "count": 2
     }
   ],
@@ -404,7 +404,7 @@
     }
   ],
   "salary": {
-    "count": 63,
+    "count": 65,
     "min": 34320.0,
     "max": 219654.0,
     "median": 85738.0,
@@ -420,12 +420,12 @@
         "p75": 91950.0
       },
       "sports-medicine": {
-        "count": 26,
+        "count": 28,
         "min": 34320.0,
         "max": 219654.0,
         "median": 81815.0,
-        "p25": 58884.5,
-        "p75": 104082.5
+        "p25": 58889.5,
+        "p75": 106751.25
       },
       "nutrition": {
         "count": 5,
@@ -471,7 +471,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.028
+    "share": 0.0275
   },
   "timeline": [
     {
@@ -480,12 +480,12 @@
     },
     {
       "month": "2026-08",
-      "count": 97
+      "count": 99
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-02T00:00:00+00:00",
+    "pivot": "2026-06-02T10:45:52.117000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -507,9 +507,9 @@
       },
       {
         "name": "Military Treatment Facilities under DHA",
-        "recent": 9,
+        "recent": 10,
         "previous": 0,
-        "change": 9
+        "change": 10
       },
       {
         "name": "Commander, Navy Installations Command",
@@ -524,16 +524,16 @@
         "change": 5
       },
       {
-        "name": "U.S. Marine Corps",
+        "name": "The Geneva Foundation",
         "recent": 4,
         "previous": 0,
         "change": 4
       },
       {
-        "name": "The Geneva Foundation",
-        "recent": 3,
+        "name": "U.S. Marine Corps",
+        "recent": 4,
         "previous": 0,
-        "change": 3
+        "change": 4
       },
       {
         "name": "Veterans Health Administration",

@@ -4,20 +4,20 @@
 
 ## Headline
 
-- **107 open jobs** from **17 employers**.
+- **109 open jobs** from **17 employers**.
 - Posted between **2026-07-02** and **2026-08-31**.
-- **$85,738 median** annualized pay across the 63 postings that publish one -- $62,783 to $117,778 covers the middle half.
+- **$85,738 median** annualized pay across the 65 postings that publish one -- $62,783 to $117,778 covers the middle half.
 - **3% remote-friendly** (3 jobs).
-- 133 of 240 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 103, Special Operations 35, Training Pipeline 21, Fire / EMS / Law Enforcement 9.
+- 138 of 247 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 105, Special Operations 35, Training Pipeline 21, Fire / EMS / Law Enforcement 9.
 
 ## Month over month
 
-Postings are **up +87** in 2026-08 (10 to 97), 870% against 2026-07.
+Postings are **up +89** in 2026-08 (10 to 99), 890% against 2026-07.
 
 ```
 2026-07    10  ###
-2026-08    97  ############################
+2026-08    99  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -25,7 +25,7 @@ Postings are **up +87** in 2026-08 (10 to 97), 870% against 2026-07.
 - Serco USA: 0 to 26
 - KBR: 0 to 21
 - General Dynamics Information Technology: 0 to 19
-- Military Treatment Facilities under DHA: 0 to 9
+- Military Treatment Facilities under DHA: 0 to 10
 - Commander, Navy Installations Command: 0 to 7
 
 **Credentials appearing more often:**
@@ -43,11 +43,11 @@ Postings are **up +87** in 2026-08 (10 to 97), 870% against 2026-07.
 | Serco USA | 26 | - | Strength & Conditioning, Cognitive Performance |
 | KBR | 21 | $91,950 | Strength & Conditioning, Sports Medicine |
 | General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
-| Military Treatment Facilities under DHA | 9 | $102,935 | Sports Medicine, Research & Analytics |
+| Military Treatment Facilities under DHA | 10 | $102,935 | Sports Medicine, Research & Analytics |
 | Commander, Navy Installations Command | 7 | $43,160 | Program Leadership, Research & Analytics |
 | Customs and Border Protection | 5 | $125,791 | - |
+| The Geneva Foundation | 4 | $62,197 | Sports Medicine, Strength & Conditioning |
 | U.S. Marine Corps | 4 | $35,277 | Sports Medicine, Strength & Conditioning |
-| The Geneva Foundation | 3 | $61,994 | Sports Medicine, Strength & Conditioning |
 | Veterans Health Administration | 3 | $72,602 | Program Leadership |
 | Bureau of Prisons/Federal Prison System | 2 | $76,335 | Sports Medicine |
 
@@ -55,12 +55,12 @@ Postings are **up +87** in 2026-08 (10 to 97), 870% against 2026-07.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 51 | 59% |
-| Sports Medicine | 38 | 44% |
+| Strength & Conditioning | 51 | 58% |
+| Sports Medicine | 40 | 45% |
 | Cognitive Performance | 20 | 23% |
 | Research & Analytics | 14 | 16% |
-| Program Leadership | 11 | 13% |
-| Performance Nutrition | 10 | 12% |
+| Program Leadership | 11 | 12% |
+| Performance Nutrition | 10 | 11% |
 | Sport Science | 1 | 1% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
@@ -91,7 +91,7 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 5 | $85,738 | $91,950 | $91,950 |
 | Research & Analytics | 6 | $64,713 | $90,457 | $98,738 |
 | Sport Science | 1 | $85,738 | $85,738 | $85,738 |
-| Sports Medicine | 26 | $58,884 | $81,815 | $104,082 |
+| Sports Medicine | 28 | $58,890 | $81,815 | $106,751 |
 | Strength & Conditioning | 17 | $58,490 | $74,485 | $91,950 |
 | Program Leadership | 8 | $57,487 | $65,375 | $74,962 |
 
@@ -100,7 +100,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** VA (11), NC (10), TX (8), CA (5), FL (5), GA (5), NM (5), WA (5), MO (4), CO (3)
+**States:** VA (11), NC (10), TX (8), GA (6), CA (5), FL (5), NM (5), WA (5), MO (4), CO (3)
 
 | Installation | Jobs |
 |---|---|
@@ -115,7 +115,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Benning | 2 |
 | Fort Bliss | 2 |
 
-**Branches and services:** Army (41), Joint (31), Navy (9), Air Force (8), Marine Corps (4), Coast Guard (1)
+**Branches and services:** Army (43), Joint (31), Navy (9), Air Force (8), Marine Corps (4), Coast Guard (1)
 
 ## Most common titles
 
