@@ -1,23 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-08-31.*
+*Briefing generated 2026-09-01.*
 
 ## Headline
 
-- **109 open jobs** from **17 employers**.
-- Posted between **2026-07-02** and **2026-08-31**.
-- **$85,738 median** annualized pay across the 65 postings that publish one -- $62,783 to $117,778 covers the middle half.
+- **110 open jobs** from **17 employers**.
+- Posted between **2026-07-02** and **2026-09-01**.
+- **$88,109 median** annualized pay across the 66 postings that publish one -- $62,783 to $119,157 covers the middle half.
 - **3% remote-friendly** (3 jobs).
-- 138 of 247 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 105, Special Operations 35, Training Pipeline 21, Fire / EMS / Law Enforcement 9.
+- 138 of 248 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 106, Special Operations 35, Training Pipeline 21, Fire / EMS / Law Enforcement 10.
 
 ## Month over month
 
-Postings are **up +89** in 2026-08 (10 to 99), 890% against 2026-07.
+Postings are **down -98** in 2026-09 (99 to 1), 99% against 2026-08.
 
 ```
 2026-07    10  ###
 2026-08    99  ############################
+2026-09     1  #
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -45,7 +46,7 @@ Postings are **up +89** in 2026-08 (10 to 99), 890% against 2026-07.
 | General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
 | Military Treatment Facilities under DHA | 10 | $102,935 | Sports Medicine, Research & Analytics |
 | Commander, Navy Installations Command | 7 | $43,160 | Program Leadership, Research & Analytics |
-| Customs and Border Protection | 5 | $125,791 | - |
+| Customs and Border Protection | 6 | $126,389 | - |
 | The Geneva Foundation | 4 | $62,197 | Sports Medicine, Strength & Conditioning |
 | U.S. Marine Corps | 4 | $35,277 | Sports Medicine, Strength & Conditioning |
 | Veterans Health Administration | 3 | $72,602 | Program Leadership |
@@ -82,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$85,738**, middle half $62,783 to $117,778.
+- Median **$88,109**, middle half $62,783 to $119,157.
 - Full range $34,320 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |

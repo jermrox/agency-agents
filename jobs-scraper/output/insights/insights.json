@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-31T23:07:07.535980+00:00",
+  "generated_at": "2026-09-01T12:13:32.756104+00:00",
   "totals": {
-    "postings": 247,
+    "postings": 248,
     "employers": 17,
-    "unique_jobs": 109,
-    "with_salary": 65,
+    "unique_jobs": 110,
+    "with_salary": 66,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-08-31T10:45:52.117000+00:00"
+      "latest": "2026-09-01T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -70,9 +70,9 @@
     },
     {
       "name": "Customs and Border Protection",
-      "count": 5,
+      "count": 6,
       "disciplines": [],
-      "median_salary": 125791.0
+      "median_salary": 126389.25
     },
     {
       "name": "The Geneva Foundation",
@@ -193,23 +193,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 105,
-      "share": 0.9633
+      "count": 106,
+      "share": 0.9636
     },
     {
       "name": "sof",
       "count": 35,
-      "share": 0.3211
+      "share": 0.3182
     },
     {
       "name": "training-pipeline",
       "count": 21,
-      "share": 0.1927
+      "share": 0.1909
     },
     {
       "name": "first-responder",
-      "count": 9,
-      "share": 0.0826
+      "count": 10,
+      "share": 0.0909
     }
   ],
   "by_branch": [
@@ -404,12 +404,12 @@
     }
   ],
   "salary": {
-    "count": 65,
+    "count": 66,
     "min": 34320.0,
     "max": 219654.0,
-    "median": 85738.0,
+    "median": 88109.0,
     "p25": 62782.81,
-    "p75": 117778.5,
+    "p75": 119156.62,
     "by_discipline": {
       "strength-conditioning": {
         "count": 17,
@@ -471,7 +471,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0275
+    "share": 0.0273
   },
   "timeline": [
     {
@@ -481,11 +481,15 @@
     {
       "month": "2026-08",
       "count": 99
+    },
+    {
+      "month": "2026-09",
+      "count": 1
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-02T10:45:52.117000+00:00",
+    "pivot": "2026-06-03T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -519,9 +523,9 @@
       },
       {
         "name": "Customs and Border Protection",
-        "recent": 5,
+        "recent": 6,
         "previous": 0,
-        "change": 5
+        "change": 6
       },
       {
         "name": "The Geneva Foundation",

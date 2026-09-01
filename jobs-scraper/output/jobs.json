@@ -1,8 +1,58 @@
 {
   "version": 2,
-  "generated_at": "2026-08-31T23:07:07.413844+00:00",
-  "count": 140,
+  "generated_at": "2026-09-01T12:13:32.637461+00:00",
+  "count": 141,
   "jobs": [
+    {
+      "id": "9ac201ba594279c90b17",
+      "fingerprint": "464d67a729c58c7c845d",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/882284000",
+      "title": "SUPERVISORY CBP OFFICER (BRANCH CHIEF)",
+      "employer": "Customs and Border Protection",
+      "location": "Washington, District of Columbia",
+      "remote": false,
+      "department": null,
+      "compensation": "$147,899 - $192,275 /yr",
+      "posted_at": null,
+      "description": "Experience: You qualify for the GS-14 grade level if you possess 1 year of specialized experience equivalent to at least the next lower grade level, performing duties such as: Ensuring consistent interpretation and application of CBP policies, procedures, and legal authorities across subordinate organizational elements to maintain consistent, lawful, and efficient operations. Serving as primary\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 147899.0,
+        "salary_max": 192275.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": true,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 147899.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-01T12:13:32.637461+00:00"
+    },
     {
       "id": "a96594c68a177a08ed6c",
       "fingerprint": "ad9776a129b1bd35f23b",
@@ -387,60 +437,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "b7a67d121e7fc7e9a41f",
-      "fingerprint": "b75023d70c4e569f3259",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/882161100",
-      "title": "Physical Therapist",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Fort Gordon, Georgia",
-      "remote": false,
-      "department": null,
-      "compensation": "$89,508 - $116,362 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 89508.0,
-        "salary_max": 116362.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": "Fort Gordon",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 89508.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "12b61b9dda44ca8024ec",
       "fingerprint": "4281fc9f364e7f6cd143",
       "source": "usajobs:federal",
@@ -653,56 +649,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "cf49e9dc9dd4f37c1c57",
-      "fingerprint": "3fad7d67b9e704975524",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881777000",
-      "title": "Physical Therapist (Physical Therapist)",
-      "employer": "Bureau of Prisons/Federal Prison System",
-      "location": "Springfield, Missouri",
-      "remote": false,
-      "department": null,
-      "compensation": "$63,780 - $82,301 /yr",
-      "posted_at": null,
-      "description": "To be considered for the position, you must meet the following qualification requirements. Basic Requirements: A graduate or higher level degree that included: A physical therapy curriculum approved by the Commission on Accreditation of Allied Health Programs (CAAHEP) or a professional accrediting organization recognized by the U.S. Department of Education at the time the degree was obtained; AND\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 63780.0,
-        "salary_max": 82301.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 63780.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "3761a27ad08688196811",
       "fingerprint": "79b44b6abfd2bd0c362a",
       "source": "usajobs:federal",
@@ -745,60 +691,6 @@
         ],
         "contingency": "unknown",
         "salary_floor_annual": 81409.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
-      "id": "45e77d07b01cede43a0e",
-      "fingerprint": "85d05816e0d0fcc322f1",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881016800",
-      "title": "Fitness Specialist",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Norfolk, Virginia",
-      "remote": false,
-      "department": null,
-      "compensation": "$19.50 - $21.00 /hr",
-      "posted_at": null,
-      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: \u00b7 Ability to competently and independently carry out fitness programs through the proper application of principles, concepts\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 19.5,
-        "salary_max": 21.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 40560.0
       },
       "matched": {
         "domain": [],
@@ -1391,56 +1283,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "af14b08fa3c8b2ff7eb7",
-      "fingerprint": "55bb06beee101a2c5d17",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881774400",
-      "title": "Occupational Therapist (Occupational Therapist)",
-      "employer": "Bureau of Prisons/Federal Prison System",
-      "location": "Rochester, Minnesota",
-      "remote": false,
-      "department": null,
-      "compensation": "$69,534 - $89,726 /yr",
-      "posted_at": null,
-      "description": "How Do I Qualify for this Position? To be considered for the position, you must meet the following qualification requirements. Basic Requirements: Degree:A graduate or higher level degree that included: An occupational therapy curriculum approved by the The American Occupational Therapy Association (ACOTE) or a professional accrediting organization recognized by the U.S. Department of Education\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 69534.0,
-        "salary_max": 89726.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 69534.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "2f95481147ec0c4ec6a4",
       "fingerprint": "c20834ac5cfcb6d71a2c",
       "source": "usajobs:federal",
@@ -1545,60 +1387,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "85f99f656dc72a36e236",
-      "fingerprint": "3ee8f48705b04f3eb095",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881740300",
-      "title": "Sports Specialist (Fitness)",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Portsmouth, Virginia",
-      "remote": false,
-      "department": null,
-      "compensation": "$19.50 - $21.00 /hr",
-      "posted_at": null,
-      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: Ability to competently and independently carry out fitness programs through the proper application of principles, concepts\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 19.5,
-        "salary_max": 21.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 40560.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "0ed08387db4f69a28740",
       "fingerprint": "dbe0eb43f60890052019",
       "source": "usajobs:federal",
@@ -1650,6 +1438,298 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "b7a67d121e7fc7e9a41f",
+      "fingerprint": "b75023d70c4e569f3259",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/882161100",
+      "title": "Physical Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Fort Gordon, Georgia",
+      "remote": false,
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Gordon",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-01T12:13:32+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "cf49e9dc9dd4f37c1c57",
+      "fingerprint": "3fad7d67b9e704975524",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881777000",
+      "title": "Physical Therapist (Physical Therapist)",
+      "employer": "Bureau of Prisons/Federal Prison System",
+      "location": "Springfield, Missouri",
+      "remote": false,
+      "department": null,
+      "compensation": "$63,780 - $82,301 /yr",
+      "posted_at": null,
+      "description": "To be considered for the position, you must meet the following qualification requirements. Basic Requirements: A graduate or higher level degree that included: A physical therapy curriculum approved by the Commission on Accreditation of Allied Health Programs (CAAHEP) or a professional accrediting organization recognized by the U.S. Department of Education at the time the degree was obtained; AND\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 63780.0,
+        "salary_max": 82301.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 63780.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-01T12:13:32+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "45e77d07b01cede43a0e",
+      "fingerprint": "85d05816e0d0fcc322f1",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881016800",
+      "title": "Fitness Specialist",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Norfolk, Virginia",
+      "remote": false,
+      "department": null,
+      "compensation": "$19.50 - $21.00 /hr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: \u00b7 Ability to competently and independently carry out fitness programs through the proper application of principles, concepts\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 19.5,
+        "salary_max": 21.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 40560.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-01T12:13:31+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "af14b08fa3c8b2ff7eb7",
+      "fingerprint": "55bb06beee101a2c5d17",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881774400",
+      "title": "Occupational Therapist (Occupational Therapist)",
+      "employer": "Bureau of Prisons/Federal Prison System",
+      "location": "Rochester, Minnesota",
+      "remote": false,
+      "department": null,
+      "compensation": "$69,534 - $89,726 /yr",
+      "posted_at": null,
+      "description": "How Do I Qualify for this Position? To be considered for the position, you must meet the following qualification requirements. Basic Requirements: Degree:A graduate or higher level degree that included: An occupational therapy curriculum approved by the The American Occupational Therapy Association (ACOTE) or a professional accrediting organization recognized by the U.S. Department of Education\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 69534.0,
+        "salary_max": 89726.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 69534.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-01T12:13:32+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "85f99f656dc72a36e236",
+      "fingerprint": "3ee8f48705b04f3eb095",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881740300",
+      "title": "Sports Specialist (Fitness)",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Portsmouth, Virginia",
+      "remote": false,
+      "department": null,
+      "compensation": "$19.50 - $21.00 /hr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: Ability to competently and independently carry out fitness programs through the proper application of principles, concepts\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 19.5,
+        "salary_max": 21.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 40560.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-01T12:13:32+00:00"
+      },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
@@ -1708,7 +1788,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-31T23:07:06+00:00"
+        "checked_at": "2026-09-01T12:13:31+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7259,7 +7339,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-08-31T23:07:06+00:00"
+        "checked_at": "2026-09-01T12:13:31+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -7547,7 +7627,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-08-31T23:07:06+00:00"
+        "checked_at": "2026-09-01T12:13:31+00:00"
       },
       "listed_at": "2026-08-07T19:48:38.173260+00:00"
     },
@@ -7775,7 +7855,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-08-31T23:07:05+00:00"
+        "checked_at": "2026-09-01T12:13:30+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }
