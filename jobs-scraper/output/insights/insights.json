@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-01T21:33:33.003334+00:00",
+  "generated_at": "2026-09-02T11:51:17.395711+00:00",
   "totals": {
-    "postings": 253,
+    "postings": 257,
     "employers": 19,
-    "unique_jobs": 115,
-    "with_salary": 71,
+    "unique_jobs": 117,
+    "with_salary": 73,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-01T16:15:01.377000+00:00"
+      "latest": "2026-09-02T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -71,9 +71,9 @@
     },
     {
       "name": "Customs and Border Protection",
-      "count": 6,
+      "count": 7,
       "disciplines": [],
-      "median_salary": 126389.25
+      "median_salary": 126987.5
     },
     {
       "name": "U.S. Marine Corps",
@@ -105,21 +105,21 @@
       "median_salary": 77322.5
     },
     {
+      "name": "Serco",
+      "count": 3,
+      "disciplines": [
+        "leadership",
+        "strength-conditioning"
+      ],
+      "median_salary": 62782.81
+    },
+    {
       "name": "Bureau of Prisons/Federal Prison System",
       "count": 2,
       "disciplines": [
         "sports-medicine"
       ],
       "median_salary": 76335.25
-    },
-    {
-      "name": "Serco",
-      "count": 2,
-      "disciplines": [
-        "leadership",
-        "strength-conditioning"
-      ],
-      "median_salary": 62782.81
     },
     {
       "name": "Air Education and Training Command",
@@ -151,73 +151,73 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 52,
-      "share": 0.5652,
-      "median_salary": 79242.5
+      "count": 53,
+      "share": 0.5699,
+      "median_salary": 74485.0
     },
     {
       "name": "sports-medicine",
       "count": 42,
-      "share": 0.4565,
+      "share": 0.4516,
       "median_salary": 84869.0
     },
     {
       "name": "cognitive",
       "count": 20,
-      "share": 0.2174,
+      "share": 0.2151,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1522,
+      "share": 0.1505,
       "median_salary": 90457.0
     },
     {
       "name": "leadership",
-      "count": 11,
-      "share": 0.1196,
-      "median_salary": 65375.15
+      "count": 12,
+      "share": 0.129,
+      "median_salary": 62782.81
     },
     {
       "name": "nutrition",
       "count": 11,
-      "share": 0.1196,
+      "share": 0.1183,
       "median_salary": 91950.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0109,
+      "share": 0.0108,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 110,
-      "share": 0.9649
+      "count": 112,
+      "share": 0.9655
     },
     {
       "name": "sof",
       "count": 37,
-      "share": 0.3246
+      "share": 0.319
     },
     {
       "name": "training-pipeline",
-      "count": 22,
-      "share": 0.193
+      "count": 23,
+      "share": 0.1983
     },
     {
       "name": "first-responder",
-      "count": 11,
-      "share": 0.0965
+      "count": 12,
+      "share": 0.1034
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Joint",
@@ -254,6 +254,10 @@
       "count": 4
     },
     {
+      "name": "Joint Base Langley-Eustis",
+      "count": 4
+    },
+    {
       "name": "Fort Campbell",
       "count": 3
     },
@@ -263,10 +267,6 @@
     },
     {
       "name": "Fort Sill",
-      "count": 3
-    },
-    {
-      "name": "Joint Base Langley-Eustis",
       "count": 3
     },
     {
@@ -316,16 +316,16 @@
       "count": 9
     },
     {
+      "code": "GA",
+      "count": 7
+    },
+    {
       "code": "CA",
       "count": 6
     },
     {
-      "code": "GA",
-      "count": 6
-    },
-    {
       "code": "FL",
-      "count": 5
+      "count": 6
     },
     {
       "code": "NM",
@@ -367,28 +367,28 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 43,
-      "share": 0.8269
+      "count": 44,
+      "share": 0.8302
     },
     {
       "name": "ATC",
       "count": 12,
-      "share": 0.2308
+      "share": 0.2264
     },
     {
       "name": "RD",
       "count": 9,
-      "share": 0.1731
+      "share": 0.1698
     },
     {
       "name": "PhD",
       "count": 2,
-      "share": 0.0385
+      "share": 0.0377
     },
     {
       "name": "TSAC-F",
       "count": 2,
-      "share": 0.0385
+      "share": 0.0377
     }
   ],
   "clearances": [
@@ -406,20 +406,20 @@
     }
   ],
   "salary": {
-    "count": 71,
+    "count": 73,
     "min": 34320.0,
     "max": 219654.0,
     "median": 91950.0,
-    "p25": 63745.81,
-    "p75": 118697.25,
+    "p25": 62782.81,
+    "p75": 119616.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 18,
+        "count": 19,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 79242.5,
-        "p25": 59365.8,
-        "p75": 90748.75
+        "median": 74485.0,
+        "p25": 60242.0,
+        "p75": 89547.5
       },
       "sports-medicine": {
         "count": 30,
@@ -462,18 +462,18 @@
         "p75": 98738.0
       },
       "leadership": {
-        "count": 8,
+        "count": 9,
         "min": 34320.0,
         "max": 82176.0,
-        "median": 65375.15,
-        "p25": 57487.11,
-        "p75": 74962.25
+        "median": 62782.81,
+        "p25": 62782.81,
+        "p75": 72602.0
       }
     }
   },
   "remote": {
     "count": 3,
-    "share": 0.0261
+    "share": 0.0256
   },
   "timeline": [
     {
@@ -482,16 +482,16 @@
     },
     {
       "month": "2026-08",
-      "count": 99
+      "count": 98
     },
     {
       "month": "2026-09",
-      "count": 6
+      "count": 9
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-03T16:15:01.377000+00:00",
+    "pivot": "2026-06-04T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -525,9 +525,9 @@
       },
       {
         "name": "Customs and Border Protection",
-        "recent": 6,
+        "recent": 7,
         "previous": 0,
-        "change": 6
+        "change": 7
       },
       {
         "name": "U.S. Marine Corps",
@@ -548,13 +548,13 @@
         "change": 4
       },
       {
-        "name": "Bureau of Prisons/Federal Prison System",
-        "recent": 2,
+        "name": "Serco",
+        "recent": 3,
         "previous": 0,
-        "change": 2
+        "change": 3
       },
       {
-        "name": "Serco",
+        "name": "Bureau of Prisons/Federal Prison System",
         "recent": 2,
         "previous": 0,
         "change": 2
@@ -587,9 +587,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 43,
+        "recent": 44,
         "previous": 0,
-        "change": 43
+        "change": 44
       },
       {
         "name": "ATC",
@@ -627,6 +627,10 @@
       "count": 4
     },
     {
+      "title": "H2FIT: Strength and Conditioning Coaches",
+      "count": 3
+    },
+    {
       "title": "Performance Dietitian",
       "count": 3
     },
@@ -636,10 +640,6 @@
     },
     {
       "title": "Fitness Specialist",
-      "count": 2
-    },
-    {
-      "title": "H2FIT: Strength and Conditioning Coaches",
       "count": 2
     },
     {
