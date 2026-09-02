@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-02T11:51:17.395711+00:00",
+  "generated_at": "2026-09-02T21:31:54.787548+00:00",
   "totals": {
-    "postings": 257,
-    "employers": 19,
-    "unique_jobs": 117,
-    "with_salary": 73,
+    "postings": 262,
+    "employers": 20,
+    "unique_jobs": 122,
+    "with_salary": 76,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-02T00:00:00+00:00"
+      "latest": "2026-09-02T14:41:47.217000+00:00"
     }
   },
   "by_employer": [
@@ -25,7 +25,7 @@
     },
     {
       "name": "KBR",
-      "count": 21,
+      "count": 23,
       "disciplines": [
         "strength-conditioning",
         "sports-medicine",
@@ -59,7 +59,7 @@
     },
     {
       "name": "Commander, Navy Installations Command",
-      "count": 8,
+      "count": 9,
       "disciplines": [
         "leadership",
         "nutrition",
@@ -105,6 +105,14 @@
       "median_salary": 77322.5
     },
     {
+      "name": "Bureau of Prisons/Federal Prison System",
+      "count": 3,
+      "disciplines": [
+        "sports-medicine"
+      ],
+      "median_salary": 79630.0
+    },
+    {
       "name": "Serco",
       "count": 3,
       "disciplines": [
@@ -112,14 +120,6 @@
         "strength-conditioning"
       ],
       "median_salary": 62782.81
-    },
-    {
-      "name": "Bureau of Prisons/Federal Prison System",
-      "count": 2,
-      "disciplines": [
-        "sports-medicine"
-      ],
-      "median_salary": 76335.25
     },
     {
       "name": "Air Education and Training Command",
@@ -151,81 +151,81 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 53,
-      "share": 0.5699,
+      "count": 55,
+      "share": 0.567,
       "median_salary": 74485.0
     },
     {
       "name": "sports-medicine",
-      "count": 42,
-      "share": 0.4516,
+      "count": 46,
+      "share": 0.4742,
       "median_salary": 84869.0
     },
     {
       "name": "cognitive",
-      "count": 20,
-      "share": 0.2151,
+      "count": 21,
+      "share": 0.2165,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1505,
+      "share": 0.1443,
       "median_salary": 90457.0
     },
     {
       "name": "leadership",
       "count": 12,
-      "share": 0.129,
+      "share": 0.1237,
       "median_salary": 62782.81
     },
     {
       "name": "nutrition",
       "count": 11,
-      "share": 0.1183,
+      "share": 0.1134,
       "median_salary": 91950.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0108,
+      "share": 0.0103,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 112,
-      "share": 0.9655
+      "count": 117,
+      "share": 0.9669
     },
     {
       "name": "sof",
-      "count": 37,
-      "share": 0.319
+      "count": 39,
+      "share": 0.3223
     },
     {
       "name": "training-pipeline",
       "count": 23,
-      "share": 0.1983
+      "share": 0.1901
     },
     {
       "name": "first-responder",
-      "count": 12,
-      "share": 0.1034
+      "count": 13,
+      "share": 0.1074
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 46
+      "count": 47
     },
     {
       "name": "Joint",
-      "count": 31
+      "count": 33
     },
     {
       "name": "Navy",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Air Force",
@@ -247,7 +247,7 @@
     },
     {
       "name": "Cannon AFB",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Hurlburt Field",
@@ -267,6 +267,10 @@
     },
     {
       "name": "Fort Sill",
+      "count": 3
+    },
+    {
+      "name": "Fort Stewart",
       "count": 3
     },
     {
@@ -296,10 +300,6 @@
     {
       "name": "Fort Riley",
       "count": 2
-    },
-    {
-      "name": "Fort Stewart",
-      "count": 2
     }
   ],
   "by_state": [
@@ -317,6 +317,10 @@
     },
     {
       "code": "GA",
+      "count": 8
+    },
+    {
+      "code": "FL",
       "count": 7
     },
     {
@@ -324,12 +328,8 @@
       "count": 6
     },
     {
-      "code": "FL",
-      "count": 6
-    },
-    {
       "code": "NM",
-      "count": 5
+      "count": 6
     },
     {
       "code": "WA",
@@ -367,38 +367,38 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 44,
-      "share": 0.8302
+      "count": 46,
+      "share": 0.8364
     },
     {
       "name": "ATC",
-      "count": 12,
-      "share": 0.2264
+      "count": 13,
+      "share": 0.2364
     },
     {
       "name": "RD",
       "count": 9,
-      "share": 0.1698
+      "share": 0.1636
     },
     {
       "name": "PhD",
       "count": 2,
-      "share": 0.0377
+      "share": 0.0364
     },
     {
       "name": "TSAC-F",
       "count": 2,
-      "share": 0.0377
+      "share": 0.0364
     }
   ],
   "clearances": [
     {
-      "name": "TS/SCI",
+      "name": "Secret",
       "count": 15
     },
     {
-      "name": "Secret",
-      "count": 13
+      "name": "TS/SCI",
+      "count": 15
     },
     {
       "name": "Top Secret",
@@ -406,12 +406,12 @@
     }
   ],
   "salary": {
-    "count": 73,
+    "count": 76,
     "min": 34320.0,
     "max": 219654.0,
-    "median": 91950.0,
+    "median": 91215.0,
     "p25": 62782.81,
-    "p75": 119616.0,
+    "p75": 118237.88,
     "by_discipline": {
       "strength-conditioning": {
         "count": 19,
@@ -422,12 +422,12 @@
         "p75": 89547.5
       },
       "sports-medicine": {
-        "count": 30,
+        "count": 32,
         "min": 34320.0,
         "max": 219654.0,
         "median": 84869.0,
-        "p25": 59106.5,
-        "p75": 112079.88
+        "p25": 59535.5,
+        "p75": 109019.62
       },
       "nutrition": {
         "count": 6,
@@ -473,7 +473,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0256
+    "share": 0.0246
   },
   "timeline": [
     {
@@ -486,12 +486,12 @@
     },
     {
       "month": "2026-09",
-      "count": 9
+      "count": 14
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-04T00:00:00+00:00",
+    "pivot": "2026-06-04T14:41:47.217000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -501,9 +501,9 @@
       },
       {
         "name": "KBR",
-        "recent": 21,
+        "recent": 23,
         "previous": 0,
-        "change": 21
+        "change": 23
       },
       {
         "name": "General Dynamics Information Technology",
@@ -519,9 +519,9 @@
       },
       {
         "name": "Commander, Navy Installations Command",
-        "recent": 8,
+        "recent": 9,
         "previous": 0,
-        "change": 8
+        "change": 9
       },
       {
         "name": "Customs and Border Protection",
@@ -548,16 +548,16 @@
         "change": 4
       },
       {
-        "name": "Serco",
+        "name": "Bureau of Prisons/Federal Prison System",
         "recent": 3,
         "previous": 0,
         "change": 3
       },
       {
-        "name": "Bureau of Prisons/Federal Prison System",
-        "recent": 2,
+        "name": "Serco",
+        "recent": 3,
         "previous": 0,
-        "change": 2
+        "change": 3
       },
       {
         "name": "Air Education and Training Command",
@@ -587,15 +587,15 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 44,
+        "recent": 46,
         "previous": 0,
-        "change": 44
+        "change": 46
       },
       {
         "name": "ATC",
-        "recent": 12,
+        "recent": 13,
         "previous": 0,
-        "change": 12
+        "change": 13
       },
       {
         "name": "RD",
@@ -620,11 +620,15 @@
   "top_titles": [
     {
       "title": "Physical Therapist",
-      "count": 6
+      "count": 7
     },
     {
       "title": "Human Performance Operations Manager",
       "count": 4
+    },
+    {
+      "title": "Fitness Specialist",
+      "count": 3
     },
     {
       "title": "H2FIT: Strength and Conditioning Coaches",
@@ -639,7 +643,7 @@
       "count": 2
     },
     {
-      "title": "Fitness Specialist",
+      "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
       "count": 2
     },
     {
@@ -672,10 +676,6 @@
     },
     {
       "title": "*SKILLBRIDGE* Electrical Engineer",
-      "count": 1
-    },
-    {
-      "title": "Biostatistician",
       "count": 1
     }
   ]
