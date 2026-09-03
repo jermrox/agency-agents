@@ -220,22 +220,43 @@
     /* The badge already says the facet is active, and on a narrow button the
        two together truncate the label ("Location" became "Loc..."). */
     #mm-jobs .mm-dd-n:not([hidden]) + .mm-dd-car { display: none; }
-    #mm-jobs .mm-dd-car { flex: none; opacity: .45; transition: transform .18s var(--mm-ease); }
-    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-dd-car { transform: rotate(180deg); opacity: .8; }
+    /* The caret becomes an X while its section is open. Two glyphs stacked in
+       the same 11px box; the chevron rotates away as the X rotates in. */
+    #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; }
+    #mm-jobs .mm-dd-car svg {
+      position: absolute; inset: 0; width: 11px; height: 11px;
+      transition: transform .28s cubic-bezier(.2,1.05,.35,1), opacity .18s var(--mm-ease);
+    }
+    #mm-jobs .mm-dd-car .mm-car-chev { opacity: .45; }
+    #mm-jobs .mm-dd-car .mm-car-x    { opacity: 0; transform: rotate(-90deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-chev { opacity: 0; transform: rotate(180deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-x    { opacity: .85; transform: none; }
 
+    /* The panel opens like a drawer rather than appearing: a grid row that
+       goes 0fr -> 1fr, with the border and padding on the inner element so a
+       closed row collapses to nothing and the buttons-to-search spacing is
+       exactly what it is with no panel at all. A clean gap above, never a
+       negative margin: merging the panel into the active button looked like a
+       tab, but the panel is full width, so the merge ran under the two
+       inactive buttons and cut their corners. Uncapped on purpose -- a
+       max-height with internal scroll sliced the last chip row in half. */
     #mm-jobs .mm-ddpanel {
+      display: grid; grid-template-rows: 0fr; margin-top: 0 !important;
+      transition: grid-template-rows .32s cubic-bezier(.2,.9,.3,1), margin-top .32s cubic-bezier(.2,.9,.3,1);
+    }
+    #mm-jobs .mm-ddpanel.is-open { grid-template-rows: 1fr; margin-top: .5rem !important; }
+    /* .mm-ddinner is the clipping element and carries NO padding or border --
+       with them, a 0fr row still measured 27.6px (padding + border), because
+       min-height: 0 clamps content, not box edges. They live on .mm-ddbox. */
+    #mm-jobs .mm-ddinner {
+      min-height: 0; overflow: hidden; visibility: hidden; opacity: 0; transform: translateY(-.35rem);
+      transition: opacity .22s var(--mm-ease), transform .32s cubic-bezier(.2,1.05,.35,1), visibility 0s linear .32s;
+    }
+    #mm-jobs .mm-ddbox {
       border: 1px solid var(--mm-border); border-radius: 8px;
       background: var(--mm-card); padding: .8rem !important;
-      /* A clean gap, never a negative margin. Merging the panel border into
-         the active button looked like a tab, but the panel is full width, so
-         the merge ran under the two inactive buttons and cut their corners. */
-      margin-top: .5rem !important;
-      /* Deliberately uncapped. A max-height with internal scroll sliced the
-         last row of chips in half at the panel's bottom border, which reads
-         as a collision. The panel is as tall as its content; it only exists
-         while a facet is open, and closing it gives the space back. */
     }
-    #mm-jobs .mm-ddpanel[hidden] { display: none; }
+    #mm-jobs .mm-ddpanel.is-open .mm-ddinner { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
     #mm-jobs .mm-ddsec[hidden] { display: none; }
     #mm-jobs .mm-ddhead {
       display: flex; align-items: baseline; justify-content: space-between; gap: .5rem;
@@ -259,6 +280,15 @@
       border-left: 0; padding-left: 0 !important; margin-top: .85rem !important;
       padding-top: .75rem !important; border-top: 1px solid var(--mm-border);
     }
+    /* Options arrive one after another when a section opens (35ms apart,
+       springing up from .85 scale), not on every re-render -- a re-render
+       happens on every chip click, and replaying the entrance each time would
+       make the panel twitch under the finger. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-chip {
+      animation: mm-chip-in .38s cubic-bezier(.2,1.1,.35,1) both;
+      animation-delay: calc(var(--i, 0) * 35ms);
+    }
+    @keyframes mm-chip-in { from { opacity: 0; transform: scale(.85) translateY(.25rem); } }
     #mm-jobs .mm-ddpanel .mm-chips {
       flex-wrap: wrap !important; overflow: visible !important;
       -webkit-mask-image: none !important; mask-image: none !important;
@@ -375,9 +405,44 @@
       padding: .65rem 1.05rem !important; border-radius: 8px !important; border: none; white-space: nowrap;
       transition: background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    #mm-jobs .mm-apply:hover { background: var(--mm-accent-text); color: #fff; }
-    #mm-jobs .mm-apply:active { transform: scale(.98); }
+    /* Shimmer ring on the call to action. A conic-gradient wedge sweeps round
+       the pill on a timer over a frosted inner. Time-driven rather than
+       hover-driven so it reads on a phone. The ring has its own dark-gold base
+       because a white sweep over a transparent ring is invisible on a cream
+       page -- the design this borrows from only works on near-black. Only
+       buttons on screen animate (see liveCtas): one rotating gradient per
+       visible card is cheap, 139 are not. Reduced-motion turns it off. */
+    #mm-jobs .mm-apply {
+      position: relative; isolation: isolate; overflow: hidden;
+      border-radius: 999px !important; background: var(--mm-accent-text);
+      box-shadow: 0 6px 22px rgba(177,138,69,.22) !important;
+      transition: transform .2s var(--mm-ease), box-shadow .2s var(--mm-ease), color .15s var(--mm-ease);
+    }
+    #mm-jobs .mm-apply::before {
+      content: ""; position: absolute; inset: -200%; z-index: -2;
+      background: conic-gradient(from 210deg, transparent 0deg, rgba(255,255,255,.55) 40deg, #fff 60deg, rgba(255,255,255,.55) 80deg, transparent 120deg);
+    }
+    #mm-jobs .mm-apply.is-live::before { animation: mm-shimmer 3s linear infinite; }
+    #mm-jobs .mm-apply::after {
+      content: ""; position: absolute; inset: 2px; z-index: -1; border-radius: 999px;
+      background: var(--mm-accent);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      transition: background .15s var(--mm-ease);
+    }
+    @supports (color: color-mix(in srgb, red, blue)) {
+      /* the frosted inner; make this a plain var(--mm-accent) for a solid one */
+      #mm-jobs .mm-apply::after { background: color-mix(in srgb, var(--mm-accent) 90%, transparent); }
+    }
+    #mm-jobs .mm-apply:hover { color: #fff; transform: scale(1.04); box-shadow: 0 0 30px 6px rgba(177,138,69,.32) !important; }
+    #mm-jobs .mm-apply:hover::after { background: var(--mm-accent-text); }
+    #mm-jobs .mm-apply:active { transform: scale(.99); }
     #mm-jobs .mm-apply svg { width: 13px; height: 13px; }
+    @keyframes mm-shimmer { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-apply::before { animation: none !important; }
+      #mm-jobs .mm-ddpanel, #mm-jobs .mm-ddinner, #mm-jobs .mm-dd-car svg { transition: none !important; }
+      #mm-jobs .mm-ddpanel.is-entering .mm-chip { animation: none !important; }
+    }
 
     #mm-jobs .mm-skel { display: grid; gap: .85rem; }
     #mm-jobs .mm-skel-card {
@@ -422,12 +487,14 @@
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
       <div class="mm-ddrow">
-        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Discipline</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        <button type="button" class="mm-dd-btn" data-dd="branch" aria-label="Service branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Branch</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Location</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Discipline</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="branch" aria-label="Service branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Branch</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Location</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
       </div>
 
-      <div class="mm-ddpanel" id="mm-ddpanel" hidden>
+      <div class="mm-ddpanel" id="mm-ddpanel">
+        <div class="mm-ddinner">
+          <div class="mm-ddbox">
         <div class="mm-ddsec" data-sec="discipline" hidden>
           <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
           <div class="mm-chips" id="mm-f-discipline"></div>
@@ -441,6 +508,8 @@
           <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
           <div class="mm-chips" id="mm-f-location"></div>
           <div class="mm-sublevel" id="mm-f-region" hidden></div>
+        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -659,6 +728,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "mm-chip";
+      btn.style.setProperty("--i", String(container.childElementCount));
       btn.setAttribute("aria-pressed", selected[group].has(opt.value) ? "true" : "false");
       btn.disabled = n === 0 && !selected[group].has(opt.value);
       btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
@@ -790,6 +860,7 @@
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "mm-chip is-sub";
+        btn.style.setProperty("--i", String(chips.childElementCount + 4));
         btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
         btn.disabled = n === 0 && !selected.region.has(name);
         btn.innerHTML = esc(name) + ' <span class="mm-n">' + n + "</span>";
@@ -809,10 +880,20 @@
   // --- facet panel ----------------------------------------------------------
   var openFacet = null;
 
+  var enterTimer = null;
   function showFacet(key) {
     openFacet = key;
     var panel = document.getElementById("mm-ddpanel");
-    panel.hidden = !key;
+    panel.classList.toggle("is-open", !!key);
+    // Replay the staggered entrance for the section being shown, then drop
+    // the class so later re-renders (every chip click) do not replay it.
+    panel.classList.remove("is-entering");
+    if (enterTimer) clearTimeout(enterTimer);
+    if (key) {
+      void panel.offsetWidth;
+      panel.classList.add("is-entering");
+      enterTimer = setTimeout(function () { panel.classList.remove("is-entering"); }, 900);
+    }
     Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
       sec.hidden = sec.dataset.sec !== key;
     });
@@ -1018,6 +1099,20 @@
     if (els.hideContingent.checked && hidden) msg += " · " + hidden + " contingent hidden";
     els.count.innerHTML = msg;
     els.live.textContent = shown.length + " jobs shown";
+    liveCtas();
+  }
+
+  // Animate only the call-to-action buttons that are on screen. The list is
+  // rebuilt on every render, so the observer is too.
+  var ctaObserver = null;
+  function liveCtas() {
+    if (ctaObserver) { ctaObserver.disconnect(); ctaObserver = null; }
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    ctaObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle("is-live", e.isIntersecting); });
+    }, { rootMargin: "80px" });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-apply"), function (a) { ctaObserver.observe(a); });
   }
 
   function renderDefinitions() {
