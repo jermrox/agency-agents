@@ -137,7 +137,7 @@
       margin: 0 !important;
       transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); }
+    @media (hover: hover) { #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); } }
     #mm-jobs .mm-chip:active:not(:disabled) { transform: scale(.97); }
     #mm-jobs .mm-chip[aria-pressed="true"] {
       background: var(--mm-accent); border-color: var(--mm-accent);
@@ -198,6 +198,7 @@
     #mm-jobs .mm-ddrow { display: flex; gap: .5rem; }
     #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 1 1 0; min-width: 0; }
     #mm-jobs .mm-dd-btn {
+      position: relative; overflow: visible;
       display: flex; align-items: center; justify-content: space-between; gap: .35rem;
       border: 1px solid var(--mm-border); background: var(--mm-card-2); color: var(--mm-ink);
       border-radius: 8px !important; padding: 0 .6rem !important;
@@ -206,20 +207,32 @@
       cursor: pointer; box-shadow: none !important; appearance: none; margin: 0 !important;
       transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease);
     }
-    #mm-jobs .mm-dd-btn:hover { border-color: var(--mm-accent); }
+    @media (hover: hover) { #mm-jobs .mm-dd-btn:hover { border-color: var(--mm-accent); } }
     #mm-jobs .mm-dd-btn:active { transform: scale(.99); }
     #mm-jobs .mm-dd-btn[aria-expanded="true"] {
       border-color: var(--mm-accent); background: var(--mm-card);
     }
     #mm-jobs .mm-dd-lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* The count sits on the button's top-right corner, out of the inline flow,
+       so the label keeps the full inner width at every phone width. Inline,
+       label and badge competed for the same 94px and "Location" rendered as
+       "Locati..." at 360px. The ring is the card colour, so the badge reads as
+       resting on the corner rather than cut by the border. */
     #mm-jobs .mm-dd-n {
-      flex: none; background: var(--mm-accent); color: var(--mm-accent-ink);
-      border-radius: 999px; font-size: .7rem; font-weight: 600; padding: .05rem .38rem;
+      position: absolute; top: -.3rem; right: -.3rem; z-index: 1;
+      background: var(--mm-accent); color: var(--mm-accent-ink);
+      border-radius: 999px; font-size: .68rem; font-weight: 600; padding: .05rem .38rem;
       font-variant-numeric: tabular-nums; line-height: 1.35;
+      box-shadow: 0 0 0 1.5px var(--mm-card);
     }
-    /* The badge already says the facet is active, and on a narrow button the
-       two together truncate the label ("Location" became "Loc..."). */
-    #mm-jobs .mm-dd-n:not([hidden]) + .mm-dd-car { display: none; }
+    #mm-jobs .mm-dd-n[hidden] { display: none; }
+    /* Below 340px the three buttons are 80px wide and "Discipline" (56px of
+       text) cannot share one with a caret and padding. The caret goes; the
+       open state still reads from the gold border and the count badge. */
+    @media (max-width: 340px) {
+      #mm-jobs .mm-dd-btn { padding: 0 .5rem !important; }
+      #mm-jobs .mm-dd-car { display: none; }
+    }
     /* The caret becomes an X while its section is open. Two glyphs stacked in
        the same 11px box; the chevron rotates away as the X rotates in. */
     #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; }
@@ -433,11 +446,39 @@
       /* the frosted inner; make this a plain var(--mm-accent) for a solid one */
       #mm-jobs .mm-apply::after { background: color-mix(in srgb, var(--mm-accent) 90%, transparent); }
     }
-    #mm-jobs .mm-apply:hover { color: #fff; transform: scale(1.04); box-shadow: 0 0 30px 6px rgba(177,138,69,.32) !important; }
-    #mm-jobs .mm-apply:hover::after { background: var(--mm-accent-text); }
+    /* Hover effects only where a hover exists. On a touchscreen :hover sticks
+       after a tap, so the CTA would stay scaled and glowing until the next tap
+       somewhere else. */
+    @media (hover: hover) {
+      #mm-jobs .mm-apply:hover { color: #fff; transform: scale(1.04); box-shadow: 0 0 30px 6px rgba(177,138,69,.32) !important; }
+      #mm-jobs .mm-apply:hover::after { background: var(--mm-accent-text); }
+    }
     #mm-jobs .mm-apply:active { transform: scale(.99); }
     #mm-jobs .mm-apply svg { width: 13px; height: 13px; }
     @keyframes mm-shimmer { to { transform: rotate(360deg); } }
+    /* Touch. Platform guidance puts the minimum tap target at 44pt on iOS and
+       48dp on Android; several controls here were 25-40px. Grow the hit areas,
+       not the type -- the text stays the size it is and the box does the work.
+       Coarse pointers only, so a desktop keeps its 40px controls. */
+    @media (pointer: coarse) {
+      #mm-jobs .mm-search { height: 2.75rem !important; line-height: 2.75rem !important; }
+      #mm-jobs .mm-select { height: 2.75rem !important; }
+      #mm-jobs .mm-check { min-height: 2.75rem; }
+      #mm-jobs .mm-dd-btn { height: 2.75rem !important; min-height: 2.75rem !important; }
+      #mm-jobs .mm-chip { min-height: 2.75rem !important; }
+      #mm-jobs .mm-chip.is-sub { min-height: 2.75rem !important; padding: .3rem .75rem !important; }
+      #mm-jobs .mm-active-chip { min-height: 2.75rem !important; padding: .3rem .7rem .3rem .85rem !important; }
+      #mm-jobs .mm-clear { min-height: 2.75rem; }
+      #mm-jobs .mm-apply { min-height: 2.75rem; }
+      /* The section header grows to hold a full-height Clear; the box gives
+         back some top padding so the chips do not move down by the whole 30px. */
+      #mm-jobs .mm-ddbox { padding-top: .35rem !important; }
+      #mm-jobs .mm-ddhead { align-items: center; min-height: 2.75rem; margin-bottom: .25rem !important; }
+      #mm-jobs .mm-ddclear {
+        display: inline-flex; align-items: center; min-height: 2.75rem !important;
+        padding: 0 .5rem !important; margin-right: -.5rem !important;
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       #mm-jobs .mm-apply::before { animation: none !important; }
       #mm-jobs .mm-ddpanel, #mm-jobs .mm-ddinner, #mm-jobs .mm-dd-car svg { transition: none !important; }
