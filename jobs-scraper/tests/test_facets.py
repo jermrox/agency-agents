@@ -642,3 +642,23 @@ class TestTelework:
     def test_genuinely_remote_still_reads_remote(self):
         classes = location_classes("Anywhere in the U.S. (remote job)", True, False)
         assert "remote" in classes
+
+
+class TestFitnessDiscipline:
+    """Installation fitness roles get a label instead of falling into Other."""
+
+    def test_navy_mwr_titles(self):
+        for t in ("Fitness Specialist", "Sports Specialist (Fitness)",
+                  "Recreation Specialist - Fitness Specialist",
+                  "FITNESS CENTER OPERATIONS SUPERVISOR NF4"):
+            assert discipline_of(t) == "fitness", t
+
+    def test_usmc_warr_and_health_promotion(self):
+        assert discipline_of("WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP SCHWAB") == "fitness"
+
+    def test_specific_disciplines_still_win_first(self):
+        # A strength coach at a fitness center is a strength coach.
+        assert discipline_of("Strength and Conditioning Coach - Fitness Center") == "strength-conditioning"
+
+    def test_cbp_officer_is_not_fitness(self):
+        assert discipline_of("CBP Officer") == "other"

@@ -105,6 +105,16 @@ DISCIPLINES: tuple[Discipline, ...] = (
         ),
     ),
     Discipline(
+        "fitness",
+        "Fitness & Health Promotion",
+        _rx(
+            r"\bfitness\s+(?:specialist|instructor|coordinator|program\s+manager|center)\b",
+            r"\bsports?\s+specialist\b",
+            r"\bhealth\s+promotion\b",
+            r"\bwarr\s+technician\b",  # USMC Warrior Athlete Readiness & Resilience
+        ),
+    ),
+    Discipline(
         "human-performance",
         "Human Performance (generalist)",
         _rx(

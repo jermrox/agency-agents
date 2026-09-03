@@ -273,3 +273,52 @@ def test_a_civilian_clinic_in_a_fort_named_city_stays_off_the_board():
         "Outpatient physical therapy in a community clinic setting.",
     )
     assert classify(posting) == Verdict.REJECT
+
+
+# --- applicant requirements are not discipline evidence -----------------------
+#
+# Every string below is from a live posting. The CBP sentence is the one that
+# put five border-officer announcements on the board: "physical readiness"
+# scored exactly the discipline floor, so one occurrence cleared the axis alone.
+
+_CBP_BOILERPLATE = (
+    "Physical Fitness Test: You will be required to successfully pass the "
+    "Pre-employment Fitness Test. Please view both Hiring Process Deep Dive "
+    "Video: The Fitness Test and Pre-Employment Fitness Test Physical Readiness "
+    "Program, a 6-week program designed to assist you in achieving a level of "
+    "physical fitness that will help you successfully pass the CBP fitness test. "
+    "As a CBP Officer you will enforce customs, immigration and agriculture laws "
+    "at ports of entry. Law enforcement experience preferred. Tactical."
+)
+
+
+def test_cbp_officer_is_rejected_on_the_discipline_axis():
+    p = _posting("CBP Officer", employer="Customs and Border Protection",
+                 location="Ketchikan, Alaska", description=_CBP_BOILERPLATE)
+    assert classify(p, Thresholds()) == Verdict.REJECT
+    # The domain axis is genuinely satisfied -- this is a tactical employer.
+    # What fails is discipline: the only hit is the applicant fitness-test
+    # sentence, and it no longer clears the floor by itself.
+    assert p.discipline_hits == ["physical readiness"]
+
+
+def test_physical_readiness_alone_is_below_the_discipline_floor():
+    p = _posting("Program Analyst", employer="United States Army",
+                 location="Fort Bragg, North Carolina",
+                 description="Military installation. Physical readiness standards apply.")
+    classify(p, Thresholds())
+    assert p.discipline_hits == ["physical readiness"]
+    assert classify(p, Thresholds()) == Verdict.REJECT
+
+
+def test_installation_fitness_roles_earn_publish_on_their_own():
+    # Demoting "physical readiness" alone dropped these three real Navy MWR
+    # postings. They now qualify on the work they actually describe.
+    for title in ("Fitness Specialist", "Sports Specialist (Fitness Instructor)",
+                  "MWR Supervisory Recreation Specialist (Fitness Program Manager)"):
+        p = _posting(title, employer="Commander, Navy Installations Command",
+                     location="Naval Station Norfolk, Virginia",
+                     description="Plan and lead fitness programs for active duty "
+                                 "sailors at the installation fitness center.")
+        assert classify(p, Thresholds()) == Verdict.PUBLISH, title
+        assert "physical readiness" not in p.discipline_hits

@@ -172,8 +172,26 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "performance specialist": 3.5,
     "exercise physiologist": 4.0,
     "exercise science": 3.0,
-    "physical readiness": 3.0,
+    # Worth less than min_discipline on purpose. At 3.0 it sat exactly on the
+    # floor, so one occurrence cleared the discipline axis alone -- and the one
+    # occurrence in a Customs and Border Protection officer announcement is
+    # "Pre-Employment Fitness Test Physical Readiness Program, a 6-week program
+    # designed to assist you in ... passing the CBP fitness test". That is a
+    # requirement on the applicant, not a description of the work, and it put
+    # five border-officer postings on a human performance board. Same failure
+    # as the VA credential list documented in classify(): evidence about the
+    # candidate read as evidence about the job. It now needs corroboration.
+    "physical readiness": 2.0,
     "fitness coordinator": 2.5,
+    # Installation fitness roles -- Navy MWR "Fitness Specialist", Marine Corps
+    # "Fitness Center Operations Supervisor". Real human performance work that
+    # was only ever clearing the gate on the same "physical readiness" phrase,
+    # so demoting it would have dropped them too. They earn it on their own now.
+    "fitness specialist": 3.5,
+    "fitness instructor": 3.5,
+    "fitness program manager": 3.5,
+    "sports specialist": 3.0,
+    "fitness center": 3.0,
     "conditioning coach": 3.5,
     # Sports medicine / rehab.
     "athletic trainer": 4.0,
