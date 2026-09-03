@@ -1,3 +1,18 @@
+## Run 2026-09-03 11:51 UTC — 1 posting(s)
+
+### [Practical Nurse (Intensive Care Unit)](https://www.usajobs.gov:443/job/883256900)
+- **Employer:** Military Treatment Facilities under DHA
+- **Location:** Bethesda, Maryland
+- **Score:** 10.5 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $56893 - $68530 PA
+- **Matched:** domain=military, service context | discipline=sports medicine
+
+> Who May Apply: US Citizens In order to qualify, you must meet the experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional;…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-02 21:31 UTC — 0 posting(s)
 
 _No new postings._
