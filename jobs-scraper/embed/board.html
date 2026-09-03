@@ -15,7 +15,7 @@
       --mm-accent: #b18a45;
       --mm-accent-text: #8a6829;
       --mm-accent-ink: #171310;
-      --mm-accent-soft: #efe8d9; --mm-cta-glow: rgba(22,19,15,.22); --mm-cta-glow-hover: rgba(22,19,15,.3); --mm-cta-arc: rgba(177,138,69,.9); --mm-cta-glass: rgba(10,11,20,.9);
+      --mm-accent-soft: #efe8d9;
 
       --mm-good: #235c34;
       --mm-good-bg: #e3f1e6;
@@ -40,7 +40,7 @@
         --mm-card: #131110; --mm-card-2: #1c1815; --mm-border: #34302a;
         --mm-ink: #f4efe6; --mm-muted: #a89f8d;
         --mm-accent: #d3a862; --mm-accent-text: #e6bd7c; --mm-accent-ink: #171310;
-        --mm-accent-soft: #332a1c; --mm-cta-glow: rgba(255,255,255,.1); --mm-cta-glow-hover: rgba(255,255,255,.16); --mm-cta-arc: rgba(255,255,255,.6); --mm-cta-glass: rgba(10,11,20,.8);
+        --mm-accent-soft: #332a1c;
         --mm-good: #6fc283; --mm-good-bg: #16261a;
         --mm-warn: #e2a24c; --mm-warn-bg: #2c2210;
         --mm-flag: #ef7167; --mm-flag-bg: #2f1613;
@@ -50,7 +50,7 @@
       --mm-card: #131110; --mm-card-2: #1c1815; --mm-border: #34302a;
       --mm-ink: #f4efe6; --mm-muted: #a89f8d;
       --mm-accent: #d3a862; --mm-accent-text: #e6bd7c; --mm-accent-ink: #171310;
-      --mm-accent-soft: #332a1c; --mm-cta-glow: rgba(255,255,255,.1); --mm-cta-glow-hover: rgba(255,255,255,.16); --mm-cta-arc: rgba(255,255,255,.6); --mm-cta-glass: rgba(10,11,20,.8);
+      --mm-accent-soft: #332a1c;
       --mm-good: #6fc283; --mm-good-bg: #16261a;
       --mm-warn: #e2a24c; --mm-warn-bg: #2c2210;
       --mm-flag: #ef7167; --mm-flag-bg: #2f1613;
@@ -59,7 +59,7 @@
       --mm-card: #ffffff; --mm-card-2: #f6f2ea; --mm-border: #e3dbc9;
       --mm-ink: #16130f; --mm-muted: #6b6151;
       --mm-accent: #b18a45; --mm-accent-text: #8a6829; --mm-accent-ink: #171310;
-      --mm-accent-soft: #efe8d9; --mm-cta-glow: rgba(22,19,15,.22); --mm-cta-glow-hover: rgba(22,19,15,.3); --mm-cta-arc: rgba(177,138,69,.9); --mm-cta-glass: rgba(10,11,20,.9);
+      --mm-accent-soft: #efe8d9;
       --mm-good: #235c34; --mm-good-bg: #e3f1e6;
       --mm-warn: #a1550c; --mm-warn-bg: #fdf0dd;
       --mm-flag: #9c2f27; --mm-flag-bg: #fbe8e5;
@@ -195,55 +195,64 @@
        anchor to a different button, so nothing lines up and the panel hangs
        over the search field. Expanding in flow means every row keeps the same
        left and right edge and nothing is ever obscured. */
-    #mm-jobs .mm-ddrow { display: flex; gap: .5rem; }
+    #mm-jobs .mm-ddrow { display: flex; gap: .5rem; align-items: flex-start; }
     #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 1 1 0; min-width: 0; }
+    /* The trigger, from the reference: 46px, radius 12px, 13px/600 tracked
+       label, icon at the left, caret at the right, press scale .95. Open
+       (.is-fused) its bottom corners square off and it extends 9px downward
+       to meet the panel, covering the panel's top border along its own span
+       -- the reference's fused trigger + list. The two inactive buttons keep
+       their gap and their corners, so nothing is cut. */
     #mm-jobs .mm-dd-btn {
-      position: relative; overflow: visible;
-      display: flex; align-items: center; justify-content: space-between; gap: .35rem;
+      position: relative; overflow: visible; isolation: isolate; box-sizing: border-box;
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
       border: 1px solid var(--mm-border); background: var(--mm-card-2); color: var(--mm-ink);
-      border-radius: 8px !important; padding: 0 .6rem !important;
-      height: 2.5rem !important; min-height: 2.5rem !important;
-      font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1 !important;
+      border-radius: 12px !important; padding: 0 .75rem !important;
+      height: 2.875rem !important; min-height: 2.875rem !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1 !important;
       cursor: pointer; box-shadow: none !important; appearance: none; margin: 0 !important;
-      transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease);
+      transition: background .2s var(--mm-ease), border-color .2s var(--mm-ease), border-radius .2s var(--mm-ease),
+        height .2s var(--mm-ease), margin .2s var(--mm-ease), box-shadow .2s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    @media (hover: hover) { #mm-jobs .mm-dd-btn:hover { border-color: var(--mm-accent); } }
-    #mm-jobs .mm-dd-btn:active { transform: scale(.99); }
-    #mm-jobs .mm-dd-btn[aria-expanded="true"] {
-      border-color: var(--mm-accent); background: var(--mm-card);
+    @media (hover: hover) { #mm-jobs .mm-dd-btn:hover { background: var(--mm-card); } }
+    #mm-jobs .mm-dd-btn:active { transform: scale(.95); }
+    #mm-jobs .mm-dd-btn.is-fused {
+      background: var(--mm-card); border-bottom-color: transparent;
+      border-radius: 12px 12px 0 0 !important;
+      height: calc(2.875rem + 9px) !important; margin-bottom: -9px !important; z-index: 2;
     }
+    #mm-jobs .mm-dd-main { display: flex; align-items: center; gap: .5rem; flex: 1 1 auto; min-width: 0; }
+    #mm-jobs .mm-dd-ico { display: block; flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-dd-ico svg { display: block; width: 16px; height: 16px; }
     #mm-jobs .mm-dd-lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    /* The count sits on the button's top-right corner, out of the inline flow,
-       so the label keeps the full inner width at every phone width. Inline,
-       label and badge competed for the same 94px and "Location" rendered as
-       "Locati..." at 360px. The ring is the card colour, so the badge reads as
-       resting on the corner rather than cut by the border. */
-    #mm-jobs .mm-dd-n {
-      position: absolute; top: -.3rem; right: -.3rem; z-index: 1;
-      background: var(--mm-accent); color: var(--mm-accent-ink);
-      border-radius: 999px; font-size: .68rem; font-weight: 600; padding: .05rem .38rem;
-      font-variant-numeric: tabular-nums; line-height: 1.35;
-      box-shadow: 0 0 0 1.5px var(--mm-card);
-    }
-    #mm-jobs .mm-dd-n[hidden] { display: none; }
-    /* Below 340px the three buttons are 80px wide and "Discipline" (56px of
-       text) cannot share one with a caret and padding. The caret goes; the
-       open state still reads from the gold border and the count badge. */
-    @media (max-width: 340px) {
-      #mm-jobs .mm-dd-btn { padding: 0 .5rem !important; }
-      #mm-jobs .mm-dd-car { display: none; }
+    /* Placeholder look until something is picked, as the reference. */
+    #mm-jobs .mm-dd-btn:not(.is-set) .mm-dd-lab { color: var(--mm-muted); font-weight: 500; }
+    #mm-jobs .mm-dd-btn.is-set .mm-dd-ico, #mm-jobs .mm-dd-btn.is-fused .mm-dd-ico { color: var(--mm-accent-text); }
+    /* Below 640px the three buttons stack full width -- the reference is a
+       single wide select, and three across on a phone leaves 60px for a
+       label that needs 78 ("Organization"). The panel moves under the button
+       that is open (see placePanel), so it stays in flow: nothing overlaps,
+       the buttons below simply move down. The column gap is the 8px the
+       fused button reaches across; a closed panel cancels its own gap. */
+    @media (max-width: 639px) {
+      #mm-jobs .mm-ddrow { flex-direction: column; }
+      /* flex-basis 0 from the row layout would override the open height */
+      #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 0 0 auto; width: 100%; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel { margin-top: -.5rem !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel.is-open { margin-top: 0 !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel .mm-ddbox { border-top-left-radius: 0; border-top-right-radius: 0; }
     }
     /* The caret becomes an X while its section is open. Two glyphs stacked in
        the same 11px box; the chevron rotates away as the X rotates in. */
-    #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; }
+    #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; color: var(--mm-muted); }
     #mm-jobs .mm-dd-car svg {
       position: absolute; inset: 0; width: 11px; height: 11px;
       transition: transform .28s cubic-bezier(.2,1.05,.35,1), opacity .18s var(--mm-ease);
     }
-    #mm-jobs .mm-dd-car .mm-car-chev { opacity: .45; }
+    #mm-jobs .mm-dd-car .mm-car-chev { opacity: .8; }
     #mm-jobs .mm-dd-car .mm-car-x    { opacity: 0; transform: rotate(-90deg) scale(.7); }
     #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-chev { opacity: 0; transform: rotate(180deg) scale(.7); }
-    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-x    { opacity: .85; transform: none; }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-x    { opacity: 1; transform: none; }
 
     /* The panel opens like a drawer rather than appearing: a grid row that
        goes 0fr -> 1fr, with the border and padding on the inner element so a
@@ -266,9 +275,42 @@
       transition: opacity .22s var(--mm-ease), transform .32s cubic-bezier(.2,1.05,.35,1), visibility 0s linear .32s;
     }
     #mm-jobs .mm-ddbox {
-      border: 1px solid var(--mm-border); border-radius: 8px;
+      border: 1px solid var(--mm-border); border-radius: 12px;
       background: var(--mm-card); padding: .8rem !important;
     }
+    /* Under an open first or last button the panel's corner goes square so
+       the button's outer edge runs straight down into the list. */
+    #mm-jobs .mm-ddpanel.is-first-open .mm-ddbox { border-top-left-radius: 0; }
+    #mm-jobs .mm-ddpanel.is-last-open .mm-ddbox { border-top-right-radius: 0; }
+    /* Options as rows, from the reference: 42px, 4px apart, radius 12px, an
+       icon and a 13px/600 tracked label, hover fill, press scale. Picked rows
+       take the accent tint and a check; empty ones fade. */
+    #mm-jobs .mm-opts { display: flex; flex-direction: column; gap: 4px; }
+    #mm-jobs .mm-opt {
+      display: flex; align-items: center; gap: .75rem; width: 100%; text-align: left;
+      min-height: 2.625rem; padding: 0 .75rem !important; margin: 0 !important;
+      border: 0; border-radius: 12px !important; background: transparent; color: var(--mm-ink);
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1.2 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none;
+      transition: background .15s var(--mm-ease), color .15s var(--mm-ease), transform .1s var(--mm-ease);
+    }
+    #mm-jobs .mm-opt-ico { flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-opt-ico svg { display: block; width: 16px; height: 16px; }
+    #mm-jobs .mm-opt-lab { flex: 1 1 auto; min-width: 0; white-space: normal; padding: .35rem 0; }
+    #mm-jobs .mm-opt .mm-n { flex: none; opacity: .6; font-weight: 500; font-size: .75rem; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+    /* The check replaces the icon on a picked row rather than taking its own
+       slot, so a long option name keeps the width on a narrow phone. */
+    #mm-jobs .mm-opt-chk { display: none; flex: none; width: 16px; height: 16px; color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { display: none; }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-chk { display: block; animation: mm-pop .25s cubic-bezier(.34,1.4,.64,1) both; }
+    @keyframes mm-pop { from { opacity: 0; transform: scale(.6); } }
+    #mm-jobs .mm-opt-chk svg { display: block; width: 16px; height: 16px; }
+    @media (hover: hover) { #mm-jobs .mm-opt:not(:disabled):hover { background: var(--mm-card-2); } }
+    #mm-jobs .mm-opt:active:not(:disabled) { transform: scale(.97); }
+    #mm-jobs .mm-opt[aria-pressed="true"] { background: var(--mm-accent-soft); color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-n { opacity: .85; }
+    #mm-jobs .mm-opt:disabled { opacity: .45; cursor: default; }
     #mm-jobs .mm-ddpanel.is-open .mm-ddinner { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
     #mm-jobs .mm-ddsec[hidden] { display: none; }
     #mm-jobs .mm-ddhead {
@@ -302,6 +344,17 @@
       animation-delay: calc(var(--i, 0) * 35ms);
     }
     @keyframes mm-chip-in { from { opacity: 0; transform: scale(.85) translateY(.25rem); } }
+    /* Rows spring in 45ms apart from .8 scale (the reference's timing), and
+       on close leave in reverse order, 20ms apart, before the drawer folds. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-opt {
+      animation: mm-opt-in .3s cubic-bezier(.34,1.3,.64,1) both;
+      animation-delay: calc(var(--i, 0) * 45ms);
+    }
+    @keyframes mm-opt-in { from { opacity: 0; transform: translateY(-6px) scale(.8); } }
+    #mm-jobs .mm-ddpanel.is-leaving .mm-opt, #mm-jobs .mm-ddpanel.is-leaving .mm-chip {
+      animation: mm-opt-out .18s var(--mm-ease) both; animation-delay: calc(var(--r, 0) * 20ms); pointer-events: none;
+    }
+    @keyframes mm-opt-out { to { opacity: 0; transform: translateY(-6px) scale(.8); } }
     #mm-jobs .mm-ddpanel .mm-chips {
       flex-wrap: wrap !important; overflow: visible !important;
       -webkit-mask-image: none !important; mask-image: none !important;
@@ -411,57 +464,29 @@
     #mm-jobs .mm-badge.is-listed   { background: var(--mm-warn-bg); color: var(--mm-warn); border-color: transparent; }
     #mm-jobs .mm-badge.is-contingent { background: var(--mm-flag-bg); color: var(--mm-flag); border-color: transparent; }
 
-    /* The call to action, ported from a glassmorphism CTA: a dark frosted pill
-       with a white shimmer ring sweeping round its edge, a second light beam
-       turning just inside it, a soft glow, and a round icon disc. Time-driven
-       so it reads on a phone; only buttons on screen animate (see liveCtas).
-       The inner is translucent, so on the cream board it reads near-black and
-       on the dark board it frosts what is behind it, as the reference does. */
+    /* The call to action: a plain pill in the ink colour, white text, a round
+       disc holding the arrow. No ring, no beam, no glow -- the user did not
+       want the chrome. On the dark board the pill is cream with dark text. */
     #mm-jobs .mm-apply {
-      --mm-spread: 90deg; --mm-shimmer: var(--mm-cta-arc); --mm-speed: 4s;
-      position: relative; isolation: isolate; overflow: hidden;
       display: inline-flex; align-items: center; gap: .75rem; margin: 0 !important;
       padding: .5rem .5rem .5rem 1.1rem !important; border: none; border-radius: 999px !important;
-      background: rgba(255,255,255,.05); color: #fff; text-decoration: none; white-space: nowrap;
+      background: var(--mm-ink); color: var(--mm-card); text-decoration: none; white-space: nowrap;
       font-family: var(--mm-font); font-size: .9375rem !important; font-weight: 500; line-height: 1.3 !important;
-      box-shadow: 0 8px 32px var(--mm-cta-glow) !important;
-      transition: transform .3s var(--mm-ease), box-shadow .3s var(--mm-ease);
+      box-shadow: none !important; transition: transform .2s var(--mm-ease), background .2s var(--mm-ease);
     }
-    /* the ring: a conic wedge spinning behind the 1px edge. White on the dark
-       board as in the reference; the brand accent on the light board, where a
-       white arc on a white card would not show. */
-    #mm-jobs .mm-apply::before {
-      content: ""; position: absolute; inset: -200%; z-index: -3;
-      background: conic-gradient(from calc(270deg - var(--mm-spread) * .5), transparent 0, var(--mm-shimmer) var(--mm-spread), transparent var(--mm-spread));
-    }
-    /* the beam: a soft band of light turning inside the edge */
-    #mm-jobs .mm-apply-beam {
-      position: absolute; left: 50%; top: 50%; width: 200%; height: 200%; z-index: -2;
-      transform: translate(-50%, -50%);
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2) 25%, rgba(255,255,255,.2) 75%, transparent);
-    }
-    /* the glass: translucent near-black, frosting whatever is behind it */
-    #mm-jobs .mm-apply::after {
-      content: ""; position: absolute; inset: 1px; z-index: -1; border-radius: 999px;
-      background: var(--mm-cta-glass);
-      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-    }
-    #mm-jobs .mm-apply.is-live::before { animation: mm-ring-spin var(--mm-speed) linear infinite; }
-    #mm-jobs .mm-apply.is-live .mm-apply-beam { animation: mm-beam-spin var(--mm-speed) linear infinite; }
     #mm-jobs .mm-apply-disc {
       display: inline-flex; align-items: center; justify-content: center; flex: none;
-      width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(255,255,255,.1);
+      width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(127,127,127,.28);
+      transition: transform .2s var(--mm-ease);
     }
     #mm-jobs .mm-apply-disc svg { width: 15px; height: 15px; }
     /* Hover effects only where a hover exists. On a touchscreen :hover sticks
-       after a tap, so the CTA would stay scaled and glowing until the next tap
-       somewhere else. */
+       after a tap, so the button would stay lifted until the next tap. */
     @media (hover: hover) {
-      #mm-jobs .mm-apply:hover { transform: scale(1.05); box-shadow: 0 0 40px 8px var(--mm-cta-glow-hover) !important; }
+      #mm-jobs .mm-apply:hover { transform: translateY(-1px); }
+      #mm-jobs .mm-apply:hover .mm-apply-disc { transform: scale(1.1); }
     }
     #mm-jobs .mm-apply:active { transform: scale(.98); }
-    @keyframes mm-ring-spin { to { transform: rotate(360deg); } }
-    @keyframes mm-beam-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
     /* Touch. Platform guidance puts the minimum tap target at 44pt on iOS and
        48dp on Android; several controls here were 25-40px. Grow the hit areas,
        not the type -- the text stays the size it is and the box does the work.
@@ -470,7 +495,7 @@
       #mm-jobs .mm-search { height: 2.75rem !important; line-height: 2.75rem !important; }
       #mm-jobs .mm-select { height: 2.75rem !important; }
       #mm-jobs .mm-check { min-height: 2.75rem; }
-      #mm-jobs .mm-dd-btn { height: 2.75rem !important; min-height: 2.75rem !important; }
+      #mm-jobs .mm-opt { min-height: 2.75rem; }
       #mm-jobs .mm-chip { min-height: 2.75rem !important; }
       #mm-jobs .mm-chip.is-sub { min-height: 2.75rem !important; padding: .3rem .75rem !important; }
       #mm-jobs .mm-active-chip { min-height: 2.75rem !important; padding: .3rem .7rem .3rem .85rem !important; }
@@ -486,9 +511,8 @@
       }
     }
     @media (prefers-reduced-motion: reduce) {
-      #mm-jobs .mm-apply::before, #mm-jobs .mm-apply-beam { animation: none !important; }
       #mm-jobs .mm-ddpanel, #mm-jobs .mm-ddinner, #mm-jobs .mm-dd-car svg { transition: none !important; }
-      #mm-jobs .mm-ddpanel.is-entering .mm-chip { animation: none !important; }
+      #mm-jobs .mm-ddpanel.is-entering .mm-chip, #mm-jobs .mm-ddpanel .mm-opt { animation: none !important; }
     }
 
     #mm-jobs .mm-skel { display: grid; gap: .85rem; }
@@ -534,9 +558,9 @@
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
       <div class="mm-ddrow">
-        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Discipline</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
-        <button type="button" class="mm-dd-btn" data-dd="branch" aria-label="Service branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Branch</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
-        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Location</span><span class="mm-dd-n" hidden></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Discipline</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Organization</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Location</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
       </div>
 
       <div class="mm-ddpanel" id="mm-ddpanel">
@@ -544,16 +568,16 @@
           <div class="mm-ddbox">
         <div class="mm-ddsec" data-sec="discipline" hidden>
           <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
-          <div class="mm-chips" id="mm-f-discipline"></div>
+          <div class="mm-opts" id="mm-f-discipline" role="group" aria-label="Discipline"></div>
         </div>
         <div class="mm-ddsec" data-sec="branch" hidden>
-          <div class="mm-ddhead"><span>Service branch</span><button type="button" class="mm-ddclear" data-clear="branch" hidden>Clear</button></div>
+          <div class="mm-ddhead"><span>Organization</span><button type="button" class="mm-ddclear" data-clear="branch" hidden>Clear</button></div>
           <p class="mm-ddnote">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</p>
-          <div class="mm-chips" id="mm-f-branch"></div>
+          <div class="mm-opts" id="mm-f-branch" role="group" aria-label="Organization"></div>
         </div>
         <div class="mm-ddsec" data-sec="location" hidden>
           <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
-          <div class="mm-chips" id="mm-f-location"></div>
+          <div class="mm-opts" id="mm-f-location" role="group" aria-label="Location"></div>
           <div class="mm-sublevel" id="mm-f-region" hidden></div>
         </div>
           </div>
@@ -628,6 +652,52 @@
     close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
     empty: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
   };
+
+  // One icon per option, so a row and the trigger can show what was picked.
+  function ico(paths) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + paths + "</svg>"; }
+  var FACET_ICONS = {
+    discipline: {
+      "strength-conditioning": ico('<path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/>'),
+      "cognitive-performance": ico('<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/>'),
+      "physical-therapy": ico('<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.5 12h5l1.5-3 2 6 1.5-3h4"/>'),
+      "nutrition": ico('<path d="M12 6.5c1.5-2 4-2.5 5.5-1.5 3 2 3 7 .5 11-1.2 2-2.5 3-4 2.5-.7-.2-1.3-.2-2 0-1.5.5-2.8-.5-4-2.5-2.5-4-2.5-9 .5-11 1.5-1 4-.5 5.5 1.5z"/><path d="M12 6.5c0-2 1-3.5 2.5-4"/>'),
+      "occupational-therapy": ico('<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M11 11.5V4.5a1.5 1.5 0 0 1 3 0V12"/><path d="M14 12V6.5a1.5 1.5 0 0 1 3 0V14"/><path d="M8 13l-1.5-2a1.6 1.6 0 0 0-2.6 1.8L7 17a7 7 0 0 0 13-3v-2"/>'),
+      "human-performance": ico('<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'),
+      "athletic-training": ico('<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>'),
+      "sport-science": ico('<path d="M3 3v18h18"/><path d="M8 17v-6M13 17V7M18 17v-3"/>'),
+      "behavioral-health": ico('<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>'),
+      "fitness": ico('<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>'),
+      "__default": ico('<circle cx="12" cy="12" r="9" stroke-dasharray="4 3"/>')
+    },
+    branch: {
+      "army": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+      "navy": ico('<circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/>'),
+      "air-force": ico('<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>'),
+      "marine-corps": ico('<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'),
+      "space-force": ico('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'),
+      "coast-guard": ico('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>'),
+      "joint": ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+      "none": ico('<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>'),
+      "__default": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>')
+    },
+    location: {
+      "remote": ico('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>'),
+      "telework": ico('<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>'),
+      "conus": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
+      "oconus": ico('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'),
+      "unspecified": ico('<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>'),
+      "__default": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>')
+    }
+  };
+  var TRIGGER_ICONS = {
+    discipline: ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+    branch: FACET_ICONS.branch.army,
+    location: FACET_ICONS.location.conus
+  };
+  function facetIcon(group, value) {
+    var set = FACET_ICONS[group] || {};
+    return set[value] || set.__default || "";
+  }
 
   var els = {
     sub: document.getElementById("mm-sub"),
@@ -773,13 +843,23 @@
         return matches(job, group);
       }).length;
 
+      var isRow = container.classList.contains("mm-opts");
+      var on = selected[group].has(opt.value);
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "mm-chip";
+      btn.className = isRow ? "mm-opt" : "mm-chip";
       btn.style.setProperty("--i", String(container.childElementCount));
-      btn.setAttribute("aria-pressed", selected[group].has(opt.value) ? "true" : "false");
-      btn.disabled = n === 0 && !selected[group].has(opt.value);
-      btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.disabled = n === 0 && !on;
+      if (isRow) {
+        btn.innerHTML =
+          '<span class="mm-opt-ico" aria-hidden="true">' + facetIcon(group, opt.value) + "</span>" +
+          '<span class="mm-opt-chk" aria-hidden="true">' + ICONS.check + "</span>" +
+          '<span class="mm-opt-lab">' + esc(opt.label) + "</span>" +
+          '<span class="mm-n">' + n + "</span>";
+      } else {
+        btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      }
       btn.addEventListener("click", function () {
         if (selected[group].has(opt.value)) selected[group].delete(opt.value);
         else selected[group].add(opt.value);
@@ -787,7 +867,7 @@
       });
       container.appendChild(btn);
     });
-    markScrollEnd(container);
+    if (!container.classList.contains("mm-opts")) markScrollEnd(container);
   }
 
   function markScrollEnd(container) {
@@ -927,27 +1007,71 @@
 
   // --- facet panel ----------------------------------------------------------
   var openFacet = null;
-
   var enterTimer = null;
+  var leaveTimer = null;
+
+  function facetSection(key) {
+    return document.querySelector('#mm-jobs .mm-ddsec[data-sec="' + key + '"]');
+  }
+
   function showFacet(key) {
-    openFacet = key;
     var panel = document.getElementById("mm-ddpanel");
-    panel.classList.toggle("is-open", !!key);
-    // Replay the staggered entrance for the section being shown, then drop
-    // the class so later re-renders (every chip click) do not replay it.
-    panel.classList.remove("is-entering");
-    if (enterTimer) clearTimeout(enterTimer);
-    if (key) {
-      void panel.offsetWidth;
-      panel.classList.add("is-entering");
-      enterTimer = setTimeout(function () { panel.classList.remove("is-entering"); }, 900);
-    }
-    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
-      sec.hidden = sec.dataset.sec !== key;
-    });
-    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+    var btns = document.querySelectorAll("#mm-jobs .mm-dd-btn");
+    if (enterTimer) { clearTimeout(enterTimer); enterTimer = null; }
+    if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+    // The caret answers the tap at once; the geometry follows the panel.
+    Array.prototype.forEach.call(btns, function (b) {
       b.setAttribute("aria-expanded", b.dataset.dd === key ? "true" : "false");
     });
+    var leaving = openFacet && openFacet !== key ? openFacet : null;
+    openFacet = key;
+
+    var reveal = function () {
+      leaveTimer = null;
+      panel.classList.remove("is-leaving", "is-entering");
+      placePanel(key);
+      Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
+        sec.hidden = sec.dataset.sec !== key;
+      });
+      Array.prototype.forEach.call(btns, function (b) { b.classList.toggle("is-fused", b.dataset.dd === key); });
+      panel.classList.toggle("is-first-open", !!key && key === btns[0].dataset.dd);
+      panel.classList.toggle("is-last-open", !!key && key === btns[btns.length - 1].dataset.dd);
+      panel.classList.toggle("is-open", !!key);
+      if (key) {
+        // Replay the staggered entrance for the section being shown, then drop
+        // the class so later re-renders (every row click) do not replay it.
+        void panel.offsetWidth;
+        panel.classList.add("is-entering");
+        enterTimer = setTimeout(function () { panel.classList.remove("is-entering"); }, 900);
+      }
+    };
+
+    if (!leaving) { reveal(); return; }
+    // The open section leaves in reverse order, 20ms a row, then the panel
+    // folds or the next section arrives. Capped so 25 state chips do not
+    // hold the drawer open for half a second.
+    var rows = facetSection(leaving).querySelectorAll(".mm-opt, .mm-chip");
+    var n = rows.length, cap = 12;
+    Array.prototype.forEach.call(rows, function (r, i) {
+      r.style.setProperty("--r", String(Math.min(n - 1 - i, cap)));
+    });
+    panel.classList.remove("is-entering");
+    panel.classList.add("is-leaving");
+    leaveTimer = setTimeout(reveal, Math.min(n - 1, cap) * 20 + 200);
+  }
+
+  // Stacked (below 640px) the panel sits directly under the open button;
+  // across, it follows the row. Kept in flow either way.
+  function placePanel(key) {
+    var panel = document.getElementById("mm-ddpanel");
+    var row = document.querySelector("#mm-jobs .mm-ddrow");
+    var stacked = !(window.matchMedia && window.matchMedia("(min-width: 640px)").matches);
+    var btn = key ? row.querySelector('.mm-dd-btn[data-dd="' + key + '"]') : null;
+    if (stacked && btn) {
+      if (btn.nextElementSibling !== panel) btn.insertAdjacentElement("afterend", panel);
+    } else if (!stacked && panel.parentElement === row) {
+      row.insertAdjacentElement("afterend", panel);
+    }
   }
 
   function bindFacets() {
@@ -968,20 +1092,64 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && openFacet) showFacet(null);
     });
+    var resizeTimer = null;
+    window.addEventListener("resize", function () {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { placePanel(openFacet); renderFacetButtons(); }, 120);
+    });
+  }
+
+  // What is picked in a facet, in option order, for the trigger to show.
+  function facetSelections(group) {
+    var out = [];
+    if (group === "discipline") {
+      disciplineOptions().forEach(function (o) {
+        if (selected.discipline.has(o.value)) out.push({ label: o.label, icon: facetIcon("discipline", o.value) });
+      });
+    } else if (group === "branch") {
+      branchOptions().forEach(function (o) {
+        if (selected.branch.has(o.value)) out.push({ label: o.label, icon: facetIcon("branch", o.value) });
+      });
+    } else {
+      locationOptions().forEach(function (o) {
+        if (selected.location.has(o.value)) out.push({ label: o.label, icon: facetIcon("location", o.value) });
+      });
+      Array.from(selected.region).sort().forEach(function (name) {
+        out.push({ label: name, icon: facetIcon("location", "conus") });
+      });
+    }
+    return out;
+  }
+
+  function textFits(el) {
+    if (!el.firstChild || !document.createRange) return true;
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    // clientWidth is rounded to a whole pixel; a label that fit by a
+    // fraction of a pixel was being rejected. Compare fractional widths.
+    return range.getBoundingClientRect().width <= el.getBoundingClientRect().width + 0.05;
   }
 
   function renderFacetButtons() {
-    var counts = {
-      discipline: selected.discipline.size,
-      branch: selected.branch.size,
-      location: selected.location.size + selected.region.size
-    };
+    var names = { discipline: "Discipline", branch: "Organization", location: "Location" };
     Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
-      var n = counts[b.dataset.dd] || 0;
-      var badge = b.querySelector(".mm-dd-n");
-      badge.textContent = n;
-      badge.hidden = n === 0;
+      var group = b.dataset.dd;
+      var picks = facetSelections(group);
+      var n = picks.length;
+      var icon = b.querySelector(".mm-dd-ico");
+      var lab = b.querySelector(".mm-dd-lab");
+      b.classList.toggle("is-set", n > 0);
+      icon.innerHTML = n ? picks[0].icon : TRIGGER_ICONS[group];
+      if (!n) { lab.textContent = names[group]; return; }
+      // The chosen option's name, "+N" for the rest -- unless it will not fit,
+      // then "N selected", then the facet name. Never an ellipsis.
+      var candidates = [picks[0].label + (n > 1 ? " +" + (n - 1) : ""), n + " selected", names[group]];
+      for (var i = 0; i < candidates.length; i++) {
+        lab.textContent = candidates[i];
+        if (textFits(lab)) break;
+      }
     });
+    var counts = { discipline: selected.discipline.size, branch: selected.branch.size, location: selected.location.size + selected.region.size };
     Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (c) {
       c.hidden = (counts[c.dataset.clear] || 0) === 0;
     });
@@ -1074,7 +1242,7 @@
 
     var actions = [];
     actions.push('<div class="mm-badges">' + badges.join("") + "</div>");
-    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer"><span class="mm-apply-beam" aria-hidden="true"></span>View posting <span class="mm-apply-disc" aria-hidden="true">' + ICONS.arrowUpRight + "</span></a>");
+    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting <span class="mm-apply-disc" aria-hidden="true">' + ICONS.arrowUpRight + "</span></a>");
 
     li.innerHTML =
       '<div class="mm-job-main">' + main.join("") + "</div>" +
