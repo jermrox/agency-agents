@@ -189,6 +189,82 @@
     #mm-jobs .mm-chip.is-sub .mm-n { font-size: .7rem; }
     #mm-jobs .mm-chip.is-sub[aria-pressed="true"] { background: var(--mm-accent); }
 
+    /* Facet controls.
+       One shared panel that expands INLINE beneath the button row, rather than
+       three popovers. A popover has to cover something, and three of them each
+       anchor to a different button, so nothing lines up and the panel hangs
+       over the search field. Expanding in flow means every row keeps the same
+       left and right edge and nothing is ever obscured. */
+    #mm-jobs .mm-ddrow { display: flex; gap: .5rem; }
+    #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 1 1 0; min-width: 0; }
+    #mm-jobs .mm-dd-btn {
+      display: flex; align-items: center; justify-content: space-between; gap: .35rem;
+      border: 1px solid var(--mm-border); background: var(--mm-card-2); color: var(--mm-ink);
+      border-radius: 8px !important; padding: 0 .6rem !important;
+      height: 2.5rem !important; min-height: 2.5rem !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none; margin: 0 !important;
+      transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease);
+    }
+    #mm-jobs .mm-dd-btn:hover { border-color: var(--mm-accent); }
+    #mm-jobs .mm-dd-btn:active { transform: scale(.99); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] {
+      border-color: var(--mm-accent); background: var(--mm-card);
+    }
+    #mm-jobs .mm-dd-lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #mm-jobs .mm-dd-n {
+      flex: none; background: var(--mm-accent); color: var(--mm-accent-ink);
+      border-radius: 999px; font-size: .7rem; font-weight: 600; padding: .05rem .38rem;
+      font-variant-numeric: tabular-nums; line-height: 1.35;
+    }
+    /* The badge already says the facet is active, and on a narrow button the
+       two together truncate the label ("Location" became "Loc..."). */
+    #mm-jobs .mm-dd-n:not([hidden]) + .mm-dd-car { display: none; }
+    #mm-jobs .mm-dd-car { flex: none; opacity: .45; transition: transform .18s var(--mm-ease); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-dd-car { transform: rotate(180deg); opacity: .8; }
+
+    #mm-jobs .mm-ddpanel {
+      border: 1px solid var(--mm-border); border-radius: 8px;
+      background: var(--mm-card); padding: .8rem !important;
+      /* A clean gap, never a negative margin. Merging the panel border into
+         the active button looked like a tab, but the panel is full width, so
+         the merge ran under the two inactive buttons and cut their corners. */
+      margin-top: .5rem !important;
+      /* Deliberately uncapped. A max-height with internal scroll sliced the
+         last row of chips in half at the panel's bottom border, which reads
+         as a collision. The panel is as tall as its content; it only exists
+         while a facet is open, and closing it gives the space back. */
+    }
+    #mm-jobs .mm-ddpanel[hidden] { display: none; }
+    #mm-jobs .mm-ddsec[hidden] { display: none; }
+    #mm-jobs .mm-ddhead {
+      display: flex; align-items: baseline; justify-content: space-between; gap: .5rem;
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .6rem !important; line-height: 1.3 !important;
+    }
+    #mm-jobs .mm-ddclear {
+      border: 0; background: none; padding: 0 !important; margin: 0 !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-ddnote {
+      font-size: .75rem !important; color: var(--mm-muted);
+      line-height: 1.45 !important; margin: 0 0 .6rem !important;
+    }
+    /* Inside the panel there is no width pressure, so chips wrap rather than
+       becoming the horizontally scrolling strip the 640px rule creates. */
+    #mm-jobs .mm-ddpanel .mm-sublevel {
+      border-left: 0; padding-left: 0 !important; margin-top: .85rem !important;
+      padding-top: .75rem !important; border-top: 1px solid var(--mm-border);
+    }
+    #mm-jobs .mm-ddpanel .mm-chips {
+      flex-wrap: wrap !important; overflow: visible !important;
+      -webkit-mask-image: none !important; mask-image: none !important;
+      padding-bottom: 0 !important; margin-bottom: 0 !important;
+    }
+
     #mm-jobs .mm-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     #mm-jobs .mm-field { position: relative; flex: 1 1 12rem; min-width: 0; }
     #mm-jobs .mm-field svg { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--mm-muted); pointer-events: none; }
@@ -345,25 +421,31 @@
 
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
-      <div class="mm-legend">Discipline</div>
-      <div class="mm-chips" id="mm-f-discipline"></div>
-    </div>
-
-    <div class="mm-group">
-      <div class="mm-legend">
-        Service branch
-        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</span>
+      <div class="mm-ddrow">
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Discipline</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button type="button" class="mm-dd-btn" data-dd="branch" aria-label="Service branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Branch</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-lab">Location</span><span class="mm-dd-n" hidden></span><svg class="mm-dd-car" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
       </div>
-      <div class="mm-chips" id="mm-f-branch"></div>
+
+      <div class="mm-ddpanel" id="mm-ddpanel" hidden>
+        <div class="mm-ddsec" data-sec="discipline" hidden>
+          <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
+          <div class="mm-chips" id="mm-f-discipline"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="branch" hidden>
+          <div class="mm-ddhead"><span>Service branch</span><button type="button" class="mm-ddclear" data-clear="branch" hidden>Clear</button></div>
+          <p class="mm-ddnote">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</p>
+          <div class="mm-chips" id="mm-f-branch"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="location" hidden>
+          <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
+          <div class="mm-chips" id="mm-f-location"></div>
+          <div class="mm-sublevel" id="mm-f-region" hidden></div>
+        </div>
+      </div>
     </div>
 
-    <div class="mm-group">
-      <div class="mm-legend">Location</div>
-      <div class="mm-chips" id="mm-f-location"></div>
-      <div class="mm-sublevel" id="mm-f-region" hidden></div>
-    </div>
-
-    <div class="mm-group">
+    <div class="mm-group mm-controls">
       <div class="mm-row">
         <div class="mm-field">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -724,6 +806,58 @@
     });
   }
 
+  // --- facet panel ----------------------------------------------------------
+  var openFacet = null;
+
+  function showFacet(key) {
+    openFacet = key;
+    var panel = document.getElementById("mm-ddpanel");
+    panel.hidden = !key;
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
+      sec.hidden = sec.dataset.sec !== key;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      b.setAttribute("aria-expanded", b.dataset.dd === key ? "true" : "false");
+    });
+  }
+
+  function bindFacets() {
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      b.addEventListener("click", function () {
+        showFacet(openFacet === b.dataset.dd ? null : b.dataset.dd);
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (btn) {
+      btn.addEventListener("click", function () {
+        var g = btn.dataset.clear;
+        selected[g].clear();
+        // Location owns the region level, so emptying it takes the states too.
+        if (g === "location") selected.region.clear();
+        render();
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && openFacet) showFacet(null);
+    });
+  }
+
+  function renderFacetButtons() {
+    var counts = {
+      discipline: selected.discipline.size,
+      branch: selected.branch.size,
+      location: selected.location.size + selected.region.size
+    };
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      var n = counts[b.dataset.dd] || 0;
+      var badge = b.querySelector(".mm-dd-n");
+      badge.textContent = n;
+      badge.hidden = n === 0;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (c) {
+      c.hidden = (counts[c.dataset.clear] || 0) === 0;
+    });
+  }
+
   function renderActiveFilters() {
     var pills = [];
     selected.discipline.forEach(function (slug) {
@@ -838,6 +972,7 @@
     renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
     renderRegionFilters();
+    renderFacetButtons();
     renderActiveFilters();
 
     els.noPayWrap.hidden = (parseInt(els.salary.value, 10) || 0) === 0;
@@ -913,6 +1048,7 @@
     [els.q, els.salary].forEach(function (el) { el.addEventListener("input", render); });
     [els.hideContingent, els.noPay].forEach(function (el) { el.addEventListener("change", render); });
     els.clear.addEventListener("click", clearAll);
+    bindFacets();
   }
 
   skeleton();
