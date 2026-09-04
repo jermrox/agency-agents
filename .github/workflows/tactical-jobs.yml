@@ -204,6 +204,15 @@ jobs:
               exit 1
             fi
           fi
+          # The loader is what sits in the Squarespace block: it fetches
+          # squarespace-embed.html from the live host on every page view, so a
+          # component change ships with the next publish instead of a re-paste.
+          if [ -n "${{ vars.JOBS_FEED_ORIGIN }}" ]; then
+            sed 's|https://agentcrawlsom.netlify.app|${{ vars.JOBS_FEED_ORIGIN }}|g' \
+              embed/squarespace-loader.html > ../site/squarespace-loader.html
+          else
+            cp -f embed/squarespace-loader.html ../site/squarespace-loader.html
+          fi
           ls -la ../site
 
       # ---------------------------------------------------------------------
@@ -235,7 +244,7 @@ jobs:
           git clone --depth 1 "https://x-access-token:${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" ../mirror
           # Copy the assembled site over the mirror's tree. Only the files this
           # workflow owns are replaced; anything else in that repo is left be.
-          for f in jobs.json jobs.xml insights.json dashboard.html index.html embed.html squarespace-embed.html _headers CNAME; do
+          for f in jobs.json jobs.xml insights.json dashboard.html index.html embed.html squarespace-embed.html squarespace-loader.html _headers CNAME; do
             [ -f "../site/$f" ] && cp -f "../site/$f" "../mirror/$f"
           done
           # tactical-jobs-board.html is a second entry point some pages link to.

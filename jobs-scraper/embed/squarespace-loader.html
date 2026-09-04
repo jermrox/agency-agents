@@ -1,0 +1,61 @@
+<!--
+  MOPs & MOEs — tactical human performance job board (loader)
+  ============================================================
+
+  Paste this ONCE into the Squarespace Code Block on the /jobs page, in place
+  of whatever the block holds now (Edit page -> click the block -> Edit ->
+  replace all -> Save).
+
+  It fetches the current board from the published host on every page view and
+  runs it here, so every published update reaches this page without touching
+  Squarespace again. The board itself keeps reading the live jobs.json.
+
+  If the board ever moves hosts, change COMPONENT_URL (and FALLBACK_URL).
+  The host must serve the component with Access-Control-Allow-Origin: *.
+-->
+<div id="mm-jobs-host">
+  <p style="font:14px/1.5 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;color:#6b6151;margin:0">Loading current postings…</p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var COMPONENT_URL = "https://agentcrawlsom.netlify.app/squarespace-embed.html";
+  var FALLBACK_URL = "https://agentcrawlsom.netlify.app/";
+
+  var host = document.getElementById("mm-jobs-host");
+  if (!host || host.getAttribute("data-mm-loaded")) return;
+  host.setAttribute("data-mm-loaded", "1");
+
+  function fail(reason) {
+    host.innerHTML =
+      '<p style="font:14px/1.5 -apple-system,BlinkMacSystemFont,\'Helvetica Neue\',Helvetica,Arial,sans-serif;color:#6b6151;margin:0">' +
+      'The job board did not load. <a href="' + FALLBACK_URL + '" style="color:#8a6829">Open it here</a>.</p>';
+    if (window.console) console.error("[mm-jobs loader]", reason);
+  }
+
+  if (!window.fetch || !window.DOMParser) { fail("browser too old"); return; }
+
+  fetch(COMPONENT_URL, { cache: "no-store" })
+    .then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.text();
+    })
+    .then(function (html) {
+      var doc = new DOMParser().parseFromString(html, "text/html");
+      var root = doc.getElementById("mm-jobs");
+      if (!root) throw new Error("component markup not found");
+      var scripts = Array.prototype.slice.call(doc.querySelectorAll("script"));
+      host.innerHTML = "";
+      host.appendChild(document.importNode(root, true));
+      // Markup inserted from a string never runs its scripts; re-create each
+      // one as a real script element so the board's code executes, after the
+      // markup it looks up is in the page.
+      scripts.forEach(function (source) {
+        var script = document.createElement("script");
+        if (source.src) script.src = source.src; else script.text = source.textContent;
+        host.appendChild(script);
+      });
+    })
+    .catch(fail);
+})();
+</script>
