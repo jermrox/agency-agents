@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-03T21:34:27.695846+00:00",
+  "generated_at": "2026-09-04T11:52:37.688774+00:00",
   "totals": {
-    "postings": 287,
+    "postings": 289,
     "employers": 23,
-    "unique_jobs": 134,
-    "with_salary": 86,
+    "unique_jobs": 136,
+    "with_salary": 88,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-03T15:22:12.723000+00:00"
+      "latest": "2026-09-04T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -50,15 +50,15 @@
     },
     {
       "name": "Commander, Navy Installations Command",
-      "count": 12,
+      "count": 14,
       "disciplines": [
+        "sports-medicine",
+        "strength-conditioning",
         "leadership",
         "nutrition",
-        "research",
-        "sports-medicine",
-        "strength-conditioning"
+        "research"
       ],
-      "median_salary": 43940.0
+      "median_salary": 45240.0
     },
     {
       "name": "Military Treatment Facilities under DHA",
@@ -153,67 +153,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 58,
-      "share": 0.5577,
-      "median_salary": 72433.25
+      "count": 60,
+      "share": 0.566,
+      "median_salary": 66582.15
     },
     {
       "name": "sports-medicine",
-      "count": 52,
-      "share": 0.5,
-      "median_salary": 90369.0
+      "count": 54,
+      "share": 0.5094,
+      "median_salary": 84869.0
     },
     {
       "name": "cognitive",
       "count": 23,
-      "share": 0.2212,
+      "share": 0.217,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1346,
+      "share": 0.1321,
       "median_salary": 90457.0
     },
     {
       "name": "nutrition",
       "count": 13,
-      "share": 0.125,
+      "share": 0.1226,
       "median_salary": 91950.0
     },
     {
       "name": "leadership",
       "count": 12,
-      "share": 0.1154,
+      "share": 0.1132,
       "median_salary": 62782.81
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0096,
+      "share": 0.0094,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 128,
-      "share": 0.9697
+      "count": 130,
+      "share": 0.9701
     },
     {
       "name": "sof",
       "count": 41,
-      "share": 0.3106
+      "share": 0.306
     },
     {
       "name": "training-pipeline",
       "count": 24,
-      "share": 0.1818
+      "share": 0.1791
     },
     {
       "name": "first-responder",
       "count": 14,
-      "share": 0.1061
+      "share": 0.1045
     }
   ],
   "by_branch": [
@@ -227,7 +227,7 @@
     },
     {
       "name": "Navy",
-      "count": 14
+      "count": 16
     },
     {
       "name": "Air Force",
@@ -362,7 +362,7 @@
       "count": 2
     },
     {
-      "code": "HI",
+      "code": "CT",
       "count": 2
     }
   ],
@@ -408,28 +408,28 @@
     }
   ],
   "salary": {
-    "count": 86,
+    "count": 88,
     "min": 34320.0,
     "max": 219654.0,
-    "median": 91215.0,
-    "p25": 62782.81,
+    "median": 88812.5,
+    "p25": 62633.62,
     "p75": 117778.5,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 20,
+        "count": 22,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 72433.25,
-        "p25": 61118.2,
-        "p75": 88346.25
+        "median": 66582.15,
+        "p25": 52062.4,
+        "p75": 86793.25
       },
       "sports-medicine": {
-        "count": 36,
+        "count": 38,
         "min": 34320.0,
         "max": 219654.0,
-        "median": 90369.0,
-        "p25": 61433.3,
-        "p75": 109019.62
+        "median": 84869.0,
+        "p25": 59106.5,
+        "p75": 107458.25
       },
       "nutrition": {
         "count": 6,
@@ -475,7 +475,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0224
+    "share": 0.0221
   },
   "timeline": [
     {
@@ -488,12 +488,12 @@
     },
     {
       "month": "2026-09",
-      "count": 29
+      "count": 31
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-05T15:22:12.723000+00:00",
+    "pivot": "2026-06-06T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -515,9 +515,9 @@
       },
       {
         "name": "Commander, Navy Installations Command",
-        "recent": 12,
+        "recent": 14,
         "previous": 0,
-        "change": 12
+        "change": 14
       },
       {
         "name": "Military Treatment Facilities under DHA",
