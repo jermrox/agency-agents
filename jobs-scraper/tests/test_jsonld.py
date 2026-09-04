@@ -893,3 +893,26 @@ def test_a_trailing_qualifier_is_not_mistaken_for_a_place():
 
     for title in ("HITT Instructor - Level I", "Athletic Trainer - Full Time", "Physical Therapist"):
         assert _location_from_title(title) == "", title
+
+
+def test_place_from_title_reads_a_located_at_prefix():
+    """LMR Technical Group files overseas billets under its Florida office and
+    names the station as "(Position Located at ..., Germany)" in the title."""
+    from tactical_jobs.sources.base import place_from_title
+
+    assert place_from_title("Physical Therapist (Position Located at Ramstein Air Base, Germany)") == "Ramstein Air Base, Germany"
+    assert place_from_title("Massage Therapist (Position located at Kunsan Air Base, Republic of Korea)") == "Kunsan Air Base, Republic of Korea"
+    assert place_from_title("Resilience & Performance Coach (LCSW) (Position Located at Vilseck, Germany)") == "Vilseck, Germany"
+    assert place_from_title("Strength & Conditioning Coach (Position Located at Camp Casey, RoK)") == "Camp Casey, RoK"
+
+
+def test_place_from_title_ignores_parentheticals_that_are_not_places():
+    from tactical_jobs.sources.base import place_from_title
+
+    for title in (
+        "Strength & Conditioning Coach (Tactical)",
+        "Certified Strength and Conditioning Specialist (CSCS)",
+        "Physical Therapist ($10,000 in bonuses the first year!)",
+        "Coach - full time, remote",
+    ):
+        assert place_from_title(title) == "", title

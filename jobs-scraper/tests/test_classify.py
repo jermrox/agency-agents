@@ -322,3 +322,33 @@ def test_installation_fitness_roles_earn_publish_on_their_own():
                                  "sailors at the installation fitness center.")
         assert classify(p, Thresholds()) == Verdict.PUBLISH, title
         assert "physical readiness" not in p.discipline_hits
+
+
+class TestVetoYieldsToAnUnmistakableTitle:
+    """The phrase veto exists for "performance" meaning software or sales. A
+    strength coach whose duties include "performance testing" of athletes is
+    not a software listing, and LMR's special-tactics postings were being
+    dropped for exactly that phrase."""
+
+    def _posting(self, title, description):
+        from tactical_jobs.models import JobPosting
+
+        return JobPosting(source="t", source_id="1", url="https://x/1", title=title,
+                          employer="LMR Technical Group", location="Portland, Oregon", description=description)
+
+    def test_human_performance_title_survives_a_performance_testing_mention(self):
+        from tactical_jobs.classify import Verdict, classify
+
+        body = ("Support the 125th Special Tactics Squadron human performance program for special operations "
+                "warfighters. Experience with performance testing, load management, return to duty and strength "
+                "and conditioning programming for military tactical athletes.")
+        assert classify(self._posting("Certified Strength and Conditioning Specialist (CSCS)", body)) == Verdict.PUBLISH
+        assert classify(self._posting("Physical Therapist", body)) == Verdict.PUBLISH
+
+    def test_software_titles_are_still_vetoed(self):
+        from tactical_jobs.classify import Verdict, classify
+
+        body = ("Performance testing of web applications for a military customer; strength and conditioning "
+                "of the load test suite; human performance dashboards for special operations.")
+        assert classify(self._posting("Performance Test Engineer", body)) == Verdict.REJECT
+        assert classify(self._posting("Senior Performance Engineer", body)) == Verdict.REJECT

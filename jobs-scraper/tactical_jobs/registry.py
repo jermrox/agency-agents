@@ -124,6 +124,7 @@ SOURCE_KINDS: frozenset[str] = frozenset(
         "assocboard",
         "bamboohr",
         "capture",
+        "catsone",
         "csod",
         "breezy",
         "genericjson",

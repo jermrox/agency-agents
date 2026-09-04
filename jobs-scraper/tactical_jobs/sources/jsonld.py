@@ -38,7 +38,7 @@ from urllib.parse import urljoin, urlparse
 
 from ..http import fetch
 from ..models import JobPosting
-from .base import Source, html_to_text, looks_remote, parse_timestamp
+from .base import place_from_title, Source, html_to_text, looks_remote, parse_timestamp
 
 log = logging.getLogger(__name__)
 
@@ -337,23 +337,8 @@ The title is then the honest remaining source, and for this shape of posting it
 is the reliable one: the place is right there in the title text.
 """
 
-_TITLE_PLACE_RE = re.compile(
-    # A trailing " - Fort Bragg, NC" / " - Camp Casey, Korea" / " (Ft. Drum, NY)".
-    #
-    # The comma is required: it is what separates a real place from a trailing
-    # qualifier like "- Level II" or "- Full Time", which have no comma.
-    #
-    # The dash must be surrounded by space. Without that guard the hyphen
-    # inside a hyphenated place name splits it, and "Joint Base
-    # Langley-Eustis, VA" is published as "Eustis, VA".
-    r"(?:\s[-–—]\s*|\(\s*)([A-Z][A-Za-z.'\s-]{2,40},\s*[A-Z][A-Za-z.\s]{1,20})\s*\)?\s*$"
-)
-
-
-def _location_from_title(title: str) -> str:
-    """Recover a place from a title that ends with one. '' when it does not."""
-    match = _TITLE_PLACE_RE.search((title or "").strip())
-    return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
+# The title-place helper lives in base.py so every adapter can use it.
+_location_from_title = place_from_title
 
 
 _REGION_ONLY_RE = re.compile(r"^([A-Z]{2,3})(?:,\s*(?:US|USA))?$")

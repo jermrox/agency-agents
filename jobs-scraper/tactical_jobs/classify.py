@@ -390,7 +390,14 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
         if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
         or f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in body
     ]
-    if excluded:
+    # ...unless the title itself is unmistakably a human performance role. The
+    # veto list exists for "performance" meaning software, sales or finance,
+    # and a title like "Physical Therapist" or "Certified Strength and
+    # Conditioning Specialist" cannot be any of those. LMR Technical Group's
+    # special-tactics postings list "performance testing" among the duties --
+    # testing athletes, not software -- and were being dropped for it.
+    title_discipline, _ = _score_axis(DISCIPLINE_TERMS, title, "")
+    if excluded and title_discipline < thresholds.min_discipline:
         posting.exclusion_hits = excluded
         posting.score = 0.0
         return Verdict.REJECT

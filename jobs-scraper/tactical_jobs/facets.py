@@ -49,9 +49,16 @@ DISCIPLINES: tuple[Discipline, ...] = (
             r"(?<![A-Za-z])LCSW(?![A-Za-z])",
             r"\bbehavioral\s+health\b",
             r"\bclinical\s+psycholog",
-            r"\bmental\s+health\s+(?:counselor|clinician|provider)\b",
+            r"\bmental\s+health\s+(?:counselor|clinician|provider|professional)\b",
             r"\bsubstance\s+abuse\s+counselor\b",
+            r"\boperational\s+psycholog",
+            r"\bresilience\s*(?:and|&)\s*performance\s+coach\b",
         ),
+    ),
+    Discipline(
+        "massage-therapy",
+        "Massage Therapy",
+        _rx(r"\bmassage\s+therap", r"(?<![A-Za-z])LMT(?![A-Za-z])"),
     ),
     Discipline(
         "nutrition",

@@ -235,6 +235,29 @@ search_terms = [
 # padding and recovers the real place from the title instead, which is where
 # Serco actually puts it. Left at the default deliberately: raising it here
 # would put a screenful of wrong cities on the board.
+# Reef Systems -- Air Force HPO, AFSPECWAR and OHWS human performance
+# contracts. Its CATS portal is plain HTML with no structured data or dates;
+# the catsone adapter reads the header, the first tag and the body.
+[[source]]
+kind = "catsone"
+name = "reef"
+subdomain = "reefsys"
+portal = 5332
+employer = "Reef Systems"
+
+# LMR Technical Group -- Air Force HPO/CRAFT, special-tactics and Army H2F
+# contracts. lmrtec.com/careers renders its list with BambooHR's script, so
+# the page itself carries no jobs; the BambooHR endpoints do. Roughly 60 of
+# its 74 postings are human performance. It files every overseas billet under
+# its Fort Walton Beach head office and names the real station in the title,
+# which the adapter reads (place_from_title).
+[[source]]
+kind = "bamboohr"
+name = "lmr"
+subdomain = "lmrtechnicalgroup"
+employer = "LMR Technical Group"
+detail_limit = 90
+
 [[source]]
 kind = "jsonld"
 name = "serco"

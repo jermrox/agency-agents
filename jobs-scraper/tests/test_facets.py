@@ -662,3 +662,19 @@ class TestFitnessDiscipline:
 
     def test_cbp_officer_is_not_fitness(self):
         assert discipline_of("CBP Officer") == "other"
+
+
+class TestMassageAndBehavioralHealthDisciplines:
+    def test_massage_therapist_has_its_own_discipline(self):
+        from tactical_jobs.facets import discipline_of, discipline_label
+
+        assert discipline_of("Licensed Massage Therapist") == "massage-therapy"
+        assert discipline_of("LMT - Optimizing the Human Weapon System") == "massage-therapy"
+        assert discipline_label("massage-therapy") == "Massage Therapy"
+
+    def test_psychologists_and_mental_health_roles_are_behavioral_health(self):
+        from tactical_jobs.facets import discipline_of
+
+        assert discipline_of("Operational Psychologist (Position Located at Vilseck, Germany)") == "behavioral-health"
+        assert discipline_of("Mental Health Professional") == "behavioral-health"
+        assert discipline_of("Resilience & Performance Coach (LCSW)") == "behavioral-health"
