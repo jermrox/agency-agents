@@ -257,6 +257,10 @@ name = "lmr"
 subdomain = "lmrtechnicalgroup"
 employer = "LMR Technical Group"
 detail_limit = 90
+# BambooHR lists open requisitions only, and LMR keeps billets open for
+# months (27 of its 60 human performance postings are past the global 45
+# days). Age is not staleness here; the liveness sweep retires closed ones.
+max_age_days = 0
 
 [[source]]
 kind = "jsonld"

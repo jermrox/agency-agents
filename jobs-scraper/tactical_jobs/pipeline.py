@@ -101,10 +101,33 @@ def _is_stale(posting: JobPosting, max_age_days: int) -> bool:
     return stamp < datetime.now(timezone.utc) - timedelta(days=max_age_days)
 
 
+def _age_limits(config: Config) -> dict[str, int]:
+    """Per-source ``max_age_days`` overrides, keyed the way postings name their source.
+
+    The global limit exists for sources that never take a filled job down, so
+    a posting's age is the only staleness signal. A BambooHR careers list is
+    the employer's set of open requisitions -- LMR Technical Group keeps a
+    strength coach billet open for months -- so there age says nothing, and
+    the liveness sweep retires the posting when it closes. A source sets
+    ``max_age_days = 0`` to opt out of the age rule.
+    """
+    limits: dict[str, int] = {}
+    for source in config.sources:
+        value = source.options.get("max_age_days")
+        if value is None:
+            continue
+        try:
+            limits[f"{source.kind}:{source.name}"] = int(value)
+        except (TypeError, ValueError):
+            log.warning("source '%s': max_age_days %r is not a number; using the global limit", source.name, value)
+    return limits
+
+
 def run(config: Config, *, dry_run: bool = False) -> RunReport:
     """Execute one full pass and return what happened."""
     report = RunReport()
     store = Store.load(config.state_path)
+    age_limits = _age_limits(config)
 
     postings = collect(config, report)
 
@@ -114,7 +137,7 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         if not posting.url or not posting.title:
             report.rejected += 1
             continue
-        if _is_stale(posting, config.max_age_days):
+        if _is_stale(posting, age_limits.get(posting.source, config.max_age_days)):
             report.stale += 1
             continue
         verdict = classify(posting, config.thresholds)
