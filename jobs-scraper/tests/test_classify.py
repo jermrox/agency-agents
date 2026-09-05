@@ -373,6 +373,39 @@ def test_two_body_terms_or_a_title_term_carry_a_posting():
     assert "licensed clinical social worker" in lcsw.discipline_hits
 
 
+def test_bare_clinical_professions_need_the_performance_context():
+    # KBR "Special Operations Clinical Psychologist (75th Ranger Regiment)":
+    # the POTFF description names human performance, so the title carries.
+    sof = _posting(
+        "Special Operations Clinical Psychologist (75th Ranger Regiment, Fort Benning, GA)",
+        "KBR",
+        "Fort Benning, Georgia",
+        "Embedded with the Regiment's human performance and POTFF team.",
+    )
+    assert classify(sof) == Verdict.PUBLISH
+    # A military treatment facility social worker: the same profession, no
+    # performance context anywhere in the posting.
+    clinic = _posting(
+        "Social Worker (Clinical)",
+        "Military Treatment Facilities under DHA",
+        "Joint Base Lewis-McChord, Washington",
+        "Provides clinical social work services to beneficiaries at the medical center.",
+    )
+    assert classify(clinic) == Verdict.REJECT
+    # Case management is care coordination, never human performance, whatever
+    # team it sits on (KBR's SOF nurse case managers, an ICE behavioral
+    # health case manager).
+    case = _posting(
+        "Special Operations Case Manager / Nurse Case Manager (Hampton Roads, VA)",
+        "KBR",
+        "Hampton, Virginia",
+        "Coordinates care for the special operations human performance program; "
+        "liaises with the unit psychologist and social worker.",
+    )
+    assert classify(case) == Verdict.REJECT
+    assert "case manager" in case.exclusion_hits
+
+
 def test_the_marine_corps_warr_programme_is_read_as_human_performance():
     # USAJOBS 879684900, read on 2026-09-05: the Twentynine Palms WARR/Semper
     # Fit role. It was vetoed on "performance testing" (testing Marines) with

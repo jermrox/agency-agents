@@ -244,11 +244,16 @@ DISCIPLINE_TERMS: dict[str, float] = {
     # clinical social workers and psychologists on every POTFF unit, and the
     # board has carried them under its behavioral-health facet since day one
     # while this list never named the titles -- they were passing on a stray
-    # "human performance" in the body.
+    # "human performance" in the body. The bare professions are worth less
+    # than the floor on purpose: at 2.5 a title alone carried every military
+    # treatment facility social worker, a prison mental-health specialist
+    # and a substance-abuse counselling supervisor onto the board. A SOF
+    # psychologist's posting always corroborates itself ("human performance"
+    # is in every POTFF description); a clinic's does not.
     "licensed clinical social worker": 3.5,
-    "clinical social worker": 3.0,
-    "social worker": 2.5,
-    "psychologist": 2.5,
+    "clinical social worker": 1.0,
+    "social worker": 1.0,
+    "psychologist": 1.0,
     # Sleep / recovery / physiology.
     "sleep scientist": 3.0,
     "recovery specialist": 3.0,
@@ -333,6 +338,10 @@ EXCLUSION_TERMS: tuple[str, ...] = (
     "tactical gear",  # retail/e-commerce, not coaching
     "performance review process",
     "sales engineer",
+    # Care coordination, never human performance -- KBR's SOF nurse case
+    # managers and an ICE behavioral-health case manager both reached the
+    # board once "social worker" and "psychologist" became discipline terms.
+    "case manager",
 )
 
 # Terms whose presence in the *title* is worth extra, since a title is a much
