@@ -204,13 +204,58 @@ search_terms = [
   "holistic health and fitness",
 ]
 
+# --- WATCHERS, enabled 2026-09-05 --------------------------------------------
+# Two primes the registry names most often for this work, carrying none of it
+# today. Booz Allen's tenant was confirmed 2026-08-28 (below); Acuity
+# International (which absorbed Magellan Federal) was read off its careers
+# page today: acuityinternational.wd5.myworkdayjobs.com/External. A Workday
+# keyword search is fuzzy and every hit costs a detail fetch, so the watchers
+# search the seven unambiguous titles only: the full fifteen-term list drew
+# 142 Booz Allen hits in a dry run (engineers, analysts, none tactical).
+[[source]]
+kind = "workday"
+name = "acuity"
+tenant = "acuityinternational"
+site = "External"
+data_center = "wd5"
+employer = "Acuity International"
+max_age_days = 0
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+  "exercise physiologist",
+]
+
+[[source]]
+kind = "workday"
+name = "bah"
+tenant = "bah"
+site = "BAH_Jobs"
+data_center = "wd1"
+employer = "Booz Allen Hamilton"
+max_age_days = 0
+search_terms = [
+  "strength and conditioning",
+  "athletic trainer",
+  "human performance",
+  "performance dietitian",
+  "cognitive performance",
+  "physical therapist",
+  "exercise physiologist",
+]
+
 # CHECKED 2026-08-28 -- primes whose Workday tenants are now CONFIRMED to
 # resolve, but which are carrying no tactical human performance work today.
 # Recorded here so nobody re-guesses these coordinates, and so enabling one is
 # a one-line uncomment on the day a recompete lands. They are left OFF because
 # a Workday keyword search is fuzzy: "strength and conditioning" against Booz
 # Allen returned seven hits, all of them engineering roles, and each hit costs
-# a detail fetch the classifier then throws away.
+# a detail fetch the classifier then throws away. (Booz Allen was switched ON
+# as a watcher on 2026-09-05, above.)
 #   bah/wd1/BAH_Jobs           HTTP 200 -- 0 tactical across all six terms
 #   caci/wd1/External          HTTP 200 -- 0 tactical across all six terms
 #   parsons/wd5/Search         HTTP 200 -- 0 tactical across all six terms
@@ -300,6 +345,129 @@ detail_limit = 90
 # months (27 of its 60 human performance postings are past the global 45
 # days). Age is not staleness here; the liveness sweep retires closed ones.
 max_age_days = 0
+
+# --- VERIFIED LIVE 2026-09-05 -----------------------------------------------
+# Planned Systems International -- athletic trainers embedded with Army units
+# (H2F) and the Marine Corps Sports Medicine Injury Prevention program (Cherry
+# Point). A hosted iCIMS portal: about 80 postings over four pages, of which
+# roughly 30 are Athletic Trainer / Lead Athletic Trainer billets, listed by
+# the nearest town (Fayetteville, Lawton, Killeen, St Robert, Watertown,
+# Hopkinsville, Leesville, Columbus, Fairbanks, Honolulu...). The list page
+# states no description, so detail_include spends the detail budget on the
+# human performance titles only; each detail page's JSON-LD carries the
+# posting text and date (a Cherry Point Athletic Trainer read today: 4,945
+# characters, posted 2026-08-28, "Marines Sports Medicine Injury Prevention
+# program (SMIP)"). iCIMS lists open requisitions only.
+[[source]]
+kind = "icims"
+name = "psi"
+careers_url = "https://careers-plansys.icims.com"
+employer = "Planned Systems International"
+detail_limit = 60
+detail_include = [
+  "athletic trainer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "occupational therap",
+  "dietitian",
+  "performance",
+  "psycholog",
+  "exercise physiolog",
+  "fitness",
+  "massage",
+]
+max_age_days = 0
+
+# Chenega Corporation -- Alaska Native Corporation with DoD medical and
+# base-support subsidiaries; the registry has named it for years with no
+# route. Hosted iCIMS portal, about 420 postings over 21 pages; no tactical
+# human performance posting on 2026-09-05, so this is a watcher: 21 list
+# requests a night and a detail fetch only for a title that matches.
+[[source]]
+kind = "icims"
+name = "chenega"
+careers_url = "https://careers-chenega.icims.com"
+employer = "Chenega Corporation"
+max_pages = 25
+detail_limit = 20
+detail_include = [
+  "athletic trainer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "occupational therap",
+  "dietitian",
+  "performance",
+  "psycholog",
+  "exercise physiolog",
+  "fitness",
+  "massage",
+]
+max_age_days = 0
+
+# Henry M. Jackson Foundation -- staffs military medical research including
+# the human performance work at USU and the military treatment facilities.
+# Oracle Recruiting Cloud behind the branded domain jobs.hjf.org (site
+# CX_2001); the requisition API answers on that domain: 139 open requisitions
+# on 2026-09-05, among them a Research Athletic Trainer at Fort Bragg and
+# military behavioral-health psychologists. One request a night.
+[[source]]
+kind = "oraclecloud"
+name = "hjf"
+careers_url = "https://jobs.hjf.org/hcmUI/CandidateExperience/en/sites/CX_2001"
+employer = "Henry M. Jackson Foundation"
+max_pages = 3
+max_age_days = 0
+
+# Cherokee Federal -- Defense Health Agency and Army medical staffing. Oracle
+# Recruiting Cloud (site CX_2), 353 open requisitions on 2026-09-05 and no
+# tactical human performance billet that day; a watcher at two requests.
+[[source]]
+kind = "oraclecloud"
+name = "cherokee"
+careers_url = "https://ibtcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2"
+employer = "Cherokee Federal"
+max_pages = 3
+max_age_days = 0
+
+# Magellan Health -- Magellan Federal's Air Force human performance work
+# (Certified Strength & Conditioning Specialists at Vance and Altus AFB, a
+# Cognitive Performance Specialist at Vance, all open 2026-09-05) posts on
+# the parent's Phenom site, the same platform as Serco: a sitemap of 575
+# URLs whose job pages carry JobPosting JSON-LD, so the same adapter and
+# the same URL fragments read the full text.
+[[source]]
+kind = "jsonld"
+name = "magellan"
+sitemap = "https://careers.magellanhealth.com/sitemap.xml"
+employer = "Magellan Health"
+max_urls = 120
+url_include = [
+  "Strength",
+  "Conditioning",
+  "Athletic-Train",
+  "Dietitian",
+  "Dietician",
+  "Physical-Therap",
+  "Occupational-Therap",
+  "Human-Performance",
+  "Cognitive-Performance",
+  "Performance-Specialist",
+  "Exercise-Physiolog",
+  "Psycholog",
+  "Fitness",
+  "Massage",
+]
+
+# DLH -- DHA and Army public-health contractor. Greenhouse board
+# "dlhcorporation": 17 postings on 2026-09-05, none tactical; one request a
+# night, kept because DLH holds the health contracts these billets sit in.
+[[source]]
+kind = "greenhouse"
+name = "dlh"
+board_token = "dlhcorporation"
+employer = "DLH"
 
 [[source]]
 kind = "jsonld"

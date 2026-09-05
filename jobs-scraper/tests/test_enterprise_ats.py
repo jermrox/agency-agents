@@ -241,6 +241,59 @@ def test_icims_date_enrichment_reads_the_detail_jsonld(monkeypatch):
     assert postings[1].posted_at is None, "past the detail budget, no date is invented"
 
 
+def test_icims_detail_enrichment_reads_the_description_too(monkeypatch):
+    """The list page states no description; the detail JSON-LD does, in the
+    employer's own words, and the classifier needs it."""
+    detail_url = f"{ICIMS_ORIGIN}/jobs/5011/coach/job?in_iframe=1"
+    detail_html = (
+        '<html><script type="application/ld+json">'
+        '{"@context":"http://schema.org","@type":"JobPosting","title":"Coach",'
+        '"datePosted":"2026-07-01",'
+        '"description":"<p>Supports the <b>H2F</b> program at Fort Bragg.</p>"}'
+        "</script></html>"
+    )
+    api = FakeHTTP(
+        text={
+            _icims_search_url(0): _icims_page([_icims_card(5011, "Coach", "Tampa, FL")]),
+            _icims_search_url(1): _icims_page([]),
+            detail_url: detail_html,
+        }
+    )
+    posting = _run_icims(monkeypatch, api, {"detail_limit": 1})[0]
+    assert "H2F program at Fort Bragg" in posting.description
+    assert "<" not in posting.description
+
+
+def test_icims_detail_include_spends_the_budget_on_matching_titles(monkeypatch):
+    """Planned Systems International: the athletic trainers sit among referral
+    clerks and nurses on every page. The budget goes to the titles named."""
+    trainer_detail = f"{ICIMS_ORIGIN}/jobs/5013/athletic-trainer/job?in_iframe=1"
+    api = FakeHTTP(
+        text={
+            _icims_search_url(0): _icims_page(
+                [
+                    _icims_card(5011, "Referral Clerk", "Altus AFB, OK"),
+                    _icims_card(5012, "Registered Nurse", "Altus AFB, OK"),
+                    _icims_card(5013, "Athletic Trainer", "Lawton, OK"),
+                ]
+            ),
+            _icims_search_url(1): _icims_page([]),
+            trainer_detail: (
+                '<script type="application/ld+json">{"@type":"JobPosting",'
+                '"datePosted":"2026-08-28","description":"Army H2F athletic trainer."}</script>'
+            ),
+        }
+    )
+    postings = _run_icims(
+        monkeypatch, api, {"detail_limit": 1, "detail_include": ["Athletic Trainer"]}
+    )
+    detail_calls = [url for url, _ in api.text_calls if url.endswith("/job?in_iframe=1")]
+    assert detail_calls == [trainer_detail]
+    assert postings[2].description == "Army H2F athletic trainer."
+    assert postings[2].posted_at is not None
+    assert postings[0].description == "" and postings[0].posted_at is None
+
+
 def test_icims_detail_failure_leaves_the_posting_undated(monkeypatch):
     api = FakeHTTP(
         text={
@@ -748,6 +801,24 @@ def test_oracle_rows_without_an_id_or_url_are_dropped(monkeypatch):
     )
     postings = _run_oracle(monkeypatch, api)
     assert [p.source_id for p in postings] == ["REQ-7", "42"]
+
+
+def test_oracle_accepts_a_branded_domain_on_the_candidate_experience_path(monkeypatch):
+    """jobs.hjf.org fronts an ORC pod: the API and the job pages live there."""
+    api = FakeHTTP(json_routes=lambda url: _oracle_page([_oracle_req()]))
+    api.install(monkeypatch)
+    source = OracleCloudSource(
+        "hjf",
+        {"careers_url": "https://jobs.hjf.org/hcmUI/CandidateExperience/en/sites/CX_2001"},
+    )
+    posting = list(source.fetch())[0]
+    assert api.json_calls[0][0].startswith(
+        "https://jobs.hjf.org/hcmRestApi/resources/latest/recruitingCEJobRequisitions?"
+    )
+    assert "siteNumber=CX_2001" in api.json_calls[0][0]
+    assert posting.url == (
+        "https://jobs.hjf.org/hcmUI/CandidateExperience/en/sites/CX_2001/job/300000123"
+    )
 
 
 def test_oracle_rejects_an_untrusted_host(monkeypatch):

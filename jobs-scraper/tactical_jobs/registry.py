@@ -336,6 +336,20 @@ VERIFICATION_HINTS: dict[str, str] = {
     "smartrecruiters": 'curl -s "https://api.smartrecruiters.com/v1/companies/<company_id>/postings"',
     "recruitee": 'curl -s "https://<board_token>.recruitee.com/api/offers/"',
     "bamboohr": 'curl -s "https://<subdomain>.bamboohr.com/careers/list"',
+    "catsone": 'curl -s "https://<subdomain>.catsone.com/careers/<portal>" | grep -c table-row',
+    "icims": (
+        'curl -s "https://careers-<tenant>.icims.com/jobs/search?ss=1&pr=0&in_iframe=1" '
+        "| grep -c iCIMS_JobCardItem"
+    ),
+    "oraclecloud": (
+        "open the careers URL, then fetch "
+        "<origin>/hcmRestApi/resources/latest/recruitingCEJobRequisitions with the "
+        "finder for that siteNumber and confirm requisitionList is populated"
+    ),
+    "phenom": (
+        "POST {\"lang\":\"en_global\",\"country\":\"global\",\"ddoKey\":\"refineSearch\"} "
+        "to <origin>/widgets and confirm refineSearch.data.jobs is a list"
+    ),
     "breezy": 'curl -s "https://<company>.breezy.hr/json"',
     "personio": "open https://<company>.jobs.personio.de and confirm the board loads",
     "rippling": "open the employer careers page and confirm the Rippling board token in the URL",
@@ -424,17 +438,23 @@ REGISTRY: tuple[Employer, ...] = (
         slug="serco",
         name="Serco",
         category="prime",
-        ats="workday",
-        options={"tenant": "serco", "site": "Serco", "data_center": "wd3"},
+        ats="jsonld",
+        options={
+            "sitemap": "https://careers.serco-na.com/sitemap.xml",
+            "url_include": ["H2F", "Strength", "Conditioning", "Athletic-Train"],
+            "max_urls": 120,
+        },
         notes=(
             "Highest-value entry in this file. Serco announced a US Army H2F award "
             "worth up to $247M in January 2025, planning to hire over 350 certified "
             "strength and conditioning coaches in the base year across 45 brigades "
-            "at 15 CONUS locations (see EMPLOYERS.md). The award is cited; the ATS "
-            "is a guess -- Serco North America appears to recruit through Workday "
-            "and the tenant is assumed to be the company name. Confirm by opening "
-            "the Serco careers page and reading tenant, data_center, and site out "
-            "of the myworkdayjobs.com URL before enabling."
+            "at 15 CONUS locations (see EMPLOYERS.md). Serco North America runs "
+            "careers.serco-na.com on Phenom People, not Workday; the job pages "
+            "carry JobPosting JSON-LD and the sitemap route has run nightly from "
+            "sources.keyless.toml since 2026-08-28 (that block carries the full "
+            "url_include list). This registry still records it as unverified. "
+            "Confirm by fetching the sitemap and checking a job URL for a "
+            "JobPosting ld+json block."
         ),
         aliases=("Serco Inc", "Serco North America", "Team Serco"),
     ),
@@ -442,24 +462,103 @@ REGISTRY: tuple[Employer, ...] = (
         slug="kbr",
         name="KBR",
         category="prime",
-        ats="jsonld",
-        options={
-            "sitemap": "PASTE_KBR_CAREERS_SITEMAP_URL_HERE",
-            "url_include": ["/job/"],
-            "max_urls": 300,
-        },
+        ats="workday",
+        options={"tenant": "kbr", "site": "KBR_Careers", "data_center": "wd5"},
         notes=(
             "Holds the USSOCOM POTFF contract (~$500M) staffing psychologists, "
             "social workers, physical therapists, athletic trainers, dietitians, "
-            "and strength coaches -- cited in EMPLOYERS.md. Unusually, KBR runs a "
-            "dedicated POTFF careers page at careers.kbr.com/us/en/potff2, which is "
-            "worth watching directly. That site is not one of the JSON ATS vendors "
-            "this project speaks, so JSON-LD over the careers sitemap is the "
-            "keyless route. Confirm by opening a KBR job detail page, viewing "
-            "source, and checking for a JobPosting ld+json block, then find the "
-            "sitemap URL and replace the placeholder."
+            "and strength coaches -- cited in EMPLOYERS.md. KBR recruits through "
+            "Workday (kbr.wd5.myworkdayjobs.com/KBR_Careers); the public HTML "
+            "403s to non-browser fetchers but the CXS JSON path answers, and the "
+            "block in sources.keyless.toml has run nightly since August. This "
+            "registry still records it as unverified. Confirm by opening a KBR "
+            "job URL and reading tenant, data_center and site out of it."
         ),
         aliases=("KBRwyle", "Kellogg Brown and Root"),
+    ),
+    Employer(
+        slug="gdit",
+        name="General Dynamics Information Technology",
+        category="prime",
+        ats="workday",
+        options={"tenant": "gdit", "site": "External_Career_Site", "data_center": "wd5"},
+        notes=(
+            "One of the densest single sources of tactical human performance "
+            "work: SOF strength and conditioning specialists, human performance "
+            "advisors, dietitians, athletic trainers and therapists across Fort "
+            "Bragg, Coronado, Hurlburt Field and a dozen more. Coordinates were "
+            "read off the careers page's own Workday hostname on 2026-08-28 and "
+            "the block in sources.keyless.toml runs nightly; this registry still "
+            "records it as unverified. Confirm by reading a GDIT job URL."
+        ),
+        aliases=("GDIT", "General Dynamics IT"),
+    ),
+    Employer(
+        slug="lmr",
+        name="LMR Technical Group",
+        category="prime",
+        ats="bamboohr",
+        options={"subdomain": "lmrtechnicalgroup", "detail_limit": 90},
+        notes=(
+            "Air Force human performance (HPO/CRAFT), special-tactics and Army "
+            "H2F contracts: about 60 of 74 postings are strength coaches, "
+            "physical therapists, athletic trainers, massage therapists, "
+            "dietitians and psychologists. lmrtec.com/careers renders its list "
+            "with BambooHR's script, so the BambooHR endpoints are the route; "
+            "running nightly since 2026-09-04, still recorded here as "
+            "unverified. Confirm by fetching "
+            "lmrtechnicalgroup.bamboohr.com/careers/list."
+        ),
+        aliases=("LMR", "LMR Tech"),
+    ),
+    Employer(
+        slug="reef",
+        name="Reef Systems",
+        category="prime",
+        ats="catsone",
+        options={"subdomain": "reefsys", "portal": 5332},
+        notes=(
+            "Army H2F subcontractor staffing strength coaches, athletic trainers "
+            "and cognitive performance specialists across the brigades. Posts on "
+            "a CATS One portal (reefsys.catsone.com/careers/5332), running "
+            "nightly since 2026-09-04 and still recorded here as unverified. "
+            "Confirm by fetching the portal's list page."
+        ),
+        aliases=("Reef Systems Corporation", "REEF"),
+    ),
+    Employer(
+        slug="cherokee-federal",
+        name="Cherokee Federal",
+        category="prime",
+        ats="oraclecloud",
+        options={
+            "careers_url": (
+                "https://ibtcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2"
+            ),
+            "max_pages": 3,
+        },
+        notes=(
+            "Defense Health Agency and Army medical staffing prime. Oracle "
+            "Recruiting Cloud site CX_2 answered 353 open requisitions on "
+            "2026-09-05 with no tactical human performance billet that day, so "
+            "it runs as a watcher; still recorded here as unverified. Confirm by "
+            "fetching the requisition API for that site."
+        ),
+        aliases=("Cherokee Nation Businesses", "Cherokee Nation Federal Solutions"),
+    ),
+    Employer(
+        slug="dlh",
+        name="DLH",
+        category="prime",
+        ats="greenhouse",
+        options={"board_token": "dlhcorporation"},
+        notes=(
+            "DHA and Army public-health contractor. Greenhouse board "
+            "'dlhcorporation' answered 17 postings on 2026-09-05, none tactical; "
+            "runs as a one-request watcher and is still recorded here as "
+            "unverified. Confirm with the greenhouse curl check."
+        ),
+        aliases=("DLH Corporation", "DLH Holdings"),
     ),
     Employer(
         slug="gap-solutions",
@@ -550,8 +649,8 @@ REGISTRY: tuple[Employer, ...] = (
         category="prime",
         ats="workday",
         options={
-            "tenant": "boozallen",
-            "site": "BoozAllen",
+            "tenant": "bah",
+            "site": "BAH_Jobs",
             "data_center": "wd1",
             "search_terms": [
                 "human performance",
@@ -561,9 +660,11 @@ REGISTRY: tuple[Employer, ...] = (
         },
         notes=(
             "A guessed prime rather than a cited award holder. Workday is the "
-            "known vendor; the tenant and site are the values already carried "
-            "unverified in sources.keyless.toml. Confirm by opening the Booz Allen "
-            "careers page and reading tenant, data_center, and site out of the URL."
+            "known vendor; bah/wd1/BAH_Jobs answered HTTP 200 on 2026-08-28 with "
+            "no tactical postings, and it runs as a watcher from "
+            "sources.keyless.toml since 2026-09-05. Still recorded here as "
+            "unverified. Confirm by opening the Booz Allen careers page and "
+            "reading tenant, data_center, and site out of the URL."
         ),
         aliases=("Booz Allen", "BAH"),
     ),
@@ -625,22 +726,28 @@ REGISTRY: tuple[Employer, ...] = (
         slug="magellan-federal",
         name="Magellan Federal",
         category="prime",
-        ats="workday",
-        options={"tenant": "PASTE_WORKDAY_TENANT_HERE", "site": "External"},
+        ats="jsonld",
+        options={
+            "sitemap": "https://careers.magellanhealth.com/sitemap.xml",
+            "url_include": ["Strength", "Conditioning", "Cognitive-Performance", "Athletic-Train"],
+            "max_urls": 120,
+        },
         notes=(
             "One of the longest-running providers of military human performance and "
-            "resilience staffing, which makes it a high-value target. Complicated by "
-            "corporate history: Magellan Federal is reported to have been acquired "
-            "into Acuity International, so postings may live on either careers "
-            "site. That reporting is not sourced in EMPLOYERS.md and Acuity is "
-            "kept out of aliases regardless -- it is a larger parent with "
-            "unrelated business lines, and matching its name here would attribute "
-            "all of it to this entry. Vendor is a guess and the tenant is "
-            "genuinely unknown, hence the placeholder. Confirm by checking both "
-            "the Magellan Federal and Acuity International careers pages and "
-            "reading the tenant out of whichever is Workday."
+            "resilience staffing, which makes it a high-value target. Its Air Force "
+            "human performance postings (strength and conditioning specialists at "
+            "Vance and Altus AFB, a cognitive performance specialist at Vance, all "
+            "open 2026-09-05) sit on the parent's Phenom site "
+            "careers.magellanhealth.com, whose job pages carry JobPosting JSON-LD; "
+            "the block in sources.keyless.toml carries the full url_include list. "
+            "Acuity International, which absorbed Magellan Federal, is a larger "
+            "parent with unrelated business lines and is deliberately not an "
+            "alias; its Workday tenant (acuityinternational/wd5/External) runs as "
+            "a separate watcher block in sources.keyless.toml. Still recorded "
+            "here as unverified. Confirm by fetching the sitemap and checking one "
+            "job URL for a JobPosting ld+json block."
         ),
-        aliases=("Magellan Health Federal",),
+        aliases=("Magellan Health Federal", "Magellan Health"),
     ),
     Employer(
         slug="icf",
@@ -659,19 +766,15 @@ REGISTRY: tuple[Employer, ...] = (
         slug="chenega",
         name="Chenega Corporation",
         category="prime",
-        ats="jsonld",
-        options={
-            "sitemap": "PASTE_CHENEGA_CAREERS_SITEMAP_URL_HERE",
-            "url_include": ["/job", "/careers/"],
-            "max_urls": 300,
-        },
+        ats="icims",
+        options={"careers_url": "https://careers-chenega.icims.com", "max_pages": 25},
         notes=(
             "Alaska Native Corporation holding substantial DoD services work, "
             "including medical and base support that carries fitness and readiness "
-            "roles. Its careers site appears to be iCIMS, for which this project "
-            "ships no JSON adapter, so JSON-LD over the sitemap is the keyless "
-            "route. Confirm by opening a job detail page and checking for a "
-            "JobPosting ld+json block, then supply the sitemap URL."
+            "roles. Hosted iCIMS portal careers-chenega.icims.com: about 420 "
+            "postings over 21 pages on 2026-09-05, none tactical that day, so it "
+            "runs as a watcher from sources.keyless.toml. Still recorded here as "
+            "unverified. Confirm by fetching the portal's first search page."
         ),
         aliases=("Chenega MIOS", "Chenega Corp"),
     ),
@@ -701,12 +804,8 @@ REGISTRY: tuple[Employer, ...] = (
         slug="akima",
         name="Akima",
         category="prime",
-        ats="jsonld",
-        options={
-            "sitemap": "PASTE_AKIMA_CAREERS_SITEMAP_URL_HERE",
-            "url_include": ["/job", "/careers/"],
-            "max_urls": 300,
-        },
+        ats=None,
+        options={},
         notes=(
             "Alaska Native Corporation operating many subsidiaries across DoD "
             "services; postings are frequently branded by subsidiary rather than by "
@@ -714,8 +813,11 @@ REGISTRY: tuple[Employer, ...] = (
             "parent is NANA Regional Corporation; that stays in this note and out "
             "of aliases, because NANA owns a great deal that has nothing to do "
             "with Akima and resolving its name here would attribute those postings "
-            "to the wrong employer. Vendor unconfirmed, jsonld assumed. Confirm by "
-            "inspecting a job detail page for ld+json markup."
+            "to the wrong employer. The vendor is iCIMS behind the branded host "
+            "careers.akima.com, but on 2026-09-05 the search page 404'd on the "
+            "branded host and careers-akima.icims.com only redirected back to it, "
+            "so the icims adapter has no working entry point and ats stays None. "
+            "Confirm by finding how careers.akima.com/jobs loads its list."
         ),
         aliases=("Akima LLC",),
     ),
@@ -738,15 +840,17 @@ REGISTRY: tuple[Employer, ...] = (
         slug="o2x",
         name="O2X Human Performance",
         category="specialist",
-        ats="greenhouse",
-        options={"board_token": "o2x"},
+        ats=None,
+        options={},
         notes=(
             "The archetypal specialist: tactical human performance for military and "
             "first responders, so essentially every posting is relevant and the "
-            "classifier has little work to do. Greenhouse with board_token 'o2x' is "
-            "the value already carried unverified in sources.keyless.toml -- a "
-            "guess derived from the brand name, not a confirmed token. Confirm with "
-            "the greenhouse curl check before enabling."
+            "classifier has little work to do. The Greenhouse token 'o2x' this "
+            "entry used to carry was checked on 2026-07-31 and 2026-09-05 and does "
+            "not exist, and o2x.com's careers pages carry no JobPosting JSON-LD, "
+            "so none of this project's adapters can read them and ats stays None. "
+            "A page reader for its careers sitemap is the route if one is written. "
+            "Confirm by re-checking o2x.com/careers for structured markup."
         ),
         aliases=("O2X", "O2X Human Performance LLC"),
     ),
@@ -766,27 +870,22 @@ REGISTRY: tuple[Employer, ...] = (
     ),
     Employer(
         slug="psi",
-        name="PSI",
+        name="Planned Systems International",
         category="specialist",
-        ats="jsonld",
-        options={
-            "sitemap": "PASTE_ATHLETICTRAINERJOB_SITEMAP_URL_HERE",
-            "url_include": ["/job"],
-            "max_urls": 200,
-        },
+        ats="icims",
+        options={"careers_url": "https://careers-plansys.icims.com", "detail_limit": 60},
         notes=(
-            "Places athletic trainers directly with US military units and posts "
-            "through athletictrainerjob.com, which makes it unusually concentrated "
-            "for this niche (EMPLOYERS.md). What the acronym stands for is not "
-            "recorded there and is deliberately not guessed here -- an invented "
-            "expansion in aliases would resolve real postings to an organization "
-            "that may not exist under that name. The site is not a known JSON ATS, "
-            "so jsonld is the assumed route and the sitemap URL is unknown. "
-            "Confirm by opening a posting on athletictrainerjob.com and checking "
-            "for JobPosting ld+json markup; if absent, the rss adapter against any "
-            "feed the site offers is the fallback."
+            "Places athletic trainers directly with Army units (H2F) and the "
+            "Marine Corps Sports Medicine Injury Prevention program at Cherry "
+            "Point, which makes it unusually concentrated for this niche "
+            "(EMPLOYERS.md). Hosted iCIMS portal careers-plansys.icims.com: about "
+            "80 postings over four pages on 2026-09-05, roughly 30 of them Athletic "
+            "Trainer / Lead Athletic Trainer billets listed by the nearest town; "
+            "the block in sources.keyless.toml carries the detail_include list "
+            "that spends the detail budget on those titles. Still recorded here "
+            "as unverified. Confirm by fetching the portal's first search page."
         ),
-        aliases=("athletictrainerjob.com",),
+        aliases=("PSI", "Cognito Systems", "athletictrainerjob.com"),
     ),
     Employer(
         slug="sword-performance",
@@ -1058,16 +1157,20 @@ REGISTRY: tuple[Employer, ...] = (
         slug="nsca",
         name="NSCA Career Center",
         category="association",
-        ats="jobsrss",
-        options={"url": "https://careers.nsca.com/jobs/feed", "employer_from": "title"},
+        ats="jsonld",
+        options={
+            "sitemap": "https://nsca.careerwebsite.com/sitemap.xml",
+            "url_include": ["/job/"],
+        },
         notes=(
             "Highest signal-per-posting source in this entire niche: nearly every "
             "listing is a strength coach role, and the NSCA's TSAC program means a "
-            "meaningful share are explicitly tactical. The feed URL follows the "
-            "YourMembership convention and matches the unverified value already in "
-            "sources/boards.py -- it is a pattern, not a confirmed endpoint. "
-            "Confirm by fetching the URL and checking it returns XML with recent "
-            "items rather than an HTML page."
+            "meaningful share are explicitly tactical. The career centre runs on "
+            "careerwebsite.com, whose job pages carry JobPosting JSON-LD; the "
+            "sitemap route in sources.keyless.toml has run nightly since August "
+            "(the careers.nsca.com/jobs/feed URL this entry used to carry was a "
+            "YourMembership convention, not an endpoint). Still recorded here as "
+            "unverified. Confirm by fetching the sitemap and one job URL."
         ),
         aliases=(
             "National Strength and Conditioning Association",
@@ -1218,14 +1321,16 @@ REGISTRY: tuple[Employer, ...] = (
         slug="geneva-foundation",
         name="The Geneva Foundation",
         category="nonprofit",
-        ats=None,
-        options={},
+        ats="workday",
+        options={"tenant": "genevausa", "site": "CareersAtGeneva", "data_center": "wd5"},
         notes=(
             "Team Serco subcontractor on the Army H2F award and a long-running "
             "military medical research nonprofit that places research and clinical "
             "staff at military treatment facilities (EMPLOYERS.md lists it in Team "
-            "Serco). ATS not identified and not guessed. Confirm by opening the "
-            "foundation's careers page and noting the platform."
+            "Serco). Workday: genevausa.wd5.myworkdayjobs.com/CareersAtGeneva, "
+            "read off a real posting URL and running nightly from "
+            "sources.keyless.toml since 2026-08-28; still recorded here as "
+            "unverified. Confirm by reading a Geneva job URL."
         ),
         aliases=("Geneva Foundation",),
     ),
@@ -1233,19 +1338,21 @@ REGISTRY: tuple[Employer, ...] = (
         slug="henry-jackson-foundation",
         name="Henry M. Jackson Foundation for the Advancement of Military Medicine",
         category="nonprofit",
-        ats="jsonld",
+        ats="oraclecloud",
         options={
-            "sitemap": "PASTE_HJF_CAREERS_SITEMAP_URL_HERE",
-            "url_include": ["/job", "/careers/"],
-            "max_urls": 300,
+            "careers_url": "https://jobs.hjf.org/hcmUI/CandidateExperience/en/sites/CX_2001",
+            "max_pages": 3,
         },
         notes=(
             "Staffs a large share of military medical research, including human "
             "performance work at USU and at military treatment facilities, and "
             "posts athletic trainer and exercise physiologist roles that never "
-            "reach USAJOBS. Careers site is unconfirmed and likely iCIMS, so jsonld "
-            "is the assumed route. Confirm by checking a job detail page for "
-            "JobPosting ld+json markup, then supply the sitemap URL."
+            "reach USAJOBS. Oracle Recruiting Cloud behind the branded domain "
+            "jobs.hjf.org (site CX_2001); its requisition API answered 139 open "
+            "requisitions on 2026-09-05 including a Research Athletic Trainer at "
+            "Fort Bragg, and the block in sources.keyless.toml runs nightly. "
+            "Still recorded here as unverified. Confirm by fetching the "
+            "requisition API for that site."
         ),
         aliases=("HJF", "Henry Jackson Foundation"),
     ),

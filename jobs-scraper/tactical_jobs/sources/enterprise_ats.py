@@ -47,9 +47,14 @@ log = logging.getLogger(__name__)
 # Shared browser-like UA, ported from career-ops providers/_http.mjs
 # (BROWSER_LIKE_USER_AGENT) and providers/oraclecloud.mjs (BROWSER_UA).
 # Sent only where the recipe documents a WAF that blocks unfamiliar agents.
+# A Linux Chrome string on purpose. iCIMS portals sit behind CloudFront, and
+# on 2026-09-05 it answered HTTP 405 to the previous "Windows NT 10.0 ...
+# Chrome/131" string on every portal tried (PSI, Chenega) while this one got
+# 200 with the same headers otherwise; the platform string was the only
+# difference.
 _BROWSER_UA = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 )
 
 
@@ -193,6 +198,20 @@ def _parse_icims_search_page(page_html: str, origin: str) -> list[dict[str, Any]
     return rows
 
 
+def _pick_description(nodes: list[Any]) -> str:
+    """Description text of the first JobPosting node that states one."""
+    for node in nodes:
+        if not isinstance(node, dict):
+            continue
+        node_type = node.get("@type")
+        is_posting = node_type == "JobPosting" or (
+            isinstance(node_type, list) and "JobPosting" in node_type
+        )
+        if is_posting and isinstance(node.get("description"), str):
+            return html_to_text(node["description"])
+    return ""
+
+
 def _pick_date_posted(nodes: list[Any]) -> Any:
     """datePosted of the first JSON-LD JobPosting node, else the first node
     carrying a datePosted at all (icims.mjs pickDatePosted)."""
@@ -211,17 +230,39 @@ def _pick_date_posted(nodes: list[Any]) -> Any:
     return fallback
 
 
+def _title_fragments(value: Any) -> tuple[str, ...]:
+    """Lower-cased ``detail_include`` fragments; empty means every row qualifies."""
+    if value is None:
+        return ()
+    if isinstance(value, str):
+        value = [value]
+    if not isinstance(value, (list, tuple, set, frozenset)):
+        log.warning("icims: detail_include=%r is not a list; fetching details for every row", value)
+        return ()
+    return tuple(item.strip().lower() for item in value if isinstance(item, str) and item.strip())
+
+
+def _wants_detail(title: str, fragments: tuple[str, ...]) -> bool:
+    lowered = title.lower()
+    return not fragments or any(fragment in lowered for fragment in fragments)
+
+
 class ICIMSSource(Source):
     """iCIMS hosted portals (``careers-<tenant>.icims.com``).
 
     Endpoint recipe ported from santifer/career-ops providers/icims.mjs (MIT).
 
     The list pages carry title/location/URL but **no posted date and no
-    description**; both are emitted empty rather than guessed. Dates live
-    only in each posting's detail-page JSON-LD, so ``detail_limit`` (default
-    0) bounds an optional per-posting date-enrichment fetch -- the same
+    description**; both are emitted empty rather than guessed. Both live in
+    each posting's detail-page JSON-LD, so ``detail_limit`` (default 0)
+    bounds an optional per-posting detail fetch that reads the date and the
+    employer's own description from that node -- the same
     filtered-candidates-only policy career-ops applies to its enrichDate
-    hook.
+    hook. ``detail_include`` (title fragments, case-insensitive) spends that
+    budget on the rows that can matter: Planned Systems International lists
+    eighty postings of which thirty are athletic trainers, scattered across
+    every page, and a budget spent in list order would fetch referral
+    clerks and leave trainers without the text the classifier needs.
     """
 
     kind = "icims"
@@ -231,6 +272,7 @@ class ICIMSSource(Source):
         employer = str(self.options.get("employer") or self.name)
         max_pages = min(max(1, _int_option(self.options, "max_pages", _ICIMS_MAX_PAGES)), _ICIMS_MAX_PAGES)
         detail_limit = max(0, _int_option(self.options, "detail_limit", 0))
+        detail_include = _title_fragments(self.options.get("detail_include"))
         delay = max(0.0, _float_option(self.options, "delay_seconds", 0.0))
 
         rows: list[dict[str, Any]] = []
@@ -268,12 +310,15 @@ class ICIMSSource(Source):
         if not reached_end and rows:
             log.warning("icims: %s stopped at the %d-page cap; later postings not fetched", self.name, max_pages)
 
-        for index, row in enumerate(rows):
+        budget = detail_limit
+        for row in rows:
             posted_at = None
-            if index < detail_limit:
+            description = ""
+            if budget > 0 and _wants_detail(row["title"], detail_include):
+                budget -= 1
                 if delay:
                     time.sleep(delay)
-                posted_at = self._detail_date(row["url"])
+                posted_at, description = self._detail(row["url"])
             try:
                 yield JobPosting(
                     source=f"{self.kind}:{self.name}",
@@ -282,8 +327,9 @@ class ICIMSSource(Source):
                     title=row["title"],
                     employer=employer,
                     location=row["location"],
-                    # The list page states no description; emit none.
-                    description="",
+                    # The list page states no description; only a detail
+                    # fetch can supply one, and it is the employer's own text.
+                    description=description,
                     posted_at=posted_at,
                     remote=looks_remote(row["location"], row["title"]),
                     raw=row,
@@ -291,14 +337,17 @@ class ICIMSSource(Source):
             except Exception as exc:  # pragma: no cover - defensive
                 log.warning("skipping malformed icims posting %s: %s", row.get("url"), exc)
 
-    def _detail_date(self, url: str) -> datetime | None:
-        """Posted date from the detail page's JSON-LD, or None on any failure."""
+    def _detail(self, url: str) -> tuple[datetime | None, str]:
+        """Posted date and description from the detail page's JSON-LD.
+
+        ``(None, "")`` on any failure: nothing is guessed.
+        """
         sep = "&" if "?" in url else "?"
         try:
             page_html = _fetch_text(f"{url}{sep}in_iframe=1", headers=_ICIMS_HEADERS)
         except Exception as exc:
-            log.debug("icims: date enrichment failed for %s: %s", url, exc)
-            return None
+            log.debug("icims: detail fetch failed for %s: %s", url, exc)
+            return None, ""
         nodes: list[Any] = []
         for match in _ICIMS_LDJSON.finditer(page_html):
             try:
@@ -313,7 +362,7 @@ class ICIMSSource(Source):
                 nodes.extend(data["@graph"])
             else:
                 nodes.append(data)
-        return parse_timestamp(_pick_date_posted(nodes))
+        return parse_timestamp(_pick_date_posted(nodes)), _pick_description(nodes)
 
 
 # ---------------------------------------------------------------------------
@@ -886,13 +935,26 @@ _ORACLE_FACETS = (
 _ORACLE_HEADERS = {"User-Agent": _BROWSER_UA, "Accept": "application/json"}
 
 
+_ORACLE_UI_PATH = "/hcmui/candidateexperience/"
+
+
 def _oracle_site(raw: str, site_number: Any = None, location_id: Any = None) -> dict[str, Any]:
-    """Resolve ORC coordinates from a CandidateExperience careers URL."""
+    """Resolve ORC coordinates from a CandidateExperience careers URL.
+
+    A branded domain (``jobs.hjf.org``) fronts the same pod and its
+    requisition API answers there too. The ``/hcmUI/CandidateExperience/``
+    path is Oracle's own UI route, so a URL carrying it is proof enough of
+    what the host is; a bare branded host would not be.
+    """
     parsed = urlparse(raw)
     host = (parsed.hostname or "").lower()
-    if parsed.scheme != "https" or not _ORACLE_HOST.match(host):
+    # An oraclecloud.com host that misses the pod pattern is a typo, path or
+    # no path; the allowance is for domains Oracle does not own.
+    branded = _ORACLE_UI_PATH in parsed.path.lower() and not host.endswith(".oraclecloud.com")
+    if parsed.scheme != "https" or not host or not (_ORACLE_HOST.match(host) or branded):
         raise ValueError(
-            f"oraclecloud: careers_url host must match *.fa[.<region>][.ocs].oraclecloud.com, got {raw!r}"
+            "oraclecloud: careers_url host must match *.fa[.<region>][.ocs].oraclecloud.com, "
+            f"or be a branded domain with the /hcmUI/CandidateExperience/ path, got {raw!r}"
         )
     segments = [segment for segment in parsed.path.split("/") if segment]
     lang = "en"
