@@ -303,6 +303,76 @@ def test_a_veterans_clinic_on_a_former_base_gets_no_service_context():
     assert "service context" not in posting.domain_hits
 
 
+def test_civilian_health_care_employers_are_rejected_outright():
+    # USAJOBS 2026-09-05: a VA staff physical therapist in Abilene ("military"
+    # three times in the credential boilerplate) and an Indian Health Service
+    # physician assistant ("active duty", "uniformed" for the Commissioned
+    # Corps) both reached PUBLISH on vocabulary about the applicant.
+    va = _posting(
+        "Staff Physical Therapist - EDRP Approved",
+        "Veterans Health Administration",
+        "Abilene, Texas",
+        "Graduate of a military physical therapy program or an accredited program. "
+        "Military physical therapists and physical therapy assistants with military "
+        "training qualify. Outpatient musculoskeletal care for veterans.",
+    )
+    assert classify(va) == Verdict.REJECT
+    assert va.exclusion_hits == ["civilian health care employer"]
+    ihs = _posting(
+        "Physician Assistant",
+        "Indian Health Service",
+        "Multiple Locations",
+        "Commissioned Corps officers serve on active duty as members of a uniformed "
+        "service. Physician assistant providing health promotion and primary care.",
+    )
+    assert classify(ihs) == Verdict.REJECT
+
+
+def test_a_single_body_mention_is_not_a_discipline():
+    # Army National Guard "Safety and Occupational Health Manager (Title 32)"
+    # at Fort Pickett: strong domain, and "health promotion" once in the body.
+    safety = _posting(
+        "Safety and Occupational Health Manager (Title 32) (Indefinite)",
+        "Army National Guard Units",
+        "Fort Pickett, Virginia",
+        "Manages the installation safety program for Soldiers and DoD civilians. "
+        "Coordinates with health promotion staff on the safety council.",
+    )
+    assert classify(safety) == Verdict.REJECT
+    # AFSOC "Publicity Assistant (Graphic Designer)": the MWR fitness center
+    # is mentioned once among the facilities the designer makes flyers for.
+    designer = _posting(
+        "PUBLICITY ASSISTANT (GRAPHIC DESIGNER)",
+        "Air Force Special Operations Command",
+        "Hurlburt Field, Florida",
+        "Designs flyers and social media for special operations MWR programs "
+        "including the fitness center, bowling center and outdoor recreation. "
+        "Military spouse and veteran preference apply.",
+    )
+    assert classify(designer) == Verdict.REJECT
+
+
+def test_two_body_terms_or_a_title_term_carry_a_posting():
+    # Marine Corps "HITT Instructor" names no listed discipline in its title
+    # but two in its text; KBR's SOF social workers name theirs in the title.
+    hitt = _posting(
+        "HITT INSTRUCTOR-LEVEL I, NF-0189-02",
+        "U.S. Marine Corps",
+        "Camp Lejeune, North Carolina",
+        "Delivers High Intensity Tactical Training to Marines: strength and "
+        "conditioning sessions and sports medicine referrals for the battalion.",
+    )
+    assert classify(hitt) == Verdict.PUBLISH
+    lcsw = _posting(
+        "Special Operations Licensed Clinical Social Worker (AFSOC GSU/Southern Pines)",
+        "KBR",
+        "Fort Bragg, North Carolina",
+        "Embedded with the special operations unit's human performance team.",
+    )
+    assert classify(lcsw) == Verdict.PUBLISH
+    assert "licensed clinical social worker" in lcsw.discipline_hits
+
+
 def test_the_marine_corps_warr_programme_is_read_as_human_performance():
     # USAJOBS 879684900, read on 2026-09-05: the Twentynine Palms WARR/Semper
     # Fit role. It was vetoed on "performance testing" (testing Marines) with

@@ -199,7 +199,11 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "fitness instructor": 3.5,
     "fitness program manager": 3.5,
     "sports specialist": 3.0,
-    "fitness center": 3.0,
+    # Below the floor on purpose: any MWR posting mentions the fitness center
+    # in passing (an AFSOC graphic designer's did), and a title that names it
+    # ("Recreation Assistant (Fitness Center)") still clears the floor on the
+    # title multiplier.
+    "fitness center": 2.0,
     "conditioning coach": 3.5,
     # Sports medicine / rehab.
     "athletic trainer": 4.0,
@@ -236,6 +240,15 @@ DISCIPLINE_TERMS: dict[str, float] = {
     # fell to the "performance testing" veto on a sentence about testing
     # Marines.
     "performance education": 3.5,
+    # Behavioral health inside the performance teams: KBR staffs licensed
+    # clinical social workers and psychologists on every POTFF unit, and the
+    # board has carried them under its behavioral-health facet since day one
+    # while this list never named the titles -- they were passing on a stray
+    # "human performance" in the body.
+    "licensed clinical social worker": 3.5,
+    "clinical social worker": 3.0,
+    "social worker": 2.5,
+    "psychologist": 2.5,
     # Sleep / recovery / physiology.
     "sleep scientist": 3.0,
     "recovery specialist": 3.0,
@@ -362,10 +375,21 @@ never reach is veterans' health care: VA clinics sit on former bases
 
 _VETERANS_CARE_RE = re.compile(
     r"\bveterans?\s+(?:health|affairs|benefits)\b|\bVHA\b|\bVA\s+medical\b"
-    r"|\bdepartment\s+of\s+veterans\b",
+    r"|\bdepartment\s+of\s+veterans\b|\bindian\s+health\s+service\b",
     re.I,
 )
-"""Employers whose postings are civilian health care for veterans, not tactical work."""
+"""Employers whose postings are civilian health care, not tactical work.
+
+The Veterans Health Administration and the Indian Health Service. Their
+announcements are full of military vocabulary that is about the applicant,
+not the job: "military physical therapy assistant programs" among the
+qualifying credentials, "active duty" and "uniformed" for the Public Health
+Service Commissioned Corps status a hire may hold, "veteran" throughout.
+Read as domain evidence, that put a VA staff physical therapist in Abilene
+and an IHS physician assistant on the board the day USAJOBS was searched
+for more disciplines. Neither employer does tactical human performance
+work, so their postings are rejected outright.
+"""
 
 
 @dataclass(frozen=True, slots=True)
@@ -446,6 +470,14 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
         posting.score = 0.0
         return Verdict.REJECT
 
+    # Civilian health care for veterans and tribal communities is never
+    # tactical work, whatever military vocabulary the announcement carries
+    # about the applicant. See _VETERANS_CARE_RE.
+    if _VETERANS_CARE_RE.search(f"{posting.employer} {posting.department or ''}"):
+        posting.exclusion_hits = ["civilian health care employer"]
+        posting.score = 0.0
+        return Verdict.REJECT
+
     domain_score, domain_hits = _score_axis(DOMAIN_TERMS, title, body)
     discipline_score, discipline_hits = _score_axis(DISCIPLINE_TERMS, title, body)
 
@@ -467,11 +499,7 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # cities named Fort-something, and it is exactly what "military" in a
     # credential list is not: evidence about the work, not about the applicant.
     #
-    # A veterans' health-care posting gets no service context at all. VA
-    # clinics sit on former bases ("Mather AFB, California"), and the base
-    # name in the location is history, not evidence about the work.
-    veterans_care = _VETERANS_CARE_RE.search(f"{posting.employer} {posting.department or ''}")
-    if not veterans_care and branches_of(posting.title, posting.employer, posting.location):
+    if branches_of(posting.title, posting.employer, posting.location):
         domain_score += SERVICE_CONTEXT_WEIGHT
         domain_hits = [*domain_hits, "service context"]
 
@@ -479,6 +507,18 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     posting.discipline_hits = discipline_hits
     posting.score = domain_score + discipline_score
     posting.tags = _derive_tags(domain_hits, discipline_hits, posting)
+
+    # A single mention in the body is not a discipline. Long federal and
+    # contractor announcements name the fitness center, "human performance"
+    # or "health promotion" once in passing, and one such mention at the
+    # term's full weight cleared the floor for an AFSOC graphic designer, two
+    # National Guard safety officers, a biostatistician and a SkillBridge
+    # electrical engineer. A posting whose title names no discipline needs
+    # at least two distinct discipline terms in its text: every genuine
+    # human performance job has that much vocabulary (an R2PC Performance
+    # Expert names five), and no passing mention does.
+    if title_discipline <= 0 and len(set(discipline_hits)) < 2:
+        return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical
     # *and* keeps it about human performance.
