@@ -41,9 +41,11 @@ _EXPIRED_MARKERS = (
     "this posting is no longer available",
     # USAJOBS serves a closed announcement with HTTP 200 and this banner; the
     # sweep called twelve closed federal postings "live" until it was added
-    # (audit 2026-09-05).
+    # (audit 2026-09-05). The full sentence on purpose: Army CHRA boilerplate
+    # on every OPEN announcement says "Once the announcement has closed, a
+    # review of your application package...", and the shorter phrase retired
+    # eighteen open postings in one sweep.
     "this job announcement has closed",
-    "announcement has closed",
     "the job you are looking for is no longer",
     "job posting has expired",
     "this job has expired",

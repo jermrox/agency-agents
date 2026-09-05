@@ -118,6 +118,21 @@ def test_a_closed_usajobs_announcement_is_gone(fake_urlopen):
     assert "announcement has closed" in verdict.reason
 
 
+def test_army_boilerplate_about_closing_does_not_retire_an_open_announcement(fake_urlopen):
+    """Every open Army announcement says "Once the announcement has closed, a
+    review of your application package..." in its evaluation section."""
+    body = (
+        b"<html><body><h1>Athletic Trainer</h1>"
+        b"<p>Open &amp; closing dates 09/03/2026 to 09/16/2026</p>"
+        b"<h2>How you will be evaluated</h2>"
+        b"<p>Once the announcement has closed, a review of your application package "
+        b"(resume, supporting documents, and responses) will be made.</p>"
+        b"</body></html>"
+    )
+    fake_urlopen(_FakeResponse(body))
+    assert liveness.check_url("https://www.usajobs.gov/job/883392800").state == liveness.LIVE
+
+
 def test_marker_with_typographic_apostrophe_is_still_caught(fake_urlopen):
     body = "<p>Sorry, this job is not available.</p>".encode()
     fake_urlopen(_FakeResponse(body))
