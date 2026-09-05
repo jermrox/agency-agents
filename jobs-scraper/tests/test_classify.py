@@ -275,6 +275,66 @@ def test_a_civilian_clinic_in_a_fort_named_city_stays_off_the_board():
     assert classify(posting) == Verdict.REJECT
 
 
+def test_the_installation_alone_clears_the_domain_floor():
+    # KBR "Physical Therapist (Eielson AFB, AK)" and a DHA physical therapy
+    # assistant at Fort Sill: the base is the only domain evidence, and other
+    # DHA physical therapists were already on the board.
+    posting = _posting(
+        "Physical Therapist (Eielson AFB, AK)",
+        "KBR",
+        "Fairbanks, Alaska",
+        "Provides outpatient physical therapy and return-to-duty rehabilitation.",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+    assert posting.domain_hits == ["service context"]
+
+
+def test_a_veterans_clinic_on_a_former_base_gets_no_service_context():
+    # VA Northern California sits on the old Mather AFB. The base name in the
+    # location is history, not evidence about the work.
+    posting = _posting(
+        "Dietitian (Facility Program Coordinator)",
+        "Veterans Health Administration",
+        "Mather AFB, California",
+        "Registered dietitian coordinating outpatient nutrition programs at the "
+        "medical center.",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "service context" not in posting.domain_hits
+
+
+def test_the_marine_corps_warr_programme_is_read_as_human_performance():
+    # USAJOBS 879684900, read on 2026-09-05: the Twentynine Palms WARR/Semper
+    # Fit role. It was vetoed on "performance testing" (testing Marines) with
+    # no discipline term in its title.
+    posting = _posting(
+        "Supervisory Performance Education Specialist NF4",
+        "U.S. Marine Corps",
+        "Twentynine Palms, California",
+        "Serves as the Supervisory Performance Education Specialist for the Warrior "
+        "Athlete Readiness and Resilience (WARR)/Semper Fit to improve readiness, "
+        "lethality, and resilience of the total force in all domains of Marine Corps "
+        "Total Fitness. Prepares content on sleep science, recovery and adaptation. "
+        "Conducts performance testing of Marines.",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+    assert "performance education" in posting.discipline_hits
+    assert "semper fit" in posting.domain_hits
+
+
+def test_ready_and_resilient_is_a_discipline():
+    posting = _posting(
+        "Readiness and Resilience Division Chief",
+        "Joint Activities",
+        "Fort Meade, Maryland",
+        "Leads the Ready and Resilient program for Soldiers, Department of Defense "
+        "civilians and families across the installation.",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+    assert "readiness and resilience" in posting.discipline_hits
+    assert "cognitive" in posting.tags
+
+
 # --- applicant requirements are not discipline evidence -----------------------
 #
 # Every string below is from a live posting. The CBP sentence is the one that

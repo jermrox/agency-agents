@@ -147,6 +147,14 @@ DOMAIN_TERMS: dict[str, float] = {
     "spiritual fitness": 2.5,
     "moral injury": 2.0,
     "human performance optimization": 3.5,
+    # Marine Corps Community Services programme names. Warrior Athlete
+    # Readiness and Resilience and Semper Fit are the Marine Corps' own human
+    # performance organisations and Marine Corps Total Fitness is their
+    # doctrine; a "Supervisory Performance Education Specialist" at
+    # Twentynine Palms named all three and nothing else this list knew.
+    "warrior athlete readiness and resilience": 4.5,
+    "semper fit": 3.5,
+    "marine corps total fitness": 4.0,
     # Generic but useful when stacked with the above.
     "tactical": 1.5,
     "uniformed": 1.5,
@@ -217,6 +225,17 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "performance psychology": 4.0,
     "mental skills": 3.0,
     "resilience training": 2.5,
+    # Army Ready and Resilient (R2), the programme whose Performance Experts
+    # are the cognitive performance coaches on the board. A "Readiness and
+    # Resilience Division Chief" at Fort Meade carried strong domain evidence
+    # and no discipline term at all.
+    "ready and resilient": 3.5,
+    "readiness and resilience": 3.5,
+    # The Marine Corps WARR title for its sleep, recovery and health
+    # education role. Without a discipline term in the title, the posting
+    # fell to the "performance testing" veto on a sentence about testing
+    # Marines.
+    "performance education": 3.5,
     # Sleep / recovery / physiology.
     "sleep scientist": 3.0,
     "recovery specialist": 3.0,
@@ -314,15 +333,28 @@ verbose listing would outrank every genuinely relevant one.
 """
 
 
-SERVICE_CONTEXT_WEIGHT = 3.0
+SERVICE_CONTEXT_WEIGHT = 3.5
 """Domain credit for a posting whose service branch can be identified.
 
-Set so that branch context alone does not clear ``min_domain`` -- it still
-needs some vocabulary of its own -- while a posting carrying both clears it
-comfortably. Tuned against the live board: at this weight the branch-aware
-rule keeps every tactical posting the old thresholds kept and adds seven the
-location field had been hiding, while dropping twenty VA clinic roles.
+Set to exactly ``min_domain``: a job at a named installation is in the
+tactical domain by definition, so branch context alone clears the domain
+floor. It was 3.0, deliberately just under the floor, and that rejected a
+KBR physical therapist at Eielson AFB and a Defense Health Agency physical
+therapy assistant at Fort Sill whose only domain evidence was where they
+are, while other DHA physical therapists reached the board on a stray
+vocabulary hit. The discipline floor still applies, so a contract
+specialist at Fort Bragg stays off the board. The one population this must
+never reach is veterans' health care: VA clinics sit on former bases
+(Mather AFB), and a VA posting gets no location credit at all -- see
+``_VETERANS_CARE_RE``.
 """
+
+_VETERANS_CARE_RE = re.compile(
+    r"\bveterans?\s+(?:health|affairs|benefits)\b|\bVHA\b|\bVA\s+medical\b"
+    r"|\bdepartment\s+of\s+veterans\b",
+    re.I,
+)
+"""Employers whose postings are civilian health care for veterans, not tactical work."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -422,7 +454,12 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # employer, the program name and the installation, it already excludes the
     # cities named Fort-something, and it is exactly what "military" in a
     # credential list is not: evidence about the work, not about the applicant.
-    if branches_of(posting.title, posting.employer, posting.location):
+    #
+    # A veterans' health-care posting gets no service context at all. VA
+    # clinics sit on former bases ("Mather AFB, California"), and the base
+    # name in the location is history, not evidence about the work.
+    veterans_care = _VETERANS_CARE_RE.search(f"{posting.employer} {posting.department or ''}")
+    if not veterans_care and branches_of(posting.title, posting.employer, posting.location):
         domain_score += SERVICE_CONTEXT_WEIGHT
         domain_hits = [*domain_hits, "service context"]
 
@@ -489,6 +526,8 @@ def _derive_tags(
             "sport psychology",
             "performance psychology",
             "mental skills",
+            "ready and resilient",
+            "readiness and resilience",
         ),
         "sport-science": (
             "sport scientist",
