@@ -426,6 +426,57 @@ def test_bare_clinical_professions_need_the_performance_context():
     assert "case manager" in case.exclusion_hits
 
 
+def test_a_uniformed_occupation_in_the_title_is_not_a_performance_job():
+    # USAJOBS 883089300, on the live board 2026-08-29 to 2026-09-05: a military
+    # training instructor billet in the pararescue pipeline, carried by the
+    # fitness test its students take and one "strength and conditioning".
+    pj = _posting(
+        "TRAINING INSTRUCTOR (PARARESCUE)",
+        "Air Education and Training Command",
+        "Lackland AFB, Texas",
+        "Instructs pararescue apprentice course students in special tactics skills. "
+        "Students must pass the physical ability and stamina test. Plans strength "
+        "and conditioning sessions and sports medicine referrals for the class.",
+    )
+    assert classify(pj) == Verdict.REJECT
+    assert "training instructor" in pj.exclusion_hits
+    # The coach who trains them is the job the board exists for.
+    coach = _posting(
+        "Strength and Conditioning Coach (Pararescue)",
+        "KBR",
+        "Hurlburt Field, Florida",
+        "Special operations human performance program for the pararescue squadron.",
+    )
+    assert classify(coach) == Verdict.PUBLISH
+    # A recruiting-pipeline operator posting: fitness tests all over it, no job.
+    swo = _posting(
+        "Special Warfare Operator",
+        "United States Navy",
+        "Coronado, California",
+        "Candidates must pass the physical screening test and the physical "
+        "readiness test; physical readiness standards apply throughout training.",
+    )
+    assert classify(swo) == Verdict.REJECT
+    drill = _posting(
+        "Drill Sergeant",
+        "United States Army",
+        "Fort Jackson, South Carolina",
+        "Leads basic training; administers the Army Combat Fitness Test.",
+    )
+    assert classify(drill) == Verdict.REJECT
+
+
+def test_hitt_instructors_carry_on_the_programme_name():
+    for title in ("HITT INSTRUCTOR-LEVEL I, NF-0189-02", "High Intensity Tactical Training (HITT) Instructor"):
+        posting = _posting(
+            title,
+            "U.S. Marine Corps",
+            "Camp Lejeune, North Carolina",
+            "Delivers the Marine Corps fitness programme to Marines of the battalion.",
+        )
+        assert classify(posting) == Verdict.PUBLISH, title
+
+
 def test_the_marine_corps_warr_programme_is_read_as_human_performance():
     # USAJOBS 879684900, read on 2026-09-05: the Twentynine Palms WARR/Semper
     # Fit role. It was vetoed on "performance testing" (testing Marines) with

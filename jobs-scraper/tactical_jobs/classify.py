@@ -197,6 +197,10 @@ DISCIPLINE_TERMS: dict[str, float] = {
     # so demoting it would have dropped them too. They earn it on their own now.
     "fitness specialist": 3.5,
     "fitness instructor": 3.5,
+    # The Marine Corps' own fitness programme; its instructor titles carry
+    # on the programme name, spelled out or not.
+    "hitt": 3.5,
+    "high intensity tactical training": 4.0,
     "fitness program manager": 3.5,
     "sports specialist": 3.0,
     # Worth the floor because "Recreation Assistant (Fitness Center)" is an
@@ -356,6 +360,31 @@ EXCLUSION_TERMS: tuple[str, ...] = (
     "substance assessment counseling",
 )
 
+# Uniformed occupations and their schoolhouses, matched against the TITLE
+# only: the body of a genuine human performance posting names these units
+# all the time ("embedded with the pararescue squadron"). A job whose title
+# IS the occupation is not a performance job however much fitness vocabulary
+# the announcement carries: "Training Instructor (Pararescue)" at Lackland
+# sat on the board for a week on the strength of the physical ability and
+# stamina test its students take and one "strength and conditioning". The
+# same override as EXCLUSION_TERMS applies -- a title that names a
+# discipline worth the floor survives, so "Strength and Conditioning Coach
+# (Pararescue)" publishes -- and "physician" is here because an aerospace
+# medicine physician reached the board the same way.
+TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
+    "training instructor",
+    "military training instructor",
+    "pararescue",
+    "pararescueman",
+    "combat controller",
+    "special warfare operator",
+    "tactical air control party",
+    "sere specialist",
+    "drill sergeant",
+    "recruiter",
+    "physician",
+)
+
 # Terms whose presence in the *title* is worth extra, since a title is a much
 # stronger claim about the job than a passing mention in the body.
 TITLE_MULTIPLIER = 2.5
@@ -492,6 +521,17 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     title_discipline, _ = _score_axis(DISCIPLINE_TERMS, title, "")
     if excluded and title_discipline < thresholds.min_discipline:
         posting.exclusion_hits = excluded
+        posting.score = 0.0
+        return Verdict.REJECT
+
+    # A title that IS a uniformed occupation (see TITLE_EXCLUSION_TERMS).
+    title_excluded = [
+        term
+        for term in TITLE_EXCLUSION_TERMS
+        if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
+    ]
+    if title_excluded and title_discipline < thresholds.min_discipline:
+        posting.exclusion_hits = title_excluded
         posting.score = 0.0
         return Verdict.REJECT
 
