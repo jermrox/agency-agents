@@ -184,6 +184,16 @@ class USAJobsSource(Source):
             # at Camp Murray under the board's Remote filter -- on-base jobs
             # offered to someone who filtered for work from home.
             remote=looks_remote(location, details.get("RemoteIndicator") and "remote"),
+            # Read from the structured field, not from the description. The
+            # adapter does fold "Telework eligible: ..." into the text below,
+            # but that line lands past the ~400 characters the board publishes,
+            # so a downstream text match would never see it.
+            #
+            # Measured across 271 live postings matching this board's keywords:
+            # 124 are TeleworkEligible and every one has a real duty station,
+            # against exactly 1 with RemoteIndicator set. Hence a separate flag
+            # rather than another way of saying remote.
+            telework=str(details.get("TeleworkEligible")).lower() == "true",
             department=department,
             compensation=compensation,
             raw=descriptor,

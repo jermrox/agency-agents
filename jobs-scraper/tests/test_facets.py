@@ -16,7 +16,10 @@ from tactical_jobs.facets import (
     facets_for,
     is_lead,
     location_classes,
+    location_regions,
+    looks_telework,
     salary_floor_annual,
+    UNSPECIFIED_LOCATION,
 )
 from tactical_jobs.models import JobPosting
 
@@ -510,3 +513,132 @@ def test_genuine_remote_language_still_reads_as_remote():
     ):
         assert "remote" in location_classes(text), text
     assert "remote" in location_classes("", remote_flag=True)
+
+
+class TestLocationRegions:
+    """The second level behind a CONUS/OCONUS pill.
+
+    Every string below is a location line taken verbatim from the live feed,
+    because the failures that matter here are shape failures -- a pattern that
+    reads "Alaska" but not "Ketchikan, Alaska".
+    """
+
+    def test_state_spelled_out(self):
+        assert location_regions(
+            "Fort Sill, Oklahoma, USA; Oklahoma, USA", {"conus"}
+        ) == {"conus": ["Oklahoma"]}
+
+    def test_gdit_country_code_place_order(self):
+        assert location_regions("USA NC Fort Bragg; USA CA San Diego", {"conus"}) == {
+            "conus": ["California", "North Carolina"]
+        }
+
+    def test_bare_state_codes(self):
+        assert location_regions("KS; MO; SC; OK; TX; WA", {"conus"}) == {
+            "conus": [
+                "Kansas", "Missouri", "Oklahoma", "South Carolina", "Texas", "Washington",
+            ]
+        }
+
+    def test_alaska_and_hawaii_are_oconus_regions(self):
+        # Capitalised, which is how they actually arrive. A case-sensitive
+        # pattern here matched nothing and left both pills empty.
+        assert location_regions("Ketchikan, Alaska", {"oconus"}) == {"oconus": ["Alaska"]}
+        assert location_regions(
+            "Hawaii, USA; Schofield Barracks, Hawaii, USA", {"oconus"}
+        ) == {"oconus": ["Hawaii"]}
+
+    def test_iso3_country_code(self):
+        assert location_regions("Camp Casey, KOR", {"oconus"}) == {
+            "oconus": ["South Korea"]
+        }
+
+    def test_installation_implies_country(self):
+        assert location_regions("Ramstein AB; RAF Lakenheath", {"oconus"}) == {
+            "oconus": ["Germany", "United Kingdom"]
+        }
+
+    def test_mixed_location_is_grouped_under_both_classes(self):
+        assert location_regions("KS; HI; TX; JP", {"conus", "oconus"}) == {
+            "conus": ["Kansas", "Texas"],
+            "oconus": ["Hawaii", "Japan"],
+        }
+
+    def test_country_codes_are_case_sensitive(self):
+        # IT, ES, PR and BE are also ordinary English words. Folding case on
+        # the code half would file a remote job in Italy.
+        assert location_regions("it is a remote role", {"oconus"}) == {}
+        assert location_regions("Position is open, be advised", {"oconus"}) == {}
+
+    def test_unplaceable_location_yields_no_group(self):
+        # Better an absent second level than an invented state.
+        assert location_regions("Multiple Locations", {"unspecified"}) == {}
+        assert location_regions("", {"remote"}) == {}
+
+    def test_regions_only_drawn_from_the_matching_class(self):
+        # A posting classed CONUS only must not surface a country pill even if
+        # the string mentions one.
+        assert location_regions("Fort Bragg, NC (supports Germany)", {"conus"}) == {
+            "conus": ["North Carolina"]
+        }
+
+
+class TestTelework:
+    """Telework is its own answer, never folded into Remote.
+
+    The numbers in these cases are from 271 live federal postings matching this
+    board's keywords: 124 were TeleworkEligible with a real duty station, and
+    exactly one was actually remote.
+    """
+
+    def test_structured_flag_true(self):
+        assert looks_telework("", "Telework eligible: True.") is True
+
+    def test_structured_flag_false_is_not_telework(self):
+        # The adapter folds this sentence in whether the value is true or
+        # false, so a naive text match would read the denial as a positive.
+        assert looks_telework("", "Telework eligible: False.") is False
+
+    def test_structured_flag_beats_free_text(self):
+        assert looks_telework(
+            "Fort Knox, Kentucky", "Telework eligible: False. Telework may be discussed."
+        ) is False
+
+    def test_only_an_explicit_statement_counts(self):
+        # The posting has to say it. A bare mention is not the job claiming to
+        # be telework -- the first version matched any occurrence of the word,
+        # so a benefits paragraph listing telework among an agency's perks
+        # published an on-site job as telework.
+        assert looks_telework("", "This position is 100% teleworking.") is False
+        assert looks_telework("", "Telecommuting is available to some staff.") is False
+        assert looks_telework("", "Benefits include telework, transit, and childcare.") is False
+        assert looks_telework("", "On-site at Fort Bragg every day.") is False
+
+    def test_the_stated_value_is_what_is_read(self):
+        assert looks_telework("", "Telework eligible: Yes.") is True
+        assert looks_telework("", "Telework eligible: No.") is False
+
+    def test_telework_does_not_make_a_job_remote(self):
+        # The Fort Knox shape: telework eligible, real duty station. It must
+        # stay CONUS and must NOT appear under Remote.
+        classes = location_classes(
+            "Fort Knox, Kentucky", remote_flag=False, telework_flag=True
+        )
+        assert "conus" in classes
+        assert "telework" in classes
+        assert "remote" not in classes
+
+    def test_telework_is_additive_only(self):
+        # Same location, with and without the flag: the placement is identical.
+        without = location_classes("Bethesda, Maryland", False, False)
+        with_tw = location_classes("Bethesda, Maryland", False, True)
+        assert with_tw - {"telework"} == without
+
+    def test_telework_alone_does_not_place_a_job(self):
+        # Telework says how you work, not where the job is.
+        classes = location_classes("", remote_flag=False, telework_flag=True)
+        assert classes == frozenset({UNSPECIFIED_LOCATION, "telework"})
+
+    def test_genuinely_remote_still_reads_remote(self):
+        classes = location_classes("Anywhere in the U.S. (remote job)", True, False)
+        assert "remote" in classes

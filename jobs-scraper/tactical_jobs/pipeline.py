@@ -13,7 +13,7 @@ from .archive import Archive
 from .classify import Verdict, classify
 from .config import Config
 from .enrich import enrich
-from .facets import facets_for
+from .facets import facets_for, looks_telework
 from .feed import normalize_file
 from .insights import build_insights
 from .liveness import check_all
@@ -129,6 +129,16 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
             enrich(posting)
         except Exception as exc:  # pragma: no cover - defensive
             log.warning("enrichment failed for %s: %s", posting.url, exc)
+
+        # Decide telework here, while the whole description is still in hand.
+        # Downstream only ever sees the published excerpt, and the evidence
+        # sits past the end of it.
+        try:
+            posting.telework = posting.telework or looks_telework(
+                posting.location, posting.description
+            )
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("telework check failed for %s: %s", posting.url, exc)
 
         try:
             posting.facets = facets_for(posting)
