@@ -527,6 +527,7 @@ Building AI agents for regulated clinical and sovereign health contexts.
 | 🩺 [Clinical Evidence Agent](healthcare/healthcare-clinical-evidence-agent.md) | Evidence standards, validated vs unvalidated claims, diagnostic authority boundaries | Making clinical claims credibly without overstepping into diagnostic authority |
 | 🌍 [Sovereign Health Systems Agent](healthcare/healthcare-sovereign-health-systems-agent.md) | Government health mandates, UHC policy, emerging market deployment | Health tech teams operating at the intersection of national health infrastructure and sovereign health policy |
 | 🧭 [Healthcare Innovation Strategist](healthcare/healthcare-innovation-strategist.md) | Narrative architecture for healthcare founders across investor, regulatory, sovereign, and clinical audiences | Healthcare founders who need to translate clinical and financial complexity into language that moves capital and builds trust |
+| 🎖️ [Military Health & Fitness Research Scout](healthcare/healthcare-military-fitness-research-scout.md) | Official-channel OSINT on military health, H2F, and human performance — DoD/DHA, USARIEM, CHAMP/HPRC, DTIC, MSMR, PubMed — with link verification and evidence grading | Tracking new military fitness policy, doctrine, studies, and emerging tactical human performance topics from official sources only |
 
 ---
 
