@@ -39,6 +39,11 @@ _EXPIRED_MARKERS = (
     "this job is no longer available",
     "this position is no longer available",
     "this posting is no longer available",
+    # USAJOBS serves a closed announcement with HTTP 200 and this banner; the
+    # sweep called twelve closed federal postings "live" until it was added
+    # (audit 2026-09-05).
+    "this job announcement has closed",
+    "announcement has closed",
     "the job you are looking for is no longer",
     "job posting has expired",
     "this job has expired",
