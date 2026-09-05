@@ -145,6 +145,22 @@ _ICIMS_LOCATION = re.compile(
     r"\s*Location\s*</span>\s*<span\b[^>]*>\s*(.*?)</span>",
     re.S,
 )
+# iCIMS states a US location as a country-state-city code, "US-NC-Havelock".
+# Those are the same three facts every other source states as "Havelock, NC",
+# which is the shape the location facets read; the code form classified every
+# posting as "location not stated". Only the US form is rewritten, and only
+# when the state is a two-letter code; anything else ("US-Remote") is kept.
+_ICIMS_US_LOCATION = re.compile(r"^US-([A-Z]{2})-(.+)$")
+
+
+def _icims_location(text: str) -> str:
+    match = _ICIMS_US_LOCATION.match(text.strip())
+    if not match:
+        return text
+    state, city = match.group(1), match.group(2).strip()
+    return f"{city}, {state}" if city else text
+
+
 # `type` is not reliably the first script attribute (CSP nonces come first on
 # some tenants), so allow attributes before it -- see icims.mjs enrichDate.
 _ICIMS_LDJSON = re.compile(
@@ -192,7 +208,7 @@ def _parse_icims_search_page(page_html: str, origin: str) -> list[dict[str, Any]
                 # Query stripped: the tracking params vary per render and
                 # would break dedupe.
                 "url": f"{origin}{resolved.path}",
-                "location": _strip_tags(location.group(1)) if location else "",
+                "location": _icims_location(_strip_tags(location.group(1))) if location else "",
             }
         )
     return rows

@@ -142,6 +142,31 @@ def test_icims_maps_list_fields_and_leaves_absent_ones_empty(monkeypatch):
     assert posting.description == ""
 
 
+def test_icims_us_location_codes_become_city_and_state(monkeypatch):
+    """"US-NC-Havelock" is "Havelock, NC": the same facts in the shape the
+    location facets read. Anything else on the list page is kept as stated."""
+    api = FakeHTTP(
+        text={
+            _icims_search_url(0): _icims_page(
+                [
+                    _icims_card(1, "Athletic Trainer", "US-NC-Havelock"),
+                    _icims_card(2, "Athletic Trainer", "US-VA-JBLE-Fort Eustis"),
+                    _icims_card(3, "Engineer", "US-Remote"),
+                    _icims_card(4, "Coach", "Fort Bragg, NC"),
+                ]
+            ),
+            _icims_search_url(1): _icims_page([]),
+        }
+    )
+    postings = _run_icims(monkeypatch, api)
+    assert [p.location for p in postings] == [
+        "Havelock, NC",
+        "JBLE-Fort Eustis, VA",
+        "US-Remote",
+        "Fort Bragg, NC",
+    ]
+
+
 def test_icims_resolves_relative_hrefs_and_drops_off_origin_cards(monkeypatch):
     api = FakeHTTP(
         text={
