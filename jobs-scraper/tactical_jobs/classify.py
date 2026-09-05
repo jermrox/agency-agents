@@ -199,11 +199,11 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "fitness instructor": 3.5,
     "fitness program manager": 3.5,
     "sports specialist": 3.0,
-    # Below the floor on purpose: any MWR posting mentions the fitness center
-    # in passing (an AFSOC graphic designer's did), and a title that names it
-    # ("Recreation Assistant (Fitness Center)") still clears the floor on the
-    # title multiplier.
-    "fitness center": 2.0,
+    # Worth the floor because "Recreation Assistant (Fitness Center)" is an
+    # installation fitness role and the title is all it says; a passing
+    # mention in an MWR graphic designer's posting is stopped by the
+    # single-mention rule in classify(), not by the weight.
+    "fitness center": 3.0,
     "conditioning coach": 3.5,
     # Sports medicine / rehab.
     "athletic trainer": 4.0,
@@ -244,15 +244,20 @@ DISCIPLINE_TERMS: dict[str, float] = {
     # clinical social workers and psychologists on every POTFF unit, and the
     # board has carried them under its behavioral-health facet since day one
     # while this list never named the titles -- they were passing on a stray
-    # "human performance" in the body. The bare professions are worth less
-    # than the floor on purpose: at 2.5 a title alone carried every military
-    # treatment facility social worker, a prison mental-health specialist
-    # and a substance-abuse counselling supervisor onto the board. A SOF
-    # psychologist's posting always corroborates itself ("human performance"
-    # is in every POTFF description); a clinic's does not.
+    # "human performance" in the body. The clinical titles are worth the
+    # floor; the bare professions are worth less than it on purpose. At 2.5
+    # "social worker" alone carried every National Guard clinic social
+    # worker, a prison mental-health specialist and a substance-abuse
+    # counselling supervisor onto the board, and "psychologist" alone a
+    # Bethesda research psychologist. "Clinical Psychologist" at a military
+    # treatment facility is on the board on the same footing as its
+    # physical therapists; "Social Worker" at a Guard wing is not.
     "licensed clinical social worker": 3.5,
-    "clinical social worker": 1.0,
+    "clinical social worker": 3.0,
     "social worker": 1.0,
+    "operational psychologist": 4.0,
+    "clinical psychologist": 3.0,
+    "licensed psychologist": 3.0,
     "psychologist": 1.0,
     # Sleep / recovery / physiology.
     "sleep scientist": 3.0,
@@ -287,7 +292,10 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "occupational therapist": 3.0,
     "physician assistant": 2.0,
     "chiropractor": 2.5,
-    "massage therapist": 2.0,
+    # Worth the floor: LMR Technical Group staffs massage therapists on its
+    # Air Force human performance teams, and the title is what those
+    # postings say. The domain floor keeps spa work off the board.
+    "massage therapist": 3.0,
     "manual therapy": 2.5,
     "physical therapy technician": 3.0,
     "rehabilitation specialist": 3.0,
@@ -342,6 +350,10 @@ EXCLUSION_TERMS: tuple[str, ...] = (
     # managers and an ICE behavioral-health case manager both reached the
     # board once "social worker" and "psychologist" became discipline terms.
     "case manager",
+    # The Marine Corps Substance Abuse Counseling Center programme: its
+    # supervisor posting names a clinical psychologist and a social worker
+    # on staff, which is the whole of its discipline evidence.
+    "substance assessment counseling",
 )
 
 # Terms whose presence in the *title* is worth extra, since a title is a much
@@ -517,6 +529,9 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     posting.score = domain_score + discipline_score
     posting.tags = _derive_tags(domain_hits, discipline_hits, posting)
 
+    # The discipline evidence has to be worth something on its own. Two
+    # failure shapes, both seen on 2026-09-05:
+    #
     # A single mention in the body is not a discipline. Long federal and
     # contractor announcements name the fitness center, "human performance"
     # or "health promotion" once in passing, and one such mention at the
@@ -526,7 +541,14 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # at least two distinct discipline terms in its text: every genuine
     # human performance job has that much vocabulary (an R2PC Performance
     # Expert names five), and no passing mention does.
-    if title_discipline <= 0 and len(set(discipline_hits)) < 2:
+    #
+    # And a profession weighted below the floor cannot lift itself over it
+    # by repetition: "Social Worker" in the title plus "social worker" three
+    # times in the body is still one weak signal, and it carried four
+    # National Guard clinic social workers. At least one of the terms hit
+    # must be worth the floor by itself.
+    strong = any(DISCIPLINE_TERMS[hit] >= thresholds.min_discipline for hit in discipline_hits)
+    if not strong or (title_discipline <= 0 and len(set(discipline_hits)) < 2):
         return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical

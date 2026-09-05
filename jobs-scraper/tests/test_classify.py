@@ -392,6 +392,18 @@ def test_bare_clinical_professions_need_the_performance_context():
         "Provides clinical social work services to beneficiaries at the medical center.",
     )
     assert classify(clinic) == Verdict.REJECT
+    # Air National Guard "SOCIAL WORKER" at Fairchild AFB: the title term
+    # repeated three times in the body is still one weak signal.
+    guard = _posting(
+        "SOCIAL WORKER",
+        "Air National Guard Units",
+        "Fairchild AFB, Washington",
+        "The social worker serves as the wing's social worker. The social worker "
+        "provides counseling to Airmen in support of combat operational readiness. "
+        "A licensed social worker is required.",
+    )
+    assert classify(guard) == Verdict.REJECT
+    assert guard.discipline_hits == ["social worker"]
     # Case management is care coordination, never human performance, whatever
     # team it sits on (KBR's SOF nurse case managers, an ICE behavioral
     # health case manager).
