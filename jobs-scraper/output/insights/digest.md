@@ -1,24 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-04.*
+*Briefing generated 2026-09-05.*
 
 ## Headline
 
-- **139 open jobs** from **23 employers**.
-- Posted between **2026-07-02** and **2026-09-04**.
-- **$85,738 median** annualized pay across the 91 postings that publish one -- $62,197 to $117,365 covers the middle half.
+- **140 open jobs** from **23 employers**.
+- Posted between **2026-07-02** and **2026-09-05**.
+- **$85,738 median** annualized pay across the 92 postings that publish one -- $61,433 to $117,158 covers the middle half.
 - **2% remote-friendly** (3 jobs).
-- 153 of 292 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 133, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 14.
+- 154 of 294 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 134, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 14.
 
 ## Month over month
 
-Postings are **down -61** in 2026-09 (95 to 34), 64% against 2026-08.
+Postings are **down -58** in 2026-09 (94 to 36), 62% against 2026-08.
 
 ```
 2026-07    10  ###
-2026-08    95  ############################
-2026-09    34  ##########
+2026-08    94  ############################
+2026-09    36  ###########
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -47,7 +47,7 @@ Postings are **down -61** in 2026-09 (95 to 34), 64% against 2026-08.
 | Commander, Navy Installations Command | 16 | $45,500 | Sports Medicine, Strength & Conditioning |
 | Military Treatment Facilities under DHA | 12 | $102,935 | Sports Medicine, Research & Analytics |
 | Customs and Border Protection | 8 | $129,124 | - |
-| U.S. Marine Corps | 5 | $35,360 | Sports Medicine, Strength & Conditioning |
+| U.S. Marine Corps | 6 | $37,638 | Sports Medicine, Strength & Conditioning |
 | Veterans Health Administration | 5 | $75,202 | Program Leadership, Sports Medicine |
 | The Geneva Foundation | 4 | $62,197 | Sports Medicine, Strength & Conditioning |
 | Bureau of Prisons/Federal Prison System | 3 | $79,630 | Sports Medicine |
@@ -56,9 +56,9 @@ Postings are **down -61** in 2026-09 (95 to 34), 64% against 2026-08.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 60 | 56% |
-| Sports Medicine | 55 | 51% |
-| Cognitive Performance | 23 | 22% |
+| Strength & Conditioning | 61 | 56% |
+| Sports Medicine | 56 | 52% |
+| Cognitive Performance | 23 | 21% |
 | Research & Analytics | 14 | 13% |
 | Program Leadership | 13 | 12% |
 | Performance Nutrition | 13 | 12% |
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$85,738**, middle half $62,197 to $117,365.
+- Median **$85,738**, middle half $61,433 to $117,158.
 - Full range $34,320 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -92,9 +92,9 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 6 | $87,291 | $91,950 | $92,738 |
 | Research & Analytics | 6 | $64,713 | $90,457 | $98,738 |
 | Sport Science | 1 | $85,738 | $85,738 | $85,738 |
-| Sports Medicine | 39 | $59,321 | $84,000 | $107,427 |
-| Strength & Conditioning | 22 | $52,062 | $66,582 | $86,793 |
+| Sports Medicine | 40 | $58,890 | $83,362 | $107,396 |
 | Program Leadership | 10 | $62,783 | $65,375 | $74,552 |
+| Strength & Conditioning | 23 | $47,840 | $62,783 | $86,442 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
@@ -116,7 +116,7 @@ annual contractor bands are not otherwise comparable.
 | JBLM | 3 |
 | MacDill AFB | 3 |
 
-**Branches and services:** Army (48), Joint (35), Navy (18), Air Force (11), Marine Corps (5), Coast Guard (1)
+**Branches and services:** Army (48), Joint (35), Navy (18), Air Force (11), Marine Corps (6), Coast Guard (1)
 
 ## Most common titles
 

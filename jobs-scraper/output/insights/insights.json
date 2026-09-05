@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-04T21:13:26.081125+00:00",
+  "generated_at": "2026-09-05T11:03:04.524497+00:00",
   "totals": {
-    "postings": 292,
+    "postings": 294,
     "employers": 23,
-    "unique_jobs": 139,
-    "with_salary": 91,
+    "unique_jobs": 140,
+    "with_salary": 92,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-04T15:13:01.437000+00:00"
+      "latest": "2026-09-05T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -77,14 +77,14 @@
     },
     {
       "name": "U.S. Marine Corps",
-      "count": 5,
+      "count": 6,
       "disciplines": [
         "sports-medicine",
         "strength-conditioning",
         "leadership",
         "research"
       ],
-      "median_salary": 35360.0
+      "median_salary": 37637.6
     },
     {
       "name": "Veterans Health Administration",
@@ -153,38 +153,38 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 60,
-      "share": 0.5607,
-      "median_salary": 66582.15
+      "count": 61,
+      "share": 0.5648,
+      "median_salary": 62782.81
     },
     {
       "name": "sports-medicine",
-      "count": 55,
-      "share": 0.514,
-      "median_salary": 84000.0
+      "count": 56,
+      "share": 0.5185,
+      "median_salary": 83362.25
     },
     {
       "name": "cognitive",
       "count": 23,
-      "share": 0.215,
+      "share": 0.213,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1308,
+      "share": 0.1296,
       "median_salary": 90457.0
     },
     {
       "name": "leadership",
       "count": 13,
-      "share": 0.1215,
+      "share": 0.1204,
       "median_salary": 65375.15
     },
     {
       "name": "nutrition",
       "count": 13,
-      "share": 0.1215,
+      "share": 0.1204,
       "median_salary": 91950.0
     },
     {
@@ -197,23 +197,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 133,
-      "share": 0.9708
+      "count": 134,
+      "share": 0.971
     },
     {
       "name": "sof",
       "count": 41,
-      "share": 0.2993
+      "share": 0.2971
     },
     {
       "name": "training-pipeline",
       "count": 24,
-      "share": 0.1752
+      "share": 0.1739
     },
     {
       "name": "first-responder",
       "count": 14,
-      "share": 0.1022
+      "share": 0.1014
     }
   ],
   "by_branch": [
@@ -235,7 +235,7 @@
     },
     {
       "name": "Marine Corps",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Coast Guard",
@@ -346,6 +346,10 @@
       "count": 4
     },
     {
+      "code": "HI",
+      "count": 3
+    },
+    {
       "code": "MD",
       "count": 3
     },
@@ -359,10 +363,6 @@
     },
     {
       "code": "AL",
-      "count": 2
-    },
-    {
-      "code": "CT",
       "count": 2
     }
   ],
@@ -408,28 +408,28 @@
     }
   ],
   "salary": {
-    "count": 91,
+    "count": 92,
     "min": 34320.0,
     "max": 219654.0,
     "median": 85738.0,
-    "p25": 62197.2,
-    "p75": 117365.0,
+    "p25": 61433.3,
+    "p75": 117158.25,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 22,
+        "count": 23,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 66582.15,
-        "p25": 52062.4,
-        "p75": 86793.25
+        "median": 62782.81,
+        "p25": 47840.0,
+        "p75": 86441.5
       },
       "sports-medicine": {
-        "count": 39,
+        "count": 40,
         "min": 34320.0,
         "max": 219654.0,
-        "median": 84000.0,
-        "p25": 59321.0,
-        "p75": 107427.0
+        "median": 83362.25,
+        "p25": 58889.5,
+        "p75": 107395.75
       },
       "nutrition": {
         "count": 6,
@@ -475,7 +475,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0216
+    "share": 0.0214
   },
   "timeline": [
     {
@@ -484,16 +484,16 @@
     },
     {
       "month": "2026-08",
-      "count": 95
+      "count": 94
     },
     {
       "month": "2026-09",
-      "count": 34
+      "count": 36
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-06T15:13:01.437000+00:00",
+    "pivot": "2026-06-07T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -533,9 +533,9 @@
       },
       {
         "name": "U.S. Marine Corps",
-        "recent": 5,
+        "recent": 6,
         "previous": 0,
-        "change": 5
+        "change": 6
       },
       {
         "name": "Veterans Health Administration",
