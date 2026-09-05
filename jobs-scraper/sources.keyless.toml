@@ -95,6 +95,14 @@ tenant = "kbr"
 site = "KBR_Careers"
 data_center = "wd5"
 employer = "KBR"
+# Workday lists open requisitions only, and KBR keeps SOF billets open for
+# months: 13 still-open tactical postings were being dropped as "stale" at
+# 45 days (audit 2026-09-05). Age says nothing here; the liveness sweep
+# retires a posting when Workday reports it gone.
+max_age_days = 0
+# Workday returns only what is searched for, so every discipline the board
+# carries needs its own term. The second group was added 2026-09-05 after the
+# coverage audit found no block searched for them anywhere.
 search_terms = [
   "strength and conditioning",
   "athletic trainer",
@@ -102,6 +110,15 @@ search_terms = [
   "performance dietitian",
   "cognitive performance",
   "physical therapist",
+  "occupational therapist",
+  "exercise physiologist",
+  "sports medicine",
+  "massage therapist",
+  "psychologist",
+  "licensed clinical social worker",
+  "fitness specialist",
+  "performance expert",
+  "holistic health and fitness",
 ]
 
 # --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
@@ -130,6 +147,8 @@ tenant = "gdit"
 site = "External_Career_Site"
 data_center = "wd5"
 employer = "General Dynamics Information Technology"
+# Open requisitions only (see KBR); the liveness sweep handles closure.
+max_age_days = 0
 search_terms = [
   "strength and conditioning",
   "athletic trainer",
@@ -138,6 +157,14 @@ search_terms = [
   "cognitive performance",
   "physical therapist",
   "occupational therapist",
+  "exercise physiologist",
+  "sports medicine",
+  "massage therapist",
+  "psychologist",
+  "licensed clinical social worker",
+  "fitness specialist",
+  "performance expert",
+  "holistic health and fitness",
 ]
 
 # --- VERIFIED LIVE 2026-08-28 -----------------------------------------------
@@ -156,6 +183,9 @@ tenant = "genevausa"
 site = "CareersAtGeneva"
 data_center = "wd5"
 employer = "The Geneva Foundation"
+# Open requisitions only (see KBR); six still-open H2F and research postings
+# were past 45 days on 2026-09-05. The liveness sweep handles closure.
+max_age_days = 0
 search_terms = [
   "strength and conditioning",
   "athletic trainer",
@@ -163,6 +193,15 @@ search_terms = [
   "performance dietitian",
   "cognitive performance",
   "physical therapist",
+  "occupational therapist",
+  "exercise physiologist",
+  "sports medicine",
+  "massage therapist",
+  "psychologist",
+  "licensed clinical social worker",
+  "fitness specialist",
+  "performance expert",
+  "holistic health and fitness",
 ]
 
 # CHECKED 2026-08-28 -- primes whose Workday tenants are now CONFIRMED to
@@ -280,6 +319,13 @@ url_include = [
   "Human-Performance",
   "Cognitive-Performance",
   "Exercise-Physiolog",
+  # Added 2026-09-05 (coverage audit): H2F behavioral-health, fitness and
+  # massage billets whose URLs carry none of the fragments above.
+  "Psycholog",
+  "Fitness",
+  "Massage",
+  "Social-Worker",
+  "Sports-Medicine",
 ]
 
 # [[source]]
@@ -352,6 +398,10 @@ optional = true
 api_key = "${USAJOBS_API_KEY}"
 user_agent = "${USAJOBS_USER_AGENT}"   # the email you registered
 max_pages = 4
+# USAJOBS returns open announcements only (each carries its own close date),
+# and DHA keeps clinical announcements open for months: six still-open PT/OT
+# postings were past 45 days on 2026-09-05. The liveness sweep handles closure.
+max_age_days = 0
 keywords = [
   "human performance",
   "strength and conditioning",
@@ -363,6 +413,18 @@ keywords = [
   "tactical fitness",
   "sports medicine",
   "physical therapist",
+  # Added 2026-09-05 (coverage audit): the disciplines and the Marine Corps
+  # and Army programme names no keyword above reaches. USAJOBS returns the
+  # full announcement in the search response, so a keyword costs at most
+  # max_pages requests and no detail fetches; the classifier does the rest.
+  "occupational therapist",
+  "massage therapist",
+  "fitness specialist",
+  "health promotion",
+  "performance psychologist",
+  "resilience",
+  "HITT",
+  "WARR",
 ]
 
 

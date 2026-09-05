@@ -79,6 +79,63 @@ def test_jsonfeed_ages_out_old_entries(tmp_path):
     assert remaining["jobs"][0]["id"] == make("2").identity
 
 
+def _age(path: Path, listed_at: str, liveness: dict | None = None) -> None:
+    board = json.loads(path.read_text())
+    board["jobs"][0]["listed_at"] = listed_at
+    if liveness is not None:
+        board["jobs"][0]["liveness"] = liveness
+    path.write_text(json.dumps(board))
+
+
+def test_a_posting_the_source_still_lists_outlives_retain_days(tmp_path):
+    """The employer kept the requisition open past 45 days and its source
+    sent it again this run. Pruning it would drop a live job for a night and
+    re-list it tomorrow with a new date."""
+    path = tmp_path / "jobs.json"
+    JSONFeedPublisher({"path": str(path)}).publish([make("1")])
+    _age(path, "2020-01-01T00:00:00+00:00")
+
+    JSONFeedPublisher({"path": str(path), "retain_days": 45}).publish([make("1")])
+    board = json.loads(path.read_text())
+    assert board["count"] == 1
+    # The original listing date survives: the retention clock is not reset.
+    assert board["jobs"][0]["listed_at"] == "2020-01-01T00:00:00+00:00"
+
+
+def test_a_verified_live_entry_outlives_retain_days(tmp_path):
+    """Not re-sent this run (a detail fetch failed, say), but the liveness
+    sweep just confirmed the link is open: that is proof enough to keep it."""
+    path = tmp_path / "jobs.json"
+    JSONFeedPublisher({"path": str(path)}).publish([make("1")])
+    checked = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    _age(path, "2020-01-01T00:00:00+00:00", {"state": "live", "checked_at": checked})
+
+    JSONFeedPublisher({"path": str(path), "retain_days": 45}).publish([])
+    assert json.loads(path.read_text())["count"] == 1
+
+
+def test_an_old_entry_nothing_vouches_for_still_ages_out(tmp_path):
+    path = tmp_path / "jobs.json"
+    publisher = JSONFeedPublisher({"path": str(path), "retain_days": 45})
+
+    # An unverifiable link (the employer's site blocks the sweep).
+    JSONFeedPublisher({"path": str(path)}).publish([make("1")])
+    checked = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    _age(path, "2020-01-01T00:00:00+00:00", {"state": "unknown", "checked_at": checked})
+    publisher.publish([])
+    assert json.loads(path.read_text())["count"] == 0
+
+    # A "live" verdict from long ago says nothing about today.
+    JSONFeedPublisher({"path": str(path)}).publish([make("1")])
+    _age(
+        path,
+        "2020-01-01T00:00:00+00:00",
+        {"state": "live", "checked_at": "2020-01-02T00:00:00+00:00"},
+    )
+    publisher.publish([])
+    assert json.loads(path.read_text())["count"] == 0
+
+
 def test_the_board_shows_the_current_post_names(tmp_path):
     """Fort Liberty is Fort Bragg. The rewrite covers entries carried from an
     earlier publish as well as the run's own, so a board published with the

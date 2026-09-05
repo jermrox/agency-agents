@@ -16,7 +16,7 @@ from the feed removes it from the page, with no stale-post cleanup.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
 from pathlib import Path
 from typing import Sequence
@@ -27,6 +27,23 @@ from ..models import JobPosting
 from .base import Publisher
 
 EXCERPT_CHARS = 400
+
+LIVE_VERDICT_MAX_AGE_DAYS = 7
+"""A liveness verdict older than this says nothing about the posting today."""
+
+
+def _verified_live(job: dict, now: datetime) -> bool:
+    """True when the liveness sweep recently confirmed the posting is open."""
+    liveness = job.get("liveness")
+    if not isinstance(liveness, dict) or liveness.get("state") != "live":
+        return False
+    try:
+        checked = datetime.fromisoformat(str(liveness.get("checked_at") or ""))
+    except ValueError:
+        return False
+    if checked.tzinfo is None:
+        checked = checked.replace(tzinfo=timezone.utc)
+    return checked >= now - timedelta(days=LIVE_VERDICT_MAX_AGE_DAYS)
 
 
 def _as_datetime(value: str | None) -> datetime:
@@ -144,15 +161,25 @@ class JSONFeedPublisher(Publisher):
                 if isinstance(value, str) and value:
                     job[field] = canonical_place_names(value)
 
-        # Age out old entries so the board does not accumulate dead links.
+        # Age out old entries so the board does not accumulate dead links --
+        # but only entries nothing vouches for. Retention used to prune by
+        # listed_at alone, so a posting the employer kept open past
+        # retain_days vanished for a night and came back the next morning as
+        # "new" with a fresh date. Two things prove a posting is still open:
+        # its source sent it again this run (it passed that source's own
+        # staleness rule to get here), or the liveness sweep just confirmed
+        # the link. Either keeps the entry, with its original listed_at, so
+        # the retention clock is never reset. Entries that could not be
+        # verified still age out.
         cutoff = now.timestamp() - retain_days * 86400
+        resent = {posting.identity for posting in postings}
         kept = []
         for job in merged.values():
             try:
                 listed = datetime.fromisoformat(job.get("listed_at", "")).timestamp()
             except ValueError:
                 listed = now.timestamp()
-            if listed >= cutoff:
+            if listed >= cutoff or job.get("id") in resent or _verified_live(job, now):
                 kept.append(job)
 
         kept.sort(key=lambda j: (j.get("listed_at") or "", j.get("score", 0)), reverse=True)
