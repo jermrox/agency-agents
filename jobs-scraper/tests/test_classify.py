@@ -352,6 +352,27 @@ _CBP_BOILERPLATE = (
 )
 
 
+def test_repeating_the_applicant_fitness_requirement_does_not_make_it_a_job():
+    # Acuity International "Protective Security Specialists - WPS III
+    # (Somalia)", 2026-09-05: "physical readiness" three times in the
+    # candidate requirements, and three times the demoted weight cleared the
+    # discipline floor alone.
+    p = _posting(
+        "Protective Security Specialists - WPS III (Somalia)",
+        employer="Acuity International",
+        location="Reston, VA",
+        description=(
+            "Provides protective security for Chief of Mission personnel. Must pass "
+            "the physical readiness test at hire. Physical readiness standards are "
+            "maintained throughout deployment; a physical readiness assessment is "
+            "repeated annually. Prior military or law enforcement experience; veteran "
+            "preferred."
+        ),
+    )
+    assert classify(p, Thresholds()) == Verdict.REJECT
+    assert p.discipline_hits == ["physical readiness"]
+
+
 def test_cbp_officer_is_rejected_on_the_discipline_axis():
     p = _posting("CBP Officer", employer="Customs and Border Protection",
                  location="Ketchikan, Alaska", description=_CBP_BOILERPLATE)

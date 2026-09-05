@@ -332,6 +332,17 @@ Long federal postings repeat "Soldier" 40 times; without a cap a single
 verbose listing would outrank every genuinely relevant one.
 """
 
+SINGLE_COUNT_TERMS: frozenset[str] = frozenset({"physical readiness"})
+"""Terms counted once no matter how often the description repeats them.
+
+"physical readiness" was demoted below the discipline floor because it
+appears in applicant requirements ("pass the physical readiness test"), and
+a requirement on the candidate is not evidence about the work. Repetition
+does not change that: an Acuity International protective-security posting
+for Somalia said it three times, and three times the demoted weight cleared
+the floor on its own. Counted once, it needs corroboration as intended.
+"""
+
 
 SERVICE_CONTEXT_WEIGHT = 3.5
 """Domain credit for a posting whose service branch can be identified.
@@ -400,7 +411,8 @@ def _score_axis(
         needle = re.sub(r"[^a-z0-9]+", " ", term)
         padded = f" {needle} "
         in_title = padded in title
-        body_count = min(body.count(padded), DESCRIPTION_CAP)
+        cap = 1 if term in SINGLE_COUNT_TERMS else DESCRIPTION_CAP
+        body_count = min(body.count(padded), cap)
         if not in_title and body_count == 0:
             continue
         hits.append(term)
