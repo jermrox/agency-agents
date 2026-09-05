@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .enrich import enrich
+from .enrich import canonical_place_names, enrich
 from .facets import facets_for
 from .models import JobPosting
 
@@ -226,6 +226,11 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     posting.facets = facets_for(posting)
 
     entry = posting.to_public_dict()
+    # Same rule as the jsonfeed publisher: the board shows the post names in
+    # force today, whatever name the employer's system still emits.
+    for field in ("title", "location"):
+        if entry.get(field):
+            entry[field] = canonical_place_names(entry[field])
     entry["id"] = str(row.get("id") or posting.source_id)
     entry["confidence"] = confidence_of(row)
     entry["program"] = row.get("program") or posting.enrichment.get("program")

@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Sequence
 from xml.sax.saxutils import escape
 
+from ..enrich import canonical_place_names
 from ..models import JobPosting
 from .base import Publisher
 
@@ -131,6 +132,17 @@ class JSONFeedPublisher(Publisher):
             newer["listed_at"] = older.get("listed_at") or newer.get("listed_at")
             by_url[key] = newer
         merged = {job["id"]: job for job in by_url.values()}
+
+        # The reader sees the post names in force today. Employer systems
+        # still emit the 2023-2025 interim names, and an entry carried from an
+        # earlier run keeps whatever text it was published with, so this runs
+        # over every entry, new and carried, on every publish. The archive
+        # keeps the employer's original text; only the board is rewritten.
+        for job in merged.values():
+            for field in ("title", "location"):
+                value = job.get(field)
+                if isinstance(value, str) and value:
+                    job[field] = canonical_place_names(value)
 
         # Age out old entries so the board does not accumulate dead links.
         cutoff = now.timestamp() - retain_days * 86400

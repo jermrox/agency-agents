@@ -97,6 +97,13 @@ def test_native_rows_pass_through_and_gain_facets():
     assert entry["facets"]["salary_floor_annual"] == 78000
 
 
+def test_normalize_row_shows_the_current_post_names():
+    """Same rule as the publisher: Fort Liberty is Fort Bragg on the board."""
+    entry = normalize_row({**LEGACY_ROW, "location": "Fort Liberty, NC / Fort Moore, GA"})
+    assert entry["location"] == "Fort Bragg, NC / Fort Benning, GA"
+    assert entry["facets"]["location_classes"] == ["conus"]
+
+
 def test_normalize_feed_publishes_the_badge_definitions():
     out = normalize_feed({"generated": "2026-08-03", "jobs": [LEGACY_ROW]})
     assert out["version"] == FEED_VERSION

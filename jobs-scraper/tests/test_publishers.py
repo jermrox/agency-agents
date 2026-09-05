@@ -79,6 +79,28 @@ def test_jsonfeed_ages_out_old_entries(tmp_path):
     assert remaining["jobs"][0]["id"] == make("2").identity
 
 
+def test_the_board_shows_the_current_post_names(tmp_path):
+    """Fort Liberty is Fort Bragg. The rewrite covers entries carried from an
+    earlier publish as well as the run's own, so a board published with the
+    interim name corrects itself on the next publish."""
+    path = tmp_path / "jobs.json"
+    JSONFeedPublisher({"path": str(path)}).publish([make("1")])
+    carried = json.loads(path.read_text())
+    carried["jobs"][0]["title"] = "SOF Athletic Trainer (Fort Liberty, NC)"
+    carried["jobs"][0]["location"] = "Fort Liberty, North Carolina"
+    path.write_text(json.dumps(carried))
+
+    fresh = make("2", title="H2F: Strength & Conditioning Coach - Fort Lee, VA")
+    fresh.location = "Fort Gregg-Adams, Virginia, USA; Virginia, USA; Fort Lee, Virginia, USA"
+    JSONFeedPublisher({"path": str(path)}).publish([fresh])
+
+    by_id = {job["id"]: job for job in json.loads(path.read_text())["jobs"]}
+    assert by_id[make("1").identity]["title"] == "SOF Athletic Trainer (Fort Bragg, NC)"
+    assert by_id[make("1").identity]["location"] == "Fort Bragg, North Carolina"
+    assert by_id[fresh.identity]["location"] == "Fort Lee, Virginia, USA; Virginia, USA"
+    assert by_id[fresh.identity]["title"] == fresh.title
+
+
 def test_jsonfeed_recovers_from_corrupt_file(tmp_path):
     path = tmp_path / "jobs.json"
     path.write_text("{ not json")
