@@ -442,6 +442,8 @@ kind = "jsonld"
 name = "magellan"
 sitemap = "https://careers.magellanhealth.com/sitemap.xml"
 employer = "Magellan Health"
+# Open jobs only, as Serco (same platform).
+max_age_days = 0
 max_urls = 120
 url_include = [
   "Strength",
@@ -474,6 +476,10 @@ kind = "jsonld"
 name = "serco"
 sitemap = "https://careers.serco-na.com/sitemap.xml"
 employer = "Serco"
+# Phenom sitemaps list open jobs only (a closed job leaves the sitemap), so
+# age says nothing here either; the liveness sweep and the source-absence
+# rule retire closed ones. Audit 2026-09-05.
+max_age_days = 0
 max_urls = 120
 url_include = [
   "H2F",
@@ -593,6 +599,10 @@ keywords = [
   "resilience",
   "HITT",
   "WARR",
+  # USAJOBS returns nothing for "athletic trainer" (an API quirk, checked
+  # 2026-09-05: 0 results, "athletic" 59, "trainer" 72), so the bare word
+  # is what finds federal athletic trainers.
+  "athletic",
 ]
 
 
