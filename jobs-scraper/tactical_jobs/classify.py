@@ -396,20 +396,24 @@ never reach is veterans' health care: VA clinics sit on former bases
 
 _VETERANS_CARE_RE = re.compile(
     r"\bveterans?\s+(?:health|affairs|benefits)\b|\bVHA\b|\bVA\s+medical\b"
-    r"|\bdepartment\s+of\s+veterans\b|\bindian\s+health\s+service\b",
+    r"|\bdepartment\s+of\s+veterans\b|\bindian\s+health\s+service\b"
+    r"|\bbureau\s+of\s+prisons\b|\bfederal\s+prison\s+system\b",
     re.I,
 )
-"""Employers whose postings are civilian health care, not tactical work.
+"""Employers whose postings are civilian care of a non-tactical population.
 
-The Veterans Health Administration and the Indian Health Service. Their
-announcements are full of military vocabulary that is about the applicant,
-not the job: "military physical therapy assistant programs" among the
-qualifying credentials, "active duty" and "uniformed" for the Public Health
-Service Commissioned Corps status a hire may hold, "veteran" throughout.
-Read as domain evidence, that put a VA staff physical therapist in Abilene
-and an IHS physician assistant on the board the day USAJOBS was searched
-for more disciplines. Neither employer does tactical human performance
-work, so their postings are rejected outright.
+The Veterans Health Administration, the Indian Health Service and the
+Bureau of Prisons. Their announcements are full of vocabulary that is about
+the applicant or the agency, not the job: "military physical therapy
+assistant programs" among the qualifying credentials, "active duty" and
+"uniformed" for the Public Health Service Commissioned Corps status a hire
+may hold, "veteran" throughout, "public safety" for the prison system's
+law-enforcement standing. Read as domain evidence, that put a VA staff
+physical therapist in Abilene, an IHS physician assistant and two federal
+prison psychologists on the board the day USAJOBS was searched for more
+disciplines. None of the three does tactical human performance work, so
+their postings are rejected outright. (A wellness role for correctional
+officers would be lost with them; none has been seen.)
 """
 
 

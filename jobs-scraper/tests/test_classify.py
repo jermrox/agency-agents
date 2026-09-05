@@ -326,6 +326,14 @@ def test_civilian_health_care_employers_are_rejected_outright():
         "service. Physician assistant providing health promotion and primary care.",
     )
     assert classify(ihs) == Verdict.REJECT
+    bop = _posting(
+        "Clinical Psychologist (Chief Psychologist)",
+        "Bureau of Prisons/Federal Prison System",
+        "Three Rivers, Texas",
+        "Doctoral degree in clinical psychology required. The Bureau of Prisons is a "
+        "public safety agency; military spouse preference applies.",
+    )
+    assert classify(bop) == Verdict.REJECT
 
 
 def test_a_single_body_mention_is_not_a_discipline():
