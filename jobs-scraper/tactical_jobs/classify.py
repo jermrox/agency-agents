@@ -197,12 +197,16 @@ DISCIPLINE_TERMS: dict[str, float] = {
     # so demoting it would have dropped them too. They earn it on their own now.
     "fitness specialist": 3.5,
     "fitness instructor": 3.5,
+    "fitness trainer": 3.5,
     # The Marine Corps' own fitness programme; its instructor titles carry
     # on the programme name, spelled out or not.
     "hitt": 3.5,
     "high intensity tactical training": 4.0,
     "fitness program manager": 3.5,
-    "sports specialist": 3.0,
+    # "sports specialist" is deliberately absent: on an installation it is
+    # intramural and team sports administration (Army IMCOM, Navy MWR), and
+    # its youth-programme form teaches children. The Navy's "Sports
+    # Specialist (Fitness Trainer)" carries on "fitness trainer".
     # Worth the floor because "Recreation Assistant (Fitness Center)" is an
     # installation fitness role and the title is all it says; a passing
     # mention in an MWR graphic designer's posting is stopped by the
@@ -385,6 +389,51 @@ TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
     "physician",
 )
 
+# Title exclusions with NO override: these describe the population or the
+# job itself, and no discipline word in the same title changes that.
+# "Fitness Specialist (CYS)" is a fitness specialist for children, and a
+# "Recreation Assistant (Fitness Center)" opens the building, cleans the
+# equipment and keeps the league standings whatever the parenthesis says.
+HARD_TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
+    # Youth programmes: Army Child and Youth Services "Fitness Specialist
+    # (CYS)" and "Sports Specialist (CYS)" teach children of service members
+    # and support volunteer youth coaches. The population is not tactical.
+    "cys",
+    "child and youth",
+    "youth",
+    # Facility staff.
+    "recreation assistant",
+    "recreation aid",
+    "recreation attendant",
+    # Research administration: a coordinator's day is record keeping and
+    # liaison, whatever the study is about.
+    "research coordinator",
+    "research assistant",
+)
+
+# Umbrella hiring notices whose whole title is a category ("Medical", the
+# Air Force direct-hire notice listing occupations): not a job.
+UMBRELLA_TITLES: frozenset[str] = frozenset({"medical", "medical services", "healthcare", "health care"})
+
+# A clinician's title needs a named programme or unit. "Clinical
+# Psychologist" at a military treatment facility and "Social Worker" at a
+# Guard wing are hospital and clinic work; the same titles on a POTFF, H2F
+# or special operations team are the embedded behavioral health the board
+# carries. The test is whether the posting names such a programme or unit:
+# any domain term worth CLINICAL_CONTEXT_WEIGHT or more (POTFF, H2F, special
+# operations, WARR, the named units), not the generic "military" or the
+# installation's service context.
+CLINICAL_TITLE_TERMS: tuple[str, ...] = (
+    "social worker",
+    "psychologist",
+    "psychology",
+    "counselor",
+    "counsellor",
+    "mental health",
+    "behavioral health",
+)
+CLINICAL_CONTEXT_WEIGHT = 3.5
+
 # Terms whose presence in the *title* is worth extra, since a title is a much
 # stronger claim about the job than a passing mention in the body.
 TITLE_MULTIPLIER = 2.5
@@ -534,6 +583,20 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
         posting.exclusion_hits = title_excluded
         posting.score = 0.0
         return Verdict.REJECT
+    hard_excluded = [
+        term
+        for term in HARD_TITLE_EXCLUSION_TERMS
+        if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
+    ]
+    if hard_excluded:
+        posting.exclusion_hits = hard_excluded
+        posting.score = 0.0
+        return Verdict.REJECT
+    bare_title = " ".join(re.sub(r"[^a-z0-9]+", " ", posting.title.lower()).split())
+    if bare_title in UMBRELLA_TITLES:
+        posting.exclusion_hits = ["umbrella notice"]
+        posting.score = 0.0
+        return Verdict.REJECT
 
     # Civilian health care for veterans and tribal communities is never
     # tactical work, whatever military vocabulary the announcement carries
@@ -593,6 +656,13 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # must be worth the floor by itself.
     strong = any(DISCIPLINE_TERMS[hit] >= thresholds.min_discipline for hit in discipline_hits)
     if not strong or (title_discipline <= 0 and len(set(discipline_hits)) < 2):
+        return Verdict.REJECT
+
+    # A clinician's title needs a named programme or unit (CLINICAL_TITLE_TERMS).
+    clinical_title = any(f" {term} " in title for term in CLINICAL_TITLE_TERMS)
+    if clinical_title and not any(
+        DOMAIN_TERMS.get(hit, 0.0) >= CLINICAL_CONTEXT_WEIGHT for hit in domain_hits
+    ):
         return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical

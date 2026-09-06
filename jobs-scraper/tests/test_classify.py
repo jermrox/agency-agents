@@ -607,3 +607,99 @@ class TestVetoYieldsToAnUnmistakableTitle:
                 "of the load test suite; human performance dashboards for special operations.")
         assert classify(self._posting("Performance Test Engineer", body)) == Verdict.REJECT
         assert classify(self._posting("Senior Performance Engineer", body)) == Verdict.REJECT
+
+
+def test_youth_programmes_and_facility_staff_are_not_performance_jobs():
+    """Read from the live board 2026-09-05: Army Child and Youth Services
+    fitness and sports specialists teach children; Navy and Space Force
+    "Recreation Assistant (Fitness Center)" posts open the building and clean
+    the equipment. Neither is the job the board exists for, whatever
+    discipline word the title also carries."""
+    cys = _posting(
+        "Fitness Specialist (CYS) NF-03",
+        "United States Army Installation Management Command",
+        "Fort Benning, Georgia",
+        "Shares expertise in age-appropriate exercises and skills development for "
+        "children and youth; supports installation volunteer sports coaches.",
+    )
+    assert classify(cys) == Verdict.REJECT
+    assert "cys" in cys.exclusion_hits
+    attendant = _posting(
+        "Recreation Assistant - Pearl Harbor Fitness Center",
+        "Commander, Navy Installations Command",
+        "Honolulu, Hawaii",
+        "Opens and readies the fitness center, cleans equipment and prepares league "
+        "schedules for service members under Navy Fitness, Sports and Aquatics standards.",
+    )
+    assert classify(attendant) == Verdict.REJECT
+    intramural = _posting(
+        "Sports Specialist NF-03",
+        "United States Army Installation Management Command",
+        "Schofield Barracks, Hawaii",
+        "Plans and administers a sports program of individual and team sports for "
+        "soldiers and families.",
+    )
+    assert classify(intramural) == Verdict.REJECT
+    # Installation fitness delivered to service members stays.
+    trainer = _posting(
+        "Recreation Specialist - Fitness Specialist",
+        "Commander, Navy Installations Command",
+        "Virginia Beach, Virginia",
+        "Designs, leads and evaluates individual and group exercise programs for "
+        "active duty service members.",
+    )
+    assert classify(trainer) == Verdict.PUBLISH
+    navy = _posting(
+        "Sports Specialist (Fitness Trainer)",
+        "Commander, Navy Installations Command",
+        "Groton, Connecticut",
+        "Instructs active duty sailors in strength and conditioning and leads fitness classes.",
+    )
+    assert classify(navy) == Verdict.PUBLISH
+
+
+def test_research_administration_and_umbrella_notices_are_not_jobs():
+    coordinator = _posting(
+        "Clinical Research Coordinator",
+        "The Geneva Foundation",
+        "West Point, NY",
+        "Principal administration liaison for a musculoskeletal injury study at Keller "
+        "Army Community Hospital; maintains record keeping systems; coordinates "
+        "physical therapy and sports medicine investigators.",
+    )
+    assert classify(coordinator) == Verdict.REJECT
+    umbrella = _posting(
+        "Medical",
+        "Department of the Air Force Headquarters",
+        "Location Negotiable After Selection",
+        "Direct hire authority occupations: physical therapist, occupational "
+        "therapist, nutritionist, physician assistant.",
+    )
+    assert classify(umbrella) == Verdict.REJECT
+    assert umbrella.exclusion_hits == ["umbrella notice"]
+
+
+def test_a_clinician_needs_a_named_programme_or_unit():
+    clinic = _posting(
+        "Supervisory Clinical Psychologist",
+        "Military Treatment Facilities under DHA",
+        "Fort Polk, Louisiana",
+        "Conducts psychological evaluations and establishes psychiatric diagnoses for "
+        "beneficiaries of the military treatment facility.",
+    )
+    assert classify(clinic) == Verdict.REJECT
+    guard = _posting(
+        "SOCIAL WORKER",
+        "Army National Guard Units",
+        "Carson City, Nevada",
+        "Provides behavioral health services to Soldiers of the National Guard; "
+        "return to duty determinations and health promotion.",
+    )
+    assert classify(guard) == Verdict.REJECT
+    sof = _posting(
+        "Special Operations Clinical Psychologist (Dam Neck, VA)",
+        "KBR",
+        "Virginia Beach, Virginia",
+        "Embedded behavioral health on the POTFF team.",
+    )
+    assert classify(sof) == Verdict.PUBLISH
