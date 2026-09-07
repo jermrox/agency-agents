@@ -1,149 +1,117 @@
 <title>H2F Scout Board</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+  /* MOPs and MOEs board theme — tokens lifted from the site's board template:
+     white ground, #1c1e1c ink, #e3e5e2 rules, #2f3e33 accent,
+     badges verified #2e7d43 / high #a87b1f / aggregator #6b7280 / contingent #b3502f.
+     Light-committed, like the Squarespace board. Type stays neutral because the
+     embeddable board inherits the site's face rather than declaring one. */
   :root {
-    --paper:        #F1F2EC;
-    --surface:      #FBFBF7;
-    --ink:          #171A15;
-    --ink-soft:     #48524A;
-    --ink-faint:    #6E786F;
-    --rule:         #D6D9CE;
-    --rule-soft:    #E4E7DC;
-    --olive:        #4B5320;
-    --olive-bright: #6B7530;
-    --brass:        #8A6210;
-    --teal:         #2F5D5B;
-    --alert:        #8C2F2A;
-    --chip-bg:      #E6E9DD;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper:        #14170F;
-      --surface:      #1C2016;
-      --ink:          #E9EBE0;
-      --ink-soft:     #AEB6A6;
-      --ink-faint:    #838C7C;
-      --rule:         #2E3427;
-      --rule-soft:    #262B20;
-      --olive:        #A3B152;
-      --olive-bright: #B9C767;
-      --brass:        #D3A343;
-      --teal:         #6FAFA9;
-      --alert:        #DB7A6F;
-      --chip-bg:      #262C1D;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper:        #14170F;
-    --surface:      #1C2016;
-    --ink:          #E9EBE0;
-    --ink-soft:     #AEB6A6;
-    --ink-faint:    #838C7C;
-    --rule:         #2E3427;
-    --rule-soft:    #262B20;
-    --olive:        #A3B152;
-    --olive-bright: #B9C767;
-    --brass:        #D3A343;
-    --teal:         #6FAFA9;
-    --alert:        #DB7A6F;
-    --chip-bg:      #262C1D;
+    --paper:    #ffffff;
+    --panel:    #f2f4f1;
+    --ink:      #1c1e1c;
+    --notes:    #4b4f4b;
+    --muted:    #6b7280;
+    --rule:     #e3e5e2;
+    --accent:   #2f3e33;
+    --verified: #2e7d43;
+    --high:     #a87b1f;
+    --contingent: #b3502f;
   }
 
   * { box-sizing: border-box; }
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.5;
     margin: 0;
-    padding: 0 20px 72px;
+    padding: 0 20px 64px;
   }
-  .wrap { max-width: 1120px; margin: 0 auto; }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  a { color: var(--accent); }
 
   /* ---------- masthead ---------- */
   header.masthead {
-    border-bottom: 2px solid var(--ink);
-    padding: 32px 0 14px;
+    border-bottom: 1px solid var(--rule);
+    padding: 30px 0 16px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 16px 32px;
+    gap: 14px 32px;
   }
   .brand h1 {
-    font-family: Oswald, "Arial Narrow", sans-serif;
-    font-weight: 600;
-    font-size: clamp(30px, 5vw, 46px);
-    letter-spacing: .015em;
-    line-height: 1.02;
+    font-size: clamp(24px, 3.6vw, 32px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.2;
     margin: 0;
+    color: var(--accent);
     text-wrap: balance;
-    text-transform: uppercase;
   }
-  .brand p {
-    color: var(--ink-soft);
-    margin: 8px 0 0;
-    max-width: 60ch;
-  }
+  .brand p { color: var(--notes); margin: 8px 0 0; max-width: 62ch; font-size: 14px; }
   .dtg {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
     font-size: 12px;
-    color: var(--ink-soft);
+    color: var(--muted);
     text-align: right;
     line-height: 1.9;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
   }
-  .dtg b { color: var(--ink); font-weight: 500; }
+  .dtg b { color: var(--ink); font-weight: 600; }
 
   /* ---------- verification notice ---------- */
   .notice {
-    border-left: 4px solid var(--alert);
-    background: var(--surface);
-    padding: 14px 18px;
-    margin: 22px 0 0;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--contingent);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 20px 0 0;
     display: grid;
     gap: 6px;
   }
   .notice h2 {
-    font-family: Oswald, sans-serif;
-    font-size: 13px;
-    letter-spacing: .09em;
+    font-size: 10px;
+    letter-spacing: .06em;
     text-transform: uppercase;
+    font-weight: 700;
     margin: 0;
-    color: var(--alert);
+    color: var(--contingent);
   }
-  .notice p { margin: 0; color: var(--ink-soft); font-size: 14px; max-width: 88ch; }
+  .notice p { margin: 0; color: var(--notes); font-size: 13px; max-width: 90ch; }
+  .notice code { background: #fff; border: 1px solid var(--rule); border-radius: 3px; padding: 0 4px; font-size: 12px; }
 
   /* ---------- tallies ---------- */
   .tally {
     display: flex;
     flex-wrap: wrap;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    margin-top: 26px;
+    gap: 10px;
+    margin-top: 20px;
   }
   .tally div {
-    padding: 0 26px 16px 0;
-    margin-right: 26px;
-    border-right: 1px solid var(--rule-soft);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    flex: 1 1 140px;
   }
-  .tally div:last-child { border-right: 0; }
   .tally .n {
-    font-family: Oswald, sans-serif;
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     line-height: 1;
+    color: var(--accent);
     font-variant-numeric: tabular-nums;
   }
   .tally .k {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 10.5px;
-    letter-spacing: .1em;
+    font-size: 10px;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    font-weight: 700;
+    color: var(--muted);
     display: block;
-    margin-top: 7px;
+    margin-top: 8px;
   }
 
   /* ---------- controls ---------- */
@@ -152,191 +120,167 @@
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--rule);
-    position: sticky;
-    top: 0;
-    background: var(--paper);
-    z-index: 5;
+    padding: 18px 0;
   }
   #q {
     font: inherit;
     font-size: 14px;
     color: var(--ink);
-    background: var(--surface);
+    background: #fff;
     border: 1px solid var(--rule);
-    padding: 8px 12px;
-    width: 260px;
-    border-radius: 2px;
+    border-radius: 6px;
+    padding: 8px 10px;
+    width: 250px;
   }
-  #q::placeholder { color: var(--ink-faint); }
+  #q::placeholder { color: var(--muted); }
   .filter {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    background: transparent;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: #fff;
     border: 1px solid var(--rule);
-    padding: 7px 11px;
+    border-radius: 6px;
+    padding: 8px 14px;
     cursor: pointer;
-    border-radius: 2px;
   }
   .filter[aria-pressed="true"] {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--paper);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
   }
   .filter:focus-visible, #q:focus-visible, a:focus-visible {
-    outline: 2px solid var(--olive-bright);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
   .count-live {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
+    font-size: 13px;
+    color: var(--muted);
     margin-left: auto;
     font-variant-numeric: tabular-nums;
   }
 
   /* ---------- sections ---------- */
-  section { margin-top: 44px; }
+  section { margin-top: 32px; }
   section > h2 {
-    font-family: Oswald, sans-serif;
-    font-size: 15px;
-    letter-spacing: .13em;
+    font-size: 12px;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    margin: 0 0 3px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 4px;
   }
-  section > .sub {
-    color: var(--ink-faint);
-    font-size: 13.5px;
-    margin: 0 0 16px;
-    max-width: 70ch;
-  }
+  section > .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; max-width: 72ch; }
   section[hidden] { display: none; }
 
   /* ---------- entries ---------- */
   .entry {
-    display: grid;
-    grid-template-columns: 62px 1fr;
-    gap: 0 18px;
-    padding: 18px 0;
-    border-top: 1px solid var(--rule-soft);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: box-shadow .15s;
   }
-  .entry:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .entry:hover { box-shadow: 0 3px 12px rgba(28,30,28,.10); }
   .grade {
-    font-family: Oswald, sans-serif;
-    font-size: 12px;
-    letter-spacing: .06em;
+    display: inline-block;
+    color: #fff;
     text-transform: uppercase;
-    text-align: center;
-    padding: 4px 0;
-    height: fit-content;
-    border: 1px solid currentColor;
-    border-radius: 2px;
+    font-size: 10px;
+    letter-spacing: .06em;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
   }
-  .g-policy { color: var(--brass); }
-  .g-a, .g-b { color: var(--olive); }
-  .g-c, .g-d { color: var(--ink-faint); }
-  .g-s      { color: var(--teal); }
-  .g-prog   { color: var(--ink-soft); }
+  .g-policy, .g-doctrine { background: var(--high); }
+  .g-a, .g-b             { background: var(--verified); }
+  .g-c, .g-d             { background: var(--muted); }
+  .g-s                   { background: var(--accent); }
+  .g-prog                { background: var(--accent); }
 
-  .entry h3 {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 16.5px;
-    font-weight: 600;
-    line-height: 1.35;
-    margin: 0 0 5px;
-    text-wrap: balance;
-  }
-  .entry h3 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--olive); }
-  .entry h3 a:hover { color: var(--olive); }
-  .meta {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px;
-    color: var(--ink-faint);
-    margin: 0 0 8px;
-  }
-  .meta .pub { color: var(--ink-soft); }
-  .sowhat { margin: 0; color: var(--ink-soft); font-size: 14.5px; max-width: 78ch; }
+  .entry h3 { font-size: 17px; font-weight: 600; line-height: 1.35; margin: 0 0 6px; text-wrap: balance; }
+  .entry h3 a { color: var(--accent); text-decoration: none; }
+  .entry h3 a:hover { text-decoration: underline; }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+  .meta .pub { color: var(--notes); font-weight: 600; }
+  .sowhat { margin: 0; color: var(--notes); font-size: 13px; max-width: 88ch; }
   .sowhat b { color: var(--ink); font-weight: 600; }
-  .caveat { display: block; margin-top: 6px; font-size: 13.5px; color: var(--ink-faint); font-style: italic; }
+  .caveat { display: block; margin-top: 6px; color: var(--muted); font-style: italic; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .tag {
-    font-family: "IBM Plex Mono", monospace;
     font-size: 10px;
-    letter-spacing: .07em;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    background: var(--chip-bg);
-    color: var(--ink-soft);
-    padding: 3px 7px;
-    border-radius: 2px;
+    font-weight: 700;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    color: var(--notes);
+    padding: 3px 8px;
+    border-radius: 4px;
   }
 
   /* ---------- watch list ---------- */
-  .watch { display: grid; gap: 0; }
+  .watch { display: grid; gap: 12px; }
   .watch-item {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px;
     display: grid;
-    grid-template-columns: 34px 1fr auto;
-    gap: 0 16px;
+    grid-template-columns: 30px 1fr auto;
+    gap: 0 14px;
     align-items: start;
-    padding: 16px 0;
-    border-top: 1px solid var(--rule-soft);
   }
-  .watch-item:last-child { border-bottom: 1px solid var(--rule-soft); }
-  .watch-n {
-    font-family: Oswald, sans-serif;
-    font-size: 20px;
-    color: var(--olive);
-    line-height: 1.1;
-    font-variant-numeric: tabular-nums;
-  }
-  .watch-item h3 { font-size: 15.5px; font-weight: 600; margin: 0 0 4px; }
-  .watch-item p { margin: 0; color: var(--ink-soft); font-size: 14px; max-width: 76ch; }
+  .watch-n { font-size: 18px; font-weight: 700; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .watch-item h3 { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+  .watch-item p { margin: 0; color: var(--notes); font-size: 13px; max-width: 78ch; }
   .converge {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 10.5px;
-    letter-spacing: .07em;
+    font-size: 10px;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    font-weight: 700;
+    color: var(--muted);
     white-space: nowrap;
-    padding-top: 4px;
+    padding-top: 3px;
   }
 
   /* ---------- registry + footer ---------- */
-  .registry { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 0 28px; }
-  .registry div { padding: 12px 0; border-top: 1px solid var(--rule-soft); }
-  .registry a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
-  .registry a:hover { color: var(--olive); border-color: var(--olive); }
+  .registry { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 10px; }
+  .registry div { background: #fff; border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .registry a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .registry a:hover { text-decoration: underline; }
   .registry span {
     display: block;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 10.5px;
+    font-size: 10px;
     letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-top: 4px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-top: 5px;
   }
   footer {
-    margin-top: 52px;
-    padding-top: 18px;
-    border-top: 2px solid var(--ink);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px;
-    color: var(--ink-faint);
-    line-height: 1.85;
+    margin-top: 28px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
   }
   .empty {
-    padding: 34px 0;
-    color: var(--ink-faint);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
+    text-align: center;
+    padding: 32px;
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 13px;
   }
-  @media (max-width: 620px) {
-    .entry { grid-template-columns: 1fr; gap: 10px; }
-    .grade { justify-self: start; padding: 4px 12px; }
+  @media (max-width: 560px) {
+    .controls { flex-direction: column; align-items: stretch; }
+    #q, .filter { width: 100%; }
+    .count-live { margin-left: 0; }
     .dtg { text-align: left; }
+    .watch-item { grid-template-columns: 1fr; gap: 8px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
@@ -389,8 +333,7 @@
     <p class="sub">Authoritative on what is <em>required</em>. Says nothing about what works — that is the research section's job.</p>
 
     <article class="entry" data-tags="physical h2f mental nutrition sleep">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://media.defense.gov/2026/Jul/15/2003961654/-1/-1/1/HEALTH%20AND%20HUMAN%20PERFORMANCE%20OPTIMIZATION%20TO%20ENHANCE%20MILITARY%20READINESS%20OSD004430-26%20RES%20FINAL.PDF">Health and Human Performance Optimization to Enhance Military Readiness</a></h3>
         <p class="meta">Secretary of War memo · <span class="pub">media.defense.gov</span> · reported 15 JUL 2026</p>
         <p class="sowhat">Department-level memo on health and human performance optimization. Search text indicates it directs Personnel &amp; Readiness policy updates, including to DoDI 6200.06 (Periodic Health Assessment), on a stated August 2026 timeline.
@@ -400,8 +343,7 @@
     </article>
 
     <article class="entry" data-tags="physical h2f mental">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://media.defense.gov/2026/Jul/15/2003961653/-1/-1/1/WARFIGHTER%20PERFORMANCE%20OPTIMIZATION%20-%20TOTAL%20FORCE%20FITNESS%20OSD014355-25%20RES%20FINAL.PDF">Warfighter Performance Optimization — Total Force Fitness</a></h3>
         <p class="meta">Secretary of War memo · <span class="pub">media.defense.gov</span> · reported 06 MAY 2026</p>
         <p class="sowhat">Companion memo to the above. Search text describes cognitive performance being established as a core occupational readiness competency measured with the same discipline as physical standards, plus a pipeline for fielding wearables and data analytics across Total Force Fitness domains.
@@ -411,8 +353,7 @@
     </article>
 
     <article class="entry" data-tags="physical">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://api.army.mil/e2/c/downloads/2026/04/29/858da01e/cft-army-directive.pdf">Army Directive 2026-07, Army Physical Fitness Standards</a></h3>
         <p class="meta">Army directive (PDF) · <span class="pub">api.army.mil</span> · reported 29 APR 2026</p>
         <p class="sowhat">Directive behind the current physical fitness standards, including the Combat Field Test (CFT) implementation beginning April 2026 for Soldiers in 24 designated combat MOSs.
@@ -422,8 +363,7 @@
     </article>
 
     <article class="entry" data-tags="physical">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://www.army.mil/aft/">Army Fitness Test (AFT) — program page and standards</a></h3>
         <p class="meta">Program page · <span class="pub">army.mil</span> · continuously updated</p>
         <p class="sowhat">The AFT replaced the ACFT on 1 June 2025. Reported scoring: combat MOSs move to one sex-neutral, age-normed standard requiring 350 total with a 60-point event minimum, effective 1 JAN 2026 (active) and 1 JUN 2026 (RC); combat-enabling specialties keep sex- and age-normed scoring at 300.
@@ -433,8 +373,7 @@
     </article>
 
     <article class="entry" data-tags="physical h2f mental nutrition sleep">
-      <div class="grade g-policy">Doctrine</div>
-      <div>
+      <div><span class="grade g-doctrine">Doctrine</span>
         <h3><a href="https://armypubs.army.mil/ProductMaps/PubForm/Details.aspx?PUB_ID=1020968">FM 7-22, Holistic Health and Fitness</a></h3>
         <p class="meta">Field manual · <span class="pub">Army Publishing Directorate</span> · base edition OCT 2020</p>
         <p class="sowhat">The doctrinal foundation of H2F: five readiness domains, unit-level experts, and the physical and non-physical components of Soldier readiness. Everything else on this board sits downstream of it.
@@ -444,8 +383,7 @@
     </article>
 
     <article class="entry" data-tags="physical">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://www.af.mil/News/Article-Display/Article/4418303/air-force-modernizes-physical-fitness-program-to-bolster-readiness-long-term-he/">Air Force modernizes Physical Fitness Program</a></h3>
         <p class="meta">Service announcement · <span class="pub">af.mil</span> · 2026</p>
         <p class="sowhat">Reported timeline: PFA testing pauses 1 JAN 2026 for transition, new-standard testing begins 1 MAR 2026, diagnostic-only through 31 AUG 2026, scored testing resumes 1 SEP 2026. Reintroduces a scored body-composition component (waist-to-height) and a two-mile run.
@@ -455,8 +393,7 @@
     </article>
 
     <article class="entry" data-tags="physical">
-      <div class="grade g-policy">Policy</div>
-      <div>
+      <div><span class="grade g-policy">Policy</span>
         <h3><a href="https://www.mynavyhr.navy.mil/Support-Services/Culture-Resilience/Physical-Readiness/">Navy Physical Readiness Program — 2026 cycle changes</a></h3>
         <p class="meta">Program page + NAVADMIN fact sheet · <span class="pub">mynavyhr.navy.mil</span> · 2026</p>
         <p class="sowhat">Two PFA cycles per calendar year in 2026 (Cycle 1: 1 JAN–30 JUN; Cycle 2: 1 JUL–31 DEC), with revised Body Composition Assessment procedures and a changed High-Performance BCA exemption policy.
@@ -472,8 +409,7 @@
     <p class="sub">Graded A–D. Population, design, and sample size belong in every line — where they are missing below, it is because the abstract was not read.</p>
 
     <article class="entry" data-tags="injury physical">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41734198/">Enhancing Military Musculoskeletal Readiness: A Proposal for Collaboration</a></h3>
         <p class="meta">Barlow BT et al. · <span class="pub">PubMed 41734198</span> · reported FEB 2026</p>
         <p class="sowhat">Position/proposal paper arguing that musculoskeletal injury remains the largest threat to readiness, deployability, and retention, and that the many existing programs need alignment plus more civilian–military partnership.
@@ -483,8 +419,7 @@
     </article>
 
     <article class="entry" data-tags="injury women physical">
-      <div class="grade g-b">B</div>
-      <div>
+      <div><span class="grade g-b">B</span>
         <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12410583/">Females Exhibit Greater Peak and Cumulative Patellofemoral Joint Stress With Moderate and Heavy Load Carriage Compared With Males</a></h3>
         <p class="meta">Journal article · <span class="pub">PMC12410583</span> · recent</p>
         <p class="sowhat">Biomechanics study on sex differences in patellofemoral joint stress under moderate and heavy load. Relevant to the reported 1.3–2.2× higher incidence of patellofemoral pain in female versus male recruits.
@@ -494,8 +429,7 @@
     </article>
 
     <article class="entry" data-tags="women">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42495932/">Perimenopause and menopause among active-duty military service women</a></h3>
         <p class="meta">Scoping review · <span class="pub">PubMed 42495932</span> · reported 2026</p>
         <p class="sowhat">Scoping review extending military women's health research past the traditional load-carriage and injury literature into midlife health — a population question the force has largely not addressed.
@@ -505,8 +439,7 @@
     </article>
 
     <article class="entry" data-tags="women injury">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38847606/">Pelvic Floor Disorders Among U.S. Military Active-Duty Females</a></h3>
         <p class="meta">Retrospective analysis · <span class="pub">PubMed 38847606</span></p>
         <p class="sowhat">Companion literature reports 497,255 active-duty service women identified, of whom 9.93% had a pelvic floor disorder — a prevalence large enough to be a readiness issue, not a niche one.
@@ -516,8 +449,7 @@
     </article>
 
     <article class="entry" data-tags="sleep mental">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://news.usuhs.edu/2026/06/at-sleep-and-fatigue-management-summit.html">At Sleep and Fatigue Management Summit, Military Experts Call Rest a Readiness Issue</a></h3>
         <p class="meta">Summit report · <span class="pub">USU News</span> · JUN 2026</p>
         <p class="sowhat">Reported from the summit: nearly 85% of deployed service members sleep less than the recommended seven hours; most report six hours or less, a deficit speakers compared to the cognitive impairment of legal intoxication.
@@ -527,8 +459,7 @@
     </article>
 
     <article class="entry" data-tags="sleep">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://cdp.usuhs.edu/blog/highlights-2026-sleep-and-fatigue-management-dow-convening">Highlights from the 2026 Sleep and Fatigue Management Convening Event</a></h3>
         <p class="meta">Center for Deployment Psychology · <span class="pub">cdp.usuhs.edu</span> · 2026</p>
         <p class="sowhat">Practitioner-facing writeup of the same convening — the more useful of the two if you are building unit-level sleep programming rather than briefing leadership.</p>
@@ -537,8 +468,7 @@
     </article>
 
     <article class="entry" data-tags="nutrition physical">
-      <div class="grade g-c">C</div>
-      <div>
+      <div><span class="grade g-c">C</span>
         <h3><a href="https://www.army.mil/article/285565/carbohydrate_supplementation_for_enhanced_physical_performance_during_military_operations">Carbohydrate Supplementation for Enhanced Physical Performance During Military Operations</a></h3>
         <p class="meta">USARIEM research feature · <span class="pub">army.mil</span></p>
         <p class="sowhat">USARIEM work on whether carbohydrate supplementation preserves physical performance during operationally relevant caloric deficits — matching caloric demand at high operational tempo often is not feasible, so the question is what to do about the gap.
@@ -548,8 +478,7 @@
     </article>
 
     <article class="entry" data-tags="physical">
-      <div class="grade g-b">B</div>
-      <div>
+      <div><span class="grade g-b">B</span>
         <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7662950/">Effects of Task-Specific and Strength Training on Simulated Military Task Performance in Soldiers</a></h3>
         <p class="meta">Controlled training study · <span class="pub">PMC7662950</span> · older, still load-bearing</p>
         <p class="sowhat">42 soldiers, three groups (task-specific, strength, control), 12-week intervention with pre/mid/post measurement on a repeated simulated military task course. Both training arms beat control; task-specific was as effective as strength training, supporting a combined approach.
@@ -565,8 +494,7 @@
     <p class="sub">Incidence and independent assessment. Describes what is happening across the force; establishes no causation.</p>
 
     <article class="entry" data-tags="injury physical">
-      <div class="grade g-s">S</div>
-      <div>
+      <div><span class="grade g-s">S</span>
         <h3><a href="https://www.health.mil/Reference-Center/Reports/2026/05/01/MSMR-Vol-33-No-5-May-2026">MSMR Vol. 33 No. 5 — heat illness, active component</a></h3>
         <p class="meta">Armed Forces Health Surveillance Division · <span class="pub">health.mil</span> · MAY 2026</p>
         <p class="sowhat">Reported to carry annual heat illness incident cases and rates by service for the active component, 2021–2025, plus heat stroke cases by encounter type and diagnosis year.
@@ -576,8 +504,7 @@
     </article>
 
     <article class="entry" data-tags="injury">
-      <div class="grade g-s">S</div>
-      <div>
+      <div><span class="grade g-s">S</span>
         <h3><a href="https://ph.health.mil/topics/workplacehealth/ergo/Pages/Military-Musculoskeletal-Injuries.aspx">Military Musculoskeletal Injuries — Defense Centers for Public Health, Aberdeen</a></h3>
         <p class="meta">Surveillance topic page · <span class="pub">ph.health.mil</span> · continuously updated</p>
         <p class="sowhat">The standing DoD public-health page for MSK injury. Related literature reports that in 2019, 55% of the active-component Army population reported an injury and 72% of those were overuse — the numbers that justify most H2F physical-domain staffing.
@@ -587,8 +514,7 @@
     </article>
 
     <article class="entry" data-tags="mental">
-      <div class="grade g-s">S</div>
-      <div>
+      <div><span class="grade g-s">S</span>
         <h3><a href="https://www.gao.gov/products/gao-26-109066">National Security Snapshot: DOD's Military Health System Reforms and Challenges</a></h3>
         <p class="meta">GAO-26-109066 · <span class="pub">gao.gov</span> · reported 25 JUN 2026</p>
         <p class="sowhat">Independent assessment of MHS reform. Reported scope figures: 9.4 million beneficiaries, 700+ facilities, 100,000+ employees, and an estimated FY2027 budget above $72.5B.
@@ -604,8 +530,7 @@
     <p class="sub">Where the work is actually being run and paid for — and the reference sites worth a permanent bookmark.</p>
 
     <article class="entry" data-tags="h2f physical">
-      <div class="grade g-prog">Program</div>
-      <div>
+      <div><span class="grade g-prog">Program</span>
         <h3><a href="https://www.army.mil/article/294839/h2f_proponency_transitions_to_the_mcoe_advancing_the_armys_holistic_health_and_fitness_system">H2F Proponency Transitions to the Maneuver Center of Excellence</a></h3>
         <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
         <p class="sowhat">H2F Directorate reported to have moved from TRADOC/CIMT to MCoE at Fort Benning, aligned under the new Transformation and Training Command (T2COM).
@@ -615,8 +540,7 @@
     </article>
 
     <article class="entry" data-tags="h2f physical">
-      <div class="grade g-prog">Program</div>
-      <div>
+      <div><span class="grade g-prog">Program</span>
         <h3><a href="https://www.army.mil/article/294841/h2f_system_update_organization_manning_h2f_for_the_total_force">H2F System Update: Manning H2F for the Total Force</a></h3>
         <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
         <p class="sowhat">Fielding status as reported: 41 HPTs and 1 AST fielding across combined FY25–26, for 90 HPTs and 2 ASTs fielded or in process; all 11 divisions have received personnel and equipment to begin fielding.
@@ -626,8 +550,7 @@
     </article>
 
     <article class="entry" data-tags="h2f physical mental">
-      <div class="grade g-prog">Program</div>
-      <div>
+      <div><span class="grade g-prog">Program</span>
         <h3><a href="https://www.army.mil/article/292580/human_performance_programs_recognized_for_excellence_at_symposium">Human performance programs recognized for excellence at H2F Symposium</a></h3>
         <p class="meta">Army news · <span class="pub">army.mil</span> · symposium held 12–14 MAY 2026</p>
         <p class="sowhat">2026 "Best in Class" recognition. Physical domain winner reported as 1st IBCT, 11th Airborne Division, for a "Wolf Recovery" initiative putting every warfighter who spent 2+ weeks forward through a standardized 90-minute session touching all five domains.
@@ -637,8 +560,7 @@
     </article>
 
     <article class="entry" data-tags="h2f">
-      <div class="grade g-prog">Portal</div>
-      <div>
+      <div><span class="grade g-prog">Portal</span>
         <h3><a href="https://h2f.army.mil/">Holistic Health and Fitness (H2F) — official program site</a></h3>
         <p class="meta">Program portal · <span class="pub">h2f.army.mil</span> · continuously updated</p>
         <p class="sowhat">The program's own site, including domain pages, unit resources, and an H2F-in-the-News feed. First stop for anything H2F before going to secondary coverage.</p>
@@ -647,8 +569,7 @@
     </article>
 
     <article class="entry" data-tags="nutrition">
-      <div class="grade g-prog">Program</div>
-      <div>
+      <div><span class="grade g-prog">Program</span>
         <h3><a href="https://www.army.mil/article/290526/army_launches_revolutionary_campus_style_dining_to_modernize_soldier_fueling">Army launches campus-style dining to modernize Soldier fueling</a></h3>
         <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
         <p class="sowhat">Army Food Program Strategy rollout: campus-style dining venues, Victory Fresh, distributed dining, and the FEED program, with the first of five pilot venues reported open and expansion planned to additional installations.
@@ -658,8 +579,7 @@
     </article>
 
     <article class="entry" data-tags="nutrition">
-      <div class="grade g-prog">Reference</div>
-      <div>
+      <div><span class="grade g-prog">Reference</span>
         <h3><a href="https://www.hprc-online.org/nutrition/warfighter-nutrition-guide">Warfighter Nutrition Guide — HPRC (CHAMP)</a></h3>
         <p class="meta">DoD human performance resource · <span class="pub">hprc-online.org</span></p>
         <p class="sowhat">The Department's own evidence-translation resource for performance nutrition, including chapters on supplements and on sleep and activity in post-deployment recovery. This is the citable alternative when someone brings you a supplement-company claim.</p>
@@ -668,8 +588,7 @@
     </article>
 
     <article class="entry" data-tags="nutrition">
-      <div class="grade g-prog">Reference</div>
-      <div>
+      <div><span class="grade g-prog">Reference</span>
         <h3><a href="https://www.hprc-online.org/page/human-performance-optimization/nutrition-dietary-supplements">Operation Supplement Safety (OPSS)</a></h3>
         <p class="meta">DoD-wide program · <span class="pub">hprc-online.org</span></p>
         <p class="sowhat">The DoD-wide effort on dietary supplement safety — the right first check when a supplement question involves adverse events or drug-test risk rather than performance claims.</p>
@@ -678,8 +597,7 @@
     </article>
 
     <article class="entry" data-tags="injury mental physical">
-      <div class="grade g-prog">Funding</div>
-      <div>
+      <div><span class="grade g-prog">Funding</span>
         <h3><a href="https://cdmrp.health.mil/pubs/press/2026/FY26_Appropriations">CDMRP announces $1.27B across 34 research programs for FY2026</a></h3>
         <p class="meta">CDMRP press release · <span class="pub">cdmrp.health.mil</span> · reported FEB 2026</p>
         <p class="sowhat">FY26 appropriations reported at $1.27B across 34 programs. Most relevant lines for this beat: the Orthopaedic Research Program, the Combat Readiness–Medical Research Program, and the Joint Warfighter Medical Research Program.
