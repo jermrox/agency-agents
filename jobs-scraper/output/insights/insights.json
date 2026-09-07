@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-06T21:02:35.753794+00:00",
+  "generated_at": "2026-09-07T13:08:21.474885+00:00",
   "totals": {
-    "postings": 307,
+    "postings": 309,
     "employers": 23,
-    "unique_jobs": 140,
-    "with_salary": 92,
+    "unique_jobs": 141,
+    "with_salary": 93,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-06T00:00:00+00:00"
+      "latest": "2026-09-07T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -50,7 +50,7 @@
     },
     {
       "name": "Commander, Navy Installations Command",
-      "count": 16,
+      "count": 17,
       "disciplines": [
         "sports-medicine",
         "strength-conditioning",
@@ -58,7 +58,7 @@
         "nutrition",
         "research"
       ],
-      "median_salary": 45500.0
+      "median_salary": 45760.0
     },
     {
       "name": "Military Treatment Facilities under DHA",
@@ -197,23 +197,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 134,
-      "share": 0.971
+      "count": 135,
+      "share": 0.9712
     },
     {
       "name": "sof",
       "count": 41,
-      "share": 0.2971
+      "share": 0.295
     },
     {
       "name": "training-pipeline",
       "count": 24,
-      "share": 0.1739
+      "share": 0.1727
     },
     {
       "name": "first-responder",
       "count": 14,
-      "share": 0.1014
+      "share": 0.1007
     }
   ],
   "by_branch": [
@@ -227,7 +227,7 @@
     },
     {
       "name": "Navy",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Air Force",
@@ -318,12 +318,12 @@
       "count": 11
     },
     {
-      "code": "GA",
+      "code": "FL",
       "count": 9
     },
     {
-      "code": "FL",
-      "count": 8
+      "code": "GA",
+      "count": 9
     },
     {
       "code": "CA",
@@ -408,12 +408,12 @@
     }
   ],
   "salary": {
-    "count": 92,
+    "count": 93,
     "min": 34320.0,
     "max": 219654.0,
     "median": 85738.0,
-    "p25": 61433.3,
-    "p75": 117158.25,
+    "p25": 59750.0,
+    "p75": 116951.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 23,
@@ -475,7 +475,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0214
+    "share": 0.0213
   },
   "timeline": [
     {
@@ -484,16 +484,16 @@
     },
     {
       "month": "2026-08",
-      "count": 91
+      "count": 90
     },
     {
       "month": "2026-09",
-      "count": 39
+      "count": 41
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-08T00:00:00+00:00",
+    "pivot": "2026-06-09T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -515,9 +515,9 @@
       },
       {
         "name": "Commander, Navy Installations Command",
-        "recent": 16,
+        "recent": 17,
         "previous": 0,
-        "change": 16
+        "change": 17
       },
       {
         "name": "Military Treatment Facilities under DHA",
@@ -677,7 +677,7 @@
       "count": 2
     },
     {
-      "title": "Supervisory CBP Officer (Assistant Port Director)",
+      "title": "Sports Specialist (Fitness)",
       "count": 2
     }
   ]

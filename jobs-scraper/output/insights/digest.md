@@ -1,24 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-06.*
+*Briefing generated 2026-09-07.*
 
 ## Headline
 
-- **140 open jobs** from **23 employers**.
-- Posted between **2026-07-02** and **2026-09-06**.
-- **$85,738 median** annualized pay across the 92 postings that publish one -- $61,433 to $117,158 covers the middle half.
+- **141 open jobs** from **23 employers**.
+- Posted between **2026-07-02** and **2026-09-07**.
+- **$85,738 median** annualized pay across the 93 postings that publish one -- $59,750 to $116,952 covers the middle half.
 - **2% remote-friendly** (3 jobs).
-- 167 of 307 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 134, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 14.
+- 168 of 309 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 135, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 14.
 
 ## Month over month
 
-Postings are **down -52** in 2026-09 (91 to 39), 57% against 2026-08.
+Postings are **down -49** in 2026-09 (90 to 41), 54% against 2026-08.
 
 ```
 2026-07    10  ###
-2026-08    91  ############################
-2026-09    39  ############
+2026-08    90  ############################
+2026-09    41  #############
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -26,7 +26,7 @@ Postings are **down -52** in 2026-09 (91 to 39), 57% against 2026-08.
 - Serco USA: 0 to 26
 - KBR: 0 to 25
 - General Dynamics Information Technology: 0 to 19
-- Commander, Navy Installations Command: 0 to 16
+- Commander, Navy Installations Command: 0 to 17
 - Military Treatment Facilities under DHA: 0 to 12
 
 **Credentials appearing more often:**
@@ -44,7 +44,7 @@ Postings are **down -52** in 2026-09 (91 to 39), 57% against 2026-08.
 | Serco USA | 26 | - | Strength & Conditioning, Cognitive Performance |
 | KBR | 25 | $91,950 | Strength & Conditioning, Sports Medicine |
 | General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
-| Commander, Navy Installations Command | 16 | $45,500 | Sports Medicine, Strength & Conditioning |
+| Commander, Navy Installations Command | 17 | $45,760 | Sports Medicine, Strength & Conditioning |
 | Military Treatment Facilities under DHA | 12 | $102,935 | Sports Medicine, Research & Analytics |
 | Customs and Border Protection | 8 | $129,124 | - |
 | U.S. Marine Corps | 6 | $37,638 | Sports Medicine, Strength & Conditioning |
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$85,738**, middle half $61,433 to $117,158.
+- Median **$85,738**, middle half $59,750 to $116,952.
 - Full range $34,320 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -101,7 +101,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** VA (12), NC (11), TX (11), GA (9), FL (8), CA (7), NM (7), WA (6), CO (4), MO (4)
+**States:** VA (12), NC (11), TX (11), FL (9), GA (9), CA (7), NM (7), WA (6), CO (4), MO (4)
 
 | Installation | Jobs |
 |---|---|
@@ -116,7 +116,7 @@ annual contractor bands are not otherwise comparable.
 | JBLM | 3 |
 | MacDill AFB | 3 |
 
-**Branches and services:** Army (48), Joint (35), Navy (18), Air Force (11), Marine Corps (6), Coast Guard (1)
+**Branches and services:** Army (48), Joint (35), Navy (19), Air Force (11), Marine Corps (6), Coast Guard (1)
 
 ## Most common titles
 
