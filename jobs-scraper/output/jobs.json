@@ -1,8 +1,115 @@
 {
   "version": 2,
-  "generated_at": "2026-09-07T21:54:32.211687+00:00",
-  "count": 169,
+  "generated_at": "2026-09-08T11:52:54.796919+00:00",
+  "count": 171,
   "jobs": [
+    {
+      "id": "92f3edada4fa2b02b36b",
+      "fingerprint": "0b5cee445eef48227c13",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/883716900",
+      "title": "WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP SCHWAB",
+      "employer": "U.S. Marine Corps",
+      "location": "Camp Foster, Japan",
+      "remote": false,
+      "department": null,
+      "compensation": "$16.00 - $17.00 /hr",
+      "posted_at": null,
+      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS",
+          "TSAC-F"
+        ],
+        "clearance": null,
+        "salary_min": 16.0,
+        "salary_max": 17.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": 2,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 33280.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-08T11:52:54.796919+00:00"
+    },
+    {
+      "id": "9cd728903a281ea9a874",
+      "fingerprint": "80abf7504f892b82f489",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/883711700",
+      "title": "Physical Therapist",
+      "employer": "Bureau of Prisons/Federal Prison System",
+      "location": "Tucson, Arizona",
+      "remote": false,
+      "department": null,
+      "compensation": "$64,990 - $83,862 /yr",
+      "posted_at": null,
+      "description": "To be considered for the position, you must meet the following qualification requirements. Basic Requirements: A graduate or higher level degree that included: A physical therapy curriculum approved by the Commission on Accreditation of Allied Health Programs (CAAHEP) or a professional accrediting organization recognized by the U.S. Department of Education at the time the degree was obtained; AND\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 64990.0,
+        "salary_max": 83862.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 64990.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-08T11:52:54.796919+00:00"
+    },
     {
       "id": "c17955114820a171f0b1",
       "fingerprint": "301db46197a9c6524f69",
@@ -1556,7 +1663,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:54+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -1989,60 +2096,6 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
-      "id": "a0a3826b699f78b120f4",
-      "fingerprint": "006b5f5bdb61ef0506ce",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/881825500",
-      "title": "HITT INSTRUCTOR-LEVEL I, NF-0189-02",
-      "employer": "U.S. Marine Corps",
-      "location": "Jacksonville, North Carolina",
-      "remote": false,
-      "department": null,
-      "compensation": "$16.92 /hr",
-      "posted_at": null,
-      "description": "What are we looking for? One year of experience within the health/fitness industry is preferred. Possess and maintain a basic level personal training certification from one of the following nationally accredited certifying organizations: National Strength and Conditioning Association (NSCA), American Council on Exercise (ACE), National Academy of Sports Medicine (NASM), or American College of\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 16.92,
-        "salary_max": 16.92,
-        "salary_period": "hour",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 35193.600000000006
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
-    },
-    {
       "id": "d4d594df76fecf938e59",
       "fingerprint": "bef056c74bee26a357bf",
       "source": "usajobs:federal",
@@ -2255,6 +2308,66 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
+      "id": "a0a3826b699f78b120f4",
+      "fingerprint": "006b5f5bdb61ef0506ce",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/881825500",
+      "title": "HITT INSTRUCTOR-LEVEL I, NF-0189-02",
+      "employer": "U.S. Marine Corps",
+      "location": "Jacksonville, North Carolina",
+      "remote": false,
+      "department": null,
+      "compensation": "$16.92 /hr",
+      "posted_at": null,
+      "description": "What are we looking for? One year of experience within the health/fitness industry is preferred. Possess and maintain a basic level personal training certification from one of the following nationally accredited certifying organizations: National Strength and Conditioning Association (NSCA), American Council on Exercise (ACE), National Academy of Sports Medicine (NASM), or American College of\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 16.92,
+        "salary_max": 16.92,
+        "salary_period": "hour",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 35193.600000000006
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-08T11:52:53+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
       "id": "83e682befd2745d1d19a",
       "fingerprint": "0b5cee445eef48227c13",
       "source": "usajobs:federal",
@@ -2313,7 +2426,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2375,7 +2488,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2435,7 +2548,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:52+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2497,7 +2610,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2557,7 +2670,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2617,7 +2730,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2677,7 +2790,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2733,7 +2846,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2789,7 +2902,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2845,7 +2958,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2901,7 +3014,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -2957,7 +3070,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3017,7 +3130,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3077,7 +3190,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3137,7 +3250,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:31+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3193,7 +3306,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3253,7 +3366,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3309,7 +3422,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3369,7 +3482,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -3429,7 +3542,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:53+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -5558,7 +5671,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:26+00:00"
+        "checked_at": "2026-09-08T11:52:48+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5620,7 +5733,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:27+00:00"
+        "checked_at": "2026-09-08T11:52:49+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5686,7 +5799,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:27+00:00"
+        "checked_at": "2026-09-08T11:52:49+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5748,7 +5861,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:27+00:00"
+        "checked_at": "2026-09-08T11:52:49+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5810,7 +5923,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:25+00:00"
+        "checked_at": "2026-09-08T11:52:47+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5872,7 +5985,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:25+00:00"
+        "checked_at": "2026-09-08T11:52:47+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5934,7 +6047,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:25+00:00"
+        "checked_at": "2026-09-08T11:52:47+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -5996,7 +6109,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:25+00:00"
+        "checked_at": "2026-09-08T11:52:47+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -8691,7 +8804,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:27+00:00"
+        "checked_at": "2026-09-08T11:52:49+00:00"
       },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -8980,7 +9093,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:52+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -9435,7 +9548,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:30+00:00"
+        "checked_at": "2026-09-08T11:52:52+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     },
@@ -9495,7 +9608,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-07T21:54:29+00:00"
+        "checked_at": "2026-09-08T11:52:52+00:00"
       },
       "listed_at": "2026-08-07T09:39:08.014436+00:00"
     }

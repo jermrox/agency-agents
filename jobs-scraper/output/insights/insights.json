@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-07T21:54:32.356616+00:00",
+  "generated_at": "2026-09-08T11:52:54.945366+00:00",
   "totals": {
-    "postings": 309,
+    "postings": 312,
     "employers": 23,
-    "unique_jobs": 141,
-    "with_salary": 93,
+    "unique_jobs": 142,
+    "with_salary": 94,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-07T00:00:00+00:00"
+      "latest": "2026-09-08T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -96,6 +96,14 @@
       "median_salary": 75201.5
     },
     {
+      "name": "Bureau of Prisons/Federal Prison System",
+      "count": 4,
+      "disciplines": [
+        "sports-medicine"
+      ],
+      "median_salary": 77028.0
+    },
+    {
       "name": "The Geneva Foundation",
       "count": 4,
       "disciplines": [
@@ -103,14 +111,6 @@
         "strength-conditioning"
       ],
       "median_salary": 62197.2
-    },
-    {
-      "name": "Bureau of Prisons/Federal Prison System",
-      "count": 3,
-      "disciplines": [
-        "sports-medicine"
-      ],
-      "median_salary": 79630.0
     },
     {
       "name": "Serco",
@@ -154,66 +154,66 @@
     {
       "name": "strength-conditioning",
       "count": 61,
-      "share": 0.5648,
+      "share": 0.5596,
       "median_salary": 62782.81
     },
     {
       "name": "sports-medicine",
-      "count": 56,
-      "share": 0.5185,
-      "median_salary": 83362.25
+      "count": 57,
+      "share": 0.5229,
+      "median_salary": 82724.5
     },
     {
       "name": "cognitive",
       "count": 23,
-      "share": 0.213,
+      "share": 0.211,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 14,
-      "share": 0.1296,
+      "share": 0.1284,
       "median_salary": 90457.0
     },
     {
       "name": "leadership",
       "count": 13,
-      "share": 0.1204,
+      "share": 0.1193,
       "median_salary": 65375.15
     },
     {
       "name": "nutrition",
       "count": 13,
-      "share": 0.1204,
+      "share": 0.1193,
       "median_salary": 91950.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0093,
+      "share": 0.0092,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 135,
-      "share": 0.9712
+      "count": 136,
+      "share": 0.9714
     },
     {
       "name": "sof",
       "count": 41,
-      "share": 0.295
+      "share": 0.2929
     },
     {
       "name": "training-pipeline",
       "count": 24,
-      "share": 0.1727
+      "share": 0.1714
     },
     {
       "name": "first-responder",
-      "count": 14,
-      "share": 0.1007
+      "count": 15,
+      "share": 0.1071
     }
   ],
   "by_branch": [
@@ -408,12 +408,12 @@
     }
   ],
   "salary": {
-    "count": 93,
+    "count": 94,
     "min": 34320.0,
     "max": 219654.0,
     "median": 85738.0,
-    "p25": 59750.0,
-    "p75": 116951.5,
+    "p25": 60311.1,
+    "p75": 116116.12,
     "by_discipline": {
       "strength-conditioning": {
         "count": 23,
@@ -424,12 +424,12 @@
         "p75": 86441.5
       },
       "sports-medicine": {
-        "count": 40,
+        "count": 41,
         "min": 34320.0,
         "max": 219654.0,
-        "median": 83362.25,
-        "p25": 58889.5,
-        "p75": 107395.75
+        "median": 82724.5,
+        "p25": 58892.0,
+        "p75": 107364.5
       },
       "nutrition": {
         "count": 6,
@@ -475,7 +475,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0213
+    "share": 0.0211
   },
   "timeline": [
     {
@@ -484,16 +484,16 @@
     },
     {
       "month": "2026-08",
-      "count": 90
+      "count": 89
     },
     {
       "month": "2026-09",
-      "count": 41
+      "count": 43
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-09T00:00:00+00:00",
+    "pivot": "2026-06-10T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -544,16 +544,16 @@
         "change": 5
       },
       {
-        "name": "The Geneva Foundation",
+        "name": "Bureau of Prisons/Federal Prison System",
         "recent": 4,
         "previous": 0,
         "change": 4
       },
       {
-        "name": "Bureau of Prisons/Federal Prison System",
-        "recent": 3,
+        "name": "The Geneva Foundation",
+        "recent": 4,
         "previous": 0,
-        "change": 3
+        "change": 4
       },
       {
         "name": "Serco",
@@ -622,7 +622,7 @@
   "top_titles": [
     {
       "title": "Physical Therapist",
-      "count": 7
+      "count": 8
     },
     {
       "title": "Fitness Specialist",

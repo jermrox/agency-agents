@@ -1,24 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-07.*
+*Briefing generated 2026-09-08.*
 
 ## Headline
 
-- **141 open jobs** from **23 employers**.
-- Posted between **2026-07-02** and **2026-09-07**.
-- **$85,738 median** annualized pay across the 93 postings that publish one -- $59,750 to $116,952 covers the middle half.
+- **142 open jobs** from **23 employers**.
+- Posted between **2026-07-02** and **2026-09-08**.
+- **$85,738 median** annualized pay across the 94 postings that publish one -- $60,311 to $116,116 covers the middle half.
 - **2% remote-friendly** (3 jobs).
-- 168 of 309 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 135, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 14.
+- 170 of 312 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 136, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 15.
 
 ## Month over month
 
-Postings are **down -49** in 2026-09 (90 to 41), 54% against 2026-08.
+Postings are **down -46** in 2026-09 (89 to 43), 52% against 2026-08.
 
 ```
 2026-07    10  ###
-2026-08    90  ############################
-2026-09    41  #############
+2026-08    89  ############################
+2026-09    43  ##############
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -49,15 +49,15 @@ Postings are **down -49** in 2026-09 (90 to 41), 54% against 2026-08.
 | Customs and Border Protection | 8 | $129,124 | - |
 | U.S. Marine Corps | 6 | $37,638 | Sports Medicine, Strength & Conditioning |
 | Veterans Health Administration | 5 | $75,202 | Program Leadership, Sports Medicine |
+| Bureau of Prisons/Federal Prison System | 4 | $77,028 | Sports Medicine |
 | The Geneva Foundation | 4 | $62,197 | Sports Medicine, Strength & Conditioning |
-| Bureau of Prisons/Federal Prison System | 3 | $79,630 | Sports Medicine |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
 | Strength & Conditioning | 61 | 56% |
-| Sports Medicine | 56 | 52% |
+| Sports Medicine | 57 | 52% |
 | Cognitive Performance | 23 | 21% |
 | Research & Analytics | 14 | 13% |
 | Program Leadership | 13 | 12% |
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$85,738**, middle half $59,750 to $116,952.
+- Median **$85,738**, middle half $60,311 to $116,116.
 - Full range $34,320 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -92,7 +92,7 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 6 | $87,291 | $91,950 | $92,738 |
 | Research & Analytics | 6 | $64,713 | $90,457 | $98,738 |
 | Sport Science | 1 | $85,738 | $85,738 | $85,738 |
-| Sports Medicine | 40 | $58,890 | $83,362 | $107,396 |
+| Sports Medicine | 41 | $58,892 | $82,724 | $107,364 |
 | Program Leadership | 10 | $62,783 | $65,375 | $74,552 |
 | Strength & Conditioning | 23 | $47,840 | $62,783 | $86,442 |
 
@@ -122,7 +122,7 @@ annual contractor bands are not otherwise comparable.
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 7 |
+| Physical Therapist | 8 |
 | Fitness Specialist | 6 |
 | Human Performance Operations Manager | 4 |
 | Occupational Therapist | 4 |
