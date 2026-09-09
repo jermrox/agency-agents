@@ -63,7 +63,7 @@ BARE_JOB = """
   "identifier": {"@type": "PropertyValue", "name": "Req", "value": "REQ-9981"},
   "url": "https://careers.example.com/job/12345",
   "datePosted": "2026-07-14",
-  "validThrough": "2026-09-30T00:00:00",
+  "validThrough": "2099-09-30T00:00:00",
   "employmentType": "FULL_TIME",
   "description": "<p>Embed with a USASOC THOR3 team.</p><ul><li>CSCS required</li></ul>",
   "qualifications": "<p>TSAC-F preferred. Active Secret clearance.</p>",
@@ -117,7 +117,7 @@ def test_description_captures_html_and_every_narrative_field(monkeypatch):
 
 def test_valid_through_is_kept_in_raw(monkeypatch):
     posting = _run(monkeypatch, {PAGE_URL: _page(BARE_JOB)}, {"urls": [PAGE_URL]})[0]
-    assert posting.raw["validThrough"] == "2026-09-30T00:00:00"
+    assert posting.raw["validThrough"] == "2099-09-30T00:00:00"
     assert posting.raw["sourcePageUrl"] == PAGE_URL
 
 
@@ -916,3 +916,119 @@ def test_place_from_title_ignores_parentheticals_that_are_not_places():
         "Coach - full time, remote",
     ):
         assert place_from_title(title) == "", title
+
+
+# --- board pages, sitemap shards, expiry and plain-HTML careers pages ---------
+
+
+def test_sitemap_option_accepts_a_list_of_shards(monkeypatch):
+    """Loyal Source splits its job sitemap into job_listing-sitemap.xml and
+    job_listing-sitemap2.xml; both are read."""
+    shard1 = b'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://careers.example.com/job/1</loc></url></urlset>'
+    shard2 = b'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://careers.example.com/job/2</loc></url></urlset>'
+    pages = {
+        "https://careers.example.com/s1.xml": shard1,
+        "https://careers.example.com/s2.xml": shard2,
+        "https://careers.example.com/job/1": _page(BARE_JOB.replace("REQ-9981", "A").replace("/job/12345", "/job/1")),
+        "https://careers.example.com/job/2": _page(BARE_JOB.replace("REQ-9981", "B").replace("/job/12345", "/job/2")),
+    }
+    postings = _run(monkeypatch, pages, {"sitemap": ["https://careers.example.com/s1.xml", "https://careers.example.com/s2.xml"]})
+    assert sorted(p.source_id for p in postings) == ["A", "B"]
+
+
+def test_index_urls_collects_the_board_page_links(monkeypatch):
+    """A JazzHR board lists its openings as anchors; url_include narrows them
+    to job pages, and the board page itself is never read as a job."""
+    board = (
+        b'<html><body><nav><a href="/apply">Careers</a><a href="mailto:hr@x">Mail</a></nav>'
+        b'<a href="/apply/AbC123/Tactical-Athletic-Trainer">Tactical Athletic Trainer</a>'
+        b'<a href="https://x.applytojob.com/apply/DeF456/Coach?source=board">Coach</a>'
+        b'<a href="/apply/AbC123/Tactical-Athletic-Trainer">dup</a>'
+        b'<a href="https://other.example/x">Other</a></body></html>'
+    )
+    pages = {
+        "https://x.applytojob.com/apply/": board,
+        "https://x.applytojob.com/apply/AbC123/Tactical-Athletic-Trainer": _page(
+            BARE_JOB.replace("REQ-9981", "AT").replace("https://careers.example.com/job/12345", "https://x.applytojob.com/apply/AbC123/Tactical-Athletic-Trainer")
+        ),
+        "https://x.applytojob.com/apply/DeF456/Coach?source=board": _page(
+            BARE_JOB.replace("REQ-9981", "C").replace("https://careers.example.com/job/12345", "https://x.applytojob.com/apply/DeF456/Coach")
+        ),
+    }
+    log: list[str] = []
+    postings = _run(
+        monkeypatch, pages,
+        {"index_urls": "https://x.applytojob.com/apply/", "url_include": ["/apply/"]},
+        log=log,
+    )
+    assert sorted(p.source_id for p in postings) == ["AT", "C"]
+    assert log.count("https://x.applytojob.com/apply/") == 1
+    assert "https://other.example/x" not in log
+
+
+def test_an_expired_posting_is_skipped(monkeypatch):
+    """validThrough in the past means the employer says it is closed; WordPress
+    boards keep the page and the sitemap entry long after."""
+    expired = BARE_JOB.replace('"validThrough": "2099-09-30T00:00:00"', '"validThrough": "2020-01-31T00:00:00"')
+    assert _run(monkeypatch, {PAGE_URL: _page(expired)}, {"urls": PAGE_URL}) == []
+    assert len(_run(monkeypatch, {PAGE_URL: _page(BARE_JOB)}, {"urls": PAGE_URL})) == 1
+
+
+def test_fallback_html_reads_a_plain_careers_page(monkeypatch):
+    """O2X states its openings as ordinary pages with no JobPosting markup."""
+    page = (
+        b"<html><head><title>O2X</title><script>var x=1;</script></head><body>"
+        b'<nav><a href="/our-story">Our Story</a> Solutions Who We Serve</nav>'
+        b"<main><h1>On-Site Human Performance Specialist</h1>"
+        b"<p>Location: Boston, MA</p>"
+        b"<p>Deliver strength and conditioning and injury prevention to a fire department.</p></main>"
+        b"<footer>Equal Opportunity Employer</footer></body></html>"
+    )
+    url = "https://www.o2x.com/careers/on-site-human-performance-specialist"
+    assert _run(monkeypatch, {url: page}, {"urls": url}) == []
+    postings = _run(monkeypatch, {url: page}, {"urls": url, "fallback_html": True, "employer": "O2X"})
+    assert len(postings) == 1
+    posting = postings[0]
+    assert posting.title == "On-Site Human Performance Specialist"
+    assert posting.location == "Boston, MA"
+    assert posting.employer == "O2X"
+    assert "injury prevention" in posting.description
+    assert "Our Story" not in posting.description
+    assert "Equal Opportunity" not in posting.description
+    assert posting.source_id == url and posting.posted_at is None
+
+
+# ---------------------------------------------------------------------------
+# title cleanup
+# ---------------------------------------------------------------------------
+
+
+def test_clean_title_unescapes_entities_and_drops_a_dangling_dash():
+    from tactical_jobs.sources.jsonld import clean_title
+
+    assert clean_title("Strength and Conditioning Specialist &#8211;") == "Strength and Conditioning Specialist"
+    assert clean_title("Strength &#038; Conditioning Coach") == "Strength & Conditioning Coach"
+    assert clean_title("  Physical  Therapist - ") == "Physical Therapist"
+    assert clean_title("Dietitian:") == "Dietitian"
+
+
+def test_clean_title_keeps_an_inner_dash_and_a_parenthetical():
+    from tactical_jobs.sources.jsonld import clean_title
+
+    assert clean_title("Athletic Trainer - Fort Bragg, NC") == "Athletic Trainer - Fort Bragg, NC"
+    assert clean_title("Tactical Athletic Trainer (H2F)") == "Tactical Athletic Trainer (H2F)"
+
+
+def test_a_posting_title_is_cleaned_on_the_way_in(monkeypatch):
+    from tactical_jobs.sources import jsonld as module
+
+    import json
+
+    node = BARE_JOB if isinstance(BARE_JOB, dict) else json.loads(BARE_JOB)
+    node = dict(node, title="Strength and Conditioning Specialist &#8211;")
+    page = "<html><head><script type=\"application/ld+json\">%s</script></head><body></body></html>" % (
+        json.dumps(node)
+    )
+    monkeypatch.setattr(module, "fetch", lambda url, **kw: page.encode("utf-8"))
+    postings = list(module.JSONLDSource("x", {"urls": ["https://example.com/job/1"], "employer": "E"}).fetch())
+    assert [posting.title for posting in postings] == ["Strength and Conditioning Specialist"]

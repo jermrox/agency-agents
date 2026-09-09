@@ -609,14 +609,158 @@ REGISTRY: tuple[Employer, ...] = (
         slug="resolution-think",
         name="Resolution Think",
         category="prime",
+        ats="jsonld",
+        options={
+            "index_urls": ["https://resolutionthinked.applytojob.com/apply/"],
+            "url_include": ["/apply/"],
+            "max_urls": 120,
+        },
+        notes=(
+            "Team Serco subcontractor on the Army H2F award. Hires through a "
+            "JazzHR board (resolutionthinked.applytojob.com): the board page "
+            "links every open job and each open job page carries JobPosting "
+            "JSON-LD, so the jsonld adapter reads the board as an index page. "
+            "On 2026-09-08 the board listed 52 jobs, 31 of them H2F and SMIP "
+            "athletic trainers, strength and conditioning coaches and physical "
+            "therapists; the block in sources.keyless.toml has run since. This "
+            "registry still records it as unverified. Confirm by fetching the "
+            "board page and checking one /apply/<token>/<slug> page for a "
+            "JobPosting ld+json block."
+        ),
+        aliases=("Resolution Think LLC",),
+    ),
+    Employer(
+        slug="loyal-source",
+        name="Loyal Source Government Services",
+        category="prime",
+        ats="jsonld",
+        options={
+            "sitemap": [
+                "https://www.loyalsource.com/job_listing-sitemap.xml",
+                "https://www.loyalsource.com/job_listing-sitemap2.xml",
+            ],
+            "url_include": [
+                "strength", "conditioning", "cognitive", "performance",
+                "athletic-trainer", "therapist", "dietitian", "dietician",
+                "social-worker", "psycholog", "human-perf", "physiolog", "massage",
+            ],
+            "max_urls": 700,
+        },
+        notes=(
+            "Government health-care staffing prime whose SOF human performance "
+            "postings name POTFF and the SOF units they serve. A WordPress job "
+            "board with two sitemap shards of job pages, each carrying JobPosting "
+            "JSON-LD (datePosted, validThrough, description, location). On "
+            "2026-09-08: 1,329 job URLs, 520 matching the fragments above, some "
+            "345 human performance postings across eight titles at about 43 "
+            "locations, all posted 2026-08-31; the block in sources.keyless.toml "
+            "has run since. This registry still records it as unverified. Confirm "
+            "by fetching a sitemap shard and checking one /job/ page for a "
+            "JobPosting ld+json block."
+        ),
+        aliases=("Loyal Source",),
+    ),
+    # -- probed 2026-09-08 with no usable route; recorded so nobody re-probes --
+    Employer(
+        slug="goldbelt",
+        name="Goldbelt",
+        category="prime",
         ats=None,
         options={},
         notes=(
-            "Team Serco subcontractor on the Army H2F award. ATS not identified. "
-            "Confirm by locating the careers page and noting the vendor; jsonld is "
-            "the fallback when no JSON API exists."
+            "Alaska Native corporation with DHA and Army health contracts. Its "
+            "careers site is a branded iCIMS portal whose search endpoint answered "
+            "404 to the adapter's route on 2026-09-08, so ats stays None. Confirm "
+            "by finding the portal's own search URL and testing it with the icims "
+            "hint before adding a kind."
         ),
-        aliases=("Resolution Think LLC",),
+        aliases=("Goldbelt Inc",),
+    ),
+    Employer(
+        slug="gdg",
+        name="GDG",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Human performance staffing firm. Its careers site sat behind a bot "
+            "wall on 2026-09-08 (HTTP 202 challenge pages, no listing), so ats "
+            "stays None. Confirm by opening the careers page in a browser and "
+            "identifying the platform behind the wall."
+        ),
+        aliases=(),
+    ),
+    Employer(
+        slug="t3i",
+        name="T3i",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Small human performance contractor. Its careers page renders its "
+            "listing with script only (no markup, no JSON-LD, no feed) as of "
+            "2026-09-08, so ats stays None. Confirm by watching the page's own "
+            "network requests for a JSON listing endpoint."
+        ),
+        aliases=("T3i Solutions",),
+    ),
+    Employer(
+        slug="dystech",
+        name="DysTech",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Small human performance contractor. Its careers page renders its "
+            "listing with script only (no markup, no JSON-LD, no feed) as of "
+            "2026-09-08, so ats stays None. Confirm by watching the page's own "
+            "network requests for a JSON listing endpoint."
+        ),
+        aliases=("Dynamic Systems Technology",),
+    ),
+    Employer(
+        slug="venesco",
+        name="Venesco",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Health services contractor that has posted embedded human "
+            "performance billets. Hires through Paylocity; every posting found on "
+            "2026-09-08 answered 'Job Not Found', so there is nothing to read yet "
+            "and ats stays None. Confirm by re-checking its Paylocity listing for "
+            "open postings before writing an adapter."
+        ),
+        aliases=("Venesco LLC",),
+    ),
+    Employer(
+        slug="maximus",
+        name="Maximus",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Large government services prime with military health work. Hires "
+            "through Avature, for which this project has no adapter, so ats stays "
+            "None (checked 2026-09-08). Confirm by identifying an Avature JSON or "
+            "feed route before adding a kind."
+        ),
+        aliases=("Maximus Inc",),
+    ),
+    Employer(
+        slug="quarterline",
+        name="QuarterLine",
+        category="prime",
+        ats=None,
+        options={},
+        notes=(
+            "Health staffing firm in the same group as Planned Systems "
+            "International: its careers-ql.icims.com portal is the same iCIMS "
+            "portal the PSI block already reads (checked 2026-09-08), so a second "
+            "source would only duplicate PSI's postings and ats stays None. "
+            "Confirm by comparing the two portals' job ids before adding a kind."
+        ),
+        aliases=("QuarterLine Consulting Services",),
     ),
     Employer(
         slug="leidos",
@@ -840,17 +984,25 @@ REGISTRY: tuple[Employer, ...] = (
         slug="o2x",
         name="O2X Human Performance",
         category="specialist",
-        ats=None,
-        options={},
+        ats="jsonld",
+        options={
+            "index_urls": ["https://www.o2x.com/careers"],
+            "url_include": ["/careers/"],
+            "fallback_html": True,
+            "max_urls": 40,
+        },
         notes=(
             "The archetypal specialist: tactical human performance for military and "
             "first responders, so essentially every posting is relevant and the "
             "classifier has little work to do. The Greenhouse token 'o2x' this "
             "entry used to carry was checked on 2026-07-31 and 2026-09-05 and does "
-            "not exist, and o2x.com's careers pages carry no JobPosting JSON-LD, "
-            "so none of this project's adapters can read them and ats stays None. "
-            "A page reader for its careers sitemap is the route if one is written. "
-            "Confirm by re-checking o2x.com/careers for structured markup."
+            "not exist. o2x.com/careers links each opening as /careers/<slug> and "
+            "those pages carry no JSON-LD, so the jsonld adapter reads the careers "
+            "page as an index and each job page as plain HTML (fallback_html); "
+            "the block in sources.keyless.toml has run since 2026-09-08. This "
+            "registry still records it as unverified. Confirm by fetching "
+            "o2x.com/careers and checking that its /careers/<slug> links open "
+            "pages with an h1 title."
         ),
         aliases=("O2X", "O2X Human Performance LLC"),
     ),
@@ -1097,14 +1249,17 @@ REGISTRY: tuple[Employer, ...] = (
         name="Los Angeles Fire Department",
         category="state-local",
         ats="governmentjobs",
-        options={"agency": "PASTE_NEOGOV_AGENCY_SLUG_HERE"},
+        options={"agency": "lacity", "employer": "City of Los Angeles"},
         notes=(
             "Large metropolitan fire departments hire wellness coordinators, peer "
             "fitness trainers, and increasingly embedded athletic trainers, and "
-            "they post to NEOGOV rather than to any commercial ATS. The vendor is "
-            "near-certain; the agency slug is not. Confirm by finding the "
-            "department on governmentjobs.com and taking the slug out of "
-            "https://www.governmentjobs.com/careers/<agency>."
+            "they post to NEOGOV rather than to any commercial ATS. LAFD posts on "
+            "the City of Los Angeles careers site, governmentjobs.com/careers/"
+            "lacity, alongside every other city department (52 open jobs on "
+            "2026-09-08); the block in sources.keyless.toml reads that site and "
+            "the classifier picks out the performance work. This registry still "
+            "records it as unverified. Confirm by opening the lacity careers page "
+            "and finding a Fire Department posting on it."
         ),
         aliases=("LAFD", "City of Los Angeles Fire"),
     ),
@@ -1112,13 +1267,14 @@ REGISTRY: tuple[Employer, ...] = (
         slug="phoenix-fire-department",
         name="Phoenix Fire Department",
         category="state-local",
-        ats="governmentjobs",
-        options={"agency": "PASTE_NEOGOV_AGENCY_SLUG_HERE"},
+        ats=None,
+        options={},
         notes=(
             "Municipal fire department with an established health and wellness "
-            "program. NEOGOV is the assumed vendor; the agency slug is unknown. "
-            "Confirm from the governmentjobs.com careers URL for the City of "
-            "Phoenix."
+            "program. NEOGOV was the assumed vendor, but governmentjobs.com/"
+            "careers/phoenix redirects off NEOGOV (checked 2026-09-08), so the city "
+            "hires elsewhere and ats stays None. Confirm by opening the City of "
+            "Phoenix jobs page and identifying the platform."
         ),
         aliases=("City of Phoenix Fire",),
     ),
@@ -1136,6 +1292,125 @@ REGISTRY: tuple[Employer, ...] = (
             "switch this entry to jsonld."
         ),
         aliases=("Texas DPS", "TxDPS"),
+    ),
+    Employer(
+        slug="prince-william-county",
+        name="Prince William County Government",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "pwcgov"},
+        notes=(
+            "Prince William County, Virginia: Fire and Rescue, Police and the Sheriff's Office hire on one county site (37 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/pwcgov and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Prince William County', 'Prince William County Fire and Rescue'),
+    ),
+    Employer(
+        slug="city-of-saint-paul",
+        name="City of Saint Paul",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "stpaul"},
+        notes=(
+            "Saint Paul, Minnesota: fire and police hire on the city site (15 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/stpaul and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Saint Paul Fire Department',),
+    ),
+    Employer(
+        slug="city-of-seattle",
+        name="City of Seattle",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "seattle"},
+        notes=(
+            "Seattle, Washington: fire and police hire on the city site (78 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/seattle and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Seattle Fire Department',),
+    ),
+    Employer(
+        slug="city-of-chula-vista",
+        name="City of Chula Vista",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "chulavista"},
+        notes=(
+            "Chula Vista, California: fire and police hire on the city site (15 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/chulavista and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Chula Vista Fire Department',),
+    ),
+    Employer(
+        slug="broward-sheriff",
+        name="Broward Sheriff's Office",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "browardsheriff"},
+        notes=(
+            "Broward County, Florida: the sheriff's office, which also runs the county's fire rescue (15 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/browardsheriff and checking that "
+            "it lists jobs."
+        ),
+        aliases=('BSO', "Broward County Sheriff's Office"),
+    ),
+    Employer(
+        slug="city-of-huntington-beach",
+        name="City of Huntington Beach",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "huntingtonbeach"},
+        notes=(
+            "Huntington Beach, California: fire, police and marine safety hire on the city site (34 open jobs on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/huntingtonbeach and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Huntington Beach Fire Department',),
+    ),
+    Employer(
+        slug="city-of-burnsville",
+        name="City of Burnsville",
+        category="state-local",
+        ats="governmentjobs",
+        options={"agency": "burnsvillemn"},
+        notes=(
+            "Burnsville, Minnesota: fire and police hire on the city site (1 open job on 2026-09-08). The listing route the adapter reads "
+            "(the page's own XHR fragment) answered for this agency on "
+            "2026-09-08 and the block in sources.keyless.toml has run since; "
+            "the classifier picks out the wellness and performance work. This "
+            "registry still records it as unverified. Confirm by opening "
+            "https://www.governmentjobs.com/careers/burnsvillemn and checking that "
+            "it lists jobs."
+        ),
+        aliases=('Burnsville Fire Department',),
     ),
     Employer(
         slug="fdny",

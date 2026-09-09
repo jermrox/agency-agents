@@ -32,6 +32,7 @@ import logging
 import re
 import time
 import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from typing import Any, Iterable
 from urllib.parse import urljoin, urlparse
@@ -44,6 +45,15 @@ log = logging.getLogger(__name__)
 
 DEFAULT_MAX_URLS = 200
 DEFAULT_MAX_SITEMAPS = 10
+
+_HREF_RE = re.compile(r"""href\s*=\s*(?:"([^"]*)"|'([^']*)')""", re.I)
+_H1_RE = re.compile(r"<h1\b[^>]*>(.*?)</h1>", re.I | re.S)
+_MAIN_RE = re.compile(r"<main\b[^>]*>(.*?)</main>", re.I | re.S)
+_BODY_RE = re.compile(r"<body\b[^>]*>(.*?)</body>", re.I | re.S)
+_CHROME_RE = re.compile(
+    r"<(script|style|nav|header|footer|noscript|form)\b[^>]*>.*?</\1>", re.I | re.S
+)
+_LOCATION_LINE_RE = re.compile(r"\bLocation\s*:?\s+([A-Z][^\n.|;]{2,60})")
 """How many child sitemaps an index file may fan out to.
 
 Large employers publish dozens of shards; without a bound one config line
@@ -243,6 +253,21 @@ def _absolute_url(candidate: str, base: str, fallback: str | None = None) -> str
     except ValueError:
         return fallback
     return resolved if urlparse(resolved).scheme in ("http", "https") else fallback
+
+
+_TITLE_TRAILING_RE = re.compile(r"[\s\-\u2013\u2014:|,]+$")
+
+
+def clean_title(value: str) -> str:
+    """A title as the board should show it.
+
+    Employers' JSON-LD carries HTML entities ("Strength &#038; Conditioning")
+    and, when a template fills the location in after a dash and leaves the
+    field cut short, a dangling dash ("Physical Therapist &#8211;"). Only the
+    encoding and the dangling separator go; the words are the employer's.
+    """
+    text = " ".join(html.unescape(value or "").split())
+    return _TITLE_TRAILING_RE.sub("", text).strip()
 
 
 def _plain(value: Any) -> str:
@@ -471,8 +496,12 @@ class JSONLDSource(Source):
     urls
         List of page URLs to read (a single string is accepted too).
     sitemap
-        Sitemap (or sitemap index) URL whose ``<loc>`` entries are read.
-        At least one of ``urls`` / ``sitemap`` is required.
+        Sitemap (or sitemap index) URL whose ``<loc>`` entries are read; a
+        list of sitemaps (shards) is accepted.
+    index_urls
+        Board pages whose links are the job pages (a JazzHR board, a
+        hand-made careers page). At least one of ``urls`` / ``sitemap`` /
+        ``index_urls`` is required.
     employer
         Fallback employer label when the markup omits ``hiringOrganization``.
     url_include
@@ -481,6 +510,16 @@ class JSONLDSource(Source):
         Cap on pages fetched per run. Default 200.
     delay_seconds
         Pause between page fetches. Default 0.0.
+    fallback_html
+        When true, a page with no JobPosting markup is read as a plain
+        careers page: its ``<h1>`` is the title, its ``<main>`` (else body,
+        minus navigation) the description, a "Location:" line the location.
+        Off by default; only for sites that state their jobs and nothing
+        else on the page (O2X).
+
+    A posting whose ``validThrough`` has passed is skipped: the employer has
+    said it is closed, and WordPress job boards (Loyal Source) keep the page
+    and its sitemap entry long after.
     """
 
     kind = "jsonld"
@@ -488,6 +527,7 @@ class JSONLDSource(Source):
     def fetch(self) -> Iterable[JobPosting]:
         employer_default = self.options.get("employer") or self.name
         delay = _as_float(self.options.get("delay_seconds"), 0.0)
+        fallback_html = bool(self.options.get("fallback_html"))
 
         seen_ids: set[str] = set()
         for index, page_url in enumerate(self._target_urls()):
@@ -496,30 +536,66 @@ class JSONLDSource(Source):
             markup = self._read_page(page_url)
             if markup is None:
                 continue
+            found = False
             for posting in self._postings_from_markup(markup, page_url, employer_default):
+                found = True
                 if posting.source_id in seen_ids:
                     continue
                 seen_ids.add(posting.source_id)
                 yield posting
+            if not found and fallback_html:
+                posting = self._posting_from_html(markup, page_url, employer_default)
+                if posting is not None and posting.source_id not in seen_ids:
+                    seen_ids.add(posting.source_id)
+                    yield posting
+
+    def _posting_from_html(
+        self, markup: str, page_url: str, employer_default: str
+    ) -> JobPosting | None:
+        """A posting from a page that states its job in plain HTML only."""
+        heading = _H1_RE.search(markup)
+        title = clean_title(html_to_text(heading.group(1))) if heading else ""
+        if not title:
+            return None
+        region = _MAIN_RE.search(markup) or _BODY_RE.search(markup)
+        inner = region.group(1) if region else markup
+        description = html_to_text(_CHROME_RE.sub(" ", inner))
+        labelled = _LOCATION_LINE_RE.search(description)
+        location = (labelled.group(1).strip() if labelled else "") or place_from_title(title) or ""
+        return JobPosting(
+            source=f"{self.kind}:{self.name}",
+            source_id=page_url,
+            url=page_url,
+            title=title,
+            employer=employer_default,
+            location=location,
+            description=description,
+            posted_at=None,
+            remote=looks_remote(location, title),
+            raw={"sourcePageUrl": page_url, "read": "html"},
+        )
 
     # -- URL selection ----------------------------------------------------
 
     def _target_urls(self) -> list[str]:
         configured = _as_list(self.options.get("urls"))
-        sitemap = str(self.options.get("sitemap") or "").strip()
+        sitemaps = _as_list(self.options.get("sitemap"))
+        index_urls = _as_list(self.options.get("index_urls"))
 
-        if not configured and not sitemap:
+        if not configured and not sitemaps and not index_urls:
             if "urls" not in self.options:
                 # Produces the standard "requires option" message.
                 self.require("urls")
             raise KeyError(
                 f"source '{self.name}' ({self.kind}) requires a non-empty "
-                "'urls' or 'sitemap' option"
+                "'urls', 'sitemap' or 'index_urls' option"
             )
 
         candidates = list(configured)
-        if sitemap:
+        for sitemap in sitemaps:
             candidates.extend(self._sitemap_urls(sitemap))
+        for index_url in index_urls:
+            candidates.extend(self._index_page_urls(index_url))
 
         includes = _as_list(self.options.get("url_include"))
         if includes:
@@ -529,11 +605,31 @@ class JSONLDSource(Source):
 
         ordered: list[str] = []
         for url in candidates:
-            if url not in ordered:
+            if url not in ordered and url not in index_urls:
                 ordered.append(url)
 
         max_urls = _as_int(self.options.get("max_urls"), DEFAULT_MAX_URLS)
         return ordered[:max_urls] if max_urls >= 0 else ordered
+
+    def _index_page_urls(self, index_url: str) -> list[str]:
+        """Every link on a board page, for sites with no sitemap.
+
+        A JazzHR board (``<company>.applytojob.com/apply/``) or a hand-made
+        careers page lists its openings as plain anchors; ``url_include``
+        then narrows them to the job pages.
+        """
+        markup = self._read_page(index_url)
+        if markup is None:
+            return []
+        links: list[str] = []
+        for match in _HREF_RE.finditer(markup):
+            href = html.unescape(match.group(1) or match.group(2) or "").strip()
+            if not href or href.startswith(("#", "mailto:", "javascript:", "tel:")):
+                continue
+            absolute = _absolute_url(href, index_url)
+            if absolute and absolute not in links:
+                links.append(absolute)
+        return links
 
     def _sitemap_urls(self, sitemap_url: str) -> list[str]:
         """Collect page URLs from a sitemap, following an index one level."""
@@ -633,11 +729,19 @@ class JSONLDSource(Source):
     def _to_posting(
         self, node: dict[str, Any], page_url: str, employer_default: str
     ) -> JobPosting | None:
-        title = _plain(node.get("title")) or _plain(node.get("name"))
+        title = clean_title(_plain(node.get("title")) or _plain(node.get("name")))
         if not title:
             # Without a title there is nothing to classify or publish.
             log.debug("%s: JobPosting without a title on %s", self.name, page_url)
             return None
+
+        expires = parse_timestamp(node.get("validThrough"))
+        if expires is not None:
+            if expires.tzinfo is None:
+                expires = expires.replace(tzinfo=timezone.utc)
+            if expires < datetime.now(timezone.utc):
+                log.debug("%s: %s closed on %s; skipping", self.name, page_url, expires.date())
+                return None
 
         # The human-facing link, never a relative path or a bare URN.
         declared_url = _plain(node.get("url")) or _plain(node.get("@id"))

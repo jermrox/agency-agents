@@ -502,6 +502,80 @@ url_include = [
   "Sports-Medicine",
 ]
 
+# --- VERIFIED LIVE 2026-09-08 -----------------------------------------------
+# Loyal Source Government Services -- SOF human performance staffing (the
+# postings themselves name POTFF and SOF units). A WordPress job board: two
+# sitemap shards of job pages, each page carrying JobPosting JSON-LD with
+# datePosted, validThrough, the full description and the location. Probed
+# 2026-09-08: 1,329 URLs across the shards, 520 matching the fragments below,
+# 345 PUBLISH -- eight titles (strength and conditioning specialist, senior
+# S&C specialist, certified athletic trainer, human performance advisor,
+# cognitive performance specialist, operational psychologist, physical
+# therapist, performance dietician), each posted 2026-08-31 at some 43
+# locations. Exact repeats of employer + title + location collapse in the
+# store (281 distinct). The JSON-LD titles end in a dangling "&#8211;" (the
+# template writes the location after the dash and the field is cut before
+# it); the adapter strips the encoding and the dangling separator only.
+[[source]]
+kind = "jsonld"
+name = "loyalsource"
+sitemap = [
+  "https://www.loyalsource.com/job_listing-sitemap.xml",
+  "https://www.loyalsource.com/job_listing-sitemap2.xml",
+]
+employer = "Loyal Source Government Services"
+# Every job page states validThrough (the adapter skips a past one) and a
+# closed job leaves the sitemap, so age says nothing here.
+max_age_days = 0
+max_urls = 700
+url_include = [
+  "strength",
+  "conditioning",
+  "cognitive",
+  "performance",
+  "athletic-trainer",
+  "therapist",
+  "dietitian",
+  "dietician",
+  "social-worker",
+  "psycholog",
+  "human-perf",
+  "physiolog",
+  "massage",
+]
+
+# Resolution Think -- Team Serco H2F subcontractor. A JazzHR board at
+# resolutionthinked.applytojob.com: the board page links every open job (52
+# on 2026-09-08, 31 of them H2F and SMIP athletic trainers, strength and
+# conditioning coaches and physical therapists) and each open job page
+# carries JobPosting JSON-LD. A closed job's page shows the board again with
+# no JobPosting node, so nothing is read for it; the RSS route is gone (410).
+[[source]]
+kind = "jsonld"
+name = "resolutionthink"
+index_urls = ["https://resolutionthinked.applytojob.com/apply/"]
+url_include = ["/apply/"]
+employer = "Resolution Think"
+# The board lists open jobs only.
+max_age_days = 0
+max_urls = 120
+
+# O2X Human Performance -- the specialist. Its careers page links every
+# opening as /careers/<slug> (6 on 2026-09-08, two of them Human Performance
+# Specialist roles); the job pages carry no JSON-LD, so the adapter's
+# plain-HTML reader takes the page's h1 and text. The pages state no
+# location and no date, and the board shows them that way.
+[[source]]
+kind = "jsonld"
+name = "o2x"
+index_urls = ["https://www.o2x.com/careers"]
+url_include = ["/careers/"]
+fallback_html = true
+employer = "O2X Human Performance"
+# The careers page lists open roles only.
+max_age_days = 0
+max_urls = 40
+
 # [[source]]
 # kind = "jsonld"
 # name = "example-careers"
@@ -614,6 +688,275 @@ keywords = [
 # almost exclusively to governmentjobs.com rather than to any ATS. Keyless.
 # -----------------------------------------------------------------------------
 
+# --- VERIFIED LIVE 2026-09-08 -----------------------------------------------
+# NEOGOV's JSON route (?format=json) is dead for every tenant checked, and
+# so are the RSS and /api/careers routes. What still answers is the listing
+# the page's own script requests: GET /careers/<agency>?page=N with
+# X-Requested-With: XMLHttpRequest returns the rendered list fragment, ten
+# rows a page, and every job page carries JobPosting JSON-LD with the full
+# text. The adapter reads both. Each agency below answered that route on
+# 2026-09-08 with the row counts noted; the classifier does the filtering,
+# and detail pages are fetched only for titles that could be human
+# performance work (detail_include), since a city lists hundreds of jobs.
+# Not listed: Denver and High Point (the route returns no rows) and Phoenix
+# (redirects off NEOGOV).
+
+# Prince William County, VA (Fire and Rescue, Police, Sheriff): 37 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "pwcgov"
+agency = "pwcgov"
+employer = "Prince William County Government"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Saint Paul, MN (fire and police): 15 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "stpaul"
+agency = "stpaul"
+employer = "City of Saint Paul"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Seattle, WA (fire and police): 78 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "seattle"
+agency = "seattle"
+employer = "City of Seattle"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Chula Vista, CA (fire and police): 15 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "chulavista"
+agency = "chulavista"
+employer = "City of Chula Vista"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Broward County, FL sheriff, fire rescue: 15 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "browardsheriff"
+agency = "browardsheriff"
+employer = "Broward Sheriff's Office"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Huntington Beach, CA (fire, police, marine safety): 34 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "huntingtonbeach"
+agency = "huntingtonbeach"
+employer = "City of Huntington Beach"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Burnsville, MN (fire and police): 1 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "burnsvillemn"
+agency = "burnsvillemn"
+employer = "City of Burnsville"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
+# Los Angeles, CA (LAFD and LAPD hire here): 52 open on 2026-09-08.
+[[source]]
+kind = "governmentjobs"
+name = "lacity"
+agency = "lacity"
+employer = "City of Los Angeles"
+max_pages = 10
+# The listing shows open jobs only; the liveness sweep and the
+# source-absence rule retire closed ones.
+max_age_days = 0
+detail_limit = 40
+detail_include = [
+  "wellness",
+  "fitness",
+  "athletic",
+  "trainer",
+  "peer",
+  "strength",
+  "conditioning",
+  "physical therap",
+  "exercise physiolog",
+  "human performance",
+  "performance",
+  "resilien",
+  "dietitian",
+  "nutrition",
+  "psycholog",
+  "behavioral health",
+  "occupational therap",
+  "health promotion",
+]
+
 # [[source]]
 # kind = "governmentjobs"
 # name = "example-city"
@@ -631,14 +974,22 @@ keywords = [
 # file as if they were configuration. Removed rather than kept as comments a
 # copy-paste could resurrect.
 #
-# RE-CHECKED 2026-08-28, and the specialist firms are still not reachable. Each
-# careers page was fetched and read: O2X, Magellan Federal, and Resolution Think
-# serve ordinary marketing pages with no JobPosting markup (only BreadcrumbList
-# and LocalBusiness nodes) and no link to any ATS host; HigherEchelon, Hyperion
+# RE-CHECKED 2026-08-28, and the specialist firms were still not reachable
+# then: O2X, Magellan Federal, and Resolution Think served marketing pages with
+# no JobPosting markup and no link to any ATS host; HigherEchelon, Hyperion
 # Biotechnology, GAP Solutions, and EXOS all 404 at their published careers
-# paths. These are small firms running careers pages by hand, which is exactly
-# what a scraper cannot generalize over. Each needs its own verified route
-# before it can be a [[source]]. See "Specialist firms" in EMPLOYERS.md.
+# paths.
+#
+# RE-CHECKED 2026-09-08: three of them now have a verified route and are
+# configured in section 2 above -- Magellan (the parent's Phenom sitemap),
+# Resolution Think (a JazzHR board whose job pages carry JSON-LD) and O2X (a
+# careers page whose job links are read as plain HTML). Still no route:
+# HigherEchelon (a Salesforce Lightning careers site), EXOS, GAP Solutions,
+# Hyperion, Sword, TAP and Aptive (no careers listing found); Goldbelt (its
+# branded iCIMS search 404s), GDG (a bot wall), T3i and DysTech (script-only
+# pages), Maximus (Avature), Venesco (Paylocity, every posting closed);
+# QuarterLine's careers-ql.icims.com is the same portal as PSI's, already
+# read. See "Specialist firms" in EMPLOYERS.md.
 
 # --- VERIFIED LIVE ----------------------------------------------------------
 # Fetched 2026-07-31: returned a well-formed feed of current postings (items
