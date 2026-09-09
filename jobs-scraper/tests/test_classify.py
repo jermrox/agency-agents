@@ -774,3 +774,43 @@ def test_a_treatment_facility_psychologist_still_needs_a_programme():
         location="Monterey, California",
     )
     assert classify(posting) == Verdict.REJECT
+
+
+# --------------------------------------------------------------------------
+# Academic posts; applicant boilerplate as the only domain evidence
+# --------------------------------------------------------------------------
+
+
+def test_a_professorship_in_human_performance_is_not_a_performance_job():
+    # NSCA board, 2026-09-09: Baylor's tenure-track assistant professor in
+    # Applied Human Performance, with a tactical research interest.
+    posting = make(
+        "Assistant Professor, Tenure Track, Applied Human Performance, HHPR",
+        "The Department of Health, Human Performance and Recreation invites "
+        "applications for a tenure-track Assistant Professor whose research centers "
+        "on human performance in tactical and military populations: exercise science, "
+        "physical therapy collaboration, wearable sensors.",
+        employer="Baylor University",
+        location="Waco, TX",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "professor" in posting.exclusion_hits
+
+
+def test_applicant_boilerplate_alone_does_not_place_the_work():
+    # Loyal Source, 2026-09-09: a strength and conditioning coach "for clients
+    # or athletes", nationwide, whose only military words are the hiring
+    # boilerplate repeated -- no unit, programme, population or installation.
+    body = (
+        "The Strength and Conditioning Coach develops training programs to improve "
+        "the strength, endurance and fitness of clients or athletes, with an emphasis "
+        "on injury prevention. CSCS required. Waivers possible for veterans and "
+        "military spouses. Veterans encouraged to apply. Military experience valued. "
+        "We are a proud employer of veterans and the military community."
+    )
+    nationwide = make("Strength & Conditioning Coach", body, employer="Loyal Source", location="Nationwide")
+    assert classify(nationwide) == Verdict.REJECT
+    # The same text at a named installation is placed by its location.
+    at_post = make("Strength & Conditioning Coach", body, employer="Loyal Source", location="Fort Drum, New York")
+    assert classify(at_post) == Verdict.PUBLISH
+    assert "service context" in at_post.domain_hits

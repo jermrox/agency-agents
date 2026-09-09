@@ -414,6 +414,17 @@ HARD_TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
     # liaison, whatever the study is about.
     "research coordinator",
     "research assistant",
+    # Academic posts: a professor teaches and researches human performance,
+    # which is not delivering it to a tactical population. Baylor's
+    # "Assistant Professor, Tenure Track, Applied Human Performance" reached
+    # PUBLISH on 2026-09-09 through the NSCA board.
+    "professor",
+    "tenure track",
+    "tenure-track",
+    "faculty",
+    "lecturer",
+    "adjunct",
+    "postdoctoral",
 )
 
 # Umbrella hiring notices whose whole title is a category ("Medical", the
@@ -458,6 +469,22 @@ a requirement on the candidate is not evidence about the work. Repetition
 does not change that: an Acuity International protective-security posting
 for Somalia said it three times, and three times the demoted weight cleared
 the floor on its own. Counted once, it needs corroboration as intended.
+"""
+
+
+APPLICANT_BOILERPLATE_TERMS: frozenset[str] = frozenset(
+    {"military", "veteran", "dod", "department of defense"}
+)
+"""Domain terms that equal-opportunity and hiring boilerplate repeats.
+
+"Veterans and military spouses encouraged to apply", "DoD contractor", "an
+equal opportunity employer of veterans": all about the applicant or the
+firm, none about who the work serves. Repeated three times each they clear
+the domain floor by arithmetic, which put three Loyal Source strength and
+conditioning coaches ("clients or athletes", no unit, no installation) on
+the board on 2026-09-09. The domain evidence must include at least one hit
+that is not on this list: a programme, a unit, a population term, or the
+installation in the location (service context).
 """
 
 
@@ -685,6 +712,11 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # A clinician's title needs a named programme or unit (CLINICAL_TITLE_TERMS).
     clinical_title = any(f" {term} " in title for term in CLINICAL_TITLE_TERMS)
     if clinical_title and not named_programme:
+        return Verdict.REJECT
+
+    # Boilerplate about the applicant is not evidence about the population
+    # (APPLICANT_BOILERPLATE_TERMS); something else must name it.
+    if not any(hit not in APPLICANT_BOILERPLATE_TERMS for hit in domain_hits):
         return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical
