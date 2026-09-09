@@ -703,3 +703,74 @@ def test_a_clinician_needs_a_named_programme_or_unit():
         "Embedded behavioral health on the POTFF team.",
     )
     assert classify(sof) == Verdict.PUBLISH
+
+
+# --------------------------------------------------------------------------
+# A VA facility named in the text; a clinician within an operational unit
+# --------------------------------------------------------------------------
+
+
+def test_a_staffing_firm_placement_at_a_va_hospital_is_rejected():
+    # Loyal Source, 2026-09-09: "Pain Physical Therapist ... NY Harbor VA
+    # Health Care System" reached PUBLISH on "military" and "veteran" repeated
+    # in the text. The employer is the staffing firm; the work is the VA's.
+    posting = make(
+        "Pain Physical Therapist",
+        "Loyal Source Government Services is looking for a full-time Pain Physical "
+        "Therapist to provide services to the NY Harbor VA Health Care System. "
+        "Physical Therapists must focus on patient care with our Veteran population "
+        "while working with our VA community. Military and veteran applicants are "
+        "encouraged; military spouses and veterans receive preference.",
+        employer="Loyal Source Government Services",
+        location="New York",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert posting.exclusion_hits == ["civilian health care site"]
+
+
+def test_a_va_mention_in_prior_experience_does_not_veto_a_potff_posting():
+    # KBR's POTFF social workers list "Department of Veterans Affairs (VA) MTF"
+    # among acceptable prior experience; the named programme keeps them.
+    posting = make(
+        "Special Operations Licensed Clinical Social Worker (Southern Pines, NC)",
+        "Provide behavioral health services under the Preservation of the Force and "
+        "Family (POTFF) program to special operations forces personnel. Licensed "
+        "clinical social worker. Experience working in a Government setting such as "
+        "a DOD or Department of Veterans Affairs (VA) MTF is desired.",
+        employer="KBR",
+        location="Southern Pines, North Carolina",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+
+
+def test_a_social_worker_within_an_operational_unit_is_embedded_behavioral_health():
+    # Loyal Source, 2026-08-31: the contractor "shall function within an
+    # operational unit, as a Behavioral Health Care Provider", attends the
+    # commander's staff meetings and reports to the unit commander.
+    posting = make(
+        "Licensed Clinical Social Worker",
+        "The contractor shall function within an operational unit, as a Behavioral "
+        "Health Care Provider. The contractor shall attend commander's staff "
+        "meetings and other meetings as directed by the unit Commander. Licensed "
+        "clinical social worker applying evidence-based therapies in the evaluation "
+        "and treatment of military service members. Veterans encouraged to apply.",
+        employer="Loyal Source Government Services",
+        location="Jacksonville, North Carolina",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+    assert "operational unit" in posting.domain_hits
+
+
+def test_a_treatment_facility_psychologist_still_needs_a_programme():
+    # The same employer's clinic psychologist: MTF privileges, psychiatric
+    # diagnoses, medical and surgical patients, no unit or programme named.
+    posting = make(
+        "Clinical Psychologist",
+        "The Psychologist shall practice within the guidelines of their state "
+        "licensing board and MTF privileges, conduct psychological evaluations and "
+        "establish psychiatric diagnoses, helping medical and surgical patients deal "
+        "with illnesses. Military treatment facility. Veterans encouraged to apply.",
+        employer="Loyal Source Government Services",
+        location="Monterey, California",
+    )
+    assert classify(posting) == Verdict.REJECT

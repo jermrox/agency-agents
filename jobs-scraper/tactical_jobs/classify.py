@@ -53,6 +53,11 @@ DOMAIN_TERMS: dict[str, float] = {
     "marsoc": 3.5,
     "afsoc": 3.5,
     "naval special warfare": 3.5,
+    # A clinician "within an operational unit" is embedded with the unit, not
+    # seeing patients at the treatment facility: Loyal Source's SOF behavioral
+    # health providers say exactly that and nothing else that names the unit.
+    "operational unit": 3.5,
+    "embedded behavioral health": 4.0,
     "green beret": 3.0,
     "army ranger": 3.0,
     "navy seal": 3.0,
@@ -475,7 +480,8 @@ never reach is veterans' health care: VA clinics sit on former bases
 _VETERANS_CARE_RE = re.compile(
     r"\bveterans?\s+(?:health|affairs|benefits)\b|\bVHA\b|\bVA\s+medical\b"
     r"|\bdepartment\s+of\s+veterans\b|\bindian\s+health\s+service\b"
-    r"|\bbureau\s+of\s+prisons\b|\bfederal\s+prison\s+system\b",
+    r"|\bbureau\s+of\s+prisons\b|\bfederal\s+prison\s+system\b"
+    r"|\bVA\s+health\s*care\b|\bVA\s+hospital\b|\bVA\s+clinic\b|\bVAMC\b",
     re.I,
 )
 """Employers whose postings are civilian care of a non-tactical population.
@@ -492,6 +498,14 @@ prison psychologists on the board the day USAJOBS was searched for more
 disciplines. None of the three does tactical human performance work, so
 their postings are rejected outright. (A wellness role for correctional
 officers would be lost with them; none has been seen.)
+
+The same pattern is read against the description, because a staffing firm
+placing a therapist at a VA hospital is the VA's work under the firm's name:
+Loyal Source's "Pain Physical Therapist ... NY Harbor VA Health Care System"
+reached PUBLISH on "military" and "veteran" repeated in the text. There the
+veto yields to a named programme or unit (any domain term worth
+``CLINICAL_CONTEXT_WEIGHT``), since KBR's POTFF social workers list
+"Department of Veterans Affairs (VA) MTF" among acceptable prior experience.
 """
 
 
@@ -631,6 +645,16 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
         domain_score += SERVICE_CONTEXT_WEIGHT
         domain_hits = [*domain_hits, "service context"]
 
+    # A VA, IHS or prison facility named in the text is where the work is,
+    # unless the posting names a tactical programme or unit of its own.
+    named_programme = any(
+        DOMAIN_TERMS.get(hit, 0.0) >= CLINICAL_CONTEXT_WEIGHT for hit in domain_hits
+    )
+    if not named_programme and _VETERANS_CARE_RE.search(posting.description or ""):
+        posting.exclusion_hits = ["civilian health care site"]
+        posting.score = 0.0
+        return Verdict.REJECT
+
     posting.domain_hits = domain_hits
     posting.discipline_hits = discipline_hits
     posting.score = domain_score + discipline_score
@@ -660,9 +684,7 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
 
     # A clinician's title needs a named programme or unit (CLINICAL_TITLE_TERMS).
     clinical_title = any(f" {term} " in title for term in CLINICAL_TITLE_TERMS)
-    if clinical_title and not any(
-        DOMAIN_TERMS.get(hit, 0.0) >= CLINICAL_CONTEXT_WEIGHT for hit in domain_hits
-    ):
+    if clinical_title and not named_programme:
         return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical
@@ -788,6 +810,8 @@ def _derive_tags(
             "submarine",
             "explosive ordnance disposal",
             "eod",
+            "operational unit",
+            "embedded behavioral health",
         ),
         "sof": (
             "thor3",
