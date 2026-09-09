@@ -8,7 +8,7 @@
 - Posted between **2026-07-02** and **2026-09-08**.
 - **$85,738 median** annualized pay across the 98 postings that publish one -- $59,106 to $112,080 covers the middle half.
 - **2% remote-friendly** (3 jobs).
-- 171 of 317 archived records are cross-board copies or re-posts, not separate jobs.
+- 172 of 318 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 140, Special Operations 41, Training Pipeline 24, Fire / EMS / Law Enforcement 15.
 
 ## Month over month
