@@ -55,7 +55,8 @@ Restrict searches by domain (`allowed_domains`) so results come back pre-filtere
 | `pubmed.ncbi.nlm.nih.gov`, PMC, `clinicaltrials.gov` | peer-reviewed, trials in progress |
 
 Cover all five H2F domains — physical, nutritional, mental, sleep, spiritual — plus injury,
-brain health, women's health, environmental extremes, wearables, and the standards chain.
+brain health, women's health, men's health, environmental extremes, wearables, and the
+standards chain.
 **Sweep every service**, not just the Army: a standards change in one service almost always
 has siblings in the other four, and the Space Force is the one most often missed.
 
@@ -84,7 +85,11 @@ Attempt to WebFetch **every URL you would list**.
   Press release, Practitioner post, News article, Program page, Reference guide, Report index
 - `secondary`: true when the link is coverage **about** a primary document rather than the
   document. Every secondary entry's caveat must name the primary source to cite instead.
-- `domains`: any of `standards physical injury sleep nutrition mental brain women environment tech h2f`
+- `domains`: any of `standards physical injury sleep nutrition mental brain women men environment tech h2f`
+  — `women` and `men` are peers. If a sweep returns sex-specific material for one and not
+  the other, that is a gap in the sweep, not in the literature: search the counterpart
+  explicitly (prostate and testicular cancer, testosterone policy, male body image and
+  APED use; pelvic health, iron status, pregnancy and postpartum return to duty).
 - `cui`: **never list a document marked CUI, FOUO, or CAC-gated**, even when a public URL
   indexes it. Drop it and note why.
 

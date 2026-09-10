@@ -9,8 +9,11 @@
   publish = "site"
 
 [build.environment]
-  # Nothing here needs node; skip the automatic dependency install.
+  # The build installs its own Tailwind toolchain from scripts/netlify/package.json.
+  # There is no package.json at the repo root, so Netlify's automatic install has
+  # nothing to do — the build script owns the dependency step.
   NETLIFY_USE_YARN = "false"
+  NPM_FLAGS = "--no-audit --no-fund"
 
 # Old/deep links keep working.
 [[redirects]]

@@ -89,3 +89,6 @@ graphify-out/
 
 # Netlify build output (assembled by scripts/build-netlify-site.sh)
 site/
+
+# Tailwind toolchain for the Netlify site build
+scripts/netlify/node_modules/

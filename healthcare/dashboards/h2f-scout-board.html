@@ -16,6 +16,14 @@
     --verified: #2e7d43;
     --high:     #a87b1f;
     --contingent: #b3502f;
+
+    --radius:   10px;
+    --radius-sm: 6px;
+    --shadow:   0 1px 2px rgba(28,30,28,.04);
+    --shadow-lift: 0 6px 20px rgba(28,30,28,.10);
+    --gutter:   clamp(16px, 4vw, 20px);
+    --label:    700 10px/1.4 inherit;
+    --track:    .07em;
   }
 
   * { box-sizing: border-box; }
@@ -26,7 +34,9 @@
     font-size: 15px;
     line-height: 1.5;
     margin: 0;
-    padding: 0 20px 64px;
+    padding: 0 var(--gutter) 72px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   .wrap { max-width: 1060px; margin: 0 auto; }
   a { color: var(--accent); }
@@ -66,7 +76,7 @@
     background: var(--panel);
     border: 1px solid var(--rule);
     border-left: 4px solid var(--contingent);
-    border-radius: 8px;
+    border-radius: var(--radius);
     padding: 14px 16px;
     margin: 20px 0 0;
     display: grid;
@@ -80,7 +90,10 @@
     margin: 0;
     color: var(--contingent);
   }
-  .notice p { margin: 0; color: var(--notes); font-size: 13px; max-width: 90ch; }
+  .notice p { margin: 0; color: var(--notes); font-size: 13.5px; max-width: 88ch; }
+  .notice-do { margin: 2px 0 0; padding-left: 18px; color: var(--notes); font-size: 13px; display: grid; gap: 3px; }
+  .notice-do li::marker { color: var(--contingent); }
+  .notice-do b { color: var(--ink); font-weight: 600; }
   .notice code { background: #fff; border: 1px solid var(--rule); border-radius: 3px; padding: 0 4px; font-size: 12px; }
 
   /* ---------- tallies ---------- */
@@ -93,7 +106,8 @@
   .tally div {
     background: #fff;
     border: 1px solid var(--rule);
-    border-radius: 8px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     padding: 12px 16px;
     flex: 1 1 140px;
   }
@@ -114,14 +128,82 @@
     margin-top: 8px;
   }
 
+  /* ---------- key ---------- */
+  .key {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .key > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 13px 16px;
+    font: var(--label);
+    letter-spacing: var(--track);
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius);
+  }
+  .key > summary::-webkit-details-marker { display: none; }
+  .key > summary::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .15s;
+    flex: none;
+  }
+  .key[open] > summary::before { transform: rotate(-135deg); }
+  .key > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4px 28px;
+    padding: 0 16px 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+  }
+  .key-col h3 {
+    font: var(--label);
+    letter-spacing: var(--track);
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .key-col dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    align-items: baseline;
+  }
+  .key-col dt { margin: 0; }
+  .key-col dt .grade, .key-col dt .dtype, .key-col dt .fmt, .key-col dt .secondary { margin: 0; }
+  .key-col dd { margin: 0; font-size: 13px; color: var(--notes); }
+  .key-col dd em { color: var(--ink); font-style: italic; }
+
   /* ---------- controls ---------- */
   .controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
-    padding: 18px 0;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 4px;
   }
+  @supports not (backdrop-filter: blur(1px)) { .controls { background: var(--paper); } }
   #q {
     font: inherit;
     font-size: 14px;
@@ -135,18 +217,21 @@
   #q::placeholder { color: var(--muted); }
   .filter {
     font: inherit;
-    font-size: 14px;
-    color: var(--ink);
+    font-size: 13.5px;
+    color: var(--notes);
     background: #fff;
     border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 8px 14px;
+    border-radius: 999px;
+    padding: 7px 13px;
     cursor: pointer;
+    transition: border-color .12s, color .12s, background .12s;
   }
+  .filter:hover { border-color: var(--accent); color: var(--accent); }
   .filter[aria-pressed="true"] {
     background: var(--accent);
     border-color: var(--accent);
     color: #fff;
+    font-weight: 600;
   }
   .filter:focus-visible, #q:focus-visible, a:focus-visible {
     outline: 2px solid var(--accent);
@@ -163,11 +248,20 @@
   section { margin-top: 32px; }
   section > h2 {
     font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     letter-spacing: .06em;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--accent);
     margin: 0 0 4px;
+  }
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
   }
   section > .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; max-width: 72ch; }
   section[hidden] { display: none; }
@@ -176,12 +270,17 @@
   .entry {
     background: #fff;
     border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    transition: box-shadow .15s;
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    transition: box-shadow .15s, border-color .15s, transform .15s;
   }
-  .entry:hover { box-shadow: 0 3px 12px rgba(28,30,28,.10); }
+  .entry:hover {
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in srgb, var(--accent) 26%, var(--rule));
+  }
+  .entry:focus-within { border-color: var(--accent); }
   .grade {
     display: inline-block;
     color: #fff;
@@ -192,6 +291,8 @@
     padding: 3px 8px;
     border-radius: 4px;
     margin-bottom: 8px;
+    letter-spacing: var(--track);
+    vertical-align: top;
   }
   .g-policy, .g-doctrine { background: var(--high); }
   .g-a, .g-b             { background: var(--verified); }
@@ -240,7 +341,8 @@
   .watch-item {
     background: #fff;
     border: 1px solid var(--rule);
-    border-radius: 8px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     padding: 16px;
     display: grid;
     grid-template-columns: 30px 1fr auto;
@@ -290,7 +392,11 @@
     color: var(--muted);
     font-size: 13px;
   }
+  @media (max-width: 720px) {
+    .key-grid { gap: 18px; }
+  }
   @media (max-width: 560px) {
+    .controls { position: static; backdrop-filter: none; }
     .controls { flex-direction: column; align-items: stretch; }
     #q, .filter { width: 100%; }
     .count-live { margin-left: 0; }
@@ -298,6 +404,14 @@
     .watch-item { grid-template-columns: 1fr; gap: 8px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+  @media print {
+    body { padding: 0; font-size: 10pt; }
+    .controls, .key > summary::before { display: none; }
+    .entry, .tally div, .watch-item, .registry div, .key { box-shadow: none; break-inside: avoid; }
+    .entry h3 a::after { content: " (" attr(href) ")"; font-size: 8pt; font-weight: 400; color: #555; word-break: break-all; }
+    section[hidden], .entry[hidden] { display: revert !important; }
+  }
 </style>
 <div class="wrap">
 
@@ -309,26 +423,57 @@
     <div class="dtg">
       SWEEP &nbsp;<b>08 SEP 2026</b><br>
       WINDOW &nbsp;<b>LAST 18 MONTHS</b><br>
-      ITEMS &nbsp;<b>96</b><br>
+      ITEMS &nbsp;<b>103</b><br>
       STATUS &nbsp;<b>LINKS UNVERIFIED</b>
     </div>
   </header>
 
   <div class="notice">
     <h2>Read this before you cite anything here</h2>
-    <p>This sweep ran in an environment where outbound page fetches are blocked by network policy. Every link below was returned by search restricted to official <code>.mil</code>, <code>.gov</code>, and indexed journal domains — but <b>no link was opened, and no primary document was read</b>. Item summaries are drawn from search-result text, not from the source documents. Treat every entry as a lead to verify, not as a verified finding: open the link, confirm the publication date and the claim, then cite. Dates, report numbers, and figures shown here are as reported by the search index.</p>
-    <p>Each entry also carries a <b>document type</b>, and the 20 entries marked <b>Secondary</b> link to a news article, press release, or blog post <em>about</em> a primary document rather than to the document itself. Those are leads to the real source, not the source. Where an entry is marked Secondary, its caveat names the primary document you should be citing instead.</p>
+    <p><b>No link on this board was opened.</b> Outbound fetches were blocked by network policy, so every summary comes from search-result text on official <code>.mil</code>, <code>.gov</code>, and indexed journal domains — not from the documents themselves.</p>
+    <ul class="notice-do">
+      <li>Treat each entry as a <b>lead to verify</b>, not a finding.</li>
+      <li>Open the link, confirm the date and the claim, then cite.</li>
+      <li>Entries marked <b>Secondary</b> point at coverage <em>about</em> a document; their caveat names the primary source to cite instead.</li>
+    </ul>
   </div>
 
   <div class="tally">
-    <div><span class="n">20</span><span class="k">Policy &amp; doctrine</span></div>
-    <div><span class="n">27</span><span class="k">Research</span></div>
-    <div><span class="n">14</span><span class="k">Surveillance &amp; oversight</span></div>
+    <div><span class="n">21</span><span class="k">Policy &amp; doctrine</span></div>
+    <div><span class="n">30</span><span class="k">Research</span></div>
+    <div><span class="n">17</span><span class="k">Surveillance &amp; oversight</span></div>
     <div><span class="n">35</span><span class="k">Programs &amp; funding</span></div>
     <div><span class="n">8</span><span class="k">Watch-list topics</span></div>
-    <div><span class="n">20</span><span class="k">Secondary sources</span></div>
+    <div><span class="n">21</span><span class="k">Secondary sources</span></div>
     <div><span class="n">0</span><span class="k">Fetch-verified</span></div>
   </div>
+
+  <!-- ============ KEY ============ -->
+  <details class="key" open>
+    <summary>Key — what the badges on each entry mean</summary>
+    <div class="key-grid">
+      <div class="key-col">
+        <h3>Evidence grade</h3>
+        <dl>
+          <dt><span class="grade g-policy">Policy</span></dt><dd>A requirement. Says what you <em>must</em> do; says nothing about whether it works.</dd>
+          <dt><span class="grade g-a">A</span></dt><dd>Randomised trial or systematic review <em>in a military population</em>. The strongest thing here.</dd>
+          <dt><span class="grade g-b">B</span></dt><dd>Large prospective cohort, or a strong civilian randomised trial. Solid, one step removed.</dd>
+          <dt><span class="grade g-c">C</span></dt><dd>Small, cross-sectional, or retrospective. Suggestive. Do not build policy on it alone.</dd>
+          <dt><span class="grade g-d">D</span></dt><dd>Pilot, conference abstract, or preprint. Not yet through peer review.</dd>
+          <dt><span class="grade g-s">S</span></dt><dd>Surveillance. Counts how often something happens. Never explains why.</dd>
+          <dt><span class="grade g-prog">Program</span></dt><dd>A program or funding line, not evidence. Read funding as a 12–24 month leading indicator.</dd>
+        </dl>
+      </div>
+      <div class="key-col">
+        <h3>Source label</h3>
+        <dl>
+          <dt><span class="dtype">Type</span></dt><dd>What the document <em>is</em> — Memorandum, Directive, Regulation, Doctrine, Service message, Gov report, Technical report, Surveillance report, Fact sheet, Peer-reviewed, Trial protocol, Press release, Program page.</dd>
+          <dt><span class="fmt">PDF</span></dt><dd>File format, where the link goes straight to a document rather than a web page.</dd>
+          <dt><span class="secondary">Secondary</span></dt><dd>The link is coverage <em>about</em> a primary document, not the document. Follow it through before citing.</dd>
+        </dl>
+      </div>
+    </div>
+  </details>
 
   <div class="controls">
     <input id="q" type="search" placeholder="Search titles, topics, publishers…" aria-label="Search entries">
@@ -341,6 +486,7 @@
     <button class="filter" data-f="mental" aria-pressed="false">Mental</button>
     <button class="filter" data-f="brain" aria-pressed="false">Brain health</button>
     <button class="filter" data-f="women" aria-pressed="false">Women's health</button>
+    <button class="filter" data-f="men" aria-pressed="false">Men's health</button>
     <button class="filter" data-f="environment" aria-pressed="false">Environment</button>
     <button class="filter" data-f="tech" aria-pressed="false">Wearables</button>
     <button class="filter" data-f="h2f" aria-pressed="false">H2F</button>
@@ -353,7 +499,7 @@
     <h2>Policy &amp; Doctrine</h2>
     <p class="sub">Authoritative on what is <em>required</em>. Says nothing about what works — that is the research section's job. Ordered roughly top-down: department, then service.</p>
 
-    <article class="entry" data-tags="physical h2f mental nutrition sleep standards">
+    <article class="entry" data-tags="physical h2f mental nutrition sleep standards men">
       <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
         <h3><a href="https://media.defense.gov/2026/Jul/15/2003961654/-1/-1/1/HEALTH%20AND%20HUMAN%20PERFORMANCE%20OPTIMIZATION%20TO%20ENHANCE%20MILITARY%20READINESS%20OSD004430-26%20RES%20FINAL.PDF">Health and Human Performance Optimization to Enhance Military Readiness</a></h3>
         <p class="meta">Secretary of War memo · <span class="pub">media.defense.gov</span> · reported 15 JUL 2026</p>
@@ -544,6 +690,15 @@
         <div class="tags"><span class="tag">USSF</span><span class="tag">HPA</span><span class="tag">CFA</span></div>
       </div>
     </article>
+    <article class="entry" data-tags="men standards physical secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Press release</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.war.gov/News/Releases/Release/Article/4546628/statement-by-chief-pentagon-spokesman-sean-parnell-on-enhanced-screening-protoc/">Statement on the Enhanced Screening Protocol to Optimize Warfighter Performance</a></h3>
+        <p class="meta">Department of War release · <span class="pub">war.gov</span> · reported 2026</p>
+        <p class="sowhat">The public announcement of the enhanced testosterone-deficiency screening protocol directed for service members. This is the press statement, not the directive — the substance sits in the Secretary of War health and human performance optimization memo listed at the top of this section.
+        <span class="caveat">Secondary: a press release about a policy document. Cite the memo (OSD004430-26) and the resulting Periodic Health Assessment change to DoDI 6200.06, not this page.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">testosterone</span><span class="tag">screening</span></div>
+      </div>
+    </article>
   </section>
 
   <!-- ============ RESEARCH ============ -->
@@ -561,7 +716,7 @@
       </div>
     </article>
 
-    <article class="entry" data-tags="injury women physical">
+    <article class="entry" data-tags="injury women physical men">
       <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
         <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12410583/">Females Exhibit Greater Peak and Cumulative Patellofemoral Joint Stress With Moderate and Heavy Load Carriage Compared With Males</a></h3>
         <p class="meta">Journal article · <span class="pub">PMC12410583</span> · recent</p>
@@ -591,7 +746,7 @@
       </div>
     </article>
 
-    <article class="entry" data-tags="women injury">
+    <article class="entry" data-tags="women injury men">
       <div><span class="grade g-s">S</span><span class="dtype">Peer-reviewed</span>
         <h3><a href="https://pubmed.ncbi.nlm.nih.gov/39255514/">Incidence and risk factors for hip fractures among U.S. Armed Forces active component women compared to men, 2018–2022</a></h3>
         <p class="meta">Surveillance analysis · <span class="pub">PubMed 39255514</span></p>
@@ -810,6 +965,33 @@
         <div class="tags"><span class="tag">USARIEM</span><span class="tag">cold injury</span><span class="tag">doctrine</span></div>
       </div>
     </article>
+    <article class="entry" data-tags="men mental physical">
+      <div><span class="grade g-a">A</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/35675995/">Body dysmorphic disorder, muscle dysmorphia, weight and shape dissatisfaction and the use of appearance-enhancing drugs in the military: a systematic review</a></h3>
+        <p class="meta">Systematic review · <span class="pub">PubMed</span> · reported 2022</p>
+        <p class="sowhat">The strongest available synthesis on male-pattern body image pathology in uniform — muscle dysmorphia, shape dissatisfaction, and appearance- and performance-enhancing drug use. Directly relevant to how physical standards and body composition messaging land on men.
+        <span class="caveat">A systematic review is only as good as the primary studies under it; several in this literature are small self-report surveys.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">body image</span><span class="tag">APEDs</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10352998/">Military Occupation and Testicular Germ Cell Tumor Risk among U.S. Air Force Servicemen</a></h3>
+        <p class="meta">Occupational epidemiology · <span class="pub">PMC</span> · reported 2023</p>
+        <p class="sowhat">Testicular germ cell tumour is the most commonly diagnosed malignancy in active duty servicemen — a young-male cancer that peaks squarely in the age band H2F serves. Search text reports elevated age-adjusted incidence among officers with a flying history.
+        <span class="caveat">Occupational cohort design: it identifies associations, not causes, and cannot separate exposure from selection into the occupation.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">occupational</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men physical">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41833285/">Factors Associated With Testicular Cancer Risk Among New American Military Recruits During Wartime</a></h3>
+        <p class="meta">Cohort study · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Among a reported 210,483 new Army recruits (2011–2014), 44 incident testicular cancers — an incidence rate reported as 11.61 per 100,000 person-years, with roughly twice the adjusted risk in infantry versus other occupations.
+        <span class="caveat">Small case count drives wide confidence intervals; confirm the figures and the adjustment set in the paper before quoting the twofold estimate.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">recruits</span></div>
+      </div>
+    </article>
   </section>
 
   <!-- ============ SURVEILLANCE ============ -->
@@ -951,6 +1133,33 @@
         <div class="tags"><span class="tag">GAO</span><span class="tag">oversight</span><span class="tag">MHS</span></div>
       </div>
     </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://health.mil/Reference-Center/Reports/2024/05/09/Study-on-the-Incidence-of-Cancer-Diagnosis-and-Mortality">Study on the Incidence of Cancer Diagnosis and Mortality Among Military Aircrew</a></h3>
+        <p class="meta">Congressionally directed study · <span class="pub">health.mil</span> · reported 2024</p>
+        <p class="sowhat">The aircrew cancer study. Search text reports active component aircrew had roughly <b>21% higher prostate cancer incidence</b> than the comparable U.S. population — the clearest men-specific signal in current DoD surveillance.
+        <span class="caveat">Surveillance and registry linkage describe incidence, not cause. Comparisons to the civilian population carry a healthy-worker effect in both directions.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">aircrew</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://health.mil/Reference-Center/Publications/2025/03/01/Prostate-Cancer">Prostate Cancer — MHS reference publication (ONC 14)</a></h3>
+        <p class="meta">Reference publication · <span class="pub">health.mil</span> · reported 2025</p>
+        <p class="sowhat">The Military Health System reference sheet on prostate cancer: background, screening posture, and the surveillance picture in the covered population. The men’s-health counterpart to the breast and ovarian material already on this board.
+        <span class="caveat">A reference sheet summarises; it is not the underlying surveillance dataset.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">screening</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://www.health.mil/Reference-Center/Publications/2026/04/01/Testicular-Cancer">Testicular Cancer — MHS reference publication (ONC 14)</a></h3>
+        <p class="meta">Reference publication · <span class="pub">health.mil</span> · reported APR 2026</p>
+        <p class="sowhat">The companion reference sheet on testicular cancer — the malignancy most concentrated in the young male population the force is built from, and the one where self-screening messaging plausibly changes outcomes.
+        <span class="caveat">A reference sheet summarises; confirm current incidence figures against MSMR before briefing them.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">screening</span></div>
+      </div>
+    </article>
   </section>
 
   <!-- ============ PROGRAMS ============ -->
@@ -1069,7 +1278,8 @@
       <div><span class="grade g-prog">Funding</span><span class="dtype">Press release</span>
         <h3><a href="https://cdmrp.health.mil/pubs/press/2026/orppreann">FY26 Orthopaedic Research Program (ORP)</a></h3>
         <p class="meta">CDMRP pre-announcement · <span class="pub">cdmrp.health.mil</span> · 2026</p>
-        <p class="sowhat">Funds clinically relevant research advancing treatment and rehabilitation of orthopaedic injuries from combat and service-related activity, aimed at function and return to duty. The most directly MSK-relevant funding line.</p>
+        <p class="sowhat">Funds clinically relevant research advancing treatment and rehabilitation of orthopaedic injuries from combat and service-related activity, aimed at function and return to duty. The most directly MSK-relevant funding line.
+        <span class="caveat">This is a pre-announcement: it precedes the actual funding opportunity announcement, and mechanisms and dollar figures can still change.</span></p>
         <div class="tags"><span class="tag">CDMRP</span><span class="tag">orthopaedic</span><span class="tag">return to duty</span></div>
       </div>
     </article>
@@ -1188,15 +1398,6 @@
         <div class="tags"><span class="tag">CDMRP</span><span class="tag">priorities</span><span class="tag">funding</span></div>
       </div>
     </article>
-    <article class="entry" data-tags="injury">
-      <div><span class="grade g-prog">Program</span><span class="dtype">Press release</span>
-        <h3><a href="https://cdmrp.health.mil/pubs/press/2026/orppreann">CDMRP 2026 Orthopaedic Research Program pre-announcement</a></h3>
-        <p class="meta">Press release · <span class="pub">cdmrp.health.mil</span> · 2026</p>
-        <p class="sowhat">Pre-announcement for the FY26 Orthopaedic Research Program — the most directly musculoskeletal of the CDMRP portfolios and the one most relevant to H2F injury reduction.
-        <span class="caveat">Pre-announcements precede the actual funding opportunity announcement; mechanisms and dollar figures can change.</span></p>
-        <div class="tags"><span class="tag">CDMRP</span><span class="tag">orthopaedic</span><span class="tag">funding</span></div>
-      </div>
-    </article>
     <article class="entry" data-tags="brain secondary">
       <div><span class="grade g-prog">Program</span><span class="dtype">Press release</span><span class="secondary">Secondary</span>
         <h3><a href="https://cdmrp.health.mil/pubs/press/2026/CDMRP_TBI_research_highlight.aspx">CDMRP-supported research assesses TBI-related outcomes to improve warfighter brain health</a></h3>
@@ -1285,6 +1486,15 @@
         <p class="sowhat">Describes a wearable platform tracking performance, fitness, recovery, sleep, and injury-risk metrics, with fielding stated to begin in early FY26.
         <span class="caveat">Secondary, and vendor-adjacent in framing. Treat capability claims as unvalidated until an independent evaluation appears.</span></p>
         <div class="tags"><span class="tag">wearables</span><span class="tag">fielding</span><span class="tag">injury risk</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://cdmrp.health.mil/funding/pcrp.aspx">CDMRP FY26 Prostate Cancer Research Program (PCRP) — funding opportunities</a></h3>
+        <p class="meta">CDMRP program · <span class="pub">cdmrp.health.mil</span> · FY26</p>
+        <p class="sowhat">Reported at <b>$75 million</b> for FY26 across Idea Development, Data Science, Physician Research, and Early Investigator awards. The largest single men’s-health line in the CDMRP portfolio, and the counterpart to the ovarian and breast programs already listed here.
+        <span class="caveat">Deadlines, mechanisms, and appropriation figures change; read the current announcement on Grants.gov (CFDA 12.420) before relying on any number here.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">CDMRP</span><span class="tag">funding</span></div>
       </div>
     </article>
   </section>
@@ -1399,8 +1609,7 @@
 
   <footer>
     NEVER CITED: supplement and equipment vendors · coaching blogs · social accounts where a document exists · news aggregators · AI-generated summary sites.<br>
-    DOCUMENT TYPES: Memorandum · Directive · Regulation · Doctrine · Service message · Gov report · Technical report · Surveillance report / data · Fact sheet · Peer-reviewed · Trial protocol · Press release · Practitioner post · News article · Program page · Reference guide. <b>Secondary</b> = the link is about a primary document, not the document.<br>
-    GRADES: Policy = requirement, silent on efficacy · A = RCT or systematic review in a military population · B = large prospective cohort or strong civilian RCT · C = small, cross-sectional, or retrospective · D = pilot, abstract, or preprint · S = surveillance, describes incidence only.<br>
+    Badge meanings are broken out in the <b>Key</b> at the top of the board.<br>
     Generated by the Military Health &amp; Fitness Research Scout. Links unverified in this sweep — open before citing.
   </footer>
 </div>
@@ -1421,7 +1630,7 @@
       var shown = 0;
 
       entries.forEach(function (el) {
-        var tags = el.getAttribute('data-tags') || '';
+        var tags = (el.getAttribute('data-tags') || '').split(/\s+/);
         var matchTag = active === 'all' || tags.indexOf(active) !== -1;
         var matchTerm = !term || el.textContent.toLowerCase().indexOf(term) !== -1;
         var show = matchTag && matchTerm;
