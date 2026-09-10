@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-10T07:06:20.392658+00:00",
+  "generated_at": "2026-09-10T19:08:03.365549+00:00",
   "totals": {
-    "postings": 324,
-    "employers": 24,
-    "unique_jobs": 151,
-    "with_salary": 101,
+    "postings": 327,
+    "employers": 25,
+    "unique_jobs": 153,
+    "with_salary": 103,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-10T00:00:00+00:00"
+      "latest": "2026-09-10T10:58:27.163000+00:00"
     }
   },
   "by_employer": [
@@ -49,16 +49,17 @@
     },
     {
       "name": "General Dynamics Information Technology",
-      "count": 19,
+      "count": 20,
       "disciplines": [
         "cognitive",
         "sports-medicine",
         "strength-conditioning",
         "nutrition",
         "research",
+        "leadership",
         "sport-science"
       ],
-      "median_salary": 98738.0
+      "median_salary": 106174.0
     },
     {
       "name": "Military Treatment Facilities under DHA",
@@ -156,73 +157,73 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 62,
-      "share": 0.5391,
+      "count": 63,
+      "share": 0.5385,
       "median_salary": 62782.81
     },
     {
       "name": "sports-medicine",
       "count": 60,
-      "share": 0.5217,
+      "share": 0.5128,
       "median_salary": 79630.0
     },
     {
       "name": "cognitive",
-      "count": 24,
-      "share": 0.2087,
-      "median_salary": 113610.0
+      "count": 25,
+      "share": 0.2137,
+      "median_salary": 122190.0
     },
     {
       "name": "leadership",
-      "count": 15,
-      "share": 0.1304,
+      "count": 16,
+      "share": 0.1368,
       "median_salary": 62782.81
     },
     {
       "name": "research",
-      "count": 15,
-      "share": 0.1304,
-      "median_salary": 90457.0
+      "count": 16,
+      "share": 0.1368,
+      "median_salary": 97651.5
     },
     {
       "name": "nutrition",
       "count": 14,
-      "share": 0.1217,
+      "share": 0.1197,
       "median_salary": 91950.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0087,
+      "share": 0.0085,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 145,
-      "share": 0.9732
+      "count": 147,
+      "share": 0.9735
     },
     {
       "name": "sof",
       "count": 41,
-      "share": 0.2752
+      "share": 0.2715
     },
     {
       "name": "training-pipeline",
-      "count": 24,
-      "share": 0.1611
+      "count": 26,
+      "share": 0.1722
     },
     {
       "name": "first-responder",
-      "count": 16,
-      "share": 0.1074
+      "count": 17,
+      "share": 0.1126
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 51
+      "count": 53
     },
     {
       "name": "Joint",
@@ -248,7 +249,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Cannon AFB",
@@ -361,39 +362,39 @@
       "count": 3
     },
     {
-      "code": "OK",
+      "code": "NY",
       "count": 3
     },
     {
-      "code": "AK",
-      "count": 2
+      "code": "OK",
+      "count": 3
     }
   ],
   "certifications": [
     {
       "name": "CSCS",
       "count": 48,
-      "share": 0.7742
+      "share": 0.7619
     },
     {
       "name": "ATC",
       "count": 15,
-      "share": 0.2419
+      "share": 0.2381
     },
     {
       "name": "RD",
       "count": 10,
-      "share": 0.1613
+      "share": 0.1587
     },
     {
       "name": "PhD",
-      "count": 5,
-      "share": 0.0806
+      "count": 6,
+      "share": 0.0952
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.0484
+      "share": 0.0476
     }
   ],
   "clearances": [
@@ -407,24 +408,24 @@
     },
     {
       "name": "Top Secret",
-      "count": 13
+      "count": 14
     }
   ],
   "salary": {
-    "count": 101,
+    "count": 103,
     "min": 34320.0,
     "max": 219654.0,
     "median": 85738.0,
-    "p25": 58882.0,
-    "p75": 113610.0,
+    "p25": 58887.0,
+    "p75": 115280.75,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 24,
+        "count": 25,
         "min": 34320.0,
         "max": 130770.0,
         "median": 62782.81,
-        "p25": 44850.0,
-        "p75": 86089.75
+        "p25": 45760.0,
+        "p75": 87145.0
       },
       "sports-medicine": {
         "count": 43,
@@ -443,10 +444,10 @@
         "p75": 97967.5
       },
       "cognitive": {
-        "count": 11,
+        "count": 12,
         "min": 74485.0,
-        "max": 130770.0,
-        "median": 113610.0,
+        "max": 173285.0,
+        "median": 122190.0,
         "p25": 98738.0,
         "p75": 130770.0
       },
@@ -459,26 +460,26 @@
         "p75": 85738.0
       },
       "research": {
-        "count": 6,
+        "count": 7,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 90457.0,
-        "p25": 64713.0,
+        "median": 97651.5,
+        "p25": 70534.0,
         "p75": 98738.0
       },
       "leadership": {
-        "count": 12,
+        "count": 13,
         "min": 34320.0,
-        "max": 82176.0,
+        "max": 173285.0,
         "median": 62782.81,
-        "p25": 42380.0,
-        "p75": 73251.88
+        "p25": 42640.0,
+        "p75": 75201.5
       }
     }
   },
   "remote": {
     "count": 3,
-    "share": 0.0199
+    "share": 0.0196
   },
   "timeline": [
     {
@@ -491,12 +492,12 @@
     },
     {
       "month": "2026-09",
-      "count": 54
+      "count": 56
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-12T00:00:00+00:00",
+    "pivot": "2026-06-12T10:58:27.163000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -518,9 +519,9 @@
       },
       {
         "name": "General Dynamics Information Technology",
-        "recent": 19,
+        "recent": 20,
         "previous": 0,
-        "change": 19
+        "change": 20
       },
       {
         "name": "Military Treatment Facilities under DHA",
@@ -610,9 +611,9 @@
       },
       {
         "name": "PhD",
-        "recent": 5,
+        "recent": 6,
         "previous": 0,
-        "change": 5
+        "change": 6
       },
       {
         "name": "TSAC-F",
