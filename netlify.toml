@@ -1,0 +1,27 @@
+# Netlify project: agentresearchsum
+#
+# This repository is an agent library, not a web root — there is no index.html
+# at the top level. Without a publish directory Netlify serves the bare repo and
+# "/" 404s, so the build step below assembles a real site instead.
+
+[build]
+  command = "bash scripts/build-netlify-site.sh site"
+  publish = "site"
+
+[build.environment]
+  # The build installs its own Tailwind toolchain from scripts/netlify/package.json.
+  # There is no package.json at the repo root, so Netlify's automatic install has
+  # nothing to do — the build script owns the dependency step.
+  NETLIFY_USE_YARN = "false"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# Old/deep links keep working.
+[[redirects]]
+  from = "/healthcare/dashboards/h2f-scout-board.html"
+  to = "/h2f-scout-board.html"
+  status = 301
+
+[[redirects]]
+  from = "/board"
+  to = "/"
+  status = 301

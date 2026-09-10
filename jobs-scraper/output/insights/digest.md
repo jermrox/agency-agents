@@ -1,61 +1,68 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-08-29.*
+*Briefing generated 2026-09-10.*
 
 ## Headline
 
-- **71 open jobs** from **5 employers**.
-- Posted between **2026-07-02** and **2026-08-28**.
-- **$130,770 median** annualized pay across the 49 postings that publish one -- $91,950 to $166,400 covers the middle half.
-- **4% remote-friendly** (3 jobs).
-- 59 of 130 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 71, Special Operations 34, Training Pipeline 21.
+- **153 open jobs** from **25 employers**.
+- Posted between **2026-07-02** and **2026-09-10**.
+- **$85,738 median** annualized pay across the 103 postings that publish one -- $58,887 to $115,281 covers the middle half.
+- **2% remote-friendly** (3 jobs).
+- 174 of 327 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 147, Special Operations 41, Training Pipeline 26, Fire / EMS / Law Enforcement 17.
 
 ## Month over month
 
-Postings are **up +53** in 2026-08 (9 to 62), 589% against 2026-07.
+Postings are **down -32** in 2026-09 (88 to 56), 36% against 2026-08.
 
 ```
-2026-07     9  ####
-2026-08    62  ############################
+2026-07     9  ###
+2026-08    88  ############################
+2026-09    56  ##################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- Serco USA: 0 to 26
-- KBR: 0 to 21
-- General Dynamics Information Technology: 0 to 19
-- The Geneva Foundation: 0 to 3
-- Serco: 0 to 2
+- Serco USA: 0 to 27
+- KBR: 0 to 25
+- Commander, Navy Installations Command: 0 to 20
+- General Dynamics Information Technology: 0 to 20
+- Military Treatment Facilities under DHA: 0 to 12
 
 **Credentials appearing more often:**
 
-- CSCS: 0 to 42
-- ATC: 0 to 12
-- RD: 0 to 8
-- PhD: 0 to 1
+- CSCS: 0 to 48
+- ATC: 0 to 15
+- RD: 0 to 10
+- PhD: 0 to 6
+- TSAC-F: 0 to 3
 
 ## Who is hiring
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| Serco USA | 26 | $166,400 | Strength & Conditioning, Cognitive Performance |
-| KBR | 21 | $91,950 | Strength & Conditioning, Sports Medicine |
-| General Dynamics Information Technology | 19 | $98,738 | Cognitive Performance, Sports Medicine |
-| The Geneva Foundation | 3 | $61,994 | Sports Medicine, Strength & Conditioning |
-| Serco | 2 | $62,783 | Program Leadership, Strength & Conditioning |
+| Serco USA | 27 | - | Strength & Conditioning, Cognitive Performance |
+| KBR | 25 | $91,950 | Strength & Conditioning, Sports Medicine |
+| Commander, Navy Installations Command | 20 | $45,760 | Program Leadership, Sports Medicine |
+| General Dynamics Information Technology | 20 | $106,174 | Cognitive Performance, Sports Medicine |
+| Military Treatment Facilities under DHA | 12 | $102,935 | Sports Medicine, Research & Analytics |
+| Customs and Border Protection | 9 | $131,260 | - |
+| U.S. Marine Corps | 7 | $35,360 | Sports Medicine, Strength & Conditioning |
+| Veterans Health Administration | 6 | $73,902 | Program Leadership, Sports Medicine |
+| Bureau of Prisons/Federal Prison System | 4 | $77,028 | Sports Medicine |
+| The Geneva Foundation | 4 | $62,197 | Sports Medicine, Strength & Conditioning |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 47 | 72% |
-| Sports Medicine | 22 | 34% |
-| Cognitive Performance | 20 | 31% |
-| Research & Analytics | 11 | 17% |
-| Performance Nutrition | 10 | 15% |
-| Program Leadership | 5 | 8% |
-| Sport Science | 1 | 2% |
+| Strength & Conditioning | 63 | 54% |
+| Sports Medicine | 60 | 51% |
+| Cognitive Performance | 25 | 21% |
+| Program Leadership | 16 | 14% |
+| Research & Analytics | 16 | 14% |
+| Performance Nutrition | 14 | 12% |
+| Sport Science | 1 | 1% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -64,63 +71,64 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 42 | 88% |
-| ATC | 12 | 25% |
-| RD | 8 | 17% |
-| PhD | 1 | 2% |
+| CSCS | 48 | 76% |
+| ATC | 15 | 24% |
+| RD | 10 | 16% |
+| PhD | 6 | 10% |
+| TSAC-F | 3 | 5% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** TS/SCI (15), Secret (12), Top Secret (11)
+**Clearances requested:** Secret (16), TS/SCI (15), Top Secret (14)
 
 ## What it pays
 
-- Median **$130,770**, middle half $91,950 to $166,400.
-- Full range $58,490 to $166,400.
+- Median **$85,738**, middle half $58,887 to $115,281.
+- Full range $34,320 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Program Leadership | 5 | $62,783 | $166,400 | $166,400 |
-| Strength & Conditioning | 32 | $90,397 | $166,400 | $166,400 |
-| Research & Analytics | 6 | $106,746 | $148,585 | $166,400 |
-| Cognitive Performance | 14 | $98,738 | $130,770 | $130,770 |
-| Sports Medicine | 14 | $84,434 | $106,174 | $157,492 |
-| Performance Nutrition | 5 | $85,738 | $91,950 | $91,950 |
+| Cognitive Performance | 12 | $98,738 | $122,190 | $130,770 |
+| Research & Analytics | 7 | $70,534 | $97,652 | $98,738 |
+| Performance Nutrition | 7 | $88,844 | $91,950 | $97,968 |
 | Sport Science | 1 | $85,738 | $85,738 | $85,738 |
+| Sports Medicine | 43 | $58,887 | $79,630 | $105,915 |
+| Program Leadership | 13 | $42,640 | $62,783 | $75,202 |
+| Strength & Conditioning | 25 | $45,760 | $62,783 | $87,145 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** NC (8), FL (5), GA (4), TX (4), VA (4), MO (3), NM (3), OK (3), WA (3), CA (2)
+**States:** VA (13), TX (12), NC (11), CA (9), FL (9), GA (9), NM (7), WA (6), MO (5), CO (4)
 
 | Installation | Jobs |
 |---|---|
-| Fort Bragg | 19 |
+| Fort Bragg | 21 |
+| Cannon AFB | 5 |
+| Fort Leonard Wood | 4 |
 | Hurlburt Field | 4 |
-| Cannon AFB | 3 |
+| Joint Base Langley-Eustis | 4 |
 | Fort Campbell | 3 |
-| Fort Leonard Wood | 3 |
 | Fort Sill | 3 |
-| Joint Base Langley-Eustis | 3 |
+| Fort Stewart | 3 |
+| JBLM | 3 |
 | MacDill AFB | 3 |
-| Fort Benning | 2 |
-| Fort Bliss | 2 |
 
-**Branches and services:** Army (34), Joint (31), Air Force (5)
+**Branches and services:** Army (53), Joint (35), Navy (22), Air Force (11), Marine Corps (7), Coast Guard (1)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
+| Physical Therapist | 8 |
+| Fitness Specialist | 6 |
 | Human Performance Operations Manager | 4 |
+| Occupational Therapist | 4 |
+| H2FIT: Strength and Conditioning Coaches | 3 |
+| Performance Dietitian | 3 |
+| Physical Therapy Assistant | 3 |
 | Cognitive Performance Specialist | 2 |
-| H2FIT: Strength and Conditioning Coaches | 2 |
-| Performance Dietitian | 2 |
-| Physical Therapist | 2 |
-| Special Operations Performance Dietitian (4/160 SOAR. JBLM, WA) | 2 |
-| Special Operations Physical Therapist-TEMP POSITION, (Onsite - Fort Bragg, NC) | 2 |
-| Special Ops Physical Therapist Part-Time (27 SOW/Cannon AFB, NM) | 2 |
-| *SKILLBRIDGE* Electrical Engineer | 1 |
-| Biostatistician | 1 |
+| OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS) | 2 |
+| Occupational Therapy Assistant | 2 |
