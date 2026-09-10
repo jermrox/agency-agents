@@ -1,0 +1,9 @@
+{
+  "name": "agentresearchsum-site",
+  "private": true,
+  "description": "Build-only Tailwind toolchain for the standalone Netlify site. Not part of the agent library.",
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.14",
+    "tailwindcss": "4.1.14"
+  }
+}

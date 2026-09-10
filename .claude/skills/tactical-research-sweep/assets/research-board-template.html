@@ -1,0 +1,159 @@
+<div class="mm-board">
+<style>
+.mm-board{font-family:inherit;background:#fff;color:#1c1e1c;line-height:1.5;}
+.mm-board *{box-sizing:border-box;}
+.mm-board a{color:#2f3e33;}
+.mm-filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}
+.mm-filters select{padding:8px 10px;border:1px solid #e3e5e2;border-radius:6px;background:#fff;color:#1c1e1c;font-family:inherit;font-size:14px;}
+.mm-filters input[type=search]{padding:8px 10px;border:1px solid #e3e5e2;border-radius:6px;background:#fff;color:#1c1e1c;font-family:inherit;font-size:14px;width:220px;}
+.mm-check{display:flex;align-items:center;gap:6px;font-size:14px;}
+.mm-check input{accent-color:#2f3e33;}
+.mm-clear{background:#2f3e33;color:#fff;border:none;border-radius:6px;padding:8px 14px;font-family:inherit;font-size:14px;cursor:pointer;}
+.mm-legend{background:#f2f4f1;border:1px solid #e3e5e2;border-radius:8px;padding:12px 14px;font-size:13px;margin-bottom:16px;}
+.mm-legend b{color:#2f3e33;}
+.mm-count{font-size:13px;color:#6b7280;margin-bottom:12px;}
+.mm-card{background:#fff;border:1px solid #e3e5e2;border-radius:8px;padding:16px;margin-bottom:12px;transition:box-shadow .15s;}
+.mm-card:hover{box-shadow:0 3px 12px rgba(28,30,28,.10);}
+.mm-card h3{margin:0 0 6px;font-size:17px;}
+.mm-card h3 a{color:#2f3e33;text-decoration:none;}
+.mm-card h3 a:hover{text-decoration:underline;}
+.mm-meta{font-size:14px;margin-bottom:4px;color:#6b7280;}
+.mm-meta b{color:#4b4f4b;font-weight:600;}
+.mm-notes{font-size:13px;color:#4b4f4b;margin-bottom:10px;max-width:88ch;}
+.mm-caveat{display:block;margin-top:6px;color:#6b7280;font-style:italic;}
+.mm-badge{display:inline-block;color:#fff;text-transform:uppercase;font-size:10px;letter-spacing:.06em;font-weight:700;padding:3px 8px;border-radius:4px;margin-right:6px;}
+.mm-b-policy{background:#a87b1f;}
+.mm-b-strong{background:#2e7d43;}
+.mm-b-weak{background:#6b7280;}
+.mm-b-surv{background:#2f3e33;}
+.mm-b-secondary{background:#fff;color:#b3502f;border:1px solid #b3502f;}
+.mm-b-type{background:#fff;color:#4b4f4b;border:1px solid #e3e5e2;}
+.mm-empty{text-align:center;padding:32px;border:1px dashed #e3e5e2;border-radius:8px;color:#6b7280;font-size:13px;}
+.mm-footer{margin-top:20px;padding-top:10px;border-top:1px solid #e3e5e2;font-size:12px;color:#6b7280;line-height:1.8;}
+@media(max-width:560px){.mm-filters{flex-direction:column;align-items:stretch;}.mm-filters select,.mm-filters input[type=search],.mm-clear{width:100%;}}
+</style>
+
+<div class="mm-legend">
+<b>Grades.</b> <b>Policy</b> = a requirement; says nothing about efficacy. <b>A</b> = RCT or systematic review in a military population. <b>B</b> = large prospective cohort or strong civilian RCT. <b>C</b> = small, cross-sectional, or retrospective. <b>D</b> = pilot, abstract, or preprint. <b>S</b> = surveillance; describes incidence only.<br>
+<b>Secondary</b> means the link goes to a news article, press release, or blog post <i>about</i> a primary document rather than to the document. Follow it through before citing.
+</div>
+
+<div class="mm-filters">
+  <input type="search" id="mm-q" placeholder="Search titles, publishers, topics…" aria-label="Search findings">
+  <select id="mm-domain" aria-label="Domain">
+    <option value="">All domains</option>
+    <option value="standards">Standards</option>
+    <option value="physical">Physical</option>
+    <option value="injury">Injury</option>
+    <option value="sleep">Sleep</option>
+    <option value="nutrition">Nutrition</option>
+    <option value="mental">Mental</option>
+    <option value="brain">Brain health</option>
+    <option value="women">Women's health</option>
+    <option value="men">Men's health</option>
+    <option value="environment">Environment</option>
+    <option value="tech">Wearables</option>
+    <option value="h2f">H2F</option>
+  </select>
+  <select id="mm-kind" aria-label="Section">
+    <option value="">All sections</option>
+    <option value="policy">Policy &amp; doctrine</option>
+    <option value="research">Research</option>
+    <option value="surv">Surveillance &amp; oversight</option>
+    <option value="program">Programs &amp; funding</option>
+  </select>
+  <select id="mm-grade" aria-label="Grade">
+    <option value="">All grades</option>
+    <option value="Policy">Policy</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="S">S</option>
+  </select>
+  <label class="mm-check"><input type="checkbox" id="mm-primary"> Primary sources only</label>
+  <label class="mm-check"><input type="checkbox" id="mm-verified"> Link-verified only</label>
+  <button class="mm-clear" id="mm-clearbtn">Clear filters</button>
+</div>
+
+<div class="mm-count"><span id="mm-n">0</span> showing</div>
+<div id="mm-list"></div>
+<div class="mm-empty" id="mm-empty" style="display:none">No findings match these filters.<br><br><button class="mm-clear" id="mm-clearbtn2">Clear filters</button></div>
+
+<div class="mm-footer">Official channels only · Last sweep: MONTH DAY, YEAR · Sources: Army Publishing Directorate, health.mil/DHA, MSMR, DCPH-A, USARIEM, NHRC, AFRL 711 HPW, HPRC/CHAMP, CDMRP, DTIC, GAO/CRS/DoD IG, NASEM, NATO STO, PubMed/PMC</div>
+
+<script>
+(function(){
+/* Replace FINDINGS wholesale each run. Fields:
+   kind: policy|research|surv|program   grade: Policy|A|B|C|D|S
+   type: document type string (Memorandum, Directive, Peer-reviewed, Program page, …)
+   secondary: true when the link is coverage ABOUT a primary document
+   verified: true only when the URL was actually fetched and confirmed on the run date
+   domains: array of filter keys                                                      */
+var FINDINGS=[
+{kind:"policy",grade:"Policy",type:"Directive",secondary:false,verified:false,
+ domains:["standards","physical"],
+ title:"Army Directive 2026-07, Army Physical Fitness Standards",
+ pub:"Army Publishing Directorate",date:"reported 2026",
+ notes:"Sex-neutral, age-normed combat standard: 350 points with no event below 60, active component from 01 JAN 2026.",
+ caveat:"Sources disagree on whether the list is 21 or 24 MOS/AOCs — read the list in the directive itself.",
+ url:"https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN46456-ARMY_DIR_2026-07-000-WEB-1.pdf"},
+{kind:"research",grade:"B",type:"Peer-reviewed",secondary:false,verified:false,
+ domains:["sleep","tech"],
+ title:"Sleep Patterns of U.S. Navy Personnel Transitioning from Training to Fleet Assignments",
+ pub:"PubMed",date:"reported 2026",
+ notes:"99 surface warfare officers monitored a median 340 days each; mean 6.79 ± 0.58 h of sleep per day, worse in fleet than in training.",
+ caveat:"One community on surface ships — do not generalise to the whole force.",
+ url:"https://pubmed.ncbi.nlm.nih.gov/42044900/"},
+{kind:"surv",grade:"S",type:"Surveillance report",secondary:false,verified:false,
+ domains:["injury","mental"],
+ title:"Ambulatory Health Care Visits Among Active Component Members, 2024",
+ pub:"MSMR / PMC",date:"2025",
+ notes:"Musculoskeletal disorders drove the largest absolute rise in ambulatory visits — a reported 1,675,234 more than 2020.",
+ caveat:"Confirm the figure and its denominator before briefing it.",
+ url:"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12530864/"},
+{kind:"program",grade:"Program",type:"Program page",secondary:false,verified:false,
+ domains:["injury","standards"],
+ title:"CDMRP FY26 Peer Reviewed Medical Research Program — funding opportunities",
+ pub:"cdmrp.health.mil",date:"standing page",
+ notes:"Musculoskeletal health is a named FY26 topic area — the leading indicator for where injury-prevention money goes next.",
+ caveat:"Deadlines and invited-application status change without notice.",
+ url:"https://cdmrp.health.mil/funding/prmrp"}
+];
+var GRADECLASS={Policy:"mm-b-policy",A:"mm-b-strong",B:"mm-b-strong",C:"mm-b-weak",D:"mm-b-weak",S:"mm-b-surv",Program:"mm-b-surv"};
+var el=function(id){return document.getElementById(id);};
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+function render(){
+  var q=el("mm-q").value.trim().toLowerCase(),d=el("mm-domain").value,k=el("mm-kind").value,
+      g=el("mm-grade").value,p=el("mm-primary").checked,v=el("mm-verified").checked;
+  var out="",n=0;
+  FINDINGS.forEach(function(f){
+    if(d&&(f.domains||[]).indexOf(d)===-1)return;
+    if(k&&f.kind!==k)return;
+    if(g&&f.grade!==g)return;
+    if(p&&f.secondary)return;
+    if(v&&!f.verified)return;
+    if(q&&(f.title+" "+f.pub+" "+f.notes+" "+(f.domains||[]).join(" ")).toLowerCase().indexOf(q)===-1)return;
+    n++;
+    var badges='<span class="mm-badge '+(GRADECLASS[f.grade]||"mm-b-weak")+'">'+esc(f.grade)+'</span>'+
+               '<span class="mm-badge mm-b-type">'+esc(f.type)+'</span>';
+    if(f.secondary)badges+='<span class="mm-badge mm-b-secondary">secondary</span>';
+    out+='<div class="mm-card">'+badges+
+      '<h3><a href="'+esc(f.url)+'" target="_blank" rel="noopener">'+esc(f.title)+'</a></h3>'+
+      '<div class="mm-meta"><b>'+esc(f.pub)+'</b> · '+esc(f.date)+'</div>'+
+      '<div class="mm-notes">'+esc(f.notes)+(f.caveat?'<span class="mm-caveat">'+esc(f.caveat)+'</span>':'')+'</div>'+
+      '</div>';
+  });
+  el("mm-list").innerHTML=out;
+  el("mm-n").textContent=n;
+  el("mm-empty").style.display=n?"none":"block";
+}
+function clearAll(){el("mm-q").value="";el("mm-domain").value="";el("mm-kind").value="";el("mm-grade").value="";el("mm-primary").checked=false;el("mm-verified").checked=false;render();}
+["mm-domain","mm-kind","mm-grade","mm-primary","mm-verified"].forEach(function(id){el(id).addEventListener("change",render);});
+el("mm-q").addEventListener("input",render);
+el("mm-clearbtn").addEventListener("click",clearAll);
+el("mm-clearbtn2").addEventListener("click",clearAll);
+render();
+})();
+</script>
+</div>

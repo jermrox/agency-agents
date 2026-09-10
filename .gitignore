@@ -86,3 +86,11 @@ integrations/vibe/agents/
 integrations/vibe/prompts/
 integrations/zcode/agents/
 graphify-out/
+
+# Netlify build output (assembled by scripts/build-netlify-site.sh)
+site/
+
+# Tailwind toolchain for the Netlify site build
+scripts/netlify/node_modules/
+# …but the Netlify build toolchain pins its versions, so that lockfile is tracked.
+!scripts/netlify/package-lock.json

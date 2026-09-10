@@ -1,0 +1,27 @@
+/* Tailwind source for the standalone Netlify site (agentresearchsum).
+ *
+ * The embeddable board at healthcare/dashboards/h2f-scout-board.html stays
+ * dependency-free on purpose — it has to drop into Squarespace and inherit that
+ * page's typeface. Tailwind is layered on ONLY for the standalone site chrome
+ * (skip link, brand bar, footer) that the embed never sees.
+ *
+ * Compiled at deploy time by scripts/build-netlify-site.sh. If the compile is
+ * unavailable the build falls back to the Tailwind CDN, and if that is blocked
+ * too the chrome degrades to readable unstyled markup — the board below it is
+ * self-contained either way.
+ */
+@import "tailwindcss";
+
+/* MOPs and MOEs palette, same tokens the board uses. */
+@theme {
+  --color-mm-paper: #ffffff;
+  --color-mm-panel: #f2f4f1;
+  --color-mm-ink: #1c1e1c;
+  --color-mm-notes: #4b4f4b;
+  --color-mm-muted: #6b7280;
+  --color-mm-rule: #e3e5e2;
+  --color-mm-accent: #2f3e33;
+  --color-mm-verified: #2e7d43;
+  --color-mm-high: #a87b1f;
+  --color-mm-flag: #b3502f;
+}

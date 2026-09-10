@@ -1,0 +1,1670 @@
+<title>H2F Scout Board</title>
+<style>
+  /* MOPs and MOEs board theme — tokens lifted from the site's board template:
+     white ground, #1c1e1c ink, #e3e5e2 rules, #2f3e33 accent,
+     badges verified #2e7d43 / high #a87b1f / aggregator #6b7280 / contingent #b3502f.
+     Light-committed, like the Squarespace board. Type stays neutral because the
+     embeddable board inherits the site's face rather than declaring one. */
+  :root {
+    --paper:    #ffffff;
+    --panel:    #f2f4f1;
+    --ink:      #1c1e1c;
+    --notes:    #4b4f4b;
+    --muted:    #6b7280;
+    --rule:     #e3e5e2;
+    --accent:   #2f3e33;
+    --verified: #2e7d43;
+    --high:     #a87b1f;
+    --contingent: #b3502f;
+
+    --radius:   10px;
+    --radius-sm: 6px;
+    --shadow:   0 1px 2px rgba(28,30,28,.04);
+    --shadow-lift: 0 6px 20px rgba(28,30,28,.10);
+    --gutter:   clamp(16px, 4vw, 20px);
+    --label:    700 10px/1.4 inherit;
+    --track:    .07em;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 var(--gutter) 72px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  a { color: var(--accent); }
+
+  /* ---------- masthead ---------- */
+  header.masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 30px 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px 32px;
+  }
+  .brand h1 {
+    font-size: clamp(24px, 3.6vw, 32px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .brand p { color: var(--notes); margin: 8px 0 0; max-width: 62ch; font-size: 14px; }
+  .dtg {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.9;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .dtg b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- verification notice ---------- */
+  .notice {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--contingent);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin: 20px 0 0;
+    display: grid;
+    gap: 6px;
+  }
+  .notice h2 {
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    color: var(--contingent);
+  }
+  .notice p { margin: 0; color: var(--notes); font-size: 13.5px; max-width: 88ch; }
+  .notice-do { margin: 2px 0 0; padding-left: 18px; color: var(--notes); font-size: 13px; display: grid; gap: 3px; }
+  .notice-do li::marker { color: var(--contingent); }
+  .notice-do b { color: var(--ink); font-weight: 600; }
+  .notice code { background: #fff; border: 1px solid var(--rule); border-radius: 3px; padding: 0 4px; font-size: 12px; }
+
+  /* ---------- tallies ---------- */
+  .tally {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .tally div {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 12px 16px;
+    flex: 1 1 140px;
+  }
+  .tally .n {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .tally .k {
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* ---------- key ---------- */
+  .key {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .key > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 13px 16px;
+    font: var(--label);
+    letter-spacing: var(--track);
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius);
+  }
+  .key > summary::-webkit-details-marker { display: none; }
+  .key > summary::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .15s;
+    flex: none;
+  }
+  .key[open] > summary::before { transform: rotate(-135deg); }
+  .key > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4px 28px;
+    padding: 0 16px 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+  }
+  .key-col h3 {
+    font: var(--label);
+    letter-spacing: var(--track);
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .key-col dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    align-items: baseline;
+  }
+  .key-col dt { margin: 0; }
+  .key-col dt .grade, .key-col dt .dtype, .key-col dt .fmt, .key-col dt .secondary { margin: 0; }
+  .key-col dd { margin: 0; font-size: 13px; color: var(--notes); }
+  .key-col dd em { color: var(--ink); font-style: italic; }
+
+  /* ---------- controls ---------- */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 4px;
+  }
+  @supports not (backdrop-filter: blur(1px)) { .controls { background: var(--paper); } }
+  #q {
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 8px 10px;
+    width: 250px;
+  }
+  #q::placeholder { color: var(--muted); }
+  .filter {
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--notes);
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 7px 13px;
+    cursor: pointer;
+    transition: border-color .12s, color .12s, background .12s;
+  }
+  .filter:hover { border-color: var(--accent); color: var(--accent); }
+  .filter[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  .filter:focus-visible, #q:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .count-live {
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 32px; }
+  section > h2 {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 4px;
+  }
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  section > .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; max-width: 72ch; }
+  section[hidden] { display: none; }
+
+  /* ---------- entries ---------- */
+  .entry {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    transition: box-shadow .15s, border-color .15s, transform .15s;
+  }
+  .entry:hover {
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in srgb, var(--accent) 26%, var(--rule));
+  }
+  .entry:focus-within { border-color: var(--accent); }
+  .grade {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .06em;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: var(--track);
+    vertical-align: top;
+  }
+  .g-policy, .g-doctrine { background: var(--high); }
+  .g-a, .g-b             { background: var(--verified); }
+  .g-c, .g-d             { background: var(--muted); }
+  .g-s                   { background: var(--accent); }
+  .g-prog                { background: var(--accent); }
+
+  .dtype, .fmt, .secondary {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin: 0 0 8px 6px;
+    vertical-align: top;
+  }
+  .dtype     { background: #fff; border: 1px solid var(--rule); color: var(--notes); }
+  .fmt       { background: var(--panel); border: 1px solid var(--rule); color: var(--muted); }
+  .secondary { background: #fff; border: 1px solid var(--contingent); color: var(--contingent); }
+
+  .entry h3 { font-size: 17px; font-weight: 600; line-height: 1.35; margin: 0 0 6px; text-wrap: balance; }
+  .entry h3 a { color: var(--accent); text-decoration: none; }
+  .entry h3 a:hover { text-decoration: underline; }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+  .meta .pub { color: var(--notes); font-weight: 600; }
+  .sowhat { margin: 0; color: var(--notes); font-size: 13px; max-width: 88ch; }
+  .sowhat b { color: var(--ink); font-weight: 600; }
+  .caveat { display: block; margin-top: 6px; color: var(--muted); font-style: italic; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    color: var(--notes);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* ---------- watch list ---------- */
+  .watch { display: grid; gap: 12px; }
+  .watch-item {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    gap: 0 14px;
+    align-items: start;
+  }
+  .watch-n { font-size: 18px; font-weight: 700; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .watch-item h3 { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+  .watch-item p { margin: 0; color: var(--notes); font-size: 13px; max-width: 78ch; }
+  .converge {
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  /* ---------- registry + footer ---------- */
+  .registry { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 10px; }
+  .registry div { background: #fff; border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .registry a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .registry a:hover { text-decoration: underline; }
+  .registry span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+  footer {
+    margin-top: 28px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .empty {
+    text-align: center;
+    padding: 32px;
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  @media (max-width: 720px) {
+    .key-grid { gap: 18px; }
+  }
+  @media (max-width: 560px) {
+    .controls { position: static; backdrop-filter: none; }
+    .controls { flex-direction: column; align-items: stretch; }
+    #q, .filter { width: 100%; }
+    .count-live { margin-left: 0; }
+    .dtg { text-align: left; }
+    .watch-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+  @media print {
+    body { padding: 0; font-size: 10pt; }
+    .controls, .key > summary::before { display: none; }
+    .entry, .tally div, .watch-item, .registry div, .key { box-shadow: none; break-inside: avoid; }
+    .entry h3 a::after { content: " (" attr(href) ")"; font-size: 8pt; font-weight: 400; color: #555; word-break: break-all; }
+    section[hidden], .entry[hidden] { display: revert !important; }
+  }
+</style>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand">
+      <h1>Military Health &amp; Fitness Scout Board</h1>
+      <p>Full-registry sweep of official channels on military health, Holistic Health and Fitness, and human performance — policy, doctrine, research, surveillance, funding, and emerging topics.</p>
+    </div>
+    <div class="dtg">
+      SWEEP &nbsp;<b>08 SEP 2026</b><br>
+      WINDOW &nbsp;<b>LAST 18 MONTHS</b><br>
+      ITEMS &nbsp;<b>103</b><br>
+      STATUS &nbsp;<b>LINKS UNVERIFIED</b>
+    </div>
+  </header>
+
+  <div class="notice">
+    <h2>Read this before you cite anything here</h2>
+    <p><b>No link on this board was opened.</b> Outbound fetches were blocked by network policy, so every summary comes from search-result text on official <code>.mil</code>, <code>.gov</code>, and indexed journal domains — not from the documents themselves.</p>
+    <ul class="notice-do">
+      <li>Treat each entry as a <b>lead to verify</b>, not a finding.</li>
+      <li>Open the link, confirm the date and the claim, then cite.</li>
+      <li>Entries marked <b>Secondary</b> point at coverage <em>about</em> a document; their caveat names the primary source to cite instead.</li>
+    </ul>
+  </div>
+
+  <div class="tally">
+    <div><span class="n">21</span><span class="k">Policy &amp; doctrine</span></div>
+    <div><span class="n">30</span><span class="k">Research</span></div>
+    <div><span class="n">17</span><span class="k">Surveillance &amp; oversight</span></div>
+    <div><span class="n">35</span><span class="k">Programs &amp; funding</span></div>
+    <div><span class="n">8</span><span class="k">Watch-list topics</span></div>
+    <div><span class="n">21</span><span class="k">Secondary sources</span></div>
+    <div><span class="n">0</span><span class="k">Fetch-verified</span></div>
+  </div>
+
+  <!-- ============ KEY ============ -->
+  <details class="key" open>
+    <summary>Key — what the badges on each entry mean</summary>
+    <div class="key-grid">
+      <div class="key-col">
+        <h3>Evidence grade</h3>
+        <dl>
+          <dt><span class="grade g-policy">Policy</span></dt><dd>A requirement. Says what you <em>must</em> do; says nothing about whether it works.</dd>
+          <dt><span class="grade g-a">A</span></dt><dd>Randomised trial or systematic review <em>in a military population</em>. The strongest thing here.</dd>
+          <dt><span class="grade g-b">B</span></dt><dd>Large prospective cohort, or a strong civilian randomised trial. Solid, one step removed.</dd>
+          <dt><span class="grade g-c">C</span></dt><dd>Small, cross-sectional, or retrospective. Suggestive. Do not build policy on it alone.</dd>
+          <dt><span class="grade g-d">D</span></dt><dd>Pilot, conference abstract, or preprint. Not yet through peer review.</dd>
+          <dt><span class="grade g-s">S</span></dt><dd>Surveillance. Counts how often something happens. Never explains why.</dd>
+          <dt><span class="grade g-prog">Program</span></dt><dd>A program or funding line, not evidence. Read funding as a 12–24 month leading indicator.</dd>
+        </dl>
+      </div>
+      <div class="key-col">
+        <h3>Source label</h3>
+        <dl>
+          <dt><span class="dtype">Type</span></dt><dd>What the document <em>is</em> — Memorandum, Directive, Regulation, Doctrine, Service message, Gov report, Technical report, Surveillance report, Fact sheet, Peer-reviewed, Trial protocol, Press release, Program page.</dd>
+          <dt><span class="fmt">PDF</span></dt><dd>File format, where the link goes straight to a document rather than a web page.</dd>
+          <dt><span class="secondary">Secondary</span></dt><dd>The link is coverage <em>about</em> a primary document, not the document. Follow it through before citing.</dd>
+        </dl>
+      </div>
+    </div>
+  </details>
+
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search titles, topics, publishers…" aria-label="Search entries">
+    <button class="filter" data-f="all" aria-pressed="true">All</button>
+    <button class="filter" data-f="standards" aria-pressed="false">Standards</button>
+    <button class="filter" data-f="physical" aria-pressed="false">Physical</button>
+    <button class="filter" data-f="injury" aria-pressed="false">Injury</button>
+    <button class="filter" data-f="sleep" aria-pressed="false">Sleep</button>
+    <button class="filter" data-f="nutrition" aria-pressed="false">Nutrition</button>
+    <button class="filter" data-f="mental" aria-pressed="false">Mental</button>
+    <button class="filter" data-f="brain" aria-pressed="false">Brain health</button>
+    <button class="filter" data-f="women" aria-pressed="false">Women's health</button>
+    <button class="filter" data-f="men" aria-pressed="false">Men's health</button>
+    <button class="filter" data-f="environment" aria-pressed="false">Environment</button>
+    <button class="filter" data-f="tech" aria-pressed="false">Wearables</button>
+    <button class="filter" data-f="h2f" aria-pressed="false">H2F</button>
+    <button class="filter" data-f="secondary" aria-pressed="false">Secondary only</button>
+    <span class="count-live" id="live">96 of 96 shown</span>
+  </div>
+
+  <!-- ============ POLICY ============ -->
+  <section id="sec-policy">
+    <h2>Policy &amp; Doctrine</h2>
+    <p class="sub">Authoritative on what is <em>required</em>. Says nothing about what works — that is the research section's job. Ordered roughly top-down: department, then service.</p>
+
+    <article class="entry" data-tags="physical h2f mental nutrition sleep standards men">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2026/Jul/15/2003961654/-1/-1/1/HEALTH%20AND%20HUMAN%20PERFORMANCE%20OPTIMIZATION%20TO%20ENHANCE%20MILITARY%20READINESS%20OSD004430-26%20RES%20FINAL.PDF">Health and Human Performance Optimization to Enhance Military Readiness</a></h3>
+        <p class="meta">Secretary of War memo · <span class="pub">media.defense.gov</span> · reported 15 JUL 2026</p>
+        <p class="sowhat">Department-level memo on health and human performance optimization. Search text indicates it directs Personnel &amp; Readiness policy updates, including to DoDI 6200.06 (Periodic Health Assessment), on a stated August 2026 timeline, and covers a testosterone-deficiency screening protocol.
+        <span class="caveat">Highest-leverage item on this board and the least verified — read the PDF before briefing any of it. A policy directive is not evidence of efficacy, and the screening element in particular deserves a careful read of what is actually mandated versus recommended.</span></p>
+        <div class="tags"><span class="tag">DoW policy</span><span class="tag">readiness</span><span class="tag">PHA</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical h2f mental tech standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2026/Jul/15/2003961653/-1/-1/1/WARFIGHTER%20PERFORMANCE%20OPTIMIZATION%20-%20TOTAL%20FORCE%20FITNESS%20OSD014355-25%20RES%20FINAL.PDF">Warfighter Performance Optimization — Total Force Fitness</a></h3>
+        <p class="meta">Secretary of War memo · <span class="pub">media.defense.gov</span> · reported 06 MAY 2026</p>
+        <p class="sowhat">Companion memo. Search text describes cognitive performance being established as a core occupational readiness competency measured with the same discipline as physical standards, plus a pipeline for fielding wearables and data analytics across modernized Total Force Fitness domains.
+        <span class="caveat">If accurate, this is the doctrinal hook for both cognitive programs and wearable procurement. Read alongside the July memo.</span></p>
+        <div class="tags"><span class="tag">Total Force Fitness</span><span class="tag">cognitive</span><span class="tag">wearables</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2025/Sep/30/2003812317/-1/-1/1/SECRETARY-OF-WAR-ANNOUNCED-MEMORANDUMS.PDF">Secretary of War announced memoranda — military fitness standards</a></h3>
+        <p class="meta">Secretary of War memoranda · <span class="pub">media.defense.gov</span> · reported 30 SEP 2025</p>
+        <p class="sowhat">The trigger document for the current standards churn. The Marine Corps explicitly cites this memo as the authority for its PFT and body-composition changes; the other services' 2026 changes trace back here too.
+        <span class="caveat">If you are trying to understand <em>why</em> every service moved standards at once, start with this and the March 2025 memos below rather than with any single service announcement.</span></p>
+        <div class="tags"><span class="tag">DoW policy</span><span class="tag">standards</span><span class="tag">origin document</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2026/Jan/12/2003855613/-1/-1/1/ADDITIONAL-GUIDANCE-ON-MILITARY-FITNESS-STANDARDS.PDF">Additional Guidance on Military Fitness Standards</a></h3>
+        <p class="meta">Under Secretary of War for Personnel &amp; Readiness · <span class="pub">media.defense.gov</span> · reported 12 JAN 2026</p>
+        <p class="sowhat">Implementation guidance under the SecWar standards memo. Related reporting describes a 18 DEC 2025 follow-up specifying waist-to-height ratio for body composition with implementation from 1 JAN 2026, and height/weight tables retired.
+        <span class="caveat">This is the document that operationalizes WHtR across the Joint Force. Every service body-composition change below is downstream of it.</span></p>
+        <div class="tags"><span class="tag">P&amp;R guidance</span><span class="tag">WHtR</span><span class="tag">body composition</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards women">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2025/Mar/31/2003678527/-1/-1/1/COMBAT-ARMS-STANDARDS.PDF">Combat Arms Standards</a></h3>
+        <p class="meta">Secretary of Defense memo · <span class="pub">media.defense.gov</span> · reported 31 MAR 2025</p>
+        <p class="sowhat">Directs the departments to distinguish combat arms from non-combat arms occupations and to make all entry-level and sustained physical requirements in combat arms sex-neutral, based solely on operational demands.
+        <span class="caveat">The origin of the Army's sex-neutral 350-point combat-MOS standard. Sex-neutral standards interact directly with the women's-health research in the section below — worth holding both in view.</span></p>
+        <div class="tags"><span class="tag">combat arms</span><span class="tag">sex-neutral</span><span class="tag">standards</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Memorandum</span><span class="fmt">PDF</span>
+        <h3><a href="https://media.defense.gov/2025/Mar/12/2003666182/-1/-1/1/RAPID-FORCE-WIDE-REVIEW-OF-MILITARY-STANDARDS-OSD001952-25-RES-FINAL.PDF">Rapid Force-Wide Review of Military Standards</a></h3>
+        <p class="meta">Secretary of Defense memo · <span class="pub">media.defense.gov</span> · reported 12 MAR 2025</p>
+        <p class="sowhat">Orders a department-wide review of standards covering physical fitness, body composition, and grooming. The earliest link in the chain that produced everything else in this section.</p>
+        <div class="tags"><span class="tag">standards review</span><span class="tag">DoW policy</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Directive</span><span class="fmt">PDF</span>
+        <h3><a href="https://api.army.mil/e2/c/downloads/2026/04/29/858da01e/cft-army-directive.pdf">Army Directive 2026-07, Army Physical Fitness Standards</a></h3>
+        <p class="meta">Army directive (PDF) · <span class="pub">api.army.mil</span> · reported 29 APR 2026</p>
+        <p class="sowhat">Behind the current Army physical fitness standards: the sex-neutral, age-normed combat standard of 350 points with no event below 60, active component from 01 JAN 2026 and Reserve/Guard from 01 JUN 2026, plus the Combat Field Test beginning April 2026 for Soldiers in the designated combat MOS/AOCs. Also posted on Army Publishing Directorate as <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN46456-ARMY_DIR_2026-07-000-WEB-1.pdf">ARN46456</a>.
+        <span class="caveat">Sources disagree on whether the list is 21 or 24 MOS/AOCs — read the list in the directive itself rather than trusting any article, this board included. Army Directive 2025-06 and 2026-13 sit in the same policy line and are easy to conflate.</span></p>
+        <div class="tags"><span class="tag">CFT</span><span class="tag">Army</span><span class="tag">standards</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards nutrition">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Directive</span><span class="fmt">PDF</span>
+        <h3><a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN47030-ARMY_DIR_2026-13-000-WEB-1.pdf">Army Directive 2026-13, Army Body Composition Program</a></h3>
+        <p class="meta">Army directive (PDF) · <span class="pub">Army Publishing Directorate</span> · reported effective 07 JUL 2026</p>
+        <p class="sowhat">Retires height/weight tables and adopts waist-to-height ratio. Reported threshold: Soldiers are enrolled in ABCP at a WHtR of <b>0.55 or greater</b>, evaluated twice per year. An ABCP FAQ is published alongside it.
+        <span class="caveat">The single most operationally consequential item for an H2F team on this board — it changes who lands in your program. Verify the threshold and the measurement protocol against the directive itself before programming to it.</span></p>
+        <div class="tags"><span class="tag">ABCP</span><span class="tag">WHtR 0.55</span><span class="tag">Army</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.army.mil/aft/">Army Fitness Test (AFT) — program page and scoring</a></h3>
+        <p class="meta">Program page · <span class="pub">army.mil</span> · continuously updated</p>
+        <p class="sowhat">The AFT replaced the ACFT on 1 June 2025. Reported scoring: combat MOSs move to one sex-neutral, age-normed standard requiring 350 total with a 60-point event minimum, effective 1 JAN 2026 (active) and 1 JUN 2026 (RC); combat-enabling specialties keep sex- and age-normed scoring at 300. A separate reported provision exempts Soldiers scoring 465+ from body fat standards.
+        <span class="caveat">All figures here are from search text. Pull the scoring tables from the program page before programming to them.</span></p>
+        <div class="tags"><span class="tag">AFT</span><span class="tag">scoring</span><span class="tag">Army</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical h2f mental nutrition sleep">
+      <div><span class="grade g-doctrine">Doctrine</span><span class="dtype">Doctrine</span>
+        <h3><a href="https://armypubs.army.mil/ProductMaps/PubForm/Details.aspx?PUB_ID=1020968">FM 7-22, Holistic Health and Fitness</a></h3>
+        <p class="meta">Field manual · <span class="pub">Army Publishing Directorate</span> · base edition OCT 2020</p>
+        <p class="sowhat">The doctrinal foundation of H2F: five readiness domains — physical, nutritional, mental, sleep, spiritual — plus unit-level experts and the non-physical components of readiness. Everything else on this board sits downstream of it. An audiobook edition is hosted on the Army's training repository.
+        <span class="caveat">Always check the ProductMap page for the current version and change packages before citing a chapter — the most link-rot-prone item here.</span></p>
+        <div class="tags"><span class="tag">FM 7-22</span><span class="tag">H2F</span><span class="tag">doctrine</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.af.mil/News/Article-Display/Article/4418303/air-force-modernizes-physical-fitness-program-to-bolster-readiness-long-term-he/">Air Force modernizes Physical Fitness Program</a></h3>
+        <p class="meta">Service announcement · <span class="pub">af.mil</span> · 2026</p>
+        <p class="sowhat">Reported timeline: PFA testing pauses 1 JAN 2026 for transition, new-standard testing begins 1 MAR 2026, diagnostic-only through 31 AUG 2026, scored testing resumes 1 SEP 2026. Reintroduces scored body composition via waist-to-height ratio and adds a two-mile run.
+        <span class="caveat">The signed DTM on afpc.af.mil (dated 26 FEB 2026 per search) is the authority for the standards; this article is the plain-language summary.</span></p>
+        <div class="tags"><span class="tag">Air Force</span><span class="tag">PFA</span><span class="tag">WHtR</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.mynavyhr.navy.mil/Support-Services/Culture-Resilience/Physical-Readiness/">Navy Physical Readiness Program — 2026 cycle changes</a></h3>
+        <p class="meta">Program page + NAVADMIN fact sheet · <span class="pub">mynavyhr.navy.mil</span> · 2026</p>
+        <p class="sowhat">Two PFA cycles per calendar year in 2026 (Cycle 1: 1 JAN–30 JUN; Cycle 2: 1 JUL–31 DEC), revised Body Composition Assessment procedures, and a changed High-Performance BCA exemption. OPNAVINST 6110.1L is the underlying instruction.</p>
+        <div class="tags"><span class="tag">Navy</span><span class="tag">PFA</span><span class="tag">BCA</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical standards secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Press release</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.marines.mil/News/Press-Releases/Press-Release-Display/Article/4414812/marine-corps-revises-body-composition-standards/">Marine Corps revises PFT and body composition standards</a></h3>
+        <p class="meta">MARADMIN 613/25 + Changes 1 &amp; 2 (066/26, 073/26) · <span class="pub">marines.mil</span> · 2025–2026</p>
+        <p class="sowhat">Issued under the 30 SEP 2025 SecWar memo. Replaces the semiannual height-and-weight evaluation with waist-to-height ratio as the first step of body-composition evaluation, alongside PFT changes.
+        <span class="caveat">Three messages in sequence — read Change 2 before assuming the original MARADMIN still stands.</span></p>
+        <div class="tags"><span class="tag">Marine Corps</span><span class="tag">PFT</span><span class="tag">WHtR</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="tech standards secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/294767/biometric_program_and_dod_biometric_data_management">AR 25-99, Biometric Program and DoD Biometric Data Management</a></h3>
+        <p class="meta">Army regulation · <span class="pub">army.mil</span> · reported effective 21 JUL 2026</p>
+        <p class="sowhat">Establishes policy for the operation, use, and protection of biometric data across the Army Biometric Program and DoW biometric data management.
+        <span class="caveat">Relevant to any H2F team fielding wearables: the governance layer for physiological data arrived alongside the hardware. Confirm scope — biometric identity management and physiological monitoring are not automatically the same policy space.</span></p>
+        <div class="tags"><span class="tag">AR 25-99</span><span class="tag">biometric data</span><span class="tag">governance</span></div>
+      </div>
+    </article>
+   <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Order</span><span class="fmt">PDF</span>
+        <h3><a href="https://api.army.mil/e2/c/downloads/2026/01/13/2887cffc/hqda-exord-218-25-frago-1-annex-a-implementation-plan-guidance-30-may-2025-final.pdf">HQDA EXORD 218-25, FRAGO 1 — Annex A: AFT implementation guidance</a></h3>
+        <p class="meta">HQDA execution order annex · <span class="pub">api.army.mil</span> · reported 30 MAY 2025, posted JAN 2026</p>
+        <p class="sowhat">The execution-order annex that tells units how and when to run the new test — phasing, diagnostic windows, record-test timing, and the reclassification path for combat-MOS Soldiers below the 350 standard.
+        <span class="caveat">Execution orders change more often than directives. Confirm this is the current FRAGO before briefing timelines from it.</span></p>
+        <div class="tags"><span class="tag">AFT</span><span class="tag">implementation</span><span class="tag">EXORD</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Administrative message</span>
+        <h3><a href="https://www.marines.mil/News/Messages/Messages-Display/Article/4363582/advance-notification-of-changes-to-the-marine-corps-physical-fitness-test-and-b/">MARADMIN 613/25 — Advance notification of changes to the Marine Corps PFT and body composition evaluation process</a></h3>
+        <p class="meta">MARADMIN · <span class="pub">marines.mil</span> · reported 2025</p>
+        <p class="sowhat">The Marine Corps' implementing message for the Secretary of War military fitness standards memo of 30 SEP 2025 — the service-level end of the body-composition policy chain already tracked on this board.
+        <span class="caveat">Superseded in part by MARADMIN 066/26 below. Read both, in order.</span></p>
+        <div class="tags"><span class="tag">USMC</span><span class="tag">PFT</span><span class="tag">body composition</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Administrative message</span>
+        <h3><a href="https://www.marines.mil/News/Messages/Messages-Display/Article/4414762/change-1-to-the-advance-notification-of-changes-to-the-marine-corps-physical-fi/">MARADMIN 066/26 — Change 1 to the advance notification of PFT and body composition changes</a></h3>
+        <p class="meta">MARADMIN · <span class="pub">marines.mil</span> · reported 26 FEB 2026</p>
+        <p class="sowhat">Change 1 to MARADMIN 613/25. Amends the implementation of the PFT and body-composition evaluation changes.
+        <span class="caveat">A change message only makes sense read against the base message — pull 613/25 first, then apply this.</span></p>
+        <div class="tags"><span class="tag">USMC</span><span class="tag">PFT</span><span class="tag">body composition</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Administrative message</span><span class="fmt">PDF</span>
+        <h3><a href="https://www.mynavyhr.navy.mil/Portals/55/Messages/NAVADMIN/NAV2025/NAV25264.pdf">NAVADMIN 264/25 — Physical Readiness Program policy changes</a></h3>
+        <p class="meta">NAVADMIN · <span class="pub">mynavyhr.navy.mil</span> · reported 30 DEC 2025</p>
+        <p class="sowhat">Sets CY2026 assessment cycles (Cycle-1 Jan–Jun, Cycle-2 Jul–Dec), a two-step body composition assessment, a tightened high-performance BCA exemption, and a one-time reset of prior PFA failures.
+        <span class="caveat">The Navy's counterpart to the Army and Marine Corps moves in the same policy chain. A companion fact sheet is posted alongside it.</span></p>
+        <div class="tags"><span class="tag">USN</span><span class="tag">PRP</span><span class="tag">body composition</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Reference guide</span><span class="fmt">PDF</span>
+        <h3><a href="https://www.mynavyhr.navy.mil/Portals/55/Support/Culture%20Resilience/Physical/Guide-1%20PRP%20Policies.pdf">Navy Physical Readiness Program Guide-1: PRP Policies (JUN 2026 edition)</a></h3>
+        <p class="meta">Program guide · <span class="pub">mynavyhr.navy.mil</span> · reported JUN 2026</p>
+        <p class="sowhat">The consolidated Navy PRP policy guide, refreshed after the CY2026 changes. Useful as the standing reference once the NAVADMINs are absorbed.
+        <span class="caveat">A guide restates policy; it does not create it. Where the guide and a NAVADMIN disagree, the message wins.</span></p>
+        <div class="tags"><span class="tag">USN</span><span class="tag">PRP</span><span class="tag">reference</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical h2f secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.spaceforce.mil/News/Article-Display/Article/4371955/space-force-publishes-further-guidance-on-physical-fitness/">Space Force publishes further guidance on physical fitness</a></h3>
+        <p class="meta">Service news · <span class="pub">spaceforce.mil</span> · reported 2025, effective 01 JAN 2026</p>
+        <p class="sowhat">From 01 JAN 2026 every Guardian must complete two Human Performance Assessments a year, whether or not they are enrolled in the Continuous Fitness Assessment. Fills the one service gap this board had in the standards chain.
+        <span class="caveat">Secondary. The underlying guidance document is what to cite; this article only announces it.</span></p>
+        <div class="tags"><span class="tag">USSF</span><span class="tag">HPA</span><span class="tag">CFA</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men standards physical secondary">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Press release</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.war.gov/News/Releases/Release/Article/4546628/statement-by-chief-pentagon-spokesman-sean-parnell-on-enhanced-screening-protoc/">Statement on the Enhanced Screening Protocol to Optimize Warfighter Performance</a></h3>
+        <p class="meta">Department of War release · <span class="pub">war.gov</span> · reported 2026</p>
+        <p class="sowhat">The public announcement of the enhanced testosterone-deficiency screening protocol directed for service members. This is the press statement, not the directive — the substance sits in the Secretary of War health and human performance optimization memo listed at the top of this section.
+        <span class="caveat">Secondary: a press release about a policy document. Cite the memo (OSD004430-26) and the resulting Periodic Health Assessment change to DoDI 6200.06, not this page.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">testosterone</span><span class="tag">screening</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="sec-research">
+    <h2>Research</h2>
+    <p class="sub">Graded A–D. Population, design, and sample size belong in every line — where they are missing it is because the abstract was not read, and the entry says so.</p>
+
+    <article class="entry" data-tags="injury physical">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41734198/">Enhancing Military Musculoskeletal Readiness: A Proposal for Collaboration</a></h3>
+        <p class="meta">Barlow BT et al. · <span class="pub">PubMed 41734198</span> · reported FEB 2026</p>
+        <p class="sowhat">Argues MSK injury remains the largest threat to readiness, deployability, and retention, and that existing programs need alignment plus more civilian–military partnership.
+        <span class="caveat">Graded C provisionally: this reads as a commentary or proposal, not a trial. If it is an editorial it is Grade D evidentially, though still useful for framing.</span></p>
+        <div class="tags"><span class="tag">MSK</span><span class="tag">readiness</span><span class="tag">policy framing</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury women physical men">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12410583/">Females Exhibit Greater Peak and Cumulative Patellofemoral Joint Stress With Moderate and Heavy Load Carriage Compared With Males</a></h3>
+        <p class="meta">Journal article · <span class="pub">PMC12410583</span> · recent</p>
+        <p class="sowhat">Biomechanics of sex differences in patellofemoral joint stress under moderate and heavy load. Companion literature reports 1.3–2.2× higher patellofemoral pain incidence in female versus male recruits, and that female trainees sustain roughly twice the injuries with 2.5× the risk of significant time-loss injury in basic training.
+        <span class="caveat">Sample size and load conditions not captured. Pull them before using this to justify a programming change.</span></p>
+        <div class="tags"><span class="tag">load carriage</span><span class="tag">knee</span><span class="tag">sex differences</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42495932/">Perimenopause and menopause among active-duty military service women</a></h3>
+        <p class="meta">Scoping review · <span class="pub">PubMed 42495932</span> · reported 2026</p>
+        <p class="sowhat">Extends military women's health research past load carriage and injury into midlife health — a population question the force has largely not addressed.
+        <span class="caveat">Scoping reviews map a literature; they do not establish effect. Useful for identifying gaps, not for prescribing.</span></p>
+        <div class="tags"><span class="tag">women's health</span><span class="tag">retention</span><span class="tag">scoping review</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women injury">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38847606/">Pelvic Floor Disorders Among U.S. Military Active-Duty Females</a></h3>
+        <p class="meta">Retrospective analysis · <span class="pub">PubMed 38847606</span></p>
+        <p class="sowhat">Companion literature reports 497,255 active-duty service women identified, of whom 9.93% had a pelvic floor disorder — large enough to be a readiness issue, not a niche one.
+        <span class="caveat">Prevalence from healthcare-encounter data undercounts people who never sought care. Directional.</span></p>
+        <div class="tags"><span class="tag">pelvic health</span><span class="tag">prevalence</span><span class="tag">women's health</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women injury men">
+      <div><span class="grade g-s">S</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/39255514/">Incidence and risk factors for hip fractures among U.S. Armed Forces active component women compared to men, 2018–2022</a></h3>
+        <p class="meta">Surveillance analysis · <span class="pub">PubMed 39255514</span></p>
+        <p class="sowhat">Five-year incidence and risk-factor comparison by sex across the active component. Pairs directly with the bone-stress and energy-availability literature below.
+        <span class="caveat">Surveillance describes incidence; it establishes no causal mechanism.</span></p>
+        <div class="tags"><span class="tag">bone</span><span class="tag">sex differences</span><span class="tag">incidence</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women nutrition injury">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7477333/">Energy Deficiency in Soldiers: Athlete Triad and RED-S Syndromes in the Military</a></h3>
+        <p class="meta">Review · <span class="pub">PMC7477333</span></p>
+        <p class="sowhat">Military training in energy deficit disturbs endocrine and metabolic function, menstrual function, bone health, immune function, GI health, iron status, mood, and physical and cognitive performance. Stress fractures at weight-bearing sites are common in basic training, more so in women.
+        <span class="caveat">Not a 2026 item, and a review rather than a trial — included because it is the mechanism that connects the fueling, women's-health, and bone-injury threads on this board.</span></p>
+        <div class="tags"><span class="tag">RED-S</span><span class="tag">energy availability</span><span class="tag">bone</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women nutrition injury">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12922946/">Evolution of Research on the Female Athlete Triad and Relative Energy Deficiency in Sport (RED-S)</a></h3>
+        <p class="meta">Review · <span class="pub">PMC12922946</span> · recent</p>
+        <p class="sowhat">Current synthesis of the RED-S construct: chronic estrogen suppression from low energy availability raises bone resorption and lowers bone strength, raising stress fracture, osteopenia, and early osteoporosis risk.
+        <span class="caveat">Civilian sport literature requiring translation to a military population. Grade C for that reason, not for quality.</span></p>
+        <div class="tags"><span class="tag">RED-S</span><span class="tag">bone</span><span class="tag">translation needed</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women environment">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12186821/">Optimizing Female Warfighter Health and Performance in Environmental Extremes</a></h3>
+        <p class="meta">Review · <span class="pub">PMC12186821</span> · recent</p>
+        <p class="sowhat">Sex-specific considerations for heat, cold, and altitude — the intersection of the women's-health and environmental-physiology threads, and a gap in most unit-level programming.</p>
+        <div class="tags"><span class="tag">women's health</span><span class="tag">heat/cold/altitude</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="women mental">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12360642/">Longitudinal Associations Between Health-Related Quality of Life and Female Service Member Readiness — Millennium Cohort</a></h3>
+        <p class="meta">Prospective cohort · <span class="pub">PMC12360642</span></p>
+        <p class="sowhat">Millennium Cohort is the largest prospective military health study running; this analysis links HRQOL to readiness outcomes in women specifically.
+        <span class="caveat">Grade B on cohort design and scale. Effect sizes not captured — pull them.</span></p>
+        <div class="tags"><span class="tag">Millennium Cohort</span><span class="tag">retention</span><span class="tag">women's health</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="sleep mental secondary">
+      <div><span class="grade g-c">C</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://news.usuhs.edu/2026/06/at-sleep-and-fatigue-management-summit.html">At Sleep and Fatigue Management Summit, Military Experts Call Rest a Readiness Issue</a></h3>
+        <p class="meta">Summit report · <span class="pub">USU News</span> · JUN 2026</p>
+        <p class="sowhat">Reported from the summit: nearly 85% of deployed service members sleep less than the recommended seven hours; most report six hours or less, a deficit speakers compared to the cognitive impairment of legal intoxication.
+        <span class="caveat">Conference reporting, not peer-reviewed. Chase the underlying studies before quoting the 85% figure — and note the intoxication comparison is an analogy, not a measured equivalence.</span></p>
+        <div class="tags"><span class="tag">sleep</span><span class="tag">fatigue</span><span class="tag">cognitive</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="sleep secondary">
+      <div><span class="grade g-c">C</span><span class="dtype">Practitioner post</span><span class="secondary">Secondary</span>
+        <h3><a href="https://cdp.usuhs.edu/blog/highlights-2026-sleep-and-fatigue-management-dow-convening">Highlights from the 2026 Sleep and Fatigue Management Convening Event</a></h3>
+        <p class="meta">Center for Deployment Psychology · <span class="pub">cdp.usuhs.edu</span> · 2026</p>
+        <p class="sowhat">Practitioner-facing writeup of the same convening — the more useful of the two if you are building unit-level sleep programming rather than briefing leadership.</p>
+        <div class="tags"><span class="tag">sleep</span><span class="tag">implementation</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="sleep brain mental">
+      <div><span class="grade g-b">B</span><span class="dtype">Trial protocol</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41630034/">Behavioral treatment of insomnia in active-duty service members with traumatic brain injury: RCT protocol</a></h3>
+        <p class="meta">Randomized trial protocol · <span class="pub">PubMed 41630034</span> · reported 2026</p>
+        <p class="sowhat">Randomized design in an active-duty TBI population — the intersection of the sleep and brain-health threads, in the population where both matter most.
+        <span class="caveat">A protocol, not results. Grade B is provisional on design; there is no finding to cite yet.</span></p>
+        <div class="tags"><span class="tag">insomnia</span><span class="tag">TBI</span><span class="tag">RCT</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="brain physical">
+      <div><span class="grade g-a">A</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41626582/">Personalised sub-symptomatic exercise for military service members with persistent symptoms after mild TBI: a randomised controlled trial</a></h3>
+        <p class="meta">RCT · <span class="pub">PubMed 41626582</span> · reported 2026</p>
+        <p class="sowhat">An RCT of exercise as treatment in a military population with persistent post-concussive symptoms — one of the few items on this board that clears the Grade A bar on design.
+        <span class="caveat">Grade A is assigned on reported design only. Sample size and results are unread — confirm before citing an effect.</span></p>
+        <div class="tags"><span class="tag">mTBI</span><span class="tag">exercise therapy</span><span class="tag">RCT</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition physical secondary">
+      <div><span class="grade g-c">C</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/285565/carbohydrate_supplementation_for_enhanced_physical_performance_during_military_operations">Carbohydrate Supplementation for Enhanced Physical Performance During Military Operations</a></h3>
+        <p class="meta">USARIEM research feature · <span class="pub">army.mil</span></p>
+        <p class="sowhat">USARIEM work on whether carbohydrate supplementation preserves performance during operationally relevant caloric deficits — matching caloric demand at high operational tempo often is not feasible, so the question is what to do about the gap.
+        <span class="caveat">A news feature about a study, not the study. Find the published paper before treating this as a finding.</span></p>
+        <div class="tags"><span class="tag">USARIEM</span><span class="tag">fueling</span><span class="tag">caloric deficit</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition tech">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42416816/">Improved dietary intake and readiness among Navy Future Sailors following mobile health application use</a></h3>
+        <p class="meta">Naval Health Research Center · <span class="pub">PubMed 42416816</span> · reported JUN 2026</p>
+        <p class="sowhat">Evaluated a mobile health app (CoachMePlus) with non-prior-service enlistees in the Delayed Entry Program, framed against recruiting and retention pressure.
+        <span class="caveat">Pre-accession population, app-based intervention — design and control condition unread. Do not generalize to in-service formations without checking.</span></p>
+        <div class="tags"><span class="tag">NHRC</span><span class="tag">accession</span><span class="tag">digital health</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7662950/">Effects of Task-Specific and Strength Training on Simulated Military Task Performance in Soldiers</a></h3>
+        <p class="meta">Controlled training study · <span class="pub">PMC7662950</span> · older, still load-bearing</p>
+        <p class="sowhat">42 soldiers, three groups (task-specific, strength, control), 12-week intervention with pre/mid/post measurement on a repeated simulated military task course. Both training arms beat control; task-specific was as effective as strength training, supporting a combined approach.
+        <span class="caveat">Not a 2026 item — included because it is the cleanest citable evidence for the combined-programming argument H2F teams make constantly.</span></p>
+        <div class="tags"><span class="tag">programming</span><span class="tag">task-specific</span><span class="tag">strength</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical injury">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/39824542/">Infantry training outcomes: are they improved with an initial reduction in load carriage mass and additional sprint intensity exercise?</a></h3>
+        <p class="meta">Training intervention study · <span class="pub">PubMed 39824542</span></p>
+        <p class="sowhat">Tests the two levers a training unit can actually pull — initial load reduction and added sprint work — against infantry training outcomes.
+        <span class="caveat">Directly actionable if it holds up. Read the methods before changing a POI.</span></p>
+        <div class="tags"><span class="tag">load carriage</span><span class="tag">initial training</span><span class="tag">programming</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/39904534/">Burden and risk factors for plantar fasciopathy in the military population, 2006–2015: a retrospective cohort study</a></h3>
+        <p class="meta">Retrospective cohort · <span class="pub">PubMed 39904534</span></p>
+        <p class="sowhat">Ten-year burden and risk-factor analysis for one of the highest-volume overuse complaints in a military population.
+        <span class="caveat">Retrospective, and the window ends in 2015 — useful for risk factors, weak for current rates.</span></p>
+        <div class="tags"><span class="tag">overuse</span><span class="tag">foot</span><span class="tag">risk factors</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition physical">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12502539/">Prevention and intervention against obesity and overweight in the military: a systematic review</a></h3>
+        <p class="meta">Systematic review · <span class="pub">PMC12502539</span></p>
+        <p class="sowhat">The evidence base underneath the body-composition policy churn in the section above. If WHtR is now the gate, this is what is known about moving people back through it.
+        <span class="caveat">Grade B: systematic review, but in a mixed military population rather than a single force. Read the inclusion criteria.</span></p>
+        <div class="tags"><span class="tag">body composition</span><span class="tag">intervention</span><span class="tag">systematic review</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="sleep tech">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42044900/">Sleep Patterns of U.S. Navy Personnel Transitioning from Training to Fleet Assignments</a></h3>
+        <p class="meta">Peer-reviewed · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Wearable monitoring of 99 fit-for-duty surface warfare officers over a median 340 days each: mean 6.79 ± 0.58 h of sleep per day, with deprivation markedly worse in fleet assignments than in training.
+        <span class="caveat">Long observation windows on real duty schedules are rare — this is a strong sleep-debt data point, but it is one community on surface ships and should not be generalised to the whole force.</span></p>
+        <div class="tags"><span class="tag">sleep</span><span class="tag">USN</span><span class="tag">wearables</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/42424303/">Patterns of Use for GLP-1 Receptor Agonists in a Weight Management Cohort: MHS Database Analysis of Active Duty Service Members, 2021–2025</a></h3>
+        <p class="meta">Peer-reviewed · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Five years of Military Health System prescribing data on GLP-1 receptor agonists in active-duty weight management — the utilisation baseline underneath the whole body-composition policy debate.
+        <span class="caveat">Utilisation data describes what is prescribed, not what works. Pair with the outcome trials before drawing performance conclusions.</span></p>
+        <div class="tags"><span class="tag">GLP-1</span><span class="tag">body composition</span><span class="tag">MHS</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41894608/">Prevalence of Obesity Medications in the Military Health System: An Update from 2022</a></h3>
+        <p class="meta">Peer-reviewed · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Updates the earlier MHS obesity-medication prevalence work. Reads as the trend companion to the 2021–2025 GLP-1 cohort analysis above.
+        <span class="caveat">Prevalence studies are sensitive to how the denominator is drawn — check the cohort definition before comparing across the two papers.</span></p>
+        <div class="tags"><span class="tag">GLP-1</span><span class="tag">obesity</span><span class="tag">MHS</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards physical">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/40560123/">Should Military Aircrew Members Be Allowed to Use FDA-Approved Weight Loss Medications? A Review and Recommendations</a></h3>
+        <p class="meta">Peer-reviewed review · <span class="pub">PubMed</span> · reported 2025</p>
+        <p class="sowhat">Aeromedical review of weight-loss pharmacotherapy in aircrew, with recommendations. A 2026 letter to the editor adds vision considerations for GLP-1 use in this population.
+        <span class="caveat">A narrative review with recommendations is expert opinion, not trial evidence. Graded accordingly.</span></p>
+        <div class="tags"><span class="tag">GLP-1</span><span class="tag">aircrew</span><span class="tag">aeromedical</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="women injury">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41910639/">Postpartum Screening and Referral for Pelvic Floor Dysfunction at a United States Military Medical Center</a></h3>
+        <p class="meta">Peer-reviewed · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">A standardised postpartum screening and referral pathway for pelvic floor dysfunction inside an MTF — one of the few implementation-grade women's health readiness papers in the current window.
+        <span class="caveat">Single-site implementation study. Useful as a model, not as prevalence evidence.</span></p>
+        <div class="tags"><span class="tag">women's health</span><span class="tag">pelvic floor</span><span class="tag">postpartum</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="mental sleep tech">
+      <div><span class="grade g-b">B</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41895610/">Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using Ecological Momentary Assessment and Passive Sleep Sensing</a></h3>
+        <p class="meta">Peer-reviewed · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Combines momentary self-report with passive wearable sleep sensing to predict next-day symptoms in service members and veterans. Sits exactly on the sleep–mental health–wearables intersection this board tracks as a hot topic.
+        <span class="caveat">Prediction is not intervention, and passive sensing raises consent and data-handling questions that any program adopting it has to answer first.</span></p>
+        <div class="tags"><span class="tag">mental health</span><span class="tag">sleep</span><span class="tag">wearables</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="environment nutrition secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/289279/nutrition_research_keeps_warfighters_ready_lethal_in_extreme_cold">Nutrition research keeps warfighters ready, lethal in extreme cold</a></h3>
+        <p class="meta">Service news · <span class="pub">army.mil</span> · reported 2026</p>
+        <p class="sowhat">USARIEM cold-weather nutrition work, including planned observational studies at Arctic Edge 2026 on how the cold-weather ration and its supplements are actually used in the field.
+        <span class="caveat">Secondary. Cite the USARIEM technical reports and journal papers behind it, not this article.</span></p>
+        <div class="tags"><span class="tag">USARIEM</span><span class="tag">cold weather</span><span class="tag">rations</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="environment injury secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/282363/usariem_is_updating_guidance_on_cold_weather_injuries">USARIEM is updating guidance on cold-weather injuries</a></h3>
+        <p class="meta">Service news · <span class="pub">army.mil</span> · reported 2025</p>
+        <p class="sowhat">Signals a revision to cold-weather injury guidance out of USARIEM's Arctic Medicine cross-functional team — worth tracking because guidance revisions eventually land in doctrine.
+        <span class="caveat">Secondary, and forward-looking: the guidance itself is the citable artefact once published.</span></p>
+        <div class="tags"><span class="tag">USARIEM</span><span class="tag">cold injury</span><span class="tag">doctrine</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men mental physical">
+      <div><span class="grade g-a">A</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/35675995/">Body dysmorphic disorder, muscle dysmorphia, weight and shape dissatisfaction and the use of appearance-enhancing drugs in the military: a systematic review</a></h3>
+        <p class="meta">Systematic review · <span class="pub">PubMed</span> · reported 2022</p>
+        <p class="sowhat">The strongest available synthesis on male-pattern body image pathology in uniform — muscle dysmorphia, shape dissatisfaction, and appearance- and performance-enhancing drug use. Directly relevant to how physical standards and body composition messaging land on men.
+        <span class="caveat">A systematic review is only as good as the primary studies under it; several in this literature are small self-report surveys.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">body image</span><span class="tag">APEDs</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10352998/">Military Occupation and Testicular Germ Cell Tumor Risk among U.S. Air Force Servicemen</a></h3>
+        <p class="meta">Occupational epidemiology · <span class="pub">PMC</span> · reported 2023</p>
+        <p class="sowhat">Testicular germ cell tumour is the most commonly diagnosed malignancy in active duty servicemen — a young-male cancer that peaks squarely in the age band H2F serves. Search text reports elevated age-adjusted incidence among officers with a flying history.
+        <span class="caveat">Occupational cohort design: it identifies associations, not causes, and cannot separate exposure from selection into the occupation.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">occupational</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men physical">
+      <div><span class="grade g-c">C</span><span class="dtype">Peer-reviewed</span>
+        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/41833285/">Factors Associated With Testicular Cancer Risk Among New American Military Recruits During Wartime</a></h3>
+        <p class="meta">Cohort study · <span class="pub">PubMed</span> · reported 2026</p>
+        <p class="sowhat">Among a reported 210,483 new Army recruits (2011–2014), 44 incident testicular cancers — an incidence rate reported as 11.61 per 100,000 person-years, with roughly twice the adjusted risk in infantry versus other occupations.
+        <span class="caveat">Small case count drives wide confidence intervals; confirm the figures and the adjustment set in the paper before quoting the twofold estimate.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">recruits</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ SURVEILLANCE ============ -->
+  <section id="sec-surv">
+    <h2>Surveillance &amp; Oversight</h2>
+    <p class="sub">Incidence and independent assessment. Describes what is happening across the force; establishes no causation.</p>
+
+    <article class="entry" data-tags="injury environment physical">
+      <div><span class="grade g-s">S</span><span class="dtype">Surveillance report</span>
+        <h3><a href="https://www.health.mil/Reference-Center/Reports/2026/05/01/MSMR-Vol-33-No-5-May-2026">MSMR Vol. 33 No. 5 — heat illness, active component</a></h3>
+        <p class="meta">Armed Forces Health Surveillance Division · <span class="pub">health.mil</span> · MAY 2026</p>
+        <p class="sowhat">Reported to carry annual heat illness incident cases and rates by service for the active component, 2021–2025, plus heat stroke cases by encounter type and diagnosis year.
+        <span class="caveat">MSMR publishes monthly and is the single best recurring input to this board — put it on a standing monthly check.</span></p>
+        <div class="tags"><span class="tag">MSMR</span><span class="tag">heat illness</span><span class="tag">incidence</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury mental">
+      <div><span class="grade g-s">S</span><span class="dtype">Surveillance report</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12530864/">Ambulatory Health Care Visits Among Active Component Members of the U.S. Armed Forces, 2024</a></h3>
+        <p class="meta">MSMR annual summary · <span class="pub">PMC12530864</span></p>
+        <p class="sowhat">Musculoskeletal disorders showed the largest absolute increase in ambulatory visits — a reported <b>1,675,234 additional visits in 2024 versus 2020</b>. Injuries, MSK disease, and mental health disorders remain the categories driving the most encounters and bed days.
+        <span class="caveat">The strongest current number on this board for the size of the MSK problem. Confirm the figure and its denominator before briefing it.</span></p>
+        <div class="tags"><span class="tag">MSMR</span><span class="tag">MSK burden</span><span class="tag">2024 data</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury">
+      <div><span class="grade g-s">S</span><span class="dtype">Surveillance report</span>
+        <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12530862/">Morbidity Burdens Among Deployed Active and Reserve Component Service Members, 2024</a></h3>
+        <p class="meta">MSMR annual summary · <span class="pub">PMC12530862</span></p>
+        <p class="sowhat">In 2024 the largest share of medical encounters among deployed service members was musculoskeletal/connective tissue, and the most common single diagnosis within it was unspecified lower back pain.
+        <span class="caveat">Deployed population — do not read across to garrison rates.</span></p>
+        <div class="tags"><span class="tag">MSMR</span><span class="tag">deployed</span><span class="tag">low back pain</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury">
+      <div><span class="grade g-s">S</span><span class="dtype">Program page</span>
+        <h3><a href="https://ph.health.mil/topics/workplacehealth/ergo/Pages/Military-Musculoskeletal-Injuries.aspx">Military Musculoskeletal Injuries — Defense Centers for Public Health, Aberdeen</a></h3>
+        <p class="meta">Surveillance topic page · <span class="pub">ph.health.mil</span> · continuously updated</p>
+        <p class="sowhat">The standing DoD public-health page for MSK injury. Related literature reports that in 2019, 55% of the active-component Army population reported an injury and 72% of those were overuse — the numbers that justify most H2F physical-domain staffing.
+        <span class="caveat">Those figures are a 2019 reporting year cited in secondary literature. Find current-year equivalents before briefing them as today's rates.</span></p>
+        <div class="tags"><span class="tag">MSK</span><span class="tag">overuse</span><span class="tag">DCPH-A</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="mental">
+      <div><span class="grade g-s">S</span><span class="dtype">Program page</span>
+        <h3><a href="https://ph.health.mil/topics/healthsurv/bhe/Pages/default.aspx">Behavioral Health Epidemiology reports — DCPH-Aberdeen</a></h3>
+        <p class="meta">Surveillance hub · <span class="pub">ph.health.mil</span> · continuously updated</p>
+        <p class="sowhat">The standing surveillance source for mental and social health in the military — the mental-domain counterpart to the MSK page above.</p>
+        <div class="tags"><span class="tag">behavioral health</span><span class="tag">surveillance</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury">
+      <div><span class="grade g-s">S</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://health.mil/Reference-Center/Fact-Sheets/2025/02/19/CY-23-Hearing-Health-Report">Hearing Health Surveillance Data Review + Hearing Conservation and Readiness</a></h3>
+        <p class="meta">DHA fact sheet / DCPH-A program page · <span class="pub">health.mil, ph.health.mil</span> · CY23 report</p>
+        <p class="sowhat">Noise-induced hearing loss is among the leading occupational hazards in the force, and tinnitus is the top veteran disability. DOEHRS-HC is the system of record for audiometric surveillance.
+        <span class="caveat">Sensory readiness (PULHES H and E) rarely appears in human performance programming and probably should — it is a readiness limiter that no amount of strength work touches.</span></p>
+        <div class="tags"><span class="tag">hearing</span><span class="tag">PULHES</span><span class="tag">occupational health</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="brain">
+      <div><span class="grade g-s">S</span><span class="dtype">Surveillance data</span>
+        <h3><a href="https://www.health.mil/Military-Health-Topics/Centers-of-Excellence/Traumatic-Brain-Injury-Center-of-Excellence/DOD-TBI-Worldwide-Numbers">DOD TBI Worldwide Numbers</a></h3>
+        <p class="meta">TBI Center of Excellence · <span class="pub">health.mil</span> · continuously updated</p>
+        <p class="sowhat">The authoritative running count of diagnosed TBI across the force. The denominator for every brain-health claim in the funding and policy sections.</p>
+        <div class="tags"><span class="tag">TBI</span><span class="tag">incidence</span><span class="tag">TBICoE</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="mental">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://www.gao.gov/products/gao-26-109066">National Security Snapshot: DOD's Military Health System Reforms and Challenges</a></h3>
+        <p class="meta">GAO-26-109066 · <span class="pub">gao.gov</span> · reported 25 JUN 2026</p>
+        <p class="sowhat">Independent assessment of MHS reform. Reported scope: 9.4 million beneficiaries, 700+ facilities, 100,000+ employees, estimated FY2027 budget above $72.5B.
+        <span class="caveat">I searched specifically for a 2026 GAO assessment of MSK injury-prevention programs and found none — that absence is itself worth citing against anyone claiming independent validation of these programs.</span></p>
+        <div class="tags"><span class="tag">GAO</span><span class="tag">oversight</span><span class="tag">MHS</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://www.gao.gov/products/gao-26-108888">Military Readiness: DOD Should Take Further Actions Across the Air, Sea, Ground, and Space Domains</a></h3>
+        <p class="meta">GAO-26-108888 · <span class="pub">gao.gov</span> · reported 04 MAR 2026</p>
+        <p class="sowhat">Covers training and non-combat accidents causing deaths and hundreds of millions in damage, against a stated DoD goal of zero preventable-accident fatalities.
+        <span class="caveat">Fatigue and human performance sit underneath a good share of preventable mishaps — a useful bridge between the sleep thread and the readiness-oversight thread.</span></p>
+        <div class="tags"><span class="tag">GAO</span><span class="tag">mishaps</span><span class="tag">readiness</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="mental">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://www.congress.gov/crs-product/IF13108">CRS: FY2026 Budget Request for the Military Health System</a></h3>
+        <p class="meta">CRS IF13108 · <span class="pub">congress.gov</span> · 2025–2026</p>
+        <p class="sowhat">Reported FY2026 request: $848.3B DoD discretionary, roughly 7.5% ($64.0B) for the MHS. Notes a target of recapturing at least 7% of care from the private sector back to MTFs by 31 DEC 2026, and the MHS Strategy FY2024–2029.
+        <span class="caveat">CRS products are the cleanest short explainers of how the money is structured. Pair with the Defense Primer (IF10530) for the org chart.</span></p>
+        <div class="tags"><span class="tag">CRS</span><span class="tag">budget</span><span class="tag">MHS</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="mental">
+      <div><span class="grade g-s">S</span><span class="dtype">Report index</span>
+        <h3><a href="https://www.dodig.mil/Reports/Audits-and-Evaluations/">DoD Inspector General — audits and evaluations</a></h3>
+        <p class="meta">Oversight hub · <span class="pub">dodig.mil</span> · continuously updated</p>
+        <p class="sowhat">The standing IG reports index. Most recent readiness-adjacent item found: DODIG-2025-114 on assigning medical personnel where they can maintain wartime skills.
+        <span class="caveat">No 2026 IG evaluation of H2F or MSK prevention surfaced in this sweep. Like the GAO gap above, the absence is the finding.</span></p>
+        <div class="tags"><span class="tag">DoD IG</span><span class="tag">oversight</span><span class="tag">medical readiness</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="brain">
+      <div><span class="grade g-s">S</span><span class="dtype">Report index</span>
+        <h3><a href="https://health.mil/Reference-Center/Publications/2026/01/20/TBICoE-Research-Review-Mild-TBI-and-PTSD">TBICoE Research Review: Mild TBI and PTSD</a></h3>
+        <p class="meta">TBI Center of Excellence · <span class="pub">health.mil</span> · reported 20 JAN 2026</p>
+        <p class="sowhat">Center-of-excellence research review on the overlap between mild TBI and PTSD — the clinical seam where brain-health and mental-health readiness programs collide.
+        <span class="caveat">A research review synthesises; it does not add primary data. Trace its citations before quoting effect sizes.</span></p>
+        <div class="tags"><span class="tag">TBI</span><span class="tag">PTSD</span><span class="tag">brain health</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="brain">
+      <div><span class="grade g-policy">Policy</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://health.mil/Reference-Center/Fact-Sheets/2025/09/16/Blast-Overpressure-Provider-Support-Tool">DoD Blast Overpressure Provider Support Tool</a></h3>
+        <p class="meta">Provider tool and fact sheet · <span class="pub">health.mil</span> · reported 16 SEP 2025</p>
+        <p class="sowhat">Provider-facing guidance for addressing low-level blast exposure, with a companion service-member fact sheet. Operationalises the 2024 DoD requirements for managing brain health risks from blast overpressure.
+        <span class="caveat">A clinical support tool, not a standard of care. The 2024 Deputy Secretary of Defense memo is the policy authority above it.</span></p>
+        <div class="tags"><span class="tag">blast overpressure</span><span class="tag">brain health</span><span class="tag">clinical</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="standards">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://www.gao.gov/products/gao-26-107979">GAO-26-107979 — Military Health Care: Clinical Quality Management in Operational Settings Like Field Hospitals</a></h3>
+        <p class="meta">GAO report · <span class="pub">gao.gov</span> · reported 13 JUL 2026</p>
+        <p class="sowhat">Oversight review of clinical quality management in deployed and operational medical settings. Third 2026 GAO product on this board's beat.
+        <span class="caveat">GAO reports recommendations; DoD concurrence and implementation are separate questions the report itself usually flags.</span></p>
+        <div class="tags"><span class="tag">GAO</span><span class="tag">oversight</span><span class="tag">MHS</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Gov report</span>
+        <h3><a href="https://health.mil/Reference-Center/Reports/2024/05/09/Study-on-the-Incidence-of-Cancer-Diagnosis-and-Mortality">Study on the Incidence of Cancer Diagnosis and Mortality Among Military Aircrew</a></h3>
+        <p class="meta">Congressionally directed study · <span class="pub">health.mil</span> · reported 2024</p>
+        <p class="sowhat">The aircrew cancer study. Search text reports active component aircrew had roughly <b>21% higher prostate cancer incidence</b> than the comparable U.S. population — the clearest men-specific signal in current DoD surveillance.
+        <span class="caveat">Surveillance and registry linkage describe incidence, not cause. Comparisons to the civilian population carry a healthy-worker effect in both directions.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">aircrew</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://health.mil/Reference-Center/Publications/2025/03/01/Prostate-Cancer">Prostate Cancer — MHS reference publication (ONC 14)</a></h3>
+        <p class="meta">Reference publication · <span class="pub">health.mil</span> · reported 2025</p>
+        <p class="sowhat">The Military Health System reference sheet on prostate cancer: background, screening posture, and the surveillance picture in the covered population. The men’s-health counterpart to the breast and ovarian material already on this board.
+        <span class="caveat">A reference sheet summarises; it is not the underlying surveillance dataset.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">screening</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-s">S</span><span class="dtype">Fact sheet</span>
+        <h3><a href="https://www.health.mil/Reference-Center/Publications/2026/04/01/Testicular-Cancer">Testicular Cancer — MHS reference publication (ONC 14)</a></h3>
+        <p class="meta">Reference publication · <span class="pub">health.mil</span> · reported APR 2026</p>
+        <p class="sowhat">The companion reference sheet on testicular cancer — the malignancy most concentrated in the young male population the force is built from, and the one where self-screening messaging plausibly changes outcomes.
+        <span class="caveat">A reference sheet summarises; confirm current incidence figures against MSMR before briefing them.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">cancer</span><span class="tag">screening</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ PROGRAMS ============ -->
+  <section id="sec-programs">
+    <h2>Programs, Funding &amp; Standing Resources</h2>
+    <p class="sub">Where the work is actually run and paid for — and the reference sites worth a permanent bookmark.</p>
+
+    <article class="entry" data-tags="h2f physical secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/294839/h2f_proponency_transitions_to_the_mcoe_advancing_the_armys_holistic_health_and_fitness_system">H2F Proponency Transitions to the Maneuver Center of Excellence</a></h3>
+        <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
+        <p class="sowhat">H2F Directorate reported to have moved from TRADOC/CIMT to MCoE at Fort Benning, aligned under the new Transformation and Training Command (T2COM).
+        <span class="caveat">An ownership change redirects who signs H2F policy and where the money sits. Verify before updating any org chart or POC list.</span></p>
+        <div class="tags"><span class="tag">H2F</span><span class="tag">MCoE</span><span class="tag">reorganization</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f physical secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/294841/h2f_system_update_organization_manning_h2f_for_the_total_force">H2F System Update: Manning H2F for the Total Force</a></h3>
+        <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
+        <p class="sowhat">Fielding status as reported: 41 HPTs and 1 AST fielding across combined FY25–26, for 90 HPTs and 2 ASTs fielded or in process; all 11 divisions have received personnel and equipment to begin fielding.
+        <span class="caveat">The most useful single number set on this board for anyone tracking H2F hiring demand.</span></p>
+        <div class="tags"><span class="tag">H2F</span><span class="tag">HPT</span><span class="tag">fielding</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f physical secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/292501/warfighter_performance_experts_share_lessons_learned_at_h2f_symposium">Guard and Reserve H2F fielding begins FY26</a></h3>
+        <p class="meta">H2F Symposium reporting · <span class="pub">army.mil / usar.army.mil</span> · MAY 2026</p>
+        <p class="sowhat">Reported from the symposium: Guard and Reserve pilots running since 2018 informed a plan to begin fielding their own H2F Performance Teams in FY2026 — building to a team in each of the 54 states and territories by FY30, and 28 teams across Reserve regional commands.
+        <span class="caveat">The biggest under-covered hiring signal on this board. Component teams operate on a fundamentally different contact model — "the other 28 days a month."</span></p>
+        <div class="tags"><span class="tag">National Guard</span><span class="tag">Army Reserve</span><span class="tag">FY26 fielding</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f physical mental secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/292580/human_performance_programs_recognized_for_excellence_at_symposium">Human performance programs recognized for excellence at H2F Symposium</a></h3>
+        <p class="meta">Army news · <span class="pub">army.mil</span> · symposium held 12–14 MAY 2026</p>
+        <p class="sowhat">2026 "Best in Class" recognition. Physical domain winner reported as 1st IBCT, 11th Airborne Division, for a "Wolf Recovery" initiative putting every warfighter who spent 2+ weeks forward through a standardized 90-minute session touching all five domains.
+        <span class="caveat">Best-in-class writeups are the closest thing to a field-tested playbook this community publishes. Read the mechanism, not the award.</span></p>
+        <div class="tags"><span class="tag">H2F</span><span class="tag">recovery</span><span class="tag">best in class</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f">
+      <div><span class="grade g-prog">Portal</span><span class="dtype">Program page</span>
+        <h3><a href="https://h2f.army.mil/">Holistic Health and Fitness (H2F) — official program site</a></h3>
+        <p class="meta">Program portal · <span class="pub">h2f.army.mil</span> · continuously updated</p>
+        <p class="sowhat">Domain pages, Unit Resources, the H2F Academy, and an H2F-in-the-News feed. First stop for anything H2F before going to secondary coverage.</p>
+        <div class="tags"><span class="tag">H2F</span><span class="tag">unit resources</span><span class="tag">H2F Academy</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f mental">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://h2f.army.mil/Domains/Spiritual-Domain/">H2F Spiritual Domain</a></h3>
+        <p class="meta">Program domain page · <span class="pub">h2f.army.mil</span></p>
+        <p class="sowhat">The least-covered of the five domains. Chaplains and religious affairs specialists are the designated subject matter experts; the H2F Handbook defines spiritual readiness as the personal qualities that sustain a person through stress, hardship, or tragedy.
+        <span class="caveat">Claims that spiritual health improves physical and mental outcomes appear in program materials — treat the underlying evidence base as unexamined until you have read it yourself.</span></p>
+        <div class="tags"><span class="tag">spiritual domain</span><span class="tag">chaplain</span><span class="tag">H2F</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="h2f physical nutrition secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/267217/future_soldier_preparatory_course_now_offers_recruits_opportunity_to_do_both_academic_fitness_tracks">Future Soldier Preparatory Course — fitness track</a></h3>
+        <p class="meta">Army program · <span class="pub">army.mil</span></p>
+        <p class="sowhat">Pre-accession program for recruits exceeding accession body fat by 2–6%. Reported: 95% graduation across both tracks, average 1.4% body fat lost per week in the fitness track, up to 90 days, with recruits educated on all five H2F domains by H2F professionals.
+        <span class="caveat">The accession end of the pipeline, and a rare place where H2F staffing shows measurable throughput numbers. Reported figures predate the WHtR transition — check whether the accession standard itself has changed.</span></p>
+        <div class="tags"><span class="tag">accession</span><span class="tag">body composition</span><span class="tag">H2F</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/290526/army_launches_revolutionary_campus_style_dining_to_modernize_soldier_fueling">Army launches campus-style dining to modernize Soldier fueling</a></h3>
+        <p class="meta">Army news · <span class="pub">army.mil</span> · 2026</p>
+        <p class="sowhat">Army Food Program Strategy rollout: campus-style dining venues, Victory Fresh, distributed dining, and the FEED program. Reported first of five pilot venues open, expansion planned to Fort Carson, Fort Bragg, Fort Drum and others; more than half a billion dollars annually in the food program.
+        <span class="caveat">Nutritional-domain infrastructure at scale. Whether it moves fueling behavior is an open empirical question nobody has published on.</span></p>
+        <div class="tags"><span class="tag">nutrition</span><span class="tag">food program</span><span class="tag">infrastructure</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Reference guide</span>
+        <h3><a href="https://www.hprc-online.org/nutrition/warfighter-nutrition-guide">Warfighter Nutrition Guide — HPRC (CHAMP)</a></h3>
+        <p class="meta">DoD human performance resource · <span class="pub">hprc-online.org</span></p>
+        <p class="sowhat">The Department's own evidence-translation resource for performance nutrition, including chapters on supplements and on sleep and activity in post-deployment recovery. The citable alternative when someone brings you a supplement-company claim.</p>
+        <div class="tags"><span class="tag">HPRC</span><span class="tag">nutrition</span><span class="tag">evidence translation</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.hprc-online.org/page/human-performance-optimization/nutrition-dietary-supplements">Operation Supplement Safety (OPSS)</a></h3>
+        <p class="meta">DoD-wide program · <span class="pub">hprc-online.org</span></p>
+        <p class="sowhat">The DoD-wide effort on dietary supplement safety — the right first check when a question involves adverse events or drug-test risk rather than performance claims. A CHAMP catalog of OPSS materials is hosted at usuhs.edu.</p>
+        <div class="tags"><span class="tag">OPSS</span><span class="tag">supplements</span><span class="tag">drug testing</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury mental physical brain">
+      <div><span class="grade g-prog">Funding</span><span class="dtype">Press release</span>
+        <h3><a href="https://cdmrp.health.mil/pubs/press/2026/FY26_Appropriations">CDMRP announces $1.27B across 34 research programs for FY2026</a></h3>
+        <p class="meta">CDMRP press release · <span class="pub">cdmrp.health.mil</span> · reported FEB 2026</p>
+        <p class="sowhat">FY26 appropriations reported at $1.27B across 34 programs under the Consolidated Appropriations Act signed 3 FEB 2026.
+        <span class="caveat">Read funding as a 12–24 month leading indicator of what shows up in doctrine later. The best forward-looking input on the board.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">funding</span><span class="tag">leading indicator</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="injury physical">
+      <div><span class="grade g-prog">Funding</span><span class="dtype">Press release</span>
+        <h3><a href="https://cdmrp.health.mil/pubs/press/2026/orppreann">FY26 Orthopaedic Research Program (ORP)</a></h3>
+        <p class="meta">CDMRP pre-announcement · <span class="pub">cdmrp.health.mil</span> · 2026</p>
+        <p class="sowhat">Funds clinically relevant research advancing treatment and rehabilitation of orthopaedic injuries from combat and service-related activity, aimed at function and return to duty. The most directly MSK-relevant funding line.
+        <span class="caveat">This is a pre-announcement: it precedes the actual funding opportunity announcement, and mechanisms and dollar figures can still change.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">orthopaedic</span><span class="tag">return to duty</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="brain mental">
+      <div><span class="grade g-prog">Funding</span><span class="dtype">Program page</span>
+        <h3><a href="https://cdmrp.health.mil/tbiphrp/default">Traumatic Brain Injury and Psychological Health Research Program</a></h3>
+        <p class="meta">CDMRP program · <span class="pub">cdmrp.health.mil</span> · FY26 cycle open</p>
+        <p class="sowhat">Covers prevention, detection, diagnosis, treatment, and rehabilitation across TBI and psychological health — including repetitive blast overpressure exposure, not just impact injury.
+        <span class="caveat">Blast overpressure is where the brain-health thread touches routine training, not just combat. Watch this line.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">TBI</span><span class="tag">blast overpressure</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="brain secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.war.gov/News/News-Stories/Article/Article/4196901/dod-brain-health-initiative-helps-protect-service-members/">DoD Warfighter Brain Health Initiative</a></h3>
+        <p class="meta">Department of War · <span class="pub">war.gov</span></p>
+        <p class="sowhat">A coordinated effort between the operational and medical communities on brain injury and its effects — the program wrapper around the TBI research and surveillance items elsewhere on this board.</p>
+        <div class="tags"><span class="tag">brain health</span><span class="tag">DoW program</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="environment nutrition physical">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://usariem.health.mil/index.cfm/research/divisions/tmmd">USARIEM Thermal &amp; Mountain Medicine Division — plus Heat and Altitude Acclimatization Guides</a></h3>
+        <p class="meta">Army research institute · <span class="pub">usariem.health.mil</span></p>
+        <p class="sowhat">DoD's premier environmental medicine laboratory: heat, cold, altitude, and multifactorial extremes, with environmental chambers, a hypobaric chamber, and water immersion labs. The published Heat Acclimatization Guide and Altitude Acclimatization Guide are directly usable field references.
+        <span class="caveat">Note the domain: USARIEM now sits at <code>usariem.health.mil</code>, not the older army.mil address. Update stale bookmarks.</span></p>
+        <div class="tags"><span class="tag">USARIEM</span><span class="tag">heat/altitude</span><span class="tag">field guides</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical mental">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.afrl.af.mil/711HPW/">AFRL 711th Human Performance Wing</a></h3>
+        <p class="meta">Air Force research · <span class="pub">afrl.af.mil</span></p>
+        <p class="sowhat">The Human Effectiveness Directorate (RH) plus the USAF School of Aerospace Medicine, at Wright-Patterson with sites in San Antonio, Cincinnati, and Baltimore. Leads Department of the Air Force human-centered research. New commander (Brig. Gen. Bogart) as of 30 MAR 2026.</p>
+        <div class="tags"><span class="tag">AFRL</span><span class="tag">711 HPW</span><span class="tag">Air Force</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical mental">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.med.navy.mil/Naval-Medical-Research-Command/R-D-Commands/Naval-Health-Research-Center/Core-Research/Operational-Readiness/">Naval Health Research Center — Operational Readiness</a></h3>
+        <p class="meta">Navy research · <span class="pub">med.navy.mil</span></p>
+        <p class="sowhat">NHRC's readiness and resilience portfolio, including the Millennium Cohort Study and the Food Utilization and Energy Laboratory behind the Future Sailors nutrition work above.</p>
+        <div class="tags"><span class="tag">NHRC</span><span class="tag">Millennium Cohort</span><span class="tag">Navy</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical mental">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.socom.mil/POTFF/Pages/human_performance.aspx">SOCOM Preservation of the Force and Family — Human Performance</a></h3>
+        <p class="meta">SOCOM program · <span class="pub">socom.mil</span></p>
+        <p class="sowhat">The physical domain covers sports medicine, strength and conditioning, and performance nutrition to optimize training, mitigate injury, and extend career longevity. Public POTFF 101 briefs report POTFF II at 791 FTE and $955M over its period of performance.
+        <span class="caveat">SOF program structure is often borrowed wholesale by conventional-force H2F teams. The population and selection effects are not comparable — borrow the mechanism, not the numbers.</span></p>
+        <div class="tags"><span class="tag">POTFF</span><span class="tag">SOF</span><span class="tag">human performance</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical mental">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.sto.nato.int/the-collaborative-programme-of-work-cpow/human-systems-performance-medicine/">NATO STO — Human Systems, Performance and Medicine</a></h3>
+        <p class="meta">NATO Science and Technology Organization · <span class="pub">sto.nato.int</span> · restructured 01 JUL 2026</p>
+        <p class="sowhat">The former Human Factors and Medicine panel, restructured under the Collaborative Programme of Work as of 1 JUL 2026. Published technical reports include Optimizing Human Performance in NATO SOF Personnel (STO-TR-HFM-308) and Neuroenhancement in Military Personnel (STO-TR-HFM-311); recent DRDC-chaired work covers measuring soldier cognitive load.
+        <span class="caveat">Allied reports are open-access and consistently under-read by US practitioners. The SOF human performance report is the obvious starting point.</span></p>
+        <div class="tags"><span class="tag">NATO STO</span><span class="tag">allied research</span><span class="tag">cognitive load</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="nutrition">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Program page</span>
+        <h3><a href="https://nap.nationalacademies.org/initiative/committee-on-military-nutrition-research">NASEM Committee on Military Nutrition Research</a></h3>
+        <p class="meta">National Academies · <span class="pub">nationalacademies.org</span></p>
+        <p class="sowhat">The consensus-report line behind military nutrition doctrine: ration composition for short-term high-intensity operations, nutritional needs in hot and in cold/high-altitude environments, and weight management for military programs. Consensus reports carry the highest evidentiary weight of anything on this board.
+        <span class="caveat">Many of these reports are decades old. Check the publication year before treating a recommendation as current.</span></p>
+        <div class="tags"><span class="tag">NASEM</span><span class="tag">consensus report</span><span class="tag">rations</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="physical tech">
+      <div><span class="grade g-prog">Reference</span><span class="dtype">Technical report</span>
+        <h3><a href="https://apps.dtic.mil/sti/html/trecms/AD1167765/index.html">DTIC — Physical Fitness Standards to Support Readiness, and the SRT2P evaluation</a></h3>
+        <p class="meta">Defense Technical Information Center · <span class="pub">apps.dtic.mil</span></p>
+        <p class="sowhat">Two directly relevant technical reports: an evaluation of whether fitness assessment components meet their intended purpose, and the Soldier Readiness Test and Training Program evaluation across four BCTs at three installations comparing Gold/Silver/Bronze human performance and injury prevention models.
+        <span class="caveat">The Gold/Silver/Bronze comparison is the closest thing to a controlled test of H2F staffing intensity in the public record. Worth reading in full.</span></p>
+        <div class="tags"><span class="tag">DTIC</span><span class="tag">technical report</span><span class="tag">staffing models</span></div>
+      </div>
+    </article>
+
+    <article class="entry" data-tags="tech physical secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/287239/delivering_on_our_commitments_using_wearable_hazard_monitoring_technology">Wearable All-hazard Remote-monitoring Program (WARP) / LifeLens</a></h3>
+        <p class="meta">JPEO-CBRND · <span class="pub">army.mil</span> · fielding from FY2026</p>
+        <p class="sowhat">Reported to deliver real-time clinical-grade vitals — heart rate, respiration, core temperature — from the warfighter to command posts, fielding from the start of FY2026. A 2023 DHA report on fitness wearables for readiness sits alongside it.
+        <span class="caveat">Also note the countervailing policy: service members are prohibited from wearing wireless devices in some areas and operations. The OPSEC constraint is as real as the capability.</span></p>
+        <div class="tags"><span class="tag">wearables</span><span class="tag">WARP</span><span class="tag">core temperature</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="injury standards">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://cdmrp.health.mil/funding/prmrp">CDMRP FY26 Peer Reviewed Medical Research Program — funding opportunities</a></h3>
+        <p class="meta">Funding program · <span class="pub">cdmrp.health.mil</span> · standing page</p>
+        <p class="sowhat">The FY26 PRMRP funding page. Musculoskeletal health is a named FY26 topic area, which makes this the leading indicator for where injury-prevention research money goes over the next 12–24 months.
+        <span class="caveat">Funding announcements move; deadlines and invited-application status on this page change without notice.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">funding</span><span class="tag">musculoskeletal</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="injury standards">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://cdmrp.health.mil/prmrp/topicareas/topicareas26">CDMRP FY26 PRMRP topic areas</a></h3>
+        <p class="meta">Funding program · <span class="pub">cdmrp.health.mil</span> · FY26</p>
+        <p class="sowhat">The full FY26 topic list. Read it as a priorities document: what Congress funded this year is what shows up as published research two to four years out.
+        <span class="caveat">Topic inclusion is not a guarantee of award volume in that topic.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">priorities</span><span class="tag">funding</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="brain secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Press release</span><span class="secondary">Secondary</span>
+        <h3><a href="https://cdmrp.health.mil/pubs/press/2026/CDMRP_TBI_research_highlight.aspx">CDMRP-supported research assesses TBI-related outcomes to improve warfighter brain health</a></h3>
+        <p class="meta">Press release · <span class="pub">cdmrp.health.mil</span> · 2026</p>
+        <p class="sowhat">Program highlight tying the FY26 appropriation to the TBI and Psychological Health research portfolios.
+        <span class="caveat">Secondary. Follow through to the funded studies it names rather than citing the highlight.</span></p>
+        <div class="tags"><span class="tag">CDMRP</span><span class="tag">TBI</span><span class="tag">brain health</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="h2f nutrition sleep mental physical">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://champ.usuhs.edu/for-the-warrior">CHAMP (Consortium for Health and Military Performance) — For the Warrior</a></h3>
+        <p class="meta">USU program · <span class="pub">champ.usuhs.edu</span> · standing page</p>
+        <p class="sowhat">CHAMP's warfighter-facing hub at the Uniformed Services University — the institutional parent of HPRC and Operation Supplement Safety.
+        <span class="caveat">Translation resource, not primary evidence. Good for what is being taught; cite the underlying science separately.</span></p>
+        <div class="tags"><span class="tag">CHAMP</span><span class="tag">USU</span><span class="tag">total force fitness</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="nutrition">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Practitioner post</span>
+        <h3><a href="https://www.hprc-online.org/nutrition/warfighter-nutrition-guide/11-mission-nutrition-combat-effectiveness">HPRC Warfighter Nutrition Guide, Ch. 11 — Mission Nutrition for Combat Effectiveness</a></h3>
+        <p class="meta">Practitioner guide · <span class="pub">hprc-online.org</span> · standing page</p>
+        <p class="sowhat">The operational-nutrition chapter of the Warfighter Nutrition Guide — what H2F dietitians and unit leaders are actually handed.
+        <span class="caveat">Guidance content. Where it makes an effect claim, trace it to the USARIEM or journal source.</span></p>
+        <div class="tags"><span class="tag">HPRC</span><span class="tag">nutrition</span><span class="tag">field feeding</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="sleep">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Practitioner post</span>
+        <h3><a href="https://www.hprc-online.org/mental-fitness/sleep/20-holistic-sleep-optimization-tips">HPRC — 20 holistic sleep-optimization tips and sleep hygiene self-check</a></h3>
+        <p class="meta">Practitioner guide · <span class="pub">hprc-online.org</span> · standing page</p>
+        <p class="sowhat">The sleep-hygiene worksheet most commonly pushed to units. Worth knowing verbatim because it is what Soldiers will have already been told.
+        <span class="caveat">Self-check worksheets are education, not screening instruments — they do not substitute for a sleep-disorder evaluation.</span></p>
+        <div class="tags"><span class="tag">HPRC</span><span class="tag">sleep</span><span class="tag">education</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="h2f physical">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.hprc-online.org/total-force-fitness/service-specific-resources/army/performance-triad">HPRC — Army Performance Triad resource set</a></h3>
+        <p class="meta">Practitioner guide · <span class="pub">hprc-online.org</span> · standing page</p>
+        <p class="sowhat">Sleep, activity, and nutrition as the Army framed them before H2F. Still in circulation, and still the vocabulary many leaders use.
+        <span class="caveat">Predates the current H2F system. Check which framework a unit is actually running before assuming alignment.</span></p>
+        <div class="tags"><span class="tag">Performance Triad</span><span class="tag">Army</span><span class="tag">H2F</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="physical injury">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://www.afrl.af.mil/711HPW/USAFSAM/">711th Human Performance Wing / U.S. Air Force School of Aerospace Medicine</a></h3>
+        <p class="meta">AFRL program · <span class="pub">afrl.af.mil</span> · standing page</p>
+        <p class="sowhat">The Air Force's consolidated human-performance research, education, and consultation organisation at Wright-Patterson — Human Effectiveness Directorate plus USAFSAM.
+        <span class="caveat">Landing page. Its publications and DTIC-indexed reports are the citable output.</span></p>
+        <div class="tags"><span class="tag">711 HPW</span><span class="tag">USAF</span><span class="tag">human performance</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="injury">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://ph.health.mil/organization/cphe/Pages/InjuryPreventionProgram.aspx">Defense Centers for Public Health–Aberdeen — Injury Prevention Branch</a></h3>
+        <p class="meta">DCPH-A program · <span class="pub">ph.health.mil</span> · standing page</p>
+        <p class="sowhat">The successor to the Army Public Health Center's injury-prevention program — the organisation that actually tracks Soldier injury trends and risk factors.
+        <span class="caveat">Note the renaming: material published under "Army Public Health Center" now lives under DCPH-A, and old links rot.</span></p>
+        <div class="tags"><span class="tag">DCPH-A</span><span class="tag">injury prevention</span><span class="tag">surveillance</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="injury standards">
+      <div><span class="grade g-s">S</span><span class="dtype">Report index</span>
+        <h3><a href="https://ph.health.mil/news/Pages/PeriodicPublications.aspx">DCPH-A periodic publications and surveillance reports</a></h3>
+        <p class="meta">Report index · <span class="pub">ph.health.mil</span> · standing page</p>
+        <p class="sowhat">The index for Health of the Force and the other recurring DCPH-A surveillance products — the standing counterpart to MSMR on this board.
+        <span class="caveat">An index, not a report. Pull the specific edition and cite that.</span></p>
+        <div class="tags"><span class="tag">DCPH-A</span><span class="tag">Health of the Force</span><span class="tag">surveillance</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="tech physical secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/280513/momrp_army_war_college_team_up_for_wearables_pilot">MOMRP and Army War College team up for wearables pilot</a></h3>
+        <p class="meta">Service news · <span class="pub">army.mil</span> · reported 2025</p>
+        <p class="sowhat">Military Operational Medicine Research Program wearables pilot — an early data point on how the Army is testing continuous physiological monitoring on a real population.
+        <span class="caveat">Secondary. Pilot coverage rarely reports methods; wait for the MOMRP output before citing findings.</span></p>
+        <div class="tags"><span class="tag">MOMRP</span><span class="tag">wearables</span><span class="tag">pilot</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="tech physical injury secondary">
+      <div><span class="grade g-prog">Program</span><span class="dtype">News article</span><span class="secondary">Secondary</span>
+        <h3><a href="https://www.army.mil/article/272846/the_transformative_power_of_wearable_health_and_performance_devices">The transformative power of wearable health and performance devices</a></h3>
+        <p class="meta">Service news · <span class="pub">army.mil</span> · reported 2025</p>
+        <p class="sowhat">Describes a wearable platform tracking performance, fitness, recovery, sleep, and injury-risk metrics, with fielding stated to begin in early FY26.
+        <span class="caveat">Secondary, and vendor-adjacent in framing. Treat capability claims as unvalidated until an independent evaluation appears.</span></p>
+        <div class="tags"><span class="tag">wearables</span><span class="tag">fielding</span><span class="tag">injury risk</span></div>
+      </div>
+    </article>
+    <article class="entry" data-tags="men">
+      <div><span class="grade g-prog">Program</span><span class="dtype">Program page</span>
+        <h3><a href="https://cdmrp.health.mil/funding/pcrp.aspx">CDMRP FY26 Prostate Cancer Research Program (PCRP) — funding opportunities</a></h3>
+        <p class="meta">CDMRP program · <span class="pub">cdmrp.health.mil</span> · FY26</p>
+        <p class="sowhat">Reported at <b>$75 million</b> for FY26 across Idea Development, Data Science, Physician Research, and Early Investigator awards. The largest single men’s-health line in the CDMRP portfolio, and the counterpart to the ovarian and breast programs already listed here.
+        <span class="caveat">Deadlines, mechanisms, and appropriation figures change; read the current announcement on Grants.gov (CFDA 12.420) before relying on any number here.</span></p>
+        <div class="tags"><span class="tag">men</span><span class="tag">CDMRP</span><span class="tag">funding</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ WATCH LIST ============ -->
+  <section id="sec-watch">
+    <h2>Emerging Topics — Watch List</h2>
+    <p class="sub">Topics appearing independently across policy, funding, surveillance, and new research inside the same sweep window. Two independent items is a note; three or more earns a line here.</p>
+    <div class="watch">
+      <div class="watch-item">
+        <div class="watch-n">01</div>
+        <div>
+          <h3>Waist-to-height ratio is replacing height/weight across the Joint Force</h3>
+          <p>P&amp;R guidance in December 2025 and January 2026, then Army Directive 2026-13 (WHtR 0.55, effective July 2026), Marine Corps MARADMIN changes, Air Force reinstating scored body composition on WHtR, and Navy revising BCA procedures. One measurement change, four services, twelve months — and it changes who enters remedial programs.</p>
+        </div>
+        <div class="converge">6 sources · policy</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">02</div>
+        <div>
+          <h3>Fitness standards moved across all four services inside twelve months</h3>
+          <p>Traceable to the March 2025 force-wide review and combat arms memos, then the September 2025 SecWar standards memo. Sex-neutral combat-MOS standards and the Army's new Combat Field Test are the two threads with the furthest downstream reach.</p>
+        </div>
+        <div class="converge">8 sources · policy</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">03</div>
+        <div>
+          <h3>Sleep is becoming a measured readiness metric, not a wellness topic</h3>
+          <p>A DoW-level summit, a practitioner convening, Total Force Fitness policy language on cognitive performance, and an RCT protocol treating insomnia in an active-duty TBI population. The trajectory runs from encouragement toward measurement — and measurement eventually means standards.</p>
+        </div>
+        <div class="converge">5 sources · policy + research</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">04</div>
+        <div>
+          <h3>Women's health is widening past load carriage</h3>
+          <p>Pelvic floor prevalence near 10% of active-duty service women, sex-specific patellofemoral loading, hip fracture surveillance by sex, a perimenopause scoping review, Millennium Cohort HRQOL work, and sex-specific environmental extremes research. The research base is moving toward retention-relevant midlife health while the standards conversation moves toward sex-neutral.</p>
+        </div>
+        <div class="converge">7 sources · research</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">05</div>
+        <div>
+          <h3>Energy availability is the mechanism under several separate problems</h3>
+          <p>USARIEM work on performance in caloric deficit, RED-S reviews in military and sport populations, bone stress and hip fracture surveillance, and a half-billion-dollar food program overhaul. Fueling deficit connects the injury, women's health, and nutrition threads — and is rarely programmed as one problem.</p>
+        </div>
+        <div class="converge">6 sources · research + program</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">06</div>
+        <div>
+          <h3>Brain health is separating out as its own readiness domain</h3>
+          <p>The Warfighter Brain Health Initiative, a dedicated CDMRP TBI/psychological health program in the FY26 line, TBICoE worldwide surveillance numbers, and 2026 RCTs on exercise therapy and insomnia in TBI populations. Repetitive blast overpressure is the piece that reaches routine training, not just combat.</p>
+        </div>
+        <div class="converge">5 sources · policy + funding + research</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">07</div>
+        <div>
+          <h3>Wearables arrived with their governance layer, and with a contradiction</h3>
+          <p>Total Force Fitness memo language on fielding wearables and analytics, WARP/LifeLens fielding from FY26, AR 25-99 on biometric data management effective July 2026 — against standing prohibitions on wireless devices in certain areas and operations. Expect procurement and data-governance questions to land before validation evidence does.</p>
+        </div>
+        <div class="converge">4 sources · policy + program</div>
+      </div>
+      <div class="watch-item">
+        <div class="watch-n">08</div>
+        <div>
+          <h3>Musculoskeletal injury remains the readiness problem nobody has solved</h3>
+          <p>MSK drove the largest absolute rise in ambulatory visits in 2024 (a reported 1.68 million more than 2020) and the largest share of deployed encounters; there is a 2026 call for cross-institution collaboration and a dedicated CDMRP orthopaedic line — and no 2026 GAO or DoD IG assessment of whether the prevention programs work. The gap between spend and independent evaluation is the story.</p>
+        </div>
+        <div class="converge">6 sources · surveillance + funding</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REGISTRY ============ -->
+  <section id="sec-registry">
+    <h2>Standing Source Registry</h2>
+    <p class="sub">Every channel this board sweeps. Anything not on this list, or not meeting the same test, does not get cited.</p>
+    <div class="registry">
+      <div><a href="https://armypubs.army.mil/">Army Publishing Directorate</a><span>Doctrine · FM / ATP / AR / directives</span></div>
+      <div><a href="https://h2f.army.mil/">H2F Program</a><span>Program · Army</span></div>
+      <div><a href="https://www.army.mil/aft/">Army Fitness Test</a><span>Standards · Army</span></div>
+      <div><a href="https://www.esd.whs.mil/DD/">Executive Services Directorate</a><span>DoDI / DoDD issuances</span></div>
+      <div><a href="https://www.health.mil/Reference-Center/Policies/">Health.mil policies</a><span>Policy · DHA</span></div>
+      <div><a href="https://www.health.mil/Military-Health-Topics/Health-Readiness/Public-Health/AFHSD/Reports-and-Publications/Medical-Surveillance-Monthly-Report">MSMR</a><span>Surveillance · monthly</span></div>
+      <div><a href="https://ph.health.mil/">Defense Centers for Public Health</a><span>Surveillance · DoD</span></div>
+      <div><a href="https://usariem.health.mil/">USARIEM</a><span>Research · environmental medicine</span></div>
+      <div><a href="https://www.med.navy.mil/Naval-Medical-Research-Command/R-D-Commands/Naval-Health-Research-Center/">Naval Health Research Center</a><span>Research · Navy</span></div>
+      <div><a href="https://www.afrl.af.mil/711HPW/">AFRL 711th HPW</a><span>Research · Air Force</span></div>
+      <div><a href="https://www.hprc-online.org/">HPRC by CHAMP</a><span>Evidence translation · DoD</span></div>
+      <div><a href="https://cdmrp.health.mil/funding/">CDMRP Funding</a><span>Funding · leading indicator</span></div>
+      <div><a href="https://apps.dtic.mil/">DTIC</a><span>Technical reports</span></div>
+      <div><a href="https://www.gao.gov/">GAO</a><span>Independent oversight</span></div>
+      <div><a href="https://www.dodig.mil/Reports/Audits-and-Evaluations/">DoD Inspector General</a><span>Independent oversight</span></div>
+      <div><a href="https://crsreports.congress.gov/">Congressional Research Service</a><span>Budget and policy explainers</span></div>
+      <div><a href="https://nap.nationalacademies.org/initiative/committee-on-military-nutrition-research">NASEM Military Nutrition</a><span>Consensus reports</span></div>
+      <div><a href="https://www.socom.mil/POTFF/Pages/human_performance.aspx">SOCOM POTFF</a><span>Program · SOF</span></div>
+      <div><a href="https://www.health.mil/Military-Health-Topics/Centers-of-Excellence/Psychological-Health-Center-of-Excellence">Psychological Health CoE</a><span>Mental domain · DHA</span></div>
+      <div><a href="https://www.health.mil/Military-Health-Topics/Centers-of-Excellence/Traumatic-Brain-Injury-Center-of-Excellence">TBI Center of Excellence</a><span>Brain health · DHA</span></div>
+      <div><a href="https://www.sto.nato.int/">NATO STO</a><span>Allied research</span></div>
+      <div><a href="https://www.va.gov/WHOLEHEALTH/">VA Whole Health</a><span>Veteran health programs</span></div>
+      <div><a href="https://www.mynavyhr.navy.mil/Support-Services/Culture-Resilience/Physical-Readiness/">Navy Physical Readiness</a><span>Standards · Navy</span></div>
+      <div><a href="https://www.marines.mil/News/Messages/">Marine Corps MARADMINs</a><span>Standards · USMC</span></div>
+      <div><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed / PMC</a><span>Peer-reviewed literature</span></div>
+      <div><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a><span>Trials in progress</span></div>
+    </div>
+  </section>
+
+  <p class="empty" id="empty" hidden>No entries match that filter.</p>
+
+  <footer>
+    NEVER CITED: supplement and equipment vendors · coaching blogs · social accounts where a document exists · news aggregators · AI-generated summary sites.<br>
+    Badge meanings are broken out in the <b>Key</b> at the top of the board.<br>
+    Generated by the Military Health &amp; Fitness Research Scout. Links unverified in this sweep — open before citing.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var q = document.getElementById('q');
+    var live = document.getElementById('live');
+    var empty = document.getElementById('empty');
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+    var entries = Array.prototype.slice.call(document.querySelectorAll('.entry'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('section'));
+    var total = entries.length;
+    var active = 'all';
+
+    function apply() {
+      var term = q.value.trim().toLowerCase();
+      var shown = 0;
+
+      entries.forEach(function (el) {
+        var tags = (el.getAttribute('data-tags') || '').split(/\s+/);
+        var matchTag = active === 'all' || tags.indexOf(active) !== -1;
+        var matchTerm = !term || el.textContent.toLowerCase().indexOf(term) !== -1;
+        var show = matchTag && matchTerm;
+        el.hidden = !show;
+        if (show) shown++;
+      });
+
+      // Hide a section whose entries are all filtered out; keep watch list and
+      // registry visible only when nothing is being filtered.
+      sections.forEach(function (sec) {
+        var own = sec.querySelectorAll('.entry');
+        if (own.length === 0) {
+          sec.hidden = (active !== 'all' || term.length > 0);
+          return;
+        }
+        var anyVisible = Array.prototype.some.call(own, function (e) { return !e.hidden; });
+        sec.hidden = !anyVisible;
+      });
+
+      live.textContent = shown + ' of ' + total + ' shown';
+      empty.hidden = shown !== 0;
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        active = b.getAttribute('data-f');
+        buttons.forEach(function (o) {
+          o.setAttribute('aria-pressed', String(o === b));
+        });
+        apply();
+      });
+    });
+
+    q.addEventListener('input', apply);
+    apply();
+  })();
+</script>
