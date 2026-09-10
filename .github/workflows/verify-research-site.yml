@@ -1,0 +1,99 @@
+# Smoke-test the published research board.
+#
+# The agentresearchsum Netlify project builds from this repository. It once
+# published the bare repo, which made "/" a 404 while the deploy itself reported
+# success — a green deploy is not evidence that the site serves anything. This
+# workflow checks the live URL and fails loudly if the board stops being served.
+#
+# Runs on demand, daily, and on any push that touches the board or its build.
+name: Verify research site
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'healthcare/dashboards/h2f-scout-board.html'
+      - 'scripts/build-netlify-site.sh'
+      - 'scripts/netlify/**'
+      - 'netlify.toml'
+      - '.github/workflows/verify-research-site.yml'
+  schedule:
+    # 12:15 UTC daily, after the nightly jobs sweep has settled.
+    - cron: '15 12 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the live site
+        env:
+          SITE: https://agentresearchsum.netlify.app
+        run: |
+          set -uo pipefail
+          fail=0
+
+          check() {
+            local path="$1" desc="$2"
+            local url="${SITE}${path}"
+            local code
+            code=$(curl -sS -o /tmp/body -w '%{http_code}' -L --max-time 30 "$url" || echo 000)
+            local bytes
+            bytes=$(wc -c </tmp/body | tr -d ' ')
+            if [ "$code" = "200" ]; then
+              echo "  OK   $code  ${bytes} bytes  $desc  ($url)"
+            else
+              echo "  FAIL $code  ${bytes} bytes  $desc  ($url)"
+              fail=1
+            fi
+          }
+
+          echo "== Reachability =="
+          check "/"                      "site root"
+          check "/h2f-scout-board.html"  "embeddable board"
+
+          echo
+          echo "== Content of / =="
+          curl -sS -L --max-time 30 "$SITE/" -o /tmp/index || true
+
+          entries=$(grep -o 'class="entry"' /tmp/index | wc -l | tr -d ' ')
+          echo "  entries rendered in markup : $entries"
+
+          title=$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' /tmp/index | head -1)
+          echo "  <title>                    : ${title:-<none>}"
+
+          for needle in 'Military Health' 'data-f="men"' 'class="key"' 'Fetch-verified'; do
+            if grep -q "$needle" /tmp/index; then
+              echo "  present                    : $needle"
+            else
+              echo "  MISSING                    : $needle"
+              fail=1
+            fi
+          done
+
+          # The board must be at least mostly there. A publish that serves a
+          # directory listing or an error page would sail past a 200 check.
+          if [ "$entries" -lt 90 ]; then
+            echo "  FAIL: expected at least 90 entries, found $entries"
+            fail=1
+          fi
+
+          echo
+          echo "== Tailwind =="
+          if grep -q 'href="/tailwind.css"' /tmp/index; then
+            echo "  index links the compiled stylesheet"
+            check "/tailwind.css" "compiled Tailwind"
+          elif grep -q 'cdn.tailwindcss.com' /tmp/index; then
+            echo "  NOTE: index fell back to the Tailwind CDN — the build-time compile did not run."
+          else
+            echo "  NOTE: no Tailwind on the page; chrome is unstyled but the board is unaffected."
+          fi
+
+          echo
+          if [ "$fail" -ne 0 ]; then
+            echo "Research site verification FAILED."
+            exit 1
+          fi
+          echo "Research site verification passed."
