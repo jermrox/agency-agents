@@ -137,7 +137,7 @@
       margin: 0 !important;
       transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); }
+    @media (hover: hover) { #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); } }
     #mm-jobs .mm-chip:active:not(:disabled) { transform: scale(.97); }
     #mm-jobs .mm-chip[aria-pressed="true"] {
       background: var(--mm-accent); border-color: var(--mm-accent);
@@ -148,6 +148,218 @@
     #mm-jobs .mm-chip:disabled { opacity: .38; cursor: default; }
     #mm-jobs .mm-chip:focus-visible,
     #mm-jobs :focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 2px; }
+
+    /* Second level under Location. Reads as a drill-down, not a peer row:
+       indented behind a rule in the accent colour, on a tinted ground, with
+       smaller pills. It only exists while CONUS or OCONUS is selected. */
+    #mm-jobs .mm-sublevel {
+      margin-top: .6rem !important;
+      padding: .6rem 0 .1rem .75rem !important;
+      border-left: 2px solid var(--mm-accent);
+      display: grid; gap: .9rem;
+      animation: mm-sublevel-in .18s var(--mm-ease) both;
+    }
+    /* The `display: grid` above outranks the plain [hidden] rule, so the
+       closed state has to be spelled out -- without it an empty container
+       still paints its left rule as a stray gold tick under the pills. */
+    #mm-jobs .mm-sublevel[hidden] { display: none; }
+    @keyframes mm-sublevel-in {
+      from { opacity: 0; transform: translateY(-.25rem); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-sublevel { animation: none; }
+    }
+    #mm-jobs .mm-sublegend {
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .4rem !important; line-height: 1.2 !important;
+    }
+    #mm-jobs .mm-sublegend .mm-sub-clear {
+      border: 0; background: none; padding: 0 !important; margin-left: .5rem !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-chip.is-sub {
+      padding: .3rem .6rem !important; min-height: 1.9rem !important;
+      font-size: .75rem !important; gap: .3rem;
+      background: var(--mm-card);
+    }
+    #mm-jobs .mm-chip.is-sub .mm-n { font-size: .7rem; }
+    #mm-jobs .mm-chip.is-sub[aria-pressed="true"] { background: var(--mm-accent); }
+
+    /* Facet controls.
+       One shared panel that expands INLINE beneath the button row, rather than
+       three popovers. A popover has to cover something, and three of them each
+       anchor to a different button, so nothing lines up and the panel hangs
+       over the search field. Expanding in flow means every row keeps the same
+       left and right edge and nothing is ever obscured. */
+    #mm-jobs .mm-ddrow { display: flex; gap: .5rem; align-items: flex-start; }
+    #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 1 1 0; min-width: 0; }
+    /* The trigger, from the reference: 46px, radius 12px, 13px/600 tracked
+       label, icon at the left, caret at the right, press scale .95. Open
+       (.is-fused) its bottom corners square off and it extends 9px downward
+       to meet the panel, covering the panel's top border along its own span
+       -- the reference's fused trigger + list. The two inactive buttons keep
+       their gap and their corners, so nothing is cut. */
+    #mm-jobs .mm-dd-btn {
+      position: relative; overflow: visible; isolation: isolate; box-sizing: border-box;
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      border: 1px solid var(--mm-border); background: var(--mm-card-2); color: var(--mm-ink);
+      border-radius: 12px !important; padding: 0 .75rem !important;
+      height: 2.875rem !important; min-height: 2.875rem !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none; margin: 0 !important;
+      transition: background .2s var(--mm-ease), border-color .2s var(--mm-ease), border-radius .2s var(--mm-ease),
+        height .2s var(--mm-ease), margin .2s var(--mm-ease), box-shadow .2s var(--mm-ease), transform .1s var(--mm-ease);
+    }
+    @media (hover: hover) { #mm-jobs .mm-dd-btn:hover { background: var(--mm-card); } }
+    #mm-jobs .mm-dd-btn:active { transform: scale(.95); }
+    #mm-jobs .mm-dd-btn.is-fused {
+      background: var(--mm-card); border-bottom-color: transparent;
+      border-radius: 12px 12px 0 0 !important;
+      height: calc(2.875rem + 9px) !important; margin-bottom: -9px !important; z-index: 2;
+    }
+    #mm-jobs .mm-dd-main { display: flex; align-items: center; gap: .5rem; flex: 1 1 auto; min-width: 0; }
+    #mm-jobs .mm-dd-ico { display: block; flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-dd-ico svg { display: block; width: 16px; height: 16px; }
+    #mm-jobs .mm-dd-lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Placeholder look until something is picked, as the reference. */
+    #mm-jobs .mm-dd-btn:not(.is-set) .mm-dd-lab { color: var(--mm-muted); font-weight: 500; }
+    #mm-jobs .mm-dd-btn.is-set .mm-dd-ico, #mm-jobs .mm-dd-btn.is-fused .mm-dd-ico { color: var(--mm-accent-text); }
+    /* Below 640px the three buttons stack full width -- the reference is a
+       single wide select, and three across on a phone leaves 60px for a
+       label that needs 78 ("Organization"). The panel moves under the button
+       that is open (see placePanel), so it stays in flow: nothing overlaps,
+       the buttons below simply move down. The column gap is the 8px the
+       fused button reaches across; a closed panel cancels its own gap. */
+    @media (max-width: 639px) {
+      #mm-jobs .mm-ddrow { flex-direction: column; }
+      /* flex-basis 0 from the row layout would override the open height */
+      #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 0 0 auto; width: 100%; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel { margin-top: -.5rem !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel.is-open { margin-top: 0 !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel .mm-ddbox { border-top-left-radius: 0; border-top-right-radius: 0; }
+    }
+    /* The caret becomes an X while its section is open. Two glyphs stacked in
+       the same 11px box; the chevron rotates away as the X rotates in. */
+    #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; color: var(--mm-muted); }
+    #mm-jobs .mm-dd-car svg {
+      position: absolute; inset: 0; width: 11px; height: 11px;
+      transition: transform .28s cubic-bezier(.2,1.05,.35,1), opacity .18s var(--mm-ease);
+    }
+    #mm-jobs .mm-dd-car .mm-car-chev { opacity: .8; }
+    #mm-jobs .mm-dd-car .mm-car-x    { opacity: 0; transform: rotate(-90deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-chev { opacity: 0; transform: rotate(180deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-x    { opacity: 1; transform: none; }
+
+    /* The panel opens like a drawer rather than appearing: a grid row that
+       goes 0fr -> 1fr, with the border and padding on the inner element so a
+       closed row collapses to nothing and the buttons-to-search spacing is
+       exactly what it is with no panel at all. A clean gap above, never a
+       negative margin: merging the panel into the active button looked like a
+       tab, but the panel is full width, so the merge ran under the two
+       inactive buttons and cut their corners. Uncapped on purpose -- a
+       max-height with internal scroll sliced the last chip row in half. */
+    #mm-jobs .mm-ddpanel {
+      display: grid; grid-template-rows: 0fr; margin-top: 0 !important;
+      transition: grid-template-rows .32s cubic-bezier(.2,.9,.3,1), margin-top .32s cubic-bezier(.2,.9,.3,1);
+    }
+    #mm-jobs .mm-ddpanel.is-open { grid-template-rows: 1fr; margin-top: .5rem !important; }
+    /* .mm-ddinner is the clipping element and carries NO padding or border --
+       with them, a 0fr row still measured 27.6px (padding + border), because
+       min-height: 0 clamps content, not box edges. They live on .mm-ddbox. */
+    #mm-jobs .mm-ddinner {
+      min-height: 0; overflow: hidden; visibility: hidden; opacity: 0; transform: translateY(-.35rem);
+      transition: opacity .22s var(--mm-ease), transform .32s cubic-bezier(.2,1.05,.35,1), visibility 0s linear .32s;
+    }
+    #mm-jobs .mm-ddbox {
+      border: 1px solid var(--mm-border); border-radius: 12px;
+      background: var(--mm-card); padding: .8rem !important;
+    }
+    /* Under an open first or last button the panel's corner goes square so
+       the button's outer edge runs straight down into the list. */
+    #mm-jobs .mm-ddpanel.is-first-open .mm-ddbox { border-top-left-radius: 0; }
+    #mm-jobs .mm-ddpanel.is-last-open .mm-ddbox { border-top-right-radius: 0; }
+    /* Options as rows, from the reference: 42px, 4px apart, radius 12px, an
+       icon and a 13px/600 tracked label, hover fill, press scale. Picked rows
+       take the accent tint and a check; empty ones fade. */
+    #mm-jobs .mm-opts { display: flex; flex-direction: column; gap: 4px; }
+    #mm-jobs .mm-opt {
+      display: flex; align-items: center; gap: .75rem; width: 100%; text-align: left;
+      min-height: 2.625rem; padding: 0 .75rem !important; margin: 0 !important;
+      border: 0; border-radius: 12px !important; background: transparent; color: var(--mm-ink);
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1.2 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none;
+      transition: background .15s var(--mm-ease), color .15s var(--mm-ease), transform .1s var(--mm-ease);
+    }
+    #mm-jobs .mm-opt-ico { flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-opt-ico svg { display: block; width: 16px; height: 16px; }
+    #mm-jobs .mm-opt-lab { flex: 1 1 auto; min-width: 0; white-space: normal; padding: .35rem 0; }
+    #mm-jobs .mm-opt .mm-n { flex: none; opacity: .6; font-weight: 500; font-size: .75rem; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+    /* The check replaces the icon on a picked row rather than taking its own
+       slot, so a long option name keeps the width on a narrow phone. */
+    #mm-jobs .mm-opt-chk { display: none; flex: none; width: 16px; height: 16px; color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { display: none; }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-chk { display: block; animation: mm-pop .25s cubic-bezier(.34,1.4,.64,1) both; }
+    @keyframes mm-pop { from { opacity: 0; transform: scale(.6); } }
+    #mm-jobs .mm-opt-chk svg { display: block; width: 16px; height: 16px; }
+    @media (hover: hover) { #mm-jobs .mm-opt:not(:disabled):hover { background: var(--mm-card-2); } }
+    #mm-jobs .mm-opt:active:not(:disabled) { transform: scale(.97); }
+    #mm-jobs .mm-opt[aria-pressed="true"] { background: var(--mm-accent-soft); color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-n { opacity: .85; }
+    #mm-jobs .mm-opt:disabled { opacity: .45; cursor: default; }
+    #mm-jobs .mm-ddpanel.is-open .mm-ddinner { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+    #mm-jobs .mm-ddsec[hidden] { display: none; }
+    #mm-jobs .mm-ddhead {
+      display: flex; align-items: baseline; justify-content: space-between; gap: .5rem;
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .6rem !important; line-height: 1.3 !important;
+    }
+    #mm-jobs .mm-ddclear {
+      border: 0; background: none; padding: 0 !important; margin: 0 !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-ddnote {
+      font-size: .75rem !important; color: var(--mm-muted);
+      line-height: 1.45 !important; margin: 0 0 .6rem !important;
+    }
+    /* Inside the panel there is no width pressure, so chips wrap rather than
+       becoming the horizontally scrolling strip the 640px rule creates. */
+    #mm-jobs .mm-ddpanel .mm-sublevel {
+      border-left: 0; padding-left: 0 !important; margin-top: .85rem !important;
+      padding-top: .75rem !important; border-top: 1px solid var(--mm-border);
+    }
+    /* Options arrive one after another when a section opens (35ms apart,
+       springing up from .85 scale), not on every re-render -- a re-render
+       happens on every chip click, and replaying the entrance each time would
+       make the panel twitch under the finger. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-chip {
+      animation: mm-chip-in .38s cubic-bezier(.2,1.1,.35,1) both;
+      animation-delay: calc(var(--i, 0) * 35ms);
+    }
+    @keyframes mm-chip-in { from { opacity: 0; transform: scale(.85) translateY(.25rem); } }
+    /* Rows spring in 45ms apart from .8 scale (the reference's timing), and
+       on close leave in reverse order, 20ms apart, before the drawer folds. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-opt {
+      animation: mm-opt-in .3s cubic-bezier(.34,1.3,.64,1) both;
+      animation-delay: calc(var(--i, 0) * 45ms);
+    }
+    @keyframes mm-opt-in { from { opacity: 0; transform: translateY(-6px) scale(.8); } }
+    #mm-jobs .mm-ddpanel.is-leaving .mm-opt, #mm-jobs .mm-ddpanel.is-leaving .mm-chip {
+      animation: mm-opt-out .18s var(--mm-ease) both; animation-delay: calc(var(--r, 0) * 20ms); pointer-events: none;
+    }
+    @keyframes mm-opt-out { to { opacity: 0; transform: translateY(-6px) scale(.8); } }
+    #mm-jobs .mm-ddpanel .mm-chips {
+      flex-wrap: wrap !important; overflow: visible !important;
+      -webkit-mask-image: none !important; mask-image: none !important;
+      padding-bottom: 0 !important; margin-bottom: 0 !important;
+    }
 
     #mm-jobs .mm-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     #mm-jobs .mm-field { position: relative; flex: 1 1 12rem; min-width: 0; }
@@ -252,16 +464,57 @@
     #mm-jobs .mm-badge.is-listed   { background: var(--mm-warn-bg); color: var(--mm-warn); border-color: transparent; }
     #mm-jobs .mm-badge.is-contingent { background: var(--mm-flag-bg); color: var(--mm-flag); border-color: transparent; }
 
+    /* The call to action: a plain pill in the board's accent gold with the
+       dark-gold text, as it always was, and a round disc holding the arrow.
+       No ring, no beam, no glow -- the user did not want the chrome, and not
+       black either. */
     #mm-jobs .mm-apply {
-      display: inline-flex; align-items: center; gap: .45rem; margin: 0 !important;
-      background: var(--mm-accent); color: var(--mm-accent-ink); box-shadow: none !important;
-      text-decoration: none; font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; line-height: 1.3 !important;
-      padding: .65rem 1.05rem !important; border-radius: 8px !important; border: none; white-space: nowrap;
-      transition: background .15s var(--mm-ease), transform .1s var(--mm-ease);
+      display: inline-flex; align-items: center; gap: .75rem; margin: 0 !important;
+      padding: .5rem .5rem .5rem 1.1rem !important; border: none; border-radius: 999px !important;
+      background: var(--mm-accent); color: var(--mm-accent-ink); text-decoration: none; white-space: nowrap;
+      font-family: var(--mm-font); font-size: .9375rem !important; font-weight: 500; line-height: 1.3 !important;
+      box-shadow: none !important; transition: transform .2s var(--mm-ease), background .2s var(--mm-ease);
     }
-    #mm-jobs .mm-apply:hover { background: var(--mm-accent-text); color: #fff; }
+    #mm-jobs .mm-apply-disc {
+      display: inline-flex; align-items: center; justify-content: center; flex: none;
+      width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(23,19,16,.14);
+      transition: transform .2s var(--mm-ease);
+    }
+    #mm-jobs .mm-apply-disc svg { width: 15px; height: 15px; }
+    /* Hover effects only where a hover exists. On a touchscreen :hover sticks
+       after a tap, so the button would stay lifted until the next tap. */
+    @media (hover: hover) {
+      #mm-jobs .mm-apply:hover { transform: translateY(-1px); }
+      #mm-jobs .mm-apply:hover .mm-apply-disc { transform: scale(1.1); }
+    }
     #mm-jobs .mm-apply:active { transform: scale(.98); }
-    #mm-jobs .mm-apply svg { width: 13px; height: 13px; }
+    /* Touch. Platform guidance puts the minimum tap target at 44pt on iOS and
+       48dp on Android; several controls here were 25-40px. Grow the hit areas,
+       not the type -- the text stays the size it is and the box does the work.
+       Coarse pointers only, so a desktop keeps its 40px controls. */
+    @media (pointer: coarse) {
+      #mm-jobs .mm-search { height: 2.75rem !important; line-height: 2.75rem !important; }
+      #mm-jobs .mm-select { height: 2.75rem !important; }
+      #mm-jobs .mm-check { min-height: 2.75rem; }
+      #mm-jobs .mm-opt { min-height: 2.75rem; }
+      #mm-jobs .mm-chip { min-height: 2.75rem !important; }
+      #mm-jobs .mm-chip.is-sub { min-height: 2.75rem !important; padding: .3rem .75rem !important; }
+      #mm-jobs .mm-active-chip { min-height: 2.75rem !important; padding: .3rem .7rem .3rem .85rem !important; }
+      #mm-jobs .mm-clear { min-height: 2.75rem; }
+      #mm-jobs .mm-apply { min-height: 2.75rem; }
+      /* The section header grows to hold a full-height Clear; the box gives
+         back some top padding so the chips do not move down by the whole 30px. */
+      #mm-jobs .mm-ddbox { padding-top: .35rem !important; }
+      #mm-jobs .mm-ddhead { align-items: center; min-height: 2.75rem; margin-bottom: .25rem !important; }
+      #mm-jobs .mm-ddclear {
+        display: inline-flex; align-items: center; min-height: 2.75rem !important;
+        padding: 0 .5rem !important; margin-right: -.5rem !important;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-ddpanel, #mm-jobs .mm-ddinner, #mm-jobs .mm-dd-car svg { transition: none !important; }
+      #mm-jobs .mm-ddpanel.is-entering .mm-chip, #mm-jobs .mm-ddpanel .mm-opt { animation: none !important; }
+    }
 
     #mm-jobs .mm-skel { display: grid; gap: .85rem; }
     #mm-jobs .mm-skel-card {
@@ -305,27 +558,35 @@
 
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
-      <div class="mm-legend">Discipline</div>
-      <div class="mm-chips" id="mm-f-discipline"></div>
-    </div>
-
-    <div class="mm-group">
-      <div class="mm-legend">
-        Service branch
-        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</span>
+      <div class="mm-ddrow">
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Discipline</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Organization</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Location</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
       </div>
-      <div class="mm-chips" id="mm-f-branch"></div>
-    </div>
 
-    <div class="mm-group">
-      <div class="mm-legend">
-        Location
-        <span class="mm-hint">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS.</span>
+      <div class="mm-ddpanel" id="mm-ddpanel">
+        <div class="mm-ddinner">
+          <div class="mm-ddbox">
+        <div class="mm-ddsec" data-sec="discipline" hidden>
+          <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
+          <div class="mm-opts" id="mm-f-discipline" role="group" aria-label="Discipline"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="branch" hidden>
+          <div class="mm-ddhead"><span>Organization</span><button type="button" class="mm-ddclear" data-clear="branch" hidden>Clear</button></div>
+          <p class="mm-ddnote">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</p>
+          <div class="mm-opts" id="mm-f-branch" role="group" aria-label="Organization"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="location" hidden>
+          <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
+          <div class="mm-opts" id="mm-f-location" role="group" aria-label="Location"></div>
+          <div class="mm-sublevel" id="mm-f-region" hidden></div>
+        </div>
+          </div>
+        </div>
       </div>
-      <div class="mm-chips" id="mm-f-location"></div>
     </div>
 
-    <div class="mm-group">
+    <div class="mm-group mm-controls">
       <div class="mm-row">
         <div class="mm-field">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -388,9 +649,56 @@
     check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
     flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    arrowUpRight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>',
     close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
     empty: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
   };
+
+  // One icon per option, so a row and the trigger can show what was picked.
+  function ico(paths) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + paths + "</svg>"; }
+  var FACET_ICONS = {
+    discipline: {
+      "strength-conditioning": ico('<path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/>'),
+      "cognitive-performance": ico('<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/>'),
+      "physical-therapy": ico('<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.5 12h5l1.5-3 2 6 1.5-3h4"/>'),
+      "nutrition": ico('<path d="M12 6.5c1.5-2 4-2.5 5.5-1.5 3 2 3 7 .5 11-1.2 2-2.5 3-4 2.5-.7-.2-1.3-.2-2 0-1.5.5-2.8-.5-4-2.5-2.5-4-2.5-9 .5-11 1.5-1 4-.5 5.5 1.5z"/><path d="M12 6.5c0-2 1-3.5 2.5-4"/>'),
+      "occupational-therapy": ico('<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M11 11.5V4.5a1.5 1.5 0 0 1 3 0V12"/><path d="M14 12V6.5a1.5 1.5 0 0 1 3 0V14"/><path d="M8 13l-1.5-2a1.6 1.6 0 0 0-2.6 1.8L7 17a7 7 0 0 0 13-3v-2"/>'),
+      "human-performance": ico('<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'),
+      "athletic-training": ico('<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>'),
+      "sport-science": ico('<path d="M3 3v18h18"/><path d="M8 17v-6M13 17V7M18 17v-3"/>'),
+      "behavioral-health": ico('<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>'),
+      "fitness": ico('<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>'),
+      "__default": ico('<circle cx="12" cy="12" r="9" stroke-dasharray="4 3"/>')
+    },
+    branch: {
+      "army": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+      "navy": ico('<circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/>'),
+      "air-force": ico('<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>'),
+      "marine-corps": ico('<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'),
+      "space-force": ico('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'),
+      "coast-guard": ico('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>'),
+      "joint": ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+      "none": ico('<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>'),
+      "__default": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>')
+    },
+    location: {
+      "remote": ico('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>'),
+      "telework": ico('<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>'),
+      "conus": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
+      "oconus": ico('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'),
+      "unspecified": ico('<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>'),
+      "__default": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>')
+    }
+  };
+  var TRIGGER_ICONS = {
+    discipline: ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+    branch: FACET_ICONS.branch.army,
+    location: FACET_ICONS.location.conus
+  };
+  function facetIcon(group, value) {
+    var set = FACET_ICONS[group] || {};
+    return set[value] || set.__default || "";
+  }
 
   var els = {
     sub: document.getElementById("mm-sub"),
@@ -405,6 +713,7 @@
     active: document.getElementById("mm-active"),
     count: document.getElementById("mm-count"),
     clear: document.getElementById("mm-clear"),
+    region: document.getElementById("mm-f-region"),
     list: document.getElementById("mm-list"),
     live: document.getElementById("mm-live"),
     defs: document.getElementById("mm-defs")
@@ -412,13 +721,28 @@
 
   var JOBS = [];
   var DEFS = {};
-  var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
+  var selected = {
+    discipline: new Set(), branch: new Set(), location: new Set(), region: new Set()
+  };
 
   var UNPLACED = "unspecified";
+  // Telework sits next to Remote rather than inside it. "Telework eligible" on
+  // a federal posting means a day a week from home from a job that is still on
+  // the installation -- 124 of 271 live federal postings carry it, every one
+  // with a real duty station. A candidate filtering Remote must not be shown
+  // those; a candidate who wants flexibility should still find them.
   var LOCATION_LABELS = {
-    remote: "Remote", conus: "CONUS", oconus: "OCONUS",
+    remote: "Remote", telework: "Telework", conus: "CONUS", oconus: "OCONUS",
     unspecified: "Location not stated"
   };
+  // The drill-down under CONUS/OCONUS. Two legends rather than one because
+  // the answer differs: inside the contiguous states a candidate is choosing a
+  // state, outside them they are choosing between Alaska, Hawaii and a list of
+  // countries -- "state" would be wrong for Germany and "country" wrong for
+  // Hawaii.
+  var REGION_CLASSES = ["conus", "oconus"];
+  var REGION_LEGENDS = { conus: "Narrow by state", oconus: "Narrow by region" };
+
   var UNATTRIBUTED = "none";
   var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
   var BRANCH_LABELS = {
@@ -470,6 +794,21 @@
       if (!classes.length) classes = [UNPLACED];
       if (!classes.some(function (c) { return selected.location.has(c); })) return false;
     }
+    // "location" ignores the region level too, so the CONUS and OCONUS counts
+    // keep describing the whole class. Without this, picking two states drops
+    // the parent pill from "CONUS 125" to "CONUS 45", which reads as jobs
+    // disappearing rather than as a narrowing the user just asked for.
+    if (ignore !== "region" && ignore !== "location" && selected.region.size) {
+      // Only regions sitting under a selected class count. Without that guard a
+      // requisition covering "TX; JP" would answer a Japan filter through its
+      // Texas half once the user had narrowed to CONUS.
+      var regions = f.location_regions || {};
+      var hitRegion = REGION_CLASSES.some(function (cls) {
+        if (!selected.location.has(cls)) return false;
+        return (regions[cls] || []).some(function (r) { return selected.region.has(r); });
+      });
+      if (!hitRegion) return false;
+    }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
 
     var floor = parseInt(els.salary.value, 10) || 0;
@@ -505,12 +844,23 @@
         return matches(job, group);
       }).length;
 
+      var isRow = container.classList.contains("mm-opts");
+      var on = selected[group].has(opt.value);
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "mm-chip";
-      btn.setAttribute("aria-pressed", selected[group].has(opt.value) ? "true" : "false");
-      btn.disabled = n === 0 && !selected[group].has(opt.value);
-      btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      btn.className = isRow ? "mm-opt" : "mm-chip";
+      btn.style.setProperty("--i", String(container.childElementCount));
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.disabled = n === 0 && !on;
+      if (isRow) {
+        btn.innerHTML =
+          '<span class="mm-opt-ico" aria-hidden="true">' + facetIcon(group, opt.value) + "</span>" +
+          '<span class="mm-opt-chk" aria-hidden="true">' + ICONS.check + "</span>" +
+          '<span class="mm-opt-lab">' + esc(opt.label) + "</span>" +
+          '<span class="mm-n">' + n + "</span>";
+      } else {
+        btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      }
       btn.addEventListener("click", function () {
         if (selected[group].has(opt.value)) selected[group].delete(opt.value);
         else selected[group].add(opt.value);
@@ -518,7 +868,7 @@
       });
       container.appendChild(btn);
     });
-    markScrollEnd(container);
+    if (!container.classList.contains("mm-opts")) markScrollEnd(container);
   }
 
   function markScrollEnd(container) {
@@ -563,8 +913,247 @@
     JOBS.forEach(function (job) {
       if (!(facetsOf(job).location_classes || []).length) present[UNPLACED] = true;
     });
-    return ["remote", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
+    return ["remote", "telework", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
+  }
+
+  function regionsOf(job, cls) {
+    return (facetsOf(job).location_regions || {})[cls] || [];
+  }
+
+  function regionOptions(cls) {
+    var present = {};
+    JOBS.forEach(function (job) {
+      regionsOf(job, cls).forEach(function (name) { present[name] = true; });
+    });
+    return Object.keys(present).sort();
+  }
+
+  function pruneRegions() {
+    // A region is only reachable while its parent pill is on. Deselecting
+    // OCONUS has to take Germany with it, or the board would go on filtering by
+    // a country the user can no longer see or switch off.
+    if (!selected.region.size) return;
+    var reachable = {};
+    REGION_CLASSES.forEach(function (cls) {
+      if (!selected.location.has(cls)) return;
+      regionOptions(cls).forEach(function (name) { reachable[name] = true; });
+    });
+    var stale = [];
+    selected.region.forEach(function (name) { if (!reachable[name]) stale.push(name); });
+    stale.forEach(function (name) { selected.region.delete(name); });
+  }
+
+  function renderRegionFilters() {
+    els.region.innerHTML = "";
+    var groups = REGION_CLASSES
+      .filter(function (cls) { return selected.location.has(cls); })
+      .map(function (cls) { return { cls: cls, names: regionOptions(cls) }; })
+      .filter(function (g) { return g.names.length; });
+
+    els.region.hidden = groups.length === 0;
+    if (!groups.length) return;
+
+    groups.forEach(function (group) {
+      var wrap = document.createElement("div");
+      wrap.setAttribute("role", "group");
+      wrap.setAttribute("aria-label", REGION_LEGENDS[group.cls]);
+
+      var legend = document.createElement("div");
+      legend.className = "mm-sublegend";
+      // Trailing space so a screen reader does not read the legend and the
+      // Clear button as one word ("narrow by stateclear").
+      legend.appendChild(document.createTextNode(REGION_LEGENDS[group.cls] + " "));
+      var chosen = group.names.filter(function (n) { return selected.region.has(n); });
+      if (chosen.length) {
+        var clear = document.createElement("button");
+        clear.type = "button";
+        clear.className = "mm-sub-clear";
+        clear.textContent = "Clear";
+        clear.setAttribute("aria-label", "Clear " + REGION_LEGENDS[group.cls].toLowerCase().replace("narrow by ", "") + " filters");
+        clear.addEventListener("click", function () {
+          chosen.forEach(function (n) { selected.region.delete(n); });
+          render();
+        });
+        legend.appendChild(clear);
+      }
+      wrap.appendChild(legend);
+
+      var chips = document.createElement("div");
+      chips.className = "mm-chips";
+      group.names.forEach(function (name) {
+        var n = JOBS.filter(function (job) {
+          return regionsOf(job, group.cls).indexOf(name) !== -1 && matches(job, "region");
+        }).length;
+
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mm-chip is-sub";
+        btn.style.setProperty("--i", String(chips.childElementCount + 4));
+        btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
+        btn.disabled = n === 0 && !selected.region.has(name);
+        btn.innerHTML = esc(name) + ' <span class="mm-n">' + n + "</span>";
+        btn.addEventListener("click", function () {
+          if (selected.region.has(name)) selected.region.delete(name);
+          else selected.region.add(name);
+          render();
+        });
+        chips.appendChild(btn);
+      });
+      wrap.appendChild(chips);
+      els.region.appendChild(wrap);
+      markScrollEnd(chips);
+    });
+  }
+
+  // --- facet panel ----------------------------------------------------------
+  var openFacet = null;
+  var enterTimer = null;
+  var leaveTimer = null;
+
+  function facetSection(key) {
+    return document.querySelector('#mm-jobs .mm-ddsec[data-sec="' + key + '"]');
+  }
+
+  function showFacet(key) {
+    var panel = document.getElementById("mm-ddpanel");
+    var btns = document.querySelectorAll("#mm-jobs .mm-dd-btn");
+    if (enterTimer) { clearTimeout(enterTimer); enterTimer = null; }
+    if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+    // The caret answers the tap at once; the geometry follows the panel.
+    Array.prototype.forEach.call(btns, function (b) {
+      b.setAttribute("aria-expanded", b.dataset.dd === key ? "true" : "false");
+    });
+    var leaving = openFacet && openFacet !== key ? openFacet : null;
+    openFacet = key;
+
+    var reveal = function () {
+      leaveTimer = null;
+      panel.classList.remove("is-leaving", "is-entering");
+      placePanel(key);
+      Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
+        sec.hidden = sec.dataset.sec !== key;
+      });
+      Array.prototype.forEach.call(btns, function (b) { b.classList.toggle("is-fused", b.dataset.dd === key); });
+      panel.classList.toggle("is-first-open", !!key && key === btns[0].dataset.dd);
+      panel.classList.toggle("is-last-open", !!key && key === btns[btns.length - 1].dataset.dd);
+      panel.classList.toggle("is-open", !!key);
+      if (key) {
+        // Replay the staggered entrance for the section being shown, then drop
+        // the class so later re-renders (every row click) do not replay it.
+        void panel.offsetWidth;
+        panel.classList.add("is-entering");
+        enterTimer = setTimeout(function () { panel.classList.remove("is-entering"); }, 900);
+      }
+    };
+
+    if (!leaving) { reveal(); return; }
+    // The open section leaves in reverse order, 20ms a row, then the panel
+    // folds or the next section arrives. Capped so 25 state chips do not
+    // hold the drawer open for half a second.
+    var rows = facetSection(leaving).querySelectorAll(".mm-opt, .mm-chip");
+    var n = rows.length, cap = 12;
+    Array.prototype.forEach.call(rows, function (r, i) {
+      r.style.setProperty("--r", String(Math.min(n - 1 - i, cap)));
+    });
+    panel.classList.remove("is-entering");
+    panel.classList.add("is-leaving");
+    leaveTimer = setTimeout(reveal, Math.min(n - 1, cap) * 20 + 200);
+  }
+
+  // Stacked (below 640px) the panel sits directly under the open button;
+  // across, it follows the row. Kept in flow either way.
+  function placePanel(key) {
+    var panel = document.getElementById("mm-ddpanel");
+    var row = document.querySelector("#mm-jobs .mm-ddrow");
+    var stacked = !(window.matchMedia && window.matchMedia("(min-width: 640px)").matches);
+    var btn = key ? row.querySelector('.mm-dd-btn[data-dd="' + key + '"]') : null;
+    if (stacked && btn) {
+      if (btn.nextElementSibling !== panel) btn.insertAdjacentElement("afterend", panel);
+    } else if (!stacked && panel.parentElement === row) {
+      row.insertAdjacentElement("afterend", panel);
+    }
+  }
+
+  function bindFacets() {
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      b.addEventListener("click", function () {
+        showFacet(openFacet === b.dataset.dd ? null : b.dataset.dd);
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (btn) {
+      btn.addEventListener("click", function () {
+        var g = btn.dataset.clear;
+        selected[g].clear();
+        // Location owns the region level, so emptying it takes the states too.
+        if (g === "location") selected.region.clear();
+        render();
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && openFacet) showFacet(null);
+    });
+    var resizeTimer = null;
+    window.addEventListener("resize", function () {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { placePanel(openFacet); renderFacetButtons(); }, 120);
+    });
+  }
+
+  // What is picked in a facet, in option order, for the trigger to show.
+  function facetSelections(group) {
+    var out = [];
+    if (group === "discipline") {
+      disciplineOptions().forEach(function (o) {
+        if (selected.discipline.has(o.value)) out.push({ label: o.label, icon: facetIcon("discipline", o.value) });
+      });
+    } else if (group === "branch") {
+      branchOptions().forEach(function (o) {
+        if (selected.branch.has(o.value)) out.push({ label: o.label, icon: facetIcon("branch", o.value) });
+      });
+    } else {
+      locationOptions().forEach(function (o) {
+        if (selected.location.has(o.value)) out.push({ label: o.label, icon: facetIcon("location", o.value) });
+      });
+      Array.from(selected.region).sort().forEach(function (name) {
+        out.push({ label: name, icon: facetIcon("location", "conus") });
+      });
+    }
+    return out;
+  }
+
+  function textFits(el) {
+    if (!el.firstChild || !document.createRange) return true;
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    // clientWidth is rounded to a whole pixel; a label that fit by a
+    // fraction of a pixel was being rejected. Compare fractional widths.
+    return range.getBoundingClientRect().width <= el.getBoundingClientRect().width + 0.05;
+  }
+
+  function renderFacetButtons() {
+    var names = { discipline: "Discipline", branch: "Organization", location: "Location" };
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      var group = b.dataset.dd;
+      var picks = facetSelections(group);
+      var n = picks.length;
+      var icon = b.querySelector(".mm-dd-ico");
+      var lab = b.querySelector(".mm-dd-lab");
+      b.classList.toggle("is-set", n > 0);
+      icon.innerHTML = n ? picks[0].icon : TRIGGER_ICONS[group];
+      if (!n) { lab.textContent = names[group]; return; }
+      // The chosen option's name, "+N" for the rest -- unless it will not fit,
+      // then "N selected", then the facet name. Never an ellipsis.
+      var candidates = [picks[0].label + (n > 1 ? " +" + (n - 1) : ""), n + " selected", names[group]];
+      for (var i = 0; i < candidates.length; i++) {
+        lab.textContent = candidates[i];
+        if (textFits(lab)) break;
+      }
+    });
+    var counts = { discipline: selected.discipline.size, branch: selected.branch.size, location: selected.location.size + selected.region.size };
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (c) {
+      c.hidden = (counts[c.dataset.clear] || 0) === 0;
+    });
   }
 
   function renderActiveFilters() {
@@ -579,6 +1168,9 @@
     });
     selected.location.forEach(function (loc) {
       pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
+    });
+    selected.region.forEach(function (name) {
+      pills.push({ label: name, onRemove: function () { selected.region.delete(name); render(); } });
     });
     if (els.hideContingent.checked) {
       pills.push({ label: "No contingent", onRemove: function () { els.hideContingent.checked = false; render(); } });
@@ -651,7 +1243,7 @@
 
     var actions = [];
     actions.push('<div class="mm-badges">' + badges.join("") + "</div>");
-    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting ' + ICONS.arrow + "</a>");
+    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting <span class="mm-apply-disc" aria-hidden="true">' + ICONS.arrowUpRight + "</span></a>");
 
     li.innerHTML =
       '<div class="mm-job-main">' + main.join("") + "</div>" +
@@ -673,9 +1265,12 @@
   }
 
   function render() {
+    pruneRegions();
     renderChips(els.discipline, "discipline", disciplineOptions());
     renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
+    renderRegionFilters();
+    renderFacetButtons();
     renderActiveFilters();
 
     els.noPayWrap.hidden = (parseInt(els.salary.value, 10) || 0) === 0;
@@ -695,7 +1290,8 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size || els.hideContingent.checked ||
+      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size ||
+        selected.region.size || els.hideContingent.checked ||
         (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
       empty.innerHTML = ICONS.empty +
         "<span>" + (JOBS.length
@@ -720,6 +1316,20 @@
     if (els.hideContingent.checked && hidden) msg += " · " + hidden + " contingent hidden";
     els.count.innerHTML = msg;
     els.live.textContent = shown.length + " jobs shown";
+    liveCtas();
+  }
+
+  // Animate only the call-to-action buttons that are on screen. The list is
+  // rebuilt on every render, so the observer is too.
+  var ctaObserver = null;
+  function liveCtas() {
+    if (ctaObserver) { ctaObserver.disconnect(); ctaObserver = null; }
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    ctaObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle("is-live", e.isIntersecting); });
+    }, { rootMargin: "80px" });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-apply"), function (a) { ctaObserver.observe(a); });
   }
 
   function renderDefinitions() {
@@ -738,6 +1348,7 @@
     selected.discipline.clear();
     selected.branch.clear();
     selected.location.clear();
+    selected.region.clear();
     els.q.value = "";
     els.salary.value = "0";
     els.hideContingent.checked = false;
@@ -749,6 +1360,7 @@
     [els.q, els.salary].forEach(function (el) { el.addEventListener("input", render); });
     [els.hideContingent, els.noPay].forEach(function (el) { el.addEventListener("change", render); });
     els.clear.addEventListener("click", clearAll);
+    bindFacets();
   }
 
   skeleton();

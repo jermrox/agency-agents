@@ -53,6 +53,11 @@ DOMAIN_TERMS: dict[str, float] = {
     "marsoc": 3.5,
     "afsoc": 3.5,
     "naval special warfare": 3.5,
+    # A clinician "within an operational unit" is embedded with the unit, not
+    # seeing patients at the treatment facility: Loyal Source's SOF behavioral
+    # health providers say exactly that and nothing else that names the unit.
+    "operational unit": 3.5,
+    "embedded behavioral health": 4.0,
     "green beret": 3.0,
     "army ranger": 3.0,
     "navy seal": 3.0,
@@ -147,6 +152,14 @@ DOMAIN_TERMS: dict[str, float] = {
     "spiritual fitness": 2.5,
     "moral injury": 2.0,
     "human performance optimization": 3.5,
+    # Marine Corps Community Services programme names. Warrior Athlete
+    # Readiness and Resilience and Semper Fit are the Marine Corps' own human
+    # performance organisations and Marine Corps Total Fitness is their
+    # doctrine; a "Supervisory Performance Education Specialist" at
+    # Twentynine Palms named all three and nothing else this list knew.
+    "warrior athlete readiness and resilience": 4.5,
+    "semper fit": 3.5,
+    "marine corps total fitness": 4.0,
     # Generic but useful when stacked with the above.
     "tactical": 1.5,
     "uniformed": 1.5,
@@ -172,8 +185,38 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "performance specialist": 3.5,
     "exercise physiologist": 4.0,
     "exercise science": 3.0,
-    "physical readiness": 3.0,
+    # Worth less than min_discipline on purpose. At 3.0 it sat exactly on the
+    # floor, so one occurrence cleared the discipline axis alone -- and the one
+    # occurrence in a Customs and Border Protection officer announcement is
+    # "Pre-Employment Fitness Test Physical Readiness Program, a 6-week program
+    # designed to assist you in ... passing the CBP fitness test". That is a
+    # requirement on the applicant, not a description of the work, and it put
+    # five border-officer postings on a human performance board. Same failure
+    # as the VA credential list documented in classify(): evidence about the
+    # candidate read as evidence about the job. It now needs corroboration.
+    "physical readiness": 2.0,
     "fitness coordinator": 2.5,
+    # Installation fitness roles -- Navy MWR "Fitness Specialist", Marine Corps
+    # "Fitness Center Operations Supervisor". Real human performance work that
+    # was only ever clearing the gate on the same "physical readiness" phrase,
+    # so demoting it would have dropped them too. They earn it on their own now.
+    "fitness specialist": 3.5,
+    "fitness instructor": 3.5,
+    "fitness trainer": 3.5,
+    # The Marine Corps' own fitness programme; its instructor titles carry
+    # on the programme name, spelled out or not.
+    "hitt": 3.5,
+    "high intensity tactical training": 4.0,
+    "fitness program manager": 3.5,
+    # "sports specialist" is deliberately absent: on an installation it is
+    # intramural and team sports administration (Army IMCOM, Navy MWR), and
+    # its youth-programme form teaches children. The Navy's "Sports
+    # Specialist (Fitness Trainer)" carries on "fitness trainer".
+    # Worth the floor because "Recreation Assistant (Fitness Center)" is an
+    # installation fitness role and the title is all it says; a passing
+    # mention in an MWR graphic designer's posting is stopped by the
+    # single-mention rule in classify(), not by the weight.
+    "fitness center": 3.0,
     "conditioning coach": 3.5,
     # Sports medicine / rehab.
     "athletic trainer": 4.0,
@@ -199,6 +242,36 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "performance psychology": 4.0,
     "mental skills": 3.0,
     "resilience training": 2.5,
+    # Army Ready and Resilient (R2), the programme whose Performance Experts
+    # are the cognitive performance coaches on the board. A "Readiness and
+    # Resilience Division Chief" at Fort Meade carried strong domain evidence
+    # and no discipline term at all.
+    "ready and resilient": 3.5,
+    "readiness and resilience": 3.5,
+    # The Marine Corps WARR title for its sleep, recovery and health
+    # education role. Without a discipline term in the title, the posting
+    # fell to the "performance testing" veto on a sentence about testing
+    # Marines.
+    "performance education": 3.5,
+    # Behavioral health inside the performance teams: KBR staffs licensed
+    # clinical social workers and psychologists on every POTFF unit, and the
+    # board has carried them under its behavioral-health facet since day one
+    # while this list never named the titles -- they were passing on a stray
+    # "human performance" in the body. The clinical titles are worth the
+    # floor; the bare professions are worth less than it on purpose. At 2.5
+    # "social worker" alone carried every National Guard clinic social
+    # worker, a prison mental-health specialist and a substance-abuse
+    # counselling supervisor onto the board, and "psychologist" alone a
+    # Bethesda research psychologist. "Clinical Psychologist" at a military
+    # treatment facility is on the board on the same footing as its
+    # physical therapists; "Social Worker" at a Guard wing is not.
+    "licensed clinical social worker": 3.5,
+    "clinical social worker": 3.0,
+    "social worker": 1.0,
+    "operational psychologist": 4.0,
+    "clinical psychologist": 3.0,
+    "licensed psychologist": 3.0,
+    "psychologist": 1.0,
     # Sleep / recovery / physiology.
     "sleep scientist": 3.0,
     "recovery specialist": 3.0,
@@ -232,7 +305,10 @@ DISCIPLINE_TERMS: dict[str, float] = {
     "occupational therapist": 3.0,
     "physician assistant": 2.0,
     "chiropractor": 2.5,
-    "massage therapist": 2.0,
+    # Worth the floor: LMR Technical Group staffs massage therapists on its
+    # Air Force human performance teams, and the title is what those
+    # postings say. The domain floor keeps spa work off the board.
+    "massage therapist": 3.0,
     "manual therapy": 2.5,
     "physical therapy technician": 3.0,
     "rehabilitation specialist": 3.0,
@@ -283,7 +359,96 @@ EXCLUSION_TERMS: tuple[str, ...] = (
     "tactical gear",  # retail/e-commerce, not coaching
     "performance review process",
     "sales engineer",
+    # Care coordination, never human performance -- KBR's SOF nurse case
+    # managers and an ICE behavioral-health case manager both reached the
+    # board once "social worker" and "psychologist" became discipline terms.
+    "case manager",
+    # The Marine Corps Substance Abuse Counseling Center programme: its
+    # supervisor posting names a clinical psychologist and a social worker
+    # on staff, which is the whole of its discipline evidence.
+    "substance assessment counseling",
 )
+
+# Uniformed occupations and their schoolhouses, matched against the TITLE
+# only: the body of a genuine human performance posting names these units
+# all the time ("embedded with the pararescue squadron"). A job whose title
+# IS the occupation is not a performance job however much fitness vocabulary
+# the announcement carries: "Training Instructor (Pararescue)" at Lackland
+# sat on the board for a week on the strength of the physical ability and
+# stamina test its students take and one "strength and conditioning". The
+# same override as EXCLUSION_TERMS applies -- a title that names a
+# discipline worth the floor survives, so "Strength and Conditioning Coach
+# (Pararescue)" publishes -- and "physician" is here because an aerospace
+# medicine physician reached the board the same way.
+TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
+    "training instructor",
+    "military training instructor",
+    "pararescue",
+    "pararescueman",
+    "combat controller",
+    "special warfare operator",
+    "tactical air control party",
+    "sere specialist",
+    "drill sergeant",
+    "recruiter",
+    "physician",
+)
+
+# Title exclusions with NO override: these describe the population or the
+# job itself, and no discipline word in the same title changes that.
+# "Fitness Specialist (CYS)" is a fitness specialist for children, and a
+# "Recreation Assistant (Fitness Center)" opens the building, cleans the
+# equipment and keeps the league standings whatever the parenthesis says.
+HARD_TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
+    # Youth programmes: Army Child and Youth Services "Fitness Specialist
+    # (CYS)" and "Sports Specialist (CYS)" teach children of service members
+    # and support volunteer youth coaches. The population is not tactical.
+    "cys",
+    "child and youth",
+    "youth",
+    # Facility staff.
+    "recreation assistant",
+    "recreation aid",
+    "recreation attendant",
+    # Research administration: a coordinator's day is record keeping and
+    # liaison, whatever the study is about.
+    "research coordinator",
+    "research assistant",
+    # Academic posts: a professor teaches and researches human performance,
+    # which is not delivering it to a tactical population. Baylor's
+    # "Assistant Professor, Tenure Track, Applied Human Performance" reached
+    # PUBLISH on 2026-09-09 through the NSCA board.
+    "professor",
+    "tenure track",
+    "tenure-track",
+    "faculty",
+    "lecturer",
+    "adjunct",
+    "postdoctoral",
+)
+
+# Umbrella hiring notices whose whole title is a category ("Medical", the
+# Air Force direct-hire notice listing occupations): not a job.
+UMBRELLA_TITLES: frozenset[str] = frozenset({"medical", "medical services", "healthcare", "health care"})
+
+# A clinician's title needs a named programme or unit. "Clinical
+# Psychologist" at a military treatment facility and "Social Worker" at a
+# Guard wing are hospital and clinic work; the same titles on a POTFF, H2F
+# or special operations team are the embedded behavioral health the board
+# carries. The test is whether the posting names such a programme or unit:
+# any domain term worth CLINICAL_CONTEXT_WEIGHT or more (POTFF, H2F, special
+# operations, WARR, the named units), not the generic "military" or the
+# installation's service context.
+CLINICAL_TITLE_TERMS: tuple[str, ...] = (
+    "social worker",
+    "psychologist",
+    "psychology",
+    "counselor",
+    "counsellor",
+    "mental health",
+    "behavioral health",
+)
+CLINICAL_CONTEXT_WEIGHT = 3.5
 
 # Terms whose presence in the *title* is worth extra, since a title is a much
 # stronger claim about the job than a passing mention in the body.
@@ -295,15 +460,79 @@ Long federal postings repeat "Soldier" 40 times; without a cap a single
 verbose listing would outrank every genuinely relevant one.
 """
 
+SINGLE_COUNT_TERMS: frozenset[str] = frozenset({"physical readiness"})
+"""Terms counted once no matter how often the description repeats them.
 
-SERVICE_CONTEXT_WEIGHT = 3.0
+"physical readiness" was demoted below the discipline floor because it
+appears in applicant requirements ("pass the physical readiness test"), and
+a requirement on the candidate is not evidence about the work. Repetition
+does not change that: an Acuity International protective-security posting
+for Somalia said it three times, and three times the demoted weight cleared
+the floor on its own. Counted once, it needs corroboration as intended.
+"""
+
+
+APPLICANT_BOILERPLATE_TERMS: frozenset[str] = frozenset(
+    {"military", "veteran", "dod", "department of defense"}
+)
+"""Domain terms that equal-opportunity and hiring boilerplate repeats.
+
+"Veterans and military spouses encouraged to apply", "DoD contractor", "an
+equal opportunity employer of veterans": all about the applicant or the
+firm, none about who the work serves. Repeated three times each they clear
+the domain floor by arithmetic, which put three Loyal Source strength and
+conditioning coaches ("clients or athletes", no unit, no installation) on
+the board on 2026-09-09. The domain evidence must include at least one hit
+that is not on this list: a programme, a unit, a population term, or the
+installation in the location (service context).
+"""
+
+
+SERVICE_CONTEXT_WEIGHT = 3.5
 """Domain credit for a posting whose service branch can be identified.
 
-Set so that branch context alone does not clear ``min_domain`` -- it still
-needs some vocabulary of its own -- while a posting carrying both clears it
-comfortably. Tuned against the live board: at this weight the branch-aware
-rule keeps every tactical posting the old thresholds kept and adds seven the
-location field had been hiding, while dropping twenty VA clinic roles.
+Set to exactly ``min_domain``: a job at a named installation is in the
+tactical domain by definition, so branch context alone clears the domain
+floor. It was 3.0, deliberately just under the floor, and that rejected a
+KBR physical therapist at Eielson AFB and a Defense Health Agency physical
+therapy assistant at Fort Sill whose only domain evidence was where they
+are, while other DHA physical therapists reached the board on a stray
+vocabulary hit. The discipline floor still applies, so a contract
+specialist at Fort Bragg stays off the board. The one population this must
+never reach is veterans' health care: VA clinics sit on former bases
+(Mather AFB), and a VA posting gets no location credit at all -- see
+``_VETERANS_CARE_RE``.
+"""
+
+_VETERANS_CARE_RE = re.compile(
+    r"\bveterans?\s+(?:health|affairs|benefits)\b|\bVHA\b|\bVA\s+medical\b"
+    r"|\bdepartment\s+of\s+veterans\b|\bindian\s+health\s+service\b"
+    r"|\bbureau\s+of\s+prisons\b|\bfederal\s+prison\s+system\b"
+    r"|\bVA\s+health\s*care\b|\bVA\s+hospital\b|\bVA\s+clinic\b|\bVAMC\b",
+    re.I,
+)
+"""Employers whose postings are civilian care of a non-tactical population.
+
+The Veterans Health Administration, the Indian Health Service and the
+Bureau of Prisons. Their announcements are full of vocabulary that is about
+the applicant or the agency, not the job: "military physical therapy
+assistant programs" among the qualifying credentials, "active duty" and
+"uniformed" for the Public Health Service Commissioned Corps status a hire
+may hold, "veteran" throughout, "public safety" for the prison system's
+law-enforcement standing. Read as domain evidence, that put a VA staff
+physical therapist in Abilene, an IHS physician assistant and two federal
+prison psychologists on the board the day USAJOBS was searched for more
+disciplines. None of the three does tactical human performance work, so
+their postings are rejected outright. (A wellness role for correctional
+officers would be lost with them; none has been seen.)
+
+The same pattern is read against the description, because a staffing firm
+placing a therapist at a VA hospital is the VA's work under the firm's name:
+Loyal Source's "Pain Physical Therapist ... NY Harbor VA Health Care System"
+reached PUBLISH on "military" and "veteran" repeated in the text. There the
+veto yields to a named programme or unit (any domain term worth
+``CLINICAL_CONTEXT_WEIGHT``), since KBR's POTFF social workers list
+"Department of Veterans Affairs (VA) MTF" among acceptable prior experience.
 """
 
 
@@ -350,7 +579,8 @@ def _score_axis(
         needle = re.sub(r"[^a-z0-9]+", " ", term)
         padded = f" {needle} "
         in_title = padded in title
-        body_count = min(body.count(padded), DESCRIPTION_CAP)
+        cap = 1 if term in SINGLE_COUNT_TERMS else DESCRIPTION_CAP
+        body_count = min(body.count(padded), cap)
         if not in_title and body_count == 0:
             continue
         hits.append(term)
@@ -372,8 +602,48 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
         if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
         or f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in body
     ]
-    if excluded:
+    # ...unless the title itself is unmistakably a human performance role. The
+    # veto list exists for "performance" meaning software, sales or finance,
+    # and a title like "Physical Therapist" or "Certified Strength and
+    # Conditioning Specialist" cannot be any of those. LMR Technical Group's
+    # special-tactics postings list "performance testing" among the duties --
+    # testing athletes, not software -- and were being dropped for it.
+    title_discipline, _ = _score_axis(DISCIPLINE_TERMS, title, "")
+    if excluded and title_discipline < thresholds.min_discipline:
         posting.exclusion_hits = excluded
+        posting.score = 0.0
+        return Verdict.REJECT
+
+    # A title that IS a uniformed occupation (see TITLE_EXCLUSION_TERMS).
+    title_excluded = [
+        term
+        for term in TITLE_EXCLUSION_TERMS
+        if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
+    ]
+    if title_excluded and title_discipline < thresholds.min_discipline:
+        posting.exclusion_hits = title_excluded
+        posting.score = 0.0
+        return Verdict.REJECT
+    hard_excluded = [
+        term
+        for term in HARD_TITLE_EXCLUSION_TERMS
+        if f" {re.sub(r'[^a-z0-9]+', ' ', term)} " in title
+    ]
+    if hard_excluded:
+        posting.exclusion_hits = hard_excluded
+        posting.score = 0.0
+        return Verdict.REJECT
+    bare_title = " ".join(re.sub(r"[^a-z0-9]+", " ", posting.title.lower()).split())
+    if bare_title in UMBRELLA_TITLES:
+        posting.exclusion_hits = ["umbrella notice"]
+        posting.score = 0.0
+        return Verdict.REJECT
+
+    # Civilian health care for veterans and tribal communities is never
+    # tactical work, whatever military vocabulary the announcement carries
+    # about the applicant. See _VETERANS_CARE_RE.
+    if _VETERANS_CARE_RE.search(f"{posting.employer} {posting.department or ''}"):
+        posting.exclusion_hits = ["civilian health care employer"]
         posting.score = 0.0
         return Verdict.REJECT
 
@@ -397,14 +667,57 @@ def classify(posting: JobPosting, thresholds: Thresholds | None = None) -> str:
     # employer, the program name and the installation, it already excludes the
     # cities named Fort-something, and it is exactly what "military" in a
     # credential list is not: evidence about the work, not about the applicant.
+    #
     if branches_of(posting.title, posting.employer, posting.location):
         domain_score += SERVICE_CONTEXT_WEIGHT
         domain_hits = [*domain_hits, "service context"]
+
+    # A VA, IHS or prison facility named in the text is where the work is,
+    # unless the posting names a tactical programme or unit of its own.
+    named_programme = any(
+        DOMAIN_TERMS.get(hit, 0.0) >= CLINICAL_CONTEXT_WEIGHT for hit in domain_hits
+    )
+    if not named_programme and _VETERANS_CARE_RE.search(posting.description or ""):
+        posting.exclusion_hits = ["civilian health care site"]
+        posting.score = 0.0
+        return Verdict.REJECT
 
     posting.domain_hits = domain_hits
     posting.discipline_hits = discipline_hits
     posting.score = domain_score + discipline_score
     posting.tags = _derive_tags(domain_hits, discipline_hits, posting)
+
+    # The discipline evidence has to be worth something on its own. Two
+    # failure shapes, both seen on 2026-09-05:
+    #
+    # A single mention in the body is not a discipline. Long federal and
+    # contractor announcements name the fitness center, "human performance"
+    # or "health promotion" once in passing, and one such mention at the
+    # term's full weight cleared the floor for an AFSOC graphic designer, two
+    # National Guard safety officers, a biostatistician and a SkillBridge
+    # electrical engineer. A posting whose title names no discipline needs
+    # at least two distinct discipline terms in its text: every genuine
+    # human performance job has that much vocabulary (an R2PC Performance
+    # Expert names five), and no passing mention does.
+    #
+    # And a profession weighted below the floor cannot lift itself over it
+    # by repetition: "Social Worker" in the title plus "social worker" three
+    # times in the body is still one weak signal, and it carried four
+    # National Guard clinic social workers. At least one of the terms hit
+    # must be worth the floor by itself.
+    strong = any(DISCIPLINE_TERMS[hit] >= thresholds.min_discipline for hit in discipline_hits)
+    if not strong or (title_discipline <= 0 and len(set(discipline_hits)) < 2):
+        return Verdict.REJECT
+
+    # A clinician's title needs a named programme or unit (CLINICAL_TITLE_TERMS).
+    clinical_title = any(f" {term} " in title for term in CLINICAL_TITLE_TERMS)
+    if clinical_title and not named_programme:
+        return Verdict.REJECT
+
+    # Boilerplate about the applicant is not evidence about the population
+    # (APPLICANT_BOILERPLATE_TERMS); something else must name it.
+    if not any(hit not in APPLICANT_BOILERPLATE_TERMS for hit in domain_hits):
+        return Verdict.REJECT
 
     # Both axes must clear their floor -- this is what keeps the board tactical
     # *and* keeps it about human performance.
@@ -464,6 +777,8 @@ def _derive_tags(
             "sport psychology",
             "performance psychology",
             "mental skills",
+            "ready and resilient",
+            "readiness and resilience",
         ),
         "sport-science": (
             "sport scientist",
@@ -527,6 +842,8 @@ def _derive_tags(
             "submarine",
             "explosive ordnance disposal",
             "eod",
+            "operational unit",
+            "embedded behavioral health",
         ),
         "sof": (
             "thor3",

@@ -475,6 +475,12 @@ def test_pagination_stops_when_a_tenant_ignores_the_page_parameter(monkeypatch):
 
 def test_first_page_failure_is_raised_rather_than_silently_empty(monkeypatch):
     api = FakeGov({1: FetchError("HTTP 503")})
+
+    def no_html(*args, **kwargs):
+        raise FetchError("HTTP 503")
+
+    # Both routes fail: the JSON list and the HTML listing it falls back to.
+    monkeypatch.setattr("tactical_jobs.sources.govjobs.fetch", no_html)
     with pytest.raises(FetchError):
         run_gov(monkeypatch, api)
 
@@ -1105,7 +1111,7 @@ def test_module_imports_only_the_standard_library_and_the_project():
         elif isinstance(node, ast.ImportFrom) and not node.level:
             roots.add((node.module or "").split(".")[0])
 
-    assert roots <= {"logging", "re", "xml", "typing", "urllib", "__future__"}, roots
+    assert roots <= {"html", "logging", "re", "xml", "typing", "urllib", "__future__"}, roots
 
 
 # ==========================================================================
@@ -1363,3 +1369,157 @@ def test_none_valued_fields_do_not_crash_the_mapping(monkeypatch):
     posting = run_gov(monkeypatch, api, {"detail_limit": 0})[0]
     assert (posting.location, posting.compensation, posting.department) == ("", None, None)
     assert posting.posted_at is None
+
+
+# ==========================================================================
+# governmentjobs: the HTML listing route (no JSON on the tenant)
+# ==========================================================================
+
+
+LIST_FRAGMENT = """
+<ul class="list">
+<li class="list-item" data-job-id="5372300">
+  <div class="list-header"><h3><a class="item-details-link" href="/careers/austintx/jobs/5372300/peer-fitness-trainer?pagetype=jobOpportunitiesJobs">Peer Fitness Trainer</a></h3></div>
+  <ul class="list-meta">
+    <li>Austin, TX</li>
+    <li>Full-Time (FT) - $62,187.36 - $106,836.44 Annually</li>
+    <li>Category: Fire &amp; EMS</li>
+    <li>Department: Fire Department</li>
+  </ul>
+  <div class="list-published">Posted 3 days ago</div>
+</li>
+<li class="list-item" data-job-id="4668505">
+  <div class="list-header"><h3><a class="item-details-link" href="/careers/austintx/jobs/4668505/accountant-ii">Accountant II</a></h3></div>
+  <ul class="list-meta">
+    <li>Austin, TX</li>
+    <li>Full-Time (FT) - $55,000.00 - $70,000.00 Annually</li>
+    <li>Category: Finance</li>
+    <li>Department: Financial Services</li>
+  </ul>
+  <div class="list-published">Posted more than 30 days ago</div>
+</li>
+</ul>
+"""
+
+DETAIL_PAGE = """<html><head>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"JobPosting",
+ "title":"Peer Fitness Trainer",
+ "datePosted":"2026-09-01T00:00:00",
+ "validThrough":"2026-10-01T00:00:00",
+ "description":"<p>%s</p>",
+ "jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX"}}}
+</script></head><body><h1>Peer Fitness Trainer</h1></body></html>""" % LONG_BODY
+
+
+class FakeHTMLGov:
+    """A tenant whose ``?format=json`` is dead: listing and pages are HTML."""
+
+    def __init__(self, pages, details=None, list_url=LIST_URL):
+        self.pages = pages
+        self.details = details or {}
+        self.list_url = list_url
+        self.json_calls: list[str] = []
+        self.list_calls: list[dict] = []
+        self.page_calls: list[str] = []
+
+    def fetch_json(self, url, params=None, headers=None, **kwargs):
+        self.json_calls.append(url)
+        raise FetchError(f"HTTP 404 for {url}")
+
+    def fetch(self, url, params=None, headers=None, **kwargs):
+        if url == self.list_url:
+            self.list_calls.append(params or {})
+            assert (headers or {}).get("X-Requested-With") == "XMLHttpRequest"
+            return (self.pages.get((params or {}).get("page", 1)) or "").encode("utf-8")
+        self.page_calls.append(url)
+        page = self.details.get(url)
+        if page is None:
+            raise FetchError(f"HTTP 404 for {url}")
+        return page.encode("utf-8")
+
+    def install(self, monkeypatch):
+        monkeypatch.setattr("tactical_jobs.sources.govjobs.fetch_json", self.fetch_json)
+        monkeypatch.setattr("tactical_jobs.sources.govjobs.fetch", self.fetch)
+        return self
+
+
+def test_parse_listing_html_reads_every_field_of_a_row():
+    from tactical_jobs.sources.govjobs import parse_listing_html
+
+    rows = parse_listing_html(LIST_FRAGMENT, LIST_URL)
+    assert [row["id"] for row in rows] == ["5372300", "4668505"]
+    first = rows[0]
+    assert first["title"] == "Peer Fitness Trainer"
+    assert first["url"] == (
+        "https://www.governmentjobs.com/careers/austintx/jobs/5372300/"
+        "peer-fitness-trainer?pagetype=jobOpportunitiesJobs"
+    )
+    assert first["location"] == "Austin, TX"
+    assert first["jobType"] == "Full-Time (FT)"
+    assert first["salary"] == "$62,187.36 - $106,836.44 Annually"
+    assert first["department"] == "Fire Department"
+    assert first["summary"] == "Category: Fire & EMS. Posted 3 days ago"
+
+
+def test_parse_listing_html_ignores_items_without_a_title_link():
+    from tactical_jobs.sources.govjobs import parse_listing_html
+
+    assert parse_listing_html('<li class="list-item" data-job-id="1"><p>nothing</p></li>') == []
+
+
+def test_html_listing_is_read_when_the_tenant_has_no_json(monkeypatch):
+    detail_url = (
+        "https://www.governmentjobs.com/careers/austintx/jobs/5372300/"
+        "peer-fitness-trainer?pagetype=jobOpportunitiesJobs"
+    )
+    api = FakeHTMLGov({1: LIST_FRAGMENT, 2: ""}, {detail_url: DETAIL_PAGE}).install(monkeypatch)
+    postings = list(
+        GovernmentJobsSource(
+            "austintx", {"agency": "austintx", "detail_include": ["fitness"], "max_pages": 5}
+        ).fetch()
+    )
+
+    assert [posting.title for posting in postings] == ["Peer Fitness Trainer", "Accountant II"]
+    # One JSON attempt on the list, none on the job pages: the tenant is HTML only.
+    assert api.json_calls == [LIST_URL]
+    assert [params["page"] for params in api.list_calls] == [1, 2]
+    # Only the title that matches ``detail_include`` spends a page fetch.
+    assert api.page_calls == [detail_url]
+
+    trainer, accountant = postings
+    assert trainer.source_id == "5372300"
+    assert trainer.url == "https://www.governmentjobs.com/jobs/5372300"
+    assert trainer.location == "Austin, TX"
+    assert "Wellness Division is hiring a peer fitness trainer" in trainer.description
+    assert trainer.posted_at is not None and trainer.posted_at.isoformat().startswith("2026-09-01")
+    assert "Accountant" in accountant.title and "Financial Services" in accountant.description
+
+
+def test_html_listing_asks_for_a_stable_order(monkeypatch):
+    """Unsorted, NEOGOV shuffles the listing between requests and a page walk
+    misses rows; the page's own script sends the sort, so the adapter does too."""
+    api = FakeHTMLGov({1: LIST_FRAGMENT}).install(monkeypatch)
+    list(GovernmentJobsSource("austintx", {"agency": "austintx", "detail_limit": 0, "max_pages": 1}).fetch())
+    assert api.list_calls == [{"sort": "PositionTitle", "isDescendingSort": "false", "page": 1}]
+
+
+def test_html_listing_stops_at_the_first_empty_page(monkeypatch):
+    api = FakeHTMLGov({1: LIST_FRAGMENT}).install(monkeypatch)
+    postings = list(
+        GovernmentJobsSource("austintx", {"agency": "austintx", "detail_limit": 0, "max_pages": 9}).fetch()
+    )
+    assert len(postings) == 2
+    assert [params["page"] for params in api.list_calls] == [1, 2]
+
+
+def test_html_listing_without_detail_include_spends_the_budget_on_every_row(monkeypatch):
+    api = FakeHTMLGov({1: LIST_FRAGMENT}).install(monkeypatch)
+    list(GovernmentJobsSource("austintx", {"agency": "austintx", "max_pages": 1}).fetch())
+    assert len(api.page_calls) == 2
+
+
+def test_a_missing_detail_page_keeps_the_html_row(monkeypatch):
+    FakeHTMLGov({1: LIST_FRAGMENT}).install(monkeypatch)
+    postings = list(GovernmentJobsSource("austintx", {"agency": "austintx", "max_pages": 1}).fetch())
+    assert [posting.title for posting in postings] == ["Peer Fitness Trainer", "Accountant II"]

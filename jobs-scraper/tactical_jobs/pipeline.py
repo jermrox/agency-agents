@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -13,7 +14,7 @@ from .archive import Archive
 from .classify import Verdict, classify
 from .config import Config
 from .enrich import enrich
-from .facets import facets_for
+from .facets import facets_for, looks_telework
 from .feed import normalize_file
 from .insights import build_insights
 from .liveness import check_all
@@ -55,8 +56,8 @@ class RunReport:
         ]
         if self.retired or self.unverifiable:
             lines.append(
-                f"retired     {self.retired} dead listing(s) "
-                f"({self.unverifiable} unverifiable, kept)"
+                f"retired     {self.retired} listing(s) (gone, no longer listed by the "
+                f"source, or rejected; {self.unverifiable} unverifiable, kept)"
             )
         if self.archived:
             lines.append(f"archived    {self.archived} new corpus record(s)")
@@ -101,25 +102,56 @@ def _is_stale(posting: JobPosting, max_age_days: int) -> bool:
     return stamp < datetime.now(timezone.utc) - timedelta(days=max_age_days)
 
 
+def _age_limits(config: Config) -> dict[str, int]:
+    """Per-source ``max_age_days`` overrides, keyed the way postings name their source.
+
+    The global limit exists for sources that never take a filled job down, so
+    a posting's age is the only staleness signal. A BambooHR careers list is
+    the employer's set of open requisitions -- LMR Technical Group keeps a
+    strength coach billet open for months -- so there age says nothing, and
+    the liveness sweep retires the posting when it closes. A source sets
+    ``max_age_days = 0`` to opt out of the age rule.
+    """
+    limits: dict[str, int] = {}
+    for source in config.sources:
+        value = source.options.get("max_age_days")
+        if value is None:
+            continue
+        try:
+            limits[f"{source.kind}:{source.name}"] = int(value)
+        except (TypeError, ValueError):
+            log.warning("source '%s': max_age_days %r is not a number; using the global limit", source.name, value)
+    return limits
+
+
 def run(config: Config, *, dry_run: bool = False) -> RunReport:
     """Execute one full pass and return what happened."""
     report = RunReport()
     store = Store.load(config.state_path)
+    age_limits = _age_limits(config)
 
     postings = collect(config, report)
 
     verdicts: dict[str, str] = {}
     scored: list[JobPosting] = []
+    # What each source listed this run, and what the classifier turned away,
+    # keyed by identity and by URL: the board retires what an open-only
+    # source no longer lists and what a re-fetched posting no longer earns.
+    returned: dict[str, set[str]] = {}
+    rejected: set[str] = set()
     for posting in postings:
         if not posting.url or not posting.title:
             report.rejected += 1
             continue
-        if _is_stale(posting, config.max_age_days):
+        keys = {posting.identity, _url_key(posting.url)}
+        returned.setdefault(posting.source, set()).update(keys)
+        if _is_stale(posting, age_limits.get(posting.source, config.max_age_days)):
             report.stale += 1
             continue
         verdict = classify(posting, config.thresholds)
         if verdict == Verdict.REJECT:
             report.rejected += 1
+            rejected.update(keys)
             continue
 
         # Enrich everything that survives classification, including postings
@@ -129,6 +161,16 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
             enrich(posting)
         except Exception as exc:  # pragma: no cover - defensive
             log.warning("enrichment failed for %s: %s", posting.url, exc)
+
+        # Decide telework here, while the whole description is still in hand.
+        # Downstream only ever sees the published excerpt, and the evidence
+        # sits past the end of it.
+        try:
+            posting.telework = posting.telework or looks_telework(
+                posting.location, posting.description
+            )
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("telework check failed for %s: %s", posting.url, exc)
 
         try:
             posting.facets = facets_for(posting)
@@ -164,7 +206,12 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
         else:
             report.review.append(posting)
 
+    plans = _retirement_plan(config, report, returned, rejected, age_limits)
     if dry_run:
+        for path, drops in plans.items():
+            for url, reason in drops.items():
+                log.info("dry run: would retire %s (%s)", url, reason)
+            log.info("dry run: %d retirement(s) planned for %s", len(drops), path)
         log.info("dry run: skipping archive, publishers, and state write")
         return report
 
@@ -172,7 +219,7 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
     # failing should never cost us the record of what we saw.
     _archive(config, report, scored)
 
-    _retire_dead(config, report)
+    _retire_dead(config, report, plans)
     _publish(config, report)
     _finalize_feeds(config, report)
 
@@ -208,27 +255,111 @@ def _feed_paths(config: Config) -> list[Path]:
     ]
 
 
-def _retire_dead(config: Config, report: RunReport) -> None:
-    """Walk the published board and drop postings that no longer exist."""
-    if not config.liveness_check:
-        return
+def _url_key(url: str | None) -> str:
+    return (url or "").strip().rstrip("/")
+
+
+# A source whose fetch lost more than this many board entries at once is
+# assumed to have failed partway, not to have closed them all. Small sources
+# are allowed to lose everything (one HJF posting closing is not an outage).
+ABSENCE_FLOOR = 4
+
+
+def _retirement_plan(
+    config: Config,
+    report: RunReport,
+    returned: dict[str, set[str]],
+    rejected: set[str],
+    age_limits: dict[str, int],
+) -> dict[Path, dict[str, str]]:
+    """Board entries to retire this run, per feed file: ``{url: reason}``.
+
+    Two reasons besides a dead link. A source that lists open jobs only --
+    exactly the set that opted out of the age rule with ``max_age_days = 0``
+    -- is the authority on what is open, so an entry it did not return this
+    run has closed; USAJOBS, iCIMS and Oracle serve closed postings with HTTP
+    200, which the liveness sweep cannot always read. And a posting the
+    classifier rejects on re-fetch no longer belongs on the board; the merge
+    only ever adds, so without this a rejected entry stayed for ever.
+
+    Absence is trusted only when the source fetched without an error and
+    returned at least one posting, and never for more than half of a
+    source's entries at once (see ``ABSENCE_FLOOR``): a partial outage must
+    not empty the board. Entries with no configured source (hand-added
+    rows) are left to the liveness sweep.
+    """
+    failed = {error.source for error in report.errors}
+    open_only = {source for source, limit in age_limits.items() if limit <= 0}
+    plans: dict[Path, dict[str, str]] = {}
     for path in _feed_paths(config):
         board = load_board(path)
         if not board:
             continue
-        try:
-            verdicts = check_all(
-                (job.get("url", "") for job in board),
-                workers=config.liveness_workers,
-                timeout=config.liveness_timeout,
-            )
-        except Exception as exc:  # pragma: no cover - defensive
-            log.warning("liveness sweep failed for %s: %s", path, exc)
-            report.errors.append(SourceError("liveness", str(exc)))
+        drops: dict[str, str] = {}
+        per_source = Counter(str(job.get("source") or "") for job in board)
+        absent: dict[str, list[dict]] = {}
+        for job in board:
+            keys = {str(job.get("id") or ""), _url_key(job.get("url"))}
+            if keys & rejected:
+                drops[job.get("url", "")] = "classifier: reject"
+                continue
+            source = str(job.get("source") or "")
+            listed = returned.get(source)
+            if (
+                source in open_only
+                and listed
+                and source.split(":", 1)[-1] not in failed
+                and not (keys & listed)
+            ):
+                absent.setdefault(source, []).append(job)
+        for source, jobs in absent.items():
+            if len(jobs) > max(ABSENCE_FLOOR, per_source[source] // 2):
+                log.warning(
+                    "%s: %d of %d board entries missing from this fetch; keeping them "
+                    "(a partial outage must not empty the board)",
+                    source, len(jobs), per_source[source],
+                )
+                continue
+            for job in jobs:
+                drops[job.get("url", "")] = f"no longer listed by {source}"
+        plans[path] = drops
+    return plans
+
+
+def _retire_dead(
+    config: Config, report: RunReport, plans: dict[Path, dict[str, str]] | None = None
+) -> None:
+    """Walk the published board and drop postings that no longer exist."""
+    plans = plans or {}
+    for path in _feed_paths(config):
+        board = load_board(path)
+        if not board:
             continue
+        drops = plans.get(path, {})
+        remaining: list[dict] = []
+        for job in board:
+            reason = drops.get(job.get("url", ""))
+            if reason:
+                report.retired += 1
+                log.info("retiring %s (%s)", job.get("url"), reason)
+                continue
+            remaining.append(job)
+
+        verdicts: dict = {}
+        if config.liveness_check:
+            try:
+                verdicts = check_all(
+                    (job.get("url", "") for job in remaining),
+                    workers=config.liveness_workers,
+                    timeout=config.liveness_timeout,
+                )
+            except Exception as exc:  # pragma: no cover - defensive
+                log.warning("liveness sweep failed for %s: %s", path, exc)
+                report.errors.append(SourceError("liveness", str(exc)))
+                verdicts = {}
 
         kept: list[dict] = []
-        for job in board:
+        for job in remaining:
             verdict = verdicts.get(job.get("url", ""))
             if verdict is None:
                 kept.append(job)
@@ -242,14 +373,14 @@ def _retire_dead(config: Config, report: RunReport) -> None:
             job["liveness"] = verdict.as_dict()
             kept.append(job)
 
-        if verdicts:
+        if drops or verdicts:
             try:
                 payload = json.loads(path.read_text())
                 payload["jobs"] = kept
                 payload["count"] = len(kept)
                 path.write_text(json.dumps(payload, indent=2) + "\n")
             except (OSError, json.JSONDecodeError) as exc:  # pragma: no cover
-                log.warning("could not rewrite %s after liveness sweep: %s", path, exc)
+                log.warning("could not rewrite %s after the retirement pass: %s", path, exc)
 
 
 def _finalize_feeds(config: Config, report: RunReport) -> None:

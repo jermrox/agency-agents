@@ -55,6 +55,17 @@ class JobPosting:
     description: str = ""
     posted_at: datetime | None = None
     remote: bool = False
+    telework: bool = False
+    """Whether the posting offers telework. Deliberately separate from
+    ``remote``: a telework-eligible job still has a duty station.
+
+    This is a FIELD rather than something re-derived downstream because the
+    evidence does not survive the trip. USAJOBS appends "Telework eligible:"
+    to the END of the description, and the published board stores a ~400
+    character excerpt -- so anything re-reading that excerpt sees a posting
+    with no telework language at all and quietly answers False. Decided once,
+    where the whole posting is in hand, then carried like ``remote``.
+    """
     department: str | None = None
     compensation: str | None = None
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
@@ -128,6 +139,7 @@ class JobPosting:
             "employer": self.employer,
             "location": self.location,
             "remote": self.remote,
+            "telework": self.telework,
             "department": self.department,
             "compensation": self.compensation,
             "posted_at": self.posted_at_iso,
