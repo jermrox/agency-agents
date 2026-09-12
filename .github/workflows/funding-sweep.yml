@@ -1,0 +1,87 @@
+name: Funding sweep — biweekly
+
+# Collects open non-dilutive funding opportunities and publishes funding.json
+# for the Vybe funding dashboard to read.
+#
+# WHY THIS RUNS IN CI AND NOT LOCALLY
+# The federal APIs this reads (sbir.gov, grants.gov) are open and keyless, but
+# they are unreachable from sandboxed agent environments behind an egress
+# allowlist. A GitHub Actions runner has open outbound network, so this is the
+# one place the sweep can actually see the whole federal picture.
+#
+# CADENCE
+# Every two weeks, matching the Pillar 2 operating rhythm: surface the current
+# top opportunities, act on them, repeat. A daily run would just burn minutes
+# re-reading solicitations whose close dates move on a monthly cycle.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Collect and report without writing funding.json"
+        type: boolean
+        default: false
+  schedule:
+    # 08:20 UTC on the 1st and 15th. Off the hour on purpose -- :00 is when
+    # every scheduled workflow on the platform fires at once.
+    - cron: "20 8 1,15 * *"
+
+concurrency:
+  group: funding-sweep
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: funding-scraper
+
+jobs:
+  sweep:
+    name: Collect and publish funding.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # No install step: the package is standard library only, by design.
+      - name: Collect opportunities
+        id: run
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python3 -m vybe_funding run --config sources.toml --dry-run | tee sweep.log
+          else
+            python3 -m vybe_funding run --config sources.toml | tee sweep.log
+          fi
+        # A dead upstream API exits non-zero but still writes the file. Keep
+        # going so a partially-fresh board still publishes, and surface the
+        # failure in the summary instead of failing the whole run.
+        continue-on-error: true
+
+      - name: Report to the run summary
+        run: |
+          {
+            echo '### Funding sweep'
+            echo ''
+            echo '```'
+            cat sweep.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the refreshed board
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if git diff --quiet -- funding-scraper/output/funding.json; then
+            echo "No change to funding.json — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add funding-scraper/output/funding.json
+          git commit -m "chore(funding): biweekly sweep [skip ci]"
+          git push

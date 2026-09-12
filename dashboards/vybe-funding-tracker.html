@@ -98,7 +98,7 @@
   <header class="top">
     <div class="kicker">Live status · organized by the three growth pillars</div>
     <h1>Vybe funding tracker</h1>
-    <div class="updated">As of Sep 12, 2026 — nothing expired on this board. Pillar 1 (cost offset) and Pillar 3 (university trade) are below the grant table. Pillar 2 (the standing grant cadence) is the table itself. Set your progress per row; it saves in this browser.</div>
+    <div class="updated">As of Sep 12, 2026 — nothing expired on this board. Pillar 1 (cost offset) and Pillar 3 (university trade) are below the grant table. Pillar 2 (the standing grant cadence) is the table itself. Rows marked <strong>NY only</strong> require New York State residency/registration — confirm Vybe qualifies before working them. Set your progress per row; it saves in this browser.</div>
   </header>
 
   <div class="stats" id="stats"></div>
@@ -170,6 +170,10 @@
     {id:'arpah-iso', name:'ARPA-H Innovative Solution Openings', type:'grant', amount:'project-scale', url:'https://arpa-h.gov/explore-funding/open-funding-opportunities', deadline:null, note:'Rolling basis \u2014 for projects outside a named program'},
     {id:'arpah-sbir', name:'ARPA-H SBIR/STTR', type:'grant', amount:'Phase I scale', url:'https://arpa-h.gov/explore-funding/sbir', deadline:null, note:'Watch for the next Solution Summary window'},
     {id:'nsf-digihealth', name:'NSF SBIR \u2014 Digital Health topic', type:'grant', amount:'$305,000', url:'https://seedfund.nsf.gov/topics/digital-health/', deadline:null, note:'The exact topic page to cite in your Project Pitch'},
+    {id:'nsf-pitch', name:'America\u2019s Seed Fund \u2014 Project Pitch', type:'grant', amount:'gateway to $305K \u2192 $2M', url:'https://seedfund.nsf.gov/project-pitch/', deadline:null, note:'Rolling, ~2 pages. Mandatory gate before any NSF full proposal \u2014 this is the actual first step'},
+    {id:'ssbci-ta', name:'NYS SSBCI Technical Assistance', type:'grant', amount:'free legal + accounting + financial advising', url:'https://esd.ny.gov/ssbci-technical-assistance-program', deadline:null, note:'NY only, rolling. Free counsel for VSB (<10 employees) or SEDI-owned \u2014 could cover the SDK-licensing/HIPAA structuring work'},
+    {id:'dprize', name:'D-Prize', type:'grant', amount:'$20,000', url:'https://www.d-prize.org/', deadline:null, note:'Rolling. Poor fit \u2014 funds distribution of proven poverty interventions in developing countries, not deep-tech hardware'},
+    {id:'fund2030', name:'2030 Fund', type:'grant', amount:'$100K\u2013$1.5M', url:'https://www.2030fund.com/', deadline:null, note:'Not eligible \u2014 climate tech only, and requires a Massachusetts-based company'},
     {id:'army-sbir', name:'Army SBIR \u2014 Wearable Physiological Monitoring', type:'grant', amount:'$150,000', url:'https://armysbir.army.mil/topics/wearable-technologies-physiological-monitoring/', deadline:null, note:'Rolling on DSIP \u2014 check current open cycle'},
     {id:'icorps', name:'NSF I-Corps', type:'grant', amount:'$50,000', url:'https://www.nsf.gov/funding/opportunities/nsf-national-innovation-corps-teams-nsf-national-i-corps-tm/nsf25-549/solicitation', deadline:null, note:'Start with a regional Short Course \u2014 no fixed date'},
     {id:'mep', name:'NIST MEP manufacturing voucher', type:'grant', amount:'up to $65,000', url:'https://www.nist.gov/mep', deadline:null, note:'Call your state MEP center \u2014 free initial assessment'},
@@ -178,6 +182,11 @@
     {id:'hersuitespot', name:'HerSuiteSpot Grant', type:'grant', amount:'$1,000', url:'https://hersuitespot.com/grant/', deadline:null, note:'Recurring, bridge cash only'},
     {id:'rwjf', name:'Robert Wood Johnson Foundation', type:'grant', amount:'up to $500,000', url:'https://www.rwjf.org/en/grants/funding-opportunities.html', deadline:null, note:'Health-equity framing required; watch for matching RFP'},
     {id:'wellcomeleap', name:'Wellcome Leap', type:'grant', amount:'program-scale, multi-$M', url:'https://wellcomeleap.org/', deadline:null, note:'Women\u2019s health programs launching 2026'},
+    {id:'cornell-cat', name:'Cornell CAT Grant', type:'grant', amount:'$75K matched 1:1 (up to $150K)', url:'https://biotech.cornell.edu/commercialization-cat', deadline:'2026-10-30', note:'NY only. Needs a Cornell faculty PI co-applicant + Vybe as the NY-state industry partner \u2014 not a solo apply'},
+    {id:'nystar-img', name:'NYSTAR Innovation Matching Grants', type:'grant', amount:'$100K (Ph I) / $200K (Ph II)', url:'https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf', deadline:'2026-10-20', note:'NY only. Window is ONE WEEK: opens Wed Oct 14 9am, closes Tue Oct 20 5pm. Matches up to 50% of a federal SBIR/STTR award'},
+    {id:'ny-ventures-seed', name:'NY Ventures Pre-Seed & Seed Matching Fund', type:'grant', amount:'$50K\u2013$250K equity, 1:1 match', url:'https://esd.ny.gov/pre-seed-and-seed-matching-fund-program', deadline:null, note:'NY only, rolling. Needs <$2M raised to date + a C-suite seat in-state'},
+    {id:'fuzehub-mfg', name:'FuzeHub Jeff Lawrence Manufacturing Grants', type:'grant', amount:'up to $65,000', url:'https://fuzehub.com/innovation-fund/', deadline:null, note:'NY only. 2026 round closed May 7 \u2014 next opens ~Apr 2027. A NY nonprofit/university applies, Vybe partners'},
+    {id:'activate', name:'Activate Fellowship', type:'grant', amount:'$300K+ over 2 yrs, 0% equity', url:'https://www.activate.org/fellowship', deadline:null, note:'2026 cohort closed Oct 2025 \u2014 next cycle typically opens ~Oct. Needs 4+ yrs post-bacc research/engineering experience'},
     {id:'hax', name:'HAX (SOSV)', type:'accelerator', amount:'$250K\u2013$550K / 8\u201316%', url:'https://www.hax.co/apply', deadline:null, note:'Rolling \u2014 needs a working prototype'},
     {id:'elevx', name:'Elev X! (NEC X)', type:'accelerator', amount:'$250K SAFE / up to 11%', url:'https://elevx.necx.us/', deadline:null, note:'Rolling, hardware/deep-tech specific'},
     {id:'techstars', name:'Techstars', type:'accelerator', amount:'$220K / ~5% + SAFE', url:'https://www.techstars.com/accelerators', deadline:null, note:'Rolling by metro/vertical cohort'},
@@ -188,6 +197,8 @@
     {id:'gener8tor', name:'gener8tor', type:'accelerator', amount:'$100K+$20K / 6\u20137%', url:'https://www.gener8tor.com/apply', deadline:null, note:'Rolling by metro cohort'},
     {id:'alchemist', name:'Alchemist Accelerator', type:'accelerator', amount:'$36,000 / 5%', url:'https://www.alchemistaccelerator.com/apply', deadline:null, note:'For the B2B SDK side, not the hardware'},
     {id:'jlabs', name:'J&J JLABS', type:'accelerator', amount:'0% equity, lab space', url:'https://jlabs.jnjinnovation.com/', deadline:null, note:'Rolling by site \u2014 best if clinical'},
+    {id:'nvidia-gpuventures', name:'NVIDIA GPU Ventures Program', type:'accelerator', amount:'$500K\u2013$5M (equity)', url:'https://www.nvidia.com/en-us/startups/', deadline:null, note:'Rolling \u2014 requires a business plan built around GPU-driven compute'},
+    {id:'elbowgrease', name:'Elbow Grease (Gutter Capital)', type:'accelerator', amount:'$300,000 investment', url:'https://elbowgrease.cc/', deadline:null, note:'Cohort 2 closed Jul 31 and is running now (Sep 15\u2013Nov 19, 2026). NYC 10-wk residency, \u226415 companies \u2014 watch for cohort 3'},
     {id:'medtech', name:'MedTech Innovator', type:'accelerator', amount:'0% to enter, prize pool', url:'https://medtechinnovator.org/apply/', deadline:null, note:'Annual cycle \u2014 watch for next window'},
     {id:'masschallenge', name:'MassChallenge', type:'accelerator', amount:'$0 equity, prize pool', url:'https://masschallenge.org/', deadline:null, note:'Watch for next cohort application window'},
     {id:'tcbattlefield', name:'TechCrunch Startup Battlefield', type:'visibility', amount:'$100,000 equity-free', url:'https://techcrunch.com/startup-battlefield/', deadline:null, note:'Applications reopen ~May each year for the fall Disrupt'},
@@ -377,6 +388,51 @@
   renderInvestors();
   renderCredits();
   renderUniversity();
+
+  // ---- Live feed -----------------------------------------------------------
+  // The biweekly CI sweep (funding-scraper) publishes funding.json with close
+  // dates straight from sbir.gov and grants.gov. When it's reachable we merge
+  // it over the built-in list so the board self-refreshes; when it isn't, the
+  // built-in list above still renders. The page must never show an empty table
+  // because a feed was unreachable.
+  var FEED_URL = 'funding.json';
+
+  function mergeFeed(feed){
+    if(!feed || !Array.isArray(feed.opportunities)) return;
+    var byId = {};
+    GRANTS.forEach(function(g){ byId[g.id] = g; });
+
+    feed.opportunities.forEach(function(row){
+      if(!row || !row.name || !row.url) return;
+      byId[row.id] = {
+        id: row.id,
+        name: row.name,
+        type: row.kind === 'credit' ? 'grant' : (row.kind === 'accelerator' ? 'accelerator' : (row.kind === 'visibility' ? 'visibility' : 'grant')),
+        amount: row.amount || 'see solicitation',
+        url: row.url,
+        deadline: row.close_date || null,
+        note: row.summary || row.eligibility || ''
+      };
+    });
+
+    GRANTS = Object.keys(byId).map(function(k){ return byId[k]; });
+
+    var stamp = document.querySelector('.updated');
+    if(stamp && feed.as_of){
+      stamp.innerHTML += ' <strong>Live feed: ' + feed.count + ' opportunities as of ' + feed.as_of + '.</strong>';
+      if(feed.source_errors && feed.source_errors.length){
+        stamp.innerHTML += ' <em>' + feed.source_errors.length + ' source(s) unreachable this sweep — built-in entries still shown.</em>';
+      }
+    }
+    render();
+  }
+
+  if(typeof fetch === 'function'){
+    fetch(FEED_URL, {cache: 'no-cache'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(mergeFeed)
+      .catch(function(){ /* offline or not deployed yet — built-in list stands */ });
+  }
 })();
 </script>
 

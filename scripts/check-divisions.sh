@@ -30,9 +30,10 @@ JSON="divisions.json"
 # runbooks (no agent frontmatter), not agents. jobs-scraper/ is a standalone
 # Python tool (the tactical human performance job aggregator), not agents.
 # dashboards/ holds standalone HTML dashboards published via Netlify (see
-# scripts/build-netlify-site.sh), not agents. None of these is a division —
-# they must never be scanned as source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper dashboards)
+# scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
+# Python tool (the biweekly non-dilutive funding sweep), not agents. None of
+# these is a division — they must never be scanned as source-agent categories.
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper dashboards funding-scraper)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }

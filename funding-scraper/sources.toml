@@ -1,0 +1,244 @@
+# =============================================================================
+# VYBE FUNDING SWEEP -- ZERO-CREDENTIAL CONFIGURATION
+#
+#   python3 -m vybe_funding run --config sources.toml --dry-run
+#
+# Every source runs on an open public API or a hand-verified entry. No API key,
+# no OAuth, no account. Nothing here reads an environment variable.
+#
+# TWO LAYERS, ON PURPOSE
+#   1. API sources (sbir.gov, grants.gov) -- self-maintaining. Close dates come
+#      from the agency, so a solicitation that closes tomorrow is marked closed
+#      the day after without anyone touching this file.
+#   2. The curated layer -- state programs, university vehicles, cloud credits
+#      and accelerators that publish a web page and nothing machine-readable.
+#      Every entry carries `verified`, the date a human last confirmed it. The
+#      run warns when one ages past `stale_days` so this list rots visibly.
+# =============================================================================
+
+[runtime]
+output_dir = "output"
+# Warn when a hand-verified entry has not been rechecked in this many days.
+# Tuned to the biweekly sweep cadence: ~3 sweeps before a nag.
+stale_days = 45
+
+
+# -----------------------------------------------------------------------------
+# 1. SBIR.gov -- all eleven federal SBIR/STTR agencies in one keyless call
+# -----------------------------------------------------------------------------
+[sources.sbir]
+kind = "sbir_gov"
+rows = 300
+# Keyword gate. A solicitation must mention one of these in its title or
+# description to reach the board -- without it this returns several hundred
+# rows a cycle, most of them submarine hulls and reactor coatings.
+keywords = [
+  "wearable", "sensor", "biosensor", "physiological", "human performance",
+  "digital health", "remote monitoring", "signal processing", "biometric",
+  "sleep", "fatigue", "cognitive", "health monitoring", "telehealth",
+]
+default_amount = "Phase I scale"
+
+
+# -----------------------------------------------------------------------------
+# 2. Grants.gov -- everything federal that is not SBIR/STTR
+# -----------------------------------------------------------------------------
+# One block per keyword: the API takes a single keyword string, and separate
+# blocks keep a zero-result term visible in the run summary instead of hiding
+# inside a combined query.
+
+[sources.grants_wearable]
+kind = "grants_gov"
+keyword = "wearable sensor"
+rows = 40
+statuses = "forecasted|posted"
+
+[sources.grants_digital_health]
+kind = "grants_gov"
+keyword = "digital health monitoring"
+rows = 40
+statuses = "forecasted|posted"
+
+[sources.grants_human_performance]
+kind = "grants_gov"
+keyword = "human performance physiological monitoring"
+rows = 40
+statuses = "forecasted|posted"
+
+
+# -----------------------------------------------------------------------------
+# 3. Curated -- verified by hand, no machine-readable source exists
+# -----------------------------------------------------------------------------
+[sources.curated]
+kind = "curated"
+
+# --- Pillar 2: grants and matched funding ------------------------------------
+
+[[sources.curated.entry]]
+name = "NYSTAR Innovation Matching Grants"
+url = "https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf"
+agency = "Empire State Development (NYSTAR)"
+amount = "$100K (Phase I) / $200K (Phase II)"
+close_date = "2026-10-20"
+open_date = "2026-10-14"
+pillar = 2
+kind = "grant"
+eligibility = "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award"
+note = "ONE WEEK WINDOW: opens 2nd Wed of Oct/Apr at 9am, closes the following Tue 5pm. Matches up to 50% of the federal award."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Cornell CAT Grant"
+url = "https://biotech.cornell.edu/commercialization-cat"
+agency = "Cornell Center for Advanced Technology"
+amount = "$75K matched 1:1 (up to $150K total)"
+close_date = "2026-10-30"
+open_date = "2026-09-01"
+pillar = 3
+kind = "partnership"
+eligibility = "Cornell faculty PI applies; company partner must be a NY State for-profit"
+note = "Not a solo apply -- needs a Cornell faculty co-PI with Vybe as the NY industry partner."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "America's Seed Fund -- NSF Project Pitch"
+url = "https://seedfund.nsf.gov/project-pitch/"
+agency = "National Science Foundation"
+amount = "gateway to $305K Phase I, up to $2M across phases"
+pillar = 2
+kind = "grant"
+eligibility = "US small business; no clinical claim required"
+note = "Rolling, ~2 pages. Mandatory gate before any NSF full proposal -- the actual first step."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NY Ventures Pre-Seed & Seed Matching Fund"
+url = "https://esd.ny.gov/pre-seed-and-seed-matching-fund-program"
+agency = "Empire State Development"
+amount = "$50K-$250K equity, 1:1 private match"
+pillar = 2
+kind = "grant"
+eligibility = "NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state"
+note = "Rolling. Equity investment, not a grant -- matched against qualified private investment."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NYS SSBCI Technical Assistance"
+url = "https://esd.ny.gov/ssbci-technical-assistance-program"
+agency = "Empire State Development"
+amount = "free legal, accounting and financial advising"
+pillar = 2
+kind = "grant"
+eligibility = "NY very small business (<10 employees) or SEDI-owned (<100 employees)"
+note = "Not cash -- free professional services. Could cover the SDK-licensing and HIPAA structuring work."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "FuzeHub Jeff Lawrence Manufacturing Grants"
+url = "https://fuzehub.com/innovation-fund/"
+agency = "FuzeHub / Empire State Development"
+amount = "up to $65,000"
+pillar = 3
+kind = "partnership"
+eligibility = "A NY nonprofit or university applies, partnered with a NY manufacturer"
+note = "2026 round closed May 7. Next opens ~Apr 2027 -- same partner shape as Cornell CAT."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Activate Fellowship"
+url = "https://www.activate.org/fellowship"
+agency = "Activate"
+amount = "$300K+ over two years, 0% equity"
+pillar = 2
+kind = "grant"
+eligibility = "Scientists/engineers with 4+ years post-baccalaureate research or engineering experience"
+note = "2026 cohort closed Oct 2025. Next cycle typically opens ~October."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NIST MEP manufacturing voucher"
+url = "https://www.nist.gov/mep"
+agency = "NIST Manufacturing Extension Partnership"
+amount = "up to $65,000, varies by state"
+pillar = 3
+kind = "partnership"
+eligibility = "Routed through your state MEP center, not paid directly to the company"
+note = "Most state centers offer a free initial manufacturability assessment."
+verified = "2026-09-12"
+
+# --- Pillar 1: cost offset (cloud and platform credits) ----------------------
+
+[[sources.curated.entry]]
+name = "Google for Startups Cloud Program"
+url = "https://cloud.google.com/startup/benefits"
+agency = "Google Cloud"
+amount = "up to $350K (AI-first) / $200K (Seed-Series A)"
+pillar = 1
+kind = "credit"
+eligibility = "<5 years old, pre-Series A funding, not a prior GCP program participant"
+note = "Rolling. Straight conversion of credits into retained cash."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "AWS Activate"
+url = "https://aws.amazon.com/startups/"
+agency = "Amazon Web Services"
+amount = "up to $100K in AWS credits"
+pillar = 1
+kind = "credit"
+note = "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Microsoft for Startups Founders Hub"
+url = "https://www.microsoft.com/en-us/startups"
+agency = "Microsoft"
+amount = "up to $150K Azure credits"
+pillar = 1
+kind = "credit"
+eligibility = "No funding required to apply -- the most accessible entry point of the three"
+note = "Rolling. Start here before the Google and AWS tiers."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NVIDIA Inception"
+url = "https://www.nvidia.com/en-us/startups/"
+agency = "NVIDIA"
+amount = "free -- routes to $100K AWS + $100K DGX Cloud credits"
+pillar = 1
+kind = "credit"
+eligibility = "Incorporated, <10 years old, a website and at least one developer; no revenue required"
+note = "Rolling, no equity, no fee. Typically a 1-4 week decision."
+verified = "2026-09-12"
+
+# --- Pillar 3: university partnership vehicles -------------------------------
+
+[[sources.curated.entry]]
+name = "Rev: Ithaca Prototyping Hardware Accelerator"
+url = "https://www.revithaca.com/hardware/"
+agency = "Cornell / Rev: Ithaca Startup Works"
+amount = "up to $2,000 stipend + prototyping access"
+pillar = 3
+kind = "partnership"
+note = "10-week cohort with a MedTech track. Devices-for-research-access shape."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "UC Berkeley CITRIS Foundry"
+url = "https://citrisfoundry.berkeley.edu/"
+agency = "UC Berkeley"
+amount = "fab lab access, no equity"
+pillar = 3
+kind = "partnership"
+note = "Hardware/deep-tech fabrication and engineering mentorship."
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Berkeley SkyDeck"
+url = "https://skydeck.berkeley.edu/program"
+agency = "UC Berkeley"
+amount = "$200K investment (equity) + Jacobs Institute hardware fab"
+pillar = 3
+kind = "accelerator"
+note = "Six-month cohort, ~20 companies selected per batch."
+verified = "2026-09-12"

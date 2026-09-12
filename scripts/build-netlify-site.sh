@@ -49,6 +49,16 @@ if [ -d "dashboards" ]; then
   done
 fi
 
+# The funding dashboard fetches /funding.json at runtime to pick up the
+# biweekly sweep (.github/workflows/funding-sweep.yml). Ship it next to the
+# page. Its absence is survivable by design -- the dashboard falls back to its
+# built-in list -- so a missing feed must not fail the build.
+if [ -f "funding-scraper/output/funding.json" ]; then
+  cp -f "funding-scraper/output/funding.json" "$OUT/funding.json"
+else
+  echo "note: funding-scraper/output/funding.json not present; dashboard will use its built-in list."
+fi
+
 # ---------------------------------------------------------------- Tailwind ---
 # Compile against the shell fragments so only the utilities they use ship.
 TW_MODE="none"
