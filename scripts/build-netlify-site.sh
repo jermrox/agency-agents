@@ -38,6 +38,17 @@ fi
 # The embeddable board, byte-for-byte. Squarespace pulls this one.
 cp -f "$SRC_BOARD" "$OUT/h2f-scout-board.html"
 
+# ------------------------------------------------------------------ extras ---
+# Standalone dashboards that aren't the H2F board still deserve a URL. Each is
+# self-contained (own CSS/JS, no build step) and gets copied byte-for-byte —
+# same rule as the H2F board above, just not wired into the Tailwind shell.
+if [ -d "dashboards" ]; then
+  for f in dashboards/*.html; do
+    [ -e "$f" ] || continue
+    cp -f "$f" "$OUT/$(basename "$f")"
+  done
+fi
+
 # ---------------------------------------------------------------- Tailwind ---
 # Compile against the shell fragments so only the utilities they use ship.
 TW_MODE="none"
