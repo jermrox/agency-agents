@@ -14,6 +14,11 @@ name: Verify board links
 
 on:
   workflow_dispatch:
+  push:
+    # Only when the checker itself changes — this job hits 123 external hosts,
+    # so it has no business running on every commit.
+    paths:
+      - '.github/workflows/verify-board-links.yml'
   schedule:
     # Weekly, Mondays 13:00 UTC. Link rot on .mil domains is constant.
     - cron: '0 13 * * 1'
