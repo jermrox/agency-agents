@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-12T20:23:01+00:00",
+  "generated": "2026-09-12T20:27:54+00:00",
   "as_of": "2026-09-12",
-  "count": 20,
+  "count": 50,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json failed: <urlopen error Tunnel connection failed: 403 Forbidden>",
     "grants_wearable: https://api.grants.gov/v1/api/search2 failed: <urlopen error Tunnel connection failed: 403 Forbidden>",
@@ -28,6 +28,26 @@
         "Works-like hardware prototype (required \u2014 not a concept or a render)",
         "Short online application describing the product and production goal",
         "Founder time commitment for the 9-week virtual program"
+      ]
+    },
+    {
+      "id": "curated-texas-woman-s-university-veteran-grant",
+      "source": "curated",
+      "name": "Texas Woman's University Veteran Grant",
+      "url": "https://twu.edu/center-women-entrepreneurs/",
+      "agency": "Texas Woman's University",
+      "amount": "$5,000 (five awarded/yr)",
+      "summary": "Quarterly cycles.",
+      "open_date": null,
+      "close_date": "2026-09-30",
+      "status": "soon",
+      "days_left": 18,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "TEXAS-adjacent \u2014 veteran-owned businesses",
+      "documents": [
+        "Proof of veteran status",
+        "Application"
       ]
     },
     {
@@ -75,6 +95,67 @@
       ]
     },
     {
+      "id": "curated-secretsos-small-business-grant",
+      "source": "curated",
+      "name": "Secretsos Small Business Grant",
+      "url": "https://www.secretsos.com/",
+      "agency": "Secretsos",
+      "amount": "$2,500",
+      "summary": "",
+      "open_date": null,
+      "close_date": "2026-10-31",
+      "status": "open",
+      "days_left": 49,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Underserved businesses: woman-, veteran-, or minority-owned",
+      "documents": [
+        "Short online application",
+        "Proof of qualifying ownership status"
+      ]
+    },
+    {
+      "id": "curated-nih-sbir-sttr-april-2027-cycle",
+      "source": "curated",
+      "name": "NIH SBIR/STTR \u2014 April 2027 cycle",
+      "url": "https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html",
+      "agency": "NIH / CDC / FDA",
+      "amount": "$400K-$700K+ by institute",
+      "summary": "The standard NIH dates are Sep 5, Jan 5 and Apr 5. Listed separately so the later cycle stays visible.",
+      "open_date": null,
+      "close_date": "2027-04-05",
+      "status": "open",
+      "days_left": 205,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "US small business with a health or clinical claim",
+      "documents": [
+        "SAM.gov UEI, eRA Commons, Grants.gov and SBIR.gov registrations",
+        "Specific Aims + Research Strategy",
+        "Budget + biosketches"
+      ]
+    },
+    {
+      "id": "curated-500-global",
+      "source": "curated",
+      "name": "500 Global",
+      "url": "https://500.co/",
+      "agency": "500 Global",
+      "amount": "varies by program",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Early-stage across sectors",
+      "documents": [
+        "Application",
+        "Pitch deck"
+      ]
+    },
+    {
       "id": "curated-aws-activate",
       "source": "curated",
       "name": "AWS Activate",
@@ -116,6 +197,46 @@
       ]
     },
     {
+      "id": "curated-alabama-sbir-sttr-match",
+      "source": "curated",
+      "name": "Alabama SBIR/STTR Match",
+      "url": "https://innovate-alabama.com/",
+      "agency": "Innovate Alabama",
+      "amount": "up to $100,000 (50% of federal award)",
+      "summary": "Phase I match. Confirm Vybe's state before working any row in this block.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Alabama-based small business holding a federal SBIR/STTR award",
+      "documents": [
+        "Federal SBIR/STTR award notice",
+        "Alabama business registration"
+      ]
+    },
+    {
+      "id": "curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology",
+      "source": "curated",
+      "name": "Alfred P. Sloan Foundation \u2014 Exploratory Grantmaking in Technology",
+      "url": "https://sloan.org/programs/digital-technology",
+      "agency": "Alfred P. Sloan Foundation",
+      "amount": "varies",
+      "summary": "Letter of inquiry first. Check current program scope before investing time.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Usually academic or nonprofit applicants",
+      "documents": [
+        "Letter of inquiry",
+        "Project narrative"
+      ]
+    },
+    {
       "id": "curated-america-s-seed-fund-nsf-project-pitch",
       "source": "curated",
       "name": "America's Seed Fund -- NSF Project Pitch",
@@ -137,6 +258,46 @@
       ]
     },
     {
+      "id": "curated-antler",
+      "source": "curated",
+      "name": "Antler",
+      "url": "https://www.antler.co/",
+      "agency": "Antler",
+      "amount": "varies by location",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Pre-seed and day-zero founders",
+      "documents": [
+        "Application",
+        "Founder background"
+      ]
+    },
+    {
+      "id": "curated-arkansas-sbir-matching-grant",
+      "source": "curated",
+      "name": "Arkansas SBIR Matching Grant",
+      "url": "https://www.arkansasedc.com/",
+      "agency": "Arkansas EDC",
+      "amount": "up to $50,000 (Phase I)",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Arkansas-based small business with a federal Phase I award",
+      "documents": [
+        "Federal Phase I award notice",
+        "Arkansas business registration"
+      ]
+    },
+    {
       "id": "curated-berkeley-skydeck",
       "source": "curated",
       "name": "Berkeley SkyDeck",
@@ -155,6 +316,27 @@
         "Pitch deck",
         "Cap table",
         "Application through the cohort cycle"
+      ]
+    },
+    {
+      "id": "curated-brinc",
+      "source": "curated",
+      "name": "Brinc",
+      "url": "https://www.brinc.io/",
+      "agency": "Brinc",
+      "amount": "$25,000-$125,000 depending on vertical",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Hardware and IoT startups",
+      "documents": [
+        "Pitch deck",
+        "Prototype status",
+        "Application"
       ]
     },
     {
@@ -201,6 +383,26 @@
       ]
     },
     {
+      "id": "curated-creative-destruction-lab-cdl-manufacturing",
+      "source": "curated",
+      "name": "Creative Destruction Lab (CDL) Manufacturing",
+      "url": "https://creativedestructionlab.com/",
+      "agency": "Creative Destruction Lab",
+      "amount": "zero equity",
+      "summary": "One of the few genuinely zero-equity hardware-relevant programs.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Science and technology ventures; objectives-based mentoring",
+      "documents": [
+        "Application during the annual cycle",
+        "Technical and commercial objectives"
+      ]
+    },
+    {
       "id": "curated-fuzehub-jeff-lawrence-manufacturing-grants",
       "source": "curated",
       "name": "FuzeHub Jeff Lawrence Manufacturing Grants",
@@ -222,6 +424,26 @@
       ]
     },
     {
+      "id": "curated-galaxy-grants",
+      "source": "curated",
+      "name": "Galaxy Grants",
+      "url": "https://www.hiddenstarters.com/",
+      "agency": "Hidden Starters",
+      "amount": "$2,500",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Women and minority business owners",
+      "documents": [
+        "Short application",
+        "Business description"
+      ]
+    },
+    {
       "id": "curated-google-for-startups-cloud-program",
       "source": "curated",
       "name": "Google for Startups Cloud Program",
@@ -240,6 +462,128 @@
         "Company website and incorporation details",
         "Funding stage evidence (pre-Series A)",
         "Google Cloud billing account"
+      ]
+    },
+    {
+      "id": "curated-hlth-usa-startup-pitch-competition",
+      "source": "curated",
+      "name": "HLTH USA Startup Pitch Competition",
+      "url": "https://hlth.com/events/usa/agenda/startup-pitch/",
+      "agency": "HLTH",
+      "amount": "$25,000 cash + 2 passes",
+      "summary": "Large health-tech audience; the exposure is worth more than the cash.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Under 5 years old and less than $8M raised",
+      "documents": [
+        "Pitch deck",
+        "Proof of <$8M raised and <5 years old",
+        "Application during the event cycle"
+      ]
+    },
+    {
+      "id": "curated-hello-tomorrow-global-challenge",
+      "source": "curated",
+      "name": "Hello Tomorrow Global Challenge",
+      "url": "https://hello-tomorrow.org/global-challenge/",
+      "agency": "Hello Tomorrow",
+      "amount": "EUR 100,000 grand prize (EUR 20K / EUR 10K also awarded)",
+      "summary": "Free entry, no equity. Finalists get access to 1,300+ VC/CVC investors. Watch for the next cycle's January deadline.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Deep tech founders, 120+ countries; free to enter",
+      "documents": [
+        "Free application",
+        "Technical description of the deep-tech core",
+        "Team information"
+      ]
+    },
+    {
+      "id": "curated-illinois-sbir-sttr-matching-program",
+      "source": "curated",
+      "name": "Illinois SBIR/STTR Matching Program",
+      "url": "https://dceo.illinois.gov/",
+      "agency": "Illinois DCEO",
+      "amount": "up to $75,000 (Phase I)",
+      "summary": "$5M state commitment. The rolling window ran through Jun 30, 2026 \u2014 confirm the current cycle.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Illinois-based small business",
+      "documents": [
+        "Federal Phase I award notice",
+        "Illinois business registration"
+      ]
+    },
+    {
+      "id": "curated-indiana-sbir-sttr-match",
+      "source": "curated",
+      "name": "Indiana SBIR/STTR Match",
+      "url": "https://www.iedc.in.gov/",
+      "agency": "Indiana Economic Development Corp",
+      "amount": "up to $50,000 per award ($150K lifetime cap)",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Indiana-based small business",
+      "documents": [
+        "Federal Phase I award notice",
+        "Indiana business registration"
+      ]
+    },
+    {
+      "id": "curated-iowa-sbir-sttr-support",
+      "source": "curated",
+      "name": "Iowa SBIR/STTR Support",
+      "url": "https://www.iowaeda.com/",
+      "agency": "Iowa Economic Development Authority",
+      "amount": "up to $25,000",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Iowa-based small business",
+      "documents": [
+        "Federal Phase I award notice",
+        "Iowa business registration"
+      ]
+    },
+    {
+      "id": "curated-kentucky-sbir-sttr-matching-funds",
+      "source": "curated",
+      "name": "Kentucky SBIR/STTR Matching Funds",
+      "url": "https://ced.ky.gov/",
+      "agency": "Kentucky Cabinet for Economic Development",
+      "amount": "up to $150,000 (Phase I)",
+      "summary": "One of the largest Phase I state matches in the country.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Kentucky-based small business",
+      "documents": [
+        "Federal Phase I award notice",
+        "Kentucky business registration"
       ]
     },
     {
@@ -282,6 +626,27 @@
         "Pitch deck with an optics/photonics/imaging (OPI+L) technical core",
         "Willingness to relocate to Rochester for the six-month program",
         "Cap table and funding history"
+      ]
+    },
+    {
+      "id": "curated-masschallenge-bae-systems-deep-tech-accelerator",
+      "source": "curated",
+      "name": "MassChallenge BAE Systems Deep-Tech Accelerator",
+      "url": "https://masschallenge.org/",
+      "agency": "MassChallenge / BAE Systems",
+      "amount": "zero equity",
+      "summary": "Named focus on advanced sensing and real-time data processing \u2014 strong thesis fit, and takes no equity.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Dual-use defense hardware; low-SWaP-C, advanced sensing, real-time data processing",
+      "documents": [
+        "Application during the cohort window",
+        "Technical description of the sensing/processing core",
+        "Dual-use case"
       ]
     },
     {
@@ -390,6 +755,47 @@
       ]
     },
     {
+      "id": "curated-new-mexico-sbir-match",
+      "source": "curated",
+      "name": "New Mexico SBIR Match",
+      "url": "https://edd.newmexico.gov/",
+      "agency": "New Mexico EDD",
+      "amount": "up to $25,000 (Phase I)",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "New Mexico-based small business",
+      "documents": [
+        "Federal Phase I award notice",
+        "New Mexico business registration"
+      ]
+    },
+    {
+      "id": "curated-pitchmi",
+      "source": "curated",
+      "name": "PitchMI",
+      "url": "https://www.michiganbusiness.org/",
+      "agency": "Michigan Economic Development Corp",
+      "amount": "$250,000 per track winner + $1M championship",
+      "summary": "Healthcare & Life Sciences is a named track. Only relevant if Vybe has Michigan operations.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "MICHIGAN ONLY \u2014 Michigan-based startups",
+      "documents": [
+        "Michigan business registration",
+        "Pitch deck",
+        "Application during the cycle"
+      ]
+    },
+    {
       "id": "curated-rev-ithaca-prototyping-hardware-accelerator",
       "source": "curated",
       "name": "Rev: Ithaca Prototyping Hardware Accelerator",
@@ -410,6 +816,107 @@
       ]
     },
     {
+      "id": "curated-schmidt-sciences",
+      "source": "curated",
+      "name": "Schmidt Sciences",
+      "url": "https://www.schmidtsciences.org/opportunities/",
+      "agency": "Schmidt Sciences",
+      "amount": "varies, $500K-$10M on some programs",
+      "summary": "DOES NOT ACCEPT UNSOLICITED PROPOSALS \u2014 they seek out grantees. Listed so it isn't chased blindly.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Academic researchers, nonprofits, think tanks",
+      "documents": [
+        "Invitation only \u2014 no open application"
+      ]
+    },
+    {
+      "id": "curated-south-park-commons",
+      "source": "curated",
+      "name": "South Park Commons",
+      "url": "https://www.southparkcommons.com/",
+      "agency": "South Park Commons",
+      "amount": "Founder Fellowship funding",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Pre-idea and early-stage technical founders",
+      "documents": [
+        "Application",
+        "Technical background"
+      ]
+    },
+    {
+      "id": "curated-startup-prize-health",
+      "source": "curated",
+      "name": "Startup Prize: Health",
+      "url": "https://startupprize.com/health/",
+      "agency": "Startup Prize",
+      "amount": "$10,000 cash",
+      "summary": "The non-FDA track fits a wellness-claim wearable without a regulatory pathway.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Health startups; separate FDA and non-FDA tracks",
+      "documents": [
+        "Registration",
+        "Pitch deck",
+        "Track selection (FDA vs non-FDA)"
+      ]
+    },
+    {
+      "id": "curated-stephen-l-tadlock-veteran-business-grant",
+      "source": "curated",
+      "name": "Stephen L. Tadlock Veteran Business Grant",
+      "url": "https://www.grantwatch.com/",
+      "agency": "Tadlock",
+      "amount": "varies",
+      "summary": "Opens ~September annually.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Veteran-owned businesses",
+      "documents": [
+        "Proof of veteran status",
+        "Application"
+      ]
+    },
+    {
+      "id": "curated-the-medtech-conference-start-up-pitch",
+      "source": "curated",
+      "name": "The MedTech Conference Start-Up Pitch",
+      "url": "https://themedtechconference.com/start-up-pitch-competition/",
+      "agency": "AdvaMed",
+      "amount": "cash award + conference pass",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Medical device and medtech startups",
+      "documents": [
+        "Application during the annual window",
+        "Pitch deck",
+        "Regulatory pathway summary"
+      ]
+    },
+    {
       "id": "curated-uc-berkeley-citris-foundry",
       "source": "curated",
       "name": "UC Berkeley CITRIS Foundry",
@@ -427,6 +934,109 @@
       "documents": [
         "UC Berkeley affiliation or sponsoring relationship",
         "Technical project description"
+      ]
+    },
+    {
+      "id": "curated-w-m-keck-foundation-science-engineering-research-program",
+      "source": "curated",
+      "name": "W.M. Keck Foundation Science & Engineering Research Program",
+      "url": "https://www.wmkeck.org/",
+      "agency": "W.M. Keck Foundation",
+      "amount": "typically $1M+",
+      "summary": "Apr 2026 deadline has passed; annual cycle. Institutionally nominated \u2014 needs a university partner, so treat as a Pillar 3 vehicle.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Usually routed through a university; high-risk, high-impact science and engineering",
+      "documents": [
+        "University sponsorship / limited-submission nomination",
+        "Concept paper",
+        "High-risk, high-impact technical rationale"
+      ]
+    },
+    {
+      "id": "curated-wisconsin-sbir-advance",
+      "source": "curated",
+      "name": "Wisconsin SBIR Advance",
+      "url": "https://wisconsinctc.org/programs/sbir-and-sttr-guidance/sbiradvance/",
+      "agency": "WEDC / Center for Technology Commercialization",
+      "amount": "50% match up to $75,000",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Wisconsin-based small business",
+      "documents": [
+        "Federal SBIR/STTR award notice",
+        "Wisconsin business registration",
+        "Commercialization plan"
+      ]
+    },
+    {
+      "id": "curated-women-veterans-giving-small-business-award",
+      "source": "curated",
+      "name": "Women Veterans Giving Small Business Award",
+      "url": "https://news.va.gov/146401/women-veterans-giving-small-business-award/",
+      "agency": "Women Veterans Giving",
+      "amount": "varies",
+      "summary": "Window runs roughly May 1 - Jul 31 annually.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Women veteran founders",
+      "documents": [
+        "Proof of veteran status",
+        "Business description"
+      ]
+    },
+    {
+      "id": "curated-women-s-business-development-council-grants",
+      "source": "curated",
+      "name": "Women's Business Development Council grants",
+      "url": "https://ctwbdc.org/",
+      "agency": "WBDC (Connecticut)",
+      "amount": "$2,500 / $10,000 / $25,000 by tier",
+      "summary": "Three tiers: Launch Pad, Ignite, Accelerate.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "CONNECTICUT ONLY \u2014 women-owned small businesses",
+      "documents": [
+        "Connecticut business registration",
+        "Proof of women-owned status",
+        "Business plan / financials by tier"
+      ]
+    },
+    {
+      "id": "curated-xcelerate-startup-competition",
+      "source": "curated",
+      "name": "Xcelerate Startup Competition",
+      "url": "https://www.worldhealthexpo.com/events/healthcare/tech/whats-on/features/xcelerate-your-startup-pitch-competition/",
+      "agency": "World Health Expo Tech",
+      "amount": "$30,000 total prize pool",
+      "summary": "",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Early-stage and scale-up tracks, ~50 startups pitch",
+      "documents": [
+        "Application",
+        "Pitch deck"
       ]
     }
   ]
