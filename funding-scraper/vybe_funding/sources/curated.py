@@ -63,6 +63,7 @@ class CuratedSource(Source):
                 pillar=int(entry.get("pillar", 2)),
                 kind=entry.get("kind", "grant"),
                 eligibility=entry.get("eligibility", ""),
+                documents=list(entry.get("documents", [])),
                 raw={"verified": verified.isoformat()},
             )
 

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-12T19:16:36+00:00",
+  "generated": "2026-09-12T20:23:01+00:00",
   "as_of": "2026-09-12",
-  "count": 15,
+  "count": 20,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json failed: <urlopen error Tunnel connection failed: 403 Forbidden>",
     "grants_wearable: https://api.grants.gov/v1/api/search2 failed: <urlopen error Tunnel connection failed: 403 Forbidden>",
@@ -9,6 +9,27 @@
     "grants_human_performance: https://api.grants.gov/v1/api/search2 failed: <urlopen error Tunnel connection failed: 403 Forbidden>"
   ],
   "opportunities": [
+    {
+      "id": "curated-nextcorps-manufacturing-accelerator-fall-2026",
+      "source": "curated",
+      "name": "NextCorps Manufacturing Accelerator (Fall 2026)",
+      "url": "https://manufacturingaccelerator.org/",
+      "agency": "NextCorps (Rochester, NY)",
+      "amount": "free \u2014 9-week virtual program",
+      "summary": "Free, no equity. Prototype-to-mass-production. Info session Sep 23. Closest process fit on this board to Vybe's actual stage.",
+      "open_date": null,
+      "close_date": "2026-09-30",
+      "status": "soon",
+      "days_left": 18,
+      "pillar": 3,
+      "kind": "accelerator",
+      "eligibility": "Hardware startups with a works-like prototype; advanced materials, medical devices, lab hardware",
+      "documents": [
+        "Works-like hardware prototype (required \u2014 not a concept or a render)",
+        "Short online application describing the product and production goal",
+        "Founder time commitment for the 9-week virtual program"
+      ]
+    },
     {
       "id": "curated-nystar-innovation-matching-grants",
       "source": "curated",
@@ -23,7 +44,13 @@
       "days_left": 38,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award"
+      "eligibility": "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award",
+      "documents": [
+        "Proof of federal SBIR/STTR award or pending application",
+        "NY State business registration / proof of NYS residency",
+        "Commercialization plan for the non-federal activities being matched",
+        "Company financials and employee count (<=100)"
+      ]
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -39,7 +66,13 @@
       "days_left": 48,
       "pillar": 3,
       "kind": "partnership",
-      "eligibility": "Cornell faculty PI applies; company partner must be a NY State for-profit"
+      "eligibility": "Cornell faculty PI applies; company partner must be a NY State for-profit",
+      "documents": [
+        "Cornell faculty PI committed as lead applicant",
+        "Signed 1:1 cash match commitment from Vybe as NY industry partner",
+        "Joint research plan with commercial milestones",
+        "Statement of quantifiable NY State economic impact"
+      ]
     },
     {
       "id": "curated-aws-activate",
@@ -55,7 +88,11 @@
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": ""
+      "eligibility": "",
+      "documents": [
+        "AWS account ID",
+        "Company details; accelerator/VC affiliation code for the higher tiers"
+      ]
     },
     {
       "id": "curated-activate-fellowship",
@@ -71,7 +108,12 @@
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Scientists/engineers with 4+ years post-baccalaureate research or engineering experience"
+      "eligibility": "Scientists/engineers with 4+ years post-baccalaureate research or engineering experience",
+      "documents": [
+        "CV showing 4+ years post-baccalaureate research/engineering experience",
+        "Technical proposal and two-year research plan",
+        "References"
+      ]
     },
     {
       "id": "curated-america-s-seed-fund-nsf-project-pitch",
@@ -87,7 +129,12 @@
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "US small business; no clinical claim required"
+      "eligibility": "US small business; no clinical claim required",
+      "documents": [
+        "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
+        "SAM.gov UEI registration (start early \u2014 weeks of lead time)",
+        "SBIR.gov company registration (SBC control number)"
+      ]
     },
     {
       "id": "curated-berkeley-skydeck",
@@ -103,7 +150,55 @@
       "days_left": null,
       "pillar": 3,
       "kind": "accelerator",
-      "eligibility": ""
+      "eligibility": "",
+      "documents": [
+        "Pitch deck",
+        "Cap table",
+        "Application through the cohort cycle"
+      ]
+    },
+    {
+      "id": "curated-cdmrp-combat-readiness-medical-research-program-crrp",
+      "source": "curated",
+      "name": "CDMRP Combat Readiness-Medical Research Program (CRRP)",
+      "url": "https://cdmrp.health.mil/funding/crrp",
+      "agency": "DoD Congressionally Directed Medical Research Programs",
+      "amount": "",
+      "summary": "FY26 focus areas include battlefield readiness in pre-hospital and operational environments \u2014 directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Pre-application through eBRAP is mandatory before the full application",
+      "documents": [
+        "eBRAP pre-application (mandatory gate before the full application)",
+        "Letter of Intent where the award mechanism requires one",
+        "SAM.gov UEI + Grants.gov registration",
+        "Full research plan mapped to a named FY26 focus area"
+      ]
+    },
+    {
+      "id": "curated-cdmrp-peer-reviewed-medical-research-program-prmrp",
+      "source": "curated",
+      "name": "CDMRP Peer Reviewed Medical Research Program (PRMRP)",
+      "url": "https://cdmrp.health.mil/funding/prmrp",
+      "agency": "DoD Congressionally Directed Medical Research Programs",
+      "amount": "up to $20M depending on award mechanism",
+      "summary": "Part of $1.27B across 34 CDMRP programs in FY26. Check the current topic list for a physiological-monitoring fit before writing.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Pre-application through eBRAP required; topic areas set annually by Congress",
+      "documents": [
+        "eBRAP pre-application",
+        "SAM.gov UEI + Grants.gov registration",
+        "Research plan matched to a congressionally-set topic area for the year"
+      ]
     },
     {
       "id": "curated-fuzehub-jeff-lawrence-manufacturing-grants",
@@ -119,7 +214,12 @@
       "days_left": null,
       "pillar": 3,
       "kind": "partnership",
-      "eligibility": "A NY nonprofit or university applies, partnered with a NY manufacturer"
+      "eligibility": "A NY nonprofit or university applies, partnered with a NY manufacturer",
+      "documents": [
+        "A NY nonprofit or university as the lead applicant",
+        "Project plan pairing the nonprofit with Vybe as the manufacturer partner",
+        "Budget and NY economic-impact statement"
+      ]
     },
     {
       "id": "curated-google-for-startups-cloud-program",
@@ -135,7 +235,54 @@
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "<5 years old, pre-Series A funding, not a prior GCP program participant"
+      "eligibility": "<5 years old, pre-Series A funding, not a prior GCP program participant",
+      "documents": [
+        "Company website and incorporation details",
+        "Funding stage evidence (pre-Series A)",
+        "Google Cloud billing account"
+      ]
+    },
+    {
+      "id": "curated-launch-ny-seed-fund",
+      "source": "curated",
+      "name": "Launch NY Seed Fund",
+      "url": "https://launchny.org/",
+      "agency": "Launch NY (Buffalo, NY)",
+      "amount": "$25K-$100K",
+      "summary": "Rolling. The most active seed fund in NY State by deal count \u2014 small checks, but explicitly hardware-friendly.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "High-growth startup in Upstate NY; hardware/robotics/IoT and healthtech are named focus sectors",
+      "documents": [
+        "Pitch deck",
+        "Financial projections",
+        "Evidence of Upstate NY operations"
+      ]
+    },
+    {
+      "id": "curated-luminate-ny-accelerator",
+      "source": "curated",
+      "name": "Luminate NY Accelerator",
+      "url": "https://luminate.org/",
+      "agency": "Empire State Development / Luminate (Rochester, NY)",
+      "amount": "$100K initial + up to $2M follow-on",
+      "summary": "Cohort 9 closed Jan 12, 2026 \u2014 watch for cohort 10. Relevant only if Vybe's sensing is optical (PPG is), so check the OPI+L fit before investing time.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Optics, photonics, imaging and lasers (OPI+L) startups; relocate to Rochester for six months",
+      "documents": [
+        "Pitch deck with an optics/photonics/imaging (OPI+L) technical core",
+        "Willingness to relocate to Rochester for the six-month program",
+        "Cap table and funding history"
+      ]
     },
     {
       "id": "curated-microsoft-for-startups-founders-hub",
@@ -151,7 +298,11 @@
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "No funding required to apply -- the most accessible entry point of the three"
+      "eligibility": "No funding required to apply -- the most accessible entry point of the three",
+      "documents": [
+        "Company details and a short product description",
+        "No funding proof required \u2014 the most accessible of the three"
+      ]
     },
     {
       "id": "curated-nist-mep-manufacturing-voucher",
@@ -167,7 +318,11 @@
       "days_left": null,
       "pillar": 3,
       "kind": "partnership",
-      "eligibility": "Routed through your state MEP center, not paid directly to the company"
+      "eligibility": "Routed through your state MEP center, not paid directly to the company",
+      "documents": [
+        "Intake call with your state MEP center",
+        "Scope of the engineering/DFM work requested"
+      ]
     },
     {
       "id": "curated-nvidia-inception",
@@ -183,7 +338,13 @@
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "Incorporated, <10 years old, a website and at least one developer; no revenue required"
+      "eligibility": "Incorporated, <10 years old, a website and at least one developer; no revenue required",
+      "documents": [
+        "Incorporation documents",
+        "Live company website",
+        "Pitch deck: mission, product, team, traction",
+        "At least one employed developer on staff"
+      ]
     },
     {
       "id": "curated-ny-ventures-pre-seed-seed-matching-fund",
@@ -199,7 +360,13 @@
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state"
+      "eligibility": "NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state",
+      "documents": [
+        "Pitch deck",
+        "Proof of qualified private investment to match 1:1",
+        "Cap table showing <$2M dilutive raised to date",
+        "NY State registration + evidence of a C-suite seat in-state"
+      ]
     },
     {
       "id": "curated-nys-ssbci-technical-assistance",
@@ -215,7 +382,12 @@
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "NY very small business (<10 employees) or SEDI-owned (<100 employees)"
+      "eligibility": "NY very small business (<10 employees) or SEDI-owned (<100 employees)",
+      "documents": [
+        "Business formation documents",
+        "Proof of VSB (<10 employees) or SEDI-owned status",
+        "Description of the legal/accounting/financial help you need"
+      ]
     },
     {
       "id": "curated-rev-ithaca-prototyping-hardware-accelerator",
@@ -231,7 +403,11 @@
       "days_left": null,
       "pillar": 3,
       "kind": "partnership",
-      "eligibility": ""
+      "eligibility": "",
+      "documents": [
+        "Prototype or detailed build plan",
+        "Team commitment for the 10-week cohort"
+      ]
     },
     {
       "id": "curated-uc-berkeley-citris-foundry",
@@ -247,7 +423,11 @@
       "days_left": null,
       "pillar": 3,
       "kind": "partnership",
-      "eligibility": ""
+      "eligibility": "",
+      "documents": [
+        "UC Berkeley affiliation or sponsoring relationship",
+        "Technical project description"
+      ]
     }
   ]
 }

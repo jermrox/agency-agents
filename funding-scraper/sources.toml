@@ -85,6 +85,12 @@ pillar = 2
 kind = "grant"
 eligibility = "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award"
 note = "ONE WEEK WINDOW: opens 2nd Wed of Oct/Apr at 9am, closes the following Tue 5pm. Matches up to 50% of the federal award."
+documents = [
+  "Proof of federal SBIR/STTR award or pending application",
+  "NY State business registration / proof of NYS residency",
+  "Commercialization plan for the non-federal activities being matched",
+  "Company financials and employee count (<=100)",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -98,6 +104,12 @@ pillar = 3
 kind = "partnership"
 eligibility = "Cornell faculty PI applies; company partner must be a NY State for-profit"
 note = "Not a solo apply -- needs a Cornell faculty co-PI with Vybe as the NY industry partner."
+documents = [
+  "Cornell faculty PI committed as lead applicant",
+  "Signed 1:1 cash match commitment from Vybe as NY industry partner",
+  "Joint research plan with commercial milestones",
+  "Statement of quantifiable NY State economic impact",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -109,6 +121,11 @@ pillar = 2
 kind = "grant"
 eligibility = "US small business; no clinical claim required"
 note = "Rolling, ~2 pages. Mandatory gate before any NSF full proposal -- the actual first step."
+documents = [
+  "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
+  "SAM.gov UEI registration (start early — weeks of lead time)",
+  "SBIR.gov company registration (SBC control number)",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -120,6 +137,12 @@ pillar = 2
 kind = "grant"
 eligibility = "NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state"
 note = "Rolling. Equity investment, not a grant -- matched against qualified private investment."
+documents = [
+  "Pitch deck",
+  "Proof of qualified private investment to match 1:1",
+  "Cap table showing <$2M dilutive raised to date",
+  "NY State registration + evidence of a C-suite seat in-state",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -131,6 +154,11 @@ pillar = 2
 kind = "grant"
 eligibility = "NY very small business (<10 employees) or SEDI-owned (<100 employees)"
 note = "Not cash -- free professional services. Could cover the SDK-licensing and HIPAA structuring work."
+documents = [
+  "Business formation documents",
+  "Proof of VSB (<10 employees) or SEDI-owned status",
+  "Description of the legal/accounting/financial help you need",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -142,6 +170,11 @@ pillar = 3
 kind = "partnership"
 eligibility = "A NY nonprofit or university applies, partnered with a NY manufacturer"
 note = "2026 round closed May 7. Next opens ~Apr 2027 -- same partner shape as Cornell CAT."
+documents = [
+  "A NY nonprofit or university as the lead applicant",
+  "Project plan pairing the nonprofit with Vybe as the manufacturer partner",
+  "Budget and NY economic-impact statement",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -153,6 +186,92 @@ pillar = 2
 kind = "grant"
 eligibility = "Scientists/engineers with 4+ years post-baccalaureate research or engineering experience"
 note = "2026 cohort closed Oct 2025. Next cycle typically opens ~October."
+documents = [
+  "CV showing 4+ years post-baccalaureate research/engineering experience",
+  "Technical proposal and two-year research plan",
+  "References",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NextCorps Manufacturing Accelerator (Fall 2026)"
+url = "https://manufacturingaccelerator.org/"
+agency = "NextCorps (Rochester, NY)"
+amount = "free — 9-week virtual program"
+close_date = "2026-09-30"
+pillar = 3
+kind = "accelerator"
+eligibility = "Hardware startups with a works-like prototype; advanced materials, medical devices, lab hardware"
+note = "Free, no equity. Prototype-to-mass-production. Info session Sep 23. Closest process fit on this board to Vybe's actual stage."
+documents = [
+  "Works-like hardware prototype (required — not a concept or a render)",
+  "Short online application describing the product and production goal",
+  "Founder time commitment for the 9-week virtual program",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Luminate NY Accelerator"
+url = "https://luminate.org/"
+agency = "Empire State Development / Luminate (Rochester, NY)"
+amount = "$100K initial + up to $2M follow-on"
+pillar = 2
+kind = "accelerator"
+eligibility = "Optics, photonics, imaging and lasers (OPI+L) startups; relocate to Rochester for six months"
+note = "Cohort 9 closed Jan 12, 2026 — watch for cohort 10. Relevant only if Vybe's sensing is optical (PPG is), so check the OPI+L fit before investing time."
+documents = [
+  "Pitch deck with an optics/photonics/imaging (OPI+L) technical core",
+  "Willingness to relocate to Rochester for the six-month program",
+  "Cap table and funding history",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Launch NY Seed Fund"
+url = "https://launchny.org/"
+agency = "Launch NY (Buffalo, NY)"
+amount = "$25K-$100K"
+pillar = 2
+kind = "grant"
+eligibility = "High-growth startup in Upstate NY; hardware/robotics/IoT and healthtech are named focus sectors"
+note = "Rolling. The most active seed fund in NY State by deal count — small checks, but explicitly hardware-friendly."
+documents = [
+  "Pitch deck",
+  "Financial projections",
+  "Evidence of Upstate NY operations",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "CDMRP Combat Readiness-Medical Research Program (CRRP)"
+url = "https://cdmrp.health.mil/funding/crrp"
+agency = "DoD Congressionally Directed Medical Research Programs"
+pillar = 2
+kind = "grant"
+eligibility = "Pre-application through eBRAP is mandatory before the full application"
+note = "FY26 focus areas include battlefield readiness in pre-hospital and operational environments — directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420."
+documents = [
+  "eBRAP pre-application (mandatory gate before the full application)",
+  "Letter of Intent where the award mechanism requires one",
+  "SAM.gov UEI + Grants.gov registration",
+  "Full research plan mapped to a named FY26 focus area",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "CDMRP Peer Reviewed Medical Research Program (PRMRP)"
+url = "https://cdmrp.health.mil/funding/prmrp"
+agency = "DoD Congressionally Directed Medical Research Programs"
+amount = "up to $20M depending on award mechanism"
+pillar = 2
+kind = "grant"
+eligibility = "Pre-application through eBRAP required; topic areas set annually by Congress"
+note = "Part of $1.27B across 34 CDMRP programs in FY26. Check the current topic list for a physiological-monitoring fit before writing."
+documents = [
+  "eBRAP pre-application",
+  "SAM.gov UEI + Grants.gov registration",
+  "Research plan matched to a congressionally-set topic area for the year",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -164,6 +283,10 @@ pillar = 3
 kind = "partnership"
 eligibility = "Routed through your state MEP center, not paid directly to the company"
 note = "Most state centers offer a free initial manufacturability assessment."
+documents = [
+  "Intake call with your state MEP center",
+  "Scope of the engineering/DFM work requested",
+]
 verified = "2026-09-12"
 
 # --- Pillar 1: cost offset (cloud and platform credits) ----------------------
@@ -177,6 +300,11 @@ pillar = 1
 kind = "credit"
 eligibility = "<5 years old, pre-Series A funding, not a prior GCP program participant"
 note = "Rolling. Straight conversion of credits into retained cash."
+documents = [
+  "Company website and incorporation details",
+  "Funding stage evidence (pre-Series A)",
+  "Google Cloud billing account",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -187,6 +315,10 @@ amount = "up to $100K in AWS credits"
 pillar = 1
 kind = "credit"
 note = "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation."
+documents = [
+  "AWS account ID",
+  "Company details; accelerator/VC affiliation code for the higher tiers",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -198,6 +330,10 @@ pillar = 1
 kind = "credit"
 eligibility = "No funding required to apply -- the most accessible entry point of the three"
 note = "Rolling. Start here before the Google and AWS tiers."
+documents = [
+  "Company details and a short product description",
+  "No funding proof required — the most accessible of the three",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -209,6 +345,12 @@ pillar = 1
 kind = "credit"
 eligibility = "Incorporated, <10 years old, a website and at least one developer; no revenue required"
 note = "Rolling, no equity, no fee. Typically a 1-4 week decision."
+documents = [
+  "Incorporation documents",
+  "Live company website",
+  "Pitch deck: mission, product, team, traction",
+  "At least one employed developer on staff",
+]
 verified = "2026-09-12"
 
 # --- Pillar 3: university partnership vehicles -------------------------------
@@ -221,6 +363,10 @@ amount = "up to $2,000 stipend + prototyping access"
 pillar = 3
 kind = "partnership"
 note = "10-week cohort with a MedTech track. Devices-for-research-access shape."
+documents = [
+  "Prototype or detailed build plan",
+  "Team commitment for the 10-week cohort",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -231,6 +377,10 @@ amount = "fab lab access, no equity"
 pillar = 3
 kind = "partnership"
 note = "Hardware/deep-tech fabrication and engineering mentorship."
+documents = [
+  "UC Berkeley affiliation or sponsoring relationship",
+  "Technical project description",
+]
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
@@ -241,4 +391,9 @@ amount = "$200K investment (equity) + Jacobs Institute hardware fab"
 pillar = 3
 kind = "accelerator"
 note = "Six-month cohort, ~20 companies selected per batch."
+documents = [
+  "Pitch deck",
+  "Cap table",
+  "Application through the cohort cycle",
+]
 verified = "2026-09-12"

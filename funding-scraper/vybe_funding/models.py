@@ -68,6 +68,15 @@ class Opportunity:
     pillar: int = 2
     kind: str = "grant"  # grant | credit | accelerator | partnership | visibility
     eligibility: str = ""
+    documents: list[str] = field(default_factory=list)
+    """What you must have in hand to apply.
+
+    Kept separate from ``eligibility`` because they fail differently: an
+    eligibility miss means don't bother, while a missing document means start
+    now. Federal registrations (SAM.gov UEI, eRA Commons, SBC control number)
+    take weeks to clear and gate every federal row on the board, so they belong
+    here where the lead time is visible rather than buried in a solicitation.
+    """
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
 
     @property
@@ -116,4 +125,5 @@ class Opportunity:
             "pillar": self.pillar,
             "kind": self.kind,
             "eligibility": self.eligibility,
+            "documents": self.documents,
         }

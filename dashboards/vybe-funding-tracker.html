@@ -89,6 +89,21 @@
   .inv-card .nm a{color:inherit}
   .inv-card .st{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
 
+  .prereq{background:var(--surface);border:1px solid var(--soon);border-left:3px solid var(--soon);border-radius:8px;padding:14px 16px;margin-bottom:20px}
+  .prereq h3{font-family:'Newsreader',Georgia,serif;font-size:15.5px;margin:0 0 6px;color:var(--ink)}
+  .prereq p{margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--ink-soft)}
+  .prereq ol{margin:0;padding-left:20px}
+  .prereq li{font-size:13px;line-height:1.6;color:var(--ink-soft);margin-bottom:3px}
+  .prereq li b{color:var(--ink)}
+
+  tr.docs-row td{padding:0 12px 12px;border-bottom:1px solid var(--line)}
+  .docs-panel{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:11px 14px}
+  .docs-panel .dh{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .docs-panel ul{margin:0;padding-left:18px}
+  .docs-panel li{font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:3px}
+  .docs-toggle{background:none;border:none;padding:0;margin-top:3px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);text-align:left}
+  .docs-toggle:hover{text-decoration:underline}
+
   footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);line-height:1.7}
 
   @media (max-width:640px){ .stats{grid-template-columns:repeat(2,1fr)} }
@@ -118,9 +133,21 @@
     </select>
   </div>
 
+  <div class="prereq">
+    <h3>Do these first — they gate every federal row and take weeks to clear</h3>
+    <p>None of the federal grants below can be submitted without these, and none of them are same-day. Starting them is free and independent of any deadline, so there is no reason to wait for a specific solicitation.</p>
+    <ol>
+      <li><b>SAM.gov UEI registration</b> — the federal entity ID. Allow several weeks; entity validation is the usual bottleneck.</li>
+      <li><b>SBIR.gov company registration</b> — issues your SBC control number, required on every SBIR/STTR application.</li>
+      <li><b>Grants.gov account</b> — the submission portal, and NIH's single official source from FY2026 onward.</li>
+      <li><b>eRA Commons</b> — NIH-specific, needed alongside Grants.gov for anything NIH.</li>
+      <li><b>eBRAP account</b> — DoD CDMRP only, and its pre-application is a hard gate before the full application.</li>
+    </ol>
+  </div>
+
   <section class="investors">
     <h2>Pillar 2 — standing grant cadence</h2>
-    <p class="inv-sub">The every-two-weeks loop: source, filter to what's winnable, apply, repeat. Several require nothing but a pitch deck.</p>
+    <p class="inv-sub">The every-two-weeks loop: source, filter to what's winnable, apply, repeat. Rows with a <strong>docs</strong> link expand to show exactly what you need in hand before applying.</p>
   </section>
 
   <div class="table-scroll">
@@ -160,52 +187,52 @@
 
   // deadline: 'YYYY-MM-DD' | null (rolling) — closed flag set explicitly when a past cycle has no confirmed next date
   var GRANTS = [
-    {id:'xtech10', name:'Army xTech|Search 10', type:'grant', amount:'$20K prize \u2192 $300K Phase I', url:'https://xtech.army.mil/competition/xtechsearch10/', deadline:'2026-10-19', note:'\u201cImmersive and Wearables\u201d is a named portfolio \u2014 best single fit on this board'},
-    {id:'dod-sbir-r2', name:'DoD SBIR FY2026 Release 2', type:'grant', amount:'Phase I scale', url:'https://www.dodsbirsttr.mil/', deadline:'2026-10-21', note:'Check current topics on DSIP for wearable/sensor matches'},
-    {id:'nsf-sbir', name:'NSF SBIR/STTR Phase I', type:'grant', amount:'$305,000', url:'https://seedfund.nsf.gov/solicitations/', deadline:'2026-11-04', note:'Project Pitch required first \u2014 start now, not in November'},
-    {id:'sxsw', name:'SXSW Pitch \u2014 Health category', type:'visibility', amount:'exposure + investor room', url:'https://sxsw.com/pitch/', deadline:'2026-09-13', note:'Early Bird $105 \u2014 closes tomorrow, Sep 13; final Nov 13 at $225'},
-    {id:'venturewell', name:'VentureWell E-Team', type:'grant', amount:'$25,000', url:'https://venturewell.org/e-team-program/', deadline:'2026-09-29', note:'Needs a university-affiliated team member'},
-    {id:'sxsw-final', name:'SXSW Pitch \u2014 final deadline', type:'visibility', amount:'exposure + investor room', url:'https://sxsw.com/pitch/', deadline:'2026-11-13', note:'Regular entry $225'},
-    {id:'nih-sbir', name:'NIH SBIR/STTR Omnibus (PA-27-100)', type:'grant', amount:'$400K\u2013$700K+', url:'https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html', deadline:'2027-01-05', note:'Next standard date. Only if Vybe carries a clinical claim'},
-    {id:'arpah-iso', name:'ARPA-H Innovative Solution Openings', type:'grant', amount:'project-scale', url:'https://arpa-h.gov/explore-funding/open-funding-opportunities', deadline:null, note:'Rolling basis \u2014 for projects outside a named program'},
-    {id:'arpah-sbir', name:'ARPA-H SBIR/STTR', type:'grant', amount:'Phase I scale', url:'https://arpa-h.gov/explore-funding/sbir', deadline:null, note:'Watch for the next Solution Summary window'},
+    {id:'xtech10', name:'Army xTech|Search 10', type:'grant', amount:'$20K prize \u2192 $300K Phase I', url:'https://xtech.army.mil/competition/xtechsearch10/', deadline:'2026-10-19', note:'\u201cImmersive and Wearables\u201d is a named portfolio \u2014 best single fit on this board', documents:['White paper (short — not a full proposal)','SAM.gov UEI registration','SBIR.gov SBC control number','Small business status, <500 employees']},
+    {id:'dod-sbir-r2', name:'DoD SBIR FY2026 Release 2', type:'grant', amount:'Phase I scale', url:'https://www.dodsbirsttr.mil/', deadline:'2026-10-21', note:'Check current topics on DSIP for wearable/sensor matches', documents:['DSIP account registration','SAM.gov UEI + SBIR.gov SBC number','Technical volume mapped to a specific DSIP topic','Cost volume']},
+    {id:'nsf-sbir', name:'NSF SBIR/STTR Phase I', type:'grant', amount:'$305,000', url:'https://seedfund.nsf.gov/solicitations/', deadline:'2026-11-04', note:'Project Pitch required first \u2014 start now, not in November', documents:['Approved Project Pitch (mandatory gate)','Technical narrative + commercialization plan','Budget and budget justification','SAM.gov UEI + Research.gov account']},
+    {id:'sxsw', name:'SXSW Pitch \u2014 Health category', type:'visibility', amount:'exposure + investor room', url:'https://sxsw.com/pitch/', deadline:'2026-09-13', note:'Early Bird $105 \u2014 closes tomorrow, Sep 13; final Nov 13 at $225', documents:['Entry fee ($105 early bird / $225 regular)','Pitch deck','Company and product description']},
+    {id:'venturewell', name:'VentureWell E-Team', type:'grant', amount:'$25,000', url:'https://venturewell.org/e-team-program/', deadline:'2026-09-29', note:'Needs a university-affiliated team member', documents:['At least one currently-enrolled US university team member','Venture concept form','Team and technology description']},
+    {id:'sxsw-final', name:'SXSW Pitch \u2014 final deadline', type:'visibility', amount:'exposure + investor room', url:'https://sxsw.com/pitch/', deadline:'2026-11-13', note:'Regular entry $225', documents:['Entry fee ($225)','Pitch deck','Company and product description']},
+    {id:'nih-sbir', name:'NIH SBIR/STTR Omnibus (PA-27-100)', type:'grant', amount:'$400K\u2013$700K+', url:'https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html', deadline:'2027-01-05', note:'Next standard date. Only if Vybe carries a clinical claim', documents:['SAM.gov UEI, eRA Commons, Grants.gov, SBIR.gov registrations (all four)','Specific Aims + Research Strategy','Budget + biosketches','Data-handling / human-subjects plan where PHI is involved']},
+    {id:'arpah-iso', name:'ARPA-H Innovative Solution Openings', type:'grant', amount:'project-scale', url:'https://arpa-h.gov/explore-funding/open-funding-opportunities', deadline:null, note:'Rolling basis \u2014 for projects outside a named program', documents:['Solution summary (first gate)','Technical and management approach','Cost proposal if invited']},
+    {id:'arpah-sbir', name:'ARPA-H SBIR/STTR', type:'grant', amount:'Phase I scale', url:'https://arpa-h.gov/explore-funding/sbir', deadline:null, note:'Watch for the next Solution Summary window', documents:['Solution summary during an open window','SAM.gov UEI + SBIR.gov SBC number']},
     {id:'nsf-digihealth', name:'NSF SBIR \u2014 Digital Health topic', type:'grant', amount:'$305,000', url:'https://seedfund.nsf.gov/topics/digital-health/', deadline:null, note:'The exact topic page to cite in your Project Pitch'},
-    {id:'nsf-pitch', name:'America\u2019s Seed Fund \u2014 Project Pitch', type:'grant', amount:'gateway to $305K \u2192 $2M', url:'https://seedfund.nsf.gov/project-pitch/', deadline:null, note:'Rolling, ~2 pages. Mandatory gate before any NSF full proposal \u2014 this is the actual first step'},
-    {id:'ssbci-ta', name:'NYS SSBCI Technical Assistance', type:'grant', amount:'free legal + accounting + financial advising', url:'https://esd.ny.gov/ssbci-technical-assistance-program', deadline:null, note:'NY only, rolling. Free counsel for VSB (<10 employees) or SEDI-owned \u2014 could cover the SDK-licensing/HIPAA structuring work'},
-    {id:'dprize', name:'D-Prize', type:'grant', amount:'$20,000', url:'https://www.d-prize.org/', deadline:null, note:'Rolling. Poor fit \u2014 funds distribution of proven poverty interventions in developing countries, not deep-tech hardware'},
-    {id:'fund2030', name:'2030 Fund', type:'grant', amount:'$100K\u2013$1.5M', url:'https://www.2030fund.com/', deadline:null, note:'Not eligible \u2014 climate tech only, and requires a Massachusetts-based company'},
-    {id:'army-sbir', name:'Army SBIR \u2014 Wearable Physiological Monitoring', type:'grant', amount:'$150,000', url:'https://armysbir.army.mil/topics/wearable-technologies-physiological-monitoring/', deadline:null, note:'Rolling on DSIP \u2014 check current open cycle'},
-    {id:'icorps', name:'NSF I-Corps', type:'grant', amount:'$50,000', url:'https://www.nsf.gov/funding/opportunities/nsf-national-innovation-corps-teams-nsf-national-i-corps-tm/nsf25-549/solicitation', deadline:null, note:'Start with a regional Short Course \u2014 no fixed date'},
-    {id:'mep', name:'NIST MEP manufacturing voucher', type:'grant', amount:'up to $65,000', url:'https://www.nist.gov/mep', deadline:null, note:'Call your state MEP center \u2014 free initial assessment'},
-    {id:'amber', name:'Amber Grant', type:'grant', amount:'$10,000/mo + $25,000/yr', url:'https://ambergrantsforwomen.com/', deadline:null, note:'Monthly rolling, women-owned'},
-    {id:'ifundwomen', name:'IFundWomen Universal Grant App', type:'grant', amount:'$1,000\u2013$25,000', url:'https://ifundwomen.com/grants', deadline:null, note:'One form, matched to multiple partner grants'},
-    {id:'hersuitespot', name:'HerSuiteSpot Grant', type:'grant', amount:'$1,000', url:'https://hersuitespot.com/grant/', deadline:null, note:'Recurring, bridge cash only'},
-    {id:'rwjf', name:'Robert Wood Johnson Foundation', type:'grant', amount:'up to $500,000', url:'https://www.rwjf.org/en/grants/funding-opportunities.html', deadline:null, note:'Health-equity framing required; watch for matching RFP'},
-    {id:'wellcomeleap', name:'Wellcome Leap', type:'grant', amount:'program-scale, multi-$M', url:'https://wellcomeleap.org/', deadline:null, note:'Women\u2019s health programs launching 2026'},
-    {id:'cornell-cat', name:'Cornell CAT Grant', type:'grant', amount:'$75K matched 1:1 (up to $150K)', url:'https://biotech.cornell.edu/commercialization-cat', deadline:'2026-10-30', note:'NY only. Needs a Cornell faculty PI co-applicant + Vybe as the NY-state industry partner \u2014 not a solo apply'},
-    {id:'nystar-img', name:'NYSTAR Innovation Matching Grants', type:'grant', amount:'$100K (Ph I) / $200K (Ph II)', url:'https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf', deadline:'2026-10-20', note:'NY only. Window is ONE WEEK: opens Wed Oct 14 9am, closes Tue Oct 20 5pm. Matches up to 50% of a federal SBIR/STTR award'},
-    {id:'ny-ventures-seed', name:'NY Ventures Pre-Seed & Seed Matching Fund', type:'grant', amount:'$50K\u2013$250K equity, 1:1 match', url:'https://esd.ny.gov/pre-seed-and-seed-matching-fund-program', deadline:null, note:'NY only, rolling. Needs <$2M raised to date + a C-suite seat in-state'},
-    {id:'fuzehub-mfg', name:'FuzeHub Jeff Lawrence Manufacturing Grants', type:'grant', amount:'up to $65,000', url:'https://fuzehub.com/innovation-fund/', deadline:null, note:'NY only. 2026 round closed May 7 \u2014 next opens ~Apr 2027. A NY nonprofit/university applies, Vybe partners'},
-    {id:'activate', name:'Activate Fellowship', type:'grant', amount:'$300K+ over 2 yrs, 0% equity', url:'https://www.activate.org/fellowship', deadline:null, note:'2026 cohort closed Oct 2025 \u2014 next cycle typically opens ~Oct. Needs 4+ yrs post-bacc research/engineering experience'},
-    {id:'hax', name:'HAX (SOSV)', type:'accelerator', amount:'$250K\u2013$550K / 8\u201316%', url:'https://www.hax.co/apply', deadline:null, note:'Rolling \u2014 needs a working prototype'},
-    {id:'elevx', name:'Elev X! (NEC X)', type:'accelerator', amount:'$250K SAFE / up to 11%', url:'https://elevx.necx.us/', deadline:null, note:'Rolling, hardware/deep-tech specific'},
-    {id:'techstars', name:'Techstars', type:'accelerator', amount:'$220K / ~5% + SAFE', url:'https://www.techstars.com/accelerators', deadline:null, note:'Rolling by metro/vertical cohort'},
-    {id:'techstars-sports', name:'Techstars Sports Accelerator (Indy)', type:'accelerator', amount:'$20K / 6% + SAFE', url:'https://www.techstars.com/blog/techstars-sports-accelerator-powered-by-indy', deadline:null, note:'45+ portfolio cos in wearables & connected fitness'},
-    {id:'comcast-sportstech', name:'Comcast SportsTech Accelerator', type:'accelerator', amount:'equity \u2014 10 startups/yr', url:'https://www.comcastsportstech.com/', deadline:null, note:'Athlete performance track; PGA Tour / Premier League access'},
-    {id:'yc', name:'Y Combinator', type:'accelerator', amount:'$500,000 deal', url:'https://www.ycombinator.com/apply', deadline:null, note:'Rolling batches \u2014 check site for current window'},
-    {id:'plugplay', name:'Plug and Play', type:'accelerator', amount:'0\u20137% equity', url:'https://www.plugandplaytechcenter.com/apply/', deadline:null, note:'Rolling, corporate-partner network'},
-    {id:'gener8tor', name:'gener8tor', type:'accelerator', amount:'$100K+$20K / 6\u20137%', url:'https://www.gener8tor.com/apply', deadline:null, note:'Rolling by metro cohort'},
-    {id:'alchemist', name:'Alchemist Accelerator', type:'accelerator', amount:'$36,000 / 5%', url:'https://www.alchemistaccelerator.com/apply', deadline:null, note:'For the B2B SDK side, not the hardware'},
-    {id:'jlabs', name:'J&J JLABS', type:'accelerator', amount:'0% equity, lab space', url:'https://jlabs.jnjinnovation.com/', deadline:null, note:'Rolling by site \u2014 best if clinical'},
-    {id:'nvidia-gpuventures', name:'NVIDIA GPU Ventures Program', type:'accelerator', amount:'$500K\u2013$5M (equity)', url:'https://www.nvidia.com/en-us/startups/', deadline:null, note:'Rolling \u2014 requires a business plan built around GPU-driven compute'},
-    {id:'elbowgrease', name:'Elbow Grease (Gutter Capital)', type:'accelerator', amount:'$300,000 investment', url:'https://elbowgrease.cc/', deadline:null, note:'Cohort 2 closed Jul 31 and is running now (Sep 15\u2013Nov 19, 2026). NYC 10-wk residency, \u226415 companies \u2014 watch for cohort 3'},
-    {id:'medtech', name:'MedTech Innovator', type:'accelerator', amount:'0% to enter, prize pool', url:'https://medtechinnovator.org/apply/', deadline:null, note:'Annual cycle \u2014 watch for next window'},
-    {id:'masschallenge', name:'MassChallenge', type:'accelerator', amount:'$0 equity, prize pool', url:'https://masschallenge.org/', deadline:null, note:'Watch for next cohort application window'},
-    {id:'tcbattlefield', name:'TechCrunch Startup Battlefield', type:'visibility', amount:'$100,000 equity-free', url:'https://techcrunch.com/startup-battlefield/', deadline:null, note:'Applications reopen ~May each year for the fall Disrupt'},
-    {id:'ces', name:'CES Innovation Awards', type:'visibility', amount:'award badge + press', url:'https://www.ces.tech/ces-innovation-awards/innovation-awards/application-information/', deadline:null, note:'Next cycle opens ~June \u2014 product must be new to market'},
-    {id:'kickstarter', name:'Kickstarter (pre-order raise)', type:'visibility', amount:'pre-orders, no equity', url:'https://www.kickstarter.com/', deadline:null, note:'Tech hardware is its strongest category'},
-    {id:'indiegogo', name:'Indiegogo (pre-order raise)', type:'visibility', amount:'pre-orders, no equity', url:'https://www.indiegogo.com/', deadline:null, note:'Wearables specifically perform well here'},
-    {id:'producthunt', name:'Product Hunt launch', type:'visibility', amount:'free \u2014 dev audience', url:'https://www.producthunt.com/', deadline:null, note:'Good fit for the SDK/developer side'}
+    {id:'nsf-pitch', name:'America\u2019s Seed Fund \u2014 Project Pitch', type:'grant', amount:'gateway to $305K \u2192 $2M', url:'https://seedfund.nsf.gov/project-pitch/', deadline:null, note:'Rolling, ~2 pages. Mandatory gate before any NSF full proposal \u2014 this is the actual first step', documents:['Project Pitch (~2 pages): innovation, technical risk, commercial potential, team','SAM.gov UEI registration (weeks of lead time)','SBIR.gov SBC control number']},
+    {id:'ssbci-ta', name:'NYS SSBCI Technical Assistance', type:'grant', amount:'free legal + accounting + financial advising', url:'https://esd.ny.gov/ssbci-technical-assistance-program', deadline:null, note:'NY only, rolling. Free counsel for VSB (<10 employees) or SEDI-owned \u2014 could cover the SDK-licensing/HIPAA structuring work', documents:['Business formation documents','Proof of VSB (<10 employees) or SEDI-owned status','Description of the help needed']},
+    {id:'dprize', name:'D-Prize', type:'grant', amount:'$20,000', url:'https://www.d-prize.org/', deadline:null, note:'Rolling. Poor fit \u2014 funds distribution of proven poverty interventions in developing countries, not deep-tech hardware', documents:['Distribution plan for a proven intervention','Team description']},
+    {id:'fund2030', name:'2030 Fund', type:'grant', amount:'$100K\u2013$1.5M', url:'https://www.2030fund.com/', deadline:null, note:'Not eligible \u2014 climate tech only, and requires a Massachusetts-based company', documents:['Massachusetts-based company','Climate-tech thesis','Pitch deck']},
+    {id:'army-sbir', name:'Army SBIR \u2014 Wearable Physiological Monitoring', type:'grant', amount:'$150,000', url:'https://armysbir.army.mil/topics/wearable-technologies-physiological-monitoring/', deadline:null, note:'Rolling on DSIP \u2014 check current open cycle', documents:['DSIP registration','Proposal against the named topic','Capability pitch to Army stakeholders','Feasibility study + transition plan if awarded']},
+    {id:'icorps', name:'NSF I-Corps', type:'grant', amount:'$50,000', url:'https://www.nsf.gov/funding/opportunities/nsf-national-innovation-corps-teams-nsf-national-i-corps-tm/nsf25-549/solicitation', deadline:null, note:'Start with a regional Short Course \u2014 no fixed date', documents:['Completed regional I-Corps course (or NSF lineage)','Team: Entrepreneurial Lead, Technical Lead, Industry Mentor','Executive summary for the national cohort']},
+    {id:'mep', name:'NIST MEP manufacturing voucher', type:'grant', amount:'up to $65,000', url:'https://www.nist.gov/mep', deadline:null, note:'Call your state MEP center \u2014 free initial assessment', documents:['Intake call with your state MEP center','Scope of the engineering/DFM work requested']},
+    {id:'amber', name:'Amber Grant', type:'grant', amount:'$10,000/mo + $25,000/yr', url:'https://ambergrantsforwomen.com/', deadline:null, note:'Monthly rolling, women-owned', documents:['Short online application','Business description']},
+    {id:'ifundwomen', name:'IFundWomen Universal Grant App', type:'grant', amount:'$1,000\u2013$25,000', url:'https://ifundwomen.com/grants', deadline:null, note:'One form, matched to multiple partner grants', documents:['Universal grant application','Business description']},
+    {id:'hersuitespot', name:'HerSuiteSpot Grant', type:'grant', amount:'$1,000', url:'https://hersuitespot.com/grant/', deadline:null, note:'Recurring, bridge cash only', documents:['Short online application']},
+    {id:'rwjf', name:'Robert Wood Johnson Foundation', type:'grant', amount:'up to $500,000', url:'https://www.rwjf.org/en/grants/funding-opportunities.html', deadline:null, note:'Health-equity framing required; watch for matching RFP', documents:['Match to an open RFP (not an open call)','Health-equity framing','Project narrative + budget']},
+    {id:'wellcomeleap', name:'Wellcome Leap', type:'grant', amount:'program-scale, multi-$M', url:'https://wellcomeleap.org/', deadline:null, note:'Women\u2019s health programs launching 2026', documents:['Match to an active Leap program call','Technical proposal to that program\'s milestones']},
+    {id:'cornell-cat', name:'Cornell CAT Grant', type:'grant', amount:'$75K matched 1:1 (up to $150K)', url:'https://biotech.cornell.edu/commercialization-cat', deadline:'2026-10-30', note:'NY only. Needs a Cornell faculty PI co-applicant + Vybe as the NY-state industry partner \u2014 not a solo apply', documents:['Cornell faculty PI as lead applicant','Signed 1:1 cash match commitment','Joint research plan with commercial milestones','NY economic-impact statement']},
+    {id:'nystar-img', name:'NYSTAR Innovation Matching Grants', type:'grant', amount:'$100K (Ph I) / $200K (Ph II)', url:'https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf', deadline:'2026-10-20', note:'NY only. Window is ONE WEEK: opens Wed Oct 14 9am, closes Tue Oct 20 5pm. Matches up to 50% of a federal SBIR/STTR award', documents:['Proof of federal SBIR/STTR award or pending application','NY State business registration','Commercialization plan','Financials and employee count (<=100)']},
+    {id:'ny-ventures-seed', name:'NY Ventures Pre-Seed & Seed Matching Fund', type:'grant', amount:'$50K\u2013$250K equity, 1:1 match', url:'https://esd.ny.gov/pre-seed-and-seed-matching-fund-program', deadline:null, note:'NY only, rolling. Needs <$2M raised to date + a C-suite seat in-state', documents:['Pitch deck','Proof of qualified 1:1 private investment','Cap table (<$2M dilutive raised)','NY registration + C-suite seat in-state']},
+    {id:'fuzehub-mfg', name:'FuzeHub Jeff Lawrence Manufacturing Grants', type:'grant', amount:'up to $65,000', url:'https://fuzehub.com/innovation-fund/', deadline:null, note:'NY only. 2026 round closed May 7 \u2014 next opens ~Apr 2027. A NY nonprofit/university applies, Vybe partners', documents:['A NY nonprofit or university as lead applicant','Partnership project plan','Budget + NY economic-impact statement']},
+    {id:'activate', name:'Activate Fellowship', type:'grant', amount:'$300K+ over 2 yrs, 0% equity', url:'https://www.activate.org/fellowship', deadline:null, note:'2026 cohort closed Oct 2025 \u2014 next cycle typically opens ~Oct. Needs 4+ yrs post-bacc research/engineering experience', documents:['CV showing 4+ years post-bacc research/engineering experience','Technical proposal and two-year plan','References']},
+    {id:'hax', name:'HAX (SOSV)', type:'accelerator', amount:'$250K\u2013$550K / 8\u201316%', url:'https://www.hax.co/apply', deadline:null, note:'Rolling \u2014 needs a working prototype', documents:['Working prototype (not a sketch)','Pitch deck','Committed founding team, not solo']},
+    {id:'elevx', name:'Elev X! (NEC X)', type:'accelerator', amount:'$250K SAFE / up to 11%', url:'https://elevx.necx.us/', deadline:null, note:'Rolling, hardware/deep-tech specific', documents:['Pitch deck','Technical/product overview']},
+    {id:'techstars', name:'Techstars', type:'accelerator', amount:'$220K / ~5% + SAFE', url:'https://www.techstars.com/accelerators', deadline:null, note:'Rolling by metro/vertical cohort', documents:['Single online application','Pitch deck','Interview if shortlisted']},
+    {id:'techstars-sports', name:'Techstars Sports Accelerator (Indy)', type:'accelerator', amount:'$20K / 6% + SAFE', url:'https://www.techstars.com/blog/techstars-sports-accelerator-powered-by-indy', deadline:null, note:'45+ portfolio cos in wearables & connected fitness', documents:['Single online application','Pitch deck']},
+    {id:'comcast-sportstech', name:'Comcast SportsTech Accelerator', type:'accelerator', amount:'equity \u2014 10 startups/yr', url:'https://www.comcastsportstech.com/', deadline:null, note:'Athlete performance track; PGA Tour / Premier League access', documents:['Application with athlete-performance use case','Pitch deck']},
+    {id:'yc', name:'Y Combinator', type:'accelerator', amount:'$500,000 deal', url:'https://www.ycombinator.com/apply', deadline:null, note:'Rolling batches \u2014 check site for current window', documents:['Short online application form','Founder video','10-minute interview if selected']},
+    {id:'plugplay', name:'Plug and Play', type:'accelerator', amount:'0\u20137% equity', url:'https://www.plugandplaytechcenter.com/apply/', deadline:null, note:'Rolling, corporate-partner network', documents:['Application through a corporate-partner track','Pitch deck']},
+    {id:'gener8tor', name:'gener8tor', type:'accelerator', amount:'$100K+$20K / 6\u20137%', url:'https://www.gener8tor.com/apply', deadline:null, note:'Rolling by metro cohort', documents:['Application through a metro cohort','Pitch deck']},
+    {id:'alchemist', name:'Alchemist Accelerator', type:'accelerator', amount:'$36,000 / 5%', url:'https://www.alchemistaccelerator.com/apply', deadline:null, note:'For the B2B SDK side, not the hardware', documents:['Enterprise/B2B revenue thesis','Pitch deck']},
+    {id:'jlabs', name:'J&J JLABS', type:'accelerator', amount:'0% equity, lab space', url:'https://jlabs.jnjinnovation.com/', deadline:null, note:'Rolling by site \u2014 best if clinical', documents:['Site-specific application','Scientific/technical plan']},
+    {id:'nvidia-gpuventures', name:'NVIDIA GPU Ventures Program', type:'accelerator', amount:'$500K\u2013$5M (equity)', url:'https://www.nvidia.com/en-us/startups/', deadline:null, note:'Rolling \u2014 requires a business plan built around GPU-driven compute', documents:['Business plan built around GPU-driven compute','Pitch deck','Funding history']},
+    {id:'elbowgrease', name:'Elbow Grease (Gutter Capital)', type:'accelerator', amount:'$300,000 investment', url:'https://elbowgrease.cc/', deadline:null, note:'Cohort 2 closed Jul 31 and is running now (Sep 15\u2013Nov 19, 2026). NYC 10-wk residency, \u226415 companies \u2014 watch for cohort 3', documents:['Application during an open cohort window','Pitch deck','Ability to be in NYC for the 10-week residency']},
+    {id:'medtech', name:'MedTech Innovator', type:'accelerator', amount:'0% to enter, prize pool', url:'https://medtechinnovator.org/apply/', deadline:null, note:'Annual cycle \u2014 watch for next window', documents:['Application during the annual window','Pitch deck','Regulatory pathway summary']},
+    {id:'masschallenge', name:'MassChallenge', type:'accelerator', amount:'$0 equity, prize pool', url:'https://masschallenge.org/', deadline:null, note:'Watch for next cohort application window', documents:['Application during an open cohort window (no fee, no equity)','Company and product description']},
+    {id:'tcbattlefield', name:'TechCrunch Startup Battlefield', type:'visibility', amount:'$100,000 equity-free', url:'https://techcrunch.com/startup-battlefield/', deadline:null, note:'Applications reopen ~May each year for the fall Disrupt', documents:['Application during the ~May window','Pitch deck','Live demo capability']},
+    {id:'ces', name:'CES Innovation Awards', type:'visibility', amount:'award badge + press', url:'https://www.ces.tech/ces-innovation-awards/innovation-awards/application-information/', deadline:null, note:'Next cycle opens ~June \u2014 product must be new to market', documents:['Product new to market between Apr 1 and Mar 31 of the award year','Entry fee','Product images and description']},
+    {id:'kickstarter', name:'Kickstarter (pre-order raise)', type:'visibility', amount:'pre-orders, no equity', url:'https://www.kickstarter.com/', deadline:null, note:'Tech hardware is its strongest category', documents:['Campaign page + video','Manufacturing and fulfillment plan','Pricing and reward tiers']},
+    {id:'indiegogo', name:'Indiegogo (pre-order raise)', type:'visibility', amount:'pre-orders, no equity', url:'https://www.indiegogo.com/', deadline:null, note:'Wearables specifically perform well here', documents:['Campaign page + video','Manufacturing and fulfillment plan']},
+    {id:'producthunt', name:'Product Hunt launch', type:'visibility', amount:'free \u2014 dev audience', url:'https://www.producthunt.com/', deadline:null, note:'Good fit for the SDK/developer side', documents:['Launch assets: logo, screenshots, tagline','Working product link']}
   ];
 
   var INVESTORS = [
@@ -268,7 +295,16 @@
     var dt = new Date(d+'T00:00:00');
     return dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
   }
-  function amountNum(s){ var m = s.match(/[\d,.]+/); return m ? parseFloat(m[0].replace(/,/g,'')) : 0; }
+  function amountNum(s){ var m = String(s||'').match(/[\d,.]+/); return m ? parseFloat(m[0].replace(/,/g,'')) : 0; }
+
+  // funding.json is generated by CI from third-party APIs. Everything from it
+  // lands in innerHTML, so escape it rather than trusting an agency feed not to
+  // contain markup.
+  function esc(value){
+    return String(value == null ? '' : value)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
 
   var STATUS_OPTS = ['Not started','Researching','Applied','Interview','Won','Passed'];
   function loadProgress(id){ try{ return localStorage.getItem('vybe-fund-'+id) || 'Not started'; }catch(e){ return 'Not started'; } }
@@ -312,19 +348,39 @@
       return a.name.localeCompare(b.name);
     });
 
-    rowsEl.innerHTML = filtered.map(function(g){
+    rowsEl.innerHTML = filtered.map(function(g, i){
       var deadlineTxt = g.deadline ? fmtDate(g.deadline) + (g.days<0 ? ' (passed)' : ' ('+g.days+'d)') : g.note;
-      return '<tr class="'+rowClass(g.cls)+'">'+
-        '<td class="name"><a href="'+g.url+'" target="_blank" rel="noopener">'+g.name+'</a><div class="type-tag">'+g.type+'</div></td>'+
-        '<td class="amt">'+g.amount+'</td>'+
+      var hasDocs = Array.isArray(g.documents) && g.documents.length;
+      var docsId = 'docs-' + i;
+      var main = '<tr class="'+rowClass(g.cls)+'">'+
+        '<td class="name"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(g.name)+'</a>'+
+          '<div class="type-tag">'+esc(g.type)+'</div>'+
+          (hasDocs ? '<button type="button" class="docs-toggle" aria-expanded="false" aria-controls="'+docsId+'" data-target="'+docsId+'">+ '+g.documents.length+' docs needed</button>' : '')+
+        '</td>'+
+        '<td class="amt">'+esc(g.amount)+'</td>'+
         '<td>'+pillHtml(g.cls,g)+'</td>'+
-        '<td class="deadline">'+deadlineTxt+'</td>'+
+        '<td class="deadline">'+esc(deadlineTxt)+'</td>'+
         '<td><select class="status-sel" data-id="'+g.id+'">'+STATUS_OPTS.map(function(o){return '<option'+(o===loadProgress(g.id)?' selected':'')+'>'+o+'</option>';}).join('')+'</select></td>'+
         '</tr>';
+      if(!hasDocs) return main;
+      return main + '<tr class="docs-row" id="'+docsId+'" hidden><td colspan="5">'+
+        '<div class="docs-panel"><div class="dh">Required to apply</div><ul>'+
+        g.documents.map(function(d){ return '<li>'+esc(d)+'</li>'; }).join('')+
+        '</ul></div></td></tr>';
     }).join('');
 
     Array.prototype.forEach.call(rowsEl.querySelectorAll('select.status-sel'), function(sel){
       sel.addEventListener('change', function(){ saveProgress(sel.getAttribute('data-id'), sel.value); });
+    });
+    Array.prototype.forEach.call(rowsEl.querySelectorAll('.docs-toggle'), function(btn){
+      btn.addEventListener('click', function(){
+        var panel = document.getElementById(btn.getAttribute('data-target'));
+        if(!panel) return;
+        var open = !panel.hidden;
+        panel.hidden = open;
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.textContent = (open ? '+ ' : '− ') + panel.querySelectorAll('li').length + ' docs needed';
+      });
     });
   }
 
@@ -411,7 +467,8 @@
         amount: row.amount || 'see solicitation',
         url: row.url,
         deadline: row.close_date || null,
-        note: row.summary || row.eligibility || ''
+        note: row.summary || row.eligibility || '',
+        documents: Array.isArray(row.documents) ? row.documents : []
       };
     });
 
