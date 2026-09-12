@@ -83,6 +83,11 @@ jobs:
           echo "================ BLOCKED / NO ANSWER ================"
           awk -F'\t' '$1 == "401" || $1 == "403" || $1 == "429" || $1 == "000" {print "  " $1 "  " $2}' /tmp/results.tsv || true
           echo
+          echo "================ SOFT 404 (200, but landed on an error page) ================"
+          # The CDMRP press-release link returned 200 while redirecting to
+          # /404?aspxerrorpath=... A status code alone would have called that healthy.
+          awk -F'\t' '$1 ~ /^2/ && ($3 ~ /[?&\/]404([?&\/]|$)/ || $3 ~ /aspxerrorpath/ || $3 ~ /maint\.html/ || $3 ~ /[Nn]ot[-_]?[Ff]ound/) {print "  " $1 "  " $2 "\n      -> " $3}' /tmp/results.tsv || true
+          echo
           echo "================ OTHER NON-2xx ================"
           awk -F'\t' '$1 !~ /^2/ && $1 != "404" && $1 != "410" && $1 != "401" && $1 != "403" && $1 != "429" && $1 != "000" {print "  " $1 "  " $2}' /tmp/results.tsv || true
           echo
