@@ -1,0 +1,92 @@
+# Resolve every link on the research board.
+#
+# The board ships with "0 Fetch-verified" because the sweep that built it ran
+# where outbound fetches are blocked — every summary came from search-result
+# text, not from the document. This workflow is the way out of that: a runner
+# has open internet, so it resolves each URL and reports what actually came back.
+#
+# It does not edit the board. It produces evidence; updating the entries is a
+# separate, deliberate step.
+#
+# Read the output honestly. A 403 from a .mil host is usually a bot filter, not
+# a dead link — that is "blocked", not "gone". Only 404/410 is proof of death.
+name: Verify board links
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly, Mondays 13:00 UTC. Link rot on .mil domains is constant.
+    - cron: '0 13 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve every URL on the board
+        run: |
+          set -uo pipefail
+          BOARD=healthcare/dashboards/h2f-scout-board.html
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36'
+
+          grep -o 'href="http[^"]*"' "$BOARD" | sed 's/href="//;s/"$//' | sort -u > /tmp/urls
+          total=$(wc -l </tmp/urls | tr -d ' ')
+          echo "Resolving $total unique URLs from $BOARD"
+          echo
+
+          : > /tmp/results.tsv
+          while IFS= read -r url; do
+            # -L follows redirects; a HEAD is enough for most, fall back to a
+            # ranged GET for hosts that reject HEAD.
+            code=$(curl -sS -A "$UA" -o /dev/null -w '%{http_code}' \
+                     -L --max-time 25 --retry 1 --retry-delay 2 -I "$url" 2>/dev/null || echo 000)
+            if [ "$code" = "000" ] || [ "$code" = "405" ] || [ "$code" = "501" ]; then
+              code=$(curl -sS -A "$UA" -o /dev/null -w '%{http_code}' \
+                       -L --max-time 25 -r 0-2048 "$url" 2>/dev/null || echo 000)
+            fi
+            final=$(curl -sS -A "$UA" -o /dev/null -w '%{url_effective}' \
+                      -L --max-time 25 -r 0-0 "$url" 2>/dev/null || echo "$url")
+            printf '%s\t%s\t%s\n' "$code" "$url" "$final" >> /tmp/results.tsv
+            printf '  %s  %s\n' "$code" "$url"
+          done < /tmp/urls
+
+          echo
+          echo "================ SUMMARY ================"
+          alive=$(awk -F'\t' '$1 ~ /^2/' /tmp/results.tsv | wc -l | tr -d ' ')
+          dead=$(awk -F'\t' '$1 == "404" || $1 == "410"' /tmp/results.tsv | wc -l | tr -d ' ')
+          blocked=$(awk -F'\t' '$1 == "403" || $1 == "401" || $1 == "429"' /tmp/results.tsv | wc -l | tr -d ' ')
+          unreach=$(awk -F'\t' '$1 == "000"' /tmp/results.tsv | wc -l | tr -d ' ')
+          other=$(( total - alive - dead - blocked - unreach ))
+          echo "  total     $total"
+          echo "  2xx alive $alive"
+          echo "  404/410   $dead      <- genuinely gone, fix or drop these"
+          echo "  401/403/429 $blocked  <- reachable host, refused the robot; NOT proof of death"
+          echo "  no answer $unreach    <- timeout/TLS/DNS"
+          echo "  other     $other"
+
+          echo
+          echo "================ DEAD (404/410) ================"
+          awk -F'\t' '$1 == "404" || $1 == "410" {print "  " $1 "  " $2}' /tmp/results.tsv || true
+          echo
+          echo "================ BLOCKED / NO ANSWER ================"
+          awk -F'\t' '$1 == "401" || $1 == "403" || $1 == "429" || $1 == "000" {print "  " $1 "  " $2}' /tmp/results.tsv || true
+          echo
+          echo "================ REDIRECTED ================"
+          awk -F'\t' '$2 != $3 {print "  " $2 "\n      -> " $3}' /tmp/results.tsv || true
+
+          # Evidence for the follow-up edit, not a gate: this job reports, it
+          # does not decide. Never fail the build over a bot filter.
+          echo
+          echo "Reported $total URLs. This job does not fail on dead links — read the lists above."
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: board-link-results
+          path: /tmp/results.tsv
+          retention-days: 30
