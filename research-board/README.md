@@ -10,6 +10,7 @@ The rebuild described in *Tactical HP Board: Brief for the Coder (v2)*, 13 SEP 2
 | `tactical_research/cluster.py` | Collapses many sightings of one document into one item, with articles as coverage underneath. |
 | `tactical_research/models.py` | The board schema, the 30-day window, and the 12-month archive split. |
 | `tactical_research/hot.py` | Hot this month: a tag earns a line at three or more independent items. |
+| `tactical_research/render.py` | The rendered board and archive pages: hot block on top, one filterable feed below. |
 | `tactical_research/sources.json` | The source registry with a sector field, and the non-military search vocabulary. |
 | `tactical_research/standards.json` | The current-standards panel. Hand-edited; the bot only watches each row's page. |
 
@@ -33,9 +34,9 @@ underlying document and may stand on coverage.
 
 ## Not built yet
 
-The rendered board itself — section 4's card design and the page that puts the
-hot block above the feed. Everything it needs is here; what is missing is the
-sweep that fills it, which has to run where fetch works.
+The sweep that fills the board. `render.py` turns items into the page, but
+something has to produce the items, and writing blurbs from primary sources
+means outbound fetch — so that step has to run where fetch works.
 
 ## One thing the brief and the data disagree on
 
