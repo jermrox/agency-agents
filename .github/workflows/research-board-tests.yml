@@ -1,0 +1,31 @@
+# The resolver and the clustering rule decide whether the board can be trusted:
+# they are what keeps one document from appearing as a dozen items written from
+# whichever outlet got there first. Both are pure logic with no network, so they
+# are cheap to test and there is no excuse for not testing them.
+name: Research board tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research-board/**'
+      - '.github/workflows/research-board-tests.yml'
+  pull_request:
+    paths:
+      - 'research-board/**'
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: python -m pip install --quiet pytest
+      - name: Run the tests
+        run: python -m pytest research-board/tests -q
