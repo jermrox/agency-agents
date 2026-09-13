@@ -11,6 +11,11 @@ name: Verify research site
 on:
   workflow_dispatch:
   push:
+    # main only. This checks the LIVE site, which a branch does not control — on
+    # a branch it would grade production's state and go red for reasons the
+    # branch cannot fix, which is how a check earns being ignored.
+    branches:
+      - main
     paths:
       - 'healthcare/dashboards/h2f-scout-board.html'
       - 'scripts/build-netlify-site.sh'
