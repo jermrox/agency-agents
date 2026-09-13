@@ -1,8 +1,20 @@
-# Netlify project: agentresearchsum
+# Shared by every Netlify project built from this repository.
 #
 # This repository is an agent library, not a web root — there is no index.html
 # at the top level. Without a publish directory Netlify serves the bare repo and
 # "/" 404s, so the build step below assembles a real site instead.
+#
+# MORE THAN ONE SITE BUILDS FROM HERE, AND THEY MUST NOT PUBLISH THE SAME THING.
+# The build script branches on Netlify's SITE_NAME so each project gets only its
+# own content:
+#
+#   agentresearchsum -> the H2F tactical research board (Squarespace embed)
+#   agentrevup       -> the Vybe funding tracker (growth/revenue)
+#
+# Adding a third site means adding its name to the case statement in
+# scripts/build-netlify-site.sh. An unrecognized SITE_NAME publishes everything,
+# which is the right default locally and a visible wrong answer in production —
+# if a new site shows both boards, its name is missing from that case.
 
 [build]
   command = "bash scripts/build-netlify-site.sh site"

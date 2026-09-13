@@ -94,3 +94,6 @@ site/
 scripts/netlify/node_modules/
 # …but the Netlify build toolchain pins its versions, so that lockfile is tracked.
 !scripts/netlify/package-lock.json
+
+# Funding sweep scratch output (funding.json itself IS tracked — it's the feed)
+funding-scraper/sweep.log

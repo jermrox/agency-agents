@@ -1,0 +1,849 @@
+# =============================================================================
+# VYBE FUNDING SWEEP -- ZERO-CREDENTIAL CONFIGURATION
+#
+#   python3 -m vybe_funding run --config sources.toml --dry-run
+#
+# Every source runs on an open public API or a hand-verified entry. No API key,
+# no OAuth, no account. Nothing here reads an environment variable.
+#
+# TWO LAYERS, ON PURPOSE
+#   1. API sources (sbir.gov, grants.gov) -- self-maintaining. Close dates come
+#      from the agency, so a solicitation that closes tomorrow is marked closed
+#      the day after without anyone touching this file.
+#   2. The curated layer -- state programs, university vehicles, cloud credits
+#      and accelerators that publish a web page and nothing machine-readable.
+#      Every entry carries `verified`, the date a human last confirmed it. The
+#      run warns when one ages past `stale_days` so this list rots visibly.
+# =============================================================================
+
+[runtime]
+output_dir = "output"
+# Warn when a hand-verified entry has not been rechecked in this many days.
+# Tuned to the biweekly sweep cadence: ~3 sweeps before a nag.
+stale_days = 45
+
+
+# -----------------------------------------------------------------------------
+# 1. SBIR.gov -- all eleven federal SBIR/STTR agencies in one keyless call
+# -----------------------------------------------------------------------------
+[sources.sbir]
+kind = "sbir_gov"
+rows = 300
+# Keyword gate. A solicitation must mention one of these in its title or
+# description to reach the board -- without it this returns several hundred
+# rows a cycle, most of them submarine hulls and reactor coatings.
+keywords = [
+  "wearable", "sensor", "biosensor", "physiological", "human performance",
+  "digital health", "remote monitoring", "signal processing", "biometric",
+  "sleep", "fatigue", "cognitive", "health monitoring", "telehealth",
+]
+default_amount = "Phase I scale"
+
+
+# -----------------------------------------------------------------------------
+# 2. Grants.gov -- everything federal that is not SBIR/STTR
+# -----------------------------------------------------------------------------
+# One block per keyword: the API takes a single keyword string, and separate
+# blocks keep a zero-result term visible in the run summary instead of hiding
+# inside a combined query.
+
+[sources.grants_wearable]
+kind = "grants_gov"
+keyword = "wearable sensor"
+rows = 40
+statuses = "forecasted|posted"
+
+[sources.grants_digital_health]
+kind = "grants_gov"
+keyword = "digital health monitoring"
+rows = 40
+statuses = "forecasted|posted"
+
+[sources.grants_human_performance]
+kind = "grants_gov"
+keyword = "human performance physiological monitoring"
+rows = 40
+statuses = "forecasted|posted"
+
+
+# -----------------------------------------------------------------------------
+# 3. Curated -- verified by hand, no machine-readable source exists
+# -----------------------------------------------------------------------------
+[sources.curated]
+kind = "curated"
+
+# --- Pillar 2: grants and matched funding ------------------------------------
+
+[[sources.curated.entry]]
+name = "NYSTAR Innovation Matching Grants"
+url = "https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf"
+agency = "Empire State Development (NYSTAR)"
+amount = "$100K (Phase I) / $200K (Phase II)"
+close_date = "2026-10-20"
+open_date = "2026-10-14"
+pillar = 2
+kind = "grant"
+eligibility = "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award"
+note = "ONE WEEK WINDOW: opens 2nd Wed of Oct/Apr at 9am, closes the following Tue 5pm. Matches up to 50% of the federal award."
+documents = [
+  "Proof of federal SBIR/STTR award or pending application",
+  "NY State business registration / proof of NYS residency",
+  "Commercialization plan for the non-federal activities being matched",
+  "Company financials and employee count (<=100)",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Cornell CAT Grant"
+url = "https://biotech.cornell.edu/commercialization-cat"
+agency = "Cornell Center for Advanced Technology"
+amount = "$75K matched 1:1 (up to $150K total)"
+close_date = "2026-10-30"
+open_date = "2026-09-01"
+pillar = 3
+kind = "partnership"
+eligibility = "Cornell faculty PI applies; company partner must be a NY State for-profit"
+note = "Not a solo apply -- needs a Cornell faculty co-PI with Vybe as the NY industry partner."
+documents = [
+  "Cornell faculty PI committed as lead applicant",
+  "Signed 1:1 cash match commitment from Vybe as NY industry partner",
+  "Joint research plan with commercial milestones",
+  "Statement of quantifiable NY State economic impact",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "America's Seed Fund -- NSF Project Pitch"
+url = "https://seedfund.nsf.gov/project-pitch/"
+agency = "National Science Foundation"
+amount = "gateway to $305K Phase I, up to $2M across phases"
+pillar = 2
+kind = "grant"
+eligibility = "US small business; no clinical claim required"
+note = "Rolling, ~2 pages. Mandatory gate before any NSF full proposal -- the actual first step."
+documents = [
+  "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
+  "SAM.gov UEI registration (start early — weeks of lead time)",
+  "SBIR.gov company registration (SBC control number)",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NY Ventures Pre-Seed & Seed Matching Fund"
+url = "https://esd.ny.gov/pre-seed-and-seed-matching-fund-program"
+agency = "Empire State Development"
+amount = "$50K-$250K equity, 1:1 private match"
+pillar = 2
+kind = "grant"
+eligibility = "NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state"
+note = "Rolling. Equity investment, not a grant -- matched against qualified private investment."
+documents = [
+  "Pitch deck",
+  "Proof of qualified private investment to match 1:1",
+  "Cap table showing <$2M dilutive raised to date",
+  "NY State registration + evidence of a C-suite seat in-state",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NYS SSBCI Technical Assistance"
+url = "https://esd.ny.gov/ssbci-technical-assistance-program"
+agency = "Empire State Development"
+amount = "free legal, accounting and financial advising"
+pillar = 2
+kind = "grant"
+eligibility = "NY very small business (<10 employees) or SEDI-owned (<100 employees)"
+note = "Not cash -- free professional services. Could cover the SDK-licensing and HIPAA structuring work."
+documents = [
+  "Business formation documents",
+  "Proof of VSB (<10 employees) or SEDI-owned status",
+  "Description of the legal/accounting/financial help you need",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "FuzeHub Jeff Lawrence Manufacturing Grants"
+url = "https://fuzehub.com/innovation-fund/"
+agency = "FuzeHub / Empire State Development"
+amount = "up to $65,000"
+pillar = 3
+kind = "partnership"
+eligibility = "A NY nonprofit or university applies, partnered with a NY manufacturer"
+note = "2026 round closed May 7. Next opens ~Apr 2027 -- same partner shape as Cornell CAT."
+documents = [
+  "A NY nonprofit or university as the lead applicant",
+  "Project plan pairing the nonprofit with Vybe as the manufacturer partner",
+  "Budget and NY economic-impact statement",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Activate Fellowship"
+url = "https://www.activate.org/fellowship"
+agency = "Activate"
+amount = "$300K+ over two years, 0% equity"
+pillar = 2
+kind = "grant"
+eligibility = "Scientists/engineers with 4+ years post-baccalaureate research or engineering experience"
+note = "2026 cohort closed Oct 2025. Next cycle typically opens ~October."
+documents = [
+  "CV showing 4+ years post-baccalaureate research/engineering experience",
+  "Technical proposal and two-year research plan",
+  "References",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NextCorps Manufacturing Accelerator (Fall 2026)"
+url = "https://manufacturingaccelerator.org/"
+agency = "NextCorps (Rochester, NY)"
+amount = "free — 9-week virtual program"
+close_date = "2026-09-30"
+pillar = 3
+kind = "accelerator"
+eligibility = "Hardware startups with a works-like prototype; advanced materials, medical devices, lab hardware"
+note = "Free, no equity. Prototype-to-mass-production. Info session Sep 23. Closest process fit on this board to Vybe's actual stage."
+documents = [
+  "Works-like hardware prototype (required — not a concept or a render)",
+  "Short online application describing the product and production goal",
+  "Founder time commitment for the 9-week virtual program",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Luminate NY Accelerator"
+url = "https://luminate.org/"
+agency = "Empire State Development / Luminate (Rochester, NY)"
+amount = "$100K initial + up to $2M follow-on"
+pillar = 2
+kind = "accelerator"
+eligibility = "Optics, photonics, imaging and lasers (OPI+L) startups; relocate to Rochester for six months"
+note = "Cohort 9 closed Jan 12, 2026 — watch for cohort 10. Relevant only if Vybe's sensing is optical (PPG is), so check the OPI+L fit before investing time."
+documents = [
+  "Pitch deck with an optics/photonics/imaging (OPI+L) technical core",
+  "Willingness to relocate to Rochester for the six-month program",
+  "Cap table and funding history",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Launch NY Seed Fund"
+url = "https://launchny.org/"
+agency = "Launch NY (Buffalo, NY)"
+amount = "$25K-$100K"
+pillar = 2
+kind = "grant"
+eligibility = "High-growth startup in Upstate NY; hardware/robotics/IoT and healthtech are named focus sectors"
+note = "Rolling. The most active seed fund in NY State by deal count — small checks, but explicitly hardware-friendly."
+documents = [
+  "Pitch deck",
+  "Financial projections",
+  "Evidence of Upstate NY operations",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "CDMRP Combat Readiness-Medical Research Program (CRRP)"
+url = "https://cdmrp.health.mil/funding/crrp"
+agency = "DoD Congressionally Directed Medical Research Programs"
+pillar = 2
+kind = "grant"
+eligibility = "Pre-application through eBRAP is mandatory before the full application"
+note = "FY26 focus areas include battlefield readiness in pre-hospital and operational environments — directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420."
+documents = [
+  "eBRAP pre-application (mandatory gate before the full application)",
+  "Letter of Intent where the award mechanism requires one",
+  "SAM.gov UEI + Grants.gov registration",
+  "Full research plan mapped to a named FY26 focus area",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "CDMRP Peer Reviewed Medical Research Program (PRMRP)"
+url = "https://cdmrp.health.mil/funding/prmrp"
+agency = "DoD Congressionally Directed Medical Research Programs"
+amount = "up to $20M depending on award mechanism"
+pillar = 2
+kind = "grant"
+eligibility = "Pre-application through eBRAP required; topic areas set annually by Congress"
+note = "Part of $1.27B across 34 CDMRP programs in FY26. Check the current topic list for a physiological-monitoring fit before writing."
+documents = [
+  "eBRAP pre-application",
+  "SAM.gov UEI + Grants.gov registration",
+  "Research plan matched to a congressionally-set topic area for the year",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NIST MEP manufacturing voucher"
+url = "https://www.nist.gov/mep"
+agency = "NIST Manufacturing Extension Partnership"
+amount = "up to $65,000, varies by state"
+pillar = 3
+kind = "partnership"
+eligibility = "Routed through your state MEP center, not paid directly to the company"
+note = "Most state centers offer a free initial manufacturability assessment."
+documents = [
+  "Intake call with your state MEP center",
+  "Scope of the engineering/DFM work requested",
+]
+verified = "2026-09-12"
+
+# --- Pillar 1: cost offset (cloud and platform credits) ----------------------
+
+[[sources.curated.entry]]
+name = "Google for Startups Cloud Program"
+url = "https://cloud.google.com/startup/benefits"
+agency = "Google Cloud"
+amount = "up to $350K (AI-first) / $200K (Seed-Series A)"
+pillar = 1
+kind = "credit"
+eligibility = "<5 years old, pre-Series A funding, not a prior GCP program participant"
+note = "Rolling. Straight conversion of credits into retained cash."
+documents = [
+  "Company website and incorporation details",
+  "Funding stage evidence (pre-Series A)",
+  "Google Cloud billing account",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "AWS Activate"
+url = "https://aws.amazon.com/startups/"
+agency = "Amazon Web Services"
+amount = "up to $100K in AWS credits"
+pillar = 1
+kind = "credit"
+note = "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation."
+documents = [
+  "AWS account ID",
+  "Company details; accelerator/VC affiliation code for the higher tiers",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Microsoft for Startups Founders Hub"
+url = "https://www.microsoft.com/en-us/startups"
+agency = "Microsoft"
+amount = "up to $150K Azure credits"
+pillar = 1
+kind = "credit"
+eligibility = "No funding required to apply -- the most accessible entry point of the three"
+note = "Rolling. Start here before the Google and AWS tiers."
+documents = [
+  "Company details and a short product description",
+  "No funding proof required — the most accessible of the three",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NVIDIA Inception"
+url = "https://www.nvidia.com/en-us/startups/"
+agency = "NVIDIA"
+amount = "free -- routes to $100K AWS + $100K DGX Cloud credits"
+pillar = 1
+kind = "credit"
+eligibility = "Incorporated, <10 years old, a website and at least one developer; no revenue required"
+note = "Rolling, no equity, no fee. Typically a 1-4 week decision."
+documents = [
+  "Incorporation documents",
+  "Live company website",
+  "Pitch deck: mission, product, team, traction",
+  "At least one employed developer on staff",
+]
+verified = "2026-09-12"
+
+# --- Pillar 3: university partnership vehicles -------------------------------
+
+[[sources.curated.entry]]
+name = "Rev: Ithaca Prototyping Hardware Accelerator"
+url = "https://www.revithaca.com/hardware/"
+agency = "Cornell / Rev: Ithaca Startup Works"
+amount = "up to $2,000 stipend + prototyping access"
+pillar = 3
+kind = "partnership"
+note = "10-week cohort with a MedTech track. Devices-for-research-access shape."
+documents = [
+  "Prototype or detailed build plan",
+  "Team commitment for the 10-week cohort",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "UC Berkeley CITRIS Foundry"
+url = "https://citrisfoundry.berkeley.edu/"
+agency = "UC Berkeley"
+amount = "fab lab access, no equity"
+pillar = 3
+kind = "partnership"
+note = "Hardware/deep-tech fabrication and engineering mentorship."
+documents = [
+  "UC Berkeley affiliation or sponsoring relationship",
+  "Technical project description",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Berkeley SkyDeck"
+url = "https://skydeck.berkeley.edu/program"
+agency = "UC Berkeley"
+amount = "$200K investment (equity) + Jacobs Institute hardware fab"
+pillar = 3
+kind = "accelerator"
+note = "Six-month cohort, ~20 companies selected per batch."
+documents = [
+  "Pitch deck",
+  "Cap table",
+  "Application through the cohort cycle",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Alabama SBIR/STTR Match"
+url = "https://innovate-alabama.com/"
+agency = "Innovate Alabama"
+amount = "up to $100,000 (50% of federal award)"
+pillar = 2
+kind = "grant"
+eligibility = "Alabama-based small business holding a federal SBIR/STTR award"
+note = "Phase I match. Confirm Vybe's state before working any row in this block."
+documents = [
+  "Federal SBIR/STTR award notice",
+  "Alabama business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Arkansas SBIR Matching Grant"
+url = "https://www.arkansasedc.com/"
+agency = "Arkansas EDC"
+amount = "up to $50,000 (Phase I)"
+pillar = 2
+kind = "grant"
+eligibility = "Arkansas-based small business with a federal Phase I award"
+documents = [
+  "Federal Phase I award notice",
+  "Arkansas business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Illinois SBIR/STTR Matching Program"
+url = "https://dceo.illinois.gov/"
+agency = "Illinois DCEO"
+amount = "up to $75,000 (Phase I)"
+pillar = 2
+kind = "grant"
+eligibility = "Illinois-based small business"
+note = "$5M state commitment. The rolling window ran through Jun 30, 2026 — confirm the current cycle."
+documents = [
+  "Federal Phase I award notice",
+  "Illinois business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Indiana SBIR/STTR Match"
+url = "https://www.iedc.in.gov/"
+agency = "Indiana Economic Development Corp"
+amount = "up to $50,000 per award ($150K lifetime cap)"
+pillar = 2
+kind = "grant"
+eligibility = "Indiana-based small business"
+documents = [
+  "Federal Phase I award notice",
+  "Indiana business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Iowa SBIR/STTR Support"
+url = "https://www.iowaeda.com/"
+agency = "Iowa Economic Development Authority"
+amount = "up to $25,000"
+pillar = 2
+kind = "grant"
+eligibility = "Iowa-based small business"
+documents = [
+  "Federal Phase I award notice",
+  "Iowa business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Kentucky SBIR/STTR Matching Funds"
+url = "https://ced.ky.gov/"
+agency = "Kentucky Cabinet for Economic Development"
+amount = "up to $150,000 (Phase I)"
+pillar = 2
+kind = "grant"
+eligibility = "Kentucky-based small business"
+note = "One of the largest Phase I state matches in the country."
+documents = [
+  "Federal Phase I award notice",
+  "Kentucky business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "New Mexico SBIR Match"
+url = "https://edd.newmexico.gov/"
+agency = "New Mexico EDD"
+amount = "up to $25,000 (Phase I)"
+pillar = 2
+kind = "grant"
+eligibility = "New Mexico-based small business"
+documents = [
+  "Federal Phase I award notice",
+  "New Mexico business registration",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Wisconsin SBIR Advance"
+url = "https://wisconsinctc.org/programs/sbir-and-sttr-guidance/sbiradvance/"
+agency = "WEDC / Center for Technology Commercialization"
+amount = "50% match up to $75,000"
+pillar = 2
+kind = "grant"
+eligibility = "Wisconsin-based small business"
+documents = [
+  "Federal SBIR/STTR award notice",
+  "Wisconsin business registration",
+  "Commercialization plan",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "HLTH USA Startup Pitch Competition"
+url = "https://hlth.com/events/usa/agenda/startup-pitch/"
+agency = "HLTH"
+amount = "$25,000 cash + 2 passes"
+pillar = 2
+kind = "visibility"
+eligibility = "Under 5 years old and less than $8M raised"
+note = "Large health-tech audience; the exposure is worth more than the cash."
+documents = [
+  "Pitch deck",
+  "Proof of <$8M raised and <5 years old",
+  "Application during the event cycle",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Startup Prize: Health"
+url = "https://startupprize.com/health/"
+agency = "Startup Prize"
+amount = "$10,000 cash"
+pillar = 2
+kind = "visibility"
+eligibility = "Health startups; separate FDA and non-FDA tracks"
+note = "The non-FDA track fits a wellness-claim wearable without a regulatory pathway."
+documents = [
+  "Registration",
+  "Pitch deck",
+  "Track selection (FDA vs non-FDA)",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "The MedTech Conference Start-Up Pitch"
+url = "https://themedtechconference.com/start-up-pitch-competition/"
+agency = "AdvaMed"
+amount = "cash award + conference pass"
+pillar = 2
+kind = "visibility"
+eligibility = "Medical device and medtech startups"
+documents = [
+  "Application during the annual window",
+  "Pitch deck",
+  "Regulatory pathway summary",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Xcelerate Startup Competition"
+url = "https://www.worldhealthexpo.com/events/healthcare/tech/whats-on/features/xcelerate-your-startup-pitch-competition/"
+agency = "World Health Expo Tech"
+amount = "$30,000 total prize pool"
+pillar = 2
+kind = "visibility"
+eligibility = "Early-stage and scale-up tracks, ~50 startups pitch"
+documents = [
+  "Application",
+  "Pitch deck",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Hello Tomorrow Global Challenge"
+url = "https://hello-tomorrow.org/global-challenge/"
+agency = "Hello Tomorrow"
+amount = "EUR 100,000 grand prize (EUR 20K / EUR 10K also awarded)"
+pillar = 2
+kind = "visibility"
+eligibility = "Deep tech founders, 120+ countries; free to enter"
+note = "Free entry, no equity. Finalists get access to 1,300+ VC/CVC investors. Watch for the next cycle's January deadline."
+documents = [
+  "Free application",
+  "Technical description of the deep-tech core",
+  "Team information",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "PitchMI"
+url = "https://www.michiganbusiness.org/"
+agency = "Michigan Economic Development Corp"
+amount = "$250,000 per track winner + $1M championship"
+pillar = 2
+kind = "visibility"
+eligibility = "MICHIGAN ONLY — Michigan-based startups"
+note = "Healthcare & Life Sciences is a named track. Only relevant if Vybe has Michigan operations."
+documents = [
+  "Michigan business registration",
+  "Pitch deck",
+  "Application during the cycle",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "MassChallenge BAE Systems Deep-Tech Accelerator"
+url = "https://masschallenge.org/"
+agency = "MassChallenge / BAE Systems"
+amount = "zero equity"
+pillar = 2
+kind = "accelerator"
+eligibility = "Dual-use defense hardware; low-SWaP-C, advanced sensing, real-time data processing"
+note = "Named focus on advanced sensing and real-time data processing — strong thesis fit, and takes no equity."
+documents = [
+  "Application during the cohort window",
+  "Technical description of the sensing/processing core",
+  "Dual-use case",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Brinc"
+url = "https://www.brinc.io/"
+agency = "Brinc"
+amount = "$25,000-$125,000 depending on vertical"
+pillar = 2
+kind = "accelerator"
+eligibility = "Hardware and IoT startups"
+documents = [
+  "Pitch deck",
+  "Prototype status",
+  "Application",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Creative Destruction Lab (CDL) Manufacturing"
+url = "https://creativedestructionlab.com/"
+agency = "Creative Destruction Lab"
+amount = "zero equity"
+pillar = 2
+kind = "accelerator"
+eligibility = "Science and technology ventures; objectives-based mentoring"
+note = "One of the few genuinely zero-equity hardware-relevant programs."
+documents = [
+  "Application during the annual cycle",
+  "Technical and commercial objectives",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Antler"
+url = "https://www.antler.co/"
+agency = "Antler"
+amount = "varies by location"
+pillar = 2
+kind = "accelerator"
+eligibility = "Pre-seed and day-zero founders"
+documents = [
+  "Application",
+  "Founder background",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "500 Global"
+url = "https://500.co/"
+agency = "500 Global"
+amount = "varies by program"
+pillar = 2
+kind = "accelerator"
+eligibility = "Early-stage across sectors"
+documents = [
+  "Application",
+  "Pitch deck",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "South Park Commons"
+url = "https://www.southparkcommons.com/"
+agency = "South Park Commons"
+amount = "Founder Fellowship funding"
+pillar = 2
+kind = "accelerator"
+eligibility = "Pre-idea and early-stage technical founders"
+documents = [
+  "Application",
+  "Technical background",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "W.M. Keck Foundation Science & Engineering Research Program"
+url = "https://www.wmkeck.org/"
+agency = "W.M. Keck Foundation"
+amount = "typically $1M+"
+pillar = 2
+kind = "grant"
+eligibility = "Usually routed through a university; high-risk, high-impact science and engineering"
+note = "Apr 2026 deadline has passed; annual cycle. Institutionally nominated — needs a university partner, so treat as a Pillar 3 vehicle."
+documents = [
+  "University sponsorship / limited-submission nomination",
+  "Concept paper",
+  "High-risk, high-impact technical rationale",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Alfred P. Sloan Foundation — Exploratory Grantmaking in Technology"
+url = "https://sloan.org/programs/digital-technology"
+agency = "Alfred P. Sloan Foundation"
+amount = "varies"
+pillar = 2
+kind = "grant"
+eligibility = "Usually academic or nonprofit applicants"
+note = "Letter of inquiry first. Check current program scope before investing time."
+documents = [
+  "Letter of inquiry",
+  "Project narrative",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Schmidt Sciences"
+url = "https://www.schmidtsciences.org/opportunities/"
+agency = "Schmidt Sciences"
+amount = "varies, $500K-$10M on some programs"
+pillar = 2
+kind = "grant"
+eligibility = "Academic researchers, nonprofits, think tanks"
+note = "DOES NOT ACCEPT UNSOLICITED PROPOSALS — they seek out grantees. Listed so it isn't chased blindly."
+documents = [
+  "Invitation only — no open application",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Secretsos Small Business Grant"
+url = "https://www.secretsos.com/"
+agency = "Secretsos"
+amount = "$2,500"
+close_date = "2026-10-31"
+pillar = 2
+kind = "grant"
+eligibility = "Underserved businesses: woman-, veteran-, or minority-owned"
+documents = [
+  "Short online application",
+  "Proof of qualifying ownership status",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Galaxy Grants"
+url = "https://www.hiddenstarters.com/"
+agency = "Hidden Starters"
+amount = "$2,500"
+pillar = 2
+kind = "grant"
+eligibility = "Women and minority business owners"
+documents = [
+  "Short application",
+  "Business description",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Women's Business Development Council grants"
+url = "https://ctwbdc.org/"
+agency = "WBDC (Connecticut)"
+amount = "$2,500 / $10,000 / $25,000 by tier"
+pillar = 2
+kind = "grant"
+eligibility = "CONNECTICUT ONLY — women-owned small businesses"
+note = "Three tiers: Launch Pad, Ignite, Accelerate."
+documents = [
+  "Connecticut business registration",
+  "Proof of women-owned status",
+  "Business plan / financials by tier",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Women Veterans Giving Small Business Award"
+url = "https://news.va.gov/146401/women-veterans-giving-small-business-award/"
+agency = "Women Veterans Giving"
+amount = "varies"
+pillar = 2
+kind = "grant"
+eligibility = "Women veteran founders"
+note = "Window runs roughly May 1 - Jul 31 annually."
+documents = [
+  "Proof of veteran status",
+  "Business description",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Stephen L. Tadlock Veteran Business Grant"
+url = "https://www.grantwatch.com/"
+agency = "Tadlock"
+amount = "varies"
+pillar = 2
+kind = "grant"
+eligibility = "Veteran-owned businesses"
+note = "Opens ~September annually."
+documents = [
+  "Proof of veteran status",
+  "Application",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "Texas Woman's University Veteran Grant"
+url = "https://twu.edu/center-women-entrepreneurs/"
+agency = "Texas Woman's University"
+amount = "$5,000 (five awarded/yr)"
+close_date = "2026-09-30"
+pillar = 2
+kind = "grant"
+eligibility = "TEXAS-adjacent — veteran-owned businesses"
+note = "Quarterly cycles."
+documents = [
+  "Proof of veteran status",
+  "Application",
+]
+verified = "2026-09-12"
+
+[[sources.curated.entry]]
+name = "NIH SBIR/STTR — April 2027 cycle"
+url = "https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html"
+agency = "NIH / CDC / FDA"
+amount = "$400K-$700K+ by institute"
+close_date = "2027-04-05"
+pillar = 2
+kind = "grant"
+eligibility = "US small business with a health or clinical claim"
+note = "The standard NIH dates are Sep 5, Jan 5 and Apr 5. Listed separately so the later cycle stays visible."
+documents = [
+  "SAM.gov UEI, eRA Commons, Grants.gov and SBIR.gov registrations",
+  "Specific Aims + Research Strategy",
+  "Budget + biosketches",
+]
+verified = "2026-09-12"

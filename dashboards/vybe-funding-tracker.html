@@ -1,0 +1,502 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>Vybe Funding Tracker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#f1efe6; --surface:#faf9f4; --ink:#1c1f1a; --ink-soft:#565c50; --muted:#84887c;
+    --line:#dcd9c9; --line-strong:#c2beac;
+    --accent:#2f6f5e; --accent-ink:#1d493d; --accent-soft:#dbe7e0;
+    --open:#2f6f5e; --open-soft:#dbe7e0;
+    --soon:#a9741f; --soon-soft:#f2e3c6;
+    --closed:#8a8578; --closed-soft:#e7e4d7;
+    --shadow:0 1px 2px rgba(28,31,26,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#14171a; --surface:#1b1f22; --ink:#e9e7dd; --ink-soft:#b4b6a9; --muted:#7d8177;
+      --line:#2a2e29; --line-strong:#3b4038;
+      --accent:#7cc3ab; --accent-ink:#a9dcc7; --accent-soft:#1f332c;
+      --open:#7cc3ab; --open-soft:#1f332c;
+      --soon:#e0ac5a; --soon-soft:#3a2c14;
+      --closed:#8d9089; --closed-soft:#26271f;
+      --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#14171a; --surface:#1b1f22; --ink:#e9e7dd; --ink-soft:#b4b6a9; --muted:#7d8177;
+    --line:#2a2e29; --line-strong:#3b4038;
+    --accent:#7cc3ab; --accent-ink:#a9dcc7; --accent-soft:#1f332c;
+    --open:#7cc3ab; --open-soft:#1f332c;
+    --soon:#e0ac5a; --soon-soft:#3a2c14;
+    --closed:#8d9089; --closed-soft:#26271f;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;padding:0 18px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding-block:28px 60px}
+  h1,h2{font-family:'Newsreader',Georgia,serif;font-weight:600;text-wrap:balance;color:var(--ink);margin:0}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  a{color:var(--accent-ink)}
+
+  header.top{display:flex;flex-direction:column;gap:4px;margin-bottom:20px}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  header.top h1{font-size:clamp(22px,4vw,30px)}
+  .updated{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted)}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:22px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:13px 15px;box-shadow:var(--shadow)}
+  .stat .n{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;line-height:1}
+  .stat .l{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .stat.open .n{color:var(--open)}
+  .stat.soon .n{color:var(--soon)}
+  .stat.closed .n{color:var(--closed)}
+
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.02em;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);padding:6px 12px;border-radius:20px;cursor:pointer;user-select:none;transition:background .12s,color .12s}
+  .chip:hover{border-color:var(--accent)}
+  .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+  .spacer{flex:1}
+  select#sortSel{font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);padding:6px 10px;border-radius:6px}
+
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:13px}
+  thead th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:10px 12px;border-bottom:1px solid var(--line-strong);white-space:nowrap;position:sticky;top:0;background:var(--surface)}
+  tbody td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle;color:var(--ink-soft)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr{border-left:3px solid transparent}
+  tbody tr.st-open{border-left-color:var(--open)}
+  tbody tr.st-soon{border-left-color:var(--soon)}
+  tbody tr.st-closed{border-left-color:var(--closed);opacity:.72}
+  td.name{color:var(--ink);font-weight:600}
+  td.name a{color:inherit;text-decoration-color:var(--line-strong);text-underline-offset:2px}
+  td.name a:hover{text-decoration-color:currentColor}
+  .type-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  td.amt{font-family:'IBM Plex Mono',monospace;color:var(--ink);white-space:nowrap}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .pill.open{background:var(--open-soft);color:var(--open)}
+  .pill.soon{background:var(--soon-soft);color:var(--soon)}
+  .pill.closed{background:var(--closed-soft);color:var(--closed)}
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+  td.deadline{font-family:'IBM Plex Mono',monospace;color:var(--ink-soft);white-space:nowrap;font-size:12.5px}
+  select.status-sel{font-family:'Public Sans',sans-serif;font-size:12.5px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);padding:5px 8px;border-radius:6px;width:100%;max-width:130px}
+
+  section.investors{margin-top:40px}
+  section.investors h2{font-size:19px;margin-bottom:4px}
+  .inv-sub{color:var(--muted);font-size:13px;margin:0 0 16px;max-width:64ch;line-height:1.55}
+  .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .inv-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;box-shadow:var(--shadow)}
+  .inv-card .nm{font-weight:600;font-size:13.5px;color:var(--ink)}
+  .inv-card .nm a{color:inherit}
+  .inv-card .st{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
+
+  .prereq{background:var(--surface);border:1px solid var(--soon);border-left:3px solid var(--soon);border-radius:8px;padding:14px 16px;margin-bottom:20px}
+  .prereq h3{font-family:'Newsreader',Georgia,serif;font-size:15.5px;margin:0 0 6px;color:var(--ink)}
+  .prereq p{margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--ink-soft)}
+  .prereq ol{margin:0;padding-left:20px}
+  .prereq li{font-size:13px;line-height:1.6;color:var(--ink-soft);margin-bottom:3px}
+  .prereq li b{color:var(--ink)}
+
+  tr.docs-row td{padding:0 12px 12px;border-bottom:1px solid var(--line)}
+  .docs-panel{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:11px 14px}
+  .docs-panel .dh{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .docs-panel ul{margin:0;padding-left:18px}
+  .docs-panel li{font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:3px}
+  .docs-toggle{background:none;border:none;padding:0;margin-top:3px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);text-align:left}
+  .docs-toggle:hover{text-decoration:underline}
+
+  footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);line-height:1.7}
+
+  @media (max-width:640px){ .stats{grid-template-columns:repeat(2,1fr)} }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">Live status · organized by the three growth pillars</div>
+    <h1>Vybe funding tracker</h1>
+    <div class="updated">As of Sep 12, 2026 — nothing expired on this board. Pillar 1 (cost offset) and Pillar 3 (university trade) are below the grant table. Pillar 2 (the standing grant cadence) is the table itself. Rows marked <strong>NY only</strong> require New York State residency/registration — confirm Vybe qualifies before working them. Set your progress per row; it saves in this browser.</div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <button class="chip" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" data-filter="open">Open now</button>
+    <button class="chip" data-filter="rolling">Rolling</button>
+    <button class="chip" data-filter="grant">Grants</button>
+    <button class="chip" data-filter="accelerator">Accelerators</button>
+    <button class="chip" data-filter="visibility">Get known</button>
+    <span class="spacer"></span>
+    <select id="sortSel">
+      <option value="urgency">Sort: urgency</option>
+      <option value="amount">Sort: amount</option>
+      <option value="name">Sort: name</option>
+    </select>
+  </div>
+
+  <div class="prereq">
+    <h3>Do these first — they gate every federal row and take weeks to clear</h3>
+    <p>None of the federal grants below can be submitted without these, and none of them are same-day. Starting them is free and independent of any deadline, so there is no reason to wait for a specific solicitation.</p>
+    <ol>
+      <li><b>SAM.gov UEI registration</b> — the federal entity ID. Allow several weeks; entity validation is the usual bottleneck.</li>
+      <li><b>SBIR.gov company registration</b> — issues your SBC control number, required on every SBIR/STTR application.</li>
+      <li><b>Grants.gov account</b> — the submission portal, and NIH's single official source from FY2026 onward.</li>
+      <li><b>eRA Commons</b> — NIH-specific, needed alongside Grants.gov for anything NIH.</li>
+      <li><b>eBRAP account</b> — DoD CDMRP only, and its pre-application is a hard gate before the full application.</li>
+    </ol>
+  </div>
+
+  <section class="investors">
+    <h2>Pillar 2 — standing grant cadence</h2>
+    <p class="inv-sub">The every-two-weeks loop: source, filter to what's winnable, apply, repeat. Rows with a <strong>docs</strong> link expand to show exactly what you need in hand before applying.</p>
+  </section>
+
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Program</th><th>Amount</th><th>Status</th><th>Deadline</th><th>My progress</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <section class="investors">
+    <h2>Pillar 1 — cost offset (cloud &amp; platform credits)</h2>
+    <p class="inv-sub">Credits convert straight into retained cash — apply anytime, stack freely, no deadline. Track application status per row.</p>
+    <div class="inv-grid" id="creditsGrid"></div>
+  </section>
+
+  <section class="investors">
+    <h2>Pillar 3 — university partnership trade</h2>
+    <p class="inv-sub">Devices/research access out, institutional logo on the site back — "the candy, and the actual candy." Track outreach per school.</p>
+    <div class="inv-grid" id="universityGrid"></div>
+  </section>
+
+  <section class="investors">
+    <h2>Beyond the three pillars — warm-intro investors</h2>
+    <p class="inv-sub">Not part of the current pillar scope, kept here for later. These don't run on a calendar — track outreach status yourself.</p>
+    <div class="inv-grid" id="invGrid"></div>
+  </section>
+
+  <footer>
+    Amounts and deadlines verified against primary sources this session (seedfund.nsf.gov, grants.nih.gov, armysbir.army.mil, xtech.army.mil, venturewell.org, arpa-h.gov, masschallenge.org). Rolling programs have no fixed date — check the link before assuming a window is open. Progress and filter state are stored only in this browser (localStorage) — they are not shared or saved to any account.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var TODAY = new Date('2026-09-12T00:00:00');
+  function daysUntil(d){ if(!d) return null; return Math.round((new Date(d+'T00:00:00') - TODAY)/86400000); }
+
+  // deadline: 'YYYY-MM-DD' | null (rolling) — closed flag set explicitly when a past cycle has no confirmed next date
+  // >>> GENERATED: built-in opportunity list (scripts/sync-funding-dashboard.py)
+  var GRANTS = [
+    {id:'curated-nextcorps-manufacturing-accelerator-fall-2026', name:'NextCorps Manufacturing Accelerator (Fall 2026)', type:'accelerator', amount:'free — 9-week virtual program', url:'https://manufacturingaccelerator.org/', deadline:'2026-09-30', note:'Free, no equity. Prototype-to-mass-production. Info session Sep 23. Closest process fit on this board to Vybe\'s actual stage.', documents:['Works-like hardware prototype (required — not a concept or a render)','Short online application describing the product and production goal','Founder time commitment for the 9-week virtual program']},
+    {id:'curated-texas-woman-s-university-veteran-grant', name:'Texas Woman\'s University Veteran Grant', type:'grant', amount:'$5,000 (five awarded/yr)', url:'https://twu.edu/center-women-entrepreneurs/', deadline:'2026-09-30', note:'Quarterly cycles.', documents:['Proof of veteran status','Application']},
+    {id:'curated-nystar-innovation-matching-grants', name:'NYSTAR Innovation Matching Grants', type:'grant', amount:'$100K (Phase I) / $200K (Phase II)', url:'https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf', deadline:'2026-10-20', note:'ONE WEEK WINDOW: opens 2nd Wed of Oct/Apr at 9am, closes the following Tue 5pm. Matches up to 50% of the federal award.', documents:['Proof of federal SBIR/STTR award or pending application','NY State business registration / proof of NYS residency','Commercialization plan for the non-federal activities being matched','Company financials and employee count (<=100)']},
+    {id:'curated-cornell-cat-grant', name:'Cornell CAT Grant', type:'grant', amount:'$75K matched 1:1 (up to $150K total)', url:'https://biotech.cornell.edu/commercialization-cat', deadline:'2026-10-30', note:'Not a solo apply -- needs a Cornell faculty co-PI with Vybe as the NY industry partner.', documents:['Cornell faculty PI committed as lead applicant','Signed 1:1 cash match commitment from Vybe as NY industry partner','Joint research plan with commercial milestones','Statement of quantifiable NY State economic impact']},
+    {id:'curated-secretsos-small-business-grant', name:'Secretsos Small Business Grant', type:'grant', amount:'$2,500', url:'https://www.secretsos.com/', deadline:'2026-10-31', note:'Underserved businesses: woman-, veteran-, or minority-owned', documents:['Short online application','Proof of qualifying ownership status']},
+    {id:'curated-nih-sbir-sttr-april-2027-cycle', name:'NIH SBIR/STTR — April 2027 cycle', type:'grant', amount:'$400K-$700K+ by institute', url:'https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html', deadline:'2027-04-05', note:'The standard NIH dates are Sep 5, Jan 5 and Apr 5. Listed separately so the later cycle stays visible.', documents:['SAM.gov UEI, eRA Commons, Grants.gov and SBIR.gov registrations','Specific Aims + Research Strategy','Budget + biosketches']},
+    {id:'curated-500-global', name:'500 Global', type:'accelerator', amount:'varies by program', url:'https://500.co/', deadline:null, note:'Early-stage across sectors', documents:['Application','Pitch deck']},
+    {id:'curated-aws-activate', name:'AWS Activate', type:'grant', amount:'up to $100K in AWS credits', url:'https://aws.amazon.com/startups/', deadline:null, note:'Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation.', documents:['AWS account ID','Company details; accelerator/VC affiliation code for the higher tiers']},
+    {id:'curated-activate-fellowship', name:'Activate Fellowship', type:'grant', amount:'$300K+ over two years, 0% equity', url:'https://www.activate.org/fellowship', deadline:null, note:'2026 cohort closed Oct 2025. Next cycle typically opens ~October.', documents:['CV showing 4+ years post-baccalaureate research/engineering experience','Technical proposal and two-year research plan','References']},
+    {id:'curated-alabama-sbir-sttr-match', name:'Alabama SBIR/STTR Match', type:'grant', amount:'up to $100,000 (50% of federal award)', url:'https://innovate-alabama.com/', deadline:null, note:'Phase I match. Confirm Vybe\'s state before working any row in this block.', documents:['Federal SBIR/STTR award notice','Alabama business registration']},
+    {id:'curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology', name:'Alfred P. Sloan Foundation — Exploratory Grantmaking in Technology', type:'grant', amount:'varies', url:'https://sloan.org/programs/digital-technology', deadline:null, note:'Letter of inquiry first. Check current program scope before investing time.', documents:['Letter of inquiry','Project narrative']},
+    {id:'curated-america-s-seed-fund-nsf-project-pitch', name:'America\'s Seed Fund -- NSF Project Pitch', type:'grant', amount:'gateway to $305K Phase I, up to $2M across phases', url:'https://seedfund.nsf.gov/project-pitch/', deadline:null, note:'Rolling, ~2 pages. Mandatory gate before any NSF full proposal -- the actual first step.', documents:['Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team','SAM.gov UEI registration (start early — weeks of lead time)','SBIR.gov company registration (SBC control number)']},
+    {id:'curated-antler', name:'Antler', type:'accelerator', amount:'varies by location', url:'https://www.antler.co/', deadline:null, note:'Pre-seed and day-zero founders', documents:['Application','Founder background']},
+    {id:'curated-arkansas-sbir-matching-grant', name:'Arkansas SBIR Matching Grant', type:'grant', amount:'up to $50,000 (Phase I)', url:'https://www.arkansasedc.com/', deadline:null, note:'Arkansas-based small business with a federal Phase I award', documents:['Federal Phase I award notice','Arkansas business registration']},
+    {id:'curated-berkeley-skydeck', name:'Berkeley SkyDeck', type:'accelerator', amount:'$200K investment (equity) + Jacobs Institute hardware fab', url:'https://skydeck.berkeley.edu/program', deadline:null, note:'Six-month cohort, ~20 companies selected per batch.', documents:['Pitch deck','Cap table','Application through the cohort cycle']},
+    {id:'curated-brinc', name:'Brinc', type:'accelerator', amount:'$25,000-$125,000 depending on vertical', url:'https://www.brinc.io/', deadline:null, note:'Hardware and IoT startups', documents:['Pitch deck','Prototype status','Application']},
+    {id:'curated-cdmrp-combat-readiness-medical-research-program-crrp', name:'CDMRP Combat Readiness-Medical Research Program (CRRP)', type:'grant', amount:'see program', url:'https://cdmrp.health.mil/funding/crrp', deadline:null, note:'FY26 focus areas include battlefield readiness in pre-hospital and operational environments — directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420.', documents:['eBRAP pre-application (mandatory gate before the full application)','Letter of Intent where the award mechanism requires one','SAM.gov UEI + Grants.gov registration','Full research plan mapped to a named FY26 focus area']},
+    {id:'curated-cdmrp-peer-reviewed-medical-research-program-prmrp', name:'CDMRP Peer Reviewed Medical Research Program (PRMRP)', type:'grant', amount:'up to $20M depending on award mechanism', url:'https://cdmrp.health.mil/funding/prmrp', deadline:null, note:'Part of $1.27B across 34 CDMRP programs in FY26. Check the current topic list for a physiological-monitoring fit before writing.', documents:['eBRAP pre-application','SAM.gov UEI + Grants.gov registration','Research plan matched to a congressionally-set topic area for the year']},
+    {id:'curated-creative-destruction-lab-cdl-manufacturing', name:'Creative Destruction Lab (CDL) Manufacturing', type:'accelerator', amount:'zero equity', url:'https://creativedestructionlab.com/', deadline:null, note:'One of the few genuinely zero-equity hardware-relevant programs.', documents:['Application during the annual cycle','Technical and commercial objectives']},
+    {id:'curated-fuzehub-jeff-lawrence-manufacturing-grants', name:'FuzeHub Jeff Lawrence Manufacturing Grants', type:'grant', amount:'up to $65,000', url:'https://fuzehub.com/innovation-fund/', deadline:null, note:'2026 round closed May 7. Next opens ~Apr 2027 -- same partner shape as Cornell CAT.', documents:['A NY nonprofit or university as the lead applicant','Project plan pairing the nonprofit with Vybe as the manufacturer partner','Budget and NY economic-impact statement']},
+    {id:'curated-galaxy-grants', name:'Galaxy Grants', type:'grant', amount:'$2,500', url:'https://www.hiddenstarters.com/', deadline:null, note:'Women and minority business owners', documents:['Short application','Business description']},
+    {id:'curated-google-for-startups-cloud-program', name:'Google for Startups Cloud Program', type:'grant', amount:'up to $350K (AI-first) / $200K (Seed-Series A)', url:'https://cloud.google.com/startup/benefits', deadline:null, note:'Rolling. Straight conversion of credits into retained cash.', documents:['Company website and incorporation details','Funding stage evidence (pre-Series A)','Google Cloud billing account']},
+    {id:'curated-hlth-usa-startup-pitch-competition', name:'HLTH USA Startup Pitch Competition', type:'visibility', amount:'$25,000 cash + 2 passes', url:'https://hlth.com/events/usa/agenda/startup-pitch/', deadline:null, note:'Large health-tech audience; the exposure is worth more than the cash.', documents:['Pitch deck','Proof of <$8M raised and <5 years old','Application during the event cycle']},
+    {id:'curated-hello-tomorrow-global-challenge', name:'Hello Tomorrow Global Challenge', type:'visibility', amount:'EUR 100,000 grand prize (EUR 20K / EUR 10K also awarded)', url:'https://hello-tomorrow.org/global-challenge/', deadline:null, note:'Free entry, no equity. Finalists get access to 1,300+ VC/CVC investors. Watch for the next cycle\'s January deadline.', documents:['Free application','Technical description of the deep-tech core','Team information']},
+    {id:'curated-illinois-sbir-sttr-matching-program', name:'Illinois SBIR/STTR Matching Program', type:'grant', amount:'up to $75,000 (Phase I)', url:'https://dceo.illinois.gov/', deadline:null, note:'$5M state commitment. The rolling window ran through Jun 30, 2026 — confirm the current cycle.', documents:['Federal Phase I award notice','Illinois business registration']},
+    {id:'curated-indiana-sbir-sttr-match', name:'Indiana SBIR/STTR Match', type:'grant', amount:'up to $50,000 per award ($150K lifetime cap)', url:'https://www.iedc.in.gov/', deadline:null, note:'Indiana-based small business', documents:['Federal Phase I award notice','Indiana business registration']},
+    {id:'curated-iowa-sbir-sttr-support', name:'Iowa SBIR/STTR Support', type:'grant', amount:'up to $25,000', url:'https://www.iowaeda.com/', deadline:null, note:'Iowa-based small business', documents:['Federal Phase I award notice','Iowa business registration']},
+    {id:'curated-kentucky-sbir-sttr-matching-funds', name:'Kentucky SBIR/STTR Matching Funds', type:'grant', amount:'up to $150,000 (Phase I)', url:'https://ced.ky.gov/', deadline:null, note:'One of the largest Phase I state matches in the country.', documents:['Federal Phase I award notice','Kentucky business registration']},
+    {id:'curated-launch-ny-seed-fund', name:'Launch NY Seed Fund', type:'grant', amount:'$25K-$100K', url:'https://launchny.org/', deadline:null, note:'Rolling. The most active seed fund in NY State by deal count — small checks, but explicitly hardware-friendly.', documents:['Pitch deck','Financial projections','Evidence of Upstate NY operations']},
+    {id:'curated-luminate-ny-accelerator', name:'Luminate NY Accelerator', type:'accelerator', amount:'$100K initial + up to $2M follow-on', url:'https://luminate.org/', deadline:null, note:'Cohort 9 closed Jan 12, 2026 — watch for cohort 10. Relevant only if Vybe\'s sensing is optical (PPG is), so check the OPI+L fit before investing time.', documents:['Pitch deck with an optics/photonics/imaging (OPI+L) technical core','Willingness to relocate to Rochester for the six-month program','Cap table and funding history']},
+    {id:'curated-masschallenge-bae-systems-deep-tech-accelerator', name:'MassChallenge BAE Systems Deep-Tech Accelerator', type:'accelerator', amount:'zero equity', url:'https://masschallenge.org/', deadline:null, note:'Named focus on advanced sensing and real-time data processing — strong thesis fit, and takes no equity.', documents:['Application during the cohort window','Technical description of the sensing/processing core','Dual-use case']},
+    {id:'curated-microsoft-for-startups-founders-hub', name:'Microsoft for Startups Founders Hub', type:'grant', amount:'up to $150K Azure credits', url:'https://www.microsoft.com/en-us/startups', deadline:null, note:'Rolling. Start here before the Google and AWS tiers.', documents:['Company details and a short product description','No funding proof required — the most accessible of the three']},
+    {id:'curated-nist-mep-manufacturing-voucher', name:'NIST MEP manufacturing voucher', type:'grant', amount:'up to $65,000, varies by state', url:'https://www.nist.gov/mep', deadline:null, note:'Most state centers offer a free initial manufacturability assessment.', documents:['Intake call with your state MEP center','Scope of the engineering/DFM work requested']},
+    {id:'curated-nvidia-inception', name:'NVIDIA Inception', type:'grant', amount:'free -- routes to $100K AWS + $100K DGX Cloud credits', url:'https://www.nvidia.com/en-us/startups/', deadline:null, note:'Rolling, no equity, no fee. Typically a 1-4 week decision.', documents:['Incorporation documents','Live company website','Pitch deck: mission, product, team, traction','At least one employed developer on staff']},
+    {id:'curated-ny-ventures-pre-seed-seed-matching-fund', name:'NY Ventures Pre-Seed & Seed Matching Fund', type:'grant', amount:'$50K-$250K equity, 1:1 private match', url:'https://esd.ny.gov/pre-seed-and-seed-matching-fund-program', deadline:null, note:'Rolling. Equity investment, not a grant -- matched against qualified private investment.', documents:['Pitch deck','Proof of qualified private investment to match 1:1','Cap table showing <$2M dilutive raised to date','NY State registration + evidence of a C-suite seat in-state']},
+    {id:'curated-nys-ssbci-technical-assistance', name:'NYS SSBCI Technical Assistance', type:'grant', amount:'free legal, accounting and financial advising', url:'https://esd.ny.gov/ssbci-technical-assistance-program', deadline:null, note:'Not cash -- free professional services. Could cover the SDK-licensing and HIPAA structuring work.', documents:['Business formation documents','Proof of VSB (<10 employees) or SEDI-owned status','Description of the legal/accounting/financial help you need']},
+    {id:'curated-new-mexico-sbir-match', name:'New Mexico SBIR Match', type:'grant', amount:'up to $25,000 (Phase I)', url:'https://edd.newmexico.gov/', deadline:null, note:'New Mexico-based small business', documents:['Federal Phase I award notice','New Mexico business registration']},
+    {id:'curated-pitchmi', name:'PitchMI', type:'visibility', amount:'$250,000 per track winner + $1M championship', url:'https://www.michiganbusiness.org/', deadline:null, note:'Healthcare & Life Sciences is a named track. Only relevant if Vybe has Michigan operations.', documents:['Michigan business registration','Pitch deck','Application during the cycle']},
+    {id:'curated-rev-ithaca-prototyping-hardware-accelerator', name:'Rev: Ithaca Prototyping Hardware Accelerator', type:'grant', amount:'up to $2,000 stipend + prototyping access', url:'https://www.revithaca.com/hardware/', deadline:null, note:'10-week cohort with a MedTech track. Devices-for-research-access shape.', documents:['Prototype or detailed build plan','Team commitment for the 10-week cohort']},
+    {id:'curated-schmidt-sciences', name:'Schmidt Sciences', type:'grant', amount:'varies, $500K-$10M on some programs', url:'https://www.schmidtsciences.org/opportunities/', deadline:null, note:'DOES NOT ACCEPT UNSOLICITED PROPOSALS — they seek out grantees. Listed so it isn\'t chased blindly.', documents:['Invitation only — no open application']},
+    {id:'curated-south-park-commons', name:'South Park Commons', type:'accelerator', amount:'Founder Fellowship funding', url:'https://www.southparkcommons.com/', deadline:null, note:'Pre-idea and early-stage technical founders', documents:['Application','Technical background']},
+    {id:'curated-startup-prize-health', name:'Startup Prize: Health', type:'visibility', amount:'$10,000 cash', url:'https://startupprize.com/health/', deadline:null, note:'The non-FDA track fits a wellness-claim wearable without a regulatory pathway.', documents:['Registration','Pitch deck','Track selection (FDA vs non-FDA)']},
+    {id:'curated-stephen-l-tadlock-veteran-business-grant', name:'Stephen L. Tadlock Veteran Business Grant', type:'grant', amount:'varies', url:'https://www.grantwatch.com/', deadline:null, note:'Opens ~September annually.', documents:['Proof of veteran status','Application']},
+    {id:'curated-the-medtech-conference-start-up-pitch', name:'The MedTech Conference Start-Up Pitch', type:'visibility', amount:'cash award + conference pass', url:'https://themedtechconference.com/start-up-pitch-competition/', deadline:null, note:'Medical device and medtech startups', documents:['Application during the annual window','Pitch deck','Regulatory pathway summary']},
+    {id:'curated-uc-berkeley-citris-foundry', name:'UC Berkeley CITRIS Foundry', type:'grant', amount:'fab lab access, no equity', url:'https://citrisfoundry.berkeley.edu/', deadline:null, note:'Hardware/deep-tech fabrication and engineering mentorship.', documents:['UC Berkeley affiliation or sponsoring relationship','Technical project description']},
+    {id:'curated-w-m-keck-foundation-science-engineering-research-program', name:'W.M. Keck Foundation Science & Engineering Research Program', type:'grant', amount:'typically $1M+', url:'https://www.wmkeck.org/', deadline:null, note:'Apr 2026 deadline has passed; annual cycle. Institutionally nominated — needs a university partner, so treat as a Pillar 3 vehicle.', documents:['University sponsorship / limited-submission nomination','Concept paper','High-risk, high-impact technical rationale']},
+    {id:'curated-wisconsin-sbir-advance', name:'Wisconsin SBIR Advance', type:'grant', amount:'50% match up to $75,000', url:'https://wisconsinctc.org/programs/sbir-and-sttr-guidance/sbiradvance/', deadline:null, note:'Wisconsin-based small business', documents:['Federal SBIR/STTR award notice','Wisconsin business registration','Commercialization plan']},
+    {id:'curated-women-veterans-giving-small-business-award', name:'Women Veterans Giving Small Business Award', type:'grant', amount:'varies', url:'https://news.va.gov/146401/women-veterans-giving-small-business-award/', deadline:null, note:'Window runs roughly May 1 - Jul 31 annually.', documents:['Proof of veteran status','Business description']},
+    {id:'curated-women-s-business-development-council-grants', name:'Women\'s Business Development Council grants', type:'grant', amount:'$2,500 / $10,000 / $25,000 by tier', url:'https://ctwbdc.org/', deadline:null, note:'Three tiers: Launch Pad, Ignite, Accelerate.', documents:['Connecticut business registration','Proof of women-owned status','Business plan / financials by tier']},
+    {id:'curated-xcelerate-startup-competition', name:'Xcelerate Startup Competition', type:'visibility', amount:'$30,000 total prize pool', url:'https://www.worldhealthexpo.com/events/healthcare/tech/whats-on/features/xcelerate-your-startup-pitch-competition/', deadline:null, note:'Early-stage and scale-up tracks, ~50 startups pitch', documents:['Application','Pitch deck']},
+  ];
+  // <<< END GENERATED
+
+  var INVESTORS = [
+    {name:'Khosla Ventures', url:'https://www.khoslaventures.com/', stage:'Seed → moonshot'},
+    {name:'Canaan Partners', url:'https://www.canaan.com/', stage:'Seed'},
+    {name:'LRVHealth', url:'https://www.lrvhealth.com/', stage:'Seed → growth'},
+    {name:'Third Rock Ventures', url:'https://www.thirdrockventures.com/', stage:'Seed → growth'},
+    {name:'Rock Health Capital', url:'https://rockhealth.com/capital/', stage:'Seed'},
+    {name:'7wireVentures', url:'https://www.7wireventures.com/', stage:'Seed → A'},
+    {name:'Flare Capital Partners', url:'https://flarecapital.com/', stage:'Seed → A'},
+    {name:'Oak HC/FT', url:'https://www.oakhcft.com/', stage:'Seed → growth'},
+    {name:'Define Ventures', url:'https://www.defineventures.com/', stage:'Seed → A'},
+    {name:'GV (Google Ventures)', url:'https://www.gv.com/', stage:'Seed → growth'},
+    {name:'Bessemer Venture Partners', url:'https://www.bvp.com/', stage:'Seed → growth'},
+    {name:'General Catalyst', url:'https://www.generalcatalyst.com/', stage:'Seed → growth'},
+    {name:'a16z Bio + Health', url:'https://a16z.com/bio-health/', stage:'Seed → growth'},
+    {name:'SmartGateVC', url:'https://www.smartgatevc.com/', stage:'Pre-seed → seed'},
+    {name:'StartUp Health', url:'https://www.startuphealth.com/', stage:'Pre-seed → seed'},
+    {name:'Golden Seeds', url:'https://goldenseeds.com/', stage:'Angel network'},
+    {name:'Tech Coast Angels', url:'https://www.techcoastangels.com/', stage:'Angel network'},
+    {name:'Band of Angels', url:'https://www.bandangels.com/', stage:'Angel network'}
+  ];
+
+  var CREDITS = [
+    {name:'Google for Startups Cloud Program', url:'https://cloud.google.com/startup/benefits', note:'Up to $350K (AI-first) / $200K (Seed–A)'},
+    {name:'AWS Activate', url:'https://aws.amazon.com/startups/', note:'Up to $100K AWS credits'},
+    {name:'Microsoft for Startups Founders Hub', url:'https://www.microsoft.com/en-us/startups', note:'Up to $150K Azure — no funding required'},
+    {name:'NVIDIA Inception', url:'https://www.nvidia.com/en-us/startups/', note:'Free, no equity — routes to $100K AWS + $100K DGX Cloud'}
+  ];
+
+  var UNIVERSITY = [
+    {name:'Rev: Ithaca Prototyping Hardware Accelerator', url:'https://www.revithaca.com/hardware/', note:'Cornell — devices/prototype for research use, 10wk cohort'},
+    {name:'Rev: Ithaca Manufacturing Hardware Accelerator', url:'https://crea.cornell.edu/rev-ithaca-startup-works/', note:'Cornell — prototype-to-manufacturing cohort'},
+    {name:'Cornell eLab Student Accelerator', url:'https://ctl.cornell.edu/new-ventures/incubators/', note:'For Cornell-affiliated founders'},
+    {name:'Berkeley SkyDeck', url:'https://skydeck.berkeley.edu/program', note:'$200K equity investment + Jacobs Institute hardware fab'},
+    {name:'UC Berkeley CITRIS Foundry', url:'https://citrisfoundry.berkeley.edu/', note:'Hardware/deep-tech fab labs, no equity'},
+    {name:'Stanford StartX', url:'https://startx.com/', note:'Equity-free, Stanford-affiliated founders only'}
+  ];
+
+  function classify(g){
+    if(g.deadline===null) return 'rolling';
+    var d = daysUntil(g.deadline);
+    if(d < 0) return 'closed';
+    if(d <= 30) return 'soon';
+    return 'open';
+  }
+  function pillHtml(cls, g){
+    if(cls==='rolling') return '<span class="pill open"><span class="dot"></span>rolling</span>';
+    if(cls==='closed') return '<span class="pill closed"><span class="dot"></span>closed</span>';
+    if(cls==='soon') return '<span class="pill soon"><span class="dot"></span>due soon</span>';
+    return '<span class="pill open"><span class="dot"></span>open</span>';
+  }
+  function rowClass(cls){
+    if(cls==='closed') return 'st-closed';
+    if(cls==='soon') return 'st-soon';
+    return 'st-open';
+  }
+  function fmtDate(d){
+    if(!d) return '—';
+    var dt = new Date(d+'T00:00:00');
+    return dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  }
+  function amountNum(s){ var m = String(s||'').match(/[\d,.]+/); return m ? parseFloat(m[0].replace(/,/g,'')) : 0; }
+
+  // funding.json is generated by CI from third-party APIs. Everything from it
+  // lands in innerHTML, so escape it rather than trusting an agency feed not to
+  // contain markup.
+  function esc(value){
+    return String(value == null ? '' : value)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  var STATUS_OPTS = ['Not started','Researching','Applied','Interview','Won','Passed'];
+  function loadProgress(id){ try{ return localStorage.getItem('vybe-fund-'+id) || 'Not started'; }catch(e){ return 'Not started'; } }
+  function saveProgress(id,val){ try{ localStorage.setItem('vybe-fund-'+id, val); }catch(e){} }
+  function loadInvStatus(name){ try{ return localStorage.getItem('vybe-inv-'+name) || 'No contact'; }catch(e){ return 'No contact'; } }
+  function saveInvStatus(name,val){ try{ localStorage.setItem('vybe-inv-'+name, val); }catch(e){} }
+
+  var currentFilter = 'all', currentSort = 'urgency';
+
+  function render(){
+    var rowsEl = document.getElementById('rows');
+    var data = GRANTS.map(function(g){ return Object.assign({}, g, {cls: classify(g), days: daysUntil(g.deadline)}); });
+
+    var counts = {open:0, soon:0, rolling:0, closed:0};
+    data.forEach(function(g){
+      if(g.cls==='soon') counts.soon++;
+      else if(g.cls==='rolling') counts.rolling++;
+      else if(g.cls==='closed') counts.closed++;
+      else counts.open++;
+    });
+    document.getElementById('stats').innerHTML =
+      '<div class="stat soon"><div class="n">'+counts.soon+'</div><div class="l">Due in ≤30 days</div></div>' +
+      '<div class="stat open"><div class="n">'+counts.open+'</div><div class="l">Open, more time</div></div>' +
+      '<div class="stat"><div class="n">'+counts.rolling+'</div><div class="l">Rolling / apply anytime</div></div>' +
+      '<div class="stat"><div class="n">'+(counts.soon+counts.open+counts.rolling)+'</div><div class="l">Total live opportunities</div></div>';
+
+    var filtered = data.filter(function(g){
+      if(currentFilter==='all') return true;
+      if(currentFilter==='grant') return g.type==='grant';
+      if(currentFilter==='accelerator') return g.type==='accelerator';
+      if(currentFilter==='visibility') return g.type==='visibility';
+      return g.cls===currentFilter;
+    });
+
+    filtered.sort(function(a,b){
+      if(currentSort==='amount') return amountNum(b.amount)-amountNum(a.amount);
+      if(currentSort==='name') return a.name.localeCompare(b.name);
+      var rank = {soon:0, open:1, rolling:2, closed:3};
+      if(rank[a.cls]!==rank[b.cls]) return rank[a.cls]-rank[b.cls];
+      if(a.days!=null && b.days!=null) return a.days-b.days;
+      return a.name.localeCompare(b.name);
+    });
+
+    rowsEl.innerHTML = filtered.map(function(g, i){
+      var deadlineTxt = g.deadline ? fmtDate(g.deadline) + (g.days<0 ? ' (passed)' : ' ('+g.days+'d)') : g.note;
+      var hasDocs = Array.isArray(g.documents) && g.documents.length;
+      var docsId = 'docs-' + i;
+      var main = '<tr class="'+rowClass(g.cls)+'">'+
+        '<td class="name"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(g.name)+'</a>'+
+          '<div class="type-tag">'+esc(g.type)+'</div>'+
+          (hasDocs ? '<button type="button" class="docs-toggle" aria-expanded="false" aria-controls="'+docsId+'" data-target="'+docsId+'">+ '+g.documents.length+' docs needed</button>' : '')+
+        '</td>'+
+        '<td class="amt">'+esc(g.amount)+'</td>'+
+        '<td>'+pillHtml(g.cls,g)+'</td>'+
+        '<td class="deadline">'+esc(deadlineTxt)+'</td>'+
+        '<td><select class="status-sel" data-id="'+g.id+'">'+STATUS_OPTS.map(function(o){return '<option'+(o===loadProgress(g.id)?' selected':'')+'>'+o+'</option>';}).join('')+'</select></td>'+
+        '</tr>';
+      if(!hasDocs) return main;
+      return main + '<tr class="docs-row" id="'+docsId+'" hidden><td colspan="5">'+
+        '<div class="docs-panel"><div class="dh">Required to apply</div><ul>'+
+        g.documents.map(function(d){ return '<li>'+esc(d)+'</li>'; }).join('')+
+        '</ul></div></td></tr>';
+    }).join('');
+
+    Array.prototype.forEach.call(rowsEl.querySelectorAll('select.status-sel'), function(sel){
+      sel.addEventListener('change', function(){ saveProgress(sel.getAttribute('data-id'), sel.value); });
+    });
+    Array.prototype.forEach.call(rowsEl.querySelectorAll('.docs-toggle'), function(btn){
+      btn.addEventListener('click', function(){
+        var panel = document.getElementById(btn.getAttribute('data-target'));
+        if(!panel) return;
+        var open = !panel.hidden;
+        panel.hidden = open;
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.textContent = (open ? '+ ' : '− ') + panel.querySelectorAll('li').length + ' docs needed';
+      });
+    });
+  }
+
+  function renderInvestors(){
+    var grid = document.getElementById('invGrid');
+    grid.innerHTML = INVESTORS.map(function(inv){
+      var id = inv.name;
+      var opts = ['No contact','Researching intro path','Intro requested','Meeting scheduled','Met','Passed'];
+      return '<div class="inv-card"><div class="nm"><a href="'+inv.url+'" target="_blank" rel="noopener">'+inv.name+'</a></div>'+
+        '<div class="st">'+inv.stage+'</div>'+
+        '<select class="status-sel" style="margin-top:8px;max-width:100%" data-inv="'+id+'">'+
+        opts.map(function(o){return '<option'+(o===loadInvStatus(id)?' selected':'')+'>'+o+'</option>';}).join('')+
+        '</select></div>';
+    }).join('');
+    Array.prototype.forEach.call(grid.querySelectorAll('select.status-sel'), function(sel){
+      sel.addEventListener('change', function(){ saveInvStatus(sel.getAttribute('data-inv'), sel.value); });
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.chip'), function(chip){
+    chip.addEventListener('click', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.chip'), function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      currentFilter = chip.getAttribute('data-filter');
+      render();
+    });
+  });
+  document.getElementById('sortSel').addEventListener('change', function(e){ currentSort = e.target.value; render(); });
+
+  function renderCredits(){
+    var grid = document.getElementById('creditsGrid');
+    grid.innerHTML = CREDITS.map(function(c){
+      var opts = ['Not applied','Applied','Approved','Active','Declined'];
+      return '<div class="inv-card"><div class="nm"><a href="'+c.url+'" target="_blank" rel="noopener">'+c.name+'</a></div>'+
+        '<div class="st">'+c.note+'</div>'+
+        '<select class="status-sel" style="margin-top:8px;max-width:100%" data-cred="'+c.name+'">'+
+        opts.map(function(o){return '<option'+(o===loadInvStatus('cred-'+c.name)?' selected':'')+'>'+o+'</option>';}).join('')+
+        '</select></div>';
+    }).join('');
+    Array.prototype.forEach.call(grid.querySelectorAll('select.status-sel'), function(sel){
+      sel.addEventListener('change', function(){ saveInvStatus('cred-'+sel.getAttribute('data-cred'), sel.value); });
+    });
+  }
+
+  function renderUniversity(){
+    var grid = document.getElementById('universityGrid');
+    var opts = ['Not contacted','Outreach sent','In discussion','Devices placed','Logo live','Declined'];
+    grid.innerHTML = UNIVERSITY.map(function(c){
+      return '<div class="inv-card"><div class="nm"><a href="'+c.url+'" target="_blank" rel="noopener">'+c.name+'</a></div>'+
+        '<div class="st">'+c.note+'</div>'+
+        '<select class="status-sel" style="margin-top:8px;max-width:100%" data-uni="'+c.name+'">'+
+        opts.map(function(o){return '<option'+(o===loadInvStatus('uni-'+c.name)?' selected':'')+'>'+o+'</option>';}).join('')+
+        '</select></div>';
+    }).join('');
+    Array.prototype.forEach.call(grid.querySelectorAll('select.status-sel'), function(sel){
+      sel.addEventListener('change', function(){ saveInvStatus('uni-'+sel.getAttribute('data-uni'), sel.value); });
+    });
+  }
+
+  render();
+  renderInvestors();
+  renderCredits();
+  renderUniversity();
+
+  // ---- Live feed -----------------------------------------------------------
+  // The biweekly CI sweep (funding-scraper) publishes funding.json with close
+  // dates straight from sbir.gov and grants.gov. When it's reachable we merge
+  // it over the built-in list so the board self-refreshes; when it isn't, the
+  // built-in list above still renders. The page must never show an empty table
+  // because a feed was unreachable.
+  var FEED_URL = 'funding.json';
+
+  function mergeFeed(feed){
+    if(!feed || !Array.isArray(feed.opportunities)) return;
+    var byId = {};
+    GRANTS.forEach(function(g){ byId[g.id] = g; });
+
+    feed.opportunities.forEach(function(row){
+      if(!row || !row.name || !row.url) return;
+      byId[row.id] = {
+        id: row.id,
+        name: row.name,
+        type: row.kind === 'credit' ? 'grant' : (row.kind === 'accelerator' ? 'accelerator' : (row.kind === 'visibility' ? 'visibility' : 'grant')),
+        amount: row.amount || 'see solicitation',
+        url: row.url,
+        deadline: row.close_date || null,
+        note: row.summary || row.eligibility || '',
+        documents: Array.isArray(row.documents) ? row.documents : []
+      };
+    });
+
+    GRANTS = Object.keys(byId).map(function(k){ return byId[k]; });
+
+    var stamp = document.querySelector('.updated');
+    if(stamp && feed.as_of){
+      stamp.innerHTML += ' <strong>Live feed: ' + feed.count + ' opportunities as of ' + feed.as_of + '.</strong>';
+      if(feed.source_errors && feed.source_errors.length){
+        stamp.innerHTML += ' <em>' + feed.source_errors.length + ' source(s) unreachable this sweep — built-in entries still shown.</em>';
+      }
+    }
+    render();
+  }
+
+  if(typeof fetch === 'function'){
+    fetch(FEED_URL, {cache: 'no-cache'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(mergeFeed)
+      .catch(function(){ /* offline or not deployed yet — built-in list stands */ });
+  }
+})();
+</script>
+
+</body></html>
