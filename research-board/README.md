@@ -48,6 +48,23 @@ cannot get context right from search snippets any better than those outlets
 did"* — so the sweep's job is to put the document in front of whoever writes and
 stop there. Each candidate carries the document's own text.
 
+### Coverage, as measured rather than intended
+
+The first live runs crawled **9 of the 17 registry sources usefully**. The rest
+contributed nothing:
+
+- **Refused outright (5):** NIOSH, FEMA AFG/FP&S/SAFER, FBI LEOKA, NSCA TSAC,
+  First H.E.L.P./BLS CFOI.
+- **Answered 200 and returned no links (3):** NFPA, the OSHA docket, and
+  NLEOMF/ODMP — client-side listings the crawler cannot read.
+
+NLEOMF/ODMP gave 40 links on one run and none on the next, so at least one
+source is intermittent rather than simply unreadable.
+
+Those entries are deliberately left as they are. Finding a fetchable equivalent
+for each is a judgement about what the registry should point at, and the run now
+names them every week so the gap is visible rather than assumed away.
+
 Two refusals matter more than anything the sweep produces:
 
 - **An unreadable page never becomes a candidate.** A 200 that yields a
