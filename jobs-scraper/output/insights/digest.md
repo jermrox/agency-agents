@@ -1,14 +1,14 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-12.*
+*Briefing generated 2026-09-13.*
 
 ## Headline
 
 - **162 open jobs** from **25 employers**.
-- Posted between **2026-07-02** and **2026-09-12**.
+- Posted between **2026-07-02** and **2026-09-13**.
 - **$85,738 median** annualized pay across the 112 postings that publish one -- $59,536 to $109,020 covers the middle half.
 - **2% remote-friendly** (3 jobs).
-- 177 of 339 archived records are cross-board copies or re-posts, not separate jobs.
+- 178 of 340 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 155, Special Operations 42, Training Pipeline 27, Fire / EMS / Law Enforcement 18.
 
 ## Month over month
