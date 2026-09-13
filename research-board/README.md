@@ -8,6 +8,10 @@ The rebuild described in *Tactical HP Board: Brief for the Coder (v2)*, 13 SEP 2
 |---|---|
 | `tactical_research/identifiers.py` | Recognises document identifiers in messy text and resolves each to its official host. Also holds the fetch allowlist. |
 | `tactical_research/cluster.py` | Collapses many sightings of one document into one item, with articles as coverage underneath. |
+| `tactical_research/models.py` | The board schema, the 30-day window, and the 12-month archive split. |
+| `tactical_research/hot.py` | Hot this month: a tag earns a line at three or more independent items. |
+| `tactical_research/sources.json` | The source registry with a sector field, and the non-military search vocabulary. |
+| `tactical_research/standards.json` | The current-standards panel. Hand-edited; the bot only watches each row's page. |
 
 Both are pure logic with no network, and both are covered by `tests/`.
 
@@ -29,9 +33,21 @@ underlying document and may stand on coverage.
 
 ## Not built yet
 
-Sections 3, 4, 6 and 7 of the brief — the 30-day feed, the hot-this-month block,
-the card design, the standards panel, and the archive. The brief puts the
-resolver before anything visual, so that is what exists.
+The rendered board itself — section 4's card design and the page that puts the
+hot block above the feed. Everything it needs is here; what is missing is the
+sweep that fills it, which has to run where fetch works.
+
+## One thing the brief and the data disagree on
+
+The standards panel lists the Army Fitness Test, whose page is `army.mil/aft/`.
+The brief's fetch allowlist includes `armypubs.army.mil` but not bare
+`army.mil`, while it does allowlist `af.mil` and `spaceforce.mil` whole — the
+Army is the only service narrowed to its publishing subdomain.
+
+Nothing here widens the allowlist to paper over that: it is a trust boundary and
+changing it is a decision, not a fix. The panel's tests assert an official host
+instead, which is the right bar for a page-change watch — a different job from
+writing a blurb out of a document.
 
 ## The fetch dependency
 
