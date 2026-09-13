@@ -98,3 +98,6 @@ scripts/netlify/node_modules/
 # Sweep output: a CI artifact, not source
 research-board/candidates.json
 research-board/findings.json
+
+# Funding sweep scratch output (funding.json itself IS tracked — it's the feed)
+funding-scraper/sweep.log
