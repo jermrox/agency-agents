@@ -47,7 +47,7 @@ jobs:
             echo '## Research board sweep'
             echo
             echo '```'
-            tail -n 12 /tmp/sweep.log
+            tail -n 24 /tmp/sweep.log
             echo '```'
             echo
             echo 'Blurbs are written from the document text in the artifact below, never from coverage.'

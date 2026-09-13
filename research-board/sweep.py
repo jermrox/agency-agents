@@ -79,7 +79,8 @@ def fetch(url: str) -> tuple[str | None, int | None]:
 def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
     """Crawl every source listing and turn its links into sightings."""
     sightings: list[Sighting] = []
-    tally = {"sources": 0, "refused": 0, "links": 0}
+    tally = {"sources": 0, "refused": 0, "links": 0, "empty": 0}
+    quiet: list[str] = []          # crawled fine, offered nothing
 
     for source in sources:
         url = source.get("url", "")
@@ -88,6 +89,7 @@ def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
         html, _ = fetch(url)
         if html is None:
             tally["refused"] += 1
+            quiet.append(f"{source['name']} (refused)")
             print(f"  refused: {source['name']}", file=sys.stderr)
             continue
         tally["sources"] += 1
@@ -95,6 +97,13 @@ def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
         found = links(html, url)[:LINKS_PER_SOURCE]
         tally["links"] += len(found)
         print(f"  {source['name']}: {len(found)} links")
+        if not found:
+            # A 200 that yielded no links is a source contributing nothing —
+            # usually a JavaScript app that renders its listing client-side.
+            # Left unsaid it is indistinguishable from a quiet week, which is
+            # how a registry rots while every run stays green.
+            tally["empty"] += 1
+            quiet.append(f"{source['name']} (0 links)")
         for link in found:
             sightings.append(
                 Sighting(
@@ -106,6 +115,7 @@ def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
                     is_event="Event pages" in source.get("name", ""),
                 )
             )
+    tally["quiet_sources"] = quiet
     return sightings, tally
 
 
@@ -195,19 +205,28 @@ def main(argv=None) -> int:
 
     candidates, read = read_documents(items, today)
 
+    quiet = crawl.pop("quiet_sources", [])
     payload = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "window_days": models.WINDOW_DAYS,
         "counts": {**crawl, **read, "candidates": len(candidates)},
+        "quiet_sources": quiet,
         "candidates": candidates,
     }
     CANDIDATES.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(
         f"\n{len(candidates)} candidates written to {CANDIDATES.name}\n"
-        f"  {crawl['sources']} sources crawled, {crawl['refused']} refused\n"
+        f"  {crawl['sources']} sources crawled, {crawl['refused']} refused, "
+        f"{crawl['empty']} returned nothing\n"
         f"  {read['refused']} documents refused, {read['unreadable']} unreadable, "
-        f"{read['stale']} outside the {LOOKBACK_DAYS}-day lookback\n"
+        f"{read['stale']} outside the {LOOKBACK_DAYS}-day lookback"
+    )
+    if quiet:
+        print("\nContributing nothing this run — check whether the source moved:")
+        for name in quiet:
+            print(f"  - {name}")
+    print(
         "\nBlurbs are not written here. Each candidate carries the document text "
         "they have to be written from."
     )

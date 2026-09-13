@@ -120,3 +120,34 @@ class TestDocumentReading:
         monkeypatch.setattr(sweep_module, "fetch", lambda url: (self.readable(), 200))
         candidates, _ = sweep_module.read_documents([self.item()], date(2026, 9, 13))
         assert "blurb" not in candidates[0]
+
+
+class TestQuietSources:
+    """A source contributing nothing must say so.
+
+    The first live run crawled NFPA and the OSHA docket successfully and got
+    zero links from both — they render their listings client-side. Counted as
+    "crawled", they look identical to a quiet week, which is how a registry
+    rots while every run stays green.
+    """
+
+    SOURCES = [{"name": "NFPA", "url": "https://www.nfpa.org/"}]
+
+    def test_a_source_yielding_no_links_is_named(self, monkeypatch):
+        shell = '<html><body><div id="root"></div></body></html>'
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (shell, 200))
+        _, tally = sweep_module.gather(self.SOURCES)
+        assert tally["empty"] == 1
+        assert tally["quiet_sources"] == ["NFPA (0 links)"]
+
+    def test_a_refused_source_is_named_too(self, monkeypatch):
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, 403))
+        _, tally = sweep_module.gather(self.SOURCES)
+        assert tally["refused"] == 1
+        assert tally["quiet_sources"] == ["NFPA (refused)"]
+
+    def test_a_working_source_is_not_named(self, monkeypatch):
+        page = '<html><body><a href="/r">Firefighter fatalities report 2026</a></body></html>'
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (page, 200))
+        sightings, tally = sweep_module.gather(self.SOURCES)
+        assert tally["quiet_sources"] == [] and len(sightings) == 1
