@@ -31,7 +31,7 @@ JSON="divisions.json"
 # Python tool (the tactical human performance job aggregator), not agents.
 # None of these is a division — they must never be scanned as source-agent
 # categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }
