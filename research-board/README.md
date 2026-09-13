@@ -13,6 +13,8 @@ The rebuild described in *Tactical HP Board: Brief for the Coder (v2)*, 13 SEP 2
 | `tactical_research/render.py` | The rendered board and archive pages: hot block on top, one filterable feed below. |
 | `tactical_research/sources.json` | The source registry with a sector field, and the non-military search vocabulary. |
 | `tactical_research/watch.py` | The standards-panel watcher: what counts as a page change worth an editor's attention. |
+| `sweep.py` | The weekly sweep: crawl the registry, cluster, fetch primary documents, emit candidates. Also renders the pages. |
+| `tactical_research/extract.py` | Reading a listing page for links and a primary document for its title, date and text. |
 | `watch_standards.py` | The CI runner for that watch — the only part that touches the network. |
 | `tactical_research/standards.json` | The current-standards panel. Hand-edited; the bot only watches each row's page. |
 
@@ -34,11 +36,27 @@ the first draft of this module.
 The one exception is events and program announcements, which often have no
 underlying document and may stand on coverage.
 
-## Not built yet
+## What the sweep does, and what it refuses to do
 
-The sweep that fills the board. `render.py` turns items into the page, but
-something has to produce the items, and writing blurbs from primary sources
-means outbound fetch — so that step has to run where fetch works.
+`sweep.py` crawls all 17 registry sources, turns their listing links into
+sightings, clusters them into one item per primary document, fetches each of
+those documents, and writes `candidates.json`.
+
+It **does not write blurbs**, and a test pins that. The brief requires a blurb
+to come from the fetched document rather than from coverage of it — *"the agent
+cannot get context right from search snippets any better than those outlets
+did"* — so the sweep's job is to put the document in front of whoever writes and
+stop there. Each candidate carries the document's own text.
+
+Two refusals matter more than anything the sweep produces:
+
+- **An unreadable page never becomes a candidate.** A 200 that yields a
+  JavaScript shell, a login wall or an undecodable PDF is discarded and counted.
+  Keeping it would mean writing a blurb from the headline, which is exactly the
+  failure the brief names.
+- **`--render` refuses to render at all if any item fails validation**, and
+  reports every problem rather than the first. Rendering the valid half would
+  drop items silently and leave the board looking complete when it is not.
 
 ## One thing the brief and the data disagree on
 

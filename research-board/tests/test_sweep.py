@@ -1,0 +1,122 @@
+"""The sweep's non-network behaviour.
+
+Fetching is not tested here — that is what the CI run exercises against real
+hosts. What is tested is the part that decides, and above all the gate: the
+board must not render from data that does not validate, because a malformed
+item on a public page is worse than a page that did not update.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from datetime import date
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+import sweep as sweep_module  # noqa: E402
+from tactical_research.cluster import Item  # noqa: E402
+from tactical_research.identifiers import primary_identifier  # noqa: E402
+
+VALID = {
+    "headline": "Army reissues the fitness test standard",
+    "blurb": "The Army published an updated standard. It changes scoring for "
+             "combat arms roles. Programs built on last year's tables need rework.",
+    "primary_url": "https://armypubs.army.mil/aft",
+    "date_published": "2026-09-10",
+    "type": "Policy",
+    "sector": "MIL",
+    "tags": ["Standards and tests"],
+}
+
+
+@pytest.fixture
+def workspace(tmp_path, monkeypatch):
+    """Point the sweep's paths at a scratch directory."""
+    monkeypatch.setattr(sweep_module, "FINDINGS", tmp_path / "findings.json")
+    monkeypatch.setattr(sweep_module, "OUT", tmp_path / "site")
+    return tmp_path
+
+
+def write(workspace, *items):
+    (workspace / "findings.json").write_text(json.dumps({"items": list(items)}), encoding="utf-8")
+
+
+class TestRenderGate:
+    def test_renders_both_pages_from_valid_findings(self, workspace):
+        write(workspace, VALID)
+        assert sweep_module.render() == 0
+        assert (workspace / "site" / "board.html").exists()
+        assert (workspace / "site" / "archive.html").exists()
+
+    def test_refuses_to_render_an_invalid_item(self, workspace):
+        write(workspace, {**VALID, "tags": ["Not a real tag"]})
+        assert sweep_module.render() == 1
+        assert not (workspace / "site").exists()
+
+    def test_one_bad_item_stops_the_whole_render(self, workspace):
+        # Publishing the good half of a batch would quietly drop items and make
+        # the board look complete when it is not.
+        write(workspace, VALID, {**VALID, "type": "Opinion"})
+        assert sweep_module.render() == 1
+
+    def test_missing_findings_is_reported_not_crashed(self, workspace):
+        assert sweep_module.render() == 1
+
+
+class TestDocumentReading:
+    """read_documents is where an unreadable page must not become an item."""
+
+    def item(self, url="https://armypubs.army.mil/doc", published=""):
+        return Item(
+            key="k", primary_url=url,
+            identifier=primary_identifier("AR 350-1"),
+            title="Source listing title", published=published,
+        )
+
+    def readable(self):
+        return "<html><body><h1>A Real Document</h1><p>" + ("finding " * 60) + "</p></body></html>"
+
+    def test_a_readable_document_becomes_a_candidate(self, monkeypatch):
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (self.readable(), 200))
+        candidates, tally = sweep_module.read_documents([self.item()], date(2026, 9, 13))
+        assert len(candidates) == 1 and tally["fetched"] == 1
+        assert candidates[0]["document_title"] == "A Real Document"
+        assert candidates[0]["excerpt"]
+
+    def test_an_unreadable_page_never_becomes_a_candidate(self, monkeypatch):
+        # A 200 that yielded nothing. Writing a blurb from this would mean
+        # writing it from the headline, which is the failure the brief names.
+        shell = '<html><head><title>Loading…</title></head><body><div id="root"></div></body></html>'
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (shell, 200))
+        candidates, tally = sweep_module.read_documents([self.item()], date(2026, 9, 13))
+        assert candidates == [] and tally["unreadable"] == 1
+
+    def test_a_refused_document_is_counted_not_invented(self, monkeypatch):
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, 403))
+        candidates, tally = sweep_module.read_documents([self.item()], date(2026, 9, 13))
+        assert candidates == [] and tally["refused"] == 1
+
+    def test_an_item_far_outside_the_lookback_is_skipped(self, monkeypatch):
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (self.readable(), 200))
+        old = self.item(published="2024-01-01")
+        candidates, tally = sweep_module.read_documents([old], date(2026, 9, 13))
+        assert candidates == [] and tally["stale"] == 1
+
+    def test_a_non_allowlisted_url_is_not_fetched_as_a_document(self, monkeypatch):
+        # The allowlist is the trust boundary for what a blurb may be written
+        # from. Coverage reaches the page as a Reporting link, never as a source.
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (self.readable(), 200))
+        trade = self.item(url="https://www.militarytimes.com/story")
+        candidates, _ = sweep_module.read_documents([trade], date(2026, 9, 13))
+        assert candidates == []
+
+    def test_the_sweep_never_writes_a_blurb(self, monkeypatch):
+        """The one invariant worth a test of its own."""
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (self.readable(), 200))
+        candidates, _ = sweep_module.read_documents([self.item()], date(2026, 9, 13))
+        assert "blurb" not in candidates[0]

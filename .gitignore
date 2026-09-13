@@ -94,3 +94,7 @@ site/
 scripts/netlify/node_modules/
 # …but the Netlify build toolchain pins its versions, so that lockfile is tracked.
 !scripts/netlify/package-lock.json
+
+# Sweep output: a CI artifact, not source
+research-board/candidates.json
+research-board/findings.json
