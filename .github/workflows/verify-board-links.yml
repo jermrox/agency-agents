@@ -1,0 +1,108 @@
+# Resolve every link on the research board.
+#
+# The board ships with "0 Fetch-verified" because the sweep that built it ran
+# where outbound fetches are blocked — every summary came from search-result
+# text, not from the document. This workflow is the way out of that: a runner
+# has open internet, so it resolves each URL and reports what actually came back.
+#
+# It does not edit the board. It produces evidence; updating the entries is a
+# separate, deliberate step.
+#
+# Read the output honestly. A 403 from a .mil host is usually a bot filter, not
+# a dead link — that is "blocked", not "gone". Only 404/410 is proof of death.
+name: Verify board links
+
+on:
+  workflow_dispatch:
+  push:
+    # Only when the checker itself changes — this job hits 123 external hosts,
+    # so it has no business running on every commit.
+    paths:
+      - '.github/workflows/verify-board-links.yml'
+  schedule:
+    # Weekly, Mondays 13:00 UTC. Link rot on .mil domains is constant.
+    - cron: '0 13 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve every URL on the board
+        run: |
+          set -uo pipefail
+          BOARD=healthcare/dashboards/h2f-scout-board.html
+
+          grep -o 'href="http[^"]*"' "$BOARD" | sed 's/href="//;s/"$//' | sort -u > /tmp/urls
+          total=$(wc -l </tmp/urls | tr -d ' ')
+          echo "Resolving $total unique URLs from $BOARD"
+          echo
+
+          # One probe per URL, 12 at a time. Sequentially this takes hours: a
+          # handful of .mil hosts hang until they time out, and the whole run
+          # waits on each one in turn.
+          cat > /tmp/probe.sh <<'PROBE'
+          #!/usr/bin/env bash
+          url="$1"
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36'
+          # A ranged GET rather than HEAD: plenty of .mil hosts reject HEAD but
+          # serve a normal request fine, and one byte is enough to prove that.
+          read -r code final < <(curl -sS -A "$UA" -o /dev/null \
+              -w '%{http_code} %{url_effective}' \
+              -L --max-time 20 --connect-timeout 10 -r 0-0 "$url" 2>/dev/null) || true
+          printf '%s\t%s\t%s\n' "${code:-000}" "$url" "${final:-$url}"
+          PROBE
+          chmod +x /tmp/probe.sh
+
+          xargs -a /tmp/urls -P 12 -I{} /tmp/probe.sh "{}" > /tmp/results.tsv
+          sort -k1,1 /tmp/results.tsv | awk -F'\t' '{printf "  %s  %s\n", $1, $2}'
+
+          echo
+          echo "================ SUMMARY ================"
+          got=$(wc -l </tmp/results.tsv | tr -d ' ')
+          alive=$(awk -F'\t' '$1 ~ /^2/' /tmp/results.tsv | wc -l | tr -d ' ')
+          dead=$(awk -F'\t' '$1 == "404" || $1 == "410"' /tmp/results.tsv | wc -l | tr -d ' ')
+          blocked=$(awk -F'\t' '$1 == "401" || $1 == "403" || $1 == "429"' /tmp/results.tsv | wc -l | tr -d ' ')
+          unreach=$(awk -F'\t' '$1 == "000"' /tmp/results.tsv | wc -l | tr -d ' ')
+          other=$(( got - alive - dead - blocked - unreach ))
+          echo "  probed      $got of $total"
+          echo "  2xx alive   $alive"
+          echo "  404/410     $dead      <- genuinely gone, fix or drop these"
+          echo "  401/403/429 $blocked   <- host answered, refused the robot; NOT proof of death"
+          echo "  no answer   $unreach   <- timeout/TLS/DNS"
+          echo "  other       $other"
+
+          echo
+          echo "================ DEAD (404/410) ================"
+          awk -F'\t' '$1 == "404" || $1 == "410" {print "  " $1 "  " $2}' /tmp/results.tsv || true
+          echo
+          echo "================ BLOCKED / NO ANSWER ================"
+          awk -F'\t' '$1 == "401" || $1 == "403" || $1 == "429" || $1 == "000" {print "  " $1 "  " $2}' /tmp/results.tsv || true
+          echo
+          echo "================ SOFT 404 (200, but landed on an error page) ================"
+          # The CDMRP press-release link returned 200 while redirecting to
+          # /404?aspxerrorpath=... A status code alone would have called that healthy.
+          awk -F'\t' '$1 ~ /^2/ && ($3 ~ /[?&\/]404([?&\/]|$)/ || $3 ~ /aspxerrorpath/ || $3 ~ /maint\.html/ || $3 ~ /[Nn]ot[-_]?[Ff]ound/) {print "  " $1 "  " $2 "\n      -> " $3}' /tmp/results.tsv || true
+          echo
+          echo "================ OTHER NON-2xx ================"
+          awk -F'\t' '$1 !~ /^2/ && $1 != "404" && $1 != "410" && $1 != "401" && $1 != "403" && $1 != "429" && $1 != "000" {print "  " $1 "  " $2}' /tmp/results.tsv || true
+          echo
+          echo "================ REDIRECTED ================"
+          awk -F'\t' '$2 != $3 {print "  " $2 "\n      -> " $3}' /tmp/results.tsv || true
+
+          # Evidence for the follow-up edit, not a gate: this job reports, it
+          # does not decide. Never fail the build over a bot filter.
+          echo
+          echo "Reported $got URLs. This job does not fail on dead links — read the lists above."
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: board-link-results
+          path: /tmp/results.tsv
+          retention-days: 30
