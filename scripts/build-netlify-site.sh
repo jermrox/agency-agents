@@ -163,9 +163,17 @@ cat > "$OUT/_headers" <<'HEADERS'
 /*.json
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300
+HEADERS
+
+# The immutable cache rule only makes sense where the file ships. Declaring it
+# on a site without Tailwind is dead config, and dead config is how a reader
+# ends up believing a site serves something it does not.
+if [ -f "$OUT/tailwind.css" ]; then
+  cat >> "$OUT/_headers" <<'HEADERS'
 /tailwind.css
   Cache-Control: public, max-age=31536000, immutable
 HEADERS
+fi
 
 echo "Tailwind: $TW_MODE"
 echo "Published $(find "$OUT" -type f | wc -l | tr -d ' ') files to $OUT/:"
