@@ -106,7 +106,11 @@ jobs:
           echo "== Content of / =="
           curl -sS -L --max-time 30 "$SITE/" -o /tmp/index || true
 
-          rows=$(grep -o "id:'" /tmp/index | wc -l | tr -d ' ')
+          # Swallowing grep's no-match exit matters: the job shell is `bash -e` and
+          # this script sets pipefail, so an unguarded grep that matches nothing would
+          # abort the run instead of reporting the count as zero -- turning the
+          # loudest possible failure into a silent one.
+          rows=$( { grep -o "id:'" /tmp/index || true; } | wc -l | tr -d ' ')
           echo "  built-in opportunities     : $rows"
 
           title=$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' /tmp/index | head -1)
