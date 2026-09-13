@@ -1,0 +1,50 @@
+name: Watch standards panel
+
+# Section 6 of the board brief: watch each row's official page weekly and raise
+# a flag when its title or dates change, so the editor knows to look. The table
+# itself is hand-edited and this workflow never touches it.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 13 * * 1'          # Mondays, so a flag lands at the start of a week
+  push:
+    paths:
+      - 'research-board/watch_standards.py'
+      - 'research-board/tactical_research/watch.py'
+      - '.github/workflows/watch-standards.yml'
+
+permissions:
+  contents: write                   # to commit the snapshot, nothing else
+
+concurrency:
+  group: watch-standards
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compare every watched page against its baseline
+        run: python research-board/watch_standards.py
+
+      - name: Keep the baseline current
+        # Only from the default branch: a snapshot committed off a branch would
+        # make that branch's baseline the one everyone else compares against.
+        if: github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- research-board/standards-snapshot.json; then
+            echo "Baseline unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research-board/standards-snapshot.json
+          git commit -m "chore(standards): refresh the watched-page baseline"
+          git push

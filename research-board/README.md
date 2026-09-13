@@ -12,6 +12,8 @@ The rebuild described in *Tactical HP Board: Brief for the Coder (v2)*, 13 SEP 2
 | `tactical_research/hot.py` | Hot this month: a tag earns a line at three or more independent items. |
 | `tactical_research/render.py` | The rendered board and archive pages: hot block on top, one filterable feed below. |
 | `tactical_research/sources.json` | The source registry with a sector field, and the non-military search vocabulary. |
+| `tactical_research/watch.py` | The standards-panel watcher: what counts as a page change worth an editor's attention. |
+| `watch_standards.py` | The CI runner for that watch — the only part that touches the network. |
 | `tactical_research/standards.json` | The current-standards panel. Hand-edited; the bot only watches each row's page. |
 
 Both are pure logic with no network, and both are covered by `tests/`.
@@ -49,6 +51,20 @@ Nothing here widens the allowlist to paper over that: it is a trust boundary and
 changing it is a decision, not a fix. The panel's tests assert an official host
 instead, which is the right bar for a page-change watch — a different job from
 writing a blurb out of a document.
+
+## The watcher is the alarm, not the editor
+
+Section 6 puts a person in charge of the standards table. `watch.py` only
+compares each row's official page week to week and raises a flag when the title
+or the dates on it move.
+
+The judgement call is what *doesn't* raise a flag. A raw content diff would flag
+nearly every row nearly every week — federal pages carry rotating banners and
+counters — and a watcher that cries wolf weekly is one the editor learns to
+ignore, which is worse than no watcher. So a content-hash difference alone is
+recorded and not flagged, and a week a page could not be fetched keeps the old
+baseline rather than overwriting it with a blank, so the real change that lands
+afterwards still has something to compare against.
 
 ## The fetch dependency
 
