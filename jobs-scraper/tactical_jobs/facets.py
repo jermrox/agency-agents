@@ -727,6 +727,17 @@ def salary_floor_annual(enrichment: dict[str, Any]) -> float | None:
     return None
 
 
+def _carried_contingency(posting: JobPosting) -> str:
+    """The upstream decision, when it was a decision.
+
+    ``"unknown"`` means the full posting said nothing either way, so it must
+    not block the text check: re-reading costs nothing and rescues a posting
+    whose evidence happens to sit inside the excerpt.
+    """
+    carried = (posting.contingency or "").strip().lower()
+    return carried if carried in ("contingent", "funded") else ""
+
+
 def facets_for(posting: JobPosting) -> dict[str, Any]:
     """Every facet for one posting, in the shape the feed publishes."""
     slug = discipline_of(posting.title, posting.description)
@@ -750,8 +761,11 @@ def facets_for(posting: JobPosting) -> dict[str, Any]:
         "branch_labels": branch_labels(branches),
         "location_classes": sorted(classes),
         "location_regions": location_regions(posting.location, classes),
-        "contingency": contingency_of(
-            posting.title, posting.description, posting.compensation or ""
-        ),
+        # The field is authoritative -- it was decided upstream against the
+        # full posting. The text check only still runs when nothing was
+        # carried, so a hand-built posting, or one whose description has not
+        # been trimmed yet, is not silently read as "unknown".
+        "contingency": _carried_contingency(posting)
+        or contingency_of(posting.title, posting.description, posting.compensation or ""),
         "salary_floor_annual": salary_floor_annual(posting.enrichment),
     }

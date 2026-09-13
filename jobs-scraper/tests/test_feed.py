@@ -258,3 +258,66 @@ class TestTeleworkSurvivesTheFeed:
             self._row("Telework eligible: True.", telework=False)
         )
         assert "telework" in entry["facets"]["location_classes"]
+
+
+class TestContingencySurvivesTheFeed:
+    """Contingency must survive the trip through the published board.
+
+    The same failure as telework, reported by a reader on 2026-09-13: the
+    board's "hide contingent" filter hid 7 postings while 34 were contingent.
+    Employers put "This is a contingent posting" near the END of a long
+    description -- GDIT's sat about 5,000 characters into a 7,915 character
+    body -- and the board stores a ~400 character excerpt, so recomputing the
+    facet from that excerpt answered "unknown" for 27 real postings (20 GDIT,
+    7 Resolution Think). Only the carried decision saves them.
+    """
+
+    def _row(self, description: str, contingency: str = "") -> dict:
+        row = {
+            "id": "RQ223541",
+            "url": (
+                "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/"
+                "USA-NC-Fort-Bragg/Senior-Strength---Conditioning-Specialist_RQ223541"
+            ),
+            "title": "Senior Strength & Conditioning Specialist",
+            "employer": "General Dynamics Information Technology",
+            "location": "USA NC Fort Bragg",
+            "description": description,
+        }
+        if contingency:
+            row["contingency"] = contingency
+        return row
+
+    def test_flag_survives_a_truncated_description(self):
+        # 400 characters with no contingency word anywhere -- what the board
+        # stores for the GDIT posting whose full text says it plainly.
+        excerpt = "Duties. " + ("Deliver strength and conditioning to SOF. " * 10)
+        assert "contingen" not in excerpt.lower()
+        entry = feed.normalize_row(self._row(excerpt, contingency="contingent"))
+        assert entry["facets"]["contingency"] == "contingent"
+
+    def test_the_facet_alone_is_enough_to_restore_it(self):
+        # Older board entries carry the value only inside ``facets``.
+        row = self._row("Duties. On an active contract.")
+        row["facets"] = {"contingency": "contingent"}
+        assert feed.normalize_row(row)["facets"]["contingency"] == "contingent"
+
+    def test_full_text_still_works_without_the_flag(self):
+        # A posting whose description has not been trimmed is read as before.
+        body = "LOCATION: Various OCONUS & CONUS SITES. This is a contingent posting, expected to start in 2027."
+        assert feed.normalize_row(self._row(body))["facets"]["contingency"] == "contingent"
+
+    def test_an_ordinary_posting_is_not_flagged(self):
+        entry = feed.normalize_row(self._row("Duties. Immediate opening on an active contract."))
+        assert entry["facets"]["contingency"] != "contingent"
+
+    def test_the_value_is_published_for_the_next_reader(self):
+        entry = feed.normalize_row(self._row("Duties.", contingency="contingent"))
+        assert entry["contingency"] == "contingent"
+
+    def test_an_unknown_carried_value_does_not_block_the_text_check(self):
+        # "unknown" means the full posting said nothing either way, so a
+        # posting whose evidence does sit inside the excerpt is still read.
+        row = self._row("This is a contingent posting, expected to start in 2027.")
+        row["facets"] = {"contingency": "unknown"}
+        assert feed.normalize_row(row)["facets"]["contingency"] == "contingent"

@@ -14,7 +14,7 @@ from .archive import Archive
 from .classify import Verdict, classify
 from .config import Config
 from .enrich import enrich
-from .facets import facets_for, looks_telework
+from .facets import contingency_of, facets_for, looks_telework
 from .feed import normalize_file
 from .insights import build_insights
 from .liveness import check_all
@@ -171,6 +171,15 @@ def run(config: Config, *, dry_run: bool = False) -> RunReport:
             )
         except Exception as exc:  # pragma: no cover - defensive
             log.warning("telework check failed for %s: %s", posting.url, exc)
+
+        # Same reason, same place: "This is a contingent posting" sits near the
+        # end of a long description and never reaches the published excerpt.
+        try:
+            posting.contingency = posting.contingency or contingency_of(
+                posting.title, posting.description, posting.compensation or ""
+            )
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("contingency check failed for %s: %s", posting.url, exc)
 
         try:
             posting.facets = facets_for(posting)
