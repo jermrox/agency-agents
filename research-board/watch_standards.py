@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from tactical_research.watch import missing_flags, report, sweep  # noqa: E402
+from tactical_research.watch import missing_flags, report, stale_flags, sweep  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 STANDARDS = HERE / "tactical_research" / "standards.json"
@@ -80,13 +80,16 @@ def main() -> int:
         elif status in GONE:
             gone[url] = status
 
-    refused = sum(1 for r in rows if r.get("url") and r["url"] not in pages and r["url"] not in gone)
-    flags, updated = sweep(rows, pages, snapshot)
-    flags = missing_flags(rows, gone) + flags
+    refused = {
+        r["url"] for r in rows
+        if r.get("url") and r["url"] not in pages and r["url"] not in gone
+    }
+    flags, updated = sweep(rows, pages, snapshot, refused=refused)
+    flags = missing_flags(rows, gone) + stale_flags(rows, updated) + flags
 
     text = report(flags)
     if refused:
-        text += f"\n\n{refused} page(s) refused the request this run; their baselines are unchanged."
+        text += f"\n\n{len(refused)} page(s) refused the request this run; their baselines are unchanged."
     print("\n" + text)
 
     SNAPSHOT.write_text(json.dumps(updated, indent=2, sort_keys=True) + "\n", encoding="utf-8")

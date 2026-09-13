@@ -121,7 +121,39 @@ def missing_flags(rows: list[dict], gone: dict[str, int]) -> list[Flag]:
     ]
 
 
-def sweep(rows: list[dict], pages: dict[str, str], snapshot: dict) -> tuple[list[Flag], dict]:
+# Four weekly runs. A row refused for a month running is not being watched, and
+# the editor should hear that once rather than never.
+STALE_RUNS = 4
+
+
+def stale_flags(rows: list[dict], snapshot: dict, threshold: int = STALE_RUNS) -> list[Flag]:
+    """Flags for rows nobody has actually managed to watch in a long time.
+
+    Several DoD hosts refuse automated requests outright, and a refusal is
+    correctly not a change — but a row refused week after week looks exactly
+    like a row that never changes. Without this, the panel reports "nothing
+    changed" about pages it has never once read.
+    """
+    flags = []
+    for row in rows:
+        entry = snapshot.get(row.get("url", ""), {})
+        runs = entry.get("refused_runs", 0)
+        if runs >= threshold:
+            flags.append(Flag(
+                row.get("name", row.get("url", "")),
+                "watch",
+                "watched",
+                f"unread for {runs} runs — the host refuses automated requests, so check it by hand",
+            ))
+    return flags
+
+
+def sweep(
+    rows: list[dict],
+    pages: dict[str, str],
+    snapshot: dict,
+    refused: set[str] | None = None,
+) -> tuple[list[Flag], dict]:
     """Compare every row against the snapshot. Returns (flags, next snapshot).
 
     ``pages`` maps URL to fetched HTML. A row whose page could not be fetched
@@ -131,22 +163,33 @@ def sweep(rows: list[dict], pages: dict[str, str], snapshot: dict) -> tuple[list
     """
     flags: list[Flag] = []
     updated = dict(snapshot)
+    refused = refused or set()
 
     for row in rows:
         url = row.get("url", "")
         name = row.get("name", url)
         if not url:
             continue                      # a row with no page cannot be watched
+
         html = pages.get(url)
         if html is None:
-            continue                      # fetch failed: keep the old baseline
+            # Fetch failed: keep the old baseline, but remember that we did not
+            # read the page, so a permanently refused row cannot masquerade as
+            # a stable one.
+            if url in refused:
+                entry = dict(updated.get(url, {}))
+                entry["refused_runs"] = entry.get("refused_runs", 0) + 1
+                updated[url] = entry
+            continue
 
         after = fingerprint(html)
         raw_before = snapshot.get(url)
         before = Fingerprint.from_dict(raw_before) if raw_before else None
 
         flags.extend(compare(name, before, after))
-        updated[url] = after.to_dict()
+        entry = after.to_dict()
+        entry["refused_runs"] = 0         # we read it: the counter starts over
+        updated[url] = entry
 
     return flags, updated
 

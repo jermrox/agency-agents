@@ -17,8 +17,10 @@ from tactical_research.watch import (  # noqa: E402
     Fingerprint,
     compare,
     fingerprint,
+    STALE_RUNS,
     missing_flags,
     report,
+    stale_flags,
     sweep,
 )
 
@@ -123,6 +125,47 @@ class TestMissingPages:
     def test_a_refusal_is_not_a_missing_page(self):
         # 403 is a bot filter answering and declining. The standard is fine.
         assert missing_flags(ROWS, {}) == []
+
+
+class TestPersistentlyRefused:
+    """Six .mil rows refuse automated requests outright. A refusal is correctly
+    not a change — but week after week it looks exactly like a page that never
+    changes, and the panel would report "nothing changed" about a page it has
+    never once read."""
+
+    def test_a_refusal_is_counted_not_forgotten(self):
+        _, snapshot = sweep(ROWS, {}, {}, refused={ROWS[0]["url"]})
+        assert snapshot[ROWS[0]["url"]]["refused_runs"] == 1
+
+    def test_refusals_accumulate_across_runs(self):
+        snapshot = {}
+        for _ in range(3):
+            _, snapshot = sweep(ROWS, {}, snapshot, refused={ROWS[0]["url"]})
+        assert snapshot[ROWS[0]["url"]]["refused_runs"] == 3
+
+    def test_one_bad_week_does_not_raise_a_flag(self):
+        _, snapshot = sweep(ROWS, {}, {}, refused={ROWS[0]["url"]})
+        assert stale_flags(ROWS, snapshot) == []
+
+    def test_a_month_of_refusals_tells_the_editor_to_look_by_hand(self):
+        snapshot = {}
+        for _ in range(STALE_RUNS):
+            _, snapshot = sweep(ROWS, {}, snapshot, refused={ROWS[0]["url"]})
+        flags = stale_flags(ROWS, snapshot)
+        assert len(flags) == 1 and "by hand" in flags[0].after
+
+    def test_reading_the_page_again_clears_the_counter(self):
+        snapshot = {}
+        for _ in range(STALE_RUNS):
+            _, snapshot = sweep(ROWS, {}, snapshot, refused={ROWS[0]["url"]})
+        _, snapshot = sweep(ROWS, {ROWS[0]["url"]: page()}, snapshot)
+        assert snapshot[ROWS[0]["url"]]["refused_runs"] == 0
+        assert stale_flags(ROWS, snapshot) == []
+
+    def test_a_refused_row_keeps_the_baseline_it_had(self):
+        _, first = sweep(ROWS, {ROWS[0]["url"]: page()}, {})
+        _, after = sweep(ROWS, {}, first, refused={ROWS[0]["url"]})
+        assert after[ROWS[0]["url"]]["title"] == first[ROWS[0]["url"]]["title"]
 
 
 class TestReport:

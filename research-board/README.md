@@ -66,6 +66,19 @@ recorded and not flagged, and a week a page could not be fetched keeps the old
 baseline rather than overwriting it with a blank, so the real change that lands
 afterwards still has something to compare against.
 
+### Six rows the bot cannot read
+
+Every `.mil` row in the panel — army.mil, af.mil, mynavyhr, marines.mil,
+spaceforce.mil, esd.whs.mil — answers an automated request with 403. A full
+browser header set does not clear DoD's filter. That is the host declining the
+robot, not a standard disappearing, so it is never treated as a change.
+
+But a row refused week after week looks exactly like a row that never changes,
+and the panel would happily report "nothing changed" about a page it has never
+once read. So refusals are counted, and after four consecutive runs the row is
+flagged as unread with a note to check it by hand. Half the panel is military,
+so this is the difference between a watcher and the appearance of one.
+
 ## The fetch dependency
 
 The brief requires blurbs to be written from the fetched primary source, not
