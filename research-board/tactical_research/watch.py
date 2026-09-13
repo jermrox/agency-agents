@@ -106,6 +106,21 @@ def compare(row_name: str, before: Fingerprint | None, after: Fingerprint) -> li
     return flags
 
 
+def missing_flags(rows: list[dict], gone: dict[str, int]) -> list[Flag]:
+    """Flags for rows whose page is gone.
+
+    A row pointing at a 404 can never be watched again, so it is worth an
+    editor's attention in its own right — silently watching nothing is the
+    failure mode a green check hides. Only 404 and 410 count: a 403 is a bot
+    filter refusing the robot, which says nothing about the standard.
+    """
+    return [
+        Flag(row.get("name", row.get("url", "")), "page", "reachable", f"HTTP {gone[row['url']]} — the page is gone")
+        for row in rows
+        if row.get("url") in gone
+    ]
+
+
 def sweep(rows: list[dict], pages: dict[str, str], snapshot: dict) -> tuple[list[Flag], dict]:
     """Compare every row against the snapshot. Returns (flags, next snapshot).
 

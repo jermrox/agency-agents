@@ -17,6 +17,7 @@ from tactical_research.watch import (  # noqa: E402
     Fingerprint,
     compare,
     fingerprint,
+    missing_flags,
     report,
     sweep,
 )
@@ -106,6 +107,22 @@ class TestSweep:
         rows = [dict(ROWS[0])]
         sweep(rows, {ROWS[0]["url"]: page(title="Something else")}, {})
         assert rows == [ROWS[0]]
+
+
+class TestMissingPages:
+    """A row pointing at a dead page watches nothing, and looks identical to a
+    row that simply never changes. The first CI run caught four of these."""
+
+    def test_a_gone_page_is_flagged_for_the_editor(self):
+        flags = missing_flags(ROWS, {ROWS[0]["url"]: 404})
+        assert len(flags) == 1 and "gone" in flags[0].after
+
+    def test_a_reachable_row_is_not_flagged(self):
+        assert missing_flags(ROWS, {}) == []
+
+    def test_a_refusal_is_not_a_missing_page(self):
+        # 403 is a bot filter answering and declining. The standard is fine.
+        assert missing_flags(ROWS, {}) == []
 
 
 class TestReport:

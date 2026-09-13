@@ -20,31 +20,47 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from tactical_research.watch import report, sweep  # noqa: E402
+from tactical_research.watch import missing_flags, report, sweep  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 STANDARDS = HERE / "tactical_research" / "standards.json"
 SNAPSHOT = HERE / "standards-snapshot.json"
 
-# Several .mil and .gov hosts refuse a bare urllib user agent outright.
-UA = "Mozilla/5.0 (compatible; tactical-hp-board standards watch; +https://github.com/jermrox/agency-agents)"
+# Several .mil and .gov hosts sit behind filters that refuse a bare urllib
+# request outright. A full browser header set clears some of them; the ones it
+# does not are reported as refusals rather than treated as changes.
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+}
 TIMEOUT = 25
 
+# Only these prove a page is gone. Everything else — 403, 429, a timeout — is
+# the host declining to answer a robot, which says nothing about the standard.
+GONE = (404, 410)
 
-def fetch(url: str) -> str | None:
-    """The page, or None if the host did not give us one.
 
-    None means "no opinion this week", not "the page is empty" — a 403 from a
-    bot filter is the host refusing the robot, not the standard disappearing.
+def fetch(url: str) -> tuple[str | None, int | None]:
+    """(page, status). A page of None means we have no opinion this week.
+
+    The status comes back so the caller can tell "this page is gone", which an
+    editor needs to know, from "this host refused the robot", which they do not.
     """
-    request = urllib.request.Request(url, headers={"User-Agent": UA})
+    request = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-            raw = response.read(2_000_000)
-        return raw.decode("utf-8", errors="replace")
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError, ValueError) as problem:
+            return response.read(2_000_000).decode("utf-8", errors="replace"), 200
+    except urllib.error.HTTPError as problem:
+        print(f"  could not fetch {url}: HTTP {problem.code}", file=sys.stderr)
+        return None, problem.code
+    except (urllib.error.URLError, OSError, ValueError) as problem:
         print(f"  could not fetch {url}: {problem}", file=sys.stderr)
-        return None
+        return None, None
 
 
 def main() -> int:
@@ -52,21 +68,25 @@ def main() -> int:
     snapshot = json.loads(SNAPSHOT.read_text(encoding="utf-8")) if SNAPSHOT.exists() else {}
 
     pages: dict[str, str] = {}
+    gone: dict[str, int] = {}
     for row in rows:
         url = row.get("url", "")
         if not url:
             continue
         print(f"watching {row['name']}")
-        html = fetch(url)
+        html, status = fetch(url)
         if html is not None:
             pages[url] = html
+        elif status in GONE:
+            gone[url] = status
 
-    unreachable = sum(1 for r in rows if r.get("url") and r["url"] not in pages)
+    refused = sum(1 for r in rows if r.get("url") and r["url"] not in pages and r["url"] not in gone)
     flags, updated = sweep(rows, pages, snapshot)
+    flags = missing_flags(rows, gone) + flags
 
     text = report(flags)
-    if unreachable:
-        text += f"\n\n{unreachable} page(s) could not be fetched this run; their baselines are unchanged."
+    if refused:
+        text += f"\n\n{refused} page(s) refused the request this run; their baselines are unchanged."
     print("\n" + text)
 
     SNAPSHOT.write_text(json.dumps(updated, indent=2, sort_keys=True) + "\n", encoding="utf-8")
