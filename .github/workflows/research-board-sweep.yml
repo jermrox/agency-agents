@@ -12,6 +12,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 13 * * 1'          # Mondays, alongside the standards watch
+  push:
+    # Only when the sweep itself changes. A crawl of 17 sources is not
+    # something to run on every commit, but a change to the crawler is exactly
+    # what needs proving against live hosts rather than against fixtures.
+    paths:
+      - 'research-board/sweep.py'
+      - 'research-board/tactical_research/extract.py'
+      - '.github/workflows/research-board-sweep.yml'
 
 permissions:
   contents: read
