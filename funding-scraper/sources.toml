@@ -47,16 +47,27 @@ default_amount = "Phase I scale"
 # blocks keep a zero-result term visible in the run summary instead of hiding
 # inside a combined query.
 
-# Grants.gov treats a multi-word keyword as a loose OR, so these queries also
-# return wildland fire staffing and crocodile population monitoring. Those
-# outrank real hits in the closing-soon list purely by having a nearer
-# deadline, so every API query carries a domain vocabulary the title or
-# summary must hit. Drops are counted in the run log, never silent.
+# WHY SO MANY QUERIES, AND WHY eligibilities = "22"
+# Grants.gov's keyword is a loose OR, so one query cannot both reach far enough
+# and stay on topic. The answer is many narrow queries plus the require_any
+# vocabulary below: breadth from the queries, precision from the filter, and
+# every drop counted in the run log.
+#
+# eligibilities = "22" is grants.gov's for-profit code. Vybe is a for-profit
+# small business, so without it the board fills with university- and
+# 501(c)(3)-only programs -- rows that read as opportunities but that Vybe
+# cannot legally win. A short honest board beats a long useless one.
+#
+# rows = 100 is the API's page cap, and pages = 3 walks up to three pages via
+# startRecordNum. The old single page of 40 left real solicitations unread.
+
 [sources.grants_wearable]
 kind = "grants_gov"
 keyword = "wearable sensor"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "22"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -64,12 +75,15 @@ require_any = [
   "human performance", "readiness", "fatigue", "warfighter", "soldier",
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
 ]
+
 
 [sources.grants_digital_health]
 kind = "grants_gov"
 keyword = "digital health monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "22"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -78,11 +92,126 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
 ]
 
+
 [sources.grants_human_performance]
 kind = "grants_gov"
 keyword = "human performance physiological monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_biosensor]
+kind = "grants_gov"
+keyword = "biosensor wearable device"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_remote_monitoring]
+kind = "grants_gov"
+keyword = "remote patient monitoring technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_sleep_recovery]
+kind = "grants_gov"
+keyword = "sleep recovery physiological"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_warfighter]
+kind = "grants_gov"
+keyword = "warfighter readiness monitoring"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_small_business_tech]
+kind = "grants_gov"
+keyword = "small business innovation health technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_medical_device]
+kind = "grants_gov"
+keyword = "medical device development small business"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_ai_health]
+kind = "grants_gov"
+keyword = "machine learning health data algorithm"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "22"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",

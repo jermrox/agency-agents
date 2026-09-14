@@ -25,7 +25,7 @@ watch for the next cycle.
 from __future__ import annotations
 
 import logging
-from typing import Iterable
+from typing import Any, Iterable
 
 from ..http import post_json
 from ..models import Opportunity, parse_date
@@ -48,27 +48,60 @@ class GrantsGovSource(Source):
 
     kind = "grants_gov"
 
-    def fetch(self) -> Iterable[Opportunity]:
-        keyword = self.require("keyword")
-        rows = int(self.options.get("rows", 50))
-        statuses = self.options.get("statuses", "forecasted|posted")
+    def _page(self, keyword: str, rows: int, statuses: str, start: int) -> list[dict]:
+        """One page of hits, or [] if the shape is not what we expect."""
+        body: dict[str, Any] = {
+            "keyword": keyword,
+            "rows": rows,
+            "oppStatuses": statuses,
+            "startRecordNum": start,
+        }
+        # Vybe is a for-profit small business. Without this filter the board
+        # fills with programs restricted to universities and 501(c)(3)s -- rows
+        # that read as opportunities but that Vybe cannot legally win, which is
+        # a worse failure than a short board. "22" is grants.gov's for-profit
+        # eligibility code; leave it unset to search every applicant type.
+        eligibilities = self.options.get("eligibilities")
+        if eligibilities:
+            body["eligibilities"] = str(eligibilities)
+        agencies = self.options.get("agencies")
+        if agencies:
+            body["agencies"] = str(agencies)
 
-        payload = post_json(
-            ENDPOINT,
-            {
-                "keyword": keyword,
-                "rows": rows,
-                "oppStatuses": statuses,
-            },
-        )
-
+        payload = post_json(ENDPOINT, body)
         data = payload.get("data") if isinstance(payload, dict) else None
         hits = (data or {}).get("oppHits", []) if isinstance(data, dict) else []
         if not isinstance(hits, list):
             log.warning("grants.gov returned an unexpected shape for %r", keyword)
-            return
+            return []
+        return [h for h in hits if isinstance(h, dict)]
 
-        for record in hits:
+    def fetch(self) -> Iterable[Opportunity]:
+        keyword = self.require("keyword")
+        # The API caps a page at 100. One page of 40 was leaving whole pages of
+        # real solicitations unread -- the board was short because it never
+        # asked, not because the opportunities were not there.
+        rows = min(int(self.options.get("rows", 100)), 100)
+        statuses = self.options.get("statuses", "forecasted|posted")
+        max_pages = int(self.options.get("pages", 3))
+
+        records: list[dict] = []
+        seen_ids: set[str] = set()
+        for page in range(max_pages):
+            hits = self._page(keyword, rows, statuses, page * rows)
+            if not hits:
+                break
+            # Stop on a page that adds nothing new: some queries repeat the
+            # last page forever rather than returning empty.
+            fresh = [h for h in hits if first_key(h, _ID_KEYS) not in seen_ids]
+            if not fresh:
+                break
+            seen_ids.update(first_key(h, _ID_KEYS) for h in fresh)
+            records.extend(fresh)
+            if len(hits) < rows:
+                break
+
+        for record in records:
             if not isinstance(record, dict):
                 continue
             # Titles arrive HTML-escaped ("Alzheimer&rsquo;s"). The dashboard
