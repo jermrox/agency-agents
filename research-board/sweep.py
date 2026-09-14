@@ -58,6 +58,10 @@ MAX_BYTES = 2_000_000
 # rule throws away anything older than a month anyway.
 LINKS_PER_SOURCE = 40
 
+# Only these prove a page is gone. Everything else — 403, 429, a timeout — is
+# the host declining to answer a robot, which says nothing about the entry.
+GONE = (404, 410)
+
 # How far back a sighting can be dated and still be worth fetching. Wider than
 # the 30-day board on purpose — an item published just outside the window may
 # still be the primary document a fresh piece of coverage points at.
@@ -79,18 +83,28 @@ def fetch(url: str) -> tuple[str | None, int | None]:
 def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
     """Crawl every source listing and turn its links into sightings."""
     sightings: list[Sighting] = []
-    tally = {"sources": 0, "refused": 0, "links": 0, "empty": 0}
+    tally = {"sources": 0, "refused": 0, "gone": 0, "links": 0, "empty": 0}
     quiet: list[str] = []          # crawled fine, offered nothing
 
     for source in sources:
         url = source.get("url", "")
         if not url:
             continue
-        html, _ = fetch(url)
+        html, status = fetch(url)
         if html is None:
-            tally["refused"] += 1
-            quiet.append(f"{source['name']} (refused)")
-            print(f"  refused: {source['name']}", file=sys.stderr)
+            # Gone and refused are different problems with different fixes, and
+            # collapsing them is how a dead registry entry hides behind a bot
+            # filter. A 404 needs the entry repointed; a 403 is the host
+            # declining the robot and the entry may be perfectly correct.
+            if status in GONE:
+                tally["gone"] += 1
+                quiet.append(f"{source['name']} (HTTP {status} — the page is gone)")
+                print(f"  GONE: {source['name']} — HTTP {status}", file=sys.stderr)
+            else:
+                tally["refused"] += 1
+                where = f"HTTP {status}" if status else "no response"
+                quiet.append(f"{source['name']} (refused: {where})")
+                print(f"  refused: {source['name']} — {where}", file=sys.stderr)
             continue
         tally["sources"] += 1
 
@@ -218,7 +232,7 @@ def main(argv=None) -> int:
     print(
         f"\n{len(candidates)} candidates written to {CANDIDATES.name}\n"
         f"  {crawl['sources']} sources crawled, {crawl['refused']} refused, "
-        f"{crawl['empty']} returned nothing\n"
+        f"{crawl['gone']} gone, {crawl['empty']} returned nothing\n"
         f"  {read['refused']} documents refused, {read['unreadable']} unreadable, "
         f"{read['stale']} outside the {LOOKBACK_DAYS}-day lookback"
     )

@@ -143,8 +143,28 @@ class TestQuietSources:
     def test_a_refused_source_is_named_too(self, monkeypatch):
         monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, 403))
         _, tally = sweep_module.gather(self.SOURCES)
-        assert tally["refused"] == 1
-        assert tally["quiet_sources"] == ["NFPA (refused)"]
+        assert tally["refused"] == 1 and tally["gone"] == 0
+        assert tally["quiet_sources"] == ["NFPA (refused: HTTP 403)"]
+
+    def test_a_dead_source_is_reported_as_gone_not_refused(self, monkeypatch):
+        """Different problems, different fixes.
+
+        A 404 needs the registry entry repointed; a 403 is the host declining
+        the robot and the entry may be perfectly correct. Collapsing the two —
+        which the first version of this did — is how a dead entry hides behind
+        a bot filter and never gets fixed.
+        """
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, 404))
+        _, tally = sweep_module.gather(self.SOURCES)
+        assert tally["gone"] == 1 and tally["refused"] == 0
+        assert "gone" in tally["quiet_sources"][0]
+
+    def test_a_source_that_never_answered_is_refused_not_gone(self, monkeypatch):
+        # A timeout says nothing about whether the page exists.
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, None))
+        _, tally = sweep_module.gather(self.SOURCES)
+        assert tally["refused"] == 1 and tally["gone"] == 0
+        assert "no response" in tally["quiet_sources"][0]
 
     def test_a_working_source_is_not_named(self, monkeypatch):
         page = '<html><body><a href="/r">Firefighter fatalities report 2026</a></body></html>'
