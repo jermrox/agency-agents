@@ -191,3 +191,42 @@ class TestSourcesWithNoUrl:
         # would send someone hunting for a bot filter that does not exist.
         _, tally = sweep_module.gather([{"name": "Event pages: several", "url": ""}])
         assert tally["refused"] == 0 and tally["gone"] == 0
+
+
+class TestKnownLimitations:
+    """Six sources cannot be crawled, and that is established rather than new.
+
+    Five refuse robots outright and NFPA renders its listings client-side across
+    three different URLs. Reported every week as "check whether the source
+    moved", they would drown the one entry that genuinely did move — the exact
+    cry-wolf failure the standards watcher is built to avoid.
+    """
+
+    REFUSING = [{"name": "NIOSH", "url": "https://x.gov/", "cannot_crawl": "403."}]
+    MOVED = [{"name": "Someone else", "url": "https://y.gov/"}]
+
+    def test_a_known_limitation_is_reported_apart_from_a_new_one(self, monkeypatch):
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (None, 403))
+        _, tally = sweep_module.gather(self.REFUSING + self.MOVED)
+        assert tally["known_limitations"] == ["NIOSH (refused: HTTP 403)"]
+        assert tally["quiet_sources"] == ["Someone else (refused: HTTP 403)"]
+
+    def test_it_still_counts_as_refused(self):
+        """Marking it known must not quietly shrink the failure count."""
+        import types
+        monkey = types.SimpleNamespace()
+        original = sweep_module.fetch
+        sweep_module.fetch = lambda url: (None, 403)
+        try:
+            _, tally = sweep_module.gather(self.REFUSING)
+        finally:
+            sweep_module.fetch = original
+        assert tally["refused"] == 1
+
+    def test_a_known_source_is_still_crawled(self, monkeypatch):
+        # Retried every week, because a host that starts answering should be
+        # noticed rather than written off permanently.
+        calls = []
+        monkeypatch.setattr(sweep_module, "fetch", lambda url: (calls.append(url), (None, 403))[1])
+        sweep_module.gather(self.REFUSING)
+        assert calls == ["https://x.gov/"]
