@@ -47,23 +47,241 @@ default_amount = "Phase I scale"
 # blocks keep a zero-result term visible in the run summary instead of hiding
 # inside a combined query.
 
+# WHY SO MANY QUERIES, AND WHY eligibilities = "23|25|99"
+# Grants.gov's keyword is a loose OR, so one query cannot both reach far enough
+# and stay on topic. The answer is many narrow queries plus the require_any
+# vocabulary below: breadth from the queries, precision from the filter, and
+# every drop counted in the run log.
+#
+# eligibilities = "23|25|99" is small businesses, other, and unrestricted.
+# Vybe is a small business, so without this the board fills with university-
+# and 501(c)(3)-only programs: rows that read as opportunities but that Vybe
+# cannot legally win. 23 is the small-business code -- 22 is for-profits OTHER
+# than small businesses, which excludes exactly what Vybe is, so filtering on
+# it loses the best rows on the board. 25 and 99 keep programs that name no
+# restriction, rather than assuming an unlabelled program is closed to us.
+#
+# rows = 100 is the API's page cap, and pages = 3 walks up to three pages via
+# startRecordNum. The old single page of 40 left real solicitations unread.
+
 [sources.grants_wearable]
 kind = "grants_gov"
 keyword = "wearable sensor"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
 
 [sources.grants_digital_health]
 kind = "grants_gov"
 keyword = "digital health monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
 
 [sources.grants_human_performance]
 kind = "grants_gov"
 keyword = "human performance physiological monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_biosensor]
+kind = "grants_gov"
+keyword = "biosensor wearable device"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_remote_monitoring]
+kind = "grants_gov"
+keyword = "remote patient monitoring technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_sleep_recovery]
+kind = "grants_gov"
+keyword = "sleep recovery physiological"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_warfighter]
+kind = "grants_gov"
+keyword = "warfighter readiness monitoring"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_small_business_tech]
+kind = "grants_gov"
+keyword = "small business innovation health technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_medical_device]
+kind = "grants_gov"
+keyword = "medical device development small business"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
+
+
+[sources.grants_ai_health]
+kind = "grants_gov"
+keyword = "machine learning health data algorithm"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
 
 
 # -----------------------------------------------------------------------------
@@ -73,6 +291,26 @@ statuses = "forecasted|posted"
 kind = "curated"
 
 # --- Pillar 2: grants and matched funding ------------------------------------
+
+[[sources.curated.entry]]
+name = "MedTech Innovator Vantage (BARDA Accelerator Network)"
+url = "https://medtechinnovator.org/vantage/devfunding/"
+agency = "MedTech Innovator / BARDA"
+amount = "$50,000 - $200,000 non-dilutive"
+close_date = "2026-10-15"
+open_date = "2026-09-01"
+pillar = 2
+kind = "grant"
+eligibility = "Startups and university-backed projects with a diagnostic or medical device technology; selects up to 10 companies a year"
+note = "OPEN NOW, closes Oct 15. Non-dilutive plus a four-month accelerator with industry mentorship. Scoped to detection, surveillance and response for public health emergencies under BARDA's preparedness mission -- frame Vybe's continuous physiological monitoring as early-signal detection. Awards announced Mar-Apr 2027, so this is runway for next year, not this quarter."
+documents = [
+  "Proposal describing the technology and the development, evaluation or validation work to be funded",
+  "Evidence of the device or diagnostic beyond concept stage",
+  "Alignment statement to BARDA's pandemic preparedness and health security mission",
+  "Company and team background",
+]
+verified = "2026-09-14"
+
 
 [[sources.curated.entry]]
 name = "NYSTAR Innovation Matching Grants"
@@ -295,26 +533,27 @@ verified = "2026-09-12"
 name = "Google for Startups Cloud Program"
 url = "https://cloud.google.com/startup/benefits"
 agency = "Google Cloud"
-amount = "up to $350K (AI-first) / $200K (Seed-Series A)"
+amount = "$2K self-serve (Start) / $100K funded (Scale) / $350K AI-First"
 pillar = 1
 kind = "credit"
-eligibility = "<5 years old, pre-Series A funding, not a prior GCP program participant"
-note = "Rolling. Straight conversion of credits into retained cash."
+eligibility = "Start tier: early-stage, no funding required. Scale tier and above: institutionally funded, <5 years old, not a prior GCP program participant"
+note = "Rolling. What Vybe can get TODAY is the $2K Start tier, with a two-year window to burn it. The $100K and $350K tiers need institutional funding -- do not plan against them until a round closes."
 documents = [
   "Company website and incorporation details",
   "Funding stage evidence (pre-Series A)",
   "Google Cloud billing account",
 ]
-verified = "2026-09-12"
+verified = "2026-09-14"
 
 [[sources.curated.entry]]
 name = "AWS Activate"
 url = "https://aws.amazon.com/startups/"
 agency = "Amazon Web Services"
-amount = "up to $100K in AWS credits"
+amount = "$1K + $350 support self-serve (Founders) / $100K via a provider (Portfolio)"
 pillar = 1
 kind = "credit"
-note = "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation."
+eligibility = "Founders tier: self-funded and bootstrapped, no affiliation needed. Portfolio tier: must be tied to an AWS Activate Provider (VC, accelerator or incubator)"
+note = "Rolling. Bootstrapped gets $1K plus $350 of Developer Support -- the smallest of the three self-serve offers. The $100K needs an Activate Provider code, which is a reason to value accelerator acceptance beyond its own cheque."
 documents = [
   "AWS account ID",
   "Company details; accelerator/VC affiliation code for the higher tiers",
@@ -325,11 +564,11 @@ verified = "2026-09-12"
 name = "Microsoft for Startups Founders Hub"
 url = "https://www.microsoft.com/en-us/startups"
 agency = "Microsoft"
-amount = "up to $150K Azure credits"
+amount = "$25K self-serve / $150K with VC affiliation"
 pillar = 1
 kind = "credit"
-eligibility = "No funding required to apply -- the most accessible entry point of the three"
-note = "Rolling. Start here before the Google and AWS tiers."
+eligibility = "No VC backing, no accelerator membership, no formal incorporation documents -- a business idea and a professional email address"
+note = "START HERE. $25K with no gatekeeping is 25x the AWS bootstrapped tier and 12x Google's, and it is the only one of the three that asks for neither funding nor incorporation papers. Apply before either of the others."
 documents = [
   "Company details and a short product description",
   "No funding proof required — the most accessible of the three",

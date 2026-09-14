@@ -27,11 +27,20 @@ from typing import Any, Iterable
 
 from ..http import fetch_json
 from ..models import Opportunity, parse_date
-from .base import Source, first_key, strip_html
+from .base import Source, SourceError, first_key, strip_html
 
 log = logging.getLogger(__name__)
 
-ENDPOINT = "https://api.www.sbir.gov/public/api/solicitations"
+# Two hosts, tried in order. The api.www host is the documented one, but it
+# answered 403 on an open-network runner across two live runs -- once with no
+# Accept header and once with one -- so it is refusing us for a reason we do
+# not control. www.sbir.gov is the older path that served the same JSON.
+# Trying both costs one extra request on the failure path and keeps the
+# federal SBIR layer alive if either host is up.
+ENDPOINTS = (
+    "https://api.www.sbir.gov/public/api/solicitations",
+    "https://www.sbir.gov/api/solicitations.json",
+)
 
 _TITLE_KEYS = ("solicitation_title", "title", "solicitationTitle")
 _AGENCY_KEYS = ("agency", "agency_name", "agencyName")
@@ -55,8 +64,21 @@ class SBIRGovSource(Source):
         # `open=1` asks the API for currently-open solicitations only. We still
         # re-derive status from close_date locally, because "open" upstream and
         # "open as of this run" are not guaranteed to agree.
-        url = f"{ENDPOINT}?open=1&rows={rows}&format=json"
-        payload = fetch_json(url)
+        payload = None
+        failures: list[str] = []
+        for endpoint in ENDPOINTS:
+            url = f"{endpoint}?open=1&rows={rows}&format=json"
+            try:
+                payload = fetch_json(url)
+                break
+            except Exception as exc:  # noqa: BLE001 - try the next host
+                # FetchError already names the URL; prefixing it again just
+                # prints every endpoint twice in the run log.
+                failures.append(str(exc))
+        if payload is None:
+            # Raise with every host's own error: "sbir is down" is not
+            # actionable, "both hosts answered 403" is.
+            raise SourceError("; ".join(failures))
 
         records = payload if isinstance(payload, list) else payload.get("data", payload.get("results", []))
         if not isinstance(records, list):

@@ -27,6 +27,12 @@ log = logging.getLogger("vybe_funding")
 
 DEFAULT_STALE_DAYS = 45
 
+# Stop calling a detail endpoint that is not answering. grants.gov's
+# fetchOpportunity timed out on essentially every row, and at one call per row
+# that is twenty minutes of sweep spent learning what the first three calls
+# already said. A dead endpoint costs three timeouts now, not a hundred.
+ENRICH_FAILURE_BUDGET = 3
+
 
 def load_config(path: Path) -> dict[str, Any]:
     with path.open("rb") as handle:
@@ -43,8 +49,45 @@ def collect(config: dict[str, Any]) -> tuple[list[Opportunity], list[str]]:
             continue
         try:
             source = build(name, options)
-            rows = list(source.fetch())
-            log.info("%-14s %3d opportunities", name, len(rows))
+            fetched = list(source.fetch())
+            rows = [row for row in fetched if source.relevant(row)]
+            dropped = len(fetched) - len(rows)
+            # Report the drop rather than just the survivors: a filter that
+            # quietly eats a whole source looks identical to a dead API.
+            if dropped:
+                log.info(
+                    "%-14s %3d opportunities (%d off-topic dropped)",
+                    name, len(rows), dropped,
+                )
+            else:
+                log.info("%-14s %3d opportunities", name, len(rows))
+            # Detail lookups run only on rows that survived the filter, so the
+            # request count tracks the board, not the search. One row's detail
+            # failing must never cost the run the row itself.
+            enriched = 0
+            consecutive_failures = 0
+            gave_up = False
+            for row in rows:
+                if consecutive_failures >= ENRICH_FAILURE_BUDGET:
+                    gave_up = True
+                    break
+                try:
+                    before = (row.summary, row.eligibility, row.amount)
+                    source.enrich(row)
+                    if (row.summary, row.eligibility, row.amount) != before:
+                        enriched += 1
+                    consecutive_failures = 0
+                except Exception as exc:  # noqa: BLE001 - detail is optional
+                    consecutive_failures += 1
+                    log.debug("%s: detail lookup failed for %r: %s", name, row.name, exc)
+            if gave_up:
+                log.warning(
+                    "%-14s detail lookups abandoned after %d consecutive failures",
+                    name, ENRICH_FAILURE_BUDGET,
+                )
+            elif enriched:
+                log.info("%-14s %3d detail lookups filled", name, enriched)
+
             found.extend(rows)
         except Exception as exc:  # noqa: BLE001 - one bad source must not end the run
             message = f"{name}: {exc}"
