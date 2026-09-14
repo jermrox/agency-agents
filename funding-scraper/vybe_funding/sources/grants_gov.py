@@ -25,6 +25,7 @@ watch for the next cycle.
 from __future__ import annotations
 
 import logging
+import re
 from typing import Any, Iterable
 
 from ..http import post_json
@@ -32,6 +33,32 @@ from ..models import Opportunity, parse_date
 from .base import Source, first_key, strip_html
 
 log = logging.getLogger(__name__)
+
+
+# The applicant types Vybe is: anything else on the list is context.
+_RELEVANT_APPLICANT = re.compile(r"small business|for.profit|unrestricted", re.I)
+
+
+def _order_for_small_business(names: list[str]) -> str:
+    """Put the applicant types that decide it for Vybe first.
+
+    grants.gov returns every eligible applicant type in a fixed order that
+    starts with school districts, housing authorities and tribal governments.
+    Truncating that list to fit a row cut off the one entry that matters --
+    the SBIR Commercialization Readiness Pilot, which is small-business-only by
+    definition, was displaying as "Independent school districts; Public housing
+    authorities...". Leading with the match and counting the rest says the same
+    thing in less space and cannot hide the answer.
+    """
+    hits = [n for n in names if _RELEVANT_APPLICANT.search(n)]
+    if not hits:
+        joined = "; ".join(names)
+        return joined[:300]
+    others = len(names) - len(hits)
+    lead = "; ".join(hits)
+    if others:
+        lead = f"{lead} (+{others} other applicant type{'s' if others != 1 else ''})"
+    return lead[:300]
 
 
 def _looks_like_machine_noise(text: str) -> bool:
@@ -200,9 +227,9 @@ class GrantsGovSource(Source):
                     else strip_html(a)
                     for a in applicants
                 ]
-                joined = "; ".join(n for n in names if n)
-                if joined:
-                    opportunity.eligibility = joined[:300]
+                names = [n for n in names if n]
+                if names:
+                    opportunity.eligibility = _order_for_small_business(names)
             else:
                 text = strip_html(first_key(merged, _APPLICANT_KEYS))
                 if text:
