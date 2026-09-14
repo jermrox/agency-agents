@@ -19,6 +19,11 @@ on:
     paths:
       - 'research-board/sweep.py'
       - 'research-board/tactical_research/extract.py'
+      # The registry is an input to the crawl, so a change to it needs proving
+      # against live hosts exactly as much as a change to the crawler does.
+      # Without this, repointing a source went unverified until someone thought
+      # to trigger a run by hand.
+      - 'research-board/tactical_research/sources.json'
       - '.github/workflows/research-board-sweep.yml'
 
 permissions:
