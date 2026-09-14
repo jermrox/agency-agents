@@ -47,23 +47,49 @@ default_amount = "Phase I scale"
 # blocks keep a zero-result term visible in the run summary instead of hiding
 # inside a combined query.
 
+# Grants.gov treats a multi-word keyword as a loose OR, so these queries also
+# return wildland fire staffing and crocodile population monitoring. Those
+# outrank real hits in the closing-soon list purely by having a nearer
+# deadline, so every API query carries a domain vocabulary the title or
+# summary must hit. Drops are counted in the run log, never silent.
 [sources.grants_wearable]
 kind = "grants_gov"
 keyword = "wearable sensor"
 rows = 40
 statuses = "forecasted|posted"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
 
 [sources.grants_digital_health]
 kind = "grants_gov"
 keyword = "digital health monitoring"
 rows = 40
 statuses = "forecasted|posted"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
 
 [sources.grants_human_performance]
 kind = "grants_gov"
 keyword = "human performance physiological monitoring"
 rows = 40
 statuses = "forecasted|posted"
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+]
 
 
 # -----------------------------------------------------------------------------

@@ -43,8 +43,18 @@ def collect(config: dict[str, Any]) -> tuple[list[Opportunity], list[str]]:
             continue
         try:
             source = build(name, options)
-            rows = list(source.fetch())
-            log.info("%-14s %3d opportunities", name, len(rows))
+            fetched = list(source.fetch())
+            rows = [row for row in fetched if source.relevant(row)]
+            dropped = len(fetched) - len(rows)
+            # Report the drop rather than just the survivors: a filter that
+            # quietly eats a whole source looks identical to a dead API.
+            if dropped:
+                log.info(
+                    "%-14s %3d opportunities (%d off-topic dropped)",
+                    name, len(rows), dropped,
+                )
+            else:
+                log.info("%-14s %3d opportunities", name, len(rows))
             found.extend(rows)
         except Exception as exc:  # noqa: BLE001 - one bad source must not end the run
             message = f"{name}: {exc}"

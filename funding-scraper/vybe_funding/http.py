@@ -39,7 +39,16 @@ def fetch(
     retries: int = 3,
 ) -> str:
     """Fetch a URL, retrying transient failures with linear backoff."""
-    request_headers = {"User-Agent": USER_AGENT, "Accept-Encoding": "gzip"}
+    request_headers = {
+        "User-Agent": USER_AGENT,
+        "Accept-Encoding": "gzip",
+        # The first live run got a 403 from sbir.gov on an open-network runner,
+        # so it is the API refusing us, not an egress block. Sending no Accept
+        # at all is the most likely trigger among the things we control, and
+        # stating what we parse is correct HTTP regardless. If the 403 persists
+        # the cause is elsewhere -- the run log is the place that will say so.
+        "Accept": "application/json, text/plain, */*",
+    }
     if headers:
         request_headers.update(headers)
 

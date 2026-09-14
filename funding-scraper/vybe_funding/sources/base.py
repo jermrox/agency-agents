@@ -58,5 +58,23 @@ class Source:
             raise SourceError(f"source {self.name!r} ({self.kind}) requires option {key!r}")
         return self.options[key]
 
+    def relevant(self, opportunity: Opportunity) -> bool:
+        """Does this record match the source's ``require_any`` terms?
+
+        Grants.gov treats a multi-word ``keyword`` as a loose OR, so
+        "human performance physiological monitoring" returns crocodile
+        population monitoring and wildland fire staffing alongside the real
+        hits. Those outrank genuine matches in the closing-soon list purely by
+        having a nearer deadline, which is how a funding board stops being read.
+
+        A source with no ``require_any`` keeps everything, so this is opt-in and
+        cannot silently empty a board.
+        """
+        terms = self.options.get("require_any") or []
+        if not terms:
+            return True
+        haystack = f"{opportunity.name} {opportunity.summary}".lower()
+        return any(str(term).lower() in haystack for term in terms)
+
     def fetch(self) -> Iterable[Opportunity]:  # pragma: no cover - interface
         raise NotImplementedError
