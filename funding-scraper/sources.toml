@@ -47,16 +47,19 @@ default_amount = "Phase I scale"
 # blocks keep a zero-result term visible in the run summary instead of hiding
 # inside a combined query.
 
-# WHY SO MANY QUERIES, AND WHY eligibilities = "22"
+# WHY SO MANY QUERIES, AND WHY eligibilities = "23|25|99"
 # Grants.gov's keyword is a loose OR, so one query cannot both reach far enough
 # and stay on topic. The answer is many narrow queries plus the require_any
 # vocabulary below: breadth from the queries, precision from the filter, and
 # every drop counted in the run log.
 #
-# eligibilities = "22" is grants.gov's for-profit code. Vybe is a for-profit
-# small business, so without it the board fills with university- and
-# 501(c)(3)-only programs -- rows that read as opportunities but that Vybe
-# cannot legally win. A short honest board beats a long useless one.
+# eligibilities = "23|25|99" is small businesses, other, and unrestricted.
+# Vybe is a small business, so without this the board fills with university-
+# and 501(c)(3)-only programs: rows that read as opportunities but that Vybe
+# cannot legally win. 23 is the small-business code -- 22 is for-profits OTHER
+# than small businesses, which excludes exactly what Vybe is, so filtering on
+# it loses the best rows on the board. 25 and 99 keep programs that name no
+# restriction, rather than assuming an unlabelled program is closed to us.
 #
 # rows = 100 is the API's page cap, and pages = 3 walks up to three pages via
 # startRecordNum. The old single page of 40 left real solicitations unread.
@@ -67,7 +70,7 @@ keyword = "wearable sensor"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -83,7 +86,7 @@ keyword = "digital health monitoring"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -99,7 +102,7 @@ keyword = "human performance physiological monitoring"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -115,7 +118,7 @@ keyword = "biosensor wearable device"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -131,7 +134,7 @@ keyword = "remote patient monitoring technology"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -147,7 +150,7 @@ keyword = "sleep recovery physiological"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -163,7 +166,7 @@ keyword = "warfighter readiness monitoring"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -179,7 +182,7 @@ keyword = "small business innovation health technology"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -195,7 +198,7 @@ keyword = "medical device development small business"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -211,7 +214,7 @@ keyword = "machine learning health data algorithm"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
-eligibilities = "22"
+eligibilities = "23|25|99"
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
@@ -228,6 +231,26 @@ require_any = [
 kind = "curated"
 
 # --- Pillar 2: grants and matched funding ------------------------------------
+
+[[sources.curated.entry]]
+name = "MedTech Innovator Vantage (BARDA Accelerator Network)"
+url = "https://medtechinnovator.org/vantage/devfunding/"
+agency = "MedTech Innovator / BARDA"
+amount = "$50,000 - $200,000 non-dilutive"
+close_date = "2026-10-15"
+open_date = "2026-09-01"
+pillar = 2
+kind = "grant"
+eligibility = "Startups and university-backed projects with a diagnostic or medical device technology; selects up to 10 companies a year"
+note = "OPEN NOW, closes Oct 15. Non-dilutive plus a four-month accelerator with industry mentorship. Scoped to detection, surveillance and response for public health emergencies under BARDA's preparedness mission -- frame Vybe's continuous physiological monitoring as early-signal detection. Awards announced Mar-Apr 2027, so this is runway for next year, not this quarter."
+documents = [
+  "Proposal describing the technology and the development, evaluation or validation work to be funded",
+  "Evidence of the device or diagnostic beyond concept stage",
+  "Alignment statement to BARDA's pandemic preparedness and health security mission",
+  "Company and team background",
+]
+verified = "2026-09-14"
+
 
 [[sources.curated.entry]]
 name = "NYSTAR Innovation Matching Grants"
