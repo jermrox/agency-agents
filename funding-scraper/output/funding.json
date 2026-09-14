@@ -1,28 +1,11 @@
 {
-  "generated": "2026-09-14T18:33:26+00:00",
+  "generated": "2026-09-14T18:35:38+00:00",
   "as_of": "2026-09-14",
-  "count": 86,
+  "count": 84,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404"
   ],
   "opportunities": [
-    {
-      "id": "grants.gov-conservation-and-forestry-program-support-2026-2031-for-environmental",
-      "source": "grants.gov",
-      "name": "Conservation and Forestry Program Support (2026-2031) for Environmental Natural Resources Management Division, Directorate of Public Works, Joint Readiness Training Center and Fort Polk, Louisiana (W9126G262RFP9554)",
-      "url": "https://www.grants.gov/search-results-detail/363721",
-      "agency": "Fort Worth District",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-08-26",
-      "close_date": "2026-09-14",
-      "status": "soon",
-      "days_left": 0,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
     {
       "id": "grants.gov-dow-alzheimer-s-transforming-diagnosis-award-ht942526azrptrda",
       "source": "grants.gov",
@@ -119,23 +102,6 @@
         "Alignment statement to BARDA's pandemic preparedness and health security mission",
         "Company and team background"
       ]
-    },
-    {
-      "id": "grants.gov-strengthening-ghana-health-service-laboratory-services-diagnostic-net",
-      "source": "grants.gov",
-      "name": "Strengthening Ghana Health Service laboratory services, diagnostic networks, and systems for a more effective, efficient, and sustainable response to HIV, TB, and other priority health threats (CDC-RFA-JG-26-0178)",
-      "url": "https://www.grants.gov/search-results-detail/360759",
-      "agency": "Centers for Disease Control-GHC",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-08-17",
-      "close_date": "2026-10-16",
-      "status": "open",
-      "days_left": 32,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
     },
     {
       "id": "curated-nystar-innovation-matching-grants",
@@ -503,15 +469,15 @@
       "name": "AWS Activate",
       "url": "https://aws.amazon.com/startups/",
       "agency": "Amazon Web Services",
-      "amount": "up to $100K in AWS credits",
-      "summary": "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation.",
+      "amount": "$1K + $350 support self-serve (Founders) / $100K via a provider (Portfolio)",
+      "summary": "Rolling. Bootstrapped gets $1K plus $350 of Developer Support -- the smallest of the three self-serve offers. The $100K needs an Activate Provider code, which is a reason to value accelerator acceptance beyond its own cheque.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "",
+      "eligibility": "Founders tier: self-funded and bootstrapped, no affiliation needed. Portfolio tier: must be tied to an AWS Activate Provider (VC, accelerator or incubator)",
       "documents": [
         "AWS account ID",
         "Company details; accelerator/VC affiliation code for the higher tiers"
@@ -859,15 +825,15 @@
       "name": "Google for Startups Cloud Program",
       "url": "https://cloud.google.com/startup/benefits",
       "agency": "Google Cloud",
-      "amount": "up to $350K (AI-first) / $200K (Seed-Series A)",
-      "summary": "Rolling. Straight conversion of credits into retained cash.",
+      "amount": "$2K self-serve (Start) / $100K funded (Scale) / $350K AI-First",
+      "summary": "Rolling. What Vybe can get TODAY is the $2K Start tier, with a two-year window to burn it. The $100K and $350K tiers need institutional funding -- do not plan against them until a round closes.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "<5 years old, pre-Series A funding, not a prior GCP program participant",
+      "eligibility": "Start tier: early-stage, no funding required. Scale tier and above: institutionally funded, <5 years old, not a prior GCP program participant",
       "documents": [
         "Company website and incorporation details",
         "Funding stage evidence (pre-Series A)",
@@ -1099,15 +1065,15 @@
       "name": "Microsoft for Startups Founders Hub",
       "url": "https://www.microsoft.com/en-us/startups",
       "agency": "Microsoft",
-      "amount": "up to $150K Azure credits",
-      "summary": "Rolling. Start here before the Google and AWS tiers.",
+      "amount": "$25K self-serve / $150K with VC affiliation",
+      "summary": "START HERE. $25K with no gatekeeping is 25x the AWS bootstrapped tier and 12x Google's, and it is the only one of the three that asks for neither funding nor incorporation papers. Apply before either of the others.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "No funding required to apply -- the most accessible entry point of the three",
+      "eligibility": "No VC backing, no accelerator membership, no formal incorporation documents -- a business idea and a professional email address",
       "documents": [
         "Company details and a short product description",
         "No funding proof required \u2014 the most accessible of the three"
