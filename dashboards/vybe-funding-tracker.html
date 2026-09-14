@@ -522,7 +522,12 @@
         amount: row.amount || 'see solicitation',
         url: row.url,
         deadline: row.close_date || null,
-        note: row.summary || row.eligibility || '',
+        // Eligibility leads, not the summary. Eight state SBIR matches are on
+        // this board and Vybe can use exactly one of them, so "Kentucky-based
+        // small business" is the fact that decides the row -- while
+        // `summary || eligibility` was showing "one of the largest Phase I
+        // state matches in the country" and hiding the gate entirely.
+        note: [row.eligibility, row.summary].filter(Boolean).join(' \u00b7 '),
         documents: Array.isArray(row.documents) ? row.documents : []
       };
     });
