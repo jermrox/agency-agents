@@ -36,13 +36,21 @@ def strip_html(value: Any) -> str:
 
 
 def first_key(record: dict[str, Any], keys: Iterable[str]) -> str:
-    """Return the first non-empty value among ``keys``.
+    """Return the first non-empty scalar value among ``keys``.
 
     The tolerant-field-picker pattern from the jobs scraper's contracts.py: an
     upstream rename costs one extra lookup instead of an empty board.
+
+    Containers are skipped rather than stringified. grants.gov nests a whole
+    object under "synopsis", and str()-ing it put a raw Python dict repr --
+    "{'opportunityId': 362179, 'version': 1, ...}" -- into the summary of the
+    row closing soonest on the board. A missing field is recoverable; a field
+    full of machine noise is worse than empty.
     """
     for key in keys:
         value = record.get(key)
+        if isinstance(value, (dict, list, tuple, set)):
+            continue
         if value not in (None, "", []):
             return str(value).strip()
     return ""

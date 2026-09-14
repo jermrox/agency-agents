@@ -33,6 +33,12 @@ from .base import Source, first_key, strip_html
 
 log = logging.getLogger(__name__)
 
+
+def _looks_like_machine_noise(text: str) -> bool:
+    """Does this read as a serialized object rather than a description?"""
+    head = text.lstrip()[:2]
+    return head.startswith("{") or head.startswith("[")
+
 ENDPOINT = "https://api.grants.gov/v1/api/search2"
 # search2 returns titles and dates and nothing else -- every federal row on the
 # board came through with no description, no eligibility and "see solicitation"
@@ -179,7 +185,10 @@ class GrantsGovSource(Source):
 
         if not opportunity.summary:
             text = strip_html(first_key(merged, _SYNOPSIS_KEYS))
-            if text:
+            # Belt and braces after a dict repr reached the board once: reject
+            # anything that still looks like a serialized structure rather than
+            # prose, whatever field it arrived in.
+            if text and not _looks_like_machine_noise(text):
                 opportunity.summary = text[:400]
 
         if not opportunity.eligibility:
