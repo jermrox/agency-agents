@@ -72,7 +72,9 @@ class SBIRGovSource(Source):
                 payload = fetch_json(url)
                 break
             except Exception as exc:  # noqa: BLE001 - try the next host
-                failures.append(f"{url}: {exc}")
+                # FetchError already names the URL; prefixing it again just
+                # prints every endpoint twice in the run log.
+                failures.append(str(exc))
         if payload is None:
             # Raise with every host's own error: "sbir is down" is not
             # actionable, "both hosts answered 403" is.
