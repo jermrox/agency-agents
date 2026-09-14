@@ -114,6 +114,38 @@ once read. So refusals are counted, and after four consecutive runs the row is
 flagged as unread with a note to check it by hand. Half the panel is military,
 so this is the difference between a watcher and the appearance of one.
 
+## Known gaps against the brief
+
+Found by auditing the brief against the code rather than by a run failing, which
+is why they are written down here: nothing red will remind anyone.
+
+**The 61 search terms in `sources.json` are stored and never used (§9).**
+`sweep.py` is a crawler — it walks the registry's listing pages. The brief's
+vocabulary exists to *search* ("cancer presumption", "CPAT", "POST physical
+ability test"), and searching needs a search API, which a CI runner does not
+have. So those terms can only ever drive the agent step, never `sweep.py`. That
+also means "the agent sweeps weekly" cannot be entirely a cron job, which is a
+constraint worth being explicit about rather than discovering later.
+
+**`supersedes` is never populated (§5).** The brief's own example works: a
+MARADMIN and its change messages carry the same number, so they cluster into one
+item already. What is missing is the case where a *different* document replaces
+an earlier one — a new issuance number superseding an old one. Nothing detects
+that, so nothing links back.
+
+**`score` is always 0.0 (§4).** Deliberate, and noted in the schema: reach,
+usefulness and hiring-signal are judgements about what a document means for a
+reader, made when the blurb is written from it. A score derived from link counts
+would be worse than an honest zero.
+
+**There is no weekly dead-link check for this board (§7.8).** The existing
+`verify-board-links.yml` reads the *old* board's HTML. The new pipeline has
+nothing to check: `findings.json` is gitignored and `candidates.json` is a
+30-day CI artifact, so the board's own links are never persisted anywhere a
+weekly job could read them. The registry's links *are* checked weekly, by the
+sweep itself. Deciding where `findings.json` lives is the prerequisite — it is
+also what publishing needs.
+
 ## The fetch dependency
 
 The brief requires blurbs to be written from the fetched primary source, not

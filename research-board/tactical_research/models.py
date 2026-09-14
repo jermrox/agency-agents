@@ -56,6 +56,12 @@ class BoardItem:
     first_seen: str = ""
     identifier: str = ""               # DOI, PMID, issuance number, docket, GAO
     coverage_urls: list[str] = field(default_factory=list)
+    # Section 4 asks for a score by reach, usefulness and whether the item is a
+    # hiring signal. Those are judgements about what a document means for a
+    # reader, so they are made when the blurb is written, from the document —
+    # not derived here from anything the sweep can see. It stays 0.0 until then,
+    # and a scoring pass that invented a number from link counts would be worse
+    # than an honest zero.
     score: float = 0.0
     supersedes: str = ""               # primary_url of the item this replaces
 
