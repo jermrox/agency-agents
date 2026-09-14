@@ -766,6 +766,80 @@
     return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
   }
 
+  // ---- search -------------------------------------------------------
+  // A candidate should not have to guess the employer's spelling. 42 of this
+  // board's dietitian postings are spelled "Dietician", so a search for the
+  // correct professional spelling used to return 14 of 56. The field also
+  // talks in abbreviations (S&C, ATC, CSCS, H2F, POTFF) and writes the same
+  // post as "Ft. Bragg" or "Fort Bragg".
+  var SEARCH_SYNONYMS = {
+    dietitian: ["dietitian", "dietician"],
+    dietician: ["dietitian", "dietician"],
+    rd: ["dietitian", "dietician"],
+    sc: ["strength and conditioning"],
+    cscs: ["strength and conditioning", "cscs"],
+    tsac: ["tactical strength and conditioning", "tsac"],
+    atc: ["athletic trainer", "athletic training", "atc"],
+    pt: ["physical therapist", "physical therapy"],
+    dpt: ["physical therapist", "physical therapy"],
+    pta: ["physical therapist assistant", "physical therapy assistant"],
+    ot: ["occupational therapist", "occupational therapy"],
+    cota: ["occupational therapy assistant"],
+    h2f: ["holistic health and fitness", "h2f"],
+    potff: ["preservation of the force", "potff"],
+    cps: ["cognitive performance", "cps"],
+    hpo: ["human performance", "hpo"],
+    sof: ["special operations", "sof"],
+    lcsw: ["licensed clinical social worker", "social worker"],
+    mwr: ["morale welfare and recreation", "mwr"]
+  };
+
+  // Lower-case, fold "&" to "and", drop punctuation, and read "Ft." as "Fort",
+  // so both sides of the comparison are plain words separated by spaces.
+  function searchWords(text) {
+    // A spaced ampersand is the word "and" ("Strength & Conditioning"); a tight
+    // one joins an abbreviation ("S&C"), so the two cannot fold the same way.
+    var raw = String(text == null ? "" : text)
+      .toLowerCase()
+      .replace(/\s+&\s+/g, " and ")
+      .replace(/&/g, "");
+    var parts = raw.replace(/[^a-z0-9]+/g, " ").split(" ");
+    var out = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i]) continue;
+      out.push(parts[i] === "ft" ? "fort" : parts[i]);
+    }
+    return " " + out.join(" ") + " ";
+  }
+
+  function searchIndex(job) {
+    if (job.__mmSearch == null) {
+      job.__mmSearch = searchWords(
+        [job.title, job.employer, job.location, job.program, job.notes, job.description].join(" ")
+      );
+    }
+    return job.__mmSearch;
+  }
+
+  // Every word the reader typed has to appear, as a whole word, in its own
+  // right or as one of its synonyms. Matching whole words is what stops "pt"
+  // from hitting "optimization" -- it used to match 328 of 731 postings.
+  function searchMatches(job, query) {
+    var words = searchWords(query).trim().split(" ");
+    var hay = searchIndex(job);
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i];
+      if (!word) continue;
+      var options = SEARCH_SYNONYMS[word] || [word];
+      var hit = false;
+      for (var k = 0; k < options.length; k++) {
+        if (hay.indexOf(searchWords(options[k])) !== -1) { hit = true; break; }
+      }
+      if (!hit) return false;
+    }
+    return true;
+  }
+
   function matches(job, ignore) {
     var f = facetsOf(job);
 
@@ -818,11 +892,8 @@
       else if (pay < floor) return false;
     }
 
-    var q = els.q.value.trim().toLowerCase();
-    if (q) {
-      var haystack = [job.title, job.employer, job.location, job.program, job.notes].join(" ").toLowerCase();
-      if (haystack.indexOf(q) === -1) return false;
-    }
+    var q = els.q.value.trim();
+    if (q && !searchMatches(job, q)) return false;
     return true;
   }
 
