@@ -83,12 +83,18 @@ def fetch(url: str) -> tuple[str | None, int | None]:
 def gather(sources: list[dict]) -> tuple[list[Sighting], dict]:
     """Crawl every source listing and turn its links into sightings."""
     sightings: list[Sighting] = []
-    tally = {"sources": 0, "refused": 0, "gone": 0, "links": 0, "empty": 0}
+    tally = {"sources": 0, "refused": 0, "gone": 0, "links": 0, "empty": 0, "no_url": 0}
     quiet: list[str] = []          # crawled fine, offered nothing
 
     for source in sources:
         url = source.get("url", "")
         if not url:
+            # A registry entry with no URL is never crawled. Skipping it in
+            # silence means the registry can claim seventeen sources while
+            # fifteen is the real number, so it is counted and named like any
+            # other source contributing nothing.
+            tally["no_url"] += 1
+            quiet.append(f"{source['name']} (no URL to crawl)")
             continue
         html, status = fetch(url)
         if html is None:
@@ -232,7 +238,8 @@ def main(argv=None) -> int:
     print(
         f"\n{len(candidates)} candidates written to {CANDIDATES.name}\n"
         f"  {crawl['sources']} sources crawled, {crawl['refused']} refused, "
-        f"{crawl['gone']} gone, {crawl['empty']} returned nothing\n"
+        f"{crawl['gone']} gone, {crawl['empty']} returned nothing, "
+        f"{crawl['no_url']} have no URL\n"
         f"  {read['refused']} documents refused, {read['unreadable']} unreadable, "
         f"{read['stale']} outside the {LOOKBACK_DAYS}-day lookback"
     )

@@ -171,3 +171,23 @@ class TestQuietSources:
         monkeypatch.setattr(sweep_module, "fetch", lambda url: (page, 200))
         sightings, tally = sweep_module.gather(self.SOURCES)
         assert tally["quiet_sources"] == [] and len(sightings) == 1
+
+
+class TestSourcesWithNoUrl:
+    """A registry entry with no URL is never crawled.
+
+    Two entries — the event pages and the trade press — name several sites each
+    and carry no single URL. Skipped in silence, they let the registry claim 17
+    sources when 15 is the real number.
+    """
+
+    def test_a_source_without_a_url_is_counted_and_named(self):
+        sightings, tally = sweep_module.gather([{"name": "Event pages: several", "url": ""}])
+        assert sightings == [] and tally["no_url"] == 1
+        assert tally["quiet_sources"] == ["Event pages: several (no URL to crawl)"]
+
+    def test_it_is_not_mistaken_for_a_refusal(self):
+        # Nothing was requested, so nothing refused. Reporting it as a refusal
+        # would send someone hunting for a bot filter that does not exist.
+        _, tally = sweep_module.gather([{"name": "Event pages: several", "url": ""}])
+        assert tally["refused"] == 0 and tally["gone"] == 0
