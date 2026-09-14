@@ -71,7 +71,11 @@ class GrantsGovSource(Source):
         for record in hits:
             if not isinstance(record, dict):
                 continue
-            title = first_key(record, _TITLE_KEYS)
+            # Titles arrive HTML-escaped ("Alzheimer&rsquo;s"). The dashboard
+            # escapes everything it renders, so an entity left in here reaches
+            # the page as the literal text "&rsquo;". Decode at the boundary,
+            # the same treatment the summary already gets.
+            title = strip_html(first_key(record, _TITLE_KEYS))
             if not title:
                 continue
 
@@ -87,7 +91,7 @@ class GrantsGovSource(Source):
                 source="grants.gov",
                 name=f"{title} ({number})" if number else title,
                 url=url,
-                agency=first_key(record, _AGENCY_KEYS),
+                agency=strip_html(first_key(record, _AGENCY_KEYS)),
                 amount=self.options.get("default_amount", "see solicitation"),
                 summary=strip_html(first_key(record, ("description", "synopsis")))[:400],
                 open_date=parse_date(first_key(record, _OPEN_KEYS)),
