@@ -160,7 +160,16 @@ class GrantsGovSource(Source):
         if not opp_id:
             return
 
-        payload = post_json(DETAIL_ENDPOINT, {"opportunityId": str(opp_id)})
+        # One attempt, short timeout. Detail is optional and this runs once per
+        # row on the board, so the default three retries with linear backoff
+        # turn one slow endpoint into minutes of dead sweep -- the cost of a
+        # miss here is a thinner row, which is not worth waiting for.
+        payload = post_json(
+            DETAIL_ENDPOINT,
+            {"opportunityId": str(opp_id)},
+            retries=1,
+            timeout=10,
+        )
         data = payload.get("data") if isinstance(payload, dict) else None
         if not isinstance(data, dict):
             return
