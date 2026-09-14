@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-13T19:08:11.655349+00:00",
+  "generated_at": "2026-09-14T07:14:49.180973+00:00",
   "totals": {
-    "postings": 340,
+    "postings": 345,
     "employers": 25,
-    "unique_jobs": 162,
-    "with_salary": 112,
+    "unique_jobs": 167,
+    "with_salary": 117,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-13T00:00:00+00:00"
+      "latest": "2026-09-14T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -62,6 +62,12 @@
       "median_salary": 106174.0
     },
     {
+      "name": "Customs and Border Protection",
+      "count": 14,
+      "disciplines": [],
+      "median_salary": 145559.0
+    },
+    {
       "name": "Military Treatment Facilities under DHA",
       "count": 13,
       "disciplines": [
@@ -69,12 +75,6 @@
         "research"
       ],
       "median_salary": 102935.0
-    },
-    {
-      "name": "Customs and Border Protection",
-      "count": 10,
-      "disciplines": [],
-      "median_salary": 132613.75
     },
     {
       "name": "U.S. Marine Corps",
@@ -107,11 +107,12 @@
     },
     {
       "name": "Bureau of Prisons/Federal Prison System",
-      "count": 4,
+      "count": 5,
       "disciplines": [
-        "sports-medicine"
+        "sports-medicine",
+        "nutrition"
       ],
-      "median_salary": 77028.0
+      "median_salary": 79630.0
     },
     {
       "name": "Serco",
@@ -162,38 +163,38 @@
     {
       "name": "sports-medicine",
       "count": 65,
-      "share": 0.5285,
+      "share": 0.5242,
       "median_salary": 81177.25
     },
     {
       "name": "strength-conditioning",
       "count": 64,
-      "share": 0.5203,
+      "share": 0.5161,
       "median_salary": 66582.15
     },
     {
       "name": "cognitive",
       "count": 25,
-      "share": 0.2033,
+      "share": 0.2016,
       "median_salary": 122190.0
     },
     {
       "name": "research",
       "count": 19,
-      "share": 0.1545,
+      "share": 0.1532,
       "median_salary": 98382.5
     },
     {
       "name": "leadership",
       "count": 16,
-      "share": 0.1301,
+      "share": 0.129,
       "median_salary": 62782.81
     },
     {
       "name": "nutrition",
-      "count": 14,
-      "share": 0.1138,
-      "median_salary": 91950.0
+      "count": 15,
+      "share": 0.121,
+      "median_salary": 92475.0
     },
     {
       "name": "sport-science",
@@ -205,23 +206,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 155,
-      "share": 0.9688
+      "count": 157,
+      "share": 0.9515
     },
     {
       "name": "sof",
       "count": 42,
-      "share": 0.2625
+      "share": 0.2545
     },
     {
       "name": "training-pipeline",
       "count": 27,
-      "share": 0.1688
+      "share": 0.1636
     },
     {
       "name": "first-responder",
-      "count": 18,
-      "share": 0.1125
+      "count": 23,
+      "share": 0.1394
     }
   ],
   "by_branch": [
@@ -315,7 +316,7 @@
   "by_state": [
     {
       "code": "TX",
-      "count": 13
+      "count": 14
     },
     {
       "code": "VA",
@@ -339,7 +340,7 @@
     },
     {
       "code": "NM",
-      "count": 7
+      "count": 8
     },
     {
       "code": "WA",
@@ -378,27 +379,27 @@
     {
       "name": "CSCS",
       "count": 49,
-      "share": 0.7538
+      "share": 0.7424
     },
     {
       "name": "ATC",
       "count": 16,
-      "share": 0.2462
+      "share": 0.2424
     },
     {
       "name": "RD",
-      "count": 10,
-      "share": 0.1538
+      "count": 11,
+      "share": 0.1667
     },
     {
       "name": "PhD",
       "count": 6,
-      "share": 0.0923
+      "share": 0.0909
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.0462
+      "share": 0.0455
     }
   ],
   "clearances": [
@@ -416,12 +417,12 @@
     }
   ],
   "salary": {
-    "count": 112,
+    "count": 117,
     "min": 34320.0,
     "max": 219654.0,
-    "median": 85738.0,
-    "p25": 59535.5,
-    "p75": 109019.62,
+    "median": 87145.0,
+    "p25": 61994.4,
+    "p75": 117778.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 26,
@@ -440,12 +441,12 @@
         "p75": 104761.75
       },
       "nutrition": {
-        "count": 7,
+        "count": 8,
         "min": 85738.0,
         "max": 113610.0,
-        "median": 91950.0,
-        "p25": 88844.0,
-        "p75": 97967.5
+        "median": 92475.0,
+        "p25": 90397.0,
+        "p75": 102935.0
       },
       "cognitive": {
         "count": 12,
@@ -483,7 +484,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0185
+    "share": 0.018
   },
   "timeline": [
     {
@@ -496,12 +497,12 @@
     },
     {
       "month": "2026-09",
-      "count": 68
+      "count": 73
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-15T00:00:00+00:00",
+    "pivot": "2026-06-16T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -528,16 +529,16 @@
         "change": 20
       },
       {
+        "name": "Customs and Border Protection",
+        "recent": 14,
+        "previous": 0,
+        "change": 14
+      },
+      {
         "name": "Military Treatment Facilities under DHA",
         "recent": 13,
         "previous": 0,
         "change": 13
-      },
-      {
-        "name": "Customs and Border Protection",
-        "recent": 10,
-        "previous": 0,
-        "change": 10
       },
       {
         "name": "U.S. Marine Corps",
@@ -559,9 +560,9 @@
       },
       {
         "name": "Bureau of Prisons/Federal Prison System",
-        "recent": 4,
+        "recent": 5,
         "previous": 0,
-        "change": 4
+        "change": 5
       },
       {
         "name": "Serco",
@@ -609,9 +610,9 @@
       },
       {
         "name": "RD",
-        "recent": 10,
+        "recent": 11,
         "previous": 0,
-        "change": 10
+        "change": 11
       },
       {
         "name": "PhD",
@@ -657,6 +658,10 @@
       "count": 3
     },
     {
+      "title": "Supervisory CBP Officer (Port Director)",
+      "count": 3
+    },
+    {
       "title": "Cognitive Performance Specialist",
       "count": 2
     },
@@ -682,10 +687,6 @@
     },
     {
       "title": "Special Ops Physical Therapist Part-Time (27 SOW/Cannon AFB, NM)",
-      "count": 2
-    },
-    {
-      "title": "Sports Specialist (Fitness)",
       "count": 2
     }
   ]
