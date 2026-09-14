@@ -18,6 +18,15 @@ _TAGS = re.compile(r"<[^>]+>")
 _WHITESPACE = re.compile(r"\s+")
 
 
+def _word_match(term: str, haystack: str) -> bool:
+    """Is ``term`` present in ``haystack`` as a whole word (or word prefix)?
+
+    Trailing-stem terms like "agricultur" still match "agriculture" and
+    "agricultural" -- the boundary is required at the start, not the end.
+    """
+    return re.search(rf"\b{re.escape(term)}", haystack) is not None
+
+
 def strip_html(value: Any) -> str:
     """Flatten an HTML blob to readable single-line text."""
     if not value:
@@ -70,10 +79,27 @@ class Source:
         A source with no ``require_any`` keeps everything, so this is opt-in and
         cannot silently empty a board.
         """
+        haystack = f"{opportunity.name} {opportunity.summary}".lower()
+
+        # A blocklist runs first, because require_any is a broad OR: one generic
+        # word is enough to admit a row. "readiness" let a forestry program onto
+        # the board and "diagnos" let in a Ghana laboratory-strengthening
+        # programme, both with empty summaries so the single title hit was the
+        # whole case for them. Naming the domains Vybe does not work in is more
+        # precise than trying to make every keyword unambiguous.
+        #
+        # Blocklist terms match on word boundaries, unlike require_any. A false
+        # positive here silently deletes a real opportunity, so the cost is not
+        # symmetric: bare substring matching had "crop" reject two
+        # microphysiological-systems awards, and would have had "election"
+        # reject anything mentioning patient selection.
+        blocked = self.options.get("exclude_any") or []
+        if any(_word_match(str(term).lower(), haystack) for term in blocked):
+            return False
+
         terms = self.options.get("require_any") or []
         if not terms:
             return True
-        haystack = f"{opportunity.name} {opportunity.summary}".lower()
         return any(str(term).lower() in haystack for term in terms)
 
     def fetch(self) -> Iterable[Opportunity]:  # pragma: no cover - interface
