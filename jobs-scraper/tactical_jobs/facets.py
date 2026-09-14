@@ -738,6 +738,54 @@ def _carried_contingency(posting: JobPosting) -> str:
     return carried if carried in ("contingent", "funded") else ""
 
 
+# Installation morale, welfare and recreation staffing: the base gym and the
+# intramural programme. Real jobs, and real human performance work for the
+# service members who use them -- but they are generic recreation billets that
+# crowd out the tactical programme roles a reader comes here for, so the board
+# keeps them behind a "Show MWR jobs" box rather than dropping them.
+_MWR_EMPLOYER_RE = re.compile(
+    r"navy installations command|marine corps community services|\bMCCS\b|"
+    r"family and mwr|\bMWR\b|force support squadron",
+    re.I,
+)
+
+_MWR_TEXT_RE = re.compile(
+    r"\bMWR\b|morale,?\s+welfare,?\s+and\s+recreation|"
+    r"marine corps community services|\bMCCS\b|semper fit|family and mwr|"
+    r"force support squadron",
+    re.I,
+)
+
+_MWR_TITLE_RE = re.compile(
+    r"\brecreation\b|\bsports\s+specialist\b|"
+    r"\bfitness\s+(?:specialist|instructor|coordinator|cent(?:er|re))\b|"
+    r"group\s+exercise",
+    re.I,
+)
+
+# A named tactical programme in the TITLE is never generic recreation, however
+# the text is worded. HITT and WARR sit inside Semper Fit and are exactly the
+# work this board exists for.
+_MWR_PROGRAMME_RE = re.compile(
+    r"\bHITT\b|high\s+intensity\s+tactical|\bWARR\b|\bH2F\b|"
+    r"holistic\s+health|\bPOTFF\b|preservation\s+of\s+the\s+force|"
+    r"special\s+operations|human\s+performance",
+    re.I,
+)
+
+
+def is_mwr(title: str, employer: str = "", description: str = "") -> bool:
+    """Installation recreation staffing rather than a tactical programme role."""
+    if _MWR_PROGRAMME_RE.search(title or ""):
+        return False
+    blob = " ".join(part for part in (title, employer, description) if part)
+    return bool(
+        _MWR_EMPLOYER_RE.search(employer or "")
+        or _MWR_TEXT_RE.search(blob)
+        or _MWR_TITLE_RE.search(title or "")
+    )
+
+
 def facets_for(posting: JobPosting) -> dict[str, Any]:
     """Every facet for one posting, in the shape the feed publishes."""
     slug = discipline_of(posting.title, posting.description)
@@ -768,4 +816,5 @@ def facets_for(posting: JobPosting) -> dict[str, Any]:
         "contingency": _carried_contingency(posting)
         or contingency_of(posting.title, posting.description, posting.compensation or ""),
         "salary_floor_annual": salary_floor_annual(posting.enrichment),
+        "mwr": is_mwr(posting.title, posting.employer, posting.description),
     }

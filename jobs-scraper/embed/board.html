@@ -613,6 +613,10 @@
           <input type="checkbox" id="mm-nopay" checked>
           Include jobs with no listed pay
         </label>
+        <label class="mm-check">
+          <input type="checkbox" id="mm-show-mwr">
+          Show MWR jobs
+        </label>
       </div>
     </div>
 
@@ -710,6 +714,7 @@
     hideContingent: document.getElementById("mm-hide-contingent"),
     noPay: document.getElementById("mm-nopay"),
     noPayWrap: document.getElementById("mm-nopay-wrap"),
+    showMwr: document.getElementById("mm-show-mwr"),
     active: document.getElementById("mm-active"),
     count: document.getElementById("mm-count"),
     clear: document.getElementById("mm-clear"),
@@ -764,6 +769,22 @@
     if (!iso) return "";
     var d = new Date(iso);
     return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
+
+  // Installation morale, welfare and recreation staffing -- the base gym and
+  // the intramural programme. The feed decides this against the whole posting;
+  // the text check below only covers a feed published before that facet
+  // existed, so the box still works on an older jobs.json.
+  var MWR_TITLE_RE = /\brecreation\b|\bsports\s+specialist\b|\bfitness\s+(?:specialist|instructor|coordinator|cent(?:er|re))\b|group\s+exercise|\bMWR\b/i;
+  var MWR_EMPLOYER_RE = /navy installations command|marine corps community services|\bMCCS\b|family and mwr|\bMWR\b|force support squadron/i;
+  var MWR_PROGRAMME_RE = /\bHITT\b|high\s+intensity\s+tactical|\bWARR\b|\bH2F\b|holistic\s+health|\bPOTFF\b|preservation\s+of\s+the\s+force|special\s+operations|human\s+performance/i;
+
+  function isMwr(job) {
+    var f = facetsOf(job);
+    if (typeof f.mwr === "boolean") return f.mwr;
+    var title = job.title || "";
+    if (MWR_PROGRAMME_RE.test(title)) return false;
+    return MWR_TITLE_RE.test(title) || MWR_EMPLOYER_RE.test(job.employer || "");
   }
 
   // ---- search -------------------------------------------------------
@@ -884,6 +905,7 @@
       if (!hitRegion) return false;
     }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
+    if (!els.showMwr.checked && isMwr(job)) return false;
 
     var floor = parseInt(els.salary.value, 10) || 0;
     if (floor > 0) {
@@ -1243,6 +1265,9 @@
     selected.region.forEach(function (name) {
       pills.push({ label: name, onRemove: function () { selected.region.delete(name); render(); } });
     });
+    if (els.showMwr.checked) {
+      pills.push({ label: "MWR shown", onRemove: function () { els.showMwr.checked = false; render(); } });
+    }
     if (els.hideContingent.checked) {
       pills.push({ label: "No contingent", onRemove: function () { els.hideContingent.checked = false; render(); } });
     }
@@ -1385,6 +1410,8 @@
     var msg = "<strong>" + shown.length + "</strong> of " + JOBS.length + " job" + (JOBS.length === 1 ? "" : "s");
     var hidden = JOBS.filter(function (j) { return facetsOf(j).contingency === "contingent"; }).length;
     if (els.hideContingent.checked && hidden) msg += " · " + hidden + " contingent hidden";
+    var mwr = JOBS.filter(isMwr).length;
+    if (!els.showMwr.checked && mwr) msg += " · " + mwr + " MWR hidden";
     els.count.innerHTML = msg;
     els.live.textContent = shown.length + " jobs shown";
     liveCtas();
@@ -1429,7 +1456,7 @@
 
   function bind() {
     [els.q, els.salary].forEach(function (el) { el.addEventListener("input", render); });
-    [els.hideContingent, els.noPay].forEach(function (el) { el.addEventListener("change", render); });
+    [els.hideContingent, els.noPay, els.showMwr].forEach(function (el) { el.addEventListener("change", render); });
     els.clear.addEventListener("click", clearAll);
     bindFacets();
   }

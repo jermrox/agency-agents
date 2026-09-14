@@ -678,3 +678,46 @@ class TestMassageAndBehavioralHealthDisciplines:
         assert discipline_of("Operational Psychologist (Position Located at Vilseck, Germany)") == "behavioral-health"
         assert discipline_of("Mental Health Professional") == "behavioral-health"
         assert discipline_of("Resilience & Performance Coach (LCSW)") == "behavioral-health"
+
+
+# ---------------------------------------------------------------------------
+# MWR: installation recreation staffing, kept behind a box
+# ---------------------------------------------------------------------------
+
+
+def test_navy_installation_recreation_staff_are_mwr():
+    from tactical_jobs.facets import is_mwr
+
+    assert is_mwr("MWR Fitness Instructor", "Commander, Navy Installations Command")
+    assert is_mwr("Sports Specialist (Fitness)", "Commander, Navy Installations Command")
+    assert is_mwr("Recreation Specialist (Group Exercise Instructor)", "Commander, Navy Installations Command")
+    assert is_mwr("FITNESS CENTER OPERATIONS SUPERVISOR NF4", "U.S. Marine Corps")
+
+
+def test_a_named_tactical_programme_is_never_mwr():
+    """HITT and WARR sit inside Semper Fit and are what this board is for."""
+    from tactical_jobs.facets import is_mwr
+
+    assert not is_mwr("HITT INSTRUCTOR-LEVEL I, NF-0189-02", "U.S. Marine Corps", "Semper Fit programme")
+    assert not is_mwr("WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION", "U.S. Marine Corps", "Semper Fit")
+    assert not is_mwr("H2F Strength and Conditioning Coach", "Serco")
+
+
+def test_contractor_performance_roles_are_not_mwr():
+    from tactical_jobs.facets import is_mwr
+
+    assert not is_mwr("Special Operations Performance Dietitian", "KBR")
+    assert not is_mwr("Certified Athletic Trainer", "Planned Systems International")
+    assert not is_mwr("Physical Therapist", "General Dynamics Information Technology")
+
+
+def test_the_facet_is_published():
+    from tactical_jobs.facets import facets_for
+    from tactical_jobs.models import JobPosting
+
+    posting = JobPosting(
+        source="t", source_id="1", url="https://example.invalid/j",
+        title="MWR Sports Specialist", employer="Commander, Navy Installations Command",
+        location="Lemoore, California",
+    )
+    assert facets_for(posting)["mwr"] is True
