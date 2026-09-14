@@ -168,7 +168,7 @@ class GrantsGovSource(Source):
             DETAIL_ENDPOINT,
             {"opportunityId": str(opp_id)},
             retries=1,
-            timeout=10,
+            timeout=6,
         )
         data = payload.get("data") if isinstance(payload, dict) else None
         if not isinstance(data, dict):
