@@ -55,6 +55,21 @@ def collect(config: dict[str, Any]) -> tuple[list[Opportunity], list[str]]:
                 )
             else:
                 log.info("%-14s %3d opportunities", name, len(rows))
+            # Detail lookups run only on rows that survived the filter, so the
+            # request count tracks the board, not the search. One row's detail
+            # failing must never cost the run the row itself.
+            enriched = 0
+            for row in rows:
+                try:
+                    before = (row.summary, row.eligibility, row.amount)
+                    source.enrich(row)
+                    if (row.summary, row.eligibility, row.amount) != before:
+                        enriched += 1
+                except Exception as exc:  # noqa: BLE001 - detail is optional
+                    log.debug("%s: detail lookup failed for %r: %s", name, row.name, exc)
+            if enriched:
+                log.info("%-14s %3d detail lookups filled", name, enriched)
+
             found.extend(rows)
         except Exception as exc:  # noqa: BLE001 - one bad source must not end the run
             message = f"{name}: {exc}"

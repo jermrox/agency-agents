@@ -102,5 +102,13 @@ class Source:
             return True
         return any(str(term).lower() in haystack for term in terms)
 
+    def enrich(self, opportunity: Opportunity) -> None:
+        """Fill in detail a search result does not carry. Default: nothing.
+
+        Called only for rows that survived ``relevant``, so the request count
+        tracks what reaches the board rather than what the search returned.
+        """
+        return None
+
     def fetch(self) -> Iterable[Opportunity]:  # pragma: no cover - interface
         raise NotImplementedError

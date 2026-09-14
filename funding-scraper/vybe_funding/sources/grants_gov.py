@@ -34,6 +34,17 @@ from .base import Source, first_key, strip_html
 log = logging.getLogger(__name__)
 
 ENDPOINT = "https://api.grants.gov/v1/api/search2"
+# search2 returns titles and dates and nothing else -- every federal row on the
+# board came through with no description, no eligibility and "see solicitation"
+# for the amount, including the one closing soonest. fetchOpportunity is the
+# public, keyless detail call that carries the synopsis, the award floor and
+# ceiling, and the applicant types.
+DETAIL_ENDPOINT = "https://api.grants.gov/v1/api/fetchOpportunity"
+
+_SYNOPSIS_KEYS = ("synopsis", "synopsisDesc", "description", "opportunityDesc")
+_CEILING_KEYS = ("awardCeiling", "award_ceiling")
+_FLOOR_KEYS = ("awardFloor", "award_floor")
+_APPLICANT_KEYS = ("applicantTypes", "applicant_types", "eligibility")
 
 _TITLE_KEYS = ("title", "opportunityTitle", "oppTitle")
 _NUMBER_KEYS = ("number", "opportunityNumber", "oppNumber")
@@ -134,3 +145,65 @@ class GrantsGovSource(Source):
                 eligibility=self.options.get("eligibility", ""),
                 raw=record,
             )
+
+    def enrich(self, opportunity: Opportunity) -> None:
+        """Pull the synopsis, award range and applicant types for one row.
+
+        Every field is filled only when it is currently empty, so a curated
+        value is never overwritten by an API one. A detail call that fails
+        leaves the row exactly as the search returned it -- a thinner row is a
+        far better outcome than a dead sweep.
+        """
+        opp_id = (opportunity.raw or {}).get("id") or first_key(
+            opportunity.raw or {}, _ID_KEYS
+        )
+        if not opp_id:
+            return
+
+        payload = post_json(DETAIL_ENDPOINT, {"opportunityId": str(opp_id)})
+        data = payload.get("data") if isinstance(payload, dict) else None
+        if not isinstance(data, dict):
+            return
+        # The detail body nests most of what we want under a synopsis object.
+        synopsis = data.get("synopsis") if isinstance(data.get("synopsis"), dict) else {}
+        merged: dict[str, Any] = {**data, **synopsis}
+
+        if not opportunity.summary:
+            text = strip_html(first_key(merged, _SYNOPSIS_KEYS))
+            if text:
+                opportunity.summary = text[:400]
+
+        if not opportunity.eligibility:
+            applicants = merged.get("applicantTypes")
+            if isinstance(applicants, list):
+                names = [
+                    strip_html(a.get("description") or a.get("name") or "")
+                    if isinstance(a, dict)
+                    else strip_html(a)
+                    for a in applicants
+                ]
+                joined = "; ".join(n for n in names if n)
+                if joined:
+                    opportunity.eligibility = joined[:300]
+            else:
+                text = strip_html(first_key(merged, _APPLICANT_KEYS))
+                if text:
+                    opportunity.eligibility = text[:300]
+
+        if opportunity.amount in ("", "see solicitation"):
+            ceiling = first_key(merged, _CEILING_KEYS)
+            floor = first_key(merged, _FLOOR_KEYS)
+
+            def _money(value: str) -> str:
+                try:
+                    return f"${int(float(value)):,}"
+                except (TypeError, ValueError):
+                    return ""
+
+            hi, lo = _money(ceiling), _money(floor)
+            if hi and lo and hi != lo:
+                opportunity.amount = f"{lo} - {hi}"
+            elif hi:
+                opportunity.amount = f"up to {hi}"
+            elif lo:
+                opportunity.amount = f"from {lo}"
