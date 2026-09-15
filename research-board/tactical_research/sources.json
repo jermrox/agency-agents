@@ -1,0 +1,189 @@
+{
+  "_note": "Source registry for the tactical human performance board. Official channels first; associations and event pages are fine; trade press only as coverage or for events, always linked to the original where one exists. No vendors, no coaching blogs, no aggregators. 'coverage_only' sources can never become an item on their own.",
+  "sources": [
+    {
+      "name": "NIOSH Fire Fighter Fatality Investigation; National Firefighter Registry for Cancer",
+      "sector": "FIRE",
+      "gives": "Fatality reports, cancer surveillance",
+      "url": "https://www.cdc.gov/niosh/firefighters/",
+      "cannot_crawl": "Refuses automated requests (HTTP 403)."
+    },
+    {
+      "name": "U.S. Fire Administration (USFA)",
+      "sector": "FIRE",
+      "gives": "Fatality and injury reports, program news",
+      "url": "https://www.usfa.fema.gov/"
+    },
+    {
+      "name": "NFPA research reports and standards pages (1580, 1550, 1010)",
+      "sector": "FIRE",
+      "gives": "Injury data, standards changes",
+      "url": "https://www.nfpa.org/news-blogs-and-articles",
+      "cannot_crawl": "Listings render client-side; three URLs tried. NFPA 1580 is watched by the standards panel instead."
+    },
+    {
+      "name": "OSHA Emergency Response Standard docket",
+      "sector": "CROSS",
+      "gives": "Federal rule; final rule projected April 2027",
+      "url": "https://www.osha.gov/emergency-response/rulemaking"
+    },
+    {
+      "name": "FEMA AFG, FP&S, and SAFER awards",
+      "sector": "FIRE",
+      "gives": "Funding and hiring signals",
+      "url": "https://www.fema.gov/grants/preparedness/firefighters",
+      "cannot_crawl": "Refuses automated requests (HTTP 403)."
+    },
+    {
+      "name": "IAFF (Wellness-Fitness Initiative, Peer Fitness Trainer, Center of Excellence); IAFC; NFFF",
+      "sector": "FIRE",
+      "gives": "Programs, model policy, events",
+      "url": "https://www.iaff.org/"
+    },
+    {
+      "name": "NWCG and USFS Wildland Fire",
+      "sector": "FIRE",
+      "gives": "Wildland fitness and health policy",
+      "url": "https://www.nwcg.gov/"
+    },
+    {
+      "name": "NHTSA Office of EMS; NEMSIS",
+      "sector": "EMS",
+      "gives": "EMS data and program news",
+      "url": "https://www.ems.gov/"
+    },
+    {
+      "name": "FBI LEOKA and Law Enforcement Suicide Data Collection",
+      "sector": "LE",
+      "gives": "Officer fatality and suicide data",
+      "url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr/leoka",
+      "cannot_crawl": "Refuses automated requests (HTTP 403)."
+    },
+    {
+      "name": "NLEOMF; ODMP",
+      "sector": "LE",
+      "gives": "Fatality reports",
+      "url": "https://nleomf.org/memorial/facts-figures/latest-fatality-reports/"
+    },
+    {
+      "name": "BJA (LEMHWA, VALOR, Officer Safety and Wellness); NIJ; DOJ COPS Office",
+      "sector": "LE",
+      "gives": "Funding, research, model policy",
+      "url": "https://bja.ojp.gov/"
+    },
+    {
+      "name": "IACP Officer Safety and Wellness; FLETC",
+      "sector": "LE",
+      "gives": "Programs, training, events",
+      "url": "https://www.theiacp.org/"
+    },
+    {
+      "name": "State POST commissions (start with California POST)",
+      "sector": "LE",
+      "gives": "Physical standards changes",
+      "url": "https://post.ca.gov/"
+    },
+    {
+      "name": "NSCA TSAC (TSAC Report, annual conference)",
+      "sector": "CROSS",
+      "gives": "Practitioner research, the field's main event",
+      "url": "https://www.nsca.com/tsac/",
+      "cannot_crawl": "Refuses automated requests (HTTP 403)."
+    },
+    {
+      "name": "First H.E.L.P.; BLS CFOI",
+      "sector": "CROSS",
+      "gives": "Cross-sector surveillance",
+      "url": "https://www.bls.gov/iif/",
+      "cannot_crawl": "Refuses automated requests (HTTP 403)."
+    },
+    {
+      "name": "Event pages: H2F Symposium, NSCA TSAC Conference, IAFF Redmond Symposium, FDIC, IACP Annual, SOMA, AMSUS",
+      "sector": "CROSS",
+      "gives": "Events",
+      "url": ""
+    },
+    {
+      "name": "Trade press: FireRescue1, Police1, JEMS, Firehouse, Fire Engineering, EMS1, Military Times, Task and Purpose",
+      "sector": "CROSS",
+      "gives": "Reporting lists under items; events",
+      "url": "",
+      "coverage_only": true
+    }
+  ],
+  "search_vocabulary": {
+    "_note": "Section 9. The military vocabulary already lives in the sweep skill; these are the terms that find the sectors the old board never covered.",
+    "people": [
+      "firefighter",
+      "wildland firefighter",
+      "first responder",
+      "emergency responder",
+      "paramedic",
+      "EMT",
+      "police officer",
+      "law enforcement officer",
+      "deputy",
+      "trooper",
+      "correctional officer",
+      "recruit academy",
+      "tactical athlete",
+      "public safety"
+    ],
+    "pubmed_mesh": [
+      "Firefighters",
+      "Police",
+      "Emergency Medical Technicians",
+      "Emergency Responders",
+      "Military Personnel",
+      "Shift Work Schedule",
+      "Physical Fitness"
+    ],
+    "standards_and_tests": [
+      "NFPA 1580",
+      "NFPA 1582",
+      "CPAT",
+      "Work Capacity Test",
+      "pack test",
+      "POST physical ability test",
+      "PAT",
+      "fitness for duty",
+      "annual fitness evaluation",
+      "return to duty"
+    ],
+    "health": [
+      "line of duty death",
+      "sudden cardiac event",
+      "cardiorespiratory fitness",
+      "cancer presumption",
+      "PFAS turnout gear",
+      "heat stress",
+      "shift work",
+      "24-hour shift",
+      "fatigue",
+      "peer support",
+      "behavioral health",
+      "musculoskeletal injury",
+      "duty belt",
+      "body armor",
+      "SCBA load"
+    ],
+    "programs_and_funding": [
+      "Wellness-Fitness Initiative",
+      "Peer Fitness Trainer",
+      "AFG",
+      "FP&S",
+      "SAFER",
+      "LEMHWA",
+      "VALOR",
+      "COPS Office",
+      "BJA",
+      "NIJ",
+      "FLETC",
+      "NSCA TSAC",
+      "Tactical Strength and Conditioning",
+      "H2F",
+      "POTFF"
+    ]
+  },
+  "_note_cannot_crawl": "cannot_crawl records a limitation established by repeated live runs, not a guess. Such a source is still crawled every week in case the host changes, but it is reported as a known limitation rather than as a source that may have moved. Without that split, six entries would raise the same alarm every week forever and the weekly report would stop being read — which is the failure the standards watcher is built to avoid. Remove the field the moment a run proves the source works again."
+}
