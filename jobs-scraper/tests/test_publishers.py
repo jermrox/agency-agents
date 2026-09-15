@@ -339,6 +339,14 @@ def test_the_same_posting_under_two_ids_is_collapsed(tmp_path):
 
 
 def test_entries_without_a_url_are_never_collapsed_together(tmp_path):
+    # The dates are relative on purpose. They were once written as fixed days
+    # in August, which put them inside the 45 day retention window when the
+    # test was written and outside it on 2026-09-15 -- so the older entry aged
+    # out and the test failed claiming a collapse that never happened. A test
+    # about collapsing must not depend on what day it is run.
+    now = datetime.now(timezone.utc)
+    first = (now - timedelta(days=2)).isoformat()
+    second = (now - timedelta(days=1)).isoformat()
     path = tmp_path / "jobs.json"
     path.write_text(
         json.dumps(
@@ -346,8 +354,8 @@ def test_entries_without_a_url_are_never_collapsed_together(tmp_path):
                 "version": 1,
                 "count": 2,
                 "jobs": [
-                    {"id": "a", "title": "One", "url": "", "listed_at": "2026-08-01T00:00:00+00:00"},
-                    {"id": "b", "title": "Two", "url": "", "listed_at": "2026-08-02T00:00:00+00:00"},
+                    {"id": "a", "title": "One", "url": "", "listed_at": first},
+                    {"id": "b", "title": "Two", "url": "", "listed_at": second},
                 ],
             }
         )
