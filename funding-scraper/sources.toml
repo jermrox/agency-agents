@@ -85,6 +85,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -109,6 +110,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -133,6 +135,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -157,6 +160,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -181,6 +185,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -205,6 +210,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -229,6 +235,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -253,6 +260,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -277,6 +285,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -301,6 +310,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 
@@ -325,6 +335,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 [sources.grants_thermal_strain]
@@ -348,6 +359,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 [sources.grants_sensor_fusion]
@@ -371,6 +383,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 # -----------------------------------------------------------------------------
@@ -425,6 +438,7 @@ require_any = [
   "heat strain", "hydration", "core temperature", "thermal strain",
   "metabolic", "on-body", "body-worn", "wearable sensor",
   "biosignal", "physiological signal",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "warfighter",
 ]
 # Domains that share vocabulary with physiological sensing but are not Vybe's.
 # Word-boundary matched, and this list runs before require_any.
@@ -470,6 +484,7 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 [sources.grants_nsf]
@@ -494,6 +509,39 @@ require_any = [
   "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+# Broad agency announcements are titled institutionally, not topically, so the
+# thirteen topic queries above cannot see them. That is not hypothetical: the
+# Air Force Research Laboratory Human Effectiveness Directorate BAA -- CHEERS,
+# FA238424S2233, open now and running to 2044, the single most on-mission
+# federal vehicle for a physiological wearable -- was missing from this board
+# entirely. Its title is an acronym expansion and its text says "Human
+# Effectiveness Directorate", never "human performance", so every keyword we
+# had went past it. Found by the unfiltered recall probe, not by the filters.
+[sources.grants_baa]
+kind = "grants_gov"
+keyword = "broad agency announcement human performance biomedical research"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
 # Recall checks on the two agency probes. Same queries, no keyword filter,
