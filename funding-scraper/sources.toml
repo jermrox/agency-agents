@@ -374,6 +374,38 @@ require_any = [
 ]
 
 # -----------------------------------------------------------------------------
+# 2b. DoD SBIR/STTR open topics (DSIP)
+# -----------------------------------------------------------------------------
+# DoD topics are not posted to grants.gov, and SBIR.gov -- the one documented
+# aggregator carrying them -- has refused every request since the programs'
+# authorization lapse. Without this block the single most relevant federal
+# layer for a warfighter-facing wearable (DARPA, Army, Navy, Air Force, DHA)
+# is invisible to the board.
+#
+# The DSIP backend is undocumented, so the adapter tries three candidate
+# endpoints and fails loudly naming each one. An unrecognised response shape
+# yields zero rows, never a wrong row.
+#
+# WHY A TIGHTER require_any THAN THE GRANTS.GOV BLOCKS
+# Every DoD topic is defense work, so "readiness", "algorithm" and "machine
+# learning" -- which are discriminating on grants.gov -- admit most of the
+# corpus here. This list names the physiology and wearable-sensing vocabulary
+# instead, and leaves the generic terms out.
+[sources.dod_sbir]
+kind = "dod_sbir"
+default_amount = "SBIR Phase I scale"
+require_any = [
+  "wearable", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "continuous monitoring",
+  "human performance", "warfighter performance", "soldier performance",
+  "fatigue", "cognitive load", "cognitive performance", "sleep deprivation",
+  "health monitoring", "remote monitoring", "telehealth", "digital health",
+  "medical device", "vital sign", "hypox", "oxygen saturation", "spo2",
+  "heat strain", "hydration", "core temperature", "thermal strain",
+  "on-body", "body-worn", "wearable sensor", "signal processing",
+]
+
+# -----------------------------------------------------------------------------
 # 3. Curated -- verified by hand, no machine-readable source exists
 # -----------------------------------------------------------------------------
 [sources.curated]
