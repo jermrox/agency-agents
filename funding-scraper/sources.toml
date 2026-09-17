@@ -382,6 +382,23 @@ kind = "curated"
 # --- Pillar 2: grants and matched funding ------------------------------------
 
 [[sources.curated.entry]]
+name = "SBIR/STTR — reauthorized through 2031 (program status)"
+url = "https://www.sbir.gov/"
+agency = "SBA / 11 participating federal agencies"
+amount = "Phase I ~$50K-$314K · Phase II to ~$2.1M · new Phase II strategic breakthrough ceiling $30M"
+pillar = 2
+kind = "grant"
+eligibility = "Small businesses; US-owned and independently operated; majority US-citizen or permanent-resident owned"
+note = "CONTEXT ROW, NOT AN APPLICATION. SBIR/STTR expired 30 Sep 2025 -- the longest lapse in 42 years. NIH cancelled 23 solicitations, NSF paused Project Pitch, DoD shelved topic lists, ~$4B stopped. Reauthorized 13 Apr 2026 (S.3971) through 30 Sep 2031, adding a Phase II strategic breakthrough vehicle with a $30M ceiling. From FY2027 each agency sets its own cap on how many proposals one company may submit -- so pick targets rather than carpet-bombing. Every state-match row on this board depends on holding a federal SBIR award first."
+documents = [
+  "SAM.gov UEI registration (weeks -- start before any solicitation)",
+  "SBIR.gov company registration for your SBC control number",
+  "Confirm the specific agency solicitation has reopened post-lapse before writing",
+]
+verified = "2026-09-17"
+
+
+[[sources.curated.entry]]
 name = "MedTech Innovator Vantage (BARDA Accelerator Network)"
 url = "https://medtechinnovator.org/vantage/devfunding/"
 agency = "MedTech Innovator / BARDA"

@@ -31,15 +31,24 @@ from .base import Source, SourceError, first_key, strip_html
 
 log = logging.getLogger(__name__)
 
-# Two hosts, tried in order. The api.www host is the documented one, but it
-# answered 403 on an open-network runner across two live runs -- once with no
-# Accept header and once with one -- so it is refusing us for a reason we do
-# not control. www.sbir.gov is the older path that served the same JSON.
-# Trying both costs one extra request on the failure path and keeps the
-# federal SBIR layer alive if either host is up.
+# Four candidate hosts, tried in order.
+#
+# WHY THIS SOURCE HAS NEVER RETURNED A ROW
+# SBIR/STTR expired 30 Sep 2025 -- the longest lapse in the programs' history --
+# and was reauthorized 13 Apr 2026 through 30 Sep 2031. SBIR.gov states its APIs
+# are under maintenance, which is consistent with a rebuild after that lapse and
+# with the 403 we get on every run. This is an upstream outage, not a bug here
+# and not something a header fixes.
+#
+# The extra candidates cost one request each on the failure path and cost
+# nothing once any host comes back. When one does, the federal SBIR layer --
+# DoD, DOE and NASA topics, which are NOT posted to grants.gov -- appears on the
+# board without further work.
 ENDPOINTS = (
     "https://api.www.sbir.gov/public/api/solicitations",
     "https://www.sbir.gov/api/solicitations.json",
+    "https://www.sbir.gov/api/solicitation",
+    "https://legacy.www.sbir.gov/api/solicitations",
 )
 
 _TITLE_KEYS = ("solicitation_title", "title", "solicitationTitle")
