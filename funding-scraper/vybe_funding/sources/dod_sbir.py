@@ -15,11 +15,36 @@ candidates below are the conventional shapes for such an app. Each costs one
 request on the failure path and the source fails loudly naming every one it
 tried, which is what a future fix starts from. Nothing here can put a wrong row
 on the board -- a shape we do not recognise yields zero opportunities, not junk.
+
+THE SCHEMA, READ OFF A LIVE RESPONSE
+The first live run returned records keyed:
+
+    topicId topicCode topicTitle topicStatus component command program
+    cycleName solicitationNumber solicitationTitle releaseNumber
+    topicStartDate topicEndDate topicPreReleaseStartDate topicPreReleaseEndDate
+    topicQAStartDate topicQAEndDate topicQAStatus ...
+
+Two things follow, and both cost a release to learn:
+
+1. The dates are epoch milliseconds, not strings. ``parse_date`` reads text
+   formats, so every close date came back None and every topic rendered as
+   "Rolling" -- an expired topic sitting on the board looking open, which is
+   the failure this board exists to prevent. ``_epoch_date`` below handles it.
+
+2. There is no description, objective or abstract field anywhere in the search
+   response; the full topic text lives behind a per-topic detail page. So the
+   summary here is assembled from what the record actually carries rather than
+   left empty, and no text is invented.
+
+A row with no close date is dropped outright. For this source that is not a
+"rolling" opportunity -- DoD topics always close -- it means the date did not
+parse, and a row we cannot date is a row we cannot honestly publish.
 """
 
 from __future__ import annotations
 
 import logging
+from datetime import datetime, timezone
 from typing import Any, Iterable
 
 from ..http import fetch_json, post_json
@@ -45,8 +70,47 @@ _CODE_KEYS = ("topicCode", "finalTopicCode", "topicNumber", "number")
 _COMPONENT_KEYS = ("component", "componentName", "agency", "command")
 _CLOSE_KEYS = ("topicEndDate", "closeDate", "endDate", "topicCloseDate")
 _OPEN_KEYS = ("topicStartDate", "openDate", "startDate", "topicOpenDate")
-_DESC_KEYS = ("objective", "description", "topicObjective", "shortDescription")
 _ID_KEYS = ("topicId", "id", "noticeId")
+_STATUS_KEYS = ("topicStatus", "status")
+_PROGRAM_KEYS = ("program",)
+_CYCLE_KEYS = ("cycleName", "solicitationTitle", "solicitationNumber")
+
+# Statuses that mean "you can still act on this". Anything else -- Closed,
+# Archived, a status we have never seen -- is dropped, because the safe default
+# for an unrecognised status is to leave the row off the board rather than
+# guess it is live.
+_ACTIONABLE_STATUSES = ("open", "pre-release", "prerelease")
+
+
+def _epoch_date(value: Any):
+    """Parse a DSIP timestamp: epoch milliseconds, seconds, or a date string.
+
+    Kept local rather than folded into ``parse_date`` because a bare number is
+    ambiguous in general -- ``20250131`` is a plausible date string and a
+    plausible epoch second. Here the field is known to be a Java timestamp, so
+    the ambiguity does not exist and the narrow reading is the correct one.
+    """
+    if value in (None, ""):
+        return None
+    if isinstance(value, bool):
+        return None
+    number: float | None = None
+    if isinstance(value, (int, float)):
+        number = float(value)
+    elif isinstance(value, str) and value.strip().lstrip("-").isdigit():
+        number = float(value.strip())
+    if number is not None:
+        # Milliseconds past ~2001; seconds past ~2001. Below that it is not a
+        # timestamp we should be guessing at.
+        if abs(number) >= 1e11:
+            number /= 1000.0
+        elif abs(number) < 1e8:
+            return None
+        try:
+            return datetime.fromtimestamp(number, tz=timezone.utc).date()
+        except (OverflowError, OSError, ValueError):
+            return None
+    return parse_date(value)
 
 
 def _rows(payload: Any) -> list[dict]:
@@ -89,15 +153,49 @@ class DodSbirSource(Source):
         if payload is None:
             raise SourceError("; ".join(failures))
 
+        statuses: dict[str, int] = {}
+        undated = 0
+        not_actionable = 0
+
         for record in _rows(payload):
             title = strip_html(first_key(record, _TITLE_KEYS))
             if not title:
                 continue
+
+            status = first_key(record, _STATUS_KEYS)
+            statuses[status or "(none)"] = statuses.get(status or "(none)", 0) + 1
+            if status and not any(s in status.lower() for s in _ACTIONABLE_STATUSES):
+                not_actionable += 1
+                continue
+
+            close_date = _epoch_date(record.get("topicEndDate")) or _epoch_date(
+                first_key(record, _CLOSE_KEYS))
+            if close_date is None:
+                # Not "rolling". DoD topics always close, so a missing close
+                # date means the field did not parse, and an undated row would
+                # render as permanently open. Drop it and say how many.
+                undated += 1
+                continue
+
             code = first_key(record, _CODE_KEYS)
             topic_id = first_key(record, _ID_KEYS)
             url = (f"https://www.dodsbirsttr.mil/topics-app/?topicId={topic_id}"
                    if topic_id else "https://www.dodsbirsttr.mil/topics-app/")
             component = strip_html(first_key(record, _COMPONENT_KEYS))
+
+            # The search response carries no description field, so the summary
+            # is assembled from what the record actually holds. Nothing here is
+            # invented: every part is a value the API returned.
+            parts = [
+                p for p in (
+                    first_key(record, _PROGRAM_KEYS),
+                    strip_html(first_key(record, _CYCLE_KEYS)),
+                    f"status {status}" if status else "",
+                ) if p
+            ]
+            summary = " · ".join(parts)
+            if summary:
+                summary += ". Full topic text is on the DSIP topic page."
 
             yield Opportunity(
                 source="dod-sbir",
@@ -105,11 +203,22 @@ class DodSbirSource(Source):
                 url=url,
                 agency=f"DoD — {component}" if component else "Department of Defense",
                 amount=self.options.get("default_amount", "SBIR Phase I scale"),
-                summary=strip_html(first_key(record, _DESC_KEYS))[:400],
-                open_date=parse_date(first_key(record, _OPEN_KEYS)),
-                close_date=parse_date(first_key(record, _CLOSE_KEYS)),
+                summary=summary[:400],
+                open_date=_epoch_date(record.get("topicStartDate")) or _epoch_date(
+                    first_key(record, _OPEN_KEYS)),
+                close_date=close_date,
                 pillar=2,
                 kind="grant",
                 eligibility="Small businesses; US-owned and independently operated",
+                documents=["SAM.gov UEI", "SBIR.gov SBC control number"],
                 raw=record,
             )
+
+        # A silent filter is indistinguishable from a dead API, so say what was
+        # dropped and on what grounds.
+        log.info("dod_sbir: statuses seen: %s",
+                 ", ".join(f"{k}={v}" for k, v in sorted(statuses.items())))
+        if not_actionable:
+            log.info("dod_sbir: %d dropped as not open or pre-release", not_actionable)
+        if undated:
+            log.warning("dod_sbir: %d dropped with an unparseable close date", undated)

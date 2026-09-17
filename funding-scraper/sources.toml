@@ -404,15 +404,30 @@ kind = "dod_sbir"
 # names get read out of a CI log. Flip this back on once close_date populates.
 enabled = false
 default_amount = "SBIR Phase I scale"
+# The first live run proved three of these terms too loose for a corpus that
+# is entirely defense engineering. "signal processing" admitted a radar
+# probability-of-detection topic, "fatigue" admitted fretting fatigue in naval
+# aerospace metal, and "physiolog" admitted a microphysiological immunogenicity
+# assay. Each is replaced by the phrase that was actually meant.
 require_any = [
-  "wearable", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "wearable", "biosensor", "biometric", "photoplethysm",
   "heart rate", "hrv", "sleep", "actigraph", "continuous monitoring",
   "human performance", "warfighter performance", "soldier performance",
-  "fatigue", "cognitive load", "cognitive performance", "sleep deprivation",
+  "physiological monitoring", "physiological sensing", "physiological status",
+  "operator fatigue", "crew fatigue", "sleep deprivation",
+  "cognitive load", "cognitive performance", "cognitive readiness",
   "health monitoring", "remote monitoring", "telehealth", "digital health",
   "medical device", "vital sign", "hypox", "oxygen saturation", "spo2",
   "heat strain", "hydration", "core temperature", "thermal strain",
-  "on-body", "body-worn", "wearable sensor", "signal processing",
+  "metabolic", "on-body", "body-worn", "wearable sensor",
+  "biosignal", "physiological signal",
+]
+# Domains that share vocabulary with physiological sensing but are not Vybe's.
+# Word-boundary matched, and this list runs before require_any.
+exclude_any = [
+  "radar", "sonar", "hull", "missile", "munition", "propulsion", "turbine",
+  "alloy", "fretting", "corrosion", "coating", "airframe", "hypersonic",
+  "microphysiological", "organ-on-a-chip", "vaccine", "antigen", "immunogenicity",
 ]
 
 # -----------------------------------------------------------------------------
