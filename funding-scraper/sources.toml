@@ -436,6 +436,17 @@ exclude_any = [
   "microphysiological", "organ-on-a-chip", "vaccine", "antigen", "immunogenicity",
 ]
 
+# A recall check on the block above, not a source of rows. Same adapter, no
+# keyword filter, permanently disabled -- `--only dod_sbir_unfiltered --verbose`
+# lists every open and pre-release DoD topic so the require_any list can be
+# judged on what it DROPS, not only on what it keeps. Tightening a filter to
+# kill false positives is exactly how real opportunities go missing silently,
+# and this is the cheapest way to see that happening.
+[sources.dod_sbir_unfiltered]
+kind = "dod_sbir"
+pages = 30
+enabled = false
+
 # -----------------------------------------------------------------------------
 # 3. Curated -- verified by hand, no machine-readable source exists
 # -----------------------------------------------------------------------------
