@@ -19,7 +19,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .models import Opportunity
+from .models import Opportunity, parse_date
 from .sources import build
 from .sources.curated import stale_entries
 
@@ -41,7 +41,7 @@ def load_config(path: Path) -> dict[str, Any]:
 
 def collect(
     config: dict[str, Any], only: set[str] | None = None
-) -> tuple[list[Opportunity], list[str]]:
+) -> tuple[list[Opportunity], list[str], set[str]]:
     """Run every configured source. Returns (opportunities, error messages).
 
     ``only`` restricts the run to the named sources. That exists for one
@@ -51,6 +51,7 @@ def collect(
     """
     found: list[Opportunity] = []
     errors: list[str] = []
+    failed: set[str] = set()
 
     for name, options in config.get("sources", {}).items():
         if not isinstance(options, dict):
@@ -110,8 +111,9 @@ def collect(
             message = f"{name}: {exc}"
             log.error("%-14s FAILED  %s", name, exc)
             errors.append(message)
+            failed.add(name)
 
-    return found, errors
+    return found, errors, failed
 
 
 def deduplicate(opportunities: list[Opportunity]) -> list[Opportunity]:
@@ -129,11 +131,67 @@ def deduplicate(opportunities: list[Opportunity]) -> list[Opportunity]:
     return list(by_fingerprint.values())
 
 
-def publish(opportunities: list[Opportunity], output_dir: Path, today: date, errors: list[str]) -> Path:
+def publish(
+    opportunities: list[Opportunity],
+    output_dir: Path,
+    today: date,
+    errors: list[str],
+    failed_sources: set[str] | None = None,
+) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     target = output_dir / "funding.json"
 
     rows = [opp.to_dict(today) for opp in opportunities]
+
+    # A source that FAILED contributes nothing, and publishing that as-is
+    # deletes every row it used to carry. That is how a real opportunity with
+    # a live deadline silently leaves the board: DSIP started returning 403
+    # after several long walks, and the Navy wearable topic closing in six
+    # days simply vanished from the published feed. An upstream outage is not
+    # evidence that an opportunity ended.
+    #
+    # Rows are keyed on the source LABEL they carry (`source`), not the config
+    # block name, because that is what the published file records. A label
+    # that produced rows this run is live, so anything of its that is missing
+    # now is genuinely gone -- filtered out or closed -- and is NOT carried.
+    # Only a label that vanished entirely, in a run that also had a failure,
+    # gets its rows carried. That can under-protect but never over-carries.
+    #
+    # Carried rows keep their own close date and have their status recomputed,
+    # so a genuinely expired one still goes closed on schedule.
+    if failed_sources and target.exists():
+        try:
+            previous = json.loads(target.read_text(encoding="utf-8"))
+            live_labels = {r.get("source") for r in rows}
+            known_ids = {r.get("id") for r in rows}
+            carried: list[str] = []
+            for row in previous.get("opportunities", []):
+                if row.get("source") in live_labels or row.get("id") in known_ids:
+                    continue
+                close = parse_date(row.get("close_date"))
+                if close is not None and close < today:
+                    continue  # genuinely expired -- let it go
+                row = dict(row)
+                row["stale"] = True
+                # Say so on the row itself, not only in the JSON: a reader of
+                # the board has no other way to know this one was not rechecked.
+                marker = "Not refreshed this run — its source was unreachable."
+                existing_note = (row.get("summary") or "").strip()
+                if marker not in existing_note:
+                    row["summary"] = f"{marker} {existing_note}".strip()
+                if close is not None:
+                    row["days_left"] = (close - today).days
+                    row["status"] = "soon" if row["days_left"] <= 30 else "open"
+                rows.append(row)
+                carried.append(row.get("source", "?"))
+            if carried:
+                log.warning(
+                    "carried %d row(s) forward from %s -- the source failed this "
+                    "run and its rows were not refreshed",
+                    len(carried), ", ".join(sorted(set(carried))),
+                )
+        except (OSError, ValueError) as exc:
+            log.warning("could not carry rows forward from %s: %s", target, exc)
     # Soonest real deadline first; rolling after; closed last. Same ordering the
     # dashboard applies, so the file reads correctly even opened raw.
     rank = {"soon": 0, "open": 1, "rolling": 2, "closed": 3}
@@ -144,6 +202,7 @@ def publish(opportunities: list[Opportunity], output_dir: Path, today: date, err
         "as_of": today.isoformat(),
         "count": len(rows),
         "source_errors": errors,
+        "stale_sources": sorted(failed_sources or ()),
         "opportunities": rows,
     }
     target.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -221,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
         # sources contribute, so --only is read-only by construction.
         args.dry_run = True
 
-    opportunities, errors = collect(config, only)
+    opportunities, errors, failed = collect(config, only)
     opportunities = deduplicate(opportunities)
     summarize(opportunities, today, int(runtime.get("stale_days", DEFAULT_STALE_DAYS)))
 
@@ -246,7 +305,9 @@ def main(argv: list[str] | None = None) -> int:
         log.info("dry run -- nothing written (%d opportunities)", len(opportunities))
         return 1 if errors else 0
 
-    target = publish(opportunities, Path(runtime.get("output_dir", "output")), today, errors)
+    target = publish(
+        opportunities, Path(runtime.get("output_dir", "output")), today, errors, failed
+    )
     log.info("-" * 58)
     log.info("wrote %s (%d opportunities)", target, len(opportunities))
 

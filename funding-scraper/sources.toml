@@ -565,22 +565,15 @@ keyword = "FA238424S2233"
 rows = 100
 pages = 1
 statuses = "forecasted|posted"
-exclude_any = [
-  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
-  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
-  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
-  "democracy", "civics", "election", "prescription drug monitoring",
-]
-require_any = [
-  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
-  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
-  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
-  "human performance", "readiness", "fatigue", "warfighter", "soldier",
-  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
-  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
-  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
-  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
-]
+# NO require_any, deliberately. The relevance filter runs BEFORE enrichment,
+# so it only ever sees the search response -- and grants.gov search2 returns
+# no description field at all, only a title. Every CHEERS record was dropped
+# on that basis: "CHEERS Open Period 2 - All Technical Areas" carries no
+# topical vocabulary in its title, and the "Human Effectiveness Directorate"
+# text that would have matched lives in the description the filter cannot see.
+#
+# A keyword filter on a query pinned to one opportunity number is redundant
+# anyway: the number IS the filter.
 
 # ONE bounded experiment on what grants.gov `keyword` actually matches, so the
 # CHEERS record stops being an unexplained curation. Three disabled probes,
