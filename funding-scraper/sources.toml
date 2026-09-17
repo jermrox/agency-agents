@@ -393,6 +393,12 @@ require_any = [
 # instead, and leaves the generic terms out.
 [sources.dod_sbir]
 kind = "dod_sbir"
+# Page budget for the topic list. The filtered search returns HTTP 500, so the
+# open topics are found by walking the plain list and filtering on the
+# topicStatus each record carries. 30 pages x 100 covers 3,000 topics; the walk
+# stops early on a short page or one adding no new ids, so this is a ceiling,
+# not a cost.
+pages = 30
 # HELD OUT OF PUBLISHING RUNS UNTIL THE DATE FIELDS ARE PROVEN.
 # The first live run returned six real DoD topics -- correct titles, correct
 # components, working topic URLs -- but close_date was None on every one of

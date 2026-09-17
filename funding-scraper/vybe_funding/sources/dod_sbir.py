@@ -113,6 +113,12 @@ def _epoch_date(value: Any):
     return parse_date(value)
 
 
+def _record_id(record: dict) -> str:
+    """Identity for cross-page dedup, falling back to the title."""
+    return str(record.get("topicId") or record.get("topicCode")
+               or record.get("topicTitle") or id(record))
+
+
 def _rows(payload: Any) -> list[dict]:
     """Pull the record list out of whatever envelope the API uses."""
     if isinstance(payload, list):
@@ -135,20 +141,31 @@ class DodSbirSource(Source):
 
     kind = "dod_sbir"
 
-    def fetch(self) -> Iterable[Opportunity]:
-        payload = None
+    def _records(self) -> list[dict]:
+        """Every topic record the portal will give us.
+
+        The filtered POST returns HTTP 500 -- the body shape it wants is not
+        something we can guess, and a 500 is the server rejecting us, not a
+        transient fault. The plain GET works and honours `size` and `page`, so
+        the open topics are found by walking the whole list and filtering on
+        the `topicStatus` each record carries. That is more requests, but it
+        relies only on behaviour that has actually been observed.
+        """
+        working: tuple[str, str, dict | None] | None = None
         failures: list[str] = []
+
         for method, url, body in CANDIDATES:
             try:
                 payload = (post_json(url, body, retries=1, timeout=20) if method == "POST"
                            else fetch_json(url, retries=1, timeout=20))
-                if _rows(payload):
+                rows = _rows(payload)
+                if rows:
                     log.info("dod_sbir: %s %s answered with %d records",
-                             method, url, len(_rows(payload)))
+                             method, url, len(rows))
+                    working = (method, url, body)
                     break
                 failures.append(f"{url}: returned no recognisable topic list")
                 log.info("dod_sbir: %s %s returned no recognisable topic list", method, url)
-                payload = None
             except Exception as exc:  # noqa: BLE001 - try the next candidate
                 failures.append(str(exc))
                 # Logged as it happens, not only when every candidate fails.
@@ -157,14 +174,51 @@ class DodSbirSource(Source):
                 # -- so the board silently showed page 0 of a closed-topic list
                 # instead of the open topics the POST asks for.
                 log.info("dod_sbir: %s %s failed: %s", method, url, exc)
-        if payload is None:
+
+        if working is None:
             raise SourceError("; ".join(failures))
+
+        method, url, body = working
+        records: list[dict] = list(rows)
+        if method != "GET" or "page=0" not in url:
+            return records
+
+        # Walk the rest. Stop on a short page, a page that adds nothing new, or
+        # the page budget -- the same three stopping conditions the grants.gov
+        # source uses, so a change upstream cannot turn this into a long loop.
+        seen = {_record_id(r) for r in records}
+        max_pages = int(self.options.get("pages", 40))
+        for page in range(1, max_pages):
+            try:
+                payload = fetch_json(url.replace("page=0", f"page={page}"),
+                                     retries=1, timeout=20)
+            except Exception as exc:  # noqa: BLE001 - keep what we already have
+                log.warning("dod_sbir: page %d failed, keeping %d records: %s",
+                            page, len(records), exc)
+                break
+            rows = _rows(payload)
+            if not rows:
+                break
+            fresh = [r for r in rows if _record_id(r) not in seen]
+            if not fresh:
+                break
+            seen.update(_record_id(r) for r in fresh)
+            records.extend(fresh)
+            if len(rows) < 100:
+                break
+
+        log.info("dod_sbir: %d topic records across %d page(s)",
+                 len(records), 1 + (len(records) - 1) // 100 if records else 0)
+        return records
+
+    def fetch(self) -> Iterable[Opportunity]:
+        records = self._records()
 
         statuses: dict[str, int] = {}
         undated = 0
         not_actionable = 0
 
-        for record in _rows(payload):
+        for record in records:
             title = strip_html(first_key(record, _TITLE_KEYS))
             if not title:
                 continue
