@@ -434,6 +434,64 @@ exclude_any = [
   "microphysiological", "organ-on-a-chip", "vaccine", "antigen", "immunogenicity",
 ]
 
+# --- Agency-targeted probes -------------------------------------------------
+# Every block above searches by topic. That leaves an agency invisible if its
+# solicitations use vocabulary our keywords miss, and an absence is impossible
+# to tell from a gap without asking the agency directly.
+#
+# Checked on 2026-09-17: NIH is 25 of 34 federal rows and CDMRP 5, both
+# entirely through grants.gov -- separate NIH Guide and eBRAP scrapers would
+# have been redundant work. NSF and ARPA-H were the only two federal agencies
+# with zero rows, so they get a direct query rather than a new adapter.
+
+[sources.grants_arpa_h]
+kind = "grants_gov"
+keyword = "health technology development"
+agencies = "ARPAH"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+]
+
+[sources.grants_nsf]
+kind = "grants_gov"
+keyword = "small business innovation research sensor"
+agencies = "NSF"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+]
+
 # A recall check on the block above, not a source of rows. Same adapter, no
 # keyword filter, permanently disabled -- `--only dod_sbir_unfiltered --verbose`
 # lists every open and pre-release DoD topic so the require_any list can be
