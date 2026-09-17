@@ -1,12 +1,31 @@
 {
-  "generated": "2026-09-17T21:50:10+00:00",
+  "generated": "2026-09-17T20:39:13+00:00",
   "as_of": "2026-09-17",
-  "count": 93,
+  "count": 95,
   "source_errors": [
-    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>",
-    "dod_sbir: https://www.dodsbirsttr.mil/topics/api/public/topics/search returned HTTP 403; https://www.dodsbirsttr.mil/topics/api/public/topics/search?size=100&page=0 returned HTTP 403; https://www.dodsbirsttr.mil/topics/api/public/topics returned HTTP 403"
+    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
   "opportunities": [
+    {
+      "id": "dod-sbir-wearable-real-time-command-and-control-interface-for-enhanced-naval-sit",
+      "source": "dod-sbir",
+      "name": "Wearable Real-Time Command-and-Control Interface for Enhanced Naval Situational Awareness (DON26BZ05-NV069)",
+      "url": "https://www.dodsbirsttr.mil/topics-app/?topicId=13cbf4e0fc51465ab387915e6c6f62c0_86635",
+      "agency": "DoD \u2014 NAVY",
+      "amount": "SBIR Phase I scale",
+      "summary": "SBIR \u00b7 DOD_SBIR_2026_P1_CBZ \u00b7 status Open. Full topic text is on the DSIP topic page.",
+      "open_date": "2026-08-26",
+      "close_date": "2026-09-23",
+      "status": "soon",
+      "days_left": 6,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses; US-owned and independently operated",
+      "documents": [
+        "SAM.gov UEI",
+        "SBIR.gov SBC control number"
+      ]
+    },
     {
       "id": "grants.gov-dow-alzheimer-s-transforming-diagnosis-award-ht942526azrptrda",
       "source": "grants.gov",
@@ -79,7 +98,7 @@
       "days_left": 19,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -339,7 +358,7 @@
       "days_left": 271,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -373,7 +392,7 @@
       "days_left": 462,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -441,7 +460,7 @@
       "days_left": 672,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -475,7 +494,7 @@
       "days_left": 931,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -492,7 +511,7 @@
       "days_left": 981,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -509,7 +528,7 @@
       "days_left": 982,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher educa",
+      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Others (see text field entitled \"Add",
       "documents": []
     },
     {
@@ -526,8 +545,29 @@
       "days_left": 1535,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": []
+    },
+    {
+      "id": "curated-afrl-human-effectiveness-directorate-baa-cheers-fa238424s2233",
+      "source": "curated",
+      "name": "AFRL Human Effectiveness Directorate BAA \u2014 CHEERS (FA238424S2233)",
+      "url": "https://www.grants.gov/search-results-detail/360258",
+      "agency": "Air Force Research Laboratory, Human Effectiveness Directorate (AFRL/RH) + USAF School of Aerospace Medicine",
+      "amount": "see solicitation \u2014 Multiple Authority Announcement, scope varies by task",
+      "summary": "The most on-mission federal vehicle on this board. AFRL/RH is the Air Force's human performance laboratory -- Continuing Human Enabling, Enhancing, Restoring and Sustaining is its standing announcement, open now and running to 2044, so there is no deadline pressure and no cycle to miss. This is a white-paper-first vehicle, which is the cheapest possible way to test whether Vybe's physiological sensing interests a government sponsor: a few pages, no full proposal, no cost volume until they ask. Still requires a SAM.gov UEI to submit.",
+      "open_date": "2025-08-07",
+      "close_date": "2044-08-22",
+      "status": "open",
+      "days_left": 6549,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Open BAA. Small businesses eligible; a white paper precedes any full proposal.",
+      "documents": [
+        "SAM.gov UEI (required before submission \u2014 start now, it takes weeks)",
+        "White paper describing the technology and its relevance to an AFRL/RH research thrust",
+        "Full proposal only if the white paper is invited"
+      ]
     },
     {
       "id": "curated-500-global",
