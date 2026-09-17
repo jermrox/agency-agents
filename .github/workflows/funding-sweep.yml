@@ -21,6 +21,14 @@ on:
         description: "Collect and report without writing funding.json"
         type: boolean
         default: false
+      only:
+        description: "Run only these sources (comma-separated). Read-only: forces a dry run."
+        type: string
+        default: ""
+      verbose:
+        description: "Print every collected row in full (use with dry_run to audit a new source)"
+        type: boolean
+        default: false
   schedule:
     # 08:20 UTC on the 1st and 15th. Off the hour on purpose -- :00 is when
     # every scheduled workflow on the platform fires at once.
@@ -51,12 +59,36 @@ jobs:
       # No install step: the package is standard library only, by design.
       - name: Collect opportunities
         id: run
+        env:
+          # Through the environment, not the command line: a workflow input is
+          # attacker-controlled in the general case and must never be spliced
+          # into a shell.
+          ONLY: ${{ inputs.only }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          VERBOSE: ${{ inputs.verbose }}
         run: |
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python3 -m vybe_funding run --config sources.toml --dry-run | tee sweep.log
-          else
-            python3 -m vybe_funding run --config sources.toml | tee sweep.log
+          # Every conditional here is a full `if`, never `[ ... ] && ...`.
+          # The step runs under `bash -e`, where a bare test that evaluates
+          # false is a failing command and aborts the step -- and on the
+          # scheduled run these inputs are empty, so every test is false.
+          # That idiom silently broke two site checkers already.
+          args=(run --config sources.toml)
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
           fi
+          if [ "$VERBOSE" = "true" ]; then
+            args+=(--verbose)
+          fi
+          # --only implies --dry-run in the CLI, so a partial run can never
+          # publish a board missing every source it skipped.
+          IFS=',' read -ra wanted <<< "${ONLY:-}"
+          for name in "${wanted[@]}"; do
+            name="$(echo "$name" | tr -d '[:space:]')"
+            if [ -n "$name" ]; then
+              args+=(--only "$name")
+            fi
+          done
+          python3 -m vybe_funding "${args[@]}" | tee sweep.log
         # A dead upstream API exits non-zero but still writes the file. Keep
         # going so a partially-fresh board still publishes, and surface the
         # failure in the summary instead of failing the whole run.
@@ -66,7 +98,7 @@ jobs:
       # it here is what keeps the offline fallback from drifting away from the
       # feed as sources.toml grows.
       - name: Sync the dashboard's built-in list
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && inputs.only == '' }}
         run: python3 ../scripts/sync-funding-dashboard.py
 
       - name: Report to the run summary
@@ -80,7 +112,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit the refreshed board
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && inputs.only == '' }}
         run: |
           cd "$GITHUB_WORKSPACE"
           if git diff --quiet -- funding-scraper/output/funding.json dashboards/vybe-funding-tracker.html; then

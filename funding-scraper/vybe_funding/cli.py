@@ -39,13 +39,23 @@ def load_config(path: Path) -> dict[str, Any]:
         return tomllib.load(handle)
 
 
-def collect(config: dict[str, Any]) -> tuple[list[Opportunity], list[str]]:
-    """Run every configured source. Returns (opportunities, error messages)."""
+def collect(
+    config: dict[str, Any], only: set[str] | None = None
+) -> tuple[list[Opportunity], list[str]]:
+    """Run every configured source. Returns (opportunities, error messages).
+
+    ``only`` restricts the run to the named sources. That exists for one
+    reason: proving a newly written adapter. Without it the only way to see
+    what a new source actually returns is to publish it, which is backwards --
+    a wrong row on the board is the expensive mistake, not a slow run.
+    """
     found: list[Opportunity] = []
     errors: list[str] = []
 
     for name, options in config.get("sources", {}).items():
         if not isinstance(options, dict) or not options.get("enabled", True):
+            continue
+        if only and name not in only:
             continue
         try:
             source = build(name, options)
@@ -169,6 +179,13 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--config", type=Path, default=Path("sources.toml"))
     run.add_argument("--dry-run", action="store_true", help="collect and report without writing")
     run.add_argument("--verbose", "-v", action="store_true")
+    run.add_argument(
+        "--only",
+        action="append",
+        metavar="SOURCE",
+        help="run only this source, repeatable. Implies --dry-run: a partial "
+             "collection must never overwrite a whole board.",
+    )
 
     args = parser.parse_args(argv)
     logging.basicConfig(
@@ -185,11 +202,34 @@ def main(argv: list[str] | None = None) -> int:
     runtime = config.get("runtime", {})
     today = date.today()
 
-    opportunities, errors = collect(config)
+    only = set(args.only or ())
+    if only:
+        known = set(config.get("sources", {}))
+        unknown = sorted(only - known)
+        if unknown:
+            log.error("unknown source(s): %s", ", ".join(unknown))
+            log.error("known: %s", ", ".join(sorted(known)))
+            return 2
+        # Publishing a subset would silently delete every row the skipped
+        # sources contribute, so --only is read-only by construction.
+        args.dry_run = True
+
+    opportunities, errors = collect(config, only)
     opportunities = deduplicate(opportunities)
     summarize(opportunities, today, int(runtime.get("stale_days", DEFAULT_STALE_DAYS)))
 
     if args.dry_run:
+        if args.verbose:
+            # The point of a dry run on a new adapter is to read what it
+            # produced, field by field, before any of it reaches the board.
+            log.info("-" * 58)
+            for row in opportunities:
+                log.info("  %s", row.name)
+                log.info("      source=%s  agency=%s", row.source, row.agency)
+                log.info("      url=%s", row.url)
+                log.info("      open=%s  close=%s  amount=%s",
+                         row.open_date, row.close_date, row.amount)
+                log.info("      summary=%s", row.summary[:200])
         log.info("-" * 58)
         log.info("dry run -- nothing written (%d opportunities)", len(opportunities))
         return 1 if errors else 0
