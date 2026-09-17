@@ -444,10 +444,14 @@ exclude_any = [
 # have been redundant work. NSF and ARPA-H were the only two federal agencies
 # with zero rows, so they get a direct query rather than a new adapter.
 
+# The agency-code form returned ZERO RAW RECORDS -- not "nothing relevant",
+# nothing at all -- which means grants.gov rejected the code "ARPAH" rather
+# than ARPA-H having no postings. A zero you cannot explain is not evidence of
+# coverage. Asking by name, with no agency filter, is the form that cannot be
+# wrong about the code.
 [sources.grants_arpa_h]
 kind = "grants_gov"
-keyword = "health technology development"
-agencies = "ARPAH"
+keyword = "ARPA-H advanced research projects agency health"
 rows = 100
 pages = 3
 statuses = "forecasted|posted"
@@ -491,6 +495,29 @@ require_any = [
   "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
   "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
 ]
+
+# Recall checks on the two agency probes. Same queries, no keyword filter,
+# permanently disabled, run with --only. The NSF probe dropped 132 of 132
+# records as off-topic; a filter that rejects everything it sees is either
+# correct or broken, and those look identical in a summary line.
+[sources.grants_nsf_unfiltered]
+kind = "grants_gov"
+keyword = "small business innovation research sensor"
+agencies = "NSF"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+enabled = false
+
+[sources.grants_arpa_h_unfiltered]
+kind = "grants_gov"
+keyword = "ARPA-H advanced research projects agency health"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+enabled = false
 
 # A recall check on the block above, not a source of rows. Same adapter, no
 # keyword filter, permanently disabled -- `--only dod_sbir_unfiltered --verbose`
