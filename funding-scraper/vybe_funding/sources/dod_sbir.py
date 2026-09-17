@@ -147,9 +147,16 @@ class DodSbirSource(Source):
                              method, url, len(_rows(payload)))
                     break
                 failures.append(f"{url}: returned no recognisable topic list")
+                log.info("dod_sbir: %s %s returned no recognisable topic list", method, url)
                 payload = None
             except Exception as exc:  # noqa: BLE001 - try the next candidate
                 failures.append(str(exc))
+                # Logged as it happens, not only when every candidate fails.
+                # The first live run fell through to the unfiltered GET and the
+                # reason the filtered POST was rejected never appeared anywhere
+                # -- so the board silently showed page 0 of a closed-topic list
+                # instead of the open topics the POST asks for.
+                log.info("dod_sbir: %s %s failed: %s", method, url, exc)
         if payload is None:
             raise SourceError("; ".join(failures))
 
