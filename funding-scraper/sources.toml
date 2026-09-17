@@ -548,6 +548,41 @@ require_any = [
   "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
+# ONE bounded experiment on what grants.gov `keyword` actually matches, so the
+# CHEERS record stops being an unexplained curation. Three disabled probes,
+# run together with --only, no require_any on any of them -- this asks what
+# the API returns, not what we would keep:
+#   _title  the record's exact title. A hit means keyword reads the title.
+#   _number the opportunity number. A hit means there is an id-style lookup,
+#           which would let any known record be pinned exactly.
+#   _phrase the description-only phrase. A hit means keyword reads the body
+#           and the earlier misses were ranking or the result window.
+# Whichever hits tells us how to reach records like this one; all three
+# missing says keyword does not reach it at all and curation was correct.
+[sources.probe_cheers_title]
+kind = "grants_gov"
+keyword = "Continuing Human Enabling Enhancing Restoring and Sustaining"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
+[sources.probe_cheers_number]
+kind = "grants_gov"
+keyword = "FA238424S2233"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
+[sources.probe_cheers_phrase]
+kind = "grants_gov"
+keyword = "Human Effectiveness Directorate"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
 # Recall checks on the two agency probes. Same queries, no keyword filter,
 # permanently disabled, run with --only. The NSF probe dropped 132 of 132
 # records as off-topic; a filter that rejects everything it sees is either
