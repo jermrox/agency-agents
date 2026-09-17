@@ -548,6 +548,40 @@ require_any = [
   "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
 ]
 
+# ANSWER TO THE EXPERIMENT BELOW: keyword matches the opportunity NUMBER.
+# Querying FA238424S2233 returns the whole CHEERS family -- three records,
+# including "CHEERS Open Period 2 - All Technical Areas" (FA238424S2335,
+# closing 2027-09-30) which no topic keyword had ever surfaced.
+#
+# That makes this scraped rather than hand-curated, which matters: a scraped
+# row re-reads its own close date every sweep, so it goes closed on its own
+# when AFRL closes it. The curated entry it replaces could not do that.
+#
+# The general lesson is reusable -- any record whose number is known can be
+# pinned exactly, regardless of how untopical its title is.
+[sources.grants_afrl_cheers]
+kind = "grants_gov"
+keyword = "FA238424S2233"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
 # ONE bounded experiment on what grants.gov `keyword` actually matches, so the
 # CHEERS record stops being an unexplained curation. Three disabled probes,
 # run together with --only, no require_any on any of them -- this asks what
@@ -638,34 +672,6 @@ documents = [
   "SAM.gov UEI registration (weeks -- start before any solicitation)",
   "SBIR.gov company registration for your SBC control number",
   "Confirm the specific agency solicitation has reopened post-lapse before writing",
-]
-verified = "2026-09-17"
-
-
-[[sources.curated.entry]]
-# Curated, not scraped, and the reason is worth recording. Every field below
-# was read off the real grants.gov record during an unfiltered recall probe --
-# nothing here is from memory. But no keyword query reached it: "broad agency
-# announcement human performance biomedical research" missed it, and the
-# narrow "human effectiveness" across 500 records missed it too. Its title
-# carries no topical vocabulary and the phrase "Human Effectiveness" lives
-# only in the description, so how grants.gov's keyword actually scores this
-# record is still unexplained. Curating it delivers the opportunity now
-# instead of leaving it off the board while that question stays open.
-name = "AFRL Human Effectiveness Directorate BAA — CHEERS (FA238424S2233)"
-url = "https://www.grants.gov/search-results-detail/360258"
-agency = "Air Force Research Laboratory, Human Effectiveness Directorate (AFRL/RH) + USAF School of Aerospace Medicine"
-amount = "see solicitation — Multiple Authority Announcement, scope varies by task"
-close_date = "2044-08-22"
-open_date = "2025-08-07"
-pillar = 2
-kind = "grant"
-eligibility = "Open BAA. Small businesses eligible; a white paper precedes any full proposal."
-note = "The most on-mission federal vehicle on this board. AFRL/RH is the Air Force's human performance laboratory -- Continuing Human Enabling, Enhancing, Restoring and Sustaining is its standing announcement, open now and running to 2044, so there is no deadline pressure and no cycle to miss. This is a white-paper-first vehicle, which is the cheapest possible way to test whether Vybe's physiological sensing interests a government sponsor: a few pages, no full proposal, no cost volume until they ask. Still requires a SAM.gov UEI to submit."
-documents = [
-  "SAM.gov UEI (required before submission — start now, it takes weeks)",
-  "White paper describing the technology and its relevance to an AFRL/RH research thrust",
-  "Full proposal only if the white paper is invited",
 ]
 verified = "2026-09-17"
 
