@@ -1,9 +1,12 @@
 {
-  "generated": "2026-09-17T20:39:13+00:00",
+  "generated": "2026-09-17T21:55:47+00:00",
   "as_of": "2026-09-17",
-  "count": 95,
+  "count": 97,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
+  ],
+  "stale_sources": [
+    "sbir"
   ],
   "opportunities": [
     {
@@ -176,7 +179,7 @@
       "days_left": 35,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -252,7 +255,7 @@
       "days_left": 61,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -375,7 +378,41 @@
       "days_left": 355,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-cheers-open-period-1-all-technical-areas-fa238424s2334",
+      "source": "grants.gov",
+      "name": "CHEERS Open Period 1 - All Technical Areas (FA238424S2334)",
+      "url": "https://www.grants.gov/search-results-detail/360261",
+      "agency": "Air Force -- Research Lab",
+      "amount": "see solicitation",
+      "summary": "The Air Force Research Laboratory, Human Effectiveness Directorate (RH) and the United States Air Force School of Aerospace Medicine (USAFSAM), is soliciting white papers (and potentially later technical and cost proposals) on the research located in the Statements of Objectives attached to the Continuing Human Enabling, Enhancing, Restoring and Sustaining (CHEERS) Multiple Authority Announcement ",
+      "open_date": "2025-08-07",
+      "close_date": "2027-09-30",
+      "status": "open",
+      "days_left": 378,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-cheers-open-period-2-all-technical-areas-fa238424s2335",
+      "source": "grants.gov",
+      "name": "CHEERS Open Period 2 - All Technical Areas (FA238424S2335)",
+      "url": "https://www.grants.gov/search-results-detail/360262",
+      "agency": "Air Force -- Research Lab",
+      "amount": "see solicitation",
+      "summary": "The Air Force Research Laboratory, Human Effectiveness Directorate (RH) and the United States Air Force School of Aerospace Medicine (USAFSAM), is soliciting white papers (and potentially later technical and cost proposals) on the research located in the Continuing Enabling, Enhancing, Restoring and Sustaining (CHEERS) Multiple Authority Announcement (MAA) Statements of Objectives, FA238424S2233. ",
+      "open_date": "2025-08-07",
+      "close_date": "2027-09-30",
+      "status": "open",
+      "days_left": 378,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": []
     },
     {
@@ -392,7 +429,7 @@
       "days_left": 462,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -409,7 +446,7 @@
       "days_left": 462,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -460,7 +497,7 @@
       "days_left": 672,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -511,7 +548,7 @@
       "days_left": 981,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -528,7 +565,7 @@
       "days_left": 982,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Others (see text field entitled \"Add",
+      "eligibility": "Public and State controlled institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits having a 501(c)(3) status wit",
       "documents": []
     },
     {
@@ -545,29 +582,25 @@
       "days_left": 1535,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
       "documents": []
     },
     {
-      "id": "curated-afrl-human-effectiveness-directorate-baa-cheers-fa238424s2233",
-      "source": "curated",
-      "name": "AFRL Human Effectiveness Directorate BAA \u2014 CHEERS (FA238424S2233)",
+      "id": "grants.gov-continuing-human-enabling-enhancing-restoring-and-sustaining-fa238424",
+      "source": "grants.gov",
+      "name": "Continuing Human Enabling Enhancing Restoring and Sustaining (FA238424S2233)",
       "url": "https://www.grants.gov/search-results-detail/360258",
-      "agency": "Air Force Research Laboratory, Human Effectiveness Directorate (AFRL/RH) + USAF School of Aerospace Medicine",
-      "amount": "see solicitation \u2014 Multiple Authority Announcement, scope varies by task",
-      "summary": "The most on-mission federal vehicle on this board. AFRL/RH is the Air Force's human performance laboratory -- Continuing Human Enabling, Enhancing, Restoring and Sustaining is its standing announcement, open now and running to 2044, so there is no deadline pressure and no cycle to miss. This is a white-paper-first vehicle, which is the cheapest possible way to test whether Vybe's physiological sensing interests a government sponsor: a few pages, no full proposal, no cost volume until they ask. Still requires a SAM.gov UEI to submit.",
+      "agency": "Air Force -- Research Lab",
+      "amount": "see solicitation",
+      "summary": "The Air Force Research Laboratory, Human Effectiveness Directorate (AFRL/RH) and the United States Air Force School of Medicine (USAFSAM) CHEERS Multiple Authority Announcement (MAA) is intended to provide a comprehensive strategy for AFRL/RH and USAFSAM's range of Science and Technology (S&T) requirements, allowing for progression from basic research to technology maturation and transition. 20 No",
       "open_date": "2025-08-07",
       "close_date": "2044-08-22",
       "status": "open",
       "days_left": 6549,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Open BAA. Small businesses eligible; a white paper precedes any full proposal.",
-      "documents": [
-        "SAM.gov UEI (required before submission \u2014 start now, it takes weeks)",
-        "White paper describing the technology and its relevance to an AFRL/RH research thrust",
-        "Full proposal only if the white paper is invited"
-      ]
+      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
     },
     {
       "id": "curated-500-global",
