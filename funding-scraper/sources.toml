@@ -608,6 +608,34 @@ verified = "2026-09-17"
 
 
 [[sources.curated.entry]]
+# Curated, not scraped, and the reason is worth recording. Every field below
+# was read off the real grants.gov record during an unfiltered recall probe --
+# nothing here is from memory. But no keyword query reached it: "broad agency
+# announcement human performance biomedical research" missed it, and the
+# narrow "human effectiveness" across 500 records missed it too. Its title
+# carries no topical vocabulary and the phrase "Human Effectiveness" lives
+# only in the description, so how grants.gov's keyword actually scores this
+# record is still unexplained. Curating it delivers the opportunity now
+# instead of leaving it off the board while that question stays open.
+name = "AFRL Human Effectiveness Directorate BAA — CHEERS (FA238424S2233)"
+url = "https://www.grants.gov/search-results-detail/360258"
+agency = "Air Force Research Laboratory, Human Effectiveness Directorate (AFRL/RH) + USAF School of Aerospace Medicine"
+amount = "see solicitation — Multiple Authority Announcement, scope varies by task"
+close_date = "2044-08-22"
+open_date = "2025-08-07"
+pillar = 2
+kind = "grant"
+eligibility = "Open BAA. Small businesses eligible; a white paper precedes any full proposal."
+note = "The most on-mission federal vehicle on this board. AFRL/RH is the Air Force's human performance laboratory -- Continuing Human Enabling, Enhancing, Restoring and Sustaining is its standing announcement, open now and running to 2044, so there is no deadline pressure and no cycle to miss. This is a white-paper-first vehicle, which is the cheapest possible way to test whether Vybe's physiological sensing interests a government sponsor: a few pages, no full proposal, no cost volume until they ask. Still requires a SAM.gov UEI to submit."
+documents = [
+  "SAM.gov UEI (required before submission — start now, it takes weeks)",
+  "White paper describing the technology and its relevance to an AFRL/RH research thrust",
+  "Full proposal only if the white paper is invited",
+]
+verified = "2026-09-17"
+
+
+[[sources.curated.entry]]
 name = "MedTech Innovator Vantage (BARDA Accelerator Network)"
 url = "https://medtechinnovator.org/vantage/devfunding/"
 agency = "MedTech Innovator / BARDA"
