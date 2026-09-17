@@ -520,11 +520,15 @@ require_any = [
 # entirely. Its title is an acronym expansion and its text says "Human
 # Effectiveness Directorate", never "human performance", so every keyword we
 # had went past it. Found by the unfiltered recall probe, not by the filters.
+# Keyword is a loose OR and every query is capped at rows x pages = 300
+# records, so a five-word query buries a specific target under hundreds of
+# loose matches. "human effectiveness" is the narrow, high-signal phrase --
+# it is what AFRL/RH calls itself and almost nothing else uses.
 [sources.grants_baa]
 kind = "grants_gov"
-keyword = "broad agency announcement human performance biomedical research"
+keyword = "human effectiveness"
 rows = 100
-pages = 3
+pages = 5
 statuses = "forecasted|posted"
 eligibilities = "23|25|99"
 exclude_any = [
