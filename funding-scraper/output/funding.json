@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-17T20:30:38+00:00",
+  "generated": "2026-09-17T20:36:24+00:00",
   "as_of": "2026-09-17",
-  "count": 96,
+  "count": 94,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -41,23 +41,6 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-modern-equipment-for-shared-use-biomedical-research-facilities-advanc",
-      "source": "grants.gov",
-      "name": "Modern Equipment for Shared-use Biomedical Research Facilities: Advancing Research-Related Operations (S15 Clinical Trial Not Allowed) (PAR-24-259)",
-      "url": "https://www.grants.gov/search-results-detail/355855",
-      "agency": "National Institutes of Health",
-      "amount": "up to $350,000",
-      "summary": "This Notice of Funding Opportunity (NOFO) invites eligible academic or research institutions to apply for funding support to purchase latest scientific equipment that will enhance and modernize research-supporting operations of existing shared biomedical research facilities. Targeted are laboratory research core facilities, animal research facilities, and other similar shared-use research spaces. ",
-      "open_date": "2024-08-02",
-      "close_date": "2026-09-25",
-      "status": "soon",
-      "days_left": 8,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -115,7 +98,7 @@
       "days_left": 19,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -269,7 +252,7 @@
       "days_left": 61,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -303,24 +286,7 @@
       "days_left": 112,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-biomedical-research-environment-and-sponsored-programs-administration",
-      "source": "grants.gov",
-      "name": "Biomedical Research Environment and Sponsored Programs Administration Development (BRE-SPAD) Program (UC2- Clinical Trial Not Allowed) (PAR-24-268)",
-      "url": "https://www.grants.gov/search-results-detail/356902",
-      "agency": "National Institutes of Health",
-      "amount": "up to $500,000",
-      "summary": "The Biomedical Research Environment and Sponsored Programs Administration Development (BRE-SPAD) Program aims to promote broad participation in the biomedical research ecosystem by supporting resource limited organizations to conduct research, enhance the research environment, and increase sponsored programs administration capacity.This program intends to support eligible, domestic organizations w",
-      "open_date": "2024-10-30",
-      "close_date": "2027-01-27",
-      "status": "open",
-      "days_left": 132,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Private institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -409,7 +375,7 @@
       "days_left": 355,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -443,7 +409,7 @@
       "days_left": 462,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -460,7 +426,7 @@
       "days_left": 477,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -494,7 +460,7 @@
       "days_left": 672,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -562,7 +528,7 @@
       "days_left": 982,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Private institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other tha",
+      "eligibility": "Public and State controlled institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofi",
       "documents": []
     },
     {
