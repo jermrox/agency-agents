@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-17T19:15:42+00:00",
+  "generated": "2026-09-17T20:30:38+00:00",
   "as_of": "2026-09-17",
-  "count": 87,
+  "count": 96,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -41,6 +41,23 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-modern-equipment-for-shared-use-biomedical-research-facilities-advanc",
+      "source": "grants.gov",
+      "name": "Modern Equipment for Shared-use Biomedical Research Facilities: Advancing Research-Related Operations (S15 Clinical Trial Not Allowed) (PAR-24-259)",
+      "url": "https://www.grants.gov/search-results-detail/355855",
+      "agency": "National Institutes of Health",
+      "amount": "up to $350,000",
+      "summary": "This Notice of Funding Opportunity (NOFO) invites eligible academic or research institutions to apply for funding support to purchase latest scientific equipment that will enhance and modernize research-supporting operations of existing shared biomedical research facilities. Targeted are laboratory research core facilities, animal research facilities, and other similar shared-use research spaces. ",
+      "open_date": "2024-08-02",
+      "close_date": "2026-09-25",
+      "status": "soon",
+      "days_left": 8,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -252,7 +269,7 @@
       "days_left": 61,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -290,6 +307,40 @@
       "documents": []
     },
     {
+      "id": "grants.gov-biomedical-research-environment-and-sponsored-programs-administration",
+      "source": "grants.gov",
+      "name": "Biomedical Research Environment and Sponsored Programs Administration Development (BRE-SPAD) Program (UC2- Clinical Trial Not Allowed) (PAR-24-268)",
+      "url": "https://www.grants.gov/search-results-detail/356902",
+      "agency": "National Institutes of Health",
+      "amount": "up to $500,000",
+      "summary": "The Biomedical Research Environment and Sponsored Programs Administration Development (BRE-SPAD) Program aims to promote broad participation in the biomedical research ecosystem by supporting resource limited organizations to conduct research, enhance the research environment, and increase sponsored programs administration capacity.This program intends to support eligible, domestic organizations w",
+      "open_date": "2024-10-30",
+      "close_date": "2027-01-27",
+      "status": "open",
+      "days_left": 132,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Public and State controlled institutions of higher education; Private institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-a-science-of-science-approach-to-analyzing-and-innovating-the-biomedi",
+      "source": "grants.gov",
+      "name": "A Science of Science Approach to Analyzing and Innovating the Biomedical Research Enterprise (SoS:BIO) (23-569)",
+      "url": "https://www.grants.gov/search-results-detail/347026",
+      "agency": "U.S. National Science Foundation",
+      "amount": "$100,000 - $250,000",
+      "summary": "The National Science Foundation (NSF) and the National Institutes of Health (NIH) are interested in proposals that will propel our understanding of the biomedical research enterprise by drawing from the scientific expertise of the science of science policy research community. NSF promotes the progress of science by maintaining the general health of research and education across all fields of scien",
+      "open_date": "2023-03-21",
+      "close_date": "2027-02-09",
+      "status": "open",
+      "days_left": 145,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
+    },
+    {
       "id": "curated-nih-sbir-sttr-april-2027-cycle",
       "source": "curated",
       "name": "NIH SBIR/STTR \u2014 April 2027 cycle",
@@ -311,6 +362,23 @@
       ]
     },
     {
+      "id": "grants.gov-computational-approaches-to-curation-at-scale-for-biomedical-research",
+      "source": "grants.gov",
+      "name": "Computational Approaches to Curation at Scale for Biomedical Research Assets (R01 Clinical Trial Not Allowed) (PAR-25-131)",
+      "url": "https://www.grants.gov/search-results-detail/356888",
+      "agency": "National Institutes of Health",
+      "amount": "up to $250,000",
+      "summary": "NLM wishes to accelerate access to, and availability of, secure, complete datasets and computational models that can serve as the basis for transformative biomedical discoveries. Innovative at-scale computational approaches that increase the speed and scope of curation processes are needed for data mining and knowledge discovery from growing quantities of biomedical data being produced from ongoin",
+      "open_date": "2024-10-29",
+      "close_date": "2027-04-15",
+      "status": "open",
+      "days_left": 210,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "documents": []
+    },
+    {
       "id": "grants.gov-brain-initiative-brain-behavior-quantification-and-synchronization-ne",
       "source": "grants.gov",
       "name": "BRAIN Initiative: Brain Behavior Quantification and Synchronization- Next Generation Sensor Technology Development (U01 Clinical Trial Optional) (RFA-MH-26-140)",
@@ -324,7 +392,7 @@
       "days_left": 271,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -341,7 +409,7 @@
       "days_left": 355,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -392,7 +460,7 @@
       "days_left": 477,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -409,7 +477,7 @@
       "days_left": 477,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -426,7 +494,7 @@
       "days_left": 672,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -460,7 +528,41 @@
       "days_left": 931,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-expansi",
+      "source": "grants.gov",
+      "name": "Limited Competition: Centers of Biomedical Research Excellence: Expansion/Sustainability Phases (COBRE-E/S) (P30 - Clinical Trial Not Allowed) (PAR-27-055)",
+      "url": "https://www.grants.gov/search-results-detail/360613",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "The Institutional Development Award (IDeA) program supports biomedical research capacity building in states that have historically received low levels of NIH funding. The Centers of Biomedical Research Excellence: Expansion/Sustainability Phases (COBRE-E/S) Notice of Funding Opportunity (NOFO) supports the expansion and sustainability of biomedical research centers in IDeA-eligible institutions. T",
+      "open_date": "2026-06-18",
+      "close_date": "2029-05-25",
+      "status": "open",
+      "days_left": 981,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-develop",
+      "source": "grants.gov",
+      "name": "Limited Competition: Centers of Biomedical Research Excellence: Development Phase (COBRE-D) (P30 - Clinical Trial Not Allowed) (PAR-27-054)",
+      "url": "https://www.grants.gov/search-results-detail/360611",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "The Institutional Development Awards (IDeA) program supports biomedical research capacity building in states that have historically received low levels of NIH funding. The Centers of Biomedical Research Excellence: Development Phase (COBRE-D) program supports institutions in IDeA states to increase their biomedical research capacity in a broad scientific area of strategic importance to them but fo",
+      "open_date": "2026-08-19",
+      "close_date": "2029-05-26",
+      "status": "open",
+      "days_left": 982,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Private institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other tha",
       "documents": []
     },
     {
@@ -477,7 +579,7 @@
       "days_left": 1535,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": []
     },
     {
@@ -994,6 +1096,23 @@
       "documents": []
     },
     {
+      "id": "grants.gov-interdisciplinary-research-networks-to-advance-biomedical-research-on",
+      "source": "grants.gov",
+      "name": "Interdisciplinary Research Networks to Advance Biomedical Research on Resilience and Health Optimization (RFA-AT-26-001)",
+      "url": "https://www.grants.gov/search-results-detail/360645",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2025-09-23",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
       "id": "curated-iowa-sbir-sttr-support",
       "source": "curated",
       "name": "Iowa SBIR/STTR Support",
@@ -1202,6 +1321,23 @@
       ]
     },
     {
+      "id": "grants.gov-national-biomedical-research-centers-p50-clinical-trial-optional-par-",
+      "source": "grants.gov",
+      "name": "National Biomedical Research Centers (P50 Clinical Trial Optional) (PAR-28-017)",
+      "url": "https://www.grants.gov/search-results-detail/362353",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2026-05-12",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
       "id": "curated-new-mexico-sbir-match",
       "source": "curated",
       "name": "New Mexico SBIR Match",
@@ -1345,6 +1481,23 @@
       "amount": "see solicitation",
       "summary": "",
       "open_date": "2025-05-28",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-small-instruments-and-modern-equipment-for-shared-use-biomedical-rese",
+      "source": "grants.gov",
+      "name": "Small Instruments and Modern Equipment for Shared-use Biomedical Research Facilities and Resources (S15 Clinical Trial Not Allowed) (PAR-28-060)",
+      "url": "https://www.grants.gov/search-results-detail/363695",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2026-08-24",
       "close_date": null,
       "status": "rolling",
       "days_left": null,
