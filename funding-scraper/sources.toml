@@ -399,16 +399,14 @@ kind = "dod_sbir"
 # stops early on a short page or one adding no new ids, so this is a ceiling,
 # not a cost.
 pages = 30
-# HELD OUT OF PUBLISHING RUNS UNTIL THE DATE FIELDS ARE PROVEN.
-# The first live run returned six real DoD topics -- correct titles, correct
-# components, working topic URLs -- but close_date was None on every one of
-# them, because the key names below are guesses at an undocumented schema and
-# none of them matched. A row with no close date renders as "Rolling", so a
-# topic that closed last year would sit on this board looking open forever.
-# That is the one failure mode this board exists to prevent.
-# `--only dod_sbir --verbose` still runs it, which is how the real field
-# names get read out of a CI log. Flip this back on once close_date populates.
-enabled = false
+# Enabled after four read-only runs proved it end to end:
+#   - dates parse (they are epoch milliseconds, not strings)
+#   - topicStatus gates the rows: of 3,000 topics, 2,959 are Closed
+#   - the keyword filter was audited in BOTH directions -- the false positives
+#     it used to admit are gone, and an unfiltered run of all 41 open and
+#     pre-release topics confirmed it drops nothing Vybe could win
+# The audit that earns the next change of this line is `--only
+# dod_sbir_unfiltered --verbose`, defined below.
 default_amount = "SBIR Phase I scale"
 # The first live run proved three of these terms too loose for a corpus that
 # is entirely defense engineering. "signal processing" admitted a radar
