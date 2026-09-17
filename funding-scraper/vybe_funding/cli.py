@@ -53,9 +53,16 @@ def collect(
     errors: list[str] = []
 
     for name, options in config.get("sources", {}).items():
-        if not isinstance(options, dict) or not options.get("enabled", True):
+        if not isinstance(options, dict):
             continue
-        if only and name not in only:
+        if only:
+            if name not in only:
+                continue
+            # Naming a source explicitly overrides `enabled = false`. A source
+            # is disabled precisely because it is not trustworthy yet, and
+            # running it read-only is how it stops being untrustworthy --
+            # honouring the flag here would lock out the only way to fix it.
+        elif not options.get("enabled", True):
             continue
         try:
             source = build(name, options)
@@ -230,6 +237,11 @@ def main(argv: list[str] | None = None) -> int:
                 log.info("      open=%s  close=%s  amount=%s",
                          row.open_date, row.close_date, row.amount)
                 log.info("      summary=%s", row.summary[:200])
+                if row.raw:
+                    # An undocumented upstream is diagnosed from its own field
+                    # names. Printing the keys is how a wrong guess in a key
+                    # tuple becomes visible instead of silently yielding None.
+                    log.info("      raw keys=%s", ", ".join(sorted(row.raw)))
         log.info("-" * 58)
         log.info("dry run -- nothing written (%d opportunities)", len(opportunities))
         return 1 if errors else 0

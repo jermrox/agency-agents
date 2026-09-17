@@ -393,6 +393,16 @@ require_any = [
 # instead, and leaves the generic terms out.
 [sources.dod_sbir]
 kind = "dod_sbir"
+# HELD OUT OF PUBLISHING RUNS UNTIL THE DATE FIELDS ARE PROVEN.
+# The first live run returned six real DoD topics -- correct titles, correct
+# components, working topic URLs -- but close_date was None on every one of
+# them, because the key names below are guesses at an undocumented schema and
+# none of them matched. A row with no close date renders as "Rolling", so a
+# topic that closed last year would sit on this board looking open forever.
+# That is the one failure mode this board exists to prevent.
+# `--only dod_sbir --verbose` still runs it, which is how the real field
+# names get read out of a CI log. Flip this back on once close_date populates.
+enabled = false
 default_amount = "SBIR Phase I scale"
 require_any = [
   "wearable", "biosensor", "biometric", "physiolog", "photoplethysm",

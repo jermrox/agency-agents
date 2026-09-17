@@ -79,6 +79,8 @@ class DodSbirSource(Source):
                 payload = (post_json(url, body, retries=1, timeout=20) if method == "POST"
                            else fetch_json(url, retries=1, timeout=20))
                 if _rows(payload):
+                    log.info("dod_sbir: %s %s answered with %d records",
+                             method, url, len(_rows(payload)))
                     break
                 failures.append(f"{url}: returned no recognisable topic list")
                 payload = None
