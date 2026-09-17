@@ -15,6 +15,7 @@ dashboard reads carries the date so the page can re-derive it client-side too.
 from __future__ import annotations
 
 import hashlib
+import html
 import re
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -24,7 +25,16 @@ _SLUG_STRIP = re.compile(r"[^a-z0-9]+")
 
 
 def slugify(text: str) -> str:
-    return _SLUG_STRIP.sub("-", text.lower()).strip("-")
+    """Lowercase hyphenated slug, insensitive to HTML escaping.
+
+    The slug becomes the row id, which is the dashboard's localStorage key, so
+    a slug that moves silently discards someone's saved progress on that row.
+    "Alzheimer&rsquo;s" and "Alzheimer’s" are the same program, and whether a
+    title arrives escaped is an upstream detail that must not reach the key --
+    so unescape before slugifying, and the id survives the decoding being
+    fixed at the source as well as any future change in how it arrives.
+    """
+    return _SLUG_STRIP.sub("-", html.unescape(text).lower()).strip("-")
 
 
 def parse_date(value: Any) -> date | None:

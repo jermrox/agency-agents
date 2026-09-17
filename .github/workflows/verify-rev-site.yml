@@ -1,0 +1,169 @@
+# Smoke-test the published funding tracker.
+#
+# The agentrevup Netlify project builds from this repository, from the same
+# netlify.toml as the research site. That shared build is exactly how the health
+# research board once ended up published on the revenue site, so this workflow
+# checks two things a green deploy cannot: that the tracker is actually served,
+# and that nothing belonging to the other site is served alongside it.
+#
+# Runs on demand, daily, and on any push to main that touches the tracker or its
+# build. Point `site` at a deploy preview to grade that build before promoting it.
+name: Verify rev site
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Site to check (defaults to production). Point it at a deploy preview to check that build before promoting it.'
+        required: false
+        default: 'https://agentrevup.netlify.app'
+  push:
+    # main only. This checks the LIVE site, which a branch does not control — on
+    # a branch it would grade production's state and go red for reasons the
+    # branch cannot fix, which is how a check earns being ignored.
+    branches:
+      - main
+    paths:
+      - 'dashboards/**'
+      - 'funding-scraper/output/funding.json'
+      - 'scripts/build-netlify-site.sh'
+      - 'netlify.toml'
+      - '.github/workflows/verify-rev-site.yml'
+  schedule:
+    # 12:25 UTC daily, ten minutes after the research site check.
+    - cron: '25 12 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the live site
+        env:
+          SITE: ${{ inputs.site || 'https://agentrevup.netlify.app' }}
+        run: |
+          set -uo pipefail
+          fail=0
+
+          # Netlify answers 5xx while a deploy is in flight, and the push trigger
+          # fires at exactly that moment. Wait the deploy out rather than
+          # reporting a site that is merely mid-publish as broken.
+          wait_for_deploy() {
+            local url="${SITE}/" code
+            for attempt in $(seq 1 15); do
+              code=$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 20 "$url" || echo 000)
+              case "$code" in
+                5*|000) echo "  waiting for deploy… ($code, attempt $attempt)"; sleep 20 ;;
+                *) echo "  site answering ($code) after $attempt attempt(s)"; return 0 ;;
+              esac
+            done
+            echo "  gave up waiting; the site never stopped returning $code"
+            return 1
+          }
+
+          check() {
+            local path="$1" desc="$2"
+            local url="${SITE}${path}" code bytes
+            code=$(curl -sS -o /tmp/body -w '%{http_code}' -L --max-time 30 "$url" || echo 000)
+            bytes=$(wc -c </tmp/body | tr -d ' ')
+            if [ "$code" = "200" ]; then
+              echo "  OK   $code  ${bytes} bytes  $desc  ($url)"
+            else
+              echo "  FAIL $code  ${bytes} bytes  $desc  ($url)"
+              fail=1
+            fi
+          }
+
+          # The isolation guarantee: this must NOT be served here.
+          absent() {
+            local path="$1" desc="$2"
+            local url="${SITE}${path}" code
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 30 "$url" || echo 000)
+            if [ "$code" = "404" ]; then
+              echo "  OK   $code  $desc is correctly absent  ($url)"
+            else
+              echo "  FAIL $code  $desc is being served on the rev site  ($url)"
+              fail=1
+            fi
+          }
+
+          echo "== Deploy readiness =="
+          wait_for_deploy || fail=1
+
+          echo
+          echo "== Reachability =="
+          check "/"                           "site root"
+          check "/vybe-funding-tracker.html"  "named tracker copy"
+          check "/funding.json"               "biweekly sweep feed"
+
+          echo
+          echo "== Isolation from the research site =="
+          absent "/h2f-scout-board.html" "the H2F research board"
+
+          echo
+          echo "== Content of / =="
+          curl -sS -L --max-time 30 "$SITE/" -o /tmp/index || true
+
+          # Swallowing grep's no-match exit matters: the job shell is `bash -e` and
+          # this script sets pipefail, so an unguarded grep that matches nothing would
+          # abort the run instead of reporting the count as zero -- turning the
+          # loudest possible failure into a silent one.
+          rows=$( { grep -o "id:'" /tmp/index || true; } | wc -l | tr -d ' ')
+          echo "  built-in opportunities     : $rows"
+
+          title=$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' /tmp/index | head -1)
+          echo "  <title>                    : ${title:-<none>}"
+
+          # Each needle is load-bearing: the save control is the point of a
+          # tracker, and .row-note is what keeps that control on screen (a long
+          # note in the nowrap deadline cell once pushed it ~1,500px out of view).
+          for needle in 'Vybe Funding Tracker' 'class="status-sel"' 'row-note' 'vybe-fund-' 'funding.json'; do
+            if grep -q "$needle" /tmp/index; then
+              echo "  present                    : $needle"
+            else
+              echo "  MISSING                    : $needle"
+              fail=1
+            fi
+          done
+
+          # Content that belongs to the other site must never appear here.
+          for needle in 'Military Health' 'h2f-scout-board'; do
+            if grep -q "$needle" /tmp/index; then
+              echo "  LEAKED                     : $needle (research-site content on the rev site)"
+              fail=1
+            else
+              echo "  absent                     : $needle"
+            fi
+          done
+
+          # A publish that served a directory listing or an error page would
+          # sail past a 200 check.
+          if [ "$rows" -lt 40 ]; then
+            echo "  FAIL: expected at least 40 built-in opportunities, found $rows"
+            fail=1
+          fi
+
+          echo
+          echo "== Feed =="
+          curl -sS -L --max-time 30 "$SITE/funding.json" -o /tmp/feed || true
+          python3 - <<'PY' || fail=1
+          import json, sys
+          try:
+              d = json.load(open('/tmp/feed'))
+          except Exception as e:
+              print(f"  FAIL: /funding.json did not parse: {e}"); sys.exit(1)
+          opps = d.get('opportunities', d if isinstance(d, list) else [])
+          print(f"  as_of                      : {d.get('as_of', '<none>') if isinstance(d, dict) else 'n/a'}")
+          print(f"  opportunities              : {len(opps)}")
+          if len(opps) < 40:
+              print("  FAIL: fewer than 40 opportunities in the feed"); sys.exit(1)
+          PY
+
+          echo
+          if [ "$fail" -ne 0 ]; then
+            echo "Rev site verification FAILED."
+            exit 1
+          fi
+          echo "Rev site verification passed."

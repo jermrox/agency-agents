@@ -47,24 +47,602 @@ default_amount = "Phase I scale"
 # blocks keep a zero-result term visible in the run summary instead of hiding
 # inside a combined query.
 
+# WHY SO MANY QUERIES, AND WHY eligibilities = "23|25|99"
+# Grants.gov's keyword is a loose OR, so one query cannot both reach far enough
+# and stay on topic. The answer is many narrow queries plus the require_any
+# vocabulary below: breadth from the queries, precision from the filter, and
+# every drop counted in the run log.
+#
+# eligibilities = "23|25|99" is small businesses, other, and unrestricted.
+# Vybe is a small business, so without this the board fills with university-
+# and 501(c)(3)-only programs: rows that read as opportunities but that Vybe
+# cannot legally win. 23 is the small-business code -- 22 is for-profits OTHER
+# than small businesses, which excludes exactly what Vybe is, so filtering on
+# it loses the best rows on the board. 25 and 99 keep programs that name no
+# restriction, rather than assuming an unlabelled program is closed to us.
+#
+# rows = 100 is the API's page cap, and pages = 3 walks up to three pages via
+# startRecordNum. The old single page of 40 left real solicitations unread.
+
 [sources.grants_wearable]
 kind = "grants_gov"
 keyword = "wearable sensor"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
 
 [sources.grants_digital_health]
 kind = "grants_gov"
 keyword = "digital health monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
 
 [sources.grants_human_performance]
 kind = "grants_gov"
 keyword = "human performance physiological monitoring"
-rows = 40
+rows = 100
+pages = 3
 statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
 
+
+[sources.grants_biosensor]
+kind = "grants_gov"
+keyword = "biosensor wearable device"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_remote_monitoring]
+kind = "grants_gov"
+keyword = "remote patient monitoring technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_sleep_recovery]
+kind = "grants_gov"
+keyword = "sleep recovery physiological"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_warfighter]
+kind = "grants_gov"
+keyword = "warfighter readiness monitoring"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_small_business_tech]
+kind = "grants_gov"
+keyword = "small business innovation health technology"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_medical_device]
+kind = "grants_gov"
+keyword = "medical device development small business"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_ai_health]
+kind = "grants_gov"
+keyword = "machine learning health data algorithm"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+
+[sources.grants_altitude]
+kind = "grants_gov"
+keyword = "altitude hypoxia physiological performance"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+[sources.grants_thermal_strain]
+kind = "grants_gov"
+keyword = "heat strain thermal physiological monitoring"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+[sources.grants_sensor_fusion]
+kind = "grants_gov"
+keyword = "multi-sensor wearable physiological algorithm"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+# -----------------------------------------------------------------------------
+# 2b. DoD SBIR/STTR open topics (DSIP)
+# -----------------------------------------------------------------------------
+# DoD topics are not posted to grants.gov, and SBIR.gov -- the one documented
+# aggregator carrying them -- has refused every request since the programs'
+# authorization lapse. Without this block the single most relevant federal
+# layer for a warfighter-facing wearable (DARPA, Army, Navy, Air Force, DHA)
+# is invisible to the board.
+#
+# The DSIP backend is undocumented, so the adapter tries three candidate
+# endpoints and fails loudly naming each one. An unrecognised response shape
+# yields zero rows, never a wrong row.
+#
+# WHY A TIGHTER require_any THAN THE GRANTS.GOV BLOCKS
+# Every DoD topic is defense work, so "readiness", "algorithm" and "machine
+# learning" -- which are discriminating on grants.gov -- admit most of the
+# corpus here. This list names the physiology and wearable-sensing vocabulary
+# instead, and leaves the generic terms out.
+[sources.dod_sbir]
+kind = "dod_sbir"
+# Page budget for the topic list. The filtered search returns HTTP 500, so the
+# open topics are found by walking the plain list and filtering on the
+# topicStatus each record carries. 30 pages x 100 covers 3,000 topics; the walk
+# stops early on a short page or one adding no new ids, so this is a ceiling,
+# not a cost.
+pages = 30
+# Enabled after four read-only runs proved it end to end:
+#   - dates parse (they are epoch milliseconds, not strings)
+#   - topicStatus gates the rows: of 3,000 topics, 2,959 are Closed
+#   - the keyword filter was audited in BOTH directions -- the false positives
+#     it used to admit are gone, and an unfiltered run of all 41 open and
+#     pre-release topics confirmed it drops nothing Vybe could win
+# The audit that earns the next change of this line is `--only
+# dod_sbir_unfiltered --verbose`, defined below.
+default_amount = "SBIR Phase I scale"
+# The first live run proved three of these terms too loose for a corpus that
+# is entirely defense engineering. "signal processing" admitted a radar
+# probability-of-detection topic, "fatigue" admitted fretting fatigue in naval
+# aerospace metal, and "physiolog" admitted a microphysiological immunogenicity
+# assay. Each is replaced by the phrase that was actually meant.
+require_any = [
+  "wearable", "biosensor", "biometric", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "continuous monitoring",
+  "human performance", "warfighter performance", "soldier performance",
+  "physiological monitoring", "physiological sensing", "physiological status",
+  "operator fatigue", "crew fatigue", "sleep deprivation",
+  "cognitive load", "cognitive performance", "cognitive readiness",
+  "health monitoring", "remote monitoring", "telehealth", "digital health",
+  "medical device", "vital sign", "hypox", "oxygen saturation", "spo2",
+  "heat strain", "hydration", "core temperature", "thermal strain",
+  "metabolic", "on-body", "body-worn", "wearable sensor",
+  "biosignal", "physiological signal",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "warfighter",
+]
+# Domains that share vocabulary with physiological sensing but are not Vybe's.
+# Word-boundary matched, and this list runs before require_any.
+exclude_any = [
+  "radar", "sonar", "hull", "missile", "munition", "propulsion", "turbine",
+  "alloy", "fretting", "corrosion", "coating", "airframe", "hypersonic",
+  "microphysiological", "organ-on-a-chip", "vaccine", "antigen", "immunogenicity",
+]
+
+# --- Agency-targeted probes -------------------------------------------------
+# Every block above searches by topic. That leaves an agency invisible if its
+# solicitations use vocabulary our keywords miss, and an absence is impossible
+# to tell from a gap without asking the agency directly.
+#
+# Checked on 2026-09-17: NIH is 25 of 34 federal rows and CDMRP 5, both
+# entirely through grants.gov -- separate NIH Guide and eBRAP scrapers would
+# have been redundant work. NSF and ARPA-H were the only two federal agencies
+# with zero rows, so they get a direct query rather than a new adapter.
+
+# The agency-code form returned ZERO RAW RECORDS -- not "nothing relevant",
+# nothing at all -- which means grants.gov rejected the code "ARPAH" rather
+# than ARPA-H having no postings. A zero you cannot explain is not evidence of
+# coverage. Asking by name, with no agency filter, is the form that cannot be
+# wrong about the code.
+[sources.grants_arpa_h]
+kind = "grants_gov"
+keyword = "ARPA-H advanced research projects agency health"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+[sources.grants_nsf]
+kind = "grants_gov"
+keyword = "small business innovation research sensor"
+agencies = "NSF"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+# Broad agency announcements are titled institutionally, not topically, so the
+# thirteen topic queries above cannot see them. That is not hypothetical: the
+# Air Force Research Laboratory Human Effectiveness Directorate BAA -- CHEERS,
+# FA238424S2233, open now and running to 2044, the single most on-mission
+# federal vehicle for a physiological wearable -- was missing from this board
+# entirely. Its title is an acronym expansion and its text says "Human
+# Effectiveness Directorate", never "human performance", so every keyword we
+# had went past it. Found by the unfiltered recall probe, not by the filters.
+# Keyword is a loose OR and every query is capped at rows x pages = 300
+# records, so a five-word query buries a specific target under hundreds of
+# loose matches. "human effectiveness" is the narrow, high-signal phrase --
+# it is what AFRL/RH calls itself and almost nothing else uses.
+[sources.grants_baa]
+kind = "grants_gov"
+keyword = "human effectiveness"
+rows = 100
+pages = 5
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+exclude_any = [
+  "forestry", "conservation", "wildlife", "habitat", "fishery", "agricultur",
+  "crop", "livestock", "watershed", "hydrolog", "crocodile", "wildland fire",
+  "ghana", "indonesia", "sub-saharan", "global health security", "foreign assistance",
+  "democracy", "civics", "election", "prescription drug monitoring",
+]
+require_any = [
+  "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
+  "heart rate", "hrv", "sleep", "actigraph", "accelerometer", "continuous monitoring",
+  "remote patient", "digital health", "mhealth", "telehealth", "health technolog",
+  "human performance", "readiness", "fatigue", "warfighter", "soldier",
+  "medical device", "diagnos", "signal processing", "algorithm", "machine learning",
+  "altimet", "altitude", "barometr", "hypox", "oxygen saturation", "spo2",
+  "thermal", "heat strain", "hydration", "core temperature", "cognitive load",
+  "human effectiveness", "human systems", "aerospace medicine", "operational medicine", "human factors", "biomedical research", "soldier performance",
+]
+
+# ANSWER TO THE EXPERIMENT BELOW: keyword matches the opportunity NUMBER.
+# Querying FA238424S2233 returns the whole CHEERS family -- three records,
+# including "CHEERS Open Period 2 - All Technical Areas" (FA238424S2335,
+# closing 2027-09-30) which no topic keyword had ever surfaced.
+#
+# That makes this scraped rather than hand-curated, which matters: a scraped
+# row re-reads its own close date every sweep, so it goes closed on its own
+# when AFRL closes it. The curated entry it replaces could not do that.
+#
+# The general lesson is reusable -- any record whose number is known can be
+# pinned exactly, regardless of how untopical its title is.
+[sources.grants_afrl_cheers]
+kind = "grants_gov"
+keyword = "FA238424S2233"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+# NO require_any, deliberately. The relevance filter runs BEFORE enrichment,
+# so it only ever sees the search response -- and grants.gov search2 returns
+# no description field at all, only a title. Every CHEERS record was dropped
+# on that basis: "CHEERS Open Period 2 - All Technical Areas" carries no
+# topical vocabulary in its title, and the "Human Effectiveness Directorate"
+# text that would have matched lives in the description the filter cannot see.
+#
+# A keyword filter on a query pinned to one opportunity number is redundant
+# anyway: the number IS the filter.
+
+# ONE bounded experiment on what grants.gov `keyword` actually matches, so the
+# CHEERS record stops being an unexplained curation. Three disabled probes,
+# run together with --only, no require_any on any of them -- this asks what
+# the API returns, not what we would keep:
+#   _title  the record's exact title. A hit means keyword reads the title.
+#   _number the opportunity number. A hit means there is an id-style lookup,
+#           which would let any known record be pinned exactly.
+#   _phrase the description-only phrase. A hit means keyword reads the body
+#           and the earlier misses were ranking or the result window.
+# Whichever hits tells us how to reach records like this one; all three
+# missing says keyword does not reach it at all and curation was correct.
+[sources.probe_cheers_title]
+kind = "grants_gov"
+keyword = "Continuing Human Enabling Enhancing Restoring and Sustaining"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
+[sources.probe_cheers_number]
+kind = "grants_gov"
+keyword = "FA238424S2233"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
+[sources.probe_cheers_phrase]
+kind = "grants_gov"
+keyword = "Human Effectiveness Directorate"
+rows = 100
+pages = 1
+statuses = "forecasted|posted"
+enabled = false
+
+# Recall checks on the two agency probes. Same queries, no keyword filter,
+# permanently disabled, run with --only. The NSF probe dropped 132 of 132
+# records as off-topic; a filter that rejects everything it sees is either
+# correct or broken, and those look identical in a summary line.
+[sources.grants_nsf_unfiltered]
+kind = "grants_gov"
+keyword = "small business innovation research sensor"
+agencies = "NSF"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+enabled = false
+
+[sources.grants_arpa_h_unfiltered]
+kind = "grants_gov"
+keyword = "ARPA-H advanced research projects agency health"
+rows = 100
+pages = 3
+statuses = "forecasted|posted"
+eligibilities = "23|25|99"
+enabled = false
+
+# A recall check on the block above, not a source of rows. Same adapter, no
+# keyword filter, permanently disabled -- `--only dod_sbir_unfiltered --verbose`
+# lists every open and pre-release DoD topic so the require_any list can be
+# judged on what it DROPS, not only on what it keeps. Tightening a filter to
+# kill false positives is exactly how real opportunities go missing silently,
+# and this is the cheapest way to see that happening.
+[sources.dod_sbir_unfiltered]
+kind = "dod_sbir"
+pages = 30
+enabled = false
 
 # -----------------------------------------------------------------------------
 # 3. Curated -- verified by hand, no machine-readable source exists
@@ -73,6 +651,43 @@ statuses = "forecasted|posted"
 kind = "curated"
 
 # --- Pillar 2: grants and matched funding ------------------------------------
+
+[[sources.curated.entry]]
+name = "SBIR/STTR — reauthorized through 2031 (program status)"
+url = "https://www.sbir.gov/"
+agency = "SBA / 11 participating federal agencies"
+amount = "Phase I ~$50K-$314K · Phase II to ~$2.1M · new Phase II strategic breakthrough ceiling $30M"
+pillar = 2
+kind = "grant"
+eligibility = "Small businesses; US-owned and independently operated; majority US-citizen or permanent-resident owned"
+note = "CONTEXT ROW, NOT AN APPLICATION. SBIR/STTR expired 30 Sep 2025 -- the longest lapse in 42 years. NIH cancelled 23 solicitations, NSF paused Project Pitch, DoD shelved topic lists, ~$4B stopped. Reauthorized 13 Apr 2026 (S.3971) through 30 Sep 2031, adding a Phase II strategic breakthrough vehicle with a $30M ceiling. From FY2027 each agency sets its own cap on how many proposals one company may submit -- so pick targets rather than carpet-bombing. Every state-match row on this board depends on holding a federal SBIR award first."
+documents = [
+  "SAM.gov UEI registration (weeks -- start before any solicitation)",
+  "SBIR.gov company registration for your SBC control number",
+  "Confirm the specific agency solicitation has reopened post-lapse before writing",
+]
+verified = "2026-09-17"
+
+
+[[sources.curated.entry]]
+name = "MedTech Innovator Vantage (BARDA Accelerator Network)"
+url = "https://medtechinnovator.org/vantage/devfunding/"
+agency = "MedTech Innovator / BARDA"
+amount = "$50,000 - $200,000 non-dilutive"
+close_date = "2026-10-15"
+open_date = "2026-09-01"
+pillar = 2
+kind = "grant"
+eligibility = "Startups and university-backed projects with a diagnostic or medical device technology; selects up to 10 companies a year"
+note = "OPEN NOW, closes Oct 15. Non-dilutive plus a four-month accelerator with industry mentorship. Scoped to detection, surveillance and response for public health emergencies under BARDA's preparedness mission -- frame Vybe's continuous physiological monitoring as early-signal detection. Awards announced Mar-Apr 2027, so this is runway for next year, not this quarter."
+documents = [
+  "Proposal describing the technology and the development, evaluation or validation work to be funded",
+  "Evidence of the device or diagnostic beyond concept stage",
+  "Alignment statement to BARDA's pandemic preparedness and health security mission",
+  "Company and team background",
+]
+verified = "2026-09-14"
+
 
 [[sources.curated.entry]]
 name = "NYSTAR Innovation Matching Grants"
@@ -295,26 +910,27 @@ verified = "2026-09-12"
 name = "Google for Startups Cloud Program"
 url = "https://cloud.google.com/startup/benefits"
 agency = "Google Cloud"
-amount = "up to $350K (AI-first) / $200K (Seed-Series A)"
+amount = "$2K self-serve (Start) / $100K funded (Scale) / $350K AI-First"
 pillar = 1
 kind = "credit"
-eligibility = "<5 years old, pre-Series A funding, not a prior GCP program participant"
-note = "Rolling. Straight conversion of credits into retained cash."
+eligibility = "Start tier: early-stage, no funding required. Scale tier and above: institutionally funded, <5 years old, not a prior GCP program participant"
+note = "Rolling. What Vybe can get TODAY is the $2K Start tier, with a two-year window to burn it. The $100K and $350K tiers need institutional funding -- do not plan against them until a round closes."
 documents = [
   "Company website and incorporation details",
   "Funding stage evidence (pre-Series A)",
   "Google Cloud billing account",
 ]
-verified = "2026-09-12"
+verified = "2026-09-14"
 
 [[sources.curated.entry]]
 name = "AWS Activate"
 url = "https://aws.amazon.com/startups/"
 agency = "Amazon Web Services"
-amount = "up to $100K in AWS credits"
+amount = "$1K + $350 support self-serve (Founders) / $100K via a provider (Portfolio)"
 pillar = 1
 kind = "credit"
-note = "Rolling. Tiered -- the larger amounts generally require an accelerator or VC affiliation."
+eligibility = "Founders tier: self-funded and bootstrapped, no affiliation needed. Portfolio tier: must be tied to an AWS Activate Provider (VC, accelerator or incubator)"
+note = "Rolling. Bootstrapped gets $1K plus $350 of Developer Support -- the smallest of the three self-serve offers. The $100K needs an Activate Provider code, which is a reason to value accelerator acceptance beyond its own cheque."
 documents = [
   "AWS account ID",
   "Company details; accelerator/VC affiliation code for the higher tiers",
@@ -325,11 +941,11 @@ verified = "2026-09-12"
 name = "Microsoft for Startups Founders Hub"
 url = "https://www.microsoft.com/en-us/startups"
 agency = "Microsoft"
-amount = "up to $150K Azure credits"
+amount = "$25K self-serve / $150K with VC affiliation"
 pillar = 1
 kind = "credit"
-eligibility = "No funding required to apply -- the most accessible entry point of the three"
-note = "Rolling. Start here before the Google and AWS tiers."
+eligibility = "No VC backing, no accelerator membership, no formal incorporation documents -- a business idea and a professional email address"
+note = "START HERE. $25K with no gatekeeping is 25x the AWS bootstrapped tier and 12x Google's, and it is the only one of the three that asks for neither funding nor incorporation papers. Apply before either of the others."
 documents = [
   "Company details and a short product description",
   "No funding proof required — the most accessible of the three",
