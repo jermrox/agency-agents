@@ -191,6 +191,27 @@ jobs:
             echo '<a href="dashboard.html" style="color:#b18a45">market dashboard</a></p>'
             echo '</body></html>'
           } > ../site/index.html
+          # frame.html is what the Squarespace page embeds in an <iframe>. It
+          # is the board plus a script that reports its height to the parent,
+          # so the frame grows and shrinks with the list instead of showing a
+          # scrollbar inside the page. Framing asks nothing of the host page:
+          # no cross-origin fetch, no re-running scripts the CMS may strip.
+          {
+            echo '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            echo '<title>MOPs &amp; MOEs — Tactical Human Performance Jobs</title>'
+            echo '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            echo '<style>body{margin:0;padding:1.25rem;background:#f6f2ea;'
+            echo 'font:16px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}'
+            echo '@media(prefers-color-scheme:dark){body{background:#0f0d0b}}</style>'
+            echo '</head><body>'
+            if [ -n "${{ vars.JOBS_FEED_ORIGIN }}" ]; then
+              sed "s|var FEED_URL = \"jobs.json\";|var FEED_URL = \"${{ vars.JOBS_FEED_ORIGIN }}/jobs.json\";|" embed/board.html
+            else
+              cat embed/board.html
+            fi
+            cat embed/frame.html
+            echo '</body></html>'
+          } > ../site/frame.html
           # A cross-origin copy for the Squarespace Code Block. embed.html
           # fetches "jobs.json" relatively, which is right when the board is
           # served from the same host and broken when it is pasted into
@@ -203,6 +224,15 @@ jobs:
               echo "::error::FEED_URL rewrite did not apply; embed/board.html no longer matches the expected line."
               exit 1
             fi
+          fi
+          # The loader is what sits in the Squarespace block: it fetches
+          # squarespace-embed.html from the live host on every page view, so a
+          # component change ships with the next publish instead of a re-paste.
+          if [ -n "${{ vars.JOBS_FEED_ORIGIN }}" ]; then
+            sed 's|https://agentcrawlsom.netlify.app|${{ vars.JOBS_FEED_ORIGIN }}|g' \
+              embed/squarespace-loader.html > ../site/squarespace-loader.html
+          else
+            cp -f embed/squarespace-loader.html ../site/squarespace-loader.html
           fi
           ls -la ../site
 
@@ -235,7 +265,7 @@ jobs:
           git clone --depth 1 "https://x-access-token:${MIRROR_TOKEN}@github.com/${MIRROR_REPO}.git" ../mirror
           # Copy the assembled site over the mirror's tree. Only the files this
           # workflow owns are replaced; anything else in that repo is left be.
-          for f in jobs.json jobs.xml insights.json dashboard.html index.html embed.html squarespace-embed.html _headers CNAME; do
+          for f in jobs.json jobs.xml insights.json dashboard.html index.html embed.html squarespace-embed.html squarespace-loader.html frame.html _headers CNAME; do
             [ -f "../site/$f" ] && cp -f "../site/$f" "../mirror/$f"
           done
           # tactical-jobs-board.html is a second entry point some pages link to.

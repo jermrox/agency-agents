@@ -137,7 +137,7 @@
       margin: 0 !important;
       transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease), transform .1s var(--mm-ease);
     }
-    #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); }
+    @media (hover: hover) { #mm-jobs .mm-chip:hover { border-color: var(--mm-accent); } }
     #mm-jobs .mm-chip:active:not(:disabled) { transform: scale(.97); }
     #mm-jobs .mm-chip[aria-pressed="true"] {
       background: var(--mm-accent); border-color: var(--mm-accent);
@@ -148,6 +148,218 @@
     #mm-jobs .mm-chip:disabled { opacity: .38; cursor: default; }
     #mm-jobs .mm-chip:focus-visible,
     #mm-jobs :focus-visible { outline: 2px solid var(--mm-accent); outline-offset: 2px; }
+
+    /* Second level under Location. Reads as a drill-down, not a peer row:
+       indented behind a rule in the accent colour, on a tinted ground, with
+       smaller pills. It only exists while CONUS or OCONUS is selected. */
+    #mm-jobs .mm-sublevel {
+      margin-top: .6rem !important;
+      padding: .6rem 0 .1rem .75rem !important;
+      border-left: 2px solid var(--mm-accent);
+      display: grid; gap: .9rem;
+      animation: mm-sublevel-in .18s var(--mm-ease) both;
+    }
+    /* The `display: grid` above outranks the plain [hidden] rule, so the
+       closed state has to be spelled out -- without it an empty container
+       still paints its left rule as a stray gold tick under the pills. */
+    #mm-jobs .mm-sublevel[hidden] { display: none; }
+    @keyframes mm-sublevel-in {
+      from { opacity: 0; transform: translateY(-.25rem); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-sublevel { animation: none; }
+    }
+    #mm-jobs .mm-sublegend {
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .4rem !important; line-height: 1.2 !important;
+    }
+    #mm-jobs .mm-sublegend .mm-sub-clear {
+      border: 0; background: none; padding: 0 !important; margin-left: .5rem !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-chip.is-sub {
+      padding: .3rem .6rem !important; min-height: 1.9rem !important;
+      font-size: .75rem !important; gap: .3rem;
+      background: var(--mm-card);
+    }
+    #mm-jobs .mm-chip.is-sub .mm-n { font-size: .7rem; }
+    #mm-jobs .mm-chip.is-sub[aria-pressed="true"] { background: var(--mm-accent); }
+
+    /* Facet controls.
+       One shared panel that expands INLINE beneath the button row, rather than
+       three popovers. A popover has to cover something, and three of them each
+       anchor to a different button, so nothing lines up and the panel hangs
+       over the search field. Expanding in flow means every row keeps the same
+       left and right edge and nothing is ever obscured. */
+    #mm-jobs .mm-ddrow { display: flex; gap: .5rem; align-items: flex-start; }
+    #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 1 1 0; min-width: 0; }
+    /* The trigger, from the reference: 46px, radius 12px, 13px/600 tracked
+       label, icon at the left, caret at the right, press scale .95. Open
+       (.is-fused) its bottom corners square off and it extends 9px downward
+       to meet the panel, covering the panel's top border along its own span
+       -- the reference's fused trigger + list. The two inactive buttons keep
+       their gap and their corners, so nothing is cut. */
+    #mm-jobs .mm-dd-btn {
+      position: relative; overflow: visible; isolation: isolate; box-sizing: border-box;
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      border: 1px solid var(--mm-border); background: var(--mm-card-2); color: var(--mm-ink);
+      border-radius: 12px !important; padding: 0 .75rem !important;
+      height: 2.875rem !important; min-height: 2.875rem !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none; margin: 0 !important;
+      transition: background .2s var(--mm-ease), border-color .2s var(--mm-ease), border-radius .2s var(--mm-ease),
+        height .2s var(--mm-ease), margin .2s var(--mm-ease), box-shadow .2s var(--mm-ease), transform .1s var(--mm-ease);
+    }
+    @media (hover: hover) { #mm-jobs .mm-dd-btn:hover { background: var(--mm-card); } }
+    #mm-jobs .mm-dd-btn:active { transform: scale(.95); }
+    #mm-jobs .mm-dd-btn.is-fused {
+      background: var(--mm-card); border-bottom-color: transparent;
+      border-radius: 12px 12px 0 0 !important;
+      height: calc(2.875rem + 9px) !important; margin-bottom: -9px !important; z-index: 2;
+    }
+    #mm-jobs .mm-dd-main { display: flex; align-items: center; gap: .5rem; flex: 1 1 auto; min-width: 0; }
+    #mm-jobs .mm-dd-ico { display: block; flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-dd-ico svg { display: block; width: 16px; height: 16px; }
+    #mm-jobs .mm-dd-lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Placeholder look until something is picked, as the reference. */
+    #mm-jobs .mm-dd-btn:not(.is-set) .mm-dd-lab { color: var(--mm-muted); font-weight: 500; }
+    #mm-jobs .mm-dd-btn.is-set .mm-dd-ico, #mm-jobs .mm-dd-btn.is-fused .mm-dd-ico { color: var(--mm-accent-text); }
+    /* Below 640px the three buttons stack full width -- the reference is a
+       single wide select, and three across on a phone leaves 60px for a
+       label that needs 78 ("Organization"). The panel moves under the button
+       that is open (see placePanel), so it stays in flow: nothing overlaps,
+       the buttons below simply move down. The column gap is the 8px the
+       fused button reaches across; a closed panel cancels its own gap. */
+    @media (max-width: 639px) {
+      #mm-jobs .mm-ddrow { flex-direction: column; }
+      /* flex-basis 0 from the row layout would override the open height */
+      #mm-jobs .mm-ddrow > .mm-dd-btn { flex: 0 0 auto; width: 100%; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel { margin-top: -.5rem !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel.is-open { margin-top: 0 !important; }
+      #mm-jobs .mm-ddrow > .mm-ddpanel .mm-ddbox { border-top-left-radius: 0; border-top-right-radius: 0; }
+    }
+    /* The caret becomes an X while its section is open. Two glyphs stacked in
+       the same 11px box; the chevron rotates away as the X rotates in. */
+    #mm-jobs .mm-dd-car { flex: none; position: relative; width: 11px; height: 11px; color: var(--mm-muted); }
+    #mm-jobs .mm-dd-car svg {
+      position: absolute; inset: 0; width: 11px; height: 11px;
+      transition: transform .28s cubic-bezier(.2,1.05,.35,1), opacity .18s var(--mm-ease);
+    }
+    #mm-jobs .mm-dd-car .mm-car-chev { opacity: .8; }
+    #mm-jobs .mm-dd-car .mm-car-x    { opacity: 0; transform: rotate(-90deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-chev { opacity: 0; transform: rotate(180deg) scale(.7); }
+    #mm-jobs .mm-dd-btn[aria-expanded="true"] .mm-car-x    { opacity: 1; transform: none; }
+
+    /* The panel opens like a drawer rather than appearing: a grid row that
+       goes 0fr -> 1fr, with the border and padding on the inner element so a
+       closed row collapses to nothing and the buttons-to-search spacing is
+       exactly what it is with no panel at all. A clean gap above, never a
+       negative margin: merging the panel into the active button looked like a
+       tab, but the panel is full width, so the merge ran under the two
+       inactive buttons and cut their corners. Uncapped on purpose -- a
+       max-height with internal scroll sliced the last chip row in half. */
+    #mm-jobs .mm-ddpanel {
+      display: grid; grid-template-rows: 0fr; margin-top: 0 !important;
+      transition: grid-template-rows .32s cubic-bezier(.2,.9,.3,1), margin-top .32s cubic-bezier(.2,.9,.3,1);
+    }
+    #mm-jobs .mm-ddpanel.is-open { grid-template-rows: 1fr; margin-top: .5rem !important; }
+    /* .mm-ddinner is the clipping element and carries NO padding or border --
+       with them, a 0fr row still measured 27.6px (padding + border), because
+       min-height: 0 clamps content, not box edges. They live on .mm-ddbox. */
+    #mm-jobs .mm-ddinner {
+      min-height: 0; overflow: hidden; visibility: hidden; opacity: 0; transform: translateY(-.35rem);
+      transition: opacity .22s var(--mm-ease), transform .32s cubic-bezier(.2,1.05,.35,1), visibility 0s linear .32s;
+    }
+    #mm-jobs .mm-ddbox {
+      border: 1px solid var(--mm-border); border-radius: 12px;
+      background: var(--mm-card); padding: .8rem !important;
+    }
+    /* Under an open first or last button the panel's corner goes square so
+       the button's outer edge runs straight down into the list. */
+    #mm-jobs .mm-ddpanel.is-first-open .mm-ddbox { border-top-left-radius: 0; }
+    #mm-jobs .mm-ddpanel.is-last-open .mm-ddbox { border-top-right-radius: 0; }
+    /* Options as rows, from the reference: 42px, 4px apart, radius 12px, an
+       icon and a 13px/600 tracked label, hover fill, press scale. Picked rows
+       take the accent tint and a check; empty ones fade. */
+    #mm-jobs .mm-opts { display: flex; flex-direction: column; gap: 4px; }
+    #mm-jobs .mm-opt {
+      display: flex; align-items: center; gap: .75rem; width: 100%; text-align: left;
+      min-height: 2.625rem; padding: 0 .75rem !important; margin: 0 !important;
+      border: 0; border-radius: 12px !important; background: transparent; color: var(--mm-ink);
+      font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; letter-spacing: .04em; line-height: 1.2 !important;
+      cursor: pointer; box-shadow: none !important; appearance: none;
+      transition: background .15s var(--mm-ease), color .15s var(--mm-ease), transform .1s var(--mm-ease);
+    }
+    #mm-jobs .mm-opt-ico { flex: none; width: 16px; height: 16px; color: var(--mm-muted); }
+    #mm-jobs .mm-opt-ico svg { display: block; width: 16px; height: 16px; }
+    #mm-jobs .mm-opt-lab { flex: 1 1 auto; min-width: 0; white-space: normal; padding: .35rem 0; }
+    #mm-jobs .mm-opt .mm-n { flex: none; opacity: .6; font-weight: 500; font-size: .75rem; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+    /* The check replaces the icon on a picked row rather than taking its own
+       slot, so a long option name keeps the width on a narrow phone. */
+    #mm-jobs .mm-opt-chk { display: none; flex: none; width: 16px; height: 16px; color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { display: none; }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-chk { display: block; animation: mm-pop .25s cubic-bezier(.34,1.4,.64,1) both; }
+    @keyframes mm-pop { from { opacity: 0; transform: scale(.6); } }
+    #mm-jobs .mm-opt-chk svg { display: block; width: 16px; height: 16px; }
+    @media (hover: hover) { #mm-jobs .mm-opt:not(:disabled):hover { background: var(--mm-card-2); } }
+    #mm-jobs .mm-opt:active:not(:disabled) { transform: scale(.97); }
+    #mm-jobs .mm-opt[aria-pressed="true"] { background: var(--mm-accent-soft); color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-opt-ico { color: var(--mm-accent-text); }
+    #mm-jobs .mm-opt[aria-pressed="true"] .mm-n { opacity: .85; }
+    #mm-jobs .mm-opt:disabled { opacity: .45; cursor: default; }
+    #mm-jobs .mm-ddpanel.is-open .mm-ddinner { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+    #mm-jobs .mm-ddsec[hidden] { display: none; }
+    #mm-jobs .mm-ddhead {
+      display: flex; align-items: baseline; justify-content: space-between; gap: .5rem;
+      font-family: var(--mm-font-display); font-size: .65rem !important; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--mm-muted); font-weight: 600;
+      margin: 0 0 .6rem !important; line-height: 1.3 !important;
+    }
+    #mm-jobs .mm-ddclear {
+      border: 0; background: none; padding: 0 !important; margin: 0 !important;
+      font: inherit; letter-spacing: inherit; text-transform: inherit;
+      color: var(--mm-accent-text); cursor: pointer; text-decoration: underline;
+      min-height: 0 !important; box-shadow: none !important;
+    }
+    #mm-jobs .mm-ddnote {
+      font-size: .75rem !important; color: var(--mm-muted);
+      line-height: 1.45 !important; margin: 0 0 .6rem !important;
+    }
+    /* Inside the panel there is no width pressure, so chips wrap rather than
+       becoming the horizontally scrolling strip the 640px rule creates. */
+    #mm-jobs .mm-ddpanel .mm-sublevel {
+      border-left: 0; padding-left: 0 !important; margin-top: .85rem !important;
+      padding-top: .75rem !important; border-top: 1px solid var(--mm-border);
+    }
+    /* Options arrive one after another when a section opens (35ms apart,
+       springing up from .85 scale), not on every re-render -- a re-render
+       happens on every chip click, and replaying the entrance each time would
+       make the panel twitch under the finger. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-chip {
+      animation: mm-chip-in .38s cubic-bezier(.2,1.1,.35,1) both;
+      animation-delay: calc(var(--i, 0) * 35ms);
+    }
+    @keyframes mm-chip-in { from { opacity: 0; transform: scale(.85) translateY(.25rem); } }
+    /* Rows spring in 45ms apart from .8 scale (the reference's timing), and
+       on close leave in reverse order, 20ms apart, before the drawer folds. */
+    #mm-jobs .mm-ddpanel.is-entering .mm-opt {
+      animation: mm-opt-in .3s cubic-bezier(.34,1.3,.64,1) both;
+      animation-delay: calc(var(--i, 0) * 45ms);
+    }
+    @keyframes mm-opt-in { from { opacity: 0; transform: translateY(-6px) scale(.8); } }
+    #mm-jobs .mm-ddpanel.is-leaving .mm-opt, #mm-jobs .mm-ddpanel.is-leaving .mm-chip {
+      animation: mm-opt-out .18s var(--mm-ease) both; animation-delay: calc(var(--r, 0) * 20ms); pointer-events: none;
+    }
+    @keyframes mm-opt-out { to { opacity: 0; transform: translateY(-6px) scale(.8); } }
+    #mm-jobs .mm-ddpanel .mm-chips {
+      flex-wrap: wrap !important; overflow: visible !important;
+      -webkit-mask-image: none !important; mask-image: none !important;
+      padding-bottom: 0 !important; margin-bottom: 0 !important;
+    }
 
     #mm-jobs .mm-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     #mm-jobs .mm-field { position: relative; flex: 1 1 12rem; min-width: 0; }
@@ -252,16 +464,57 @@
     #mm-jobs .mm-badge.is-listed   { background: var(--mm-warn-bg); color: var(--mm-warn); border-color: transparent; }
     #mm-jobs .mm-badge.is-contingent { background: var(--mm-flag-bg); color: var(--mm-flag); border-color: transparent; }
 
+    /* The call to action: a plain pill in the board's accent gold with the
+       dark-gold text, as it always was, and a round disc holding the arrow.
+       No ring, no beam, no glow -- the user did not want the chrome, and not
+       black either. */
     #mm-jobs .mm-apply {
-      display: inline-flex; align-items: center; gap: .45rem; margin: 0 !important;
-      background: var(--mm-accent); color: var(--mm-accent-ink); box-shadow: none !important;
-      text-decoration: none; font-family: var(--mm-font); font-size: .8125rem !important; font-weight: 600; line-height: 1.3 !important;
-      padding: .65rem 1.05rem !important; border-radius: 8px !important; border: none; white-space: nowrap;
-      transition: background .15s var(--mm-ease), transform .1s var(--mm-ease);
+      display: inline-flex; align-items: center; gap: .75rem; margin: 0 !important;
+      padding: .5rem .5rem .5rem 1.1rem !important; border: none; border-radius: 999px !important;
+      background: var(--mm-accent); color: var(--mm-accent-ink); text-decoration: none; white-space: nowrap;
+      font-family: var(--mm-font); font-size: .9375rem !important; font-weight: 500; line-height: 1.3 !important;
+      box-shadow: none !important; transition: transform .2s var(--mm-ease), background .2s var(--mm-ease);
     }
-    #mm-jobs .mm-apply:hover { background: var(--mm-accent-text); color: #fff; }
+    #mm-jobs .mm-apply-disc {
+      display: inline-flex; align-items: center; justify-content: center; flex: none;
+      width: 1.75rem; height: 1.75rem; border-radius: 50%; background: rgba(23,19,16,.14);
+      transition: transform .2s var(--mm-ease);
+    }
+    #mm-jobs .mm-apply-disc svg { width: 15px; height: 15px; }
+    /* Hover effects only where a hover exists. On a touchscreen :hover sticks
+       after a tap, so the button would stay lifted until the next tap. */
+    @media (hover: hover) {
+      #mm-jobs .mm-apply:hover { transform: translateY(-1px); }
+      #mm-jobs .mm-apply:hover .mm-apply-disc { transform: scale(1.1); }
+    }
     #mm-jobs .mm-apply:active { transform: scale(.98); }
-    #mm-jobs .mm-apply svg { width: 13px; height: 13px; }
+    /* Touch. Platform guidance puts the minimum tap target at 44pt on iOS and
+       48dp on Android; several controls here were 25-40px. Grow the hit areas,
+       not the type -- the text stays the size it is and the box does the work.
+       Coarse pointers only, so a desktop keeps its 40px controls. */
+    @media (pointer: coarse) {
+      #mm-jobs .mm-search { height: 2.75rem !important; line-height: 2.75rem !important; }
+      #mm-jobs .mm-select { height: 2.75rem !important; }
+      #mm-jobs .mm-check { min-height: 2.75rem; }
+      #mm-jobs .mm-opt { min-height: 2.75rem; }
+      #mm-jobs .mm-chip { min-height: 2.75rem !important; }
+      #mm-jobs .mm-chip.is-sub { min-height: 2.75rem !important; padding: .3rem .75rem !important; }
+      #mm-jobs .mm-active-chip { min-height: 2.75rem !important; padding: .3rem .7rem .3rem .85rem !important; }
+      #mm-jobs .mm-clear { min-height: 2.75rem; }
+      #mm-jobs .mm-apply { min-height: 2.75rem; }
+      /* The section header grows to hold a full-height Clear; the box gives
+         back some top padding so the chips do not move down by the whole 30px. */
+      #mm-jobs .mm-ddbox { padding-top: .35rem !important; }
+      #mm-jobs .mm-ddhead { align-items: center; min-height: 2.75rem; margin-bottom: .25rem !important; }
+      #mm-jobs .mm-ddclear {
+        display: inline-flex; align-items: center; min-height: 2.75rem !important;
+        padding: 0 .5rem !important; margin-right: -.5rem !important;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mm-jobs .mm-ddpanel, #mm-jobs .mm-ddinner, #mm-jobs .mm-dd-car svg { transition: none !important; }
+      #mm-jobs .mm-ddpanel.is-entering .mm-chip, #mm-jobs .mm-ddpanel .mm-opt { animation: none !important; }
+    }
 
     #mm-jobs .mm-skel { display: grid; gap: .85rem; }
     #mm-jobs .mm-skel-card {
@@ -294,6 +547,87 @@
     #mm-jobs .mm-empty svg { color: var(--mm-border); }
     #mm-jobs .mm-empty .mm-clear { background: var(--mm-card); }
 
+
+    /* ---- map (collapsed by default) -------------------------------------
+       An extra way in, not part of the main board: the filters above are
+       untouched and this stays shut until someone opens it. Geometry is
+       baked in at build time, so it fetches nothing. */
+    #mm-jobs .mm-map { margin-top: 2rem !important; border-top: 1px solid var(--mm-border); }
+    #mm-jobs .mm-map > summary {
+      cursor: pointer; font-family: var(--mm-font-display); font-weight: 500;
+      font-size: 1rem !important; color: var(--mm-ink); padding: 1rem .25rem !important;
+      list-style: none; margin: 0 !important; display: flex; align-items: center; gap: .5rem;
+    }
+    #mm-jobs .mm-map > summary::-webkit-details-marker { display: none; }
+    #mm-jobs .mm-map-pin { color: var(--mm-accent-text); flex: none; }
+    #mm-jobs .mm-map-car { margin-left: auto; color: var(--mm-muted); flex: none; transition: transform .2s var(--mm-ease); }
+    #mm-jobs .mm-map[open] .mm-map-car { transform: rotate(180deg); }
+    #mm-jobs .mm-map-sub {
+      color: var(--mm-accent-text); font-weight: 600; font-family: var(--mm-font);
+      font-size: .6875rem !important; letter-spacing: .06em; text-transform: uppercase;
+      background: var(--mm-accent-soft, var(--mm-card-2)); border: 1px solid var(--mm-border);
+      border-radius: 999px; padding: .15rem .5rem !important;
+    }
+    #mm-jobs .mm-map-wrap { padding-bottom: 1rem !important; }
+    /* The drawing sits on its own tinted field so the card edge does not cut
+       through the ocean, and the caption explains the one thing a circle
+       cannot say for itself. */
+    #mm-jobs .mm-map-fig {
+      background: var(--mm-card-2); border: 1px solid var(--mm-border);
+      border-radius: var(--mm-radius); padding: .5rem .5rem .25rem !important; overflow: hidden;
+    }
+    #mm-jobs .mm-map-fig svg { width: 100%; height: auto; display: block; }
+    #mm-jobs .mm-map-key {
+      color: var(--mm-muted); font-family: var(--mm-font); margin: .25rem .25rem 0 !important;
+      font-size: .6875rem !important; line-height: 1.4 !important;
+    }
+    #mm-jobs .mm-land { fill: var(--mm-card); stroke: var(--mm-border); stroke-width: .6; }
+    #mm-jobs .mm-bub {
+      fill: var(--mm-accent); fill-opacity: .5; stroke: var(--mm-accent-text);
+      stroke-width: 1; cursor: pointer; transition: fill-opacity .15s var(--mm-ease);
+    }
+    @media (hover: hover) { #mm-jobs .mm-bub:hover { fill-opacity: .85; } }
+    #mm-jobs .mm-bub.is-on { fill-opacity: 1; stroke: var(--mm-card); stroke-width: 2; }
+    /* Once a place is picked the rest step back, so the answer is the only
+       thing lit on the map. */
+    #mm-jobs .mm-map-fig.is-picked .mm-bub:not(.is-on) { fill-opacity: .15; stroke-opacity: .25; }
+
+    #mm-jobs .mm-pgroup { margin-top: 1rem !important; }
+    #mm-jobs .mm-phead {
+      display: flex; align-items: baseline; gap: .5rem; margin: 0 .15rem .45rem !important;
+      font-family: var(--mm-font); font-size: .6875rem !important; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--mm-muted); font-weight: 600;
+    }
+    #mm-jobs .mm-phead .mm-pnote { text-transform: none; letter-spacing: 0; font-weight: 400; }
+    #mm-jobs .mm-places { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 !important; }
+    #mm-jobs .mm-place {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--mm-border); background: var(--mm-card); color: var(--mm-ink);
+      border-radius: 999px !important; padding: .35rem .4rem .35rem .75rem !important; margin: 0 !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.3 !important;
+      cursor: pointer; min-height: 2.25rem !important; box-shadow: none !important;
+      transition: border-color .15s var(--mm-ease), background .15s var(--mm-ease);
+    }
+    @media (hover: hover) { #mm-jobs .mm-place:hover { border-color: var(--mm-accent); } }
+    @media (pointer: coarse) { #mm-jobs .mm-place { min-height: 2.75rem !important; } }
+    #mm-jobs .mm-place[aria-pressed="true"] { background: var(--mm-accent); border-color: var(--mm-accent); color: var(--mm-accent-ink); font-weight: 600; }
+    /* The count rides in its own disc, so the eye can rank the row without
+       reading a single place name. */
+    #mm-jobs .mm-place .mm-n {
+      font-variant-numeric: tabular-nums; font-size: .75rem; min-width: 1.5rem;
+      padding: .1rem .35rem; border-radius: 999px; text-align: center;
+      background: var(--mm-card-2); color: var(--mm-muted);
+    }
+    #mm-jobs .mm-place[aria-pressed="true"] .mm-n { background: rgba(23,19,16,.16); color: inherit; }
+    #mm-jobs .mm-pmore {
+      margin-left: auto !important; border: 1px solid var(--mm-border); background: var(--mm-card);
+      padding: .3rem .6rem !important; border-radius: 999px !important;
+      color: var(--mm-accent-text); font-family: var(--mm-font); font-size: .6875rem !important;
+      letter-spacing: .06em; text-transform: uppercase; font-weight: 600; cursor: pointer;
+    }
+    @media (hover: hover) { #mm-jobs .mm-pmore:hover { border-color: var(--mm-accent); } }
+    @media (pointer: coarse) { #mm-jobs .mm-pmore { min-height: 2.25rem !important; } }
+
     #mm-jobs .mm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   </style>
 
@@ -305,27 +639,36 @@
 
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
-      <div class="mm-legend">Discipline</div>
-      <div class="mm-chips" id="mm-f-discipline"></div>
-    </div>
-
-    <div class="mm-group">
-      <div class="mm-legend">
-        Service branch
-        <span class="mm-hint">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</span>
+      <div class="mm-ddrow">
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Discipline</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Organization</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Location</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
       </div>
-      <div class="mm-chips" id="mm-f-branch"></div>
-    </div>
 
-    <div class="mm-group">
-      <div class="mm-legend">
-        Location
-        <span class="mm-hint">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS.</span>
+      <div class="mm-ddpanel" id="mm-ddpanel">
+        <div class="mm-ddinner">
+          <div class="mm-ddbox">
+        <div class="mm-ddsec" data-sec="discipline" hidden>
+          <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
+          <div class="mm-opts" id="mm-f-discipline" role="group" aria-label="Discipline"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="branch" hidden>
+          <div class="mm-ddhead"><span>Organization</span><button type="button" class="mm-ddclear" data-clear="branch" hidden>Clear</button></div>
+          <p class="mm-ddnote">Who you would be embedded with. A role serving more than one service shows under each; federal law-enforcement and civilian-agency roles sit under Not service-specific.</p>
+          <div class="mm-opts" id="mm-f-branch" role="group" aria-label="Organization"></div>
+        </div>
+        <div class="mm-ddsec" data-sec="location" hidden>
+          <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
+          <p class="mm-ddnote">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS. Pick one to narrow by state or country.</p>
+          <div class="mm-opts" id="mm-f-location" role="group" aria-label="Location"></div>
+          <div class="mm-sublevel" id="mm-f-region" hidden></div>
+        </div>
+          </div>
+        </div>
       </div>
-      <div class="mm-chips" id="mm-f-location"></div>
     </div>
 
-    <div class="mm-group">
+    <div class="mm-group mm-controls">
       <div class="mm-row">
         <div class="mm-field">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -352,6 +695,10 @@
           <input type="checkbox" id="mm-nopay" checked>
           Include jobs with no listed pay
         </label>
+        <label class="mm-check">
+          <input type="checkbox" id="mm-show-mwr">
+          Show MWR jobs
+        </label>
       </div>
     </div>
 
@@ -365,6 +712,21 @@
 
   <ul class="mm-list" id="mm-list"></ul>
   <p class="mm-sr" role="status" aria-live="polite" id="mm-live"></p>
+
+  <details class="mm-map">
+    <summary>
+      <svg class="mm-map-pin" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Where the work is <span class="mm-map-sub" id="mm-map-sub"></span>
+      <svg class="mm-map-car" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="mm-map-wrap">
+      <div class="mm-map-fig" id="mm-map-fig">
+        <div id="mm-map-svg"></div>
+        <p class="mm-map-key" id="mm-map-key"></p>
+      </div>
+      <div id="mm-map-places" role="group" aria-label="Filter by place"></div>
+    </div>
+  </details>
 
   <details class="mm-why">
     <summary>
@@ -388,9 +750,56 @@
     check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
     flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    arrowUpRight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>',
     close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
     empty: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
   };
+
+  // One icon per option, so a row and the trigger can show what was picked.
+  function ico(paths) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + paths + "</svg>"; }
+  var FACET_ICONS = {
+    discipline: {
+      "strength-conditioning": ico('<path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/>'),
+      "cognitive-performance": ico('<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/>'),
+      "physical-therapy": ico('<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/><path d="M3.5 12h5l1.5-3 2 6 1.5-3h4"/>'),
+      "nutrition": ico('<path d="M12 6.5c1.5-2 4-2.5 5.5-1.5 3 2 3 7 .5 11-1.2 2-2.5 3-4 2.5-.7-.2-1.3-.2-2 0-1.5.5-2.8-.5-4-2.5-2.5-4-2.5-9 .5-11 1.5-1 4-.5 5.5 1.5z"/><path d="M12 6.5c0-2 1-3.5 2.5-4"/>'),
+      "occupational-therapy": ico('<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M11 11.5V4.5a1.5 1.5 0 0 1 3 0V12"/><path d="M14 12V6.5a1.5 1.5 0 0 1 3 0V14"/><path d="M8 13l-1.5-2a1.6 1.6 0 0 0-2.6 1.8L7 17a7 7 0 0 0 13-3v-2"/>'),
+      "human-performance": ico('<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'),
+      "athletic-training": ico('<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>'),
+      "sport-science": ico('<path d="M3 3v18h18"/><path d="M8 17v-6M13 17V7M18 17v-3"/>'),
+      "behavioral-health": ico('<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>'),
+      "fitness": ico('<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>'),
+      "__default": ico('<circle cx="12" cy="12" r="9" stroke-dasharray="4 3"/>')
+    },
+    branch: {
+      "army": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+      "navy": ico('<circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/>'),
+      "air-force": ico('<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>'),
+      "marine-corps": ico('<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'),
+      "space-force": ico('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'),
+      "coast-guard": ico('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>'),
+      "joint": ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+      "none": ico('<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>'),
+      "__default": ico('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>')
+    },
+    location: {
+      "remote": ico('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>'),
+      "telework": ico('<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>'),
+      "conus": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
+      "oconus": ico('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'),
+      "unspecified": ico('<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>'),
+      "__default": ico('<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>')
+    }
+  };
+  var TRIGGER_ICONS = {
+    discipline: ico('<path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/>'),
+    branch: FACET_ICONS.branch.army,
+    location: FACET_ICONS.location.conus
+  };
+  function facetIcon(group, value) {
+    var set = FACET_ICONS[group] || {};
+    return set[value] || set.__default || "";
+  }
 
   var els = {
     sub: document.getElementById("mm-sub"),
@@ -402,9 +811,11 @@
     hideContingent: document.getElementById("mm-hide-contingent"),
     noPay: document.getElementById("mm-nopay"),
     noPayWrap: document.getElementById("mm-nopay-wrap"),
+    showMwr: document.getElementById("mm-show-mwr"),
     active: document.getElementById("mm-active"),
     count: document.getElementById("mm-count"),
     clear: document.getElementById("mm-clear"),
+    region: document.getElementById("mm-f-region"),
     list: document.getElementById("mm-list"),
     live: document.getElementById("mm-live"),
     defs: document.getElementById("mm-defs")
@@ -412,13 +823,28 @@
 
   var JOBS = [];
   var DEFS = {};
-  var selected = { discipline: new Set(), branch: new Set(), location: new Set() };
+  var selected = {
+    discipline: new Set(), branch: new Set(), location: new Set(), region: new Set()
+  };
 
   var UNPLACED = "unspecified";
+  // Telework sits next to Remote rather than inside it. "Telework eligible" on
+  // a federal posting means a day a week from home from a job that is still on
+  // the installation -- 124 of 271 live federal postings carry it, every one
+  // with a real duty station. A candidate filtering Remote must not be shown
+  // those; a candidate who wants flexibility should still find them.
   var LOCATION_LABELS = {
-    remote: "Remote", conus: "CONUS", oconus: "OCONUS",
+    remote: "Remote", telework: "Telework", conus: "CONUS", oconus: "OCONUS",
     unspecified: "Location not stated"
   };
+  // The drill-down under CONUS/OCONUS. Two legends rather than one because
+  // the answer differs: inside the contiguous states a candidate is choosing a
+  // state, outside them they are choosing between Alaska, Hawaii and a list of
+  // countries -- "state" would be wrong for Germany and "country" wrong for
+  // Hawaii.
+  var REGION_CLASSES = ["conus", "oconus"];
+  var REGION_LEGENDS = { conus: "Narrow by state", oconus: "Narrow by region" };
+
   var UNATTRIBUTED = "none";
   var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
   var BRANCH_LABELS = {
@@ -440,6 +866,96 @@
     if (!iso) return "";
     var d = new Date(iso);
     return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
+
+  // Installation morale, welfare and recreation staffing -- the base gym and
+  // the intramural programme. The feed decides this against the whole posting;
+  // the text check below only covers a feed published before that facet
+  // existed, so the box still works on an older jobs.json.
+  var MWR_TITLE_RE = /\brecreation\b|\bsports\s+specialist\b|\bfitness\s+(?:specialist|instructor|coordinator|cent(?:er|re))\b|group\s+exercise|\bMWR\b/i;
+  var MWR_EMPLOYER_RE = /navy installations command|marine corps community services|\bMCCS\b|family and mwr|\bMWR\b|force support squadron/i;
+  var MWR_PROGRAMME_RE = /\bHITT\b|high\s+intensity\s+tactical|\bWARR\b|\bH2F\b|holistic\s+health|\bPOTFF\b|preservation\s+of\s+the\s+force|special\s+operations|human\s+performance/i;
+
+  function isMwr(job) {
+    var f = facetsOf(job);
+    if (typeof f.mwr === "boolean") return f.mwr;
+    var title = job.title || "";
+    if (MWR_PROGRAMME_RE.test(title)) return false;
+    return MWR_TITLE_RE.test(title) || MWR_EMPLOYER_RE.test(job.employer || "");
+  }
+
+  // ---- search -------------------------------------------------------
+  // A candidate should not have to guess the employer's spelling. 42 of this
+  // board's dietitian postings are spelled "Dietician", so a search for the
+  // correct professional spelling used to return 14 of 56. The field also
+  // talks in abbreviations (S&C, ATC, CSCS, H2F, POTFF) and writes the same
+  // post as "Ft. Bragg" or "Fort Bragg".
+  var SEARCH_SYNONYMS = {
+    dietitian: ["dietitian", "dietician"],
+    dietician: ["dietitian", "dietician"],
+    rd: ["dietitian", "dietician"],
+    sc: ["strength and conditioning"],
+    cscs: ["strength and conditioning", "cscs"],
+    tsac: ["tactical strength and conditioning", "tsac"],
+    atc: ["athletic trainer", "athletic training", "atc"],
+    pt: ["physical therapist", "physical therapy"],
+    dpt: ["physical therapist", "physical therapy"],
+    pta: ["physical therapist assistant", "physical therapy assistant"],
+    ot: ["occupational therapist", "occupational therapy"],
+    cota: ["occupational therapy assistant"],
+    h2f: ["holistic health and fitness", "h2f"],
+    potff: ["preservation of the force", "potff"],
+    cps: ["cognitive performance", "cps"],
+    hpo: ["human performance", "hpo"],
+    sof: ["special operations", "sof"],
+    lcsw: ["licensed clinical social worker", "social worker"],
+    mwr: ["morale welfare and recreation", "mwr"]
+  };
+
+  // Lower-case, fold "&" to "and", drop punctuation, and read "Ft." as "Fort",
+  // so both sides of the comparison are plain words separated by spaces.
+  function searchWords(text) {
+    // A spaced ampersand is the word "and" ("Strength & Conditioning"); a tight
+    // one joins an abbreviation ("S&C"), so the two cannot fold the same way.
+    var raw = String(text == null ? "" : text)
+      .toLowerCase()
+      .replace(/\s+&\s+/g, " and ")
+      .replace(/&/g, "");
+    var parts = raw.replace(/[^a-z0-9]+/g, " ").split(" ");
+    var out = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i]) continue;
+      out.push(parts[i] === "ft" ? "fort" : parts[i]);
+    }
+    return " " + out.join(" ") + " ";
+  }
+
+  function searchIndex(job) {
+    if (job.__mmSearch == null) {
+      job.__mmSearch = searchWords(
+        [job.title, job.employer, job.location, job.program, job.notes, job.description].join(" ")
+      );
+    }
+    return job.__mmSearch;
+  }
+
+  // Every word the reader typed has to appear, as a whole word, in its own
+  // right or as one of its synonyms. Matching whole words is what stops "pt"
+  // from hitting "optimization" -- it used to match 328 of 731 postings.
+  function searchMatches(job, query) {
+    var words = searchWords(query).trim().split(" ");
+    var hay = searchIndex(job);
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i];
+      if (!word) continue;
+      var options = SEARCH_SYNONYMS[word] || [word];
+      var hit = false;
+      for (var k = 0; k < options.length; k++) {
+        if (hay.indexOf(searchWords(options[k])) !== -1) { hit = true; break; }
+      }
+      if (!hit) return false;
+    }
+    return true;
   }
 
   function matches(job, ignore) {
@@ -470,7 +986,23 @@
       if (!classes.length) classes = [UNPLACED];
       if (!classes.some(function (c) { return selected.location.has(c); })) return false;
     }
+    // "location" ignores the region level too, so the CONUS and OCONUS counts
+    // keep describing the whole class. Without this, picking two states drops
+    // the parent pill from "CONUS 125" to "CONUS 45", which reads as jobs
+    // disappearing rather than as a narrowing the user just asked for.
+    if (ignore !== "region" && ignore !== "location" && selected.region.size) {
+      // Only regions sitting under a selected class count. Without that guard a
+      // requisition covering "TX; JP" would answer a Japan filter through its
+      // Texas half once the user had narrowed to CONUS.
+      var regions = f.location_regions || {};
+      var hitRegion = REGION_CLASSES.some(function (cls) {
+        if (!selected.location.has(cls)) return false;
+        return (regions[cls] || []).some(function (r) { return selected.region.has(r); });
+      });
+      if (!hitRegion) return false;
+    }
     if (els.hideContingent.checked && f.contingency === "contingent") return false;
+    if (!els.showMwr.checked && isMwr(job)) return false;
 
     var floor = parseInt(els.salary.value, 10) || 0;
     if (floor > 0) {
@@ -479,11 +1011,8 @@
       else if (pay < floor) return false;
     }
 
-    var q = els.q.value.trim().toLowerCase();
-    if (q) {
-      var haystack = [job.title, job.employer, job.location, job.program, job.notes].join(" ").toLowerCase();
-      if (haystack.indexOf(q) === -1) return false;
-    }
+    var q = els.q.value.trim();
+    if (q && !searchMatches(job, q)) return false;
     return true;
   }
 
@@ -505,12 +1034,23 @@
         return matches(job, group);
       }).length;
 
+      var isRow = container.classList.contains("mm-opts");
+      var on = selected[group].has(opt.value);
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "mm-chip";
-      btn.setAttribute("aria-pressed", selected[group].has(opt.value) ? "true" : "false");
-      btn.disabled = n === 0 && !selected[group].has(opt.value);
-      btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      btn.className = isRow ? "mm-opt" : "mm-chip";
+      btn.style.setProperty("--i", String(container.childElementCount));
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.disabled = n === 0 && !on;
+      if (isRow) {
+        btn.innerHTML =
+          '<span class="mm-opt-ico" aria-hidden="true">' + facetIcon(group, opt.value) + "</span>" +
+          '<span class="mm-opt-chk" aria-hidden="true">' + ICONS.check + "</span>" +
+          '<span class="mm-opt-lab">' + esc(opt.label) + "</span>" +
+          '<span class="mm-n">' + n + "</span>";
+      } else {
+        btn.innerHTML = esc(opt.label) + ' <span class="mm-n">' + n + "</span>";
+      }
       btn.addEventListener("click", function () {
         if (selected[group].has(opt.value)) selected[group].delete(opt.value);
         else selected[group].add(opt.value);
@@ -518,7 +1058,7 @@
       });
       container.appendChild(btn);
     });
-    markScrollEnd(container);
+    if (!container.classList.contains("mm-opts")) markScrollEnd(container);
   }
 
   function markScrollEnd(container) {
@@ -563,8 +1103,251 @@
     JOBS.forEach(function (job) {
       if (!(facetsOf(job).location_classes || []).length) present[UNPLACED] = true;
     });
-    return ["remote", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
+    return ["remote", "telework", "conus", "oconus", UNPLACED].filter(function (c) { return present[c]; })
       .map(function (c) { return { value: c, label: LOCATION_LABELS[c] }; });
+  }
+
+  function regionsOf(job, cls) {
+    return (facetsOf(job).location_regions || {})[cls] || [];
+  }
+
+  function regionOptions(cls) {
+    var present = {};
+    JOBS.forEach(function (job) {
+      regionsOf(job, cls).forEach(function (name) { present[name] = true; });
+    });
+    return Object.keys(present).sort();
+  }
+
+  function pruneRegions() {
+    // A region is only reachable while its parent pill is on. Deselecting
+    // OCONUS has to take Germany with it, or the board would go on filtering by
+    // a country the user can no longer see or switch off.
+    if (!selected.region.size) return;
+    var reachable = {};
+    REGION_CLASSES.forEach(function (cls) {
+      if (!selected.location.has(cls)) return;
+      regionOptions(cls).forEach(function (name) { reachable[name] = true; });
+    });
+    var stale = [];
+    selected.region.forEach(function (name) { if (!reachable[name]) stale.push(name); });
+    stale.forEach(function (name) { selected.region.delete(name); });
+  }
+
+  function renderRegionFilters() {
+    els.region.innerHTML = "";
+    var groups = REGION_CLASSES
+      .filter(function (cls) { return selected.location.has(cls); })
+      .map(function (cls) { return { cls: cls, names: regionOptions(cls) }; })
+      .filter(function (g) { return g.names.length; });
+
+    els.region.hidden = groups.length === 0;
+    if (!groups.length) return;
+
+    groups.forEach(function (group) {
+      var wrap = document.createElement("div");
+      wrap.setAttribute("role", "group");
+      wrap.setAttribute("aria-label", REGION_LEGENDS[group.cls]);
+
+      var legend = document.createElement("div");
+      legend.className = "mm-sublegend";
+      // Trailing space so a screen reader does not read the legend and the
+      // Clear button as one word ("narrow by stateclear").
+      legend.appendChild(document.createTextNode(REGION_LEGENDS[group.cls] + " "));
+      var chosen = group.names.filter(function (n) { return selected.region.has(n); });
+      if (chosen.length) {
+        var clear = document.createElement("button");
+        clear.type = "button";
+        clear.className = "mm-sub-clear";
+        clear.textContent = "Clear";
+        clear.setAttribute("aria-label", "Clear " + REGION_LEGENDS[group.cls].toLowerCase().replace("narrow by ", "") + " filters");
+        clear.addEventListener("click", function () {
+          chosen.forEach(function (n) { selected.region.delete(n); });
+          render();
+        });
+        legend.appendChild(clear);
+      }
+      wrap.appendChild(legend);
+
+      var chips = document.createElement("div");
+      chips.className = "mm-chips";
+      group.names.forEach(function (name) {
+        var n = JOBS.filter(function (job) {
+          return regionsOf(job, group.cls).indexOf(name) !== -1 && matches(job, "region");
+        }).length;
+
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mm-chip is-sub";
+        btn.style.setProperty("--i", String(chips.childElementCount + 4));
+        btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
+        btn.disabled = n === 0 && !selected.region.has(name);
+        btn.innerHTML = esc(name) + ' <span class="mm-n">' + n + "</span>";
+        btn.addEventListener("click", function () {
+          if (selected.region.has(name)) selected.region.delete(name);
+          else selected.region.add(name);
+          render();
+        });
+        chips.appendChild(btn);
+      });
+      wrap.appendChild(chips);
+      els.region.appendChild(wrap);
+      markScrollEnd(chips);
+    });
+  }
+
+  // --- facet panel ----------------------------------------------------------
+  var openFacet = null;
+  var enterTimer = null;
+  var leaveTimer = null;
+
+  function facetSection(key) {
+    return document.querySelector('#mm-jobs .mm-ddsec[data-sec="' + key + '"]');
+  }
+
+  function showFacet(key) {
+    var panel = document.getElementById("mm-ddpanel");
+    var btns = document.querySelectorAll("#mm-jobs .mm-dd-btn");
+    if (enterTimer) { clearTimeout(enterTimer); enterTimer = null; }
+    if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+    // The caret answers the tap at once; the geometry follows the panel.
+    Array.prototype.forEach.call(btns, function (b) {
+      b.setAttribute("aria-expanded", b.dataset.dd === key ? "true" : "false");
+    });
+    var leaving = openFacet && openFacet !== key ? openFacet : null;
+    openFacet = key;
+
+    var reveal = function () {
+      leaveTimer = null;
+      panel.classList.remove("is-leaving", "is-entering");
+      placePanel(key);
+      Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddsec"), function (sec) {
+        sec.hidden = sec.dataset.sec !== key;
+      });
+      Array.prototype.forEach.call(btns, function (b) { b.classList.toggle("is-fused", b.dataset.dd === key); });
+      panel.classList.toggle("is-first-open", !!key && key === btns[0].dataset.dd);
+      panel.classList.toggle("is-last-open", !!key && key === btns[btns.length - 1].dataset.dd);
+      panel.classList.toggle("is-open", !!key);
+      if (key) {
+        // Replay the staggered entrance for the section being shown, then drop
+        // the class so later re-renders (every row click) do not replay it.
+        void panel.offsetWidth;
+        panel.classList.add("is-entering");
+        enterTimer = setTimeout(function () { panel.classList.remove("is-entering"); }, 900);
+      }
+    };
+
+    if (!leaving) { reveal(); return; }
+    // The open section leaves in reverse order, 20ms a row, then the panel
+    // folds or the next section arrives. Capped so 25 state chips do not
+    // hold the drawer open for half a second.
+    var rows = facetSection(leaving).querySelectorAll(".mm-opt, .mm-chip");
+    var n = rows.length, cap = 12;
+    Array.prototype.forEach.call(rows, function (r, i) {
+      r.style.setProperty("--r", String(Math.min(n - 1 - i, cap)));
+    });
+    panel.classList.remove("is-entering");
+    panel.classList.add("is-leaving");
+    leaveTimer = setTimeout(reveal, Math.min(n - 1, cap) * 20 + 200);
+  }
+
+  // Stacked (below 640px) the panel sits directly under the open button;
+  // across, it follows the row. Kept in flow either way.
+  function placePanel(key) {
+    var panel = document.getElementById("mm-ddpanel");
+    var row = document.querySelector("#mm-jobs .mm-ddrow");
+    var stacked = !(window.matchMedia && window.matchMedia("(min-width: 640px)").matches);
+    var btn = key ? row.querySelector('.mm-dd-btn[data-dd="' + key + '"]') : null;
+    if (stacked && btn) {
+      if (btn.nextElementSibling !== panel) btn.insertAdjacentElement("afterend", panel);
+    } else if (!stacked && panel.parentElement === row) {
+      row.insertAdjacentElement("afterend", panel);
+    }
+  }
+
+  function bindFacets() {
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      b.addEventListener("click", function () {
+        showFacet(openFacet === b.dataset.dd ? null : b.dataset.dd);
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (btn) {
+      btn.addEventListener("click", function () {
+        var g = btn.dataset.clear;
+        selected[g].clear();
+        // Location owns the region level, so emptying it takes the states too.
+        if (g === "location") { selected.region.clear(); mapAdded = {}; }
+        render();
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && openFacet) showFacet(null);
+    });
+    var resizeTimer = null;
+    window.addEventListener("resize", function () {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { placePanel(openFacet); renderFacetButtons(); renderMap(); }, 120);
+    });
+    // A closed <details> has no width to measure, so the map is drawn again
+    // the moment it opens, at the size it is actually going to be seen at.
+    var mapBox = document.querySelector("#mm-jobs details.mm-map");
+    if (mapBox) mapBox.addEventListener("toggle", function () { if (mapBox.open) renderMap(); });
+  }
+
+  // What is picked in a facet, in option order, for the trigger to show.
+  function facetSelections(group) {
+    var out = [];
+    if (group === "discipline") {
+      disciplineOptions().forEach(function (o) {
+        if (selected.discipline.has(o.value)) out.push({ label: o.label, icon: facetIcon("discipline", o.value) });
+      });
+    } else if (group === "branch") {
+      branchOptions().forEach(function (o) {
+        if (selected.branch.has(o.value)) out.push({ label: o.label, icon: facetIcon("branch", o.value) });
+      });
+    } else {
+      locationOptions().forEach(function (o) {
+        if (selected.location.has(o.value)) out.push({ label: o.label, icon: facetIcon("location", o.value) });
+      });
+      Array.from(selected.region).sort().forEach(function (name) {
+        out.push({ label: name, icon: facetIcon("location", "conus") });
+      });
+    }
+    return out;
+  }
+
+  function textFits(el) {
+    if (!el.firstChild || !document.createRange) return true;
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    // clientWidth is rounded to a whole pixel; a label that fit by a
+    // fraction of a pixel was being rejected. Compare fractional widths.
+    return range.getBoundingClientRect().width <= el.getBoundingClientRect().width + 0.05;
+  }
+
+  function renderFacetButtons() {
+    var names = { discipline: "Discipline", branch: "Organization", location: "Location" };
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
+      var group = b.dataset.dd;
+      var picks = facetSelections(group);
+      var n = picks.length;
+      var icon = b.querySelector(".mm-dd-ico");
+      var lab = b.querySelector(".mm-dd-lab");
+      b.classList.toggle("is-set", n > 0);
+      icon.innerHTML = n ? picks[0].icon : TRIGGER_ICONS[group];
+      if (!n) { lab.textContent = names[group]; return; }
+      // The chosen option's name, "+N" for the rest -- unless it will not fit,
+      // then "N selected", then the facet name. Never an ellipsis.
+      var candidates = [picks[0].label + (n > 1 ? " +" + (n - 1) : ""), n + " selected", names[group]];
+      for (var i = 0; i < candidates.length; i++) {
+        lab.textContent = candidates[i];
+        if (textFits(lab)) break;
+      }
+    });
+    var counts = { discipline: selected.discipline.size, branch: selected.branch.size, location: selected.location.size + selected.region.size };
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-ddclear"), function (c) {
+      c.hidden = (counts[c.dataset.clear] || 0) === 0;
+    });
   }
 
   function renderActiveFilters() {
@@ -580,6 +1363,12 @@
     selected.location.forEach(function (loc) {
       pills.push({ label: LOCATION_LABELS[loc], onRemove: function () { selected.location.delete(loc); render(); } });
     });
+    selected.region.forEach(function (name) {
+      pills.push({ label: name, onRemove: function () { selected.region.delete(name); render(); } });
+    });
+    if (els.showMwr.checked) {
+      pills.push({ label: "MWR shown", onRemove: function () { els.showMwr.checked = false; render(); } });
+    }
     if (els.hideContingent.checked) {
       pills.push({ label: "No contingent", onRemove: function () { els.hideContingent.checked = false; render(); } });
     }
@@ -651,7 +1440,7 @@
 
     var actions = [];
     actions.push('<div class="mm-badges">' + badges.join("") + "</div>");
-    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting ' + ICONS.arrow + "</a>");
+    actions.push('<a class="mm-apply" href="' + esc(job.url) + '" target="_blank" rel="noopener noreferrer">View posting <span class="mm-apply-disc" aria-hidden="true">' + ICONS.arrowUpRight + "</span></a>");
 
     li.innerHTML =
       '<div class="mm-job-main">' + main.join("") + "</div>" +
@@ -673,9 +1462,12 @@
   }
 
   function render() {
+    pruneRegions();
     renderChips(els.discipline, "discipline", disciplineOptions());
     renderChips(els.branch, "branch", branchOptions());
     renderChips(els.location, "location", locationOptions());
+    renderRegionFilters();
+    renderFacetButtons();
     renderActiveFilters();
 
     els.noPayWrap.hidden = (parseInt(els.salary.value, 10) || 0) === 0;
@@ -695,7 +1487,8 @@
     if (!shown.length) {
       var empty = document.createElement("li");
       empty.className = "mm-empty";
-      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size || els.hideContingent.checked ||
+      var hasFilters = selected.discipline.size || selected.branch.size || selected.location.size ||
+        selected.region.size || els.hideContingent.checked ||
         (parseInt(els.salary.value, 10) || 0) > 0 || els.q.value.trim();
       empty.innerHTML = ICONS.empty +
         "<span>" + (JOBS.length
@@ -718,8 +1511,193 @@
     var msg = "<strong>" + shown.length + "</strong> of " + JOBS.length + " job" + (JOBS.length === 1 ? "" : "s");
     var hidden = JOBS.filter(function (j) { return facetsOf(j).contingency === "contingent"; }).length;
     if (els.hideContingent.checked && hidden) msg += " · " + hidden + " contingent hidden";
+    var mwr = JOBS.filter(isMwr).length;
+    if (!els.showMwr.checked && mwr) msg += " · " + mwr + " MWR hidden";
     els.count.innerHTML = msg;
+    renderMap();
     els.live.textContent = shown.length + " jobs shown";
+    liveCtas();
+  }
+
+  // Animate only the call-to-action buttons that are on screen. The list is
+  // rebuilt on every render, so the observer is too.
+  var ctaObserver = null;
+  function liveCtas() {
+    if (ctaObserver) { ctaObserver.disconnect(); ctaObserver = null; }
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    ctaObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle("is-live", e.isIntersecting); });
+    }, { rootMargin: "80px" });
+    Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-apply"), function (a) { ctaObserver.observe(a); });
+  }
+
+
+  // ---- map -------------------------------------------------------------
+  // Collapsed by default and additive: the filters above behave exactly as
+  // they did. Clicking a place selects its class as well as its name, which
+  // is what a reader does by hand, so nothing in the filter model changes.
+  // Equirectangular world basemap, baked in at build time.
+  var WORLD = {"vb":[0,40,960,380],"land":"M570 243L585 252L585 263L588 268L585 269L572 271L570 265L562 262L559 257L558 252L562 249L561 243L570 243ZM457 166L457 171L448 171L448 178L446 178L446 183L435 184L441 183L450 168L457 166ZM152 109L140 104L139 100L132 95L133 91L119 81L113 83L104 79L104 54L116 56L134 53L136 54L138 52L145 55L148 53L149 55L156 54L173 56L176 58L173 59L177 59L187 59L190 60L193 59L190 58L192 57L197 57L209 60L217 59L217 58L220 57L224 58L224 61L229 56L223 53L223 50L226 48L232 50L236 53L234 54L239 55L239 57L242 55L245 57L244 59L247 61L252 57L252 54L260 54L263 56L261 58L263 61L251 63L247 67L238 70L229 78L228 83L231 83L234 88L261 93L261 98L267 103L270 100L267 94L276 89L271 83L274 80L272 74L283 73L294 77L295 83L300 85L308 79L316 88L315 90L327 94L331 98L332 101L320 106L303 106L290 115L307 109L309 110L306 112L308 117L316 118L319 115L321 118L306 124L304 124L304 121L308 119L301 120L299 114L295 113L289 120L280 120L260 129L258 128L261 124L260 119L244 111L236 112L228 110L227 108L152 109ZM267 46L264 43L277 46L267 46ZM230 40L222 40L227 38L230 40ZM222 30L225 31L221 32L217 30L222 30ZM245 42L234 40L230 36L221 35L236 35L242 38L264 38L267 40L245 42ZM183 32L187 32L177 33L183 32ZM184 30L188 30L180 31L184 30ZM332 103L329 107L337 109L337 111L338 110L340 113L338 116L336 115L335 113L332 115L330 113L322 113L327 105L332 103ZM256 66L266 70L258 69L252 72L247 71L251 65L256 66ZM270 47L272 46L282 50L287 49L297 52L301 56L297 57L315 62L310 67L302 63L299 63L298 65L308 71L307 73L297 70L304 75L296 74L280 68L271 68L272 66L283 65L286 61L284 58L269 53L244 52L241 51L244 50L240 50L239 47L244 44L251 43L249 45L251 47L260 43L265 46L265 48L270 47ZM228 42L239 43L226 48L224 44L228 42ZM152 37L162 33L170 33L168 36L152 37ZM126 96L129 96L128 99L130 101L125 98L126 96ZM199 29L211 30L214 32L200 31L202 30L199 29ZM151 111L145 110L138 105L145 106L151 111ZM156 41L172 44L152 51L144 48L149 44L147 42L156 41ZM192 38L198 39L181 42L176 41L182 40L166 39L172 36L189 39L185 36L188 35L192 38ZM196 45L199 46L201 51L210 54L206 55L207 57L197 56L178 57L167 53L180 52L166 52L164 51L170 50L162 49L173 44L176 45L174 46L187 45L191 49L193 48L191 45L196 45ZM212 46L209 44L220 43L219 45L223 47L222 49L218 50L207 47L212 46ZM196 44L201 44L199 46L196 44ZM217 35L219 37L218 40L207 38L206 36L217 35ZM224 25L234 23L251 28L243 31L232 31L229 30L232 28L222 26L224 25ZM236 22L269 18L315 20L300 23L305 23L290 27L275 28L279 29L277 29L279 31L267 34L272 35L265 37L241 36L241 35L246 34L245 32L253 33L245 31L253 28L248 26L262 25L246 25L236 22ZM279 60L274 60L278 58L279 60ZM223 55L225 56L223 57L214 55L218 53L223 55ZM309 115L315 116L312 117L309 116L309 115ZM152 109L227 108L228 110L236 112L244 111L260 119L259 129L269 126L270 124L275 124L280 120L289 120L295 113L299 114L301 121L293 124L291 127L293 129L283 131L288 131L283 131L280 136L279 135L280 138L277 141L276 136L276 138L275 138L278 145L263 156L267 168L266 173L262 171L257 160L253 161L250 159L241 160L242 162L227 161L221 166L220 171L216 170L211 162L203 162L196 155L184 156L174 153L168 153L164 149L158 148L148 132L150 119L148 112L152 112L153 114L152 109ZM36 79L38 80L33 79L36 79ZM71 85L74 86L68 88L71 85ZM104 54L104 79L113 83L119 81L133 91L132 94L122 85L116 85L107 81L88 78L85 78L85 80L75 82L78 77L69 82L71 83L69 85L58 91L40 94L57 88L61 83L48 84L47 80L39 79L37 76L38 74L41 72L51 70L49 68L51 67L40 68L32 65L41 62L49 64L35 58L37 56L62 50L104 54ZM713 109L709 111L707 115L702 114L700 119L693 120L696 125L694 127L678 125L676 127L670 126L663 132L658 130L656 125L653 123L645 124L636 118L629 120L629 130L624 127L620 129L620 126L614 121L621 119L621 115L611 116L604 111L607 105L610 107L615 102L629 105L644 105L644 103L640 101L645 99L643 97L644 96L664 92L669 93L670 96L676 96L676 97L685 95L693 104L695 103L702 104L713 109ZM629 130L629 120L636 118L645 124L653 123L656 125L658 130L662 132L669 127L668 129L675 131L671 133L668 133L668 131L665 131L663 135L661 134L662 138L661 141L657 140L657 139L636 126L632 130L629 130ZM856 247L866 250L874 256L873 260L882 268L874 267L866 260L860 265L856 264L856 247ZM887 250L888 253L882 247L887 250ZM883 256L879 257L876 255L880 253L882 255L886 251L883 256ZM856 247L856 264L854 262L847 262L850 260L848 254L836 249L835 251L832 248L837 246L833 246L828 242L837 242L838 247L841 249L847 245L856 247ZM813 264L812 267L809 267L813 264ZM794 229L793 231L797 238L794 238L790 251L774 248L771 239L772 235L775 238L783 237L786 236L789 229L794 229ZM825 247L829 250L821 249L825 247ZM821 234L823 237L822 242L820 237L821 234ZM808 238L814 236L810 239L800 239L800 241L802 244L809 242L804 245L808 254L806 254L807 252L804 252L803 247L801 248L801 255L799 255L797 247L800 240L802 237L808 238ZM801 267L797 265L800 265L802 267L801 267ZM804 263L808 262L807 263L800 263L804 263ZM795 262L798 263L791 264L795 262ZM769 257L780 259L789 262L786 263L761 258L763 256L769 257ZM758 243L763 248L762 256L759 256L754 251L734 225L740 226L748 234L753 236L757 240L756 242L758 243ZM297 380L299 384L307 386L297 386L297 380ZM326 321L324 332L327 334L329 338L322 343L314 344L314 348L313 349L306 350L307 352L311 354L306 356L305 360L301 361L300 363L305 366L296 375L298 380L288 379L284 372L287 369L290 359L288 353L291 343L290 338L294 331L292 324L294 316L298 312L298 305L300 304L303 298L308 301L309 299L312 299L318 304L326 307L324 312L331 313L336 308L337 312L326 321ZM297 380L297 386L301 386L298 388L291 387L281 381L290 384L293 381L297 380ZM294 287L297 292L299 301L301 301L298 305L298 312L294 316L292 324L294 331L290 338L291 343L288 353L290 359L287 369L284 372L288 379L297 379L291 381L290 384L280 379L278 370L282 365L278 364L282 358L285 359L286 353L284 352L283 356L282 355L285 345L284 339L290 326L293 297L292 289L294 287ZM558 252L562 262L557 263L556 271L559 272L559 275L552 271L539 270L538 259L534 259L531 261L527 262L524 256L512 255L516 252L519 253L523 249L527 241L529 229L532 227L540 229L548 226L553 226L556 229L559 228L563 234L560 238L558 252ZM591 244L589 233L592 229L600 227L610 215L611 210L616 208L610 226L591 244ZM585 252L570 243L573 235L571 229L574 225L582 230L592 230L589 233L591 244L585 252ZM546 218L543 216L543 213L538 206L541 198L544 198L544 187L547 187L547 181L578 181L580 190L582 192L578 195L577 204L571 212L571 217L567 207L564 214L560 213L557 215L551 215L547 213L544 217L546 218ZM544 188L544 198L541 198L538 206L541 210L528 219L521 220L517 215L521 213L519 204L516 202L521 196L522 186L520 179L522 178L544 188ZM289 187L289 192L281 191L287 190L285 187L289 187ZM289 192L289 187L298 190L292 191L290 193L289 192ZM730 24L736 23L747 27L747 30L741 30L723 26L730 24ZM754 29L761 30L745 32L750 29L754 29ZM850 37L867 38L865 40L851 41L845 39L850 37ZM875 39L882 40L870 40L875 39ZM853 44L859 43L863 45L853 44ZM600 25L617 25L607 27L600 25ZM541 95L532 95L537 93L541 95ZM623 43L629 41L628 40L643 37L664 36L636 42L628 47L628 49L633 51L618 49L620 46L625 44L623 43ZM861 97L866 109L862 109L860 112L863 117L861 115L859 117L858 98L860 97L859 95L861 97ZM569 117L577 119L570 122L567 119L569 117ZM317 378L324 376L326 377L322 379L317 378ZM520 28L525 27L537 29L531 31L526 35L522 35L508 28L520 28ZM563 55L556 56L557 54L554 53L546 57L537 55L533 58L528 57L516 67L516 69L514 69L512 72L513 80L509 83L508 81L502 84L495 84L493 75L531 54L555 50L563 52L560 53L563 55ZM553 27L541 28L526 26L553 27ZM546 32L535 33L537 32L536 31L541 31L546 32ZM355 20L377 17L408 17L424 19L395 21L421 22L418 24L438 22L447 23L427 26L433 26L427 30L428 33L431 35L422 36L427 37L428 39L425 40L428 42L422 42L425 44L417 45L421 48L414 47L421 49L422 52L417 52L412 50L413 51L410 53L420 53L406 57L395 58L389 62L374 65L370 71L366 73L367 75L364 80L351 78L342 70L336 61L343 57L344 54L334 54L335 51L343 52L331 49L334 46L324 39L297 37L290 35L302 34L285 32L305 28L306 27L299 26L314 23L313 22L346 20L361 22L355 20ZM664 370L668 371L663 373L664 370ZM813 264L820 262L814 265L813 264ZM524 316L525 315L529 317L533 316L533 306L536 312L538 311L542 307L548 308L558 299L563 299L565 305L565 309L563 309L562 311L563 313L568 311L566 317L555 327L549 331L540 330L534 333L529 331L529 324L524 316ZM557 317L552 320L555 321L557 317ZM557 317L555 321L552 320L557 317ZM168 153L174 153L184 156L196 155L203 162L209 161L216 170L221 171L219 180L224 190L228 192L236 190L239 184L248 183L246 191L237 192L236 194L239 197L235 197L234 201L230 197L223 198L204 191L199 187L199 183L197 179L181 163L178 157L174 156L185 175L188 178L187 179L181 174L181 171L173 166L176 164L172 161L168 153ZM326 321L337 325L338 327L337 332L330 333L324 330L326 321ZM338 330L337 325L326 321L337 312L337 310L334 309L335 304L332 304L331 300L326 299L327 288L325 283L320 283L319 277L306 271L306 266L298 269L292 269L292 265L288 267L285 265L283 260L286 254L294 251L295 243L293 239L295 237L294 235L300 235L301 237L305 238L311 234L309 233L307 229L312 230L318 226L320 227L320 233L323 236L331 235L331 233L339 234L343 229L347 235L346 240L350 241L350 243L352 242L360 244L361 247L373 248L385 254L387 260L386 264L377 275L375 288L371 298L368 301L361 302L353 306L351 309L350 316L338 330ZM295 269L306 266L306 271L319 277L320 283L325 283L327 288L326 293L322 292L315 292L313 299L309 299L308 301L303 298L299 301L297 292L294 287L297 273L295 269ZM294 251L286 254L283 260L285 265L288 267L292 265L292 269L295 269L297 273L295 280L296 284L292 289L277 279L267 259L263 256L263 253L266 249L265 252L270 252L272 248L279 244L280 240L285 246L293 247L291 250L294 251ZM302 237L300 235L294 235L295 237L293 239L295 243L294 251L291 250L293 247L285 246L280 240L274 239L269 235L274 230L272 221L273 217L278 215L280 210L290 207L285 216L288 221L300 224L299 232L302 237ZM274 217L272 221L269 216L264 221L259 218L259 215L263 217L269 215L274 217ZM260 214L259 218L253 213L253 215L252 214L251 211L257 211L260 214ZM257 211L251 210L246 206L254 201L258 200L257 211ZM258 200L254 201L247 205L242 202L246 198L253 197L258 200ZM242 202L246 203L246 205L240 203L242 202ZM234 201L235 197L239 197L236 194L237 192L242 193L242 198L245 198L242 202L240 203L234 201ZM242 193L245 191L243 198L242 193ZM318 226L312 230L307 229L309 233L311 234L303 238L299 232L300 224L288 221L285 216L286 212L290 209L288 214L290 216L290 211L293 208L298 212L307 213L315 211L313 212L321 218L316 224L318 226ZM329 235L324 237L321 235L320 227L316 224L321 218L328 224L325 229L329 235ZM335 234L329 235L326 231L325 229L328 224L336 225L335 234ZM342 229L339 234L335 234L336 225L342 229ZM496 108L502 109L496 115L500 123L485 127L475 124L477 117L468 112L468 110L476 110L475 107L477 108L487 104L496 108ZM503 126L505 125L505 130L503 126ZM279 240L279 244L272 248L270 252L265 252L267 247L264 246L264 243L266 238L270 236L279 240ZM303 191L305 191L301 192L303 191ZM273 191L277 192L271 191L273 191ZM261 178L271 180L282 186L273 187L274 186L270 182L262 180L253 182L261 178ZM563 299L555 297L547 287L552 288L561 281L568 285L567 294L563 299ZM558 299L548 308L542 307L538 311L536 312L533 306L533 298L536 298L536 289L547 287L555 297L558 299ZM533 306L533 316L529 317L525 315L524 316L521 312L518 299L511 286L547 287L536 289L536 298L533 298L533 306ZM435 204L433 201L437 196L441 196L448 201L449 207L436 207L435 205L443 204L435 204ZM449 207L448 201L449 199L465 199L463 173L467 173L488 187L488 189L491 189L490 198L477 200L469 204L464 213L459 213L456 207L453 208L449 207ZM435 184L446 183L446 178L448 178L448 171L457 171L457 167L467 173L463 173L465 199L449 199L448 201L441 196L436 197L437 186L435 184ZM487 223L485 224L484 216L482 212L488 207L490 211L487 217L487 223ZM520 179L522 186L521 196L516 202L519 204L518 207L515 204L504 206L495 203L491 204L490 209L483 206L481 200L490 198L491 189L512 177L518 180L520 179ZM487 223L492 203L504 206L515 204L519 208L511 221L505 223L503 227L496 229L492 223L487 223ZM519 206L521 213L517 215L521 219L519 227L522 232L523 235L506 234L506 232L503 228L503 225L507 221L511 221L519 206ZM482 211L485 224L483 224L480 211L482 211ZM480 211L483 224L472 227L472 211L480 211ZM459 213L463 212L472 214L472 227L459 228L460 225L457 223L459 213ZM443 206L453 208L456 207L459 213L458 220L455 220L454 217L452 218L450 213L445 216L440 211L443 209L443 206ZM436 207L443 206L443 209L440 211L436 207ZM457 220L459 228L449 222L453 218L455 220L457 220ZM445 216L450 213L453 218L449 222L445 219L445 216ZM466 212L469 205L477 200L481 200L483 206L486 206L482 211L472 211L472 214L466 212ZM553 226L545 226L540 229L532 227L529 231L526 230L523 234L519 225L521 220L528 219L541 210L543 216L553 226ZM529 231L527 241L523 249L519 253L514 252L512 253L510 251L512 249L511 247L514 245L517 247L518 244L517 240L518 237L515 236L515 234L523 235L526 230L529 231ZM510 234L515 234L515 236L518 237L517 240L518 244L517 247L514 245L511 247L512 249L510 251L503 243L505 237L510 237L510 234ZM506 234L510 234L510 237L505 237L506 234ZM562 262L569 266L567 277L569 277L560 279L561 281L552 288L542 287L538 283L538 274L544 274L544 269L552 271L559 275L559 272L556 271L556 264L557 262L562 262ZM567 265L571 267L572 276L575 279L573 285L572 279L567 277L569 268L567 265ZM572 271L580 271L588 268L589 279L585 285L573 293L575 304L568 308L568 311L566 311L563 299L567 294L568 285L561 282L560 279L569 277L572 279L573 285L575 279L572 276L572 271ZM566 311L563 313L562 311L563 309L566 311ZM513 256L524 256L527 262L531 261L534 259L538 259L539 270L544 270L544 274L538 274L538 283L542 287L511 286L517 270L513 256ZM561 246L562 249L558 252L557 248L561 246ZM575 153L573 155L573 161L571 157L574 152L576 151L575 153ZM576 151L574 152L577 148L576 151ZM612 273L614 282L612 282L606 307L601 308L597 307L596 301L599 292L597 286L599 283L604 282L611 272L612 273ZM505 159L500 149L502 141L505 140L507 142L509 141L507 148L511 152L505 159ZM457 167L457 163L477 154L474 146L477 145L484 142L502 141L500 149L504 154L506 162L505 170L507 175L512 177L495 188L488 189L488 187L457 167ZM575 154L583 151L585 154L579 156L581 159L576 162L573 161L575 154ZM618 175L624 176L630 171L627 180L619 179L618 175ZM608 160L609 164L604 162L608 160ZM585 154L583 151L589 148L590 143L594 140L599 141L603 145L601 149L606 153L610 160L599 162L585 154ZM627 179L630 174L639 181L634 186L634 189L622 196L619 189L627 187L628 181L627 179ZM754 208L755 202L763 203L764 201L767 204L767 207L762 209L763 211L756 212L754 208ZM761 202L755 202L754 208L747 204L745 215L752 223L750 225L742 218L746 208L742 200L744 197L740 191L742 187L747 186L750 188L749 193L755 191L759 194L762 198L761 202ZM766 202L761 202L762 198L757 191L749 193L750 188L747 186L750 183L751 184L751 180L755 185L758 185L760 187L757 189L766 198L766 202ZM747 186L742 187L740 191L744 197L742 200L746 208L743 214L743 205L739 195L734 198L731 197L732 191L726 183L734 169L739 168L740 165L743 167L740 176L743 176L745 179L745 181L750 182L747 186ZM758 212L763 211L762 209L767 207L767 199L760 190L757 189L760 187L758 185L755 185L752 180L761 178L768 183L762 189L770 199L771 209L760 217L758 212ZM828 127L826 131L820 134L822 138L813 138L814 135L811 134L814 132L818 128L822 129L821 128L827 125L828 127ZM816 139L822 137L825 142L824 146L817 148L816 142L818 142L816 139ZM714 109L726 105L739 107L744 101L756 106L765 106L769 109L775 109L785 106L791 107L789 113L795 112L799 115L783 121L778 120L777 121L778 123L774 126L760 129L749 126L737 126L734 122L723 119L723 115L714 109ZM740 165L739 168L734 169L727 181L726 177L725 179L723 177L726 173L720 173L716 169L715 171L717 173L715 175L717 175L717 182L712 183L711 186L699 196L694 198L693 212L687 219L676 197L674 183L668 184L662 177L664 175L669 175L665 168L668 165L671 166L681 154L677 148L685 148L688 145L690 148L690 156L696 160L694 163L702 167L715 170L715 166L717 165L717 168L719 169L725 168L725 166L736 161L737 164L740 165ZM727 181L726 185L724 179L721 179L721 182L717 181L715 175L717 173L715 171L716 169L720 173L726 173L723 177L725 179L726 177L727 181ZM725 166L725 168L717 168L720 165L725 166ZM715 166L715 170L713 170L694 163L697 159L709 165L715 166ZM688 145L685 148L677 148L681 154L671 166L668 165L665 168L669 175L664 175L662 177L657 172L644 173L645 170L649 169L642 160L647 162L657 160L658 157L665 155L672 143L680 141L683 144L688 145ZM657 140L665 141L669 137L672 142L675 140L680 141L670 144L671 146L669 149L666 149L668 151L665 155L658 157L657 160L647 162L642 160L645 158L641 152L643 145L648 146L653 141L657 140ZM661 141L662 138L661 134L668 131L669 133L665 135L676 135L680 140L672 142L669 137L665 141L661 141ZM669 127L672 126L676 127L678 125L694 127L676 135L665 135L665 133L675 131L668 129L669 127ZM620 129L624 127L628 130L632 130L636 126L657 139L657 140L655 140L646 146L643 145L643 143L633 139L624 141L624 136L621 133L621 131L626 131L623 128L621 130L620 129ZM610 160L606 153L601 149L603 145L598 139L598 135L599 134L603 137L608 134L611 140L616 142L624 141L631 138L643 143L641 152L645 158L642 160L649 169L645 170L644 173L633 171L632 168L623 169L617 166L614 160L610 160ZM575 153L578 149L576 146L578 142L593 141L590 143L589 148L578 154L575 153ZM604 137L596 133L596 130L601 131L604 137ZM509 83L514 77L512 72L514 69L516 69L525 59L535 56L543 59L544 64L539 65L537 68L528 73L526 76L530 80L525 83L522 90L515 92L509 83ZM555 90L562 92L562 94L567 98L563 98L565 101L561 103L543 102L543 96L548 95L551 92L555 90ZM565 101L570 100L574 105L587 108L586 112L573 117L573 118L564 115L556 119L557 116L560 116L556 112L546 113L539 111L544 106L543 102L561 103L565 101ZM543 96L543 99L542 100L544 105L541 109L523 106L518 99L518 97L527 94L543 96ZM525 112L523 116L519 116L505 114L514 113L516 110L524 110L525 112ZM539 111L541 112L536 116L529 118L523 115L525 112L539 111ZM551 111L556 112L560 116L557 116L555 119L555 115L551 111ZM555 119L559 119L556 123L541 123L534 117L542 112L551 111L555 115L555 119ZM551 92L548 95L543 96L537 93L536 91L546 90L551 92ZM553 87L555 90L551 92L546 90L536 91L538 87L540 86L542 88L547 85L553 87ZM555 81L553 87L545 86L542 82L555 81ZM518 97L520 104L513 106L516 110L514 113L500 113L502 109L498 109L496 106L496 102L498 101L499 97L502 97L503 96L503 93L506 93L509 96L513 95L518 97ZM540 122L556 123L555 128L541 130L540 122ZM541 130L551 129L549 131L543 132L545 133L540 133L544 140L542 139L542 143L540 143L534 134L536 131L541 130ZM599 141L578 142L576 144L576 142L573 142L559 144L554 142L550 135L558 130L569 128L582 131L594 129L599 134L598 135L599 141ZM550 128L555 128L557 130L550 133L550 128ZM536 131L534 134L532 133L533 126L536 131ZM524 116L532 119L522 120L529 127L523 124L520 120L516 120L524 116ZM506 113L508 116L499 118L496 117L498 113L506 113ZM496 105L495 108L487 104L493 103L496 105ZM498 97L496 105L489 103L493 98L498 97ZM456 128L458 127L463 130L460 134L461 138L459 142L456 142L456 138L455 137L456 128ZM460 141L460 134L463 130L458 127L456 128L455 125L459 123L488 127L486 130L482 131L479 135L480 137L474 142L468 142L466 144L460 141ZM463 96L462 101L453 102L456 99L454 96L460 93L460 96L463 96ZM922 296L926 299L921 298L917 294L922 296ZM906 261L906 263L902 260L906 261ZM952 347L949 350L946 350L947 348L944 345L946 340L940 332L945 334L949 340L956 341L952 347ZM932 356L941 348L942 350L945 350L941 356L942 357L937 358L935 362L932 364L924 363L925 360L932 356ZM874 349L875 349L874 355L869 356L866 349L874 349ZM816 326L810 330L800 331L795 334L787 331L789 326L782 310L783 311L783 308L785 310L782 305L783 300L791 295L802 292L808 284L810 286L809 284L815 278L819 277L826 280L828 273L834 272L832 270L833 270L841 273L844 272L845 273L841 280L854 287L857 284L860 268L864 279L866 278L868 280L870 291L877 294L879 300L882 300L882 303L888 307L890 315L888 324L883 331L880 340L870 344L866 342L867 341L863 343L855 341L852 336L848 335L849 332L845 334L847 328L843 333L838 327L830 324L816 326ZM698 220L698 223L694 224L693 218L694 214L698 220ZM772 191L770 188L775 186L772 191ZM694 127L696 125L693 120L700 119L702 114L707 115L709 111L714 109L723 115L723 119L734 122L737 126L749 126L760 129L771 127L778 123L777 121L778 120L783 121L793 116L799 115L795 112L788 112L791 107L794 108L798 106L802 101L800 99L806 98L816 99L820 107L825 108L829 113L840 111L835 120L829 120L828 127L827 125L821 128L822 129L818 128L811 134L803 136L806 132L804 131L793 137L799 141L802 139L806 140L807 142L803 142L798 147L805 155L803 158L806 160L804 165L796 175L789 179L775 183L775 186L773 186L773 183L765 182L765 179L761 178L751 180L751 184L745 181L745 179L743 176L740 176L743 167L741 164L737 164L736 161L727 166L720 165L717 167L717 165L709 165L690 156L690 148L683 144L676 135L694 127ZM805 175L802 181L800 177L804 173L805 175ZM508 115L517 116L517 118L513 119L514 122L529 134L525 132L524 134L525 136L522 139L523 136L521 133L510 127L507 123L504 122L500 123L498 117L508 115ZM519 138L521 138L520 142L513 140L519 138ZM503 131L506 132L506 136L503 136L502 131L503 131ZM506 93L503 93L502 89L508 86L507 88L509 89L506 92L506 93ZM463 96L460 96L460 93L465 95L463 96ZM472 98L467 91L465 93L464 89L467 84L472 84L469 87L475 86L472 91L474 91L481 99L484 99L484 103L465 106L471 103L466 101L469 101L468 97L472 98ZM441 63L441 65L444 66L430 71L419 69L422 68L416 67L421 66L415 65L421 63L425 65L441 63ZM604 128L608 130L610 129L614 133L612 133L610 138L608 134L604 137L602 134L600 130L604 130L604 128ZM587 124L601 127L604 130L591 129L591 126L587 124ZM807 213L811 210L808 216L807 213ZM817 218L817 221L817 223L816 221L814 222L814 225L811 224L810 219L805 221L809 217L810 218L815 216L814 214L817 218ZM796 215L792 218L799 210L799 212L796 215ZM806 191L805 202L811 203L811 207L808 204L802 203L803 201L800 199L802 191L806 191ZM815 208L815 211L813 210L813 213L811 207L815 208ZM747 223L755 225L758 237L750 233L747 223ZM794 229L789 229L786 236L775 238L773 236L772 235L776 235L777 233L781 232L785 228L788 228L791 222L798 226L794 229ZM517 116L524 116L521 119L517 119L517 116ZM556 56L556 58L560 59L557 61L561 65L559 67L561 69L560 71L564 72L563 74L555 79L541 80L537 78L537 71L548 66L543 63L543 59L535 56L546 57L554 53L557 54L556 56ZM540 109L538 111L528 113L525 111L529 108L540 109ZM520 104L530 108L525 110L518 111L513 108L513 106L520 104ZM577 202L578 195L582 192L585 198L595 206L593 207L587 201L581 200L580 202L577 202ZM858 136L854 146L846 148L842 151L840 148L829 150L832 152L830 156L827 156L828 154L825 151L834 146L842 145L845 141L846 142L852 138L854 130L857 130L858 136ZM866 123L868 122L868 125L862 128L858 126L856 129L853 129L853 126L857 124L859 119L866 123ZM833 151L837 148L839 150L835 153L833 151ZM325 294L326 299L331 300L332 304L335 304L334 311L331 313L324 312L326 307L313 299L315 292L322 292L325 294ZM619 189L622 196L619 198L596 206L594 199L596 193L605 195L611 190L619 189ZM573 162L580 160L581 159L579 156L585 154L599 162L607 163L614 169L619 179L627 179L628 181L627 187L611 190L605 195L596 193L594 196L584 183L583 177L572 165L573 162ZM474 146L477 154L457 163L457 168L450 168L441 183L435 183L441 170L454 160L454 157L457 151L462 149L464 145L474 146ZM578 181L547 181L547 156L557 158L563 156L565 158L571 157L573 161L571 166L566 161L575 176L575 178L578 181ZM547 181L547 187L544 188L522 178L518 180L507 175L505 170L507 156L511 152L521 154L522 156L531 159L536 153L546 155L547 181ZM607 219L600 227L585 231L576 228L568 219L570 218L571 212L577 202L580 202L581 200L591 204L593 207L591 211L594 211L596 216L607 219ZM593 207L596 207L594 211L591 211L593 207ZM611 210L610 215L607 219L596 216L593 212L595 209L598 212L611 210ZM570 243L559 244L563 230L571 229L572 231L573 235L570 243ZM561 243L562 246L557 248L558 244L561 243ZM529 126L524 123L523 119L532 120L532 124L529 126ZM540 127L541 130L535 130L535 128L540 127ZM530 118L534 117L541 121L540 127L538 127L536 125L534 126L531 124L530 118ZM534 126L532 128L529 127L531 124L534 126ZM535 128L534 126L535 125L538 126L535 128ZM562 231L559 228L555 228L544 217L549 212L551 215L557 215L560 213L564 214L566 210L566 208L569 208L571 217L568 219L574 225L569 230L562 231Z","centroids":{"Canada":[238.0,89.6],"Kenya":[580.9,237.0],"Norway":[528.2,63.4],"Mexico":[205.0,176.3],"Colombia":[286.3,228.0],"Panama":[265.8,217.3],"Honduras":[249.8,200.7],"France":[488.8,114.7],"Puerto Rico":[302.8,191.5],"Cuba":[267.4,182.1],"Israel":[573.8,154.5],"Jordan":[577.7,157.0],"United Arab Emirates":[624.6,175.5],"Qatar":[616.4,172.6],"Kuwait":[607.3,161.8],"Thailand":[748.4,204.9],"South Korea":[819.9,142.1],"Sweden":[524.2,72.7],"Poland":[531.9,102.0],"Austria":[516.0,112.9],"Hungary":[531.3,113.4],"Romania":[547.2,117.7],"Lithuania":[544.0,92.8],"Latvia":[546.5,88.4],"Estonia":[549.1,83.7],"Germany":[508.5,103.9],"Bulgaria":[545.8,125.6],"Greece":[541.7,133.9],"Turkey":[578.0,137.6],"Croatia":[523.7,120.3],"Switzerland":[502.2,115.2],"Belgium":[492.2,105.0],"Netherlands":[495.1,100.9],"Portugal":[458.6,134.0],"Spain":[468.1,132.9],"Ireland":[459.4,97.2],"New Zealand":[947.9,341.9],"Australia":[835.3,303.5],"Italy":[513.7,125.1],"Denmark":[505.7,89.9],"United Kingdom":[471.8,96.3],"Iceland":[428.6,65.9],"Georgia":[259.5,153.7],"Philippines":[804.8,199.0],"Slovenia":[520.0,117.0],"Finland":[548.7,65.4],"Slovakia":[531.6,110.0],"Czechia":[522.3,107.3],"Japan":[842.7,144.7],"Djibouti":[593.4,208.5],"Alabama":[248.7,155.2],"Alaska":[74.7,69.3],"Arizona":[176.8,148.0],"Colorado":[198.3,136.2],"Florida":[259.3,164.5],"Indiana":[248.7,136.6],"Kansas":[222.6,135.9],"Maine":[296.0,120.5],"Massachusetts":[290.8,127.9],"Minnesota":[231.0,114.8],"New Jersey":[280.5,133.2],"North Carolina":[271.5,145.2],"North Dakota":[217.6,113.2],"Oklahoma":[220.2,148.1],"Pennsylvania":[276.7,130.7],"South Dakota":[218.2,123.4],"Texas":[217.3,159.8],"Wyoming":[191.1,124.3],"Connecticut":[286.0,129.5],"Missouri":[235.3,137.5],"West Virginia":[265.5,136.6],"Illinois":[241.4,135.1],"New Mexico":[197.4,148.4],"Arkansas":[236.6,147.8],"California":[159.3,142.2],"Delaware":[278.8,135.2],"District of Columbia":[274.6,136.3],"Hawaii":[65.3,187.7],"Iowa":[230.3,128.3],"Kentucky":[251.6,139.2],"Maryland":[275.4,136.4],"Michigan":[248.6,116.6],"Mississippi":[238.4,153.0],"Montana":[179.3,117.3],"New Hampshire":[288.9,123.0],"New York":[279.8,126.4],"Ohio":[260.3,133.8],"Oregon":[157.3,120.8],"Tennessee":[249.3,144.3],"Utah":[182.4,134.6],"Virginia":[270.5,139.4],"Washington":[153.5,113.8],"Wisconsin":[240.7,120.0],"American Samoa":[24.8,278.1],"Guam":[866.0,204.1],"Commonwealth of the Northern Mariana Islands":[868.7,199.5],"Nebraska":[220.9,128.8],"South Carolina":[263.6,150.8],"United States Virgin Islands":[306.8,191.1],"Idaho":[174.3,118.8],"Nevada":[171.0,138.8],"Vermont":[286.4,122.6],"Louisiana":[237.0,158.7],"Rhode Island":[289.3,129.0]}};
+
+  function classOf(name) {
+    for (var i = 0; i < JOBS.length; i++) {
+      for (var c = 0; c < REGION_CLASSES.length; c++) {
+        if (regionsOf(JOBS[i], REGION_CLASSES[c]).indexOf(name) !== -1) return REGION_CLASSES[c];
+      }
+    }
+    return null;
+  }
+
+  function placeCounts() {
+    var counts = {};
+    JOBS.forEach(function (job) {
+      if (!matches(job, "region")) return;
+      var seen = {};
+      REGION_CLASSES.forEach(function (cls) {
+        regionsOf(job, cls).forEach(function (name) {
+          if (seen[name]) return;
+          seen[name] = true;
+          counts[name] = (counts[name] || 0) + 1;
+        });
+      });
+    });
+    return counts;
+  }
+
+  // Classes the map switched on by itself, so it can switch them off again.
+  // Without this, clicking Florida and then unclicking it leaves CONUS on and
+  // the board still filtered to 545 of 713 with nothing the reader asked for.
+  var mapAdded = {};
+
+  // How many places each group shows before it asks to be opened. Thirty-four
+  // pills in one run is eleven rows on a phone and reads as a wall.
+  var PLACES_SHOWN = 10;
+  var placesOpen = {};
+
+  function togglePlace(name) {
+    if (selected.region.has(name)) {
+      selected.region.delete(name);
+      Object.keys(mapAdded).forEach(function (cls) {
+        var kept = false;
+        selected.region.forEach(function (other) { if (classOf(other) === cls) kept = true; });
+        if (!kept) { selected.location.delete(cls); delete mapAdded[cls]; }
+      });
+    } else {
+      var cls = classOf(name);
+      if (cls && !selected.location.has(cls)) {   // the parent the filter model expects
+        selected.location.add(cls);
+        mapAdded[cls] = true;
+      }
+      selected.region.add(name);
+    }
+    render();
+  }
+
+  function renderMap() {
+    var host = document.getElementById("mm-map-svg");
+    if (!host) return;
+    var counts = placeCounts();
+    var names = Object.keys(counts).filter(function (n) { return WORLD.centroids[n]; })
+      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
+    var top = names.length ? counts[names[0]] : 0;
+
+    var sub = document.getElementById("mm-map-sub");
+    if (sub) sub.textContent = names.length ? names.length + " places" : "";
+
+    // A world map on a phone is a thin strip: at 430px the drawing is about a
+    // third of its desktop size, and a circle worth three units of the viewBox
+    // lands under two painted pixels. Grow the marks as the map shrinks so the
+    // clusters still read; the land keeps its own scale.
+    var width = host.getBoundingClientRect().width || 960;
+    var boost = Math.min(1.9, Math.max(1, 820 / width));
+
+    var bubbles = names.map(function (name) {
+      var c = WORLD.centroids[name];
+      // Area in proportion to the count, so a big number does not read as a
+      // wildly bigger circle than it is.
+      var r = (3 + Math.sqrt(top ? counts[name] / top : 0) * 16) * boost;
+      return '<circle class="mm-bub' + (selected.region.has(name) ? " is-on" : "") + '" cx="' + c[0] +
+             '" cy="' + c[1] + '" r="' + r.toFixed(1) + '" tabindex="0" role="button" data-place="' +
+             esc(name) + '" aria-pressed="' + (selected.region.has(name) ? "true" : "false") +
+             '"><title>' + esc(name) + " — " + counts[name] + " job" + (counts[name] === 1 ? "" : "s") +
+             "</title></circle>";
+    }).join("");
+
+    host.innerHTML = '<svg viewBox="' + WORLD.vb.join(" ") + '" role="img" aria-label="Jobs by place">' +
+      '<path class="mm-land" d="' + WORLD.land + '"/>' + bubbles + "</svg>";
+
+    Array.prototype.forEach.call(host.querySelectorAll("[data-place]"), function (el) {
+      el.addEventListener("click", function () { togglePlace(el.getAttribute("data-place")); });
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); togglePlace(el.getAttribute("data-place")); }
+      });
+    });
+
+    var fig = document.getElementById("mm-map-fig");
+    if (fig) fig.classList.toggle("is-picked", selected.region.size > 0);
+    var key = document.getElementById("mm-map-key");
+    if (key) {
+      key.textContent = names.length
+        ? "Each circle is a place, sized by how many postings are open there. Pick one on the map or below to filter the board."
+        : "No posting on the board names a place that can be put on a map.";
+    }
+
+    // The same places as buttons, split the way the Location filter splits
+    // them. A circle is a small target on a phone, and a place the basemap
+    // cannot draw would otherwise be unreachable.
+    var list = document.getElementById("mm-map-places");
+    if (!list) return;
+    list.innerHTML = "";
+    var byClass = {};
+    Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); })
+      .forEach(function (name) {
+        var cls = classOf(name) || "oconus";
+        (byClass[cls] = byClass[cls] || []).push(name);
+      });
+
+    REGION_CLASSES.forEach(function (cls) {
+      var group = byClass[cls];
+      if (!group || !group.length) return;
+      // A picked place stays in the visible run, so collapsing the list never
+      // hides the filter that is currently doing the work.
+      group.sort(function (a, b) {
+        var pa = selected.region.has(a) ? 1 : 0, pb = selected.region.has(b) ? 1 : 0;
+        return pb - pa || counts[b] - counts[a] || a.localeCompare(b);
+      });
+      var shown = placesOpen[cls] ? group.length : Math.min(group.length, PLACES_SHOWN);
+
+      var head = document.createElement("div");
+      head.className = "mm-phead";
+      head.innerHTML = esc(LOCATION_LABELS[cls] || cls) +
+        ' <span class="mm-pnote">' + group.length + (group.length === 1 ? " place" : " places") + "</span>";
+      if (group.length > PLACES_SHOWN) {
+        var more = document.createElement("button");
+        more.type = "button";
+        more.className = "mm-pmore";
+        more.textContent = placesOpen[cls] ? "Show fewer" : "Show all " + group.length;
+        more.addEventListener("click", function () { placesOpen[cls] = !placesOpen[cls]; renderMap(); });
+        head.appendChild(more);
+      }
+
+      var row = document.createElement("div");
+      row.className = "mm-places";
+      group.slice(0, shown).forEach(function (name) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "mm-place";
+        btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
+        btn.innerHTML = esc(name) + ' <span class="mm-n">' + counts[name] + "</span>";
+        btn.addEventListener("click", function () { togglePlace(name); });
+        row.appendChild(btn);
+      });
+
+      var box = document.createElement("div");
+      box.className = "mm-pgroup";
+      box.appendChild(head);
+      box.appendChild(row);
+      list.appendChild(box);
+    });
   }
 
   function renderDefinitions() {
@@ -738,6 +1716,8 @@
     selected.discipline.clear();
     selected.branch.clear();
     selected.location.clear();
+    selected.region.clear();
+    mapAdded = {};
     els.q.value = "";
     els.salary.value = "0";
     els.hideContingent.checked = false;
@@ -747,8 +1727,9 @@
 
   function bind() {
     [els.q, els.salary].forEach(function (el) { el.addEventListener("input", render); });
-    [els.hideContingent, els.noPay].forEach(function (el) { el.addEventListener("change", render); });
+    [els.hideContingent, els.noPay, els.showMwr].forEach(function (el) { el.addEventListener("change", render); });
     els.clear.addEventListener("click", clearAll);
+    bindFacets();
   }
 
   skeleton();

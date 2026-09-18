@@ -55,6 +55,29 @@ class JobPosting:
     description: str = ""
     posted_at: datetime | None = None
     remote: bool = False
+    telework: bool = False
+    """Whether the posting offers telework. Deliberately separate from
+    ``remote``: a telework-eligible job still has a duty station.
+
+    This is a FIELD rather than something re-derived downstream because the
+    evidence does not survive the trip. USAJOBS appends "Telework eligible:"
+    to the END of the description, and the published board stores a ~400
+    character excerpt -- so anything re-reading that excerpt sees a posting
+    with no telework language at all and quietly answers False. Decided once,
+    where the whole posting is in hand, then carried like ``remote``.
+    """
+    contingency: str = ""
+    """``"contingent"``, ``"funded"``, ``"unknown"``, or empty when undecided.
+
+    A FIELD for the same reason as ``telework``: the evidence does not survive
+    the trip. Employers put "This is a contingent posting" near the END of a
+    long description -- GDIT's sits about 5,000 characters into a 7,915
+    character body -- and the published board stores a ~400 character excerpt.
+    Anything re-deriving this from that excerpt sees no contingency language
+    and quietly answers "unknown", which is what silently un-flagged 27
+    contingent postings and let them through the board's "hide contingent"
+    filter. Decided once, where the whole posting is in hand, then carried.
+    """
     department: str | None = None
     compensation: str | None = None
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
@@ -128,6 +151,8 @@ class JobPosting:
             "employer": self.employer,
             "location": self.location,
             "remote": self.remote,
+            "telework": self.telework,
+            "contingency": self.contingency,
             "department": self.department,
             "compensation": self.compensation,
             "posted_at": self.posted_at_iso,
