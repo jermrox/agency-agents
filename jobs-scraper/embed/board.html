@@ -547,6 +547,60 @@
     #mm-jobs .mm-empty svg { color: var(--mm-border); }
     #mm-jobs .mm-empty .mm-clear { background: var(--mm-card); }
 
+
+    /* ---- map ------------------------------------------------------------
+       A state is shaded by how many postings sit in it and clicking one
+       filters the board, so the map is a control rather than decoration.
+       The geometry is baked in (Albers, Alaska and Hawaii as insets) and
+       nothing is fetched at runtime. */
+    #mm-jobs .mm-map { margin-top: 2rem !important; }
+    #mm-jobs .mm-map-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: .75rem; flex-wrap: wrap; margin-bottom: .6rem !important;
+    }
+    #mm-jobs .mm-map-title {
+      font-family: var(--mm-font-display); font-weight: 500; font-size: 1.05rem !important;
+      line-height: 1.3 !important; margin: 0 !important;
+    }
+    #mm-jobs .mm-map-hint { font-size: .8125rem !important; color: var(--mm-muted); line-height: 1.4 !important; }
+    #mm-jobs .mm-map-wrap {
+      background: var(--mm-card); border: 1px solid var(--mm-border);
+      border-radius: var(--mm-radius); padding: .75rem !important;
+    }
+    #mm-jobs .mm-map svg { width: 100%; height: auto; display: block; overflow: visible; }
+    #mm-jobs .mm-st { fill: var(--mm-card-2); stroke: var(--mm-border); stroke-width: 1; }
+    #mm-jobs .mm-st.is-live { cursor: pointer; }
+    #mm-jobs .mm-st.is-live:hover { stroke: var(--mm-accent); stroke-width: 1.6; }
+    #mm-jobs .mm-st.is-on { stroke: var(--mm-accent-text); stroke-width: 2; }
+    /* Sized in viewBox units, so the number has to grow as the map shrinks:
+       13 units read fine on a desktop and come out under 7 real pixels on a
+       phone. */
+    #mm-jobs .mm-st-lab {
+      font-family: var(--mm-font); font-size: 15px; font-weight: 600;
+      text-anchor: middle; pointer-events: none; fill: var(--mm-accent-ink);
+    }
+    @media (max-width: 640px) { #mm-jobs .mm-st-lab { font-size: 26px; } }
+    #mm-jobs .mm-st-lab.is-faint { fill: var(--mm-muted); font-weight: 500; }
+    #mm-jobs .mm-map-legend {
+      display: flex; align-items: center; gap: .4rem; flex-wrap: wrap;
+      margin-top: .6rem !important; font-size: .75rem !important; color: var(--mm-muted);
+    }
+    #mm-jobs .mm-map-key { width: 14px; height: 10px; border-radius: 2px; border: 1px solid var(--mm-border); }
+    #mm-jobs .mm-oconus { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem !important; }
+    #mm-jobs .mm-oconus-tile {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 1px solid var(--mm-border); background: var(--mm-card-2);
+      border-radius: 8px !important; padding: .45rem .7rem !important;
+      font-family: var(--mm-font); font-size: .8125rem !important; line-height: 1.3 !important;
+      color: var(--mm-ink); cursor: pointer; min-height: 2.25rem !important;
+      margin: 0 !important; box-shadow: none !important;
+    }
+    @media (pointer: coarse) { #mm-jobs .mm-oconus-tile { min-height: 2.75rem !important; } }
+    #mm-jobs .mm-oconus-tile[aria-pressed="true"] {
+      background: var(--mm-accent); border-color: var(--mm-accent); color: var(--mm-accent-ink); font-weight: 600;
+    }
+    #mm-jobs .mm-oconus-tile .mm-n { opacity: .7; font-variant-numeric: tabular-nums; font-size: .75rem; }
+
     #mm-jobs .mm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   </style>
 
@@ -559,16 +613,16 @@
   <div class="mm-filters" role="region" aria-label="Filter jobs">
     <div class="mm-group">
       <div class="mm-ddrow">
-        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Discipline</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="discipline" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Specialty</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
         <button type="button" class="mm-dd-btn" data-dd="branch" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Organization</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
-        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">Location</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
+        <button type="button" class="mm-dd-btn" data-dd="location" aria-expanded="false" aria-controls="mm-ddpanel"><span class="mm-dd-main"><span class="mm-dd-ico" aria-hidden="true"></span><span class="mm-dd-lab">State</span></span><span class="mm-dd-car" aria-hidden="true"><svg class="mm-car-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><svg class="mm-car-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span></button>
       </div>
 
       <div class="mm-ddpanel" id="mm-ddpanel">
         <div class="mm-ddinner">
           <div class="mm-ddbox">
         <div class="mm-ddsec" data-sec="discipline" hidden>
-          <div class="mm-ddhead"><span>Discipline</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
+          <div class="mm-ddhead"><span>Specialty</span><button type="button" class="mm-ddclear" data-clear="discipline" hidden>Clear</button></div>
           <div class="mm-opts" id="mm-f-discipline" role="group" aria-label="Discipline"></div>
         </div>
         <div class="mm-ddsec" data-sec="branch" hidden>
@@ -577,8 +631,8 @@
           <div class="mm-opts" id="mm-f-branch" role="group" aria-label="Organization"></div>
         </div>
         <div class="mm-ddsec" data-sec="location" hidden>
-          <div class="mm-ddhead"><span>Location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
-          <p class="mm-ddnote">CONUS = the 48 contiguous states. Alaska, Hawaii and overseas are OCONUS. Pick one to narrow by state or country.</p>
+          <div class="mm-ddhead"><span>State and location</span><button type="button" class="mm-ddclear" data-clear="location" hidden>Clear</button></div>
+          <p class="mm-ddnote">Pick a state or country directly, or narrow by where the work sits: CONUS = the 48 contiguous states, with Alaska, Hawaii and overseas as OCONUS.</p>
           <div class="mm-opts" id="mm-f-location" role="group" aria-label="Location"></div>
           <div class="mm-sublevel" id="mm-f-region" hidden></div>
         </div>
@@ -631,6 +685,18 @@
 
   <ul class="mm-list" id="mm-list"></ul>
   <p class="mm-sr" role="status" aria-live="polite" id="mm-live"></p>
+
+  <section class="mm-map" aria-labelledby="mm-map-title">
+    <div class="mm-map-head">
+      <p class="mm-map-title" id="mm-map-title">Where the work is</p>
+      <p class="mm-map-hint">Tap a state to filter the list above.</p>
+    </div>
+    <div class="mm-map-wrap">
+      <div id="mm-map-svg"></div>
+      <div class="mm-map-legend" id="mm-map-legend"></div>
+      <div class="mm-oconus" id="mm-map-oconus" role="group" aria-label="Outside the United States"></div>
+    </div>
+  </section>
 
   <details class="mm-why">
     <summary>
@@ -747,7 +813,7 @@
   // countries -- "state" would be wrong for Germany and "country" wrong for
   // Hawaii.
   var REGION_CLASSES = ["conus", "oconus"];
-  var REGION_LEGENDS = { conus: "Narrow by state", oconus: "Narrow by region" };
+  var REGION_LEGENDS = { conus: "By state", oconus: "By country or region" };
 
   var UNATTRIBUTED = "none";
   var BRANCH_ORDER = ["army", "navy", "air-force", "marine-corps", "space-force", "coast-guard", "joint", UNATTRIBUTED];
@@ -895,12 +961,11 @@
     // the parent pill from "CONUS 125" to "CONUS 45", which reads as jobs
     // disappearing rather than as a narrowing the user just asked for.
     if (ignore !== "region" && ignore !== "location" && selected.region.size) {
-      // Only regions sitting under a selected class count. Without that guard a
-      // requisition covering "TX; JP" would answer a Japan filter through its
-      // Texas half once the user had narrowed to CONUS.
+      // States and countries stand on their own now. They used to be reachable
+      // only under a selected CONUS or OCONUS pill, which meant picking a state
+      // took two steps and the map below could not drive the filter at all.
       var regions = f.location_regions || {};
       var hitRegion = REGION_CLASSES.some(function (cls) {
-        if (!selected.location.has(cls)) return false;
         return (regions[cls] || []).some(function (r) { return selected.region.has(r); });
       });
       if (!hitRegion) return false;
@@ -1024,24 +1089,22 @@
   }
 
   function pruneRegions() {
-    // A region is only reachable while its parent pill is on. Deselecting
-    // OCONUS has to take Germany with it, or the board would go on filtering by
-    // a country the user can no longer see or switch off.
+    // Kept as a hook, now a near no-op: a state or country is selectable in its
+    // own right, so nothing can strand a selection behind a parent pill. The
+    // only stale case left is a region that has left the feed entirely.
     if (!selected.region.size) return;
-    var reachable = {};
+    var present = {};
     REGION_CLASSES.forEach(function (cls) {
-      if (!selected.location.has(cls)) return;
-      regionOptions(cls).forEach(function (name) { reachable[name] = true; });
+      regionOptions(cls).forEach(function (name) { present[name] = true; });
     });
     var stale = [];
-    selected.region.forEach(function (name) { if (!reachable[name]) stale.push(name); });
+    selected.region.forEach(function (name) { if (!present[name]) stale.push(name); });
     stale.forEach(function (name) { selected.region.delete(name); });
   }
 
   function renderRegionFilters() {
     els.region.innerHTML = "";
     var groups = REGION_CLASSES
-      .filter(function (cls) { return selected.location.has(cls); })
       .map(function (cls) { return { cls: cls, names: regionOptions(cls) }; })
       .filter(function (g) { return g.names.length; });
 
@@ -1226,7 +1289,7 @@
   }
 
   function renderFacetButtons() {
-    var names = { discipline: "Discipline", branch: "Organization", location: "Location" };
+    var names = { discipline: "Specialty", branch: "Organization", location: "State" };
     Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-dd-btn"), function (b) {
       var group = b.dataset.dd;
       var picks = facetSelections(group);
@@ -1414,6 +1477,7 @@
     var mwr = JOBS.filter(isMwr).length;
     if (!els.showMwr.checked && mwr) msg += " · " + mwr + " MWR hidden";
     els.count.innerHTML = msg;
+    renderMap();
     els.live.textContent = shown.length + " jobs shown";
     liveCtas();
   }
@@ -1429,6 +1493,106 @@
       entries.forEach(function (e) { e.target.classList.toggle("is-live", e.isIntersecting); });
     }, { rootMargin: "80px" });
     Array.prototype.forEach.call(document.querySelectorAll("#mm-jobs .mm-apply"), function (a) { ctaObserver.observe(a); });
+  }
+
+
+  // ---- map ------------------------------------------------------------
+  // Geometry baked in at build time: us-atlas states, Albers conic equal
+  // area, Alaska and Hawaii projected separately and placed as insets.
+  // Guam, the Marianas and Puerto Rico are left out; no posting has been in
+  // any of them, and projected with the lower 48 they land off the map.
+  var US_MAP = {"vb":[8.0,8.0,731.0,492.5],"paths":{"Alabama":"M491.2 297.2L527.8 293.9L537.8 330.0L543.3 340.1L540.5 347.8L544.2 362.2L505.9 366.2L509.2 371.6L508.9 378.0L501.1 380.1L504.7 378.6L500.3 372.2L498.9 378.6L495.0 378.0L491.7 351.6L492.8 298.9L491.2 297.2Z","Alaska":"M28.2 393.5L34.4 391.3L35.5 391.6L34.9 393.4L39.1 393.4L37.1 390.8L38.3 392.5L38.7 390.7L35.8 389.6L32.3 384.4L33.5 382.7L37.2 382.4L40.0 378.5L46.9 375.6L47.5 377.5L48.7 376.4L52.5 379.1L61.3 380.3L63.3 379.4L66.4 380.7L72.0 414.3L75.4 413.5L79.3 418.2L82.7 414.3L92.1 423.4L96.4 424.4L96.6 429.2L94.0 425.2L94.9 428.0L93.2 425.8L92.6 427.2L92.4 424.9L91.3 426.0L91.6 424.1L82.6 415.8L84.5 419.6L81.7 417.3L80.3 417.7L82.4 419.4L81.4 420.3L74.6 416.7L74.8 414.8L73.7 416.3L71.1 415.0L65.8 417.1L66.7 416.1L65.0 414.8L61.9 415.8L63.4 414.4L61.5 413.8L62.4 412.5L59.2 414.0L59.8 412.2L58.6 414.0L59.8 416.9L57.1 417.6L57.0 416.5L55.3 419.5L55.4 418.5L52.8 420.2L54.2 417.9L52.6 418.0L53.4 414.5L55.2 413.3L57.6 413.9L55.7 412.8L56.4 411.5L48.4 419.4L50.0 421.3L48.1 423.8L39.5 429.5L39.2 431.1L33.2 432.7L32.8 431.7L31.4 433.5L29.1 433.1L29.1 434.7L25.4 435.0L26.2 433.2L28.6 433.8L32.3 430.7L35.3 431.5L35.5 429.6L41.4 425.8L43.0 420.5L40.7 421.6L40.1 420.1L39.2 422.3L36.8 419.5L33.8 421.0L33.6 415.0L30.6 415.8L28.5 412.8L29.7 410.9L28.3 407.9L32.0 403.4L34.1 404.4L35.6 402.9L37.5 403.2L37.4 399.8L38.7 398.9L35.3 399.9L34.9 398.6L30.2 397.9L30.6 395.4L28.2 393.5ZM46.9 426.6L49.4 424.5L51.9 425.2L48.4 428.9L48.7 427.4L47.7 428.6L46.9 426.6ZM89.0 426.8L89.9 425.2L93.9 430.2L91.0 428.9L92.1 430.7L89.0 426.8ZM86.9 424.0L89.3 422.8L90.8 423.9L88.6 424.7L88.3 426.8L86.9 424.0ZM84.5 418.8L87.3 420.9L86.3 420.2L87.5 421.9L86.6 423.4L84.5 418.8ZM18.0 437.4L20.5 436.7L20.2 435.6L22.1 436.4L18.0 437.4Z","Arizona":"M110.7 314.9L114.7 313.5L112.6 304.8L116.3 301.1L117.4 294.6L124.2 290.1L119.3 278.1L121.8 256.9L127.3 257.0L129.9 259.6L134.4 243.0L202.4 254.3L188.7 352.6L159.1 348.1L108.6 318.5L110.7 314.9Z","Colorado":"M212.0 184.8L302.5 193.8L298.1 264.1L202.4 254.3L212.0 184.8Z","Florida":"M544.2 362.2L546.9 367.0L586.4 364.3L587.5 367.8L589.5 367.3L589.6 359.2L597.7 360.3L602.5 375.1L616.2 394.6L617.7 402.9L629.6 423.7L631.0 441.4L628.7 450.3L631.1 446.4L625.2 457.6L627.8 452.1L616.8 454.3L613.1 445.8L606.4 443.9L602.3 435.3L598.3 434.1L597.6 426.0L595.2 430.4L585.9 417.5L590.1 410.5L588.1 411.8L585.6 409.0L587.6 412.4L585.9 416.2L583.5 412.1L583.5 393.9L581.2 390.0L577.4 390.8L566.9 378.9L557.1 376.5L556.4 380.0L545.0 384.6L546.9 386.0L551.4 383.0L546.4 386.7L541.7 386.0L540.0 381.1L526.3 375.3L508.1 378.5L510.2 375.6L505.9 366.2L544.2 362.2ZM607.8 466.0L613.0 461.0L616.5 462.8L607.8 466.0ZM595.3 430.8L599.9 434.4L596.9 434.2L595.3 430.8Z","Georgia":"M527.8 293.9L562.7 289.4L560.2 295.3L567.2 298.0L573.1 306.6L590.6 320.5L598.5 335.2L602.6 336.1L598.3 342.2L596.0 355.6L597.4 360.1L589.6 359.2L589.5 367.3L587.5 367.8L586.4 364.3L546.1 366.4L540.5 347.8L543.3 340.1L537.8 330.0L527.8 293.9Z","Indiana":"M490.3 179.1L494.3 180.2L499.2 177.3L525.0 174.6L531.3 224.9L522.7 228.7L523.5 231.6L516.1 242.6L511.2 239.1L508.3 245.5L505.2 243.2L501.8 247.1L495.1 244.4L494.9 247.0L491.0 245.6L490.7 248.3L488.4 246.2L489.4 240.0L495.3 230.9L492.7 223.6L490.3 179.1Z","Kansas":"M301.4 211.3L390.4 213.8L395.4 215.7L396.2 218.5L393.1 222.0L400.0 228.6L400.2 266.5L298.1 264.1L301.4 211.3Z","Maine":"M697.0 118.0L692.1 113.5L682.3 81.4L685.3 81.9L685.3 78.4L687.3 78.7L685.6 76.8L689.3 69.0L688.6 54.6L693.7 39.4L698.8 43.0L705.6 37.8L712.1 41.1L718.9 64.2L723.4 64.1L724.6 69.7L729.1 70.5L733.0 75.6L730.8 80.1L728.7 79.4L727.7 83.8L725.1 82.8L722.9 87.5L721.0 87.0L721.6 89.5L719.1 90.0L717.3 87.3L718.0 94.8L713.4 87.4L711.1 89.2L712.4 97.1L700.7 105.9L697.0 118.0ZM713.3 94.3L714.4 92.7L715.6 94.4L713.3 94.3Z","Massachusetts":"M667.0 131.5L691.6 126.1L696.5 121.6L700.2 124.4L696.9 132.2L700.8 132.5L706.7 139.2L711.4 137.1L707.4 133.1L710.2 133.4L713.0 141.1L712.3 139.1L708.0 140.8L701.6 146.7L704.3 140.4L699.1 145.8L693.4 137.8L667.1 143.9L667.0 131.5ZM710.5 146.1L713.4 144.2L714.7 146.0L710.5 146.1Z","Minnesota":"M367.1 57.1L391.0 57.2L390.9 50.6L393.2 50.8L397.0 61.5L406.9 65.2L416.2 63.1L420.4 64.4L423.7 69.8L427.2 67.3L433.1 72.5L441.0 68.6L442.6 71.1L457.5 71.6L443.3 79.2L427.9 94.4L428.9 95.8L425.6 96.7L426.0 106.9L419.3 113.2L422.2 118.0L420.8 130.4L438.0 142.5L441.2 151.1L375.5 152.6L375.6 121.2L370.8 115.8L374.4 108.0L367.1 57.1Z","New Jersey":"M650.3 191.3L659.2 180.0L651.5 174.1L650.7 167.1L653.3 160.8L654.8 159.3L666.1 163.1L663.7 172.6L667.4 172.7L668.7 184.8L662.0 201.1L660.9 197.5L657.0 197.5L650.3 191.3Z","North Carolina":"M578.6 258.9L657.7 245.0L665.2 257.2L656.1 245.8L660.4 253.1L654.3 250.3L656.6 252.4L651.0 253.1L653.5 254.0L650.0 256.4L647.4 252.1L649.0 258.0L657.1 255.2L658.6 260.8L658.8 255.4L660.7 255.0L663.0 260.5L658.5 266.8L653.5 267.0L651.7 265.1L653.3 264.0L651.0 265.2L652.2 267.0L645.6 266.2L654.2 268.9L650.6 275.0L648.0 274.8L657.5 272.7L655.5 279.0L653.3 279.0L655.6 279.5L660.9 271.1L655.7 280.7L648.5 280.8L642.0 286.5L638.3 297.3L630.1 298.8L611.3 285.3L595.5 287.7L591.2 282.5L572.2 284.2L562.7 289.4L545.8 291.8L545.7 287.6L550.7 281.8L562.4 275.6L566.8 269.9L568.0 271.7L574.9 267.5L578.8 263.3L578.6 258.9ZM661.2 270.9L666.9 266.0L665.4 257.4L667.2 266.6L661.2 270.9Z","North Dakota":"M288.4 53.3L367.1 57.1L374.3 110.1L284.0 105.9L288.4 53.3Z","Oklahoma":"M285.0 263.0L400.2 266.5L403.2 294.5L402.9 325.3L392.3 319.8L376.0 324.5L368.0 319.8L365.1 324.0L363.9 320.5L360.5 322.1L357.1 319.2L354.3 321.5L351.1 316.2L345.7 317.7L335.7 314.7L333.1 310.3L328.4 311.4L324.4 308.2L325.8 274.2L284.3 271.7L285.0 263.0Z","Pennsylvania":"M579.0 163.0L587.7 156.5L588.5 161.1L643.9 150.2L650.7 158.1L654.8 159.3L650.7 167.1L650.9 172.1L659.2 180.0L647.0 190.4L585.5 202.1L579.0 163.0Z","South Dakota":"M282.4 122.3L284.0 105.9L374.3 110.1L370.8 115.8L375.6 121.2L375.5 152.6L373.6 153.5L375.7 159.3L373.1 165.3L375.5 170.2L365.8 163.9L355.6 165.2L349.6 160.9L279.5 157.0L282.4 122.3Z","Texas":"M284.3 271.7L325.8 274.2L324.4 308.2L328.4 311.4L333.1 310.3L335.7 314.7L345.7 317.7L351.1 316.2L353.0 320.9L357.5 319.2L360.5 322.1L363.9 320.5L365.1 324.0L368.0 319.8L376.0 324.5L392.3 319.8L404.3 326.8L409.3 326.7L409.9 354.0L418.1 370.8L415.0 379.2L415.8 387.5L412.4 392.3L413.9 394.3L400.4 399.9L404.0 397.2L399.8 396.8L399.9 392.8L397.2 394.3L398.1 400.9L393.9 404.4L400.4 400.5L365.8 425.4L359.9 438.3L363.0 456.8L359.8 448.6L360.1 434.8L364.6 425.2L374.7 416.8L370.8 418.3L369.5 416.6L366.9 421.6L363.5 421.4L365.5 423.0L362.9 426.6L358.2 425.7L361.8 428.9L359.3 435.4L355.7 436.2L359.1 436.4L358.6 447.7L363.1 459.0L359.5 460.9L332.9 450.8L327.5 439.7L326.8 430.3L315.3 417.4L310.2 402.9L299.6 391.0L285.6 388.3L280.7 390.0L272.9 402.6L268.3 401.3L252.8 389.6L248.1 372.3L225.2 347.7L225.7 345.5L277.6 350.3L284.3 271.7Z","Wyoming":"M282.4 122.3L276.5 191.9L186.2 181.0L197.1 111.8L282.4 122.3Z","Connecticut":"M667.1 143.9L688.3 139.1L690.9 150.7L677.6 155.0L669.3 162.6L668.0 160.8L670.6 158.2L667.1 143.9Z","Missouri":"M384.3 203.6L438.6 203.1L441.4 205.8L442.5 217.1L451.6 225.4L452.7 230.7L460.1 231.7L457.5 242.9L469.5 251.4L472.2 262.7L476.1 263.8L475.0 270.5L472.8 270.0L471.9 272.8L470.3 271.0L469.1 280.8L459.5 281.9L463.3 276.8L462.1 272.9L400.3 275.2L400.0 228.6L393.1 222.0L396.2 218.5L395.4 215.7L388.9 213.1L384.3 203.6Z","West Virginia":"M561.4 228.9L565.0 227.9L567.4 217.2L571.0 218.5L571.4 212.3L581.0 204.6L581.4 186.8L585.5 202.1L599.1 199.8L600.5 208.8L608.5 199.9L612.8 201.0L616.0 197.2L620.9 197.9L622.9 201.4L622.5 206.0L614.6 201.5L614.8 206.8L610.0 214.9L608.1 213.7L605.3 222.0L600.2 219.7L594.7 240.0L583.0 246.7L580.9 245.2L578.6 247.9L574.3 247.1L561.5 233.9L561.4 228.9Z","Illinois":"M441.4 205.8L446.8 196.0L445.3 187.3L452.7 185.1L456.0 179.9L455.9 174.5L449.5 168.0L485.5 165.7L490.3 179.1L492.7 223.6L495.3 230.9L489.4 240.0L489.5 253.0L484.0 255.7L484.7 261.2L477.4 259.0L475.7 263.5L472.2 262.7L469.5 251.4L457.5 242.9L460.1 231.7L456.1 229.9L453.7 231.7L451.6 225.4L442.5 217.1L441.4 205.8Z","New Mexico":"M202.4 254.3L285.0 263.0L277.6 350.3L225.7 345.5L226.6 349.4L202.1 346.4L201.1 354.2L188.7 352.6L202.4 254.3Z","Arkansas":"M400.3 275.2L462.1 272.9L463.3 276.8L459.5 281.9L468.5 281.2L469.7 283.2L463.1 291.8L464.8 296.6L461.6 298.6L462.5 300.8L459.3 301.4L458.5 309.5L451.7 317.7L452.6 323.0L449.8 323.2L450.3 327.9L452.4 327.3L451.3 334.8L409.6 336.1L409.3 326.7L402.9 325.3L403.2 294.5L400.3 275.2Z","California":"M24.6 125.5L76.6 140.2L63.4 191.1L119.8 275.9L124.2 290.1L119.4 292.2L116.3 301.1L113.0 303.1L113.6 314.8L75.9 310.8L73.6 295.9L66.9 287.3L62.4 286.0L61.9 280.5L53.9 277.4L49.4 270.6L35.3 264.5L37.7 254.7L26.4 230.4L29.5 219.6L23.7 213.2L25.1 202.9L29.6 210.1L27.1 200.1L29.4 198.2L27.0 197.3L25.1 202.1L19.7 197.2L21.5 193.2L15.0 178.4L18.0 163.2L14.0 150.9L20.8 142.2L24.6 125.5ZM42.9 275.0L48.3 277.2L45.2 277.7L42.9 275.0Z","Delaware":"M647.0 190.4L651.5 187.9L650.6 194.3L659.5 204.2L661.5 210.1L653.0 211.8L647.0 190.4Z","District of Columbia":"M632.5 207.6L635.4 207.7L634.1 209.8L632.5 207.6Z","Hawaii":"M287.8 479.6L291.7 475.3L292.1 470.1L302.6 475.4L309.5 483.4L294.5 494.5L290.8 492.3L287.8 479.6ZM276.7 458.1L278.6 456.1L289.0 461.7L282.3 464.4L276.7 458.1ZM266.3 454.9L267.1 452.7L276.5 453.8L273.7 455.8L266.3 454.9ZM249.7 446.2L255.1 443.8L260.4 451.3L252.6 451.2L249.7 446.2ZM224.0 437.8L227.6 434.4L232.5 435.8L229.8 440.7L224.0 437.8ZM270.5 458.4L274.9 460.0L272.1 461.6L270.5 458.4Z","Iowa":"M375.5 152.6L441.2 151.1L444.0 164.2L448.5 165.8L455.9 174.5L456.0 179.9L452.7 185.1L445.3 187.3L446.8 196.0L441.4 205.8L437.1 201.9L384.3 203.6L379.5 179.3L373.2 166.4L375.7 159.3L373.7 152.6L375.5 152.6Z","Kentucky":"M475.7 263.5L477.4 259.0L484.7 261.2L484.0 255.7L489.3 253.8L488.0 250.5L491.0 245.6L494.9 247.0L495.1 244.4L498.1 244.8L501.8 247.1L505.9 243.1L508.3 245.5L511.6 239.0L517.3 241.7L523.5 231.6L522.7 228.7L531.1 226.3L529.4 221.9L531.1 220.0L535.2 220.0L539.0 225.1L546.7 227.2L556.7 223.6L561.2 228.2L563.9 237.2L572.1 243.0L558.2 259.1L551.0 262.9L490.6 267.6L491.1 270.8L472.3 272.2L475.7 269.0L475.7 263.5Z","Maryland":"M599.1 199.8L647.0 190.4L653.0 211.8L661.5 210.1L660.6 217.9L652.3 221.7L651.1 213.9L649.0 216.8L646.0 215.7L644.7 210.9L648.1 211.0L643.5 209.8L645.0 207.0L642.4 205.4L644.8 203.9L642.7 201.7L645.2 193.7L642.1 199.0L640.8 197.6L640.4 201.3L638.5 200.4L641.7 204.3L640.4 209.0L646.2 220.8L635.6 215.7L632.7 217.4L635.4 207.7L627.5 206.0L620.9 197.9L616.0 197.2L612.8 201.0L608.5 199.9L600.5 208.8L599.1 199.8Z","Michigan":"M448.2 97.3L465.0 88.4L473.7 80.0L478.1 79.4L479.3 80.5L473.4 84.5L470.9 92.4L474.8 88.4L473.3 90.9L478.8 89.4L484.9 95.6L491.4 96.1L499.1 91.2L513.0 88.0L512.7 93.1L523.3 91.0L522.6 97.2L532.4 99.4L521.6 101.7L518.0 100.0L517.4 103.9L507.6 100.4L505.7 103.0L498.7 104.1L495.2 110.2L495.7 105.3L490.9 109.5L490.0 106.8L484.2 120.2L482.9 115.5L480.2 115.5L480.9 110.4L476.8 106.5L452.0 101.0L448.2 97.3ZM499.2 177.3L505.4 162.0L499.6 144.6L501.2 125.7L508.9 115.7L510.0 123.7L510.9 114.4L516.2 111.7L513.4 108.8L514.3 105.6L533.4 110.1L537.0 115.6L534.7 115.7L537.8 127.5L531.5 138.6L535.2 141.0L537.9 134.8L543.6 131.5L546.0 132.6L552.5 149.7L552.1 156.1L550.2 157.9L550.7 155.3L548.5 155.8L542.3 172.9L499.2 177.3ZM460.4 73.8L469.8 67.6L464.4 73.2L460.4 73.8Z","Mississippi":"M451.3 334.8L452.7 330.2L452.2 326.9L449.9 327.3L449.9 322.8L452.6 323.0L451.7 317.7L458.5 309.5L459.3 301.4L462.5 300.8L461.5 299.3L491.2 297.2L492.8 298.9L491.7 351.6L494.8 378.5L481.2 379.0L477.7 382.6L472.9 374.5L474.0 368.6L446.1 370.2L447.6 358.8L453.1 352.4L454.3 349.5L452.1 348.8L456.0 346.0L452.5 344.1L454.3 343.7L453.5 341.0L452.0 342.0L451.3 334.8Z","Montana":"M151.4 32.9L218.1 45.1L288.4 53.3L282.6 122.2L197.1 111.8L195.8 120.9L192.4 115.4L190.8 118.9L181.0 116.7L173.5 119.1L171.3 111.4L167.6 109.1L165.8 95.7L163.9 93.6L158.9 96.9L156.8 94.7L163.0 76.5L158.1 74.9L153.5 64.0L149.0 60.1L150.4 55.6L147.7 50.1L151.4 32.9Z","New Hampshire":"M678.7 87.6L678.4 83.7L682.3 81.4L692.1 113.5L697.0 118.0L691.6 126.1L677.0 129.3L674.4 114.7L675.4 101.0L680.0 96.5L678.7 87.6Z","New York":"M587.7 156.5L597.6 145.5L593.3 137.8L600.2 134.5L612.4 134.6L621.3 131.6L627.7 125.5L625.6 121.3L627.5 119.8L623.9 118.2L624.1 115.1L633.9 101.7L638.9 97.3L656.8 93.2L661.6 117.6L663.9 117.6L667.0 131.5L666.7 143.4L670.6 158.2L667.9 165.4L682.3 159.5L686.1 155.4L689.0 157.6L691.8 155.5L678.3 166.1L667.5 171.0L666.1 163.1L650.7 158.1L643.9 150.2L588.5 161.1L587.7 156.5Z","Ohio":"M525.2 175.7L542.3 172.9L555.7 177.3L564.8 174.0L579.0 163.0L582.9 186.3L581.4 202.9L577.3 209.3L571.4 212.3L571.0 218.5L566.7 218.3L565.0 227.9L561.4 228.9L556.7 223.6L551.5 227.1L545.3 227.0L539.0 225.1L535.2 220.0L530.3 220.8L525.2 175.7Z","Oregon":"M53.9 56.7L60.5 61.9L60.1 69.5L65.3 73.1L71.5 71.8L78.4 75.6L87.9 76.4L105.9 75.6L130.3 81.3L133.3 85.9L134.1 89.2L120.2 107.6L123.5 112.7L113.6 149.1L24.6 125.5L24.7 110.1L35.1 93.8L48.6 55.5L53.9 56.7Z","Tennessee":"M468.5 281.2L470.6 272.3L491.1 270.8L490.6 267.6L578.9 258.4L578.8 263.3L574.9 267.5L568.0 271.7L566.8 269.9L562.4 275.6L550.7 281.8L545.7 287.6L545.8 291.8L461.5 299.3L464.8 296.6L463.1 291.8L466.4 290.0L465.6 286.3L469.7 283.2L468.5 281.2Z","Utah":"M151.1 157.1L188.9 163.5L186.2 181.0L212.0 184.8L202.4 254.3L134.4 243.0L151.1 157.1Z","Virginia":"M572.1 243.0L577.0 248.2L594.7 240.0L600.2 219.7L605.3 222.0L608.1 213.7L610.0 214.9L614.8 206.8L614.6 201.5L622.5 206.0L623.3 202.5L625.4 202.4L626.6 205.4L633.8 208.5L631.8 217.5L635.4 216.5L637.1 219.5L647.9 223.1L647.2 228.3L638.7 223.5L648.2 228.9L649.4 233.2L647.2 232.0L648.5 234.0L646.7 234.9L650.2 238.6L640.6 236.5L644.3 236.3L648.1 240.8L654.6 239.1L657.7 245.0L599.9 256.3L551.2 262.6L558.2 259.1L572.1 243.0ZM655.2 220.4L660.6 217.9L654.3 236.2L653.0 227.2L655.2 220.4Z","Washington":"M140.2 30.4L129.9 74.8L130.3 81.3L105.9 75.6L87.9 76.4L78.4 75.6L71.5 71.8L65.3 73.1L60.1 69.5L61.0 64.2L58.5 59.5L47.9 54.7L49.8 48.8L49.9 53.4L53.0 48.2L50.1 46.8L50.4 44.0L53.8 44.3L51.3 41.8L50.0 43.5L51.5 17.5L58.5 23.8L68.1 26.4L70.1 30.2L72.1 28.1L72.6 32.9L63.8 39.9L66.8 40.2L64.4 39.4L73.6 32.8L70.4 43.1L68.6 41.7L67.8 45.2L67.7 40.9L66.7 42.3L68.1 45.7L73.3 42.8L73.5 37.2L77.3 32.7L76.6 27.9L76.0 30.8L74.9 29.1L77.0 26.3L74.2 23.0L78.1 21.7L76.2 14.0L140.2 30.4ZM72.4 26.8L75.1 24.2L75.7 26.5L73.0 26.8L75.3 33.3L72.4 26.8ZM71.0 41.9L72.3 39.6L72.9 41.9L71.0 41.9ZM69.3 19.2L74.8 19.7L72.1 23.3L69.3 19.2Z","Wisconsin":"M428.9 95.8L442.8 90.8L441.7 97.1L444.2 95.3L452.0 101.0L476.8 106.5L480.9 110.4L480.2 115.5L482.9 115.5L484.2 120.2L480.3 130.5L491.4 116.1L484.2 141.4L483.0 152.9L485.5 165.7L449.5 168.0L444.0 164.2L440.2 145.2L420.6 129.8L422.2 118.0L419.3 113.2L426.0 106.9L425.6 96.7L428.9 95.8Z","Nebraska":"M279.5 157.0L349.6 160.9L355.6 165.2L364.7 163.5L371.0 166.4L376.1 170.3L383.3 193.3L382.7 201.2L390.4 213.8L301.4 211.3L302.5 193.8L276.5 191.9L279.5 157.0Z","South Carolina":"M562.7 289.4L572.2 284.2L591.2 282.5L595.5 287.7L611.3 285.3L630.1 298.8L625.1 303.5L621.1 315.6L617.9 316.1L613.1 324.0L606.7 327.0L607.4 329.9L603.2 331.0L604.7 332.3L601.5 336.0L592.8 327.1L590.6 320.5L573.1 306.6L567.2 298.0L560.2 295.3L562.7 289.4Z","Idaho":"M130.3 81.3L129.9 74.8L140.2 30.4L151.4 32.9L147.7 50.1L150.4 55.6L149.0 60.1L153.5 64.0L158.1 74.9L163.0 76.5L156.8 94.7L158.9 96.9L163.9 93.6L165.8 95.7L167.6 109.1L171.3 111.4L173.5 119.1L181.0 116.7L190.8 118.9L192.4 115.4L195.8 120.9L188.9 163.5L113.6 149.1L123.5 112.7L120.2 107.6L134.1 89.2L130.3 81.3Z","Nevada":"M76.6 140.2L151.1 157.1L131.9 257.0L129.9 259.6L127.3 257.0L121.8 256.9L119.8 275.9L63.4 191.1L76.6 140.2Z","Vermont":"M656.8 93.2L678.7 87.6L680.0 96.5L675.4 101.0L674.4 114.7L677.0 129.3L666.4 130.6L656.8 93.2Z","Louisiana":"M409.6 336.1L452.3 335.1L451.8 341.2L454.3 343.7L452.5 344.1L456.0 346.0L452.1 348.8L454.3 349.5L453.1 352.4L447.6 358.8L446.1 370.2L474.0 368.6L472.9 374.5L478.4 382.6L473.9 387.0L477.4 388.1L479.1 384.3L481.0 387.1L483.2 385.9L482.1 389.7L476.7 393.5L487.0 398.9L485.5 402.8L483.7 401.3L481.4 404.2L483.2 399.6L474.6 397.9L469.0 402.3L465.6 398.0L459.2 403.3L452.0 399.5L455.2 400.1L447.3 392.2L443.8 392.8L444.1 390.7L438.5 392.2L441.4 394.5L436.8 396.2L423.8 392.4L413.9 394.1L412.4 392.3L415.8 387.5L415.0 379.2L418.1 370.8L409.9 354.0L409.6 336.1ZM481.2 384.5L483.3 382.6L483.0 385.4L481.2 384.5ZM441.4 394.9L446.1 395.4L444.5 396.9L441.4 394.9Z","Rhode Island":"M690.7 151.3L688.4 139.3L693.4 137.8L696.8 143.2L694.4 141.8L695.1 149.1L690.7 151.3ZM697.3 143.0L699.1 145.8L697.0 144.1L696.5 147.3L697.3 143.0Z"},"postal":{"Alabama":"AL","Alaska":"AK","Arizona":"AZ","Arkansas":"AR","California":"CA","Colorado":"CO","Connecticut":"CT","Delaware":"DE","District of Columbia":"DC","Florida":"FL","Georgia":"GA","Hawaii":"HI","Idaho":"ID","Illinois":"IL","Indiana":"IN","Iowa":"IA","Kansas":"KS","Kentucky":"KY","Louisiana":"LA","Maine":"ME","Maryland":"MD","Massachusetts":"MA","Michigan":"MI","Minnesota":"MN","Mississippi":"MS","Missouri":"MO","Montana":"MT","Nebraska":"NE","Nevada":"NV","New Hampshire":"NH","New Jersey":"NJ","New Mexico":"NM","New York":"NY","North Carolina":"NC","North Dakota":"ND","Ohio":"OH","Oklahoma":"OK","Oregon":"OR","Pennsylvania":"PA","Rhode Island":"RI","South Carolina":"SC","South Dakota":"SD","Tennessee":"TN","Texas":"TX","Utah":"UT","Vermont":"VT","Virginia":"VA","Washington":"WA","West Virginia":"WV","Wisconsin":"WI","Wyoming":"WY","Puerto Rico":"PR"},"centroids":{"Alabama":[510.8,348.4],"Alaska":[52.8,411.8],"Arizona":[131.1,293.9],"Colorado":[245.4,216.3],"Florida":[580.4,400.6],"Georgia":[571.2,333.5],"Indiana":[502.7,224.7],"Kansas":[364.0,228.0],"Maine":[709.1,79.3],"Massachusetts":[697.6,135.7],"Minnesota":[412.6,88.7],"New Jersey":[658.3,179.5],"North Carolina":[629.4,269.1],"North Dakota":[320.4,75.9],"Oklahoma":[349.6,305.2],"Pennsylvania":[623.1,168.6],"South Dakota":[346.2,143.0],"Texas":[350.9,382.7],"Wyoming":[244.9,145.9],"Connecticut":[674.9,151.8],"Missouri":[440.3,242.8],"West Virginia":[592.2,216.5],"Illinois":[466.0,220.3],"New Mexico":[223.5,318.9],"Arkansas":[444.6,303.6],"California":[51.9,229.0],"Delaware":[652.9,198.4],"District of Columbia":[633.6,208.1],"Hawaii":[294.6,481.3],"Iowa":[418.0,175.2],"Kentucky":[513.2,245.3],"Maryland":[636.9,206.6],"Michigan":[489.7,98.1],"Mississippi":[461.7,338.5],"Montana":[179.5,85.7],"New Hampshire":[682.3,103.6],"New York":[642.0,139.4],"Ohio":[556.4,204.3],"Oregon":[80.3,85.7],"Tennessee":[512.6,279.4],"Utah":[175.2,191.5],"Virginia":[622.4,228.1],"Washington":[72.6,43.9],"Wisconsin":[454.8,120.5],"Nebraska":[339.5,180.4],"South Carolina":[595.7,308.6],"Idaho":[155.6,92.5],"Nevada":[110.9,215.0],"Vermont":[670.7,105.8],"Louisiana":[453.8,379.1],"Rhode Island":[692.8,144.8]}};
+
+  function regionCounts() {
+    var counts = {};
+    JOBS.forEach(function (job) {
+      if (!matches(job, "region")) return;
+      var seen = {};
+      REGION_CLASSES.forEach(function (cls) {
+        regionsOf(job, cls).forEach(function (name) {
+          if (seen[name]) return;          // one requisition, one vote per place
+          seen[name] = true;
+          counts[name] = (counts[name] || 0) + 1;
+        });
+      });
+    });
+    return counts;
+  }
+
+  function toggleRegion(name) {
+    if (selected.region.has(name)) selected.region.delete(name);
+    else selected.region.add(name);
+    render();
+  }
+
+  function renderMap() {
+    var host = document.getElementById("mm-map-svg");
+    if (!host) return;
+    var counts = regionCounts();
+    var narrow = !!(window.matchMedia && window.matchMedia("(max-width: 640px)").matches);
+    var top = 0;
+    Object.keys(counts).forEach(function (k) { if (US_MAP.paths[k] && counts[k] > top) top = counts[k]; });
+
+    var svg = ['<svg viewBox="' + US_MAP.vb.join(" ") + '" role="img" aria-label="Jobs by state">'];
+    var labels = [];
+    Object.keys(US_MAP.paths).forEach(function (name) {
+      var n = counts[name] || 0;
+      var cls = "mm-st" + (n ? " is-live" : "") + (selected.region.has(name) ? " is-on" : "");
+      // Shade from a tenth to full accent, on the square root so one very
+      // large state does not flatten every other one to the same pale wash.
+      var style = "";
+      if (n) {
+        var t = top > 0 ? Math.sqrt(n / top) : 0;
+        style = ' style="fill:var(--mm-accent);fill-opacity:' + (0.14 + t * 0.72).toFixed(3) + '"';
+      }
+      svg.push('<path class="' + cls + '" d="' + US_MAP.paths[name] + '"' + style +
+               (n ? ' tabindex="0" role="button" data-region="' + esc(name) + '" aria-pressed="' +
+                    (selected.region.has(name) ? "true" : "false") + '"' : ' aria-hidden="true"') +
+               '><title>' + esc(name) + (n ? " — " + n + " job" + (n === 1 ? "" : "s") : " — none") + '</title></path>');
+      // On a phone the numbers are twice the size and the small north-eastern
+      // states sit on top of each other, so only the places carrying real
+      // volume are labelled there. Shading still shows the rest, and a tap
+      // gives the exact figure.
+      if (n && (!narrow || n >= 10)) {
+        var c = US_MAP.centroids[name] || [0, 0];
+        var faint = (0.14 + (top > 0 ? Math.sqrt(n / top) : 0) * 0.72) < 0.45;
+        labels.push('<text class="mm-st-lab' + (faint ? " is-faint" : "") + '" x="' + c[0] + '" y="' + (c[1] + 5) + '">' + n + '</text>');
+      }
+    });
+    host.innerHTML = svg.concat(labels).join("") + "</svg>";
+
+    Array.prototype.forEach.call(host.querySelectorAll("[data-region]"), function (el) {
+      el.addEventListener("click", function () { toggleRegion(el.getAttribute("data-region")); });
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleRegion(el.getAttribute("data-region")); }
+      });
+    });
+
+    var legend = document.getElementById("mm-map-legend");
+    if (legend) {
+      legend.innerHTML = top
+        ? '<span class="mm-map-key" style="background:var(--mm-accent);opacity:.22"></span><span>1</span>' +
+          '<span class="mm-map-key" style="background:var(--mm-accent);opacity:.6"></span>' +
+          '<span class="mm-map-key" style="background:var(--mm-accent)"></span><span>' + top + ' jobs</span>'
+        : "";
+    }
+
+    // Anything the map cannot draw -- Germany, Japan, the UK, Korea -- as
+    // tiles underneath, so overseas postings are not silently invisible.
+    var away = document.getElementById("mm-map-oconus");
+    if (!away) return;
+    var names = Object.keys(counts).filter(function (k) { return !US_MAP.paths[k]; })
+      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
+    away.innerHTML = "";
+    names.forEach(function (name) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "mm-oconus-tile";
+      btn.setAttribute("aria-pressed", selected.region.has(name) ? "true" : "false");
+      btn.innerHTML = esc(name) + ' <span class="mm-n">' + counts[name] + "</span>";
+      btn.addEventListener("click", function () { toggleRegion(name); });
+      away.appendChild(btn);
+    });
   }
 
   function renderDefinitions() {
