@@ -34,7 +34,7 @@ JSON="divisions.json"
 # scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
 # Python tool (the biweekly non-dilutive funding sweep), not agents. None of
 # these is a division — they must never be scanned as source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }

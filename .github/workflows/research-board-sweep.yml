@@ -1,0 +1,67 @@
+name: Research board sweep
+
+# The weekly sweep from the v2 brief. It runs here rather than in an
+# interactive session for one reason: outbound fetch works on a runner and is
+# blocked in the authoring sandbox, and the brief requires every blurb to be
+# written from the fetched primary document rather than from coverage of it.
+#
+# This job does not write blurbs. It produces candidates.json — one entry per
+# clustered primary document, carrying the text a blurb has to be written from.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * 1'          # Mondays, alongside the standards watch
+  push:
+    # Only when the sweep itself changes. A crawl of 17 sources is not
+    # something to run on every commit, but a change to the crawler is exactly
+    # what needs proving against live hosts rather than against fixtures.
+    paths:
+      - 'research-board/sweep.py'
+      - 'research-board/tactical_research/extract.py'
+      # The registry is an input to the crawl, so a change to it needs proving
+      # against live hosts exactly as much as a change to the crawler does.
+      # Without this, repointing a source went unverified until someone thought
+      # to trigger a run by hand.
+      - 'research-board/tactical_research/sources.json'
+      - '.github/workflows/research-board-sweep.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-board-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Crawl the registry and fetch primary documents
+        run: python research-board/sweep.py | tee /tmp/sweep.log
+
+      - name: Summarise the run
+        run: |
+          {
+            echo '## Research board sweep'
+            echo
+            echo '```'
+            tail -n 24 /tmp/sweep.log
+            echo '```'
+            echo
+            echo 'Blurbs are written from the document text in the artifact below, never from coverage.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the candidates for whoever writes the blurbs
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidates
+          path: research-board/candidates.json
+          retention-days: 30
+          if-no-files-found: error
