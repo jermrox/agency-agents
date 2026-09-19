@@ -29,7 +29,7 @@ def slugify(text: str) -> str:
 
     The slug becomes the row id, which is the dashboard's localStorage key, so
     a slug that moves silently discards someone's saved progress on that row.
-    "Alzheimer&rsquo;s" and "Alzheimer’s" are the same program, and whether a
+    "Women&rsquo;s" and "Women’s" are the same program, and whether a
     title arrives escaped is an upstream detail that must not reach the key --
     so unescape before slugifying, and the id survives the decoding being
     fixed at the source as well as any future change in how it arrives.
