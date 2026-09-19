@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-19T10:45:51+00:00",
   "as_of": "2026-09-19",
-  "count": 117,
+  "count": 113,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -12,11 +12,11 @@
     {
       "id": "curated-fund-her-future-h-r-block-block-advisors",
       "source": "curated",
-      "name": "Fund Her Future \u2014 H&R Block / Block Advisors",
+      "name": "Fund Her Future — H&R Block / Block Advisors",
       "url": "https://www.helloalice.com/opportunities/grants/h-r-block-fund-her-future-grant-2026",
       "agency": "H&R Block and Block Advisors, via Hello Alice",
       "amount": "4 x $45,000 ($180,000 total), plus a year of Block Advisors services",
-      "summary": "CLOSES 22 SEP AT 6PM ET \u2014 three days out. Largest per-winner cheque of any rolling small-business grant found: $45,000 each to four winners. Every applicant, not just winners, gets a year of community programming. The $20,000 2025 revenue floor is the gate to check before spending time on it.",
+      "summary": "CLOSES 22 SEP AT 6PM ET — three days out. Largest per-winner cheque of any rolling small-business grant found: $45,000 each to four winners. Every applicant, not just winners, gets a year of community programming. The $20,000 2025 revenue floor is the gate to check before spending time on it.",
       "open_date": "2026-09-01",
       "close_date": "2026-09-22",
       "status": "soon",
@@ -35,9 +35,9 @@
       "source": "dod-sbir",
       "name": "Wearable Real-Time Command-and-Control Interface for Enhanced Naval Situational Awareness (DON26BZ05-NV069)",
       "url": "https://www.dodsbirsttr.mil/topics-app/?topicId=13cbf4e0fc51465ab387915e6c6f62c0_86635",
-      "agency": "DoD \u2014 NAVY",
+      "agency": "DoD — NAVY",
       "amount": "SBIR Phase I scale",
-      "summary": "SBIR \u00b7 DOD_SBIR_2026_P1_CBZ \u00b7 status Open. Full topic text is on the DSIP topic page.",
+      "summary": "SBIR · DOD_SBIR_2026_P1_CBZ · status Open. Full topic text is on the DSIP topic page.",
       "open_date": "2026-08-26",
       "close_date": "2026-09-23",
       "status": "soon",
@@ -51,30 +51,13 @@
       ]
     },
     {
-      "id": "grants.gov-dow-alzheimer-s-transforming-diagnosis-award-ht942526azrptrda",
-      "source": "grants.gov",
-      "name": "DoW Alzheimer\u2019s Transforming Diagnosis Award (HT942526AZRPTRDA)",
-      "url": "https://www.grants.gov/search-results-detail/362179",
-      "agency": "Defense Health Agency Contracting Activity - DHACA",
-      "amount": "see solicitation",
-      "summary": "Summary: The fiscal year 2026 (FY26) Alzheimer\u2019s Research Program (AZRP) Transforming Diagnosis Award (TrDA) supports non-incremental, solutions-oriented research that reduces or overcomes important barriers to obtaining a diagnosis, meaningful disease monitoring and accurate prognosis. Distinctive Features: Clinical research is allowed, however clinical trials and animal research are prohibited. ",
-      "open_date": "2026-05-01",
-      "close_date": "2026-09-24",
-      "status": "soon",
-      "days_left": 5,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
-    },
-    {
       "id": "curated-amber-grant-for-women-monthly",
       "source": "curated",
-      "name": "Amber Grant for Women \u2014 monthly",
+      "name": "Amber Grant for Women — monthly",
       "url": "https://ambergrantsforwomen.com/",
       "agency": "WomensNet",
       "amount": "3 x $10,000 every month, plus annual $25,000 awards",
-      "summary": "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the last day of each month. One application enters you for the month and for the annual award. Low effort, genuinely repeatable \u2014 apply once and re-enter.",
+      "summary": "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the last day of each month. One application enters you for the month and for the annual award. Low effort, genuinely repeatable — apply once and re-enter.",
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "soon",
@@ -93,7 +76,7 @@
       "name": "NextCorps Manufacturing Accelerator (Fall 2026)",
       "url": "https://manufacturingaccelerator.org/",
       "agency": "NextCorps (Rochester, NY)",
-      "amount": "free \u2014 9-week virtual program",
+      "amount": "free — 9-week virtual program",
       "summary": "Free, no equity. Prototype-to-mass-production. Info session Sep 23. Closest process fit on this board to Vybe's actual stage.",
       "open_date": null,
       "close_date": "2026-09-30",
@@ -103,7 +86,7 @@
       "kind": "accelerator",
       "eligibility": "Hardware startups with a works-like prototype; advanced materials, medical devices, lab hardware",
       "documents": [
-        "Works-like hardware prototype (required \u2014 not a concept or a render)",
+        "Works-like hardware prototype (required — not a concept or a render)",
         "Short online application describing the product and production goal",
         "Founder time commitment for the 9-week virtual program"
       ]
@@ -122,7 +105,7 @@
       "days_left": 11,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "TEXAS-adjacent \u2014 veteran-owned businesses",
+      "eligibility": "TEXAS-adjacent — veteran-owned businesses",
       "documents": [
         "Proof of veteran status",
         "Application"
@@ -340,11 +323,11 @@
     {
       "id": "grants.gov-dow-combat-readiness-medical-research-program-translational-research-",
       "source": "grants.gov",
-      "name": "DOW Combat Readiness \u2013 Medical Research Program Translational Research Award (HT942526CRRPTRA)",
+      "name": "DOW Combat Readiness – Medical Research Program Translational Research Award (HT942526CRRPTRA)",
       "url": "https://www.grants.gov/search-results-detail/362961",
       "agency": "Defense Health Agency Contracting Activity - DHACA",
       "amount": "see solicitation",
-      "summary": "Summary: The fiscal year 2026 (FY26) Combat Readiness \u2013 Medical Research Program (CRRP) Translational Research Award (TRA) supports hypothesis-driven innovative, high-impact translational research that will accelerate the movement of promising ideas and/or technologies in trauma care into solutions to maximize casualty survivability, improve patient care closer to the point of injury and/or trauma",
+      "summary": "Summary: The fiscal year 2026 (FY26) Combat Readiness – Medical Research Program (CRRP) Translational Research Award (TRA) supports hypothesis-driven innovative, high-impact translational research that will accelerate the movement of promising ideas and/or technologies in trauma care into solutions to maximize casualty survivability, improve patient care closer to the point of injury and/or trauma",
       "open_date": "2026-06-24",
       "close_date": "2026-11-18",
       "status": "open",
@@ -412,7 +395,7 @@
       "url": "https://matter.health/challenges/paratus-digital-health-accelerator-non-dilutive-funding/",
       "agency": "MATTER / BARDA Accelerator Network",
       "amount": "up to $200,000 non-dilutive",
-      "summary": "CLOSEST PROGRAM FIT ON THIS BOARD. Explicitly targets wearable and minimally invasive biosensing that detects early physiological signatures \u2014 which is what Vybe's five dimensions do. Preliminary application closes 15 Jan, annually; the 2026 cycle has passed, so this is the January 2027 window. Worth preparing well ahead.",
+      "summary": "CLOSEST PROGRAM FIT ON THIS BOARD. Explicitly targets wearable and minimally invasive biosensing that detects early physiological signatures — which is what Vybe's five dimensions do. Preliminary application closes 15 Jan, annually; the 2026 cycle has passed, so this is the January 2027 window. Worth preparing well ahead.",
       "open_date": null,
       "close_date": "2027-01-15",
       "status": "open",
@@ -446,7 +429,7 @@
     {
       "id": "curated-nih-sbir-sttr-april-2027-cycle",
       "source": "curated",
-      "name": "NIH SBIR/STTR \u2014 April 2027 cycle",
+      "name": "NIH SBIR/STTR — April 2027 cycle",
       "url": "https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html",
       "agency": "NIH / CDC / FDA",
       "amount": "$400K-$700K+ by institute",
@@ -604,23 +587,6 @@
       "documents": []
     },
     {
-      "id": "grants.gov-academic-industrial-partnerships-for-translation-of-technologies-for-",
-      "source": "grants.gov",
-      "name": "Academic-Industrial Partnerships for Translation of Technologies for Diagnosis and Treatment (R01 - Clinical Trial Optional) (PAR-25-337)",
-      "url": "https://www.grants.gov/search-results-detail/357963",
-      "agency": "National Institutes of Health",
-      "amount": "up to $499,000",
-      "summary": "Through this Notice of Funding Opportunity (NOFO), the National Cancer Institute (NCI) intends to stimulate efforts to translate scientific discoveries and engineering developments into methods or tools that address problems in basic research to understand disease, or in applied research to assess risk, detect, prevent, diagnose, treat, and/or manage disease. The rationale is to deliver new capabi",
-      "open_date": "2024-12-31",
-      "close_date": "2028-01-07",
-      "status": "open",
-      "days_left": 475,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
       "id": "grants.gov-laboratories-to-optimize-digital-health-r01-clinical-trial-required-p",
       "source": "grants.gov",
       "name": "Laboratories to Optimize Digital Health (R01 Clinical Trial Required) (PAR-25-136)",
@@ -742,7 +708,7 @@
     {
       "id": "grants.gov-readiness-and-recreation-initiative-rari-recurring-5-year-notice-p26a",
       "source": "grants.gov",
-      "name": "Readiness and Recreation Initiative (RARI) \u2013 Recurring 5 Year Notice (P26AS00146)",
+      "name": "Readiness and Recreation Initiative (RARI) – Recurring 5 Year Notice (P26AS00146)",
       "url": "https://www.grants.gov/search-results-detail/362717",
       "agency": "National Park Service",
       "amount": "$250,000 - $3,000,000",
@@ -891,7 +857,7 @@
     {
       "id": "curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology",
       "source": "curated",
-      "name": "Alfred P. Sloan Foundation \u2014 Exploratory Grantmaking in Technology",
+      "name": "Alfred P. Sloan Foundation — Exploratory Grantmaking in Technology",
       "url": "https://sloan.org/programs/digital-technology",
       "agency": "Alfred P. Sloan Foundation",
       "amount": "varies",
@@ -925,7 +891,7 @@
       "eligibility": "US small business; no clinical claim required",
       "documents": [
         "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
-        "SAM.gov UEI registration (start early \u2014 weeks of lead time)",
+        "SAM.gov UEI registration (start early — weeks of lead time)",
         "SBIR.gov company registration (SBC control number)"
       ]
     },
@@ -943,7 +909,7 @@
       "days_left": null,
       "pillar": 1,
       "kind": "credit",
-      "eligibility": "Open application. VC backing is NOT required \u2014 unusual among AI credit programs and the reason this one is worth doing first.",
+      "eligibility": "Open application. VC backing is NOT required — unusual among AI credit programs and the reason this one is worth doing first.",
       "documents": [
         "Company details and a description of what you are building with the API"
       ]
@@ -1054,7 +1020,7 @@
       "url": "https://cdmrp.health.mil/funding/crrp",
       "agency": "DoD Congressionally Directed Medical Research Programs",
       "amount": "",
-      "summary": "FY26 focus areas include battlefield readiness in pre-hospital and operational environments \u2014 directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420.",
+      "summary": "FY26 focus areas include battlefield readiness in pre-hospital and operational environments — directly on-thesis for physiological monitoring. Deadline not published in the pre-announcement; check cdmrp.health.mil and Grants.gov CFDA 12.420.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1298,7 +1264,7 @@
     {
       "id": "curated-hello-alice-rolling-grant-cycles",
       "source": "curated",
-      "name": "Hello Alice \u2014 rolling grant cycles",
+      "name": "Hello Alice — rolling grant cycles",
       "url": "https://helloalice.com/",
       "agency": "Hello Alice (with Progressive, Verizon, US Chamber and others)",
       "amount": "typically $5,000 - $25,000 per cycle",
@@ -1343,7 +1309,7 @@
       "url": "https://dceo.illinois.gov/",
       "agency": "Illinois DCEO",
       "amount": "up to $75,000 (Phase I)",
-      "summary": "$5M state commitment. The rolling window ran through Jun 30, 2026 \u2014 confirm the current cycle.",
+      "summary": "$5M state commitment. The rolling window ran through Jun 30, 2026 — confirm the current cycle.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1457,7 +1423,7 @@
       "url": "https://launchny.org/",
       "agency": "Launch NY (Buffalo, NY)",
       "amount": "$25K-$100K",
-      "summary": "Rolling. The most active seed fund in NY State by deal count \u2014 small checks, but explicitly hardware-friendly.",
+      "summary": "Rolling. The most active seed fund in NY State by deal count — small checks, but explicitly hardware-friendly.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1478,7 +1444,7 @@
       "url": "https://luminate.org/",
       "agency": "Empire State Development / Luminate (Rochester, NY)",
       "amount": "$100K initial + up to $2M follow-on",
-      "summary": "Cohort 9 closed Jan 12, 2026 \u2014 watch for cohort 10. Relevant only if Vybe's sensing is optical (PPG is), so check the OPI+L fit before investing time.",
+      "summary": "Cohort 9 closed Jan 12, 2026 — watch for cohort 10. Relevant only if Vybe's sensing is optical (PPG is), so check the OPI+L fit before investing time.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1499,7 +1465,7 @@
       "url": "https://masschallenge.org/",
       "agency": "MassChallenge / BAE Systems",
       "amount": "zero equity",
-      "summary": "Named focus on advanced sensing and real-time data processing \u2014 strong thesis fit, and takes no equity.",
+      "summary": "Named focus on advanced sensing and real-time data processing — strong thesis fit, and takes no equity.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1530,7 +1496,7 @@
       "eligibility": "No VC backing, no accelerator membership, no formal incorporation documents -- a business idea and a professional email address",
       "documents": [
         "Company details and a short product description",
-        "No funding proof required \u2014 the most accessible of the three"
+        "No funding proof required — the most accessible of the three"
       ]
     },
     {
@@ -1673,23 +1639,6 @@
       "documents": []
     },
     {
-      "id": "grants.gov-pilot-testing-implementation-and-evaluation-of-the-cervical-breast-an",
-      "source": "grants.gov",
-      "name": "Pilot Testing, Implementation, and Evaluation of the Cervical, Breast and Colorectal Cancer Clinical Decision Support Tools (RFA-DP-27-036)",
-      "url": "https://www.grants.gov/search-results-detail/363309",
-      "agency": "Centers for Disease Control and Prevention - ERA",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-07-24",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
       "id": "curated-pitchmi",
       "source": "curated",
       "name": "PitchMI",
@@ -1703,7 +1652,7 @@
       "days_left": null,
       "pillar": 2,
       "kind": "visibility",
-      "eligibility": "MICHIGAN ONLY \u2014 Michigan-based startups",
+      "eligibility": "MICHIGAN ONLY — Michigan-based startups",
       "documents": [
         "Michigan business registration",
         "Pitch deck",
@@ -1733,10 +1682,10 @@
     {
       "id": "curated-sbir-sttr-reauthorized-through-2031-program-status",
       "source": "curated",
-      "name": "SBIR/STTR \u2014 reauthorized through 2031 (program status)",
+      "name": "SBIR/STTR — reauthorized through 2031 (program status)",
       "url": "https://www.sbir.gov/",
       "agency": "SBA / 11 participating federal agencies",
-      "amount": "Phase I ~$50K-$314K \u00b7 Phase II to ~$2.1M \u00b7 new Phase II strategic breakthrough ceiling $30M",
+      "amount": "Phase I ~$50K-$314K · Phase II to ~$2.1M · new Phase II strategic breakthrough ceiling $30M",
       "summary": "CONTEXT ROW, NOT AN APPLICATION. SBIR/STTR expired 30 Sep 2025 -- the longest lapse in 42 years. NIH cancelled 23 solicitations, NSF paused Project Pitch, DoD shelved topic lists, ~$4B stopped. Reauthorized 13 Apr 2026 (S.3971) through 30 Sep 2031, adding a Phase II strategic breakthrough vehicle with a $30M ceiling. From FY2027 each agency sets its own cap on how many proposals one company may submit -- so pick targets rather than carpet-bombing. Every state-match row on this board depends on holding a federal SBIR award first.",
       "open_date": null,
       "close_date": null,
@@ -1758,7 +1707,7 @@
       "url": "https://www.schmidtsciences.org/opportunities/",
       "agency": "Schmidt Sciences",
       "amount": "varies, $500K-$10M on some programs",
-      "summary": "DOES NOT ACCEPT UNSOLICITED PROPOSALS \u2014 they seek out grantees. Listed so it isn't chased blindly.",
+      "summary": "DOES NOT ACCEPT UNSOLICITED PROPOSALS — they seek out grantees. Listed so it isn't chased blindly.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -1767,13 +1716,13 @@
       "kind": "grant",
       "eligibility": "Academic researchers, nonprofits, think tanks",
       "documents": [
-        "Invitation only \u2014 no open application"
+        "Invitation only — no open application"
       ]
     },
     {
       "id": "curated-second-service-foundation-military-entrepreneur-challenge",
       "source": "curated",
-      "name": "Second Service Foundation \u2014 Military Entrepreneur Challenge",
+      "name": "Second Service Foundation — Military Entrepreneur Challenge",
       "url": "https://secondservicefoundation.org/",
       "agency": "Second Service Foundation (formerly StreetShares Foundation)",
       "amount": "$1,000 - $15,000 per regional event; larger prizes at the national final",
@@ -1942,23 +1891,6 @@
       ]
     },
     {
-      "id": "grants.gov-translational-center-for-accelerating-the-use-of-digital-health-techn",
-      "source": "grants.gov",
-      "name": "Translational Center for Accelerating the Use of Digital Health Technologies Data in AD/ADRD Research (RFA-AG-27-002)",
-      "url": "https://www.grants.gov/search-results-detail/360451",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2025-09-03",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
       "id": "grants.gov-translational-centers-using-microphysiologic-systems-for-infectious-d",
       "source": "grants.gov",
       "name": "Translational Centers Using Microphysiologic Systems for Infectious Diseases (RFA-AI-28-012)",
@@ -2070,7 +2002,7 @@
       "url": "https://www.verizon.com/business/small-business-essentials/digital-ready/",
       "agency": "Verizon, administered via Hello Alice",
       "amount": "$10,000 grants",
-      "summary": "Confirmed active for 2026 through the Hello Alice platform. Eligibility is earned by completing free courses, so the cost is time rather than money \u2014 worth doing once to unlock repeat cycles.",
+      "summary": "Confirmed active for 2026 through the Hello Alice platform. Eligibility is earned by completing free courses, so the cost is time rather than money — worth doing once to unlock repeat cycles.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -2090,7 +2022,7 @@
       "url": "https://www.wmkeck.org/",
       "agency": "W.M. Keck Foundation",
       "amount": "typically $1M+",
-      "summary": "Apr 2026 deadline has passed; annual cycle. Institutionally nominated \u2014 needs a university partner, so treat as a Pillar 3 vehicle.",
+      "summary": "Apr 2026 deadline has passed; annual cycle. Institutionally nominated — needs a university partner, so treat as a Pillar 3 vehicle.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -2107,11 +2039,11 @@
     {
       "id": "curated-warrior-rising-vetrepreneur-grants",
       "source": "curated",
-      "name": "Warrior Rising \u2014 vetrepreneur grants",
+      "name": "Warrior Rising — vetrepreneur grants",
       "url": "https://warriorrising.org/",
       "agency": "Warrior Rising",
       "amount": "up to $20,000 via business shower awards",
-      "summary": "Training-first: applicants generally complete Warrior Rising's programs before becoming eligible for funding, which arrives alongside mentorship, investor introductions and business services. Start the programme early \u2014 the grant is the back end of a pipeline, not a form.",
+      "summary": "Training-first: applicants generally complete Warrior Rising's programs before becoming eligible for funding, which arrives alongside mentorship, investor introductions and business services. Start the programme early — the grant is the back end of a pipeline, not a form.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -2180,7 +2112,7 @@
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "CONNECTICUT ONLY \u2014 women-owned small businesses",
+      "eligibility": "CONNECTICUT ONLY — women-owned small businesses",
       "documents": [
         "Connecticut business registration",
         "Proof of women-owned status",
@@ -2214,14 +2146,14 @@
       "url": "https://ventures.yale.edu/healthtech-works",
       "agency": "Yale Ventures",
       "amount": "$100,000 - $250,000 non-dilutive",
-      "summary": "Among the largest non-dilutive cheques on this board for a digital health product. Applications launch early in the year; confirm the next window before building a submission. Check whether a Yale affiliation is required \u2014 that is the gate to verify first.",
+      "summary": "Among the largest non-dilutive cheques on this board for a digital health product. Applications launch early in the year; confirm the next window before building a submission. Check whether a Yale affiliation is required — that is the gate to verify first.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
       "days_left": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Healthtech ventures \u2014 digital health, medtech, diagnostics, devices, AI/ML-enabled tools",
+      "eligibility": "Healthtech ventures — digital health, medtech, diagnostics, devices, AI/ML-enabled tools",
       "documents": [
         "Application during the open window",
         "Technical and commercialization plan"
