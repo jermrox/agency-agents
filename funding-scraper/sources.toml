@@ -669,6 +669,46 @@ kind = "curated"
 
 # --- Pillar 2: grants and matched funding ------------------------------------
 
+[[sources.curated.entry]]
+name = "Fund Her Future — H&R Block / Block Advisors"
+url = "https://www.helloalice.com/opportunities/grants/h-r-block-fund-her-future-grant-2026"
+agency = "H&R Block and Block Advisors, via Hello Alice"
+amount = "4 x $45,000 ($180,000 total), plus a year of Block Advisors services"
+open_date = "2026-09-01"
+close_date = "2026-09-22"
+pillar = 2
+kind = "grant"
+eligibility = "51%+ woman-owned, US-based, 18+, and the business must have generated at least $20,000 revenue in 2025. Nonprofits not eligible."
+note = "CLOSES 22 SEP AT 6PM ET — three days out. Largest per-winner cheque of any rolling small-business grant found: $45,000 each to four winners. Every applicant, not just winners, gets a year of community programming. The $20,000 2025 revenue floor is the gate to check before spending time on it."
+documents = ["Hello Alice profile", "Proof of 51%+ woman ownership", "Evidence of $20,000+ 2025 revenue"]
+verified = "2026-09-19"
+
+[[sources.curated.entry]]
+name = "Anthropic Claude Startup Program"
+url = "https://claude.com/programs/startups"
+agency = "Anthropic"
+amount = "API credits (tier varies)"
+pillar = 1
+kind = "credit"
+eligibility = "Open application. VC backing is NOT required — unusual among AI credit programs and the reason this one is worth doing first."
+note = "Directly relevant: Vybe's product IS an interpretation layer over an LLM, so model credits offset a real line of cost rather than a nice-to-have. Public application route, no investor introduction needed. By contrast OpenAI routes its startup credits through partner VCs (Thrive, Sequoia, a16z, Kleiner Perkins, Conviction), so a bootstrapped company cannot access that one directly."
+documents = ["Company details and a description of what you are building with the API"]
+verified = "2026-09-19"
+
+[[sources.curated.entry]]
+name = "Ohio TechCred"
+url = "https://techcred.ohio.gov/"
+agency = "Ohio Department of Development"
+amount = "up to $1,000 per employee credential, capped at $30,000 per application period"
+open_date = "2026-10-01"
+close_date = "2026-10-30"
+pillar = 1
+kind = "grant"
+eligibility = "OHIO-BASED EMPLOYERS ONLY. Confirm Vybe has Ohio operations before spending time here."
+note = "Reimburses technology credentials for employees rather than funding the business directly, so it is a cost offset on upskilling. Runs in fixed application windows; the next opens 1 Oct and closes 30 Oct. Listed because the window is short and easy to miss, not because it is large."
+documents = ["Ohio employer registration", "Named employees and the credentials to be earned", "Training provider details"]
+verified = "2026-09-19"
+
 # --- Recurring small-business grants (added 2026-09-19) -------------------
 # This board was built around federal SBIR/manufacturing vehicles and missed
 # the recurring small-business grant layer almost entirely. These have no API
