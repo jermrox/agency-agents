@@ -85,6 +85,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -120,6 +125,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -155,6 +165,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -190,6 +205,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -225,6 +245,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -260,6 +285,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -295,6 +325,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -330,6 +365,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -365,6 +405,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -400,6 +445,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -435,6 +485,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -469,6 +524,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -503,6 +563,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -615,6 +680,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -650,6 +720,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -696,6 +771,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 require_any = [
   "wearable", "sensor", "biosensor", "biometric", "physiolog", "photoplethysm",
@@ -758,6 +838,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 
 [sources.probe_cheers_title]
@@ -779,6 +864,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 
 [sources.probe_cheers_number]
@@ -800,6 +890,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 
 [sources.probe_cheers_phrase]
@@ -825,6 +920,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 
 [sources.grants_nsf_unfiltered]
@@ -846,6 +946,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 enabled = false
 
@@ -867,6 +972,11 @@ exclude_any = [
   "hiv/aids", "tuberculosis", "malaria", "hepatitis", "vaccine",
   "cystic fibrosis", "sickle cell", "rare disease", "gene therapy",
   "spinal cord injury", "prosthe", "organ transplant", "wound healing",
+  "tick-borne", "tickborne", "lyme disease", "type 2 diabetes", "obesity research center",
+  # A required clinical trial is a hard disqualifier, not a topic mismatch:
+  # Vybe has no trial arm, no IRB and no clinical infrastructure, so an
+  # award that mandates one cannot be won as prime however well it reads.
+  "clinical trial required", "clinical trail required",
 ]
 enabled = false
 

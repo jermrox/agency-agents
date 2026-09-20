@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-19T10:45:51+00:00",
   "as_of": "2026-09-19",
-  "count": 113,
+  "count": 107,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -112,23 +112,6 @@
       ]
     },
     {
-      "id": "grants.gov-advancing-research-on-the-application-of-digital-health-technology-to",
-      "source": "grants.gov",
-      "name": "Advancing Research on the Application of Digital Health Technology to the Management of Type 2 Diabetes (R01- Clinical Trail Required) (RFA-DK-26-315)",
-      "url": "https://www.grants.gov/search-results-detail/359252",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "This notice of funding opportunity (NOFO) invites applications designed to examine the efficacy and clinical effectiveness of multimodality digital health technology approaches to the remote management of diabetes.",
-      "open_date": "2025-09-17",
-      "close_date": "2026-10-06",
-      "status": "soon",
-      "days_left": 17,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
       "id": "curated-medtech-innovator-vantage-barda-accelerator-network",
       "source": "curated",
       "name": "MedTech Innovator Vantage (BARDA Accelerator Network)",
@@ -171,57 +154,6 @@
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
       ]
-    },
-    {
-      "id": "grants.gov-nutrition-obesity-research-centers-norcs-p30-clinical-trial-optional-",
-      "source": "grants.gov",
-      "name": "Nutrition Obesity Research Centers (NORCs) (P30 Clinical Trial Optional) (RFA-DK-27-120)",
-      "url": "https://www.grants.gov/search-results-detail/360544",
-      "agency": "National Institutes of Health",
-      "amount": "up to $750,000",
-      "summary": "This Notice of Funding Opportunity (NOFO) invites applications from institutions/organizations that propose to establish core centers that are part of an integrated and existing program of nutrition and/or obesity research. The Nutrition Obesity Research Centers (NORC) program is designed to support and enhance the national research effort in nutrition and obesity. NORCs support three primary rese",
-      "open_date": "2026-06-30",
-      "close_date": "2026-10-20",
-      "status": "open",
-      "days_left": 31,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-dow-tick-borne-disease-therapeutic-diagnostic-research-award-ht942526",
-      "source": "grants.gov",
-      "name": "DoW Tick-Borne Disease Therapeutic/Diagnostic Research Award (HT942526TBDRPTDRA)",
-      "url": "https://www.grants.gov/search-results-detail/362174",
-      "agency": "Defense Health Agency Contracting Activity - DHACA",
-      "amount": "see solicitation",
-      "summary": "Summary: The intent of the fiscal year 2026 (FY26) Tick-Borne Disease Research Program (TBDRP) Therapeutic/Diagnostic Research Award (TDRA) is to support product-driven therapeutic and diagnostic development research aimed at reducing the burden of Lyme disease and/or other tick-borne diseases and conditions, and improving patient care and/or quality of life. Treatment-focused applications should ",
-      "open_date": "2026-05-05",
-      "close_date": "2026-10-22",
-      "status": "open",
-      "days_left": 33,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-optimizing-behavioral-sleep-interventions-for-adolescents-and-young-a",
-      "source": "grants.gov",
-      "name": "Optimizing Behavioral Sleep Interventions for Adolescents and Young Adults (R34 Clinical Trial Required) (RFA-MH-27-140)",
-      "url": "https://www.grants.gov/search-results-detail/359159",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "NIMH seeks applications for pilot research to adapt, optimize, and test behavioral interventions that address common sleep problems in adolescents and young adults with or at risk for a mental health disorder. This notice of funding opportunity (NOFO) supports pilot clinical trials designed to evaluate the feasibility, tolerability, acceptability, safety, and potential effectiveness of the approac",
-      "open_date": "2026-05-28",
-      "close_date": "2026-10-22",
-      "status": "open",
-      "days_left": 33,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -301,23 +233,6 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-investigator-initiated-clinical-trials-of-complementary-and-integrati",
-      "source": "grants.gov",
-      "name": "Investigator Initiated Clinical Trials of Complementary and Integrative Interventions Delivered Remotely or via mHealth (R01 Clinical Trial Required) (PAR-25-268)",
-      "url": "https://www.grants.gov/search-results-detail/357303",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "This Notice of Funding Opportunity (NOFO) encourages applications for investigator-initiated fully remotely delivered and conducted clinical trials to assess the efficacy or effectiveness of complementary and integrative health interventions in NCCIH- designated areas of high research priority. Applications submitted under this NOFO are expected to propose a remotely delivered and conducted fully ",
-      "open_date": "2024-11-21",
-      "close_date": "2026-11-17",
-      "status": "open",
-      "days_left": 59,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -584,23 +499,6 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-laboratories-to-optimize-digital-health-r01-clinical-trial-required-p",
-      "source": "grants.gov",
-      "name": "Laboratories to Optimize Digital Health (R01 Clinical Trial Required) (PAR-25-136)",
-      "url": "https://www.grants.gov/search-results-detail/357034",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "NIMH seeks applications for innovative research projects to test strategies to increase the reach, efficiency, effectiveness, and quality of digital mental health interventions. This NOFO is intended to support the development of digital health test beds that leverage well-established digital mental health platforms,to rapidly refine and optimize existing evidence-based digital health intervention",
-      "open_date": "2024-11-07",
-      "close_date": "2028-01-07",
-      "status": "open",
-      "days_left": 475,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
