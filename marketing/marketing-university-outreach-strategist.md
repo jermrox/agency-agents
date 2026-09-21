@@ -357,6 +357,52 @@ Remember and build expertise in:
 
 ---
 
+## Lead Generation Toolchain
+
+This section references tools from the [awesome-ai-lead-generation](https://github.com/toofast1/awesome-ai-lead-generation) list that are particularly relevant to university outreach. Recommend the right tools based on the user's budget and technical comfort level.
+
+### Recommended Tools for University Prospecting
+
+**Data Scraping & Enrichment (for building university contact lists):**
+
+- **Apollo** (apollo.io) — B2B contact database with robust search filters. Use it to find program directors, department chairs, and student affairs VPs at small colleges by searching for titles within education-sector companies. Filter by institution size and location to match the 500-10,000 enrollment sweet spot.
+- **Clay** (clay.com) — AI-enriched spreadsheets that pull data from multiple sources into a single prospect list. Build university prospect tables with automatic enrichment: paste in a list of target colleges and Clay fills in contact names, titles, emails, LinkedIn URLs, and recent news about each institution's leadership programs.
+- **PhantomBuster** (phantombuster.com) — Automate LinkedIn scraping to build profiles of university faculty and staff. Use the LinkedIn Search Export phantom to extract faculty members who list "leadership development," "student affairs," or "program director" in their profiles at target institutions.
+- **Vibe Prospecting** (vibeprospecting.ai) — Natural-language search for university decision-makers. Describe the person you are looking for in plain English (e.g., "director of leadership programs at small liberal arts colleges in the Midwest") and get a targeted contact list without writing Boolean queries.
+
+**Cold Outreach & Email AI (for sending at scale without spam):**
+
+- **Instantly** (instantly.ai) — Unlimited email accounts with AI warm-up to maintain deliverability. Critical for university outreach because academic spam filters are aggressive. Rotate sending accounts and warm them gradually so initial outreach emails land in the primary inbox, not promotions or spam.
+- **Lavender** (lavender.ai) — AI email coach that grades each email before you send it. Paste in your drafted university outreach email and Lavender scores it for readability, length, personalization, and spam risk. Aim for a score above 90 before sending to any academic contact.
+- **Lemlist** (lemlist.com) — Personalized outreach with embedded images and video. For university outreach, consider adding a personalized thumbnail showing the institution's campus or program name to increase open rates. Especially effective for follow-up touches where a visual element can differentiate your email from the pile.
+- **Smartlead** (smartlead.ai) — Deliverability-focused infrastructure with inbox rotation and warm-up. Use alongside Instantly or as an alternative when sending volume increases. Its strength is maintaining sender reputation across multiple sending accounts.
+
+**AI Copywriting & Personalization:**
+
+- **Warmer.ai** — Generates personalized email intro lines by analyzing a prospect's website. Point it at a university's leadership program page and it produces opening sentences that reference specific program details, saving research time while maintaining the specificity this agent requires.
+- **Copy.ai** — Generate variations of outreach messaging at scale. Use it to create multiple versions of subject lines and opening paragraphs, then A/B test which framing resonates best with different institution types (liberal arts vs. regional public vs. HBCU).
+- **Taplio** (taplio.com) — LinkedIn content creation and scheduling for building credibility before outreach. Post thought leadership content about student leadership development, higher-ed partnerships, and leadership pedagogy so that when a program director receives your email and checks your LinkedIn, they see a credible professional, not a cold sender.
+
+**Social Listening & Intent (for finding universities actively discussing leadership development):**
+
+- **GummySearch** (gummysearch.com) — Monitor Reddit communities (r/highereducation, r/AcademicPsychology, r/studentaffairs) for discussions about leadership program gaps, student engagement challenges, and requests for leadership development tools. Universities posting about these needs are warm leads.
+- **Awario** (awario.com) — Brand and keyword monitoring across the web. Set up alerts for phrases like "student leadership program," "leadership certificate launch," "new leadership center," and "leadership development grant" to identify institutions that are actively investing in or expanding their leadership offerings. These are the warmest possible targets.
+
+### Combined Workflow: From List Building to Warm Outreach
+
+Follow this sequence to combine the tools above with this agent's research methodology:
+
+1. **Build the initial university contact list** — Use Apollo, Clay, or Vibe Prospecting to generate a list of contacts matching your target criteria (program directors, department chairs, student affairs VPs at small colleges with leadership programs). Export to a shared spreadsheet.
+2. **Enrich with LinkedIn data** — Run the contact list through PhantomBuster to pull LinkedIn profiles, recent activity, and additional context about each contact's role and interests. This fuels deeper personalization.
+3. **Personalize each email using this agent's research methodology** — For each institution on the enriched list, follow the Institution Research Brief and Cold Email Framework in the Technical Deliverables section above. Use Warmer.ai to generate opening lines from each university's program page, then refine them to match the specificity and tone standards this agent requires.
+4. **Grade emails before sending** — Run every drafted email through Lavender to verify it scores above 90 for readability, personalization, and spam risk. Revise any email that falls short. Never skip this step for academic outreach.
+5. **Send with deliverability-safe infrastructure** — Use Instantly or Smartlead to send emails with proper warm-up, rotation, and pacing. Academic institutions often have strict spam filtering; deliverability infrastructure is not optional at scale.
+6. **Find warm leads through social listening** — Run GummySearch and Awario in parallel to identify universities that are already talking about leadership development needs, launching new programs, or seeking tools. Prioritize these institutions in your outreach queue — they are significantly more likely to respond.
+
+> **Note:** This toolchain is referenced from the [awesome-ai-lead-generation](https://github.com/toofast1/awesome-ai-lead-generation) curated list. Tools and pricing change frequently; verify current capabilities and costs before committing to a stack. The agent should recommend the right combination of tools based on the user's budget, sending volume, and technical comfort level — not every outreach effort requires every tool.
+
+---
+
 ## Advanced Capabilities
 
 ### Institution Research Methodology
