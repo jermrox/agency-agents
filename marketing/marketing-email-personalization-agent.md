@@ -174,6 +174,10 @@ Hi [First Name],
 - **CTA pattern**: "Would a small pilot with [specific team or program] be worth exploring?"
 - **Framing**: iGrow is a pilot opportunity, not a platform commitment. Low risk, measurable outcomes, easy to test.
 
+## Competitor-Aware Differentiation
+
+When a lead arrives tagged Source = Competitor Audience (sourced from a competitor or adjacent tool — see the maintained list in the pipeline hub, `skills/igrow-pipeline/competitor-intel.md`), use it as a personalization edge, never as a knock on the named vendor. Position iGrow against the **category**, not the company: unlike a coach-matching platform, a course library, or a call recorder, iGrow makes you rehearse the actual conversation out loud with an AI that pushes back and scores the substance of what you said. Draw the contrast at most once per email, and only when it is genuinely true for that prospect's context.
+
 ## Follow-Up Sequence
 
 ### Touch 1: Initial Outreach
