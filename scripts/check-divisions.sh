@@ -33,9 +33,11 @@ JSON="divisions.json"
 # standalone HTML dashboards published via Netlify (see
 # scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
 # Python tool (the biweekly non-dilutive funding sweep), not agents.
-# vybe-app/ is the Vybe Health React Native app (product source, JS), not
-# agents. None of these is a division — they must never be scanned as source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper vybe-app)
+# components/ holds shared React/TSX UI components (the research board's map),
+# not agents. vybe-app/ is the Vybe Health React Native app (product source,
+# JS), not agents. None of these is a division — they must never be scanned as
+# source-agent categories.
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }

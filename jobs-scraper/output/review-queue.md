@@ -1,3 +1,30 @@
+## Run 2026-09-22 10:45 UTC — 2 posting(s)
+
+### [Social Worker (Behavioral Health Interdisciplinary Program) - EDRP approved](https://www.usajobs.gov:443/job/884968800)
+- **Employer:** Veterans Health Administration
+- **Location:** Clovis, New Mexico
+- **Score:** 12.0 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $61722 - $97087 PA
+- **Matched:** domain=dod, military, veteran | discipline=physical therapist
+
+> Applicants pending the completion of educational or certification/licensure requirements may be referred and tentatively selected but may not be hired until all requirements are met. HPTs who are on track to graduate/complete the requirements should respond as if they have met the requirements.…
+
+- [ ] Approve  - [ ] Reject
+
+### [Social Worker (MH Residential Rehabilitation Program) - EDRP/Recruitment/Relocation Incentive](https://www.usajobs.gov:443/job/884741700)
+- **Employer:** Veterans Health Administration
+- **Location:** Big Spring, Texas
+- **Score:** 8.5 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $71255 - $112082 PA
+- **Matched:** domain=military, veteran | discipline=physical therapist
+
+> Applicants pending the completion of educational or certification/licensure requirements may be referred and tentatively selected but may not be hired until all requirements are met. HPTs who are on track to graduate/complete the requirements should respond as if they have met the requirements.…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-14 19:09 UTC — 0 posting(s)
 
 _No new postings._
