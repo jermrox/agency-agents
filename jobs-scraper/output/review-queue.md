@@ -1,3 +1,18 @@
+## Run 2026-09-23 19:07 UTC — 1 posting(s)
+
+### [SOCIAL WORKER](https://www.usajobs.gov:443/job/885960700)
+- **Employer:** U.S. Air Forces, Europe
+- **Location:** Alconbury, United Kingdom
+- **Score:** 11.5 | **Tags:** military
+- **Source:** `usajobs:federal`
+- **Compensation:** $76463 - $99404 PA
+- **Matched:** domain=dod, military | discipline=human performance
+
+> Conditions of Employment Continues: This position has been identified as having "regular contact with children". IAW Public Law 101-647 Section231, and Public Law 102-190, Section 1094 and DoD Instruction 1402.05, background checks are required. DD Form 2981 Basic Criminal History and Statement of…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-23 07:06 UTC — 0 posting(s)
 
 _No new postings._

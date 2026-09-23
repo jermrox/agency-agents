@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-23T07:06:17.924479+00:00",
+  "generated_at": "2026-09-23T19:07:36.738590+00:00",
   "totals": {
-    "postings": 464,
-    "employers": 29,
-    "unique_jobs": 212,
-    "with_salary": 150,
+    "postings": 468,
+    "employers": 30,
+    "unique_jobs": 213,
+    "with_salary": 151,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
-      "latest": "2026-09-22T13:23:02.370000+00:00"
+      "latest": "2026-09-23T12:30:48.293000+00:00"
     }
   },
   "by_employer": [
@@ -203,23 +203,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 200,
-      "share": 0.9524
+      "count": 201,
+      "share": 0.9526
     },
     {
       "name": "sof",
       "count": 50,
-      "share": 0.2381
+      "share": 0.237
     },
     {
       "name": "first-responder",
       "count": 34,
-      "share": 0.1619
+      "share": 0.1611
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1429
+      "share": 0.1422
     }
   ],
   "by_branch": [
@@ -237,7 +237,7 @@
     },
     {
       "name": "Air Force",
-      "count": 19
+      "count": 20
     },
     {
       "name": "Marine Corps",
@@ -410,7 +410,7 @@
     },
     {
       "name": "Secret",
-      "count": 18
+      "count": 19
     },
     {
       "name": "TS/SCI",
@@ -418,12 +418,12 @@
     }
   ],
   "salary": {
-    "count": 150,
+    "count": 151,
     "min": 27500.0,
     "max": 219654.0,
-    "median": 90158.75,
+    "median": 89837.5,
     "p25": 62782.81,
-    "p75": 119156.62,
+    "p75": 118697.25,
     "by_discipline": {
       "strength-conditioning": {
         "count": 28,
@@ -485,7 +485,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0142
+    "share": 0.0141
   },
   "timeline": [
     {
@@ -498,12 +498,12 @@
     },
     {
       "month": "2026-09",
-      "count": 136
+      "count": 137
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-24T13:23:02.370000+00:00",
+    "pivot": "2026-06-25T12:30:48.293000+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
@@ -667,6 +667,10 @@
       "count": 3
     },
     {
+      "title": "SOCIAL WORKER",
+      "count": 3
+    },
+    {
       "title": "Supervisory CBP Officer (Assistant Port Director)",
       "count": 3
     },
@@ -684,10 +688,6 @@
     },
     {
       "title": "Human Performance Program Manager",
-      "count": 2
-    },
-    {
-      "title": "MWR Fitness Instructor",
       "count": 2
     }
   ]

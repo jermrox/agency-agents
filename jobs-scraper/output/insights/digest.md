@@ -4,21 +4,21 @@
 
 ## Headline
 
-- **212 open jobs** from **29 employers**.
-- Posted between **2026-07-06** and **2026-09-22**.
-- **$90,159 median** annualized pay across the 150 postings that publish one -- $62,783 to $119,157 covers the middle half.
+- **213 open jobs** from **30 employers**.
+- Posted between **2026-07-06** and **2026-09-23**.
+- **$89,838 median** annualized pay across the 151 postings that publish one -- $62,783 to $118,697 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 252 of 464 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 200, Special Operations 50, Fire / EMS / Law Enforcement 34, Training Pipeline 30.
+- 255 of 468 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 201, Special Operations 50, Fire / EMS / Law Enforcement 34, Training Pipeline 30.
 
 ## Month over month
 
-Postings are **up +68** in 2026-09 (68 to 136), 100% against 2026-08.
+Postings are **up +69** in 2026-09 (68 to 137), 101% against 2026-08.
 
 ```
 2026-07     8  ##
 2026-08    68  ##############
-2026-09   136  ############################
+2026-09   137  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -79,11 +79,11 @@ more than one, so these do not sum to 100%.
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Top Secret (22), Secret (18), TS/SCI (17)
+**Clearances requested:** Top Secret (22), Secret (19), TS/SCI (17)
 
 ## What it pays
 
-- Median **$90,159**, middle half $62,783 to $119,157.
+- Median **$89,838**, middle half $62,783 to $118,697.
 - Full range $27,500 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -116,7 +116,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Sill | 3 |
 | JBLM | 3 |
 
-**Branches and services:** Army (68), Joint (42), Navy (26), Air Force (19), Marine Corps (7), Coast Guard (1), Space Force (1)
+**Branches and services:** Army (68), Joint (42), Navy (26), Air Force (20), Marine Corps (7), Coast Guard (1), Space Force (1)
 
 ## Most common titles
 
@@ -131,4 +131,4 @@ annual contractor bands are not otherwise comparable.
 | OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS) | 3 |
 | Occupational Therapy Assistant | 3 |
 | Performance Dietitian | 3 |
-| Supervisory CBP Officer (Assistant Port Director) | 3 |
+| SOCIAL WORKER | 3 |
