@@ -1,24 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-22.*
+*Briefing generated 2026-09-23.*
 
 ## Headline
 
-- **211 open jobs** from **29 employers**.
+- **212 open jobs** from **29 employers**.
 - Posted between **2026-07-06** and **2026-09-22**.
-- **$89,838 median** annualized pay across the 149 postings that publish one -- $62,783 to $119,616 covers the middle half.
+- **$90,159 median** annualized pay across the 150 postings that publish one -- $62,783 to $119,157 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 252 of 463 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 199, Special Operations 50, Fire / EMS / Law Enforcement 34, Training Pipeline 30.
+- 252 of 464 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 200, Special Operations 50, Fire / EMS / Law Enforcement 34, Training Pipeline 30.
 
 ## Month over month
 
-Postings are **up +67** in 2026-09 (68 to 135), 99% against 2026-08.
+Postings are **up +68** in 2026-09 (68 to 136), 100% against 2026-08.
 
 ```
 2026-07     8  ##
 2026-08    68  ##############
-2026-09   135  ############################
+2026-09   136  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -46,7 +46,7 @@ Postings are **up +67** in 2026-09 (68 to 135), 99% against 2026-08.
 | Commander, Navy Installations Command | 24 | $46,166 | Program Leadership, Sports Medicine |
 | General Dynamics Information Technology | 22 | $106,174 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 21 | $142,469 | - |
-| Military Treatment Facilities under DHA | 18 | $97,983 | Sports Medicine, Program Leadership |
+| Military Treatment Facilities under DHA | 19 | $102,935 | Sports Medicine, Program Leadership |
 | Veterans Health Administration | 9 | $78,296 | Sports Medicine, Program Leadership |
 | Bureau of Prisons/Federal Prison System | 7 | $74,426 | Sports Medicine, Performance Nutrition |
 | The Geneva Foundation | 7 | $75,000 | Sports Medicine, Strength & Conditioning |
@@ -56,8 +56,8 @@ Postings are **up +67** in 2026-09 (68 to 135), 99% against 2026-08.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Sports Medicine | 81 | 53% |
-| Strength & Conditioning | 75 | 49% |
+| Sports Medicine | 82 | 53% |
+| Strength & Conditioning | 75 | 48% |
 | Cognitive Performance | 30 | 19% |
 | Research & Analytics | 25 | 16% |
 | Program Leadership | 19 | 12% |
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$89,838**, middle half $62,783 to $119,616.
+- Median **$90,159**, middle half $62,783 to $119,157.
 - Full range $27,500 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -92,7 +92,7 @@ Share is out of jobs that name any certification at all.
 | Research & Analytics | 14 | $70,342 | $97,839 | $101,886 |
 | Sport Science | 2 | $89,941 | $94,144 | $98,347 |
 | Performance Nutrition | 8 | $90,397 | $92,475 | $102,935 |
-| Sports Medicine | 59 | $60,872 | $79,404 | $102,935 |
+| Sports Medicine | 60 | $61,433 | $79,517 | $103,318 |
 | Strength & Conditioning | 28 | $48,880 | $66,582 | $88,346 |
 | Program Leadership | 16 | $57,747 | $65,546 | $82,076 |
 
@@ -101,14 +101,14 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** TX (19), VA (16), CA (15), FL (14), GA (13), NC (13), NM (10), MO (7), MD (6), WA (6)
+**States:** TX (19), VA (16), CA (15), FL (14), GA (13), NC (13), NM (10), MO (8), MD (6), WA (6)
 
 | Installation | Jobs |
 |---|---|
 | Fort Bragg | 25 |
 | Cannon AFB | 6 |
+| Fort Leonard Wood | 6 |
 | Hurlburt Field | 6 |
-| Fort Leonard Wood | 5 |
 | Fort Stewart | 5 |
 | Joint Base Langley-Eustis | 5 |
 | Fort Benning | 4 |
@@ -116,13 +116,13 @@ annual contractor bands are not otherwise comparable.
 | Fort Sill | 3 |
 | JBLM | 3 |
 
-**Branches and services:** Army (67), Joint (42), Navy (26), Air Force (19), Marine Corps (7), Coast Guard (1), Space Force (1)
+**Branches and services:** Army (68), Joint (42), Navy (26), Air Force (19), Marine Corps (7), Coast Guard (1), Space Force (1)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 13 |
+| Physical Therapist | 14 |
 | Fitness Specialist | 6 |
 | Human Performance Operations Manager | 4 |
 | Occupational Therapist | 4 |
