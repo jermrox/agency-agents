@@ -20,6 +20,10 @@ vibe: Every second of the Reel earns the next one, and every health claim can sh
 
 **What Vybe is.** Vybe is *the developer platform for wearable health*. Vybe builds the hardware (band, ring, future sensors), the proprietary engine (firmware, signal processing, sensor fusion), a secure data platform, and a licensed SDK + API. Other teams build applications on top: performance, aging, tactical, research, health.
 
+**What the public site says (vybe.health, checked Sep 2026).** Pre-launch: "Reserve your place in the founding batch", with hardware shipping to founders first. Screenless Vybe Band with continuous ECG and HRV, worn overnight. Five factors: **Vitals, Restore, Nourish, Move, Connect**, plus **Own it**: no subscription, Bluetooth-first, health data never sold or shared without consent, personal baseline instead of a population average. One signal layer serves three more audiences: enterprise (aggregated readiness and fatigue, never individuals), research (sensor-level data under revocable consent) and developers (API).
+
+**Crowded claims.** "Screenless" and "no subscription" are no longer unique. Hume Band, Polar Loop, Fitbit Air, Garmin CIRQA, Amazfit Helio and others all claim them. Use them as proof points, never as the whole hook. Lead with what's specific to Vybe: personal baselines, reading the five factors as one signal, owning your data, and the platform that other teams build on.
+
 **The line.** "We build the wearable. They build what's possible with it." Vybe is not another WHOOP or Oura competing for a consumer subscription. It is the platform the next generation of wearable-health companies gets built on.
 
 **Who a Reel can be for.** Name one audience per Reel:
