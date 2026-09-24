@@ -1,0 +1,2128 @@
+{
+  "generated": "2026-09-24T00:00:00Z",
+  "fetch_verified": false,
+  "findings": [
+    {
+      "title": "Health and Human Performance Optimization to Enhance Military Readiness",
+      "url": "https://media.defense.gov/2026/Jul/15/2003961654/-1/-1/1/HEALTH%20AND%20HUMAN%20PERFORMANCE%20OPTIMIZATION%20TO%20ENHANCE%20MILITARY%20READINESS%20OSD004430-26%20RES%20FINAL.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "h2f",
+        "mental",
+        "nutrition",
+        "sleep",
+        "standards",
+        "men"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 15 JUL 2026",
+      "notes": "Department-level memo on health and human performance optimization. Search text indicates it directs Personnel & Readiness policy updates, including to DoDI 6200.06 (Periodic Health Assessment), on a stated August 2026 timeline, and covers a testosterone-deficiency screening protocol.",
+      "caveat": "Highest-leverage item on this board and the least verified — read the PDF before briefing any of it. A policy directive is not evidence of efficacy, and the screening element in particular deserves a careful read of what is actually mandated versus recommended."
+    },
+    {
+      "title": "Warfighter Performance Optimization — Total Force Fitness",
+      "url": "https://media.defense.gov/2026/Jul/15/2003961653/-1/-1/1/WARFIGHTER%20PERFORMANCE%20OPTIMIZATION%20-%20TOTAL%20FORCE%20FITNESS%20OSD014355-25%20RES%20FINAL.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "h2f",
+        "mental",
+        "tech",
+        "standards"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 06 MAY 2026",
+      "notes": "Companion memo. Search text describes cognitive performance being established as a core occupational readiness competency measured with the same discipline as physical standards, plus a pipeline for fielding wearables and data analytics across modernized Total Force Fitness domains.",
+      "caveat": "If accurate, this is the doctrinal hook for both cognitive programs and wearable procurement. Read alongside the July memo."
+    },
+    {
+      "title": "Secretary of War announced memoranda — military fitness standards",
+      "url": "https://media.defense.gov/2025/Sep/30/2003812317/-1/-1/1/SECRETARY-OF-WAR-ANNOUNCED-MEMORANDUMS.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 30 SEP 2025",
+      "notes": "The trigger document for the current standards churn. The Marine Corps explicitly cites this memo as the authority for its PFT and body-composition changes; the other services' 2026 changes trace back here too.",
+      "caveat": "If you are trying to understand why every service moved standards at once, start with this and the March 2025 memos below rather than with any single service announcement."
+    },
+    {
+      "title": "Additional Guidance on Military Fitness Standards",
+      "url": "https://media.defense.gov/2026/Jan/12/2003855613/-1/-1/1/ADDITIONAL-GUIDANCE-ON-MILITARY-FITNESS-STANDARDS.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 12 JAN 2026",
+      "notes": "Implementation guidance under the SecWar standards memo. Related reporting describes a 18 DEC 2025 follow-up specifying waist-to-height ratio for body composition with implementation from 1 JAN 2026, and height/weight tables retired.",
+      "caveat": "This is the document that operationalizes WHtR across the Joint Force. Every service body-composition change below is downstream of it."
+    },
+    {
+      "title": "Combat Arms Standards",
+      "url": "https://media.defense.gov/2025/Mar/31/2003678527/-1/-1/1/COMBAT-ARMS-STANDARDS.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "women"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 31 MAR 2025",
+      "notes": "Directs the departments to distinguish combat arms from non-combat arms occupations and to make all entry-level and sustained physical requirements in combat arms sex-neutral, based solely on operational demands.",
+      "caveat": "The origin of the Army's sex-neutral 350-point combat-MOS standard. Sex-neutral standards interact directly with the women's-health research in the section below — worth holding both in view."
+    },
+    {
+      "title": "Rapid Force-Wide Review of Military Standards",
+      "url": "https://media.defense.gov/2025/Mar/12/2003666182/-1/-1/1/RAPID-FORCE-WIDE-REVIEW-OF-MILITARY-STANDARDS-OSD001952-25-RES-FINAL.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Memorandum",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported 12 MAR 2025",
+      "notes": "Orders a department-wide review of standards covering physical fitness, body composition, and grooming. The earliest link in the chain that produced everything else in this section.",
+      "caveat": ""
+    },
+    {
+      "title": "Army Directive 2026-07, Army Physical Fitness Standards",
+      "url": "https://api.army.mil/e2/c/downloads/2026/04/29/858da01e/cft-army-directive.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Directive",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "api.army.mil",
+      "date": "reported 29 APR 2026",
+      "notes": "Behind the current Army physical fitness standards: the sex-neutral, age-normed combat standard of 350 points with no event below 60, active component from 01 JAN 2026 and Reserve/Guard from 01 JUN 2026, plus the Combat Field Test beginning April 2026 for Soldiers in the designated combat MOS/AOCs. Also posted on Army Publishing Directorate as ARN46456.",
+      "caveat": "Sources disagree on whether the list is 21 or 24 MOS/AOCs — read the list in the directive itself rather than trusting any article, this board included. Army Directive 2025-06 and 2026-13 sit in the same policy line and are easy to conflate."
+    },
+    {
+      "title": "Army Directive 2026-13, Army Body Composition Program",
+      "url": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN47030-ARMY_DIR_2026-13-000-WEB-1.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Directive",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "nutrition"
+      ],
+      "pub": "Army Publishing Directorate",
+      "date": "reported effective 07 JUL 2026",
+      "notes": "Retires height/weight tables and adopts waist-to-height ratio. Reported threshold: Soldiers are enrolled in ABCP at a WHtR of 0.55 or greater, evaluated twice per year. An ABCP FAQ is published alongside it.",
+      "caveat": "The single most operationally consequential item for an H2F team on this board — it changes who lands in your program. Verify the threshold and the measurement protocol against the directive itself before programming to it."
+    },
+    {
+      "title": "Army Fitness Test (AFT) — program page and scoring",
+      "url": "https://www.army.mil/aft/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "army.mil",
+      "date": "continuously updated",
+      "notes": "The AFT replaced the ACFT on 1 June 2025. Reported scoring: combat MOSs move to one sex-neutral, age-normed standard requiring 350 total with a 60-point event minimum, effective 1 JAN 2026 (active) and 1 JUN 2026 (RC); combat-enabling specialties keep sex- and age-normed scoring at 300. A separate reported provision exempts Soldiers scoring 465+ from body fat standards.",
+      "caveat": "All figures here are from search text. Pull the scoring tables from the program page before programming to them."
+    },
+    {
+      "title": "FM 7-22, Holistic Health and Fitness",
+      "url": "https://armypubs.army.mil/ProductMaps/PubForm/Details.aspx?PUB_ID=1020968",
+      "kind": "policy",
+      "grade": "Doctrine",
+      "type": "Doctrine",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "h2f",
+        "mental",
+        "nutrition",
+        "sleep"
+      ],
+      "pub": "Army Publishing Directorate",
+      "date": "base edition OCT 2020",
+      "notes": "The doctrinal foundation of H2F: five readiness domains — physical, nutritional, mental, sleep, spiritual — plus unit-level experts and the non-physical components of readiness. Everything else on this board sits downstream of it. An audiobook edition is hosted on the Army's training repository.",
+      "caveat": "Always check the ProductMap page for the current version and change packages before citing a chapter — the most link-rot-prone item here."
+    },
+    {
+      "title": "Air Force modernizes Physical Fitness Program",
+      "url": "https://www.af.mil/News/Article-Display/Article/4418303/air-force-modernizes-physical-fitness-program-to-bolster-readiness-long-term-he/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "secondary"
+      ],
+      "pub": "af.mil",
+      "date": "2026",
+      "notes": "Reported timeline: PFA testing pauses 1 JAN 2026 for transition, new-standard testing begins 1 MAR 2026, diagnostic-only through 31 AUG 2026, scored testing resumes 1 SEP 2026. Reintroduces scored body composition via waist-to-height ratio and adds a two-mile run.",
+      "caveat": "The signed DTM on afpc.af.mil (dated 26 FEB 2026 per search) is the authority for the standards; this article is the plain-language summary."
+    },
+    {
+      "title": "Navy Physical Readiness Program — 2026 cycle changes",
+      "url": "https://www.mynavyhr.navy.mil/Support-Services/Culture-Resilience/Physical-Readiness/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "mynavyhr.navy.mil",
+      "date": "2026",
+      "notes": "Two PFA cycles per calendar year in 2026 (Cycle 1: 1 JAN–30 JUN; Cycle 2: 1 JUL–31 DEC), revised Body Composition Assessment procedures, and a changed High-Performance BCA exemption. OPNAVINST 6110.1L is the underlying instruction.",
+      "caveat": ""
+    },
+    {
+      "title": "Marine Corps revises PFT and body composition standards",
+      "url": "https://www.marines.mil/News/Press-Releases/Press-Release-Display/Article/4414812/marine-corps-revises-body-composition-standards/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Press release",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "secondary"
+      ],
+      "pub": "marines.mil",
+      "date": "2025–2026",
+      "notes": "Issued under the 30 SEP 2025 SecWar memo. Replaces the semiannual height-and-weight evaluation with waist-to-height ratio as the first step of body-composition evaluation, alongside PFT changes.",
+      "caveat": "Three messages in sequence — read Change 2 before assuming the original MARADMIN still stands."
+    },
+    {
+      "title": "AR 25-99, Biometric Program and DoD Biometric Data Management",
+      "url": "https://www.army.mil/article/294767/biometric_program_and_dod_biometric_data_management",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "tech",
+        "standards",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "reported effective 21 JUL 2026",
+      "notes": "Establishes policy for the operation, use, and protection of biometric data across the Army Biometric Program and DoW biometric data management.",
+      "caveat": "Relevant to any H2F team fielding wearables: the governance layer for physiological data arrived alongside the hardware. Confirm scope — biometric identity management and physiological monitoring are not automatically the same policy space."
+    },
+    {
+      "title": "HQDA EXORD 218-25, FRAGO 1 — Annex A: AFT implementation guidance",
+      "url": "https://api.army.mil/e2/c/downloads/2026/01/13/2887cffc/hqda-exord-218-25-frago-1-annex-a-implementation-plan-guidance-30-may-2025-final.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Order",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "api.army.mil",
+      "date": "reported 30 MAY 2025, posted JAN 2026",
+      "notes": "The execution-order annex that tells units how and when to run the new test — phasing, diagnostic windows, record-test timing, and the reclassification path for combat-MOS Soldiers below the 350 standard.",
+      "caveat": "Execution orders change more often than directives. Confirm this is the current FRAGO before briefing timelines from it."
+    },
+    {
+      "title": "MARADMIN 613/25 — Advance notification of changes to the Marine Corps PFT and body composition evaluation process",
+      "url": "https://www.marines.mil/News/Messages/Messages-Display/Article/4363582/advance-notification-of-changes-to-the-marine-corps-physical-fitness-test-and-b/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Administrative message",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "marines.mil",
+      "date": "reported 2025",
+      "notes": "The Marine Corps' implementing message for the Secretary of War military fitness standards memo of 30 SEP 2025 — the service-level end of the body-composition policy chain already tracked on this board.",
+      "caveat": "Superseded in part by MARADMIN 066/26 below. Read both, in order."
+    },
+    {
+      "title": "MARADMIN 066/26 — Change 1 to the advance notification of PFT and body composition changes",
+      "url": "https://www.marines.mil/News/Messages/Messages-Display/Article/4414762/change-1-to-the-advance-notification-of-changes-to-the-marine-corps-physical-fi/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Administrative message",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "marines.mil",
+      "date": "reported 26 FEB 2026",
+      "notes": "Change 1 to MARADMIN 613/25. Amends the implementation of the PFT and body-composition evaluation changes.",
+      "caveat": "A change message only makes sense read against the base message — pull 613/25 first, then apply this."
+    },
+    {
+      "title": "NAVADMIN 264/25 — Physical Readiness Program policy changes",
+      "url": "https://www.mynavyhr.navy.mil/Portals/55/Messages/NAVADMIN/NAV2025/NAV25264.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Administrative message",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "mynavyhr.navy.mil",
+      "date": "reported 30 DEC 2025",
+      "notes": "Sets CY2026 assessment cycles (Cycle-1 Jan–Jun, Cycle-2 Jul–Dec), a two-step body composition assessment, a tightened high-performance BCA exemption, and a one-time reset of prior PFA failures.",
+      "caveat": "The Navy's counterpart to the Army and Marine Corps moves in the same policy chain. A companion fact sheet is posted alongside it."
+    },
+    {
+      "title": "Navy Physical Readiness Program Guide-1: PRP Policies (JUN 2026 edition)",
+      "url": "https://www.mynavyhr.navy.mil/Portals/55/Support/Culture%20Resilience/Physical/Guide-1%20PRP%20Policies.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "mynavyhr.navy.mil",
+      "date": "reported JUN 2026",
+      "notes": "The consolidated Navy PRP policy guide, refreshed after the CY2026 changes. Useful as the standing reference once the NAVADMINs are absorbed.",
+      "caveat": "A guide restates policy; it does not create it. Where the guide and a NAVADMIN disagree, the message wins."
+    },
+    {
+      "title": "Space Force publishes further guidance on physical fitness",
+      "url": "https://www.spaceforce.mil/News/Article-Display/Article/4371955/space-force-publishes-further-guidance-on-physical-fitness/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical",
+        "h2f",
+        "secondary"
+      ],
+      "pub": "spaceforce.mil",
+      "date": "reported 2025, effective 01 JAN 2026",
+      "notes": "From 01 JAN 2026 every Guardian must complete two Human Performance Assessments a year, whether or not they are enrolled in the Continuous Fitness Assessment. Fills the one service gap this board had in the standards chain.",
+      "caveat": "Secondary. The underlying guidance document is what to cite; this article only announces it."
+    },
+    {
+      "title": "Statement on the Enhanced Screening Protocol to Optimize Warfighter Performance",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4546628/statement-by-chief-pentagon-spokesman-sean-parnell-on-enhanced-screening-protoc/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Press release",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "men",
+        "standards",
+        "physical",
+        "secondary"
+      ],
+      "pub": "war.gov",
+      "date": "reported 2026",
+      "notes": "The public announcement of the enhanced testosterone-deficiency screening protocol directed for service members. This is the press statement, not the directive — the substance sits in the Secretary of War health and human performance optimization memo listed at the top of this section.",
+      "caveat": "Secondary: a press release about a policy document. Cite the memo (OSD004430-26) and the resulting Periodic Health Assessment change to DoDI 6200.06, not this page."
+    },
+    {
+      "title": "COMDTINST 6100.1 — Coast Guard Physical Readiness Program",
+      "url": "https://media.defense.gov/2026/Jun/16/2003949424/-1/-1/0/CI_6100_1.PDF",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Directive",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "media.defense.gov",
+      "date": "reported JUN 2026",
+      "notes": "The Coast Guard's implementing instruction for its Physical Readiness Program, issued June 2026 with an official launch date of 1 JUL 2026. Completes the set: every uniformed service now has a 2025–2026 standards update in the same policy chain.",
+      "caveat": "The Coast Guard sits under DHS, not DoW — its standards chain runs through a different authority than the other four services on this board. Verify the measurement protocol and scoring against the instruction itself."
+    },
+    {
+      "title": "Coast Guard Physical Readiness Program officially launches July 1",
+      "url": "https://www.mycg.uscg.mil/News/Article/4513114/physical-readiness-program-officially-launches-july-1/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "secondary"
+      ],
+      "pub": "mycg.uscg.mil",
+      "date": "reported JUL 2026",
+      "notes": "The public announcement of the Coast Guard PRP launch. Complements the instruction above with plain-language implementation details.",
+      "caveat": "Secondary. Cite the COMDTINST 6100.1, not this article."
+    },
+    {
+      "title": "Air Force updates fitness test requirements — effective 1 JUL 2026",
+      "url": "https://www.af.mil/News/Article-Display/Article/4371953/air-force-updates-fitness-test-requirements/",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "secondary"
+      ],
+      "pub": "af.mil",
+      "date": "reported 2026",
+      "notes": "Updated Air Force PFA reporting: new standards effective 1 JUL 2026, following the diagnostic-only period that began 1 MAR 2026. Adds detail beyond the earlier modernization article already on this board.",
+      "caveat": "Secondary. The signed DTM remains the authority; this article adds implementation timeline color."
+    },
+    {
+      "title": "SPFMAN 36-2905 — Space Force Human Performance Manual",
+      "url": "https://static.e-publishing.af.mil/production/1/sf_s1/publication/spfman36-2905/spfman36-2905.pdf",
+      "kind": "policy",
+      "grade": "Policy",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards",
+        "h2f"
+      ],
+      "pub": "e-publishing.af.mil",
+      "date": "reported 2026",
+      "notes": "The Space Force's standalone human performance manual — formalising the service's approach to fitness assessment, body composition, and human performance programs distinct from Air Force guidance.",
+      "caveat": "The Space Force is the service most often missed in standards tracking. This closes that gap alongside the HPA guidance already on this board."
+    },
+    {
+      "title": "Enhancing Military Musculoskeletal Readiness: A Proposal for Collaboration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41734198/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "physical"
+      ],
+      "pub": "PubMed 41734198",
+      "date": "reported FEB 2026",
+      "notes": "Argues MSK injury remains the largest threat to readiness, deployability, and retention, and that existing programs need alignment plus more civilian–military partnership.",
+      "caveat": "Graded C provisionally: this reads as a commentary or proposal, not a trial. If it is an editorial it is Grade D evidentially, though still useful for framing."
+    },
+    {
+      "title": "Females Exhibit Greater Peak and Cumulative Patellofemoral Joint Stress With Moderate and Heavy Load Carriage Compared With Males",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12410583/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "women",
+        "physical",
+        "men"
+      ],
+      "pub": "PMC12410583",
+      "date": "recent",
+      "notes": "Biomechanics of sex differences in patellofemoral joint stress under moderate and heavy load. Companion literature reports 1.3–2.2× higher patellofemoral pain incidence in female versus male recruits, and that female trainees sustain roughly twice the injuries with 2.5× the risk of significant time-loss injury in basic training.",
+      "caveat": "Sample size and load conditions not captured. Pull them before using this to justify a programming change."
+    },
+    {
+      "title": "Perimenopause and menopause among active-duty military service women",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42495932/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women"
+      ],
+      "pub": "PubMed 42495932",
+      "date": "reported 2026",
+      "notes": "Extends military women's health research past load carriage and injury into midlife health — a population question the force has largely not addressed.",
+      "caveat": "Scoping reviews map a literature; they do not establish effect. Useful for identifying gaps, not for prescribing."
+    },
+    {
+      "title": "Pelvic Floor Disorders Among U.S. Military Active-Duty Females",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38847606/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "injury"
+      ],
+      "pub": "PubMed 38847606",
+      "date": "PubMed 38847606",
+      "notes": "Companion literature reports 497,255 active-duty service women identified, of whom 9.93% had a pelvic floor disorder — large enough to be a readiness issue, not a niche one.",
+      "caveat": "Prevalence from healthcare-encounter data undercounts people who never sought care. Directional."
+    },
+    {
+      "title": "Incidence and risk factors for hip fractures among U.S. Armed Forces active component women compared to men, 2018–2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39255514/",
+      "kind": "research",
+      "grade": "S",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "injury",
+        "men"
+      ],
+      "pub": "PubMed 39255514",
+      "date": "PubMed 39255514",
+      "notes": "Five-year incidence and risk-factor comparison by sex across the active component. Pairs directly with the bone-stress and energy-availability literature below.",
+      "caveat": "Surveillance describes incidence; it establishes no causal mechanism."
+    },
+    {
+      "title": "Energy Deficiency in Soldiers: Athlete Triad and RED-S Syndromes in the Military",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7477333/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "nutrition",
+        "injury"
+      ],
+      "pub": "PMC7477333",
+      "date": "PMC7477333",
+      "notes": "Military training in energy deficit disturbs endocrine and metabolic function, menstrual function, bone health, immune function, GI health, iron status, mood, and physical and cognitive performance. Stress fractures at weight-bearing sites are common in basic training, more so in women.",
+      "caveat": "Not a 2026 item, and a review rather than a trial — included because it is the mechanism that connects the fueling, women's-health, and bone-injury threads on this board."
+    },
+    {
+      "title": "Evolution of Research on the Female Athlete Triad and Relative Energy Deficiency in Sport (RED-S)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12922946/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "nutrition",
+        "injury"
+      ],
+      "pub": "PMC12922946",
+      "date": "recent",
+      "notes": "Current synthesis of the RED-S construct: chronic estrogen suppression from low energy availability raises bone resorption and lowers bone strength, raising stress fracture, osteopenia, and early osteoporosis risk.",
+      "caveat": "Civilian sport literature requiring translation to a military population. Grade C for that reason, not for quality."
+    },
+    {
+      "title": "Optimizing Female Warfighter Health and Performance in Environmental Extremes",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12186821/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "environment"
+      ],
+      "pub": "PMC12186821",
+      "date": "recent",
+      "notes": "Sex-specific considerations for heat, cold, and altitude — the intersection of the women's-health and environmental-physiology threads, and a gap in most unit-level programming.",
+      "caveat": ""
+    },
+    {
+      "title": "Longitudinal Associations Between Health-Related Quality of Life and Female Service Member Readiness — Millennium Cohort",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12360642/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "mental"
+      ],
+      "pub": "PMC12360642",
+      "date": "PMC12360642",
+      "notes": "Millennium Cohort is the largest prospective military health study running; this analysis links HRQOL to readiness outcomes in women specifically.",
+      "caveat": "Grade B on cohort design and scale. Effect sizes not captured — pull them."
+    },
+    {
+      "title": "At Sleep and Fatigue Management Summit, Military Experts Call Rest a Readiness Issue",
+      "url": "https://news.usuhs.edu/2026/06/at-sleep-and-fatigue-management-summit.html",
+      "kind": "research",
+      "grade": "C",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "mental",
+        "secondary"
+      ],
+      "pub": "USU News",
+      "date": "JUN 2026",
+      "notes": "Reported from the summit: nearly 85% of deployed service members sleep less than the recommended seven hours; most report six hours or less, a deficit speakers compared to the cognitive impairment of legal intoxication.",
+      "caveat": "Conference reporting, not peer-reviewed. Chase the underlying studies before quoting the 85% figure — and note the intoxication comparison is an analogy, not a measured equivalence."
+    },
+    {
+      "title": "Highlights from the 2026 Sleep and Fatigue Management Convening Event",
+      "url": "https://cdp.usuhs.edu/blog/highlights-2026-sleep-and-fatigue-management-dow-convening",
+      "kind": "research",
+      "grade": "C",
+      "type": "Practitioner post",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "secondary"
+      ],
+      "pub": "cdp.usuhs.edu",
+      "date": "2026",
+      "notes": "Practitioner-facing writeup of the same convening — the more useful of the two if you are building unit-level sleep programming rather than briefing leadership.",
+      "caveat": ""
+    },
+    {
+      "title": "Behavioral treatment of insomnia in active-duty service members with traumatic brain injury: RCT protocol",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41630034/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Trial protocol",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "brain",
+        "mental"
+      ],
+      "pub": "PubMed 41630034",
+      "date": "reported 2026",
+      "notes": "Randomized design in an active-duty TBI population — the intersection of the sleep and brain-health threads, in the population where both matter most.",
+      "caveat": "A protocol, not results. Grade B is provisional on design; there is no finding to cite yet."
+    },
+    {
+      "title": "Personalised sub-symptomatic exercise for military service members with persistent symptoms after mild TBI: a randomised controlled trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41626582/",
+      "kind": "research",
+      "grade": "A",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain",
+        "physical"
+      ],
+      "pub": "PubMed 41626582",
+      "date": "reported 2026",
+      "notes": "An RCT of exercise as treatment in a military population with persistent post-concussive symptoms — one of the few items on this board that clears the Grade A bar on design.",
+      "caveat": "Grade A is assigned on reported design only. Sample size and results are unread — confirm before citing an effect."
+    },
+    {
+      "title": "Carbohydrate Supplementation for Enhanced Physical Performance During Military Operations",
+      "url": "https://www.army.mil/article/285565/carbohydrate_supplementation_for_enhanced_physical_performance_during_military_operations",
+      "kind": "research",
+      "grade": "C",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "nutrition",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "army.mil",
+      "notes": "USARIEM work on whether carbohydrate supplementation preserves performance during operationally relevant caloric deficits — matching caloric demand at high operational tempo often is not feasible, so the question is what to do about the gap.",
+      "caveat": "A news feature about a study, not the study. Find the published paper before treating this as a finding."
+    },
+    {
+      "title": "Improved dietary intake and readiness among Navy Future Sailors following mobile health application use",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42416816/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition",
+        "tech"
+      ],
+      "pub": "PubMed 42416816",
+      "date": "reported JUN 2026",
+      "notes": "Evaluated a mobile health app (CoachMePlus) with non-prior-service enlistees in the Delayed Entry Program, framed against recruiting and retention pressure.",
+      "caveat": "Pre-accession population, app-based intervention — design and control condition unread. Do not generalize to in-service formations without checking."
+    },
+    {
+      "title": "Effects of Task-Specific and Strength Training on Simulated Military Task Performance in Soldiers",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7662950/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical"
+      ],
+      "pub": "PMC7662950",
+      "date": "older, still load-bearing",
+      "notes": "42 soldiers, three groups (task-specific, strength, control), 12-week intervention with pre/mid/post measurement on a repeated simulated military task course. Both training arms beat control; task-specific was as effective as strength training, supporting a combined approach.",
+      "caveat": "Not a 2026 item — included because it is the cleanest citable evidence for the combined-programming argument H2F teams make constantly."
+    },
+    {
+      "title": "Infantry training outcomes: are they improved with an initial reduction in load carriage mass and additional sprint intensity exercise?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39824542/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "injury"
+      ],
+      "pub": "PubMed 39824542",
+      "date": "PubMed 39824542",
+      "notes": "Tests the two levers a training unit can actually pull — initial load reduction and added sprint work — against infantry training outcomes.",
+      "caveat": "Directly actionable if it holds up. Read the methods before changing a POI."
+    },
+    {
+      "title": "Burden and risk factors for plantar fasciopathy in the military population, 2006–2015: a retrospective cohort study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39904534/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury"
+      ],
+      "pub": "PubMed 39904534",
+      "date": "PubMed 39904534",
+      "notes": "Ten-year burden and risk-factor analysis for one of the highest-volume overuse complaints in a military population.",
+      "caveat": "Retrospective, and the window ends in 2015 — useful for risk factors, weak for current rates."
+    },
+    {
+      "title": "Prevention and intervention against obesity and overweight in the military: a systematic review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12502539/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition",
+        "physical"
+      ],
+      "pub": "PMC12502539",
+      "date": "PMC12502539",
+      "notes": "The evidence base underneath the body-composition policy churn in the section above. If WHtR is now the gate, this is what is known about moving people back through it.",
+      "caveat": "Grade B: systematic review, but in a mixed military population rather than a single force. Read the inclusion criteria."
+    },
+    {
+      "title": "Sleep Patterns of U.S. Navy Personnel Transitioning from Training to Fleet Assignments",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42044900/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "tech"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "Wearable monitoring of 99 fit-for-duty surface warfare officers over a median 340 days each: mean 6.79 ± 0.58 h of sleep per day, with deprivation markedly worse in fleet assignments than in training.",
+      "caveat": "Long observation windows on real duty schedules are rare — this is a strong sleep-debt data point, but it is one community on surface ships and should not be generalised to the whole force."
+    },
+    {
+      "title": "Patterns of Use for GLP-1 Receptor Agonists in a Weight Management Cohort: MHS Database Analysis of Active Duty Service Members, 2021–2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42424303/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "Five years of Military Health System prescribing data on GLP-1 receptor agonists in active-duty weight management — the utilisation baseline underneath the whole body-composition policy debate.",
+      "caveat": "Utilisation data describes what is prescribed, not what works. Pair with the outcome trials before drawing performance conclusions."
+    },
+    {
+      "title": "Prevalence of Obesity Medications in the Military Health System: An Update from 2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41894608/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "Updates the earlier MHS obesity-medication prevalence work. Reads as the trend companion to the 2021–2025 GLP-1 cohort analysis above.",
+      "caveat": "Prevalence studies are sensitive to how the denominator is drawn — check the cohort definition before comparing across the two papers."
+    },
+    {
+      "title": "Should Military Aircrew Members Be Allowed to Use FDA-Approved Weight Loss Medications? A Review and Recommendations",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40560123/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards",
+        "physical"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2025",
+      "notes": "Aeromedical review of weight-loss pharmacotherapy in aircrew, with recommendations. A 2026 letter to the editor adds vision considerations for GLP-1 use in this population.",
+      "caveat": "A narrative review with recommendations is expert opinion, not trial evidence. Graded accordingly."
+    },
+    {
+      "title": "Postpartum Screening and Referral for Pelvic Floor Dysfunction at a United States Military Medical Center",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41910639/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "injury"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "A standardised postpartum screening and referral pathway for pelvic floor dysfunction inside an MTF — one of the few implementation-grade women's health readiness papers in the current window.",
+      "caveat": "Single-site implementation study. Useful as a model, not as prevalence evidence."
+    },
+    {
+      "title": "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using Ecological Momentary Assessment and Passive Sleep Sensing",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41895610/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental",
+        "sleep",
+        "tech"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "Combines momentary self-report with passive wearable sleep sensing to predict next-day symptoms in service members and veterans. Sits exactly on the sleep–mental health–wearables intersection this board tracks as a hot topic.",
+      "caveat": "Prediction is not intervention, and passive sensing raises consent and data-handling questions that any program adopting it has to answer first."
+    },
+    {
+      "title": "Nutrition research keeps warfighters ready, lethal in extreme cold",
+      "url": "https://www.army.mil/article/289279/nutrition_research_keeps_warfighters_ready_lethal_in_extreme_cold",
+      "kind": "research",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "environment",
+        "nutrition",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "reported 2026",
+      "notes": "USARIEM cold-weather nutrition work, including planned observational studies at Arctic Edge 2026 on how the cold-weather ration and its supplements are actually used in the field.",
+      "caveat": "Secondary. Cite the USARIEM technical reports and journal papers behind it, not this article."
+    },
+    {
+      "title": "USARIEM is updating guidance on cold-weather injuries",
+      "url": "https://www.army.mil/article/282363/usariem_is_updating_guidance_on_cold_weather_injuries",
+      "kind": "research",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "environment",
+        "injury",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "reported 2025",
+      "notes": "Signals a revision to cold-weather injury guidance out of USARIEM's Arctic Medicine cross-functional team — worth tracking because guidance revisions eventually land in doctrine.",
+      "caveat": "Secondary, and forward-looking: the guidance itself is the citable artefact once published."
+    },
+    {
+      "title": "Body dysmorphic disorder, muscle dysmorphia, weight and shape dissatisfaction and the use of appearance-enhancing drugs in the military: a systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35675995/",
+      "kind": "research",
+      "grade": "A",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men",
+        "mental",
+        "physical"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2022",
+      "notes": "The strongest available synthesis on male-pattern body image pathology in uniform — muscle dysmorphia, shape dissatisfaction, and appearance- and performance-enhancing drug use. Directly relevant to how physical standards and body composition messaging land on men.",
+      "caveat": "A systematic review is only as good as the primary studies under it; several in this literature are small self-report surveys."
+    },
+    {
+      "title": "Military Occupation and Testicular Germ Cell Tumor Risk among U.S. Air Force Servicemen",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10352998/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men"
+      ],
+      "pub": "PMC",
+      "date": "reported 2023",
+      "notes": "Testicular germ cell tumour is the most commonly diagnosed malignancy in active duty servicemen — a young-male cancer that peaks squarely in the age band H2F serves. Search text reports elevated age-adjusted incidence among officers with a flying history.",
+      "caveat": "Occupational cohort design: it identifies associations, not causes, and cannot separate exposure from selection into the occupation."
+    },
+    {
+      "title": "Factors Associated With Testicular Cancer Risk Among New American Military Recruits During Wartime",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41833285/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men",
+        "physical"
+      ],
+      "pub": "PubMed",
+      "date": "reported 2026",
+      "notes": "Among a reported 210,483 new Army recruits (2011–2014), 44 incident testicular cancers — an incidence rate reported as 11.61 per 100,000 person-years, with roughly twice the adjusted risk in infantry versus other occupations.",
+      "caveat": "Small case count drives wide confidence intervals; confirm the figures and the adjustment set in the paper before quoting the twofold estimate."
+    },
+    {
+      "title": "Sleep Quality and Cognitive Performance in Special Operations Forces Personnel",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42378457/",
+      "kind": "research",
+      "grade": "B",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "physical"
+      ],
+      "pub": "PubMed 42378457",
+      "date": "reported 2026",
+      "notes": "Examines the relationship between sleep quality and cognitive performance specifically in SOF personnel — a population where both are operationally decisive and sleep deprivation is structurally embedded in the training pipeline.",
+      "caveat": "SOF populations self-select and cannot be generalised to conventional formations. Read the sample and methods before extrapolating."
+    },
+    {
+      "title": "Sleep, Fatigue, and Performance in Sub-Arctic Military Operations",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42431682/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "environment",
+        "physical"
+      ],
+      "pub": "PubMed 42431682",
+      "date": "reported 2026",
+      "notes": "Measures sleep, fatigue, and performance under sub-Arctic field conditions — the environmental-physiology thread meeting the sleep thread in an operational setting most units never train for.",
+      "caveat": "Extreme-environment studies have small samples by necessity. Valuable for mechanism and direction, not for effect-size estimates."
+    },
+    {
+      "title": "Fatigue Countermeasures in Military Populations: A Systematic Review",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12665280/",
+      "kind": "research",
+      "grade": "A",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep",
+        "physical"
+      ],
+      "pub": "PMC12665280",
+      "date": "reported 2026",
+      "notes": "Systematic review of fatigue countermeasure interventions in military populations — the evidence synthesis underneath the sleep-as-readiness policy push tracked in the watch list.",
+      "caveat": "Grade A on design (systematic review, military population). The strength of the conclusions depends on the quality of the primary studies underneath it — check the GRADE or ROBIS assessment in the paper."
+    },
+    {
+      "title": "PTSD and Executive Dysfunction in Military Populations",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42102530/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental",
+        "brain"
+      ],
+      "pub": "PubMed 42102530",
+      "date": "reported 2026",
+      "notes": "Examines the intersection of PTSD and executive dysfunction in military populations — the cognitive dimension of a condition typically treated as purely psychological, and where the brain-health and behavioral-health threads converge.",
+      "caveat": "Design and sample not captured from abstract. Grade C pending full read."
+    },
+    {
+      "title": "Physical Fitness in Postpartum Airmen: Return-to-Duty Readiness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39841580/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "physical",
+        "standards"
+      ],
+      "pub": "PubMed 39841580",
+      "date": "reported 2026",
+      "notes": "Studies fitness recovery and return-to-duty readiness in postpartum Air Force personnel — a gap in the women's health literature that matters practically because the new standards timeline does not pause for postpartum status.",
+      "caveat": "Single-service study. Postpartum policy timelines differ across services; check the applicable one before generalising."
+    },
+    {
+      "title": "Pregnancy and Musculoskeletal Conditions in Military Service Members",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39623566/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "injury"
+      ],
+      "pub": "PubMed 39623566",
+      "date": "reported 2026",
+      "notes": "Investigates the relationship between pregnancy and musculoskeletal conditions in military service members — connecting the women's health and MSK injury threads at a point the force does not routinely program for.",
+      "caveat": "Design and denominator unread. If retrospective MHS encounter data, the same undercounting caveat applies as to the pelvic floor literature."
+    },
+    {
+      "title": "Pressure to Lose Pregnancy Weight in Military Servicewomen",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42033899/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "mental"
+      ],
+      "pub": "PubMed 42033899",
+      "date": "reported 2026",
+      "notes": "Examines the pressure military women experience to lose pregnancy weight — where the body-composition standards push meets women's health and behavioral health. Relevant to any H2F team advising postpartum service members under the new WHtR gate.",
+      "caveat": "Social-science design likely. Read the methods before assuming the finding generalises beyond the study's sample."
+    },
+    {
+      "title": "From Test to Task: Relevance of Fitness Metrics to Occupational Performance",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42348841/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "PubMed 42348841",
+      "date": "reported 2026",
+      "notes": "Examines how well fitness-test scores predict occupational task performance — the validation question underneath every service's standards overhaul. If test events do not predict job performance, the standard is theatre.",
+      "caveat": "A critical framing paper for the standards conversation. Read the tasks and populations studied before applying to a specific MOS."
+    },
+    {
+      "title": "Provider Perceptions of Concussion Care in Military Settings",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42560204/",
+      "kind": "research",
+      "grade": "C",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain"
+      ],
+      "pub": "PubMed 42560204",
+      "date": "reported 2026",
+      "notes": "Provider-side view of concussion care delivery in military settings — identifies barriers and facilitators from the clinical side rather than the patient side.",
+      "caveat": "Perception studies describe what providers believe, not what outcomes result. Useful for implementation, not for clinical effect."
+    },
+    {
+      "title": "Virtual Reality Assessment of Cognitive and Psychomotor Performance in Soldiers",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41669150/",
+      "kind": "research",
+      "grade": "D",
+      "type": "Peer-reviewed",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "tech",
+        "brain",
+        "physical"
+      ],
+      "pub": "PubMed 41669150",
+      "date": "reported 2026",
+      "notes": "Uses a VR-based test battery to assess cognitive and psychomotor performance in soldiers — sits on the wearables/tech thread as a potential replacement for paper-based cognitive screening.",
+      "caveat": "VR assessment tools are early-stage; validation evidence is thin and this is likely a pilot or feasibility study. Grade D pending design confirmation."
+    },
+    {
+      "title": "MSMR Vol. 33 No. 5 — heat illness, active component",
+      "url": "https://www.health.mil/Reference-Center/Reports/2026/05/01/MSMR-Vol-33-No-5-May-2026",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Surveillance report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "environment",
+        "physical"
+      ],
+      "pub": "health.mil",
+      "date": "MAY 2026",
+      "notes": "Reported to carry annual heat illness incident cases and rates by service for the active component, 2021–2025, plus heat stroke cases by encounter type and diagnosis year.",
+      "caveat": "MSMR publishes monthly and is the single best recurring input to this board — put it on a standing monthly check."
+    },
+    {
+      "title": "Ambulatory Health Care Visits Among Active Component Members of the U.S. Armed Forces, 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12530864/",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Surveillance report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "mental"
+      ],
+      "pub": "PMC12530864",
+      "date": "PMC12530864",
+      "notes": "Musculoskeletal disorders showed the largest absolute increase in ambulatory visits — a reported 1,675,234 additional visits in 2024 versus 2020. Injuries, MSK disease, and mental health disorders remain the categories driving the most encounters and bed days.",
+      "caveat": "The strongest current number on this board for the size of the MSK problem. Confirm the figure and its denominator before briefing it."
+    },
+    {
+      "title": "Morbidity Burdens Among Deployed Active and Reserve Component Service Members, 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12530862/",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Surveillance report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury"
+      ],
+      "pub": "PMC12530862",
+      "date": "PMC12530862",
+      "notes": "In 2024 the largest share of medical encounters among deployed service members was musculoskeletal/connective tissue, and the most common single diagnosis within it was unspecified lower back pain.",
+      "caveat": "Deployed population — do not read across to garrison rates."
+    },
+    {
+      "title": "Military Musculoskeletal Injuries — Defense Centers for Public Health, Aberdeen",
+      "url": "https://ph.health.mil/topics/workplacehealth/ergo/Pages/Military-Musculoskeletal-Injuries.aspx",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury"
+      ],
+      "pub": "ph.health.mil",
+      "date": "continuously updated",
+      "notes": "The standing DoD public-health page for MSK injury. Related literature reports that in 2019, 55% of the active-component Army population reported an injury and 72% of those were overuse — the numbers that justify most H2F physical-domain staffing.",
+      "caveat": "Those figures are a 2019 reporting year cited in secondary literature. Find current-year equivalents before briefing them as today's rates."
+    },
+    {
+      "title": "Behavioral Health Epidemiology reports — DCPH-Aberdeen",
+      "url": "https://ph.health.mil/topics/healthsurv/bhe/Pages/default.aspx",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental"
+      ],
+      "pub": "ph.health.mil",
+      "date": "continuously updated",
+      "notes": "The standing surveillance source for mental and social health in the military — the mental-domain counterpart to the MSK page above.",
+      "caveat": ""
+    },
+    {
+      "title": "Hearing Health Surveillance Data Review + Hearing Conservation and Readiness",
+      "url": "https://health.mil/Reference-Center/Fact-Sheets/2025/02/19/CY-23-Hearing-Health-Report",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Fact sheet",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury"
+      ],
+      "pub": "health.mil, ph.health.mil",
+      "date": "CY23 report",
+      "notes": "Noise-induced hearing loss is among the leading occupational hazards in the force, and tinnitus is the top veteran disability. DOEHRS-HC is the system of record for audiometric surveillance.",
+      "caveat": "Sensory readiness (PULHES H and E) rarely appears in human performance programming and probably should — it is a readiness limiter that no amount of strength work touches."
+    },
+    {
+      "title": "DOD TBI Worldwide Numbers",
+      "url": "https://www.health.mil/Military-Health-Topics/Centers-of-Excellence/Traumatic-Brain-Injury-Center-of-Excellence/DOD-TBI-Worldwide-Numbers",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Surveillance data",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain"
+      ],
+      "pub": "health.mil",
+      "date": "continuously updated",
+      "notes": "The authoritative running count of diagnosed TBI across the force. The denominator for every brain-health claim in the funding and policy sections.",
+      "caveat": ""
+    },
+    {
+      "title": "National Security Snapshot: DOD's Military Health System Reforms and Challenges",
+      "url": "https://www.gao.gov/products/gao-26-109066",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental"
+      ],
+      "pub": "gao.gov",
+      "date": "reported 25 JUN 2026",
+      "notes": "Independent assessment of MHS reform. Reported scope: 9.4 million beneficiaries, 700+ facilities, 100,000+ employees, estimated FY2027 budget above $72.5B.",
+      "caveat": "I searched specifically for a 2026 GAO assessment of MSK injury-prevention programs and found none — that absence is itself worth citing against anyone claiming independent validation of these programs."
+    },
+    {
+      "title": "Military Readiness: DOD Should Take Further Actions Across the Air, Sea, Ground, and Space Domains",
+      "url": "https://www.gao.gov/products/gao-26-108888",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical"
+      ],
+      "pub": "gao.gov",
+      "date": "reported 04 MAR 2026",
+      "notes": "Covers training and non-combat accidents causing deaths and hundreds of millions in damage, against a stated DoD goal of zero preventable-accident fatalities.",
+      "caveat": "Fatigue and human performance sit underneath a good share of preventable mishaps — a useful bridge between the sleep thread and the readiness-oversight thread."
+    },
+    {
+      "title": "CRS: FY2026 Budget Request for the Military Health System",
+      "url": "https://www.congress.gov/crs-product/IF13108",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental"
+      ],
+      "pub": "congress.gov",
+      "date": "2025–2026",
+      "notes": "Reported FY2026 request: $848.3B DoD discretionary, roughly 7.5% ($64.0B) for the MHS. Notes a target of recapturing at least 7% of care from the private sector back to MTFs by 31 DEC 2026, and the MHS Strategy FY2024–2029.",
+      "caveat": "CRS products are the cleanest short explainers of how the money is structured. Pair with the Defense Primer (IF10530) for the org chart."
+    },
+    {
+      "title": "DoD Inspector General — audits and evaluations",
+      "url": "https://www.dodig.mil/Reports/Audits-and-Evaluations/",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Report index",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental"
+      ],
+      "pub": "dodig.mil",
+      "date": "continuously updated",
+      "notes": "The standing IG reports index. Most recent readiness-adjacent item found: DODIG-2025-114 on assigning medical personnel where they can maintain wartime skills.",
+      "caveat": "No 2026 IG evaluation of H2F or MSK prevention surfaced in this sweep. Like the GAO gap above, the absence is the finding."
+    },
+    {
+      "title": "TBICoE Research Review: Mild TBI and PTSD",
+      "url": "https://health.mil/Reference-Center/Publications/2026/01/20/TBICoE-Research-Review-Mild-TBI-and-PTSD",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Report index",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain"
+      ],
+      "pub": "health.mil",
+      "date": "reported 20 JAN 2026",
+      "notes": "Center-of-excellence research review on the overlap between mild TBI and PTSD — the clinical seam where brain-health and mental-health readiness programs collide.",
+      "caveat": "A research review synthesises; it does not add primary data. Trace its citations before quoting effect sizes."
+    },
+    {
+      "title": "DoD Blast Overpressure Provider Support Tool",
+      "url": "https://health.mil/Reference-Center/Fact-Sheets/2025/09/16/Blast-Overpressure-Provider-Support-Tool",
+      "kind": "surv",
+      "grade": "Policy",
+      "type": "Fact sheet",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain"
+      ],
+      "pub": "health.mil",
+      "date": "reported 16 SEP 2025",
+      "notes": "Provider-facing guidance for addressing low-level blast exposure, with a companion service-member fact sheet. Operationalises the 2024 DoD requirements for managing brain health risks from blast overpressure.",
+      "caveat": "A clinical support tool, not a standard of care. The 2024 Deputy Secretary of Defense memo is the policy authority above it."
+    },
+    {
+      "title": "GAO-26-107979 — Military Health Care: Clinical Quality Management in Operational Settings Like Field Hospitals",
+      "url": "https://www.gao.gov/products/gao-26-107979",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "standards"
+      ],
+      "pub": "gao.gov",
+      "date": "reported 13 JUL 2026",
+      "notes": "Oversight review of clinical quality management in deployed and operational medical settings. Third 2026 GAO product on this board's beat.",
+      "caveat": "GAO reports recommendations; DoD concurrence and implementation are separate questions the report itself usually flags."
+    },
+    {
+      "title": "Study on the Incidence of Cancer Diagnosis and Mortality Among Military Aircrew",
+      "url": "https://health.mil/Reference-Center/Reports/2024/05/09/Study-on-the-Incidence-of-Cancer-Diagnosis-and-Mortality",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men"
+      ],
+      "pub": "health.mil",
+      "date": "reported 2024",
+      "notes": "The aircrew cancer study. Search text reports active component aircrew had roughly 21% higher prostate cancer incidence than the comparable U.S. population — the clearest men-specific signal in current DoD surveillance.",
+      "caveat": "Surveillance and registry linkage describe incidence, not cause. Comparisons to the civilian population carry a healthy-worker effect in both directions."
+    },
+    {
+      "title": "Prostate Cancer — MHS reference publication (ONC 14)",
+      "url": "https://health.mil/Reference-Center/Publications/2025/03/01/Prostate-Cancer",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Fact sheet",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men"
+      ],
+      "pub": "health.mil",
+      "date": "reported 2025",
+      "notes": "The Military Health System reference sheet on prostate cancer: background, screening posture, and the surveillance picture in the covered population. The men’s-health counterpart to the breast and ovarian material already on this board.",
+      "caveat": "A reference sheet summarises; it is not the underlying surveillance dataset."
+    },
+    {
+      "title": "Testicular Cancer — MHS reference publication (ONC 14)",
+      "url": "https://www.health.mil/Reference-Center/Publications/2026/04/01/Testicular-Cancer",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Fact sheet",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men"
+      ],
+      "pub": "health.mil",
+      "date": "reported APR 2026",
+      "notes": "The companion reference sheet on testicular cancer — the malignancy most concentrated in the young male population the force is built from, and the one where self-screening messaging plausibly changes outcomes.",
+      "caveat": "A reference sheet summarises; confirm current incidence figures against MSMR before briefing them."
+    },
+    {
+      "title": "GAO-26-107677 — Defense Health: Civilian Partnerships and Readiness",
+      "url": "https://www.gao.gov/products/gao-26-107677",
+      "kind": "surv",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "mental",
+        "physical"
+      ],
+      "pub": "gao.gov",
+      "date": "reported 2026",
+      "notes": "Independent assessment of defense health civilian partnerships — the pipeline that connects military readiness requirements to civilian medical expertise.",
+      "caveat": "GAO reports recommendations; DoD concurrence and implementation are tracked separately."
+    },
+    {
+      "title": "ICD-10-CM Coding Guidance for Traumatic Brain Injury",
+      "url": "https://health.mil/Reference-Center/Publications/2026/01/23/ICD10-Coding-Guidance-for-TBI",
+      "kind": "surv",
+      "grade": "Policy",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain"
+      ],
+      "pub": "health.mil",
+      "date": "reported JAN 2026",
+      "notes": "Standardised coding guidance for TBI in the Military Health System — the denominator accuracy tool. If TBI is coded inconsistently, the surveillance numbers on this board are wrong, and the funding arguments built on them are weaker than they look.",
+      "caveat": "Coding guidance is not clinical guidance. It improves data quality, not care quality, though the former enables the latter."
+    },
+    {
+      "title": "Assessment and Management of Dizziness and Visual Disturbances Following Concussion/mTBI",
+      "url": "https://health.mil/Reference-Center/Publications/2026/02/04/Assessment-and-Management-of-Dizziness-and-Visual-Disturbances-Following-Concussion-Mild-Traumatic-Brain-Injury",
+      "kind": "surv",
+      "grade": "Policy",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain",
+        "physical"
+      ],
+      "pub": "health.mil",
+      "date": "reported FEB 2026",
+      "notes": "Clinical recommendation for assessing and managing dizziness and visual disturbances after concussion — the symptomatic pathway that gates return to duty after mild TBI.",
+      "caveat": "A clinical recommendation, not a standard of care or a binding directive. Useful for H2F teams coordinating with providers on return-to-duty protocols."
+    },
+    {
+      "title": "H2F Proponency Transitions to the Maneuver Center of Excellence",
+      "url": "https://www.army.mil/article/294839/h2f_proponency_transitions_to_the_mcoe_advancing_the_armys_holistic_health_and_fitness_system",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "2026",
+      "notes": "H2F Directorate reported to have moved from TRADOC/CIMT to MCoE at Fort Benning, aligned under the new Transformation and Training Command (T2COM).",
+      "caveat": "An ownership change redirects who signs H2F policy and where the money sits. Verify before updating any org chart or POC list."
+    },
+    {
+      "title": "H2F System Update: Manning H2F for the Total Force",
+      "url": "https://www.army.mil/article/294841/h2f_system_update_organization_manning_h2f_for_the_total_force",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "2026",
+      "notes": "Fielding status as reported: 41 HPTs and 1 AST fielding across combined FY25–26, for 90 HPTs and 2 ASTs fielded or in process; all 11 divisions have received personnel and equipment to begin fielding.",
+      "caveat": "The most useful single number set on this board for anyone tracking H2F hiring demand."
+    },
+    {
+      "title": "Guard and Reserve H2F fielding begins FY26",
+      "url": "https://www.army.mil/article/292501/warfighter_performance_experts_share_lessons_learned_at_h2f_symposium",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil / usar.army.mil",
+      "date": "MAY 2026",
+      "notes": "Reported from the symposium: Guard and Reserve pilots running since 2018 informed a plan to begin fielding their own H2F Performance Teams in FY2026 — building to a team in each of the 54 states and territories by FY30, and 28 teams across Reserve regional commands.",
+      "caveat": "The biggest under-covered hiring signal on this board. Component teams operate on a fundamentally different contact model — \"the other 28 days a month.\""
+    },
+    {
+      "title": "Human performance programs recognized for excellence at H2F Symposium",
+      "url": "https://www.army.mil/article/292580/human_performance_programs_recognized_for_excellence_at_symposium",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical",
+        "mental",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "symposium held 12–14 MAY 2026",
+      "notes": "2026 \"Best in Class\" recognition. Physical domain winner reported as 1st IBCT, 11th Airborne Division, for a \"Wolf Recovery\" initiative putting every warfighter who spent 2+ weeks forward through a standardized 90-minute session touching all five domains.",
+      "caveat": "Best-in-class writeups are the closest thing to a field-tested playbook this community publishes. Read the mechanism, not the award."
+    },
+    {
+      "title": "Holistic Health and Fitness (H2F) — official program site",
+      "url": "https://h2f.army.mil/",
+      "kind": "program",
+      "grade": "Portal",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "h2f"
+      ],
+      "pub": "h2f.army.mil",
+      "date": "continuously updated",
+      "notes": "Domain pages, Unit Resources, the H2F Academy, and an H2F-in-the-News feed. First stop for anything H2F before going to secondary coverage.",
+      "caveat": ""
+    },
+    {
+      "title": "H2F Spiritual Domain",
+      "url": "https://h2f.army.mil/Domains/Spiritual-Domain/",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "mental"
+      ],
+      "pub": "h2f.army.mil",
+      "date": "h2f.army.mil",
+      "notes": "The least-covered of the five domains. Chaplains and religious affairs specialists are the designated subject matter experts; the H2F Handbook defines spiritual readiness as the personal qualities that sustain a person through stress, hardship, or tragedy.",
+      "caveat": "Claims that spiritual health improves physical and mental outcomes appear in program materials — treat the underlying evidence base as unexamined until you have read it yourself."
+    },
+    {
+      "title": "Future Soldier Preparatory Course — fitness track",
+      "url": "https://www.army.mil/article/267217/future_soldier_preparatory_course_now_offers_recruits_opportunity_to_do_both_academic_fitness_tracks",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical",
+        "nutrition",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "army.mil",
+      "notes": "Pre-accession program for recruits exceeding accession body fat by 2–6%. Reported: 95% graduation across both tracks, average 1.4% body fat lost per week in the fitness track, up to 90 days, with recruits educated on all five H2F domains by H2F professionals.",
+      "caveat": "The accession end of the pipeline, and a rare place where H2F staffing shows measurable throughput numbers. Reported figures predate the WHtR transition — check whether the accession standard itself has changed."
+    },
+    {
+      "title": "Army launches campus-style dining to modernize Soldier fueling",
+      "url": "https://www.army.mil/article/290526/army_launches_revolutionary_campus_style_dining_to_modernize_soldier_fueling",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "nutrition",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "2026",
+      "notes": "Army Food Program Strategy rollout: campus-style dining venues, Victory Fresh, distributed dining, and the FEED program. Reported first of five pilot venues open, expansion planned to Fort Carson, Fort Bragg, Fort Drum and others; more than half a billion dollars annually in the food program.",
+      "caveat": "Nutritional-domain infrastructure at scale. Whether it moves fueling behavior is an open empirical question nobody has published on."
+    },
+    {
+      "title": "Warfighter Nutrition Guide — HPRC (CHAMP)",
+      "url": "https://www.hprc-online.org/nutrition/warfighter-nutrition-guide",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition"
+      ],
+      "pub": "hprc-online.org",
+      "date": "hprc-online.org",
+      "notes": "The Department's own evidence-translation resource for performance nutrition, including chapters on supplements and on sleep and activity in post-deployment recovery. The citable alternative when someone brings you a supplement-company claim.",
+      "caveat": ""
+    },
+    {
+      "title": "Operation Supplement Safety (OPSS)",
+      "url": "https://www.hprc-online.org/resources-partners/opss",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition"
+      ],
+      "pub": "hprc-online.org",
+      "date": "hprc-online.org",
+      "notes": "The DoD-wide effort on dietary supplement safety — the right first check when a question involves adverse events or drug-test risk rather than performance claims. A CHAMP catalog of OPSS materials is hosted at usuhs.edu.",
+      "caveat": ""
+    },
+    {
+      "title": "CDMRP announces $1.27B across 34 research programs for FY2026",
+      "url": "https://cdmrp.health.mil/pubs/press/2026/FY26_Appropriations",
+      "kind": "program",
+      "grade": "Funding",
+      "type": "Press release",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "mental",
+        "physical",
+        "brain"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "reported FEB 2026",
+      "notes": "FY26 appropriations reported at $1.27B across 34 programs under the Consolidated Appropriations Act signed 3 FEB 2026.",
+      "caveat": "Read funding as a 12–24 month leading indicator of what shows up in doctrine later. The best forward-looking input on the board."
+    },
+    {
+      "title": "FY26 Peer Reviewed Orthopaedic Research Program (PRORP) — funding opportunities",
+      "url": "https://cdmrp.health.mil/funding/prorp",
+      "kind": "program",
+      "grade": "Funding",
+      "type": "Press release",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "physical"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "FY26",
+      "notes": "Funds clinically relevant research advancing treatment and rehabilitation of orthopaedic injuries from combat and service-related activity, aimed at function and return to duty. The most directly MSK-relevant funding line.",
+      "caveat": "Previously linked to the FY26 pre-announcement, which now resolves to the CDMRP error page; this points at the standing funding page instead. Mechanisms and dollar figures change — read the current announcement on Grants.gov."
+    },
+    {
+      "title": "Traumatic Brain Injury and Psychological Health Research Program",
+      "url": "https://cdmrp.health.mil/tbiphrp/default",
+      "kind": "program",
+      "grade": "Funding",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "brain",
+        "mental"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "FY26 cycle open",
+      "notes": "Covers prevention, detection, diagnosis, treatment, and rehabilitation across TBI and psychological health — including repetitive blast overpressure exposure, not just impact injury.",
+      "caveat": "Blast overpressure is where the brain-health thread touches routine training, not just combat. Watch this line."
+    },
+    {
+      "title": "DoD Warfighter Brain Health Initiative",
+      "url": "https://www.war.gov/News/News-Stories/Article/Article/4196901/dod-brain-health-initiative-helps-protect-service-members/",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "brain",
+        "secondary"
+      ],
+      "pub": "war.gov",
+      "date": "war.gov",
+      "notes": "A coordinated effort between the operational and medical communities on brain injury and its effects — the program wrapper around the TBI research and surveillance items elsewhere on this board.",
+      "caveat": ""
+    },
+    {
+      "title": "USARIEM Thermal & Mountain Medicine Division — plus Heat and Altitude Acclimatization Guides",
+      "url": "https://usariem.health.mil/index.cfm/research/divisions/tmmd",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "environment",
+        "nutrition",
+        "physical"
+      ],
+      "pub": "usariem.health.mil",
+      "date": "usariem.health.mil",
+      "notes": "DoD's premier environmental medicine laboratory: heat, cold, altitude, and multifactorial extremes, with environmental chambers, a hypobaric chamber, and water immersion labs. The published Heat Acclimatization Guide and Altitude Acclimatization Guide are directly usable field references.",
+      "caveat": "Note the domain: USARIEM now sits at usariem.health.mil, not the older army.mil address. Update stale bookmarks."
+    },
+    {
+      "title": "AFRL 711th Human Performance Wing",
+      "url": "https://www.afrl.af.mil/711HPW/",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "mental"
+      ],
+      "pub": "afrl.af.mil",
+      "date": "afrl.af.mil",
+      "notes": "The Human Effectiveness Directorate (RH) plus the USAF School of Aerospace Medicine, at Wright-Patterson with sites in San Antonio, Cincinnati, and Baltimore. Leads Department of the Air Force human-centered research. New commander (Brig. Gen. Bogart) as of 30 MAR 2026.",
+      "caveat": ""
+    },
+    {
+      "title": "Naval Health Research Center — Operational Readiness",
+      "url": "https://www.med.navy.mil/Naval-Medical-Research-Command/R-D-Commands/Naval-Health-Research-Center/Core-Research/Operational-Readiness/",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "mental"
+      ],
+      "pub": "med.navy.mil",
+      "date": "med.navy.mil",
+      "notes": "NHRC's readiness and resilience portfolio, including the Millennium Cohort Study and the Food Utilization and Energy Laboratory behind the Future Sailors nutrition work above.",
+      "caveat": ""
+    },
+    {
+      "title": "SOCOM Preservation of the Force and Family — Human Performance",
+      "url": "https://www.socom.mil/POTFF/Pages/human_performance.aspx",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "mental"
+      ],
+      "pub": "socom.mil",
+      "date": "socom.mil",
+      "notes": "The physical domain covers sports medicine, strength and conditioning, and performance nutrition to optimize training, mitigate injury, and extend career longevity. Public POTFF 101 briefs report POTFF II at 791 FTE and $955M over its period of performance.",
+      "caveat": "SOF program structure is often borrowed wholesale by conventional-force H2F teams. The population and selection effects are not comparable — borrow the mechanism, not the numbers."
+    },
+    {
+      "title": "NATO STO — Human Systems, Performance and Medicine",
+      "url": "https://www.sto.nato.int/the-collaborative-programme-of-work-cpow/human-systems-performance-medicine/",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "mental"
+      ],
+      "pub": "sto.nato.int",
+      "date": "restructured 01 JUL 2026",
+      "notes": "The former Human Factors and Medicine panel, restructured under the Collaborative Programme of Work as of 1 JUL 2026. Published technical reports include Optimizing Human Performance in NATO SOF Personnel (STO-TR-HFM-308) and Neuroenhancement in Military Personnel (STO-TR-HFM-311); recent DRDC-chaired work covers measuring soldier cognitive load.",
+      "caveat": "Allied reports are open-access and consistently under-read by US practitioners. The SOF human performance report is the obvious starting point."
+    },
+    {
+      "title": "NASEM Committee on Military Nutrition Research",
+      "url": "https://nap.nationalacademies.org/initiative/committee-on-military-nutrition-research",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition"
+      ],
+      "pub": "nationalacademies.org",
+      "date": "nationalacademies.org",
+      "notes": "The consensus-report line behind military nutrition doctrine: ration composition for short-term high-intensity operations, nutritional needs in hot and in cold/high-altitude environments, and weight management for military programs. Consensus reports carry the highest evidentiary weight of anything on this board.",
+      "caveat": "Many of these reports are decades old. Check the publication year before treating a recommendation as current."
+    },
+    {
+      "title": "DTIC — Physical Fitness Standards to Support Readiness, and the SRT2P evaluation",
+      "url": "https://apps.dtic.mil/sti/html/trecms/AD1167765/index.html",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Technical report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "tech"
+      ],
+      "pub": "apps.dtic.mil",
+      "date": "apps.dtic.mil",
+      "notes": "Two directly relevant technical reports: an evaluation of whether fitness assessment components meet their intended purpose, and the Soldier Readiness Test and Training Program evaluation across four BCTs at three installations comparing Gold/Silver/Bronze human performance and injury prevention models.",
+      "caveat": "As of 12 SEP 2026 DTIC was serving a maintenance page, so this link may not open yet. The Gold/Silver/Bronze comparison is the closest thing to a controlled test of H2F staffing intensity in the public record. Worth reading in full."
+    },
+    {
+      "title": "Wearable All-hazard Remote-monitoring Program (WARP) / LifeLens",
+      "url": "https://www.army.mil/article/287239/delivering_on_our_commitments_using_wearable_hazard_monitoring_technology",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "tech",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "fielding from FY2026",
+      "notes": "Reported to deliver real-time clinical-grade vitals — heart rate, respiration, core temperature — from the warfighter to command posts, fielding from the start of FY2026. A 2023 DHA report on fitness wearables for readiness sits alongside it.",
+      "caveat": "Also note the countervailing policy: service members are prohibited from wearing wireless devices in some areas and operations. The OPSEC constraint is as real as the capability."
+    },
+    {
+      "title": "CDMRP FY26 Peer Reviewed Medical Research Program — funding opportunities",
+      "url": "https://cdmrp.health.mil/funding/prmrp",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "standards"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "standing page",
+      "notes": "The FY26 PRMRP funding page. Musculoskeletal health is a named FY26 topic area, which makes this the leading indicator for where injury-prevention research money goes over the next 12–24 months.",
+      "caveat": "Funding announcements move; deadlines and invited-application status on this page change without notice."
+    },
+    {
+      "title": "CDMRP FY26 PRMRP topic areas",
+      "url": "https://cdmrp.health.mil/prmrp/topicareas/topicareas26",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "standards"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "FY26",
+      "notes": "The full FY26 topic list. Read it as a priorities document: what Congress funded this year is what shows up as published research two to four years out.",
+      "caveat": "Topic inclusion is not a guarantee of award volume in that topic."
+    },
+    {
+      "title": "CDMRP-supported research assesses TBI-related outcomes to improve warfighter brain health",
+      "url": "https://cdmrp.health.mil/pubs/press/2026/CDMRP_TBI_research_highlight.aspx",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Press release",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "brain",
+        "secondary"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "2026",
+      "notes": "Program highlight tying the FY26 appropriation to the TBI and Psychological Health research portfolios.",
+      "caveat": "Secondary. Follow through to the funded studies it names rather than citing the highlight."
+    },
+    {
+      "title": "CHAMP (Consortium for Health and Military Performance) — For the Warrior",
+      "url": "https://champ.usuhs.edu/for-the-warrior",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "nutrition",
+        "sleep",
+        "mental",
+        "physical"
+      ],
+      "pub": "champ.usuhs.edu",
+      "date": "standing page",
+      "notes": "CHAMP's warfighter-facing hub at the Uniformed Services University — the institutional parent of HPRC and Operation Supplement Safety.",
+      "caveat": "Translation resource, not primary evidence. Good for what is being taught; cite the underlying science separately."
+    },
+    {
+      "title": "HPRC Warfighter Nutrition Guide, Ch. 11 — Mission Nutrition for Combat Effectiveness",
+      "url": "https://www.hprc-online.org/nutrition/warfighter-nutrition-guide/11-mission-nutrition-combat-effectiveness",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Practitioner post",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "nutrition"
+      ],
+      "pub": "hprc-online.org",
+      "date": "standing page",
+      "notes": "The operational-nutrition chapter of the Warfighter Nutrition Guide — what H2F dietitians and unit leaders are actually handed.",
+      "caveat": "Guidance content. Where it makes an effect claim, trace it to the USARIEM or journal source."
+    },
+    {
+      "title": "HPRC — 20 holistic sleep-optimization tips and sleep hygiene self-check",
+      "url": "https://www.hprc-online.org/mental-fitness/sleep/20-holistic-sleep-optimization-tips",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Practitioner post",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "sleep"
+      ],
+      "pub": "hprc-online.org",
+      "date": "standing page",
+      "notes": "The sleep-hygiene worksheet most commonly pushed to units. Worth knowing verbatim because it is what Soldiers will have already been told.",
+      "caveat": "Self-check worksheets are education, not screening instruments — they do not substitute for a sleep-disorder evaluation."
+    },
+    {
+      "title": "HPRC — Army Performance Triad resource set",
+      "url": "https://www.hprc-online.org/total-force-fitness/service-specific-resources/army/performance-triad",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "h2f",
+        "physical"
+      ],
+      "pub": "hprc-online.org",
+      "date": "standing page",
+      "notes": "Sleep, activity, and nutrition as the Army framed them before H2F. Still in circulation, and still the vocabulary many leaders use.",
+      "caveat": "Predates the current H2F system. Check which framework a unit is actually running before assuming alignment."
+    },
+    {
+      "title": "711th Human Performance Wing / U.S. Air Force School of Aerospace Medicine",
+      "url": "https://www.afrl.af.mil/711HPW/USAFSAM/",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "injury"
+      ],
+      "pub": "afrl.af.mil",
+      "date": "standing page",
+      "notes": "The Air Force's consolidated human-performance research, education, and consultation organisation at Wright-Patterson — Human Effectiveness Directorate plus USAFSAM.",
+      "caveat": "Landing page. Its publications and DTIC-indexed reports are the citable output."
+    },
+    {
+      "title": "Defense Centers for Public Health–Aberdeen — Injury Prevention Branch",
+      "url": "https://ph.health.mil/organization/cphe/Pages/InjuryPreventionProgram.aspx",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury"
+      ],
+      "pub": "ph.health.mil",
+      "date": "standing page",
+      "notes": "The successor to the Army Public Health Center's injury-prevention program — the organisation that actually tracks Soldier injury trends and risk factors.",
+      "caveat": "Note the renaming: material published under \"Army Public Health Center\" now lives under DCPH-A, and old links rot."
+    },
+    {
+      "title": "DCPH-A periodic publications and surveillance reports",
+      "url": "https://ph.health.mil/news/Pages/PeriodicPublications.aspx",
+      "kind": "program",
+      "grade": "S",
+      "type": "Report index",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "injury",
+        "standards"
+      ],
+      "pub": "ph.health.mil",
+      "date": "standing page",
+      "notes": "The index for Health of the Force and the other recurring DCPH-A surveillance products — the standing counterpart to MSMR on this board.",
+      "caveat": "An index, not a report. Pull the specific edition and cite that."
+    },
+    {
+      "title": "Navy FY26 Physical Readiness Program FAQ",
+      "url": "https://www.mynavyhr.navy.mil/Portals/55/Support/Culture%20Resilience/Physical/FY26%20PRP%20FAQ_JUN%202026.pdf",
+      "kind": "program",
+      "grade": "Reference",
+      "type": "Reference guide",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "standards"
+      ],
+      "pub": "mynavyhr.navy.mil",
+      "date": "reported JUN 2026",
+      "notes": "The frequently asked questions companion to the Navy's CY2026 PRP changes — the operational-level Q&A that units use when implementing the NAVADMIN 264/25 policy already on this board.",
+      "caveat": "A FAQ restates policy in Q&A form. Where it and the NAVADMIN disagree, the message wins."
+    },
+    {
+      "title": "Program to Prevent Perinatal Mental Health Conditions — Report",
+      "url": "https://www.health.mil/Reference-Center/Reports/2026/02/23/Program-to-Prevent-Perinatal-MH-Conditions",
+      "kind": "program",
+      "grade": "S",
+      "type": "Gov report",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "women",
+        "mental"
+      ],
+      "pub": "health.mil",
+      "date": "reported FEB 2026",
+      "notes": "Reports on the DHA program to prevent perinatal mental health conditions — connecting the women's health and behavioral health threads at the point where postpartum return to duty, new-parent readiness, and mental health converge.",
+      "caveat": "A program report describes what the program does, not whether it works. Look for outcome data before citing effectiveness."
+    },
+    {
+      "title": "Military Health and Nutrition Examination Study (MilHANES) — trial registration",
+      "url": "https://clinicaltrials.gov/study/NCT06380322",
+      "kind": "program",
+      "grade": "D",
+      "type": "Trial protocol",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "physical",
+        "nutrition",
+        "h2f"
+      ],
+      "pub": "clinicaltrials.gov",
+      "date": "registered 2024, recruiting",
+      "notes": "A large health and nutrition examination study in a military population — the DoD equivalent of NHANES. If it reaches sufficient enrollment, this becomes the baseline dataset for body composition, metabolic health, and nutritional status across the force.",
+      "caveat": "A registered protocol, not results. Grade D: no data to cite yet. Watch the enrollment status."
+    },
+    {
+      "title": "MOMRP and Army War College team up for wearables pilot",
+      "url": "https://www.army.mil/article/280513/momrp_army_war_college_team_up_for_wearables_pilot",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "tech",
+        "physical",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "reported 2025",
+      "notes": "Military Operational Medicine Research Program wearables pilot — an early data point on how the Army is testing continuous physiological monitoring on a real population.",
+      "caveat": "Secondary. Pilot coverage rarely reports methods; wait for the MOMRP output before citing findings."
+    },
+    {
+      "title": "The transformative power of wearable health and performance devices",
+      "url": "https://www.army.mil/article/272846/the_transformative_power_of_wearable_health_and_performance_devices",
+      "kind": "program",
+      "grade": "Program",
+      "type": "News article",
+      "secondary": true,
+      "verified": false,
+      "domains": [
+        "tech",
+        "physical",
+        "injury",
+        "secondary"
+      ],
+      "pub": "army.mil",
+      "date": "reported 2025",
+      "notes": "Describes a wearable platform tracking performance, fitness, recovery, sleep, and injury-risk metrics, with fielding stated to begin in early FY26.",
+      "caveat": "Secondary, and vendor-adjacent in framing. Treat capability claims as unvalidated until an independent evaluation appears."
+    },
+    {
+      "title": "CDMRP FY26 Prostate Cancer Research Program (PCRP) — funding opportunities",
+      "url": "https://cdmrp.health.mil/funding/pcrp.aspx",
+      "kind": "program",
+      "grade": "Program",
+      "type": "Program page",
+      "secondary": false,
+      "verified": false,
+      "domains": [
+        "men"
+      ],
+      "pub": "cdmrp.health.mil",
+      "date": "FY26",
+      "notes": "Reported at $75 million for FY26 across Idea Development, Data Science, Physician Research, and Early Investigator awards. The largest single men’s-health line in the CDMRP portfolio, and the counterpart to the ovarian and breast programs already listed here.",
+      "caveat": "Deadlines, mechanisms, and appropriation figures change; read the current announcement on Grants.gov (CFDA 12.420) before relying on any number here."
+    }
+  ],
+  "watch_list": [],
+  "registry": [],
+  "dropped_dead": []
+}
