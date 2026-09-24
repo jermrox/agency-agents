@@ -16,8 +16,10 @@ npx expo start
 
 - **HomeScreen** — today, in reading order: the ask bar, the insight, then the
   five dimensions.
-- **RestoreScreen** *(new, 21 Sep)* — the Restore dimension in detail. Tap the
+- **RestoreScreen** *(21 Sep)* — the Restore dimension in detail. Tap the
   Restore card on Home to open it.
+- **MoveTrendScreen** *(new, 24 Sep)* — six months of weekly active minutes,
+  and what changed. Tap the Move card on Home to open it.
 
 ## The three decisions worth keeping
 
@@ -41,6 +43,44 @@ you read a word.
 context event."* A health app that sounds equally certain about everything is
 either lying or not paying attention. Saying how sure it is, and why, is what
 makes the confident statements worth believing.
+
+## The trend screen, and why it looks like that
+
+**A chart is not an answer, so it is not at the top.**
+MoveTrendScreen opens on *"Your movement climbed five weeks straight out of the
+late-July dip, and every week since 24 August has sat above your usual range"* —
+and only then draws the six months it is describing. Somebody opening a history
+screen wants to know whether the line is good news before being asked to read
+it. The caveat sits directly underneath: six months shows a direction, not a
+lasting change.
+
+**Drawn with Views sized by value, not a charting library.**
+Every RN chart package pulls in react-native-svg, and most pull reanimated and
+gesture-handler behind it — three native dependencies and an Expo prebuild to
+draw twenty-six rectangles. A `View` with a computed height *is* a rectangle.
+`src/components/TrendColumns.js` is flexbox and arithmetic.
+
+**The band is the person's own range.**
+The shading behind the columns is the middle half of their own last 26 weeks
+(114–159 minutes), not a population norm. "Above average for women your age" is
+a comparison nobody asked for; "higher than your own normal, six months running"
+is a fact about them. The legend says so in words, because a grey rectangle
+explains nothing on its own.
+
+**Five treatments, so the hierarchy reads before a word does.**
+Oversized type on bare paper for the verdict, a full-width plot for the series,
+two proportional bars lying on their side for the month-on-month comparison, a
+numbered timeline on a rule for the events, and one tinted panel to close. The
+plot is the only thing on the screen shaped like a chart, so the eye lands there
+unprompted.
+
+**Every number on the screen is derived from the series, not typed in.**
+The four-week averages, the 77% change, the peak and which weeks sit outside the
+band are all computed at render time from `src/moveTrendSampleData.js`. A summary
+typed by hand drifts from the data it claims to describe the first time somebody
+edits a value — and then the screen is confidently wrong. Only the editorial
+sentences are hand-written, which makes them the only thing a reviewer has to
+check.
 
 ## Non-negotiables held
 

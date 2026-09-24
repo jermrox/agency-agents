@@ -1914,18 +1914,21 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Stephen L. Tadlock Veteran Business Grant"
-url = "https://www.grantwatch.com/"
-agency = "Tadlock"
-amount = "varies"
+url = "https://foundersfirstcdc.org/stephen-tadlock"
+agency = "Founders First CDC"
+amount = "$1,000 micro-grant + a free place on Passport Community ($1,499) or Zebra Leadership ($1,699). $20,000 fund, 20 finalists."
+open_date = "2026-09-15"
+close_date = "2026-10-15"
 pillar = 2
 kind = "grant"
-eligibility = "Veteran-owned businesses"
-note = "Opens ~September annually."
+eligibility = "US military veteran who is CEO, President or owner of an active US business; annual revenue under $5M; 2 to 100 employees; at least one year in business."
+note = "OPEN NOW, closes 15 Oct. Was a stub on this board pointing at grantwatch.com with 'varies' for an amount — the programme's own page carries the real dates and terms, so this row is now first-hand. Small cheque, but the free programme place is worth more than the cash and the 2-employee floor is the gate to check first. Semifinalists 22 Oct, finalists 10 Nov."
 documents = [
-  "Proof of veteran status",
-  "Application",
+  "Proof of veteran status (DD-214 or equivalent)",
+  "Evidence of 2-100 employees and under $5M revenue",
+  "Proof the business has traded at least one year",
 ]
-verified = "2026-09-12"
+verified = "2026-09-24"
 
 [[sources.curated.entry]]
 name = "Texas Woman's University Veteran Grant"
@@ -1942,6 +1945,85 @@ documents = [
   "Application",
 ]
 verified = "2026-09-12"
+
+# --- Added 24 Sep 2026: the veteran / woman / minority vein ---------------
+# Jeremy confirmed 20 Sep that Vybe qualifies as veteran-, woman- AND
+# minority-owned (51%+). The four rows below were read first-hand from each
+# programme's own site on 24 Sep, not from a listicle. Four other leads were
+# read the same way and deliberately NOT added, because they are dead: the
+# SoGal Foundation's site is a Squarespace parking page, streetsharesfoundation
+# .org now resolves to a gambling site, Google's Founders Funds page describes
+# itself entirely in the past tense, and Black Ambition's own application page
+# says it is not accepting new applications in 2026. See CANDIDATES.md.
+
+[[sources.curated.entry]]
+name = "Buckeye State Credit Union Small Business Recovery Grant"
+url = "https://www.buckeyecu.org/small-business-recovery-grant/"
+agency = "Buckeye State Credit Union — CDFI Equitable Recovery Program"
+amount = "$200,000 / $150,000 / $125,000 — three grants, $475,000 total"
+close_date = "2026-09-30"
+pillar = 2
+kind = "grant"
+eligibility = "Minority-owned or minority-controlled as defined by federal guideline; trading at least two years; must show the funds benefit low-to-moderate-income or underserved communities. Credit union membership is NOT required and businesses outside Ohio may apply, though priority goes to Summit County and especially Akron."
+note = "CLOSES 30 SEP — six days out, and the largest per-winner cheque anywhere on this board by a wide margin. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments."
+documents = [
+  "Completed Buckeye State CU application form (downloaded from the programme page)",
+  "Documentation of minority ownership or control",
+  "Evidence of at least two years of operation",
+  "A written plan showing how the funds benefit eligible communities",
+]
+verified = "2026-09-24"
+
+[[sources.curated.entry]]
+name = "Tory Burch Foundation Fellows — 2027 Program"
+url = "https://fellows.toryburchfoundation.org/prog/2027_fellows_program/"
+agency = "Tory Burch Foundation"
+amount = "Fellowship place, roughly 120 selected — advisors, coaching, network and Foundation capital programmes. The cash grant attached to the 2027 cycle is not stated on the Foundation's own pages."
+open_date = "2026-09-22"
+close_date = "2026-11-17"
+pillar = 3
+kind = "accelerator"
+eligibility = "A woman entrepreneur who owns the largest or equally-largest stake in a business that is 51%+ owned and controlled by women, with a significant day-to-day management role; 21 or older as of 17 Nov 2026; US legal resident. Business must be for-profit, any industry, formed under US law and operating in the US, generating a minimum of $75,000 a year with no maximum."
+note = "OPEN NOW — the application portal opened 22 Sep 2026 and closes 17 Nov 2026 at 11:59pm ET. The Foundation's FAQ states plainly that applying is free. The $75,000 revenue floor is the gate to check before spending an evening on it; there is no revenue ceiling. Filed under pillar 3 rather than 2 on purpose: the network and the Foundation's capital programmes are the confirmed benefit, and the cash figure is not published for this cycle, so it is not counted as grant money until someone confirms it."
+documents = [
+  "Proof of 51%+ women ownership and control",
+  "Evidence of at least $75,000 annual revenue",
+  "Business and financial narrative through the Fellows portal",
+]
+verified = "2026-09-24"
+
+[[sources.curated.entry]]
+name = "Boundless Futures Foundation — EmpowHer Grant (Fall 2026 cycle)"
+url = "https://theboundlessfuturesfoundation.submittable.com/"
+agency = "Boundless Futures Foundation"
+amount = "Up to $50,000, plus access to the foundation's Advisory Circle"
+open_date = "2026-11-01"
+pillar = 2
+kind = "grant"
+eligibility = "US-based female founders of for-profit businesses up to five years old, measured from the date of state registration or incorporation. Social impact must be fundamental to the business — either in the model itself or as the reason the business exists."
+note = "NOT OPEN YET, and that is the point of listing it: the foundation's own submission portal says there are no open calls today and names 1 November 2026 as the Fall cycle opening, with grants awarded spring 2027. Up to $50,000 is larger than all but a handful of rows here, and 2026 brought two changes in the applicant's favour — the ceiling rose to $50,000 and eligible business age went from three years to five. No application fee. The close date for the Fall cycle is not published; applications are reviewed on a rolling basis within the cycle. The foundation says outright that several grantees applied two or three times before being selected."
+documents = [
+  "Proof of female ownership",
+  "Date of state registration or incorporation (business must be under five years old)",
+  "A statement of the social impact central to the business",
+  "Financial position and scope of work — the award size is set by demonstrated need",
+]
+verified = "2026-09-24"
+
+[[sources.curated.entry]]
+name = "The Rosie Network — Service2CEO"
+url = "https://www.therosienetwork.org/service2ceo-program"
+agency = "The Rosie Network (501(c)(3), Ramona CA)"
+amount = "No cash — a free, college-accredited 9-module programme with mentorship and pitch-deck development"
+pillar = 3
+kind = "accelerator"
+eligibility = "Veterans, transitioning service members and military spouses. Rosie Chapters serve military spouses, women veterans and women active-duty service members specifically; Warrior Chapters serve the wider military-connected community."
+note = "TRAINING, NOT MONEY — listed as such rather than left off, because it is free, it is gated to exactly the community Vybe belongs to, and its output is a finished pitch deck, which feeds the competitions already on this board. Several cohorts run each year; the 2026 intakes closed 31 Dec 2025, 15 May and 31 May, and the programme page carries no dates, so the next intake is UNCONFIRMED — ask via a chapter rather than waiting for a public announcement. Free means free: no fee, no equity."
+documents = [
+  "Proof of military affiliation (veteran, transitioning service member or military spouse)",
+  "Chapter application",
+]
+verified = "2026-09-24"
 
 [[sources.curated.entry]]
 name = "NIH SBIR/STTR — April 2027 cycle"

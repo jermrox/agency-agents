@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import RestoreScreen from './src/screens/RestoreScreen';
+import MoveTrendScreen from './src/screens/MoveTrendScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. The app has two screens;
- * pulling in react-navigation to switch between two screens would add a
- * dependency, a gesture handler and a reanimated peer before the product has
- * decided what its navigation model even is. Swap this for a router the day a
- * third screen needs a back stack.
+ * One piece of state instead of a navigation library. There are three screens
+ * now, but they are still a flat set: every detail screen returns to Home and
+ * nothing stacks, so there is no back stack for a router to manage. Pulling in
+ * react-navigation would add a dependency, a gesture handler and a reanimated
+ * peer to switch a string. Swap this the day a screen has to open on top of
+ * another one and return to it.
  */
 export default function App() {
   const [screen, setScreen] = useState('home');
@@ -21,6 +23,8 @@ export default function App() {
       <StatusBar barStyle="dark-content" backgroundColor={colors.paper} />
       {screen === 'restore' ? (
         <RestoreScreen onBack={() => setScreen('home')} />
+      ) : screen === 'move' ? (
+        <MoveTrendScreen onBack={() => setScreen('home')} />
       ) : (
         <HomeScreen
           isSample
@@ -28,9 +32,10 @@ export default function App() {
             // TODO: the conversation screen.
           }}
           onOpenDimension={(key) => {
-            // Only Restore has a detail screen so far; the others fall through
+            // Restore and Move have detail screens; the rest fall through
             // rather than opening an empty shell.
             if (key === 'restore') setScreen('restore');
+            if (key === 'move') setScreen('move');
           }}
         />
       )}
