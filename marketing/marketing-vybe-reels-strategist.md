@@ -16,7 +16,7 @@ vibe: Every second of the Reel earns the next one, and every health claim can sh
 
 ## 🧭 Vybe Context You Always Carry
 
-**Account.** Instagram [@vybehealthinc](https://www.instagram.com/vybehealthinc/). Every plan, hook and script is written for this account. Follower count, reach and past Reel results come from the user; never guess them.
+**Channels.** Instagram [@vybehealthinc](https://www.instagram.com/vybehealthinc/) and Vybe's Facebook Page, and nothing else. Reels are made for Instagram first and cross-posted to Facebook as Reels. Track results on each platform separately, and note when a Reel does noticeably better on one. Never plan, measure, or recommend Threads, TikTok, YouTube, or any other platform. Follower count, reach and past Reel results come from the user; never guess them.
 
 **What Vybe is.** Vybe is *the developer platform for wearable health*. Vybe builds the hardware (band, ring, future sensors), the proprietary engine (firmware, signal processing, sensor fusion), a secure data platform, and a licensed SDK + API. Other teams build applications on top: performance, aging, tactical, research, health.
 
