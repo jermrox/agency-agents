@@ -1,0 +1,371 @@
+<title>Vybe Applications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#FBF9F5; --surface:#FFFFFF; --mist:#F1EDE7; --ink:#161C22; --muted:#4E5960;
+  --faint:#7D878D; --rule:#DFDBD1; --brand:#1F8E78; --brand-ink:#FFFFFF;
+  --gap-bg:#FBEDE7; --gap-ink:#9C4127; --ask-ink:#3E3EA0; --ask-line:#4B4BAE;
+  --ok-bg:#E3F2EC; --ok-ink:#16614F; --chk-bg:#F7EEDB; --chk-ink:#7A5410;
+  --no-bg:#F9E9EB; --no-ink:#8C2A38; --shut-bg:#ECEAE6; --shut-ink:#5E6468;
+  --focus:#1F8E78;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#101618; --surface:#161F22; --mist:#1C272A; --ink:#ECE8E0; --muted:#A9B3B6;
+    --faint:#7F8A8E; --rule:#2B373A; --brand:#3FBFA0; --brand-ink:#0C1A17;
+    --gap-bg:#3A2620; --gap-ink:#F2A88F; --ask-ink:#B9B9F2; --ask-line:#8686DA;
+    --ok-bg:#133A31; --ok-ink:#7FDCC2; --chk-bg:#3A2F17; --chk-ink:#E8C57F;
+    --no-bg:#3C1C23; --no-ink:#F29AA7; --shut-bg:#232B2E; --shut-ink:#9AA3A6;
+    --focus:#3FBFA0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#101618; --surface:#161F22; --mist:#1C272A; --ink:#ECE8E0; --muted:#A9B3B6;
+  --faint:#7F8A8E; --rule:#2B373A; --brand:#3FBFA0; --brand-ink:#0C1A17;
+  --gap-bg:#3A2620; --gap-ink:#F2A88F; --ask-ink:#B9B9F2; --ask-line:#8686DA;
+  --ok-bg:#133A31; --ok-ink:#7FDCC2; --chk-bg:#3A2F17; --chk-ink:#E8C57F;
+  --no-bg:#3C1C23; --no-ink:#F29AA7; --shut-bg:#232B2E; --shut-ink:#9AA3A6;
+  --focus:#3FBFA0;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:400 16px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:20px;padding-block:0 96px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:"Newsreader",Georgia,"Times New Roman",serif;font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:300;line-height:1.05}
+h2{font-size:1.9rem;line-height:1.15}
+h3{font-size:1.45rem;line-height:1.2}
+p{margin:0}
+a{color:var(--brand);text-underline-offset:3px}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.05rem}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+
+header.top{padding-block:56px 36px;display:grid;gap:14px;border-bottom:1px solid var(--rule)}
+.progress{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:.92rem;margin-top:6px}
+.progress b{color:var(--ink);font-weight:600}
+
+section{padding-block:44px;border-bottom:1px solid var(--rule);display:grid;gap:22px}
+.sec-head{display:grid;gap:8px}
+
+/* Setup: gates + facts */
+.setup{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:36px;align-items:start}
+@media (max-width:820px){.setup{grid-template-columns:1fr}}
+.gates{display:grid;gap:0;border-top:1px solid var(--rule)}
+.gate{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding-block:12px;border-bottom:1px solid var(--rule)}
+.gate span{font-size:.97rem}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:var(--surface)}
+.seg button{font:500 .82rem "Public Sans",system-ui,sans-serif;border:0;background:transparent;color:var(--muted);padding:6px 12px;cursor:pointer;min-height:32px}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+.fact{display:grid;gap:5px}
+.fact label{font-size:.82rem;font-weight:600;color:var(--muted)}
+.fact input{font:400 .97rem "Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:9px 11px;width:100%}
+.fact input::placeholder{color:var(--faint)}
+.fact input:not(:placeholder-shown){border-color:var(--brand)}
+.small{font-size:.86rem;color:var(--faint)}
+
+/* Order table */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);background:var(--mist)}
+tr:last-child td{border-bottom:0}
+td b{white-space:nowrap}
+td .sub{display:block;font-size:.85rem;color:var(--muted);margin-top:2px}
+.chip{display:inline-block;font:600 .74rem/1 "Public Sans",system-ui,sans-serif;letter-spacing:.04em;padding:6px 9px;border-radius:999px;white-space:nowrap}
+.chip.ready{background:var(--ok-bg);color:var(--ok-ink)}
+.chip.check{background:var(--chk-bg);color:var(--chk-ink)}
+.chip.no{background:var(--no-bg);color:var(--no-ink)}
+.chip.shut{background:var(--shut-bg);color:var(--shut-ink)}
+.chip.fee{background:transparent;color:var(--gap-ink);border:1px solid currentColor;padding:5px 8px}
+
+/* Packets */
+.packet{display:grid;gap:22px;padding-block:44px;border-bottom:1px solid var(--rule)}
+.phead{display:grid;gap:10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;color:var(--muted);font-size:.94rem}
+.brief{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 36px}
+@media (max-width:760px){.brief{grid-template-columns:1fr}}
+.brief .block{display:grid;gap:6px}
+.brief p,.brief li{color:var(--muted);font-size:.96rem;max-width:62ch}
+.brief ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.gatelist{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.gatelist li{display:flex;gap:10px;align-items:baseline;font-size:.94rem;color:var(--ink)}
+.gatelist .mark{font-weight:700;width:1.1em;flex:none;text-align:center}
+.gatelist .y{color:var(--ok-ink)} .gatelist .n{color:var(--no-ink)} .gatelist .u{color:var(--chk-ink)}
+.note{background:var(--mist);border-radius:10px;padding:14px 16px;color:var(--muted);font-size:.93rem;max-width:none}
+
+.fields{display:grid;gap:0;border-top:1px solid var(--ink)}
+.field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;padding-block:18px;border-bottom:1px solid var(--rule)}
+.field .q{font-weight:600;font-size:.98rem}
+.field .ans{grid-column:1/-1;white-space:pre-wrap;font-size:1rem;line-height:1.62;max-width:74ch}
+.field .tools{display:flex;gap:10px;align-items:center;justify-self:end}
+.field .count{font-size:.8rem;color:var(--faint)}
+mark.gap{background:var(--gap-bg);color:var(--gap-ink);padding:1px 5px;border-radius:4px;font-weight:600;font-size:.92em}
+.ask{color:var(--ask-ink);border-bottom:1.5px dashed var(--ask-line)}
+.filled{text-decoration:underline;text-decoration-color:var(--brand);text-decoration-thickness:1.5px;text-underline-offset:3px}
+button.copy{font:600 .82rem "Public Sans",system-ui,sans-serif;background:var(--ink);color:var(--ground);border:0;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:34px;white-space:nowrap}
+button.copy.done{background:var(--brand);color:var(--brand-ink)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.88rem;color:var(--muted)}
+footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Vybe Health · grant and program applications</span>
+    <h1>Apply, in order.</h1>
+    <p class="lede">Every answer below is drafted. Fill in your facts once and they drop into every application. Answer the six eligibility questions and each application tells you whether it is worth your time.</p>
+    <div class="progress num" id="progress"></div>
+  </header>
+
+  <section id="setup" aria-labelledby="setup-h">
+    <div class="sec-head">
+      <span class="eyebrow">Step 1 · five minutes, once</span>
+      <h2 id="setup-h">Your facts</h2>
+      <p class="lede">Saved in this browser only. Nothing here leaves your device.</p>
+    </div>
+    <div class="setup">
+      <div class="sec-head">
+        <h3>Eligibility</h3>
+        <p class="small">These decide which applications are real options.</p>
+        <div class="gates" id="gates"></div>
+      </div>
+      <div class="sec-head">
+        <h3>Business facts</h3>
+        <p class="small">Grey text is an example of the format, not your data.</p>
+        <div class="facts" id="facts"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" aria-labelledby="order-h">
+    <div class="sec-head">
+      <span class="eyebrow">Step 2</span>
+      <h2 id="order-h">Apply in this order</h2>
+      <p class="lede">Sorted by deadline. The status updates as you answer the eligibility questions.</p>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Due</th><th>Application</th><th>Award</th><th>Status</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <div class="legend">
+      <span><span class="chip ready">Ready</span> meets every gate</span>
+      <span><span class="chip check">Check</span> answer a gate first</span>
+      <span><span class="chip no">Not eligible</span> fails a gate</span>
+    </div>
+  </section>
+
+  <div id="packets"></div>
+
+  <section id="shared" aria-labelledby="shared-h">
+    <div class="sec-head">
+      <span class="eyebrow">Reusable</span>
+      <h2 id="shared-h">Descriptions for any other form</h2>
+      <p class="lede">For the next application that asks the same questions in different words.</p>
+    </div>
+    <div class="legend">
+      <span><mark class="gap">Gap</mark> a fact you haven't filled in yet</span>
+      <span><span class="ask">[Prompt]</span> write this part yourself</span>
+      <span><span class="filled">Filled</span> taken from your facts</span>
+    </div>
+    <div class="fields" id="shared-fields"></div>
+  </section>
+
+  <footer>
+    <span class="num" id="built"></span>
+    <span>Every requirement here was read from the program's own page. Eligibility the program did not publish is marked for you to confirm on the form itself. No figure about Vybe is invented: anything only you know is left as a gap.</span>
+  </footer>
+</div>
+
+<script type="application/json" id="data">{"facts": [{"key": "LEGAL_NAME", "label": "Legal business name", "hint": "Vybe Health, Inc."}, {"key": "STATE", "label": "State of formation", "hint": "Delaware"}, {"key": "FORMED", "label": "Date formed", "hint": "March 2024"}, {"key": "EIN", "label": "EIN", "hint": "12-3456789"}, {"key": "CITY", "label": "Business city and state", "hint": "Akron, OH"}, {"key": "WEBSITE", "label": "Website", "hint": "vybe.health"}, {"key": "EMAIL", "label": "Company email", "hint": "you@vybe.health"}, {"key": "CEO", "label": "CEO name and title", "hint": "Jane Doe, Founder and CEO"}, {"key": "OWNERSHIP", "label": "Who owns what", "hint": "Jane Doe 60%, John Roe 40%"}, {"key": "WOMAN_OWNER", "label": "Woman owner (the Amber / Tory Burch applicant)", "hint": "Jane Doe"}, {"key": "VETERAN_OWNER", "label": "Veteran owner, branch, years", "hint": "John Roe, US Army, 2008-2016"}, {"key": "MINORITY_BASIS", "label": "Minority ownership, as the federal definition names it", "hint": "Black American"}, {"key": "REVENUE", "label": "Revenue, last 12 months", "hint": "$0 (pre-revenue)"}, {"key": "EMPLOYEES", "label": "Employees (including founders)", "hint": "3"}, {"key": "STAGE", "label": "Where the product is today", "hint": "working Band prototype; app in private beta"}, {"key": "TRACTION", "label": "Users, waitlist or pilots", "hint": "a 400-person waitlist"}], "gates": [{"key": "years2", "label": "In business 2+ years"}, {"key": "years1", "label": "In business 1+ year"}, {"key": "staff2", "label": "2 or more employees"}, {"key": "rev75", "label": "Revenue of $75,000+ a year"}, {"key": "incorp", "label": "Incorporated (LLC or corporation)"}, {"key": "equity", "label": "Raised equity from an institutional investor"}], "packets": [{"id": "buckeye", "name": "Buckeye State CU Small Business Recovery Grant", "funder": "Buckeye State Credit Union (CDFI Equitable Recovery Program)", "amount": "$200,000 / $150,000 / $125,000 — three grants", "deadline": "2026-09-30", "fee": null, "url": "https://www.buckeyecu.org/small-business-recovery-grant/", "submit": "Download the application from the program page, complete it, and email the full package to grantsupport@buckeyecu.org by 30 September. Membership is not required and businesses outside Akron may apply; Summit County gets priority.", "gates": ["years2"], "confirmed": ["Minority-owned or minority-controlled (confirmed 20 Sep)"], "why": "The largest award on the board that Vybe's ownership qualifies for. Reviewers score eligibility, completeness, alignment with the program and community impact. Funds may pay payroll, rent, utilities, inventory, supplies and working capital.", "docs": ["Completed application form (from the program page)", "Proof of two or more years in operation: formation documents plus two years of tax returns or financial statements", "Proof of minority ownership or control: operating agreement or cap table, and any MBE certification you hold", "Certificate of good standing from your state", "The community-benefit plan and use-of-funds budget below"], "note": "The exact form was not readable from here. These are the sections the program says it scores; paste each into the matching part of the downloaded form. Label every attachment by name so the reviewer never has to hunt for proof.", "fields": [{"q": "Business overview", "a": "Most wearables stop at the score. They report that heart-rate variability dropped and leave the person to work out why. Vybe is built for the step after the number.\n\nThe Vybe Band is a screenless wearable that tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals across five parts of a person's life: Restore, Move, Nourish, Connect and Vitals. Connect is the one other products miss. A reading can change for reasons a sensor cannot see, like a hard week at work, a long flight or a heat wave, so Vybe takes that context into account.\n\nPeople ask plain questions, such as \"Why am I tired today?\" or \"Should I train tonight?\", and get an answer grounded in their own data, with the evidence shown and one next step.\n\nVybe has no required subscription. The interpretation is part of the product, not a monthly fee. Vybe is not a medical device and makes no diagnostic claims."}, {"q": "Operating history (two years or more)", "a": "{{LEGAL_NAME}} was formed in {{STATE}} in {{FORMED}} and has operated continuously since. Over that time we have [name two or three milestones: the first working Band, first customers or testers, first hire]. Today the product is at this stage: {{STAGE}}. We have {{EMPLOYEES}} people on the team and our revenue over the last 12 months was {{REVENUE}}."}, {"q": "Minority ownership and control", "a": "{{LEGAL_NAME}} is at least 51% owned and controlled by minority owners ({{MINORITY_BASIS}}). Ownership: {{OWNERSHIP}}. {{CEO}} directs day-to-day operations. The operating agreement and cap table are attached as proof."}, {"q": "Community served and how the grant benefits it", "a": "Personal health insight has become a subscription product. The best-known wearables put the interpretation behind a recurring monthly fee. That fee prices out the households with the most avoidable health risk and the least time to manage it.\n\nVybe removes the fee. A person buys the Band once and the answers come with it.\n\nWith this grant we will place Vybe Bands with [number] residents of low- to moderate-income neighborhoods through [partner organization, such as a community health center or veteran service organization], and hire [number] people from those neighborhoods to onboard users in person. Onboarding in person matters: the product only helps someone who can get a useful answer on the first day.\n\nWe will report at 90 and 180 days: residents actively using the Band, jobs created, and the share of users who say an answer changed what they did."}, {"q": "Use of funds (suggested split for $200,000 — replace with your real costs)", "a": "Payroll: two hires, a community onboarding lead and an engineer — $90,000\nInventory: Vybe Bands for the community pilot — $60,000\nWorking capital: manufacturing deposits and operating reserve — $30,000\nRent, utilities and software — $20,000\nTotal: $200,000\n\nEvery line is an allowed use under the program: payroll, inventory, working capital and day-to-day operating expenses."}, {"q": "Jobs and outcomes", "a": "The grant creates [number] jobs within six months, at least [number] filled by residents of the communities the pilot serves. It puts [number] Bands on people who would not otherwise have access to this kind of insight, and it carries Vybe from {{STAGE}} to a product in daily use outside our team."}]}, {"id": "amber", "name": "Amber Grant for Women", "funder": "WomensNet", "amount": "$10,000 monthly (three awards a month), plus $50,000 year-end", "deadline": "2026-09-30", "fee": "$15 non-refundable application fee", "url": "https://ambergrantsforwomen.com/get-an-amber-grant/", "submit": "Short online form, applied by the woman owner. Applying by 30 September enters the September round; winners are announced by the 21st of the following month. One application also enters you for the Startup Grant (if sales are under $10,000) and any Business Category Grant for 12 months.", "gates": [], "confirmed": ["51%+ woman-owned (confirmed 20 Sep)"], "why": "Running since 1998 with no revenue floor, so it works before Vybe has sales. A pre-revenue Vybe is also automatically considered for the $10,000 Startup Grant. The $15 fee is the only cost.", "docs": [], "note": "Judges read these as a person talking about her business. The bracketed sentence about why you started Vybe matters more than any polish here; write it yourself.", "fields": [{"q": "Tell us about yourself and your business", "a": "I'm {{WOMAN_OWNER}}, and I lead {{LEGAL_NAME}}. [One or two sentences in your own words: why you started Vybe.]\n\nMost wearables stop at the score. They tell you your heart-rate variability dropped and leave you to work out why. Vybe is built for the step after the number. Our screenless Vybe Band tracks ECG, heart-rate variability, sleep and activity, and Vybe Intelligence reads those signals alongside the rest of your life, like stress, work, travel and weather. You ask a plain question, such as \"Why am I tired today?\", and get an answer from your own data with one next step.\n\nThere is no required subscription. The answers come with the Band. Today we are at this stage: {{STAGE}}."}, {"q": "What would you do with the grant?", "a": "Put Vybe on the wrists of its first [number] people outside our team. The $10,000 covers at-cost Bands for that group and six weeks of hands-on onboarding. That test answers the question our business depends on: can a person, not an engineer, get a useful answer about their own health on the first day? What they tell us shapes the product we take to market."}]}, {"id": "tadlock", "name": "Stephen L. Tadlock Veteran Business Grant", "funder": "Founders First CDC", "amount": "$1,000 micro-grant plus a free program place (Passport or Zebra)", "deadline": "2026-10-15", "fee": null, "url": "https://foundersfirstcdc.org/stephen-tadlock", "submit": "Online application, open since 15 September, closes 15 October. Semifinalists announced 22 October, finalists 10 November. The veteran applies as CEO, President or owner.", "gates": ["years1", "staff2"], "confirmed": ["Veteran-owned (confirmed 20 Sep)", "Revenue under $5M"], "why": "Small cash, but the Passport program (weekly sessions on marketing, sales, operations and finance, worth $1,499) fits where Vybe is. Two hard gates: at least one year in business and 2 to 100 employees.", "docs": ["DD-214 or other proof of service may be requested"], "note": "", "fields": [{"q": "Describe your business", "a": "Vybe turns the signals a body already produces into answers a person can act on. The screenless Vybe Band tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals alongside the context around them, like stress, work, travel and weather, and answers questions such as \"Why am I tired today?\" There is no required subscription."}, {"q": "Your military service", "a": "{{VETERAN_OWNER}}. [Two sentences in your own words: what you did in service and one thing it taught you that you use running Vybe.]"}, {"q": "How would you use the $1,000?", "a": "[Choose one and keep it specific:] a radio pre-scan ahead of the Band's FCC certification / filing the VYBE trademark / at-cost Bands for our first ten outside testers. A small grant does the most good on one named cost."}, {"q": "Which program, and why?", "a": "Passport Community. Vybe's next step is getting from {{STAGE}} to paying customers, and Passport's weekly sessions cover the four things that step depends on: marketing, sales, operations and finance."}]}, {"id": "toryburch", "name": "Tory Burch Foundation Fellows — 2027", "funder": "Tory Burch Foundation", "amount": "Fellowship place (about 120 chosen): coaching, advisors, peer network", "deadline": "2026-11-17", "fee": null, "url": "https://fellows.toryburchfoundation.org/prog/2027_fellows_program/", "submit": "Online only, one applicant per business: the woman who owns the largest or equal-largest stake and manages the business day to day. Include a photo (JPG, GIF or PNG, under 2 MB) and a video of up to 2 minutes.", "gates": ["rev75"], "confirmed": ["51%+ woman-owned (confirmed 20 Sep)"], "why": "The Foundation's terms require a revenue-generating business with at least $75,000 a year. If Vybe is below that, skip this cycle; the gate is firm. A business plan is optional.", "docs": ["Photo of the applicant, under 2 MB", "Video, 2 minutes or less (script below)"], "note": "The revenue floor is stated in the Foundation's terms for the 2026 cycle; the 2027 page shows no change. Confirm in the 2027 rules when you open the form.", "fields": [{"q": "Describe your business", "a": "Most wearables stop at the score. They report that heart-rate variability dropped and leave the person to work out why. Vybe is built for the step after the number.\n\nThe Vybe Band is a screenless wearable that tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals across five parts of a person's life: Restore, Move, Nourish, Connect and Vitals. Connect is the one other products miss. A reading can change for reasons a sensor cannot see, like a hard week at work, a long flight or a heat wave, so Vybe takes that context into account.\n\nPeople ask plain questions, such as \"Why am I tired today?\" or \"Should I train tonight?\", and get an answer grounded in their own data, with the evidence shown and one next step.\n\nVybe has no required subscription. The interpretation is part of the product, not a monthly fee. Vybe is not a medical device and makes no diagnostic claims."}, {"q": "Your biggest challenge right now", "a": "Moving from {{STAGE}} to a first production run while keeping the product free of a required subscription. Hardware companies usually fund that step with recurring fees. We have chosen not to charge them, so the product has to earn its way through the Band itself, partnerships and licensing."}, {"q": "What you want from the Fellowship", "a": "Advisors who have taken a consumer hardware product through manufacturing and into retail, and peers a year or two ahead who have made the pricing decisions we are making now."}, {"q": "Video script (about 2 minutes)", "a": "I'm {{WOMAN_OWNER}}, and I lead {{LEGAL_NAME}}.\n\n[Hold up the Band.] This is the Vybe Band. It has no screen, on purpose. It tracks your heart, your sleep and how you move.\n\nEvery wearable gives you a number. Your sleep score is 71. Your heart-rate variability is down. Then it stops, and you're left asking why.\n\nVybe answers the why. You ask a plain question, like \"Why am I tired today?\", and Vybe looks at your body and the life around it: the hard week at work, the late flight, the heat. You get an answer from your own data and one thing to do next.\n\nAnd there's no required subscription. The answers come with the Band. Health insight shouldn't be a monthly bill.\n\n[One sentence in your own words: why this matters to you.]\n\nWe're at this stage: {{STAGE}}. The Fellowship would put me in a room with women who have taken hardware to market. That's the step in front of us."}]}, {"id": "credits", "name": "Cloud and AI credits — five programs, one description", "funder": "NVIDIA, Microsoft, AWS, Google, Anthropic", "amount": "NVIDIA Inception (free, routes to partner credit offers) · Microsoft up to $150K · AWS Activate Founders $1K · Google Cloud Start $2K · Anthropic credits need institutional funding", "deadline": "rolling", "fee": null, "url": "https://www.nvidia.com/en-us/startups/", "submit": "All rolling, all short online forms, ten minutes each. Apply in this order: NVIDIA Inception (nvidia.com/startups), Microsoft for Startups (microsoft.com/startups), AWS Activate Founders (aws.amazon.com/startups), Google for Startups Cloud Program Start tier (cloud.google.com/startup). Use the company email, not a personal one.", "gates": ["incorp"], "confirmed": [], "why": "Credits cut what Vybe spends to run its AI, and they compound: Inception membership opens partner offers. Correction to the board: Anthropic's program is open to anyone to join, but its credits require equity from an institutional investor and a company under four years old. Join it now for the community; apply for credits after a priced round.", "docs": ["Company email address", "Website", "Claude Console account (for Anthropic)"], "note": "Inception membership may give a legitimate way to reference NVIDIA. Read Inception's brand guidelines before putting any NVIDIA mark on packaging; membership is not the same as a partnership.", "fields": [{"q": "One-line description", "a": "{{LEGAL_NAME}} builds Vybe, a personal health intelligence platform: a screenless band, a person's connected health data, and AI that answers plain questions about their own body."}, {"q": "What you are building (short)", "a": "Vybe turns the signals a body already produces into answers a person can act on. The screenless Vybe Band tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals alongside the context around them, like stress, work, travel and weather, and answers questions such as \"Why am I tired today?\" There is no required subscription."}, {"q": "How you use AI / how you'd use the credits", "a": "Vybe Intelligence runs models over each user's own time-series signals, ECG, heart-rate variability, sleep and activity, and a language model turns the result into a plain answer with the evidence shown. Credits would pay for training and evaluating those models and for inference as we move from {{STAGE}} to daily use by {{TRACTION}}."}, {"q": "Industry and stage", "a": "Industry: Healthcare and life sciences (consumer health, wearables). Stage: {{STAGE}}. Team: {{EMPLOYEES}} people. Funding: [bootstrapped / amount raised]."}]}, {"id": "veterans", "name": "Veteran pitch circuit — Second Service Foundation and Warrior Rising", "funder": "Second Service Foundation · Warrior Rising", "amount": "Second Service: $1,000–$15,000 per regional event · Warrior Rising: up to $20,000 through business showers", "deadline": "rolling", "fee": null, "url": "https://secondservicefoundation.org/", "submit": "Second Service runs regional Military Entrepreneur Challenge pitch events; register for the next one near you. Warrior Rising is training-first: complete its program to become eligible for business-shower awards (warriorrising.org). Both require 51%+ veteran (or eligible military-family) ownership.", "gates": [], "confirmed": ["Veteran-owned 51%+ (confirmed 20 Sep)"], "why": "Repeatable. Each Second Service event is a new chance at cash with the same pitch, and a win is a line in every later application.", "docs": [], "note": "", "fields": [{"q": "60-second pitch", "a": "I'm {{VETERAN_OWNER}}, and I'm building Vybe.\n\nEvery wearable gives you a number. None of them tell you why it moved. Vybe does. The screenless Vybe Band reads your heart, sleep and movement, and Vybe Intelligence connects them to the life around them: stress, work, travel. Ask \"Why am I tired today?\" and you get an answer from your own data and one next step.\n\nNo required subscription. The answers come with the Band.\n\nWe're at this stage: {{STAGE}}. [Your ask: what this award buys.]"}, {"q": "Why a veteran is building this", "a": "[In your own words: what service taught you about sleep, recovery or readiness, and why a product that explains your body matters to you.]"}]}], "shared": [{"q": "Company details, for the top of any form", "a": "Legal name: {{LEGAL_NAME}}\nFormed: {{STATE}}, {{FORMED}}\nEIN: {{EIN}}\nLocation: {{CITY}}\nWebsite: {{WEBSITE}}\nEmail: {{EMAIL}}\nLead: {{CEO}}\nOwnership: {{OWNERSHIP}}\nEmployees: {{EMPLOYEES}}\nRevenue, last 12 months: {{REVENUE}}"}, {"q": "One line", "a": "{{LEGAL_NAME}} builds Vybe, a personal health intelligence platform: a screenless band, a person's connected health data, and AI that answers plain questions about their own body."}, {"q": "Short description (about 60 words)", "a": "Vybe turns the signals a body already produces into answers a person can act on. The screenless Vybe Band tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals alongside the context around them, like stress, work, travel and weather, and answers questions such as \"Why am I tired today?\" There is no required subscription."}, {"q": "Long description (about 190 words)", "a": "Most wearables stop at the score. They report that heart-rate variability dropped and leave the person to work out why. Vybe is built for the step after the number.\n\nThe Vybe Band is a screenless wearable that tracks ECG, heart-rate variability, sleep and activity. Vybe Intelligence reads those signals across five parts of a person's life: Restore, Move, Nourish, Connect and Vitals. Connect is the one other products miss. A reading can change for reasons a sensor cannot see, like a hard week at work, a long flight or a heat wave, so Vybe takes that context into account.\n\nPeople ask plain questions, such as \"Why am I tired today?\" or \"Should I train tonight?\", and get an answer grounded in their own data, with the evidence shown and one next step.\n\nVybe has no required subscription. The interpretation is part of the product, not a monthly fee. Vybe is not a medical device and makes no diagnostic claims."}, {"q": "Why now", "a": "Wearables are a roughly $103 billion market in 2026, and AI on wearables is growing about 27.8% a year through 2033. The category has split. Oura kept its subscription and deepened its intelligence, reaching an $11 billion valuation. Whoop went subscription-only, reversed a 2025 upgrade decision under pressure and now faces a 2026 class action. Ultrahuman, RingConn and Amazfit dropped the subscription and the intelligence with it. No one offers deep interpretation without a required subscription. That is Vybe's position."}], "built": "2026-09-24"}</script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var KEY = 'vybe-apply-v1';
+  var state = {facts:{}, gates:{}};
+  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) state = {facts:s.facts||{}, gates:s.gates||{}}; } catch(e) {}
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
+
+  var labels = {}; D.facts.forEach(function(f){ labels[f.key] = f.label; });
+  var gateLabel = {}; D.gates.forEach(function(g){ gateLabel[g.key] = g.label; });
+
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  var TOKEN = /(\{\{[A-Z_0-9]+\}\}|\[[^\]\n]+\])/g;
+
+  function render(text){
+    var gaps = 0;
+    var html = text.split(TOKEN).map(function(part){
+      var m = part.match(/^\{\{([A-Z_0-9]+)\}\}$/);
+      if (m){
+        var v = (state.facts[m[1]] || '').trim();
+        if (v) return '<span class="filled">' + esc(v) + '</span>';
+        gaps++; return '<mark class="gap">' + esc(labels[m[1]] || m[1]) + '</mark>';
+      }
+      if (/^\[[^\]]+\]$/.test(part)){ gaps++; return '<span class="ask">' + esc(part) + '</span>'; }
+      return esc(part);
+    }).join('');
+    return {html:html, gaps:gaps};
+  }
+  function plain(text){
+    return text.replace(/\{\{([A-Z_0-9]+)\}\}/g, function(_, k){
+      var v = (state.facts[k] || '').trim(); return v || '[' + (labels[k] || k) + ']';
+    });
+  }
+  function words(t){ var w = t.trim().split(/\s+/).filter(Boolean); return w.length; }
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  function daysLeft(iso){
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
+    var p = iso.split('-'); var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return Math.round((d - today) / 864e5);
+  }
+  function fmtDate(iso){
+    if (!/^\d{4}/.test(iso)) return 'Rolling';
+    var p = iso.split('-'); var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString('en-US',{month:'short', day:'numeric'});
+  }
+  function verdict(p){
+    var dl = daysLeft(p.deadline);
+    if (dl !== null && dl < 0) return {cls:'shut', text:'Closed'};
+    var any = false, allYes = true;
+    p.gates.forEach(function(g){ var v = state.gates[g]; if (v === 'no') any = true; if (v !== 'yes') allYes = false; });
+    if (any) return {cls:'no', text:'Not eligible'};
+    if (allYes) return {cls:'ready', text:'Ready'};
+    return {cls:'check', text:'Check'};
+  }
+
+  /* Gates */
+  var gatesEl = document.getElementById('gates');
+  D.gates.forEach(function(g){
+    var row = document.createElement('div'); row.className = 'gate';
+    row.innerHTML = '<span id="gl-' + g.key + '">' + esc(g.label) + '</span>';
+    var seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role','group'); seg.setAttribute('aria-labelledby','gl-' + g.key);
+    [['yes','Yes'],['no','No'],['', 'Not sure']].forEach(function(o){
+      var b = document.createElement('button'); b.type = 'button'; b.id = 'g-' + g.key + '-' + (o[0] || 'unsure'); b.textContent = o[1];
+      b.setAttribute('aria-pressed', String((state.gates[g.key] || '') === o[0]));
+      b.addEventListener('click', function(){
+        if (o[0]) state.gates[g.key] = o[0]; else delete state.gates[g.key];
+        seg.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true'); save(); refresh();
+      });
+      seg.appendChild(b);
+    });
+    row.appendChild(seg); gatesEl.appendChild(row);
+  });
+
+  /* Facts */
+  var factsEl = document.getElementById('facts');
+  D.facts.forEach(function(f){
+    var w = document.createElement('div'); w.className = 'fact';
+    w.innerHTML = '<label for="f-' + f.key + '">' + esc(f.label) + '</label><input id="f-' + f.key + '" type="text" autocomplete="off" placeholder="' + esc(f.hint) + '">';
+    var inp = w.querySelector('input'); inp.value = state.facts[f.key] || '';
+    inp.addEventListener('input', function(){ state.facts[f.key] = inp.value; save(); refreshText(); });
+    factsEl.appendChild(w);
+  });
+
+  /* Fields */
+  var fieldRegistry = [];
+  function fieldRow(parent, f){
+    var d = document.createElement('div'); d.className = 'field';
+    var id = 'a' + fieldRegistry.length;
+    d.innerHTML = '<div class="q" id="' + id + '-q">' + esc(f.q) + '</div>' +
+      '<div class="tools"><span class="count num" id="' + id + '-c"></span>' +
+      '<button type="button" class="copy" id="' + id + '-b" aria-describedby="' + id + '-q">Copy</button></div>' +
+      '<div class="ans" id="' + id + '-t"></div>';
+    parent.appendChild(d);
+    var btn = d.querySelector('button');
+    btn.addEventListener('click', function(){
+      var text = plain(f.a);
+      function ok(){ btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function(){ btn.classList.remove('done'); updateOne(entry); }, 1600); }
+      function fallback(){
+        var r = document.createRange(); r.selectNodeContents(document.getElementById(id + '-t'));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected — press Ctrl/Cmd+C';
+      }
+      try { navigator.clipboard.writeText(text).then(ok, fallback); } catch(e) { fallback(); }
+    });
+    var entry = {f:f, id:id, btn:btn};
+    fieldRegistry.push(entry); return entry;
+  }
+  function updateOne(e){
+    var r = render(e.f.a);
+    document.getElementById(e.id + '-t').innerHTML = r.html;
+    document.getElementById(e.id + '-c').textContent = words(plain(e.f.a)) + ' words' + (r.gaps ? ' · ' + r.gaps + (r.gaps === 1 ? ' gap' : ' gaps') : '');
+    if (!e.btn.classList.contains('done')) e.btn.textContent = r.gaps ? 'Copy with gaps' : 'Copy';
+  }
+
+  /* Packets */
+  var sorted = D.packets.slice().sort(function(a,b){
+    var da = daysLeft(a.deadline), db = daysLeft(b.deadline);
+    return (da === null ? 1e6 : da) - (db === null ? 1e6 : db);
+  });
+  var packetsEl = document.getElementById('packets');
+  sorted.forEach(function(p){
+    var s = document.createElement('article'); s.className = 'packet'; s.id = p.id;
+    var dl = daysLeft(p.deadline);
+    var due = dl === null ? 'Rolling — apply any time' : 'Due ' + fmtDate(p.deadline) + ' · ' + (dl === 0 ? 'today' : dl === 1 ? '1 day left' : dl + ' days left');
+    var docs = p.docs.length ? '<div class="block"><span class="eyebrow">You will need</span><ul>' + p.docs.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>' : '';
+    s.innerHTML =
+      '<div class="phead"><span class="eyebrow">' + esc(p.funder) + '</span><h2>' + esc(p.name) + '</h2>' +
+      '<div class="meta num"><span class="chip" data-verdict="' + p.id + '"></span><span>' + esc(due) + '</span><span>' + esc(p.amount) + '</span>' +
+      (p.fee ? '<span class="chip fee">' + esc(p.fee) + '</span>' : '') + '</div></div>' +
+      '<div class="brief">' +
+        '<div class="block"><span class="eyebrow">Why this one</span><p>' + esc(p.why) + '</p></div>' +
+        '<div class="block"><span class="eyebrow">How to submit</span><p>' + esc(p.submit) + '</p><p><a href="' + esc(p.url) + '" target="_blank" rel="noopener">Open the program page</a></p></div>' +
+        '<div class="block"><span class="eyebrow">Eligibility</span><ul class="gatelist" data-gates="' + p.id + '"></ul></div>' + docs +
+      '</div>' + (p.note ? '<p class="note">' + esc(p.note) + '</p>' : '') +
+      '<div class="fields"></div>';
+    packetsEl.appendChild(s);
+    var fl = s.querySelector('.fields');
+    p.fields.forEach(function(f){ fieldRow(fl, f); });
+  });
+
+  var sharedEl = document.getElementById('shared-fields');
+  D.shared.forEach(function(f){ fieldRow(sharedEl, f); });
+
+  function refreshText(){ fieldRegistry.forEach(updateOne); progress(); }
+  function refresh(){
+    var rows = document.getElementById('rows'); rows.innerHTML = '';
+    sorted.forEach(function(p){
+      var v = verdict(p), dl = daysLeft(p.deadline);
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td class="num"><b>' + fmtDate(p.deadline) + '</b><span class="sub">' + (dl === null ? 'any time' : dl < 0 ? 'passed' : dl + ' days') + '</span></td>' +
+        '<td><a href="#' + p.id + '">' + esc(p.name) + '</a><span class="sub">' + esc(p.funder) + '</span></td>' +
+        '<td>' + esc(p.amount) + (p.fee ? '<span class="sub" style="color:var(--gap-ink)">' + esc(p.fee) + '</span>' : '') + '</td>' +
+        '<td><span class="chip ' + v.cls + '">' + v.text + '</span></td>';
+      rows.appendChild(tr);
+      var chip = document.querySelector('[data-verdict="' + p.id + '"]'); chip.className = 'chip ' + v.cls; chip.textContent = v.text;
+      var gl = document.querySelector('[data-gates="' + p.id + '"]');
+      var items = (p.confirmed || []).map(function(c){ return '<li><span class="mark y" aria-hidden="true">✓</span><span>' + esc(c) + '</span></li>'; });
+      p.gates.forEach(function(g){
+        var st = state.gates[g];
+        var mark = st === 'yes' ? '<span class="mark y" aria-hidden="true">✓</span>' : st === 'no' ? '<span class="mark n" aria-hidden="true">✕</span>' : '<span class="mark u" aria-hidden="true">?</span>';
+        var word = st === 'yes' ? 'Yes' : st === 'no' ? 'No' : 'Not answered';
+        items.push('<li>' + mark + '<span>' + esc(gateLabel[g]) + ' — ' + word + '</span></li>');
+      });
+      if (!items.length) items.push('<li><span class="mark y" aria-hidden="true">✓</span><span>No gates beyond ownership</span></li>');
+      gl.innerHTML = items.join('');
+    });
+    progress();
+  }
+  function progress(){
+    var filled = D.facts.filter(function(f){ return (state.facts[f.key] || '').trim(); }).length;
+    var counts = {ready:0, check:0, no:0};
+    D.packets.forEach(function(p){ var v = verdict(p).cls; if (counts[v] !== undefined) counts[v]++; });
+    var gaps = fieldRegistry.reduce(function(n, e){ return n + render(e.f.a).gaps; }, 0);
+    document.getElementById('progress').innerHTML =
+      '<span><b>' + filled + ' of ' + D.facts.length + '</b> facts filled</span>' +
+      '<span><b>' + counts.ready + '</b> ready</span><span><b>' + counts.check + '</b> to check</span><span><b>' + counts.no + '</b> not eligible</span>' +
+      '<span><b>' + gaps + '</b> gaps left across ' + fieldRegistry.length + ' answers</span>';
+  }
+  document.getElementById('built').textContent = 'Drafted ' + D.built + ' · ' + D.packets.length + ' applications · ' + fieldRegistry.length + ' answers';
+  refreshText(); refresh();
+})();
+</script>
