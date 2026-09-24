@@ -134,7 +134,7 @@ footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6
     <div class="setup">
       <div class="sec-head">
         <h3>Eligibility</h3>
-        <p class="small">These decide which applications are real options.</p>
+        <p class="small">Pre-set from your answers on 24 September. Change any that are out of date.</p>
         <div class="gates" id="gates"></div>
       </div>
       <div class="sec-head">
@@ -149,7 +149,7 @@ footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6
     <div class="sec-head">
       <span class="eyebrow">Step 2</span>
       <h2 id="order-h">Apply in this order</h2>
-      <p class="lede">Sorted by deadline. The status updates as you answer the eligibility questions.</p>
+      <p class="lede">What you can apply to comes first, soonest deadline on top. The status updates if you change an eligibility answer.</p>
     </div>
     <div class="tablewrap"><table>
       <thead><tr><th>Due</th><th>Application</th><th>Award</th><th>Status</th></tr></thead>
@@ -189,8 +189,8 @@ footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6
 (function(){
   var D = JSON.parse(document.getElementById('data').textContent);
   var KEY = 'vybe-apply-v1';
-  var state = {facts:{}, gates:{}};
-  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) state = {facts:s.facts||{}, gates:s.gates||{}}; } catch(e) {}
+  var state = {facts:{}, gates:Object.assign({}, D.gateDefaults || {})};
+  try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) state = {facts:s.facts||{}, gates:Object.assign({}, D.gateDefaults || {}, s.gates||{})}; } catch(e) {}
   function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
 
   var labels = {}; D.facts.forEach(function(f){ labels[f.key] = f.label; });
@@ -333,7 +333,9 @@ footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6
   function refreshText(){ fieldRegistry.forEach(updateOne); progress(); }
   function refresh(){
     var rows = document.getElementById('rows'); rows.innerHTML = '';
-    sorted.forEach(function(p){
+    var rank = {ready:0, check:1, no:2, shut:3};
+    var ordered = sorted.slice().sort(function(a,b){ return rank[verdict(a).cls] - rank[verdict(b).cls]; });
+    ordered.forEach(function(p){
       var v = verdict(p), dl = daysLeft(p.deadline);
       var tr = document.createElement('tr');
       tr.innerHTML = '<td class="num"><b>' + fmtDate(p.deadline) + '</b><span class="sub">' + (dl === null ? 'any time' : dl < 0 ? 'passed' : dl + ' days') + '</span></td>' +

@@ -6,6 +6,7 @@ here = pathlib.Path(__file__).parent
 data = {
     "facts": [{"key": k, "label": l, "hint": h} for k, l, h in P.FACTS],
     "gates": [{"key": k, "label": l} for k, l in P.GATES],
+    "gateDefaults": P.GATE_DEFAULTS,
     "packets": P.PACKETS,
     "shared": [{"q": q, "a": a} for q, a in P.SHARED],
     "built": datetime.date.today().isoformat(),

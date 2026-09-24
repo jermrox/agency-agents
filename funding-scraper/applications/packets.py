@@ -36,6 +36,18 @@ GATES = [
     ("equity", "Raised equity from an institutional investor"),
 ]
 
+# Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
+# daily routine must not draft a packet whose gates these fail:
+# under 1 year in business, revenue under $75,000, 2-100 employees, incorporated.
+# Institutional equity was not asked; leave it unanswered until it is.
+GATE_DEFAULTS = {
+    "years2": "no",
+    "years1": "no",
+    "staff2": "yes",
+    "rev75": "no",
+    "incorp": "yes",
+}
+
 # Reusable blocks. Written in Vybe's voice: calm, plain, short lines.
 ONE_LINER = (
     "{{LEGAL_NAME}} builds Vybe, a personal health intelligence platform: a "
