@@ -10,12 +10,14 @@ from typing import Any
 
 from .base import Source, SourceError
 from .curated import CuratedSource
+from .dod_sbir import DodSbirSource
 from .grants_gov import GrantsGovSource
 from .sbir_gov import SBIRGovSource
 
 REGISTRY: dict[str, type[Source]] = {
     SBIRGovSource.kind: SBIRGovSource,
     GrantsGovSource.kind: GrantsGovSource,
+    DodSbirSource.kind: DodSbirSource,
     CuratedSource.kind: CuratedSource,
 }
 

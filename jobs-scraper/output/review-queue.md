@@ -1,3 +1,22 @@
+## Run 2026-09-14 19:09 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-14 07:14 UTC — 1 posting(s)
+
+### [Food Services Specialist (Food Service Administrator)](https://www.usajobs.gov:443/job/884462700)
+- **Employer:** Bureau of Prisons/Federal Prison System
+- **Location:** Marion, Illinois
+- **Score:** 8.0 | **Tags:** first-responder, military, nutrition
+- **Source:** `usajobs:federal`
+- **Compensation:** $89508 - $116362 PA
+- **Matched:** domain=military, public safety | discipline=registered dietitian
+
+> To be considered for the position, you must meet the following qualification requirements: Education: There is no substitution of education for specialized experience for this position. Experience: You must have at least one year of specialized experience equivalent in difficulty and complexity to…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-13 19:08 UTC — 0 posting(s)
 
 _No new postings._

@@ -88,7 +88,10 @@ jobs:
           echo "== Content of / =="
           curl -sS -L --max-time 30 "$SITE/" -o /tmp/index || true
 
-          entries=$(grep -o 'class="entry"' /tmp/index | wc -l | tr -d ' ')
+          # Swallowing grep's no-match exit matters: the job shell is `bash -e` and
+          # this script sets pipefail, so an unguarded grep that matches nothing would
+          # abort the run here instead of reaching the "at least 90 entries" report.
+          entries=$( { grep -o 'class="entry"' /tmp/index || true; } | wc -l | tr -d ' ')
           echo "  entries rendered in markup : $entries"
 
           title=$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' /tmp/index | head -1)

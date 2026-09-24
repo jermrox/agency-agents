@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-13T19:08:11.655349+00:00",
+  "generated_at": "2026-09-14T19:09:44.451092+00:00",
   "totals": {
-    "postings": 340,
-    "employers": 25,
-    "unique_jobs": 162,
-    "with_salary": 112,
+    "postings": 379,
+    "employers": 26,
+    "unique_jobs": 172,
+    "with_salary": 121,
     "date_span": {
       "earliest": "2026-07-02T00:00:00+00:00",
-      "latest": "2026-09-13T00:00:00+00:00"
+      "latest": "2026-09-14T11:25:25.103000+00:00"
     }
   },
   "by_employer": [
     {
       "name": "Serco USA",
-      "count": 27,
+      "count": 28,
       "disciplines": [
         "strength-conditioning",
         "cognitive",
@@ -25,7 +25,7 @@
     },
     {
       "name": "KBR",
-      "count": 25,
+      "count": 26,
       "disciplines": [
         "strength-conditioning",
         "sports-medicine",
@@ -33,7 +33,7 @@
         "cognitive",
         "research"
       ],
-      "median_salary": 91950.0
+      "median_salary": 87975.0
     },
     {
       "name": "Commander, Navy Installations Command",
@@ -62,6 +62,12 @@
       "median_salary": 106174.0
     },
     {
+      "name": "Customs and Border Protection",
+      "count": 14,
+      "disciplines": [],
+      "median_salary": 145559.0
+    },
+    {
       "name": "Military Treatment Facilities under DHA",
       "count": 13,
       "disciplines": [
@@ -71,10 +77,13 @@
       "median_salary": 102935.0
     },
     {
-      "name": "Customs and Border Protection",
-      "count": 10,
-      "disciplines": [],
-      "median_salary": 132613.75
+      "name": "The Geneva Foundation",
+      "count": 7,
+      "disciplines": [
+        "sports-medicine",
+        "strength-conditioning"
+      ],
+      "median_salary": 75000.0
     },
     {
       "name": "U.S. Marine Corps",
@@ -97,21 +106,13 @@
       "median_salary": 75201.5
     },
     {
-      "name": "The Geneva Foundation",
-      "count": 6,
+      "name": "Bureau of Prisons/Federal Prison System",
+      "count": 5,
       "disciplines": [
         "sports-medicine",
-        "strength-conditioning"
+        "nutrition"
       ],
-      "median_salary": 68700.0
-    },
-    {
-      "name": "Bureau of Prisons/Federal Prison System",
-      "count": 4,
-      "disciplines": [
-        "sports-medicine"
-      ],
-      "median_salary": 77028.0
+      "median_salary": 79630.0
     },
     {
       "name": "Serco",
@@ -121,6 +122,15 @@
         "strength-conditioning"
       ],
       "median_salary": 62782.81
+    },
+    {
+      "name": "U.S. Army Training and Doctrine Command",
+      "count": 3,
+      "disciplines": [
+        "sports-medicine",
+        "nutrition"
+      ],
+      "median_salary": 102935.0
     },
     {
       "name": "Air Force Special Operations Command",
@@ -147,91 +157,82 @@
         "sports-medicine"
       ],
       "median_salary": 109943.25
-    },
-    {
-      "name": "U.S. Army Training and Doctrine Command",
-      "count": 2,
-      "disciplines": [
-        "nutrition",
-        "sports-medicine"
-      ],
-      "median_salary": 103700.0
     }
   ],
   "by_discipline": [
     {
       "name": "sports-medicine",
-      "count": 65,
-      "share": 0.5285,
+      "count": 67,
+      "share": 0.5234,
       "median_salary": 81177.25
     },
     {
       "name": "strength-conditioning",
-      "count": 64,
-      "share": 0.5203,
+      "count": 65,
+      "share": 0.5078,
       "median_salary": 66582.15
     },
     {
       "name": "cognitive",
       "count": 25,
-      "share": 0.2033,
+      "share": 0.1953,
       "median_salary": 122190.0
     },
     {
       "name": "research",
-      "count": 19,
-      "share": 0.1545,
-      "median_salary": 98382.5
+      "count": 20,
+      "share": 0.1562,
+      "median_salary": 98027.0
     },
     {
       "name": "leadership",
       "count": 16,
-      "share": 0.1301,
+      "share": 0.125,
       "median_salary": 62782.81
     },
     {
       "name": "nutrition",
-      "count": 14,
-      "share": 0.1138,
-      "median_salary": 91950.0
+      "count": 15,
+      "share": 0.1172,
+      "median_salary": 92475.0
     },
     {
       "name": "sport-science",
       "count": 1,
-      "share": 0.0081,
+      "share": 0.0078,
       "median_salary": 85738.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 155,
-      "share": 0.9688
+      "count": 162,
+      "share": 0.9529
     },
     {
       "name": "sof",
       "count": 42,
-      "share": 0.2625
+      "share": 0.2471
     },
     {
       "name": "training-pipeline",
-      "count": 27,
-      "share": 0.1688
+      "count": 28,
+      "share": 0.1647
     },
     {
       "name": "first-responder",
-      "count": 18,
-      "share": 0.1125
+      "count": 23,
+      "share": 0.1353
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 55
+      "count": 57
     },
     {
       "name": "Joint",
-      "count": 35
+      "count": 36
     },
     {
       "name": "Navy",
@@ -239,7 +240,7 @@
     },
     {
       "name": "Air Force",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Marine Corps",
@@ -260,16 +261,16 @@
       "count": 5
     },
     {
+      "name": "Fort Leonard Wood",
+      "count": 5
+    },
+    {
       "name": "Hurlburt Field",
       "count": 5
     },
     {
-      "name": "Fort Leonard Wood",
-      "count": 4
-    },
-    {
       "name": "Joint Base Langley-Eustis",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Fort Benning",
@@ -315,11 +316,11 @@
   "by_state": [
     {
       "code": "TX",
-      "count": 13
+      "count": 15
     },
     {
       "code": "VA",
-      "count": 13
+      "count": 14
     },
     {
       "code": "CA",
@@ -339,7 +340,11 @@
     },
     {
       "code": "NM",
-      "count": 7
+      "count": 8
+    },
+    {
+      "code": "MO",
+      "count": 6
     },
     {
       "code": "WA",
@@ -350,8 +355,12 @@
       "count": 5
     },
     {
-      "code": "MO",
-      "count": 5
+      "code": "MD",
+      "count": 4
+    },
+    {
+      "code": "AK",
+      "count": 3
     },
     {
       "code": "AL",
@@ -364,41 +373,33 @@
     {
       "code": "HI",
       "count": 3
-    },
-    {
-      "code": "MD",
-      "count": 3
-    },
-    {
-      "code": "NY",
-      "count": 3
     }
   ],
   "certifications": [
     {
       "name": "CSCS",
-      "count": 49,
-      "share": 0.7538
+      "count": 50,
+      "share": 0.7463
     },
     {
       "name": "ATC",
       "count": 16,
-      "share": 0.2462
+      "share": 0.2388
     },
     {
       "name": "RD",
-      "count": 10,
-      "share": 0.1538
+      "count": 11,
+      "share": 0.1642
     },
     {
       "name": "PhD",
       "count": 6,
-      "share": 0.0923
+      "share": 0.0896
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.0462
+      "share": 0.0448
     }
   ],
   "clearances": [
@@ -416,12 +417,12 @@
     }
   ],
   "salary": {
-    "count": 112,
-    "min": 34320.0,
+    "count": 121,
+    "min": 27500.0,
     "max": 219654.0,
     "median": 85738.0,
-    "p25": 59535.5,
-    "p75": 109019.62,
+    "p25": 61994.4,
+    "p75": 116951.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 26,
@@ -432,20 +433,20 @@
         "p75": 90748.75
       },
       "sports-medicine": {
-        "count": 48,
-        "min": 34320.0,
+        "count": 50,
+        "min": 27500.0,
         "max": 219654.0,
         "median": 81177.25,
-        "p25": 59535.5,
-        "p75": 104761.75
+        "p25": 59106.5,
+        "p75": 104082.5
       },
       "nutrition": {
-        "count": 7,
+        "count": 8,
         "min": 85738.0,
         "max": 113610.0,
-        "median": 91950.0,
-        "p25": 88844.0,
-        "p75": 97967.5
+        "median": 92475.0,
+        "p25": 90397.0,
+        "p75": 102935.0
       },
       "cognitive": {
         "count": 12,
@@ -464,12 +465,12 @@
         "p75": 85738.0
       },
       "research": {
-        "count": 10,
+        "count": 11,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 98382.5,
-        "p25": 86044.88,
-        "p75": 101885.75
+        "median": 98027.0,
+        "p25": 74286.75,
+        "p75": 100836.5
       },
       "leadership": {
         "count": 13,
@@ -483,7 +484,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0185
+    "share": 0.0174
   },
   "timeline": [
     {
@@ -492,28 +493,28 @@
     },
     {
       "month": "2026-08",
-      "count": 85
+      "count": 77
     },
     {
       "month": "2026-09",
-      "count": 68
+      "count": 86
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-15T00:00:00+00:00",
+    "pivot": "2026-06-16T11:25:25.103000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
-        "recent": 27,
+        "recent": 28,
         "previous": 0,
-        "change": 27
+        "change": 28
       },
       {
         "name": "KBR",
-        "recent": 25,
+        "recent": 26,
         "previous": 0,
-        "change": 25
+        "change": 26
       },
       {
         "name": "Commander, Navy Installations Command",
@@ -528,16 +529,22 @@
         "change": 20
       },
       {
+        "name": "Customs and Border Protection",
+        "recent": 14,
+        "previous": 0,
+        "change": 14
+      },
+      {
         "name": "Military Treatment Facilities under DHA",
         "recent": 13,
         "previous": 0,
         "change": 13
       },
       {
-        "name": "Customs and Border Protection",
-        "recent": 10,
+        "name": "The Geneva Foundation",
+        "recent": 7,
         "previous": 0,
-        "change": 10
+        "change": 7
       },
       {
         "name": "U.S. Marine Corps",
@@ -552,19 +559,19 @@
         "change": 7
       },
       {
-        "name": "The Geneva Foundation",
-        "recent": 6,
-        "previous": 0,
-        "change": 6
-      },
-      {
         "name": "Bureau of Prisons/Federal Prison System",
-        "recent": 4,
+        "recent": 5,
         "previous": 0,
-        "change": 4
+        "change": 5
       },
       {
         "name": "Serco",
+        "recent": 3,
+        "previous": 0,
+        "change": 3
+      },
+      {
+        "name": "U.S. Army Training and Doctrine Command",
         "recent": 3,
         "previous": 0,
         "change": 3
@@ -586,20 +593,14 @@
         "recent": 2,
         "previous": 0,
         "change": 2
-      },
-      {
-        "name": "U.S. Army Training and Doctrine Command",
-        "recent": 2,
-        "previous": 0,
-        "change": 2
       }
     ],
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 49,
+        "recent": 50,
         "previous": 0,
-        "change": 49
+        "change": 50
       },
       {
         "name": "ATC",
@@ -609,9 +610,9 @@
       },
       {
         "name": "RD",
-        "recent": 10,
+        "recent": 11,
         "previous": 0,
-        "change": 10
+        "change": 11
       },
       {
         "name": "PhD",
@@ -649,6 +650,10 @@
       "count": 3
     },
     {
+      "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
+      "count": 3
+    },
+    {
       "title": "Performance Dietitian",
       "count": 3
     },
@@ -657,11 +662,11 @@
       "count": 3
     },
     {
-      "title": "Cognitive Performance Specialist",
-      "count": 2
+      "title": "Supervisory CBP Officer (Port Director)",
+      "count": 3
     },
     {
-      "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
+      "title": "Cognitive Performance Specialist",
       "count": 2
     },
     {
@@ -682,10 +687,6 @@
     },
     {
       "title": "Special Ops Physical Therapist Part-Time (27 SOW/Cannon AFB, NM)",
-      "count": 2
-    },
-    {
-      "title": "Sports Specialist (Fitness)",
       "count": 2
     }
   ]

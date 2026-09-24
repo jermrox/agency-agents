@@ -27,11 +27,29 @@ from typing import Any, Iterable
 
 from ..http import fetch_json
 from ..models import Opportunity, parse_date
-from .base import Source, first_key, strip_html
+from .base import Source, SourceError, first_key, strip_html
 
 log = logging.getLogger(__name__)
 
-ENDPOINT = "https://api.www.sbir.gov/public/api/solicitations"
+# Four candidate hosts, tried in order.
+#
+# WHY THIS SOURCE HAS NEVER RETURNED A ROW
+# SBIR/STTR expired 30 Sep 2025 -- the longest lapse in the programs' history --
+# and was reauthorized 13 Apr 2026 through 30 Sep 2031. SBIR.gov states its APIs
+# are under maintenance, which is consistent with a rebuild after that lapse and
+# with the 403 we get on every run. This is an upstream outage, not a bug here
+# and not something a header fixes.
+#
+# The extra candidates cost one request each on the failure path and cost
+# nothing once any host comes back. When one does, the federal SBIR layer --
+# DoD, DOE and NASA topics, which are NOT posted to grants.gov -- appears on the
+# board without further work.
+ENDPOINTS = (
+    "https://api.www.sbir.gov/public/api/solicitations",
+    "https://www.sbir.gov/api/solicitations.json",
+    "https://www.sbir.gov/api/solicitation",
+    "https://legacy.www.sbir.gov/api/solicitations",
+)
 
 _TITLE_KEYS = ("solicitation_title", "title", "solicitationTitle")
 _AGENCY_KEYS = ("agency", "agency_name", "agencyName")
@@ -55,8 +73,21 @@ class SBIRGovSource(Source):
         # `open=1` asks the API for currently-open solicitations only. We still
         # re-derive status from close_date locally, because "open" upstream and
         # "open as of this run" are not guaranteed to agree.
-        url = f"{ENDPOINT}?open=1&rows={rows}&format=json"
-        payload = fetch_json(url)
+        payload = None
+        failures: list[str] = []
+        for endpoint in ENDPOINTS:
+            url = f"{endpoint}?open=1&rows={rows}&format=json"
+            try:
+                payload = fetch_json(url)
+                break
+            except Exception as exc:  # noqa: BLE001 - try the next host
+                # FetchError already names the URL; prefixing it again just
+                # prints every endpoint twice in the run log.
+                failures.append(str(exc))
+        if payload is None:
+            # Raise with every host's own error: "sbir is down" is not
+            # actionable, "both hosts answered 403" is.
+            raise SourceError("; ".join(failures))
 
         records = payload if isinstance(payload, list) else payload.get("data", payload.get("results", []))
         if not isinstance(records, list):
