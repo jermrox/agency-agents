@@ -37,3 +37,9 @@
   from = "/board"
   to = "/"
   status = 301
+
+# The drafted grant applications (rev site only).
+[[redirects]]
+  from = "/apply"
+  to = "/apply.html"
+  status = 200
