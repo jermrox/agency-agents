@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-24T19:08:07.102928+00:00",
+  "generated_at": "2026-09-25T07:07:40.252506+00:00",
   "totals": {
-    "postings": 487,
+    "postings": 489,
     "employers": 32,
-    "unique_jobs": 220,
-    "with_salary": 157,
+    "unique_jobs": 222,
+    "with_salary": 159,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
-      "latest": "2026-09-24T14:28:31.713000+00:00"
+      "latest": "2026-09-25T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -50,14 +50,14 @@
     },
     {
       "name": "General Dynamics Information Technology",
-      "count": 23,
+      "count": 24,
       "disciplines": [
         "cognitive",
         "sports-medicine",
         "strength-conditioning",
+        "leadership",
         "nutrition",
         "research",
-        "leadership",
         "sport-science"
       ],
       "median_salary": 98738.0
@@ -70,13 +70,13 @@
     },
     {
       "name": "Military Treatment Facilities under DHA",
-      "count": 19,
+      "count": 20,
       "disciplines": [
         "sports-medicine",
         "leadership",
         "research"
       ],
-      "median_salary": 102935.0
+      "median_salary": 97983.25
     },
     {
       "name": "Veterans Health Administration",
@@ -159,77 +159,77 @@
   "by_discipline": [
     {
       "name": "sports-medicine",
-      "count": 84,
-      "share": 0.5283,
-      "median_salary": 78850.0
+      "count": 85,
+      "share": 0.528,
+      "median_salary": 78295.5
     },
     {
       "name": "strength-conditioning",
       "count": 76,
-      "share": 0.478,
+      "share": 0.472,
       "median_salary": 70381.5
     },
     {
       "name": "cognitive",
       "count": 31,
-      "share": 0.195,
+      "share": 0.1925,
       "median_salary": 113610.0
     },
     {
       "name": "research",
       "count": 27,
-      "share": 0.1698,
+      "share": 0.1677,
       "median_salary": 97651.5
     },
     {
       "name": "leadership",
-      "count": 19,
-      "share": 0.1195,
-      "median_salary": 65545.75
+      "count": 20,
+      "share": 0.1242,
+      "median_salary": 64709.0
     },
     {
       "name": "nutrition",
       "count": 17,
-      "share": 0.1069,
+      "share": 0.1056,
       "median_salary": 92475.0
     },
     {
       "name": "sport-science",
       "count": 2,
-      "share": 0.0126,
+      "share": 0.0124,
       "median_salary": 94144.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 208,
-      "share": 0.9541
+      "count": 210,
+      "share": 0.9545
     },
     {
       "name": "sof",
-      "count": 51,
-      "share": 0.2339
+      "count": 52,
+      "share": 0.2364
     },
     {
       "name": "first-responder",
       "count": 35,
-      "share": 0.1606
+      "share": 0.1591
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1376
+      "share": 0.1364
     }
   ],
   "by_branch": [
     {
       "name": "Army",
-      "count": 69
+      "count": 70
     },
     {
       "name": "Joint",
-      "count": 42
+      "count": 43
     },
     {
       "name": "Navy",
@@ -255,7 +255,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Cannon AFB",
@@ -266,12 +266,12 @@
       "count": 6
     },
     {
-      "name": "Hurlburt Field",
+      "name": "Fort Stewart",
       "count": 6
     },
     {
-      "name": "Fort Stewart",
-      "count": 5
+      "name": "Hurlburt Field",
+      "count": 6
     },
     {
       "name": "Joint Base Langley-Eustis",
@@ -332,12 +332,12 @@
       "count": 15
     },
     {
-      "code": "NC",
+      "code": "GA",
       "count": 14
     },
     {
-      "code": "GA",
-      "count": 13
+      "code": "NC",
+      "count": 14
     },
     {
       "code": "NM",
@@ -414,7 +414,7 @@
     },
     {
       "name": "TS/SCI",
-      "count": 17
+      "count": 18
     },
     {
       "name": "Public Trust",
@@ -422,11 +422,11 @@
     }
   ],
   "salary": {
-    "count": 157,
+    "count": 159,
     "min": 27500.0,
     "max": 219654.0,
-    "median": 87933.5,
-    "p25": 62711.5,
+    "median": 87145.0,
+    "p25": 62555.75,
     "p75": 117778.5,
     "by_discipline": {
       "strength-conditioning": {
@@ -438,11 +438,11 @@
         "p75": 87145.0
       },
       "sports-medicine": {
-        "count": 62,
+        "count": 63,
         "min": 27500.0,
         "max": 219654.0,
-        "median": 78850.0,
-        "p25": 59106.5,
+        "median": 78295.5,
+        "p25": 58887.0,
         "p75": 102935.0
       },
       "nutrition": {
@@ -478,18 +478,18 @@
         "p75": 100836.5
       },
       "leadership": {
-        "count": 16,
+        "count": 17,
         "min": 34320.0,
         "max": 173285.0,
-        "median": 65545.75,
-        "p25": 57747.11,
-        "p75": 82076.25
+        "median": 64709.0,
+        "p25": 62782.81,
+        "p75": 82043.0
       }
     }
   },
   "remote": {
     "count": 3,
-    "share": 0.0136
+    "share": 0.0135
   },
   "timeline": [
     {
@@ -502,12 +502,12 @@
     },
     {
       "month": "2026-09",
-      "count": 144
+      "count": 146
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-26T14:28:31.713000+00:00",
+    "pivot": "2026-06-27T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",
@@ -529,9 +529,9 @@
       },
       {
         "name": "General Dynamics Information Technology",
-        "recent": 23,
+        "recent": 24,
         "previous": 0,
-        "change": 23
+        "change": 24
       },
       {
         "name": "Customs and Border Protection",
@@ -541,9 +541,9 @@
       },
       {
         "name": "Military Treatment Facilities under DHA",
-        "recent": 19,
+        "recent": 20,
         "previous": 0,
-        "change": 19
+        "change": 20
       },
       {
         "name": "Veterans Health Administration",
@@ -651,6 +651,10 @@
       "count": 4
     },
     {
+      "title": "Occupational Therapy Assistant",
+      "count": 4
+    },
+    {
       "title": "Physical Therapy Assistant",
       "count": 4
     },
@@ -660,10 +664,6 @@
     },
     {
       "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
-      "count": 3
-    },
-    {
-      "title": "Occupational Therapy Assistant",
       "count": 3
     },
     {

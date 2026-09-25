@@ -1,8 +1,66 @@
 {
   "version": 2,
-  "generated_at": "2026-09-24T19:08:06.936610+00:00",
-  "count": 206,
+  "generated_at": "2026-09-25T07:07:40.040078+00:00",
+  "count": 203,
   "jobs": [
+    {
+      "id": "ff3aa6ac12dae17fe5fb",
+      "fingerprint": "e41cd57ecb8638ea4e83",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Community-Resource-Coordinator_RQ229019",
+      "title": "Community Resource Coordinator",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA NC Fort Bragg; USA CA San Diego; USA KY Fort Campbell; USA FL Hurlburt Field; USA WA Joint Base Lewis-McChord",
+      "remote": false,
+      "department": null,
+      "compensation": "from $55,003",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Behavioral Health, Counseling, Family Support, Peer Support, Social Services Certifications: None Experience: 4 + years of related experience US Citizenship Required: Yes\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "TS/SCI",
+        "salary_min": 55003.0,
+        "salary_max": 74415.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 4,
+        "employment_type": "Full-time",
+        "installation": "Fort Bragg",
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "behavioral-health",
+        "discipline_label": "Behavioral Health",
+        "lead": true,
+        "branches": [
+          "air-force",
+          "army",
+          "joint"
+        ],
+        "branch_labels": [
+          "Army",
+          "Air Force",
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 55003.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "POTFF",
+      "notes": "",
+      "listed_at": "2026-09-25T07:07:40.040078+00:00"
+    },
     {
       "id": "99bcbf2e1f38b3129dab",
       "fingerprint": "7bf00a8b037ea3a8af00",
@@ -866,7 +924,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:07:59+00:00"
+        "checked_at": "2026-09-25T07:07:33+00:00"
       },
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
@@ -2572,56 +2630,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "ce664accb31d22a22d85",
-      "fingerprint": "4fb808f2ab070d8dfe18",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885019300",
-      "title": "Supervisory CBP Officer (First Line-POE)",
-      "employer": "Customs and Border Protection",
-      "location": "Fort Myers, Florida",
-      "remote": false,
-      "department": null,
-      "compensation": "$109,383 - $142,199 /yr",
-      "posted_at": null,
-      "description": "Experience: You qualify for the GS-13 grade level if you possess 1 year of specialized experience equivalent to at least the next lower grade level, performing duties such as: Conducting prearrival targeting and intelligence vetting and gathering and analyzing information from all available sources Performing primary inspections of cargo, conveyances, and travelers and secondary inspections of\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 109383.0,
-        "salary_max": 142199.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 109383.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "a14602b97f545b731604",
       "fingerprint": "9a8a5236391c543ec822",
       "source": "usajobs:federal",
@@ -2781,60 +2789,6 @@
       "source": "usajobs:federal",
       "url": "https://www.usajobs.gov:443/job/885531000",
       "title": "HEALTH SYSTEMS SPECIALIST (TITLE 32)",
-      "employer": "Army National Guard Units",
-      "location": "Bluffdale, Utah",
-      "remote": false,
-      "department": null,
-      "compensation": "$61,722 - $80,243 /yr",
-      "posted_at": null,
-      "description": "*Your resume must reflect in detail how the duties and responsibilities under each position you have held with each employer meets the below listed general and specialized experience required for the position. **Must include beginning and ending dates of employment stated as MM/YYYY; and total hours worked per week in order to determine part time vs. full time credit. SPECIALIZED EXPERIENCE\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 61722.0,
-        "salary_max": 80243.0,
-        "salary_period": "year",
-        "education": "High School",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 61722.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "3c85ac9a45c2bb9b723b",
-      "fingerprint": "9027d62cf36a8efc0a65",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885538100",
-      "title": "HEALTH SYSTEMS SPECIALIST (TEMP) (TITLE 32)",
       "employer": "Army National Guard Units",
       "location": "Bluffdale, Utah",
       "remote": false,
@@ -3094,62 +3048,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "f2dbed3162429edd6371",
-      "fingerprint": "b530aa065824393d1846",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885137000",
-      "title": "SOCIAL WORKER",
-      "employer": "Pacific Air Forces",
-      "location": "Kadena Air Base Okinawa, Japan",
-      "remote": false,
-      "department": null,
-      "compensation": "$76,463 - $99,404 /yr",
-      "posted_at": null,
-      "description": "Conditions of Employment continued This position has been identified as having \"regular contact with children\". IAW Public Law 101-647 Section 231, and Public Law 102-190, Section 1094. A FBI fingerprint and State Criminal History Repository (SCHR) Check will be completed on any person selected for this position This position has been designated by the Air Force as a Testing Designated Position\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 76463.0,
-        "salary_max": 99404.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "air-force",
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Air Force",
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 76463.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "e868ad1ccbe32aeb0ebd",
       "fingerprint": "67d77d488f890937be7f",
       "source": "usajobs:federal",
@@ -3314,6 +3212,184 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
+      "id": "ce664accb31d22a22d85",
+      "fingerprint": "4fb808f2ab070d8dfe18",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/885019300",
+      "title": "Supervisory CBP Officer (First Line-POE)",
+      "employer": "Customs and Border Protection",
+      "location": "Fort Myers, Florida",
+      "remote": false,
+      "department": null,
+      "compensation": "$109,383 - $142,199 /yr",
+      "posted_at": null,
+      "description": "Experience: You qualify for the GS-13 grade level if you possess 1 year of specialized experience equivalent to at least the next lower grade level, performing duties such as: Conducting prearrival targeting and intelligence vetting and gathering and analyzing information from all available sources Performing primary inspections of cargo, conveyances, and travelers and secondary inspections of\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 109383.0,
+        "salary_max": 142199.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 109383.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:39+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "3c85ac9a45c2bb9b723b",
+      "fingerprint": "9027d62cf36a8efc0a65",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/885538100",
+      "title": "HEALTH SYSTEMS SPECIALIST (TEMP) (TITLE 32)",
+      "employer": "Army National Guard Units",
+      "location": "Bluffdale, Utah",
+      "remote": false,
+      "department": null,
+      "compensation": "$61,722 - $80,243 /yr",
+      "posted_at": null,
+      "description": "*Your resume must reflect in detail how the duties and responsibilities under each position you have held with each employer meets the below listed general and specialized experience required for the position. **Must include beginning and ending dates of employment stated as MM/YYYY; and total hours worked per week in order to determine part time vs. full time credit. SPECIALIZED EXPERIENCE\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 61722.0,
+        "salary_max": 80243.0,
+        "salary_period": "year",
+        "education": "High School",
+        "years_experience_min": 1,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 61722.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:39+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "f2dbed3162429edd6371",
+      "fingerprint": "b530aa065824393d1846",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/885137000",
+      "title": "SOCIAL WORKER",
+      "employer": "Pacific Air Forces",
+      "location": "Kadena Air Base Okinawa, Japan",
+      "remote": false,
+      "department": null,
+      "compensation": "$76,463 - $99,404 /yr",
+      "posted_at": null,
+      "description": "Conditions of Employment continued This position has been identified as having \"regular contact with children\". IAW Public Law 101-647 Section 231, and Public Law 102-190, Section 1094. A FBI fingerprint and State Criminal History Repository (SCHR) Check will be completed on any person selected for this position This position has been designated by the Air Force as a Testing Designated Position\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 76463.0,
+        "salary_max": 99404.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Air Force",
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 76463.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:38+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
       "id": "6c2928d9430c3f2741c5",
       "fingerprint": "69a40b7d83e2db390dbe",
       "source": "usajobs:federal",
@@ -3371,7 +3447,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:05+00:00"
+        "checked_at": "2026-09-25T07:07:39+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3427,7 +3503,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:05+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3483,7 +3559,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:05+00:00"
+        "checked_at": "2026-09-25T07:07:38+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3825,7 +3901,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:07:59+00:00"
+        "checked_at": "2026-09-25T07:07:33+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -3885,7 +3961,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -3941,7 +4017,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -3997,7 +4073,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4053,7 +4129,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4109,7 +4185,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4219,7 +4295,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4275,7 +4351,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4440,9 +4516,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": null,
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:37+00:00"
+      },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
     {
@@ -4503,7 +4585,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4563,7 +4645,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:04+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4787,7 +4869,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -4845,7 +4927,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -4904,62 +4986,6 @@
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
     {
-      "id": "c50e273ab2236096dde2",
-      "fingerprint": "6a14fa2ebd211db843fd",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/884064700",
-      "title": "WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP FOSTER",
-      "employer": "U.S. Marine Corps",
-      "location": "Camp Foster, Japan",
-      "remote": false,
-      "department": null,
-      "compensation": "$16.00 - $18.00 /hr",
-      "posted_at": null,
-      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "TSAC-F"
-        ],
-        "clearance": null,
-        "salary_min": 16.0,
-        "salary_max": 18.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": 2,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 33280.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-10T07:06:20.246383+00:00"
-    },
-    {
       "id": "92ea98c767f4332bb0d2",
       "fingerprint": "32fec078fca05b119fe8",
       "source": "usajobs:federal",
@@ -5011,6 +5037,68 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-09-10T07:06:20.246383+00:00"
+    },
+    {
+      "id": "c50e273ab2236096dde2",
+      "fingerprint": "6a14fa2ebd211db843fd",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/884064700",
+      "title": "WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP FOSTER",
+      "employer": "U.S. Marine Corps",
+      "location": "Camp Foster, Japan",
+      "remote": false,
+      "department": null,
+      "compensation": "$16.00 - $18.00 /hr",
+      "posted_at": null,
+      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "TSAC-F"
+        ],
+        "clearance": null,
+        "salary_min": 16.0,
+        "salary_max": 18.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": 2,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 33280.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:37+00:00"
+      },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
     {
@@ -5067,7 +5155,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 202,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5123,7 +5211,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5239,7 +5327,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5295,7 +5383,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5355,7 +5443,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5415,7 +5503,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:37+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5478,7 +5566,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -5534,7 +5622,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -5594,7 +5682,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-07T13:08:21.322720+00:00"
     },
@@ -5708,7 +5796,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -5768,7 +5856,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -5824,7 +5912,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -5884,7 +5972,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -5944,7 +6032,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6160,7 +6248,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6218,7 +6306,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6278,7 +6366,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:03+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6394,7 +6482,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6454,7 +6542,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6514,7 +6602,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6570,7 +6658,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6793,7 +6881,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -6849,7 +6937,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -6905,7 +6993,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-02T11:51:17.268529+00:00"
     },
@@ -6967,7 +7055,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:36+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7027,7 +7115,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7089,7 +7177,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7151,7 +7239,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7211,7 +7299,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7267,7 +7355,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-09-01T12:13:32.637461+00:00"
     },
@@ -7381,63 +7469,9 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-31T23:07:07.413844+00:00"
-    },
-    {
-      "id": "9466a3254b3da224cef1",
-      "fingerprint": "9cb4e8e4a108d76b60ae",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/882019300",
-      "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
-      "employer": "U.S. Army Training and Doctrine Command",
-      "location": "Fort Eustis, Virginia",
-      "remote": false,
-      "department": null,
-      "compensation": "$90,838 - $118,092 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 90838.0,
-        "salary_max": 118092.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 90838.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
       "id": "d4d594df76fecf938e59",
@@ -7548,6 +7582,66 @@
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
+      "id": "9466a3254b3da224cef1",
+      "fingerprint": "9cb4e8e4a108d76b60ae",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/882019300",
+      "title": "OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS)",
+      "employer": "U.S. Army Training and Doctrine Command",
+      "location": "Fort Eustis, Virginia",
+      "remote": false,
+      "department": null,
+      "compensation": "$90,838 - $118,092 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 90838.0,
+        "salary_max": 118092.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 90838.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "H2F",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-25T07:07:35+00:00"
+      },
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
       "id": "6a4c5db0852848dfe033",
       "fingerprint": "4a39df9ed5ee0a7469a5",
       "source": "usajobs:federal",
@@ -7603,7 +7697,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7663,7 +7757,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7719,7 +7813,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7779,7 +7873,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7839,7 +7933,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7899,7 +7993,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7959,7 +8053,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8022,7 +8116,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8084,7 +8178,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8144,7 +8238,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8206,7 +8300,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8266,7 +8360,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8326,7 +8420,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8386,7 +8480,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8442,7 +8536,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8498,7 +8592,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8554,7 +8648,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8610,7 +8704,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:02+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8666,7 +8760,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8726,7 +8820,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8786,7 +8880,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8846,7 +8940,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8902,7 +8996,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8962,7 +9056,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9018,7 +9112,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9078,7 +9172,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:35+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9138,7 +9232,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:01+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9485,7 +9579,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:07:59+00:00"
+        "checked_at": "2026-09-25T07:07:33+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -9756,62 +9850,6 @@
       },
       "confidence": "listed",
       "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "62d71129079c29f15982",
-      "fingerprint": "ff3d662b6fd084d62267",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Cognitive-Performance-Specialist_RQ222816",
-      "title": "Cognitive Performance Specialist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg; USA KY Fort Campbell; USA GA Fort Benning - Customer Proprietary (GAC101); USA VA Dam Neck; USA GA Hunter AAF",
-      "remote": false,
-      "department": null,
-      "compensation": "from $83,927",
-      "posted_at": null,
-      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Adaptive Thinking, Human Performance, Performance Improvements, Researching, Training and Education Certifications: None Experience: 3 + years of related experience US\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 83927.0,
-        "salary_max": 113549.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army",
-          "navy"
-        ],
-        "branch_labels": [
-          "Army",
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 83927.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
       "notes": "",
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -10589,60 +10627,6 @@
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
-      "id": "1d768ae288f3a5e18751",
-      "fingerprint": "9ba01f4a9aac7f14f8b3",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Cognitive-Enhancement-Practitioner_RQ222819",
-      "title": "Cognitive Enhancement Practitioner",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg",
-      "remote": false,
-      "department": null,
-      "compensation": "from $111,155",
-      "posted_at": null,
-      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Cognitive Training, Health Outcomes, Human Performance, Researching, Special Operations Certifications: None Experience: 3 + years of related experience US Citizenship Required:\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 111155.0,
-        "salary_max": 150385.0,
-        "salary_period": "year",
-        "education": "Doctorate",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 111155.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
       "id": "232b73617ace45b4453c",
       "fingerprint": "347efa7e45903bd3848c",
       "source": "workday:gdit",
@@ -11112,64 +11096,6 @@
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
-      "id": "e71fbf6e02d22b7edf46",
-      "fingerprint": "785f8f943cd31975d54b",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg---Fort-Bragg-NCC004/Psychometrist_RQ222815",
-      "title": "Psychometrist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg - Fort Bragg (NCC004); USA CA Coronado; USA NC Camp Lejeune; USA NC Fort Bragg",
-      "remote": false,
-      "department": null,
-      "compensation": "from $54,995",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Mental Health, Patient Interviews, Psychological Evaluations, Psychology, Referrals Certifications: None Experience: 1 + years of related experience US Citizenship\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "TS/SCI",
-        "salary_min": 26.44,
-        "salary_max": 35.78,
-        "salary_period": "hour",
-        "education": "Bachelor",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "army",
-          "marine-corps",
-          "navy"
-        ],
-        "branch_labels": [
-          "Army",
-          "Navy",
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 54995.200000000004
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
       "id": "7855cadb2d16e109b926",
       "fingerprint": "53826ee17bc77be0e320",
       "source": "workday:kbr",
@@ -11228,7 +11154,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -11461,7 +11387,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
@@ -11578,72 +11504,9 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-24T19:08:00+00:00"
+        "checked_at": "2026-09-25T07:07:34+00:00"
       },
       "listed_at": "2026-08-11T08:01:48.517216+00:00"
-    },
-    {
-      "id": "c0eba146a955a7b238bc",
-      "fingerprint": "1ef614aadbe1068043a9",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fayetteville-North-Carolina/Special-Operations-Physical-Therapist-TEMP-POSITION---Onsite---Fort-Bragg--NC-_R2128061",
-      "title": "Special Operations Physical Therapist-TEMP POSITION, (Onsite - Fort Bragg, NC)",
-      "employer": "KBR",
-      "location": "Fayetteville, North Carolina",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Special Operations Physical Therapist-TEMP POSITION, (Onsite - Fort Bragg, NC) THIS POSITION IS ON-SITE!!! THIS POSITION OFFERS RELOCATION. We attract the best minds in the world because our expertise thrives on creativity, resourcefulness and collaboration. That is how we supply our clients with cutting-edge solutions and services. We are seeking a stellar Special Operations Physical\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC",
-          "CSCS"
-        ],
-        "clearance": "Top Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "verified",
-      "program": "POTFF",
-      "notes": "",
-      "liveness": {
-        "state": "live",
-        "reason": "workday cxs: live",
-        "http_status": 200,
-        "checked_at": "2026-09-24T19:07:59+00:00"
-      },
-      "listed_at": "2026-08-10T19:52:19.072166+00:00"
     }
   ],
   "definitions": {

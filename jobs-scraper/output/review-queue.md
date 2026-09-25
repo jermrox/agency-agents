@@ -1,3 +1,18 @@
+## Run 2026-09-25 07:07 UTC — 1 posting(s)
+
+### [Occupational Therapy Assistant](https://www.usajobs.gov:443/job/885859600)
+- **Employer:** Military Treatment Facilities under DHA
+- **Location:** Fort Stewart, Georgia
+- **Score:** 11.5 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $50460 - $65599 PA
+- **Matched:** domain=military, service context | discipline=exercise science, sports medicine
+
+> Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g.,…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-24 19:08 UTC — 0 posting(s)
 
 _No new postings._
