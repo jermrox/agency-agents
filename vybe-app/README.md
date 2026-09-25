@@ -18,8 +18,11 @@ npx expo start
   five dimensions.
 - **RestoreScreen** *(21 Sep)* — the Restore dimension in detail. Tap the
   Restore card on Home to open it.
-- **MoveTrendScreen** *(new, 24 Sep)* — six months of weekly active minutes,
+- **MoveTrendScreen** *(24 Sep)* — six months of weekly active minutes,
   and what changed. Tap the Move card on Home to open it.
+- **DataSettingsScreen** *(new, 25 Sep)* — what is connected, where the data
+  sits, and how to export or delete it. Reached from "Your data" in the Home
+  header.
 
 ## The three decisions worth keeping
 
@@ -81,6 +84,30 @@ typed by hand drifts from the data it claims to describe the first time somebody
 edits a value — and then the screen is confidently wrong. Only the editorial
 sentences are hand-written, which makes them the only thing a reviewer has to
 check.
+
+## The data screen, and why it looks like that
+
+**Every row says what the source actually hands over.**
+Not "Health data" or "Analytics" — the category label is how consent forms end
+up unreadable while staying technically complete. Calendar reads *how full a day
+is and time-zone changes*, and the row says outright that Vybe never reads an
+event title or who was invited.
+
+**The storage split is drawn, not asserted.**
+"Almost all of it stays on your phone" is either visible in the proportions or
+it is not true, so one proportional bar shows 88% on the phone, 8% on Vybe's
+servers and 4% on the Band. The screen refuses to draw the bar at all unless the
+shares total 100, and a worded legend carries the meaning for anyone the bar
+does not reach.
+
+**Export and delete are last, and they are the point.**
+They are the only lines on the screen a person can check, so they close the
+argument rather than open it. Delete asks twice, and the button changes its
+*words* between the two states rather than leaning on red.
+
+**Reachable from the front door.**
+A company whose position is "your data is yours" should not bury the proof three
+taps down, so Home carries a "Your data" link in its header.
 
 ## Non-negotiables held
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import AskBar from '../components/AskBar';
 import DimensionCard from '../components/DimensionCard';
@@ -18,7 +18,7 @@ import { today } from '../sampleData';
  * A conventional wearable app inverts this — metrics first, meaning last.
  * Calm technology means the answer is at the top and the charts are optional.
  */
-export default function HomeScreen({ onAsk, onOpenDimension, isSample = true }) {
+export default function HomeScreen({ onAsk, onOpenDimension, onOpenData, isSample = true }) {
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.paper} />
@@ -27,7 +27,21 @@ export default function HomeScreen({ onAsk, onOpenDimension, isSample = true }) 
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <Text style={styles.date}>{today.dateLabel.toUpperCase()}</Text>
+          <View style={styles.headerTop}>
+            <Text style={styles.date}>{today.dateLabel.toUpperCase()}</Text>
+            {/* Data and permissions reachable from the front door, not buried
+                three taps down. A company whose position is "your data is
+                yours" should not make the proof of it hard to find. */}
+            <Pressable
+              onPress={onOpenData}
+              accessibilityRole="button"
+              accessibilityLabel="Data and permissions"
+              accessibilityHint="Opens what is connected, where your data sits, and how to export or delete it"
+              style={({ pressed }) => [styles.dataLink, pressed && styles.pressed]}
+            >
+              <Text style={styles.dataLinkText}>Your data</Text>
+            </Pressable>
+          </View>
           <Text style={styles.greeting}>{today.greeting}</Text>
         </View>
 
@@ -68,6 +82,10 @@ const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.paper },
   scroll: { padding: space(2.5), gap: space(2), paddingBottom: space(6) },
   header: { gap: space(0.5) },
+  headerTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  dataLink: { paddingVertical: space(0.5), paddingLeft: space(2) },
+  dataLinkText: { ...type.small, color: colors.brand, fontWeight: '600' },
+  pressed: { opacity: 0.6 },
   date: { ...type.label, color: colors.faint },
   greeting: { ...type.display, color: colors.ink },
   section: { gap: space(1.5) },

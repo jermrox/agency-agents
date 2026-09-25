@@ -34,6 +34,10 @@ GATES = [
     ("rev75", "Revenue of $75,000+ a year"),
     ("incorp", "Incorporated (LLC or corporation)"),
     ("equity", "Raised equity from an institutional investor"),
+    # An age CEILING, not a floor. Most veteran grants want a minimum trading
+    # history; Veteran Shark Tank wants the opposite, which is why a company too
+    # young for Tadlock or Buckeye clears it.
+    ("under3", "In business less than 3 years"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -46,6 +50,8 @@ GATE_DEFAULTS = {
     "staff2": "yes",
     "rev75": "no",
     "incorp": "yes",
+    # Follows directly from "under 1 year in business" — not a separate claim.
+    "under3": "yes",
 }
 
 # Reusable blocks. Written in Vybe's voice: calm, plain, short lines.
@@ -186,6 +192,96 @@ PACKETS = [
                 "onboarding. That test answers the question our business depends on: can a "
                 "person, not an engineer, get a useful answer about their own health on the "
                 "first day? What they tell us shapes the product we take to market."},
+        ],
+    },
+    {
+        "id": "sharktank",
+        "name": "Veteran Shark Tank 2026 (13th annual)",
+        "funder": "Veteran Shark Tank — Philadelphia",
+        "amount": "$50,000 to the winner; five veterans pitch live on 7 December 2026",
+        "deadline": "2026-10-13",
+        "fee": None,
+        "url": "https://veteransharktank.com/apply/",
+        "submit": "Submit the application form at veteransharktank.com/apply with a pitch video of 2 minutes or less and a deck of no more than 10 slides. The committee judges the video and the deck together, as one package, the way the live competition does. If something fails the criteria you get five days from notice to fix and resubmit. Questions go to info@veteransharktank.com.",
+        "gates": ["under3"],
+        "confirmed": ["Veteran-owned 51%+ (confirmed 20 Sep)"],
+        "why": "The one live item on the board whose age test runs in Vybe's favour: the business must be UNDER three years old, where Buckeye wants two years and Tadlock one. Biggest single cheque Vybe currently qualifies for, and the 2016 winner was NeuroFlow, a behavioural-health platform, so the judges have backed health tech before.",
+        "docs": [
+            "Proof of veteran status (DD-214 or equivalent)",
+            "Pitch video, 2 minutes maximum — narrated, not a promo",
+            "Deck, 10 slides maximum, covering the six sections below in this order",
+            "Evidence the business is under three years old as of 7 Dec 2026",
+        ],
+        "note": "This is a pitch, not a grant form: the committee is buying a person as much as a company. The video should be you talking, not a product reel — they say so explicitly. Financials below are left as bracketed prompts on purpose; a projection is a claim about your own business and nobody else should write it for you.",
+        "fields": [
+            {"q": "Video spine — what the business is, and why it belongs in Veteran Shark Tank 2026 (2 minutes, narrated)", "a":
+                "I'm {{VETERAN_OWNER}}, and I'm building Vybe at {{LEGAL_NAME}}.\n\n"
+                "Every wearable hands you a number. None of them tell you why it moved. "
+                "Vybe is built for the step after the number: the screenless Band reads your "
+                "heart, sleep and movement, and Vybe Intelligence reads those signals next to "
+                "the life around them — a hard week, a long flight, a heat wave. You ask "
+                "\"Why am I tired today?\" and you get an answer out of your own data, the "
+                "evidence behind it, and one thing to do.\n\n"
+                "There is no required subscription. The interpretation comes with the Band.\n\n"
+                "We are at this stage: {{STAGE}}. {{TRACTION}}.\n\n"
+                "[Close in your own words: why a veteran is the right person to build a "
+                "product about recovery and readiness, and what $50,000 changes in the next "
+                "six months. This is the part the judges remember — keep it yours.]"},
+            {"q": "Slide — Market: size, growth, competition and regulatory dynamics", "a":
+                WHY_NOW + "\n\n"
+                "Regulatory position: Vybe is a consumer wellness product. It is not a "
+                "medical device, makes no diagnostic claim and needs no clearance to ship, "
+                "which is why it can reach people now rather than after a trial."},
+            {"q": "Slide — Product and value proposition", "a": SHORT},
+            {"q": "Slide — Go-to-market: customer acquisition strategy and cost", "a":
+                "The Band is bought once, so the first sale is the whole relationship — no "
+                "subscription to win and no churn to fight.\n\n"
+                "Three routes, in the order we intend to open them:\n"
+                "1. Direct, to people already unhappy about paying monthly for their own "
+                "numbers. That grievance is specific and easy to find.\n"
+                "2. The veteran and military-family community, where recovery and readiness "
+                "are already the language people use.\n"
+                "3. Licensing the interpretation layer to partners who have hardware and no "
+                "answer to give with it.\n\n"
+                "[Your numbers: what a customer costs you to acquire today, through which "
+                "channel, and what you have actually spent to learn that. If you do not know "
+                "yet, say so and say what you will test first — a made-up CAC is the "
+                "fastest way to lose a judge who has run a business.]"},
+            {"q": "Slide — Customers: profile and attractiveness", "a":
+                "The person who buys Vybe already owns a wearable and has stopped opening it. "
+                "They have the data and none of the meaning, and they resent paying a monthly "
+                "fee to be told a number they can already see.\n\n"
+                "[Describe who you have actually talked to: how many, how you reached them, "
+                "and the one sentence you heard most often. Real quotes beat a persona.]\n\n"
+                "Beyond consumers, Vybe is a platform: developers, researchers and employers "
+                "need interpretation they can build on, and none of them want to build a "
+                "sensor stack to get it."},
+            {"q": "Slide — Financials: current and projected model", "a":
+                "[This slide is yours to write, and only you can. The committee asks for "
+                "sales, cost of goods sold, operating expenses and expected profit, current "
+                "and projected. Give them:\n"
+                "- unit economics: what a Band costs to make and what it sells for\n"
+                "- revenue to date, even if it is zero — say zero rather than dress it up\n"
+                "- monthly operating cost and how long your runway is\n"
+                "- a projection with the two or three assumptions it rests on named\n"
+                "Judges forgive a small number. They do not forgive a number you cannot "
+                "explain.]"},
+            {"q": "Slide — Key risks and mitigants", "a":
+                "Hardware execution. A screenless band has to be manufactured and it has to "
+                "be reliable. [Name where you are with your manufacturer and what is de-risked "
+                "so far.]\n\n"
+                "A big wearable adds real interpretation. Possible, and the reason to be "
+                "early. Our answer is the context layer — Connect, the part that reads work, "
+                "travel and stress — which is harder to copy than a score, plus a "
+                "buy-once model an incumbent with subscription revenue cannot match without "
+                "hurting itself.\n\n"
+                "Trust. We ask people for health data and the whole product depends on their "
+                "believing we will not sell it. Mitigation is structural rather than stated: "
+                "the data lives on the person's phone, the app shows them where every piece "
+                "of it sits, and export and delete are one tap from the home screen.\n\n"
+                "Staying a wellness product. Any drift toward a diagnostic claim pulls Vybe "
+                "into a regulatory path it is not funded for, so the claim boundary is a "
+                "product rule, not a marketing preference."},
         ],
     },
     {

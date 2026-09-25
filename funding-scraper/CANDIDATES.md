@@ -37,6 +37,19 @@ The **Stephen L. Tadlock Veteran Business Grant** was already on the board as a
 stub pointing at grantwatch.com with "varies" for an amount. It now carries the
 programme's own URL, dates (15 Sep – 15 Oct 2026) and terms.
 
+## Promoted to the board — 25 Sep 2026
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **Veteran Shark Tank 2026** | **$50,000** to the winner | closes 13 Oct 2026 |
+| **AARP AgeTech Collaborative** Startup Accelerator | free, no equity, no cash | rolling cohorts |
+| **IFW by Honeycomb** Universal Funding & Grant Application | varies by sponsor | standing |
+
+Veteran Shark Tank is the find: its age test is a **ceiling** (under three years on
+7 Dec 2026), the opposite of every other veteran programme's minimum trading
+history, so a company too young for Buckeye or Tadlock clears it. Drafted as the
+`sharktank` packet the same day.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |
@@ -74,8 +87,27 @@ Dead on inspection, 24 Sep 2026 — each of these still headlines the listicles:
 - **Black Ambition Prize** — its own application page says it is "not accepting
   new applications for the Prize Competition in 2026" and is instead backing
   founders already in its portfolio.
-- **Nasdaq Milestone Makers** — free and real, but the Fall 2026 cohort is
-  CleanTech. Recheck when the theme rotates.
+- **Nasdaq Milestone Makers** — free and real, but themed CleanTech, and as of
+  25 Sep its own page still advertises a cohort whose applications closed
+  **27 October 2025**. Recheck when the theme rotates AND the page is current.
+
+Dead on inspection, 25 Sep 2026:
+
+- **FedEx Entrepreneur Fund** (FedEx + Hello Alice + GEN) — **closed.** Hello
+  Alice's own page says so in the first line, and FedEx Cares has already
+  announced the 2026 graduates. An aggregator was showing "deadline November 21,
+  **2026** — 85 days remaining"; the real deadline was 21 November **2025**. This
+  is the second aggregator date-shift caught in two days. Note it is also a
+  different programme from the retired FedEx Small Business Grant Contest, so
+  "FedEx" appearing on a board row is not automatically the dead one — check
+  which.
+- **SoGal Black Founder Startup Grant** — the 24 Sep note said
+  `sogalfoundation.org` serves a parking page, which is still true. Re-checked
+  from the other direction: `iamsogal.com` does resolve and the Foundation
+  exists, but the site shows no grant programme and its contact block still
+  reads `your@emailaddress.com`. So the grant is not applicable-for rather than
+  provably discontinued. Leave it off the board; revisit only if a working
+  application page appears.
 - **Makers Mindset × The Equity Studio** — open (9 Sep – 9 Oct 2026), $10,000 ×
   5, women-owned, no fee. Rejected on fit, not integrity: eligible categories
   are beauty and wellness CPG — supplements, ingestibles, skincare. Vybe is a

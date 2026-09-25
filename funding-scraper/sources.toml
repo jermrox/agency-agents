@@ -2025,6 +2025,61 @@ documents = [
 ]
 verified = "2026-09-24"
 
+# --- Added 25 Sep 2026 -----------------------------------------------------
+# Read first-hand from each programme's own site. Two more leads died on
+# inspection and are recorded in CANDIDATES.md: the FedEx Entrepreneur Fund is
+# CLOSED (Hello Alice's own page says so — an aggregator had shifted the 21 Nov
+# 2025 deadline to 2026 and showed "85 days remaining"), and Nasdaq Milestone
+# Makers' own page still advertises a cohort that closed in Oct 2025.
+
+[[sources.curated.entry]]
+name = "Veteran Shark Tank 2026 (13th annual)"
+url = "https://veteransharktank.com/apply/"
+agency = "Veteran Shark Tank — Philadelphia"
+amount = "$50,000 to the winner; five veteran entrepreneurs pitch live"
+close_date = "2026-10-13"
+pillar = 3
+kind = "visibility"
+eligibility = "US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 — an age ceiling, not a floor, which is why a company too young for most veteran grants qualifies here."
+note = "CLOSES 13 OCT — the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else's. Buckeye wants two years and Tadlock wants one; this one wants under three. Entry is a form plus a 2-minute narrated pitch video and a deck of no more than 10 slides covering market, product, go-to-market, customers, financials and key risks. No application fee is named anywhere on the application page. The 2016 winner was NeuroFlow, now a behavioural-health platform, so the judges have backed a health-tech company before."
+documents = [
+  "Proof of veteran status (DD-214 or equivalent)",
+  "A 2-minute narrated pitch video — a pitch, not a promo",
+  "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
+  "Evidence the business is under three years old as of 7 Dec 2026",
+]
+verified = "2026-09-25"
+
+[[sources.curated.entry]]
+name = "AARP AgeTech Collaborative — Startup Accelerator"
+url = "https://agetechcollaborative.org/startups/"
+agency = "AARP"
+amount = "No cash — an 8-week virtual accelerator, explicitly no fee and no equity, plus AARP's consumer research and UX and growth support"
+pillar = 3
+kind = "accelerator"
+eligibility = "Startups building technology that improves life as people age. No ownership, revenue or age-of-business gate published."
+note = "NO CASH, and the gate is a positioning question rather than a paperwork one: Vybe would have to make an honest case that personal health intelligence serves people over 50, which it can, rather than retrofit itself as an ageing product, which it should not. Worth a row because it is free, takes no equity, and the AARP consumer research is the part small teams cannot buy. The programme page names no deadline, so cohort timing is UNCONFIRMED — ask before building a submission around it."
+documents = [
+  "A clear statement of how the product serves people aged 50 and over",
+  "Product stage and current traction",
+]
+verified = "2026-09-25"
+
+[[sources.curated.entry]]
+name = "IFW by Honeycomb — Universal Funding & Grant Application"
+url = "https://ifundwomen.com/grants"
+agency = "IFundWomen / Honeycomb Credit"
+amount = "Varies by sponsor — partner grants have included American Express, Visa, adidas, Caress, Johnnie Walker and Angel City FC"
+pillar = 2
+kind = "grant"
+eligibility = "Open to small business owners and entrepreneurs; the individual sponsor grants carry their own gates, and the women-founder programmes are the ones this platform is built around."
+note = "NOT A GRANT ITSELF — it is the matching database sponsors draw from, which is why it earns a row: one free application, then IFW notifies you when a partner's criteria match your business. That makes it a standing entry rather than a deadline to race. Caveat worth knowing before spending an evening: the named grants on the page today are all closed and some carry 2025 dates, so treat the individual listings as stale and the Universal Application as the live mechanism. No application fee found for the Universal Application."
+documents = [
+  "Business profile: stage, industry, revenue, ownership",
+  "The reusable answers IFW's own grant planner asks for",
+]
+verified = "2026-09-25"
+
 [[sources.curated.entry]]
 name = "NIH SBIR/STTR — April 2027 cycle"
 url = "https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html"

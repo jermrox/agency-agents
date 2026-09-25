@@ -3,6 +3,7 @@ import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import RestoreScreen from './src/screens/RestoreScreen';
 import MoveTrendScreen from './src/screens/MoveTrendScreen';
+import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import { colors } from './src/theme';
 
 /**
@@ -25,9 +26,12 @@ export default function App() {
         <RestoreScreen onBack={() => setScreen('home')} />
       ) : screen === 'move' ? (
         <MoveTrendScreen onBack={() => setScreen('home')} />
+      ) : screen === 'data' ? (
+        <DataSettingsScreen onBack={() => setScreen('home')} />
       ) : (
         <HomeScreen
           isSample
+          onOpenData={() => setScreen('data')}
           onAsk={() => {
             // TODO: the conversation screen.
           }}
