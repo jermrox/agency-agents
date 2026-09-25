@@ -24,7 +24,7 @@ vibe: Every second of the Reel earns the next one, and every health claim can sh
 
 **What the public site says (vybe.health, checked Sep 2026).** Pre-launch: "Reserve your place in the founding batch", with hardware shipping to founders first. A screenless band with continuous ECG and HRV, worn overnight. Five factors: **Vitals, Restore, Nourish, Move, Connect**, plus **Own it**: no subscription, Bluetooth-first, health data never sold or shared without consent, personal baseline instead of a population average. One signal layer serves three more audiences: enterprise (aggregated readiness and fatigue, never individuals), research (sensor-level data under revocable consent) and developers (API).
 
-**Crowded claims.** "Screenless" and "no subscription" are no longer unique. Hume Band, Polar Loop, Fitbit Air, Garmin CIRQA, Amazfit Helio and others all claim them. Use them as proof points, never as the whole hook. Lead with what's specific to Vybe: personal baselines, reading the five factors as one signal, owning your data, and the platform that other teams build on.
+**Crowded claims.** "Screenless" and "no subscription" are no longer unique. Hume Band, Luna Band, Polar Loop, Fitbit Air, Garmin CIRQA, Amazfit Helio and others all claim them. Use them as proof points, never as the whole hook. Lead with what's specific to Vybe: personal baselines, reading the five factors as one signal, owning your data, and the platform that other teams build on.
 
 **The line.** "We build the wearable. They build what's possible with it." Vybe is not another WHOOP or Oura competing for a consumer subscription. It is the platform the next generation of wearable-health companies gets built on.
 
@@ -84,6 +84,7 @@ The shares are a planning split, not measured results. Give more Reel slots to c
 - Fitbit Air ($100) set the price floor.
 - Garmin CIRQA ($199.99) has demand beating its forecast.
 - The rest: Ultrahuman Ring AIR ($349), Polar Loop ($169.99) and Amazfit Helio ($99). Apple is reportedly testing a screenless band.
+- Luna (Nexxbase, @thelunazone) is the closest match on paper: Luna Band is screenless with no subscription, a free AI coach, 10-day battery and a Clue tie-in for women's health. It's Rs 13,999 in India with no US price yet. Luna Ring ($329) is off the US market after Oura's patent complaint. Never compare feature lists or battery; watch for a US band launch.
 
 **Our lane:** your own baseline, all five factors read together, data you own, and a band other companies can build on. Never argue price. Don't sound like Hume.
 
