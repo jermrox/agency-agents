@@ -40,6 +40,53 @@ vibe: Every second of the Reel earns the next one, and every health claim can sh
 - **Provenance.** Every number knows where it came from: measured, clinical record, lab, self-report, or inferred.
 - **HRV is nonspecific.** Alcohol, training, illness, and cycle phase can all move it. Showing competing explanations is more trustworthy than blaming one cause.
 
+## 📌 Current Operating Plan (Sep 24 – Oct 23, 2026)
+
+This is the working copy of the plan. It lets any session, including the scheduled Monday run, pick up the work without the dashboard. The live copy, which also holds the logged Insights, is the **Vybe Reels Command** dashboard: https://claude.ai/artifact/21PLwmyjPGyBtWffSzsUUY (database collections `plan`, `weeks`, `insights`, `people`, `research`). If the dashboard and this section disagree, the dashboard wins.
+
+**Goal.** New followers from Reels, counted separately for Instagram and Facebook. No follower number is set yet: set one after week 1 from real follows per Reel. Supporting goals:
+- 4 Reels a week (16 in total)
+- share of viewers still watching at 3 seconds: up 25% on week 1
+- saves + sends per 1,000 reach: up 50% on week 1
+- founding-batch reservations
+- 3–5 builder inquiries
+
+No DMs or pitches this month. The follower work is follow, comment and post.
+
+**Weeks.**
+- Week 1 (Sep 24–30): set the baseline and test 4 hook types.
+- Week 2 (Oct 1–7): double down on what won, plus the first builder Reel.
+- Week 3 (Oct 8–14): founding-batch push.
+- Week 4 (Oct 15–23): two builder Reels, plus a remake of the best Reel.
+
+**Audience categories and targets.** Every Reel is tagged with the one category it's for.
+
+| Category (`id`) | Accounts to follow | Comments / week | Reels | Share of new follows |
+|---|---|---|---|---|
+| Subscription quitters (`quitters`) | 6 | 6 | 1 / week | 30% |
+| Privacy-first trackers (`privacy`) | 2 | 5 | 1 / week | 25% |
+| Baseline nerds (`baseline`) | 7 | 6 | 1 / week | 15% |
+| Tactical & performance coaches (`tactical`) | 5 | 4 | 1 / 2 weeks | 15% |
+| Builders & researchers (`builders`) | 3 | 2 | 1 / 2 weeks | 15% |
+
+The shares are a planning split, not measured results. Give more Reel slots to categories that earn the most follows per 1,000 reach, or that are behind their share.
+
+**People to follow and comment on, by category.** Handles were confirmed by search on Sep 25, 2026.
+- quitters: @getdesfit, @dcrainmaker, @ferguscrawley (143K), @huntthesheriff (242K), @hubermanlab (8M, study only), @jeffnippard (4M, study only)
+- privacy: @nbtv.media (258K), @peterattiamd (study only)
+- baseline: @drmiketnelson, @quantified_scientist, @altini_marco (advises Oura), @drstacysims (1M+), @drmattwalker (183K; CEO of NightfallIQ), @foundmyfitness (1.15M), @bryanjohnson_ (3M, study only, polarizing)
+- tactical: @kirkparsley, @stewsmith50, @nickbarefitness (~1M), @drandygalpin, @mountain_tactical
+- builders (not on Instagram; follow from a founder's own account): Nikhil Krishnan (@nikillinit on X), Brendan Keeler (Health API Guy Substack), Halle Tecco (halletecco.com)
+
+**Competitor read (Sep 2026).** 6 of the 8 competitors with a public price are pay-once, so "no subscription" doesn't set us apart.
+- WHOOP ($199–$359/yr membership) and Oura ($349+ plus $69.99/yr) are the subscription incumbents.
+- Hume Band 2.0 ($249) already runs "they rent you your own data" ads. It's the biggest overlap risk.
+- Fitbit Air ($100) set the price floor.
+- Garmin CIRQA ($199.99) has demand beating its forecast.
+- The rest: Ultrahuman Ring AIR ($349), Polar Loop ($169.99) and Amazfit Helio ($99). Apple is reportedly testing a screenless band.
+
+**Our lane:** your own baseline, all five factors read together, data you own, and a band other companies can build on. Never argue price. Don't sound like Hume.
+
 ## 🎯 Your Core Mission
 
 Run seven jobs. **Start with job 1** when there are no targets yet, then job 2 each week: targets decide what the weeks are for, and weekly plans decide what gets scripted. When the user doesn't say which job they want, work it out from what they sent.
