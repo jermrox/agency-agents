@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-25T07:07:40.252506+00:00",
+  "generated_at": "2026-09-25T19:09:23.989962+00:00",
   "totals": {
-    "postings": 489,
+    "postings": 492,
     "employers": 32,
-    "unique_jobs": 222,
-    "with_salary": 159,
+    "unique_jobs": 223,
+    "with_salary": 160,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
-      "latest": "2026-09-25T00:00:00+00:00"
+      "latest": "2026-09-25T14:31:46.257000+00:00"
     }
   },
   "by_employer": [
@@ -203,23 +203,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 210,
-      "share": 0.9545
+      "count": 211,
+      "share": 0.9548
     },
     {
       "name": "sof",
       "count": 52,
-      "share": 0.2364
+      "share": 0.2353
     },
     {
       "name": "first-responder",
       "count": 35,
-      "share": 0.1591
+      "share": 0.1584
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1364
+      "share": 0.1357
     }
   ],
   "by_branch": [
@@ -249,7 +249,7 @@
     },
     {
       "name": "Coast Guard",
-      "count": 1
+      "count": 2
     }
   ],
   "by_installation": [
@@ -332,11 +332,11 @@
       "count": 15
     },
     {
-      "code": "GA",
-      "count": 14
+      "code": "NC",
+      "count": 15
     },
     {
-      "code": "NC",
+      "code": "GA",
       "count": 14
     },
     {
@@ -422,11 +422,11 @@
     }
   ],
   "salary": {
-    "count": 159,
+    "count": 160,
     "min": 27500.0,
     "max": 219654.0,
-    "median": 87145.0,
-    "p25": 62555.75,
+    "median": 87539.25,
+    "p25": 62633.62,
     "p75": 117778.5,
     "by_discipline": {
       "strength-conditioning": {
@@ -502,12 +502,12 @@
     },
     {
       "month": "2026-09",
-      "count": 146
+      "count": 147
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-27T00:00:00+00:00",
+    "pivot": "2026-06-27T14:31:46.257000+00:00",
     "fastest_growing_employers": [
       {
         "name": "KBR",

@@ -4,21 +4,21 @@
 
 ## Headline
 
-- **222 open jobs** from **32 employers**.
+- **223 open jobs** from **32 employers**.
 - Posted between **2026-07-06** and **2026-09-25**.
-- **$87,145 median** annualized pay across the 159 postings that publish one -- $62,556 to $117,778 covers the middle half.
+- **$87,539 median** annualized pay across the 160 postings that publish one -- $62,634 to $117,778 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 267 of 489 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 210, Special Operations 52, Fire / EMS / Law Enforcement 35, Training Pipeline 30.
+- 269 of 492 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 211, Special Operations 52, Fire / EMS / Law Enforcement 35, Training Pipeline 30.
 
 ## Month over month
 
-Postings are **up +78** in 2026-09 (68 to 146), 115% against 2026-08.
+Postings are **up +79** in 2026-09 (68 to 147), 116% against 2026-08.
 
 ```
 2026-07     8  ##
 2026-08    68  #############
-2026-09   146  ############################
+2026-09   147  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$87,145**, middle half $62,556 to $117,778.
+- Median **$87,539**, middle half $62,634 to $117,778.
 - Full range $27,500 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -101,7 +101,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** TX (19), VA (16), CA (15), FL (15), GA (14), NC (14), NM (10), MO (8), CO (7), WA (7)
+**States:** TX (19), VA (16), CA (15), FL (15), NC (15), GA (14), NM (10), MO (8), CO (7), WA (7)
 
 | Installation | Jobs |
 |---|---|
@@ -116,7 +116,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Sill | 3 |
 | JBLM | 3 |
 
-**Branches and services:** Army (70), Joint (43), Navy (28), Air Force (20), Marine Corps (8), Space Force (3), Coast Guard (1)
+**Branches and services:** Army (70), Joint (43), Navy (28), Air Force (20), Marine Corps (8), Space Force (3), Coast Guard (2)
 
 ## Most common titles
 
