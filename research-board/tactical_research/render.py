@@ -17,7 +17,7 @@ script.
 
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import UTC, date, datetime
 from html import escape
 
 from .hot import HotTopic, hot_topics
@@ -353,4 +353,4 @@ def _long_date(value: str) -> str:
 
 
 def _stamp() -> str:
-    return datetime.utcnow().strftime("%d %b %Y")
+    return datetime.now(UTC).strftime("%d %b %Y")

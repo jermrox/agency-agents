@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 
 # Filters only. An item carries one to three; they never structure the page,
 # because the brief's whole layout argument is that sections force readers to
@@ -110,7 +110,7 @@ class BoardItem:
 
 
 def _today(today: date | None) -> date:
-    return today or datetime.utcnow().date()
+    return today or datetime.now(UTC).date()
 
 
 def _parse(value: str) -> date | None:
@@ -146,7 +146,7 @@ def load(path) -> list[BoardItem]:
 def dump(items: list[BoardItem], path, generated: str = "") -> None:
     """Write items to a findings JSON file."""
     payload = {
-        "generated": generated or datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "generated": generated or datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "window_days": WINDOW_DAYS,
         "items": [i.to_dict() for i in items],
     }
