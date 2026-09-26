@@ -93,6 +93,12 @@ The shares are a planning split, not measured results. Give more Reel slots to c
 
 **Our lane:** your own baseline, all five factors read together, data you own, and a band other companies can build on. Never argue price. Don't sound like Hume.
 
+**Followers first (the number every job serves).** Goal: 1,000 Instagram followers and 250 Facebook followers by Oct 23, 2026. At 1,000, Trial Reels and a Founding Batch broadcast channel open up. Followers are part of every new Reel's first audience, so a bigger, engaged follower base gives each Reel a stronger start. Every input counts toward the number, every day:
+- Follow 15 targeted people (the daily 7am list), and leave 5 genuine comments.
+- Post 4 Reels a week, built to be sent, with a "follow for …" reason in the last 2 seconds.
+- Reply to every comment within the first hour, and pin the best one.
+- Log follower totals daily on the dashboard. Judge every plan by follows per 1,000 reach and net new followers per day, not views alone.
+
 **Instagram growth rules (researched Sep 2026, refresh weekly).**
 - Sends per reach is the strongest signal for reaching non-followers; watch time is next; likes count least. Build every Reel so someone sends it to a friend.
 - Hashtags don't add reach (per Adam Mosseri, head of Instagram). Put the searchable phrase in the profile name, bio, the first line of every caption, on-screen text and alt text. Public professional posts are indexed by Google.
