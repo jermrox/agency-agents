@@ -1,8 +1,172 @@
 {
   "version": 2,
-  "generated_at": "2026-09-25T19:09:23.819405+00:00",
-  "count": 203,
+  "generated_at": "2026-09-26T07:03:20.437509+00:00",
+  "count": 206,
   "jobs": [
+    {
+      "id": "93efb782fa66f8ad3b92",
+      "fingerprint": "33ce9fa98cdec85ec44a",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/886461600",
+      "title": "Holistic Health Dietician, SBD2",
+      "employer": "Space Systems Command",
+      "location": "Buckley AFB, Colorado",
+      "remote": false,
+      "department": null,
+      "compensation": "$99,800 - $154,280 /yr",
+      "posted_at": null,
+      "description": "The 0630 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "RD"
+        ],
+        "clearance": null,
+        "salary_min": 99800.0,
+        "salary_max": 154280.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": "Buckley SFB",
+        "service_branch": "Space Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "space-force"
+        ],
+        "branch_labels": [
+          "Space Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 99800.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-26T07:03:20.437509+00:00"
+    },
+    {
+      "id": "e7bddca89ce90fe6a89f",
+      "fingerprint": "3f6ba836eedba46dea8a",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/886471400",
+      "title": "MWR Supervisor Recreation Specialist (Fitness Program Manager)",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Monterey, California",
+      "remote": false,
+      "department": null,
+      "compensation": "$77,161 - $90,024 /yr",
+      "posted_at": null,
+      "description": "Knowledge that enables the employee to competently and independently carry out fitness programs through the proper application of principles, concepts and techniques of recreation to specific needs of the community to be served. Knowledge of Department of War (DoW), Department of the Navy (DON) and CNIC policies and procedures governing the recreational activity certifications. Knowledge of both,\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 77161.0,
+        "salary_max": 90024.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": true,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 77161.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-26T07:03:20.437509+00:00"
+    },
+    {
+      "id": "2e384088d49a7a0854b2",
+      "fingerprint": "7986954b1348913d4181",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Suffolk-England/Special-Operations-Performance-Dietitian--ONSITE-at-352-SOW-Mildenhall--UK-_R2125745",
+      "title": "Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK)",
+      "employer": "KBR",
+      "location": "Suffolk, England",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Special Operations Performance Dietitian (ONSITE at 352 SOW/Mildenhall, UK) Suffolk, England R2125745",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-26T07:03:20.437509+00:00"
+    },
     {
       "id": "9c7dd6ec7d075426283d",
       "fingerprint": "2bdf833f789080ab429d",
@@ -164,110 +328,16 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:12+00:00"
+      },
       "listed_at": "2026-09-25T07:07:40.040078+00:00"
-    },
-    {
-      "id": "99bcbf2e1f38b3129dab",
-      "fingerprint": "7bf00a8b037ea3a8af00",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Tampa-Florida/Cognitive-Performance-Curriculum-Development-Manager_R2130480",
-      "title": "Cognitive Performance Curriculum Development Manager",
-      "employer": "KBR",
-      "location": "Tampa, Florida",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Cognitive Performance Curriculum Development Manager Belong. Connect. Grow. with KBR! Around here, we define the future. We are a company of innovators, thinkers, creators, explorers, volunteers, and dreamers. But we all share one goal: to improve the world responsibly and safely. Position Overview: KBR is actively seeking a Cognitive Performance Curriculum Development Manager to join our\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": true,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-24T19:08:06.936610+00:00"
-    },
-    {
-      "id": "32b6c9f83aff63742de6",
-      "fingerprint": "f89df5f28dc9667349d9",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Pope-AFF/Paramedic_RQ229040-1",
-      "title": "Paramedic",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Pope AFF",
-      "remote": false,
-      "department": null,
-      "compensation": "from $42,432",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Other Clearance Level Must Be Able to Obtain: None Public Trust/Other Required: NACI (T1) Job Family: SCA Job Qualifications: Skills: Emergency Care, Emergency Medical Services, Life Support, Life Support Training, Psychological Traumas Certifications: None Experience: 3 + years of related experience US Citizenship Required: Yes\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Public Trust",
-        "salary_min": 20.4,
-        "salary_max": 27.6,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 42432.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-24T19:08:06.936610+00:00"
     },
     {
       "id": "09eb42c41cb3d3721f79",
@@ -483,6 +553,118 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-09-24T19:08:06.936610+00:00"
+    },
+    {
+      "id": "99bcbf2e1f38b3129dab",
+      "fingerprint": "7bf00a8b037ea3a8af00",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Tampa-Florida/Cognitive-Performance-Curriculum-Development-Manager_R2130480",
+      "title": "Cognitive Performance Curriculum Development Manager",
+      "employer": "KBR",
+      "location": "Tampa, Florida",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Cognitive Performance Curriculum Development Manager Belong. Connect. Grow. with KBR! Around here, we define the future. We are a company of innovators, thinkers, creators, explorers, volunteers, and dreamers. But we all share one goal: to improve the world responsibly and safely. Position Overview: KBR is actively seeking a Cognitive Performance Curriculum Development Manager to join our\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Top Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Master",
+        "years_experience_min": 3,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "cognitive-performance",
+        "discipline_label": "Cognitive Performance",
+        "lead": true,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:16+00:00"
+      },
+      "listed_at": "2026-09-24T19:08:06.936610+00:00"
+    },
+    {
+      "id": "32b6c9f83aff63742de6",
+      "fingerprint": "f89df5f28dc9667349d9",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Pope-AFF/Paramedic_RQ229040-1",
+      "title": "Paramedic",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA NC Pope AFF",
+      "remote": false,
+      "department": null,
+      "compensation": "from $42,432",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Other Clearance Level Must Be Able to Obtain: None Public Trust/Other Required: NACI (T1) Job Family: SCA Job Qualifications: Skills: Emergency Care, Emergency Medical Services, Life Support, Life Support Training, Psychological Traumas Certifications: None Experience: 3 + years of related experience US Citizenship Required: Yes\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Public Trust",
+        "salary_min": 20.4,
+        "salary_max": 27.6,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 42432.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:13+00:00"
+      },
       "listed_at": "2026-09-24T19:08:06.936610+00:00"
     },
     {
@@ -748,69 +930,16 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": null,
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:20+00:00"
+      },
       "listed_at": "2026-09-23T07:06:17.723512+00:00"
-    },
-    {
-      "id": "acdb842941372519ccdc",
-      "fingerprint": "83b4461cdec433148578",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Liberty-North-Carolina/Special-Operations-Certified-Athletic-Trainer--AFSOC-GSU-Southern-Pines--NC-_R2122466",
-      "title": "Special Operations Certified Athletic Trainer (AFSOC GSU/Southern Pines, NC)",
-      "employer": "KBR",
-      "location": "Fort Liberty, North Carolina",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Special Operations Certified Athletic Trainer (AFSOC GSU/Southern Pines, NC) THIS POSITION OFFERS RELOCATION. We are looking for a Certified Athletic Trainer to join the team who is responsible for integrating the physical, mental and psychological wellness of our service members and their families for the Preservation of the Force and Family (POTFF) contract to optimize and sustain\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC",
-          "CSCS"
-        ],
-        "clearance": "Top Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "athletic-training",
-        "discipline_label": "Athletic Training",
-        "lead": false,
-        "branches": [
-          "air-force",
-          "army"
-        ],
-        "branch_labels": [
-          "Army",
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
     {
       "id": "a128af1c98d9935e26aa",
@@ -981,6 +1110,71 @@
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
     {
+      "id": "acdb842941372519ccdc",
+      "fingerprint": "83b4461cdec433148578",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Liberty-North-Carolina/Special-Operations-Certified-Athletic-Trainer--AFSOC-GSU-Southern-Pines--NC-_R2122466",
+      "title": "Special Operations Certified Athletic Trainer (AFSOC GSU/Southern Pines, NC)",
+      "employer": "KBR",
+      "location": "Fort Liberty, North Carolina",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Special Operations Certified Athletic Trainer (AFSOC GSU/Southern Pines, NC) THIS POSITION OFFERS RELOCATION. We are looking for a Certified Athletic Trainer to join the team who is responsible for integrating the physical, mental and psychological wellness of our service members and their families for the Preservation of the Force and Family (POTFF) contract to optimize and sustain\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC",
+          "CSCS"
+        ],
+        "clearance": "Top Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Fort Bragg",
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "athletic-training",
+        "discipline_label": "Athletic Training",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "army"
+        ],
+        "branch_labels": [
+          "Army",
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:15+00:00"
+      },
+      "listed_at": "2026-09-22T19:07:58.694309+00:00"
+    },
+    {
       "id": "d3432a65c7d1fefcfd13",
       "fingerprint": "623c44a49d31e68d14a3",
       "source": "workday:kbr",
@@ -1032,7 +1226,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:18+00:00"
+        "checked_at": "2026-09-26T07:03:15+00:00"
       },
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
@@ -1303,120 +1497,6 @@
       },
       "confidence": "listed",
       "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "789c652a0cdbe4247ece",
-      "fingerprint": "50b3361f498ced6e5e37",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Homestead-AFB-Florida/R2130051-Special-Operations-Performance-Dietitian-PART-TIME--SOCSOUTH--Homestead--FL-_R2130204",
-      "title": "R2130051 Special Operations Performance Dietitian PART-TIME (SOCSOUTH, Homestead, FL)",
-      "employer": "KBR",
-      "location": "Homestead AFB, Florida",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: R2130051 Special Operations Performance Dietitian PART-TIME (SOCSOUTH, Homestead, FL) THIS POSITION OFFERS RELOCATION. Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS",
-          "RD"
-        ],
-        "clearance": "Top Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "nutrition",
-        "discipline_label": "Performance Nutrition",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "8a067ab905ce47e59876",
-      "fingerprint": "3b635dcf1418c75c24b9",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Cannon-AFB-New-Mexico/Special-Operations-Certified-Athletic-Trainer--27-SOW-Cannon-AFB--NM--Sign-on-Bonus-Eligible_R2130249",
-      "title": "Special Operations Certified Athletic Trainer (27 SOW/Cannon AFB, NM) Sign-on Bonus Eligible",
-      "employer": "KBR",
-      "location": "Cannon AFB, New Mexico",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Special Operations Certified Athletic Trainer (27 SOW/Cannon AFB, NM) Sign-on Bonus Eligible Sign-on bonus of up to $5K may be available to qualified, selected candidates (eligibility requirements may apply). Current KBR employees are not eligible to receive sign-on bonuses. THIS POSITION OFFERS RELOCATION. We are looking for a Certified Athletic Trainer to join the team who is responsible\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC",
-          "CSCS"
-        ],
-        "clearance": "Top Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Cannon AFB",
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "athletic-training",
-        "discipline_label": "Athletic Training",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
       "notes": "",
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -1750,62 +1830,6 @@
       },
       "confidence": "listed",
       "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "119121ee7d5e8b5a29a3",
-      "fingerprint": "2f23ed0c8d0a75b3ee31",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Moore-Georgia/Special-Operations-Strength-and-Conditioning-Specialist--75th-RR--Ft-Benning--GA-_R2130335",
-      "title": "Special Operations Strength and Conditioning Specialist, 75th RR (Ft. Benning, GA)",
-      "employer": "KBR",
-      "location": "Fort Moore, Georgia",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Special Operations Strength and Conditioning Specialist, 75th RR (Ft. Benning, GA) Strength & Conditioning Specialist Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": "Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Fort Benning",
-        "service_branch": "Army",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
       "notes": "",
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -2206,60 +2230,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "015baad1f4e727c7915a",
-      "fingerprint": "118ee618d1a370d74060",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Human-Performance-Program-Manager_RQ211645",
-      "title": "Human Performance Program Manager",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA FL Hurlburt Field",
-      "remote": false,
-      "department": null,
-      "compensation": "from $147,292",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Program Delivery and Execution Job Qualifications: Skills: Cost Management, Hiring, Operations, People Management, Supervision Certifications: None Experience: 10 + years of related experience US Citizenship Required: Yes Job\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 147292.0,
-        "salary_max": 199278.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 10,
-        "employment_type": "Full-time",
-        "installation": "Hurlburt Field",
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": true,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 147292.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "301b0e4f583ddbf2c133",
       "fingerprint": "0b5cee445eef48227c13",
       "source": "usajobs:federal",
@@ -2372,6 +2342,60 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
+      "id": "32e2ff5d7417d2ce639d",
+      "fingerprint": "118ee618d1a370d74060",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Human-Performance-Program-Manager_RQ211645",
+      "title": "Human Performance Program Manager",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA FL Hurlburt Field",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Human Performance Program Manager USA FL Hurlburt Field RQ211645",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": "Hurlburt Field",
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": true,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
       "id": "ee1f148a87f22fb51121",
       "fingerprint": "d8ee5563b6513987e7b4",
       "source": "usajobs:federal",
@@ -2410,60 +2434,6 @@
         ],
         "contingency": "unknown",
         "salary_floor_annual": 125158.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "860a9649e854036dd014",
-      "fingerprint": "140536fba3c6ca65f47b",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Houston-Texas/KBR-DoD-SkillBridge-Internship---Multiple-Roles--Evergreen-_R2115438",
-      "title": "KBR DoD SkillBridge Internship - Multiple Roles",
-      "employer": "KBR",
-      "location": "Houston, Texas",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: KBR DoD SkillBridge Internship - Multiple Roles Program Summary KBR\u2019s delivers comprehensive engineering and technical solutions across the full lifecycle of military systems including on land, at sea, in the air, and in space. By integrating emerging technologies with deep platform expertise, KBR enhances mission effectiveness on a global scale. With strengths in digital engineering;\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "TS/SCI",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
       },
       "matched": {
         "domain": [],
@@ -2684,6 +2654,60 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
+      "id": "c9b5825023ec92918e49",
+      "fingerprint": "50b3361f498ced6e5e37",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Homestead-AFB-Florida/R2130051-Special-Operations-Performance-Dietitian-PART-TIME--SOCSOUTH--Homestead--FL-_R2130204",
+      "title": "R2130051 Special Operations Performance Dietitian PART-TIME (SOCSOUTH, Homestead, FL)",
+      "employer": "KBR",
+      "location": "Homestead AFB, Florida",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "R2130051 Special Operations Performance Dietitian PART-TIME (SOCSOUTH, Homestead, FL) Homestead AFB, Florida R2130204",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
       "id": "ac0826429dea6c0eb24e",
       "fingerprint": "f91a0ecb60a7ecc40b60",
       "source": "usajobs:federal",
@@ -2838,60 +2862,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "830001dcf578397e098e",
-      "fingerprint": "d8971205c22670666f30",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Wright-Patterson-AFB-Ohio/Senior-Physiology-Specialist_R2129807",
-      "title": "Senior Physiology Specialist",
-      "employer": "KBR",
-      "location": "Wright Patterson AFB, Ohio",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Senior Physiology Specialist Belong. Connect. Grow. with KBR! Around here, we define the future. We are a company of innovators, thinkers, creators, explorers, volunteers, and dreamers. But we all share one goal: to improve the world responsibly and safely. Role Overview: KBR is seeking an Aerospace Physiologist to conduct literature reviews and summarize previous research concerning the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "sport-science",
-        "discipline_label": "Sport Science",
-        "lead": true,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "75da8dbdda99cdfa0dbc",
       "fingerprint": "4754f3f9b860092c051c",
       "source": "usajobs:federal",
@@ -2988,56 +2958,6 @@
         ],
         "contingency": "unknown",
         "salary_floor_annual": 61722.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "cdc1612fc29f510e370e",
-      "fingerprint": "6a937d802dc4691c103d",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885453700",
-      "title": "Supervisory CBP Officer (Border Security/Cargo)",
-      "employer": "Customs and Border Protection",
-      "location": "El Paso, Texas",
-      "remote": false,
-      "department": null,
-      "compensation": "$129,258 - $168,040 /yr",
-      "posted_at": null,
-      "description": "NOTE: Your resume must explicitly indicate how you meet this requirement, otherwise you will be found ineligible. Please see the \"Required Documents\" section below for additional resume requirements. Experience: You qualify for the GS-14 grade level if you possess 1 year of specialized experience equivalent to at least the next lower grade level, performing duties such as: Guiding port-of-entry\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 129258.0,
-        "salary_max": 168040.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 129258.0
       },
       "matched": {
         "domain": [],
@@ -3374,6 +3294,307 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
+      "id": "8a067ab905ce47e59876",
+      "fingerprint": "3b635dcf1418c75c24b9",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Cannon-AFB-New-Mexico/Special-Operations-Certified-Athletic-Trainer--27-SOW-Cannon-AFB--NM--Sign-on-Bonus-Eligible_R2130249",
+      "title": "Special Operations Certified Athletic Trainer (27 SOW/Cannon AFB, NM) Sign-on Bonus Eligible",
+      "employer": "KBR",
+      "location": "Cannon AFB, New Mexico",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Special Operations Certified Athletic Trainer (27 SOW/Cannon AFB, NM) Sign-on Bonus Eligible Sign-on bonus of up to $5K may be available to qualified, selected candidates (eligibility requirements may apply). Current KBR employees are not eligible to receive sign-on bonuses. THIS POSITION OFFERS RELOCATION. We are looking for a Certified Athletic Trainer to join the team who is responsible\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC",
+          "CSCS"
+        ],
+        "clearance": "Top Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Cannon AFB",
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "athletic-training",
+        "discipline_label": "Athletic Training",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:15+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "119121ee7d5e8b5a29a3",
+      "fingerprint": "2f23ed0c8d0a75b3ee31",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Moore-Georgia/Special-Operations-Strength-and-Conditioning-Specialist--75th-RR--Ft-Benning--GA-_R2130335",
+      "title": "Special Operations Strength and Conditioning Specialist, 75th RR (Ft. Benning, GA)",
+      "employer": "KBR",
+      "location": "Fort Moore, Georgia",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Special Operations Strength and Conditioning Specialist, 75th RR (Ft. Benning, GA) Strength & Conditioning Specialist Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": "Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Fort Benning",
+        "service_branch": "Army",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:15+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "860a9649e854036dd014",
+      "fingerprint": "140536fba3c6ca65f47b",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Houston-Texas/KBR-DoD-SkillBridge-Internship---Multiple-Roles--Evergreen-_R2115438",
+      "title": "KBR DoD SkillBridge Internship - Multiple Roles",
+      "employer": "KBR",
+      "location": "Houston, Texas",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: KBR DoD SkillBridge Internship - Multiple Roles Program Summary KBR\u2019s delivers comprehensive engineering and technical solutions across the full lifecycle of military systems including on land, at sea, in the air, and in space. By integrating emerging technologies with deep platform expertise, KBR enhances mission effectiveness on a global scale. With strengths in digital engineering;\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "TS/SCI",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:16+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "830001dcf578397e098e",
+      "fingerprint": "d8971205c22670666f30",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Wright-Patterson-AFB-Ohio/Senior-Physiology-Specialist_R2129807",
+      "title": "Senior Physiology Specialist",
+      "employer": "KBR",
+      "location": "Wright Patterson AFB, Ohio",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Senior Physiology Specialist Belong. Connect. Grow. with KBR! Around here, we define the future. We are a company of innovators, thinkers, creators, explorers, volunteers, and dreamers. But we all share one goal: to improve the world responsibly and safely. Role Overview: KBR is seeking an Aerospace Physiologist to conduct literature reviews and summarize previous research concerning the\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Master",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "sport-science",
+        "discipline_label": "Sport Science",
+        "lead": true,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:17+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "cdc1612fc29f510e370e",
+      "fingerprint": "6a937d802dc4691c103d",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/885453700",
+      "title": "Supervisory CBP Officer (Border Security/Cargo)",
+      "employer": "Customs and Border Protection",
+      "location": "El Paso, Texas",
+      "remote": false,
+      "department": null,
+      "compensation": "$129,258 - $168,040 /yr",
+      "posted_at": null,
+      "description": "NOTE: Your resume must explicitly indicate how you meet this requirement, otherwise you will be found ineligible. Please see the \"Required Documents\" section below for additional resume requirements. Experience: You qualify for the GS-14 grade level if you possess 1 year of specialized experience equivalent to at least the next lower grade level, performing duties such as: Guiding port-of-entry\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 129258.0,
+        "salary_max": 168040.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 129258.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:20+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
       "id": "ce664accb31d22a22d85",
       "fingerprint": "4fb808f2ab070d8dfe18",
       "source": "usajobs:federal",
@@ -3425,7 +3646,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3487,7 +3708,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:23+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3549,7 +3770,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:23+00:00"
+        "checked_at": "2026-09-26T07:03:20+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3605,7 +3826,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3661,7 +3882,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4003,7 +4224,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:18+00:00"
+        "checked_at": "2026-09-26T07:03:15+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4063,7 +4284,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4119,7 +4340,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4175,7 +4396,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4231,7 +4452,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4287,7 +4508,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4340,9 +4561,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": null,
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:19+00:00"
+      },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
     {
@@ -4397,7 +4624,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4453,7 +4680,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4625,7 +4852,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4687,7 +4914,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4747,7 +4974,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:22+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4860,7 +5087,7 @@
       "listed_at": "2026-09-11T07:04:24.616728+00:00"
     },
     {
-      "id": "dc995fa5e056eb803732",
+      "id": "68a0631e2f28055eb394",
       "fingerprint": "7a264473ee6823d6c659",
       "source": "workday:gdit",
       "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg---Fort-Bragg-NCC004/Human-Performance-Program-Manager_RQ211383-1",
@@ -4869,20 +5096,20 @@
       "location": "USA NC Fort Bragg - Fort Bragg (NCC004)",
       "remote": false,
       "department": null,
-      "compensation": "from $147,292",
+      "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Program Delivery and Execution Job Qualifications: Skills: Life Support, Meeting Organization, Planning, Professional Development, Scheduling Certifications: None Experience: 10 + years of related experience US Citizenship\u2026",
+      "description": "Human Performance Program Manager USA NC Fort Bragg - Fort Bragg (NCC004) RQ211383",
       "score": 0.0,
       "tags": [],
       "enrichment": {
         "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 147292.0,
-        "salary_max": 199278.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 10,
-        "employment_type": "Full-time",
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
         "installation": "Fort Bragg",
         "service_branch": "Army",
         "program": null
@@ -4901,7 +5128,7 @@
           "conus"
         ],
         "contingency": "unknown",
-        "salary_floor_annual": 147292.0
+        "salary_floor_annual": null
       },
       "matched": {
         "domain": [],
@@ -4971,7 +5198,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5029,7 +5256,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5199,7 +5426,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5257,7 +5484,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 202,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:16+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5313,7 +5540,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5429,7 +5656,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5485,7 +5712,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5545,7 +5772,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5605,7 +5832,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5668,7 +5895,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:19+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -5724,7 +5951,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -5784,7 +6011,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-07T13:08:21.322720+00:00"
     },
@@ -5898,7 +6125,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -5958,7 +6185,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6014,7 +6241,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6074,7 +6301,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6134,7 +6361,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6350,7 +6577,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6408,7 +6635,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6468,7 +6695,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6584,7 +6811,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6644,7 +6871,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6704,7 +6931,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6760,7 +6987,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6805,58 +7032,6 @@
         "branch_labels": [
           "Air Force"
         ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-09-02T21:31:54.656342+00:00"
-    },
-    {
-      "id": "ffeaae78e95eb94cf345",
-      "fingerprint": "85e2b7d54a0ecf70563f",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Miami-Florida/Special-Operations-Strength-and-Conditioning-Specialist--Homestead-ARB--FL-_R2129290",
-      "title": "Special Operations Strength and Conditioning Specialist (Homestead ARB, FL)",
-      "employer": "KBR",
-      "location": "Miami, Florida",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Title: Special Operations Strength and Conditioning Specialist (Homestead ARB, FL) THIS POSITION OFFERS RELOCATION Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": "Secret",
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [],
-        "branch_labels": [],
         "location_classes": [
           "conus"
         ],
@@ -6928,6 +7103,64 @@
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
     {
+      "id": "ffeaae78e95eb94cf345",
+      "fingerprint": "85e2b7d54a0ecf70563f",
+      "source": "workday:kbr",
+      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Miami-Florida/Special-Operations-Strength-and-Conditioning-Specialist--Homestead-ARB--FL-_R2129290",
+      "title": "Special Operations Strength and Conditioning Specialist (Homestead ARB, FL)",
+      "employer": "KBR",
+      "location": "Miami, Florida",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Title: Special Operations Strength and Conditioning Specialist (Homestead ARB, FL) THIS POSITION OFFERS RELOCATION Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": "Secret",
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:16+00:00"
+      },
+      "listed_at": "2026-09-02T21:31:54.656342+00:00"
+    },
+    {
       "id": "0cc97f26f301776d2837",
       "fingerprint": "324f4bfe0a3d0d7813f9",
       "source": "usajobs:federal",
@@ -6983,7 +7216,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7039,7 +7272,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:21+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7095,7 +7328,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-02T11:51:17.268529+00:00"
     },
@@ -7157,7 +7390,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7217,7 +7450,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7279,7 +7512,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7341,7 +7574,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7401,7 +7634,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7457,7 +7690,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-09-01T12:13:32.637461+00:00"
     },
@@ -7571,63 +7804,9 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-31T23:07:07.413844+00:00"
-    },
-    {
-      "id": "d4d594df76fecf938e59",
-      "fingerprint": "bef056c74bee26a357bf",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/882241100",
-      "title": "HEALTH SYSTEM SPECIALIST",
-      "employer": "Army National Guard Units",
-      "location": "Camp Murray, Washington",
-      "remote": false,
-      "department": null,
-      "compensation": "$69,373 - $90,190 /yr",
-      "posted_at": null,
-      "description": "GENERAL EXPERIENCE: Work that required a knowledge of the basic principles and practices related to the management of a health care delivery system. SPECIALIZED EXPERIENCE: Must have at least 24 months of progressively responsible analytical or administrative, or clinical management or supervisory experience in the health care field. This work may have been performed in an operating health care\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 69373.0,
-        "salary_max": 90190.0,
-        "salary_period": "year",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 69373.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
       "id": "0ed08387db4f69a28740",
@@ -7681,6 +7860,66 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-08-29T21:29:39.815055+00:00"
+    },
+    {
+      "id": "d4d594df76fecf938e59",
+      "fingerprint": "bef056c74bee26a357bf",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/882241100",
+      "title": "HEALTH SYSTEM SPECIALIST",
+      "employer": "Army National Guard Units",
+      "location": "Camp Murray, Washington",
+      "remote": false,
+      "department": null,
+      "compensation": "$69,373 - $90,190 /yr",
+      "posted_at": null,
+      "description": "GENERAL EXPERIENCE: Work that required a knowledge of the basic principles and practices related to the management of a health care delivery system. SPECIALIZED EXPERIENCE: Must have at least 24 months of progressively responsible analytical or administrative, or clinical management or supervisory experience in the health care field. This work may have been performed in an operating health care\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 69373.0,
+        "salary_max": 90190.0,
+        "salary_period": "year",
+        "education": "High School",
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 69373.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:18+00:00"
+      },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
     {
@@ -7739,7 +7978,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7799,7 +8038,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7859,7 +8098,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7915,7 +8154,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -7975,7 +8214,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8035,7 +8274,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8095,7 +8334,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8155,7 +8394,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8218,7 +8457,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8280,7 +8519,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8340,7 +8579,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8402,7 +8641,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8462,7 +8701,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8522,7 +8761,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8582,7 +8821,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8638,7 +8877,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8694,7 +8933,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8750,7 +8989,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8806,7 +9045,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:18+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8862,7 +9101,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8922,7 +9161,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8982,7 +9221,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9042,7 +9281,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9098,7 +9337,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9158,7 +9397,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9214,7 +9453,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:20+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9274,7 +9513,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9334,7 +9573,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9623,7 +9862,7 @@
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
     {
-      "id": "c5f9243fc0f0c7ce51cd",
+      "id": "86354eb5374aabe3c193",
       "fingerprint": "1331879c7e0bd7476e9c",
       "source": "workday:kbr",
       "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Liberty-North-Carolina/Special-Operations-Performance-Dietitian-JFKSWCS-Ft-Bragg--NC_R2128062",
@@ -9634,24 +9873,21 @@
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
-      "description": "Title: Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC THIS POSITION OFFERS RELOCATION. Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts across the\u2026",
+      "description": "Special Operations Performance Dietitian JFKSWCS Ft. Bragg, NC Fort Liberty, North Carolina R2128062",
       "score": 0.0,
       "tags": [],
       "enrichment": {
-        "certifications": [
-          "CSCS",
-          "RD"
-        ],
-        "clearance": "Secret",
+        "certifications": [],
+        "clearance": null,
         "salary_min": null,
         "salary_max": null,
         "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
         "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": "POTFF"
+        "service_branch": "Army",
+        "program": null
       },
       "facets": {
         "discipline": "nutrition",
@@ -9674,15 +9910,9 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "verified",
-      "program": "POTFF",
+      "confidence": "listed",
+      "program": null,
       "notes": "",
-      "liveness": {
-        "state": "live",
-        "reason": "workday cxs: live",
-        "http_status": 200,
-        "checked_at": "2026-09-25T19:09:18+00:00"
-      },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
     {
@@ -10124,123 +10354,6 @@
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
-      "id": "800aa08b94dc54b09768",
-      "fingerprint": "0ecd0ad728f9a8e218d6",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Certified-Athletic-Trainer_RQ223291",
-      "title": "Certified Athletic Trainer",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA FL Hurlburt Field; USA FL Fort Walton Beach",
-      "remote": false,
-      "department": null,
-      "compensation": "from $72,877",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Training, Clinical Practice, Injury Prevention, Performance Improvements, Rehabilitation Certifications: None Experience: 5 + years of related experience US Citizenship\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC"
-        ],
-        "clearance": "Top Secret",
-        "salary_min": 72877.0,
-        "salary_max": 98599.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Hurlburt Field",
-        "service_branch": "Air Force",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "athletic-training",
-        "discipline_label": "Athletic Training",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 72877.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "5766db8fbcf1c5098492",
-      "fingerprint": "1b28553155640b25c588",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Cognitive-Performance-Specialist_RQ204500",
-      "title": "Cognitive Performance Specialist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg; USA CA Coronado; USA HI Pearl Harbor; USA GA Fort Moore; USA VA Dam Neck; USA GA Hunter AAF; USA KY Fort Campbell; USA NC Camp Lejeune; USA CA Camp Pendleton - Camp Pendleton (CAC011); USA CO Fort Carson; DEU Baumholder - Bldg 8264 Smith Barracks (APC274); USA FL Hurlburt Field - 229 Cody Ave (FLC017)",
-      "remote": false,
-      "department": null,
-      "compensation": "from $83,927",
-      "posted_at": null,
-      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Adaptive Thinking, Human Performance, Performance Improvements, Researching, Training and Education Certifications: None Experience: 3 + years of related experience US\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 83927.0,
-        "salary_max": 113549.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "air-force",
-          "army",
-          "marine-corps",
-          "navy"
-        ],
-        "branch_labels": [
-          "Army",
-          "Navy",
-          "Air Force",
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "conus",
-          "oconus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 83927.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
       "id": "08bc6eb0e1899e089296",
       "fingerprint": "96221d0d0f69660f14f2",
       "source": "workday:gdit",
@@ -10523,223 +10636,6 @@
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
-      "id": "cebb7ee27e25319ba0c0",
-      "fingerprint": "074868199fcb4c1ca274",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-MacDill-AFB---MacDill-AFB-FLC007/Physical-Therapist_RQ223298",
-      "title": "Physical Therapist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA FL MacDill AFB - MacDill AFB (FLC007); USA CA Monterey; USA FL Eglin AFB",
-      "remote": false,
-      "department": null,
-      "compensation": "from $111,155",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Therapy, NCAA Athletics, Sports Activities, Sports Science, Therapy Certifications: None Experience: 5 + years of related experience US Citizenship Required: Yes\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC"
-        ],
-        "clearance": "TS/SCI",
-        "salary_min": 111155.0,
-        "salary_max": 150385.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "MacDill AFB",
-        "service_branch": "Air Force",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 111155.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "aa0478e770d95feccaf9",
-      "fingerprint": "35c8ec46f9315e2456e1",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio---Customer-Proprietary-TXC018/Human-Performance-Operations-Manager_RQ225534-1",
-      "title": "Human Performance Operations Manager",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA TX San Antonio - Customer Proprietary (TXC018)",
-      "remote": false,
-      "department": null,
-      "compensation": "from $111,155",
-      "posted_at": null,
-      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Administration Job Qualifications: Skills: Contract Agreements, Customer Requirements, Military Health, Program Management, Statement of Work (SOW) Certifications: None Experience: 7 + years of related experience US\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "TS/SCI",
-        "salary_min": 111155.0,
-        "salary_max": 150385.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 7,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": true,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 111155.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "d04fe6c6f33e60ce1073",
-      "fingerprint": "de240906b40c9123ac53",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Human-Performance-Operations-Manager_RQ225563",
-      "title": "Human Performance Operations Manager",
-      "employer": "General Dynamics Information Technology",
-      "location": "",
-      "remote": false,
-      "department": null,
-      "compensation": "from $111,155",
-      "posted_at": null,
-      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Administration Job Qualifications: Skills: Contract Agreements, Customer Requirements, Military Health, Program Management, Statement of Work (SOW) Certifications: None Experience: 7 + years of related experience US\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "TS/SCI",
-        "salary_min": 111155.0,
-        "salary_max": 150385.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 7,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Joint",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": true,
-        "branches": [],
-        "branch_labels": [],
-        "location_classes": [
-          "unspecified"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 111155.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "232b73617ace45b4453c",
-      "fingerprint": "347efa7e45903bd3848c",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-KY-Fort-Campbell/Physical-Therapist_RQ204547",
-      "title": "Physical Therapist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA KY Fort Campbell; USA UT Draper; USA VA Dam Neck; USA FL Eglin AFB",
-      "remote": false,
-      "department": null,
-      "compensation": "from $111,155",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Therapy, NCAA Athletics, Sports Activities, Sports Science, Therapy Certifications: None Experience: 5 + years of related experience US Citizenship Required: Yes\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC",
-          "CSCS"
-        ],
-        "clearance": "TS/SCI",
-        "salary_min": 111155.0,
-        "salary_max": 150385.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
-        "installation": "Fort Campbell",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "air-force",
-          "army",
-          "navy"
-        ],
-        "branch_labels": [
-          "Army",
-          "Navy",
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 111155.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
       "id": "9bda677c444260eeb019",
       "fingerprint": "3c8843014bb9f746b610",
       "source": "workday:gdit",
@@ -10788,121 +10684,6 @@
         ],
         "contingency": "unknown",
         "salary_floor_annual": 96569.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "d911a161464b5e9e8a93",
-      "fingerprint": "01862223fea58f257a11",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Occupational-Therapist_RQ222747",
-      "title": "Occupational Therapist",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg; USA CA San Diego; USA KY Fort Campbell; USA FL Hurlburt Field; USA WA Joint Base Lewis-McChord",
-      "remote": false,
-      "department": null,
-      "compensation": "from $83,927",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Alternative Assessments, Coaching, Employee Performance Evaluations, Human Performance, Skill Development Certifications: None Experience: 5 + years of related experience\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "TS/SCI",
-        "salary_min": 83927.0,
-        "salary_max": 113549.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 2,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Joint",
-        "program": null
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "air-force",
-          "army",
-          "joint"
-        ],
-        "branch_labels": [
-          "Army",
-          "Air Force",
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 83927.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "ef6585d53f673660fc2a",
-      "fingerprint": "df63f1aea912c424a508",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field---229-Cody-Ave-FLC017/Performance-Dietician_RQ204529",
-      "title": "Performance Dietitian",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA FL Hurlburt Field - 229 Cody Ave (FLC017)",
-      "remote": false,
-      "department": null,
-      "compensation": "from $72,877",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Clinical Staffing, Counseling, Documentations, Inservice Training, Office Administration Certifications: None Experience: 3 + years of related experience US Citizenship\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS",
-          "RD"
-        ],
-        "clearance": "TS/SCI",
-        "salary_min": 72877.0,
-        "salary_max": 98599.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": "Hurlburt Field",
-        "service_branch": "Joint",
-        "program": null
-      },
-      "facets": {
-        "discipline": "nutrition",
-        "discipline_label": "Performance Nutrition",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 72877.0
       },
       "matched": {
         "domain": [],
@@ -10976,6 +10757,503 @@
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
+      "id": "800aa08b94dc54b09768",
+      "fingerprint": "0ecd0ad728f9a8e218d6",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Certified-Athletic-Trainer_RQ223291",
+      "title": "Certified Athletic Trainer",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA FL Hurlburt Field; USA FL Fort Walton Beach",
+      "remote": false,
+      "department": null,
+      "compensation": "from $72,877",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Training, Clinical Practice, Injury Prevention, Performance Improvements, Rehabilitation Certifications: None Experience: 5 + years of related experience US Citizenship\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC"
+        ],
+        "clearance": "Top Secret",
+        "salary_min": 72877.0,
+        "salary_max": 98599.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Hurlburt Field",
+        "service_branch": "Air Force",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "athletic-training",
+        "discipline_label": "Athletic Training",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 72877.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:14+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "5766db8fbcf1c5098492",
+      "fingerprint": "1b28553155640b25c588",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Cognitive-Performance-Specialist_RQ204500",
+      "title": "Cognitive Performance Specialist",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA NC Fort Bragg; USA CA Coronado; USA HI Pearl Harbor; USA GA Fort Moore; USA VA Dam Neck; USA GA Hunter AAF; USA KY Fort Campbell; USA NC Camp Lejeune; USA CA Camp Pendleton - Camp Pendleton (CAC011); USA CO Fort Carson; DEU Baumholder - Bldg 8264 Smith Barracks (APC274); USA FL Hurlburt Field - 229 Cody Ave (FLC017)",
+      "remote": false,
+      "department": null,
+      "compensation": "from $83,927",
+      "posted_at": null,
+      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Adaptive Thinking, Human Performance, Performance Improvements, Researching, Training and Education Certifications: None Experience: 3 + years of related experience US\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Top Secret",
+        "salary_min": 83927.0,
+        "salary_max": 113549.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": "Full-time",
+        "installation": "Fort Bragg",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "cognitive-performance",
+        "discipline_label": "Cognitive Performance",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "army",
+          "marine-corps",
+          "navy"
+        ],
+        "branch_labels": [
+          "Army",
+          "Navy",
+          "Air Force",
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "conus",
+          "oconus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 83927.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:12+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "cebb7ee27e25319ba0c0",
+      "fingerprint": "074868199fcb4c1ca274",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-MacDill-AFB---MacDill-AFB-FLC007/Physical-Therapist_RQ223298",
+      "title": "Physical Therapist",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA FL MacDill AFB - MacDill AFB (FLC007); USA CA Monterey; USA FL Eglin AFB",
+      "remote": false,
+      "department": null,
+      "compensation": "from $111,155",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Therapy, NCAA Athletics, Sports Activities, Sports Science, Therapy Certifications: None Experience: 5 + years of related experience US Citizenship Required: Yes\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC"
+        ],
+        "clearance": "TS/SCI",
+        "salary_min": 111155.0,
+        "salary_max": 150385.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "MacDill AFB",
+        "service_branch": "Air Force",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 111155.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:11+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "aa0478e770d95feccaf9",
+      "fingerprint": "35c8ec46f9315e2456e1",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-San-Antonio---Customer-Proprietary-TXC018/Human-Performance-Operations-Manager_RQ225534-1",
+      "title": "Human Performance Operations Manager",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA TX San Antonio - Customer Proprietary (TXC018)",
+      "remote": false,
+      "department": null,
+      "compensation": "from $111,155",
+      "posted_at": null,
+      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Administration Job Qualifications: Skills: Contract Agreements, Customer Requirements, Military Health, Program Management, Statement of Work (SOW) Certifications: None Experience: 7 + years of related experience US\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "TS/SCI",
+        "salary_min": 111155.0,
+        "salary_max": 150385.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 7,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": true,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 111155.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:14+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "d04fe6c6f33e60ce1073",
+      "fingerprint": "de240906b40c9123ac53",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/Human-Performance-Operations-Manager_RQ225563",
+      "title": "Human Performance Operations Manager",
+      "employer": "General Dynamics Information Technology",
+      "location": "",
+      "remote": false,
+      "department": null,
+      "compensation": "from $111,155",
+      "posted_at": null,
+      "description": "Type of Requisition: Pipeline Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Administration Job Qualifications: Skills: Contract Agreements, Customer Requirements, Military Health, Program Management, Statement of Work (SOW) Certifications: None Experience: 7 + years of related experience US\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "TS/SCI",
+        "salary_min": 111155.0,
+        "salary_max": 150385.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 7,
+        "employment_type": "Full-time",
+        "installation": null,
+        "service_branch": "Joint",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": true,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "unspecified"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 111155.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": "POTFF",
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:12+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "232b73617ace45b4453c",
+      "fingerprint": "347efa7e45903bd3848c",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-KY-Fort-Campbell/Physical-Therapist_RQ204547",
+      "title": "Physical Therapist",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA KY Fort Campbell; USA UT Draper; USA VA Dam Neck; USA FL Eglin AFB",
+      "remote": false,
+      "department": null,
+      "compensation": "from $111,155",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Athletic Therapy, NCAA Athletics, Sports Activities, Sports Science, Therapy Certifications: None Experience: 5 + years of related experience US Citizenship Required: Yes\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC",
+          "CSCS"
+        ],
+        "clearance": "TS/SCI",
+        "salary_min": 111155.0,
+        "salary_max": 150385.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 5,
+        "employment_type": "Full-time",
+        "installation": "Fort Campbell",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "army",
+          "navy"
+        ],
+        "branch_labels": [
+          "Army",
+          "Navy",
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 111155.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:11+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "d911a161464b5e9e8a93",
+      "fingerprint": "01862223fea58f257a11",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg/Occupational-Therapist_RQ222747",
+      "title": "Occupational Therapist",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA NC Fort Bragg; USA CA San Diego; USA KY Fort Campbell; USA FL Hurlburt Field; USA WA Joint Base Lewis-McChord",
+      "remote": false,
+      "department": null,
+      "compensation": "from $83,927",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Alternative Assessments, Coaching, Employee Performance Evaluations, Human Performance, Skill Development Certifications: None Experience: 5 + years of related experience\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "TS/SCI",
+        "salary_min": 83927.0,
+        "salary_max": 113549.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 2,
+        "employment_type": "Full-time",
+        "installation": "Fort Bragg",
+        "service_branch": "Joint",
+        "program": null
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "army",
+          "joint"
+        ],
+        "branch_labels": [
+          "Army",
+          "Air Force",
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 83927.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:12+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
+      "id": "ef6585d53f673660fc2a",
+      "fingerprint": "df63f1aea912c424a508",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field---229-Cody-Ave-FLC017/Performance-Dietician_RQ204529",
+      "title": "Performance Dietitian",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA FL Hurlburt Field - 229 Cody Ave (FLC017)",
+      "remote": false,
+      "department": null,
+      "compensation": "from $72,877",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Top Secret Clearance Level Must Be Able to Obtain: Top Secret/SCI Public Trust/Other Required: None Job Family: Healthcare Services Job Qualifications: Skills: Clinical Staffing, Counseling, Documentations, Inservice Training, Office Administration Certifications: None Experience: 3 + years of related experience US Citizenship\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS",
+          "RD"
+        ],
+        "clearance": "TS/SCI",
+        "salary_min": 72877.0,
+        "salary_max": 98599.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": "Hurlburt Field",
+        "service_branch": "Joint",
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 72877.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:11+00:00"
+      },
+      "listed_at": "2026-08-29T14:09:45.600028+00:00"
+    },
+    {
       "id": "c1eb1d7970842be29481",
       "fingerprint": "9295357e381d1c796a6a",
       "source": "workday:gdit",
@@ -11030,9 +11308,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:13+00:00"
+      },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
@@ -11084,9 +11368,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": null,
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:11+00:00"
+      },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
@@ -11142,9 +11432,15 @@
         "discipline": [],
         "excluded_by": []
       },
-      "confidence": "listed",
+      "confidence": "verified",
       "program": "POTFF",
       "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "workday cxs: live",
+        "http_status": 200,
+        "checked_at": "2026-09-26T07:03:12+00:00"
+      },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
     {
@@ -11206,7 +11502,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:16+00:00"
       },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -11325,7 +11621,7 @@
       "listed_at": "2026-08-20T19:25:47.810619+00:00"
     },
     {
-      "id": "6507ce3e05663729bdd2",
+      "id": "5a34d1fe62a212b8ce47",
       "fingerprint": "9d17e1944990d9bc2f09",
       "source": "workday:kbr",
       "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Tampa-Florida/Special-Operations-Performance-Dietitian--MacDill-AFB--Florida-_R2128582",
@@ -11336,24 +11632,21 @@
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
-      "description": "Title: Special Operations Performance Dietitian (MacDill AFB, Florida) THIS POSITION OFFERS RELOCATION. Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts across the\u2026",
+      "description": "Special Operations Performance Dietitian (MacDill AFB, Florida) Tampa, Florida R2128582",
       "score": 0.0,
       "tags": [],
       "enrichment": {
-        "certifications": [
-          "CSCS",
-          "RD"
-        ],
-        "clearance": "Top Secret",
+        "certifications": [],
+        "clearance": null,
         "salary_min": null,
         "salary_max": null,
         "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
         "installation": "MacDill AFB",
-        "service_branch": "Joint",
-        "program": "POTFF"
+        "service_branch": "Air Force",
+        "program": null
       },
       "facets": {
         "discipline": "nutrition",
@@ -11377,7 +11670,7 @@
         "excluded_by": []
       },
       "confidence": "listed",
-      "program": "POTFF",
+      "program": null,
       "notes": "",
       "listed_at": "2026-08-19T19:20:32.037154+00:00"
     },
@@ -11439,12 +11732,12 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-25T19:09:19+00:00"
+        "checked_at": "2026-09-26T07:03:17+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     },
     {
-      "id": "5cbde695934c37c22761",
+      "id": "b9c9550f57d3a3604377",
       "fingerprint": "9e2e4cd2185d3c587ddd",
       "source": "workday:kbr",
       "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Campbell-Kentucky/Special-Operations-Physical-Therapist--5th-SFG-A---Ft-Campbell--KY-_R2128199",
@@ -11455,24 +11748,21 @@
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
-      "description": "Title: Special Operations Physical Therapist (5th SFG(A), Ft. Campbell, KY) THIS POSITION OFFERS RELOCATION. Belong. Connect. Grow. with KBR! KBR is a company of innovators, thinkers, creators, explorers, volunteers, and dreamers; but we all share one goal: to improve the world responsibly and safely. We maintain a highly qualified workforce to help care for service people and astronauts across\u2026",
+      "description": "Special Operations Physical Therapist (5th SFG(A), Ft. Campbell, KY) Fort Campbell, Kentucky R2128199",
       "score": 0.0,
       "tags": [],
       "enrichment": {
-        "certifications": [
-          "ATC",
-          "CSCS"
-        ],
-        "clearance": "Top Secret",
+        "certifications": [],
+        "clearance": null,
         "salary_min": null,
         "salary_max": null,
         "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 5,
-        "employment_type": "Full-time",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
         "installation": "Fort Campbell",
-        "service_branch": "Joint",
-        "program": "POTFF"
+        "service_branch": "Army",
+        "program": null
       },
       "facets": {
         "discipline": "physical-therapy",
@@ -11496,7 +11786,7 @@
         "excluded_by": []
       },
       "confidence": "listed",
-      "program": "POTFF",
+      "program": null,
       "notes": "",
       "listed_at": "2026-08-12T19:58:53.663445+00:00"
     }
