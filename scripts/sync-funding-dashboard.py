@@ -74,6 +74,12 @@ def main() -> int:
             f"deadline:{js_string(row['close_date']) if row.get('close_date') else 'null'}",
             f"note:{js_string(row.get('summary') or row.get('eligibility') or '')}",
         ]
+        # Emitted whenever the feed has one, past or future: the page decides
+        # what it means by comparing it to the clock. Filtering to future dates
+        # here would bake the sweep date into the page, so a row generated in
+        # September would still read "not open yet" when served in November.
+        if row.get("open_date"):
+            parts.append(f"opens:{js_string(row['open_date'])}")
         docs = row.get("documents") or []
         if docs:
             parts.append("documents:[" + ",".join(js_string(d) for d in docs) + "]")
