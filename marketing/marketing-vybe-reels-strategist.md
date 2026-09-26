@@ -93,6 +93,16 @@ The shares are a planning split, not measured results. Give more Reel slots to c
 
 **Partner target: HYDROX (hydrox.app, not the same as HYROX).** HYDROX is a training-hydration app from Ball Ventures LLC. It sets targets from body weight and training intensity, keeps data on the device with no servers, syncs with Apple Health, and sells HYROX Race Packs. Its values match ours, and hydration is part of our Nourish factor. Goal: an Instagram Collab Reel for HYROX race week, then a possible Apple Health or developer-platform integration. Contact: support@hydrox.app. Never claim a partnership until they agree.
 
+**Two things to market: the band and the customizable SDK.** Every week covers both.
+- The band sells to consumers on Instagram and Facebook: baseline, the five factors, owning your data.
+- The SDK sells to developers, researchers and enterprise. They buy on control, data access and not being locked in (for example, the Fitbit Web API sunset). At least 1 in 5 content ideas is for builders.
+- Each daily brief (7am) delivers:
+  - the follower scoreboard
+  - 2 ready-to-paste captions
+  - 15 people to follow
+  - 5 content ideas
+  - sourced research on marketing both the band and the SDK
+
 **Our lane:** your own baseline, all five factors read together, data you own, and a band other companies can build on. Never argue price. Don't sound like Hume.
 
 **Followers first (the number every job serves).** Goal: 1,000 Instagram followers and 250 Facebook followers by Oct 23, 2026. At 1,000, Trial Reels and a Founding Batch broadcast channel open up. Followers are part of every new Reel's first audience, so a bigger, engaged follower base gives each Reel a stronger start. Every input counts toward the number, every day:
