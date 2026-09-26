@@ -179,9 +179,20 @@ def publish(
                 existing_note = (row.get("summary") or "").strip()
                 if marker not in existing_note:
                     row["summary"] = f"{marker} {existing_note}".strip()
+                opens = parse_date(row.get("open_date"))
+                row["days_until_open"] = None
+                if opens is not None and opens > today:
+                    # Recomputing from close_date alone would promote a row whose
+                    # window has not opened into a live one -- the exact thing
+                    # `forecast` exists to stop, reintroduced on the carry path.
+                    row["status"] = "forecast"
+                    row["days_until_open"] = (opens - today).days
                 if close is not None:
                     row["days_left"] = (close - today).days
-                    row["status"] = "soon" if row["days_left"] <= 30 else "open"
+                    # .get: a row carried from a file written before `forecast`
+                    # existed may have no status key at all.
+                    if row.get("status") != "forecast":
+                        row["status"] = "soon" if row["days_left"] <= 30 else "open"
                 rows.append(row)
                 carried.append(row.get("source", "?"))
             if carried:
@@ -192,10 +203,17 @@ def publish(
                 )
         except (OSError, ValueError) as exc:
             log.warning("could not carry rows forward from %s: %s", target, exc)
-    # Soonest real deadline first; rolling after; closed last. Same ordering the
-    # dashboard applies, so the file reads correctly even opened raw.
-    rank = {"soon": 0, "open": 1, "rolling": 2, "closed": 3}
-    rows.sort(key=lambda r: (rank.get(r["status"], 9), r["days_left"] if r["days_left"] is not None else 9999, r["name"]))
+    # Soonest real deadline first; rolling after; then windows that have not
+    # opened; closed last. Everything applicable today sorts above everything
+    # that is not. Same ordering the dashboard applies, so the file reads
+    # correctly even opened raw.
+    rank = {"soon": 0, "open": 1, "rolling": 2, "forecast": 3, "closed": 4}
+    # .get on both keys: a carried row comes from a file this code did not
+    # necessarily write, and a missing key here would abort the whole publish
+    # over one malformed row.
+    rows.sort(key=lambda r: (rank.get(r.get("status"), 9),
+                             r.get("days_left") if r.get("days_left") is not None else 9999,
+                             r.get("name", "")))
 
     payload = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -215,7 +233,7 @@ def summarize(opportunities: list[Opportunity], today: date, stale_days: int) ->
         buckets[opp.status(today)] = buckets.get(opp.status(today), 0) + 1
 
     log.info("-" * 58)
-    for status in ("soon", "open", "rolling", "closed"):
+    for status in ("soon", "open", "rolling", "forecast", "closed"):
         if buckets.get(status):
             log.info("%-8s %3d", status, buckets[status])
 
@@ -228,6 +246,20 @@ def summarize(opportunities: list[Opportunity], today: date, stale_days: int) ->
         log.info("Closing within 30 days:")
         for opp in urgent:
             log.info("  %3dd  %s", opp.days_left(today), opp.name[:70])
+
+    # A row whose window opens next month leaves the "closing" list, and losing
+    # a $50,000 programme from the summary because it is not applicable *yet*
+    # would trade one silent failure for another. It gets its own list.
+    upcoming = sorted(
+        (o for o in opportunities if o.status(today) == "forecast"),
+        key=lambda o: o.days_until_open(today) or 0,
+    )
+    if upcoming:
+        log.info("-" * 58)
+        log.info("Not open yet — window starts:")
+        for opp in upcoming:
+            log.info("  %3dd  %s  (%s)", opp.days_until_open(today),
+                     opp.name[:56], opp.open_date.isoformat())
 
     stale = stale_entries(opportunities, today, stale_days)
     if stale:
