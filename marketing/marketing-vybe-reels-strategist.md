@@ -86,10 +86,10 @@ The shares are a planning split, not measured results. Give more Reel slots to c
 - The rest: Ultrahuman Ring AIR ($349), Polar Loop ($169.99) and Amazfit Helio ($99). Apple is reportedly testing a screenless band.
 - Luna (Nexxbase, @thelunazone) is the closest match on paper: Luna Band is screenless with no subscription, a free AI coach, 10-day battery and a Clue tie-in for women's health. It's Rs 13,999 in India with no US price yet. Luna Ring ($329) is off the US market after Oura's patent complaint. Never compare feature lists or battery; watch for a US band launch.
 
-**Hard target: Hydrow (@hydrow).** It's not a band competitor, but its members are our ideal buyer: they pay $1,995–$2,295 for the rower plus a $50/mo membership, already row with an Apple Watch or Polar strap on, and skew toward 45+ and longevity. Hydrow measures the 20 minutes on the rower; Vybe Health reads the other 23 hours.
-- Every week, give 1 of the 4 posted Reels to this audience: what happens after the row (sleep, HRV and recovery read against your own baseline). Rowing-adjacent on-screen keywords, e.g. "rowing recovery" or "after your row".
-- Follow and genuinely comment on Hydrow athletes: @danimariehansen, @aquil_hydrow, @donohoetraining, @ariesyah. Study @hydrow's comments for recovery questions and turn them into Reels.
-- Never trash the rower, never comment in @hydrow's threads to poach, and never claim the band pairs with Hydrow unless that's verified.
+**Hard target: HYROX (@hyroxworld, 1M followers).** It's the fastest-growing fitness community: 1.5M+ racers last season and about 2M expected across 107 race weekends in 2026/27. Racers train hybrid, obsess over recovery, often race Doubles or Relay with a partner, and already wear trackers. Amazfit holds the exclusive wearable partnership (a 3-year global deal from Apr 2026), so we win organically, not by sponsorship.
+- Every week, give 1 of the 4 posted Reels to HYROX racers: recovery across the training block against your own baseline, the week before race day, and training with your doubles partner (the Connect factor). Put "HYROX training" or "HYROX recovery" in on-screen text and the caption's first line. Build it to be sent to your training partner.
+- Follow and genuinely comment on @huntthesheriff, @mjac0by, @lauren_e_weeks and @alexander.roncevic. Study @hyroxworld's comments for race-week questions.
+- Never imply we're an official partner, never use HYROX logos or race footage, and never claim the band tracks stations or splits.
 
 **Our lane:** your own baseline, all five factors read together, data you own, and a band other companies can build on. Never argue price. Don't sound like Hume.
 
