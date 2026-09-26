@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-26T07:03:20.647633+00:00",
+  "generated_at": "2026-09-26T19:07:05.722672+00:00",
   "totals": {
-    "postings": 502,
+    "postings": 503,
     "employers": 33,
-    "unique_jobs": 225,
-    "with_salary": 160,
+    "unique_jobs": 226,
+    "with_salary": 161,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
       "latest": "2026-09-25T18:07:02.820000+00:00"
@@ -50,13 +50,13 @@
     },
     {
       "name": "General Dynamics Information Technology",
-      "count": 24,
+      "count": 25,
       "disciplines": [
         "cognitive",
         "sports-medicine",
         "strength-conditioning",
-        "leadership",
         "nutrition",
+        "leadership",
         "research",
         "sport-science"
       ],
@@ -159,67 +159,67 @@
   "by_discipline": [
     {
       "name": "sports-medicine",
-      "count": 85,
-      "share": 0.5215,
-      "median_salary": 78295.5
+      "count": 86,
+      "share": 0.5244,
+      "median_salary": 78850.0
     },
     {
       "name": "strength-conditioning",
-      "count": 71,
-      "share": 0.4356,
-      "median_salary": 70381.5
+      "count": 72,
+      "share": 0.439,
+      "median_salary": 72433.25
     },
     {
       "name": "cognitive",
-      "count": 29,
-      "share": 0.1779,
-      "median_salary": 98738.0
+      "count": 30,
+      "share": 0.1829,
+      "median_salary": 106174.0
     },
     {
       "name": "research",
       "count": 28,
-      "share": 0.1718,
+      "share": 0.1707,
       "median_salary": 97379.75
     },
     {
       "name": "leadership",
       "count": 21,
-      "share": 0.1288,
+      "share": 0.128,
       "median_salary": 63916.5
     },
     {
       "name": "nutrition",
-      "count": 18,
-      "share": 0.1104,
-      "median_salary": 93000.0
+      "count": 19,
+      "share": 0.1159,
+      "median_salary": 97967.5
     },
     {
       "name": "sport-science",
       "count": 2,
-      "share": 0.0123,
+      "share": 0.0122,
       "median_salary": 94144.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 206,
-      "share": 0.9321
+      "count": 207,
+      "share": 0.9324
     },
     {
       "name": "sof",
-      "count": 52,
-      "share": 0.2353
+      "count": 53,
+      "share": 0.2387
     },
     {
       "name": "first-responder",
       "count": 35,
-      "share": 0.1584
+      "share": 0.1577
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1357
+      "share": 0.1351
     }
   ],
   "by_branch": [
@@ -229,7 +229,7 @@
     },
     {
       "name": "Joint",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Navy",
@@ -255,7 +255,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 26
+      "count": 27
     },
     {
       "name": "Cannon AFB",
@@ -379,37 +379,37 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 53,
-      "share": 0.7067
+      "count": 54,
+      "share": 0.7105
     },
     {
       "name": "ATC",
       "count": 17,
-      "share": 0.2267
+      "share": 0.2237
     },
     {
       "name": "RD",
-      "count": 10,
-      "share": 0.1333
+      "count": 11,
+      "share": 0.1447
     },
     {
       "name": "PhD",
       "count": 9,
-      "share": 0.12
+      "share": 0.1184
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.04
+      "share": 0.0395
     }
   ],
   "clearances": [
     {
-      "name": "Secret",
-      "count": 18
+      "name": "TS/SCI",
+      "count": 19
     },
     {
-      "name": "TS/SCI",
+      "name": "Secret",
       "count": 18
     },
     {
@@ -422,43 +422,43 @@
     }
   ],
   "salary": {
-    "count": 160,
+    "count": 161,
     "min": 27500.0,
     "max": 219654.0,
-    "median": 86441.5,
-    "p25": 62633.62,
-    "p75": 117158.25,
+    "median": 87145.0,
+    "p25": 62711.5,
+    "p75": 116951.5,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 29,
+        "count": 30,
         "min": 34320.0,
         "max": 130770.0,
-        "median": 70381.5,
-        "p25": 49920.0,
-        "p75": 87145.0
+        "median": 72433.25,
+        "p25": 51940.0,
+        "p75": 90748.75
       },
       "sports-medicine": {
-        "count": 63,
+        "count": 64,
         "min": 27500.0,
         "max": 219654.0,
-        "median": 78295.5,
-        "p25": 58887.0,
-        "p75": 102935.0
+        "median": 78850.0,
+        "p25": 58889.5,
+        "p75": 103317.5
       },
       "nutrition": {
-        "count": 9,
+        "count": 10,
         "min": 85738.0,
         "max": 127040.0,
-        "median": 93000.0,
+        "median": 97967.5,
         "p25": 91950.0,
-        "p75": 102935.0
+        "p75": 110941.25
       },
       "cognitive": {
-        "count": 13,
+        "count": 14,
         "min": 58000.0,
         "max": 130770.0,
-        "median": 98738.0,
-        "p25": 84000.0,
+        "median": 106174.0,
+        "p25": 87684.5,
         "p75": 130770.0
       },
       "sport-science": {
@@ -502,7 +502,7 @@
     },
     {
       "month": "2026-09",
-      "count": 146
+      "count": 147
     }
   ],
   "trends": {
@@ -529,9 +529,9 @@
       },
       {
         "name": "General Dynamics Information Technology",
-        "recent": 22,
+        "recent": 23,
         "previous": 0,
-        "change": 22
+        "change": 23
       },
       {
         "name": "Customs and Border Protection",
@@ -603,9 +603,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 53,
+        "recent": 54,
         "previous": 0,
-        "change": 53
+        "change": 54
       },
       {
         "name": "ATC",
@@ -615,9 +615,9 @@
       },
       {
         "name": "RD",
-        "recent": 10,
+        "recent": 11,
         "previous": 0,
-        "change": 10
+        "change": 11
       },
       {
         "name": "PhD",
