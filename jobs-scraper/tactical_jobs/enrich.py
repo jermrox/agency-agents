@@ -513,6 +513,8 @@ _EMPLOYMENT_VETO_WINDOW = 40
 # official name, the name in every pre-2023 posting, and the name practitioners
 # actually use. "Fort Liberty" and the other interim names are kept as aliases
 # so the 2023-2025 archive does not fragment into two separate installations.
+# The same nine renames drive ``canonical_place_names`` below, which is what
+# the published board runs over its title and location text.
 def _fort(*names: str) -> tuple[str, ...]:
     """Patterns for "Fort X" / "Ft. X" / "Ft X"."""
     return tuple(rf"\b(?:fort|ft\.?)\s+{name}\b" for name in names)
@@ -533,6 +535,9 @@ _INSTALLATIONS_RAW: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("Fort Gordon", "Army", _fort("gordon", "eisenhower")),
     ("Fort Polk", "Army", _fort("polk", "johnson")),
     ("Fort Rucker", "Army", _fort("rucker", "novosel")),
+    ("Fort Lee", "Army", _fort("lee", r"gregg[\s-]+adams")),
+    ("Fort Pickett", "Army", _fort("pickett", "barfoot")),
+    ("Fort A.P. Hill", "Army", _fort(r"a\.?\s?p\.?\s+hill", "walker")),
     ("Fort Leonard Wood", "Army", _fort(r"leonard\s+wood")),
     ("Fort Sill", "Army", _fort("sill")),
     ("Fort Jackson", "Army", _fort("jackson")),
@@ -576,6 +581,58 @@ _INSTALLATIONS: tuple[tuple[str, str, tuple[re.Pattern[str], ...]], ...] = tuple
     (name, branch, tuple(re.compile(pattern, re.I) for pattern in patterns))
     for name, branch, patterns in _INSTALLATIONS_RAW
 )
+
+# The aliases above fix the *installation* field. They do nothing for the text
+# a reader sees: the board shows the employer's location string verbatim, and
+# employer systems still emit the interim names (Workday location lists, the
+# multi-location strings on Serco's H2F postings), so a card for Fort Bragg
+# read "Fort Liberty, North Carolina". This rewrites the nine interim names to
+# the name in force today, keeping the employer's own "Fort" / "Ft." and
+# every other character of the string. A string that names the same post
+# twice after the rewrite (Serco lists "Fort Gregg-Adams ...; Fort Lee ...")
+# loses the repeat.
+_INTERIM_NAMES: dict[str, str] = {
+    "liberty": "Bragg",
+    "moore": "Benning",
+    "cavazos": "Hood",
+    "eisenhower": "Gordon",
+    "johnson": "Polk",
+    "novosel": "Rucker",
+    "gregg-adams": "Lee",
+    "barfoot": "Pickett",
+    "walker": "A.P. Hill",
+}
+_INTERIM_NAME_RE = re.compile(
+    r"\b(fort|ft\.?)(\s+)"
+    r"(liberty|moore|cavazos|eisenhower|johnson|novosel|gregg[\s-]+adams|barfoot|walker)\b",
+    re.I,
+)
+
+
+def canonical_place_names(text: str) -> str:
+    """Display text with the renamed Army posts under their current names."""
+    if not text:
+        return text or ""
+
+    def swap(match: re.Match[str]) -> str:
+        prefix, space, interim = match.group(1), match.group(2), match.group(3)
+        current = _INTERIM_NAMES[re.sub(r"[\s-]+", "-", interim.lower())]
+        if interim.isupper():
+            current = current.upper()
+        return f"{prefix}{space}{current}"
+
+    rewritten = _INTERIM_NAME_RE.sub(swap, text)
+    if rewritten == text or ";" not in rewritten:
+        return rewritten
+    seen: set[str] = set()
+    parts: list[str] = []
+    for part in rewritten.split(";"):
+        key = " ".join(part.split()).lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        parts.append(part.strip())
+    return "; ".join(parts)
 
 # --------------------------------------------------------------------------
 # Service branch

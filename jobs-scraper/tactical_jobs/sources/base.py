@@ -111,6 +111,31 @@ def parse_timestamp(value: Any) -> datetime | None:
 # synonym for remote put on-base jobs in front of people filtering for work
 # from home. "telecommut" stays a hint elsewhere: that one really does mean
 # the duty station is your home.
+_TITLE_PLACE_RE = re.compile(
+    # A trailing " - Fort Bragg, NC" / " - Camp Casey, Korea" / " (Ft. Drum, NY)",
+    # or "(Position located at Ramstein Air Base, Germany)" -- LMR Technical
+    # Group lists every overseas billet under its Florida head office and
+    # names the real station in the title that way.
+    #
+    # The comma is required: it is what separates a real place from a trailing
+    # qualifier like "- Level II" or "- Full Time", which have no comma.
+    #
+    # The dash must be surrounded by space. Without that guard the hyphen
+    # inside a hyphenated place name splits it, and "Joint Base
+    # Langley-Eustis, VA" is published as "Eustis, VA".
+    # Only the "located at" prefix is case-insensitive; the place itself must
+    # start with a capital, or "coach - full time, remote" would read as one.
+    r"(?:\s[-–—]\s*|\(\s*)(?:(?i:(?:position\s+)?located\s+(?:at|in)\s+))?"
+    r"([A-Z][A-Za-z.'\s-]{2,40},\s*[A-Z][A-Za-z.\s]{1,20})\s*\)?\s*$"
+)
+
+
+def place_from_title(title: str) -> str:
+    """Recover a place from a title that ends with one. '' when it does not."""
+    match = _TITLE_PLACE_RE.search((title or "").strip())
+    return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
+
+
 REMOTE_HINTS = ("remote", "work from home", "virtual", "anywhere")
 
 

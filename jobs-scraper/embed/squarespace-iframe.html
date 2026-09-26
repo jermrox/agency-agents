@@ -1,0 +1,38 @@
+<!--
+  MOPs & MOEs — tactical human performance job board (iframe embed)
+  =================================================================
+
+  Paste this ONCE into the Squarespace Code Block on the /jobs page, in place
+  of whatever the block holds now.
+
+  It embeds the published board. Every update published to the host reaches
+  this page on its own, with no second paste.
+
+  Why a frame rather than fetching the component into the page: a frame asks
+  nothing of the host. No cross-origin fetch to permit, no <script> tags for
+  the CMS to strip or defer, no re-executing code inside someone else's page.
+  The browser loads a normal page and runs it normally.
+
+  The board reports its own height, so the frame grows and shrinks with the
+  list instead of showing a scrollbar inside the page.
+-->
+<iframe id="mm-jobs-frame"
+        src="https://agentcrawlsom.netlify.app/frame.html"
+        title="Tactical human performance jobs"
+        style="width:100%;border:0;display:block;height:1200px"
+        scrolling="no"></iframe>
+<script>
+(function () {
+  "use strict";
+  var frame = document.getElementById("mm-jobs-frame");
+  if (!frame) return;
+  window.addEventListener("message", function (event) {
+    // Only this board's messages, and only a sane height: anything on the
+    // page can post a message, so the shape is checked before it is used.
+    if (!event || !event.data || typeof event.data.mmJobsHeight !== "number") return;
+    if (event.source !== frame.contentWindow) return;
+    var height = event.data.mmJobsHeight;
+    if (height > 200 && height < 2000000) frame.style.height = height + "px";
+  });
+})();
+</script>
