@@ -148,7 +148,7 @@ class GrantsGovSource(Source):
         for record in records:
             if not isinstance(record, dict):
                 continue
-            # Titles arrive HTML-escaped ("Alzheimer&rsquo;s"). The dashboard
+            # Titles arrive HTML-escaped ("Women&rsquo;s"). The dashboard
             # escapes everything it renders, so an entity left in here reaches
             # the page as the literal text "&rsquo;". Decode at the boundary,
             # the same treatment the summary already gets.

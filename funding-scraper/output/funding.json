@@ -1,50 +1,57 @@
 {
-  "generated": "2026-09-17T21:55:47+00:00",
-  "as_of": "2026-09-17",
-  "count": 97,
+  "generated": "2026-09-24T18:27:00+00:00",
+  "as_of": "2026-09-24",
+  "count": 104,
   "source_errors": [
-    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
+    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>",
+    "dod_sbir: https://www.dodsbirsttr.mil/topics/api/public/topics/search returned HTTP 403; https://www.dodsbirsttr.mil/topics/api/public/topics/search?size=100&page=0 returned HTTP 403; https://www.dodsbirsttr.mil/topics/api/public/topics returned HTTP 403"
   ],
   "stale_sources": [
+    "dod_sbir",
     "sbir"
   ],
   "opportunities": [
     {
-      "id": "dod-sbir-wearable-real-time-command-and-control-interface-for-enhanced-naval-sit",
-      "source": "dod-sbir",
-      "name": "Wearable Real-Time Command-and-Control Interface for Enhanced Naval Situational Awareness (DON26BZ05-NV069)",
-      "url": "https://www.dodsbirsttr.mil/topics-app/?topicId=13cbf4e0fc51465ab387915e6c6f62c0_86635",
-      "agency": "DoD \u2014 NAVY",
-      "amount": "SBIR Phase I scale",
-      "summary": "SBIR \u00b7 DOD_SBIR_2026_P1_CBZ \u00b7 status Open. Full topic text is on the DSIP topic page.",
-      "open_date": "2026-08-26",
-      "close_date": "2026-09-23",
+      "id": "curated-amber-grant-for-women-monthly",
+      "source": "curated",
+      "name": "Amber Grant for Women \u2014 monthly",
+      "url": "https://ambergrantsforwomen.com/",
+      "agency": "WomensNet",
+      "amount": "3 x $10,000 every month, plus annual $25,000 awards",
+      "summary": "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the last day of each month. One application enters you for the month and for the annual award. Low effort, genuinely repeatable \u2014 apply once and re-enter.",
+      "open_date": null,
+      "close_date": "2026-09-30",
       "status": "soon",
       "days_left": 6,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; US-owned and independently operated",
+      "eligibility": "Women-owned businesses. $15 non-refundable application fee.",
       "documents": [
-        "SAM.gov UEI",
-        "SBIR.gov SBC control number"
+        "Short online application describing the business and use of funds",
+        "$15 application fee"
       ]
     },
     {
-      "id": "grants.gov-dow-alzheimer-s-transforming-diagnosis-award-ht942526azrptrda",
-      "source": "grants.gov",
-      "name": "DoW Alzheimer\u2019s Transforming Diagnosis Award (HT942526AZRPTRDA)",
-      "url": "https://www.grants.gov/search-results-detail/362179",
-      "agency": "Defense Health Agency Contracting Activity - DHACA",
-      "amount": "see solicitation",
-      "summary": "Summary: The fiscal year 2026 (FY26) Alzheimer\u2019s Research Program (AZRP) Transforming Diagnosis Award (TrDA) supports non-incremental, solutions-oriented research that reduces or overcomes important barriers to obtaining a diagnosis, meaningful disease monitoring and accurate prognosis. Distinctive Features: Clinical research is allowed, however clinical trials and animal research are prohibited. ",
-      "open_date": "2026-05-01",
-      "close_date": "2026-09-24",
+      "id": "curated-buckeye-state-credit-union-small-business-recovery-grant",
+      "source": "curated",
+      "name": "Buckeye State Credit Union Small Business Recovery Grant",
+      "url": "https://www.buckeyecu.org/small-business-recovery-grant/",
+      "agency": "Buckeye State Credit Union \u2014 CDFI Equitable Recovery Program",
+      "amount": "$200,000 / $150,000 / $125,000 \u2014 three grants, $475,000 total",
+      "summary": "CLOSES 30 SEP \u2014 six days out, and the largest per-winner cheque anywhere on this board by a wide margin. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments.",
+      "open_date": null,
+      "close_date": "2026-09-30",
       "status": "soon",
-      "days_left": 7,
+      "days_left": 6,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "eligibility": "Minority-owned or minority-controlled as defined by federal guideline; trading at least two years; must show the funds benefit low-to-moderate-income or underserved communities. Credit union membership is NOT required and businesses outside Ohio may apply, though priority goes to Summit County and especially Akron.",
+      "documents": [
+        "Completed Buckeye State CU application form (downloaded from the programme page)",
+        "Documentation of minority ownership or control",
+        "Evidence of at least two years of operation",
+        "A written plan showing how the funds benefit eligible communities"
+      ]
     },
     {
       "id": "curated-nextcorps-manufacturing-accelerator-fall-2026",
@@ -57,7 +64,7 @@
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "soon",
-      "days_left": 13,
+      "days_left": 6,
       "pillar": 3,
       "kind": "accelerator",
       "eligibility": "Hardware startups with a works-like prototype; advanced materials, medical devices, lab hardware",
@@ -78,7 +85,7 @@
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "soon",
-      "days_left": 13,
+      "days_left": 6,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "TEXAS-adjacent \u2014 veteran-owned businesses",
@@ -86,23 +93,6 @@
         "Proof of veteran status",
         "Application"
       ]
-    },
-    {
-      "id": "grants.gov-advancing-research-on-the-application-of-digital-health-technology-to",
-      "source": "grants.gov",
-      "name": "Advancing Research on the Application of Digital Health Technology to the Management of Type 2 Diabetes (R01- Clinical Trail Required) (RFA-DK-26-315)",
-      "url": "https://www.grants.gov/search-results-detail/359252",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "This notice of funding opportunity (NOFO) invites applications designed to examine the efficacy and clinical effectiveness of multimodality digital health technology approaches to the remote management of diabetes.",
-      "open_date": "2025-09-17",
-      "close_date": "2026-10-06",
-      "status": "soon",
-      "days_left": 19,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
     },
     {
       "id": "curated-medtech-innovator-vantage-barda-accelerator-network",
@@ -115,7 +105,7 @@
       "open_date": "2026-09-01",
       "close_date": "2026-10-15",
       "status": "soon",
-      "days_left": 28,
+      "days_left": 21,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Startups and university-backed projects with a diagnostic or medical device technology; selects up to 10 companies a year",
@@ -124,6 +114,27 @@
         "Evidence of the device or diagnostic beyond concept stage",
         "Alignment statement to BARDA's pandemic preparedness and health security mission",
         "Company and team background"
+      ]
+    },
+    {
+      "id": "curated-stephen-l-tadlock-veteran-business-grant",
+      "source": "curated",
+      "name": "Stephen L. Tadlock Veteran Business Grant",
+      "url": "https://foundersfirstcdc.org/stephen-tadlock",
+      "agency": "Founders First CDC",
+      "amount": "$1,000 micro-grant + a free place on Passport Community ($1,499) or Zebra Leadership ($1,699). $20,000 fund, 20 finalists.",
+      "summary": "OPEN NOW, closes 15 Oct. Was a stub on this board pointing at grantwatch.com with 'varies' for an amount \u2014 the programme's own page carries the real dates and terms, so this row is now first-hand. Small cheque, but the free programme place is worth more than the cash and the 2-employee floor is the gate to check first. Semifinalists 22 Oct, finalists 10 Nov.",
+      "open_date": "2026-09-15",
+      "close_date": "2026-10-15",
+      "status": "soon",
+      "days_left": 21,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "US military veteran who is CEO, President or owner of an active US business; annual revenue under $5M; 2 to 100 employees; at least one year in business.",
+      "documents": [
+        "Proof of veteran status (DD-214 or equivalent)",
+        "Evidence of 2-100 employees and under $5M revenue",
+        "Proof the business has traded at least one year"
       ]
     },
     {
@@ -136,8 +147,8 @@
       "summary": "ONE WEEK WINDOW: opens 2nd Wed of Oct/Apr at 9am, closes the following Tue 5pm. Matches up to 50% of the federal award.",
       "open_date": "2026-10-14",
       "close_date": "2026-10-20",
-      "status": "open",
-      "days_left": 33,
+      "status": "soon",
+      "days_left": 26,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award",
@@ -147,40 +158,6 @@
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
       ]
-    },
-    {
-      "id": "grants.gov-dow-tick-borne-disease-therapeutic-diagnostic-research-award-ht942526",
-      "source": "grants.gov",
-      "name": "DoW Tick-Borne Disease Therapeutic/Diagnostic Research Award (HT942526TBDRPTDRA)",
-      "url": "https://www.grants.gov/search-results-detail/362174",
-      "agency": "Defense Health Agency Contracting Activity - DHACA",
-      "amount": "see solicitation",
-      "summary": "Summary: The intent of the fiscal year 2026 (FY26) Tick-Borne Disease Research Program (TBDRP) Therapeutic/Diagnostic Research Award (TDRA) is to support product-driven therapeutic and diagnostic development research aimed at reducing the burden of Lyme disease and/or other tick-borne diseases and conditions, and improving patient care and/or quality of life. Treatment-focused applications should ",
-      "open_date": "2026-05-05",
-      "close_date": "2026-10-22",
-      "status": "open",
-      "days_left": 35,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-optimizing-behavioral-sleep-interventions-for-adolescents-and-young-a",
-      "source": "grants.gov",
-      "name": "Optimizing Behavioral Sleep Interventions for Adolescents and Young Adults (R34 Clinical Trial Required) (RFA-MH-27-140)",
-      "url": "https://www.grants.gov/search-results-detail/359159",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "NIMH seeks applications for pilot research to adapt, optimize, and test behavioral interventions that address common sleep problems in adolescents and young adults with or at risk for a mental health disorder. This notice of funding opportunity (NOFO) supports pilot clinical trials designed to evaluate the feasibility, tolerability, acceptability, safety, and potential effectiveness of the approac",
-      "open_date": "2026-05-28",
-      "close_date": "2026-10-22",
-      "status": "open",
-      "days_left": 35,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -193,7 +170,7 @@
       "open_date": "2026-09-01",
       "close_date": "2026-10-30",
       "status": "open",
-      "days_left": 43,
+      "days_left": 36,
       "pillar": 3,
       "kind": "partnership",
       "eligibility": "Cornell faculty PI applies; company partner must be a NY State for-profit",
@@ -202,6 +179,27 @@
         "Signed 1:1 cash match commitment from Vybe as NY industry partner",
         "Joint research plan with commercial milestones",
         "Statement of quantifiable NY State economic impact"
+      ]
+    },
+    {
+      "id": "curated-ohio-techcred",
+      "source": "curated",
+      "name": "Ohio TechCred",
+      "url": "https://techcred.ohio.gov/",
+      "agency": "Ohio Department of Development",
+      "amount": "up to $1,000 per employee credential, capped at $30,000 per application period",
+      "summary": "Reimburses technology credentials for employees rather than funding the business directly, so it is a cost offset on upskilling. Runs in fixed application windows; the next opens 1 Oct and closes 30 Oct. Listed because the window is short and easy to miss, not because it is large.",
+      "open_date": "2026-10-01",
+      "close_date": "2026-10-30",
+      "status": "open",
+      "days_left": 36,
+      "pillar": 1,
+      "kind": "grant",
+      "eligibility": "OHIO-BASED EMPLOYERS ONLY. Confirm Vybe has Ohio operations before spending time here.",
+      "documents": [
+        "Ohio employer registration",
+        "Named employees and the credentials to be earned",
+        "Training provider details"
       ]
     },
     {
@@ -215,7 +213,7 @@
       "open_date": null,
       "close_date": "2026-10-31",
       "status": "open",
-      "days_left": 44,
+      "days_left": 37,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Underserved businesses: woman-, veteran-, or minority-owned",
@@ -235,28 +233,32 @@
       "open_date": "2026-06-17",
       "close_date": "2026-11-16",
       "status": "open",
-      "days_left": 60,
+      "days_left": 53,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": []
     },
     {
-      "id": "grants.gov-investigator-initiated-clinical-trials-of-complementary-and-integrati",
-      "source": "grants.gov",
-      "name": "Investigator Initiated Clinical Trials of Complementary and Integrative Interventions Delivered Remotely or via mHealth (R01 Clinical Trial Required) (PAR-25-268)",
-      "url": "https://www.grants.gov/search-results-detail/357303",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "This Notice of Funding Opportunity (NOFO) encourages applications for investigator-initiated fully remotely delivered and conducted clinical trials to assess the efficacy or effectiveness of complementary and integrative health interventions in NCCIH- designated areas of high research priority. Applications submitted under this NOFO are expected to propose a remotely delivered and conducted fully ",
-      "open_date": "2024-11-21",
+      "id": "curated-tory-burch-foundation-fellows-2027-program",
+      "source": "curated",
+      "name": "Tory Burch Foundation Fellows \u2014 2027 Program",
+      "url": "https://fellows.toryburchfoundation.org/prog/2027_fellows_program/",
+      "agency": "Tory Burch Foundation",
+      "amount": "Fellowship place, roughly 120 selected \u2014 advisors, coaching, network and Foundation capital programmes. The cash grant attached to the 2027 cycle is not stated on the Foundation's own pages.",
+      "summary": "OPEN NOW \u2014 the application portal opened 22 Sep 2026 and closes 17 Nov 2026 at 11:59pm ET. The Foundation's FAQ states plainly that applying is free. The $75,000 revenue floor is the gate to check before spending an evening on it; there is no revenue ceiling. Filed under pillar 3 rather than 2 on purpose: the network and the Foundation's capital programmes are the confirmed benefit, and the cash figure is not published for this cycle, so it is not counted as grant money until someone confirms it.",
+      "open_date": "2026-09-22",
       "close_date": "2026-11-17",
       "status": "open",
-      "days_left": 61,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "days_left": 54,
+      "pillar": 3,
+      "kind": "accelerator",
+      "eligibility": "A woman entrepreneur who owns the largest or equally-largest stake in a business that is 51%+ owned and controlled by women, with a significant day-to-day management role; 21 or older as of 17 Nov 2026; US legal resident. Business must be for-profit, any industry, formed under US law and operating in the US, generating a minimum of $75,000 a year with no maximum.",
+      "documents": [
+        "Proof of 51%+ women ownership and control",
+        "Evidence of at least $75,000 annual revenue",
+        "Business and financial narrative through the Fellows portal"
+      ]
     },
     {
       "id": "grants.gov-dow-combat-readiness-medical-research-program-translational-research-",
@@ -269,28 +271,66 @@
       "open_date": "2026-06-24",
       "close_date": "2026-11-18",
       "status": "open",
-      "days_left": 62,
+      "days_left": 55,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": []
     },
     {
-      "id": "grants.gov-nhlbi-early-phase-clinical-trials-for-therapeutics-and-or-diagnostics",
+      "id": "grants.gov-nih-strokenet-clinical-trials-and-biomarker-studies-for-stroke-treatm",
       "source": "grants.gov",
-      "name": "NHLBI Early Phase Clinical Trials for Therapeutics and/or Diagnostics for HLBS Disorders (R33 CT Required) (PAR-25-025)",
-      "url": "https://www.grants.gov/search-results-detail/357542",
+      "name": "NIH StrokeNet Clinical Trials and Biomarker Studies for Stroke Treatment, Recovery, and Prevention (UG3/UH3 Clinical Trial Optional) (PAR-25-052)",
+      "url": "https://www.grants.gov/search-results-detail/357256",
       "agency": "National Institutes of Health",
-      "amount": "up to $1,515,000",
-      "summary": "The objective of this funding opportunity is to support investigator-initiated, phase I clinical trials for diagnostic and therapeutic interventions for heart, lung, blood, and sleep (HLBS) disorders in adults and children. The proposed trial can be single or multisite. Applicants applying for funding under this NOFO should be ready to initiate the clinical trial within the first quarter of the pr",
-      "open_date": "2024-12-05",
-      "close_date": "2027-01-07",
+      "amount": "see solicitation",
+      "summary": "This NOFO encourages applications for multi-site exploratory and confirmatory clinical trials focused on promising interventions; biomarker or outcome measure validation studies that are immediately preparatory to trials in stroke prevention, treatment, and recovery; and ancillary studies designed to add scientific aims to active studies being conducted within StrokeNet. Successful applicants will",
+      "open_date": "2024-11-20",
+      "close_date": "2026-11-19",
       "status": "open",
-      "days_left": 112,
+      "days_left": 56,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
+    },
+    {
+      "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
+      "source": "grants.gov",
+      "name": "Personal Health Informatics for Delivering Actionable Insights to Individuals (R01 Clinical Trial Optional) (PAR-25-235)",
+      "url": "https://www.grants.gov/search-results-detail/357273",
+      "agency": "National Institutes of Health",
+      "amount": "up to $250,000",
+      "summary": "The purpose of this Notice of Funding Opportunity (NOFO) is to advance the development of novel informatics and data science approaches that can help individuals understand and improve their health through actionable insights. NLM seeks applications that further the science of personal health informatics by providing meaningful and actionable insights to individuals through innovative personal hea",
+      "open_date": "2024-11-21",
+      "close_date": "2027-01-07",
+      "status": "open",
+      "days_left": 105,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "documents": []
+    },
+    {
+      "id": "curated-paratus-digital-health-accelerator-barda-network",
+      "source": "curated",
+      "name": "Paratus Digital Health Accelerator (BARDA network)",
+      "url": "https://matter.health/challenges/paratus-digital-health-accelerator-non-dilutive-funding/",
+      "agency": "MATTER / BARDA Accelerator Network",
+      "amount": "up to $200,000 non-dilutive",
+      "summary": "CLOSEST PROGRAM FIT ON THIS BOARD. Explicitly targets wearable and minimally invasive biosensing that detects early physiological signatures \u2014 which is what Vybe's five dimensions do. Preliminary application closes 15 Jan, annually; the 2026 cycle has passed, so this is the January 2027 window. Worth preparing well ahead.",
+      "open_date": null,
+      "close_date": "2027-01-15",
+      "status": "open",
+      "days_left": 113,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Startups and university-backed projects with a digital health solution aligned to BARDA's preparedness mission",
+      "documents": [
+        "Preliminary application",
+        "Proof-of-concept study design",
+        "Alignment to BARDA preparedness mission"
+      ]
     },
     {
       "id": "grants.gov-a-science-of-science-approach-to-analyzing-and-innovating-the-biomedi",
@@ -303,7 +343,24 @@
       "open_date": "2023-03-21",
       "close_date": "2027-02-09",
       "status": "open",
-      "days_left": 145,
+      "days_left": 138,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-deployed-warfighter-protection-fy27-afpmb-baa-27-01",
+      "source": "grants.gov",
+      "name": "Deployed Warfighter Protection FY27 (AFPMB-BAA-27-01)",
+      "url": "https://www.grants.gov/search-results-detail/363946",
+      "agency": "ACC-APG-Detrick",
+      "amount": "$20,000 - $1,100,000",
+      "summary": "The DWFP Program\u2019s mission is to protect deployed military personnel from arthropod vectors of medically relevant disease pathogens, including (but not limited to) arthropod disease vectors of tick-borne pathogens and mosquito-borne arboviruses, as well as nuisance biting arthropods and emerging arthropod threats such as the New World Screwworm fly. The DWFP Program seeks to fund original and inno",
+      "open_date": "2026-09-24",
+      "close_date": "2027-03-17",
+      "status": "open",
+      "days_left": 174,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
@@ -320,7 +377,7 @@
       "open_date": null,
       "close_date": "2027-04-05",
       "status": "open",
-      "days_left": 200,
+      "days_left": 193,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "US small business with a health or clinical claim",
@@ -341,7 +398,7 @@
       "open_date": "2024-10-29",
       "close_date": "2027-04-15",
       "status": "open",
-      "days_left": 210,
+      "days_left": 203,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
@@ -358,11 +415,31 @@
       "open_date": "2024-10-23",
       "close_date": "2027-06-15",
       "status": "open",
-      "days_left": 271,
+      "days_left": 264,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
+    },
+    {
+      "id": "curated-future-of-health-grant",
+      "source": "curated",
+      "name": "Future of Health Grant",
+      "url": "https://future-of-health.org/",
+      "agency": "EPFL Innovation Park and CSS",
+      "amount": "financial plus operational support; coaching and CxO-as-a-service",
+      "summary": "Swiss-based, digital-health specific. Applications close 31 Jul with the programme starting in September, so the next window is mid-2027. Listed now because the preparation lead time is long and the fit is direct.",
+      "open_date": null,
+      "close_date": "2027-07-31",
+      "status": "open",
+      "days_left": 310,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Digital health startups from concept through market validation",
+      "documents": [
+        "Application",
+        "Product and validation plan"
+      ]
     },
     {
       "id": "grants.gov-interventions-to-reduce-sleep-health-disparities-r01-clinical-trials-",
@@ -375,10 +452,10 @@
       "open_date": "2024-12-06",
       "close_date": "2027-09-07",
       "status": "open",
-      "days_left": 355,
+      "days_left": 348,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -392,7 +469,7 @@
       "open_date": "2025-08-07",
       "close_date": "2027-09-30",
       "status": "open",
-      "days_left": 378,
+      "days_left": 371,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
@@ -409,7 +486,7 @@
       "open_date": "2025-08-07",
       "close_date": "2027-09-30",
       "status": "open",
-      "days_left": 378,
+      "days_left": 371,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
@@ -426,10 +503,10 @@
       "open_date": "2024-11-22",
       "close_date": "2027-12-23",
       "status": "open",
-      "days_left": 462,
+      "days_left": 455,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -443,61 +520,10 @@
       "open_date": "2024-11-22",
       "close_date": "2027-12-23",
       "status": "open",
-      "days_left": 462,
+      "days_left": 455,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-academic-industrial-partnerships-for-translation-of-technologies-for-",
-      "source": "grants.gov",
-      "name": "Academic-Industrial Partnerships for Translation of Technologies for Diagnosis and Treatment (R01 - Clinical Trial Optional) (PAR-25-337)",
-      "url": "https://www.grants.gov/search-results-detail/357963",
-      "agency": "National Institutes of Health",
-      "amount": "up to $499,000",
-      "summary": "Through this Notice of Funding Opportunity (NOFO), the National Cancer Institute (NCI) intends to stimulate efforts to translate scientific discoveries and engineering developments into methods or tools that address problems in basic research to understand disease, or in applied research to assess risk, detect, prevent, diagnose, treat, and/or manage disease. The rationale is to deliver new capabi",
-      "open_date": "2024-12-31",
-      "close_date": "2028-01-07",
-      "status": "open",
-      "days_left": 477,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-laboratories-to-optimize-digital-health-r01-clinical-trial-required-p",
-      "source": "grants.gov",
-      "name": "Laboratories to Optimize Digital Health (R01 Clinical Trial Required) (PAR-25-136)",
-      "url": "https://www.grants.gov/search-results-detail/357034",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "NIMH seeks applications for innovative research projects to test strategies to increase the reach, efficiency, effectiveness, and quality of digital mental health interventions. This NOFO is intended to support the development of digital health test beds that leverage well-established digital mental health platforms,to rapidly refine and optimize existing evidence-based digital health intervention",
-      "open_date": "2024-11-07",
-      "close_date": "2028-01-07",
-      "status": "open",
-      "days_left": 477,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-clinical-trial-readiness-for-rare-diseases-disorders-and-syndromes-r2",
-      "source": "grants.gov",
-      "name": "Clinical Trial Readiness for Rare Diseases, Disorders, and Syndromes (R21 Clinical Trial Not Allowed) (PAR-25-450)",
-      "url": "https://www.grants.gov/search-results-detail/359645",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "This Notice of Funding Opportunity (NOFO) invites researchers to submit applications for support of clinical projects that address critical needs for clinical trial readiness in rare diseases. The initiative seeks applications that are intended to facilitate rare diseases research by enabling efficient and effective movement of candidate therapeutics or diagnostics toward clinical trials, and to i",
-      "open_date": "2025-09-22",
-      "close_date": "2028-07-20",
-      "status": "open",
-      "days_left": 672,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -511,10 +537,27 @@
       "open_date": "2023-07-27",
       "close_date": "2028-07-31",
       "status": "open",
-      "days_left": 683,
+      "days_left": 676,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
+      "source": "grants.gov",
+      "name": "HEAL Initiative: Translating Addiction Epidemiology, Prevention, Treatment, and Recovery Research into Practice (R61/R33 - Clinical Trial Optional) (RFA-DA-27-016)",
+      "url": "https://www.grants.gov/search-results-detail/362672",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "The goal of this notice of funding opportunity (NOFO) is to address the opioid crisis and/or overdose events by supporting action-oriented research, accelerating the translation of addiction epidemiology, prevention, treatment services, and recovery research to practice. Proposed studies may target the individual, provider, organizational, community, or system level. This initiative prioritizes re",
+      "open_date": "2026-06-04",
+      "close_date": "2029-02-09",
+      "status": "open",
+      "days_left": 869,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -528,7 +571,7 @@
       "open_date": "2026-05-28",
       "close_date": "2029-04-05",
       "status": "open",
-      "days_left": 931,
+      "days_left": 924,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
@@ -545,10 +588,10 @@
       "open_date": "2026-06-18",
       "close_date": "2029-05-25",
       "status": "open",
-      "days_left": 981,
+      "days_left": 974,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -562,10 +605,10 @@
       "open_date": "2026-08-19",
       "close_date": "2029-05-26",
       "status": "open",
-      "days_left": 982,
+      "days_left": 975,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits having a 501(c)(3) status wit",
+      "eligibility": "Public and State controlled institutions of higher education; Private institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher educa",
       "documents": []
     },
     {
@@ -579,10 +622,10 @@
       "open_date": "2026-06-08",
       "close_date": "2030-11-30",
       "status": "open",
-      "days_left": 1535,
+      "days_left": 1528,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": []
     },
     {
@@ -596,7 +639,7 @@
       "open_date": "2025-08-07",
       "close_date": "2044-08-22",
       "status": "open",
-      "days_left": 6549,
+      "days_left": 6542,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
@@ -662,23 +705,6 @@
         "Technical proposal and two-year research plan",
         "References"
       ]
-    },
-    {
-      "id": "grants.gov-advancing-screening-diagnosis-and-referral-for-late-talking-children-",
-      "source": "grants.gov",
-      "name": "Advancing Screening, Diagnosis, and Referral for Late Talking Children (RFA-DC-28-007)",
-      "url": "https://www.grants.gov/search-results-detail/362352",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-05-12",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
     },
     {
       "id": "grants.gov-african-medical-devices-regulatory-harmonization-program-for-fd-23-01",
@@ -759,6 +785,25 @@
       ]
     },
     {
+      "id": "curated-anthropic-claude-startup-program",
+      "source": "curated",
+      "name": "Anthropic Claude Startup Program",
+      "url": "https://claude.com/programs/startups",
+      "agency": "Anthropic",
+      "amount": "Membership free; API credits for institutionally funded startups only",
+      "summary": "Corrected 24 Sep from the program's own FAQ: an earlier version of this row said VC backing was not required, which is true of membership but not of the credits. For a bootstrapped Vybe, join now for the community and rate-limit upgrade, and apply for credits after a priced round. Directly relevant once eligible: Vybe's product is an interpretation layer over an LLM, so model credits offset a real cost.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Anyone can JOIN the program, with or without VC backing. CREDITS are narrower: the company must have received equity funding from an institutional investor, been founded within the last four years, and not have received Anthropic startup credits before. Needs a Claude Console account, a company email and a website.",
+      "documents": [
+        "Company details and a description of what you are building with the API"
+      ]
+    },
+    {
       "id": "curated-antler",
       "source": "curated",
       "name": "Antler",
@@ -820,6 +865,28 @@
       ]
     },
     {
+      "id": "curated-boundless-futures-foundation-empowher-grant-fall-2026-cycle",
+      "source": "curated",
+      "name": "Boundless Futures Foundation \u2014 EmpowHer Grant (Fall 2026 cycle)",
+      "url": "https://theboundlessfuturesfoundation.submittable.com/",
+      "agency": "Boundless Futures Foundation",
+      "amount": "Up to $50,000, plus access to the foundation's Advisory Circle",
+      "summary": "NOT OPEN YET, and that is the point of listing it: the foundation's own submission portal says there are no open calls today and names 1 November 2026 as the Fall cycle opening, with grants awarded spring 2027. Up to $50,000 is larger than all but a handful of rows here, and 2026 brought two changes in the applicant's favour \u2014 the ceiling rose to $50,000 and eligible business age went from three years to five. No application fee. The close date for the Fall cycle is not published; applications are reviewed on a rolling basis within the cycle. The foundation says outright that several grantees applied two or three times before being selected.",
+      "open_date": "2026-11-01",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "US-based female founders of for-profit businesses up to five years old, measured from the date of state registration or incorporation. Social impact must be fundamental to the business \u2014 either in the model itself or as the reason the business exists.",
+      "documents": [
+        "Proof of female ownership",
+        "Date of state registration or incorporation (business must be under five years old)",
+        "A statement of the social impact central to the business",
+        "Financial position and scope of work \u2014 the award size is set by demonstrated need"
+      ]
+    },
+    {
       "id": "curated-brinc",
       "source": "curated",
       "name": "Brinc",
@@ -839,6 +906,23 @@
         "Prototype status",
         "Application"
       ]
+    },
+    {
+      "id": "grants.gov-building-communities-of-recovery-ti-27-004",
+      "source": "grants.gov",
+      "name": "Building Communities of Recovery (TI-27-004)",
+      "url": "https://www.grants.gov/search-results-detail/363810",
+      "agency": "Substance Abuse and Mental Health Services Adminis",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2026-09-03",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
     },
     {
       "id": "curated-cdmrp-combat-readiness-medical-research-program-crrp",
@@ -884,14 +968,14 @@
       ]
     },
     {
-      "id": "grants.gov-collaborative-awards-to-support-microphysiological-system-pilot-studi",
+      "id": "grants.gov-controlled-clinical-trials-on-long-term-effects-of-nutritional-interv",
       "source": "grants.gov",
-      "name": "Collaborative Awards to Support Microphysiological System Pilot Studies in Type 2 Diabetes Research (R21, Clinical Trial Not Allowed) (RFA-DK-27-102)",
-      "url": "https://www.grants.gov/search-results-detail/360659",
+      "name": "Controlled Clinical Trials on Long-Term Effects of Nutritional Interventions on the Progression of Risk Factors for Age-Related Chronic Conditions Over the Life Span and Their Age of Onset (PAR-26-065)",
+      "url": "https://www.grants.gov/search-results-detail/361214",
       "agency": "National Institutes of Health",
       "amount": "see solicitation",
       "summary": "",
-      "open_date": "2025-09-26",
+      "open_date": "2026-01-29",
       "close_date": null,
       "status": "rolling",
       "days_left": null,
@@ -929,6 +1013,23 @@
       "amount": "see solicitation",
       "summary": "",
       "open_date": "2026-07-02",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-fiscal-year-2027-regional-nutrition-hubs-hrsa-27-019",
+      "source": "grants.gov",
+      "name": "Fiscal Year 2027 Regional Nutrition Hubs (HRSA-27-019)",
+      "url": "https://www.grants.gov/search-results-detail/363392",
+      "agency": "Health Resources and Services Administration",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2026-07-30",
       "close_date": null,
       "status": "rolling",
       "days_left": null,
@@ -1000,6 +1101,40 @@
       ]
     },
     {
+      "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-opioid-use",
+      "source": "grants.gov",
+      "name": "HEAL Initiative: Integrative Management of Chronic Pain and Opioid Use Disorder (OUD) for Whole Recovery: Health Systems (RFA-DA-27-001)",
+      "url": "https://www.grants.gov/search-results-detail/360048",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2025-07-17",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
+      "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-oud-for-wh",
+      "source": "grants.gov",
+      "name": "HEAL Initiative: Integrative Management of chronic Pain and OUD for Whole Recovery (IMPOWR) - Building Engagement, Assistance, Capacity, Outreach, and Networks (BEACON) Center (RFA-DA-27-006)",
+      "url": "https://www.grants.gov/search-results-detail/360366",
+      "agency": "National Institutes of Health",
+      "amount": "see solicitation",
+      "summary": "",
+      "open_date": "2025-08-27",
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "",
+      "documents": []
+    },
+    {
       "id": "grants.gov-heal-initiative-optimization-of-therapeutic-medical-devices-through-t",
       "source": "grants.gov",
       "name": "HEAL Initiative: Optimization of Therapeutic Medical Devices through Team Science Mechanistic Research (RM1) (RFA-NS-26-028)",
@@ -1035,6 +1170,26 @@
         "Pitch deck",
         "Proof of <$8M raised and <5 years old",
         "Application during the event cycle"
+      ]
+    },
+    {
+      "id": "curated-hello-alice-rolling-grant-cycles",
+      "source": "curated",
+      "name": "Hello Alice \u2014 rolling grant cycles",
+      "url": "https://helloalice.com/",
+      "agency": "Hello Alice (with Progressive, Verizon, US Chamber and others)",
+      "amount": "typically $5,000 - $25,000 per cycle",
+      "summary": "Runs multiple corporate-funded grant rounds a year rather than one deadline. The practical move is a completed Hello Alice profile kept current, so each new cycle is a short application rather than a cold start. Check open cycles monthly.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses; individual cycles carry their own criteria",
+      "documents": [
+        "Hello Alice business profile",
+        "Cycle-specific application"
       ]
     },
     {
@@ -1378,23 +1533,6 @@
       ]
     },
     {
-      "id": "grants.gov-nexttech-translational-development-of-next-generation-diagnostic-and-",
-      "source": "grants.gov",
-      "name": "NextTech: Translational Development of Next-Generation Diagnostic and Therapeutic Devices (R18 Clinical Trial Not Allowed) (RFA-EB-26-004)",
-      "url": "https://www.grants.gov/search-results-detail/361380",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-02-27",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
       "id": "curated-pitchmi",
       "source": "curated",
       "name": "PitchMI",
@@ -1473,6 +1611,27 @@
       "eligibility": "Academic researchers, nonprofits, think tanks",
       "documents": [
         "Invitation only \u2014 no open application"
+      ]
+    },
+    {
+      "id": "curated-second-service-foundation-military-entrepreneur-challenge",
+      "source": "curated",
+      "name": "Second Service Foundation \u2014 Military Entrepreneur Challenge",
+      "url": "https://secondservicefoundation.org/",
+      "agency": "Second Service Foundation (formerly StreetShares Foundation)",
+      "amount": "$1,000 - $15,000 per regional event; larger prizes at the national final",
+      "summary": "A nationwide pitch-competition circuit with regional events through the year and a national championship at the Military Influencer Conference. Applications open at least 30 days before each regional event, so this is a calendar to watch rather than a single deadline.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Veteran, Reservist, Guard, transitioning active duty, military spouse or Gold Star family; must own 51%+ of the business",
+      "documents": [
+        "Proof of military affiliation",
+        "51%+ ownership evidence",
+        "Pitch for the regional event"
       ]
     },
     {
@@ -1568,26 +1727,6 @@
       ]
     },
     {
-      "id": "curated-stephen-l-tadlock-veteran-business-grant",
-      "source": "curated",
-      "name": "Stephen L. Tadlock Veteran Business Grant",
-      "url": "https://www.grantwatch.com/",
-      "agency": "Tadlock",
-      "amount": "varies",
-      "summary": "Opens ~September annually.",
-      "open_date": null,
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Veteran-owned businesses",
-      "documents": [
-        "Proof of veteran status",
-        "Application"
-      ]
-    },
-    {
       "id": "grants.gov-telehealth-nutrition-services-network-grant-program-hrsa-27-044",
       "source": "grants.gov",
       "name": "Telehealth Nutrition Services Network Grant Program (HRSA-27-044)",
@@ -1626,21 +1765,24 @@
       ]
     },
     {
-      "id": "grants.gov-translational-center-for-accelerating-the-use-of-digital-health-techn",
-      "source": "grants.gov",
-      "name": "Translational Center for Accelerating the Use of Digital Health Technologies Data in AD/ADRD Research (RFA-AG-27-002)",
-      "url": "https://www.grants.gov/search-results-detail/360451",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2025-09-03",
+      "id": "curated-the-rosie-network-service2ceo",
+      "source": "curated",
+      "name": "The Rosie Network \u2014 Service2CEO",
+      "url": "https://www.therosienetwork.org/service2ceo-program",
+      "agency": "The Rosie Network (501(c)(3), Ramona CA)",
+      "amount": "No cash \u2014 a free, college-accredited 9-module programme with mentorship and pitch-deck development",
+      "summary": "TRAINING, NOT MONEY \u2014 listed as such rather than left off, because it is free, it is gated to exactly the community Vybe belongs to, and its output is a finished pitch deck, which feeds the competitions already on this board. Several cohorts run each year; the 2026 intakes closed 31 Dec 2025, 15 May and 31 May, and the programme page carries no dates, so the next intake is UNCONFIRMED \u2014 ask via a chapter rather than waiting for a public announcement. Free means free: no fee, no equity.",
+      "open_date": null,
       "close_date": null,
       "status": "rolling",
       "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
+      "pillar": 3,
+      "kind": "accelerator",
+      "eligibility": "Veterans, transitioning service members and military spouses. Rosie Chapters serve military spouses, women veterans and women active-duty service members specifically; Warrior Chapters serve the wider military-connected community.",
+      "documents": [
+        "Proof of military affiliation (veteran, transitioning service member or military spouse)",
+        "Chapter application"
+      ]
     },
     {
       "id": "grants.gov-translational-centers-using-microphysiologic-systems-for-infectious-d",
@@ -1680,57 +1822,6 @@
       ]
     },
     {
-      "id": "grants.gov-undiagnosed-diseases-network-udn-clinical-networks-of-diagnostic-exce",
-      "source": "grants.gov",
-      "name": "Undiagnosed Diseases Network (UDN) Clinical Networks of Diagnostic Excellence (PAR-27-137)",
-      "url": "https://www.grants.gov/search-results-detail/363834",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-09-10",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-undiagnosed-diseases-network-udn-clinical-and-data-coordinating-cente",
-      "source": "grants.gov",
-      "name": "Undiagnosed Diseases Network (UDN) Clinical and Data Coordinating Center (PAR-27-135)",
-      "url": "https://www.grants.gov/search-results-detail/363836",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-09-10",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
-      "id": "grants.gov-undiagnosed-diseases-network-udn-diagnostic-research-innovation-cente",
-      "source": "grants.gov",
-      "name": "Undiagnosed Diseases Network (UDN) Diagnostic Research Innovation Center (PAR-27-136)",
-      "url": "https://www.grants.gov/search-results-detail/363837",
-      "agency": "National Institutes of Health",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-09-10",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": []
-    },
-    {
       "id": "grants.gov-utilizing-real-world-data-and-algorithmic-analyses-to-assess-post-mar",
       "source": "grants.gov",
       "name": "Utilizing Real-World Data and Algorithmic Analyses to Assess Post-Market Clinical Outcomes in Patients Switching Amongst Therapeutically Equivalent Complex Generic Drug Products and Reference Listed Drugs (U01) Clinical Trial Not Allowed (FOR-FD-24-003)",
@@ -1746,6 +1837,26 @@
       "kind": "grant",
       "eligibility": "",
       "documents": []
+    },
+    {
+      "id": "curated-verizon-small-business-digital-ready",
+      "source": "curated",
+      "name": "Verizon Small Business Digital Ready",
+      "url": "https://www.verizon.com/business/small-business-essentials/digital-ready/",
+      "agency": "Verizon, administered via Hello Alice",
+      "amount": "$10,000 grants",
+      "summary": "Confirmed active for 2026 through the Hello Alice platform. Eligibility is earned by completing free courses, so the cost is time rather than money \u2014 worth doing once to unlock repeat cycles.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Small businesses that complete Verizon's free digital-skills coursework",
+      "documents": [
+        "Completed Verizon Digital Ready coursework",
+        "Hello Alice profile"
+      ]
     },
     {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
@@ -1766,6 +1877,27 @@
         "University sponsorship / limited-submission nomination",
         "Concept paper",
         "High-risk, high-impact technical rationale"
+      ]
+    },
+    {
+      "id": "curated-warrior-rising-vetrepreneur-grants",
+      "source": "curated",
+      "name": "Warrior Rising \u2014 vetrepreneur grants",
+      "url": "https://warriorrising.org/",
+      "agency": "Warrior Rising",
+      "amount": "up to $20,000 via business shower awards",
+      "summary": "Training-first: applicants generally complete Warrior Rising's programs before becoming eligible for funding, which arrives alongside mentorship, investor introductions and business services. Start the programme early \u2014 the grant is the back end of a pipeline, not a form.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "US military veterans and their immediate family",
+      "documents": [
+        "Veteran status",
+        "Completion of Warrior Rising training track",
+        "Business plan"
       ]
     },
     {
@@ -1848,6 +1980,47 @@
       "documents": [
         "Application",
         "Pitch deck"
+      ]
+    },
+    {
+      "id": "curated-yale-ventures-healthtech-works",
+      "source": "curated",
+      "name": "Yale Ventures HealthTech Works",
+      "url": "https://ventures.yale.edu/healthtech-works",
+      "agency": "Yale Ventures",
+      "amount": "$100,000 - $250,000 non-dilutive",
+      "summary": "Among the largest non-dilutive cheques on this board for a digital health product. Applications launch early in the year; confirm the next window before building a submission. Check whether a Yale affiliation is required \u2014 that is the gate to verify first.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Healthtech ventures \u2014 digital health, medtech, diagnostics, devices, AI/ML-enabled tools",
+      "documents": [
+        "Application during the open window",
+        "Technical and commercialization plan"
+      ]
+    },
+    {
+      "id": "curated-fund-her-future-h-r-block-block-advisors",
+      "source": "curated",
+      "name": "Fund Her Future \u2014 H&R Block / Block Advisors",
+      "url": "https://www.helloalice.com/opportunities/grants/h-r-block-fund-her-future-grant-2026",
+      "agency": "H&R Block and Block Advisors, via Hello Alice",
+      "amount": "4 x $45,000 ($180,000 total), plus a year of Block Advisors services",
+      "summary": "CLOSES 22 SEP AT 6PM ET \u2014 three days out. Largest per-winner cheque of any rolling small-business grant found: $45,000 each to four winners. Every applicant, not just winners, gets a year of community programming. The $20,000 2025 revenue floor is the gate to check before spending time on it.",
+      "open_date": "2026-09-01",
+      "close_date": "2026-09-22",
+      "status": "closed",
+      "days_left": -2,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "51%+ woman-owned, US-based, 18+, and the business must have generated at least $20,000 revenue in 2025. Nonprofits not eligible.",
+      "documents": [
+        "Hello Alice profile",
+        "Proof of 51%+ woman ownership",
+        "Evidence of $20,000+ 2025 revenue"
       ]
     }
   ]
