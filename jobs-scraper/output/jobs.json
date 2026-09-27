@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "generated_at": "2026-09-26T19:07:05.508717+00:00",
-  "count": 207,
+  "generated_at": "2026-09-27T07:05:18.316948+00:00",
+  "count": 206,
   "jobs": [
     {
       "id": "d8f2bb0a467eb0164377",
@@ -230,7 +230,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-09-26T07:03:20.437509+00:00"
     },
@@ -986,7 +986,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:05+00:00"
+        "checked_at": "2026-09-27T07:05:18+00:00"
       },
       "listed_at": "2026-09-23T07:06:17.723512+00:00"
     },
@@ -1269,7 +1269,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:14+00:00"
       },
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
@@ -1460,6 +1460,60 @@
         "years_experience_min": 1,
         "employment_type": "Full-time",
         "installation": null,
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "cognitive-performance",
+        "discipline_label": "Cognitive Performance",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": null
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
+      "id": "b4b07e9102ad0e63c837",
+      "fingerprint": "429d1c9b8bdfd45cc24b",
+      "source": "jsonld:serco",
+      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35274EXTERNALENUS/H2FIT-Cognitive-Performance-Specialist-Fort-Benning-GA",
+      "title": "H2FIT: Cognitive Performance Specialist - Fort Benning, GA",
+      "employer": "Serco USA",
+      "location": "Fort Benning, Georgia, USA; Georgia, USA; Columbus, Georgia, USA; Fort Moore, Georgia, USA",
+      "remote": false,
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": "Full-time",
+        "installation": "Fort Benning",
         "service_branch": "Army",
         "program": "H2F"
       },
@@ -3507,66 +3561,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "b4b07e9102ad0e63c837",
-      "fingerprint": "429d1c9b8bdfd45cc24b",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35274EXTERNALENUS/H2FIT-Cognitive-Performance-Specialist-Fort-Benning-GA",
-      "title": "H2FIT: Cognitive Performance Specialist - Fort Benning, GA",
-      "employer": "Serco USA",
-      "location": "Fort Benning, Georgia, USA; Georgia, USA; Columbus, Georgia, USA; Fort Moore, Georgia, USA",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Benning",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "verified",
-      "program": "H2F",
-      "notes": "",
-      "liveness": {
-        "state": "live",
-        "reason": "reachable",
-        "http_status": 200,
-        "checked_at": "2026-09-26T19:06:58+00:00"
-      },
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "cdc1612fc29f510e370e",
       "fingerprint": "6a937d802dc4691c103d",
       "source": "usajobs:federal",
@@ -3618,7 +3612,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3674,7 +3668,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3736,7 +3730,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3798,7 +3792,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3854,7 +3848,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3910,7 +3904,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4252,7 +4246,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:14+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4312,7 +4306,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4368,7 +4362,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4424,7 +4418,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4480,7 +4474,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4536,7 +4530,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4596,7 +4590,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4652,7 +4646,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4708,7 +4702,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4880,7 +4874,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -4942,7 +4936,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -5002,7 +4996,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -5226,7 +5220,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:04+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5284,7 +5278,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5454,7 +5448,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5512,7 +5506,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 202,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5568,7 +5562,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5684,7 +5678,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5740,7 +5734,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5800,7 +5794,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5860,7 +5854,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5923,7 +5917,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -5979,7 +5973,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -6039,7 +6033,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-07T13:08:21.322720+00:00"
     },
@@ -6153,7 +6147,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6213,7 +6207,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6269,7 +6263,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:17+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6329,7 +6323,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6389,7 +6383,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6605,7 +6599,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6663,7 +6657,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6723,7 +6717,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6839,7 +6833,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6899,7 +6893,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -6959,7 +6953,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7015,7 +7009,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7238,7 +7232,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7294,7 +7288,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7350,7 +7344,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-02T11:51:17.268529+00:00"
     },
@@ -7412,7 +7406,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7472,7 +7466,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7534,7 +7528,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7596,7 +7590,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7656,7 +7650,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7712,7 +7706,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-09-01T12:13:32.637461+00:00"
     },
@@ -7826,7 +7820,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:03+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-31T23:07:07.413844+00:00"
     },
@@ -7940,7 +7934,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8000,7 +7994,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8060,7 +8054,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8120,7 +8114,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8176,7 +8170,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8236,7 +8230,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8296,7 +8290,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8356,7 +8350,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8416,7 +8410,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8479,7 +8473,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8541,7 +8535,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8601,7 +8595,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8663,7 +8657,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8723,7 +8717,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8783,7 +8777,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8843,7 +8837,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8899,7 +8893,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8955,7 +8949,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9011,7 +9005,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9067,7 +9061,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9123,7 +9117,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9183,7 +9177,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9243,7 +9237,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9303,7 +9297,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9359,7 +9353,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9419,7 +9413,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9475,7 +9469,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9535,7 +9529,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9595,7 +9589,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:02+00:00"
+        "checked_at": "2026-09-27T07:05:16+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9939,7 +9933,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -11464,7 +11458,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -11697,69 +11691,9 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-26T19:07:01+00:00"
+        "checked_at": "2026-09-27T07:05:15+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
-    },
-    {
-      "id": "b9c9550f57d3a3604377",
-      "fingerprint": "9e2e4cd2185d3c587ddd",
-      "source": "workday:kbr",
-      "url": "https://kbr.wd5.myworkdayjobs.com/KBR_Careers/job/Fort-Campbell-Kentucky/Special-Operations-Physical-Therapist--5th-SFG-A---Ft-Campbell--KY-_R2128199",
-      "title": "Special Operations Physical Therapist (5th SFG(A), Ft. Campbell, KY)",
-      "employer": "KBR",
-      "location": "Fort Campbell, Kentucky",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Special Operations Physical Therapist (5th SFG(A), Ft. Campbell, KY) Fort Campbell, Kentucky R2128199",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": "Fort Campbell",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "verified",
-      "program": null,
-      "notes": "",
-      "liveness": {
-        "state": "live",
-        "reason": "workday cxs: live",
-        "http_status": 200,
-        "checked_at": "2026-09-26T19:07:00+00:00"
-      },
-      "listed_at": "2026-08-12T19:58:53.663445+00:00"
     }
   ],
   "definitions": {
