@@ -5,10 +5,10 @@
 ## Headline
 
 - **226 open jobs** from **33 employers**.
-- Posted between **2026-07-06** and **2026-09-25**.
+- Posted between **2026-07-06** and **2026-09-27**.
 - **$87,145 median** annualized pay across the 161 postings that publish one -- $62,712 to $116,952 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 277 of 503 archived records are cross-board copies or re-posts, not separate jobs.
+- 288 of 514 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 207, Special Operations 53, Fire / EMS / Law Enforcement 35, Training Pipeline 30.
 
 ## Month over month
