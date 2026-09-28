@@ -97,11 +97,35 @@ programme's own page rather than its summary:
   background check — none of which the row stated. Watch it only if the eligible
   categories change.
 
-**Next row to inspect:** **MedTech Innovator Vantage (BARDA Accelerator
-Network)** is still on the board, closing 15 Oct. It is the same network and the
-same posture problem that just removed Paratus, and `DECKS.md` already records it
-as a structural disqualifier for a deck. Read its own page before that deadline
-and either state the medical-device gate on the row or take it off.
+**MedTech Innovator Vantage — read the same day, and removed.** It was flagged
+here as the next row to inspect; its own page settles it. The programme funds
+"the development, evaluation, and validation of **diagnostic and medical device
+technologies**", and states outright that "BARDA primarily develops medical
+countermeasures to counter acute threats and **does not support research and
+development or acceleration in the areas of oncology or chronic disease**".
+Its named interests are acute radiation syndrome, Botulinum toxin serotypes,
+femtomolar point-of-care assays and pathogen-ID sequencing. Vybe is a consumer
+wellness product about everyday recovery, with no device classification and no
+diagnostic claim — by product rule, not by omission.
+
+The row's own note was the real problem. It read: "frame Vybe's continuous
+physiological monitoring as early-signal detection." That is a board row
+coaching a founder to dress a wellness product as a diagnostic to fit a
+countermeasure programme — the opposite of what this file exists for, and the
+same misframe `DECKS.md` had already rejected for a deck. Dates were not the
+issue: 1 Sep – 15 Oct 2026 is correct, awards Mar–Apr 2027. Fit was.
+
+**The MedTech Conference Start-Up Pitch — corrected, not removed.** Reading it
+in the same pass found the opposite kind of error. The board had it as "medical
+device and medtech startups", rolling, "cash award + conference pass". Its own
+page says the competition is scoped to a **military-focused application of
+medtech, diagnostics, digital health or imaging** — digital health named
+explicitly, and military focus is the category Vybe is strongest in — for
+companies that have **raised under $10M**, with **$7,500** to the winner. And it
+is not rolling: the 2026 applications **closed 6 August** for the 18 October
+event in Boston, so a row carried as "apply any time" was quietly unwinnable for
+seven weeks. The 2027 window is unposted; on this year's pattern it is a
+June–July job. Selected companies still pay $750 to attend.
 
 ## Priority 2 — women-founder
 
