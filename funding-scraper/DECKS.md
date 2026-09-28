@@ -22,6 +22,7 @@ same target twice running. If this file says a target was covered in the last
 |---|---|---|---|
 | 2026-09-21 | Google for Startups Founders Fund (Black / Latino, US) | $150k equity-free + up to $100k cloud credits, explicitly favours AI-powered startups, and Jeremy qualifies on founder eligibility. Largest non-dilutive item identified so far. | https://claude.ai/artifact/QnBLB3mCG4QLS1Az8ra15a |
 | 2026-09-22 | Strategic / OEM partner (audience deck, rotation step 2) | No live board opportunity cleared the structural disqualifiers inside the 8-week window, so the rotation moved to its second audience. Leads on the licensing wedge: partners can buy the interpretation layer instead of building one. | https://claude.ai/artifact/VzwoWJjUU9rBRj2x7Hy6rY |
+| 2026-09-28 | **Veteran Shark Tank 2026** (live opportunity, rotation rule 1) | $50,000 non-dilutive, closing 13 Oct — 15 days out — and the one live item on the board whose age test runs in Vybe's favour: the business must be UNDER three years old on 7 Dec. Clears every structural disqualifier: no clinical trial, no single disease, no device or diagnostic posture, not institutional, no fee. The competition requires a deck of no more than 10 slides covering six named sections in order, so this deck is built to that brief rather than to the audience rotation, which stays at enterprise / team buyer for next week. | https://claude.ai/artifact/7WVaCL6sb8JkNE2JS4ceBK |
 
 ## Considered and rejected — do not re-propose without new information
 
@@ -36,3 +37,4 @@ same target twice running. If this file says a target was covered in the last
 |---|---|
 | 2026-09-22 | The 13:00 UTC Monday slot did **not** fire on its own — the routine had no run history at all, so no weekly deck or report had ever been delivered. The week's run was fired by hand as a catch-up. Watch the next scheduled slot (2026-09-28) and fix the trigger if it skips again rather than hand-firing it each week. |
 | 2026-09-22 | The catch-up run published both artifacts but **pushed no commits**, so this ledger row was written separately. If a future run's artifacts exist but the ledger is unchanged, the run ended before its commit step. |
+| 2026-09-28 | The 13:00 UTC Monday slot **fired on its own** — scheduled 13:02, delivered 13:25 — so this is the first unattended weekly run. The daily routine fired the same morning at 12:28. No hand-firing needed; the trigger is healthy. |
