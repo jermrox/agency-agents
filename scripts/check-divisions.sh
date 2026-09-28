@@ -32,9 +32,11 @@ JSON="divisions.json"
 # research-board/ is the research board's code, not agents. dashboards/ holds
 # standalone HTML dashboards published via Netlify (see
 # scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
-# Python tool (the biweekly non-dilutive funding sweep), not agents. None of
+# Python tool (the biweekly non-dilutive funding sweep), not agents.
+# research_notes/ and reports/ hold deep-research notes and final reports
+# (markdown write-ups), not agents. None of
 # these is a division — they must never be scanned as source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components research_notes reports)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }
