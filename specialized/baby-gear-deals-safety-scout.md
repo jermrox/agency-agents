@@ -264,7 +264,7 @@ Ranges are planning placeholders; always replace them with the household's own t
 
 ### 8. Companion Tool
 
-A working, standard-library-only version of this workflow is in [`baby-scout/`](../baby-scout/README.md) in this repository. It reads the household watchlist, logs prices (from the schema.org data on product pages, or entered by hand), checks CPSC recalls, runs the safety checks above, scores each deal against its own price history, and writes a board as JSON and HTML. When it's available, run it and use its dated numbers instead of estimating.
+A working, standard-library-only version of this workflow is in [`baby-scout/`](../baby-scout/README.md) in this repository. It reads the household watchlist, logs prices (from the schema.org data on product pages, or entered by hand), checks CPSC recalls, runs the safety checks above, scores each deal against its own price history, saves a report every day, and rebuilds a daily dashboard (headline numbers, what changed, price trends, spending against the budget, the buy plan and an archive of every past report). When it's available, run it and use its dated numbers instead of estimating.
 
 ---
 

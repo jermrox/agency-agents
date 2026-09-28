@@ -6,14 +6,15 @@ import argparse
 import datetime as dt
 import json
 import logging
+import statistics
 import sys
 from pathlib import Path
 
-from . import board, config, deals, plan, recalls, safety
+from . import board, config, dashboard, deals, plan, recalls, report, safety
 from .collect import CollectError, collect, extract_products
 from .http import FetchError
 from .models import Observation, utcnow
-from .store import PriceStore
+from .store import PriceStore, PurchaseStore
 
 log = logging.getLogger("baby_scout")
 
@@ -32,10 +33,25 @@ def _load_recalls(args: argparse.Namespace, brand: str) -> list[recalls.Recall] 
         return None
 
 
+def _paths(args: argparse.Namespace) -> dict[str, Path]:
+    data = Path(args.data)
+    return {
+        "watchlist": Path(args.watchlist) if getattr(args, "watchlist", None) else data / "watchlist.toml",
+        "prices": data / "prices.jsonl",
+        "purchases": data / "purchases.jsonl",
+        "reports": data / "reports",
+    }
+
+
+def _today(args: argparse.Namespace) -> dt.date:
+    return dt.date.fromisoformat(args.today) if getattr(args, "today", None) else dt.date.today()
+
+
 def cmd_run(args: argparse.Namespace) -> int:
-    wl = config.load(args.watchlist)
-    store = PriceStore(args.history)
-    today = dt.date.today()
+    paths = _paths(args)
+    wl = config.load(paths["watchlist"])
+    store = PriceStore(paths["prices"])
+    today = _today(args)
 
     if not args.offline:
         for item in wl.items:
@@ -58,23 +74,49 @@ def cmd_run(args: argparse.Namespace) -> int:
         brand_recalls = cache[item.brand]
         match = (recalls.match_recalls(brand_recalls, item.brand, item.model, item.model_number)
                  if brand_recalls is not None else None)
-        latest = store.latest(item.key)
+        latest = store.latest(item.key, until=today)
         sold_by = next((o.sold_by_retailer for o in latest if o.sold_by_retailer is not None), None)
-        report = safety.evaluate(item, match, sold_by_retailer=sold_by, today=today, checked_at=utcnow())
-        results.append(board.item_result(item, store, report, match, today=today))
+        safety_report = safety.evaluate(item, match, sold_by_retailer=sold_by, today=today, checked_at=utcnow())
+        results.append(board.item_result(item, store, safety_report, match, today=today))
 
     buy_plan = None
     if wl.household.due_date:
         buy_plan = plan.build_plan(dt.date.fromisoformat(wl.household.due_date), wl.household.budget,
                                    today=today, owned=set(wl.household.owned))
-    json_path, html_path = board.write(results, args.out, buy_plan)
 
-    for r in results:
-        verdict = deals.VERDICT_LABELS[r["deal"]["verdict"]] if r["deal"] else (
-            "🔴 Skip -- fails safety" if not r["safety"]["passed"] else "⚪ No price yet")
-        fails = "; ".join(g["name"] for g in r["safety"]["gates"] if g["status"] == "fail")
-        print(f"{verdict:34} {r['name']}" + (f"  [FAILS: {fails}]" if fails else ""))
-    print(f"\nWrote {json_path} and {html_path}")
+    archive = report.ReportArchive(paths["reports"])
+    purchases = [p for p in PurchaseStore(paths["purchases"]).all() if p["date"] <= today.isoformat()]
+    daily = report.build(results, buy_plan, purchases, wl.household.budget,
+                         wl.household.due_date, archive.previous(today.isoformat()), today)
+    report_path = archive.save(daily)
+    index = dashboard.write(results, buy_plan, archive, args.site)
+
+    for r in daily["items"]:
+        print(f"{deals.VERDICT_LABELS[r['verdict']]:34} {r['name']}")
+    if daily["events"]:
+        print("\nChanges since the last report:")
+        for e in daily["events"]:
+            print(f"  [{e['severity']}] {e['name']}: {e['detail']}")
+    print(f"\nSaved {report_path} and {index}")
+    return 0
+
+
+def cmd_bought(args: argparse.Namespace) -> int:
+    paths = _paths(args)
+    name, category = args.key, args.category
+    if paths["watchlist"].exists():
+        for item in config.load(paths["watchlist"]).items:
+            if item.key == args.key:
+                name, category = item.name, category or item.category
+    when = dt.date.fromisoformat(args.date) if args.date else dt.date.today()
+    history = [(d, p) for d, p in PriceStore(paths["prices"]).history(args.key) if 0 <= (when - d).days <= 90]
+    median = round(statistics.median(p for _, p in history), 2) if len(history) >= deals.MIN_POINTS else None
+    PurchaseStore(paths["purchases"]).append({
+        "key": args.key, "name": name, "category": category, "price": args.price,
+        "retailer": args.retailer, "date": when.isoformat(), "median_90d": median,
+    })
+    saved = f"; ${median - args.price:,.2f} under its 90-day median" if median and median > args.price else ""
+    print(f"Logged purchase: {name} for ${args.price:,.2f} at {args.retailer} on {when}{saved}")
     return 0
 
 
@@ -86,7 +128,7 @@ def cmd_add_price(args: argparse.Namespace) -> int:
         sold_by_retailer=args.sold_by_retailer, url=args.url,
         unit_count=args.unit_count, unit_label=args.unit_label,
     )
-    PriceStore(args.history).append(obs)
+    PriceStore(_paths(args)["prices"]).append(obs)
     unit = f" (${obs.unit_price}/{args.unit_label or 'unit'})" if obs.unit_price else ""
     print(f"Logged {args.key} @ {args.retailer}: ${args.price:.2f}{unit} on {observed[:10]}")
     return 0
@@ -151,12 +193,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("-v", "--verbose", action="store_true")
     sub = p.add_subparsers(dest="command", required=True)
 
-    r = sub.add_parser("run", help="collect prices, check recalls, write board.json/board.html")
-    r.add_argument("--watchlist", default="watchlist.toml")
-    r.add_argument("--history", default="state/prices.jsonl")
-    r.add_argument("--out", default="output")
+    r = sub.add_parser("run", help="collect prices, check recalls, save today's report, rebuild the dashboard")
+    r.add_argument("--data", default="data", help="folder holding watchlist.toml, prices, purchases and reports")
+    r.add_argument("--watchlist", help="watchlist file (default: <data>/watchlist.toml)")
+    r.add_argument("--site", default="site", help="where the dashboard is written")
     r.add_argument("--offline", action="store_true", help="no network: use logged prices only")
     r.add_argument("--recalls-file", help="saved CPSC API JSON to use instead of a live lookup")
+    r.add_argument("--today", help=argparse.SUPPRESS)
     r.set_defaults(func=cmd_run)
 
     a = sub.add_parser("add-price", help="log a price you saw (in store, app, flyer)")
@@ -172,8 +215,18 @@ def build_parser() -> argparse.ArgumentParser:
     a.add_argument("--unit-count", type=float, help="e.g. 164 for a 164-count diaper box")
     a.add_argument("--unit-label", help="diaper, wipe, oz ...")
     a.add_argument("--date", help="YYYY-MM-DD if logging an older price")
-    a.add_argument("--history", default="state/prices.jsonl")
+    a.add_argument("--data", default="data")
     a.set_defaults(func=cmd_add_price)
+
+    bt = sub.add_parser("bought", help="log something you bought (feeds spending and savings)")
+    bt.add_argument("--key", required=True, help="watchlist key, or any short name")
+    bt.add_argument("--price", type=float, required=True, help="what you actually paid")
+    bt.add_argument("--retailer", required=True)
+    bt.add_argument("--category", help="plan category, e.g. stroller (taken from the watchlist when the key matches)")
+    bt.add_argument("--date", help="YYYY-MM-DD (default today)")
+    bt.add_argument("--data", default="data")
+    bt.add_argument("--watchlist", help=argparse.SUPPRESS)
+    bt.set_defaults(func=cmd_bought)
 
     c = sub.add_parser("recalls", help="CPSC recall check for one product")
     c.add_argument("--brand", required=True)

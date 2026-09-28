@@ -71,7 +71,7 @@ def _occurrences(name: str, start: dt.date, end: dt.date) -> list[tuple[dt.date,
         begin = dt.date(year, sm, sd)
         finish = dt.date(year + (1 if em < sm else 0), em, ed)
         if finish >= start and begin <= end:
-            out.append((max(begin, start), finish))
+            out.append((begin, finish))
     return out
 
 
@@ -99,8 +99,10 @@ def build_plan(due: dt.date, budget: float | None = None, today: dt.date | None 
             continue
         need_by = due + dt.timedelta(weeks=need.weeks_from_due)
         window = best_window(need_by, today, need.windows)
+        start = end = None
         if window:
             name, begin, finish = window
+            start, end = begin.isoformat(), finish.isoformat()
             when = f"{WINDOWS[name][4]}: {begin:%b %d} - {finish:%b %d, %Y}"
         elif need_by < today:
             when = "Overdue -- buy now at the best in-stock price"
@@ -108,7 +110,7 @@ def build_plan(due: dt.date, budget: float | None = None, today: dt.date | None 
             when = f"Buy by {need_by:%b %d, %Y} (no reliable sale window before then)"
         rows.append({
             "category": need.category, "item": need.label, "need_by": need_by.isoformat(),
-            "buy_window": when, "estimate_low": need.low, "estimate_high": need.high,
+            "buy_window": when, "window_start": start, "window_end": end, "estimate_low": need.low, "estimate_high": need.high,
             "buy_new": need.buy_new, "note": need.note,
         })
         low_total += need.low

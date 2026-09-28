@@ -31,7 +31,10 @@ jobs:
       - name: Smoke-test the CLI offline
         working-directory: baby-scout
         run: |
-          cp watchlist.example.toml watchlist.toml
-          python -m baby_scout add-price --key nestwell-cozy-dream --retailer "Example Mart" --price 129.99
-          python -m baby_scout run --offline --recalls-file tests/fixtures/cpsc_sample.json
-          test -s output/board.html
+          D=$(mktemp -d)
+          cp watchlist.example.toml "$D/watchlist.toml"
+          python -m baby_scout add-price --data "$D" --key nestwell-cozy-dream --retailer "Example Mart" --price 129.99
+          python -m baby_scout bought --data "$D" --key bramble-roam-convertible --price 239.99 --retailer "Big Box"
+          python -m baby_scout run --data "$D" --site "$D/site" --offline --recalls-file tests/fixtures/cpsc_sample.json
+          test -s "$D/site/index.html" && test -s "$D/site/data.json"
+          ls "$D/reports"/*.json

@@ -10,8 +10,9 @@
 #
 #   agentresearchsum -> the H2F tactical research board (Squarespace embed)
 #   agentrevup       -> the Vybe funding tracker (growth/revenue)
+#   agentbabyscout   -> the Baby Gear dashboard (baby-scout/site, rebuilt daily)
 #
-# Adding a third site means adding its name to the case statement in
+# Adding another site means adding its name to the case statement in
 # scripts/build-netlify-site.sh. An unrecognized SITE_NAME publishes everything,
 # which is the right default locally and a visible wrong answer in production —
 # if a new site shows both boards, its name is missing from that case.

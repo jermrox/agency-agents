@@ -8,40 +8,78 @@ recalls and hard safety gates, and lays out a buy plan against the due date.
 Python 3.11+ standard library only. pytest is the only dev dependency.
 
 ```
-watchlist.toml ──▶ collect prices ──▶ state/prices.jsonl ──▶ deal score ─┐
-                   (JSON-LD / manual)                                    ├─▶ output/board.json
-                  CPSC recall API ──▶ recall match ──▶ safety gates ─────┤    output/board.html
-                  due date ─────────────────────────▶ buy plan ─────────┘
+data/watchlist.toml ─▶ collect prices ──▶ data/prices.jsonl ──▶ deal score ─┐
+                       (JSON-LD / manual)                                   │
+                      CPSC recall API ──▶ recall match ──▶ safety gates ────┼─▶ data/reports/YYYY-MM-DD.json
+data/purchases.jsonl ─▶ spending & savings                                  │         (one per day, kept)
+due date ─────────────▶ buy plan ───────────────────────────────────────────┘                │
+                                                                                             ▼
+                                                              site/index.html  (daily dashboard + archive)
 ```
+
+## The daily dashboard
+
+`site/index.html` is one self-contained page (no external requests) built
+from every saved report:
+
+- **Headline numbers:** days until the due date, spent vs. budget, saved vs.
+  typical prices, buy-now deals, safety alerts, and the estimate still to buy.
+- **What changed:** today's differences from the previous report, such as new
+  recalls, buy-now prices, items hitting your target, new 12-month lows, price
+  moves of 3% or more, stock changes, purchases, and sale windows opening.
+- **Watchlist:** each item's verdict, best price, 90-day median, 12-month low,
+  a price-history line you can hover over (or step through with the arrow keys),
+  and its safety checks.
+- **Buy plan:** need-by dates and sale windows, marked Bought, Sale window
+  open or Overdue.
+- **Spending:** every purchase and what it saved against its typical price.
+- **Report archive:** every past day. Choose a day (or use the Report picker)
+  and the whole page shows that day's report.
+
+`site/data.json` and `site/reports/*.json` hold the same data for anything
+else that wants it.
 
 ## Quick start
 
 ```bash
 cd baby-scout
-cp watchlist.example.toml watchlist.toml     # edit: due date, budget, products
+# data/watchlist.toml holds your due date, budget and products (fictional
+# placeholders to start -- replace them).
 
 # Log a price you saw (store shelf, app, flyer). Per-unit for consumables.
 python3 -m baby_scout add-price --key bramble-roam-convertible --retailer Target --price 239.99 --list-price 349.99 --sold-by-retailer yes
 python3 -m baby_scout add-price --key store-brand-diapers-size1 --retailer Costco --price 42.99 --unit-count 198 --unit-label diaper
 
-# Collect prices from product URLs, check recalls live, write the board.
+# Log what you actually bought -- this drives spending and savings.
+python3 -m baby_scout bought --key bramble-roam-convertible --price 229.99 --retailer Target
+
+# Collect prices, check recalls, save today's report, rebuild the dashboard.
 python3 -m baby_scout run
 
-# Same, but no network (uses logged prices; recall gate shows "CHECK").
+# Same, but no network (uses saved prices; the recall check shows "CHECK").
 python3 -m baby_scout run --offline
 ```
 
-Open `output/board.html` in a browser.
+Open `site/index.html` in a browser.
 
-### Other commands
+## Running it every day
 
-| Command | What it does |
-|---|---|
-| `recalls --brand B --model M [--model-number N]` | CPSC recall check for one product. Exit code 1 if the model matches a recall. |
-| `plan --due 2027-02-10 --budget 4500` | What to buy, by when, and which sale window to aim for. |
-| `stack --price 239.99 --pct 15 --gift-card 20` | True price after stacking discounts, gift cards, cash back and rebates. |
-| `banned "product name"` | Checks a name against banned or discouraged sleep products. |
-| `extract --file saved_page.html` | Shows the schema.org price/stock data a product page publishes. |
+`.github/workflows/baby-scout-daily.yml` runs at 11:52 UTC every day (and on
+demand from the Actions tab). It runs the tests, then `run`, then commits
+`data/` and `site/` back to the repository, so every report is kept and the
+archive grows by one day per run. Scheduled workflows only run from the
+default branch, so this starts after the branch is merged.
+
+**Viewing it:** the Netlify build (`scripts/build-netlify-site.sh`) has a
+`baby` target. Create a Netlify site named `agentbabyscout` from this
+repository (or set `SITE_TARGET=baby` in its environment) and it publishes
+`site/` at its root, redeploying after each daily commit.
+
+**Privacy:** this repository is public. Anything in `data/` and `site/` is
+public, including the due date, budget, prices and purchases. To keep the
+watchlist file itself out of the repo, put its contents in the repository
+secret `BABY_SCOUT_WATCHLIST`; the workflow uses it and never commits it. For
+fully private reports, run the workflow in a private repository.
 
 ## How it decides
 
@@ -91,9 +129,11 @@ announcements, so confirm the dates each year.
 
 | Path | Purpose |
 |---|---|
-| `watchlist.toml` | your household and products (gitignored; copy from the example) |
-| `state/prices.jsonl` | append-only price history (gitignored) |
-| `output/board.json`, `output/board.html` | latest results (gitignored) |
+| `data/watchlist.toml` | your household and products (or the `BABY_SCOUT_WATCHLIST` secret) |
+| `data/prices.jsonl` | append-only price history |
+| `data/purchases.jsonl` | what you bought, when, for how much |
+| `data/reports/YYYY-MM-DD.json` | one saved report per day |
+| `site/` | the dashboard (`index.html`), `data.json` and a copy of the reports |
 | `tests/fixtures/` | recorded sample data with **fictional** brands, for offline tests |
 
 Run the tests with `python3 -m pytest tests -q`.

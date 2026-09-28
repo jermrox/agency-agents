@@ -25,6 +25,7 @@ VERDICT_LABELS = {
     "wait": "🟠 Wait -- likely to drop",
     "tracking": "⚪ Tracking -- not enough history",
     "skip": "🔴 Skip -- fails safety",
+    "bought": "✅ Bought",
 }
 
 

@@ -1,3 +1,5 @@
-watchlist.toml
-state/
-output/
+# Local scratch copies. The tracked household data lives in data/ and the
+# published dashboard in site/ (both written by the daily workflow).
+/watchlist.toml
+/state/
+/output/
