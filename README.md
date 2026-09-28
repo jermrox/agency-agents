@@ -415,6 +415,7 @@ The unique specialists who don't fit in a box.
 | 🏺 [Codebase Archaeologist](specialized/specialized-codebase-archaeologist.md) | Multi-tool codebase drift audits | Detecting silent drift across Claude/Cursor/Copilot/Windsurf edits |
 | 🧾 [Resume Tailor](specialized/resume-tailor.md) | Candidate-side resume optimization | JD mapping, ATS keyword alignment, experience-to-requirement matching |
 | 🧡 [Aging Parent Care Companion](specialized/healthcare-aging-parent-care-companion.md) | Family caregiver decision-support | Appointment/medication coordination, care-team comms, caregiver wellbeing (HIPAA-aligned) |
+| 🍼 [Baby Gear Deals & Safety Scout](specialized/baby-gear-deals-safety-scout.md) | Baby product prices, deals, recalls & first-year budgeting | Price/stock tracking, honest deal scoring, CPSC/NHTSA safety checks, seasonal buy plans for parents |
 
 ### 💵 Finance Division
 
