@@ -1,24 +1,24 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-27.*
+*Briefing generated 2026-09-28.*
 
 ## Headline
 
-- **226 open jobs** from **33 employers**.
-- Posted between **2026-07-06** and **2026-09-27**.
-- **$87,145 median** annualized pay across the 161 postings that publish one -- $62,712 to $116,952 covers the middle half.
+- **229 open jobs** from **33 employers**.
+- Posted between **2026-07-06** and **2026-09-28**.
+- **$87,934 median** annualized pay across the 164 postings that publish one -- $62,765 to $117,778 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 288 of 514 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 207, Special Operations 53, Fire / EMS / Law Enforcement 35, Training Pipeline 30.
+- 289 of 518 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 210, Special Operations 53, Fire / EMS / Law Enforcement 38, Training Pipeline 30.
 
 ## Month over month
 
-Postings are **up +83** in 2026-09 (64 to 147), 130% against 2026-08.
+Postings are **up +86** in 2026-09 (64 to 150), 134% against 2026-08.
 
 ```
-2026-07     8  ##
+2026-07     8  #
 2026-08    64  ############
-2026-09   147  ############################
+2026-09   150  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -26,15 +26,15 @@ Postings are **up +83** in 2026-09 (64 to 147), 130% against 2026-08.
 - Serco USA: 0 to 32
 - KBR: 0 to 31
 - Commander, Navy Installations Command: 0 to 27
+- Customs and Border Protection: 0 to 24
 - General Dynamics Information Technology: 0 to 23
-- Customs and Border Protection: 0 to 21
 
 **Credentials appearing more often:**
 
 - CSCS: 0 to 54
 - ATC: 0 to 17
 - RD: 0 to 11
-- PhD: 0 to 9
+- PhD: 0 to 10
 - TSAC-F: 0 to 3
 
 ## Who is hiring
@@ -45,7 +45,7 @@ Postings are **up +83** in 2026-09 (64 to 147), 130% against 2026-08.
 | Serco USA | 32 | - | Strength & Conditioning, Cognitive Performance |
 | Commander, Navy Installations Command | 27 | $46,436 | Program Leadership, Research & Analytics |
 | General Dynamics Information Technology | 25 | $98,738 | Cognitive Performance, Sports Medicine |
-| Customs and Border Protection | 21 | $142,469 | - |
+| Customs and Border Protection | 24 | $136,702 | - |
 | Military Treatment Facilities under DHA | 20 | $97,983 | Sports Medicine, Program Leadership |
 | Veterans Health Administration | 9 | $78,296 | Sports Medicine, Program Leadership |
 | U.S. Marine Corps | 8 | $37,638 | Sports Medicine, Strength & Conditioning |
@@ -71,10 +71,10 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 54 | 71% |
+| CSCS | 54 | 70% |
 | ATC | 17 | 22% |
 | RD | 11 | 14% |
-| PhD | 9 | 12% |
+| PhD | 10 | 13% |
 | TSAC-F | 3 | 4% |
 
 Share is out of jobs that name any certification at all.
@@ -83,7 +83,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$87,145**, middle half $62,712 to $116,952.
+- Median **$87,934**, middle half $62,765 to $117,778.
 - Full range $27,500 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
@@ -101,7 +101,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** TX (19), CA (16), VA (16), FL (15), NC (15), GA (14), NM (10), CO (8), MO (8), WA (7)
+**States:** TX (20), CA (16), VA (16), FL (15), NC (15), GA (14), NM (10), CO (8), MO (8), WA (7)
 
 | Installation | Jobs |
 |---|---|

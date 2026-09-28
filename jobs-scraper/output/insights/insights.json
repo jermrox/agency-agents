@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-27T19:07:21.143781+00:00",
+  "generated_at": "2026-09-28T07:21:45.256566+00:00",
   "totals": {
-    "postings": 514,
+    "postings": 518,
     "employers": 33,
-    "unique_jobs": 226,
-    "with_salary": 161,
+    "unique_jobs": 229,
+    "with_salary": 164,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
-      "latest": "2026-09-27T00:00:00+00:00"
+      "latest": "2026-09-28T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -64,9 +64,9 @@
     },
     {
       "name": "Customs and Border Protection",
-      "count": 21,
+      "count": 24,
       "disciplines": [],
-      "median_salary": 142469.0
+      "median_salary": 136702.25
     },
     {
       "name": "Military Treatment Facilities under DHA",
@@ -203,23 +203,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 207,
-      "share": 0.9324
+      "count": 210,
+      "share": 0.9333
     },
     {
       "name": "sof",
       "count": 53,
-      "share": 0.2387
+      "share": 0.2356
     },
     {
       "name": "first-responder",
-      "count": 35,
-      "share": 0.1577
+      "count": 38,
+      "share": 0.1689
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1351
+      "share": 0.1333
     }
   ],
   "by_branch": [
@@ -317,7 +317,7 @@
   "by_state": [
     {
       "code": "TX",
-      "count": 19
+      "count": 20
     },
     {
       "code": "CA",
@@ -380,27 +380,27 @@
     {
       "name": "CSCS",
       "count": 54,
-      "share": 0.7105
+      "share": 0.7013
     },
     {
       "name": "ATC",
       "count": 17,
-      "share": 0.2237
+      "share": 0.2208
     },
     {
       "name": "RD",
       "count": 11,
-      "share": 0.1447
+      "share": 0.1429
     },
     {
       "name": "PhD",
-      "count": 9,
-      "share": 0.1184
+      "count": 10,
+      "share": 0.1299
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.0395
+      "share": 0.039
     }
   ],
   "clearances": [
@@ -422,12 +422,12 @@
     }
   ],
   "salary": {
-    "count": 161,
+    "count": 164,
     "min": 27500.0,
     "max": 219654.0,
-    "median": 87145.0,
-    "p25": 62711.5,
-    "p75": 116951.5,
+    "median": 87933.5,
+    "p25": 62764.98,
+    "p75": 117778.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 30,
@@ -489,7 +489,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0133
+    "share": 0.0131
   },
   "timeline": [
     {
@@ -502,12 +502,12 @@
     },
     {
       "month": "2026-09",
-      "count": 147
+      "count": 150
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-29T00:00:00+00:00",
+    "pivot": "2026-06-30T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -528,16 +528,16 @@
         "change": 27
       },
       {
+        "name": "Customs and Border Protection",
+        "recent": 24,
+        "previous": 0,
+        "change": 24
+      },
+      {
         "name": "General Dynamics Information Technology",
         "recent": 23,
         "previous": 0,
         "change": 23
-      },
-      {
-        "name": "Customs and Border Protection",
-        "recent": 21,
-        "previous": 0,
-        "change": 21
       },
       {
         "name": "Military Treatment Facilities under DHA",
@@ -621,9 +621,9 @@
       },
       {
         "name": "PhD",
-        "recent": 9,
+        "recent": 10,
         "previous": 0,
-        "change": 9
+        "change": 10
       },
       {
         "name": "TSAC-F",
@@ -687,11 +687,11 @@
       "count": 3
     },
     {
-      "title": "Cognitive Performance Specialist",
+      "title": "CBP Officer",
       "count": 2
     },
     {
-      "title": "H2Fit: Strength & Conditioning Coach - Fort Bragg, NC",
+      "title": "Cognitive Performance Specialist",
       "count": 2
     }
   ]
