@@ -4,37 +4,37 @@
 
 ## Headline
 
-- **229 open jobs** from **33 employers**.
+- **231 open jobs** from **33 employers**.
 - Posted between **2026-07-06** and **2026-09-28**.
-- **$87,934 median** annualized pay across the 164 postings that publish one -- $62,765 to $117,778 covers the middle half.
+- **$87,934 median** annualized pay across the 166 postings that publish one -- $62,783 to $117,778 covers the middle half.
 - **1% remote-friendly** (3 jobs).
-- 289 of 518 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 210, Special Operations 53, Fire / EMS / Law Enforcement 38, Training Pipeline 30.
+- 291 of 522 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 212, Special Operations 54, Fire / EMS / Law Enforcement 39, Training Pipeline 30.
 
 ## Month over month
 
-Postings are **up +86** in 2026-09 (64 to 150), 134% against 2026-08.
+Postings are **up +90** in 2026-09 (63 to 153), 143% against 2026-08.
 
 ```
 2026-07     8  #
-2026-08    64  ############
-2026-09   150  ############################
+2026-08    63  ############
+2026-09   153  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
 - Serco USA: 0 to 32
 - KBR: 0 to 31
-- Commander, Navy Installations Command: 0 to 27
+- Commander, Navy Installations Command: 0 to 28
 - Customs and Border Protection: 0 to 24
-- General Dynamics Information Technology: 0 to 23
+- General Dynamics Information Technology: 0 to 24
 
 **Credentials appearing more often:**
 
 - CSCS: 0 to 54
 - ATC: 0 to 17
+- PhD: 0 to 11
 - RD: 0 to 11
-- PhD: 0 to 10
 - TSAC-F: 0 to 3
 
 ## Who is hiring
@@ -43,8 +43,8 @@ Postings are **up +86** in 2026-09 (64 to 150), 134% against 2026-08.
 |---|---|---|---|
 | KBR | 36 | $87,975 | Strength & Conditioning, Sports Medicine |
 | Serco USA | 32 | - | Strength & Conditioning, Cognitive Performance |
-| Commander, Navy Installations Command | 27 | $46,436 | Program Leadership, Research & Analytics |
-| General Dynamics Information Technology | 25 | $98,738 | Cognitive Performance, Sports Medicine |
+| Commander, Navy Installations Command | 28 | $47,138 | Program Leadership, Research & Analytics |
+| General Dynamics Information Technology | 26 | $98,738 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 24 | $136,702 | - |
 | Military Treatment Facilities under DHA | 20 | $97,983 | Sports Medicine, Program Leadership |
 | Veterans Health Administration | 9 | $78,296 | Sports Medicine, Program Leadership |
@@ -56,12 +56,12 @@ Postings are **up +86** in 2026-09 (64 to 150), 134% against 2026-08.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Sports Medicine | 86 | 52% |
-| Strength & Conditioning | 72 | 44% |
-| Cognitive Performance | 30 | 18% |
-| Research & Analytics | 28 | 17% |
+| Sports Medicine | 87 | 52% |
+| Strength & Conditioning | 72 | 43% |
+| Cognitive Performance | 31 | 19% |
+| Research & Analytics | 29 | 17% |
 | Program Leadership | 21 | 13% |
-| Performance Nutrition | 19 | 12% |
+| Performance Nutrition | 19 | 11% |
 | Sport Science | 2 | 1% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
@@ -71,28 +71,28 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 54 | 70% |
+| CSCS | 54 | 69% |
 | ATC | 17 | 22% |
+| PhD | 11 | 14% |
 | RD | 11 | 14% |
-| PhD | 10 | 13% |
 | TSAC-F | 3 | 4% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** TS/SCI (19), Secret (18), Top Secret (17), Public Trust (1)
+**Clearances requested:** TS/SCI (19), Secret (18), Top Secret (17), Public Trust (2)
 
 ## What it pays
 
-- Median **$87,934**, middle half $62,765 to $117,778.
+- Median **$87,934**, middle half $62,783 to $117,778.
 - Full range $27,500 to $219,654.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Cognitive Performance | 14 | $87,684 | $106,174 | $130,770 |
+| Cognitive Performance | 15 | $91,369 | $113,610 | $130,770 |
 | Performance Nutrition | 10 | $91,950 | $97,968 | $110,941 |
-| Research & Analytics | 16 | $73,539 | $97,380 | $99,787 |
+| Research & Analytics | 17 | $75,920 | $97,108 | $98,738 |
 | Sport Science | 2 | $89,941 | $94,144 | $98,347 |
-| Sports Medicine | 64 | $58,890 | $78,850 | $103,318 |
+| Sports Medicine | 65 | $58,892 | $79,404 | $102,935 |
 | Strength & Conditioning | 30 | $51,940 | $72,433 | $90,749 |
 | Program Leadership | 16 | $57,747 | $63,916 | $76,912 |
 
@@ -116,7 +116,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Sill | 3 |
 | JBLM | 3 |
 
-**Branches and services:** Army (72), Joint (39), Navy (29), Air Force (21), Marine Corps (8), Space Force (4), Coast Guard (2)
+**Branches and services:** Army (72), Joint (39), Navy (30), Air Force (22), Marine Corps (8), Space Force (4), Coast Guard (2)
 
 ## Most common titles
 

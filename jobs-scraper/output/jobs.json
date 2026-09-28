@@ -1,8 +1,120 @@
 {
   "version": 2,
-  "generated_at": "2026-09-28T07:21:45.084891+00:00",
-  "count": 210,
+  "generated_at": "2026-09-28T19:07:55.047697+00:00",
+  "count": 211,
   "jobs": [
+    {
+      "id": "8ebba033126449da349c",
+      "fingerprint": "9eeecc1f2148889672a3",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-TX-Lackland-AFB/OPERATIONAL-PSYCHOLOGIST---SPECIAL-WARFARE-TRAINING-WING_RQ228947-2",
+      "title": "OPERATIONAL PSYCHOLOGIST - SPECIAL WARFARE TRAINING WING",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA TX Lackland AFB; USA TX Fort Sam Houston",
+      "remote": false,
+      "department": null,
+      "compensation": "from $102,654",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: None Clearance Level Must Be Able to Obtain: None Public Trust/Other Required: NACI (T1) Job Family: Healthcare Services Job Qualifications: Skills: Behavioral Health, Mental Health Care, Military Personnel, Public Health Certifications: None Experience: 2 + years of related experience US Citizenship Required: Yes Job\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "PhD"
+        ],
+        "clearance": "Public Trust",
+        "salary_min": 102654.0,
+        "salary_max": 138886.0,
+        "salary_period": "year",
+        "education": "Doctorate",
+        "years_experience_min": 2,
+        "employment_type": "Full-time",
+        "installation": "JBSA",
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "behavioral-health",
+        "discipline_label": "Behavioral Health",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "army"
+        ],
+        "branch_labels": [
+          "Army",
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 102654.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-28T19:07:55.047697+00:00"
+    },
+    {
+      "id": "0688727796408028f3bf",
+      "fingerprint": "716ef7030e1999b3286e",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/886618500",
+      "title": "Supervisory Recreation Specialist Fitness",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Kittery, Maine",
+      "remote": false,
+      "department": null,
+      "compensation": "$81,393 - $85,567 /yr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: Knowledge of a wide range of principles, concepts and techniques that govern physical fitness programs which includes\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 81393.0,
+        "salary_max": 85567.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 81393.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-09-28T19:07:55.047697+00:00"
+    },
     {
       "id": "c86eef6a4fb4e03f3a43",
       "fingerprint": "6a14fa2ebd211db843fd",
@@ -273,62 +385,6 @@
       "listed_at": "2026-09-26T19:07:05.508717+00:00"
     },
     {
-      "id": "93efb782fa66f8ad3b92",
-      "fingerprint": "33ce9fa98cdec85ec44a",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/886461600",
-      "title": "Holistic Health Dietician, SBD2",
-      "employer": "Space Systems Command",
-      "location": "Buckley AFB, Colorado",
-      "remote": false,
-      "department": null,
-      "compensation": "$99,800 - $154,280 /yr",
-      "posted_at": null,
-      "description": "The 0630 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "RD"
-        ],
-        "clearance": null,
-        "salary_min": 99800.0,
-        "salary_max": 154280.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": "Buckley SFB",
-        "service_branch": "Space Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "nutrition",
-        "discipline_label": "Performance Nutrition",
-        "lead": false,
-        "branches": [
-          "space-force"
-        ],
-        "branch_labels": [
-          "Space Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 99800.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-26T07:03:20.437509+00:00"
-    },
-    {
       "id": "e7bddca89ce90fe6a89f",
       "fingerprint": "3f6ba836eedba46dea8a",
       "source": "usajobs:federal",
@@ -380,6 +436,68 @@
       "confidence": "listed",
       "program": null,
       "notes": "",
+      "listed_at": "2026-09-26T07:03:20.437509+00:00"
+    },
+    {
+      "id": "93efb782fa66f8ad3b92",
+      "fingerprint": "33ce9fa98cdec85ec44a",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/886461600",
+      "title": "Holistic Health Dietician, SBD2",
+      "employer": "Space Systems Command",
+      "location": "Buckley AFB, Colorado",
+      "remote": false,
+      "department": null,
+      "compensation": "$99,800 - $154,280 /yr",
+      "posted_at": null,
+      "description": "The 0630 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "RD"
+        ],
+        "clearance": null,
+        "salary_min": 99800.0,
+        "salary_max": 154280.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": "Buckley SFB",
+        "service_branch": "Space Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "space-force"
+        ],
+        "branch_labels": [
+          "Space Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 99800.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-28T19:07:54+00:00"
+      },
       "listed_at": "2026-09-26T07:03:20.437509+00:00"
     },
     {
@@ -438,7 +556,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-09-26T07:03:20.437509+00:00"
     },
@@ -1194,7 +1312,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:44+00:00"
+        "checked_at": "2026-09-28T19:07:54+00:00"
       },
       "listed_at": "2026-09-23T07:06:17.723512+00:00"
     },
@@ -1477,7 +1595,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:49+00:00"
       },
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
@@ -2651,60 +2769,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "015baad1f4e727c7915a",
-      "fingerprint": "118ee618d1a370d74060",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Human-Performance-Program-Manager_RQ211645",
-      "title": "Human Performance Program Manager",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA FL Hurlburt Field",
-      "remote": false,
-      "department": null,
-      "compensation": "from $147,292",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Program Delivery and Execution Job Qualifications: Skills: Cost Management, Hiring, Operations, People Management, Supervision Certifications: None Experience: 10 + years of related experience US Citizenship Required: Yes Job\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 147292.0,
-        "salary_max": 199278.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 10,
-        "employment_type": "Full-time",
-        "installation": "Hurlburt Field",
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": true,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": 147292.0
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "301b0e4f583ddbf2c133",
       "fingerprint": "0b5cee445eef48227c13",
       "source": "usajobs:federal",
@@ -3769,6 +3833,66 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
+      "id": "015baad1f4e727c7915a",
+      "fingerprint": "118ee618d1a370d74060",
+      "source": "workday:gdit",
+      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-FL-Hurlburt-Field/Human-Performance-Program-Manager_RQ211645",
+      "title": "Human Performance Program Manager",
+      "employer": "General Dynamics Information Technology",
+      "location": "USA FL Hurlburt Field",
+      "remote": false,
+      "department": null,
+      "compensation": "from $147,292",
+      "posted_at": null,
+      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Program Delivery and Execution Job Qualifications: Skills: Cost Management, Hiring, Operations, People Management, Supervision Certifications: None Experience: 10 + years of related experience US Citizenship Required: Yes Job\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": "Top Secret",
+        "salary_min": 147292.0,
+        "salary_max": 199278.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 10,
+        "employment_type": "Full-time",
+        "installation": "Hurlburt Field",
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": true,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "contingency": "unknown",
+        "salary_floor_annual": 147292.0
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "verified",
+      "program": null,
+      "notes": "",
+      "liveness": {
+        "state": "live",
+        "reason": "reachable",
+        "http_status": 200,
+        "checked_at": "2026-09-28T19:07:47+00:00"
+      },
+      "listed_at": "2026-09-22T10:45:04.722464+00:00"
+    },
+    {
       "id": "cdc1612fc29f510e370e",
       "fingerprint": "6a937d802dc4691c103d",
       "source": "usajobs:federal",
@@ -3820,7 +3944,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:44+00:00"
+        "checked_at": "2026-09-28T19:07:54+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3876,7 +4000,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:44+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -3938,7 +4062,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:44+00:00"
+        "checked_at": "2026-09-28T19:07:54+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4000,7 +4124,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:44+00:00"
+        "checked_at": "2026-09-28T19:07:54+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4056,7 +4180,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4112,7 +4236,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -4454,7 +4578,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:39+00:00"
+        "checked_at": "2026-09-28T19:07:49+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4514,7 +4638,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
@@ -4570,7 +4694,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4626,7 +4750,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4682,7 +4806,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4738,7 +4862,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-14T07:14:49.027634+00:00"
     },
@@ -4798,7 +4922,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4854,7 +4978,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -4910,7 +5034,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-12T07:04:12.406605+00:00"
     },
@@ -5082,7 +5206,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -5144,7 +5268,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -5204,7 +5328,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-11T19:07:32.361116+00:00"
     },
@@ -5428,7 +5552,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5486,7 +5610,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:53+00:00"
       },
       "listed_at": "2026-09-10T19:08:03.209133+00:00"
     },
@@ -5656,7 +5780,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5714,7 +5838,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 202,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5770,7 +5894,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -5886,7 +6010,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -5942,7 +6066,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:43+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -6002,7 +6126,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -6062,7 +6186,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T21:35:10.854257+00:00"
     },
@@ -6125,7 +6249,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -6181,7 +6305,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-08T11:52:54.796919+00:00"
     },
@@ -6241,7 +6365,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-07T13:08:21.322720+00:00"
     },
@@ -6355,7 +6479,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6415,7 +6539,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6471,7 +6595,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-04T21:13:25.939184+00:00"
     },
@@ -6531,7 +6655,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6591,7 +6715,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-04T11:52:37.549225+00:00"
     },
@@ -6807,7 +6931,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6865,7 +6989,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -6925,7 +7049,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
     },
@@ -7041,7 +7165,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7101,7 +7225,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7161,7 +7285,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7217,7 +7341,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
@@ -7440,7 +7564,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7496,7 +7620,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:52+00:00"
       },
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
@@ -7552,7 +7676,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-02T11:51:17.268529+00:00"
     },
@@ -7614,7 +7738,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7674,7 +7798,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7736,7 +7860,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:42+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7798,7 +7922,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7858,7 +7982,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T21:33:32.882621+00:00"
     },
@@ -7914,7 +8038,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-09-01T12:13:32.637461+00:00"
     },
@@ -8028,7 +8152,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-31T23:07:07.413844+00:00"
     },
@@ -8142,7 +8266,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8202,7 +8326,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8262,7 +8386,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8322,7 +8446,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8378,7 +8502,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8438,7 +8562,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8498,7 +8622,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8558,7 +8682,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8618,7 +8742,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8681,7 +8805,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8743,7 +8867,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8803,7 +8927,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8865,7 +8989,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8925,7 +9049,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -8985,7 +9109,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9045,7 +9169,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9101,7 +9225,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9157,7 +9281,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9213,7 +9337,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9269,7 +9393,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9325,7 +9449,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9385,7 +9509,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9445,7 +9569,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9505,7 +9629,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9561,7 +9685,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9621,7 +9745,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9677,7 +9801,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9737,7 +9861,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:51+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -9797,7 +9921,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:41+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-29T21:29:39.815055+00:00"
     },
@@ -10141,7 +10265,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:39+00:00"
+        "checked_at": "2026-09-28T19:07:49+00:00"
       },
       "listed_at": "2026-08-29T18:21:50.115879+00:00"
     },
@@ -10516,62 +10640,6 @@
         ],
         "contingency": "unknown",
         "salary_floor_annual": 54995.200000000004
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "e439e253f247b182a6ec",
-      "fingerprint": "068d121062c131750263",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS34823EXTERNALENUS/H2FIT-Lead-Strength-and-Conditioning-Coach-Ft-Hood-TX",
-      "title": "H2FIT Lead Strength and Conditioning Coach - Ft. Hood, TX",
-      "employer": "Serco USA",
-      "location": "Fort Hood, Texas, USA",
-      "remote": false,
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications Lead Strength and Conditioning Coach Job Description Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. This Lead Strength and Conditioning Coach Certified (SCC) will be on a dynamic team,\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Hood",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": true,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "contingency": "unknown",
-        "salary_floor_annual": null
       },
       "matched": {
         "domain": [],
@@ -11666,7 +11734,7 @@
         "state": "live",
         "reason": "workday cxs: live",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:49+00:00"
       },
       "listed_at": "2026-08-29T14:09:45.600028+00:00"
     },
@@ -11899,7 +11967,7 @@
         "state": "live",
         "reason": "reachable",
         "http_status": 200,
-        "checked_at": "2026-09-28T07:21:40+00:00"
+        "checked_at": "2026-09-28T19:07:50+00:00"
       },
       "listed_at": "2026-08-18T14:23:57+00:00"
     }
