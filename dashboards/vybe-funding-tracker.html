@@ -127,7 +127,7 @@
   <header class="top">
     <div class="kicker">Live status · organized by the three growth pillars</div>
     <h1>Vybe funding tracker</h1>
-    <div class="updated">As of Sep 12, 2026 · nothing on this board has expired</div>
+    <div class="updated" id="stamp"></div>
     <p class="lede">The table below is <b>Pillar 2</b>, the standing grant cadence. <b>Pillar 1</b> (cost offset) and <b>Pillar 3</b> (university trade) follow it. Set your progress on any row — it saves in this browser. Rows marked <b>NY only</b> need New York State residency or registration, so confirm Vybe qualifies before spending time on them.</p>
   </header>
 
@@ -404,6 +404,24 @@
 
   var currentFilter = 'all', currentSort = 'urgency';
 
+  // The date and the "nothing has expired" claim were typed into the markup,
+  // so they were wrong the day after they were written: the published page was
+  // still headed "As of Sep 12, 2026" a fortnight later, above rows it was
+  // correctly drawing as closed. Both are derived now — the date from the
+  // clock, the claim by counting the rows — so the header cannot contradict
+  // the table underneath it. The feed's own as-of date is a separate clause,
+  // held in `feedNote` rather than appended, so re-rendering cannot stack it.
+  var feedNote = '';
+  function stamp(counts){
+    var el = document.getElementById('stamp');
+    if(!el) return;
+    var when = TODAY.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+    var state = counts.closed === 0
+      ? 'nothing on this board has expired'
+      : counts.closed + (counts.closed === 1 ? ' row has' : ' rows have') + ' closed and stayed on, for the record';
+    el.innerHTML = 'As of ' + esc(when) + ' · ' + state + feedNote;
+  }
+
   function render(){
     var rowsEl = document.getElementById('rows');
     var data = GRANTS.map(function(g){ return Object.assign({}, g, {cls: classify(g), days: daysUntil(g.deadline)}); });
@@ -422,6 +440,7 @@
       '<div class="stat"><div class="n">'+counts.rolling+'</div><div class="l">Rolling / apply anytime</div></div>' +
       (counts.forecast ? '<div class="stat forecast"><div class="n">'+counts.forecast+'</div><div class="l">Window not open yet</div></div>' : '') +
       '<div class="stat"><div class="n">'+(counts.soon+counts.open+counts.rolling)+'</div><div class="l">Total live opportunities</div></div>';
+    stamp(counts);
 
     var filtered = data.filter(function(g){
       if(currentFilter==='all') return true;
@@ -585,11 +604,10 @@
 
     GRANTS = Object.keys(byId).map(function(k){ return byId[k]; });
 
-    var stamp = document.querySelector('.updated');
-    if(stamp && feed.as_of){
-      stamp.innerHTML += ' · <strong>live feed: ' + feed.count + ' opportunities as of ' + feed.as_of + '</strong>';
+    if(feed.as_of){
+      feedNote = ' · <strong>live feed: ' + esc(String(feed.count)) + ' opportunities as of ' + esc(feed.as_of) + '</strong>';
       if(feed.source_errors && feed.source_errors.length){
-        stamp.innerHTML += ' · <em>' + feed.source_errors.length + ' source(s) unreachable, built-in entries shown</em>';
+        feedNote += ' · <em>' + feed.source_errors.length + ' source(s) unreachable, built-in entries shown</em>';
       }
     }
     render();
