@@ -20,9 +20,11 @@ npx expo start
   Restore card on Home to open it.
 - **MoveTrendScreen** *(24 Sep)* — six months of weekly active minutes,
   and what changed. Tap the Move card on Home to open it.
-- **DataSettingsScreen** *(new, 25 Sep)* — what is connected, where the data
+- **DataSettingsScreen** *(25 Sep)* — what is connected, where the data
   sits, and how to export or delete it. Reached from "Your data" in the Home
   header.
+- **NourishScreen** *(new, 28 Sep)* — one day of eating on real clock time, and
+  the gap between the last bite and lights out. Tap the Nourish card on Home.
 
 ## The three decisions worth keeping
 
@@ -108,6 +110,47 @@ argument rather than open it. Delete asks twice, and the button changes its
 **Reachable from the front door.**
 A company whose position is "your data is yours" should not bury the proof three
 taps down, so Home carries a "Your data" link in its header.
+
+## The nourish screen, and why it looks like that
+
+**The claim is about timing, so the screen is a clock.**
+NourishScreen opens on *"The strongest signal in your food data is when you stop
+eating, not what you ate"* — and then the middle of the screen is the day laid
+out on an axis, with the meals where they actually happened. A list of meals in
+order cannot make that argument: it spaces breakfast and lunch the same distance
+apart as lunch and a dinner six hours later. On an axis the shape of the day *is*
+the finding — a long empty afternoon, then a meal pressed up against sleep.
+
+**Every nutrition app opens on a calorie total. This one refuses to.**
+A calorie count is a number the person then has to interpret alone, which is the
+gap the whole product exists to close. So the day's food gets one hairline list
+of four readings, and the screen closes by saying outright what it will never do:
+count calories, score the day out of ten, or sort food into good and bad.
+
+**The one number that matters is set at 56pt on bare paper.**
+`1h 35m` — last bite to lights out — with the person's own 3h for comparison, not
+a guideline. It sits between the answer and the plot because it is the figure the
+answer turns on, and it is computed from the meal times and the bedtime rather
+than typed, so it cannot drift from the timeline drawn directly beneath it.
+The same is true of the eating window, the duration of each meal, and the
+19-minute difference in the pattern section.
+
+**A Nourish screen making a Restore argument.**
+The pattern section compares estimated deep sleep on the nights after a late
+dinner with the nights after an early one, and says so in words: the five
+dimensions are one system, not five scores that never speak to each other. It
+also says, in the same breath, that deep sleep is an *estimate* from the Band and
+not a measurement — a wrist sensor does not get to sound certain about sleep
+architecture.
+
+**The marker is a touch target and the bar is the truth.**
+A ten-minute coffee is under 1% of an eighteen-hour day, which is three pixels:
+honest as geometry, impossible as a thumb target. So `DayTimeline` draws the true
+duration as a small bar under the day's line and puts a 26pt numbered marker on
+the midpoint for tapping, with the numbers mapped to meal names in a line of
+text under the axis. Both bands are explained in words for the same reason the
+readings are — a tinted rectangle tells somebody who cannot separate these
+colours nothing at all.
 
 ## Non-negotiables held
 

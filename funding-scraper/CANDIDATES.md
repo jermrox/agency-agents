@@ -50,6 +50,59 @@ Veteran Shark Tank is the find: its age test is a **ceiling** (under three years
 history, so a company too young for Buckeye or Tadlock clears it. Drafted as the
 `sharktank` packet the same day.
 
+## Promoted to the board — 28 Sep 2026
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **PenFed Foundation** Veteran Entrepreneur Program (Accelerator / Incubator) | free place, travel covered, **zero equity**; Accelerator feeds a year-end pitch competition for non-dilutive funding | rolling, reviewed monthly |
+| **IVMF Military Founders Lab** (Syracuse) | free 10-week virtual programme, no cash | 3 cohorts a year; next intake winter 2027, dates unposted |
+| **Veterans Business Battle** (Rice University) | **$30,000** non-dilutive split between the top three, plus investors with earmarked capital | 2027 window unposted; the 2026 early window ran 2 Sep – 10 Nov |
+
+PenFed is the find. It is the only item on the board whose only hard gate is one
+Vybe has already confirmed — majority veteran-owned — and it costs nothing:
+no fee, no equity, flights and hotels paid. An unsuccessful application is held
+on file for a calendar year, so there is no window to miss. Drafted the same day
+as the `penfed` packet, against the real form, which turns out to be readable
+end to end without an account.
+
+The Military Founders Lab matters for the same reason Veteran Shark Tank did: its
+revenue test is a **ceiling** (under $250K in the last 12 months, or pre-revenue
+with confirmed capital), where most veteran programmes set a floor. Its cohort
+tracks include Women Founders and Black Founders — three of Vybe's confirmed
+categories in one programme.
+
+## Removed from the board — 28 Sep 2026
+
+Both were rows this file helped put there, and both came off after reading the
+programme's own page rather than its summary:
+
+- **Paratus Digital Health Accelerator (BARDA network)** — the board carried
+  `close_date = 2027-01-15` with the note "closes 15 Jan, annually". MATTER's own
+  page says the preliminary application was due **15 January 2026**, that awards
+  were announced in June 2026 and that funding began that summer. No 2027 window
+  is published anywhere on it. The date on the board was extrapolated from the
+  word "annually" — which is the same failure as a stale deadline, wearing the
+  clothes of a live one. Reading further kills it on fit as well: the funding
+  buys a **proof-of-concept study at a partner study site**, for detecting
+  infectious disease and CBRN exposure, "enabling earlier diagnosis and
+  intervention". That is a diagnostic posture and a trial arm, neither of which
+  Vybe has. PR #20 called this "the closest programme fit on the board"; that
+  claim does not survive the page.
+- **Boundless Futures Foundation — EmpowHer Grant** — up to $50,000, real, and
+  opening 1 November, but the foundation's own submission manager restricts
+  eligible businesses to those addressing **poverty, hunger or humanitarian aid,
+  or sustainability and the environment**. Consumer health is not on the list,
+  so the age ceiling that made this row attractive is irrelevant. It also
+  requires existing revenue, a self-reported credit score and a third-party
+  background check — none of which the row stated. Watch it only if the eligible
+  categories change.
+
+**Next row to inspect:** **MedTech Innovator Vantage (BARDA Accelerator
+Network)** is still on the board, closing 15 Oct. It is the same network and the
+same posture problem that just removed Paratus, and `DECKS.md` already records it
+as a structural disqualifier for a deck. Read its own page before that deadline
+and either state the medical-device gate on the row or take it off.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |
@@ -112,6 +165,38 @@ Dead on inspection, 25 Sep 2026:
   5, women-owned, no fee. Rejected on fit, not integrity: eligible categories
   are beauty and wellness CPG — supplements, ingestibles, skincare. Vybe is a
   wearable and an app, not a consumer packaged good.
+
+Dead or rejected on inspection, 28 Sep 2026:
+
+- **Google for Startups Accelerator: North America** — genuinely equity-free and
+  genuinely real, but the 2026 North America cohort was **AI for Energy** (grid
+  modernisation, demand flexibility, energy affordability) and applications
+  closed 30 June 2026. Google's own page also sets a **5+ employees** floor and
+  asks for a CTO committed to every session. The Canada page says 2027 dates
+  will be announced later this year. Recheck when a 2027 AI-First cohort with a
+  theme Vybe fits is posted — and check the headcount gate first.
+- **Visa She's Next** — the 2026 programme was **Ireland only** (€90,000 across
+  five winners, closed 6 April, 51% women-owned and €10K minimum revenue). Visa
+  has run US cycles through iFundWomen in past years; no US 2026 window is
+  posted. Worth a look each spring, not now.
+- **Comcast RISE** — settled. `comcastrise.com` now serves Comcast's Project UP
+  page, which describes RISE entirely in the past tense ("has supported 14,500
+  small business owners") with no application anywhere on it. The board's
+  standing judgement was right; this is the confirmation, dated.
+- **Hiring Our Heroes Small Business Grant** — their own site no longer lists an
+  entrepreneurship programme at all: the homepage offers hiring events,
+  fellowships, a Skilled Trades Academy and career connectors. The grant is not
+  merely between cycles, it is absent from the programme list. Drop it from
+  Priority 3 unless it reappears.
+- **Founders First CDC — Pride Business Grant** — real, national, $1,000 plus a
+  free programme place, and deliberately not added. Its gate is the founders'
+  LGBTQIA+ status, which nobody has stated and which is not something a board
+  row should invite a claim about. If the founders say it applies, it is a
+  one-line add.
+- **Founders First CDC — Kitty Fund Mom Business Grant** — same shape, $1,000
+  plus a programme place, gated on mother-owned. Left in the queue rather than on
+  the board because that gate is unconfirmed for Vybe. Sister programme to the
+  Tadlock grant already on the board, so the application is a known quantity.
 
 Standing rejections:
 
