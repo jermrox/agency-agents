@@ -425,6 +425,22 @@ HARD_TITLE_EXCLUSION_TERMS: tuple[str, ...] = (
     "lecturer",
     "adjunct",
     "postdoctoral",
+    # Designing the instruction is the same species as teaching it. The Space
+    # Force "Instructional Systems Specialist, S2I-F" at Peterson AFB reached
+    # PUBLISH on 2026-09-29; the 1750 series is curriculum design.
+    "instructional systems",
+    # Emergency care is not performance delivery. GDIT's "Paramedic" at Pope
+    # Field reached PUBLISH on 2026-09-29 on a SOF employer and a tactical
+    # location, with duties that are emergency medical services and life
+    # support. The board's disciplines are strength and conditioning, athletic
+    # training, rehabilitation, nutrition, cognitive and behavioral health --
+    # an ambulance is none of them.
+    "paramedic",
+    "emergency medical technician",
+    # Family and community services, likewise: GDIT's "Community Resource
+    # Coordinator" across five posts is peer support, family support and social
+    # services. It sits beside the performance teams without being one.
+    "community resource",
 )
 
 # Umbrella hiring notices whose whole title is a category ("Medical", the

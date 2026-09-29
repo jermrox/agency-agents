@@ -797,6 +797,65 @@ def test_a_professorship_in_human_performance_is_not_a_performance_job():
     assert "professor" in posting.exclusion_hits
 
 
+def test_designing_the_instruction_is_not_delivering_the_performance():
+    # US Space Force, 2026-09-29, Peterson AFB. The 1750 series is
+    # instructional systems design -- writing the course, not coaching anyone.
+    posting = make(
+        "Instructional Systems Specialist, S2I-F",
+        "The 1750 series has an individual occupational requirement that must be met. "
+        "Space Force Forces direct hire. Develops training curricula and instructional "
+        "materials for guardian readiness and human performance courses.",
+        employer="United States Space Force Forces",
+        location="Peterson AFB, Colorado",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "instructional systems" in posting.exclusion_hits
+
+
+def test_emergency_care_at_a_tactical_site_is_not_performance_work():
+    # GDIT, 2026-09-29, Pope Field. A SOF employer and a tactical location
+    # carried this to PUBLISH; the duties are an ambulance.
+    posting = make(
+        "Paramedic",
+        "Job Family: SCA. Skills: Emergency Care, Emergency Medical Services, Life "
+        "Support, Life Support Training, Psychological Traumas. Supports special "
+        "operations forces at Pope Field. 3+ years of related experience.",
+        employer="General Dynamics Information Technology",
+        location="USA NC Pope AFF",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "paramedic" in posting.exclusion_hits
+
+
+def test_family_and_community_services_are_not_embedded_performance():
+    # GDIT, 2026-09-29, five SOF posts at once. Behavioral-health vocabulary
+    # throughout, but the work is family support and social services.
+    posting = make(
+        "Community Resource Coordinator",
+        "Job Family: Healthcare Services. Skills: Behavioral Health, Counseling, "
+        "Family Support, Peer Support, Social Services. Supports special operations "
+        "units and their families. Top Secret clearance required.",
+        employer="General Dynamics Information Technology",
+        location="USA NC Fort Bragg; USA KY Fort Campbell; USA FL Hurlburt Field",
+    )
+    assert classify(posting) == Verdict.REJECT
+    assert "community resource" in posting.exclusion_hits
+
+
+def test_an_embedded_sof_psychologist_still_publishes():
+    # The guard against over-reach: the three rules above must not touch the
+    # embedded behavioral health the board exists to carry.
+    posting = make(
+        "Special Operations Clinical Psychologist (Fort Bragg, NC)",
+        "Provides POTFF embedded behavioral health support to special operations "
+        "forces, including cognitive performance training and return-to-duty "
+        "evaluations for operators.",
+        employer="KBR",
+        location="Fort Bragg, North Carolina",
+    )
+    assert classify(posting) == Verdict.PUBLISH
+
+
 def test_applicant_boilerplate_alone_does_not_place_the_work():
     # Loyal Source, 2026-09-09: a strength and conditioning coach "for clients
     # or athletes", nationwide, whose only military words are the hiring
