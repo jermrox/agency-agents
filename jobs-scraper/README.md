@@ -401,13 +401,17 @@ working pattern is a static feed plus a client-side embed, which is what
 1. Do steps 1–4 above (the domain is optional here — the default
    `username.github.io/repo` URL works fine).
 2. On the Squarespace page: *Edit → Add Block → Code*, paste the contents of
-   [`embed/squarespace-jobs.html`](embed/squarespace-jobs.html).
-3. Set `FEED_URL` at the top of its script to your `jobs.json`:
-   `https://jobs.mopsnmoes.com/jobs.json` (or the `github.io` URL).
+   [`embed/squarespace-loader.html`](embed/squarespace-loader.html) — about
+   fifty lines. It is also published as `squarespace-loader.html` on the
+   live host, with the host's own origin filled in.
+3. Nothing else. The loader fetches `squarespace-embed.html` (the board with
+   the absolute feed URL) from the live host on every page view and runs it.
 
-The board then updates on the site with no further edits: the workflow
-rewrites `jobs.json` nightly and the page renders whatever is in it. A role
-that drops out of the feed disappears from the page — no stale-post cleanup.
+Both the jobs and the board itself then update on the site with no further
+edits: the workflow rewrites `jobs.json` nightly, and any change to the
+component ships with the next publish, because the page never holds a copy
+of it. Pasting the whole board (`embed/board.html`) still works, but then the
+page keeps that copy until someone pastes again.
 
 **Both options publish the same four files**, so you can start with B and add
 A later without changing anything:

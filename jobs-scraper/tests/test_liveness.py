@@ -103,6 +103,36 @@ def test_expired_marker_in_page_text_retires_the_posting(fake_urlopen):
     assert "no longer available" in verdict.reason
 
 
+def test_a_closed_usajobs_announcement_is_gone(fake_urlopen):
+    """USAJOBS answers 200 for a closed announcement; the banner is the signal.
+    Twelve closed federal postings sat on the live board as "live" (2026-09-05)."""
+    body = (
+        b"<html><body><div class=\"usajobs-joa-banner--closed\">"
+        b"<p>This job announcement has closed</p></div>"
+        b"<h1>Physical Therapist</h1><p>Open &amp; closing dates 08/26/2026 to 09/02/2026</p>"
+        b"</body></html>"
+    )
+    fake_urlopen(_FakeResponse(body))
+    verdict = liveness.check_url("https://www.usajobs.gov/job/881789900")
+    assert verdict.state == liveness.GONE
+    assert "announcement has closed" in verdict.reason
+
+
+def test_army_boilerplate_about_closing_does_not_retire_an_open_announcement(fake_urlopen):
+    """Every open Army announcement says "Once the announcement has closed, a
+    review of your application package..." in its evaluation section."""
+    body = (
+        b"<html><body><h1>Athletic Trainer</h1>"
+        b"<p>Open &amp; closing dates 09/03/2026 to 09/16/2026</p>"
+        b"<h2>How you will be evaluated</h2>"
+        b"<p>Once the announcement has closed, a review of your application package "
+        b"(resume, supporting documents, and responses) will be made.</p>"
+        b"</body></html>"
+    )
+    fake_urlopen(_FakeResponse(body))
+    assert liveness.check_url("https://www.usajobs.gov/job/883392800").state == liveness.LIVE
+
+
 def test_marker_with_typographic_apostrophe_is_still_caught(fake_urlopen):
     body = "<p>Sorry, this job is not available.</p>".encode()
     fake_urlopen(_FakeResponse(body))
