@@ -70,10 +70,20 @@ demand from the Actions tab). It runs the tests, then `run`, then commits
 archive grows by one day per run. Scheduled workflows only run from the
 default branch, so this starts after the branch is merged.
 
-**Viewing it:** the Netlify build (`scripts/build-netlify-site.sh`) has a
-`baby` target. Create a Netlify site named `agentbabyscout` from this
-repository (or set `SITE_TARGET=baby` in its environment) and it publishes
-`site/` at its root, redeploying after each daily commit.
+**Viewing it:** the dashboard is its own Netlify project, separate from the
+sites that build from the repository root. Set it up once:
+
+1. In Netlify: **Add new site → Import an existing project → GitHub →**
+   this repository, branch `main`.
+2. Set **Base directory** to `baby-scout`. Leave the build command and
+   publish directory empty; `baby-scout/netlify.toml` supplies them.
+3. Deploy. The page is `site/` at the site root and redeploys after each
+   daily commit. Rename the site, or add a custom domain, under *Site configuration*.
+
+`baby-scout/netlify.toml` only redeploys when something under `baby-scout/`
+changed, and the root `netlify.toml` skips rebuilding the other sites when a
+commit touches only `baby-scout/`, so the daily run never redeploys them. The
+dashboard is served with `X-Robots-Tag: noindex` so search engines leave it out.
 
 **Privacy:** this repository is public. Anything in `data/` and `site/` is
 public, including the due date, budget, prices and purchases. To keep the
