@@ -30,8 +30,10 @@ on:
       - 'netlify.toml'
       - '.github/workflows/verify-rev-site.yml'
   schedule:
-    # 12:25 UTC daily, ten minutes after the research site check.
-    - cron: '25 12 * * *'
+    # 14:20 UTC daily: 40 minutes after the daily funding sweep, which is long
+    # enough for Netlify to deploy its commit. Running before the sweep would
+    # check yesterday's data every day and call it fresh.
+    - cron: '20 14 * * *'
 
 permissions:
   contents: read
@@ -96,7 +98,7 @@ jobs:
           echo "== Reachability =="
           check "/"                           "site root"
           check "/vybe-funding-tracker.html"  "named tracker copy"
-          check "/funding.json"               "biweekly sweep feed"
+          check "/funding.json"               "daily sweep feed"
 
           echo
           echo "== Isolation from the research site =="
@@ -159,6 +161,19 @@ jobs:
           print(f"  opportunities              : {len(opps)}")
           if len(opps) < 40:
               print("  FAIL: fewer than 40 opportunities in the feed"); sys.exit(1)
+          # Freshness: the site is supposed to update daily. A feed that loads
+          # fine but is days old is the failure that went unnoticed until 29 Sep,
+          # because every check above passes on stale data.
+          from datetime import datetime, timezone
+          gen = d.get('generated') if isinstance(d, dict) else None
+          try:
+              age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(gen)).total_seconds() / 3600
+          except Exception:
+              print(f"  FAIL: feed has no readable 'generated' timestamp ({gen!r})"); sys.exit(1)
+          print(f"  generated                  : {gen} ({age_h:.0f}h ago)")
+          if age_h > 30:
+              print(f"  FAIL: the live feed is {age_h:.0f} hours old; the daily sweep has not reached the site")
+              sys.exit(1)
           PY
 
           echo

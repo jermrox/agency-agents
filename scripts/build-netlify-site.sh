@@ -76,7 +76,7 @@ if want_rev; then
   cp -f "$SRC_FUNDING" "$OUT/vybe-funding-tracker.html"
 
   # The funding dashboard fetches /funding.json at runtime to pick up the
-  # biweekly sweep. Its absence is survivable by design -- the page falls back
+  # daily sweep. Its absence is survivable by design -- the page falls back
   # to its built-in list -- so a missing feed must not fail the build.
   if [ -f "$FUNDING_FEED" ]; then
     cp -f "$FUNDING_FEED" "$OUT/funding.json"

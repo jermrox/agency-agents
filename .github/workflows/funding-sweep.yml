@@ -1,4 +1,4 @@
-name: Funding sweep — biweekly
+name: Funding sweep — daily
 
 # Collects open non-dilutive funding opportunities and publishes funding.json
 # for the Vybe funding dashboard to read.
@@ -10,9 +10,11 @@ name: Funding sweep — biweekly
 # one place the sweep can actually see the whole federal picture.
 #
 # CADENCE
-# Every two weeks, matching the Pillar 2 operating rhythm: surface the current
-# top opportunities, act on them, repeat. A daily run would just burn minutes
-# re-reading solicitations whose close dates move on a monthly cycle.
+# Daily, at 13:40 UTC. The live site (agentrevup) is expected to update every
+# day: the daily Vybe routine adds verified rows to sources.toml at 12:00 UTC,
+# and this run is what turns them into funding.json. Biweekly left the live
+# board up to two weeks behind its own source file (it sat five days stale on
+# 29 Sep). A run takes about a minute, so daily costs almost nothing.
 
 on:
   workflow_dispatch:
@@ -30,9 +32,10 @@ on:
         type: boolean
         default: false
   schedule:
-    # 08:20 UTC on the 1st and 15th. Off the hour on purpose -- :00 is when
-    # every scheduled workflow on the platform fires at once.
-    - cron: "20 8 1,15 * *"
+    # 13:40 UTC daily: after the 12:00 daily routine, before the 14:20 live-site
+    # check. Off the hour on purpose -- :00 is when every scheduled workflow on
+    # the platform fires at once.
+    - cron: "40 13 * * *"
 
 concurrency:
   group: funding-sweep
@@ -122,5 +125,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add funding-scraper/output/funding.json dashboards/vybe-funding-tracker.html
-          git commit -m "chore(funding): biweekly sweep [skip ci]"
+          # No [skip ci] here. Netlify honours that marker and skips the deploy,
+          # so a sweep commit carrying it refreshed main and never reached the
+          # live site. It was also redundant: a push made with GITHUB_TOKEN does
+          # not trigger other workflows in the first place.
+          git commit -m "chore(funding): daily sweep"
           git push
