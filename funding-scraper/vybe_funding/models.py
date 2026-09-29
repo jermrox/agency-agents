@@ -8,8 +8,16 @@ WHY STATUS IS DERIVED, NEVER STORED
 The failure mode this whole project exists to prevent is a board full of
 expired deadlines presented as live opportunities. A stored status goes stale
 the moment the clock passes it; a derived one cannot. ``status`` is therefore
-computed from ``close_date`` against the run date every time, and the JSON the
-dashboard reads carries the date so the page can re-derive it client-side too.
+computed from the dates against the run date every time, and the JSON the
+dashboard reads carries them so the page can re-derive it client-side too.
+
+A WINDOW HAS TWO ENDS
+Status was read off ``close_date`` alone, which quietly published three rows as
+applicable today: a programme whose portal does not open until 1 November read
+"rolling", and two whose windows open in October read "open" and "soon". Telling
+someone to apply to something that cannot be applied to is the same failure as
+an expired deadline, pointing the other way -- so a window that has not started
+is its own state, ``forecast``, and never one of the live ones.
 """
 
 from __future__ import annotations
@@ -29,7 +37,7 @@ def slugify(text: str) -> str:
 
     The slug becomes the row id, which is the dashboard's localStorage key, so
     a slug that moves silently discards someone's saved progress on that row.
-    "Alzheimer&rsquo;s" and "Alzheimer’s" are the same program, and whether a
+    "Women&rsquo;s" and "Women’s" are the same program, and whether a
     title arrives escaped is an upstream detail that must not reach the key --
     so unescape before slugifying, and the id survives the decoding being
     fixed at the source as well as any future change in how it arrives.
@@ -104,13 +112,19 @@ class Opportunity:
         return hashlib.sha256(f"{self.source}|{self.name}|{self.url}".encode()).hexdigest()[:16]
 
     def status(self, today: date) -> str:
-        """open | soon | closed | rolling, derived fresh every run."""
+        """forecast | soon | open | rolling | closed, derived fresh every run.
+
+        Closed is tested first so that contradictory dates -- a future opening
+        with a past deadline, which is upstream saying two things at once --
+        settle on the state that tells nobody to go and apply.
+        """
+        if self.close_date is not None and (self.close_date - today).days < 0:
+            return "closed"
+        if self.open_date is not None and self.open_date > today:
+            return "forecast"
         if self.close_date is None:
             return "rolling"
-        days = (self.close_date - today).days
-        if days < 0:
-            return "closed"
-        if days <= 30:
+        if (self.close_date - today).days <= 30:
             return "soon"
         return "open"
 
@@ -118,6 +132,19 @@ class Opportunity:
         if self.close_date is None:
             return None
         return (self.close_date - today).days
+
+    def days_until_open(self, today: date) -> int | None:
+        """Days until the window opens, or None once it has.
+
+        Only meaningful while the opening is ahead: past it, the number is an
+        age rather than a wait, and grants.gov puts a posted date on every row,
+        so returning one unconditionally would invite "opened 900 days ago" to
+        be rendered as if it meant something.
+        """
+        if self.open_date is None:
+            return None
+        days = (self.open_date - today).days
+        return days if days > 0 else None
 
     def to_dict(self, today: date) -> dict[str, Any]:
         return {
@@ -132,6 +159,7 @@ class Opportunity:
             "close_date": self.close_date.isoformat() if self.close_date else None,
             "status": self.status(today),
             "days_left": self.days_left(today),
+            "days_until_open": self.days_until_open(today),
             "pillar": self.pillar,
             "kind": self.kind,
             "eligibility": self.eligibility,
