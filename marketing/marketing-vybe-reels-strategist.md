@@ -22,6 +22,8 @@ vibe: Every second of the Reel earns the next one, and every health claim can sh
 
 **What Vybe is.** Vybe is *the developer platform for wearable health*. Vybe builds the hardware (band, ring, future sensors), the proprietary engine (firmware, signal processing, sensor fusion), a secure data platform, and a licensed SDK + API. Other teams build applications on top: performance, aging, tactical, research, health.
 
+**Core message (Vybe one-pager).** "We build the wearable. They build what's possible with it." Vybe is the platform the next generation of wearable-health companies gets built on, not just another wearable competing with WHOOP or Oura. Own = buy the band, no mandatory consumer subscription. Create = the open platform (DevKit, SDK + API, licensed data access). The founder's hook "Why rent when you can own and even create" is on-message. The research behind "rent": the objection to subscriptions "is not simply price. It is the feeling of renting access to a device and one's own data." Always pair it with the fair line, never say subscriptions are bad, and never lead with the waitlist. The call to action is follow-first plus a question. Full rules live in the dashboard's `research/strategy` (`coreMessage`, `instagramRules`).
+
 **What the public site says (vybe.health, checked Sep 2026).** Pre-launch: "Reserve your place in the founding batch", with hardware shipping to founders first. A screenless band with continuous ECG and HRV, worn overnight. Five factors: **Vitals, Restore, Nourish, Move, Connect**, plus **Own it**: no subscription, Bluetooth-first, health data never sold or shared without consent, personal baseline instead of a population average. One signal layer serves three more audiences: enterprise (aggregated readiness and fatigue, never individuals), research (sensor-level data under revocable consent) and developers (API).
 
 **Crowded claims.** "Screenless" and "no subscription" are no longer unique. Hume Band, Luna Band, Polar Loop, Fitbit Air, Garmin CIRQA, Amazfit Helio and others all claim them. Use them as proof points, never as the whole hook. Lead with what's specific to Vybe: personal baselines, reading the five factors as one signal, owning your data, and the platform that other teams build on.
@@ -48,7 +50,7 @@ This is the working copy of the plan. It lets any session, including the schedul
 - 4 Reels a week (16 in total)
 - share of viewers still watching at 3 seconds: up 25% on week 1
 - saves + sends per 1,000 reach: up 50% on week 1
-- founding-batch reservations
+- profile visits that turn into follows
 - 3–5 builder inquiries
 
 No DMs or pitches this month. The follower work is follow, comment and post.
@@ -56,7 +58,7 @@ No DMs or pitches this month. The follower work is follow, comment and post.
 **Weeks.**
 - Week 1 (Sep 24–30): set the baseline and test 4 hook types.
 - Week 2 (Oct 1–7): double down on what won, plus the first builder Reel.
-- Week 3 (Oct 8–14): founding-batch push.
+- Week 3 (Oct 8–14): own-and-create push: ownership plus the platform. Not a waitlist push.
 - Week 4 (Oct 15–23): two builder Reels, plus a remake of the best Reel.
 
 **Audience categories and targets.** Every Reel is tagged with the one category it's for.
@@ -117,7 +119,7 @@ The shares are a planning split, not measured results. Give more Reel slots to c
 - Collab posts reach about 2.2× a solo post, and more when the creator publishes and invites @vybehealthinc as co-author. Use Tier 1 micro-creators.
 - Unlocked at 1,000 followers:
   - Trial Reels: shown to non-followers for 72 hours. Use them to A/B test hooks.
-  - Broadcast channel: plan a "Founding Batch" channel. Meta reports opens above 70%.
+  - Broadcast channel: plan a Vybe channel for followers. Meta reports opens above 70%.
 - Connect people to each other, not just to the brand:
   - Story polls and question stickers
   - a weekly "My baseline" feature, with consent
