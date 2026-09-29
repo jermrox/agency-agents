@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vybe Health Social</title>
+<meta name="description" content="Instagram growth for @vybehealthinc: followers, profile visits, reach, posts and follow-backs, logged daily from the Instagram Graph API.">
+<meta name="robots" content="noindex">
+<style>
+:root {
+  --surface-0: #f4f4f2;
+  --surface-1: #fcfcfb;
+  --border: #e3e2de;
+  --grid: #ecebe7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #77766f;
+  --series: #1baf7a;
+  --series-soft: rgba(27, 175, 122, .12);
+  --link: #1f64b8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-0: #121211;
+    --surface-1: #1a1a19;
+    --border: #2e2e2c;
+    --grid: #262624;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #96958c;
+    --series: #199e70;
+    --series-soft: rgba(25, 158, 112, .18);
+    --link: #7fb3f0;
+  }
+}
+:root[data-theme="dark"] {
+  --surface-0: #121211;
+  --surface-1: #1a1a19;
+  --border: #2e2e2c;
+  --grid: #262624;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #96958c;
+  --series: #199e70;
+  --series-soft: rgba(25, 158, 112, .18);
+  --link: #7fb3f0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--surface-0);
+  color: var(--text-primary);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; }
+header h1 { margin: 0; font-size: 26px; letter-spacing: -.01em; }
+header p { margin: 4px 0 0; color: var(--text-secondary); }
+.stamp { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+h2 { font-size: 17px; margin: 36px 0 12px; }
+.note { font-size: 13px; color: var(--text-muted); margin: 0 0 12px; }
+a { color: var(--link); }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 24px; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile .label { font-size: 13px; color: var(--text-secondary); }
+.tile .value { font-size: 28px; font-weight: 650; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.tile .sub { font-size: 13px; color: var(--text-muted); }
+
+.goal { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-top: 12px; }
+.goal .bar { height: 8px; border-radius: 4px; background: var(--grid); margin: 10px 0 6px; overflow: hidden; }
+.goal .bar span { display: block; height: 100%; background: var(--series); border-radius: 4px; }
+.goal .row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.chart { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px 10px; position: relative; }
+.chart h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.chart .latest { font-size: 13px; color: var(--text-secondary); }
+.chart svg { display: block; width: 100%; height: 150px; margin-top: 8px; overflow: visible; }
+.chart .empty { height: 150px; display: grid; place-items: center; color: var(--text-muted); font-size: 13px; }
+.tip {
+  position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-primary); white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12); display: none; font-variant-numeric: tabular-nums;
+}
+
+.tablewrap { overflow-x: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .04em; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.cap { white-space: normal; min-width: 220px; }
+tr:last-child td { border-bottom: 0; }
+.na { color: var(--text-muted); }
+details { margin-top: 10px; }
+summary { cursor: pointer; font-size: 13px; color: var(--text-secondary); }
+.brief { margin: 0; padding: 14px 16px 14px 34px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; }
+.brief li { margin: 4px 0; }
+.up { color: var(--text-primary); font-weight: 600; }
+footer { margin-top: 48px; font-size: 13px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Vybe Health · Instagram growth</h1>
+    <p><a href="https://www.instagram.com/vybehealthinc/">@vybehealthinc</a>. Real numbers from the Instagram Graph API, logged every morning and kept for good.</p>
+    <div class="stamp" id="stamp">Loading…</div>
+  </header>
+
+  <section class="tiles" id="tiles"></section>
+  <section class="goal" id="goal" hidden></section>
+
+  <h2>Where we stand</h2>
+  <ul class="brief" id="brief"></ul>
+
+  <h2>Daily log</h2>
+  <p class="note">One row per day, straight from Instagram. Follower counts are logged from Sep 27, when tracking started. Instagram doesn't give daily follower history for accounts under 100 followers, so earlier days can't be backfilled.</p>
+  <div class="tablewrap"><table id="daily"></table></div>
+
+  <h2>Trends</h2>
+  <p class="note">Daily values. Gaps are days Instagram returned nothing, not zeros.</p>
+  <section class="charts" id="charts"></section>
+
+  <h2>Posts</h2>
+  <div class="tablewrap"><table id="posts"></table></div>
+
+  <h2>Follow-backs</h2>
+  <p class="note" id="followNote"></p>
+  <div class="tablewrap"><table id="followCats"></table></div>
+
+  <footer>Snapshot of the live Vybe dashboard on claude.ai. Rebuilt with each daily Instagram pull.</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var fmt = new Intl.NumberFormat("en-US");
+  function n(v) { return v == null ? "—" : fmt.format(v); }
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    for (var k in attrs || {}) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function day(d) {
+    var p = d.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  }
+
+  fetch("data.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function () { document.getElementById("stamp").textContent = "Couldn't load data.json."; });
+
+  function render(d) {
+    var gen = new Date(d.generatedAt);
+    document.getElementById("stamp").textContent =
+      "Updated " + gen.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " · " + d.source;
+
+    var f = d.followers || [];
+    var last = f[f.length - 1] || {};
+    var prev = f.length > 1 ? f[f.length - 2] : null;
+    var first = f[0] || {};
+    function delta(a, b) {
+      if (a == null || b == null) return "";
+      var x = a - b;
+      return (x > 0 ? "+" : "") + fmt.format(x);
+    }
+    var ins = d.insights || [];
+    var wk = ins.slice(-7);
+    function sum(key) {
+      var s = 0, any = false;
+      wk.forEach(function (r) { if (r[key] != null) { s += r[key]; any = true; } });
+      return any ? s : null;
+    }
+    var tiles = [
+      ["Instagram followers", n(last.ig), prev ? delta(last.ig, prev.ig) + " vs " + day(prev.date) + " · " + delta(last.ig, first.ig) + " since " + day(first.date) : ""],
+      ["Following", n(last.igFollowing), ""],
+      ["Profile visits, last 7 days", n(sum("profileViews")), "Visits vs follows is the conversion to fix"],
+      ["Views, last 7 days", n(sum("views")), ""],
+      ["Website taps, last 7 days", n(sum("websiteTaps")), ""],
+      ["Posts", n(last.igPosts), ""]
+    ];
+    var T = document.getElementById("tiles");
+    tiles.forEach(function (t) {
+      var box = el("div", { "class": "tile" });
+      box.appendChild(el("div", { "class": "label" }, t[0]));
+      box.appendChild(el("div", { "class": "value" }, t[1]));
+      if (t[2]) box.appendChild(el("div", { "class": "sub" }, t[2]));
+      T.appendChild(box);
+    });
+
+    var tg = d.targets || {};
+    if (tg.followerTarget && tg.followerTarget.ig && last.ig != null) {
+      var goal = tg.followerTarget.ig;
+      var end = new Date(tg.end + "T23:59:59");
+      var daysLeft = Math.max(1, Math.ceil((end - new Date()) / 864e5));
+      var need = Math.max(0, goal - last.ig);
+      var G = document.getElementById("goal");
+      G.hidden = false;
+      G.appendChild(el("div", { "class": "label" }, "Goal: " + fmt.format(goal) + " Instagram followers by " + day(tg.end)));
+      var bar = el("div", { "class": "bar", role: "img", "aria-label": Math.round(100 * last.ig / goal) + "% of goal" });
+      var fill = el("span");
+      fill.style.width = Math.min(100, 100 * last.ig / goal) + "%";
+      bar.appendChild(fill);
+      G.appendChild(bar);
+      var row = el("div", { "class": "row" });
+      row.appendChild(el("span", null, fmt.format(last.ig) + " of " + fmt.format(goal)));
+      row.appendChild(el("span", null, fmt.format(need) + " to go · about " + fmt.format(Math.ceil(need / daysLeft)) + " a day for " + daysLeft + " days"));
+      G.appendChild(row);
+    }
+
+    brief(d, f, ins);
+    dailyLog(f, ins);
+
+    var C = document.getElementById("charts");
+    chart(C, "Instagram followers", f.map(function (r) { return [r.date, r.ig]; }));
+    chart(C, "Profile visits", ins.map(function (r) { return [r.date, r.profileViews]; }));
+    chart(C, "Views", ins.map(function (r) { return [r.date, r.views]; }));
+    chart(C, "Reach", ins.map(function (r) { return [r.date, r.reach]; }));
+    chart(C, "Website taps", ins.map(function (r) { return [r.date, r.websiteTaps]; }));
+    chart(C, "Following", f.map(function (r) { return [r.date, r.igFollowing]; }));
+
+    posts(d.posts || []);
+    follows(d.people || []);
+  }
+
+  function chart(host, title, rows) {
+    var pts = rows.filter(function (r) { return r[1] != null; });
+    var box = el("div", { "class": "chart" });
+    box.appendChild(el("h3", null, title));
+    var lastPt = pts[pts.length - 1];
+    box.appendChild(el("div", { "class": "latest" }, lastPt ? "Latest " + fmt.format(lastPt[1]) + " on " + day(lastPt[0]) : "No data yet"));
+    host.appendChild(box);
+    if (pts.length < 2) {
+      box.appendChild(el("div", { "class": "empty" }, pts.length ? "Needs a second day to draw a trend." : "No data yet."));
+      return;
+    }
+    var W = 300, H = 150, L = 30, R = 8, Tp = 8, B = 20;
+    var xs = rows.map(function (r) { return r[0]; });
+    var max = Math.max.apply(null, pts.map(function (p) { return p[1]; }));
+    var top = niceMax(max);
+    function x(i) { return L + (W - L - R) * (xs.length === 1 ? 0.5 : i / (xs.length - 1)); }
+    function y(v) { return Tp + (H - Tp - B) * (1 - v / top); }
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("preserveAspectRatio", "none");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", title + ": " + pts.map(function (p) { return day(p[0]) + " " + p[1]; }).join(", "));
+    function s(tag, a) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
+    [0, top / 2, top].forEach(function (v) {
+      s("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1, "vector-effect": "non-scaling-stroke" });
+      var t = s("text", { x: L - 6, y: y(v) + 4, "text-anchor": "end", "font-size": 10, fill: "var(--text-muted)" });
+      t.textContent = fmt.format(v);
+    });
+    [0, xs.length - 1].forEach(function (i) {
+      var t = s("text", { x: x(i), y: H - 4, "text-anchor": i ? "end" : "start", "font-size": 10, fill: "var(--text-muted)" });
+      t.textContent = day(xs[i]);
+    });
+    // break the line at missing days
+    var d = "", pen = false;
+    rows.forEach(function (r, i) {
+      if (r[1] == null) { pen = false; return; }
+      d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(r[1]).toFixed(1);
+      pen = true;
+    });
+    s("path", { d: d, fill: "none", stroke: "var(--series)", "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round", "vector-effect": "non-scaling-stroke" });
+    var dot = s("circle", { r: 4, fill: "var(--series)", stroke: "var(--surface-1)", "stroke-width": 2, visibility: "hidden" });
+    var guide = s("line", { y1: Tp, y2: H - B, stroke: "var(--text-muted)", "stroke-width": 1, "stroke-dasharray": "2 3", visibility: "hidden", "vector-effect": "non-scaling-stroke" });
+    box.appendChild(svg);
+    var tip = el("div", { "class": "tip" });
+    box.appendChild(tip);
+    function hide() { dot.setAttribute("visibility", "hidden"); guide.setAttribute("visibility", "hidden"); tip.style.display = "none"; }
+    svg.addEventListener("pointermove", function (ev) {
+      var rect = svg.getBoundingClientRect();
+      var px = (ev.clientX - rect.left) / rect.width * W;
+      var best = -1, bd = Infinity;
+      rows.forEach(function (r, i) { if (r[1] == null) return; var dd = Math.abs(x(i) - px); if (dd < bd) { bd = dd; best = i; } });
+      if (best < 0) return hide();
+      var r = rows[best];
+      dot.setAttribute("cx", x(best)); dot.setAttribute("cy", y(r[1])); dot.setAttribute("visibility", "visible");
+      guide.setAttribute("x1", x(best)); guide.setAttribute("x2", x(best)); guide.setAttribute("visibility", "visible");
+      tip.textContent = day(r[0]) + " · " + fmt.format(r[1]);
+      tip.style.display = "block";
+      var bx = svg.offsetLeft + x(best) / W * rect.width;
+      tip.style.left = Math.min(box.clientWidth - tip.offsetWidth - 8, Math.max(8, bx - tip.offsetWidth / 2)) + "px";
+      tip.style.top = (svg.offsetTop + y(r[1]) / H * rect.height - 34) + "px";
+    });
+    svg.addEventListener("pointerleave", hide);
+  }
+  function niceMax(v) {
+    if (v <= 0) return 1;
+    var p = Math.pow(10, Math.floor(Math.log10(v)));
+    var steps = [1, 2, 2.5, 5, 10];
+    for (var i = 0; i < steps.length; i++) if (steps[i] * p >= v) return steps[i] * p;
+    return 10 * p;
+  }
+
+  function brief(d, f, ins) {
+    var B = document.getElementById("brief");
+    function li(t) { B.appendChild(el("li", null, t)); }
+    var last = f[f.length - 1], first = f[0];
+    if (last && first) {
+      var days = Math.max(1, Math.round((new Date(last.date) - new Date(first.date)) / 864e5));
+      li("Followers went from " + first.ig + " to " + last.ig + " in " + days + " day" + (days > 1 ? "s" : "") + " (" + (last.ig - first.ig >= 0 ? "+" : "") + (last.ig - first.ig) + "), about " + ((last.ig - first.ig) / days).toFixed(1) + " a day.");
+    }
+    var tg = d.targets || {};
+    if (tg.followerTarget && last) {
+      var need = tg.followerTarget.ig - last.ig;
+      var left = Math.max(1, Math.ceil((new Date(tg.end + "T23:59:59") - new Date()) / 864e5));
+      li("To reach " + fmt.format(tg.followerTarget.ig) + " by " + day(tg.end) + " we need about " + Math.ceil(need / left) + " new followers a day.");
+    }
+    var wk = ins.slice(-7), pv = 0, vw = 0;
+    wk.forEach(function (r) { pv += r.profileViews || 0; vw += r.views || 0; });
+    var gained = f.length > 1 ? last.ig - f[Math.max(0, f.length - 8)].ig : null;
+    if (pv) li(fmt.format(pv) + " profile visits in the last 7 days" + (gained != null ? ", against +" + gained + " followers since tracking began" : "") + ". People are looking but not following, so the profile and bio are the fix.");
+    var reels = (d.posts || []).filter(function (p) { return p.product === "REELS"; }).length;
+    li(reels ? reels + " Reel" + (reels > 1 ? "s" : "") + " posted so far." : "No Reels yet, only photos. Reels are what reach new people.");
+    var followed = (d.people || []).filter(function (p) { return p.followedAt; }).length;
+    li(followed ? followed + " accounts followed from the target list." : "Follow-backs start counting once follows are ticked in the tracker.");
+  }
+
+  function dailyLog(f, ins) {
+    var byDay = {};
+    f.forEach(function (r) { (byDay[r.date] = byDay[r.date] || {}).f = r; });
+    ins.forEach(function (r) { (byDay[r.date] = byDay[r.date] || {}).i = r; });
+    var dates = Object.keys(byDay).sort().reverse();
+    var t = document.getElementById("daily");
+    var head = el("tr");
+    [["Day", ""], ["Followers", "num"], ["Change", "num"], ["Following", "num"], ["Profile visits", "num"], ["Views", "num"], ["Reach", "num"], ["Website taps", "num"]]
+      .forEach(function (h) { head.appendChild(el("th", h[1] ? { "class": h[1] } : null, h[0])); });
+    t.appendChild(el("thead")).appendChild(head);
+    var body = t.appendChild(el("tbody"));
+    var fsorted = f.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    dates.forEach(function (dt) {
+      var r = byDay[dt], tr = el("tr");
+      tr.appendChild(el("td", null, day(dt)));
+      var fr = r.f || {};
+      var idx = fsorted.findIndex(function (x) { return x.date === dt; });
+      var prev = idx > 0 ? fsorted[idx - 1] : null;
+      var ch = (fr.ig != null && prev && prev.ig != null) ? fr.ig - prev.ig : null;
+      function cell(v, extra) { tr.appendChild(el("td", { "class": "num" + (v == null ? " na" : "") + (extra || "") }, v == null ? "—" : (typeof v === "string" ? v : fmt.format(v)))); }
+      cell(fr.ig);
+      cell(ch == null ? null : (ch > 0 ? "+" : "") + ch, ch > 0 ? " up" : "");
+      cell(fr.igFollowing);
+      var i = r.i || {};
+      cell(i.profileViews); cell(i.views); cell(i.reach); cell(i.websiteTaps);
+      body.appendChild(tr);
+    });
+  }
+
+  function posts(list) {
+    var t = document.getElementById("posts");
+    var head = el("tr");
+    [["Posted", ""], ["Type", ""], ["Caption", ""], ["Views", "num"], ["Reach", "num"], ["Likes", "num"], ["Comments", "num"], ["Saves", "num"], ["Shares", "num"]]
+      .forEach(function (h) { head.appendChild(el("th", h[1] ? { "class": h[1] } : null, h[0])); });
+    t.appendChild(el("thead")).appendChild(head);
+    var body = t.appendChild(el("tbody"));
+    if (!list.length) { var r0 = el("tr"); r0.appendChild(el("td", { colspan: 9, "class": "na" }, "No posts yet.")); body.appendChild(r0); return; }
+    list.forEach(function (p) {
+      var tr = el("tr");
+      var when = el("td");
+      var a = el("a", { href: p.permalink }, p.timestamp ? new Date(p.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "—");
+      when.appendChild(a);
+      tr.appendChild(when);
+      tr.appendChild(el("td", null, p.product === "REELS" ? "Reel" : (p.type || "").toLowerCase().replace("_", " ")));
+      tr.appendChild(el("td", { "class": "cap" }, (p.caption || "").slice(0, 90)));
+      ["views", "reach", "likes", "comments", "saved", "shares"].forEach(function (k) {
+        tr.appendChild(el("td", { "class": "num" + (p[k] == null ? " na" : "") }, n(p[k])));
+      });
+      body.appendChild(tr);
+    });
+  }
+
+  function follows(people) {
+    var followed = people.filter(function (p) { return p.followedAt; });
+    var back = followed.filter(function (p) { return p.followedBack; });
+    var note = document.getElementById("followNote");
+    note.textContent = people.length + " accounts on the follow list · " + followed.length + " followed · " + back.length + " followed back" +
+      (followed.length ? " (" + Math.round(100 * back.length / followed.length) + "%)" : "") +
+      (followed.length < 20 ? ". Under 20 follows, so rates aren't reliable yet." : ".");
+    var cats = {};
+    people.forEach(function (p) {
+      var c = p.category || "other";
+      cats[c] = cats[c] || { total: 0, followed: 0, back: 0 };
+      cats[c].total++;
+      if (p.followedAt) cats[c].followed++;
+      if (p.followedAt && p.followedBack) cats[c].back++;
+    });
+    var t = document.getElementById("followCats");
+    var head = el("tr");
+    [["Category", ""], ["On list", "num"], ["Followed", "num"], ["Followed back", "num"], ["Rate", "num"]]
+      .forEach(function (h) { head.appendChild(el("th", h[1] ? { "class": h[1] } : null, h[0])); });
+    t.appendChild(el("thead")).appendChild(head);
+    var body = t.appendChild(el("tbody"));
+    Object.keys(cats).sort(function (a, b) { return cats[b].total - cats[a].total; }).forEach(function (c) {
+      var r = cats[c], tr = el("tr");
+      tr.appendChild(el("td", null, c));
+      tr.appendChild(el("td", { "class": "num" }, n(r.total)));
+      tr.appendChild(el("td", { "class": "num" }, n(r.followed)));
+      tr.appendChild(el("td", { "class": "num" }, n(r.back)));
+      tr.appendChild(el("td", { "class": "num" + (r.followed ? "" : " na") }, r.followed ? Math.round(100 * r.back / r.followed) + "%" : "—"));
+      body.appendChild(tr);
+    });
+  }
+})();
+</script>
+</body>
+</html>
