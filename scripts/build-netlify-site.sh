@@ -15,6 +15,7 @@
 #
 #   agentresearchsum -> the H2F tactical research board (Squarespace embed)
 #   agentrevup       -> the Vybe funding tracker (growth/revenue)
+#   agentbabyscout   -> the Baby Gear dashboard (baby-scout/site, rebuilt daily)
 #   anything else    -> everything, which is what you want locally
 #
 # Override with SITE_TARGET=rev when testing another site's output by hand.
@@ -34,6 +35,7 @@ SRC_BOARD="healthcare/dashboards/h2f-scout-board.html"
 SRC_FUNDING="dashboards/vybe-funding-tracker.html"
 FUNDING_FEED="funding-scraper/output/funding.json"
 SRC_APPLY="funding-scraper/applications/index.html"
+SRC_BABY="baby-scout/site"
 SHELL_HEAD="scripts/netlify/shell-head.html"
 SHELL_FOOT="scripts/netlify/shell-foot.html"
 TW_SRC="scripts/netlify/tailwind.css"
@@ -44,6 +46,7 @@ RAW_TARGET="${SITE_TARGET:-${SITE_NAME:-all}}"
 case "$RAW_TARGET" in
   agentresearchsum|research|researchsum) TARGET="research" ;;
   agentrevup|rev|revup)                  TARGET="rev" ;;
+  agentbabyscout|baby|babyscout)         TARGET="baby" ;;
   *)                                     TARGET="all" ;;
 esac
 echo "Building for target: $TARGET (from '${RAW_TARGET}')"
@@ -53,6 +56,7 @@ mkdir -p "$OUT"
 
 want_research() { [ "$TARGET" = "research" ] || [ "$TARGET" = "all" ]; }
 want_rev()      { [ "$TARGET" = "rev" ]      || [ "$TARGET" = "all" ]; }
+want_baby()     { [ "$TARGET" = "baby" ]     || [ "$TARGET" = "all" ]; }
 
 # ------------------------------------------------------------------ boards ---
 if want_research; then
@@ -98,6 +102,24 @@ if want_rev && [ -d "dashboards" ]; then
   done
 fi
 
+# The Baby Gear dashboard is generated whole by the baby-scout daily workflow
+# (index.html + data.json + reports/), so it is copied as-is. On its own site
+# it is the root; in a local "all" build it lives under /baby/.
+if want_baby; then
+  if [ ! -f "$SRC_BABY/index.html" ]; then
+    if [ "$TARGET" = "baby" ]; then
+      echo "error: $SRC_BABY/index.html is missing; run the baby-scout daily workflow first." >&2
+      exit 1
+    fi
+    echo "note: $SRC_BABY not built yet; /baby/ will not be published."
+  else
+    BABY_OUT="$OUT"
+    [ "$TARGET" = "all" ] && BABY_OUT="$OUT/baby"
+    mkdir -p "$BABY_OUT"
+    cp -R "$SRC_BABY"/. "$BABY_OUT"/
+  fi
+fi
+
 # ---------------------------------------------------------------- Tailwind ---
 # Only the research site's index uses the Tailwind shell, so only build it there.
 TW_MODE="none"
@@ -140,6 +162,8 @@ esac
 # tracker, shipped as-is because it carries its own chrome.
 if [ "$TARGET" = "rev" ]; then
   cp -f "$SRC_FUNDING" "$OUT/index.html"
+elif [ "$TARGET" = "baby" ]; then
+  : # the dashboard's own index.html was copied above
 else
   {
     # everything up to and including the board's <style> block
