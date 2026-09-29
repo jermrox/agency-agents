@@ -32,7 +32,7 @@ JSON="divisions.json"
 # research-board/ is the research board's code, not agents. dashboards/ holds
 # standalone HTML dashboards published via Netlify (see
 # scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
-# Python tool (the biweekly non-dilutive funding sweep), not agents.
+# Python tool (the daily non-dilutive funding sweep), not agents.
 # components/ holds shared React/TSX UI components (the research board's map),
 # not agents. vybe-app/ is the Vybe Health React Native app (product source,
 # JS), not agents. None of these is a division — they must never be scanned as

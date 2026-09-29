@@ -57,7 +57,7 @@ it is the difference between "rolling" and "opens 1 November".
 ## Running in CI
 
 `.github/workflows/funding-sweep.yml` runs on the 1st and 15th, matching the
-Pillar 2 biweekly rhythm, and commits the refreshed `funding.json`. It must run
+Pillar 2 rhythm (daily at 13:40 UTC since 29 Sep, so the live site updates every day), and commits the refreshed `funding.json`. It must run
 in CI rather than a sandboxed agent environment: the federal APIs are open and
 keyless but unreachable from behind an egress allowlist.
 
