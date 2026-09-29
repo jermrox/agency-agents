@@ -38,6 +38,11 @@ GATES = [
     # history; Veteran Shark Tank wants the opposite, which is why a company too
     # young for Tadlock or Buckeye clears it.
     ("under3", "In business less than 3 years"),
+    # Not money and not paperwork: PenFed's Accelerator is four days in a room
+    # plus six weeks of mentoring, and the Incubator three days. A founder who
+    # cannot travel is not eligible however good the business is, so it belongs
+    # here rather than buried in a note.
+    ("inperson", "Able to attend several days in person, travel covered"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -353,6 +358,111 @@ PACKETS = [
                 "[One sentence in your own words: why this matters to you.]\n\n"
                 "We're at this stage: {{STAGE}}. The Fellowship would put me in a room with "
                 "women who have taken hardware to market. That's the step in front of us."},
+        ],
+    },
+    {
+        "id": "penfed",
+        "name": "Veteran Entrepreneur Program — Accelerator",
+        "funder": "The PenFed Foundation for Military Heroes",
+        "amount": "No cash award: a free place, travel and meals covered, zero equity taken — plus eligibility for the year-end Pitch Competition, which awards non-dilutive funding",
+        "deadline": "rolling",
+        "fee": None,
+        "url": "https://penfedfoundation.org/our-programs/accelerator/",
+        "submit": "One multi-step form, linked from the VEP page. The selection committee reviews applications monthly, then invites shortlisted founders to an interview. An application that is not selected is held on file for a full calendar year and reconsidered for later cohorts, so submitting between cohorts costs nothing. Five Accelerator cohorts run each year; the Incubator dates on the form are Tysons 17-19 June, New York 12-14 August and Boston 14-16 October 2026.",
+        "gates": ["incorp", "inperson"],
+        "confirmed": ["Veteran-owned 51%+ (confirmed 20 Sep)"],
+        "why": "The strongest non-cash item on the board, and the gate is one Vybe already clears: majority veteran-owned. No fee, no equity, flights and hotels paid, and the Accelerator feeds a year-end pitch competition whose prize is non-dilutive. It is also the rare rolling application that does not expire — held on file for a year — so there is no deadline to miss. The Foundation says it is industry agnostic but gives priority to national security and defense businesses, which is worth knowing before writing the answers.",
+        "docs": [
+            "Member-4 DD-214 for the veteran owner (the form asks you to confirm you can produce it)",
+            "EIN and state formation documents",
+            "Company website",
+            "Availability for four days in person plus six weeks of mentoring",
+        ],
+        "note": "The form routes you to the Accelerator or the Incubator based on one answer — the product's stage. Accelerator is for a validated or launched product with early traction; Incubator is for an idea with no product or revenue. The answers below are written for the Accelerator; if the honest stage answer is pre-MVP, the same material still applies but the cohort is the Incubator and the commitment is three days rather than four. Nothing here fills in the stage for you.",
+        "fields": [
+            {"q": "Military service and veteran status", "a":
+                "Veteran owner: {{VETERAN_OWNER}}.\n\n"
+                "The form asks for service status from a list (active duty, retired, "
+                "reserves or guard, spouse, separated, medically retired) and then asks you "
+                "to confirm you can produce a Member-4 DD-214. It also states plainly that "
+                "the nature of the separation is considered in review. Answer it as it is."},
+            {"q": "Brief founder bio: military and professional background, and other experience relevant to your company", "a":
+                "[This one is yours and nobody should draft it for you. What the reviewers "
+                "are looking for, from their own selection criteria, is leadership and "
+                "coachability — so the useful shape is: what you were responsible for in "
+                "service, what you did after it, and the specific thing in that history that "
+                "makes you the person to build a product about recovery and readiness. Two "
+                "short paragraphs beats a resume.]"},
+            {"q": "What stage of development is your product or service in?", "a":
+                "{{STAGE}}\n\n"
+                "Pick the option on the form that matches that sentence — the list runs "
+                "concept, research and validation, prototype/MVP, pilot/beta, pre-launch, "
+                "launched, revenue-generating, growth and scaling. This single answer decides "
+                "which programme you are offered, so it is worth answering precisely rather "
+                "than optimistically."},
+            {"q": "Main industry and sub-type", "a":
+                "Healthcare & Life Sciences. Sub-type: consumer digital health and wearables.\n\n"
+                "Say in the description that Vybe is a consumer wellness product, not a "
+                "medical device, and makes no diagnostic claim. Reviewers in this category "
+                "will assume a regulatory pathway unless told otherwise, and Vybe's ability "
+                "to ship without one is an advantage rather than a gap."},
+            {"q": "Provide a brief description of your company and the product/service you provide", "a": SHORT},
+            {"q": "What problem does your company solve?", "a":
+                "People own the data and not the meaning.\n\n"
+                "A wearable reports that heart-rate variability fell 18% and stops there. The "
+                "person is left to guess whether it was the late dinner, the bad night, the "
+                "flight or the week they have had — and most of them stop opening the app. "
+                "The measurement problem is solved; the interpretation problem is not.\n\n"
+                "Vybe answers the question the number raises. It reads the signals alongside "
+                "the context around them and replies in a sentence, with the evidence it used "
+                "and one thing to do next."},
+            {"q": "How is your product/service different than what is already on the market?", "a":
+                WHY_NOW + "\n\n"
+                "Two differences, and the second is the durable one:\n\n"
+                "The interpretation is not a subscription. The Band is bought once and the "
+                "answers come with it.\n\n"
+                "The context layer. Vybe reads five parts of a life — Restore, Move, Nourish, "
+                "Connect and Vitals — and Connect is the one competitors leave out: work, "
+                "travel, stress and weather, the reasons a reading moves that no sensor can "
+                "see. A score is easy to copy. A model of somebody's week is not."},
+            {"q": "Who is your target market?", "a":
+                "The person who already owns a wearable and has stopped looking at it. They "
+                "have years of their own data, no answers from it, and a monthly fee for the "
+                "privilege.\n\n"
+                "Two segments beyond that, both reachable without consumer-scale marketing: "
+                "the veteran and military-family community, where recovery and readiness are "
+                "already the everyday language; and platform customers — developers, "
+                "researchers and employers who need interpretation they can build on and do "
+                "not want to build a sensor stack to get it.\n\n"
+                "[If you have specific numbers on who you have reached so far, put them here "
+                "instead of a description.]"},
+            {"q": "Have you conducted any market validation? If yes, describe the type of validation and the key findings", "a":
+                "What is established: {{TRACTION}}.\n\n"
+                "[The rest is yours, and this is the answer the committee weighs most heavily "
+                "for the Accelerator, because 'validated' is in their entry criteria. Say how "
+                "many people you have actually spoken to, how you reached them, and the "
+                "sentence you heard most often. If the validation so far is a waitlist and a "
+                "set of conversations, say exactly that — an honest small number reads as "
+                "evidence, and an invented survey reads as a company that does not know its "
+                "own customers.]"},
+            {"q": "How do you plan to generate revenue?", "a":
+                "Hardware sold once, at a margin, with the intelligence included. No required "
+                "subscription — which is the position, not a discount.\n\n"
+                "Then licensing: the interpretation layer sold to partners who have sensors "
+                "and nothing to say with the readings. That is the same product doing "
+                "second-hand work, so it costs little to serve.\n\n"
+                "[Your numbers: what a Band costs to build and what it sells for. Do not "
+                "publish a price here that you have not decided.]"},
+            {"q": "Do you currently have revenue? If so, enter the annual amount", "a":
+                "{{REVENUE}}\n\n"
+                "The form says to enter 0 if there is none. Enter 0. A pre-revenue answer is "
+                "not a disqualifier for either track — it is one of the inputs that decides "
+                "which one you are offered."},
+            {"q": "Formation: EIN and state filing", "a":
+                "EIN {{EIN}}, formed in {{STATE}} in {{FORMED}}, operating from {{CITY}}. "
+                "Website {{WEBSITE}}.\n\n"
+                "The Accelerator section asks you to tick that the business has an EIN and "
+                "has filed formation documents with the state. Both are true for Vybe."},
         ],
     },
     {
