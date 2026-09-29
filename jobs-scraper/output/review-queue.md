@@ -1,3 +1,18 @@
+## Run 2026-09-29 19:31 UTC — 1 posting(s)
+
+### [Recreation Specialist (GEI)](https://www.usajobs.gov:443/job/882856600)
+- **Employer:** Commander, Navy Installations Command
+- **Location:** Virginia Beach, Virginia
+- **Score:** 13.5 | **Tags:** sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $19.5 - $21.5 PH
+- **Matched:** domain=service context | discipline=exercise science, sports medicine
+
+> Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: QUALIFICATIONS REQUIRED…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-29 07:11 UTC — 0 posting(s)
 
 _No new postings._
