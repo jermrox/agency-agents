@@ -23,8 +23,11 @@ npx expo start
 - **DataSettingsScreen** *(25 Sep)* — what is connected, where the data
   sits, and how to export or delete it. Reached from "Your data" in the Home
   header.
-- **NourishScreen** *(new, 28 Sep)* — one day of eating on real clock time, and
+- **NourishScreen** *(28 Sep)* — one day of eating on real clock time, and
   the gap between the last bite and lights out. Tap the Nourish card on Home.
+- **AskScreen** *(new, 29 Sep)* — the conversation. Ask in your own words and
+  get an answer with its basis, its blind spots and one action. Tap the ask bar
+  at the top of Home.
 
 ## The three decisions worth keeping
 
@@ -151,6 +154,42 @@ the midpoint for tapping, with the numbers mapped to meal names in a line of
 text under the axis. Both bands are explained in words for the same reason the
 readings are — a tinted rectangle tells somebody who cannot separate these
 colours nothing at all.
+
+## The ask screen, and why it looks like that
+
+**No chat bubbles.**
+A bubble pair says "two people talking, both equally sure". What is actually
+happening is a question and a piece of reasoning, and they do not deserve the
+same weight. So the question is a quiet label over a line of ink, and the answer
+is a tinted panel; the basis is a hairline list, the action is the one dark
+block. Four registers, so the hierarchy reads before the words do.
+
+**Every answer shows what Vybe could not see.**
+"What this rests on" is the easy half — the signals and the window they cover.
+"What Vybe could not see" is the half competitors omit: whether the late nights
+were work or choice, anything the person drank, how they actually feel today. A
+confident sentence with no stated blind spots is how a wellness product starts
+sounding like a doctor, and that is the exact drift the product rule forbids.
+
+**One of the three worked examples is a refusal.**
+*"Do I have sleep apnea?"* gets the only outlined block on the screen and the
+label OUTSIDE WHAT VYBE DOES: a diagnosis is made with a sleep study, and Vybe is
+not a medical device. It then shows the overnight breathing signal anyway and
+says to export the 30 nights and take them to a clinician. Withholding the
+reading would be the same paternalism the product exists to avoid — the boundary
+is on the claim, not on the person's own data.
+
+**Confidence is a sentence with a reason attached.**
+"Low confidence — Vybe has eleven days of training data for you. It does not yet
+know how you respond to a third hard day, only that most people do not." A
+percentage would be a number the person has to interpret alone, which is the gap
+the product exists to close.
+
+**A typed question with no sample answer says so.**
+The composer is a real `TextInput`. Anything outside the three worked examples
+returns *"There is no sample answer for that one"* rather than a generated
+reading — in this build because it would be fiction, and in the shipped product
+because "not enough data yet" is a real answer that has to have a place to live.
 
 ## Non-negotiables held
 

@@ -2097,3 +2097,57 @@ documents = [
   "Willingness to travel to Houston for the two-day final",
 ]
 verified = "2026-09-28"
+
+# --- Added 29 Sep 2026 -----------------------------------------------------
+# Read first-hand from each programme's own page, not from a listicle.
+# xTech|Search 10 is the find: an open-topic Army prize competition whose own
+# priority portfolios name "Immersive and Wearables" outright, closing 19 Oct.
+
+[[sources.curated.entry]]
+name = "Army xTech|Search 10"
+url = "https://xtech.army.mil/competition/xtechsearch10/"
+agency = "U.S. Army FUZE xTech Program, ASA(ALT)"
+amount = "Up to $1,000,000 in non-dilutive cash prizes across the competition: $5,000 to each of up to 50 semifinalists, a further $20,000 to each of up to 20 finalists, then $200,000 / $100,000 / $50,000 to first, second and third. Finalists may also submit a Phase I Army SBIR or STTR proposal worth up to $300,000."
+open_date = "2026-09-10"
+close_date = "2026-10-19"
+pillar = 2
+kind = "visibility"
+eligibility = "For-profit US small business, more than 50% owned AND controlled by US citizens or permanent residents, 500 or fewer employees including affiliates. The submission must not be substantially the same as a proposal funded, being funded, or pending award at another federal agency. One submission per entity. No fee, and no equity is taken."
+note = "BEST LIVE ITEM ON THE BOARD, and the deadline is 19 Oct at 5pm ET. It is an OPEN-TOPIC competition — you are not fitting a product to a stated problem — and one of the four named priority portfolios is 'Immersive and Wearables: smart electronic devices that can be worn by or attached to the user to gather data or provide insight', which is Vybe's category described by the Army in its own words. Four rounds: white paper by 19 Oct, virtual semifinal pitch 18-29 Jan 2027, finals at eMerge Americas in Miami 2-4 Mar 2027, then the SBIR/STTR window to 30 Apr. THE ONE GATE TO READ CAREFULLY: technologies falling EXCLUSIVELY within the U.S. Army Medical Research and Development Command portfolio — military operational medicine, clinical and rehabilitative medicine, infectious disease, CBRN — are excluded. Vybe's honest position is a commercial consumer wearable with a dual-use readiness application, not a medical technology, which is both true and the only framing that clears this exclusion. Do not describe it as a medical or diagnostic capability to sound more serious; that is the sentence that makes it ineligible. Judges compare unlike technologies, so the published evaluation emphasis is commercial traction, a defensible technical advantage, a direct line to an Army need, and a credible transition path."
+documents = [
+  "Concept white paper via the xTech portal (Section IV of the RFI PDF states the format; the PDF was not readable from here)",
+  "Eligibility attestation: for-profit, >50% US-citizen owned and controlled, <=500 employees",
+  "Disclosure of any similar proposal funded or pending at another federal agency",
+  "SAM.gov UEI and a CAGE code for the follow-on SBIR/STTR stage",
+]
+verified = "2026-09-29"
+
+[[sources.curated.entry]]
+name = "Freed Fellowship Grant"
+url = "https://www.freedfellowship.com/grant"
+agency = "Freed Fellowship LLC"
+amount = "$500 a month to one selected US business owner, no strings and no equity; monthly Fellows are then eligible for an additional $2,500 end-of-year grant"
+pillar = 2
+kind = "grant"
+eligibility = "A US business owner with an existing business. No ownership, revenue, sector or age-of-business gate published on the application page."
+note = "SMALL MONEY, LOW COST, AND ROLLING — one Fellow selected every month, so a submission that misses is a submission already made for next month. The reason it earns a row is the second thing it returns: every submission gets a written score against Freed's five-part framework (Context, Content, Community, Chemistry, Commerce) plus two months in its online community, which is a free outside read on the pitch before it goes to a programme that matters. No application fee is named anywhere on the application page. Treat the $500 as the feedback's price being zero rather than as funding."
+documents = [
+  "Business description against the five-part framework: market, core narrative, community, differentiator, how you make money",
+  "Evidence the business already exists and is trading or building",
+]
+verified = "2026-09-29"
+
+[[sources.curated.entry]]
+name = "Kinetic — Health Care Innovation in Motion"
+url = "https://bouncehub.org/kinetic/"
+agency = "Bounce Innovation Hub and Northeast Ohio Medical University (NEOMED)"
+amount = "No cash — free and discounted professional services (regulatory, legal, HR, financial projections, pitch deck), entrepreneurs-in-residence, free coworking at Bounce's Generator, and access to NEOMED prototyping and lab facilities at startup rates"
+pillar = 3
+kind = "partnership"
+eligibility = "Healthcare and life-science startups in Ohio and the wider Midwest. No ownership, revenue or stage gate is published; the application route and any intake window are NOT stated on the programme page."
+note = "NO CASH, and it is on the board because it is local: Bounce is in Akron, which is where the company is. The honest fit is the commercialization half — EIRs, free coworking, discounted legal and financial services, priority access to the workshop series — not the regulatory half. Kinetic's published outcomes are about regulatory pathways and FDA submissions, and Vybe has neither and should not acquire one to qualify. Two things to confirm before spending a week on it: the page notes that startups inside their 'Launch Pad period' do NOT get the free services, and it names no application form, so ask what the intake actually is. Lab and prototyping space is fee-for-service or leased, not free."
+documents = [
+  "Company description and stage",
+  "What you want from the programme, stated as services rather than money",
+]
+verified = "2026-09-29"

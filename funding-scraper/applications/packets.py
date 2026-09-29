@@ -43,6 +43,13 @@ GATES = [
     # cannot travel is not eligible however good the business is, so it belongs
     # here rather than buried in a note.
     ("inperson", "Able to attend several days in person, travel covered"),
+    # Army xTech's ownership test is not the usual paperwork question. It is a
+    # citizenship AND control test: a cap table that passes can still fail on
+    # who actually controls the company, so it gets its own line.
+    ("uscitizen", "Majority owned AND controlled by US citizens or permanent residents"),
+    # Federal prize competitions bar a submission that duplicates work already
+    # funded or pending elsewhere in government. Only the founders know this.
+    ("nodupfed", "No substantially similar proposal funded or pending at another federal agency"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -463,6 +470,155 @@ PACKETS = [
                 "Website {{WEBSITE}}.\n\n"
                 "The Accelerator section asks you to tick that the business has an EIN and "
                 "has filed formation documents with the state. Both are true for Vybe."},
+        ],
+    },
+    {
+        "id": "xtech",
+        "name": "Army xTech|Search 10",
+        "funder": "U.S. Army FUZE xTech Program, ASA(ALT)",
+        "amount": "Up to $1,000,000 in non-dilutive prizes across the competition — $5,000 to each of up to 50 semifinalists, a further $20,000 to each of up to 20 finalists, then $200,000 / $100,000 / $50,000 — plus a Phase I Army SBIR or STTR proposal worth up to $300,000 for finalists",
+        "deadline": "2026-10-19",
+        "fee": None,
+        "url": "https://xtech.army.mil/competition/xtechsearch10/",
+        "submit": "Submit a concept white paper through the xTech portal linked from xtech.army.mil/competitions by 5pm ET on 19 October 2026. One submission per company. Semifinalists pitch virtually 18-29 January 2027, finalists demonstrate at eMerge Americas in Miami 2-4 March 2027, and the SBIR/STTR window runs to 30 April 2027.",
+        "gates": ["incorp", "uscitizen", "nodupfed"],
+        "confirmed": [
+            "Veteran-owned 51%+ (confirmed 20 Sep)",
+            "Fewer than 500 employees — a 3-person company cannot fail this ceiling",
+        ],
+        "why": "The largest non-dilutive opportunity on the board and the only one that names Vybe's category in the Army's own words: one of the four published priority portfolios is 'Immersive and Wearables — smart electronic devices that can be worn by or attached to the user to gather data or provide insight'. It is open-topic, so there is no stated problem to contort the product into; it is free; it takes no equity; and $5,000 lands at the semifinal stage, which is a real outcome for a white paper rather than a lottery ticket.",
+        "docs": [
+            "Concept white paper submitted through the xTech portal",
+            "Eligibility attestation: for-profit, more than 50% owned and controlled by US citizens or permanent residents, 500 or fewer employees including affiliates",
+            "Disclosure of any substantially similar proposal funded, being funded, or pending award at another federal agency",
+            "SAM.gov UEI and a CAGE code — needed for the Phase I SBIR/STTR stage, not for the white paper",
+        ],
+        "note": (
+            "THE RFI PDF WAS NOT READABLE FROM HERE, so the exact white paper format — section "
+            "headings, page limit, file type — is not confirmed. Section IV of the RFI has it, and "
+            "it is the first thing to open. The sections below are drafted against what the "
+            "competition's own page publishes that it weighs: the solution's advantage, its "
+            "technical viability, its commercial potential, and a clear line to an Army need.\n\n"
+            "THE EXCLUSION THAT DECIDES THIS APPLICATION. The page states that technologies "
+            "falling EXCLUSIVELY within the U.S. Army Medical Research and Development Command "
+            "portfolio — military operational medicine, clinical and rehabilitative medicine, "
+            "infectious disease, CBRN — are excluded from xTech|Search. Vybe is a commercial "
+            "consumer wearable with a dual-use readiness application. That is true, and it is also "
+            "the only framing under which this is eligible. The temptation with a defence "
+            "application is to sound more serious by sounding more clinical. Here that is the "
+            "sentence that makes the submission ineligible, so every answer below stays on the "
+            "wellness side of the line on purpose.\n\n"
+            "Financials, manufacturing status and anything about customer conversations are left "
+            "as bracketed prompts. Judges comparing unlike technologies lean on evidence of real "
+            "commercial traction, and a number nobody can stand behind is worse than a small one."
+        ),
+        "fields": [
+            {"q": "Technology description — what it is, in plain terms", "a": LONG},
+            {"q": "One-line summary", "a": ONE_LINER},
+            {"q": "The Army need it addresses", "a":
+                "A soldier's readiness is already being measured. Wrist and ring wearables are "
+                "common in the force, and the sensors report heart rate, heart-rate variability, "
+                "sleep and movement. What none of them do is say what the numbers mean for this "
+                "person, this week, given what has actually happened to them.\n\n"
+                "That gap is an interpretation problem, not a sensor problem, and it is the one "
+                "Vybe is built to close. The published priority areas include multi-domain force "
+                "readiness across dispersed formations and soldier support across distributed "
+                "environments. Readiness data that nobody can read is the same as no readiness "
+                "data, and the cost of the gap is carried by leaders making training and rest "
+                "decisions on a number with no explanation attached.\n\n"
+                "Vybe's answer is the Connect layer: the part that reads context a sensor cannot "
+                "see — schedule, travel, heat, workload — and uses it to explain why a signal "
+                "moved. Vybe is a wellness product and stays one. It supports a decision about "
+                "training and rest. It does not diagnose, screen, or triage, and nothing in this "
+                "submission asks the Army to treat it as though it does.\n\n"
+                "[If there is a specific unit, programme or military user you have actually "
+                "spoken to, name them here and say what they told you. If there is not, say so "
+                "plainly — the competition explicitly welcomes companies that do not yet know "
+                "the Army problem their technology solves.]"},
+            {"q": "Technical advantage over what already exists commercially", "a":
+                "Three things, and the third is the one that is hard to copy.\n\n"
+                "1. Interpretation, not scoring. Every competitor returns a number and leaves the "
+                "reasoning to the user. Vybe returns a sentence, the evidence behind it, and one "
+                "action — and it states what it could not see, which is the part that keeps it "
+                "honest.\n\n"
+                "2. Context as an input, not a footnote. Work, travel, heat and schedule change "
+                "physiological readings. Vybe models them as signals. A score computed from the "
+                "sensor alone cannot be corrected after the fact by a user note.\n\n"
+                "3. No required subscription. The interpretation ships with the Band. This is a "
+                "commercial advantage, but it is also a structural one against incumbents: a "
+                "company living on monthly revenue cannot match buy-once without cutting its own "
+                "income.\n\n"
+                + WHY_NOW},
+            {"q": "Technical viability and maturity", "a":
+                "Where the product is today: {{STAGE}}.\n\n"
+                "The physiological sensing is established engineering — ECG, photoplethysmography, "
+                "accelerometry — and the risk does not sit there. It sits in the interpretation "
+                "layer, which is why that is where the work and the evidence are.\n\n"
+                "[This section needs your real numbers, and only you have them:\n"
+                "- Technology readiness level, and what you are basing that on\n"
+                "- What the Band measures today versus what it is specified to measure\n"
+                "- How the interpretation layer is built and what it has been validated against\n"
+                "- Manufacturing status: who is building the Band, what stage that is at, and "
+                "what is already de-risked\n"
+                "- Any bench, field or user data you can actually show\n"
+                "A reviewer who works with hardware will know immediately if a maturity claim is "
+                "generous. An honest early-stage answer with a clear roadmap beats an inflated "
+                "one.]"},
+            {"q": "Commercial potential and traction", "a":
+                "Vybe is a commercial product first, which is the shape this competition asks "
+                "for: technologies with commercial traction that may also serve the Army.\n\n"
+                "The buyer is someone who already owns a wearable and has stopped opening it. "
+                "They have the data and none of the meaning, and they resent paying monthly to be "
+                "shown a number they can already see. The Band is bought once, so the first sale "
+                "is the whole relationship.\n\n"
+                "Beyond direct sales, the interpretation layer licenses: other manufacturers have "
+                "sensors and nothing to say with them.\n\n"
+                "Current position: revenue {{REVENUE}}; {{TRACTION}}; team of {{EMPLOYEES}}.\n\n"
+                "[Add what you can evidence: pre-orders, pilots, letters of intent, partner "
+                "conversations, or money raised. If the honest answer is a waitlist and nothing "
+                "else, say that. Overstating traction to a panel that reads hundreds of these is "
+                "the cheapest way to lose.]"},
+            {"q": "Transition path — what a follow-on Phase I would demonstrate", "a":
+                "The competition's Phase I asks for a feasibility study and a concept "
+                "demonstration, so the proposal writes itself from what is genuinely unproven: "
+                "whether the interpretation layer holds up on people under sustained physical "
+                "load rather than on consumers going about a normal week.\n\n"
+                "A six-month Phase I would put that to the test: run the Band and the "
+                "interpretation layer against a defined training population, compare what Vybe "
+                "says about recovery with what the people and their leaders already observe, and "
+                "report where it agrees, where it does not, and what the system refuses to answer.\n\n"
+                "The commercial path is unchanged either way, which is the point of dual use: the "
+                "product ships to consumers regardless, and the Army work makes the interpretation "
+                "better rather than forking it.\n\n"
+                "[Budget: a Phase I is capped at $300,000 over six months. A suggested split to "
+                "replace with your own — roughly 60% engineering time, 20% hardware and field "
+                "instrumentation, 10% data and analysis, 10% programme management. These are a "
+                "starting shape, not costed figures.]"},
+            {"q": "Eligibility statement", "a":
+                "{{LEGAL_NAME}} is a for-profit small business, formed in {{STATE}} in {{FORMED}}, "
+                "operating from {{CITY}}, EIN {{EIN}}. Ownership: {{OWNERSHIP}}. Employees "
+                "including founders: {{EMPLOYEES}}, well inside the 500 ceiling.\n\n"
+                "[Confirm before you submit, because these are the three things that end an "
+                "application:\n"
+                "- More than 50% of the equity is owned AND controlled by US citizens or "
+                "permanent residents. Both words matter; a control arrangement can fail this "
+                "even when the cap table passes.\n"
+                "- This submission is not substantially the same as any proposal funded, being "
+                "funded, or pending award at another federal agency. If anything is close, the "
+                "competition says to disclose it early rather than hope.\n"
+                "- One submission per company. Pick the strongest framing and send that one.]"},
+            {"q": "Why this is not a medical technology", "a":
+                "Worth stating plainly in the submission rather than leaving a reviewer to "
+                "wonder, because the exclusion is specific.\n\n"
+                "Vybe is a consumer wellness product. It is not a medical device, it holds no "
+                "device classification, it makes no diagnostic or therapeutic claim, and it needs "
+                "no clearance to ship — which is why it is on shelves rather than in a trial. It "
+                "does not screen for conditions, and when a user asks it a clinical question it "
+                "declines and says to see a clinician.\n\n"
+                "What it does is read a person's own signals and explain them. That is a "
+                "human-performance and readiness capability of the ordinary commercial kind, and "
+                "it does not fall within the Army Medical Research and Development Command "
+                "portfolio the competition excludes."},
         ],
     },
     {
