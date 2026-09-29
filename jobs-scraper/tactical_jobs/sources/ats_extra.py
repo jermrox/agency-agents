@@ -34,7 +34,7 @@ from urllib.parse import quote, urljoin
 
 from ..http import fetch, fetch_json
 from ..models import JobPosting
-from .base import Source, html_to_text, looks_remote, parse_timestamp
+from .base import place_from_title, Source, html_to_text, looks_remote, parse_timestamp
 
 log = logging.getLogger(__name__)
 
@@ -267,7 +267,15 @@ class BambooHRSource(Source):
         else:
             location_text = _label(location)
 
-        title = _first_text(record, ("jobOpeningName", "title", "name"))
+        title = _first_text(record, ("jobOpeningName", "title", "name")).strip()
+        # A title that ends in a place names the duty station better than the
+        # list does. LMR Technical Group files every overseas billet under its
+        # Fort Walton Beach head office and writes "(Position Located at
+        # Ramstein Air Base, Germany)" in the title; the board would otherwise
+        # put a Germany job under Florida.
+        titled_place = place_from_title(title)
+        if titled_place:
+            location_text = titled_place
         department = _first_text(record, ("departmentLabel", "department"))
         employment = _first_text(record, ("employmentStatusLabel", "employmentStatus"))
 

@@ -127,6 +127,58 @@ event in Boston, so a row carried as "apply any time" was quietly unwinnable for
 seven weeks. The 2027 window is unposted; on this year's pattern it is a
 June–July job. Selected companies still pay $750 to attend.
 
+## Promoted to the board — 29 Sep 2026
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **Army xTech\|Search 10** | up to **$1,000,000** in non-dilutive prizes, plus a Phase I SBIR/STTR worth up to **$300,000** | white paper due **19 Oct 2026**, 5pm ET |
+| **Freed Fellowship Grant** | $500 a month, plus a $2,500 end-of-year grant | rolling, one Fellow selected monthly |
+| **Kinetic — Health Care Innovation in Motion** (Bounce Innovation Hub × NEOMED, Akron) | no cash — services, EIRs, free coworking | rolling; no intake window published |
+
+xTech|Search 10 is the find, and it is the largest non-dilutive item this board
+has ever carried. It is **open-topic**, so there is no stated problem to contort
+the product into, and one of its four published priority portfolios is
+*"Immersive and Wearables: smart electronic devices that can be worn by or
+attached to the user to gather data or provide insight"* — Vybe's category,
+written by the Army. Money lands early: $5,000 at semifinal, which up to 50
+companies reach.
+
+**The gate to read before writing a word.** The competition excludes
+technologies falling *exclusively* within the U.S. Army Medical Research and
+Development Command portfolio — military operational medicine, clinical and
+rehabilitative medicine, infectious disease, CBRN. A defence application invites
+a founder to sound more serious by sounding more clinical, and here that is the
+sentence that makes the submission ineligible. Vybe's honest position — a
+commercial consumer wearable with a dual-use readiness application, no device
+classification, no diagnostic claim — is both true and the only one that clears
+the exclusion. This is the same failure mode `DECKS.md` rejected for the MedTech
+Innovator row, arriving from the opposite direction.
+
+Drafted the same day as the `xtech` packet. The RFI PDF was not readable from
+here, so the packet is built against the four things the competition's own page
+says it weighs, and says so in its note rather than guessing at section headings.
+
+**Kinetic is on the board for location, not money.** Bounce is in Akron, which is
+where the company is, and the offer is free coworking, entrepreneurs-in-residence
+and discounted professional services. Its published outcomes are about regulatory
+pathways and FDA submissions; Vybe has neither and should not acquire one to
+qualify, so the row says the fit is the commercialization half. Two unknowns the
+page does not answer: there is no application form, and startups inside their
+"Launch Pad period" are excluded from the free services.
+
+## Rejected on inspection — 29 Sep 2026
+
+- **Cartier Women's Initiative** — real, large ($100K/$60K/$30K to nine regional
+  and three thematic fellows), free, and the Science & Technology Pioneer Award
+  would fit. Its own awards page says *"Applications are now closed for the 2027
+  edition"* and publishes no date for the next one. Not a board row until a
+  window is posted; on the published pattern that is a spring job. Worth a diary
+  note, not an entry.
+- **Founders First Capital Partners** — rejected on fit, not integrity. Its own
+  page sets the floor at **$500K to $10M+ annual revenue** and serves
+  service-based B2B or B2G companies. Vybe is pre-revenue consumer hardware. The
+  capital is also revenue-based loans and term loans, not grant money.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |
