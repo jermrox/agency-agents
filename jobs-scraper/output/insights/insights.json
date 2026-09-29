@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-28T19:07:55.162531+00:00",
+  "generated_at": "2026-09-29T07:11:19.329075+00:00",
   "totals": {
-    "postings": 522,
+    "postings": 534,
     "employers": 33,
-    "unique_jobs": 231,
-    "with_salary": 166,
+    "unique_jobs": 236,
+    "with_salary": 171,
     "date_span": {
       "earliest": "2026-07-06T00:00:00+00:00",
-      "latest": "2026-09-28T14:51:40.163000+00:00"
+      "latest": "2026-09-29T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -38,7 +38,7 @@
     },
     {
       "name": "Commander, Navy Installations Command",
-      "count": 28,
+      "count": 29,
       "disciplines": [
         "leadership",
         "research",
@@ -46,11 +46,11 @@
         "strength-conditioning",
         "nutrition"
       ],
-      "median_salary": 47137.75
+      "median_salary": 47840.0
     },
     {
       "name": "General Dynamics Information Technology",
-      "count": 26,
+      "count": 27,
       "disciplines": [
         "cognitive",
         "sports-medicine",
@@ -64,19 +64,30 @@
     },
     {
       "name": "Customs and Border Protection",
-      "count": 24,
+      "count": 25,
       "disciplines": [],
-      "median_salary": 136702.25
+      "median_salary": 139436.5
     },
     {
       "name": "Military Treatment Facilities under DHA",
-      "count": 20,
+      "count": 21,
       "disciplines": [
         "sports-medicine",
         "leadership",
         "research"
       ],
-      "median_salary": 97983.25
+      "median_salary": 102935.0
+    },
+    {
+      "name": "U.S. Marine Corps",
+      "count": 9,
+      "disciplines": [
+        "sports-medicine",
+        "strength-conditioning",
+        "leadership",
+        "nutrition"
+      ],
+      "median_salary": 39915.2
     },
     {
       "name": "Veterans Health Administration",
@@ -86,16 +97,6 @@
         "leadership"
       ],
       "median_salary": 78295.5
-    },
-    {
-      "name": "U.S. Marine Corps",
-      "count": 8,
-      "disciplines": [
-        "sports-medicine",
-        "strength-conditioning",
-        "leadership"
-      ],
-      "median_salary": 37637.6
     },
     {
       "name": "Bureau of Prisons/Federal Prison System",
@@ -159,67 +160,67 @@
   "by_discipline": [
     {
       "name": "sports-medicine",
-      "count": 87,
-      "share": 0.5241,
-      "median_salary": 79404.5
+      "count": 90,
+      "share": 0.5294,
+      "median_salary": 79517.25
     },
     {
       "name": "strength-conditioning",
       "count": 72,
-      "share": 0.4337,
+      "share": 0.4235,
       "median_salary": 72433.25
     },
     {
       "name": "cognitive",
       "count": 31,
-      "share": 0.1867,
+      "share": 0.1824,
       "median_salary": 113610.0
     },
     {
       "name": "research",
-      "count": 29,
-      "share": 0.1747,
-      "median_salary": 97108.0
+      "count": 30,
+      "share": 0.1765,
+      "median_salary": 90350.25
     },
     {
       "name": "leadership",
-      "count": 21,
-      "share": 0.1265,
-      "median_salary": 63916.5
+      "count": 22,
+      "share": 0.1294,
+      "median_salary": 63440.0
     },
     {
       "name": "nutrition",
-      "count": 19,
-      "share": 0.1145,
-      "median_salary": 97967.5
+      "count": 20,
+      "share": 0.1176,
+      "median_salary": 93000.0
     },
     {
       "name": "sport-science",
       "count": 2,
-      "share": 0.012,
+      "share": 0.0118,
       "median_salary": 94144.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 212,
-      "share": 0.9339
+      "count": 217,
+      "share": 0.9353
     },
     {
       "name": "sof",
-      "count": 54,
-      "share": 0.2379
+      "count": 55,
+      "share": 0.2371
     },
     {
       "name": "first-responder",
-      "count": 39,
-      "share": 0.1718
+      "count": 41,
+      "share": 0.1767
     },
     {
       "name": "training-pipeline",
       "count": 30,
-      "share": 0.1322
+      "share": 0.1293
     }
   ],
   "by_branch": [
@@ -233,15 +234,15 @@
     },
     {
       "name": "Navy",
-      "count": 30
+      "count": 31
     },
     {
       "name": "Air Force",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Marine Corps",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Space Force",
@@ -352,15 +353,19 @@
       "count": 8
     },
     {
+      "code": "MD",
+      "count": 7
+    },
+    {
       "code": "WA",
       "count": 7
     },
     {
-      "code": "MD",
-      "count": 6
+      "code": "AK",
+      "count": 4
     },
     {
-      "code": "AK",
+      "code": "DC",
       "count": 4
     },
     {
@@ -370,37 +375,33 @@
     {
       "code": "AL",
       "count": 3
-    },
-    {
-      "code": "DC",
-      "count": 3
     }
   ],
   "certifications": [
     {
       "name": "CSCS",
       "count": 54,
-      "share": 0.6923
+      "share": 0.6835
     },
     {
       "name": "ATC",
       "count": 17,
-      "share": 0.2179
+      "share": 0.2152
+    },
+    {
+      "name": "RD",
+      "count": 12,
+      "share": 0.1519
     },
     {
       "name": "PhD",
       "count": 11,
-      "share": 0.141
-    },
-    {
-      "name": "RD",
-      "count": 11,
-      "share": 0.141
+      "share": 0.1392
     },
     {
       "name": "TSAC-F",
       "count": 3,
-      "share": 0.0385
+      "share": 0.038
     }
   ],
   "clearances": [
@@ -418,16 +419,16 @@
     },
     {
       "name": "Public Trust",
-      "count": 2
+      "count": 3
     }
   ],
   "salary": {
-    "count": 166,
+    "count": 171,
     "min": 27500.0,
     "max": 219654.0,
     "median": 87933.5,
     "p25": 62782.81,
-    "p75": 117778.5,
+    "p75": 118697.25,
     "by_discipline": {
       "strength-conditioning": {
         "count": 30,
@@ -438,20 +439,20 @@
         "p75": 90748.75
       },
       "sports-medicine": {
-        "count": 65,
+        "count": 68,
         "min": 27500.0,
         "max": 219654.0,
-        "median": 79404.5,
-        "p25": 58892.0,
-        "p75": 102935.0
+        "median": 79517.25,
+        "p25": 59535.5,
+        "p75": 106080.12
       },
       "nutrition": {
-        "count": 10,
-        "min": 85738.0,
+        "count": 11,
+        "min": 77350.0,
         "max": 127040.0,
-        "median": 97967.5,
-        "p25": 91950.0,
-        "p75": 110941.25
+        "median": 93000.0,
+        "p25": 88844.0,
+        "p75": 108272.5
       },
       "cognitive": {
         "count": 15,
@@ -470,26 +471,26 @@
         "p75": 98347.0
       },
       "research": {
-        "count": 17,
+        "count": 18,
         "min": 58000.0,
         "max": 170556.5,
-        "median": 97108.0,
-        "p25": 75920.0,
+        "median": 90350.25,
+        "p25": 68778.12,
         "p75": 98738.0
       },
       "leadership": {
-        "count": 16,
+        "count": 17,
         "min": 34320.0,
         "max": 89837.5,
-        "median": 63916.5,
-        "p25": 57747.11,
-        "p75": 76911.88
+        "median": 63440.0,
+        "p25": 62782.81,
+        "p75": 75201.5
       }
     }
   },
   "remote": {
     "count": 3,
-    "share": 0.013
+    "share": 0.0127
   },
   "timeline": [
     {
@@ -498,16 +499,16 @@
     },
     {
       "month": "2026-08",
-      "count": 63
+      "count": 62
     },
     {
       "month": "2026-09",
-      "count": 153
+      "count": 159
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-06-30T14:51:40.163000+00:00",
+    "pivot": "2026-07-01T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Serco USA",
@@ -523,39 +524,39 @@
       },
       {
         "name": "Commander, Navy Installations Command",
-        "recent": 28,
+        "recent": 29,
         "previous": 0,
-        "change": 28
+        "change": 29
       },
       {
         "name": "Customs and Border Protection",
-        "recent": 24,
+        "recent": 25,
         "previous": 0,
-        "change": 24
+        "change": 25
       },
       {
         "name": "General Dynamics Information Technology",
-        "recent": 24,
+        "recent": 25,
         "previous": 0,
-        "change": 24
+        "change": 25
       },
       {
         "name": "Military Treatment Facilities under DHA",
-        "recent": 20,
+        "recent": 21,
         "previous": 0,
-        "change": 20
+        "change": 21
+      },
+      {
+        "name": "U.S. Marine Corps",
+        "recent": 9,
+        "previous": 0,
+        "change": 9
       },
       {
         "name": "Veterans Health Administration",
         "recent": 9,
         "previous": 0,
         "change": 9
-      },
-      {
-        "name": "U.S. Marine Corps",
-        "recent": 8,
-        "previous": 0,
-        "change": 8
       },
       {
         "name": "Bureau of Prisons/Federal Prison System",
@@ -614,13 +615,13 @@
         "change": 17
       },
       {
-        "name": "PhD",
-        "recent": 11,
+        "name": "RD",
+        "recent": 12,
         "previous": 0,
-        "change": 11
+        "change": 12
       },
       {
-        "name": "RD",
+        "name": "PhD",
         "recent": 11,
         "previous": 0,
         "change": 11
