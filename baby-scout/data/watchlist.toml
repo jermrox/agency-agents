@@ -1,0 +1,50 @@
+# Baby Gear Scout watchlist used by the daily workflow.
+# PUBLIC REPO: replace these fictional placeholders with your products, or keep
+# your real list in the BABY_SCOUT_WATCHLIST secret instead (see README).
+
+[household]
+due_date = 2027-02-10
+budget = 4500
+region = "US"
+owned = []            # categories already covered, e.g. ["high_chair"]
+
+[[item]]
+key = "nestwell-cozy-dream"
+brand = "Nestwell"
+model = "Cozy Dream Bassinet"
+model_number = "NW-CD100"
+category = "bassinet"
+target_price = 120
+jpma_certified = true
+  [[item.offer]]
+  retailer = "Example Mart"
+  url = "https://www.example.com/p/nestwell-cozy-dream"
+
+[[item]]
+key = "bramble-roam-convertible"
+brand = "Bramble & Co."
+model = "Roam Convertible Car Seat"
+model_number = "BC-RC-22"
+category = "car_seat.convertible"
+target_price = 250
+jpma_certified = true
+ease_of_use_stars = 4
+
+[[item]]
+key = "hand-me-down-infant-seat"
+brand = "Bramble & Co."
+model = "Snug Infant Car Seat"
+category = "car_seat.infant"
+condition = "used"
+expiration_date = 2031-05-01
+crash_history_known = true
+labels_intact = true
+
+[[item]]
+key = "store-brand-diapers-size1"
+brand = "Store Brand"
+model = "Diapers Size 1"
+category = "diapers"
+unit_count = 198
+unit_label = "diaper"
+target_price = 0.18    # per diaper when unit_count is set

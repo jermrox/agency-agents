@@ -89,6 +89,8 @@ graphify-out/
 
 # Netlify build output (assembled by scripts/build-netlify-site.sh)
 site/
+# ...except the Baby Gear dashboard, which the baby-scout daily workflow commits.
+!baby-scout/site/
 
 # Tailwind toolchain for the Netlify site build
 scripts/netlify/node_modules/

@@ -3,13 +3,14 @@ import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import RestoreScreen from './src/screens/RestoreScreen';
 import MoveTrendScreen from './src/screens/MoveTrendScreen';
+import NourishScreen from './src/screens/NourishScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are three screens
+ * One piece of state instead of a navigation library. There are four screens
  * now, but they are still a flat set: every detail screen returns to Home and
  * nothing stacks, so there is no back stack for a router to manage. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
@@ -26,6 +27,8 @@ export default function App() {
         <RestoreScreen onBack={() => setScreen('home')} />
       ) : screen === 'move' ? (
         <MoveTrendScreen onBack={() => setScreen('home')} />
+      ) : screen === 'nourish' ? (
+        <NourishScreen onBack={() => setScreen('home')} />
       ) : screen === 'data' ? (
         <DataSettingsScreen onBack={() => setScreen('home')} />
       ) : (
@@ -36,10 +39,11 @@ export default function App() {
             // TODO: the conversation screen.
           }}
           onOpenDimension={(key) => {
-            // Restore and Move have detail screens; the rest fall through
-            // rather than opening an empty shell.
+            // Restore, Move and Nourish have detail screens; Connect and Vitals
+            // fall through rather than opening an empty shell.
             if (key === 'restore') setScreen('restore');
             if (key === 'move') setScreen('move');
+            if (key === 'nourish') setScreen('nourish');
           }}
         />
       )}

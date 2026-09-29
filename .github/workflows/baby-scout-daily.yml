@@ -1,0 +1,106 @@
+name: Baby Scout — daily report
+
+# Once a day: collect prices for the watchlist, check CPSC recalls, save the
+# day's report to baby-scout/data/reports/, and rebuild the dashboard in
+# baby-scout/site/. Both are committed back, so every past report stays in the
+# repo and the dashboard's archive grows by one day per run. The push is what
+# redeploys the dashboard (Netlify target "agentbabyscout").
+#
+# Household privacy: this repository is public. To keep your real watchlist
+# (due date, budget, products) out of it, store the file's contents in the
+# repository secret BABY_SCOUT_WATCHLIST; the run writes it to disk, uses it,
+# and never commits it. Reports and the dashboard still contain prices, the
+# due date and spending, so use a private repository if those should be private.
+
+on:
+  workflow_dispatch:
+    inputs:
+      offline:
+        description: "Skip price collection and recall lookups (rebuild from saved data)"
+        type: boolean
+        default: false
+  schedule:
+    # 11:52 UTC = early morning across US time zones; the dashboard is fresh
+    # before anyone checks it.
+    - cron: "52 11 * * *"
+
+concurrency:
+  group: baby-scout-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: baby-scout
+
+jobs:
+  report:
+    name: Collect, check, report, publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # A broken scorer publishing wrong verdicts is worse than a day without an update.
+      - name: Run tests
+        run: |
+          python -m pip install --quiet pytest
+          python -m pytest tests -q
+
+      - name: Select watchlist
+        env:
+          WATCHLIST: ${{ secrets.BABY_SCOUT_WATCHLIST }}
+        run: |
+          if [ -n "$WATCHLIST" ]; then
+            printf '%s\n' "$WATCHLIST" > "$RUNNER_TEMP/watchlist.toml"
+            echo "WATCHLIST_PATH=$RUNNER_TEMP/watchlist.toml" >> "$GITHUB_ENV"
+            echo "Using the BABY_SCOUT_WATCHLIST secret."
+          elif [ -f data/watchlist.toml ]; then
+            echo "WATCHLIST_PATH=data/watchlist.toml" >> "$GITHUB_ENV"
+            echo "Using data/watchlist.toml."
+          else
+            echo "::error::No watchlist: add data/watchlist.toml or the BABY_SCOUT_WATCHLIST secret."
+            exit 1
+          fi
+
+      - name: Run the daily report
+        run: |
+          set -o pipefail
+          OFFLINE=""
+          if [ "${{ inputs.offline }}" = "true" ]; then OFFLINE="--offline"; fi
+          python -m baby_scout run --data data --watchlist "$WATCHLIST_PATH" --site site $OFFLINE 2>&1 | tee run.log
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Baby Scout — $(date -u +%F)"
+            echo ""
+            echo '```'
+            cat run.log 2>/dev/null || echo "no run log produced"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the report and dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data site
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(baby-scout): daily report $(date -u +%F)"
+          for attempt in 1 2 3 4; do
+            if git push; then exit 0; fi
+            echo "Push failed; rebasing and retrying (attempt $attempt)."
+            sleep $((attempt * 5))
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          done
+          echo "::error::Could not push the daily report after 4 attempts."
+          exit 1
