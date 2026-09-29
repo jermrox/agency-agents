@@ -1,11 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-</head>
-<body>
 <title>Vybe Reels Command</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -415,46 +407,6 @@ form.log .full{grid-column:1/-1}
   </section>
 </main>
 
-<script>
-/* Read-only stand-in for the claude.ai runtime. Serves the page from all.json. */
-(function () {
-  var data = fetch("all.json", { cache: "no-store" }).then(function (r) { return r.json(); });
-  function snap(id, v) { return { id: id, exists: v != null, data: function () { return v == null ? undefined : JSON.parse(JSON.stringify(v)); } }; }
-  function ro() { return Promise.reject(new Error("This copy is read-only. Edit on claude.ai.")); }
-  function docRef(coll, id) {
-    return {
-      onSnapshot: function (cb) { data.then(function (d) { var c = d.collections[coll] || {}; cb(snap(id, c[id])); }); return function () {}; },
-      set: ro, update: ro, delete: ro
-    };
-  }
-  var db = {
-    collection: function (name) {
-      return {
-        onSnapshot: function (cb) {
-          data.then(function (d) {
-            var c = d.collections[name] || {};
-            cb({ docs: Object.keys(c).sort().map(function (k) { return snap(k, c[k]); }) });
-          });
-          return function () {};
-        },
-        doc: function (id) { return docRef(name, id); }
-      };
-    },
-    doc: function (path) { var p = path.split("/"); return docRef(p[0], p[1]); }
-  };
-  window.claude = {
-    use: function (name) {
-      if (name === "db") return data.then(function () { return db; });
-      if (name === "user") return Promise.resolve({ canEdit: function () { return Promise.resolve(false); } });
-      return Promise.resolve(null);
-    }
-  };
-  data.then(function (d) {
-    var el = document.getElementById("dbBanner");
-    if (el) { el.hidden = false; el.textContent = "Read-only copy. Data as of " + new Date(d.generatedAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) + ", refreshed every morning from Instagram. Edit and tick follows on claude.ai."; }
-  });
-})();
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
 <script>
 (function(){
@@ -1163,6 +1115,3 @@ form.log .full{grid-column:1/-1}
   boot();
 })();
 </script>
-
-</body>
-</html>
