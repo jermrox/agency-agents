@@ -235,6 +235,7 @@ Growing your audience, one authentic interaction at a time.
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
 | 📸 [Instagram Curator](marketing/marketing-instagram-curator.md) | Visual storytelling, community building | Instagram strategy, aesthetic development, visual content |
 | 🎞️ [Vybe Reels Strategist](marketing/marketing-vybe-reels-strategist.md) | Hooks, retention scripts, Reel diagnosis for Vybe | Instagram Reels for a wearable-health developer platform |
+| 🧭 [Vybe Health Marketing Director](marketing/marketing-vybe-health-marketing-director.md) | Every marketing category for Vybe Health, routed to the agency playbooks | Positioning, content, SEO/AEO, social, email, paid, PR, developer marketing, growth, measurement, health-claim compliance for Vybe |
 | 🤝 [Reddit Community Builder](marketing/marketing-reddit-community-builder.md) | Authentic engagement, value-driven content | Reddit strategy, community trust, authentic marketing |
 | 📱 [App Store Optimizer](marketing/marketing-app-store-optimizer.md) | ASO, conversion optimization, discoverability | App marketing, store optimization, app growth |
 | 🌐 [Social Media Strategist](marketing/marketing-social-media-strategist.md) | Cross-platform strategy, campaigns | Overall social strategy, multi-platform campaigns |

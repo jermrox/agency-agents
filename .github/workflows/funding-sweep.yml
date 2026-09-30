@@ -116,6 +116,8 @@ jobs:
 
       - name: Commit the refreshed board
         if: ${{ inputs.dry_run != true && inputs.only == '' }}
+        env:
+          REF_NAME: ${{ github.ref_name }}
         run: |
           cd "$GITHUB_WORKSPACE"
           if git diff --quiet -- funding-scraper/output/funding.json dashboards/vybe-funding-tracker.html; then
@@ -130,4 +132,22 @@ jobs:
           # live site. It was also redundant: a push made with GITHUB_TOKEN does
           # not trigger other workflows in the first place.
           git commit -m "chore(funding): daily sweep"
-          git push
+          # The ref can move while the sweep runs: on 29 Sep a PR merged 30
+          # seconds into a run and the bare `git push` was rejected, losing the
+          # whole refresh. Daily runs make that race more likely, so rebase onto
+          # whatever landed and retry. The sweep only writes these two files, so
+          # a conflict means someone else changed them mid-run: fail loudly
+          # rather than guess which version wins.
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$REF_NAME"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt): $REF_NAME moved during the sweep; rebasing onto it."
+            if ! git pull --rebase origin "$REF_NAME"; then
+              git rebase --abort || true
+              echo "::error::Rebase onto $REF_NAME conflicted: funding.json or the dashboard changed during the sweep."
+              exit 1
+            fi
+          done
+          echo "::error::Push to $REF_NAME was rejected three times."
+          exit 1

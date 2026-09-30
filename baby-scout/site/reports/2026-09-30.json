@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-30",
+  "generated_at": "2026-09-30T11:57:16Z",
+  "due_date": "2027-02-10",
+  "days_to_due": 133,
+  "totals": {
+    "watched": 4,
+    "buy_now": 0,
+    "bought": 0,
+    "safety_fail": 0,
+    "tracking": 4,
+    "at_target": 0
+  },
+  "spending": {
+    "spent": 0,
+    "saved_vs_typical": 0,
+    "budget": 4500,
+    "remaining_budget": 4500,
+    "still_to_buy_low": 1090,
+    "still_to_buy_high": 3420,
+    "projected_high": 3420,
+    "purchases": []
+  },
+  "events": [],
+  "items": [
+    {
+      "key": "nestwell-cozy-dream",
+      "name": "Nestwell Cozy Dream Bassinet",
+      "category": "bassinet",
+      "verdict": "tracking",
+      "price": null,
+      "per_unit": false,
+      "retailer": null,
+      "stock": null,
+      "median_90d": null,
+      "low_365d": null,
+      "at_or_below_target": false,
+      "safety_passed": true,
+      "safety_score": 80,
+      "recalls": []
+    },
+    {
+      "key": "bramble-roam-convertible",
+      "name": "Bramble & Co. Roam Convertible Car Seat",
+      "category": "car_seat.convertible",
+      "verdict": "tracking",
+      "price": null,
+      "per_unit": false,
+      "retailer": null,
+      "stock": null,
+      "median_90d": null,
+      "low_365d": null,
+      "at_or_below_target": false,
+      "safety_passed": true,
+      "safety_score": 86,
+      "recalls": []
+    },
+    {
+      "key": "hand-me-down-infant-seat",
+      "name": "Bramble & Co. Snug Infant Car Seat",
+      "category": "car_seat.infant",
+      "verdict": "tracking",
+      "price": null,
+      "per_unit": false,
+      "retailer": null,
+      "stock": null,
+      "median_90d": null,
+      "low_365d": null,
+      "at_or_below_target": false,
+      "safety_passed": true,
+      "safety_score": 62,
+      "recalls": []
+    },
+    {
+      "key": "store-brand-diapers-size1",
+      "name": "Store Brand Diapers Size 1",
+      "category": "diapers",
+      "verdict": "tracking",
+      "price": null,
+      "per_unit": true,
+      "retailer": null,
+      "stock": null,
+      "median_90d": null,
+      "low_365d": null,
+      "at_or_below_target": false,
+      "safety_passed": true,
+      "safety_score": 70,
+      "recalls": []
+    }
+  ]
+}
