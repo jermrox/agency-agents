@@ -4,7 +4,8 @@ name: Baby Scout — daily report
 # day's report to baby-scout/data/reports/, and rebuild the dashboard in
 # baby-scout/site/. Both are committed back, so every past report stays in the
 # repo and the dashboard's archive grows by one day per run. The push is what
-# redeploys the dashboard (Netlify target "agentbabyscout").
+# redeploys the dashboard, which is its own Netlify project (base directory
+# baby-scout/, config in baby-scout/netlify.toml).
 #
 # Household privacy: this repository is public. To keep your real watchlist
 # (due date, budget, products) out of it, store the file's contents in the
