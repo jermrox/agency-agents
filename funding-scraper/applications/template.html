@@ -197,7 +197,7 @@ footer{padding-block:32px;color:var(--faint);font-size:.86rem;display:grid;gap:6
   var labels = {}; D.facts.forEach(function(f){ labels[f.key] = f.label; });
   var gateLabel = {}; D.gates.forEach(function(g){ gateLabel[g.key] = g.label; });
 
-  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   var TOKEN = /(\{\{[A-Z_0-9]+\}\}|\[[^\]\n]+\])/g;
 
   function render(text){
