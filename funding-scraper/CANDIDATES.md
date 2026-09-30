@@ -179,6 +179,80 @@ page does not answer: there is no application form, and startups inside their
   service-based B2B or B2G companies. Vybe is pre-revenue consumer hardware. The
   capital is also revenue-based loans and term loans, not grant money.
 
+## Promoted to the board — 30 Sep 2026
+
+The board held exactly one Ohio row before today, which was a gap: the company
+operates from Akron and two of the three rows below are state or regional money.
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **Ohio Third Frontier TVSF Phase 2 — Start-Up Fund** | up to **$200,000**, a grant, no cost share required | quarterly; Round 46 closed 6 Aug, next RFP ~late Oct |
+| **Innovation Fund (Northeast Ohio)** — GLIDE / LCCC Foundation | "A" up to **$50,000**, "B" up to **$150,000**, matched dollar-for-dollar | quarterly cycles |
+| **DAV Patriot Boot Camp** | free three-day programme; cohort pitch contest was **$10,000** non-dilutive in spring 2026 | cohorts several times a year; next window unposted |
+
+**TVSF is the big one and Vybe cannot apply for it today.** Phase 2 exists to move
+technology *out of* Ohio research institutions and into startups, so the project's
+technology must be one the company has licensed — or intends to license — from an
+Ohio university, an Ohio not-for-profit research institution or a federal lab, and
+it must already carry IP protection. A company that built its own stack has nothing
+to propose. It earns a row anyway because this is a gate Vybe could clear on
+purpose rather than by luck: the Round 44 award list includes the University of
+Akron Research Foundation, and the Kinetic programme added to the board yesterday
+is a partnership with NEOMED. A licence taken to qualify for a grant would be a bad
+idea. A licence Vybe actually wants would open a $200,000 round every quarter.
+
+**Innovation Fund has one unanswered question and it is the important one.** The
+fund calls these "awards" and also calls itself a pre-seed investor with
+"portfolio companies" expected to give back "educationally and financially".
+Nothing on its public pages says whether the money is a grant, a note or equity.
+This board is for non-dilutive funding, so that is the first question to GLIDE, not
+the last. Its published figures also conflict — GLIDE's own support pages still
+show $25,000 and $100,000 against the fund's $50,000 and $150,000 — and the
+dollar-for-dollar match means a $50,000 award needs $50,000 of Vybe's own money
+already committed.
+
+**Patriot Boot Camp has the lowest bar of any veteran programme here.** Revenue and
+raised capital are explicitly *preferences*, not requirements, and an EIN and
+website are preferred rather than required — unusual enough to be worth saying.
+Free, spouses included, and the pitch contest at the end is the cash. No window is
+posted: the June 2026 Salt Lake City cohort has been and gone, so today's action is
+the mailing list, not a deadline.
+
+## Corrected on the board — 30 Sep 2026
+
+**Ohio TechCred** was carried with the eligibility line "OHIO-BASED EMPLOYERS
+ONLY", which understates the gate badly enough to waste a week. The real test is
+four things: Secretary of State registration, a **physical, non-residential**
+business location in Ohio, Ohio-resident **W-2** employees reported to Ohio
+unemployment insurance, and Ohio income tax withheld for them. Contractors and 1099
+workers count for nothing, and an employer exempt from those reporting requirements
+is not eligible at all. A three-person startup working from a founder's house, or
+one whose founders draw no W-2 wage, fails on the address and the payroll before
+any credential is chosen — and the reimbursement stage asks for each earner's wage,
+hire date and W4/IT4 verification, so it is not a gate that can be finessed later.
+
+The programme was also reframed in **July 2026** with a tighter technology-focused
+credential definition, updated employer eligibility and a **new** eligible-provider
+list, so any provider picked from older advice needs re-checking. Window: 9:00am
+1 Oct to 3:00pm 30 Oct 2026. Drafted the same day as the `techcred` packet.
+
+## Rejected on inspection — 30 Sep 2026
+
+- **Fast Break for Small Business** (LegalZoom + Accion Opportunity Fund + NBA /
+  WNBA) — **dead.** Accion's own programme page says it "began in 2021 and closed
+  for the final time in 2024". It was a $6M multi-year commitment with $10,000
+  grants and it is finished; "details about future programming will be available
+  soon" has been the line since. This is the third aggregator-fed lead in a week
+  whose real status is closed. Do not re-add without a live application page.
+- **SOFWERX Tech Tuesday** — real, free, and the cheapest door into USSOCOM human
+  performance, which is the category Vybe is strongest in. Kept off the board for
+  one reason: its own page says **"New Tech Tuesday submissions are currently
+  paused"** while it works through the queue. A forum you cannot submit to is not
+  an opportunity. Watch it — the forum itself is still running weekly, so the pause
+  should lift. Note also that SOFWERX's homepage advertises a 30-minute slot while
+  the Tech Tuesday page says 20 minutes (10 present, 5 Q&A); the programme page is
+  the one to believe. Submissions go through Submittable when they reopen.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |

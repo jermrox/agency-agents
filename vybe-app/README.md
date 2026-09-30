@@ -25,9 +25,12 @@ npx expo start
   header.
 - **NourishScreen** *(28 Sep)* — one day of eating on real clock time, and
   the gap between the last bite and lights out. Tap the Nourish card on Home.
-- **AskScreen** *(new, 29 Sep)* — the conversation. Ask in your own words and
+- **AskScreen** *(29 Sep)* — the conversation. Ask in your own words and
   get an answer with its basis, its blind spots and one action. Tap the ask bar
   at the top of Home.
+- **OnboardingScreen** *(new, 30 Sep)* — first run: pair the Band, choose what
+  Vybe may read, see what you agreed to, and see what it can actually tell you
+  yet. The app opens here.
 
 ## The three decisions worth keeping
 
@@ -190,6 +193,44 @@ The composer is a real `TextInput`. Anything outside the three worked examples
 returns *"There is no sample answer for that one"* rather than a generated
 reading — in this build because it would be fiction, and in the shipped product
 because "not enough data yet" is a real answer that has to have a place to live.
+
+## The onboarding screen, and why it looks like that
+
+**Sources are described by the question they unlock, not by the data they send.**
+"Calendar" tells a person nothing. *"Was it the week, or was it me?"* tells them
+exactly what the permission buys. The Data screen already does disclosure — what
+each source hands over, and where it sits — so this screen deliberately works the
+other axis: on first run you are deciding, not auditing. Each row still names the
+use it is excluded from, because that is the half a permission dialog leaves out:
+the calendar row reads event times and time zones and never the titles.
+
+**Nothing is on by default.**
+A ticked box the person did not tick is not consent. Every switch starts off, and
+the step says so in its first line. This costs connected sources and is the point.
+
+**Pairing is a state machine, not a spinner.**
+Not looking yet → looking → found → pairing → paired, each named in words on the
+screen and announced through `accessibilityLiveRegion`, because a moving circle is
+not a status and a screen reader cannot read one. The three physical things that
+decide whether a search succeeds — Bluetooth on, Band charged, hold the button —
+are shown *before* the attempt, not behind a "trouble connecting?" link that
+appears after it fails.
+
+**Consent comes third, as a summary of decisions already made.**
+Not a wall of text read before the person knows what any of it buys. The step
+restates what is being read from, then the two promises that can actually be
+checked (the readings live on this phone; export and delete are one tap), then the
+claim boundary in the one outlined block — the same treatment the Ask screen gives
+a refusal, so the app says "this is outside what Vybe does" in one visual language.
+
+**The last step says Vybe knows nothing.**
+Every first-run flow ends on "you're all set", which on day one is false: a band
+that has watched you for zero nights has nothing to say about you. So the final
+step reads **Today — nothing yet**, then what arrives after three nights (your own
+range, roughly, labelled low confidence), two weeks (patterns, and the first real
+answers) and six weeks (whether a change you made actually moved anything). It is
+the only expectation that survives contact with the product, and it makes the
+closing ask a small one: wear it tonight.
 
 ## Non-negotiables held
 
