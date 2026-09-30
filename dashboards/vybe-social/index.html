@@ -370,6 +370,8 @@ form.log .full{grid-column:1/-1}
       </div>
     </div>
     <div class="reels" id="reels"><div class="empty">Loading this week's plan…</div></div>
+    <div class="sec-head" style="margin-top:18px"><h3 id="t-stories" style="margin:0">Stories, one a day</h3><span class="note" id="storiesNote"></span></div>
+    <div class="tablewrap" id="stories"><div class="empty">No Stories planned for this week yet.</div></div>
   </section>
 
   <section aria-labelledby="t-script">
@@ -575,9 +577,17 @@ form.log .full{grid-column:1/-1}
         <div class="reel-top"><span class="mono">${esc(r.day)}</span>${status}</div>
         <div class="hook">“${esc(r.hook)}”</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="color:${tagColor}">${esc(r.world||"Vybe")}</span><span class="tag" style="color:var(--muted)">${esc(r.pillar)}</span><span class="tag" style="color:var(--muted)">Tests: ${esc(r.tests)}</span></div>
-        <dl class="kv"><dt>Viewer need</dt><dd>${esc(r.need)}</dd><dt>Angle</dt><dd>${esc(r.angle)}</dd><dt>Format</dt><dd>${esc(r.format)}</dd><dt>Takeaway</dt><dd>${esc(r.takeaway)}</dd></dl>
+        <dl class="kv"><dt>Viewer need</dt><dd>${esc(r.need)}</dd><dt>Angle</dt><dd>${esc(r.angle)}</dd><dt>Format</dt><dd>${esc(r.format)}</dd><dt>Takeaway</dt><dd>${esc(r.takeaway)}</dd>${r.question?`<dt>Ends on</dt><dd>${esc(r.question)}</dd>`:""}</dl>
         <div class="reel-actions"><button class="btn ghost" data-log="${esc(r.id)}">Log Insights</button><button class="copy" data-copy="${esc(r.hook)}">Copy hook</button></div>
       </article>`; }).join("") : `<div class="empty">Nothing here yet for this filter.</div>`;
+  }
+
+  // ---------- stories ----------
+  function renderStories(){
+    const w = state.week; const el = $("#stories"); if (!w || !el) return;
+    $("#storiesNote").textContent = w.storiesNote || "";
+    const list = w.stories || [];
+    el.innerHTML = list.length ? `<table><thead><tr><th>Day</th><th>Type</th><th>Idea</th><th>Sticker</th></tr></thead><tbody>${list.map(s => `<tr><td class="t">${esc(s.day)}</td><td>${esc(s.type)}</td><td>${esc(s.idea)}</td><td>${esc(s.sticker)} <button class="copy" data-copy="${esc(s.sticker)}">Copy</button></td></tr>`).join("")}</tbody></table>` : `<div class="empty">No Stories planned for this week yet.</div>`;
   }
 
   // ---------- script + hooks ----------
@@ -1077,6 +1087,11 @@ form.log .full{grid-column:1/-1}
     const fx = g.fixFirst;
     $("#strat").innerHTML =
       (fx ? `<div class="panel" style="border-color:var(--warn)"><div class="eyebrow" style="color:var(--warn)">Fix first · website (checked ${esc(fx.checkedOn)})</div><p style="margin:0">${esc(fx.finding)}</p><p class="note" style="margin:0">${esc(fx.why)}</p><ol style="margin:0;padding-left:20px;font-size:14px;display:grid;gap:3px">${li(fx.fixes)}</ol><p class="note" style="margin:0">${esc(fx.caveat)}</p></div>` : "") +
+      (g.audit0930 ? (a => `<div class="panel"><div class="eyebrow">Account audit · ${esc(a.date)}</div><div class="rgrid">
+        <div class="ritem"><b>What the numbers say</b><p>${esc(a.numbers.followers)} followers · ${esc(a.numbers.following)} following · ${esc(a.numbers.posts)} posts. Reach ${esc(a.numbers.reach30d)} · views ${esc(a.numbers.views30d)} · profile visits ${esc(a.numbers.profileVisits30d)} · engaged accounts ${esc(a.numbers.accountsEngaged30d)} · comments ${esc(a.numbers.comments)} · saves ${esc(a.numbers.saves)} · shares ${esc(a.numbers.shares)}.</p><ul style="margin:0;padding-left:18px">${li(a.diagnosis)}</ul></div>
+        <div class="ritem"><b>Signal hygiene</b><ul style="margin:0;padding-left:18px">${li(a.signalHygiene)}</ul></div>
+        <div class="ritem"><b>Cadence</b><p>Reels: ${esc(a.cadence.reels)}</p><p>Stories: ${esc(a.cadence.stories)}</p><p>Replies: ${esc(a.cadence.replies)}</p><p class="note">Kept from the audit: ${esc((a.keptFromAudit||[]).join("; "))}. Not adopted: ${esc((a.notAdopted||[]).join("; "))}.</p></div>
+      </div></div>`)(g.audit0930) : "") +
       `<div class="whitespace"><div class="eyebrow">Position · ${esc(f.category||"")}</div><p>${esc(m.position||"")}</p><div class="note" style="color:var(--on-forest);opacity:.85">Lead line: “${esc(m.primary||"")}” · Thesis: “${esc(f.thesis||"")}” · ${esc(f.launch||"")}</div></div>` +
       `<div class="panel"><div class="rgrid">
         <div class="ritem"><b>Say it this way</b><ul style="margin:0;padding-left:18px">${li(m.proof)}</ul><p class="note">Fair line: ${esc(m.fairLine||"")}</p></div>
@@ -1088,7 +1103,7 @@ form.log .full{grid-column:1/-1}
       ((g.pageBriefs||[]).length ? `<div class="panel"><div class="eyebrow">Pages to build on vybe.health · first four</div><div class="rgrid">${g.pageBriefs.map(b => `<div class="ritem"><span class="mono">${esc(b.url)}</span><b>${esc(b.title)}</b><p class="note">Targets: ${esc(b.targets)}</p><ol style="margin:0;padding-left:18px;font-size:13px;display:grid;gap:3px">${li(b.outline)}</ol><p class="note">Reel tie-in: ${esc(b.reelTieIn)}</p></div>`).join("")}</div>
         <div class="note">Existing pages: ${(f.existingPages||[]).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace("https://vybe.health",""))}</a>`).join(" · ")}</div></div>` : "");
   }
-  function renderAll(){ renderStrategy(); renderBrief(); renderFollowers(); renderFollowTracker(); renderTrend(); renderActivity(); renderWeekly(); renderDemo(); renderAds(); renderGrowth(); renderCats(); renderComp(); renderAud(); renderPeople(); renderHeader(); renderTiles(); renderWeeks(); renderReels(); renderScript(); renderNews(); renderReelSelect(); renderLog(); }
+  function renderAll(){ renderStrategy(); renderBrief(); renderFollowers(); renderFollowTracker(); renderTrend(); renderActivity(); renderWeekly(); renderDemo(); renderAds(); renderGrowth(); renderCats(); renderComp(); renderAud(); renderPeople(); renderHeader(); renderTiles(); renderWeeks(); renderReels(); renderStories(); renderScript(); renderNews(); renderReelSelect(); renderLog(); }
 
   // ---------- interactions ----------
   document.addEventListener("change", async e => {
