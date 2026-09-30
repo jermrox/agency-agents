@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-29T19:31:30.805335+00:00",
+  "generated_at": "2026-09-30T07:25:15.078077+00:00",
   "totals": {
-    "postings": 1233,
+    "postings": 1269,
     "employers": 42,
-    "unique_jobs": 747,
-    "with_salary": 219,
+    "unique_jobs": 752,
+    "with_salary": 222,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-09-29T14:12:52.347000+00:00"
+      "latest": "2026-09-30T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -51,6 +51,18 @@
       "median_salary": 60750.0
     },
     {
+      "name": "Serco USA",
+      "count": 34,
+      "disciplines": [
+        "strength-conditioning",
+        "cognitive",
+        "research",
+        "sports-medicine",
+        "leadership"
+      ],
+      "median_salary": null
+    },
+    {
       "name": "Planned Systems International",
       "count": 33,
       "disciplines": [
@@ -72,18 +84,6 @@
         "sport-science"
       ],
       "median_salary": 535360.0
-    },
-    {
-      "name": "Serco USA",
-      "count": 32,
-      "disciplines": [
-        "strength-conditioning",
-        "cognitive",
-        "research",
-        "sports-medicine",
-        "leadership"
-      ],
-      "median_salary": null
     },
     {
       "name": "Commander, Navy Installations Command",
@@ -141,6 +141,20 @@
       "median_salary": 102935.0
     },
     {
+      "name": "U.S. Marine Corps",
+      "count": 13,
+      "disciplines": [
+        "sports-medicine",
+        "strength-conditioning",
+        "cognitive",
+        "research",
+        "leadership",
+        "nutrition",
+        "sport-science"
+      ],
+      "median_salary": 68796.0
+    },
+    {
       "name": "The Geneva Foundation",
       "count": 11,
       "disciplines": [
@@ -150,18 +164,6 @@
         "strength-conditioning"
       ],
       "median_salary": 85000.0
-    },
-    {
-      "name": "U.S. Marine Corps",
-      "count": 10,
-      "disciplines": [
-        "sports-medicine",
-        "strength-conditioning",
-        "cognitive",
-        "leadership",
-        "nutrition"
-      ],
-      "median_salary": 40580.8
     },
     {
       "name": "Veterans Health Administration",
@@ -187,77 +189,77 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 396,
-      "share": 0.6781,
-      "median_salary": 69198.75
+      "count": 401,
+      "share": 0.6808,
+      "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
-      "count": 327,
-      "share": 0.5599,
+      "count": 331,
+      "share": 0.562,
       "median_salary": 73040.5
     },
     {
       "name": "cognitive",
-      "count": 165,
-      "share": 0.2825,
-      "median_salary": 84869.0
+      "count": 168,
+      "share": 0.2852,
+      "median_salary": 84000.0
     },
     {
       "name": "research",
-      "count": 113,
-      "share": 0.1935,
-      "median_salary": 78110.0
+      "count": 116,
+      "share": 0.1969,
+      "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 98,
-      "share": 0.1678,
+      "share": 0.1664,
       "median_salary": 91950.0
     },
     {
       "name": "leadership",
       "count": 31,
-      "share": 0.0531,
+      "share": 0.0526,
       "median_salary": 64074.5
     },
     {
       "name": "sport-science",
-      "count": 8,
-      "share": 0.0137,
-      "median_salary": 94144.0
+      "count": 9,
+      "share": 0.0153,
+      "median_salary": 102550.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 705,
-      "share": 0.9566
+      "count": 710,
+      "share": 0.9569
     },
     {
       "name": "sof",
       "count": 366,
-      "share": 0.4966
+      "share": 0.4933
     },
     {
       "name": "first-responder",
-      "count": 44,
-      "share": 0.0597
+      "count": 46,
+      "share": 0.062
     },
     {
       "name": "training-pipeline",
-      "count": 39,
-      "share": 0.0529
+      "count": 41,
+      "share": 0.0553
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 265
+      "count": 266
     },
     {
       "name": "Army",
-      "count": 173
+      "count": 175
     },
     {
       "name": "Air Force",
@@ -269,7 +271,7 @@
     },
     {
       "name": "Marine Corps",
-      "count": 18
+      "count": 20
     },
     {
       "name": "Space Force",
@@ -310,6 +312,10 @@
       "count": 8
     },
     {
+      "name": "Fort Campbell",
+      "count": 8
+    },
+    {
       "name": "Fort Drum",
       "count": 8
     },
@@ -324,10 +330,6 @@
     {
       "name": "Schofield Barracks",
       "count": 8
-    },
-    {
-      "name": "Fort Campbell",
-      "count": 7
     },
     {
       "name": "Fort Hood",
@@ -381,11 +383,15 @@
     },
     {
       "code": "HI",
-      "count": 20
+      "count": 21
     },
     {
       "code": "WA",
       "count": 19
+    },
+    {
+      "code": "AZ",
+      "count": 18
     },
     {
       "code": "MS",
@@ -396,10 +402,6 @@
       "count": 18
     },
     {
-      "code": "AZ",
-      "count": 17
-    },
-    {
       "code": "DC",
       "count": 14
     }
@@ -407,38 +409,38 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 284,
-      "share": 0.5992
+      "count": 287,
+      "share": 0.6004
     },
     {
       "name": "ATC",
-      "count": 201,
-      "share": 0.4241
+      "count": 203,
+      "share": 0.4247
     },
     {
       "name": "RD",
       "count": 61,
-      "share": 0.1287
+      "share": 0.1276
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.1034
+      "share": 0.1025
     },
     {
       "name": "DPT",
       "count": 15,
-      "share": 0.0316
+      "share": 0.0314
     },
     {
       "name": "LAT",
       "count": 7,
-      "share": 0.0148
+      "share": 0.0146
     },
     {
       "name": "TSAC-F",
       "count": 6,
-      "share": 0.0127
+      "share": 0.0126
     }
   ],
   "clearances": [
@@ -460,28 +462,28 @@
     }
   ],
   "salary": {
-    "count": 219,
+    "count": 222,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 82043.0,
-    "p25": 62200.25,
-    "p75": 110000.0,
+    "median": 81021.5,
+    "p25": 62477.88,
+    "p75": 109713.25,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 56,
+        "count": 59,
         "min": 34320.0,
         "max": 1000000.0,
-        "median": 69198.75,
-        "p25": 57950.0,
+        "median": 68796.0,
+        "p25": 58244.8,
         "p75": 85738.0
       },
       "sports-medicine": {
-        "count": 105,
+        "count": 108,
         "min": 10000.0,
         "max": 1000000.0,
         "median": 73040.5,
-        "p25": 59750.0,
-        "p75": 98738.0
+        "p25": 59937.5,
+        "p75": 99787.25
       },
       "nutrition": {
         "count": 14,
@@ -492,28 +494,28 @@
         "p75": 102935.0
       },
       "cognitive": {
-        "count": 32,
+        "count": 35,
         "min": 34320.0,
         "max": 173285.0,
-        "median": 84869.0,
-        "p25": 62000.38,
-        "p75": 113632.5
+        "median": 84000.0,
+        "p25": 62725.25,
+        "p75": 113610.0
       },
       "sport-science": {
-        "count": 4,
+        "count": 5,
         "min": 72644.01,
         "max": 113700.0,
-        "median": 94144.0,
-        "p25": 82464.5,
-        "p75": 105337.5
+        "median": 102550.0,
+        "p25": 85738.0,
+        "p75": 104933.73
       },
       "research": {
-        "count": 29,
+        "count": 32,
         "min": 45655.0,
         "max": 170556.5,
-        "median": 78110.0,
-        "p25": 63440.0,
-        "p75": 98027.0
+        "median": 77015.0,
+        "p25": 63530.38,
+        "p75": 98204.75
       },
       "leadership": {
         "count": 20,
@@ -568,12 +570,12 @@
     },
     {
       "month": "2026-09",
-      "count": 543
+      "count": 548
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-01T14:12:52.347000+00:00",
+    "pivot": "2026-07-02T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -589,9 +591,9 @@
       },
       {
         "name": "Serco USA",
-        "recent": 32,
+        "recent": 34,
         "previous": 0,
-        "change": 32
+        "change": 34
       },
       {
         "name": "KBR",
@@ -637,9 +639,9 @@
       },
       {
         "name": "U.S. Marine Corps",
-        "recent": 10,
+        "recent": 13,
         "previous": 0,
-        "change": 10
+        "change": 13
       },
       {
         "name": "Veterans Health Administration",
@@ -669,15 +671,15 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 261,
+        "recent": 264,
         "previous": 2,
-        "change": 259
+        "change": 262
       },
       {
         "name": "ATC",
-        "recent": 181,
+        "recent": 183,
         "previous": 5,
-        "change": 176
+        "change": 178
       },
       {
         "name": "RD",

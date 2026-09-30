@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-29.*
+*Briefing generated 2026-09-30.*
 
 ## Headline
 
-- **747 open jobs** from **42 employers**.
-- Posted between **2025-12-03** and **2026-09-29**.
-- **$82,043 median** annualized pay across the 219 postings that publish one -- $62,200 to $110,000 covers the middle half.
+- **752 open jobs** from **42 employers**.
+- Posted between **2025-12-03** and **2026-09-30**.
+- **$81,022 median** annualized pay across the 222 postings that publish one -- $62,478 to $109,713 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 486 of 1,233 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 705, Special Operations 366, Fire / EMS / Law Enforcement 44, Training Pipeline 39.
+- 517 of 1,269 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 710, Special Operations 366, Fire / EMS / Law Enforcement 46, Training Pipeline 41.
 
 ## Month over month
 
-Postings are **up +443** in 2026-09 (100 to 543), 443% against 2026-08.
+Postings are **up +448** in 2026-09 (100 to 548), 448% against 2026-08.
 
 ```
 2025-12     1  #
@@ -25,21 +25,21 @@ Postings are **up +443** in 2026-09 (100 to 543), 443% against 2026-08.
 2026-06    11  #
 2026-07    19  #
 2026-08   100  #####
-2026-09   543  ############################
+2026-09   548  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
 - Loyal Source: 0 to 316
 - LMR Technical Group: 10 to 44
-- Serco USA: 0 to 32
+- Serco USA: 0 to 34
 - KBR: 5 to 35
 - Commander, Navy Installations Command: 0 to 30
 
 **Credentials appearing more often:**
 
-- CSCS: 2 to 261
-- ATC: 5 to 181
+- CSCS: 2 to 264
+- ATC: 5 to 183
 - RD: 3 to 56
 - PhD: 0 to 48
 - DPT: 4 to 8
@@ -51,9 +51,9 @@ Postings are **up +443** in 2026-09 (100 to 543), 443% against 2026-08.
 | Loyal Source | 316 | $68,016 | Strength & Conditioning, Sports Medicine |
 | KBR | 61 | $91,950 | Strength & Conditioning, Sports Medicine |
 | LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
+| Serco USA | 34 | - | Strength & Conditioning, Cognitive Performance |
 | Planned Systems International | 33 | $66,345 | Sports Medicine, Strength & Conditioning |
 | Reef Systems | 33 | $535,360 | Sports Medicine, Strength & Conditioning |
-| Serco USA | 32 | - | Strength & Conditioning, Cognitive Performance |
 | Commander, Navy Installations Command | 30 | $47,138 | Program Leadership, Research & Analytics |
 | General Dynamics Information Technology | 28 | $98,738 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 25 | $139,436 | - |
@@ -63,13 +63,13 @@ Postings are **up +443** in 2026-09 (100 to 543), 443% against 2026-08.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 396 | 68% |
-| Sports Medicine | 327 | 56% |
-| Cognitive Performance | 165 | 28% |
-| Research & Analytics | 113 | 19% |
+| Strength & Conditioning | 401 | 68% |
+| Sports Medicine | 331 | 56% |
+| Cognitive Performance | 168 | 29% |
+| Research & Analytics | 116 | 20% |
 | Performance Nutrition | 98 | 17% |
 | Program Leadership | 31 | 5% |
-| Sport Science | 8 | 1% |
+| Sport Science | 9 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -78,8 +78,8 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 284 | 60% |
-| ATC | 201 | 42% |
+| CSCS | 287 | 60% |
+| ATC | 203 | 42% |
 | RD | 61 | 13% |
 | PhD | 49 | 10% |
 | DPT | 15 | 3% |
@@ -92,17 +92,17 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$82,043**, middle half $62,200 to $110,000.
+- Median **$81,022**, middle half $62,478 to $109,713.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Sport Science | 4 | $82,464 | $94,144 | $105,338 |
+| Sport Science | 5 | $85,738 | $102,550 | $104,934 |
 | Performance Nutrition | 14 | $79,447 | $91,950 | $102,935 |
-| Cognitive Performance | 32 | $62,000 | $84,869 | $113,632 |
-| Research & Analytics | 29 | $63,440 | $78,110 | $98,027 |
-| Sports Medicine | 105 | $59,750 | $73,040 | $98,738 |
-| Strength & Conditioning | 56 | $57,950 | $69,199 | $85,738 |
+| Cognitive Performance | 35 | $62,725 | $84,000 | $113,610 |
+| Research & Analytics | 32 | $63,530 | $77,015 | $98,205 |
+| Sports Medicine | 108 | $59,938 | $73,040 | $99,787 |
+| Strength & Conditioning | 59 | $58,245 | $68,796 | $85,738 |
 | Program Leadership | 20 | $61,537 | $64,074 | $76,912 |
 
 Every figure is annualized before comparison -- hourly federal rates and
@@ -110,7 +110,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (74), NC (61), CA (55), GA (43), TX (40), NM (36), VA (32), KY (23), CO (21), HI (20)
+**States:** FL (74), NC (61), CA (55), GA (43), TX (40), NM (36), VA (32), KY (23), CO (21), HI (21)
 
 | Installation | Jobs |
 |---|---|
@@ -121,11 +121,11 @@ annual contractor bands are not otherwise comparable.
 | Fort Bliss | 9 |
 | Cannon AFB | 8 |
 | Fort Benning | 8 |
+| Fort Campbell | 8 |
 | Fort Drum | 8 |
 | Fort Sill | 8 |
-| Hurlburt Field | 8 |
 
-**Branches and services:** Joint (265), Army (173), Air Force (97), Navy (35), Marine Corps (18), Space Force (4), Coast Guard (3)
+**Branches and services:** Joint (266), Army (175), Air Force (97), Navy (35), Marine Corps (20), Space Force (4), Coast Guard (3)
 
 ## Most common titles
 
