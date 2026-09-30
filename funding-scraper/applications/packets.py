@@ -50,6 +50,13 @@ GATES = [
     # Federal prize competitions bar a submission that duplicates work already
     # funded or pending elsewhere in government. Only the founders know this.
     ("nodupfed", "No substantially similar proposal funded or pending at another federal agency"),
+    # Ohio TechCred's two real gates, and the reason its board row was corrected.
+    # "Ohio-based" is not the test: the premises must not be residential, so a
+    # company working out of a founder's house fails on the address alone.
+    ("ohiosite", "A physical, non-residential business location in Ohio"),
+    # And the payroll test. Contractors and 1099 workers count for nothing here,
+    # so a founding team drawing no wage has nobody eligible to train.
+    ("w2ohio", "Ohio-resident W-2 employees reported to Ohio unemployment insurance"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -619,6 +626,141 @@ PACKETS = [
                 "human-performance and readiness capability of the ordinary commercial kind, and "
                 "it does not fall within the Army Medical Research and Development Command "
                 "portfolio the competition excludes."},
+        ],
+    },
+    {
+        "id": "techcred",
+        "name": "Ohio TechCred — October 2026 round",
+        "funder": "Ohio Department of Development",
+        "amount": "Reimbursement of up to $1,000 per person per credential, capped at $30,000 per application period",
+        "deadline": "2026-10-30",
+        "fee": None,
+        "url": "https://development.ohio.gov/business/workforce-development/tech-cred/apply",
+        "submit": "Apply online at development.ohio.gov/TechCred. The window opens 9:00am on 1 October 2026 and closes 3:00pm on 30 October 2026. One application per federal tax ID per period. It is competitive and merit-based rather than first come, first served, and review can take up to 90 days. Training must start on or after the first day of the application period and finish within 12 months.",
+        "gates": ["ohiosite", "w2ohio"],
+        "confirmed": [
+            "Operating from Ohio — the company works out of Akron",
+        ],
+        "why": "The nearest live deadline on the board and the only one that pays for something Vybe has to buy anyway. It is a cost offset, not a cheque: up to $30,000 back on technology credentials for people already on the payroll or about to be. Worth doing because the window is short, the form is mostly facts rather than persuasion, and a company that misses it waits a full round.",
+        "docs": [
+            "Federal tax ID",
+            "Ohio Payee ID Number from ohiopays.ohio.gov",
+            "Ohio Secretary of State charter or entity number from businesssearch.ohiosos.gov",
+            "Physical, non-residential Ohio business address",
+            "Number of Ohio W-2 employees",
+            "For each credential: the training provider from Ohio's eligible list, training cost, certification test cost, and the reimbursement requested",
+            "Headcounts of incumbent and prospective employees per credential, with average wages before and after",
+        ],
+        "note": (
+            "READ THE TWO GATES FIRST, BECAUSE THEY DECIDE WHETHER ANY OF THIS IS WORTH "
+            "TYPING. TechCred needs a physical, NON-RESIDENTIAL business location in Ohio, "
+            "and it needs Ohio-resident W-2 employees who are reported to the Ohio "
+            "Unemployment Insurance Office with Ohio income tax withheld. Contractors and "
+            "1099 workers do not count for anything here. A three-person company working "
+            "from home, or one whose founders take no W-2 wage, fails before the credentials "
+            "are chosen — and the reimbursement stage asks for each earner's wage, hire date "
+            "and W4/IT4 verification, so this is not a gate that can be finessed later.\n\n"
+            "Two more things worth knowing before the window opens. The programme was "
+            "reframed in July 2026 with a tighter technology-focused credential definition "
+            "and a NEW list of eligible training providers, so any provider chosen from "
+            "older advice has to be re-checked against the current list — and the provider "
+            "must be independent of Vybe, with no shared ownership or management. And the "
+            "money is a reimbursement: Vybe pays the provider, then claims, with an itemised "
+            "invoice and proof of payment showing Vybe as the payer. Payment typically "
+            "arrives within 60 days of an approved request.\n\n"
+            "The application itself does NOT ask you to name individuals — only how many "
+            "incumbent and prospective employees will earn each credential, with average "
+            "wages before and after. The credential choices and the cost figures below are "
+            "left as bracketed prompts because they depend on which providers are on the "
+            "current eligible list and what they actually charge, neither of which can be "
+            "invented. Check the Eligible Credential List on the apply page first, then fill "
+            "these in from real quotes."
+        ),
+        "fields": [
+            {"q": "Employer information", "a":
+                "Employer name: {{LEGAL_NAME}}\n"
+                "Federal Tax ID: {{EIN}}\n"
+                "Physical, non-residential business address: [the Ohio premises — NOT a home "
+                "address, and not a registered-agent address. If Vybe has no non-residential "
+                "Ohio location, this is where the application stops.]\n"
+                "Website: {{WEBSITE}}\n"
+                "Point of contact: {{CEO}}, {{EMAIL}}\n"
+                "Number of Ohio W-2 employees: [how many people are on an Ohio W-2, reported "
+                "to Ohio unemployment insurance. Founders drawing no wage do not count.]\n\n"
+                "[Two numbers you have to fetch rather than remember:\n"
+                "- Payee ID Number — register or look it up at ohiopays.ohio.gov\n"
+                "- Ohio Secretary of State charter or entity number — businesssearch.ohiosos.gov. "
+                "Vybe is formed in {{STATE}}, so if it has not filed as a foreign entity in "
+                "Ohio there will be no number to enter, and that filing has to happen first.]"},
+            {"q": "Employer's industry", "a":
+                "Healthcare and life sciences — consumer digital health and wearables.\n\n"
+                "Worth adding in any free text that Vybe is a consumer wellness product, not a "
+                "medical device, and makes no diagnostic claim. A reviewer in this category "
+                "will otherwise assume a regulatory pathway, and Vybe's ability to ship "
+                "without one is an advantage rather than a gap."},
+            {"q": "What the company does (for any description field)", "a": SHORT},
+            {"q": "Credential 1 — what to train and why it is technology-focused", "a":
+                "[Choose from the Eligible Credential List on the apply page. What TechCred is "
+                "buying here is a short, technology-focused credential, so the ones that fit "
+                "the work Vybe actually does are in embedded firmware, wireless and Bluetooth "
+                "Low Energy, data engineering, applied machine learning, and mobile "
+                "development. Name the one the person will genuinely use, not the one that "
+                "sounds most impressive.]\n\n"
+                "Training provider: [must be on Ohio's current eligible list, and must be "
+                "independent of Vybe — no shared owners, no shared management.]\n"
+                "Training cost: [from a real quote]\n"
+                "Certification test cost: [from a real quote]\n"
+                "Total actual cost: [the two added together]\n"
+                "Reimbursement requested: [up to $1,000]\n\n"
+                "If the credential Vybe needs is not on the list, select “Credential Not "
+                "Listed” and supply the provider's own outline, the learning objectives, "
+                "evidence the skills are technology-focused, and evidence the credential has "
+                "value beyond Vybe. That is a real piece of work, not a checkbox."},
+            {"q": "Credential 2 and beyond", "a":
+                "[Repeat the block above for each credential. The cap is $1,000 per person per "
+                "credential and $30,000 per application, and multiple credentials for the same "
+                "person are allowed — so the arithmetic that reaches $30,000 is people "
+                "multiplied by credentials, not one large course.\n\n"
+                "A suggested shape to replace with your own, once the eligible list is open: "
+                "one firmware or BLE credential for whoever owns the Band, one data or applied "
+                "ML credential for whoever owns Vybe Intelligence, and one mobile credential "
+                "for whoever owns the app. Three credentials across three people is $3,000 at "
+                "the cap — a long way under $30,000, which is the honest size of this "
+                "opportunity for a company of Vybe's headcount.]"},
+            {"q": "Trainee information per credential", "a":
+                "[The form asks for counts, not names:\n"
+                "- Number of INCUMBENT W-2 employees who will earn each credential, with their "
+                "average current hourly wage and average expected wage after\n"
+                "- Number of PROSPECTIVE W-2 employees who will earn each credential, with the "
+                "average wage they would have earned without it and the average expected wage "
+                "after\n\n"
+                "Prospective hires are allowed, which is the flexible part of this programme — "
+                "you can request funding for roles you plan to fill. But at reimbursement you "
+                "have to name the person, prove they were hired, and supply their wage before "
+                "and after, so do not claim for a role you are not confident of filling within "
+                "12 months.]"},
+            {"q": "How the training fits the business", "a":
+                "The Band and the interpretation layer are built in-house, so the skills that "
+                "limit Vybe are specific and identifiable: reliable firmware on a screenless "
+                "device, Bluetooth that does not drop, and models that hold up on a real "
+                "person's time series rather than a clean dataset.\n\n"
+                "Credentials in those areas move work that would otherwise be contracted out "
+                "onto the payroll, which is the outcome TechCred exists for. It also does "
+                "something the grant cannot: contractors take the knowledge with them, and an "
+                "employee who earns the credential keeps it inside the company.\n\n"
+                "[If the form gives room, name the specific thing each credential unblocks. A "
+                "reviewer comparing applications is reading for whether the training is real "
+                "work or a shopping list.]"},
+            {"q": "Before you submit — the timing rule that catches people", "a":
+                "Training must start ON OR AFTER the first day of the application period and "
+                "finish within 12 months of the award. Anything Vybe pays for before the grant "
+                "agreement is executed is at Vybe's own risk and may not be reimbursed.\n\n"
+                "So: do not enrol anybody before submitting, and do not pay an invoice hoping "
+                "it will be covered retroactively. Submit in the window, wait for the executed "
+                "agreement, then book the training.\n\n"
+                "Also: if something is missing from the application and it was submitted at "
+                "least 24 hours before the round closes, the programme will tell you what it "
+                "needs. Submitting on 29 October rather than 30 October buys that safety net."},
         ],
     },
     {
