@@ -324,6 +324,11 @@ form.log .full{grid-column:1/-1}
     <div id="demo"><div class="empty">Loading research…</div></div>
   </section>
 
+  <section aria-labelledby="t-ads">
+    <div class="sec-head"><h2 id="t-ads">Meta targeting</h2><span class="note" id="adsNote">Instagram and Facebook ads research. Reference for the founder's decision; no ads are running.</span></div>
+    <div id="ads"><div class="empty">Loading Meta targeting research…</div></div>
+  </section>
+
   <section aria-labelledby="t-aud">
     <div class="sec-head"><h2 id="t-aud">Who we're talking to</h2><span class="note">Every Reel names one of these. The share is our planning split, not a measured number.</span></div>
     <div class="segs" id="segs"></div>
@@ -941,6 +946,27 @@ form.log .full{grid-column:1/-1}
       </article>`).join("")}</div>`;
     $("#demoNote").textContent = `Sourced research, as of ${d.asOf}. ${d.method||""}`;
   }
+  function renderAds(){
+    const el = $("#ads"), a = state.ads; if (!el || !a) return;
+    const d = a.deepDive || {}, b = d.buyers || {}, t = d.metaToolbox2026 || {}, c = d.competitorsOnMeta || {}, s = d.referenceStructure || {};
+    const li = arr => (arr||[]).length ? `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+    const kv = obj => Object.keys(obj||{}).length ? `<ul>${Object.entries(obj).map(([k,v]) => `<li><b>${esc(k)}</b>: ${esc(Array.isArray(v)?v.join("; "):v)}</li>`).join("")}</ul>` : "";
+    const blk = (label, html) => html ? `<div><div class="lbl">${label}</div>${html}</div>` : "";
+    const card = (title, inner) => `<article class="dseg"><h3>${esc(title)}</h3>${inner}</article>`;
+    el.innerHTML =
+      `<div class="whitespace"><div class="eyebrow">What the research says · ${esc(d.savedOn||a.savedOn||"")}</div><p>${esc(d.headline||"")}</p><div class="note" style="color:var(--on-forest);opacity:.85">${esc(a.status||"")}</div></div>` +
+      `<div class="dgrid">` +
+      card("Who buys a WHOOP or Oura alternative", kv(b)) +
+      card("What Meta lets us fence in 2026", blk("Hard controls", li(t.hardControls)) + blk("Suggestion only", li(t.suggestionOnly)) + (t.stillFences?`<p class="note">${esc(t.stillFences)}</p>`:"") + blk("Interests that exist", li(t.interestsExist)) + blk("Interests not verified", li(t.interestsUnverified)) + blk("Removed by Meta", li(t.removed)) + (t.audiences?`<p class="note">${esc(t.audiences)}</p>`:"") + (t.learning?`<p class="note">${esc(t.learning)}</p>`:"")) +
+      card("Health & wellness rules", `<p style="margin:0;font-size:14px">${esc(d.healthRestrictions||"")}</p>` + (a.creativeRulesForAds?`<p class="note">${esc(a.creativeRulesForAds)}</p>`:"")) +
+      card("How competitors advertise on Meta", kv({whoop:c.whoop, oura:c.oura, garmin:c.garmin, amazfit:c.amazfit, others:c.others}) + blk("Nobody is speaking to", li(c.underServed))) +
+      card("Reference structure, if ads are ever approved", (s.status?`<p class="note">${esc(s.status)}</p>`:"") + blk("Campaigns", li(s.campaigns)) + (s.phases?`<p style="margin:0;font-size:13.5px">${esc(s.phases)}</p>`:"") + blk("Personas carried in creative", li(s.personasInCreative)) + blk("Measure", li(s.measure)) + (s.costProxies?`<p class="note">${esc(s.costProxies)}</p>`:"")) +
+      card("Hooks: approved and rejected", blk("Approved", li(a.approvedAdHooks)) + blk("Rejected", (a.rejectedHooks||[]).length?`<ul>${a.rejectedHooks.map(h => `<li>“${esc(h.hook)}” <span class="note">${esc(h.why)}</span></li>`).join("")}</ul>`:"")) +
+      card("Verify before quoting", li(d.unverified||a.unverified) + blk("Verified", li(a.verified))) +
+      card("Decisions only the founder can make", li(d.founderDecisions||a.openDecisions)) +
+      `</div>`;
+    $("#adsNote").textContent = `Instagram and Facebook ads research, as of ${d.savedOn||a.savedOn||""}. ${d.report?`Full report: ${d.report}.`:""} No ads are running.`;
+  }
   function renderWeekly(){
     const el = $("#weekly"), pick = $("#repPick"); if (!el || !pick) return;
     const reps = (state.reports||[]).slice().sort((a,b) => a._id < b._id ? 1 : -1);
@@ -1014,7 +1040,7 @@ form.log .full{grid-column:1/-1}
       ((g.pageBriefs||[]).length ? `<div class="panel"><div class="eyebrow">Pages to build on vybe.health · first four</div><div class="rgrid">${g.pageBriefs.map(b => `<div class="ritem"><span class="mono">${esc(b.url)}</span><b>${esc(b.title)}</b><p class="note">Targets: ${esc(b.targets)}</p><ol style="margin:0;padding-left:18px;font-size:13px;display:grid;gap:3px">${li(b.outline)}</ol><p class="note">Reel tie-in: ${esc(b.reelTieIn)}</p></div>`).join("")}</div>
         <div class="note">Existing pages: ${(f.existingPages||[]).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace("https://vybe.health",""))}</a>`).join(" · ")}</div></div>` : "");
   }
-  function renderAll(){ renderStrategy(); renderBrief(); renderFollowers(); renderFollowTracker(); renderTrend(); renderActivity(); renderWeekly(); renderDemo(); renderGrowth(); renderCats(); renderComp(); renderAud(); renderPeople(); renderHeader(); renderTiles(); renderWeeks(); renderReels(); renderScript(); renderNews(); renderReelSelect(); renderLog(); }
+  function renderAll(){ renderStrategy(); renderBrief(); renderFollowers(); renderFollowTracker(); renderTrend(); renderActivity(); renderWeekly(); renderDemo(); renderAds(); renderGrowth(); renderCats(); renderComp(); renderAud(); renderPeople(); renderHeader(); renderTiles(); renderWeeks(); renderReels(); renderScript(); renderNews(); renderReelSelect(); renderLog(); }
 
   // ---------- interactions ----------
   document.addEventListener("change", async e => {
@@ -1096,7 +1122,7 @@ form.log .full{grid-column:1/-1}
     state.db = db;
     try { const user = await window.claude.use("user"); if (user) state.canWrite = await user.canEdit(); } catch {}
     if (!state.canWrite){ $("#logForm").hidden = true; $("#folForm").hidden = true; }
-    db.collection("research").onSnapshot(q => { q.docs.forEach(d => { const v = d.data(); if (d.id==="competitors") state.comp = v; if (d.id==="audience") state.aud = v; if (d.id==="categories") state.cats = v.items; if (d.id==="growth") state.growth = v; if (d.id==="strategy") state.strategy = v; if (d.id==="demographics") state.demo = v; if (d.id==="peopleplan") { state.tiers = v.tiers; state.playbook = v.playbook; } }); renderAll(); });
+    db.collection("research").onSnapshot(q => { q.docs.forEach(d => { const v = d.data(); if (d.id==="competitors") state.comp = v; if (d.id==="audience") state.aud = v; if (d.id==="categories") state.cats = v.items; if (d.id==="growth") state.growth = v; if (d.id==="strategy") state.strategy = v; if (d.id==="demographics") state.demo = v; if (d.id==="ads") state.ads = v; if (d.id==="peopleplan") { state.tiers = v.tiers; state.playbook = v.playbook; } }); renderAll(); });
     db.collection("people").onSnapshot(q => { state.people = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
     db.doc("plan/targets").onSnapshot(s => { state.targets = s.exists ? s.data() : null; renderAll(); });
     const pickWeek = () => { state.week = state.weeks[state.currentId] || null; renderAll(); };
