@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-30T07:25:15.078077+00:00",
+  "generated_at": "2026-09-30T19:32:29.373026+00:00",
   "totals": {
-    "postings": 1269,
+    "postings": 1276,
     "employers": 42,
-    "unique_jobs": 752,
-    "with_salary": 222,
+    "unique_jobs": 756,
+    "with_salary": 225,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-09-30T00:00:00+00:00"
+      "latest": "2026-09-30T13:47:43.530000+00:00"
     }
   },
   "by_employer": [
@@ -52,7 +52,7 @@
     },
     {
       "name": "Serco USA",
-      "count": 34,
+      "count": 35,
       "disciplines": [
         "strength-conditioning",
         "cognitive",
@@ -87,11 +87,11 @@
     },
     {
       "name": "Commander, Navy Installations Command",
-      "count": 30,
+      "count": 32,
       "disciplines": [
+        "sports-medicine",
         "leadership",
         "research",
-        "sports-medicine",
         "strength-conditioning",
         "nutrition"
       ],
@@ -132,7 +132,7 @@
     },
     {
       "name": "Military Treatment Facilities under DHA",
-      "count": 23,
+      "count": 24,
       "disciplines": [
         "sports-medicine",
         "research",
@@ -189,67 +189,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 401,
-      "share": 0.6808,
+      "count": 403,
+      "share": 0.6807,
       "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
-      "count": 331,
-      "share": 0.562,
+      "count": 333,
+      "share": 0.5625,
       "median_salary": 73040.5
     },
     {
       "name": "cognitive",
       "count": 168,
-      "share": 0.2852,
+      "share": 0.2838,
       "median_salary": 84000.0
     },
     {
       "name": "research",
       "count": 116,
-      "share": 0.1969,
+      "share": 0.1959,
       "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 98,
-      "share": 0.1664,
+      "share": 0.1655,
       "median_salary": 91950.0
     },
     {
       "name": "leadership",
       "count": 31,
-      "share": 0.0526,
+      "share": 0.0524,
       "median_salary": 64074.5
     },
     {
       "name": "sport-science",
       "count": 9,
-      "share": 0.0153,
+      "share": 0.0152,
       "median_salary": 102550.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 710,
-      "share": 0.9569
+      "count": 714,
+      "share": 0.9571
     },
     {
       "name": "sof",
       "count": 366,
-      "share": 0.4933
+      "share": 0.4906
     },
     {
       "name": "first-responder",
       "count": 46,
-      "share": 0.062
+      "share": 0.0617
     },
     {
       "name": "training-pipeline",
-      "count": 41,
-      "share": 0.0553
+      "count": 42,
+      "share": 0.0563
     }
   ],
   "by_branch": [
@@ -259,7 +259,7 @@
     },
     {
       "name": "Army",
-      "count": 175
+      "count": 177
     },
     {
       "name": "Air Force",
@@ -267,7 +267,7 @@
     },
     {
       "name": "Navy",
-      "count": 35
+      "count": 37
     },
     {
       "name": "Marine Corps",
@@ -289,7 +289,7 @@
     },
     {
       "name": "Coronado",
-      "count": 12
+      "count": 13
     },
     {
       "name": "Fort Leonard Wood",
@@ -355,7 +355,7 @@
     },
     {
       "code": "CA",
-      "count": 55
+      "count": 56
     },
     {
       "code": "GA",
@@ -363,7 +363,7 @@
     },
     {
       "code": "TX",
-      "count": 40
+      "count": 41
     },
     {
       "code": "NM",
@@ -371,7 +371,7 @@
     },
     {
       "code": "VA",
-      "count": 32
+      "count": 33
     },
     {
       "code": "KY",
@@ -409,28 +409,28 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 287,
-      "share": 0.6004
+      "count": 288,
+      "share": 0.6013
     },
     {
       "name": "ATC",
       "count": 203,
-      "share": 0.4247
+      "share": 0.4238
     },
     {
       "name": "RD",
       "count": 61,
-      "share": 0.1276
+      "share": 0.1273
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.1025
+      "share": 0.1023
     },
     {
       "name": "DPT",
       "count": 15,
-      "share": 0.0314
+      "share": 0.0313
     },
     {
       "name": "LAT",
@@ -440,7 +440,7 @@
     {
       "name": "TSAC-F",
       "count": 6,
-      "share": 0.0126
+      "share": 0.0125
     }
   ],
   "clearances": [
@@ -462,28 +462,28 @@
     }
   ],
   "salary": {
-    "count": 222,
+    "count": 225,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 81021.5,
-    "p25": 62477.88,
-    "p75": 109713.25,
+    "median": 80000.0,
+    "p25": 62000.5,
+    "p75": 108853.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 59,
+        "count": 60,
         "min": 34320.0,
         "max": 1000000.0,
         "median": 68796.0,
-        "p25": 58244.8,
+        "p25": 57950.0,
         "p75": 85738.0
       },
       "sports-medicine": {
-        "count": 108,
+        "count": 110,
         "min": 10000.0,
         "max": 1000000.0,
         "median": 73040.5,
-        "p25": 59937.5,
-        "p75": 99787.25
+        "p25": 59812.5,
+        "p75": 101885.75
       },
       "nutrition": {
         "count": 14,
@@ -570,12 +570,12 @@
     },
     {
       "month": "2026-09",
-      "count": 548
+      "count": 552
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-02T00:00:00+00:00",
+    "pivot": "2026-07-02T13:47:43.530000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -584,28 +584,28 @@
         "change": 316
       },
       {
+        "name": "Serco USA",
+        "recent": 35,
+        "previous": 0,
+        "change": 35
+      },
+      {
         "name": "LMR Technical Group",
         "recent": 44,
         "previous": 10,
         "change": 34
       },
       {
-        "name": "Serco USA",
-        "recent": 34,
+        "name": "Commander, Navy Installations Command",
+        "recent": 32,
         "previous": 0,
-        "change": 34
+        "change": 32
       },
       {
         "name": "KBR",
         "recent": 35,
-        "previous": 5,
-        "change": 30
-      },
-      {
-        "name": "Commander, Navy Installations Command",
-        "recent": 30,
-        "previous": 0,
-        "change": 30
+        "previous": 4,
+        "change": 31
       },
       {
         "name": "General Dynamics Information Technology",
@@ -633,9 +633,9 @@
       },
       {
         "name": "Military Treatment Facilities under DHA",
-        "recent": 22,
+        "recent": 23,
         "previous": 1,
-        "change": 21
+        "change": 22
       },
       {
         "name": "U.S. Marine Corps",
@@ -671,9 +671,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 264,
+        "recent": 265,
         "previous": 2,
-        "change": 262
+        "change": 263
       },
       {
         "name": "ATC",
@@ -710,7 +710,7 @@
   "top_titles": [
     {
       "title": "Physical Therapist",
-      "count": 56
+      "count": 57
     },
     {
       "title": "Cognitive Performance Specialist",
