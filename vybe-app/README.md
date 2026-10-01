@@ -28,9 +28,11 @@ npx expo start
 - **AskScreen** *(29 Sep)* — the conversation. Ask in your own words and
   get an answer with its basis, its blind spots and one action. Tap the ask bar
   at the top of Home.
-- **OnboardingScreen** *(new, 30 Sep)* — first run: pair the Band, choose what
+- **OnboardingScreen** *(30 Sep)* — first run: pair the Band, choose what
   Vybe may read, see what you agreed to, and see what it can actually tell you
   yet. The app opens here.
+- **PatternHistoryScreen** *(new, 1 Oct)* — twelve weeks of one claim, and the
+  weeks it broke. Reached from the pattern section of NourishScreen.
 
 ## The three decisions worth keeping
 
@@ -231,6 +233,48 @@ range, roughly, labelled low confidence), two weeks (patterns, and the first rea
 answers) and six weeks (whether a change you made actually moved anything). It is
 the only expectation that survives contact with the product, and it makes the
 closing ask a small one: wear it tonight.
+
+## The pattern history screen, and why it looks like that
+
+**It is a history of a claim, not of a metric.**
+`MoveTrendScreen` already does the other kind: one number across twenty-six
+weeks. This screen tests the thing the product actually asserts — that it can
+find a relationship — by showing both halves of that relationship week by week.
+Two values and a verdict per week do not fit in an eight-point column, which is
+why it is twelve rows down the phone rather than a dense plot across it, and why
+every row has a full-size touch target and its words on it.
+
+**The weeks it broke are the same size as the weeks it held.**
+Nine of eleven is a different claim from eleven of eleven, and every product that
+reports "we found a pattern" has rounded that difference away. Both exceptions sit
+in the list at full size with Vybe's explanation beside them — and for one of them
+the explanation is *"Vybe does not know. Nothing in your data separates this week
+from the ones where the pattern held. It is left here rather than explained away."*
+A product that explains away every exception is not explaining, it is defending.
+
+**One week is excluded from the count, and the screen says so.**
+Three recorded nights is not evidence in either direction, so the denominator is
+eleven, not twelve, the row reads "Too few nights", and the headline adds
+"1 more week had too few nights to count". The thin week is also excluded from the
+middle it would otherwise be judged against.
+
+**Nothing on the screen is a stored verdict.**
+`9 of 11`, the `64 min` middle, and each row's "Held" / "Ran the other way" are
+all computed at render from the numbers in `patternHistorySampleData.js`, against
+a rule printed on screen. A typed headline can drift away from the rows beneath
+it, and this is the screen where that would matter most.
+
+**The rule is printed, not hidden.**
+"Three or more nights of eating after 21:00 came with deep sleep below your
+twelve-week middle." A pattern you cannot check is indistinguishable from one
+that was asserted — and a correlation coefficient would be a number the person
+has to interpret alone, which is the gap the whole product exists to close.
+
+**The last word is that this is not a cause.**
+The closing dark block says Vybe has shown two things that moved together in the
+person's own data and the weeks they did not, and that it cannot tell them
+eating earlier would have fixed those weeks — only that trying it for three weeks
+would tell them something this screen cannot.
 
 ## Non-negotiables held
 
