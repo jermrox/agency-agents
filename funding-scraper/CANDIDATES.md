@@ -269,7 +269,7 @@ smartwatches, fitness trackers and biosensors for heart rate, sleep and activity
 alongside AI diet insights. It is a prize, not a grant, so none of the federal
 registrations gate it.
 
-## Corrected on the board — 1 Oct 2026
+## Corrected on the board — 1 Oct 2026 (wearable sweep)
 
 **Xcelerate (WHX Tech)** was carried with no deadline and no mention of its real
 gate. The deadline is **4 Nov 2026**, and only startups holding a confirmed
@@ -342,7 +342,7 @@ The **Buckeye** row is genuinely closed and stays on the board for the record, b
 its note still read "CLOSES 30 SEP — six days out". Prose that counts down does not
 survive the date it was written on; rewritten in the past tense.
 
-## Promoted to the board — 1 Oct 2026
+## Promoted to the board — 1 Oct 2026 (Ohio and defence sweep)
 
 | Now on the board | Award | Window |
 |---|---|---|
@@ -376,7 +376,7 @@ to be an **Ohio resident** who has held the 51% **for more than a year** — so 
 Ohio MBE certification, and the 15% state-contract set-aside behind it, is likely a
 2027 conversation. The free counselling at both is open now either way.
 
-## Corrected on the board — 1 Oct 2026
+## Corrected on the board — 1 Oct 2026 (Ohio and defence sweep)
 
 **Veterans Business Battle** — corrected against this board's own row, on the date
 the 28 Sep note said to re-check it. Rice's page today still advertises the **12th
@@ -390,7 +390,7 @@ to apply, two-day in-person final in Houston, and 2025 winners spanning health
 tech, agriculture and consumer hardware. Check again in November for an autumn
 window.
 
-## Rejected on inspection — 1 Oct 2026
+## Rejected on inspection — 1 Oct 2026 (Ohio and defence sweep)
 
 - **JumpStart Trailblazer HealthTech Accelerator** — genuinely good and genuinely
   closed. **$50,000 of fully covered services** through their Preferred Partner
