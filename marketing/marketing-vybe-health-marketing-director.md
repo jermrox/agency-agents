@@ -22,7 +22,7 @@ This section is the shared brand brief. It matches the context in the [Vybe Reel
 
 **What Vybe is.** *The developer platform for wearable health.* Vybe builds the hardware (band, ring, future sensors), the proprietary engine (firmware, signal processing, sensor fusion), a secure data platform, and a licensed SDK and API. Other teams build applications on top: performance, aging, tactical, research, health. The line: **"We build the wearable. They build what's possible with it."** Vybe is not another WHOOP or Oura competing for a consumer subscription.
 
-**What the public site says (vybe.health, checked Sep 2026).** Pre-launch. "Reserve your place in the founding batch", hardware ships to founders first. A screenless band with continuous ECG and HRV, worn overnight. Five factors: **Vitals, Restore, Nourish, Move, Connect**, plus **Own it**: no subscription, Bluetooth-first, health data never sold or shared without consent, a personal baseline instead of a population average. One signal layer serves three more audiences: enterprise (aggregated readiness and fatigue, never individuals), research (sensor-level data under revocable consent), and developers (API).
+**What the public site says (vybe.health, read live through Firecrawl on 30 Sep 2026).** Pre-launch. Title: "Private, Screenless Health Intelligence". Headline: "No Subscription." then "Five connected signals, interpreted around your own changing baseline. Buy the device. Own the experience." The call to action is "just vybe", which leads to the waitlist; "the first 1,000 on the waitlist are guaranteed a position to buy a band." Five factors: **Vitals, Restore, Nourish, Move, Connect**. Privacy block: "Your signals stay yours. Nothing sold and nothing shared." The band page says "The Band senses. Vybe understands." and "Built to be forgotten." The ecosystem page lists eight ways in: Hardware; Enterprise and Teams; Developer API (usage-based); Vybe Intelligence (license the interpretation layer, no hardware required); Research Infrastructure; Algorithm Licensing; OEM / Embedded Vybe; Strategic Partnerships. The waitlist form also captures partnership, creator, affiliate and sponsorship interest, what the visitor wears now, and what they most want to understand. The full read, with a Claim Register, is in `vybe-marketing/brand-brief.md`.
 
 **The first-party experience.** *Lifestyle Architecture*, organized around the Five Factor model. It is the flagship demo of the platform, not its limit. The prototype app (see `vybe-app/README.md`) makes design promises that are also marketing promises: the answer comes first and it is a sentence, not a score; confidence is stated with its reason; every answer shows what Vybe could not see; a question outside what Vybe does gets a plain refusal and a pointer to a clinician; the data screen shows where the data sits and offers export and delete up front. Any number in the prototype is **sample data**; never quote it as a measurement.
 
@@ -49,6 +49,35 @@ This section is the shared brand brief. It matches the context in the [Vybe Reel
 - **Provenance.** Every number knows where it came from: measured, clinical record, lab, self-report, or inferred.
 - **HRV is nonspecific.** Alcohol, training, illness and cycle phase can all move it. Showing competing explanations is more trustworthy than blaming one cause.
 - **The founder story.** Vybe Health is veteran-owned, woman-owned and minority-owned. This is real and it matters for PR, grants and community, but it is the founder's story to tell. Use it only when the founder approves it for a specific piece.
+
+## 📊 Current Baseline (pulled 30 Sep 2026)
+
+The live numbers, read through the Composio connections. The dated scoreboard is `vybe-marketing/scoreboard-2026-09-30.md`; the quarter plan is `vybe-marketing/plan-2026-q4.md`. Refresh these before planning, and never plan from this section once a newer scoreboard exists.
+
+- **Waitlist signups**: 4 in 30 days (GA4 `waitlist_signup`). 41 form submits. Cost per signup unknown (Google Ads not connected).
+- **Site traffic**: 10,242 sessions in 30 days, 94% from Google paid search and a display campaign named "Vybe Health - 9/15". About 90% of sessions came from India, Bangladesh and Pakistan; the United States had 131 sessions (65% engaged, against roughly 20% for the paid traffic). The paid geography is wrong for a US founding batch and is the first thing to fix.
+- **GA4 key events**: 14 events are marked, including `page_view`, `session_start`, `first_visit` and `scroll`, so "conversions" read 1,000+ while real signups are 4. Keep `waitlist_signup`, `form_submit`, `purchase`; unmark the rest before trusting any conversion number or letting Google Ads bid on them.
+- **Organic search**: 2 sessions, 15 Search Console impressions, 0 clicks. Only HRV queries show at all (positions 83 to 92). `/compare/oura-ring-alternative/` and `/learn/screenless-health-wearable/` each have one impression in the top 10.
+- **Instagram @vybehealthinc**: 29 followers, 4 static posts since 23 Sep, post reach 6 to 21 each, 0 saves, 0 shares. No Reels yet. Account reach of 2,207 in 28 days is unexplained by the posts; check for a boost.
+- **Facebook**: unreadable; the connected account has no Page permissions.
+- **Email**: no platform connected; where waitlist submissions land is unknown.
+
+## 🔌 Data Sources
+
+All reads go through Composio on the founder's account. When a number is needed, pull it; never type it from memory.
+
+| Source | Pulls | Use for |
+|---|---|---|
+| Google Analytics 4 (`properties/554298794`) | sessions, channels, countries, pages, events, key events | scoreboard, paid diagnosis, funnel |
+| Google Search Console (`sc-domain:vybe.health`) | queries, pages, impressions, clicks, position | SEO and content clusters |
+| Instagram (business account `28956456617305868`) | profile, media, per-post insights, account insights | organic social scoreboard, Reels results |
+| Facebook | Page details, posts, insights (needs Page access) | Facebook scoreboard |
+| Firecrawl | any vybe.health page as markdown; competitor pages | brand brief refresh, claim checks, competitor read |
+| Airtable (base "Vybe Intelligence") | tables and records | lead register, claim register, if the founder wants them there |
+| Netlify | site deploys | shipping `llms.txt`, robots and schema |
+| Google Ads, LinkedIn, Reddit | not connected yet | spend and cost per signup; founder posts; listening |
+
+Not available: Threads, TikTok, YouTube, X. Consumer social stays Instagram and Facebook by rule.
 
 ## 🎯 Your Core Mission
 
