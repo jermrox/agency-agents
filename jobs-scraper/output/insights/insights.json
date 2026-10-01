@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-30T19:32:29.373026+00:00",
+  "generated_at": "2026-10-01T07:31:37.614446+00:00",
   "totals": {
-    "postings": 1276,
+    "postings": 1282,
     "employers": 42,
-    "unique_jobs": 756,
-    "with_salary": 225,
+    "unique_jobs": 760,
+    "with_salary": 229,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-09-30T13:47:43.530000+00:00"
+      "latest": "2026-10-01T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -142,14 +142,14 @@
     },
     {
       "name": "U.S. Marine Corps",
-      "count": 13,
+      "count": 17,
       "disciplines": [
         "sports-medicine",
-        "strength-conditioning",
         "cognitive",
-        "research",
+        "strength-conditioning",
         "leadership",
         "nutrition",
+        "research",
         "sport-science"
       ],
       "median_salary": 68796.0
@@ -189,73 +189,73 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 403,
-      "share": 0.6807,
+      "count": 404,
+      "share": 0.6779,
       "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
-      "count": 333,
-      "share": 0.5625,
+      "count": 337,
+      "share": 0.5654,
       "median_salary": 73040.5
     },
     {
       "name": "cognitive",
-      "count": 168,
-      "share": 0.2838,
-      "median_salary": 84000.0
+      "count": 172,
+      "share": 0.2886,
+      "median_salary": 81504.8
     },
     {
       "name": "research",
       "count": 116,
-      "share": 0.1959,
+      "share": 0.1946,
       "median_salary": 77015.0
     },
     {
       "name": "nutrition",
-      "count": 98,
-      "share": 0.1655,
-      "median_salary": 91950.0
+      "count": 100,
+      "share": 0.1678,
+      "median_salary": 91125.0
     },
     {
       "name": "leadership",
-      "count": 31,
-      "share": 0.0524,
-      "median_salary": 64074.5
+      "count": 32,
+      "share": 0.0537,
+      "median_salary": 63440.0
     },
     {
       "name": "sport-science",
       "count": 9,
-      "share": 0.0152,
+      "share": 0.0151,
       "median_salary": 102550.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 714,
-      "share": 0.9571
+      "count": 718,
+      "share": 0.9573
     },
     {
       "name": "sof",
       "count": 366,
-      "share": 0.4906
+      "share": 0.488
     },
     {
       "name": "first-responder",
-      "count": 46,
-      "share": 0.0617
+      "count": 48,
+      "share": 0.064
     },
     {
       "name": "training-pipeline",
       "count": 42,
-      "share": 0.0563
+      "share": 0.056
     }
   ],
   "by_branch": [
     {
       "name": "Joint",
-      "count": 266
+      "count": 267
     },
     {
       "name": "Army",
@@ -271,7 +271,7 @@
     },
     {
       "name": "Marine Corps",
-      "count": 20
+      "count": 23
     },
     {
       "name": "Space Force",
@@ -355,7 +355,7 @@
     },
     {
       "code": "CA",
-      "count": 56
+      "count": 57
     },
     {
       "code": "GA",
@@ -410,37 +410,37 @@
     {
       "name": "CSCS",
       "count": 288,
-      "share": 0.6013
+      "share": 0.5975
     },
     {
       "name": "ATC",
       "count": 203,
-      "share": 0.4238
+      "share": 0.4212
     },
     {
       "name": "RD",
-      "count": 61,
-      "share": 0.1273
+      "count": 63,
+      "share": 0.1307
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.1023
+      "share": 0.1017
     },
     {
       "name": "DPT",
       "count": 15,
-      "share": 0.0313
+      "share": 0.0311
     },
     {
       "name": "LAT",
       "count": 7,
-      "share": 0.0146
+      "share": 0.0145
     },
     {
       "name": "TSAC-F",
-      "count": 6,
-      "share": 0.0125
+      "count": 7,
+      "share": 0.0145
     }
   ],
   "clearances": [
@@ -462,44 +462,44 @@
     }
   ],
   "salary": {
-    "count": 225,
+    "count": 229,
     "min": 10000.0,
     "max": 1000000.0,
     "median": 80000.0,
     "p25": 62000.5,
-    "p75": 108853.0,
+    "p75": 107489.5,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 60,
+        "count": 61,
         "min": 34320.0,
         "max": 1000000.0,
         "median": 68796.0,
-        "p25": 57950.0,
+        "p25": 57800.0,
         "p75": 85738.0
       },
       "sports-medicine": {
-        "count": 110,
+        "count": 114,
         "min": 10000.0,
         "max": 1000000.0,
         "median": 73040.5,
         "p25": 59812.5,
-        "p75": 101885.75
+        "p75": 98560.25
       },
       "nutrition": {
-        "count": 14,
+        "count": 16,
         "min": 64285.0,
         "max": 127040.0,
-        "median": 91950.0,
-        "p25": 79447.0,
+        "median": 91125.0,
+        "p25": 75211.5,
         "p75": 102935.0
       },
       "cognitive": {
-        "count": 35,
+        "count": 39,
         "min": 34320.0,
         "max": 173285.0,
-        "median": 84000.0,
+        "median": 81504.8,
         "p25": 62725.25,
-        "p75": 113610.0
+        "p75": 109271.86
       },
       "sport-science": {
         "count": 5,
@@ -518,18 +518,18 @@
         "p75": 98204.75
       },
       "leadership": {
-        "count": 20,
+        "count": 21,
         "min": 34320.0,
         "max": 173285.0,
-        "median": 64074.5,
-        "p25": 61537.11,
-        "p75": 76911.88
+        "median": 63440.0,
+        "p25": 57800.0,
+        "p75": 75201.5
       }
     }
   },
   "remote": {
     "count": 3,
-    "share": 0.004
+    "share": 0.0039
   },
   "timeline": [
     {
@@ -571,11 +571,15 @@
     {
       "month": "2026-09",
       "count": 552
+    },
+    {
+      "month": "2026-10",
+      "count": 4
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-02T13:47:43.530000+00:00",
+    "pivot": "2026-07-03T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -639,9 +643,9 @@
       },
       {
         "name": "U.S. Marine Corps",
-        "recent": 13,
+        "recent": 17,
         "previous": 0,
-        "change": 13
+        "change": 17
       },
       {
         "name": "Veterans Health Administration",
@@ -683,9 +687,9 @@
       },
       {
         "name": "RD",
-        "recent": 56,
+        "recent": 58,
         "previous": 3,
-        "change": 53
+        "change": 55
       },
       {
         "name": "PhD",
@@ -694,15 +698,15 @@
         "change": 48
       },
       {
+        "name": "TSAC-F",
+        "recent": 5,
+        "previous": 0,
+        "change": 5
+      },
+      {
         "name": "DPT",
         "recent": 8,
         "previous": 4,
-        "change": 4
-      },
-      {
-        "name": "TSAC-F",
-        "recent": 4,
-        "previous": 0,
         "change": 4
       }
     ]

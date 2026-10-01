@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-30.*
+*Briefing generated 2026-10-01.*
 
 ## Headline
 
-- **756 open jobs** from **42 employers**.
-- Posted between **2025-12-03** and **2026-09-30**.
-- **$80,000 median** annualized pay across the 225 postings that publish one -- $62,000 to $108,853 covers the middle half.
+- **760 open jobs** from **42 employers**.
+- Posted between **2025-12-03** and **2026-10-01**.
+- **$80,000 median** annualized pay across the 229 postings that publish one -- $62,000 to $107,490 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 520 of 1,276 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 714, Special Operations 366, Fire / EMS / Law Enforcement 46, Training Pipeline 42.
+- 522 of 1,282 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 718, Special Operations 366, Fire / EMS / Law Enforcement 48, Training Pipeline 42.
 
 ## Month over month
 
-Postings are **up +452** in 2026-09 (100 to 552), 452% against 2026-08.
+Postings are **down -548** in 2026-10 (552 to 4), 99% against 2026-09.
 
 ```
 2025-12     1  #
@@ -26,6 +26,7 @@ Postings are **up +452** in 2026-09 (100 to 552), 452% against 2026-08.
 2026-07    19  #
 2026-08   100  #####
 2026-09   552  ############################
+2026-10     4  #
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -40,9 +41,9 @@ Postings are **up +452** in 2026-09 (100 to 552), 452% against 2026-08.
 
 - CSCS: 2 to 265
 - ATC: 5 to 183
-- RD: 3 to 56
+- RD: 3 to 58
 - PhD: 0 to 48
-- DPT: 4 to 8
+- TSAC-F: 0 to 5
 
 ## Who is hiring
 
@@ -63,12 +64,12 @@ Postings are **up +452** in 2026-09 (100 to 552), 452% against 2026-08.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 403 | 68% |
-| Sports Medicine | 333 | 56% |
-| Cognitive Performance | 168 | 28% |
-| Research & Analytics | 116 | 20% |
-| Performance Nutrition | 98 | 17% |
-| Program Leadership | 31 | 5% |
+| Strength & Conditioning | 404 | 68% |
+| Sports Medicine | 337 | 57% |
+| Cognitive Performance | 172 | 29% |
+| Research & Analytics | 116 | 19% |
+| Performance Nutrition | 100 | 17% |
+| Program Leadership | 32 | 5% |
 | Sport Science | 9 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
@@ -80,11 +81,11 @@ more than one, so these do not sum to 100%.
 |---|---|---|
 | CSCS | 288 | 60% |
 | ATC | 203 | 42% |
-| RD | 61 | 13% |
+| RD | 63 | 13% |
 | PhD | 49 | 10% |
 | DPT | 15 | 3% |
 | LAT | 7 | 1% |
-| TSAC-F | 6 | 1% |
+| TSAC-F | 7 | 1% |
 
 Share is out of jobs that name any certification at all.
 
@@ -92,25 +93,25 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$80,000**, middle half $62,000 to $108,853.
+- Median **$80,000**, middle half $62,000 to $107,490.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
 | Sport Science | 5 | $85,738 | $102,550 | $104,934 |
-| Performance Nutrition | 14 | $79,447 | $91,950 | $102,935 |
-| Cognitive Performance | 35 | $62,725 | $84,000 | $113,610 |
+| Performance Nutrition | 16 | $75,212 | $91,125 | $102,935 |
+| Cognitive Performance | 39 | $62,725 | $81,505 | $109,272 |
 | Research & Analytics | 32 | $63,530 | $77,015 | $98,205 |
-| Sports Medicine | 110 | $59,812 | $73,040 | $101,886 |
-| Strength & Conditioning | 60 | $57,950 | $68,796 | $85,738 |
-| Program Leadership | 20 | $61,537 | $64,074 | $76,912 |
+| Sports Medicine | 114 | $59,812 | $73,040 | $98,560 |
+| Strength & Conditioning | 61 | $57,800 | $68,796 | $85,738 |
+| Program Leadership | 21 | $57,800 | $63,440 | $75,202 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (74), NC (61), CA (56), GA (43), TX (41), NM (36), VA (33), KY (23), CO (21), HI (21)
+**States:** FL (74), NC (61), CA (57), GA (43), TX (41), NM (36), VA (33), KY (23), CO (21), HI (21)
 
 | Installation | Jobs |
 |---|---|
@@ -125,7 +126,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Drum | 8 |
 | Fort Sill | 8 |
 
-**Branches and services:** Joint (266), Army (177), Air Force (97), Navy (37), Marine Corps (20), Space Force (4), Coast Guard (3)
+**Branches and services:** Joint (267), Army (177), Air Force (97), Navy (37), Marine Corps (23), Space Force (4), Coast Guard (3)
 
 ## Most common titles
 
