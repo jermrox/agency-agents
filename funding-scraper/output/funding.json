@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-01T17:19:50+00:00",
+  "generated": "2026-10-01T17:53:13+00:00",
   "as_of": "2026-10-01",
-  "count": 134,
+  "count": 154,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -165,6 +165,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-nba-launchpad-2027-cohort-sixth-cohort",
+      "source": "curated",
+      "name": "NBA Launchpad: 2027 cohort (sixth cohort)",
+      "url": "https://www.launchpad.nba.com/apply",
+      "agency": "National Basketball Association (NBA Launchpad)",
+      "amount": "No cash amount stated. Selected companies run a six-month R&D project (pilot) inside an NBA property, present at NBA Summer League, and are evaluated for a broader partnership",
+      "summary": "CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to 'a sports-science lab that runs your device pilot'. The 'Future of Player Health & Wellbeing' priority asks for technologies to 'optimize sleep and recovery', for health and performance analytics, and for female-athlete health. It notes 'expanding wearable technology use across the WNBA'. The Vybe Band and DevKit, with ECG/HRV, sleep and recovery data, fit directly, and the women's-health angle is a differentiator. Apply in the Player Health & Wellbeing track, not the open category. Not in the existing list; distinct from Comcast NBCU SportsTech and NFLPA, which are already rejected or listed.",
+      "open_date": null,
+      "close_date": "2026-10-16",
+      "status": "soon",
+      "days_left": 15,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies headquartered in Asia, Australia or New Zealand; the other tracks state no geography limit. No application fee is stated. Equity terms are not stated.",
+      "documents": [
+        "Online application form (launchpad.nba.com)",
+        "Company/product overview and pitch deck",
+        "Description of proposed R&D pilot within the NBA ecosystem",
+        "Team info"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-army-xtech-search-10",
       "source": "curated",
       "name": "Army xTech|Search 10",
@@ -214,6 +238,30 @@
       "sam": "later"
     },
     {
+      "id": "curated-eeg-emg-foundation-challenge-2026-neurips-track-3-sleep-onset-on-wearabl",
+      "source": "curated",
+      "name": "EEG/EMG Foundation Challenge 2026 (NeurIPS), Track 3: Sleep onset on wearable EEG",
+      "url": "https://neural-interfaces26.github.io/rules.html",
+      "agency": "EEG/EMG Foundation Challenge organizers (Yneuro, Inria, UC San Diego; data from Muse, Meta Reality Labs and others), Brain & Body Workshop at NeurIPS 2026",
+      "amount": "$2,000 each for 1st/2nd/3rd in Track 3 (the 1st-place winner may take a remote Muse internship instead). Separate $2,000 'best all-round' award. Total pool about $20K\u2013$30K across tracks.",
+      "summary": "REGISTRATION CLOSES 24 OCT 2026. THE TRACK USES 4-CHANNEL EEG (MUSE HEADBAND), NOT THE BAND'S ECG/HRV, SO THIS IS A SIGNAL-PROCESSING CREDIBILITY PLAY, NOT A PRODUCT FIT. It earns a public sleep-algorithm benchmark result and a NeurIPS-workshop presence. That supports the 'research infrastructure' and 'proprietary engine' story for DevKit university partners. Participants keep their IP, and open-sourcing is optional. Enter only if an engineer can spare 4\u20136 weeks. The cash is small.",
+      "open_date": null,
+      "close_date": "2026-10-24",
+      "status": "soon",
+      "days_left": 23,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Anyone: industry, academia, students and independents. Register on Codabench by Oct 24, 2026. Warm-up runs Sep 21\u2013Oct 25 and the sealed final runs Oct 28\u2013Nov 21, 2026 (AoE). The top 3 per track must pass a reproducibility re-run (\u00b12\u03c3). Winners are announced at the NeurIPS workshop in Sydney.",
+      "documents": [
+        "Codabench account and track registration",
+        "Model submissions in the scoring container (\u226460 min inference on one A100)",
+        "Method description with external-data and compute disclosures",
+        "Training and inference code for the reproducibility audit (top 3)"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-cornell-cat-grant",
       "source": "curated",
       "name": "Cornell CAT Grant",
@@ -234,6 +282,29 @@
         "Signed 1:1 cash match commitment from Vybe as NY industry partner",
         "Joint research plan with commercial milestones",
         "Statement of quantifiable NY State economic impact"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-digikey-w-rth-elektronik-proteus-iv-eval-board-design-contest",
+      "source": "curated",
+      "name": "DigiKey & W\u00fcrth Elektronik Proteus-IV Eval Board Design Contest",
+      "url": "https://www.allaboutcircuits.com/giveaways/digikey-wuerth-elektronik-proteus-iv-design-contest/",
+      "agency": "DigiKey + W\u00fcrth Elektronik (hosted on All About Circuits)",
+      "amount": "Idea stage: 1 of 50 free Proteus-IV evaluation boards (Nordic nRF54L15, BLE 6.0). Project stage: 1 grand prize, value not stated.",
+      "summary": "GRAND PRIZE VALUE NOT STATED, AND IDEAS ARE POSTED PUBLICLY as comments on the contest page, so do not disclose proprietary sensor-fusion IP. A low-effort, low-value entry: a free pre-certified BLE 6.0 module on Nordic's nRF54L15 is a credible radio candidate for a future Vybe sensor or the DevKit, and the build is good DevKit content. Idea submissions close 30 Oct; finalists submit by 31 Dec; winner on 15 Jan 2027. Bonus points for using more W\u00fcrth parts.",
+      "open_date": null,
+      "close_date": "2026-10-30",
+      "status": "soon",
+      "days_left": 29,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Idea must use the Proteus-IV module. No fixed theme, and 'wearable' is named explicitly. Country and entrant-type rules are not stated on the page. Requires an All About Circuits account.",
+      "documents": [
+        "All About Circuits account",
+        "Written idea submission describing the design and the W\u00fcrth parts used",
+        "If selected: finalist project write-up by 31 Dec 2026"
       ],
       "sam": "none"
     },
@@ -525,6 +596,31 @@
       "sam": "none"
     },
     {
+      "id": "curated-jlc-hardware-accelerator-jlcpcb-jlc3dp-jlcmc-jlccnc",
+      "source": "curated",
+      "name": "JLC Hardware Accelerator (JLCPCB / JLC3DP / JLCMC / JLCCNC)",
+      "url": "https://jlc3dp.com/hardware-accelerator",
+      "agency": "JLC group (JLCPCB, JLC3DP, JLCMC, JLCCNC)",
+      "amount": "Up to $1,600 in manufacturing coupons: $400 at Stage 1 approval (PCB $50, SMT $50, 3DP $100, MC $100, CNC $100) and $1,200 after DVT review. Also a Supply Chain Partner badge, an account manager and preferential production pricing.",
+      "summary": "PROGRAM WINDOW ENDS 31 DEC 2026, AND IT IS FRAMED AROUND KICKSTARTER/INDIEGOGO TEAMS. The May 2027 launch and the DevKit v0.1 run count as a defined go-to-market plan. These are coupons, not cash: they cut the cost of DevKit v0.1 PCB/SMT and enclosure iterations. CAD files are not needed to apply. Team size is listed as 1\u20135, but the FAQ says 'Company size is not the determining factor'.",
+      "open_date": null,
+      "close_date": "2026-12-31",
+      "status": "open",
+      "days_left": 91,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Hardware founder or small team of 1\u20135 people with a functional prototype who needs PCB, 3D printing, MC or CNC services and intends to move into production. Crowdfunding is 'not mandatory', but you need a clear commercialization roadmap and launch timeline. Excludes academic coursework, cosmetic-only models, hobby projects and 'applications submitted solely to obtain coupons'. No fee stated. No exclusivity.",
+      "documents": [
+        "Project overview",
+        "Product use case",
+        "Development stage",
+        "Crowdfunding or launch timeline",
+        "Stage 2: prototype photos or video, a preliminary production plan, and engagement with JLC official channels"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
       "source": "grants.gov",
       "name": "Personal Health Informatics for Delivering Actionable Insights to Individuals (R01 Clinical Trial Optional) (PAR-25-235)",
@@ -560,6 +656,33 @@
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
+      "sam": "required"
+    },
+    {
+      "id": "curated-nsf-pathways-to-enable-secure-open-source-ecosystems-pesose-nsf-26-506",
+      "source": "curated",
+      "name": "NSF Pathways to Enable Secure Open-Source Ecosystems (PESOSE), NSF 26-506",
+      "url": "https://www.nsf.gov/funding/opportunities/pesose-pathways-enable-secure-open-source-ecosystems/nsf26-506/solicitation",
+      "agency": "U.S. National Science Foundation (TIP Directorate)",
+      "amount": "Track 1 (scope and plan an open-source ecosystem): up to $300,000, about 30 awards. Tracks 2 and 3: up to $1,500,000 each",
+      "summary": "REQUIRES AN OPEN-SOURCE PRODUCT, AND SAM.GOV MUST BE ACTIVE BEFORE SUBMISSION. This is the rare NSF research-infrastructure program a startup can lead without a university. The fit is Track 1: a planning grant to scope an open ecosystem around a piece of the DevKit that Vybe chooses to open, for example an open wearable-data schema, a reference signal-processing library or open DevKit firmware, while the core engine and SDK stay proprietary. That matches the 'developer platform' story and the DevKit v0.1 design-partner universities. The next deadline is 2 March 2027 (first Tuesday in March). Start SAM.gov registration now; it can take 4\u20136+ weeks. NSF PFI has been archived and the Convergence Accelerator has no open call, so this is NSF's live open-source and research-tool path for a company.",
+      "open_date": null,
+      "close_date": "2027-03-02",
+      "status": "open",
+      "days_left": 152,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "U.S.-based for-profits, including small businesses, may submit directly. The company must be more than 50% owned and controlled by U.S. citizens or permanent residents. The PI must be an employee of the proposing company and normally resident in the U.S. Proposals go through Research.gov or Grants.gov, which need a SAM.gov UEI. Awardees must take part in 'I-Corps for PESOSE'. Voluntary cost share is prohibited.",
+      "documents": [
+        "SAM.gov UEI + Research.gov registration",
+        "Project Description (incl. track choice, ecosystem/governance plan)",
+        "Project Summary",
+        "Budget + justification",
+        "Biosketches / Current & Pending (Senior/Key personnel)",
+        "Data Management Plan",
+        "Ownership/control attestation (for-profit eligibility)"
+      ],
       "sam": "required"
     },
     {
@@ -638,7 +761,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -679,7 +802,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -759,7 +882,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -827,6 +950,31 @@
       "sam": "later"
     },
     {
+      "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-3-commercial-so",
+      "source": "curated",
+      "name": "AFRL 711th Human Performance Wing CHEERS MAA, Open Period 3 (Commercial Solutions Opening, FA238424S2336), white papers",
+      "url": "https://www.afrl.af.mil/711HPW/711HPW-Opportunities/",
+      "agency": "US Air Force Research Laboratory, 711th Human Performance Wing (Human Effectiveness Directorate + USAF School of Aerospace Medicine), Wright-Patterson AFB, Ohio",
+      "amount": "not stated (award size set per white paper; CSO awards are contracts or OTs)",
+      "summary": "SAM.GOV REGISTRATION NEEDED BEFORE ANY AWARD; SAM.gov could not be loaded from here, so confirm on the SAM notice whether a UEI is needed at white-paper stage. This is the commercial-products door into the Air Force's human performance lab, 3 hours from Akron. Open Period 2 (the ARA) is already on the board; Open Period 3 is a separate solicitation using the CSO authority (10 U.S.C. 3458), which fits a commercial wearable plus SDK better than a research BAA. Pitch the DevKit as an Airman readiness/recovery sensing platform (HRV, ECG, sleep) for 711 HPW researchers, not as a medical device. Read the CHEERS Industry Guide and the RH/USAFSAM Statements of Objectives first. The close date comes from the SAM notice as mirrored by HigherGov; the AFRL page confirms OP3 is a current solicitation but does not print the date.",
+      "open_date": null,
+      "close_date": "2028-09-30",
+      "status": "open",
+      "days_left": 730,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Any company offering an innovative commercial solution in the CHEERS technical areas (human performance, bioengineering, warfighter medical optimization, aerospace physiology, readiness). Solutions must be new or a new application of existing tech. White paper first, then invited proposal.",
+      "documents": [
+        "White paper per the Open Period 3 CSO instructions (format in the solicitation attachment)",
+        "Alignment to an RH or USAFSAM Statement of Objectives",
+        "Rough cost / affordability estimate",
+        "SAM.gov registration (UEI, CAGE) before award",
+        "S&T Protection appendix items referenced in the MAA"
+      ],
+      "sam": "later"
+    },
+    {
       "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
       "source": "grants.gov",
       "name": "HEAL Initiative: Translating Addiction Epidemiology, Prevention, Treatment, and Recovery Research into Practice (R61/R33 - Clinical Trial Optional) (RFA-DA-27-016)",
@@ -841,7 +989,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -903,7 +1051,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -922,7 +1070,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Public and State controlled institutions of higher education; Nonprofi",
+      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Private institutions of higher education",
       "documents": [],
       "sam": "required"
     },
@@ -941,7 +1089,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": [],
       "sam": "required"
     },
@@ -1183,6 +1331,28 @@
       "sam": "none"
     },
     {
+      "id": "curated-aptible-startup-program-hipaa-capable-hosting",
+      "source": "curated",
+      "name": "Aptible Startup Program (HIPAA-capable hosting)",
+      "url": "https://www.aptible.com/pricing",
+      "agency": "Aptible",
+      "amount": "6 months of credits: 50% off the Production plan base fee ($250/mo in credits), 50% off the LLM Gateway base fee ($200/mo in credits) and $50/mo in LLM token credits. About $3,000 over 6 months, by our calculation from the stated monthly figures.",
+      "summary": "THIS IS A 50% DISCOUNT, NOT FREE HOSTING. Vybe still pays the other half of the $499/mo Production plan plus usage. It fits the privacy-first, BAA-backed Health Intelligence layer directly: the Production plan includes a dedicated stack with enforced HIPAA controls and a BAA. The LLM Gateway covers Anthropic, OpenAI and Bedrock models under one BAA, which matches the 'BAA, zero data retention' AI design. Apply only once PHI is about to flow (Clinical Records, Epic on FHIR, Blue Button), because the 6-month clock starts at approval.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "'Startup or YC'. No hard gates are stated: 'Not sure if you're eligible? Apply anyway.'",
+      "documents": [
+        "Startup Program application (linked from the pricing page)",
+        "Company and product description"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-arkansas-sbir-matching-grant",
       "source": "curated",
       "name": "Arkansas SBIR Matching Grant",
@@ -1203,6 +1373,31 @@
         "Arkansas business registration"
       ],
       "sam": "required"
+    },
+    {
+      "id": "curated-army-open-solicitation-aos-w9128z-25-s-a002-active-capability-gap-submis",
+      "source": "curated",
+      "name": "Army Open Solicitation (AOS) W9128Z-25-S-A002 \u2014 Active Capability Gap submissions",
+      "url": "https://sam.gov/opp/a03947273b374e78a9c4cde564f568c8/view",
+      "agency": "US Army Contracting Command \u2013 Aberdeen Proving Ground (all Army mission areas; also the vehicle Army Applications Lab and PdM H2F use for Calls for Solutions)",
+      "amount": "not stated (contracts / prototype OTs / CSO awards sized per requirement)",
+      "summary": "THIS IS A CONTRACT/OT DOOR, NOT A GRANT, AND YOU NEED SAM.GOV BEFORE AWARD. It is the standing, always-open front door the Army uses for H2F buys (the 2025 H2FMS Call for Solutions and the AAL 25-01 call both ran under it). Two routes: (1) submit against an Active Capability Gap in the ACG mailboxes listed in Attachment 1, at any time; (2) watch for a Call for Solutions, which opens for a few weeks only. Map the DevKit to H2F sleep/physical readiness gaps and pair it with the earlier H2FMS requirement for wearable inputs (Whoop, Polar, Garmin, Oura were named). No H2F-specific call is open today.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Any company with a commercial or R&D solution to a posted Army Active Capability Gap; time-limited Calls for Solutions are posted under the same AOS. Grants are excluded as an award type (contracts/OTs only).",
+      "documents": [
+        "Read the current AOS PDF and Attachment 1 (ACG procedures)",
+        "Short solution brief / white paper to the relevant ACG mailbox",
+        "Rough order of magnitude price",
+        "SAM.gov registration and CAGE before award",
+        "Non-traditional defense contractor self-identification (for OT eligibility)"
+      ],
+      "sam": "later"
     },
     {
       "id": "curated-berkeley-skydeck",
@@ -1339,6 +1534,99 @@
       "sam": "none"
     },
     {
+      "id": "curated-cms-blue-button-2-0-api-production-access",
+      "source": "curated",
+      "name": "CMS Blue Button 2.0 API: production access",
+      "url": "https://bluebutton.cms.gov/api-documentation/",
+      "agency": "Centers for Medicare & Medicaid Services (CMS)",
+      "amount": "No cash. Free sandbox (synthetic data) and production access to Medicare claims data (FHIR R4 / CARIN) for 64M+ enrollees with their consent.",
+      "summary": "NO MONEY. THIS IS A DATA-ACCESS PARTNERSHIP ON THE HEALTH INTELLIGENCE ROADMAP. Blue Button is named in Vybe's own roadmap. A '13 months' personal-health-aggregator category fits the normalized personal health timeline. Starting in the sandbox now costs nothing, and a working Blue Button connection gives evidence for the CMS pledge and the Medicare App Library entries. Production review takes time, so start before the May 2027 launch.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Any developer can create a sandbox account. Production access comes after you complete CMS's production-access guide and CMS approves the app. The access-duration category (1 hour, 13 months or research) is assigned during review. The page states no company-size or revenue gate, and no fee.",
+      "documents": [
+        "Blue Button sandbox account",
+        "Working app on synthetic data",
+        "Production-access requirements per the CMS production access user guide (privacy policy, terms, app review)"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-cms-health-tech-ecosystem-pledge-patient-facing-app-friend-of-the-ecosys",
+      "source": "curated",
+      "name": "CMS Health Tech Ecosystem Pledge (Patient-Facing App / Friend of the Ecosystem)",
+      "url": "https://www.cms.gov/initiatives/health-technology-ecosystem/overview",
+      "agency": "Centers for Medicare & Medicaid Services (CMS)",
+      "amount": "No cash. Listing as a CMS pledgee, access to CMS Aligned Networks and the work groups, and the required first step toward the Medicare App Library",
+      "summary": "A PLEDGE IS A PUBLIC COMMITMENT TO SHIP REAL FHIR INTEGRATIONS, NOT A GRANT. This is the federal on-ramp for the 'Vybe Health Intelligence' roadmap (Blue Button, Epic on FHIR, Health Gorilla, Particle and 1up all feed CMS Aligned Networks). Signing now puts Vybe on CMS's public pledgee list and in the July 2026 work groups, which is useful credibility for DevKit design partners and health-company buyers. Pick the category with care. 'Patient Facing App' carries delivery expectations. 'Friend of the Ecosystem' is the lighter option for a company whose band launches in May 2027. The page does not say whether CMS has a deadline to deliver after pledging.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Voluntary. Open to companies and individuals through the pledge form. Pledge categories include EHRs, payers, pharmacies, providers, the ACCESS Provider add-on, the Ditch-the-Disk workgroup and 'Friend of the Ecosystem'. Patient-facing apps commit to FHIR R4, SMART on FHIR and connection to a CMS Aligned Network. The page names no size, revenue or age gate.",
+      "documents": [
+        "CMS pledge form (fields not published on the page)",
+        "Choice of pledge category",
+        "A short description of the planned FHIR/SMART on FHIR integration and the target CMS Aligned Network"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-caelestinus-digital-health-interoperability-and-fhir-incubator-2027-batc",
+      "source": "curated",
+      "name": "Caelestinus \u2014 Digital Health Interoperability and FHIR Incubator (2027 batch)",
+      "url": "https://www.caelestinus.tech/",
+      "agency": "Caelestinus (powered by InterSystems; Prague-based, fully virtual)",
+      "amount": "No cash. Free 3-month virtual incubator with no equity taken. Includes InterSystems FHIRaaS / IRIS for Health access, AWS support and credits (amount not stated), mentors, clinician/pilot introductions and investor introductions",
+      "summary": "DEADLINE FOR THE 2027 BATCH NOT STATED. The page says 'Apply NOW for our next batch starting in March 2027'. Last year's deadline was 8 Feb 2026, so plan for early February 2027 at the latest. This is the closest fit in this lane for the Vybe Health Intelligence layer (FHIR normalization, Epic/Health Gorilla-style record joins). The page lists 'Healthcare Data', 'Medical Devices ... build an IoT gadget' and 'Prevention' as focus areas. The cohort pitches at InterSystems READY in the US, and the program is fully virtual, so Akron is not a problem. The pitch should centre on the FHIR timeline, not on diagnostics.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Open to 'individuals with foggy ideas as well as teams with validated products'. No geography, age or stage gate stated. The 2026 cohort included US startups. Free, no equity, time commitment only.",
+      "documents": [
+        "Online registration form (linked from the home page)",
+        "Team details and idea or product description",
+        "Pre-offer interview if shortlisted"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-cloudflare-for-startups",
+      "source": "curated",
+      "name": "Cloudflare for Startups",
+      "url": "https://www.cloudflare.com/forstartups/",
+      "agency": "Cloudflare",
+      "amount": "$5K credits (Bootstrapped/Stealth tier). Higher tiers are $25K (active LinkedIn, funded up to $1M), $100K ($1M\u2013$5M raised or an approved VC/accelerator) and $250K (Tier 1 VC/accelerator, or a 'mission critical AI application'). Credits expire within 1 year.",
+      "summary": "REQUIRES A CREDIT CARD ON FILE, AND THE BASE TIER IS ONLY $5K. Vybe qualifies for $5K now and very likely for $25K (it has an active LinkedIn and is funded under $1M). Useful for the SDK/API edge layer, R2 storage of band data exports (no egress fees) and Workers AI. Check whether Cloudflare will sign a BAA before any PHI from the Health Intelligence layer touches it.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Building a software product or service with an active website. Funded up to Series B. Founded within the last 5 years. Valid, matching website and email. You must create a free account and add a credit card first.",
+      "documents": [
+        "Cloudflare account with a credit card",
+        "Online form describing the product and team",
+        "Company website and matching-domain email",
+        "LinkedIn page (for the $25K tier)"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "grants.gov-controlled-clinical-trials-on-long-term-effects-of-nutritional-interv",
       "source": "grants.gov",
       "name": "Controlled Clinical Trials on Long-Term Effects of Nutritional Interventions on the Progression of Risk Factors for Age-Related Chronic Conditions Over the Life Span and Their Age of Onset (PAR-26-065)",
@@ -1356,6 +1644,27 @@
       "eligibility": "",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-corti-for-startups-healthcare-ai-api-credits",
+      "source": "curated",
+      "name": "Corti for Startups (healthcare AI API credits)",
+      "url": "https://corti.ai/startups",
+      "agency": "Corti",
+      "amount": "Up to $5,000 in API credits valid for 12 months, plus roadmap scoping with Corti AI experts, events and possible enterprise introductions",
+      "summary": "SMALL AND CLINICAL-LEANING. Corti's models target clinical documentation, coding and agentic clinical workflows. Use them only for the AI reasoning layer over records, and keep outputs educational to preserve Vybe's no-diagnostic-claims position. It is worth a quick application as a second healthcare-native model source alongside general LLM credits. Confirm Corti's BAA and zero-retention terms before sending it any PHI.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Early-stage companies, pre-seed through Series B, building in healthcare, clinical workflows or adjacent life sciences. Needs a clear product thesis, a working prototype or MVP, and a use case heading toward a commercial product. Rolling review with a reply within two weeks. No equity or revenue share.",
+      "documents": [
+        "Online application: company description, use case, planned use of the Corti platform"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-creative-destruction-lab-cdl-manufacturing",
@@ -1421,6 +1730,31 @@
       "eligibility": "",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-dow-dod-mentor-prot-g-program-prot-g-application",
+      "source": "curated",
+      "name": "DoW (DoD) Mentor-Prot\u00e9g\u00e9 Program \u2014 prot\u00e9g\u00e9 application",
+      "url": "https://business.defense.gov/Programs/Mentor-Protege-Program/How-To-Participate/",
+      "agency": "Department of War (DoD) Office of Small Business Programs",
+      "amount": "no cash to the prot\u00e9g\u00e9 directly; the mentor is reimbursed for developmental help it gives you (direct-reimbursed agreements) or earns subcontracting credit; agreements last up to 3 years",
+      "summary": "YOU MUST FIND YOUR OWN MENTOR. DoD is barred by law from matching you. Vybe qualifies through the WOSB route (self-certify) and possibly SDB (needs SBA certification). The SDVOSB route needs a service-connected disability rating, which 'veteran-owned' alone does not give. Best use: get a large prime that already sells human-performance or medical wearables to the Army or SOCOM (approved mentors are listed in a PDF on the program page) to fund engineering, quality, cybersecurity/RMF and DFARS-compliance help under a reimbursed agreement. This builds the ATO/RMF capability the USASOC wearables RFI asked about. The new portal is accepting applications now.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Prot\u00e9g\u00e9 must be an SBA-certified small disadvantaged business, a woman-owned small business (self-certified per DFARS), a service-disabled veteran-owned small business, a HUBZone firm, or an organization employing the severely disabled. The SDB route requires 'eligible for the award of Federal contracts' (that means SAM).",
+      "documents": [
+        "Account on the MPP portal",
+        "Mentor-Prot\u00e9g\u00e9 Agreement with a needs assessment and measurable milestones",
+        "Proof of prot\u00e9g\u00e9 status (WOSB self-certification; SBA SDB certification if using that route)",
+        "For reimbursed agreements: endorsement letter from a DoD program manager plus the component OSBP's endorsement and funding request",
+        "SAM.gov registration (in practice, for federal contract eligibility)"
+      ],
+      "sam": "later"
     },
     {
       "id": "grants.gov-fiscal-year-2027-regional-nutrition-hubs-hrsa-27-019",
@@ -1967,6 +2301,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-mayo-clinic-platform-accelerate",
+      "source": "curated",
+      "name": "Mayo Clinic Platform_Accelerate",
+      "url": "https://www.mayoclinicplatform.org/focus-areas/digital-health/accelerate/",
+      "agency": "Mayo Clinic Platform",
+      "amount": "No cash. The prize is access to 'millions of longitudinal, de-identified patient records', 1:1 technical mentorship, and a 30-week accelerator or a multi-year pathway of up to 2 years of data-environment access",
+      "summary": "FEE, EQUITY AND CONTRACT TERMS ARE NOT PUBLISHED ON THE OFFICIAL PAGE; ASK BEFORE SIGNING, BECAUSE THE PROGRAM INVOLVES CONTRACTING. This is research infrastructure, not money: a de-identified clinical data environment to validate the 'Vybe Health Intelligence' layer, the normalised timeline and the AI reasoning over audited tools, against real longitudinal records. It also gives a Mayo credibility signal for research and enterprise buyers. Best used once the DevKit and Intelligence layer have a defined validation question. Keep the framing non-diagnostic.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Health-technology companies. The process is application, then a business and data interview, then a project proposal, then acceptance and contracting. Cohorts recur; the June 2026 cohort has been selected and the 'Apply' path is live. No fixed deadline is published.",
+      "documents": [
+        "Online application",
+        "Business and data interview",
+        "Project proposal (data use / validation plan)",
+        "Contracting documents"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-microsoft-for-startups-founders-hub",
       "source": "curated",
       "name": "Microsoft for Startups Founders Hub",
@@ -1985,6 +2343,30 @@
       "documents": [
         "Company details and a short product description",
         "No funding proof required \u2014 the most accessible of the three"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-mongodb-for-startups",
+      "source": "curated",
+      "name": "MongoDB for Startups",
+      "url": "https://www.mongodb.com/solutions/startups",
+      "agency": "MongoDB",
+      "amount": "Atlas credits plus Voyage AI embedding/reranker tokens, with technical support. The dollar amount per tier is not stated. The base tier is described as 'baseline credits' for bootstrapped startups.",
+      "summary": "THE CREDIT AMOUNT IS NOT PUBLISHED. Direct application is allowed with no referral, which suits a bootstrapped Vybe. Fits the time-series and document store behind the data platform and the vector search for the AI reasoning interface. Only one admission per company, so time it for when the data platform build starts.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Less than 7 years old and Series A or earlier. Building a single software-based product (agencies and dev shops are not eligible). Not previously accepted into the program. Active company website and LinkedIn. You can apply directly if you have no VC or accelerator.",
+      "documents": [
+        "Online application on the page",
+        "Company website",
+        "LinkedIn page",
+        "Description of the product"
       ],
       "sam": "none"
     },
@@ -2454,6 +2836,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-trish-catalyst-grants-program-nasa-funded-translational-research-institu",
+      "source": "curated",
+      "name": "TRISH Catalyst Grants Program (NASA-funded Translational Research Institute for Space Health)",
+      "url": "https://www.bcm.edu/academic-centers/space-medicine/translational-research-institute/funding",
+      "agency": "Translational Research Institute for Space Health (Baylor College of Medicine), funded by NASA Human Research Program",
+      "amount": "Tier 1: under $150K total cost, up to 12 months. Tier 2: $150K or more total cost, up to 18 months (no ceiling stated)",
+      "summary": "PRIORITY TOPICS ARE NARROW, SAM.GOV IS NEEDED, AND THE STUDY INVOLVES HUMAN SUBJECTS (IRB, NOT A CLINICAL TRIAL). The best match for Vybe is the ground-based priority: 'Test the feasibility and acceptability of methods to autonomously and unobtrusively detect early signs of behavioral health decline (e.g., depression, anxiety, conflict)'. Passive ECG/HRV, sleep and recovery data from a screenless band in isolated, high-performing teams fits this directly and is dual-use for tactical work. TRISH says proposals outside the listed topics will score 'significantly lower'. Frame the work as a feasibility and acceptability study, not a diagnostic. A university co-investigator (for example a NEOMED, Kent State or Ohio State behavioural-health lab) would strengthen the 'documented R&D base' criterion. Rolling submission makes this a low-risk Step-1 (letter-of-intent style) once SAM is active.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "All categories of U.S. institutions and companies may apply. The applicant must have 'a documented base of ongoing high-quality research and development' relevant to the topics. Proposals are accepted any time in two steps: Step-1 and an invited Step-2. The applicant must be registered in SAM.gov and submit through TRISH GRID. Funding depends on NASA appropriations.",
+      "documents": [
+        "SAM.gov UEI",
+        "TRISH GRID account",
+        "Step-1 proposal (LOI-style) selecting Tier 1 or 2",
+        "If invited: Project Description, Biosketches, Facilities/Resources, Current & Pending, Management Approach, Data Management Plan, Statistical Approach, Budget + justification, Letters of collaboration, human-subjects plan/IRB"
+      ],
+      "sam": "required"
+    },
+    {
       "id": "grants.gov-telehealth-nutrition-services-network-grant-program-hrsa-27-044",
       "source": "grants.gov",
       "name": "Telehealth Nutrition Services Network Grant Program (HRSA-27-044)",
@@ -2471,6 +2877,30 @@
       "eligibility": "",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-terra-startup-accelerator-wearable-health-data-api-credits",
+      "source": "curated",
+      "name": "Terra Startup Accelerator (wearable/health-data API credits)",
+      "url": "https://tryterra.co/accelerator",
+      "agency": "Terra (tryterra.co)",
+      "amount": "Up to $100,000 in Terra API credits over up to 6 months, plus a named account manager and integration support",
+      "summary": "HIGHLY SELECTIVE (~1.8%); ATTACH A PAID-CONVERSION PLAN. Terra wants 'users, pilots, or revenue, or a working prototype with a credible, near-term path to both', and 'a realistic path to affording Terra once the credits end'. Vybe's fit is strong because it unifies its own band data with Apple Health, Oura, Garmin and others into one timeline. Terra could cover the third-party-wearable side of the Health Intelligence layer and of DevKit partner demos. Credits convert to a negotiated commercial plan after 6 months, so plan for that cost.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Early-stage teams whose product depends on health data. Rolling admission, free to apply, no equity, decision within 10 business days. Funding raised is not a criterion. Research projects are eligible if they credit Terra. About 1.8% of applicants are accepted.",
+      "documents": [
+        "Online form: website/app link",
+        "One-sentence product description",
+        "Why health data is essential (what breaks without it)",
+        "Product stage"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-the-medtech-conference-start-up-pitch-pitch-pour",
@@ -2600,6 +3030,54 @@
       "eligibility": "",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-va-lighthouse-api-program-patient-health-api-fhir-sandbox-and-production",
+      "source": "curated",
+      "name": "VA Lighthouse API program \u2014 Patient Health API (FHIR) sandbox and production access",
+      "url": "https://developer.va.gov/explore/api/patient-health",
+      "agency": "US Department of Veterans Affairs, Lighthouse API platform",
+      "amount": "no cash; free API access (VA states it never charges fees)",
+      "summary": "NO MONEY, BUT IT IS ON THE PRODUCT ROADMAP: the Vybe Health Intelligence layer already names the VA Patient Health API. Start sandbox access now so the integration exists before the 2027 launch. Production approval for non-open-data APIs takes 1\u20136 months, and VA currently warns of long delays for benefits APIs. A live, approved VA integration is also strong proof for VA PathFinder, VA research partners and veteran-focused judges.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Any developer can get sandbox access at once; production access needs a request form, any required changes, and a demo to VA.",
+      "documents": [
+        "Sandbox access request on the API overview page",
+        "Production access form (app description, security/privacy practices, terms of service, privacy policy)",
+        "A 30\u201360 minute demo to the Lighthouse team",
+        "Any changes VA requires after review"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-va-pathfinder-vha-innovation-ecosystem-external-innovator-submission",
+      "source": "curated",
+      "name": "VA PathFinder \u2014 VHA Innovation Ecosystem external innovator submission",
+      "url": "https://pathfinder.va.gov/innovate.html",
+      "agency": "US Department of Veterans Affairs, VHA Innovation Ecosystem",
+      "amount": "no cash (collaboration / pilot pathway inside VA)",
+      "summary": "NO MONEY, AND A SUBMISSION THAT 'REQUIRES VA FUNDING' IS LISTED AS A ROADBLOCK. Use it to get a VA site to evaluate or pilot the DevKit (for example, wellness/sleep/HRV for Veterans or a VA research team as a design partner). The founders' veteran status and the planned VA Patient Health API integration make this a natural ask. Make the ask concrete: 'pilot with N Veterans at one VAMC', not 'buy our product'. Paired with the Lighthouse entry, this is the VA door for the Health Intelligence roadmap.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "External innovators, companies and individuals with a novel solution relevant to Veterans' health; reviewed on feasibility, meaningfulness and alignment with VHA priorities.",
+      "documents": [
+        "Online PathFinder submission form",
+        "Problem statement tied to a VHA priority",
+        "Evidence or materials showing need or value (data, demo, prototype photos)",
+        "A clear collaboration ask and the stage of the solution"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-verizon-small-business-digital-ready",
