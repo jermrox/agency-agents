@@ -80,6 +80,8 @@ def main() -> int:
         # September would still read "not open yet" when served in November.
         if row.get("open_date"):
             parts.append(f"opens:{js_string(row['open_date'])}")
+        if row.get("sam"):
+            parts.append(f"sam:{js_string(row['sam'])}")
         docs = row.get("documents") or []
         if docs:
             parts.append("documents:[" + ",".join(js_string(d) for d in docs) + "]")
