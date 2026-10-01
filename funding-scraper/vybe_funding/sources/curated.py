@@ -21,7 +21,7 @@ import logging
 from datetime import date
 from typing import Iterable
 
-from ..models import Opportunity, parse_date
+from ..models import SAM_VALUES, Opportunity, parse_date
 from .base import Source, SourceError
 
 log = logging.getLogger(__name__)
@@ -51,6 +51,13 @@ class CuratedSource(Source):
                     "opportunity must record when a human last checked it"
                 )
 
+            sam = str(entry.get("sam", "")).strip()
+            if sam and sam not in SAM_VALUES:
+                raise SourceError(
+                    f"curated entry {name!r} has sam = {sam!r}; use one of {', '.join(SAM_VALUES)} "
+                    "or leave it out"
+                )
+
             yield Opportunity(
                 source="curated",
                 name=name,
@@ -64,6 +71,7 @@ class CuratedSource(Source):
                 kind=entry.get("kind", "grant"),
                 eligibility=entry.get("eligibility", ""),
                 documents=list(entry.get("documents", [])),
+                sam=sam,
                 raw={"verified": verified.isoformat()},
             )
 

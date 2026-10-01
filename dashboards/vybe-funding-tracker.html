@@ -76,6 +76,8 @@
   td.name{color:var(--ink);font-weight:600}
   td.name a{color:inherit;text-decoration-color:var(--line-strong);text-underline-offset:2px}
   td.name a:hover{text-decoration-color:currentColor}
+  .sam-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:3px;margin-left:6px;border:1px solid var(--line-strong);color:var(--ink-soft)}
+  .sam-tag.none{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
   .type-tag{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:3px}
   /* Amounts wrap rather than forcing the column wide; the longest ones are
      sentences like "$100K (Phase I) / $200K (Phase II)". */
@@ -135,6 +137,7 @@
 
   <div class="controls">
     <button class="chip" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" data-filter="nosam">No SAM.gov needed</button>
     <button class="chip" data-filter="open">Open now</button>
     <button class="chip" data-filter="rolling">Rolling</button>
     <button class="chip" data-filter="forecast">Not open yet</button>
@@ -151,6 +154,7 @@
 
   <div class="prereq">
     <h3>Do these first — they gate every federal row and take weeks to clear</h3>
+    <p id="nosamNote"></p>
     <p>None of the federal grants below can be submitted without these, and none of them are same-day. Starting them is free and independent of any deadline, so there is no reason to wait for a specific solicitation.</p>
     <ol>
       <li><b>SAM.gov UEI registration</b> — the federal entity ID. Allow several weeks; entity validation is the usual bottleneck.</li>
@@ -439,6 +443,15 @@
     el.innerHTML = 'As of ' + esc(when) + ' · ' + state + feedNote;
   }
 
+  // Every row says whether SAM.gov stands in the way, in words: a UEI takes
+  // weeks, and that is the difference between "apply this week" and "apply
+  // next quarter". "check" means the row has not been confirmed either way.
+  var SAM_LABEL = {none:'No SAM.gov', later:'SAM.gov later', required:'SAM.gov required', check:'SAM.gov: unconfirmed'};
+  function samTag(sam){
+    if(!sam || !SAM_LABEL[sam]) return '';
+    return '<span class="sam-tag '+sam+'">'+SAM_LABEL[sam]+'</span>';
+  }
+
   function render(){
     var rowsEl = document.getElementById('rows');
     var data = GRANTS.map(function(g){ return Object.assign({}, g, {cls: classify(g), days: daysUntil(g.deadline)}); });
@@ -451,7 +464,11 @@
       else if(g.cls==='closed') counts.closed++;
       else counts.open++;
     });
+    var noSam = data.filter(function(g){ return g.sam==='none' && g.cls!=='closed'; }).length;
+    var nosamEl = document.getElementById('nosamNote');
+    if(nosamEl) nosamEl.innerHTML = '<b>' + noSam + ' live opportunities need none of this.</b> Rows tagged <span class="sam-tag none">No SAM.gov</span> are private, state or prize programmes you can apply to this week. <span class="sam-tag">SAM.gov later</span> means you can enter without it but need it to be paid or to go further. Use the "No SAM.gov needed" filter to see only those.';
     document.getElementById('stats').innerHTML =
+      '<div class="stat open"><div class="n">'+noSam+'</div><div class="l">Live, no SAM.gov needed</div></div>' +
       '<div class="stat soon"><div class="n">'+counts.soon+'</div><div class="l">Due in ≤30 days</div></div>' +
       '<div class="stat open"><div class="n">'+counts.open+'</div><div class="l">Open, more time</div></div>' +
       '<div class="stat"><div class="n">'+counts.rolling+'</div><div class="l">Rolling / apply anytime</div></div>' +
@@ -461,6 +478,10 @@
 
     var filtered = data.filter(function(g){
       if(currentFilter==='all') return true;
+      // Live rows only: a closed row that needs no registration is not
+      // something to act on, and this filter exists to answer "what can we
+      // apply for this week without waiting weeks on SAM.gov".
+      if(currentFilter==='nosam') return g.sam==='none' && g.cls!=='closed';
       if(currentFilter==='grant') return g.type==='grant';
       if(currentFilter==='accelerator') return g.type==='accelerator';
       if(currentFilter==='visibility') return g.type==='visibility';
@@ -494,7 +515,7 @@
       var docsId = 'docs-' + i;
       var main = '<tr class="'+rowClass(g.cls)+'">'+
         '<td class="name"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(g.name)+'</a>'+
-          '<div class="type-tag">'+esc(g.type)+'</div>'+
+          '<div class="type-tag">'+esc(g.type)+samTag(g.sam)+'</div>'+
           (g.note ? '<div class="row-note">'+esc(g.note)+'</div>' : '')+
           (hasDocs ? '<button type="button" class="docs-toggle" aria-expanded="false" aria-controls="'+docsId+'" data-target="'+docsId+'">+ '+g.documents.length+' docs needed</button>' : '')+
         '</td>'+
@@ -615,7 +636,8 @@
         // `summary || eligibility` was showing "one of the largest Phase I
         // state matches in the country" and hiding the gate entirely.
         note: [row.eligibility, row.summary].filter(Boolean).join(' \u00b7 '),
-        documents: Array.isArray(row.documents) ? row.documents : []
+        documents: Array.isArray(row.documents) ? row.documents : [],
+        sam: row.sam || ''
       };
     });
 

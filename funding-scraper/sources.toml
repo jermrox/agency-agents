@@ -1027,6 +1027,7 @@ verified = "2026-09-19"
 
 [[sources.curated.entry]]
 name = "Ohio TechCred"
+sam = "none"
 url = "https://techcred.ohio.gov/"
 agency = "Ohio Department of Development"
 amount = "up to $1,000 per employee credential, capped at $30,000 per application period"
@@ -1143,6 +1144,7 @@ verified = "2026-09-19"
 
 [[sources.curated.entry]]
 name = "SBIR/STTR — reauthorized through 2031 (program status)"
+sam = "required"
 url = "https://www.sbir.gov/"
 agency = "SBA / 11 participating federal agencies"
 amount = "Phase I ~$50K-$314K · Phase II to ~$2.1M · new Phase II strategic breakthrough ceiling $30M"
@@ -1160,6 +1162,7 @@ verified = "2026-09-17"
 
 [[sources.curated.entry]]
 name = "NYSTAR Innovation Matching Grants"
+sam = "required"
 url = "https://esd.ny.gov/sites/default/files/media/document/I-B-Innovation-Matching-Grants-Program-Guidelines.pdf"
 agency = "Empire State Development (NYSTAR)"
 amount = "$100K (Phase I) / $200K (Phase II)"
@@ -1198,6 +1201,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "America's Seed Fund -- NSF Project Pitch"
+sam = "later"
 url = "https://seedfund.nsf.gov/project-pitch/"
 agency = "National Science Foundation"
 amount = "gateway to $305K Phase I, up to $2M across phases"
@@ -1328,6 +1332,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "CDMRP Combat Readiness-Medical Research Program (CRRP)"
+sam = "required"
 url = "https://cdmrp.health.mil/funding/crrp"
 agency = "DoD Congressionally Directed Medical Research Programs"
 pillar = 2
@@ -1344,6 +1349,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "CDMRP Peer Reviewed Medical Research Program (PRMRP)"
+sam = "required"
 url = "https://cdmrp.health.mil/funding/prmrp"
 agency = "DoD Congressionally Directed Medical Research Programs"
 amount = "up to $20M depending on award mechanism"
@@ -1360,6 +1366,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "NIST MEP manufacturing voucher"
+sam = "none"
 url = "https://www.nist.gov/mep"
 agency = "NIST Manufacturing Extension Partnership"
 amount = "up to $65,000, varies by state"
@@ -1485,6 +1492,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Alabama SBIR/STTR Match"
+sam = "required"
 url = "https://innovate-alabama.com/"
 agency = "Innovate Alabama"
 amount = "up to $100,000 (50% of federal award)"
@@ -1500,6 +1508,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Arkansas SBIR Matching Grant"
+sam = "required"
 url = "https://www.arkansasedc.com/"
 agency = "Arkansas EDC"
 amount = "up to $50,000 (Phase I)"
@@ -1514,6 +1523,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Illinois SBIR/STTR Matching Program"
+sam = "required"
 url = "https://dceo.illinois.gov/"
 agency = "Illinois DCEO"
 amount = "up to $75,000 (Phase I)"
@@ -1529,6 +1539,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Indiana SBIR/STTR Match"
+sam = "required"
 url = "https://www.iedc.in.gov/"
 agency = "Indiana Economic Development Corp"
 amount = "up to $50,000 per award ($150K lifetime cap)"
@@ -1543,6 +1554,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Iowa SBIR/STTR Support"
+sam = "required"
 url = "https://www.iowaeda.com/"
 agency = "Iowa Economic Development Authority"
 amount = "up to $25,000"
@@ -1557,6 +1569,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Kentucky SBIR/STTR Matching Funds"
+sam = "required"
 url = "https://ced.ky.gov/"
 agency = "Kentucky Cabinet for Economic Development"
 amount = "up to $150,000 (Phase I)"
@@ -1572,6 +1585,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "New Mexico SBIR Match"
+sam = "required"
 url = "https://edd.newmexico.gov/"
 agency = "New Mexico EDD"
 amount = "up to $25,000 (Phase I)"
@@ -1586,6 +1600,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Wisconsin SBIR Advance"
+sam = "required"
 url = "https://wisconsinctc.org/programs/sbir-and-sttr-guidance/sbiradvance/"
 agency = "WEDC / Center for Technology Commercialization"
 amount = "50% match up to $75,000"
@@ -1617,6 +1632,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Startup Prize: Health"
+sam = "none"
 url = "https://startupprize.com/health/"
 agency = "Startup Prize"
 amount = "$10,000 cash"
@@ -1666,6 +1682,7 @@ verified = "2026-10-01"
 
 [[sources.curated.entry]]
 name = "NIH NOURISH Autoimmunity Digital Health Challenge — Phase 1"
+sam = "none"
 url = "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge"
 agency = "NIH Office of Autoimmune Disease Research (OADR-ORWH)"
 amount = "Up to 10 × $20,000 in Phase 1; up to $650,000 across three phases (5 × $30K, then 3 × $100K)"
@@ -1940,6 +1957,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Stephen L. Tadlock Veteran Business Grant"
+sam = "none"
 url = "https://foundersfirstcdc.org/stephen-tadlock"
 agency = "Founders First CDC"
 amount = "$1,000 micro-grant + a free place on Passport Community ($1,499) or Zebra Leadership ($1,699). $20,000 fund, 20 finalists."
@@ -1984,6 +2002,7 @@ verified = "2026-09-12"
 
 [[sources.curated.entry]]
 name = "Buckeye State Credit Union Small Business Recovery Grant"
+sam = "none"
 url = "https://www.buckeyecu.org/small-business-recovery-grant/"
 agency = "Buckeye State Credit Union — CDFI Equitable Recovery Program"
 amount = "$200,000 / $150,000 / $125,000 — three grants, $475,000 total"
@@ -2090,6 +2109,7 @@ verified = "2026-09-25"
 
 [[sources.curated.entry]]
 name = "NIH SBIR/STTR — April 2027 cycle"
+sam = "required"
 url = "https://grants.nih.gov/grants/guide/pa-files/PA-27-100.html"
 agency = "NIH / CDC / FDA"
 amount = "$400K-$700K+ by institute"
@@ -2163,6 +2183,7 @@ verified = "2026-10-01"
 
 [[sources.curated.entry]]
 name = "Army xTech|Search 10"
+sam = "later"
 url = "https://xtech.army.mil/competition/xtechsearch10/"
 agency = "U.S. Army FUZE xTech Program, ASA(ALT)"
 amount = "Up to $1,000,000 in non-dilutive cash prizes across the competition: $5,000 to each of up to 50 semifinalists, a further $20,000 to each of up to 20 finalists, then $200,000 / $100,000 / $50,000 to first, second and third. Finalists may also submit a Phase I Army SBIR or STTR proposal worth up to $300,000."
@@ -2274,6 +2295,7 @@ verified = "2026-09-30"
 
 [[sources.curated.entry]]
 name = "DoW SBIR / STTR Specific Topics — Release 6 (26.BX / 26.BZ / 26.TX / 26.TZ)"
+sam = "later"
 url = "https://afwerx.com/get-funded/"
 agency = "Department of the Air Force — AFWERX / SpaceWERX, via the Defense SBIR/STTR Innovation Portal"
 amount = "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken"
@@ -2309,6 +2331,7 @@ verified = "2026-10-01"
 
 [[sources.curated.entry]]
 name = "Ohio MBDA Business Center"
+sam = "none"
 url = "https://www.mbda.gov/business-center/ohio-mbda-business-center"
 agency = "U.S. Department of Commerce, Minority Business Development Agency — operated in Ohio by the Economic Growth Foundation"
 amount = "No cash — free business consulting, capital sourcing, grant and loan identification and packaging, contract opportunity sourcing and matchmaking"
@@ -2325,6 +2348,7 @@ verified = "2026-10-01"
 
 [[sources.curated.entry]]
 name = "Ohio Minority Business Assistance Centers (MBAC)"
+sam = "none"
 url = "https://development.ohio.gov/business/minority-business/mbac/minority-business-assistance-centers"
 agency = "Ohio Department of Development — Minority Business Development Division"
 amount = "No cash — free counselling, loan packaging, certification help, procurement and bidding assistance"
