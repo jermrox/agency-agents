@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-01T13:50:39+00:00",
+  "generated": "2026-10-01T16:59:48+00:00",
   "as_of": "2026-10-01",
-  "count": 114,
+  "count": 117,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -26,6 +26,27 @@
       "kind": "grant",
       "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": []
+    },
+    {
+      "id": "curated-agetech-after-dark-ces-2027-aarp-pitch",
+      "source": "curated",
+      "name": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
+      "url": "https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/",
+      "agency": "AgeTech Collaborative from AARP",
+      "amount": "$10,000 grand prize; every finalist gets a complimentary CES 2027 ticket",
+      "summary": "Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027. Vybe qualifies through the healthspan-and-wellness door \u2014 the pitch should be personal health intelligence for people over 50, not a repositioned ageing product. Pitching also makes Vybe eligible for the AARP accelerator already on the board. The page names no application fee. Getting to Las Vegas is Vybe's cost; the CES ticket is not.",
+      "open_date": null,
+      "close_date": "2026-10-12",
+      "status": "soon",
+      "days_left": 11,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "AgeTech startups, and explicitly healthspan and wellness products that help people 'stay in the game' as they age. Prototypes welcome but they want market-ready products",
+      "documents": [
+        "Online application: how the product makes ageing easier, and its stage",
+        "A 3-minute pitch, ready by early January"
+      ]
     },
     {
       "id": "curated-veteran-shark-tank-2026-13th-annual",
@@ -164,6 +185,28 @@
       ]
     },
     {
+      "id": "curated-xcelerate-startup-competition",
+      "source": "curated",
+      "name": "Xcelerate Startup Competition",
+      "url": "https://www.worldhealthexpo.com/events/healthcare/tech/whats-on/features/xcelerate-your-startup-pitch-competition/",
+      "agency": "World Health Expo Tech",
+      "amount": "$30,000 total equity-free pool \u2014 $15K champion, $10K best early-stage, $5K best scale-up",
+      "summary": "PAID-POD GATE: the competition only shortlists startups holding a confirmed WHX Tech Startup Pod, and the pod is a paid exhibitor package whose price is not on the page. Pitches 26\u201328 Jan 2027 in Dubai; travel, accommodation and visa are the startup's own cost. Up to 40 pitch, 12 reach the final. Shortlist announced end of November. Price the pod and the trip before writing the application.",
+      "open_date": null,
+      "close_date": "2026-11-04",
+      "status": "open",
+      "days_left": 34,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Legally registered health or health-adjacent startup with a WORKING PRODUCT; early-stage track is pre-seed to pre-Series A. Must hold a WHX Tech Startup Pod if shortlisted",
+      "documents": [
+        "Online application",
+        "Pitch deck",
+        "Quote for a WHX Tech Startup Pod, and a travel budget for Dubai"
+      ]
+    },
+    {
       "id": "grants.gov-dow-joint-warfighter-medical-military-medical-research-and-developmen",
       "source": "grants.gov",
       "name": "DoW Joint Warfighter Medical, Military Medical Research and Development Award (HT942526JWMRPMMRDA)",
@@ -240,6 +283,29 @@
       "documents": []
     },
     {
+      "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
+      "source": "curated",
+      "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
+      "url": "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge",
+      "agency": "NIH Office of Autoimmune Disease Research (OADR-ORWH)",
+      "amount": "Up to 10 \u00d7 $20,000 in Phase 1; up to $650,000 across three phases (5 \u00d7 $30K, then 3 \u00d7 $100K)",
+      "summary": "Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet \u2014 that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 \u2014 the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul\u2013Dec 2027 for invited Phase 1 entrants only.",
+      "open_date": null,
+      "close_date": "2026-12-11",
+      "status": "open",
+      "days_left": 71,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community",
+      "documents": [
+        "Registration form (nourishchallenge.org)",
+        "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
+        "Video demonstration of a working Phase 1 prototype",
+        "No HHS or NIH logos, and no claim of government endorsement"
+      ]
+    },
+    {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
       "source": "grants.gov",
       "name": "Personal Health Informatics for Delivering Actionable Insights to Individuals (R01 Clinical Trial Optional) (PAR-25-235)",
@@ -254,7 +320,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -330,7 +396,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -348,7 +414,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -387,7 +453,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -441,7 +507,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -495,7 +561,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -567,7 +633,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": []
     },
     {
@@ -922,6 +988,27 @@
         "eBRAP pre-application",
         "SAM.gov UEI + Grants.gov registration",
         "Research plan matched to a congressionally-set topic area for the year"
+      ]
+    },
+    {
+      "id": "curated-ces-2027-eureka-park",
+      "source": "curated",
+      "name": "CES 2027 Eureka Park",
+      "url": "https://www.ces.tech/explore-ces/eureka-park/",
+      "agency": "Consumer Technology Association",
+      "amount": "No cash \u2014 a startup booth in CES's startup hall, in front of press, retail buyers and investors",
+      "summary": "PAID BOOTH, cost not published on the page \u2014 get the quote before treating this as an opportunity. Listed because a screenless wearable is exactly what Eureka Park press walks the floor for, and Vybe meets every published criterion. The free-booth routes (Innovation For All, Accessibility contests) closed in August. CES runs in early January; there is no fixed close date on the page, and booths sell out, so ask now rather than in December.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Company 5 years old or less, Series B or earlier, with a demo-ready consumer product. Wearables and health tech are named categories",
+      "documents": [
+        "Eureka Park application",
+        "A demo-ready unit and a booth budget"
       ]
     },
     {
@@ -2171,27 +2258,6 @@
         "Connecticut business registration",
         "Proof of women-owned status",
         "Business plan / financials by tier"
-      ]
-    },
-    {
-      "id": "curated-xcelerate-startup-competition",
-      "source": "curated",
-      "name": "Xcelerate Startup Competition",
-      "url": "https://www.worldhealthexpo.com/events/healthcare/tech/whats-on/features/xcelerate-your-startup-pitch-competition/",
-      "agency": "World Health Expo Tech",
-      "amount": "$30,000 total prize pool",
-      "summary": "",
-      "open_date": null,
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "visibility",
-      "eligibility": "Early-stage and scale-up tracks, ~50 startups pitch",
-      "documents": [
-        "Application",
-        "Pitch deck"
       ]
     },
     {
