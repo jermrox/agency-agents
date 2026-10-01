@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-01T17:04:26+00:00",
+  "generated": "2026-10-01T17:14:57+00:00",
   "as_of": "2026-10-01",
   "count": 121,
   "source_errors": [
@@ -25,7 +25,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-agetech-after-dark-ces-2027-aarp-pitch",
@@ -46,7 +47,8 @@
       "documents": [
         "Online application: how the product makes ageing easier, and its stage",
         "A 3-minute pitch, ready by early January"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-veteran-shark-tank-2026-13th-annual",
@@ -69,7 +71,8 @@
         "A 2-minute narrated pitch video \u2014 a pitch, not a promo",
         "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
         "Evidence the business is under three years old as of 7 Dec 2026"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-stephen-l-tadlock-veteran-business-grant",
@@ -91,7 +94,8 @@
         "Proof of veteran status (DD-214 or equivalent)",
         "Evidence of 2-100 employees and under $5M revenue",
         "Proof the business has traded at least one year"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-army-xtech-search-10",
@@ -114,7 +118,8 @@
         "Eligibility attestation: for-profit, >50% US-citizen owned and controlled, <=500 employees",
         "Disclosure of any similar proposal funded or pending at another federal agency",
         "SAM.gov UEI and a CAGE code for the follow-on SBIR/STTR stage"
-      ]
+      ],
+      "sam": "later"
     },
     {
       "id": "curated-dow-sbir-sttr-specific-topics-release-6-26-bx-26-bz-26-tx-26-tz",
@@ -138,7 +143,8 @@
         "Phase I work plan: scope, task outline, deliverables, kickoff within 30 days, preliminary and final report",
         "Cost volume",
         "Disclosure of any essentially equivalent work funded or pending elsewhere"
-      ]
+      ],
+      "sam": "later"
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -161,7 +167,8 @@
         "Signed 1:1 cash match commitment from Vybe as NY industry partner",
         "Joint research plan with commercial milestones",
         "Statement of quantifiable NY State economic impact"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ohio-techcred",
@@ -185,7 +192,8 @@
         "Chosen credential from the eligible list, or a full case for a new one, with the training provider's own documentation",
         "Per-credential training and certification costs, and the reimbursement amount requested (max $1,000 each)",
         "Headcounts of incumbent and prospective employees per credential, with average wages before and after"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-amber-grant-for-women-monthly",
@@ -206,7 +214,8 @@
       "documents": [
         "Short online application describing the business and use of funds",
         "$15 application fee"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-secretsos-small-business-grant",
@@ -227,7 +236,8 @@
       "documents": [
         "Short online application",
         "Proof of qualifying ownership status"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-xcelerate-startup-competition",
@@ -249,7 +259,8 @@
         "Online application",
         "Pitch deck",
         "Quote for a WHX Tech Startup Pod, and a travel budget for Dubai"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-dow-joint-warfighter-medical-military-medical-research-and-developmen",
@@ -267,7 +278,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-tory-burch-foundation-fellows-2027-program",
@@ -289,7 +301,8 @@
         "Proof of 51%+ women ownership and control",
         "Evidence of at least $75,000 annual revenue",
         "Business and financial narrative through the Fellows portal"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-dow-combat-readiness-medical-research-program-translational-research-",
@@ -307,7 +320,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-nih-strokenet-clinical-trials-and-biomarker-studies-for-stroke-treatm",
@@ -325,7 +339,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
@@ -348,7 +363,8 @@
         "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
         "Video demonstration of a working Phase 1 prototype",
         "No HHS or NIH logos, and no claim of government endorsement"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
@@ -365,8 +381,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-a-science-of-science-approach-to-analyzing-and-innovating-the-biomedi",
@@ -384,7 +401,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-deployed-warfighter-protection-fy27-afpmb-baa-27-01",
@@ -402,7 +420,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-nih-sbir-sttr-april-2027-cycle",
@@ -424,7 +443,8 @@
         "SAM.gov UEI, eRA Commons, Grants.gov and SBIR.gov registrations",
         "Specific Aims + Research Strategy",
         "Budget + biosketches"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "grants.gov-computational-approaches-to-curation-at-scale-for-biomedical-research",
@@ -441,8 +461,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-brain-initiative-brain-behavior-quantification-and-synchronization-ne",
@@ -459,8 +480,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-future-of-health-grant",
@@ -481,7 +503,8 @@
       "documents": [
         "Application",
         "Product and validation plan"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-interventions-to-reduce-sleep-health-disparities-r01-clinical-trials-",
@@ -499,7 +522,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-cheers-open-period-1-all-technical-areas-fa238424s2334",
@@ -517,7 +541,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-cheers-open-period-2-all-technical-areas-fa238424s2335",
@@ -535,7 +560,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-design-testing-a",
@@ -553,7 +579,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-optimization-r33",
@@ -571,7 +598,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-broad-agency-announcement-baa-for-extramural-biomedical-and-human-per",
@@ -589,7 +617,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
@@ -607,7 +636,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-sbir-sttr-commercialization-readiness-pilot-crp-program-parent-sb1-cl",
@@ -625,7 +655,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-expansi",
@@ -642,8 +673,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
-      "documents": []
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-develop",
@@ -660,8 +692,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Privat",
-      "documents": []
+      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Public and State controlled institutions of higher educa",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-readiness-and-recreation-initiative-rari-recurring-5-year-notice-p26a",
@@ -678,8 +711,9 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
-      "documents": []
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-continuing-human-enabling-enhancing-restoring-and-sustaining-fa238424",
@@ -697,7 +731,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-500-global",
@@ -718,7 +753,8 @@
       "documents": [
         "Application",
         "Pitch deck"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-aarp-agetech-collaborative-startup-accelerator",
@@ -739,7 +775,8 @@
       "documents": [
         "A clear statement of how the product serves people aged 50 and over",
         "Product stage and current traction"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-aws-activate",
@@ -760,7 +797,8 @@
       "documents": [
         "AWS account ID",
         "Company details; accelerator/VC affiliation code for the higher tiers"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-activate-fellowship",
@@ -782,7 +820,8 @@
         "CV showing 4+ years post-baccalaureate research/engineering experience",
         "Technical proposal and two-year research plan",
         "References"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-african-medical-devices-regulatory-harmonization-program-for-fd-23-01",
@@ -800,7 +839,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-alabama-sbir-sttr-match",
@@ -821,7 +861,8 @@
       "documents": [
         "Federal SBIR/STTR award notice",
         "Alabama business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology",
@@ -842,7 +883,8 @@
       "documents": [
         "Letter of inquiry",
         "Project narrative"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-america-s-seed-fund-nsf-project-pitch",
@@ -864,7 +906,8 @@
         "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
         "SAM.gov UEI registration (start early \u2014 weeks of lead time)",
         "SBIR.gov company registration (SBC control number)"
-      ]
+      ],
+      "sam": "later"
     },
     {
       "id": "curated-anthropic-claude-startup-program",
@@ -884,7 +927,8 @@
       "eligibility": "Anyone can JOIN the program, with or without VC backing. CREDITS are narrower: the company must have received equity funding from an institutional investor, been founded within the last four years, and not have received Anthropic startup credits before. Needs a Claude Console account, a company email and a website.",
       "documents": [
         "Company details and a description of what you are building with the API"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-antler",
@@ -905,7 +949,8 @@
       "documents": [
         "Application",
         "Founder background"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-arkansas-sbir-matching-grant",
@@ -926,7 +971,8 @@
       "documents": [
         "Federal Phase I award notice",
         "Arkansas business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-berkeley-skydeck",
@@ -948,7 +994,8 @@
         "Pitch deck",
         "Cap table",
         "Application through the cohort cycle"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-brinc",
@@ -970,7 +1017,8 @@
         "Pitch deck",
         "Prototype status",
         "Application"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-building-communities-of-recovery-ti-27-004",
@@ -988,7 +1036,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-cdmrp-combat-readiness-medical-research-program-crrp",
@@ -1011,7 +1060,8 @@
         "Letter of Intent where the award mechanism requires one",
         "SAM.gov UEI + Grants.gov registration",
         "Full research plan mapped to a named FY26 focus area"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-cdmrp-peer-reviewed-medical-research-program-prmrp",
@@ -1033,7 +1083,8 @@
         "eBRAP pre-application",
         "SAM.gov UEI + Grants.gov registration",
         "Research plan matched to a congressionally-set topic area for the year"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-ces-2027-eureka-park",
@@ -1054,7 +1105,8 @@
       "documents": [
         "Eureka Park application",
         "A demo-ready unit and a booth budget"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-controlled-clinical-trials-on-long-term-effects-of-nutritional-interv",
@@ -1072,7 +1124,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-creative-destruction-lab-cdl-manufacturing",
@@ -1093,7 +1146,8 @@
       "documents": [
         "Application during the annual cycle",
         "Technical and commercial objectives"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-dav-patriot-boot-camp",
@@ -1116,7 +1170,8 @@
         "Proof of veteran, service-member or military-spouse status",
         "EIN and website (preferred, not required)",
         "Availability for three consecutive days in person"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-digital-health-technology-and-reciprocal-innovation-to-improve-clinic",
@@ -1134,7 +1189,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-fiscal-year-2027-regional-nutrition-hubs-hrsa-27-019",
@@ -1152,7 +1208,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-freed-fellowship-grant",
@@ -1173,7 +1230,8 @@
       "documents": [
         "Business description against the five-part framework: market, core narrative, community, differentiator, how you make money",
         "Evidence the business already exists and is trading or building"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-fuzehub-jeff-lawrence-manufacturing-grants",
@@ -1195,7 +1253,8 @@
         "A NY nonprofit or university as the lead applicant",
         "Project plan pairing the nonprofit with Vybe as the manufacturer partner",
         "Budget and NY economic-impact statement"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-galaxy-grants",
@@ -1216,7 +1275,8 @@
       "documents": [
         "Short application",
         "Business description"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-google-for-startups-cloud-program",
@@ -1238,7 +1298,8 @@
         "Company website and incorporation details",
         "Funding stage evidence (pre-Series A)",
         "Google Cloud billing account"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-opioid-use",
@@ -1256,7 +1317,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-oud-for-wh",
@@ -1274,7 +1336,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-heal-initiative-optimization-of-therapeutic-medical-devices-through-t",
@@ -1292,7 +1355,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-hlth-usa-startup-pitch-competition",
@@ -1314,7 +1378,8 @@
         "Pitch deck",
         "Proof of <$8M raised and <5 years old",
         "Application during the event cycle"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-hello-alice-rolling-grant-cycles",
@@ -1335,7 +1400,8 @@
       "documents": [
         "Hello Alice business profile",
         "Cycle-specific application"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-hello-tomorrow-global-challenge",
@@ -1357,7 +1423,8 @@
         "Free application",
         "Technical description of the deep-tech core",
         "Team information"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ifw-by-honeycomb-universal-funding-grant-application",
@@ -1378,7 +1445,8 @@
       "documents": [
         "Business profile: stage, industry, revenue, ownership",
         "The reusable answers IFW's own grant planner asks for"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ivmf-military-founders-lab",
@@ -1401,7 +1469,8 @@
         "State business registration",
         "Revenue for the last 12 months, or evidence of confirmed capital if pre-revenue",
         "Choice of cohort track"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-illinois-sbir-sttr-matching-program",
@@ -1422,7 +1491,8 @@
       "documents": [
         "Federal Phase I award notice",
         "Illinois business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-indiana-sbir-sttr-match",
@@ -1443,7 +1513,8 @@
       "documents": [
         "Federal Phase I award notice",
         "Indiana business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-innovation-fund-northeast-ohio",
@@ -1466,7 +1537,8 @@
         "Financial projections with the assumptions stated, which they will ask you to defend",
         "A pitch presentation to their outline",
         "Evidence of the dollar-for-dollar match, uncommitted and available"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-integrating-machine-learning-with-computational-fluid-dynamics-models",
@@ -1484,7 +1556,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-interdisciplinary-research-networks-to-advance-biomedical-research-on",
@@ -1502,7 +1575,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-iowa-sbir-sttr-support",
@@ -1523,7 +1597,8 @@
       "documents": [
         "Federal Phase I award notice",
         "Iowa business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-kentucky-sbir-sttr-matching-funds",
@@ -1544,7 +1619,8 @@
       "documents": [
         "Federal Phase I award notice",
         "Kentucky business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-kinetic-health-care-innovation-in-motion",
@@ -1565,7 +1641,8 @@
       "documents": [
         "Company description and stage",
         "What you want from the programme, stated as services rather than money"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-launch-ny-seed-fund",
@@ -1587,7 +1664,8 @@
         "Pitch deck",
         "Financial projections",
         "Evidence of Upstate NY operations"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-luminate-ny-accelerator",
@@ -1609,7 +1687,8 @@
         "Pitch deck with an optics/photonics/imaging (OPI+L) technical core",
         "Willingness to relocate to Rochester for the six-month program",
         "Cap table and funding history"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-masschallenge-bae-systems-deep-tech-accelerator",
@@ -1631,7 +1710,8 @@
         "Application during the cohort window",
         "Technical description of the sensing/processing core",
         "Dual-use case"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-microsoft-for-startups-founders-hub",
@@ -1652,7 +1732,8 @@
       "documents": [
         "Company details and a short product description",
         "No funding proof required \u2014 the most accessible of the three"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nist-mep-manufacturing-voucher",
@@ -1673,7 +1754,8 @@
       "documents": [
         "Intake call with your state MEP center",
         "Scope of the engineering/DFM work requested"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nvidia-inception",
@@ -1696,7 +1778,8 @@
         "Live company website",
         "Pitch deck: mission, product, team, traction",
         "At least one employed developer on staff"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ny-ventures-pre-seed-seed-matching-fund",
@@ -1719,7 +1802,8 @@
         "Proof of qualified private investment to match 1:1",
         "Cap table showing <$2M dilutive raised to date",
         "NY State registration + evidence of a C-suite seat in-state"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nys-ssbci-technical-assistance",
@@ -1741,7 +1825,8 @@
         "Business formation documents",
         "Proof of VSB (<10 employees) or SEDI-owned status",
         "Description of the legal/accounting/financial help you need"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-national-biomedical-research-centers-p50-clinical-trial-optional-par-",
@@ -1759,7 +1844,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-new-mexico-sbir-match",
@@ -1780,7 +1866,8 @@
       "documents": [
         "Federal Phase I award notice",
         "New Mexico business registration"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-ohio-centers-of-excellence-jumpstart-backed-by-ohio-third-frontier",
@@ -1801,7 +1888,8 @@
       "documents": [
         "Short intake form describing the company and what you need",
         "A clear statement of which sector centre fits \u2014 HealthTech, for Vybe"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ohio-mbda-business-center",
@@ -1823,7 +1911,8 @@
         "Client engagement and intake forms",
         "Evidence of minority ownership or control",
         "A specific ask \u2014 the intake form has a services checkbox including Grants and Financing"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ohio-minority-business-assistance-centers-mbac",
@@ -1845,7 +1934,8 @@
         "No-cost appointment booked through the Division",
         "Ownership documents showing 51%+ and how long it has been held",
         "Ohio residency evidence for the qualifying owner, if pursuing certification"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-ohio-third-frontier-tvsf-phase-2-start-up-fund",
@@ -1869,7 +1959,8 @@
         "Seven-page proposal: market opportunity, project plan with one-year market entry or proof, budget table and narrative",
         "One-page letter of support",
         "Ohio Secretary of State registration and a 12-month-or-longer lease on an Ohio facility"
-      ]
+      ],
+      "sam": "check"
     },
     {
       "id": "curated-penfed-foundation-veteran-entrepreneur-program-accelerator-incubator",
@@ -1892,7 +1983,8 @@
         "EIN and state formation documents",
         "Founder bio covering military and professional background",
         "Evidence of market validation for the Accelerator track"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-pitchmi",
@@ -1914,7 +2006,8 @@
         "Michigan business registration",
         "Pitch deck",
         "Application during the cycle"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-rev-ithaca-prototyping-hardware-accelerator",
@@ -1935,7 +2028,8 @@
       "documents": [
         "Prototype or detailed build plan",
         "Team commitment for the 10-week cohort"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-sbir-sttr-reauthorized-through-2031-program-status",
@@ -1957,7 +2051,8 @@
         "SAM.gov UEI registration (weeks -- start before any solicitation)",
         "SBIR.gov company registration for your SBC control number",
         "Confirm the specific agency solicitation has reopened post-lapse before writing"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-schmidt-sciences",
@@ -1977,7 +2072,8 @@
       "eligibility": "Academic researchers, nonprofits, think tanks",
       "documents": [
         "Invitation only \u2014 no open application"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-second-service-foundation-military-entrepreneur-challenge",
@@ -1999,7 +2095,8 @@
         "Proof of military affiliation",
         "51%+ ownership evidence",
         "Pitch for the regional event"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-single-source-for-the-continuation-of-the-physiology-of-the-weight-re",
@@ -2017,7 +2114,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-small-business-translator-medtech-and-digital-health-technologies-for",
@@ -2035,7 +2133,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "grants.gov-small-instruments-and-modern-equipment-for-shared-use-biomedical-rese",
@@ -2053,7 +2152,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-south-park-commons",
@@ -2074,7 +2174,8 @@
       "documents": [
         "Application",
         "Technical background"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-startup-prize-health",
@@ -2096,7 +2197,8 @@
         "Registration",
         "Pitch deck",
         "Track selection (FDA vs non-FDA)"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-telehealth-nutrition-services-network-grant-program-hrsa-27-044",
@@ -2114,7 +2216,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-the-medtech-conference-start-up-pitch-pitch-pour",
@@ -2137,7 +2240,8 @@
         "Evidence of under $10M raised since inception",
         "Deck of at most 15 slides: vision, the ask and use of funds, problem with military relevance, solution, current status with preliminary data, commercial and government path",
         "Budget for attendance \u2014 the pitch slot is discounted, not free"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-the-rosie-network-service2ceo",
@@ -2158,7 +2262,8 @@
       "documents": [
         "Proof of military affiliation (veteran, transitioning service member or military spouse)",
         "Chapter application"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-translational-centers-using-microphysiologic-systems-for-infectious-d",
@@ -2176,7 +2281,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-uc-berkeley-citris-foundry",
@@ -2197,7 +2303,8 @@
       "documents": [
         "UC Berkeley affiliation or sponsoring relationship",
         "Technical project description"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "grants.gov-utilizing-real-world-data-and-algorithmic-analyses-to-assess-post-mar",
@@ -2215,7 +2322,8 @@
       "pillar": 2,
       "kind": "grant",
       "eligibility": "",
-      "documents": []
+      "documents": [],
+      "sam": "required"
     },
     {
       "id": "curated-verizon-small-business-digital-ready",
@@ -2236,7 +2344,8 @@
       "documents": [
         "Completed Verizon Digital Ready coursework",
         "Hello Alice profile"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-veterans-business-battle-rice-university",
@@ -2259,7 +2368,8 @@
         "Proof of veteran status",
         "Business plan and financials for the investor selection committee",
         "Willingness to travel to Houston for the two-day final"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
@@ -2281,7 +2391,8 @@
         "University sponsorship / limited-submission nomination",
         "Concept paper",
         "High-risk, high-impact technical rationale"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-warrior-rising-vetrepreneur-grants",
@@ -2303,7 +2414,8 @@
         "Veteran status",
         "Completion of Warrior Rising training track",
         "Business plan"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-wisconsin-sbir-advance",
@@ -2325,7 +2437,8 @@
         "Federal SBIR/STTR award notice",
         "Wisconsin business registration",
         "Commercialization plan"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-women-veterans-giving-small-business-award",
@@ -2346,7 +2459,8 @@
       "documents": [
         "Proof of veteran status",
         "Business description"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-women-s-business-development-council-grants",
@@ -2368,7 +2482,8 @@
         "Connecticut business registration",
         "Proof of women-owned status",
         "Business plan / financials by tier"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-yale-ventures-healthtech-works",
@@ -2389,7 +2504,8 @@
       "documents": [
         "Application during the open window",
         "Technical and commercialization plan"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nystar-innovation-matching-grants",
@@ -2412,7 +2528,8 @@
         "NY State business registration / proof of NYS residency",
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
-      ]
+      ],
+      "sam": "required"
     },
     {
       "id": "curated-fund-her-future-h-r-block-block-advisors",
@@ -2434,7 +2551,8 @@
         "Hello Alice profile",
         "Proof of 51%+ woman ownership",
         "Evidence of $20,000+ 2025 revenue"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-buckeye-state-credit-union-small-business-recovery-grant",
@@ -2457,7 +2575,8 @@
         "Documentation of minority ownership or control",
         "Evidence of at least two years of operation",
         "A written plan showing how the funds benefit eligible communities"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nextcorps-manufacturing-accelerator-fall-2026",
@@ -2479,7 +2598,8 @@
         "Works-like hardware prototype (required \u2014 not a concept or a render)",
         "Short online application describing the product and production goal",
         "Founder time commitment for the 9-week virtual program"
-      ]
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-texas-woman-s-university-veteran-grant",
@@ -2500,7 +2620,8 @@
       "documents": [
         "Proof of veteran status",
         "Application"
-      ]
+      ],
+      "sam": "none"
     }
   ]
 }
