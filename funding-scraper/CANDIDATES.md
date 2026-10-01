@@ -253,6 +253,61 @@ list, so any provider picked from older advice needs re-checking. Window: 9:00am
   the Tech Tuesday page says 20 minutes (10 present, 5 Q&A); the programme page is
   the one to believe. Submissions go through Submittable when they reopen.
 
+## Promoted to the board — 1 Oct 2026 (wearable sweep)
+
+A sweep aimed only at health-wearable money that a pre-revenue company can file
+without a trial, a fee or a licence. Most leads were already closed; three were not.
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **NIH NOURISH Autoimmunity Digital Health Challenge** — Phase 1 | up to 10 × **$20,000**; $650K across three phases | opened 1 Oct; package due **11 Dec 2026** (page header says 8 Jan 2027) |
+| **AgeTech After Dark @ CES 2027** (AARP) | **$10,000** grand prize + CES tickets for finalists | closes **12 Oct 2026** |
+| **CES 2027 Eureka Park** | booth, no cash — **paid**, price unpublished | rolling until sold out |
+
+NOURISH is the best wearable fit found in weeks: NIH's own scope list names
+smartwatches, fitness trackers and biosensors for heart rate, sleep and activity
+alongside AI diet insights. It is a prize, not a grant, so none of the federal
+registrations gate it.
+
+## Corrected on the board — 1 Oct 2026
+
+**Xcelerate (WHX Tech)** was carried with no deadline and no mention of its real
+gate. The deadline is **4 Nov 2026**, and only startups holding a confirmed
+**WHX Tech Startup Pod** — a paid exhibitor package, price not published — are
+shortlisted. The pitches are in Dubai, 26–28 Jan 2027, at the startup's own travel
+cost. The row now says all of that.
+
+## Rejected on inspection — 1 Oct 2026 (wearable sweep)
+
+- **DARPA "Engineering Sleep for Cognitive Performance"** (DPA26BZ03-DV012) — a
+  wearable closed-loop sleep topic, as close to Vybe as a DoD topic gets. Ran
+  24 Jun – 22 Jul 2026 and was **missed** because the `dod_sbir` source has 403'd
+  for weeks. The structural fix is to read each monthly DSIP release by hand until
+  that source works. **DoD FY26 Release 6** (opened 23 Sep, closes 21 Oct) was read
+  in full and has no wearable or human-performance topic.
+- **eWEAR Health Prize @ Stanford** ($25K) — closed 25 Sep, and the founder must be
+  **18–35** on 6 Nov 2026. Watch for the 2027 cycle only if a founder fits the age gate.
+- **2026 Health Security Innovation Prize Challenge** (TechConnect, $200K, lists
+  wearable biosensors) — **closed 23 Mar 2026**; pitches were 12 May. CBRN-defence
+  framed. Re-check around February 2027.
+- **AgeTech Open Mic (Oct and Nov)** and the **Making Aging Easier pitch @ HLTH** — closed
+  30 Sep and 26 Jun. The CES pitch above is the live one.
+- **AHA Health Tech Competition** — closed 18 Sep, and it wants clinical or pilot
+  data plus paying customers.
+- **NurseHack4Health** — closed 21 Sep, nurse-led teams only.
+- **KU / Garmin Wearable Insights** — closed, academic.
+- **Samsung Mobile Advance 2026** — closed.
+- **TOPx HHS Tech Sprint** — Phase 2 is only for teams selected in Phase 1.
+- **HHS All-American Fitness Challenge** — youth K–12 framing, current phase unclear.
+- **J&J QuickFire Challenges** — none open for wearables today.
+- **Women's Health Europe Forum pitch** — EU/UK-incorporated companies only.
+- **VR Health Champions** (€60K) — European XR SMEs only.
+- **Columbia Fast-Pitch**, **AMSA Digital Health Festival**, **UW–Madison Bradley
+  Challenge** — student-only, or prizes too small to be worth a submission.
+- **NNEMTC pitch** (Portland, ME, 12–13 Nov) — open to any early-stage digital
+  health company, but the prize is in-kind only and no deadline is posted. Held
+  back, not rejected; worth an hour if a regulatory-readiness review is wanted.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |
