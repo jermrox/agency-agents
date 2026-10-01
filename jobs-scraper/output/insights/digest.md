@@ -4,16 +4,16 @@
 
 ## Headline
 
-- **760 open jobs** from **42 employers**.
+- **763 open jobs** from **42 employers**.
 - Posted between **2025-12-03** and **2026-10-01**.
-- **$80,000 median** annualized pay across the 229 postings that publish one -- $62,000 to $107,490 covers the middle half.
+- **$81,505 median** annualized pay across the 231 postings that publish one -- $62,200 to $109,426 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 522 of 1,282 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 718, Special Operations 366, Fire / EMS / Law Enforcement 48, Training Pipeline 42.
+- 523 of 1,286 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 721, Special Operations 367, Fire / EMS / Law Enforcement 49, Training Pipeline 42.
 
 ## Month over month
 
-Postings are **down -548** in 2026-10 (552 to 4), 99% against 2026-09.
+Postings are **down -546** in 2026-10 (552 to 6), 99% against 2026-09.
 
 ```
 2025-12     1  #
@@ -26,7 +26,7 @@ Postings are **down -548** in 2026-10 (552 to 4), 99% against 2026-09.
 2026-07    19  #
 2026-08   100  #####
 2026-09   552  ############################
-2026-10     4  #
+2026-10     6  #
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -53,8 +53,8 @@ Postings are **down -548** in 2026-10 (552 to 4), 99% against 2026-09.
 | KBR | 61 | $91,950 | Strength & Conditioning, Sports Medicine |
 | LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
 | Serco USA | 35 | - | Strength & Conditioning, Cognitive Performance |
+| Reef Systems | 34 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Planned Systems International | 33 | $66,345 | Sports Medicine, Strength & Conditioning |
-| Reef Systems | 33 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Commander, Navy Installations Command | 32 | $47,138 | Sports Medicine, Program Leadership |
 | General Dynamics Information Technology | 28 | $98,738 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 25 | $139,436 | - |
@@ -64,10 +64,10 @@ Postings are **down -548** in 2026-10 (552 to 4), 99% against 2026-09.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 404 | 68% |
-| Sports Medicine | 337 | 57% |
+| Strength & Conditioning | 405 | 68% |
+| Sports Medicine | 338 | 57% |
 | Cognitive Performance | 172 | 29% |
-| Research & Analytics | 116 | 19% |
+| Research & Analytics | 117 | 20% |
 | Performance Nutrition | 100 | 17% |
 | Program Leadership | 32 | 5% |
 | Sport Science | 9 | 2% |
@@ -79,7 +79,7 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 288 | 60% |
+| CSCS | 289 | 60% |
 | ATC | 203 | 42% |
 | RD | 63 | 13% |
 | PhD | 49 | 10% |
@@ -89,11 +89,11 @@ more than one, so these do not sum to 100%.
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (57), TS/SCI (23), Top Secret (22), Public Trust (3)
+**Clearances requested:** Secret (58), TS/SCI (23), Top Secret (22), Public Trust (3)
 
 ## What it pays
 
-- Median **$80,000**, middle half $62,000 to $107,490.
+- Median **$81,505**, middle half $62,200 to $109,426.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -111,7 +111,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (74), NC (61), CA (57), GA (43), TX (41), NM (36), VA (33), KY (23), CO (21), HI (21)
+**States:** FL (74), NC (61), CA (57), GA (43), TX (41), NM (36), VA (33), KY (23), CO (22), HI (21)
 
 | Installation | Jobs |
 |---|---|
@@ -126,7 +126,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Drum | 8 |
 | Fort Sill | 8 |
 
-**Branches and services:** Joint (267), Army (177), Air Force (97), Navy (37), Marine Corps (23), Space Force (4), Coast Guard (3)
+**Branches and services:** Joint (267), Army (178), Air Force (98), Navy (37), Marine Corps (23), Space Force (4), Coast Guard (3)
 
 ## Most common titles
 

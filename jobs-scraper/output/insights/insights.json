@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-01T07:31:37.614446+00:00",
+  "generated_at": "2026-10-01T19:31:09.291485+00:00",
   "totals": {
-    "postings": 1282,
+    "postings": 1286,
     "employers": 42,
-    "unique_jobs": 760,
-    "with_salary": 229,
+    "unique_jobs": 763,
+    "with_salary": 231,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-01T00:00:00+00:00"
+      "latest": "2026-10-01T13:15:02.473000+00:00"
     }
   },
   "by_employer": [
@@ -63,6 +63,18 @@
       "median_salary": null
     },
     {
+      "name": "Reef Systems",
+      "count": 34,
+      "disciplines": [
+        "sports-medicine",
+        "strength-conditioning",
+        "research",
+        "cognitive",
+        "sport-science"
+      ],
+      "median_salary": 535360.0
+    },
+    {
       "name": "Planned Systems International",
       "count": 33,
       "disciplines": [
@@ -72,18 +84,6 @@
         "research"
       ],
       "median_salary": 66345.0
-    },
-    {
-      "name": "Reef Systems",
-      "count": 33,
-      "disciplines": [
-        "sports-medicine",
-        "strength-conditioning",
-        "research",
-        "cognitive",
-        "sport-science"
-      ],
-      "median_salary": 535360.0
     },
     {
       "name": "Commander, Navy Installations Command",
@@ -189,38 +189,38 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 404,
-      "share": 0.6779,
+      "count": 405,
+      "share": 0.6784,
       "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
-      "count": 337,
-      "share": 0.5654,
+      "count": 338,
+      "share": 0.5662,
       "median_salary": 73040.5
     },
     {
       "name": "cognitive",
       "count": 172,
-      "share": 0.2886,
+      "share": 0.2881,
       "median_salary": 81504.8
     },
     {
       "name": "research",
-      "count": 116,
-      "share": 0.1946,
+      "count": 117,
+      "share": 0.196,
       "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 100,
-      "share": 0.1678,
+      "share": 0.1675,
       "median_salary": 91125.0
     },
     {
       "name": "leadership",
       "count": 32,
-      "share": 0.0537,
+      "share": 0.0536,
       "median_salary": 63440.0
     },
     {
@@ -233,23 +233,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 718,
-      "share": 0.9573
+      "count": 721,
+      "share": 0.9575
     },
     {
       "name": "sof",
-      "count": 366,
-      "share": 0.488
+      "count": 367,
+      "share": 0.4874
     },
     {
       "name": "first-responder",
-      "count": 48,
-      "share": 0.064
+      "count": 49,
+      "share": 0.0651
     },
     {
       "name": "training-pipeline",
       "count": 42,
-      "share": 0.056
+      "share": 0.0558
     }
   ],
   "by_branch": [
@@ -259,11 +259,11 @@
     },
     {
       "name": "Army",
-      "count": 177
+      "count": 178
     },
     {
       "name": "Air Force",
-      "count": 97
+      "count": 98
     },
     {
       "name": "Navy",
@@ -332,16 +332,16 @@
       "count": 8
     },
     {
+      "name": "Fort Carson",
+      "count": 7
+    },
+    {
       "name": "Fort Hood",
       "count": 7
     },
     {
       "name": "Fort Riley",
       "count": 7
-    },
-    {
-      "name": "Fort Carson",
-      "count": 6
     }
   ],
   "by_state": [
@@ -379,7 +379,7 @@
     },
     {
       "code": "CO",
-      "count": 21
+      "count": 22
     },
     {
       "code": "HI",
@@ -402,30 +402,30 @@
       "count": 18
     },
     {
-      "code": "DC",
+      "code": "AK",
       "count": 14
     }
   ],
   "certifications": [
     {
       "name": "CSCS",
-      "count": 288,
-      "share": 0.5975
+      "count": 289,
+      "share": 0.5983
     },
     {
       "name": "ATC",
       "count": 203,
-      "share": 0.4212
+      "share": 0.4203
     },
     {
       "name": "RD",
       "count": 63,
-      "share": 0.1307
+      "share": 0.1304
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.1017
+      "share": 0.1014
     },
     {
       "name": "DPT",
@@ -446,7 +446,7 @@
   "clearances": [
     {
       "name": "Secret",
-      "count": 57
+      "count": 58
     },
     {
       "name": "TS/SCI",
@@ -462,12 +462,12 @@
     }
   ],
   "salary": {
-    "count": 229,
+    "count": 231,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 80000.0,
-    "p25": 62000.5,
-    "p75": 107489.5,
+    "median": 81504.8,
+    "p25": 62200.25,
+    "p75": 109426.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 61,
@@ -574,12 +574,12 @@
     },
     {
       "month": "2026-10",
-      "count": 4
+      "count": 6
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-03T00:00:00+00:00",
+    "pivot": "2026-07-03T13:15:02.473000+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
