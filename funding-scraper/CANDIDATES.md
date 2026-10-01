@@ -1,5 +1,9 @@
 # Candidate queue — NOT on the board
 
+> **Start every search with [`VYBE_PROFILE.md`](VYBE_PROFILE.md).** Vybe is a wearable
+> *developer platform* (DevKit, SDK, research and tactical partners), not only a consumer
+> band, and that widens which money fits.
+
 Every row here is a lead, not an opportunity. Nothing moves from this file to
 `sources.toml` until `probe-candidates.yml` has read the programme's own page
 from a runner and confirmed three things: it is still running, its deadline,
