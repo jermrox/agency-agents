@@ -35,9 +35,11 @@ JSON="divisions.json"
 # Python tool (the daily non-dilutive funding sweep), not agents.
 # components/ holds shared React/TSX UI components (the research board's map),
 # not agents. vybe-app/ is the Vybe Health React Native app (product source,
-# JS), not agents. None of these is a division — they must never be scanned as
+# JS), not agents. vybe-marketing/ holds the Vybe Health marketing scoreboards,
+# plan and brand brief (markdown working files for the marketing agent), not
+# agents. None of these is a division — they must never be scanned as
 # source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout vybe-marketing)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }
