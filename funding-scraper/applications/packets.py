@@ -764,6 +764,99 @@ PACKETS = [
         ],
     },
     {
+        "id": "freed",
+        "name": "Freed Fellowship Grant — monthly",
+        "funder": "Freed Fellowship LLC",
+        "amount": "$500 a month to one selected US business owner, no strings and no equity; monthly Fellows are then eligible for an additional $2,500 end-of-year grant",
+        "deadline": "rolling",
+        "fee": None,
+        "url": "https://www.freedfellowship.com/grant",
+        "submit": "Short online submission at freedfellowship.com/grant. One Fellow is selected every month, so a submission that does not win is a submission already made for the next round. Every submission — not just the winner — gets a written Freed score against the five-part framework plus two months inside the Freed Studio community.",
+        "gates": [],
+        "confirmed": [
+            "US-based business owner with an existing business — no ownership, revenue, sector or age gate is published",
+        ],
+        "why": "The smallest money on the board and one of the most useful things on it, for one reason: every submission comes back with a written outside read on the business, scored against five named criteria. Vybe has $50,000 to $1,000,000 of applications in flight over the next month. Paying nothing to find out how a stranger scores the pitch, before those go in, is worth more than the $500.",
+        "docs": [],
+        "note": (
+            "BE HONEST ABOUT THE SIZE OF THIS. It is $500 a month, with a $2,500 "
+            "end-of-year grant open only to monthly Fellows. Nobody should spend a day on "
+            "it. It earns a packet because the submission is short, it recurs every month "
+            "so there is no deadline to miss, and the thing it returns — a score and "
+            "written recommendations against Freed's five Cs — is the one piece of outside "
+            "feedback on this board that arrives whether or not you win.\n\n"
+            "Treat the answers below as the first draft of a reusable pitch rather than a "
+            "grant application. The five headings are Freed's own, in their order: Context, "
+            "Content, Community, Chemistry, Commerce. Where an answer needs a number only "
+            "the founders have, it is a bracketed prompt — a made-up figure here would also "
+            "corrupt the feedback, which is the entire point of applying.\n\n"
+            "No application fee is named anywhere on the application page. Worth a second "
+            "look at the form itself before submitting, since a fee appearing later would "
+            "change the arithmetic on a $500 award."
+        ),
+        "fields": [
+            {"q": "One-line summary", "a": ONE_LINER},
+            {"q": "Context — why is the market in your favour?", "a":
+                WHY_NOW + "\n\n"
+                "The short version: the category split, and nobody took the position Vybe "
+                "is taking. Deep interpretation without a required subscription is an empty "
+                "space on the shelf, and it is empty because it costs the incumbents their "
+                "recurring revenue to enter it."},
+            {"q": "Content — what is your compelling core narrative?", "a":
+                "People own the data and not the meaning.\n\n"
+                "A wearable reports that heart-rate variability fell 18% and stops there. "
+                "The person is left to guess whether it was the late dinner, the bad night, "
+                "the flight or the week they have had — and most of them stop opening the "
+                "app. The measurement problem is solved. The interpretation problem is not, "
+                "and that is the whole company.\n\n"
+                + SHORT},
+            {"q": "Community — have you found or created a community?", "a":
+                "Two, and neither needs consumer-scale marketing to reach.\n\n"
+                "People who already own a wearable and have stopped opening it. The "
+                "grievance is specific — paying monthly to be shown a number they can "
+                "already see — which makes them findable in a way a general wellness "
+                "audience is not.\n\n"
+                "The veteran and military-family community, where recovery and readiness "
+                "are already the everyday language rather than a wellness concept that has "
+                "to be introduced. Vybe is veteran-, woman- and minority-owned, so this is "
+                "a community the founders are in rather than one they are marketing at.\n\n"
+                "Current position: {{TRACTION}}.\n\n"
+                "[Add what you can evidence about the people you have actually reached: how "
+                "many, through what, and the sentence you heard most often. Freed scores "
+                "this heading on evidence of a real audience, and a waitlist described "
+                "honestly reads better than a described persona.]"},
+            {"q": "Chemistry — have you found your special sauce?", "a":
+                "The context layer, and it is the part that is hard to copy.\n\n"
+                "Vybe reads five parts of a life — Restore, Move, Nourish, Connect and "
+                "Vitals — and Connect is the one competitors leave out: work, travel, "
+                "stress and weather, the reasons a reading moves that no sensor can see. A "
+                "score is easy to copy. A model of somebody's week is not.\n\n"
+                "The second piece is restraint, and it is a product decision rather than a "
+                "marketing one. Vybe states what it could not see alongside every answer, "
+                "and when it is asked a clinical question it declines and says to see a "
+                "clinician. It is a consumer wellness product, not a medical device, and "
+                "holding that line is what lets it ship at all."},
+            {"q": "Commerce — how do you make money?", "a":
+                "The Band is bought once, at a margin, with the intelligence included. No "
+                "required subscription — which is the position, not a discount.\n\n"
+                "Then licensing: the interpretation layer sold to manufacturers who have "
+                "sensors and nothing to say with the readings. Same product, second "
+                "customer, little extra cost to serve.\n\n"
+                "Revenue over the last 12 months: {{REVENUE}}. Team of {{EMPLOYEES}}. "
+                "Product stage: {{STAGE}}.\n\n"
+                "[Your unit economics: what a Band costs to build and what it sells for. "
+                "This is the heading Freed scores hardest and the one where a number you "
+                "cannot defend does the most damage — to the score and to the usefulness of "
+                "the feedback.]"},
+            {"q": "What would you do with the grant?", "a":
+                "[Keep it to one named cost. $500 does the most good on something specific "
+                "and finishable — a radio pre-scan ahead of the Band's FCC work, at-cost "
+                "Bands for the next few outside testers, or the VYBE trademark filing. A "
+                "$500 answer that reads like a $50,000 plan is the fastest way to look like "
+                "you have not thought about it.]"},
+        ],
+    },
+    {
         "id": "credits",
         "name": "Cloud and AI credits — five programs, one description",
         "funder": "NVIDIA, Microsoft, AWS, Google, Anthropic",

@@ -253,6 +253,102 @@ list, so any provider picked from older advice needs re-checking. Window: 9:00am
   the Tech Tuesday page says 20 minutes (10 present, 5 Q&A); the programme page is
   the one to believe. Submissions go through Submittable when they reopen.
 
+## Status derivation — verified live, 1 Oct 2026
+
+The `forecast` state built on 28 Sep had its first unattended test today, and it
+passed on both sides of the pipeline. Verified by running `models.py` and the
+dashboard's own `classify()` over the same three rows across the date boundary:
+
+| Row | 30 Sep | 1 Oct |
+|---|---|---|
+| **Ohio TechCred** (opens 1 Oct, closes 30 Oct) | `forecast`, 1 day until open | `soon`, 29 days left, `days_until_open` null |
+| **Buckeye State CU** (closed 30 Sep) | `soon`, 0 days left | `closed` |
+| **Amber Grant** (closed 30 Sep) | `soon`, 0 days left | `closed` |
+
+Both implementations agree on all three rows and all three transitions. The
+dashboard re-derives from the live clock rather than reading the stored `status`,
+so the page was correct this morning even though `output/funding.json` still
+carried `as_of: 2026-09-30`. That is the behaviour the 28 Sep work was for.
+
+**One caveat worth knowing.** The stored `status` field in `funding.json` *is* a
+day stale until the sweep runs. The dashboard does not use it, but anything else
+reading that field directly will be behind by up to a day. Re-derive, do not read.
+
+**And one real bug the check found.** The **Amber Grant** closes on the last day
+of EVERY month. Its row carried `close_date = 2026-09-30`, so the derivation
+published it as `closed` on 1 October — correct arithmetic, wrong answer, because
+the programme had simply rolled to its next monthly round. A falsely dead row on a
+live programme is the same failure as a stale deadline, pointing the other way.
+Rolled to `2026-10-31`; the next roll is due 1 November. Until the model carries a
+recurrence rule, any monthly row needs advancing on the first of the month — Amber
+is the only one on the board today.
+
+The **Buckeye** row is genuinely closed and stays on the board for the record, but
+its note still read "CLOSES 30 SEP — six days out". Prose that counts down does not
+survive the date it was written on; rewritten in the past tense.
+
+## Promoted to the board — 1 Oct 2026
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **DoW SBIR / STTR Specific Topics — Release 6** (26.BX / 26.BZ / 26.TX / 26.TZ) | Phase I feasibility, then Phase II prototype; non-dilutive contract money | **closes 21 Oct 2026** |
+| **Ohio Centers of Excellence** (JumpStart, Ohio Third Frontier) | no cash — rolling intake to advisors and the state's non-dilutive programmes | rolling |
+| **Ohio MBDA Business Center** (US Commerce, Cleveland) | no cash — free consulting, grant identification and packaging | rolling |
+| **Ohio Minority Business Assistance Centers** (Ohio Dept of Development) | no cash — free counselling, certification, procurement help | rolling |
+
+**The Centers of Excellence row is the answer to yesterday's TVSF problem.** TVSF
+Phase 2's $200,000 is blocked because the technology must be licensed from an Ohio
+research institution, and this network is how that introduction happens rather than
+something to arrange cold. Its named Regional Startup Ambassadors include **Bounce
+Innovation Hub** (Akron — on this board via Kinetic) and **GLIDE at Lorain County
+Community College** (which administers the Innovation Fund — also on this board).
+Three rows added over three days turn out to be one system with one front door.
+
+**The DAF window is reading work, not writing work.** Eligibility is the same test
+Vybe passed for xTech|Search 10 — for-profit, under 500 employees, majority US
+citizen owned *and controlled*, dual-use — and 26.BX is literally the solicitation
+family xTech's follow-on topic sits in. But these are **Specific** topics, so the
+only question that matters is whether any Release 6 topic fits a consumer wearable
+without requiring a clinical or diagnostic posture. Read the DSIP topic list before
+drafting a word. **No Open Topic cycle is currently published**, and Open Topic is
+the one that takes any dual-use technology — that is the thing to wait for if
+nothing in Release 6 fits.
+
+**The two minority-business centres differ in a way that matters.** The federal
+MBDA definition (15 C.F.R. 1400.1) has no state-residency test and no minimum time
+in business, so Vybe qualifies today. Ohio's own MBE definition requires the owner
+to be an **Ohio resident** who has held the 51% **for more than a year** — so formal
+Ohio MBE certification, and the 15% state-contract set-aside behind it, is likely a
+2027 conversation. The free counselling at both is open now either way.
+
+## Corrected on the board — 1 Oct 2026
+
+**Veterans Business Battle** — corrected against this board's own row, on the date
+the 28 Sep note said to re-check it. Rice's page today still advertises the **12th
+annual** competition, 8–9 April 2026, and says "Applications to compete are closed
+as of January 31, 2026". It still lists the 2025 winners. So the "13th annual" this
+board claimed was an extrapolation rather than something Rice published, and the
+"$30,000 split between the top three" figure is not on the page either. Both have
+been removed from the row. What the page does support: the largest veteran-only
+business competition in the country, $10M+ of investment extended since 2015, free
+to apply, two-day in-person final in Houston, and 2025 winners spanning health
+tech, agriculture and consumer hardware. Check again in November for an autumn
+window.
+
+## Rejected on inspection — 1 Oct 2026
+
+- **JumpStart Trailblazer HealthTech Accelerator** — genuinely good and genuinely
+  closed. **$50,000 of fully covered services** through their Preferred Partner
+  Program, three months plus two months of EIR advising, no fee and no equity. Its
+  own page says "Applications are currently closed. Please check back soon!" Also
+  worth knowing before it reopens: candidates are scored on "the likelihood of a
+  venture capital raise within 12 months", and the programme describes itself as
+  preparing companies for "their next dilutive fundraise" — a philosophical mismatch
+  with a buy-once product, though not a disqualifier. Watch for the next cohort.
+- **Hello Alice funding portal** — could not be read today (the fetch failed, not a
+  404). The platform row already on this board stands; re-check whether a live
+  partner grant exists before treating it as actionable.
+
 ## Priority 2 — women-founder
 
 | Candidate | Claimed award | Gate | What to confirm |

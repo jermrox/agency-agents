@@ -1060,13 +1060,13 @@ name = "Amber Grant for Women — monthly"
 url = "https://ambergrantsforwomen.com/"
 agency = "WomensNet"
 amount = "3 x $10,000 every month, plus annual $25,000 awards"
-close_date = "2026-09-30"
+close_date = "2026-10-31"
 pillar = 2
 kind = "grant"
 eligibility = "Women-owned businesses. $15 non-refundable application fee."
-note = "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the last day of each month. One application enters you for the month and for the annual award. Low effort, genuinely repeatable — apply once and re-enter."
+note = "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the LAST DAY OF EACH MONTH. One application enters you for the month and for the annual award. Low effort, genuinely repeatable — apply once and re-enter. DATE ROLLED 1 OCT: this row carried close_date 2026-09-30, so the status derivation published it as `closed` on 1 October — correct arithmetic, wrong answer, because the programme had simply moved to its next monthly round. A monthly recurring deadline has to be advanced each month until the model carries a recurrence rule; the next roll is due 1 November, to 2026-11-30."
 documents = ["Short online application describing the business and use of funds", "$15 application fee"]
-verified = "2026-09-19"
+verified = "2026-10-01"
 
 [[sources.curated.entry]]
 name = "Hello Alice — rolling grant cycles"
@@ -1939,7 +1939,7 @@ close_date = "2026-09-30"
 pillar = 2
 kind = "grant"
 eligibility = "Minority-owned or minority-controlled as defined by federal guideline; trading at least two years; must show the funds benefit low-to-moderate-income or underserved communities. Credit union membership is NOT required and businesses outside Ohio may apply, though priority goes to Summit County and especially Akron."
-note = "CLOSES 30 SEP — six days out, and the largest per-winner cheque anywhere on this board by a wide margin. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments."
+note = "CLOSED 30 SEP 2026, and kept on the board for the record: it was the largest per-winner cheque anywhere here by a wide margin, so it is worth recognising if the credit union runs the programme again. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments."
 documents = [
   "Completed Buckeye State CU application form (downloaded from the programme page)",
   "Documentation of minority ownership or control",
@@ -2091,18 +2091,18 @@ verified = "2026-09-28"
 name = "Veterans Business Battle (Rice University)"
 url = "https://business.rice.edu/veterans-business-battle"
 agency = "Rice Business Veterans Association and Entrepreneurs' Organization of Houston"
-amount = "$30,000 in non-dilutive prize money split between the top three, plus pitching to investors who earmark capital for the event"
+amount = "Non-dilutive prize money to the top three plus investor offers — the competition reports more than $10M of investment extended since 2015. THE EXACT PRIZE AMOUNT IS NOT PUBLISHED on the competition page today, so this row states no figure."
 pillar = 2
 kind = "visibility"
 eligibility = "US military veteran-led startups. Free to apply. Roughly 16 finalists are selected from the applicant pool and pitch in person at Rice University in Houston."
-note = "The largest veteran-only business competition in the country: more than $10M in investment offers extended since 2015, and the prize money is non-dilutive. NO CLOSE DATE IS POSTED for the 13th annual competition, so this row carries none. The published 2026 cycle is the thing to act on: early applications opened 2 Sep and closed 10 Nov, regular applications ran 11 Nov to 31 Jan, finalists were picked in February and the event was 8-9 Apr. On that pattern the 2027 early window is open now or opens shortly — check the Rice page and the YouNoodle portal in early October rather than waiting for January. Note the event charges spectators, not applicants."
+note = "CORRECTED 1 OCT, AND THE CORRECTION IS AGAINST THIS BOARD'S OWN ROW. Re-read on the date the 28 Sep note said to re-read it. Rice's page today still advertises the 12TH ANNUAL competition, 8-9 April 2026, and states 'Applications to compete are closed as of January 31, 2026'. It still lists the 2025 winners. So: there is no 2027 cycle posted, the '13th annual' this row claimed was an extrapolation rather than something Rice published, and the $30,000-split figure is not on the page either. What IS supported: the largest veteran-only business competition in the country, more than $10M of investment extended since 2015, free to apply, and a two-day in-person final in Houston. The pattern to watch, from the published 2026 cycle, is early applications in the autumn and a late-January close — so check again in November. Three veteran-founded winners in 2025 across health tech, agriculture and consumer hardware, so the judges are not sector-bound."
 documents = [
   "Online application via the competition's YouNoodle portal",
   "Proof of veteran status",
   "Business plan and financials for the investor selection committee",
   "Willingness to travel to Houston for the two-day final",
 ]
-verified = "2026-09-28"
+verified = "2026-10-01"
 
 # --- Added 29 Sep 2026 -----------------------------------------------------
 # Read first-hand from each programme's own page, not from a listicle.
@@ -2214,3 +2214,75 @@ documents = [
   "Availability for three consecutive days in person",
 ]
 verified = "2026-09-30"
+
+# --- Added 1 Oct 2026 ------------------------------------------------------
+# Two live windows and two standing front doors, all read from their own pages.
+# The Centers of Excellence row is the answer to yesterday's TVSF problem: the
+# licence gate that blocks TVSF is reachable through this network, not around it.
+
+[[sources.curated.entry]]
+name = "DoW SBIR / STTR Specific Topics — Release 6 (26.BX / 26.BZ / 26.TX / 26.TZ)"
+url = "https://afwerx.com/get-funded/"
+agency = "Department of the Air Force — AFWERX / SpaceWERX, via the Defense SBIR/STTR Innovation Portal"
+amount = "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken"
+open_date = "2026-09-23"
+close_date = "2026-10-21"
+pillar = 2
+kind = "dod_sbir"
+eligibility = "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment — more than 50% — must be with the small business. All R&D must be performed in the United States. One proposal per solicitation, and you cannot submit under both Air Force and Space Force topics in the same cycle. SAM.gov registration is required before award."
+note = "LIVE WINDOW, CLOSES 21 OCT. Eligibility is the same test Vybe already passed for xTech|Search 10, and the 26.BX solicitation family is literally the one xTech's follow-on topic sits in. THE WORK HERE IS NOT WRITING, IT IS READING: these are SPECIFIC topics, not an open topic, so the whole question is whether any Release 6 topic fits a consumer wearable and its interpretation layer without requiring a clinical or diagnostic posture. Open the Release 6 topic list on DSIP first and decide that before drafting anything. If nothing fits, the thing to wait for is an OPEN TOPIC cycle, which takes any dual-use technology — none is open as of today, and the published schedule shows only Specific Topics and Strategic Breakthrough, the latter needing a prior Phase II. Note Phase I is a three-month feasibility study with a structured curriculum and a kickoff meeting, and it does NOT require an existing DAF customer: finding one is part of the work. Letters of support from government personnel are not required but are read."
+documents = [
+  "Proposal on the mandatory AFWERX template — submissions that deviate from it are not evaluated",
+  "SAM.gov registration (required before award, not before submission)",
+  "Phase I work plan: scope, task outline, deliverables, kickoff within 30 days, preliminary and final report",
+  "Cost volume",
+  "Disclosure of any essentially equivalent work funded or pending elsewhere",
+]
+verified = "2026-10-01"
+
+[[sources.curated.entry]]
+name = "Ohio Centers of Excellence (JumpStart, backed by Ohio Third Frontier)"
+url = "https://jumpstartinc.org/coe"
+agency = "JumpStart Inc. and the Ohio Third Frontier"
+amount = "No cash directly — a free, rolling intake that connects Ohio founders to advisors and to the state's non-dilutive funding programmes"
+pillar = 3
+kind = "partnership"
+eligibility = "Ohio tech founders; the network states its doors are open to entrepreneurs from anywhere in the state. Five sector centres: HealthTech, Software, Advanced Manufacturing, Advanced Materials and Advanced Energy. No ownership, revenue or stage gate published."
+note = "THE FRONT DOOR TO THE OHIO SYSTEM, AND THE ANSWER TO THE TVSF PROBLEM ON THIS BOARD. The Technology Validation and Start-up Fund's $200,000 is blocked for Vybe because the technology must be licensed from an Ohio research institution — and this network is how that introduction happens rather than something to arrange alone. Its named Regional Startup Ambassadors include Bounce Innovation Hub (Akron, already on this board via Kinetic) and GLIDE at Lorain County Community College (which administers the Innovation Fund, also on this board), so three rows here are one system. Intake is a short form: say what you are working on and they route you to an Ambassador. No cash, no fee, no equity, no deadline — which is exactly why it is worth an hour this week rather than a week next quarter. NOT TO BE CONFUSED with JumpStart's Trailblazer HealthTech Accelerator, which carries $50,000 of covered services but is CLOSED to applications today and scores candidates on their likelihood of raising venture capital within 12 months."
+documents = [
+  "Short intake form describing the company and what you need",
+  "A clear statement of which sector centre fits — HealthTech, for Vybe",
+]
+verified = "2026-10-01"
+
+[[sources.curated.entry]]
+name = "Ohio MBDA Business Center"
+url = "https://www.mbda.gov/business-center/ohio-mbda-business-center"
+agency = "U.S. Department of Commerce, Minority Business Development Agency — operated in Ohio by the Economic Growth Foundation"
+amount = "No cash — free business consulting, capital sourcing, grant and loan identification and packaging, contract opportunity sourcing and matchmaking"
+pillar = 3
+kind = "partnership"
+eligibility = "A Minority Business Enterprise as 15 C.F.R. 1400.1 defines it: more than 50% owned OR controlled by African Americans, Hispanic Americans, Asian and Pacific Islander Americans, Native Americans, Asian Indians or Hasidic Jews, who are US citizens or lawfully admitted permanent residents. No state residency test and no minimum time in business."
+note = "FREE, FEDERAL, AND VYBE'S OWNERSHIP ALREADY CLEARS IT — minority-owned 51%+ was confirmed on 20 Sep. The useful service for a company at Vybe's stage is the one in the middle of their list: grant identification and packaging, which is a trained person reading the same board this repo maintains and arguing with it. The Ohio centre is in Cleveland, about 40 miles from Akron. ONE CAVEAT, STATED BY THE NETWORK ITSELF: target clients are firms with $1M+ revenue, firms in high-growth industries (health care is named outright) or firms with rapid growth potential, and the programme says start-ups and micro firms will be served 'via strategic partnership referrals or electronic service delivery' rather than a dedicated consultant. So Vybe qualifies on industry and growth potential but may be routed to a partner rather than staffed directly. Ask which, up front, rather than assuming."
+documents = [
+  "Client engagement and intake forms",
+  "Evidence of minority ownership or control",
+  "A specific ask — the intake form has a services checkbox including Grants and Financing",
+]
+verified = "2026-10-01"
+
+[[sources.curated.entry]]
+name = "Ohio Minority Business Assistance Centers (MBAC)"
+url = "https://development.ohio.gov/business/minority-business/mbac/minority-business-assistance-centers"
+agency = "Ohio Department of Development — Minority Business Development Division"
+amount = "No cash — free counselling, loan packaging, certification help, procurement and bidding assistance"
+pillar = 3
+kind = "partnership"
+eligibility = "GATE IS TIGHTER THAN THE FEDERAL ONE. Ohio defines an MBE as a business at least 51% owned and controlled FOR MORE THAN A YEAR by an OHIO RESIDENT who is a US citizen and a member of one of four groups: African American, Asian, Hispanic or Native American. The Centers also serve certified EDGE businesses, socially and economically disadvantaged businesses, and startups generally."
+note = "FREE AND EXPLICITLY OPEN TO STARTUPS, which is where it beats the federal MBDA centre — but read the two extra gates. Ohio's MBE definition requires the owner to be an Ohio RESIDENT and to have held the ownership for MORE THAN A YEAR, neither of which the federal 15 C.F.R. definition asks for. Vybe is under a year in business, so formal Ohio MBE certification is likely a 2027 conversation even though the counselling itself is open now to startups and to socially and economically disadvantaged businesses. The real prize behind the certification is Ohio's 15% MBE set-aside on state contracts, which is a revenue path rather than a grant — worth knowing exists, and worth the free appointment to find out exactly when the clock starts. No cost, no application window; you book a counsellor."
+documents = [
+  "No-cost appointment booked through the Division",
+  "Ownership documents showing 51%+ and how long it has been held",
+  "Ohio residency evidence for the qualifying owner, if pursuing certification",
+]
+verified = "2026-10-01"
