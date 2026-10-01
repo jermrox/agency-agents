@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-01T17:14:57+00:00",
+  "generated": "2026-10-01T17:19:50+00:00",
   "as_of": "2026-10-01",
-  "count": 121,
+  "count": 134,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -9,6 +9,28 @@
     "sbir"
   ],
   "opportunities": [
+    {
+      "id": "curated-pm-r-pitch-tank-2026-aapm-r-x-matter",
+      "source": "curated",
+      "name": "PM&R Pitch Tank 2026 (AAPM&R x MATTER)",
+      "url": "https://www.aapmr.org/education/annual-assembly/pm-r-pitch-tank",
+      "agency": "American Academy of Physical Medicine and Rehabilitation, with MATTER",
+      "amount": "Potential $5,000 non-dilutive award, plus pitch coaching and a feature in The Physiatrist",
+      "summary": "CLOSES TOMORROW (OCT 2) AND IS REHAB-SPECIFIC. Only worth it if Vybe can submit today with a recovery or remote-monitoring angle, such as HRV-guided recovery, activity and return-to-function tracking, or telerehab support. Three finalists pitch in person on Nov 12, 2026 in Orlando at their own cost. Judges score reimbursement potential and fit with clinical workflow, so this one leans clinical.",
+      "open_date": null,
+      "close_date": "2026-10-02",
+      "status": "soon",
+      "days_left": 1,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Open to startups, early-stage companies, researchers, clinicians and entrepreneurs 'regardless of professional background or geographic location' whose solution connects to physical medicine and rehabilitation. The solution must be past the idea stage (working prototype, pilot data, early traction or other progress). Application fee: not stated. Travel is not covered.",
+      "documents": [
+        "Submittable profile, then the online application",
+        "Evidence of stage of development (prototype, pilot data or traction)"
+      ],
+      "sam": "none"
+    },
     {
       "id": "grants.gov-nij-fy-2026-invited-to-apply-advancing-the-understanding-of-3d-algori",
       "source": "grants.gov",
@@ -27,6 +49,28 @@
       "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-emerge-americas-natsec-veteran-pitch-competition-nov-2026-cycle",
+      "source": "curated",
+      "name": "eMerge Americas NatSec Veteran Pitch Competition (Nov 2026 cycle)",
+      "url": "https://emergeamericas.com/veteran-led-national-security-startups/",
+      "agency": "eMerge Americas (private)",
+      "amount": "Not cash-denominated on the page: the top three get Demo Day participation at PortMiami (2 Mar 2027), Accelerator and Showcase fast-tracks, exhibition space in the NatSec Pavilion and investor/government-buyer introductions. A prior cycle listed micro-grants among prizes, but no cash figure is stated for this cycle.",
+      "summary": "MUST BE A 'CRITICAL TECHNOLOGY' / DUAL-USE NATIONAL-SECURITY PITCH, WITH A WORKING MVP AND 2+ FULL-TIME STAFF. Vybe fits only if it frames the Vybe Band (ECG/HRV, recovery, readiness) as a warfighter human-performance and readiness tool. The veteran owner has to pitch. Virtual event on 4 Nov 2026, with no registration fee. The deadline is 9 days away.",
+      "open_date": null,
+      "close_date": "2026-10-10",
+      "status": "soon",
+      "days_left": 9,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "U.S.-based critical-technology startup founded within the last 3 years; working MVP; 2+ full-time team members; no more than $1M raised; a veteran, active or reserve service member must be a founder or C-level exec and must deliver the pitch; technology must be presentable unclassified.",
+      "documents": [
+        "Online application (details on the application page; contents not stated on the announcement page)",
+        "Pitch deck for a 4-minute virtual pitch if selected"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-agetech-after-dark-ces-2027-aarp-pitch",
@@ -94,6 +138,29 @@
         "Proof of veteran status (DD-214 or equivalent)",
         "Evidence of 2-100 employees and under $5M revenue",
         "Proof the business has traded at least one year"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-blake-family-military-veterans-pitch-competition-clemson-2nd-annual",
+      "source": "curated",
+      "name": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+      "url": "https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/",
+      "agency": "Clemson University Brook T. Smith Launchpad (Blake family gift)",
+      "amount": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500",
+      "summary": "IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered). This is a strong fit: the business can be at idea stage, it is national, and last year's winner was a performance product (ruck-marching socks), so a recovery and readiness wearable is on theme. Vybe qualifies through its veteran owner. The deadline is 16 Oct, 11:59 pm ET.",
+      "open_date": null,
+      "close_date": "2026-10-16",
+      "status": "soon",
+      "days_left": 15,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve, National Guard, a veteran or a military spouse. Up to 10 finalists must travel to Clemson, SC for the live final on 6 Nov 2026.",
+      "documents": [
+        "Idea/business description",
+        "Pitch deck",
+        "Short video"
       ],
       "sam": "none"
     },
@@ -240,6 +307,50 @@
       "sam": "none"
     },
     {
+      "id": "curated-break-the-barrier-national-ai-healthcare-competition-inventacare-x-redes",
+      "source": "curated",
+      "name": "Break the Barrier: National AI Healthcare Competition (Inventacare x Redesign Health)",
+      "url": "https://www.inventacare.com/",
+      "agency": "Inventacare, in partnership with Redesign Health",
+      "amount": "$8,000 cash pool ($5,000 / $2,000 / $1,000, awarded December 2026). Top finalists may also be considered for Redesign Health's 5-week virtual Spark cohort (Q1 2027) and possible $1M+ investment, which would be dilutive.",
+      "summary": "PROMPT IS AI ON HEALTHCARE OPERATIONAL, ADMINISTRATIVE AND CLINICAL-WORKFLOW FRICTION, NOT CONSUMER WELLNESS. Vybe would need to pitch its AI layer, for example turning wearable HRV/ECG data into useful signals for coaches, employers or care teams. Entry is cheap: a written problem statement plus a 3\u20135 minute video or deck, reviewed blind. The cash is small but has no equity attached. The Spark path is an investment track, so read its terms before accepting.",
+      "open_date": null,
+      "close_date": "2026-11-01",
+      "status": "open",
+      "days_left": 31,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Must live in the US or Canada (excluding Quebec) during the competition. The concept cannot have taken formal venture or strategic investment above seed stage; grants, accelerators, angel, pre-seed and seed money are fine. Solo entrants or teams of any skill level. Entrants keep 100% of their IP. Application fee: not stated.",
+      "documents": [
+        "Written problem description (at least one paragraph: who is affected, how severely, what solving it unlocks)",
+        "3\u20135 minute video demo or pitch deck"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-charmhealth-innovation-challenge-and-pitch-competition-2026",
+      "source": "curated",
+      "name": "CharmHealth Innovation Challenge and Pitch Competition (2026)",
+      "url": "https://www.charmhealthchallenge.com",
+      "agency": "CharmHealth (MedicalMine Inc.), Pleasanton CA",
+      "amount": "$10,000 first / $5,000 second / $2,500 third (up to $17,500), plus access to CharmVentures and a listing on the CharmHealthHub marketplace",
+      "summary": "DEADLINE CONFLICT: the official page now says 'Deadline: November 2026' and 'Applications are now being accepted on a rolling basis, until November 2026', but CharmHealth's Feb 23, 2026 press release gave July 31, 2026. Apply this week and email innovate@charmhealth.com to confirm the window and the Pitch Day date. Vybe fits the digital-health brief, and 2025 winners included consumer-facing and AI tools. No equity on the cash prizes. CharmVentures is a separate investment track.",
+      "open_date": null,
+      "close_date": "2026-11-01",
+      "status": "open",
+      "days_left": 31,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Digital health startups, individuals and organisations. CharmHealth's Feb 2026 press release says submission is free of charge. Finalists present a poster in person at Pitch Day during CharmHealth's Charmalot user conference, then audience votes pick 6 for live pitches. The Pitch Day date and location are not stated on the page.",
+      "documents": [
+        "Online submission form on the challenge site (custom form; fields not listed on the page)",
+        "Poster presentation and 10-minute live pitch if selected"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-xcelerate-startup-competition",
       "source": "curated",
       "name": "Xcelerate Startup Competition",
@@ -280,6 +391,28 @@
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-global-deep-tech-battle-ces-2027-healthtech-consumer-electronics-battles",
+      "source": "curated",
+      "name": "Global Deep Tech Battle @ CES 2027 (HealthTech / Consumer Electronics battles)",
+      "url": "https://www.swiss.tech/events/global-deep-tech-battle-ces-2027",
+      "agency": "swisstech (Swiss public-private initiative), at the swisstech Pavilion, Eureka Park, CES Las Vegas",
+      "amount": "$3,000 cash prize per battle, plus visibility",
+      "summary": "YOU PROBABLY NEED TO BE AT CES ALREADY: according to startupticker.ch, the 2026 edition's rules said GDTB does not provide entry tickets and only startups attending the event are eligible. Confirm on the swiss.tech Rules tab. This pairs naturally with any CES 2027 plan (Eureka Park and AgeTech After Dark are already on the board). The prize is small, but a screenless ECG/HRV band fits both the HealthTech and Consumer Electronics battles.",
+      "open_date": null,
+      "close_date": "2026-11-16",
+      "status": "open",
+      "days_left": 46,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Global pitch contest for deep-tech startups in Robotics, HealthTech, CleanTech or Consumer Electronics. Pitches run Jan 7\u20138, 2027 at CES. Other eligibility rules and any fee are not stated on the official event page we read.",
+      "documents": [
+        "Application form on the swiss.tech page",
+        "Pitch built on the organiser's template (per prior-edition rules, to be confirmed)"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-tory-burch-foundation-fellows-2027-program",
@@ -343,6 +476,31 @@
       "sam": "required"
     },
     {
+      "id": "curated-vetcon-2026-business-plan-competition",
+      "source": "curated",
+      "name": "VETCON 2026 Business Plan Competition",
+      "url": "https://www.vetconny.com/business-plan-competition/",
+      "agency": "Tully Rinckey PLLC / Tully Rinckey Foundation (VETCON)",
+      "amount": "$3,000 / $2,000 / $1,000 cash",
+      "summary": "IN-PERSON PITCH IN ALBANY, NY (1\u20132 DEC 2026); the conference is New York State-oriented, but the competition rules do not restrict where the business is based. The prize is small, but entry costs nothing more than an emailed packet, and Vybe meets every rule as a company under 1 year old with a veteran majority owner.",
+      "open_date": null,
+      "close_date": "2026-11-20",
+      "status": "open",
+      "days_left": 50,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "At least one presenting team member must be a veteran. Veteran ownership must be real, substantial and continuing, with independent day-to-day control. The business must be pre-startup or operating 3 years or less. A team member must present in person at VETCON (1\u20132 Dec 2026, Crowne Plaza Desmond, Albany, NY).",
+      "documents": [
+        "Email to bizplan@vetconny.com",
+        "Business name",
+        "Names of owners and branches of service",
+        "DD Form 214 (discharge papers)",
+        "Executive summary, max 4 pages (12-pt, 1.5 spacing): elevator pitch, team, industry/market/competition, growth plan, financial plan with 3-year forecast and use of prize"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
       "source": "curated",
       "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
@@ -381,7 +539,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -526,6 +684,29 @@
       "sam": "required"
     },
     {
+      "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-2-fa2384-24-s-2",
+      "source": "curated",
+      "name": "AFRL 711th Human Performance Wing CHEERS MAA, Open Period 2 (FA2384-24-S-2335), white papers",
+      "url": "https://www.afrl.af.mil/711HPW/711HPW-Opportunities/",
+      "agency": "Air Force Research Laboratory, Human Effectiveness Directorate (RH) and USAF School of Aerospace Medicine, Wright-Patterson AFB, Ohio",
+      "amount": "Not stated per award. The total ceiling for all awards under this Open Period is $499.87M, and cost sharing is not required.",
+      "summary": "SAM IS NOT MENTIONED IN THE OPEN PERIOD 2 TEXT. It will apply at the RFP/award stage (FAR clauses list), so 'later' is an inference and not a quote. This is the in-state DoD door: 711 HPW is at Wright-Patterson AFB about 3 hours from Akron, and its STRONG Lab already runs wearable-based continuous fitness, sleep and recovery monitoring for Airmen and Guardians (including the Space Force Continuous Fitness Assessment). The 'Health & Performance Sensing' line of effort is the hook. White papers are reviewed on a notional 180-day cycle, so this is slow money. Open Period 3 (CSO, FA2384-24-S-2336) is the commercial-solutions sibling. Read the MAA Industry Guide (Ch. 4) for white-paper format before writing.",
+      "open_date": null,
+      "close_date": "2027-09-30",
+      "status": "open",
+      "days_left": 364,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Open to offerors generally; no eligibility restriction is stated in the Open Period 2 text. White papers go by email to AFRL.711HPW.MAA@us.af.mil, and proposals are by invitation only. Efforts must fit 10 U.S.C. 4023 (procurement for experimental/test purposes) and a Technical Area in the CHEERS MAA Statements of Objectives. Some Technical Areas carry temporary moratoria, so check the MAA notice.",
+      "documents": [
+        "White paper per CHEERS MAA Industry Guide, Chapter 4, naming the exact SOO Technical Area",
+        "If invited: technical proposal and cost proposal per RFP",
+        "Representations & certifications at RFP stage (SAM/UEI implied for award)"
+      ],
+      "sam": "later"
+    },
+    {
       "id": "grants.gov-cheers-open-period-1-all-technical-areas-fa238424s2334",
       "source": "grants.gov",
       "name": "CHEERS Open Period 1 - All Technical Areas (FA238424S2334)",
@@ -578,7 +759,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -621,6 +802,31 @@
       "sam": "required"
     },
     {
+      "id": "curated-ussocom-baa-for-extramural-biomedical-and-human-performance-r-d-ht9425-2",
+      "source": "curated",
+      "name": "USSOCOM BAA for Extramural Biomedical and Human Performance R&D (HT9425-23-S-SOC1), Human Performance RAI 7 (Improved Sleep / Wearables)",
+      "url": "https://ebrap.org/eBRAP/public/ViewFile.htm?fileId=20099220&fileType=pdf",
+      "agency": "US Special Operations Command, via Defense Health Agency Contracting Activity (eBRAP / CDMRP tools)",
+      "amount": "Projects 'generally anticipated' at about $2,000,000, with a ceiling of $5,000,000 each. Up to $20M a year across all awards.",
+      "summary": "THE WEARABLES TOPIC ASKS FOR A DEVICE THAT CAN 'PROVIDE REAL-TIME FEEDBACK ON A DISPLAY SCREEN' AND 'DISPLAY TIME'. The Vybe Band is screenless, so pitch under 7a Improved Sleep, 7i Predictors of trainability (HRV and sleep as early indicators) or the 'parallel interest' in unit-level sleep/fatigue tracking, or route feedback to the phone and say so explicitly. Otherwise the fit is unusually close: the topic names HRV, heart rate, deep and REM sleep and real-time Bluetooth transfer. This is research money, so Vybe would need a credible research design and probably an academic partner for the human-subjects work (for example OSU's Human Performance Collaborative, run by an AFRL STRONG Lab scientist). Rolling: pre-proposals are accepted any time until 2028-07-31. It is a separate funding line from the CDMRP CRRP/PRMRP already on the board.",
+      "open_date": null,
+      "close_date": "2028-07-31",
+      "status": "open",
+      "days_left": 669,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Organizations only, including national, international, for-profit, non-profit, public and private (FFRDCs cannot be prime). A pre-proposal through eBRAP is required, and a full proposal is by invitation through Grants.gov. Work must be basic or applied research, not development of a specific system. Human-subjects work needs DoD OHRO review (allow 2\u20133 months), but 'Typically, a clinical trial is not associated with this BAA.'",
+      "documents": [
+        "eBRAP registration for the organization, Business Official and PI",
+        "Pre-proposal / pre-application in eBRAP (format in General Submission Instructions on Grants.gov)",
+        "If invited: full proposal through a Grants.gov Workspace (SF424 package, technical and cost volumes per General Submission Instructions)",
+        "Active SAM.gov registration and UEI before the Grants.gov full submission",
+        "Human-subjects protocol for OHRO/HRPO review if selected"
+      ],
+      "sam": "later"
+    },
+    {
       "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
       "source": "grants.gov",
       "name": "HEAL Initiative: Translating Addiction Epidemiology, Prevention, Treatment, and Recovery Research into Practice (R61/R33 - Clinical Trial Optional) (RFA-DA-27-016)",
@@ -635,9 +841,33 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-arpa-h-proactive-health-office-pho-mission-office-iso-arpa-h-sol-24-106",
+      "source": "curated",
+      "name": "ARPA-H Proactive Health Office (PHO) Mission Office ISO (ARPA-H-SOL-24-106)",
+      "url": "https://arpa-h.gov/explore-funding/open-funding-opportunities",
+      "agency": "Advanced Research Projects Agency for Health (ARPA-H / HHS)",
+      "amount": "Not stated (Other Transaction awards, sized to the project)",
+      "summary": "LONG SHOT: ARPA-H funds ambitious, non-incremental R&D, and a consumer HRV/ECG band alone will read as incremental. The fit is PHO's stated interests: 'population-level approaches to increase adoption of wellness behaviors' and early detection 'prior to the onset of disease'. Pitch the behavior-change engine (adaptive nudges for sleep, movement and recovery driven by HRV), not the hardware. Solution Summaries are rolling, need no SAM and are free to send, so this is a cheap way to get written feedback from ARPA-H. Do NOT confuse this with the ARPA-H REST sleep program: its solution summaries closed 2026-08-12 and are listed under rejected. The SAM.gov notice shows offers due Mar 05, 2029; a university summary lists Mar 3, 2029. Confirm on SAM.gov.",
+      "open_date": null,
+      "close_date": "2029-03-05",
+      "status": "open",
+      "days_left": 886,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "All responsible sources, including for-profit companies. A Solution Summary is required first, and ARPA-H must give written feedback before a full proposal. The idea must fall outside ARPA-H's existing programs. The Mission Offices exclude incremental advances, technology already at the clinical-trial stage, education/training and physical infrastructure. No application fee.",
+      "documents": [
+        "ARPA-H Solutions site account",
+        "Solution Summary on the PHO ISO template (Appendix A)",
+        "If encouraged, a full proposal: technical & management volume, task description, cost proposal narrative and workbook, admin & national policy document",
+        "SAM.gov registration and UEI before the proposal (not before the summary)"
+      ],
+      "sam": "later"
     },
     {
       "id": "grants.gov-sbir-sttr-commercialization-readiness-pilot-crp-program-parent-sb1-cl",
@@ -654,7 +884,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -692,7 +922,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Public and State controlled institutions of higher educa",
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Public and State controlled institutions of higher education; Nonprofi",
       "documents": [],
       "sam": "required"
     },
@@ -1378,6 +1608,29 @@
         "Pitch deck",
         "Proof of <$8M raised and <5 years old",
         "Application during the event cycle"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-halcyon-fellowships-year-round-eligibility-form-us-health-accelerator-tr",
+      "source": "curated",
+      "name": "Halcyon Fellowships \u2014 year-round eligibility form (US Health Accelerator track)",
+      "url": "https://halcyonaccelerator.org/applicants/",
+      "agency": "Halcyon (nonprofit incubator, Washington, DC)",
+      "amount": "The last US Health Accelerator (2026) gave a $6K equity-free stipend per venture and $10K AWS credits, plus two in-person residencies. The next cohort's terms are not stated.",
+      "summary": "MVP AND EARLY VALIDATION (PILOTS/LOIs/REVENUE) WERE REQUIRED FOR THE HEALTH TRACK. ROLLING ONLY AT THE FIRST STAGE: the eligibility form is year-round, but a cohort opens only in multi-week windows. The 2026 US Health window was Apr\u2013May and the 2027 dates are not posted. The only call open now is an Africa agriculture track, which does not fit. File the form now so Vybe is in the pool when the next US Health call opens. Pitch Vybe under 'Health for women' or 'Underserved communities'. Under the 2026 rules each venture could bring at most one co-founder.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "At least MVP stage. Must be an impact-driven for-profit tied to one or more UN SDGs. The 2026 US Health track also required a US base, early validation (pilots, LOIs or revenue), the applicant as CEO/primary decision-maker, age 21+, and full participation.",
+      "documents": [
+        "Short year-round eligibility form",
+        "If invited: second-round application within 2 weeks",
+        "Finalist pitch to selection committee"
       ],
       "sam": "none"
     },
@@ -2307,6 +2560,29 @@
       "sam": "none"
     },
     {
+      "id": "curated-university-of-akron-research-foundation-uarf-i-corps-community-teams-nex",
+      "source": "curated",
+      "name": "University of Akron Research Foundation (UARF) I-Corps \u2014 community teams (next cohort) + Starting Line pre-accelerator",
+      "url": "https://www.uakronuarf.com/i-corps.html",
+      "agency": "University of Akron Research Foundation (affiliate of the NSF Great Lakes Region I-Corps Hub)",
+      "amount": "Free 6-week virtual customer-discovery program (no cash prize). UARF's own LinkedIn post says participants can get up to $1,500 from the NSF Great Lakes Hub for conference travel.",
+      "summary": "The Fall 2026 cohort closed on 6 Sep, but applications are rolling for the next one. It is a five-minute drive from Vybe in Akron, and completing I-Corps strengthens a later NSF SBIR Project Pitch and an NSF I-Corps Teams application. UARF's Starting Line pre-accelerator (https://www.uakronuarf.com/step1.html) is a free 5-step on-ramp that leads into I-Corps, and Vybe can start it today. No money changes hands, so SAM.gov is not needed.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Community teams need at least one entrepreneur as Entrepreneurial Lead, and \"should be based in Northeast Ohio, but need not be affiliated with The University of Akron.\" The team must run at least 21 customer interviews. No fee is stated.",
+      "documents": [
+        "Online I-Corps application (team members, business idea, market and business model)",
+        "Commitment to 6 virtual meetings and 21+ customer interviews",
+        "Optional: Starting Line Step 1 form (status of product/service idea)"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "grants.gov-utilizing-real-world-data-and-algorithmic-analyses-to-assess-post-mar",
       "source": "grants.gov",
       "name": "Utilizing Real-World Data and Algorithmic Analyses to Assess Post-Market Clinical Outcomes in Patients Switching Amongst Therapeutically Equivalent Complex Generic Drug Products and Reference Listed Drugs (U01) Clinical Trial Not Allowed (FOR-FD-24-003)",
@@ -2530,6 +2806,31 @@
         "Company financials and employee count (<=100)"
       ],
       "sam": "required"
+    },
+    {
+      "id": "curated-2027-nia-start-up-challenge-and-accelerator",
+      "source": "curated",
+      "name": "2027 NIA Start-Up Challenge and Accelerator",
+      "url": "https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator",
+      "agency": "National Institute on Aging (NIH / HHS), Office of Strategic Extramural Programs",
+      "amount": "Up to $994,000 total. Up to 21 Stage 1 finalists get $24,000 each plus a free five-month accelerator. Up to 7 Stage 2 winners get $70,000 each (so up to $94,000 per team).",
+      "summary": "SUBMISSIONS DO NOT OPEN UNTIL 2026-12-01; the deadline is 2027-01-15 11:59 pm ET. This is the best federal fit in this lane: healthy aging, aging in place and AI-enabled personalized intervention are named interests, and the program is built for first-time founders. Frame Vybe's HRV/sleep/Move/Connect data around older adults (one in three rural Ohioans is over 60), for example as early-warning wellness trends or support for aging in place, without diagnostic claims. 25 of the 100 Stage 1 points score 'Challenge impact on the submitter', meaning a lack of access to resources and networks, so Vybe's veteran founder and lived experience count here (race and sex may not be scored). Finalists commit 6\u20138 hours a week from June to Nov 2027 and attend two in-person events; registration is covered but travel is not. Register for the 2026-12-03 1 pm ET webinar. There is no SAM gate to enter. A UEI is optional and only speeds up payment.",
+      "open_date": "2026-12-01",
+      "close_date": "2027-01-15",
+      "status": "forecast",
+      "days_left": 106,
+      "days_until_open": 61,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "Individuals, teams or entities aged 18+. A private entity must be incorporated in the US and have its primary place of business there. Individuals must be US citizens or permanent residents. Not open to a PI on an NIH SBIR/STTR award that is active at the close of submissions, or to a finalist from an earlier NIA Start-Up Challenge. Each entrant certifies it has formed, or will form by 2027-11-01, a US-owned small business eligible for NIH SBIR/STTR. No application fee.",
+      "documents": [
+        "Registration as individual, team or entity (a point of contact for an entity)",
+        "Submission narrative covering the evaluation criteria: significance, innovation, commercialization, team, challenge impact on the submitter, and impact on NIA SBIR/STTR R&D",
+        "Statement of how the solution differs from existing commercial products and from NIA-funded SBIR/STTR work (check NIH RePORTER)",
+        "Certification that a SBIR-eligible small business is or will be formed",
+        "If selected: winner verification and payment documents within 3 business days. Stage 2 adds a one-page impact document, a 7-minute pitch video and a meeting with an NIH program officer by 2027-11-01"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-fund-her-future-h-r-block-block-advisors",
