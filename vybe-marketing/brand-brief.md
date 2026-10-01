@@ -61,7 +61,7 @@ supported** → **hypothesis**. Health and science claims need a source.
 | 2 | No required consumer subscription | Site | Product / pricing fact | Site copy, repeated | Approved. Note the site says "required consumer subscription"; IG says "No Subscription". Keep the site's wording where space allows. |
 | 3 | Five connected signals read against your own baseline | Site | Product fact | Site copy | Approved |
 | 4 | Health data never sold, nothing shared without consent | Site | Privacy promise | Site copy; must match the data screen and privacy policy | Approved. Counsel to confirm the privacy policy matches before paid use. |
-| 5 | ECG, HRV and heart rhythm in one continuous record | `/ecosystem` Vitals | Product spec | Site copy | Founder to confirm "continuous" is the shipped behaviour |
+| 5 | ECG, HRV and heart rhythm in one continuous record | `/ecosystem` Vitals | Product spec | Site copy | **Counsel to review.** WHOOP holds an FDA 510(k) clearance for its ECG feature (K243236, Class II, cleared 4 Apr 2025, per the openFDA database). Vybe has no clearance, so "ECG" on a Vybe page must never read as a clinical or diagnostic ECG. Founder to confirm "continuous" is the shipped behaviour. |
 | 6 | Sleep stages, efficiency and recovery, read across every night | `/ecosystem` Restore | Product spec, estimate | Wrist-based sleep staging is an estimate | Approved only with "estimated" where stages are named in long copy or ads |
 | 7 | 30 days of battery | IG post, 25 Sep | Product spec | Not on the site | Founder to confirm before reuse |
 | 8 | "Validated proprietary models for sleep, recovery, HRV, readiness, and behavioral baselines" | `/ecosystem` Algorithm Licensing | Validation claim | No study or method cited on the site | Founder to confirm what "validated" rests on. Until then, do not repeat in ads or press. |
@@ -76,3 +76,41 @@ supported** → **hypothesis**. Health and science claims need a source.
 cause-and-effect statement about a reader's own body; any comparison on price
 or battery against a named competitor; any partnership (HYROX, HYDROX, a
 creator) before it is signed.
+
+## Safe and unsafe claim shapes
+
+From the founder's Activity Mode research (Sep 2026), which reads FDA's
+January 2026 General Wellness guidance. Counsel to confirm before paid use.
+
+**Inside wellness:** "Track heart rate, breathing rate, workout intensity and
+recovery during exercise." "Understand how your heart and breathing respond
+to training." "See how your sleep compares with your own baseline."
+
+**Outside wellness, never write:** detect, diagnose, identify, warn of or
+monitor for any condition (for example respiratory distress, arrhythmia,
+asthma, sleep apnea, cardiopulmonary disease). The same test applies to app
+strings, push notifications and AI answers, not only to the website.
+
+**Unreleased features.** The founder's research describes features and device
+integrations that are not shipped. None of them appears in public copy, ads,
+press or social until it ships and the founder approves the claim. This
+includes any statement that another company's device works with Vybe.
+
+**Data claims.** Consumer health data collected directly by Vybe is usually
+outside HIPAA, but the FTC Act and the FTC Health Breach Notification Rule
+still apply. Do not write "HIPAA-compliant" in consumer copy.
+
+## Evidence library
+
+Checked on PubMed on 1 Oct 2026. Use these for content and claims at the
+support level stated; do not stretch them.
+
+| Study | What it supports | What it does not support |
+|---|---|---|
+| Gardiner et al., *Sleep Med Rev* 2024, systematic review and meta-analysis of 27 studies. [doi:10.1016/j.smrv.2024.102030](https://doi.org/10.1016/j.smrv.2024.102030) | At the population level, alcohol delays REM onset and reduces REM duration, from about two standard drinks, worsening with dose. | That alcohol caused any one reader's bad night or HRV drop. |
+| Altini & Plews, *Sensors* 2021, about 9 million measurements from 28,175 people. [doi:10.3390/s21237932](https://doi.org/10.3390/s21237932) | HRV and resting HR shift with training, alcohol, menstrual-cycle phase and sickness; HRV is sensitive but not specific. The basis for "show competing explanations". | Any single cause for a change in HRV. |
+| Lee et al., *J Clin Sleep Med* 2025, meta-analysis of 24 studies of consumer wrist trackers against polysomnography. [doi:10.5664/jcsm.11460](https://doi.org/10.5664/jcsm.11460) | Wrist sleep trackers differ significantly from lab polysomnography on total sleep time, efficiency, latency and wake after sleep onset; useful for general patterns. | Any accuracy figure for the Vybe band, which was not in the study. |
+
+Marco Altini, first author of the HRV study, is on the Reels program's
+"baseline" follow list (@altini_marco); citing the work in a Reel and
+crediting him is natural and honest.

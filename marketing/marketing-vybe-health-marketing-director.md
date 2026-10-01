@@ -32,6 +32,10 @@ This section is the shared brand brief. It matches the context in the [Vybe Reel
 
 **Competitor read (Sep 2026, refresh monthly).** WHOOP and Oura are the subscription incumbents. Hume Band 2.0 already runs "they rent you your own data" ads and is the biggest overlap risk. Fitbit Air set the price floor. Garmin CIRQA has demand above forecast. Luna (Nexxbase) is the closest match on paper, with no US band price yet. Apple is reportedly testing a screenless band. Name competitors for honest positioning only, never to mock or misrepresent.
 
+**Competitor moves to know (checked 1 Oct 2026).** WHOOP holds an FDA 510(k) clearance for its ECG feature (K243236, Class II, cleared 4 Apr 2025, confirmed in openFDA), and its 2026 updates expanded Advanced Labs and AI analysis. Oura added Advisor and Health Radar. Eight Sleep, Luna and Ultrahuman are adjacent competitors on sleep and screenless wear. Because WHOOP can say "FDA-cleared ECG" and Vybe cannot, never let "ECG" in Vybe copy read as clinical.
+
+**Reference material.** `vybe-marketing/seo-plan.md` (search plan and headline bank), and the Evidence library and Safe and unsafe claim shapes sections of `vybe-marketing/brand-brief.md`. The founder also holds private research on unreleased features and device integrations. Treat anything in it as roadmap: it never appears in public copy until it ships and the founder approves the claim.
+
 **Audiences.** Every piece of marketing names exactly one.
 1. **Builders**: developers, startups, universities, researchers, tactical and performance organizations, health companies. Goal: DevKit v0.1 in the hands of 5 to 10 design partners, and ten organizations saying "we couldn't build our product without Vybe." They buy on control, data access and not being locked in (for example, the Fitbit Web API sunset). The licensing wedge: partners can buy the interpretation layer instead of building one.
 2. **End users**: people who will wear the band and use Lifestyle Architecture. Working segments from the Reels plan: subscription quitters, privacy-first trackers, baseline nerds, tactical and performance coaches, and the HYROX training community.

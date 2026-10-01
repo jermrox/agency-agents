@@ -10,6 +10,7 @@ agent. The Reels program has its own dashboard and lives with the
 | `plan-2026-q4.md` | The quarter's plan, with the week-1 fixes at the top. |
 | `brand-brief.md` | Messaging House and Claim Register. The Claim Register is the gate every piece of copy passes. |
 | `scoreboard.json` | The latest scoreboard as data. The dashboard reads it. |
+| `seo-plan.md` | Search plan: commercial pages, pillar pages, headline bank, and what must be measured before production order is locked. |
 
 ## Dashboard
 
