@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-01T16:59:48+00:00",
+  "generated": "2026-10-01T17:04:26+00:00",
   "as_of": "2026-10-01",
-  "count": 117,
+  "count": 121,
   "source_errors": [
     "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
   ],
@@ -117,6 +117,30 @@
       ]
     },
     {
+      "id": "curated-dow-sbir-sttr-specific-topics-release-6-26-bx-26-bz-26-tx-26-tz",
+      "source": "curated",
+      "name": "DoW SBIR / STTR Specific Topics \u2014 Release 6 (26.BX / 26.BZ / 26.TX / 26.TZ)",
+      "url": "https://afwerx.com/get-funded/",
+      "agency": "Department of the Air Force \u2014 AFWERX / SpaceWERX, via the Defense SBIR/STTR Innovation Portal",
+      "amount": "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken",
+      "summary": "LIVE WINDOW, CLOSES 21 OCT. Eligibility is the same test Vybe already passed for xTech|Search 10, and the 26.BX solicitation family is literally the one xTech's follow-on topic sits in. THE WORK HERE IS NOT WRITING, IT IS READING: these are SPECIFIC topics, not an open topic, so the whole question is whether any Release 6 topic fits a consumer wearable and its interpretation layer without requiring a clinical or diagnostic posture. Open the Release 6 topic list on DSIP first and decide that before drafting anything. If nothing fits, the thing to wait for is an OPEN TOPIC cycle, which takes any dual-use technology \u2014 none is open as of today, and the published schedule shows only Specific Topics and Strategic Breakthrough, the latter needing a prior Phase II. Note Phase I is a three-month feasibility study with a structured curriculum and a kickoff meeting, and it does NOT require an existing DAF customer: finding one is part of the work. Letters of support from government personnel are not required but are read.",
+      "open_date": "2026-09-23",
+      "close_date": "2026-10-21",
+      "status": "soon",
+      "days_left": 20,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "dod_sbir",
+      "eligibility": "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment \u2014 more than 50% \u2014 must be with the small business. All R&D must be performed in the United States. One proposal per solicitation, and you cannot submit under both Air Force and Space Force topics in the same cycle. SAM.gov registration is required before award.",
+      "documents": [
+        "Proposal on the mandatory AFWERX template \u2014 submissions that deviate from it are not evaluated",
+        "SAM.gov registration (required before award, not before submission)",
+        "Phase I work plan: scope, task outline, deliverables, kickoff within 30 days, preliminary and final report",
+        "Cost volume",
+        "Disclosure of any essentially equivalent work funded or pending elsewhere"
+      ]
+    },
+    {
       "id": "curated-cornell-cat-grant",
       "source": "curated",
       "name": "Cornell CAT Grant",
@@ -161,6 +185,27 @@
         "Chosen credential from the eligible list, or a full case for a new one, with the training provider's own documentation",
         "Per-credential training and certification costs, and the reimbursement amount requested (max $1,000 each)",
         "Headcounts of incumbent and prospective employees per credential, with average wages before and after"
+      ]
+    },
+    {
+      "id": "curated-amber-grant-for-women-monthly",
+      "source": "curated",
+      "name": "Amber Grant for Women \u2014 monthly",
+      "url": "https://ambergrantsforwomen.com/",
+      "agency": "WomensNet",
+      "amount": "3 x $10,000 every month, plus annual $25,000 awards",
+      "summary": "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the LAST DAY OF EACH MONTH. One application enters you for the month and for the annual award. Low effort, genuinely repeatable \u2014 apply once and re-enter. DATE ROLLED 1 OCT: this row carried close_date 2026-09-30, so the status derivation published it as `closed` on 1 October \u2014 correct arithmetic, wrong answer, because the programme had simply moved to its next monthly round. A monthly recurring deadline has to be advanced each month until the model carries a recurrence rule; the next roll is due 1 November, to 2026-11-30.",
+      "open_date": null,
+      "close_date": "2026-10-31",
+      "status": "soon",
+      "days_left": 30,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Women-owned businesses. $15 non-refundable application fee.",
+      "documents": [
+        "Short online application describing the business and use of funds",
+        "$15 application fee"
       ]
     },
     {
@@ -396,7 +441,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -414,7 +459,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -453,7 +498,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -561,7 +606,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -597,7 +642,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": []
     },
     {
@@ -615,7 +660,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Nonprofi",
+      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Privat",
       "documents": []
     },
     {
@@ -1738,6 +1783,71 @@
       ]
     },
     {
+      "id": "curated-ohio-centers-of-excellence-jumpstart-backed-by-ohio-third-frontier",
+      "source": "curated",
+      "name": "Ohio Centers of Excellence (JumpStart, backed by Ohio Third Frontier)",
+      "url": "https://jumpstartinc.org/coe",
+      "agency": "JumpStart Inc. and the Ohio Third Frontier",
+      "amount": "No cash directly \u2014 a free, rolling intake that connects Ohio founders to advisors and to the state's non-dilutive funding programmes",
+      "summary": "THE FRONT DOOR TO THE OHIO SYSTEM, AND THE ANSWER TO THE TVSF PROBLEM ON THIS BOARD. The Technology Validation and Start-up Fund's $200,000 is blocked for Vybe because the technology must be licensed from an Ohio research institution \u2014 and this network is how that introduction happens rather than something to arrange alone. Its named Regional Startup Ambassadors include Bounce Innovation Hub (Akron, already on this board via Kinetic) and GLIDE at Lorain County Community College (which administers the Innovation Fund, also on this board), so three rows here are one system. Intake is a short form: say what you are working on and they route you to an Ambassador. No cash, no fee, no equity, no deadline \u2014 which is exactly why it is worth an hour this week rather than a week next quarter. NOT TO BE CONFUSED with JumpStart's Trailblazer HealthTech Accelerator, which carries $50,000 of covered services but is CLOSED to applications today and scores candidates on their likelihood of raising venture capital within 12 months.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "Ohio tech founders; the network states its doors are open to entrepreneurs from anywhere in the state. Five sector centres: HealthTech, Software, Advanced Manufacturing, Advanced Materials and Advanced Energy. No ownership, revenue or stage gate published.",
+      "documents": [
+        "Short intake form describing the company and what you need",
+        "A clear statement of which sector centre fits \u2014 HealthTech, for Vybe"
+      ]
+    },
+    {
+      "id": "curated-ohio-mbda-business-center",
+      "source": "curated",
+      "name": "Ohio MBDA Business Center",
+      "url": "https://www.mbda.gov/business-center/ohio-mbda-business-center",
+      "agency": "U.S. Department of Commerce, Minority Business Development Agency \u2014 operated in Ohio by the Economic Growth Foundation",
+      "amount": "No cash \u2014 free business consulting, capital sourcing, grant and loan identification and packaging, contract opportunity sourcing and matchmaking",
+      "summary": "FREE, FEDERAL, AND VYBE'S OWNERSHIP ALREADY CLEARS IT \u2014 minority-owned 51%+ was confirmed on 20 Sep. The useful service for a company at Vybe's stage is the one in the middle of their list: grant identification and packaging, which is a trained person reading the same board this repo maintains and arguing with it. The Ohio centre is in Cleveland, about 40 miles from Akron. ONE CAVEAT, STATED BY THE NETWORK ITSELF: target clients are firms with $1M+ revenue, firms in high-growth industries (health care is named outright) or firms with rapid growth potential, and the programme says start-ups and micro firms will be served 'via strategic partnership referrals or electronic service delivery' rather than a dedicated consultant. So Vybe qualifies on industry and growth potential but may be routed to a partner rather than staffed directly. Ask which, up front, rather than assuming.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "A Minority Business Enterprise as 15 C.F.R. 1400.1 defines it: more than 50% owned OR controlled by African Americans, Hispanic Americans, Asian and Pacific Islander Americans, Native Americans, Asian Indians or Hasidic Jews, who are US citizens or lawfully admitted permanent residents. No state residency test and no minimum time in business.",
+      "documents": [
+        "Client engagement and intake forms",
+        "Evidence of minority ownership or control",
+        "A specific ask \u2014 the intake form has a services checkbox including Grants and Financing"
+      ]
+    },
+    {
+      "id": "curated-ohio-minority-business-assistance-centers-mbac",
+      "source": "curated",
+      "name": "Ohio Minority Business Assistance Centers (MBAC)",
+      "url": "https://development.ohio.gov/business/minority-business/mbac/minority-business-assistance-centers",
+      "agency": "Ohio Department of Development \u2014 Minority Business Development Division",
+      "amount": "No cash \u2014 free counselling, loan packaging, certification help, procurement and bidding assistance",
+      "summary": "FREE AND EXPLICITLY OPEN TO STARTUPS, which is where it beats the federal MBDA centre \u2014 but read the two extra gates. Ohio's MBE definition requires the owner to be an Ohio RESIDENT and to have held the ownership for MORE THAN A YEAR, neither of which the federal 15 C.F.R. definition asks for. Vybe is under a year in business, so formal Ohio MBE certification is likely a 2027 conversation even though the counselling itself is open now to startups and to socially and economically disadvantaged businesses. The real prize behind the certification is Ohio's 15% MBE set-aside on state contracts, which is a revenue path rather than a grant \u2014 worth knowing exists, and worth the free appointment to find out exactly when the clock starts. No cost, no application window; you book a counsellor.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 3,
+      "kind": "partnership",
+      "eligibility": "GATE IS TIGHTER THAN THE FEDERAL ONE. Ohio defines an MBE as a business at least 51% owned and controlled FOR MORE THAN A YEAR by an OHIO RESIDENT who is a US citizen and a member of one of four groups: African American, Asian, Hispanic or Native American. The Centers also serve certified EDGE businesses, socially and economically disadvantaged businesses, and startups generally.",
+      "documents": [
+        "No-cost appointment booked through the Division",
+        "Ownership documents showing 51%+ and how long it has been held",
+        "Ohio residency evidence for the qualifying owner, if pursuing certification"
+      ]
+    },
+    {
       "id": "curated-ohio-third-frontier-tvsf-phase-2-start-up-fund",
       "source": "curated",
       "name": "Ohio Third Frontier TVSF Phase 2 \u2014 Start-Up Fund",
@@ -2134,8 +2244,8 @@
       "name": "Veterans Business Battle (Rice University)",
       "url": "https://business.rice.edu/veterans-business-battle",
       "agency": "Rice Business Veterans Association and Entrepreneurs' Organization of Houston",
-      "amount": "$30,000 in non-dilutive prize money split between the top three, plus pitching to investors who earmark capital for the event",
-      "summary": "The largest veteran-only business competition in the country: more than $10M in investment offers extended since 2015, and the prize money is non-dilutive. NO CLOSE DATE IS POSTED for the 13th annual competition, so this row carries none. The published 2026 cycle is the thing to act on: early applications opened 2 Sep and closed 10 Nov, regular applications ran 11 Nov to 31 Jan, finalists were picked in February and the event was 8-9 Apr. On that pattern the 2027 early window is open now or opens shortly \u2014 check the Rice page and the YouNoodle portal in early October rather than waiting for January. Note the event charges spectators, not applicants.",
+      "amount": "Non-dilutive prize money to the top three plus investor offers \u2014 the competition reports more than $10M of investment extended since 2015. THE EXACT PRIZE AMOUNT IS NOT PUBLISHED on the competition page today, so this row states no figure.",
+      "summary": "CORRECTED 1 OCT, AND THE CORRECTION IS AGAINST THIS BOARD'S OWN ROW. Re-read on the date the 28 Sep note said to re-read it. Rice's page today still advertises the 12TH ANNUAL competition, 8-9 April 2026, and states 'Applications to compete are closed as of January 31, 2026'. It still lists the 2025 winners. So: there is no 2027 cycle posted, the '13th annual' this row claimed was an extrapolation rather than something Rice published, and the $30,000-split figure is not on the page either. What IS supported: the largest veteran-only business competition in the country, more than $10M of investment extended since 2015, free to apply, and a two-day in-person final in Houston. The pattern to watch, from the published 2026 cycle, is early applications in the autumn and a late-January close \u2014 so check again in November. Three veteran-founded winners in 2025 across health tech, agriculture and consumer hardware, so the judges are not sector-bound.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -2327,34 +2437,13 @@
       ]
     },
     {
-      "id": "curated-amber-grant-for-women-monthly",
-      "source": "curated",
-      "name": "Amber Grant for Women \u2014 monthly",
-      "url": "https://ambergrantsforwomen.com/",
-      "agency": "WomensNet",
-      "amount": "3 x $10,000 every month, plus annual $25,000 awards",
-      "summary": "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the last day of each month. One application enters you for the month and for the annual award. Low effort, genuinely repeatable \u2014 apply once and re-enter.",
-      "open_date": null,
-      "close_date": "2026-09-30",
-      "status": "closed",
-      "days_left": -1,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Women-owned businesses. $15 non-refundable application fee.",
-      "documents": [
-        "Short online application describing the business and use of funds",
-        "$15 application fee"
-      ]
-    },
-    {
       "id": "curated-buckeye-state-credit-union-small-business-recovery-grant",
       "source": "curated",
       "name": "Buckeye State Credit Union Small Business Recovery Grant",
       "url": "https://www.buckeyecu.org/small-business-recovery-grant/",
       "agency": "Buckeye State Credit Union \u2014 CDFI Equitable Recovery Program",
       "amount": "$200,000 / $150,000 / $125,000 \u2014 three grants, $475,000 total",
-      "summary": "CLOSES 30 SEP \u2014 six days out, and the largest per-winner cheque anywhere on this board by a wide margin. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments.",
+      "summary": "CLOSED 30 SEP 2026, and kept on the board for the record: it was the largest per-winner cheque anywhere here by a wide margin, so it is worth recognising if the credit union runs the programme again. A credit union rather than a foundation, funded from its own CDFI Equitable Recovery award, which is why the money is this size and this obscure. The two real gates are the two-year trading floor and a credible case that the funds serve an LMI or underserved population; the Akron priority is a tiebreak, not a bar. Applications are emailed to grantsupport@buckeyecu.org rather than submitted through a portal, so leave time for the attachments.",
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "closed",
