@@ -107,5 +107,5 @@ submissions are stored.
 
 ## Next scoreboard
 
-Pull the same tables on Mon 6 Oct after the key-event fix and the geo fix, and
+Pull the same tables on Mon 5 Oct after the key-event fix and the geo fix, and
 record the first clean week as the baseline for Q4 targets.

@@ -90,6 +90,18 @@ if want_rev; then
   fi
 fi
 
+# The Vybe marketing scoreboard feed. dashboards/vybe-marketing-dashboard.html
+# fetches /vybe-marketing.json and falls back to the copy built into the page,
+# so a missing feed must not fail the build either.
+MARKETING_FEED="vybe-marketing/scoreboard.json"
+if want_rev; then
+  if [ -f "$MARKETING_FEED" ]; then
+    cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
+  else
+    echo "note: $MARKETING_FEED not present; the marketing dashboard will use its built-in copy."
+  fi
+fi
+
 # Any other standalone dashboard still gets a URL on the rev site.
 if want_rev && [ -d "dashboards" ]; then
   for f in dashboards/*.html; do

@@ -9,6 +9,32 @@ agent. The Reels program has its own dashboard and lives with the
 | `scoreboard-YYYY-MM-DD.md` | A dated scoreboard pulled from the connected sources. One per pull; the newest is current. |
 | `plan-2026-q4.md` | The quarter's plan, with the week-1 fixes at the top. |
 | `brand-brief.md` | Messaging House and Claim Register. The Claim Register is the gate every piece of copy passes. |
+| `scoreboard.json` | The latest scoreboard as data. The dashboard reads it. |
+
+## Dashboard
+
+[`dashboards/vybe-marketing-dashboard.html`](../dashboards/vybe-marketing-dashboard.html)
+is published by the agentrevup Netlify site at
+`https://agentrevup.netlify.app/vybe-marketing-dashboard.html`. The build
+(`scripts/build-netlify-site.sh`) copies `scoreboard.json` to
+`/vybe-marketing.json`; the page fetches it and falls back to the copy built
+into the page if the feed is missing. When the feed changes, also re-embed it
+in the page so both stay identical:
+
+```
+python3 - <<'PY'
+import re
+p = "dashboards/vybe-marketing-dashboard.html"
+h = open(p).read()
+feed = open("vybe-marketing/scoreboard.json").read().replace("</", "<\\/")
+h = re.sub(r'(<script type="application/json" id="fallback">).*?(</script>)',
+           lambda m: m.group(1) + feed + m.group(2), h, flags=re.S)
+open(p, "w").write(h)
+PY
+```
+
+The repository and the Netlify URL are public. The page carries `noindex`,
+which keeps it out of search results but does not make it private.
 
 ## Data sources
 
@@ -30,5 +56,7 @@ Nothing in these files is typed from memory.
 ## Refreshing the scoreboard
 
 Ask the Marketing Director agent to "pull the scoreboard". It reads GA4
-(channels, countries, pages, events), Search Console (queries, pages),
-Instagram (profile, media, insights) and writes a new dated file here.
+(channels, countries, daily sessions, pages, events), Search Console (queries,
+pages), Instagram (profile, media, per-post insights) and writes a new dated
+`scoreboard-YYYY-MM-DD.md`, rewrites `scoreboard.json`, and re-embeds it in the
+dashboard. A weekly routine does this every Monday morning.
