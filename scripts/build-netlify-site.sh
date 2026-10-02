@@ -15,6 +15,7 @@
 #
 #   agentresearchsum -> the H2F tactical research board (Squarespace embed)
 #   agentrevup       -> the Vybe funding tracker (growth/revenue)
+#   agentmarksom     -> the Vybe Health Marketing Director's hub and scoreboard
 #   anything else    -> everything, which is what you want locally
 #
 # Override with SITE_TARGET=rev when testing another site's output by hand.
@@ -44,6 +45,7 @@ RAW_TARGET="${SITE_TARGET:-${SITE_NAME:-all}}"
 case "$RAW_TARGET" in
   agentresearchsum|research|researchsum) TARGET="research" ;;
   agentrevup|rev|revup)                  TARGET="rev" ;;
+  agentmarksom|marksom)                  TARGET="marksom" ;;
   *)                                     TARGET="all" ;;
 esac
 echo "Building for target: $TARGET (from '${RAW_TARGET}')"
@@ -53,6 +55,7 @@ mkdir -p "$OUT"
 
 want_research() { [ "$TARGET" = "research" ] || [ "$TARGET" = "all" ]; }
 want_rev()      { [ "$TARGET" = "rev" ]      || [ "$TARGET" = "all" ]; }
+want_marksom()  { [ "$TARGET" = "marksom" ]  || [ "$TARGET" = "all" ]; }
 
 # ------------------------------------------------------------------ boards ---
 if want_research; then
@@ -110,6 +113,30 @@ if want_rev && [ -d "dashboards" ]; then
   done
 fi
 
+# ----------------------------------------------------------------- marksom ---
+# agentmarksom is the Vybe Health Marketing Director's own site: the agent hub
+# (audiences, targets, targeting playbook, eval scores) at "/", and the weekly
+# scoreboard at /scoreboard.html. Both read JSON feeds published alongside them
+# and fall back to the copies embedded in each page.
+MARKSOM_HUB="vybe-marketing/hub/index.html"
+MARKSOM_FEED="vybe-marketing/marksom.json"
+if want_marksom && [ ! -f "$MARKSOM_HUB" ]; then
+  if [ "$TARGET" = "marksom" ]; then
+    echo "error: $MARKSOM_HUB is missing; nothing to publish for the marksom site." >&2
+    exit 1
+  fi
+  echo "note: $MARKSOM_HUB not built yet; skipping the marksom hub."
+elif want_marksom; then
+  if [ "$TARGET" = "marksom" ]; then
+    cp -f "$MARKSOM_HUB" "$OUT/index.html"
+  else
+    cp -f "$MARKSOM_HUB" "$OUT/marksom.html"
+  fi
+  [ -f "$MARKSOM_FEED" ] && cp -f "$MARKSOM_FEED" "$OUT/marksom.json"
+  [ -f "dashboards/vybe-marketing-dashboard.html" ] && cp -f "dashboards/vybe-marketing-dashboard.html" "$OUT/scoreboard.html"
+  [ -f "$MARKETING_FEED" ] && cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
+fi
+
 # ---------------------------------------------------------------- Tailwind ---
 # Only the research site's index uses the Tailwind shell, so only build it there.
 TW_MODE="none"
@@ -152,6 +179,8 @@ esac
 # tracker, shipped as-is because it carries its own chrome.
 if [ "$TARGET" = "rev" ]; then
   cp -f "$SRC_FUNDING" "$OUT/index.html"
+elif [ "$TARGET" = "marksom" ]; then
+  : # index.html is the marksom hub, written above
 else
   {
     # everything up to and including the board's <style> block
