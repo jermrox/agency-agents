@@ -1,8 +1,134 @@
 {
   "version": 2,
-  "generated_at": "2026-10-01T19:31:08.629938+00:00",
-  "count": 705,
+  "generated_at": "2026-10-02T07:30:20.586716+00:00",
+  "count": 699,
   "jobs": [
+    {
+      "id": "f8bdfb5776cd7c82d20a",
+      "fingerprint": "0e121ed42b57037311c0",
+      "source": "jsonld:serco",
+      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35300EXTERNALENUS/H2Fit-Strength-Conditioning-Coach-Fort-Riley-KS",
+      "title": "H2Fit: Strength & Conditioning Coach - Fort Riley, KS",
+      "employer": "Serco USA",
+      "location": "Fort Riley, Kansas, USA; Kansas, USA",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. The Strength and Conditioning Coach (SCC) is a pivotal member of the H2F Performance Teams, dedicated to developing, implementing, and overseeing strength and conditioning programs\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": "Fort Riley",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "strength-conditioning",
+        "discipline_label": "Strength & Conditioning",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Kansas"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": null,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-02T07:30:20.586716+00:00"
+    },
+    {
+      "id": "9aa195899520c34165f4",
+      "fingerprint": "b24946383543edf81066",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/885828200",
+      "title": "Physical Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Fort Leonard Wood, Missouri",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$100,167 - $130,219 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 100167.0,
+        "salary_max": 130219.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Leonard Wood",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Missouri"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 100167.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-02T07:30:20.586716+00:00"
+    },
     {
       "id": "cddc4f09fbefa35ccafa",
       "fingerprint": "9a7175d844512b523ce0",
@@ -1187,71 +1313,6 @@
         "location_regions": {
           "conus": [
             "Arizona"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-30T07:25:14.429628+00:00"
-    },
-    {
-      "id": "4140032b9a9538dacc6e",
-      "fingerprint": "5422dd2bdde5a87cab11",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35161EXTERNALENUS/H2FIT-Strength-and-Conditioning-Coach-Fort-Campbell-KY",
-      "title": "H2FIT: Strength and Conditioning Coach - Fort Campbell, KY",
-      "employer": "Serco USA",
-      "location": "Fort Campbell, Kentucky, USA; Kentucky, USA; Nashville, Tennessee, USA; Tennessee, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. The Strength and Conditioning Coach (SCC) is a pivotal member of the H2F Performance Teams, dedicated to developing, implementing, and overseeing strength and conditioning programs\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": "Fort Campbell",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Kentucky",
-            "Tennessee"
           ]
         },
         "contingency": "unknown",
@@ -40021,68 +40082,6 @@
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
     },
     {
-      "id": "7a33bcf6b0c7c7ad4041",
-      "fingerprint": "22171f05d51a79ecaf41",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35298EXTERNALENUS/H2F-Cognitive-Performance-Specialist-Fort-Sill-OK",
-      "title": "H2F: Cognitive Performance Specialist - Fort Sill, OK",
-      "employer": "Serco USA",
-      "location": "Fort Sill, Oklahoma, USA; Oklahoma, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Sill",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Oklahoma"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "814654a7692c25243eec",
       "fingerprint": "98ec388fb34d37aabf82",
       "source": "jsonld:serco",
@@ -40128,68 +40127,6 @@
         "location_regions": {
           "conus": [
             "Missouri"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "b4b07e9102ad0e63c837",
-      "fingerprint": "8431e156005f75cc1b7c",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35274EXTERNALENUS/H2FIT-Cognitive-Performance-Specialist-Fort-Benning-GA",
-      "title": "H2FIT: Cognitive Performance Specialist - Fort Benning, GA",
-      "employer": "Serco USA",
-      "location": "Fort Benning, Georgia, USA; Georgia, USA; Columbus, Georgia, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Benning",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Georgia"
           ]
         },
         "contingency": "unknown",
@@ -40394,70 +40331,6 @@
       },
       "confidence": "listed",
       "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "aeda25de72965facc403",
-      "fingerprint": "99a23adfe5709bc93f0a",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35292EXTERNALENUS/H2F-Strength-Conditioning-Coach-Fort-Lee-VA",
-      "title": "H2F: Strength & Conditioning Coach - Fort Lee, VA",
-      "employer": "Serco USA",
-      "location": "Fort Lee, Virginia, USA; Virginia, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. The Strength and Conditioning Coach (SCC) is a pivotal member of the H2F Performance Teams, dedicated to developing, implementing, and overseeing strength and conditioning programs\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": "Fort Lee",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Virginia"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
       "notes": "",
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
@@ -41293,68 +41166,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "22f35284e6473010fa5b",
-      "fingerprint": "3ee8f48705b04f3eb095",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885327200",
-      "title": "Sports Specialist (Fitness)",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Portsmouth, Virginia",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$19.50 - $21.00 /hr",
-      "posted_at": null,
-      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: Ability to competently and independently carry out fitness programs through the proper application of principles, concepts\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 19.5,
-        "salary_max": 21.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Virginia"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 40560.0,
-        "mwr": true
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "0923061b2e30be0be8b6",
       "fingerprint": "16ff527a24d8c00fb464",
       "source": "usajobs:federal",
@@ -41528,70 +41339,6 @@
         "location_regions": {
           "conus": [
             "New York"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-14T19:09:44.275307+00:00"
-    },
-    {
-      "id": "52e2cac28a5d8d8fec3a",
-      "fingerprint": "9cbe612ddf9250667dda",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35280EXTERNALENUS/H2Fit-Strength-Conditioning-Coach-Schofield-Barracks-HI",
-      "title": "H2Fit: Strength & Conditioning Coach - Schofield Barracks, HI",
-      "employer": "Serco USA",
-      "location": "Hawaii, USA; Schofield Barracks, Hawaii, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. The Strength and Conditioning Coach (SCC) is a pivotal member of the H2F Performance Teams, dedicated to developing, implementing, and overseeing strength and conditioning programs\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": "Schofield Barracks",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Hawaii"
           ]
         },
         "contingency": "unknown",
@@ -41926,10 +41673,10 @@
     },
     {
       "id": "92ea98c767f4332bb0d2",
-      "fingerprint": "32fec078fca05b119fe8",
+      "fingerprint": "36edb8332ec6228901e8",
       "source": "usajobs:federal",
       "url": "https://www.usajobs.gov:443/job/884034100",
-      "title": "MWR Sports Specialist",
+      "title": "MWR Fitness Instructor",
       "employer": "Commander, Navy Installations Command",
       "location": "Lemoore, California",
       "remote": false,
@@ -42048,7 +41795,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-01T19:30:58+00:00"
+        "checked_at": "2026-10-02T07:30:11+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -42426,68 +42173,6 @@
       "listed_at": "2026-09-02T21:31:54.656342+00:00"
     },
     {
-      "id": "53bf0bc295a71b8ec575",
-      "fingerprint": "5aa82b34eef3b43cf460",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/883204100",
-      "title": "Occupational Therapist (Holistic Health and Fitness)",
-      "employer": "U.S. Army Forces Command",
-      "location": "Fort Stewart, Georgia",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$89,508 - $116,362 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 89508.0,
-        "salary_max": 116362.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": "Fort Stewart",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Georgia"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 89508.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-02T21:31:54.656342+00:00"
-    },
-    {
       "id": "a96594c68a177a08ed6c",
       "fingerprint": "ad9776a129b1bd35f23b",
       "source": "workday:geneva",
@@ -42726,70 +42411,6 @@
         "location_regions": {
           "conus": [
             "Missouri"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T18:21:50.115879+00:00"
-    },
-    {
-      "id": "6c3ed52b0ff65da775c9",
-      "fingerprint": "8e693a2e599603c00c74",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS33523EXTERNALENUS/H2FIT-Strength-Conditioning-Coach-Camp-Casey-Korea",
-      "title": "H2FIT: Strength & Conditioning Coach - Camp Casey, Korea",
-      "employer": "Serco USA",
-      "location": "Camp Casey, KOR",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications Do you have a passion for health and fitness? Join our team and transform Soldier performance and readiness as part of the Army\u2019s elite Holistic Health and Fitness (H2F) program. The Strength and Conditioning Coach (SCC) is a pivotal member of the H2F Performance Teams, dedicated to developing, implementing, and overseeing strength and conditioning programs\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 3,
-        "employment_type": "Full-time",
-        "installation": null,
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "strength-conditioning",
-        "discipline_label": "Strength & Conditioning",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "South Korea"
           ]
         },
         "contingency": "unknown",

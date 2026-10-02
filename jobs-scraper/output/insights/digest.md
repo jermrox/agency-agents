@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-01.*
+*Briefing generated 2026-10-02.*
 
 ## Headline
 
-- **763 open jobs** from **42 employers**.
+- **764 open jobs** from **42 employers**.
 - Posted between **2025-12-03** and **2026-10-01**.
-- **$81,505 median** annualized pay across the 231 postings that publish one -- $62,200 to $109,426 covers the middle half.
+- **$80,752 median** annualized pay across the 232 postings that publish one -- $62,000 to $109,140 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 523 of 1,286 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 721, Special Operations 367, Fire / EMS / Law Enforcement 49, Training Pipeline 42.
+- 525 of 1,289 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 722, Special Operations 367, Fire / EMS / Law Enforcement 49, Training Pipeline 42.
 
 ## Month over month
 
-Postings are **down -546** in 2026-10 (552 to 6), 99% against 2026-09.
+Postings are **down -547** in 2026-10 (553 to 6), 99% against 2026-09.
 
 ```
 2025-12     1  #
@@ -25,7 +25,7 @@ Postings are **down -546** in 2026-10 (552 to 6), 99% against 2026-09.
 2026-06    11  #
 2026-07    19  #
 2026-08   100  #####
-2026-09   552  ############################
+2026-09   553  ############################
 2026-10     6  #
 ```
 
@@ -34,7 +34,7 @@ Postings are **down -546** in 2026-10 (552 to 6), 99% against 2026-09.
 - Loyal Source: 0 to 316
 - Serco USA: 0 to 35
 - LMR Technical Group: 10 to 44
-- Commander, Navy Installations Command: 0 to 32
+- Commander, Navy Installations Command: 0 to 33
 - KBR: 4 to 35
 
 **Credentials appearing more often:**
@@ -54,8 +54,8 @@ Postings are **down -546** in 2026-10 (552 to 6), 99% against 2026-09.
 | LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
 | Serco USA | 35 | - | Strength & Conditioning, Cognitive Performance |
 | Reef Systems | 34 | $535,360 | Sports Medicine, Strength & Conditioning |
+| Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
 | Planned Systems International | 33 | $66,345 | Sports Medicine, Strength & Conditioning |
-| Commander, Navy Installations Command | 32 | $47,138 | Sports Medicine, Program Leadership |
 | General Dynamics Information Technology | 28 | $98,738 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 25 | $139,436 | - |
 | Resolution Think | 25 | $63,560 | Sports Medicine, Strength & Conditioning |
@@ -93,7 +93,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$81,505**, middle half $62,200 to $109,426.
+- Median **$80,752**, middle half $62,000 to $109,140.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -111,7 +111,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (74), NC (61), CA (57), GA (43), TX (41), NM (36), VA (33), KY (23), CO (22), HI (21)
+**States:** FL (74), NC (61), CA (58), GA (43), TX (41), NM (36), VA (33), KY (23), CO (22), HI (21)
 
 | Installation | Jobs |
 |---|---|
@@ -126,7 +126,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Drum | 8 |
 | Fort Sill | 8 |
 
-**Branches and services:** Joint (267), Army (178), Air Force (98), Navy (37), Marine Corps (23), Space Force (4), Coast Guard (3)
+**Branches and services:** Joint (267), Army (178), Air Force (98), Navy (38), Marine Corps (23), Space Force (4), Coast Guard (3)
 
 ## Most common titles
 

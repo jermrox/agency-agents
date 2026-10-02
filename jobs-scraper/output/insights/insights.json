@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-01T19:31:09.291485+00:00",
+  "generated_at": "2026-10-02T07:30:21.239118+00:00",
   "totals": {
-    "postings": 1286,
+    "postings": 1289,
     "employers": 42,
-    "unique_jobs": 763,
-    "with_salary": 231,
+    "unique_jobs": 764,
+    "with_salary": 232,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
       "latest": "2026-10-01T13:15:02.473000+00:00"
@@ -75,6 +75,18 @@
       "median_salary": 535360.0
     },
     {
+      "name": "Commander, Navy Installations Command",
+      "count": 33,
+      "disciplines": [
+        "sports-medicine",
+        "leadership",
+        "research",
+        "strength-conditioning",
+        "nutrition"
+      ],
+      "median_salary": 47840.0
+    },
+    {
       "name": "Planned Systems International",
       "count": 33,
       "disciplines": [
@@ -84,18 +96,6 @@
         "research"
       ],
       "median_salary": 66345.0
-    },
-    {
-      "name": "Commander, Navy Installations Command",
-      "count": 32,
-      "disciplines": [
-        "sports-medicine",
-        "leadership",
-        "research",
-        "strength-conditioning",
-        "nutrition"
-      ],
-      "median_salary": 47137.75
     },
     {
       "name": "General Dynamics Information Technology",
@@ -233,23 +233,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 721,
-      "share": 0.9575
+      "count": 722,
+      "share": 0.9576
     },
     {
       "name": "sof",
       "count": 367,
-      "share": 0.4874
+      "share": 0.4867
     },
     {
       "name": "first-responder",
       "count": 49,
-      "share": 0.0651
+      "share": 0.065
     },
     {
       "name": "training-pipeline",
       "count": 42,
-      "share": 0.0558
+      "share": 0.0557
     }
   ],
   "by_branch": [
@@ -267,7 +267,7 @@
     },
     {
       "name": "Navy",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Marine Corps",
@@ -355,7 +355,7 @@
     },
     {
       "code": "CA",
-      "count": 57
+      "count": 58
     },
     {
       "code": "GA",
@@ -462,12 +462,12 @@
     }
   ],
   "salary": {
-    "count": 231,
+    "count": 232,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 81504.8,
-    "p25": 62200.25,
-    "p75": 109426.5,
+    "median": 80752.4,
+    "p25": 62000.38,
+    "p75": 109139.75,
     "by_discipline": {
       "strength-conditioning": {
         "count": 61,
@@ -570,7 +570,7 @@
     },
     {
       "month": "2026-09",
-      "count": 552
+      "count": 553
     },
     {
       "month": "2026-10",
@@ -601,9 +601,9 @@
       },
       {
         "name": "Commander, Navy Installations Command",
-        "recent": 32,
+        "recent": 33,
         "previous": 0,
-        "change": 32
+        "change": 33
       },
       {
         "name": "KBR",
