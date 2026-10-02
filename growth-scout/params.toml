@@ -186,3 +186,6 @@ max_follow_ups = 1
 follow_up_after_days = [5, 7]
 open_channels = ["Instagram", "Facebook"]       # confirmed by the founder
 pending_channels = ["LinkedIn", "X", "email"]  # list targets; flag until confirmed
+# Openers that say Vybe is veteran-, woman- or minority-owned stay out of
+# "Send today" and carry a warning until the founder approves that story.
+founder_identity_approved = false

@@ -223,12 +223,13 @@ const DATA = /*__DATA__*/null;
     return `<span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span>` +
       `<span class="pill hunt">${esc(t.hunt)}</span><span class="pill">${esc(TYPE_LABEL[t.type] || t.type)}</span>` +
       (d !== null && d >= 0 ? `<span class="pill due">Due in ${d}d</span>` : "") +
-      (t.confidence === "single-source" ? `<span class="pill">single source</span>` : "");
+      (t.confidence === "single-source" ? `<span class="pill">single source</span>` : "") +
+      (t.identity_needs_ok ? `<span class="pill due" title="The opener says Vybe is veteran-, woman- or minority-owned. Founder approval needed before sending.">Founder identity: needs OK</span>` : "");
   };
   const statusSel = (t) => `<select class="status" data-id="${esc(t.id)}" aria-label="Status for ${esc(t.name)}">${STATUSES.map((x) => `<option${x === statusOf(t) ? " selected" : ""}>${x}</option>`).join("")}</select>`;
 
   // Send today
-  const ready = T.filter((t) => !["signal","competitor-deal"].includes(t.type) && safeUrl(t.contact_url) && t.opener && !["Passed","Dead"].includes(statusOf(t))).slice(0, 10);
+  const ready = T.filter((t) => !["signal","competitor-deal"].includes(t.type) && safeUrl(t.contact_url) && t.opener && !t.identity_needs_ok && !["Passed","Dead"].includes(statusOf(t))).slice(0, 10);
   $("#cards").innerHTML = ready.length ? ready.map((t) => `
     <article class="card">
       <div class="row">${pills(t)}</div>
@@ -292,7 +293,7 @@ const DATA = /*__DATA__*/null;
         <td style="min-width:160px">${esc(t.why_now || "—")}</td>
         <td>${safeUrl(t.contact_url) ? `<a href="${esc(t.contact_url)}" target="_blank" rel="noopener">${esc(t.channel || "link")}</a>` : esc(t.channel || "—")}</td>
         <td class="num">${esc(t.fit)}</td>
-        <td><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span></td>
+        <td><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span>${t.identity_needs_ok ? ' <span class="pill due" title="Opener uses the founder-identity story; needs approval">identity: needs OK</span>' : ""}</td>
         <td>${statusSel(t)}</td>
       </tr>${open.has(t.id) ? detail(t) : ""}`).join("") : '<tr><td colspan="9" class="empty">No targets match these filters.</td></tr>';
   };
@@ -347,6 +348,7 @@ const DATA = /*__DATA__*/null;
       <p>${t.evidence.slice(0, 2).map((u) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">source</a>`).join(" · ")}</p></div></li>`).join("")
     : '<li class="empty">No signals yet.</li>';
 
+  if (DATA.summary.identity_needs_ok) $("#rejected").insertAdjacentText("beforebegin", ` ${DATA.summary.identity_needs_ok} drafted openers mention that Vybe is veteran-, woman- or minority-owned; they are held out of "Send today" until the founder approves that story.`);
   if (DATA.rejected_count) $("#rejected").textContent = ` ${DATA.rejected_count} candidates were dropped this build for failing a check (no source, low fit, passed deadline, or out of lane).`;
 })();
 </script>

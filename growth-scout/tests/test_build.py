@@ -76,3 +76,10 @@ def test_sponsorship_rows_are_valid_and_competitor_deals_dedupe_by_headline():
     assert build.validate(a, PARAMS, TODAY) == []
     assert build.dedupe_key(a) == build.dedupe_key(dict(a, org="Whoop Inc"))
     assert build.validate(row(type="athlete", hunt="sponsorship"), PARAMS, TODAY) == []
+
+
+def test_founder_identity_openers_are_flagged():
+    assert build.uses_founder_identity(row(opener="Hi - Vybe is a woman-, veteran- and minority-owned startup"))
+    assert build.uses_founder_identity(row(opener="I'm a veteran founder in Akron"))
+    assert not build.uses_founder_identity(row(opener="Our cohort gets monthly calls with veteran mentors"))
+    assert not build.uses_founder_identity(row(opener="We're building Vybe Health in Akron, Ohio"))

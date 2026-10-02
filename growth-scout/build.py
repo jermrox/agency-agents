@@ -93,6 +93,17 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
     return problems
 
 
+IDENTITY_RE = re.compile(
+    r"\bveteran[- ](?:owned|founder|led)|\bveteran-,|\b(?:woman|women)[- ](?:owned|led|founder)|\bwoman-,|\bminority[- ]owned",
+    re.I,
+)
+
+
+def uses_founder_identity(row: dict) -> bool:
+    """True when the drafted opener tells the founder-identity story."""
+    return bool(IDENTITY_RE.search(row.get("opener") or ""))
+
+
 def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     p = params["priority"]
     s = int(row["fit"]) * 10
@@ -146,6 +157,9 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
             row["lane"] = lane
             row["evidence"] = [u for u in row["evidence"] if isinstance(u, str) and u.startswith("http")]
             row["score"], row["priority"] = score(row, params, today)
+            row["identity_needs_ok"] = (
+                uses_founder_identity(row) and not params["outreach"].get("founder_identity_approved", False)
+            )
             key = dedupe_key(row)
             prior = kept.get(key)
             if prior:
@@ -179,7 +193,9 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "signals": count(lambda t: t["type"] == "signal"),
         "high": count(lambda t: t["priority"] == "High" and t["type"] != "signal"),
         "deadlines_30d": len(soon),
-        "ready_to_send": count(lambda t: t["type"] not in {"signal", "competitor-deal"} and t.get("contact_url") and t.get("opener")),
+        "ready_to_send": count(lambda t: t["type"] not in {"signal", "competitor-deal"} and t.get("contact_url")
+                               and t.get("opener") and not t.get("identity_needs_ok")),
+        "identity_needs_ok": count(lambda t: t.get("identity_needs_ok")),
     }
 
 
