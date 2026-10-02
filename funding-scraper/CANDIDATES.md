@@ -273,7 +273,7 @@ smartwatches, fitness trackers and biosensors for heart rate, sleep and activity
 alongside AI diet insights. It is a prize, not a grant, so none of the federal
 registrations gate it.
 
-## Corrected on the board — 1 Oct 2026
+## Corrected on the board — 1 Oct 2026 (wearable sweep)
 
 **Xcelerate (WHX Tech)** was carried with no deadline and no mention of its real
 gate. The deadline is **4 Nov 2026**, and only startups holding a confirmed
@@ -346,7 +346,7 @@ The **Buckeye** row is genuinely closed and stays on the board for the record, b
 its note still read "CLOSES 30 SEP — six days out". Prose that counts down does not
 survive the date it was written on; rewritten in the past tense.
 
-## Promoted to the board — 1 Oct 2026
+## Promoted to the board — 1 Oct 2026 (Ohio and defence sweep)
 
 | Now on the board | Award | Window |
 |---|---|---|
@@ -380,7 +380,7 @@ to be an **Ohio resident** who has held the 51% **for more than a year** — so 
 Ohio MBE certification, and the 15% state-contract set-aside behind it, is likely a
 2027 conversation. The free counselling at both is open now either way.
 
-## Corrected on the board — 1 Oct 2026
+## Corrected on the board — 1 Oct 2026 (Ohio and defence sweep)
 
 **Veterans Business Battle** — corrected against this board's own row, on the date
 the 28 Sep note said to re-check it. Rice's page today still advertises the **12th
@@ -394,7 +394,7 @@ to apply, two-day in-person final in Houston, and 2025 winners spanning health
 tech, agriculture and consumer hardware. Check again in November for an autumn
 window.
 
-## Rejected on inspection — 1 Oct 2026
+## Rejected on inspection — 1 Oct 2026 (Ohio and defence sweep)
 
 - **JumpStart Trailblazer HealthTech Accelerator** — genuinely good and genuinely
   closed. **$50,000 of fully covered services** through their Preferred Partner
@@ -722,6 +722,136 @@ Added (13):
 - **AgeTech Connect Rural Health Innovation Challenge (GSA 2026)** — Requires a commercially available product with verifiable customers; Vybe is pre-revenue.
 - **DHN HealthTech Innovation Challenge 2026** — India-focused; closed 23 Sep 2026.
 - **Wayra / Pfizer Innomakers4Health 2026** — In-person hackathon in Madrid for individuals (€3,000 prize); non-US and not a company program.
+
+## Promoted to the board — 2 Oct 2026 (wearable sweep, round two)
+
+Two rows, and a long list of dead leads below. The 1 Oct sweep had already
+worked this lane and killed fifteen leads, so the honest yield today is small.
+Both of these are free to enter and neither needs a device classification.
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **19th Healthcare Innovation World Cup** | no cash — Top 12 pitch at the MEDICA Innovation Forum, corporate and investor introductions | closes **9 Sep 2027** |
+| **Extreme Tech Challenge (XTC)** | no cash — regional and global pitch rounds, AI:360 Summit, investor panel | open now, **deadline not published on the pages read** |
+
+**The Healthcare Innovation World Cup is the most wearable-specific thing on
+this board.** Its call names what it wants outright: smart health devices,
+*medical wearables*, digital biomarkers, electroceuticals, intelligent patches.
+Nineteen editions old, free of charge in both the programme page and the terms,
+worldwide, no revenue or ownership gate. The 18th closed 10 Sep 2026 with finals
+at MEDICA on 16 Nov; the 19th is open with a 9 Sep 2027 deadline, confirmed
+independently on the programme page and on MEDICA's own event listing. Eleven
+months out, so it is a diary entry — but the portal lets an entry be edited until
+the deadline, so there is no reason not to open it now.
+
+Two honest caveats on it: no prize money, and the MEDICA audience is MedTech, so
+a wellness product with no device classification has to say so rather than let
+the room assume. Its sibling, the **18th Innovation World Cup** (free, deadline
+11 Feb 2027), lists a Top 12 wearable pitch at WT | Wearable Technologies
+Americas 2027 among its prizes — but its categories are Industry, Industrial AI,
+Robotics, Security and Mobility, so health is not one of them and the healthcare
+competition is the right door. One platform, two competitions, one free account.
+
+**XTC is on the board with no close date on purpose.** The homepage says
+applications are open and the official rules say no purchase is necessary, but
+the rules also say deadlines are published per competition on XTC's own site, and
+no date was readable on the pages reached. Find it in the portal before planning
+around it. Note the prize is visibility and an investor panel, not cash — and the
+investor route is dilutive, which is not what this board is for.
+
+## Rejected or recorded on inspection — 2 Oct 2026
+
+**A structural correction first: challenge.gov no longer exists.** The platform
+was **sunset on 30 March 2026**. Federal prize competitions still run, but the
+listing moved to the Innovation section of **usa.gov** (`usa.gov/find-active-challenge`),
+with agencies hosting their own pages. Any routine or note that says to search
+challenge.gov is searching a redirect.
+
+**And a trap inside that replacement.** usa.gov's "active challenges" list
+includes competitions whose *entry* phase has closed — it tracks whether the
+challenge is running, not whether you can enter it. Read the agency page, not the
+list.
+
+- **ACL Caregiver AI Prize Challenge** (HHS Administration for Community Living) —
+  listed as active on usa.gov, and **Phase 1 closed 31 July 2026**. Phases 2 and 3
+  are open *only to Phase 1 winners*, so there is no way in. Worth knowing for the
+  future: it is a genuine prize rather than a grant — up to 10 × **$100,000** with
+  meritorious prizes of a further $50,000, no budget required, no reporting after
+  the award, for-profits eligible, and it explicitly disclaims making any FDA
+  determinations. The hard technical gate is **Technology Readiness Level 3 or
+  higher**, meaning a tool that has already passed basic laboratory validation.
+  Re-check when a Phase 1 of the next edition opens.
+- **ARPA-H REST** (Restorative and health-Enhancing Sleep Time) — the closest
+  federal programme to Vybe's subject matter that exists: it names wearable and
+  in-home biosensing in its own scope. Rejected on two counts. The **solution
+  summary was due 12 August 2026** and full proposals are **invited submissions
+  only**; and the programme's purpose is to "diagnose and mechanistically classify
+  poor sleep with a primary emphasis on insomnia" with clinical trials and
+  regulatory science in scope — a diagnostic posture, which is a standing
+  disqualifier here. Watch for a future ARPA-H programme without the diagnostic
+  framing.
+- **Ladies Who Launch** (with Boundless Futures Foundation) — three disqualifiers,
+  any one of them fatal: the business must be a **consumer packaged goods**
+  company; gross annual revenue must be **between $100,000 and $499,999** (Vybe is
+  pre-revenue); and the business must not have raised or intend to seek venture
+  capital within 12 months. The 2026 cycle closed 17 March 2026 and Submittable
+  shows no open calls. Note the partner is the same Boundless Futures Foundation
+  this board rejected on 28 September for category mismatch.
+- **Coalition to Back Black Businesses** (US Chamber Foundation + American Express)
+  — **the initiative is no longer active**, in the Foundation's own words. It ran
+  2020–2024 and awarded over $14M. Its successor, the **Readiness for Resiliency
+  (R4R)** programme, offers $5,000 grants but is disaster-recovery framed —
+  immediate grants *after* a disaster occurs — so it is not an opportunity to
+  apply for on an ordinary week. The old CBBB gate (3–20 employees) would have fit
+  Vybe exactly, which is the frustrating part.
+- **New Majority Ventures**, formerly **1863 Ventures** — restructured in January
+  2025 and **stopped hosting its own programmes**, cutting staff from eight to
+  four in order to sell its curriculum to other accelerators instead. There is no
+  programme to apply to. The old Pipeline Program required **$10,000–$50,000 of
+  monthly revenue** in any case.
+- **Garmin Health Awards** — closed **8 May 2026**; the 2026 summit was 28–29 Oct
+  in Bangkok and the prize is Garmin devices worth up to $10,000 rather than cash.
+  The hard gate is the interesting part: the solution **must use Garmin
+  smartwatches, trackers or scales and the Garmin Health API or SDK**. Vybe builds
+  its own Band, so entering would mean building on a competitor's hardware — *but*
+  that is precisely the licensing wedge in Vybe's own pitch, the interpretation
+  layer running on somebody else's sensors. If that product ever ships, this
+  becomes a real door. The 2026 call went out on 14 April; re-check around April
+  2027.
+- **NFL 1st and Future** — $50,000 and $25,000 cash, free to enter, and its
+  "Innovations to Advance Athlete Health and Safety" category names sensors
+  explicitly. Recorded rather than rowed because **no current edition is visible**:
+  everything readable is from 2018–2021, up to the 6th annual during Super Bowl LV
+  week. It may be dormant. These competitions launch in late autumn for a
+  Super Bowl-week final, so re-check in November or December.
+- **TechCrunch Startup Battlefield 200** — closed **8 June 2026** for Disrupt 2026
+  (13–15 Oct, San Francisco), and the page says to apply next year. **This is the
+  best future fit found in two weeks of sweeping** and belongs in the diary for
+  roughly May 2027: **$100,000 equity-free**, TechCrunch takes no fee and no
+  equity, pre-launch companies are explicitly welcome, a working MVP is required
+  but customers and revenue are not, and bootstrapped and pre-seed are encouraged.
+  Selected companies also get a funded demo booth and four passes.
+- **Army xTech|Apex Intercept** and **xTech|Kinetic Reach** — both open and both
+  no-fit: low-cost interceptors and sustainment solutions respectively. xTech's
+  open-topic competition, xTech|Search 10, is already on the board and closes
+  19 Oct.
+
+## DoD: there is no Release 7 — 2 Oct 2026
+
+Read because the 1 Oct note said to read each DSIP release by hand until the
+`dod_sbir` API source stops 403ing. **The published FY2026 DoW SBIR/STTR schedule
+ends at Release 6** — six releases, Release 1 opening May 2026 through Release 6
+closing **21 Oct 2026**, which is the row already on this board. No Release 7
+exists and **no FY2027 schedule is published yet**.
+
+Two things follow. First, the 21 Oct window is the last FY26 one, and the 1 Oct
+reading of its topic list found no wearable or human-performance topic — so unless
+a topic is re-read differently, that row is a registration exercise rather than a
+submission. Second, the mechanism that does keep producing topics is the **Annual
+BAA**: components may release topics monthly, pre-releasing on the **first
+Wednesday of each month**, each with its own open and close dates at least 45 days
+out. The next first Wednesday is **7 October 2026**. That is the date to check,
+not a release number.
 
 ## Priority 2 — women-founder
 

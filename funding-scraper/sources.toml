@@ -2961,3 +2961,41 @@ documents = [
   "Training and inference code for the reproducibility audit (top 3)",
 ]
 verified = "2026-10-01"
+
+# --- Added 2 Oct 2026 ------------------------------------------------------
+# Wearable-first sweep. Most of this lane was already swept on 1 Oct, so the
+# yield is two rows and a long list of dead leads recorded in CANDIDATES.md.
+# Both rows are free to enter and neither needs a device classification.
+
+[[sources.curated.entry]]
+name = "19th Healthcare Innovation World Cup"
+url = "https://www.innovationworldcup.com/healthcare/"
+agency = "Innovation World Cup Series — Navispace GmbH and Techpreneurs GmbH, finals hosted at MEDICA"
+amount = "No cash. A place in the Top 12 Health Techpreneurs, a pitch slot in the official award ceremony at the MEDICA Innovation Forum in Düsseldorf, introductions to the series' corporate and investor partners, and global marketing coverage."
+close_date = "2027-09-09"
+pillar = 3
+kind = "visibility"
+eligibility = "HealthTech and MedTech innovators worldwide — no region, revenue, ownership or age-of-business gate published. Submission is in English through the series' own portal. Participation is FREE OF CHARGE, stated on the programme page and again in the terms."
+note = "THE MOST WEARABLE-SPECIFIC THING ON THIS BOARD. The call names what it wants outright: smart health devices, MEDICAL WEARABLES, digital biomarkers, electroceuticals and intelligent patches. Nineteen editions old, free, worldwide, no fee anywhere in the terms. The 18th edition closed 10 Sep 2026 and its finals are at MEDICA on 16 Nov 2026; the 19th is open now with a deadline of 9 Sep 2027 (23:59), confirmed on both the programme page and MEDICA's own event listing. ELEVEN MONTHS OUT, so this is a diary entry rather than this month's work — but the submission can be drafted once and edited in the portal until the deadline, which is how the series is designed. TWO THINGS TO BE HONEST ABOUT: there is no prize money, and the audience is MedTech-heavy, so a wellness product with no device classification has to say so rather than let a MEDICA crowd assume otherwise. Sibling competitions on the same free platform: the 18th Innovation World Cup (IoT and DeepTech, deadline 11 Feb 2027) whose prize list includes a Top 12 wearable pitch at WT | Wearable Technologies Americas 2027 — but its categories are Industry, Industrial AI, Robotics, Security and Mobility, so health is not one of them and the healthcare competition is the right door."
+documents = [
+  "Account on the Innovation World Cup portal — the entry can be edited there until the deadline",
+  "Solution description in English: the technology, its stage, and its market",
+  "Evidence for the jury's criteria: degree of innovation, technical feasibility, commercial potential, go-to-market, time to market, sustainability",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "Extreme Tech Challenge (XTC)"
+url = "https://extremetechchallenge.org/"
+agency = "Extreme Tech Challenge, a California 501(c)(3)"
+amount = "No cash prize. Regional and global pitch rounds, an invitation to the AI:360 Summit in Palo Alto for award winners, and the chance for top finalists to pitch a panel of global investors."
+pillar = 3
+kind = "visibility"
+eligibility = "Open to any company legally incorporated or registered in an eligible country, across 120+ countries and all funding stages, submitting a product or service built by the submitting company. Entries are sorted into ten categories bundling the UN Sustainable Development Goals; good health and well-being is one of them. The official rules state NO PURCHASE NECESSARY to enter or win."
+note = "APPLICATIONS ARE OPEN — the homepage says so — AND THIS ROW CARRIES NO CLOSE DATE BECAUSE THE DEADLINE WAS NOT READABLE. The rules say XTC publishes deadlines per competition on its own site, so the first thing to do is open the application portal and find the date before planning around it. Why it earns a row anyway: free entry confirmed in the rules, global, open to any stage including pre-revenue, and 2026's focus is AI:360 with an Excellence in Applied AI Award for practical applied-AI solutions — which is a fair description of an interpretation layer over physiological signals. TWO CAVEATS. There is no cash: the value is visibility and investor access, and the investor route is by definition dilutive, which is not what this board is for — treat the pitch as marketing, not funding. And entrants bear all their own costs, including travel to any round, stated plainly in the rules."
+documents = [
+  "Application through the XTC portal, in one of the ten SDG-bundled categories",
+  "A statement of which UN Sustainable Development Goal the product addresses",
+  "Evidence against the published criteria: quality, fit to the SDG, long-term viability",
+]
+verified = "2026-10-02"
