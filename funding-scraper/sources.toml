@@ -2999,3 +2999,124 @@ documents = [
   "Evidence against the published criteria: quality, fit to the SDG, long-term viability",
 ]
 verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "Shophand $5k Small Business Boost Grant (current cycle)"
+url = "https://www.shophand.com/small-business-boost-grant"
+agency = "Shophand (private)"
+amount = "$5,000 package: $2,500 no-strings cash + $2,500 in Shophand tech/ops services"
+close_date = "2026-11-30"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "US-based, for-profit, fewer than 50 employees, under $5M annual revenue, 'actively operating (not just an idea)'; must follow Shophand on Instagram, X, LinkedIn and Facebook. Preference (not a requirement) for applicants who used a paid 'Your Shophand' service this cycle. No revenue minimum."
+note = "PREFERENCE GOES TO APPLICANTS WHO BUY A SHOPHAND SERVICE (optional; the page says no fees, subscriptions or purchases are required). Awarded three times a year to one business. Only $2,500 is cash; the other half is service credit. Vybe is incorporated and building, so it counts as 'actively operating'. Frame the challenge as ops/tech setup for a pre-launch hardware company (e.g. CRM, waitlist, DevKit partner pipeline). The page's cycle table is garbled. Shophand's own LinkedIn post (19 Aug 2026) says 'NEW DEADLINE: November 30, 2026', and the page's table shows a 1 Dec cycle end, so submit by 30 Nov."
+documents = [
+  "Basic business information",
+  "Business description",
+  "Your biggest small-business challenge",
+  "How Shophand could best support you",
+  "Follows on 4 social platforms",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "Business Freedom Grant (Darcy's Business), Nov 15 / Dec 31 2026 review rounds"
+url = "https://businessfreedomgrant.com/"
+agency = "Darcy's Business / Coach Darcy (private)"
+amount = "$1,000 cash"
+close_date = "2026-12-31"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Anyone with a business idea or an existing small business, any industry, location, experience level or background. No application fee. Official Rules are linked from the page; no other gates are stated on it."
+note = "SMALL ($1,000), but free and quick to apply. Two review rounds remain: 15 Nov 2026 (second deadline) and 31 Dec 2026 (final). Apply before 15 Nov so you are in both. Joining the free 'GrantHouse' community before the final deadline adds +2 bonus points; GrantHouse's own page says join for free. Scored on clarity (3), feasibility (3), impact of the grant (2) and passion (2). Winners are announced on Coach Darcy's YouTube."
+documents = [
+  "Brief online application (business idea/plan, intended use of $1,000)",
+  "Optional: join GrantHouse (free) for +2 points",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "Next Era Founders Fellowship (Nika Lawrie), 2026 cycle"
+url = "https://www.nikalawrie.com/Fellowship"
+agency = "Nika Lawrie / Next Era (private)"
+amount = "$3,000 startup grant + full scholarship to the Next Era Accelerator + 1 year of mentorship"
+open_date = "2026-11-09"
+close_date = "2026-12-04"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Women entrepreneurs with a business idea or early-stage business. The page states no fee, residency rule, age gate or revenue rule ('not stated'). Applications open 9 Nov 2026 and close 4 Dec 2026, 11:59 PM MT."
+note = "OPENS 9 NOV 2026 (not open today). WOMEN FOUNDERS ONLY: Vybe qualifies as woman-owned. Usually a single recipient ('the Next Era Fellowship recipient'), so the odds are long. Finalist interviews are 16-17 Dec with a short scheduling window; the recipient is announced 21 Dec 2026. Use: lead with the founder's story and the DevKit milestone."
+documents = [
+  "Online application (opens Nov 9; contents not stated)",
+  "Finalist interview Dec 16-17",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "USOPC Performance Innovation: industry partner intake (Team USA)"
+url = "https://www.usopc.org/technology"
+agency = "United States Olympic & Paralympic Committee, Performance Innovation team"
+amount = "No cash for applicants. The page offers a route to be considered for Team USA use. The donor-backed Performance Innovation Fund makes grants, but the page does not describe direct application or amounts"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Open to 'individuals and small businesses to Fortune 500 companies' with products, services or inventions of interest to Team USA athletes, coaches and staff. No other gates stated"
+note = "NO CASH; INTAKE IS AN EXPRESSION OF INTEREST, NOT A COMPETITION. Free and rolling. It is a direct path to the 'performance organization' design partners that DevKit v0.1 needs (5-10 external partners). USOPC sport physiologists and strength and conditioning staff are natural users of HRV/ECG band data. Submit after the DevKit spec is stable, and frame it as research and athlete-monitoring infrastructure (SDK and API), not a consumer band. Grants from the Performance Innovation Fund appear to flow through partnerships with National Governing Bodies (SBJ, Jan 2026), so treat cash as a possible later step, not a promise. A private nonprofit, so no SAM.gov."
+documents = [
+  "Company and product information through the USOPC 'submit your information' form",
+  "One-page DevKit/SDK overview (recommended)",
+  "Validation data or a pilot plan (recommended)",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "InsurTech America Innovation Challenge 2026 (The Hartford / Travelers prize categories)"
+url = "https://insurtechamerica.com/innovation-challenge.html"
+agency = "InsurTech America (InsurTech Hartford); categories sponsored by The Hartford and Travelers"
+amount = "$10,000 cash per category: 'Future of Customer Protection Award' (The Hartford) and 'Best Emerging Product / Service' (Travelers). One startup from the challenge also qualifies for the Startup World Cup (a $1,000,000 INVESTMENT prize, so equity, not a grant). The student category is for CT students only."
+close_date = "2026-10-07"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Open to 'startups, scale-ups, and innovators from across the insurance ecosystem'. The page states no application fee, no geographic gate and no age gate. The CT Student Seed Fund category is limited to Connecticut students; Vybe should enter one of the two open $10K categories. Finalists present in person in Hartford, CT on 27 Oct 2026."
+note = "DEADLINE IN 5 DAYS (7 Oct 2026), AND THE CHALLENGE IS FRAMED AROUND INSURANCE. This is the only corporate or payer challenge in this lane that pays cash and is open today. To fit, pitch Vybe as risk prevention: continuous HRV/ECG-derived recovery and sleep signals that help insurers and employers 'predict, prevent, quantify, and manage risk'. Past rounds had a Hartford category seeking 'remote monitoring, coaching, and care delivery' for insureds' health and safety, which is close to Vybe. Pitch it as wellness and risk insight, never diagnosis. The page does not state a fee, entry documents or a revenue cap. Read the form before submitting. The submission link on the official LinkedIn posts is lnkd.in/gfg5dGDf. Finalists are announced 20 Oct; a mentorship program follows (Nov to Feb). Travel to Hartford is at Vybe's own cost (not stated otherwise)."
+documents = [
+  "Online submission form (contents not stated on the public page; expect a company and solution description)",
+  "Possibly a pitch deck (not stated)",
+  "Finalists: a live pitch at the Showcase & Awards on 27 Oct 2026",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "OhioHealth New Ventures and Business Incubation (NVBI): external New Venture Submission"
+url = "https://www.ohiohealth.com/nvbi/new-ventures-form/"
+agency = "OhioHealth (Columbus, OH health system), New Ventures and Business Incubation"
+amount = "No cash prize. Partnership, adoption or co-development; NVBI says it also invests directly in later-stage companies (amount not stated)."
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Open to external companies that (1) align with OhioHealth's mission, vision, values and strategic focus areas; (2) 'primarily focus on healthcare IT or services'; and (3) address a significant issue that healthcare providers and their patients face. There is no fee, deadline or stage gate stated."
+note = "NO CASH, AND THE FOCUS IS 'HEALTHCARE IT OR SERVICES'. Lead with the Vybe Health Intelligence and data platform (the FHIR/Epic-normalised personal health timeline, the SDK and the API) rather than the band itself. It is a free, rolling, in-state pilot door with a big Ohio health system, and an OhioHealth pilot or design-partner letter would also strengthen Vybe's cash applications (Ohio Third Frontier, SBIR). Use it to place DevKit v0.1 with a health-system design partner. OhioHealth says responses 'generally take 15 business days'. Keep it non-diagnostic: wellness, recovery and patient engagement between visits."
+documents = [
+  "Online form on the NVBI page (company and solution summary)",
+  "Follow-up deck on request",
+]
+verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "University Hospitals Ventures: 'UH Partner' pilot and collaboration submission"
+url = "https://ventures.uhhospitals.org/submissions/uh-partner/"
+agency = "University Hospitals (Cleveland, OH), UH Ventures"
+amount = "No cash stated. It offers a path to a UH pilot and to collaboration with UH designers, clinicians and subject-matter experts."
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Any company with 'a solution that University Hospitals could pilot' or a technology that could benefit from collaboration with UH. The page states no fee, deadline, stage or geography gate."
+note = "NO CASH. This is a rolling, free intake form. It is separate from the already-rejected CDL-Cleveland stream and the UH Haslam Sports Innovation Center Challenge. UH is about 35 miles from Akron, so a local pilot is realistic. Pitch the DevKit or design-partner model: a UH clinician or research group as one of the 5–10 DevKit v0.1 partners for wellness, recovery and sleep monitoring (non-diagnostic). The UH Haslam Sports Innovation Center angle (performance and recovery) suits the Vybe Band. A pilot letter is leverage for later cash applications."
+documents = [
+  "Online 'UH Partner' form (solution description)",
+]
+verified = "2026-10-02"
