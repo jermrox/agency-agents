@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02 19:36 UTC",
+  "generated": "2026-10-02 20:38 UTC",
   "today": "2026-10-02",
   "scope": {
     "company": "Vybe Health",
@@ -99,16 +99,16 @@
     }
   ],
   "summary": {
-    "total": 268,
+    "total": 303,
     "investor": 98,
-    "growth": 31,
-    "social": 28,
+    "growth": 55,
+    "social": 39,
     "sponsorship": 44,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 49,
-    "deadlines_30d": 4,
-    "ready_to_send": 120,
+    "high": 55,
+    "deadlines_30d": 6,
+    "ready_to_send": 155,
     "identity_needs_ok": 74
   },
   "targets": [
@@ -1411,6 +1411,48 @@
       "id": "kristina-simmons-overwater-ventures"
     },
     {
+      "name": "Kygo Health",
+      "org": "Kygo Health",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Posted that its WHOOP integration is fully built and validated with live members, but capped in development mode with 0 test users left and 100+ users waiting.",
+      "why_now": "2026-08-23 WHOOP Community post: approval Typeform submitted 2026-03-27, resubmitted 2026-05-19, no response.",
+      "evidence": [
+        "https://www.community.whoop.com/t/api-request-developer-support/15981",
+        "https://kygo.app"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://kygo.app",
+      "warm_path": null,
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 6,
+        "e": 7
+      },
+      "ask": "15-min call: would an open SDK/API band give Kygo's waitlisted users a second data source?",
+      "opener": "Hi Kygo team, I saw your WHOOP Community post about 100+ users waiting behind the dev cap since March. I'm building Vybe in Akron, Ohio: a screenless HRV/ECG band with a licensed SDK/API, so apps aren't waiting on a gatekeeper. We're picking 5-10 DevKit design partners for early access. Worth a 15-minute call to compare data needs?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-23",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "whoop-api",
+        "hrv"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 33,
+      "id": "kygo-health-kygo-health"
+    },
+    {
       "name": "LORDoftheSMARTRINGS",
       "org": "LordOfTheSmartRings",
       "role": "Independent reviewer",
@@ -1445,7 +1487,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 33,
+      "rank": 34,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
     {
@@ -1484,7 +1526,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 34,
+      "rank": 35,
       "id": "labcorp-venture-fund-labcorp"
     },
     {
@@ -1528,7 +1570,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 35,
+      "rank": 36,
       "id": "levels-x-crossfit-affiliate-network-partnership-levels"
     },
     {
@@ -1567,8 +1609,45 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 36,
+      "rank": 37,
       "id": "marco-altini-hrv4training"
+    },
+    {
+      "name": "Marko Maslakovic",
+      "org": "Gadgets & Wearables",
+      "role": "Founder / Editor",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Covers wearables and the developer side as it happens. He broke and then confirmed the Fitbit Web API turndown moving to 2026-10-30 and explained the re-consent problem for developers.",
+      "why_now": "2026-09-28 article (updated 2026-09-30) on the Fitbit API deadline extension.",
+      "evidence": [
+        "https://gadgetsandwearables.com/2026/09/28/fitbit-api-migration-deadline-october-30/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://gadgetsandwearables.com",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Briefing on Vybe as an open-SDK band for developers leaving closed APIs; DevKit for hands-on.",
+      "opener": "Hi Marko, your Fitbit API deadline piece was the first place I saw the October 30 extension confirmed. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band whose SDK/API is licensed to developers, aimed at the builders getting squeezed by closed platforms. When we have DevKits, could I send you one for an honest look?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-30",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "journalist",
+        "dev-platform",
+        "fitbit-sunset"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 38,
+      "id": "marko-maslakovic-gadgets-wearables"
     },
     {
       "name": "Meredith Dietz",
@@ -1604,8 +1683,48 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 37,
+      "rank": 39,
       "id": "meredith-dietz-lifehacker"
+    },
+    {
+      "name": "Nikita Starov",
+      "org": "AIFitnessAPI (aifitnessapi.com)",
+      "role": "Author",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Writes developer guides on wearable API changes (Google Fit deprecation, Oura PAT removal, Fitbit shutdown, API costs), read by the developers Vybe's SDK targets.",
+      "why_now": "Dated posts 2026-07-08, 2026-07-09, 2026-08-02 and 2026-09-01.",
+      "evidence": [
+        "https://aifitnessapi.com/fix/google-fit-api-deprecated",
+        "https://aifitnessapi.com/fix/oura-personal-access-token-deprecated",
+        "https://aifitnessapi.com/fitbit-api-shutdown"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://aifitnessapi.com",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Add Vybe to the wearable-API roundup once SDK docs are public; give feedback on the docs.",
+      "opener": "Hi Nikita, your guides on the Fit deprecation and Oura PAT removal are what I send developers who ask what broke. I'm building Vybe in Akron, Ohio: a screenless band whose SDK/API is licensed to developers. When our docs go public, would you take an honest look and tell us where they fall short?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-01",
+      "confidence": "verified",
+      "tags": [
+        "dev-platform",
+        "wearable-api",
+        "writer",
+        "fitbit-sunset",
+        "oura-api"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 40,
+      "id": "nikita-starov-aifitnessapi-aifitnessapi-com"
     },
     {
       "name": "Open Wearables",
@@ -1649,7 +1768,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 38,
+      "rank": 41,
       "id": "open-wearables-momentum-the-momentum"
     },
     {
@@ -1687,7 +1806,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 39,
+      "rank": 42,
       "id": "oscar-moralez-boomerang-ventures"
     },
     {
@@ -1730,7 +1849,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 40,
+      "rank": 43,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
     {
@@ -1768,7 +1887,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 41,
+      "rank": 44,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
     {
@@ -1806,7 +1925,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 42,
+      "rank": 45,
       "id": "pankaj-kedia-2468-ventures"
     },
     {
@@ -1846,8 +1965,52 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 43,
+      "rank": 46,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
+    },
+    {
+      "name": "PlayersLab",
+      "org": "PlayersLab",
+      "role": "Founder: Ethan O'Neal",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Baseball/softball player-development iOS app that builds a daily readiness score from workload plus WHOOP recovery, HRV, resting HR and sleep. Founder says the WHOOP integration is built and deployed but capped at 10 members, and that it has signed its first paid college baseball program.",
+      "why_now": "2026-07-26 WHOOP Community post: production access request acknowledged 2026-06-26, no decision after ~60 days.",
+      "evidence": [
+        "https://www.community.whoop.com/t/production-api-access-submitted-jun-26-no-decision-after-60-days-playerslab-integration-already-built/15628",
+        "https://playerslab.appstor.io/"
+      ],
+      "channel": "WHOOP Community DM / LinkedIn",
+      "contact_url": "https://www.community.whoop.com/t/production-api-access-submitted-jun-26-no-decision-after-60-days-playerslab-integration-already-built/15628",
+      "warm_path": null,
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "DevKit v0.1 design-partner conversation: HRV/sleep data for team readiness without a per-app cap.",
+      "opener": "Hi Ethan, I read your WHOOP thread about PlayersLab's readiness score being stuck at the 10-member cap while you onboard a college program. I'm building Vybe in Akron, Ohio: a screenless HRV band with a licensed SDK/API, and teams own the integration. We're choosing 5-10 DevKit design partners. Open to a 15-minute call to see if it could sit alongside WHOOP for your athletes?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-26",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "whoop-api",
+        "team-sports",
+        "hrv",
+        "college"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 47,
+      "id": "playerslab-playerslab"
     },
     {
       "name": "Ray Maker",
@@ -1885,7 +2048,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 44,
+      "rank": 48,
       "id": "ray-maker-dc-rainmaker"
     },
     {
@@ -1923,8 +2086,52 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 45,
+      "rank": 49,
       "id": "resolute-ventures-resolute-ventures"
+    },
+    {
+      "name": "RestOrTrain",
+      "org": "RestOrTrain",
+      "role": "Co-founder: Michał Michalik",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "iOS AI training app for cyclists (site claims 2,000+ App Store reviews). Co-founder posted that its WHOOP integration is fully built but hidden in the app because WHOOP's 10-member development cap has not been lifted.",
+      "why_now": "2026-08-13 and 2026-08-20 WHOOP Community posts: approval form submitted early July, no acknowledgement.",
+      "evidence": [
+        "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-submitted-early-july-still-no-response/15892",
+        "https://www.community.whoop.com/t/question-on-the-developer-app-review-process/15951",
+        "https://restortrain.com"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://restortrain.com",
+      "warm_path": null,
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "15-min call to see whether a no-cap wearable SDK fits RestOrTrain's recovery inputs; DevKit v0.1 design-partner slot.",
+      "opener": "Hi Michał, I saw your WHOOP Community posts about the integration sitting behind the 10-member cap since July. I'm building Vybe in Akron, Ohio: a screenless band with a licensed SDK/API, and no per-app user cap to wait on. We're picking 5-10 DevKit design partners now. Would a 15-minute call be useful to see if our data fits RestOrTrain's training model?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-20",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "whoop-api",
+        "cycling",
+        "hrv"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 50,
+      "id": "restortrain-restortrain"
     },
     {
       "name": "Rob ter Horst",
@@ -1962,7 +2169,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 46,
+      "rank": 51,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
     {
@@ -2000,7 +2207,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 47,
+      "rank": 52,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
     {
@@ -2039,7 +2246,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 48,
+      "rank": 53,
       "id": "sosv-hax-sosv"
     },
     {
@@ -2085,7 +2292,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 49,
+      "rank": 54,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
     {
@@ -2125,8 +2332,46 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 50,
+      "rank": 55,
       "id": "seaside-ventures-seaside-ventures"
+    },
+    {
+      "name": "Sunil Bhatt",
+      "org": "Smartwatch Insight",
+      "role": "Writer / reviewer",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Independent reviewer running side-by-side tests of screenless trackers (CIRQA, Helio Strap Pro, Fitbit Air, WHOOP 5.0, Polar Loop, rings), including subscription-free picks. That's exactly the category Vybe enters.",
+      "why_now": "2026-09-11 'Best Screenless Fitness Trackers 2026' comparison.",
+      "evidence": [
+        "https://smartwatchinsight.com/best-screenless-fitness-trackers/",
+        "https://smartwatchinsight.com/whoop-vs-polar-vs-amazfit-screen-free-review/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://smartwatchinsight.com",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Include Vybe in the screenless comparison at consumer launch; review unit offer.",
+      "opener": "Hi Sunil, your eight-way screenless tracker comparison is one of the most useful I've read, especially the no-subscription angle. I'm building Vybe in Akron, Ohio: a screenless band with no subscription and an open developer SDK, launching May 2027. Could I send you a unit when it's ready for an unvarnished review?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-11",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "screenless",
+        "reviewer",
+        "no-subscription"
+      ],
+      "lane": "growth_wave3",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 56,
+      "id": "sunil-bhatt-smartwatch-insight"
     },
     {
       "name": "Sunil Nagaraj",
@@ -2164,7 +2409,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 51,
+      "rank": 57,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
     {
@@ -2204,7 +2449,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 52,
+      "rank": 58,
       "id": "toni-schneider-true-ventures"
     },
     {
@@ -2243,7 +2488,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 53,
+      "rank": 59,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
     {
@@ -2281,7 +2526,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 54,
+      "rank": 60,
       "id": "victoria-song-the-verge"
     },
     {
@@ -2324,7 +2569,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 55,
+      "rank": 61,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
     {
@@ -2369,7 +2614,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 56,
+      "rank": 62,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
     {
@@ -2406,7 +2651,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 57,
+      "rank": 63,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
     {
@@ -2445,7 +2690,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 58,
+      "rank": 64,
       "id": "the5krunner-the5krunner"
     },
     {
@@ -2488,7 +2733,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 59,
+      "rank": 65,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
     {
@@ -2530,7 +2775,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 60,
+      "rank": 66,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
     {
@@ -2572,7 +2817,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 61,
+      "rank": 67,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
     {
@@ -2609,8 +2854,50 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 62,
+      "rank": 68,
       "id": "health2tech-cleveland-health2tech"
+    },
+    {
+      "name": "Innovation Day 2026",
+      "org": "Northeast Ohio Public University Research Alliance (NEO-PURA), hosted by The University of Akron",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Free exhibition of Northeast Ohio innovation (UA, CSU, Kent State, NEOMED, YSU) at Vybe's home city. It has an open submission period, so it's a local stage for partners in university labs and industry.",
+      "why_now": "2026-10-29 at InfoCision Stadium, Akron; registration and submissions close 2026-10-26.",
+      "evidence": [
+        "https://event.fourwaves.com/innovationday2026"
+      ],
+      "channel": "apply",
+      "contact_url": "https://event.fourwaves.com/innovationday2026",
+      "warm_path": "Akron / University of Akron",
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 7,
+        "e": 8
+      },
+      "ask": "Submit a showcase entry or register to attend and meet UA/Kent/NEOMED researchers for DevKit research pilots.",
+      "opener": "Hi Innovation Day team, I'm the founder of Vybe Health in Akron, building a screenless wearable band with a licensed SDK/API for researchers and developers. We'd like to take part in Innovation Day on Oct 29, either by showing the DevKit or by meeting faculty who run wearable studies. Is an Akron startup eligible to submit, and what format works best?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": "2026-10-26",
+      "last_signal_date": "2026-10-29",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "akron",
+        "university",
+        "research",
+        "event"
+      ],
+      "lane": "growth_wave3",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 69,
+      "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
     {
       "name": "Bounce Innovation Hub",
@@ -2646,7 +2933,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 63,
+      "rank": 70,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
     {
@@ -2684,7 +2971,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 64,
+      "rank": 71,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
     {
@@ -2721,7 +3008,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 65,
+      "rank": 72,
       "id": "sxsw-pitch-2027-sxsw"
     },
     {
@@ -2764,8 +3051,46 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 66,
+      "rank": 73,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
+    },
+    {
+      "name": "Brendan Keeler",
+      "org": "Health API Guy (Substack)",
+      "role": "Author",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Widely read health-interoperability newsletter. 'The Wearables Interoperability Stack' maps the aggregator layer (Validic, Terra, ROOK, Vital) and the lack of a regulatory floor for wearable data access.",
+      "why_now": "Wearables piece 2026-05-21; actively publishing (posts dated through 2026-09-25).",
+      "evidence": [
+        "https://healthapiguy.substack.com/p/the-wearables-interoperability-stack",
+        "https://healthapiguy.substack.com/archive"
+      ],
+      "channel": "Substack",
+      "contact_url": "https://healthapiguy.substack.com",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Feedback on Vybe's data-access policy; possible mention in a future wearables piece.",
+      "opener": "Hi Brendan, your Wearables Interoperability Stack piece is the best map of that layer I've seen. I'm building Vybe in Akron, Ohio: a screenless band whose SDK/API is licensed directly to developers, partly because of the access problems you describe. Would you be up for a 15-minute critique of our data-access terms before we publish them?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-25",
+      "confidence": "verified",
+      "tags": [
+        "interoperability",
+        "dev-platform",
+        "newsletter",
+        "digital-health"
+      ],
+      "lane": "growth_wave3",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 74,
+      "id": "brendan-keeler-health-api-guy-substack"
     },
     {
       "name": "CES 2027 - Eureka Park",
@@ -2802,7 +3127,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 67,
+      "rank": 75,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
     {
@@ -2846,8 +3171,52 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 68,
+      "rank": 76,
       "id": "chris-chartier-the-righteous-path-substack"
+    },
+    {
+      "name": "Columbus Hardware Meetup",
+      "org": "Columbus Hardware Meetup @ Rev1 Labs",
+      "role": "Hosts: Nate Padgett, Julian Lopresto, Michael Liang (Midwest Hard Tech Substack)",
+      "type": "community",
+      "hunt": "growth",
+      "why": "Columbus hardware builders meetup at Rev1 Labs with a 40-minute demo and open-mic block (2-minute pitches). Co-host Michael Liang writes the Midwest Hard Tech Substack and features Ohio hardware founders.",
+      "why_now": "First meetup August 2026; the 2nd meetup page was live with 18 going (date not shown on the page).",
+      "evidence": [
+        "https://luma.com/wf2fdr3y",
+        "https://luma.com/dwoivnh4",
+        "https://midwesthardtech.substack.com/archive"
+      ],
+      "channel": "Luma",
+      "contact_url": "https://luma.com/cbus-hardware-meetup",
+      "warm_path": "Rev1 Ventures (Columbus) network",
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 7,
+        "e": 8
+      },
+      "ask": "Demo slot at the next meetup and a feature in Midwest Hard Tech Substack.",
+      "opener": "Hi Mike, I'm building Vybe in Akron, Ohio: a screenless wearable band with a licensed SDK/API, now at DevKit stage. I'd love to bring it to the next Columbus Hardware Meetup demo block, and if it fits, share our build story for Midwest Hard Tech. Could I grab a 2-minute slot?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": "2026-08-03",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "columbus",
+        "hardware",
+        "community",
+        "demo"
+      ],
+      "lane": "growth_wave3",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 77,
+      "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
     {
       "name": "Creapure HYROX Chicago 2027",
@@ -2889,7 +3258,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 78,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
     {
@@ -2931,7 +3300,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 70,
+      "rank": 79,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
     {
@@ -2976,7 +3345,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 71,
+      "rank": 80,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
     {
@@ -3019,7 +3388,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 72,
+      "rank": 81,
       "id": "fitabase-fitabase-small-steps-labs"
     },
     {
@@ -3057,7 +3426,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 73,
+      "rank": 82,
       "id": "golden-seeds-golden-seeds"
     },
     {
@@ -3094,7 +3463,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 74,
+      "rank": 83,
       "id": "hax-sosv"
     },
     {
@@ -3136,7 +3505,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 75,
+      "rank": 84,
       "id": "invi-mindhealth-invi-mindhealth"
     },
     {
@@ -3174,7 +3543,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 76,
+      "rank": 85,
       "id": "isabel-glass-cade-ventures"
     },
     {
@@ -3212,7 +3581,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 86,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
     {
@@ -3250,7 +3619,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 78,
+      "rank": 87,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
     {
@@ -3287,7 +3656,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 88,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
     {
@@ -3332,7 +3701,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 80,
+      "rank": 89,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
     {
@@ -3375,7 +3744,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 81,
+      "rank": 90,
       "id": "noop-ryanbr-noop-open-source"
     },
     {
@@ -3417,7 +3786,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 82,
+      "rank": 91,
       "id": "neurovus-neurovus"
     },
     {
@@ -3455,7 +3824,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 83,
+      "rank": 92,
       "id": "open-wearables-momentum-open-wearables-project"
     },
     {
@@ -3492,7 +3861,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 93,
       "id": "qualcomm-ventures-qualcomm"
     },
     {
@@ -3529,7 +3898,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 85,
+      "rank": 94,
       "id": "quinn-li-qualcomm-ventures"
     },
     {
@@ -3567,7 +3936,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 86,
+      "rank": 95,
       "id": "redalpine-redalpine"
     },
     {
@@ -3604,7 +3973,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 87,
+      "rank": 96,
       "id": "ryan-engel-cade-ventures"
     },
     {
@@ -3646,7 +4015,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 97,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
     {
@@ -3686,7 +4055,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 98,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
     {
@@ -3728,7 +4097,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 90,
+      "rank": 99,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
     {
@@ -3772,7 +4141,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 91,
+      "rank": 100,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
     {
@@ -3810,7 +4179,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 92,
+      "rank": 101,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
     {
@@ -3851,7 +4220,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 102,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
     {
@@ -3889,8 +4258,95 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 94,
+      "rank": 103,
       "id": "r-quantifiedself-reddit"
+    },
+    {
+      "name": "TechDoctor (SelfBase / Health Portal)",
+      "org": "TechDoctor Inc.",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Tokyo clinical-research data platform (SelfBase) and digital-biomarker platform (Health Portal). It says it has supported 100+ research and healthcare projects across wearables. It had to rebuild Fitbit ingestion on the Google Health API, pass CASA Tier 2 and re-consent every participant.",
+      "why_now": "2026-09-08 press release: Google Health API migration completed ahead of the Fitbit Web API turndown.",
+      "evidence": [
+        "https://prtimes.jp/main/html/rd/p/000000082.000071267.html",
+        "https://third-news.com/article/ef1db7ac-ab1d-11f1-ab6b-9ca3ba08e13f"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://prtimes.jp/main/html/rd/p/000000082.000071267.html",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 5,
+        "e": 5
+      },
+      "ask": "Explore adding Vybe as a SelfBase-supported device for research studies (DevKit eval unit).",
+      "opener": "Hello TechDoctor team, congratulations on finishing the Google Health API migration for SelfBase. Re-consenting every participant is a lot of work. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band with a licensed SDK/API made for research and developer use. Would you be open to a short call about adding it as a supported device for studies in 2027?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Tokyo, Japan",
+      "deadline": null,
+      "last_signal_date": "2026-09-08",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "research-platform",
+        "fitbit-sunset",
+        "digital-health",
+        "hrv"
+      ],
+      "lane": "growth_wave3",
+      "score": 94,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 104,
+      "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
+    },
+    {
+      "name": "UH Haslam Sports Innovation Center",
+      "org": "University Hospitals (Cleveland)",
+      "role": null,
+      "type": "community",
+      "hunt": "growth",
+      "why": "Year-round Cleveland sports-tech hub with a 'living lab' where startups can pilot and co-develop with UH. It runs the Haslam Sports Innovation Center Challenge (with Plug and Play), and its SportsLand summit programmed wearables and athlete-monitoring panels.",
+      "why_now": "SportsLand ran 2026-06-18 with a wearables panel and the HSIC pitch challenge; the center invites partnership inquiries year-round.",
+      "evidence": [
+        "https://uhhaslamsportsinnovation.org/sportsland",
+        "https://www.sportslandsummit.com/agenda",
+        "https://www.ohiox.org/morning-tech"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://uhhaslamsportsinnovation.org/sportsland",
+      "warm_path": "Ohio / OhioX",
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 5,
+        "e": 6
+      },
+      "ask": "Intro call about the next HSIC Challenge cycle and a living-lab DevKit pilot (wellness use only).",
+      "opener": "Hi HSIC team, I'm the founder of Vybe Health in Akron, building a screenless ECG/HRV band with a licensed SDK/API for performance and research teams. The SportsLand panel on the data-driven athlete is the conversation we're building for. Could we have 15 minutes to learn how startups enter the next Challenge cycle or a living-lab pilot?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-06-18",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "cleveland",
+        "sports-tech",
+        "human-performance",
+        "pilot"
+      ],
+      "lane": "growth_wave3",
+      "score": 94,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 105,
+      "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
     },
     {
       "name": "Oura API cuts off Gen3 users without paid membership",
@@ -3930,8 +4386,51 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 95,
+      "rank": 106,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
+    },
+    {
+      "name": "Cleveland Hardware Meetup",
+      "org": "Cleveland Hardware Meetup (Hardware Meetup network)",
+      "role": "Hosts: Nate Padgett, Julian Lopresto and others",
+      "type": "community",
+      "hunt": "growth",
+      "why": "New Cleveland community for people building physical products. Every meetup has a 2-minute community open-mic for demoing prototypes. Landi Industries (NE Ohio prototype-to-production shop that works with health-tech founders) is a partner.",
+      "why_now": "First meetup held during Cleveland Tech Week (2026-09-26 to 10-03) at Baldwin Wallace; the series continues.",
+      "evidence": [
+        "https://luma.com/fxlo2ybj",
+        "https://cletechweek.kit.com/posts/save-the-date-host-an-event-during-cleveland-tech-week-2026"
+      ],
+      "channel": "Luma",
+      "contact_url": "https://luma.com/fxlo2ybj",
+      "warm_path": "Ohio hardware network; Landi Industries",
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 8,
+        "e": 9
+      },
+      "ask": "Take a 2-minute open-mic slot at the next meetup to show the DevKit band; meet Landi Industries about production.",
+      "opener": "Hi Nate and Julian, I'm building Vybe in Akron, a screenless wearable band with a developer SDK. We're a hardware team 40 minutes down I-77 and would love to bring the DevKit to the next Cleveland Hardware Meetup open mic. Could you add us to the list for the next one?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-10-03",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "cleveland",
+        "hardware",
+        "community",
+        "demo"
+      ],
+      "lane": "growth_wave3",
+      "score": 91,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 107,
+      "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
     {
       "name": "FDA closes WHOOP warning letter on Blood Pressure Insights",
@@ -3972,7 +4471,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 96,
+      "rank": 108,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
     {
@@ -4013,7 +4512,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 109,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
     {
@@ -4051,7 +4550,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 98,
+      "rank": 110,
       "id": "accelerating-angels-accelerating-angels"
     },
     {
@@ -4088,7 +4587,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 111,
       "id": "achal-upadhyaya-interlagos"
     },
     {
@@ -4131,7 +4630,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 112,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
     {
@@ -4174,8 +4673,45 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 101,
+      "rank": 113,
       "id": "barrett-piper-west-licking-oh-fire-district"
+    },
+    {
+      "name": "Chris Gammell",
+      "org": "The Amp Hour (podcast)",
+      "role": "Host",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Long-running electronics and hardware podcast that just ran an episode on ultra-low-power wearable health trackers (Chargerless, PPG sampling, sensor ICs). The audience is the embedded engineers Vybe's DevKit needs.",
+      "why_now": "2026-09-10 episode 'Perpetual Wearable Biosensing with Andy Kong'.",
+      "evidence": [
+        "https://app.podcastguru.io/podcast/the-amp-hour-a9402282972b9275ae22640d2c842f62/episode/perpetual-wearable-biosensing-with-andy-kong-73cd6389be64fc9f49d017849a8303f8"
+      ],
+      "channel": "X / podcast contact",
+      "contact_url": "https://app.podcastguru.io/podcast/the-amp-hour-a9402282972b9275ae22640d2c842f62/episode/perpetual-wearable-biosensing-with-andy-kong-73cd6389be64fc9f49d017849a8303f8",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Guest spot on building a screenless ECG/HRV band and an open SDK from Akron.",
+      "opener": "Hi Chris, the Andy Kong episode on low-power biosensing was great, especially the bit about sensor ICs. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band with an open developer SDK, now at DevKit stage. If a follow-up on the firmware and SDK side of a wearable startup would interest your listeners, I'd love to come on.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-10",
+      "confidence": "single-source",
+      "tags": [
+        "hardware",
+        "podcast",
+        "embedded",
+        "wearables"
+      ],
+      "lane": "growth_wave3",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 114,
+      "id": "chris-gammell-the-amp-hour-podcast"
     },
     {
       "name": "Columbus Fury",
@@ -4217,7 +4753,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 102,
+      "rank": 115,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
     {
@@ -4254,7 +4790,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 116,
       "id": "conor-allison-wareable"
     },
     {
@@ -4296,7 +4832,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 104,
+      "rank": 117,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
     {
@@ -4337,7 +4873,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 118,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
     {
@@ -4374,7 +4910,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 119,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
     {
@@ -4411,7 +4947,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 107,
+      "rank": 120,
       "id": "healthtech-capital-healthtech-capital"
     },
     {
@@ -4447,7 +4983,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 108,
+      "rank": 121,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
     {
@@ -4489,7 +5025,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 109,
+      "rank": 122,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
     {
@@ -4526,7 +5062,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 110,
+      "rank": 123,
       "id": "julien-blin-the-upside-newsletter"
     },
     {
@@ -4566,7 +5102,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 111,
+      "rank": 124,
       "id": "leo-polovets-humba-ventures"
     },
     {
@@ -4603,8 +5139,45 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 112,
+      "rank": 125,
       "id": "lunar-ventures-lunar-ventures"
+    },
+    {
+      "name": "Matt Evans",
+      "org": "TechRadar",
+      "role": "Fitness & wellbeing reviewer",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Reviews screenless bands in depth (Garmin CIRQA review; Helio Strap / Polar Loop / WHOOP buying guides) and flags subscription and paywall value issues.",
+      "why_now": "2026-08-06 Garmin CIRQA review.",
+      "evidence": [
+        "https://www.techradar.com/health-fitness/fitness-trackers/garmin-cirqa-review"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.techradar.com",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Review unit at the May 2027 launch; inclusion in the screenless buying guide.",
+      "opener": "Hi Matt, I liked your CIRQA review, especially the point about paywalled coaching on top of the hardware price. I'm building Vybe in Akron, Ohio: a screenless band with no subscription and an open developer SDK, launching May 2027. Could I put you on the list for an early review unit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-06",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "screenless",
+        "journalist",
+        "no-subscription"
+      ],
+      "lane": "growth_wave3",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 126,
+      "id": "matt-evans-techradar"
     },
     {
       "name": "Michael L Hicks",
@@ -4639,7 +5212,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 113,
+      "rank": 127,
       "id": "michael-l-hicks-android-central"
     },
     {
@@ -4678,7 +5251,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 114,
+      "rank": 128,
       "id": "mick-halsband-lunar-ventures"
     },
     {
@@ -4720,7 +5293,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 115,
+      "rank": 129,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
     },
     {
@@ -4756,7 +5329,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 116,
+      "rank": 130,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
     {
@@ -4801,7 +5374,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 131,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
     {
@@ -4843,7 +5416,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 118,
+      "rank": 132,
       "id": "openstrap-openstrap-open-source"
     },
     {
@@ -4887,7 +5460,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 119,
+      "rank": 133,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
     },
     {
@@ -4927,7 +5500,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 120,
+      "rank": 134,
       "id": "petteri-koponen-lifeline-ventures"
     },
     {
@@ -4964,7 +5537,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 121,
+      "rank": 135,
       "id": "point-nine-point-nine"
     },
     {
@@ -5001,7 +5574,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 122,
+      "rank": 136,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
     {
@@ -5040,7 +5613,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 123,
+      "rank": 137,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
     {
@@ -5083,8 +5656,44 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 124,
+      "rank": 138,
       "id": "reach-fitness-reach-fitness-ohio"
+    },
+    {
+      "name": "Rachael Schultz",
+      "org": "Business Insider",
+      "role": "Fitness product reviewer",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Experienced fitness product reviewer who wore the Garmin CIRQA 24/7 for four weeks and assessed screenless trackers for a mainstream audience.",
+      "why_now": "2026-09-13 Garmin CIRQA review.",
+      "evidence": [
+        "https://www.businessinsider.com/guides/tech/garmin-cirqa-fitness-tracker-review"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.businessinsider.com/guides/tech/garmin-cirqa-fitness-tracker-review",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Four-week wear test of Vybe at launch.",
+      "opener": "Hi Rachael, your four-week CIRQA test is the kind of review I trust: long enough to see real habits. I'm building Vybe in Akron, Ohio: a screenless band with no subscription and an open developer SDK, launching May 2027. Would you be open to a review unit for a similar long-term wear test?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-13",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "screenless",
+        "journalist"
+      ],
+      "lane": "growth_wave3",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 139,
+      "id": "rachael-schultz-business-insider"
     },
     {
       "name": "Rev1 Ventures",
@@ -5120,7 +5729,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 125,
+      "rank": 140,
       "id": "rev1-ventures-rev1-ventures"
     },
     {
@@ -5157,8 +5766,45 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 141,
       "id": "robb-sutton-robbsutton-com"
+    },
+    {
+      "name": "Ryan Merket",
+      "org": "RuntimeWire",
+      "role": "Writer",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Covers developer platforms. He wrote on Google's ghealth CLI turning Fitbit/Pixel data into an agent-readable developer surface, and on startups' growing dependence on the Google Health API.",
+      "why_now": "2026-07-01 article on the Google Health CLI as the Fitbit Web API winds down.",
+      "evidence": [
+        "https://runtimewire.com/article/google-health-cli-agent-readable-fitbit-data"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://runtimewire.com",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Briefing on an independent, licensable wearable SDK as the counterweight to platform dependency.",
+      "opener": "Hi Ryan, your ghealth piece nailed the tradeoff: new developer primitives, deeper dependency on Google. I'm building Vybe in Akron, Ohio: a screenless band whose SDK/API is licensed to developers so their roadmap isn't tied to one platform. Happy to brief you when DevKit v0.1 ships if that angle is useful.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-01",
+      "confidence": "single-source",
+      "tags": [
+        "dev-platform",
+        "journalist",
+        "ai-agents",
+        "fitbit-sunset"
+      ],
+      "lane": "growth_wave3",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 142,
+      "id": "ryan-merket-runtimewire"
     },
     {
       "name": "SBA Veteran Small Business Certification (VetCert)",
@@ -5198,7 +5844,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 127,
+      "rank": 143,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
     {
@@ -5236,7 +5882,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 144,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
     {
@@ -5278,7 +5924,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 129,
+      "rank": 145,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
     {
@@ -5314,7 +5960,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 130,
+      "rank": 146,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
     {
@@ -5351,7 +5997,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 131,
+      "rank": 147,
       "id": "t3-performance-t3-performance"
     },
     {
@@ -5389,7 +6035,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 132,
+      "rank": 148,
       "id": "timothy-martens-vaark-ventures"
     },
     {
@@ -5426,7 +6072,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 133,
+      "rank": 149,
       "id": "true-ventures-true-ventures"
     },
     {
@@ -5472,7 +6118,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 134,
+      "rank": 150,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
     {
@@ -5508,7 +6154,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 135,
+      "rank": 151,
       "id": "vaark-ventures-vaark-ventures"
     },
     {
@@ -5551,7 +6197,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 136,
+      "rank": 152,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
     {
@@ -5588,7 +6234,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 137,
+      "rank": 153,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
     },
     {
@@ -5628,7 +6274,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 138,
+      "rank": 154,
       "id": "mydatahelps-careevolution"
     },
     {
@@ -5670,8 +6316,49 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 155,
       "id": "synheart-synheart-mila-ventures"
+    },
+    {
+      "name": "Thryve",
+      "org": "Thryve",
+      "role": "Author: Amith Tony Joseph",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Wearable data aggregator. It says Google Health no longer allows shared credentials, so each customer needs its own OAuth verification plus CASA (from ~EUR 1,000/yr). Some customers are being routed to an on-device bridge. A licensable band with an open SDK is a new source for them.",
+      "why_now": "2026-09-29 blog: Fitbit connections end 2026-10-30; Thryve will disconnect them within 24 hours.",
+      "evidence": [
+        "https://www.thryve.health/blog/fitbit-shutdown-september-2026-migration-options"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.thryve.health",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 5,
+        "e": 6
+      },
+      "ask": "Partner call: list Vybe as an integrated data source in Thryve's SDK in 2027.",
+      "opener": "Hi Amith, your Fitbit shutdown guide was the clearest one I've read, especially the CASA cost point. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band whose SDK/API is licensed to developers, so aggregators aren't at the mercy of a platform owner. Would Thryve be open to a 20-minute call about adding Vybe as a source ahead of our 2027 launch?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-29",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "aggregator",
+        "fitbit-sunset",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 89,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 156,
+      "id": "thryve-thryve"
     },
     {
       "name": "HHS Secretary Kennedy: 'every American wearing a wearable within four years'",
@@ -5711,7 +6398,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 140,
+      "rank": 157,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
     {
@@ -5754,7 +6441,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 141,
+      "rank": 158,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
     {
@@ -5796,7 +6483,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 142,
+      "rank": 159,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
     {
@@ -5838,7 +6525,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 143,
+      "rank": 160,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
     {
@@ -5876,7 +6563,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 161,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
     {
@@ -5913,7 +6600,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 145,
+      "rank": 162,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
     {
@@ -5951,7 +6638,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 163,
       "id": "aix-ventures-aix-ventures"
     },
     {
@@ -5988,7 +6675,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 147,
+      "rank": 164,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
     {
@@ -6030,7 +6717,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 148,
+      "rank": 165,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
     },
     {
@@ -6068,7 +6755,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 149,
+      "rank": 166,
       "id": "anirvan-chowdhury-qualcomm-ventures"
     },
     {
@@ -6105,7 +6792,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 167,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
     {
@@ -6142,7 +6829,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 151,
+      "rank": 168,
       "id": "blume-ventures-blume-ventures"
     },
     {
@@ -6185,7 +6872,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 152,
+      "rank": 169,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
     {
@@ -6222,7 +6909,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 170,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
     {
@@ -6265,7 +6952,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 154,
+      "rank": 171,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
     },
     {
@@ -6301,7 +6988,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 155,
+      "rank": 172,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
     {
@@ -6344,7 +7031,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 156,
+      "rank": 173,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
     {
@@ -6380,7 +7067,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 157,
+      "rank": 174,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
     {
@@ -6415,7 +7102,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 175,
       "id": "humba-ventures-humba-ventures"
     },
     {
@@ -6452,7 +7139,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 159,
+      "rank": 176,
       "id": "jumpstart-ventures-jumpstart-inc"
     },
     {
@@ -6487,7 +7174,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 160,
+      "rank": 177,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
     {
@@ -6528,7 +7215,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 161,
+      "rank": 178,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
     {
@@ -6572,7 +7259,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 162,
+      "rank": 179,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
     {
@@ -6609,7 +7296,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 163,
+      "rank": 180,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
     {
@@ -6650,7 +7337,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 181,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
     {
@@ -6694,7 +7381,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 165,
+      "rank": 182,
       "id": "pace-pace-pacetraining-co"
     },
     {
@@ -6731,7 +7418,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 166,
+      "rank": 183,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
     {
@@ -6773,7 +7460,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 184,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
     {
@@ -6810,7 +7497,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 168,
+      "rank": 185,
       "id": "samsung-next-samsung-electronics"
     },
     {
@@ -6851,7 +7538,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 169,
+      "rank": 186,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
     {
@@ -6892,7 +7579,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 170,
+      "rank": 187,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
     {
@@ -6927,7 +7614,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 171,
+      "rank": 188,
       "id": "veteran-angel-network-van-context-ventures"
     },
     {
@@ -6964,7 +7651,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 172,
+      "rank": 189,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
     {
@@ -7005,7 +7692,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 173,
+      "rank": 190,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
     {
@@ -7042,7 +7729,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 174,
+      "rank": 191,
       "id": "wearable-data-builders-by-rook-rook"
     },
     {
@@ -7078,8 +7765,300 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 175,
+      "rank": 192,
       "id": "r-hyrox-reddit"
+    },
+    {
+      "name": "IEEE Young Professionals Amplified Cleveland 2026",
+      "org": "IEEE Cleveland Section",
+      "role": null,
+      "type": "listing",
+      "hunt": "growth",
+      "why": "Young engineers' conference with an IoT focus (Larry Sears, IoT Sandbox) and a 'Future of Medical Devices' talk. It sells published partner tables, which are a cheap way to meet embedded and firmware talent and early DevKit testers.",
+      "why_now": "2026-10-23 to 24 at Cleveland State University; partner tiers $200 ad / $500 hallway table / $800 ballroom table.",
+      "evidence": [
+        "https://ieeer1.org/r1_event/ieee-young-professionals-amplified-cleveland-october-23-24-2026/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://forms.gle/ZuDNJ4m4hhqnq5rf8",
+      "warm_path": "Ohio engineering network",
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 7,
+        "e": 6
+      },
+      "ask": "$500 hallway table to show the DevKit and collect developer sign-ups.",
+      "opener": "Hi IEEE Cleveland YP team, I'm the founder of Vybe Health in Akron, building a screenless wearable band with an open developer SDK. Your Oct 24 lineup on IoT and medical devices fits the engineers we want to meet. We're interested in the $500 hallway table to demo the DevKit. Is space still available?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": "2026-10-23",
+      "last_signal_date": "2026-10-24",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "cleveland",
+        "engineering",
+        "iot",
+        "event"
+      ],
+      "lane": "growth_wave3",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 193,
+      "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
+    },
+    {
+      "name": "Lightship BootCamp Akron",
+      "org": "Black Tech Week",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Free 3-day hands-on founder bootcamp in Akron covering financial model, ideal customer, pitch and non-dilutive funding.",
+      "why_now": "2026-11-16 to 2026-11-18 in Akron; intake form required.",
+      "evidence": [
+        "https://allevents.in/akron/lightship-bootcamp-akron/200030684940933"
+      ],
+      "channel": "apply",
+      "contact_url": "https://allevents.in/akron/lightship-bootcamp-akron/200030684940933",
+      "warm_path": "Akron",
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "Apply for a seat; use the non-dilutive funding session for SBIR/grant planning.",
+      "opener": "Hi Lightship team, I'm the founder of Vybe Health in Akron. We're building a screenless wearable band with a developer SDK/API and are preparing our DevKit pilot and non-dilutive funding plan. The Nov 16-18 Bootcamp looks like a strong fit and it's right here at home. I've submitted the intake form. Is there anything else you need?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": "2026-11-16",
+      "last_signal_date": "2026-11-16",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "akron",
+        "founder-program",
+        "non-dilutive"
+      ],
+      "lane": "growth_wave3",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 194,
+      "id": "lightship-bootcamp-akron-black-tech-week"
+    },
+    {
+      "name": "Justin (GitHub: rlarson7)",
+      "org": "Ilfirin (longevity-coaching project)",
+      "role": "Independent developer",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Developer whose Ilfirin longevity-coaching pipeline depends on Open Wearables and a Fitbit Charge 6. He wrote that without a working Fitbit to Google path the pipeline is dead in September, and he smoke-tested the live Google Health API.",
+      "why_now": "Open Wearables issue #1000 opened 2026-05-03; he offered to beta-test the 0.6.1 Google Health provider.",
+      "evidence": [
+        "https://github.com/the-momentum/open-wearables/issues/1000"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/rlarson7",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 5,
+        "c": 6,
+        "e": 7
+      },
+      "ask": "Beta-test Vybe's API with his pipeline; DevKit v0.1 design-partner slot.",
+      "opener": "Hi Justin, I read your Open Wearables thread and the Google Health API gotchas you documented. Really useful. I'm building Vybe in Akron, Ohio: a screenless HRV/ECG band with a licensed SDK/API, so builders like you aren't rewriting after every platform change. We're picking 5-10 DevKit design partners. Would you want to put it through your Ilfirin pipeline?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-05-03",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "longevity",
+        "fitbit-sunset",
+        "dev-platform",
+        "hrv"
+      ],
+      "lane": "growth_wave3",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 195,
+      "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
+    },
+    {
+      "name": "fitbit-grafana",
+      "org": "arpanghosh8453/fitbit-grafana (open source)",
+      "role": "Maintainer: Arpan Ghosh",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Popular self-hosted Fitbit-to-InfluxDB/Grafana dashboard. The maintainer merged a provider switch and migration guide (+777 lines) to move to the Google Health API.",
+      "why_now": "PR #62 merged 2026-04-20; the Fitbit Web API turns off 2026-10-30, so users are migrating now.",
+      "evidence": [
+        "https://github.com/arpanghosh8453/fitbit-grafana/pull/62"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/arpanghosh8453/fitbit-grafana",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 7
+      },
+      "ask": "Feedback on Vybe's API shape; a DevKit unit to add a Vybe provider to the dashboard.",
+      "opener": "Hi Arpan, thanks for the Google Health migration work in fitbit-grafana. That PR saved many self-hosters. I'm building Vybe in Akron, Ohio: a screenless HRV/ECG band with a licensed SDK/API made for people who want their raw data in their own stack. Would you look at our API draft and tell us what's missing for a Grafana pipeline? A DevKit unit is yours if it's useful.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-04-20",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "self-hosted",
+        "fitbit-sunset",
+        "dev-platform",
+        "quantified-self"
+      ],
+      "lane": "growth_wave3",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 196,
+      "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
+    },
+    {
+      "name": "oura-toolkit",
+      "org": "spxrogers/oura-toolkit (open source)",
+      "role": "Maintainer: spxrogers",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Rust CLI/SDK/MCP toolkit for Oura. Its decisions log says Oura deprecated personal access tokens (Dec 2025), uses a confidential OAuth client with no PKCE, and caps apps at 10 users, so every user must register their own Oura app.",
+      "why_now": "DECISIONS.md entries dated 2026-07-02 and 2026-07-05.",
+      "evidence": [
+        "https://github.com/spxrogers/oura-toolkit/blob/fd56bb8a2122788c5742ec0ff3f60735011bc0f5/DECISIONS.md",
+        "https://aifitnessapi.com/fix/oura-personal-access-token-deprecated"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/spxrogers/oura-toolkit",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 7
+      },
+      "ask": "Review Vybe's auth model (PKCE/public-client support) before we lock the SDK.",
+      "opener": "Hi, your oura-toolkit DECISIONS.md is a great record of what Oura's auth changes cost CLI and MCP builders: no PATs, no PKCE, a 10-user cap. I'm building Vybe in Akron, Ohio, a screenless band with a licensed SDK/API, and we're deciding our auth model now. Would you give us 20 minutes of honest feedback on it?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-05",
+      "confidence": "verified",
+      "tags": [
+        "open-source",
+        "oura-api",
+        "dev-platform",
+        "mcp"
+      ],
+      "lane": "growth_wave3",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 197,
+      "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
+    },
+    {
+      "name": "Big Team Challenge",
+      "org": "Big Team Challenge",
+      "role": "Help-article author: David",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Team step-challenge platform for workplaces that synced through Fitbit. It had to rebuild on the Google Health API and push every Fitbit user to reconnect.",
+      "why_now": "Help article (updated September 2026): users must reconnect before 2026-09-30 (Google has since extended the turndown to 2026-10-30).",
+      "evidence": [
+        "https://help.bigteamchallenge.com/en/articles/676129-fitbit-is-transitioning-to-google-health",
+        "https://gadgetsandwearables.com/2026/09/28/fitbit-api-migration-deadline-october-30/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://help.bigteamchallenge.com/en/articles/676129-fitbit-is-transitioning-to-google-health",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 6
+      },
+      "ask": "15-min call on adding an open-SDK band as a sync source for workplace challenges.",
+      "opener": "Hi David, I saw your help article walking Fitbit users through reconnecting to Google Health. That's a lot of support load for a challenge platform. I'm building Vybe in Akron, Ohio: a no-subscription screenless band with a licensed SDK/API. Would 15 minutes on what a device integration would need for Big Team Challenge be worthwhile?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-30",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "corporate-wellness",
+        "fitbit-sunset"
+      ],
+      "lane": "growth_wave3",
+      "score": 83,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 198,
+      "id": "big-team-challenge-big-team-challenge"
+    },
+    {
+      "name": "Terra",
+      "org": "Terra (tryterra.co)",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Wearable API aggregator that publicly maintains provider-side connections (Fitbit/Google Health, Garmin, Oura, WHOOP) for developers, and wrote a migration guide for the Fitbit turndown. Adding a new open device fits its model.",
+      "why_now": "2026-09-19 blog post on the Fitbit API migration.",
+      "evidence": [
+        "https://tryterra.co/blog/fitbit-api-shutdown-september-2026-migration",
+        "https://healthapiguy.substack.com/p/the-wearables-interoperability-stack"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://tryterra.co",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 7,
+        "c": 4,
+        "e": 5
+      },
+      "ask": "Integration partner intro: get Vybe on Terra's provider list for the 2027 launch.",
+      "opener": "Hi Terra team, I read your Fitbit migration post. Good point that the user's re-consent is the hard part. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band with a licensed SDK/API and no subscription. We'd like Vybe to show up where developers already integrate. Who's the right person to talk to about adding a new provider before our May 2027 launch?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-19",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "aggregator",
+        "fitbit-sunset",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 83,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 199,
+      "id": "terra-terra-tryterra-co"
     },
     {
       "name": "Rock Health H1 2026: $7.4B digital health funding; wearables are the platform story",
@@ -7120,7 +8099,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 176,
+      "rank": 200,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
     {
@@ -7157,7 +8136,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 201,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
     {
@@ -7199,7 +8178,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 178,
+      "rank": 202,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
     {
@@ -7242,7 +8221,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 179,
+      "rank": 203,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
     {
@@ -7285,8 +8264,46 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 180,
+      "rank": 204,
       "id": "austin-womack-rugged-athlete-training"
+    },
+    {
+      "name": "BTW Meetup Akron",
+      "org": "Black Tech Week",
+      "role": null,
+      "type": "event",
+      "hunt": "social",
+      "why": "Northeast Ohio tech networking meetup in Akron for founders, engineers and students; it invites people to bring an elevator pitch.",
+      "why_now": "2026-11-18, 5:30-7:30 PM, Akron (RSVP on Luma).",
+      "evidence": [
+        "https://allevents.in/akron/btw-meetup-akron/200030212121839",
+        "https://stayhappening.com/e/btw-meetup-akron-E2ISYMDWY1T"
+      ],
+      "channel": "Luma",
+      "contact_url": "https://luma.com/a2q798eh",
+      "warm_path": "Akron",
+      "fit": 7,
+      "ice": null,
+      "ask": "Attend; recruit local firmware/app developers for DevKit testing.",
+      "opener": "Hi BTW team, I'm building Vybe Health here in Akron, a screenless wearable band with a developer SDK. I'm RSVPing for the Nov 18 meetup and hoping to meet local engineers who'd want to hack on our DevKit. Glad to see Black Tech Week bringing this to the 330!",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": null,
+      "last_signal_date": "2026-11-18",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "akron",
+        "community",
+        "networking"
+      ],
+      "lane": "growth_wave3",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 205,
+      "id": "btw-meetup-akron-black-tech-week"
     },
     {
       "name": "COROS x NextGen high-school runners program (NIL)",
@@ -7327,7 +8344,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 206,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
     {
@@ -7365,7 +8382,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 182,
+      "rank": 207,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
     {
@@ -7403,7 +8420,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 183,
+      "rank": 208,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
     {
@@ -7440,7 +8457,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 184,
+      "rank": 209,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
     {
@@ -7477,7 +8494,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 185,
+      "rank": 210,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
     {
@@ -7516,7 +8533,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 186,
+      "rank": 211,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
     {
@@ -7557,7 +8574,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 187,
+      "rank": 212,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
     {
@@ -7602,7 +8619,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 188,
+      "rank": 213,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
     {
@@ -7638,7 +8655,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 189,
+      "rank": 214,
       "id": "greg-morris-gregmorris-co-uk"
     },
     {
@@ -7680,7 +8697,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 215,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
     {
@@ -7716,7 +8733,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 191,
+      "rank": 216,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
     {
@@ -7758,7 +8775,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 192,
+      "rank": 217,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
     {
@@ -7793,7 +8810,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 218,
       "id": "interlagos-interlagos"
     },
     {
@@ -7830,7 +8847,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 194,
+      "rank": 219,
       "id": "inventure-inventure-vc"
     },
     {
@@ -7866,7 +8883,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 195,
+      "rank": 220,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
     {
@@ -7902,7 +8919,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 221,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
     {
@@ -7946,7 +8963,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 197,
+      "rank": 222,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
     {
@@ -7987,7 +9004,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 198,
+      "rank": 223,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
     {
@@ -8028,7 +9045,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 199,
+      "rank": 224,
       "id": "oura-x-usta-us-open-oura"
     },
     {
@@ -8063,7 +9080,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 200,
+      "rank": 225,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
     {
@@ -8104,7 +9121,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 201,
+      "rank": 226,
       "id": "polar-x-team-essent-speed-skating-polar"
     },
     {
@@ -8141,7 +9158,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 202,
+      "rank": 227,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
     {
@@ -8183,7 +9200,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 203,
+      "rank": 228,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
     },
     {
@@ -8225,8 +9242,45 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 204,
+      "rank": 229,
       "id": "sweatid-sweatid"
+    },
+    {
+      "name": "Tim Perkin",
+      "org": "Mountain Massif",
+      "role": "Reviewer",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Outdoor and endurance gear reviewer who wrote an 11-minute CIRQA review focused on HRV, sleep, training readiness and the no-subscription model versus WHOOP.",
+      "why_now": "2026-09-22 Garmin CIRQA review.",
+      "evidence": [
+        "https://mountainmassif.com/reviews/technical-hardware/garmin-cirqa-review/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://mountainmassif.com",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Review unit at launch for an outdoor/endurance audience.",
+      "opener": "Hi Tim, I enjoyed your CIRQA review, especially the clear take on complementing a watch rather than replacing it. I'm building Vybe in Akron, Ohio: a screenless band with no subscription and an open developer SDK, launching May 2027. Could I send you one for an honest outdoor-use review when it's ready?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-22",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "screenless",
+        "outdoor",
+        "reviewer"
+      ],
+      "lane": "growth_wave3",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 230,
+      "id": "tim-perkin-mountain-massif"
     },
     {
       "name": "Veteran Owned Business Directory (VeteranOwnedBusiness.com)",
@@ -8265,7 +9319,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 205,
+      "rank": 231,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
     {
@@ -8302,7 +9356,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 206,
+      "rank": 232,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
     {
@@ -8343,7 +9397,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 207,
+      "rank": 233,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
     {
@@ -8385,8 +9439,94 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 208,
+      "rank": 234,
       "id": "withings-x-boston-10k-for-women-withings"
+    },
+    {
+      "name": "Cintrifuse Demo Night",
+      "org": "Cintrifuse",
+      "role": null,
+      "type": "community",
+      "hunt": "growth",
+      "why": "Cincinnati's recurring no-slides live-demo night. Submissions go through a Request to Demo form reviewed by founders, and it has run health-themed editions (BioFrontiers; Prototype Demo Night with health tech) plus a roadshow.",
+      "why_now": "Health-tech-themed nights ran in 2026 (BioFrontiers on 2026-02-04, plus a later Prototype Demo Night); the Request to Demo form is open on a rolling basis.",
+      "evidence": [
+        "https://luma.com/timkdfst",
+        "https://cintrifuse.com/event/biofrontiers-demo-night/",
+        "https://luma.com/3idbnkzm",
+        "https://cintrifuse.com/roadshow/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://cintrifuse.com/roadshow/",
+      "warm_path": "Ohio startup network",
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 7
+      },
+      "ask": "Submit the Request to Demo form for the next health or prototype demo night.",
+      "opener": "Hi Cintrifuse team, I'm the founder of Vybe Health in Akron, Ohio. We build a screenless wearable band with a licensed SDK/API and are at DevKit stage, which suits a no-slides live demo. We'd love to show it at an upcoming Demo Night, ideally a health-tech edition. I've filled out the Request to Demo form. Anything else you need?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cincinnati, OH",
+      "deadline": null,
+      "last_signal_date": "2026-02-04",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "cincinnati",
+        "demo",
+        "community",
+        "health-tech"
+      ],
+      "lane": "growth_wave3",
+      "score": 79,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 235,
+      "id": "cintrifuse-demo-night-cintrifuse"
+    },
+    {
+      "name": "Oura Home Assistant Integration",
+      "org": "louispires/Oura-Home-Assistant-Integration (open source)",
+      "role": "Maintainer: louispires",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Community Oura integration for Home Assistant that keeps breaking on Oura's new developer portal and OAuth endpoint changes. It needed fallback releases v2.8.6 and v2.8.7.",
+      "why_now": "Issue #71 filed and fixed 2026-08-14.",
+      "evidence": [
+        "https://github.com/louispires/Oura-Home-Assistant-Integration/issues/71"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/louispires/Oura-Home-Assistant-Integration",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 7
+      },
+      "ask": "Feedback on a stable, documented OAuth/local API for a future Vybe HA integration.",
+      "opener": "Hi Louis, I saw the v2.8.7 fix for Oura's new-portal 401s. That's a lot of maintenance caused by endpoint churn. I'm building Vybe in Akron, Ohio: a screenless band with a licensed SDK/API, and we want stable, documented endpoints from day one. Would you spare 15 minutes to tell us what would make a Home Assistant integration painless?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-14",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "smart-home",
+        "oura-api",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 79,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 236,
+      "id": "oura-home-assistant-integration-louispires-oura-home-assistant-integration-open-"
     },
     {
       "name": "Pulsetto",
@@ -8425,7 +9565,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 209,
+      "rank": 237,
       "id": "pulsetto-pulsetto"
     },
     {
@@ -8465,8 +9605,133 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 238,
       "id": "sahha-sahha"
+    },
+    {
+      "name": "ai-brain-starter health-mcp (Google Health connector)",
+      "org": "mycelium-hq/ai-brain-starter (open source)",
+      "role": "PR author: ortizia2000",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Open-source AI 'coach' starter whose health MCP imported Fitbit data. A draft PR adds a Google Health API connector because both the Fitbit Web API and the Google Fit REST API are retiring. Several field names are still unverified.",
+      "why_now": "PR #281 opened 2026-07-01, updated 2026-08-07, still a draft.",
+      "evidence": [
+        "https://github.com/mycelium-hq/ai-brain-starter/pull/281"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/mycelium-hq/ai-brain-starter/pull/281",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 7
+      },
+      "ask": "Add a Vybe vendor stub to the health MCP once the SDK docs are public; feedback on our schema.",
+      "opener": "Hi, I saw PR #281 moving ai-brain-starter's health MCP off the Fitbit and Fit APIs, and the VERIFY flags on field names say a lot. I'm building Vybe in Akron, Ohio: a screenless band whose SDK/API is licensed to developers, with published schemas. Would you review our draft data model and tell us what an agent-facing MCP needs?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-07",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "ai-agents",
+        "mcp",
+        "fitbit-sunset",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 79,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 239,
+      "id": "ai-brain-starter-health-mcp-google-health-connector-mycelium-hq-ai-brain-starter"
+    },
+    {
+      "name": "oura-ring-mcp-server",
+      "org": "jordanburke/oura-ring-mcp-server (open source)",
+      "role": "Maintainer: Jordan Burke",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "MCP server exposing Oura data to AI assistants. It had to add a full OAuth2 login flow and a rotating token store because new Oura personal access tokens fail outright.",
+      "why_now": "PR #7 merged 2026-07-13.",
+      "evidence": [
+        "https://github.com/jordanburke/oura-ring-mcp-server/pull/7"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/jordanburke/oura-ring-mcp-server",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 7
+      },
+      "ask": "Build a Vybe MCP adapter with us when DevKit v0.1 ships.",
+      "opener": "Hi Jordan, I saw PR #7 adding OAuth and a rotating token store after Oura killed new PATs. A lot of plumbing just to keep an MCP alive. I'm building Vybe in Akron, Ohio: a screenless band with a licensed SDK/API meant for developer and agent use. Would you be up for testing a Vybe MCP adapter with our DevKit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-13",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "mcp",
+        "ai-agents",
+        "oura-api",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 79,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 240,
+      "id": "oura-ring-mcp-server-jordanburke-oura-ring-mcp-server-open-source"
+    },
+    {
+      "name": "Home Assistant Fitbit / Google Health integration",
+      "org": "Home Assistant",
+      "role": "Code owner: Allen Porter",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Home Assistant's Fitbit integration broke for new users because new apps must register with Google Health. Users reported unauthorized_client errors, and the maintainer shipped a new google_health integration.",
+      "why_now": "Issue #45291 opened 2026-05-10, closed 2026-08-06 after the new integration was released.",
+      "evidence": [
+        "https://github.com/home-assistant/home-assistant.io/issues/45291"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/home-assistant/home-assistant.io/issues/45291",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 4,
+        "e": 5
+      },
+      "ask": "Guidance on what a local-first Vybe integration for Home Assistant would need; offer a DevKit unit.",
+      "opener": "Hi Allen, I followed the Fitbit-to-Google Health thread in Home Assistant, and thanks for shipping the new integration so quickly. I'm building Vybe in Akron, Ohio: a screenless band with a licensed SDK/API, and we'd like a local-first Home Assistant path from day one. Could you point us to what a well-behaved integration needs? Happy to send a DevKit unit.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-06",
+      "confidence": "single-source",
+      "tags": [
+        "open-source",
+        "smart-home",
+        "fitbit-sunset",
+        "dev-platform"
+      ],
+      "lane": "growth_wave3",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 241,
+      "id": "home-assistant-fitbit-google-health-integration-home-assistant"
     },
     {
       "name": "Ohio Office of Business Certifications (MBE / EDGE / WBE / VFBE)",
@@ -8507,8 +9772,91 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 211,
+      "rank": 242,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
+    },
+    {
+      "name": "Soluno",
+      "org": "Soluno",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Russian-language companion app for WHOOP members built on the official API v2; stuck at the 10-member cap and found the developers@whoop.com address bounced.",
+      "why_now": "2026-08-24 WHOOP Community post: App Approval submitted 2026-06-22 and 2026-07-29, 64+ days without a human reply.",
+      "evidence": [
+        "https://www.community.whoop.com/t/app-approval-10-user-limit-submitted-jun-22-and-again-jul-29-no-response-in-64-days-soluno/16008"
+      ],
+      "channel": "WHOOP Community DM",
+      "contact_url": "https://www.community.whoop.com/t/app-approval-10-user-limit-submitted-jun-22-and-again-jul-29-no-response-in-64-days-soluno/16008",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 6
+      },
+      "ask": "Feedback call on what a localization-friendly wearable SDK should expose.",
+      "opener": "Hi, I read your WHOOP thread about Soluno's approval and the bounced developer address. I'm building Vybe in Akron, Ohio, a screenless band with a licensed SDK/API, and I'd value 15 minutes on what a third-party app like yours needs from a wearable platform: docs, limits, review process. Happy to share our DevKit plans in return.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-24",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "whoop-api",
+        "localization"
+      ],
+      "lane": "growth_wave3",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 243,
+      "id": "soluno-soluno"
+    },
+    {
+      "name": "Timeless",
+      "org": "Timeless",
+      "role": "Poster: idanunzio",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Digital health company in Mexico that syncs WHOOP recovery, sleep, workout and cycle data into longevity reports for patients. It was stuck at the 10-user cap and later posted its 17-day path to approval.",
+      "why_now": "2026-06-28 thread, active through July 2026; the thread documents the approval timeline and other builders still waiting.",
+      "evidence": [
+        "https://www.community.whoop.com/t/no-response-on-api-app-approval-to-raise-the-10-user-limit/15246"
+      ],
+      "channel": "WHOOP Community DM",
+      "contact_url": "https://www.community.whoop.com/t/no-response-on-api-app-approval-to-raise-the-10-user-limit/15246",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 5
+      },
+      "ask": "Add Vybe as a second device option once the SDK ships; 15-min discovery call.",
+      "opener": "Hi, I read your WHOOP Community thread about the 10-user cap and your approval timeline. Thanks for documenting it. I'm building Vybe in Akron, Ohio: a screenless band with a licensed SDK/API and no subscription, built for apps like yours. Would you be open to 15 minutes on what a second wearable integration would need to look like for Timeless?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Mexico",
+      "deadline": null,
+      "last_signal_date": "2026-07-06",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "whoop-api",
+        "digital-health",
+        "longevity"
+      ],
+      "lane": "growth_wave3",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 244,
+      "id": "timeless-timeless"
     },
     {
       "name": "37 Angels",
@@ -8542,7 +9890,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 212,
+      "rank": 245,
       "id": "37-angels-37-angels"
     },
     {
@@ -8584,7 +9932,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 246,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
     {
@@ -8625,7 +9973,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 247,
       "id": "akron-running-project-akron-marathon-race-series"
     },
     {
@@ -8661,7 +10009,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 215,
+      "rank": 248,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
     {
@@ -8697,7 +10045,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 216,
+      "rank": 249,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
     {
@@ -8740,7 +10088,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 250,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
     {
@@ -8775,7 +10123,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 218,
+      "rank": 251,
       "id": "dvc-health-duro-ventures-collective"
     },
     {
@@ -8812,7 +10160,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 219,
+      "rank": 252,
       "id": "elevate-human-performance-elevate-human-performance"
     },
     {
@@ -8853,7 +10201,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 220,
+      "rank": 253,
       "id": "garmin-x-usa-triathlon-garmin"
     },
     {
@@ -8888,7 +10236,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 254,
       "id": "hpa-hyde-park-angels-hpa"
     },
     {
@@ -8924,7 +10272,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 255,
       "id": "heather-landi-fierce-healthcare"
     },
     {
@@ -8965,7 +10313,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 256,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
     {
@@ -9001,7 +10349,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 224,
+      "rank": 257,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
     {
@@ -9043,7 +10391,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 258,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
     {
@@ -9079,7 +10427,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 259,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
     {
@@ -9120,7 +10468,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 227,
+      "rank": 260,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
     {
@@ -9155,7 +10503,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 228,
+      "rank": 261,
       "id": "life-science-angels-life-science-angels"
     },
     {
@@ -9190,7 +10538,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 229,
+      "rank": 262,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
     {
@@ -9227,7 +10575,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 230,
+      "rank": 263,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
     {
@@ -9264,7 +10612,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 231,
+      "rank": 264,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
     {
@@ -9300,7 +10648,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 232,
+      "rank": 265,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
     {
@@ -9342,7 +10690,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 266,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
     {
@@ -9383,7 +10731,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 234,
+      "rank": 267,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
     {
@@ -9424,7 +10772,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 235,
+      "rank": 268,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
     {
@@ -9465,7 +10813,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 269,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
     {
@@ -9500,7 +10848,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 237,
+      "rank": 270,
       "id": "sand-hill-angels-sand-hill-angels"
     },
     {
@@ -9541,7 +10889,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 271,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
     },
     {
@@ -9577,7 +10925,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 239,
+      "rank": 272,
       "id": "startup-health-syndicate-startup-health"
     },
     {
@@ -9613,7 +10961,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 273,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
     {
@@ -9656,8 +11004,44 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 241,
+      "rank": 274,
       "id": "suunto-x-utmb-world-series-suunto"
+    },
+    {
+      "name": "TechLife Columbus 2.0 Launch",
+      "org": "TechLife Columbus",
+      "role": null,
+      "type": "community",
+      "hunt": "social",
+      "why": "Central Ohio's tech community hub is relaunching as a place to find events, people and companies. Getting listed early gives an Ohio hardware startup a home in Columbus tech.",
+      "why_now": "Launch party 2026-10-24 at COhatch Westerville.",
+      "evidence": [
+        "https://happeningnext.com/event/carnifall-techlife-columbus-20-launch-party-eid1ef0l6d8siwr"
+      ],
+      "channel": "event RSVP",
+      "contact_url": "https://happeningnext.com/event/carnifall-techlife-columbus-20-launch-party-eid1ef0l6d8siwr",
+      "warm_path": "Ohio tech network",
+      "fit": 7,
+      "ice": null,
+      "ask": "Attend and ask to be listed in the TechLife 2.0 company directory.",
+      "opener": "Hi TechLife team, congrats on the 2.0 relaunch. I'm the founder of Vybe Health in Akron, building a screenless wearable band with a developer SDK. We'd love to be part of the new TechLife directory and meet Columbus builders. See you Oct 24 at COhatch!",
+      "check_size": null,
+      "stage": null,
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": "2026-10-24",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "columbus",
+        "community"
+      ],
+      "lane": "growth_wave3",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 275,
+      "id": "techlife-columbus-2-0-launch-techlife-columbus"
     },
     {
       "name": "WHOOP x Dubai Fitness Challenge 2025",
@@ -9696,7 +11080,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 276,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
     {
@@ -9738,7 +11122,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 243,
+      "rank": 277,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
     },
     {
@@ -9775,7 +11159,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 244,
+      "rank": 278,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
     {
@@ -9817,7 +11201,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 279,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
     {
@@ -9858,7 +11242,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 280,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
     },
     {
@@ -9897,7 +11281,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 247,
+      "rank": 281,
       "id": "digital-health-digital-health"
     },
     {
@@ -9940,7 +11324,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 248,
+      "rank": 282,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
     {
@@ -9981,7 +11365,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 283,
       "id": "notus-labs-notus-labs"
     },
     {
@@ -10021,7 +11405,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 284,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
     {
@@ -10060,8 +11444,50 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 251,
+      "rank": 285,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
+    },
+    {
+      "name": "AHA Scientific Sessions 2026 - Health Innovation Pavilion",
+      "org": "American Heart Association Center for Health Technology & Innovation",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "The Health Innovation Pavilion at AHA's flagship meeting gathers clinicians, founders, investors and health systems around connected health and AI, with a Health Tech Competition. It's within driving distance for meeting cardiology researchers who use ECG/HRV wearables.",
+      "why_now": "2026-11-07 to 09, McCormick Place, Chicago.",
+      "evidence": [
+        "https://ahahealthtech.org/scientific-sessions/"
+      ],
+      "channel": "event registration",
+      "contact_url": "https://ahahealthtech.org/scientific-sessions/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 4,
+        "e": 4
+      },
+      "ask": "Attend HIP and book 5-10 meetings with research teams about DevKit study use (no clinical claims).",
+      "opener": "Hi CHTI team, I'm the founder of Vybe Health in Akron, Ohio, building a screenless ECG/HRV wellness band with a licensed SDK/API for researchers and developers. We'll be at Scientific Sessions in Chicago and would love to meet teams in the Health Innovation Pavilion. Is there a way for early-stage companies to take part or book meetings?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": "2026-11-07",
+      "confidence": "single-source",
+      "tags": [
+        "midwest",
+        "chicago",
+        "cardiology",
+        "research",
+        "event"
+      ],
+      "lane": "growth_wave3",
+      "score": 73,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 286,
+      "id": "aha-scientific-sessions-2026-health-innovation-pavilion-american-heart-associati"
     },
     {
       "name": "EarlyHunt - Wearables category",
@@ -10100,7 +11526,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 252,
+      "rank": 287,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
     {
@@ -10141,7 +11567,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 288,
       "id": "coros-x-jakob-ingebrigtsen-coros"
     },
     {
@@ -10182,7 +11608,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 254,
+      "rank": 289,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
     {
@@ -10223,7 +11649,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 255,
+      "rank": 290,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
     {
@@ -10264,7 +11690,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 256,
+      "rank": 291,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
     },
     {
@@ -10306,7 +11732,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 292,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
     {
@@ -10347,7 +11773,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 258,
+      "rank": 293,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
     {
@@ -10388,7 +11814,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 259,
+      "rank": 294,
       "id": "jacob-hart-independent-ultrarunner"
     },
     {
@@ -10424,7 +11850,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 260,
+      "rank": 295,
       "id": "jessica-hagen-mobihealthnews"
     },
     {
@@ -10465,7 +11891,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 261,
+      "rank": 296,
       "id": "john-miller-stormbound-crossfit"
     },
     {
@@ -10507,7 +11933,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 297,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
     {
@@ -10549,7 +11975,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 298,
       "id": "oura-x-u-s-soccer-oura"
     },
     {
@@ -10591,7 +12017,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 264,
+      "rank": 299,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
     {
@@ -10632,7 +12058,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 265,
+      "rank": 300,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
     {
@@ -10673,7 +12099,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 266,
+      "rank": 301,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
     {
@@ -10714,7 +12140,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 267,
+      "rank": 302,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
     {
@@ -10755,7 +12181,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 268,
+      "rank": 303,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
   ],
