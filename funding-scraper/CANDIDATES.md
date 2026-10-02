@@ -408,6 +408,135 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 2 Oct 2026 (small-and-available sweep)
+
+The founder asked for small, easy, available-now money. Every row needs no SAM.gov and
+charges no fee. 26 rows were added:
+
+- **Cash:**
+  - Intuit IDEAS veteran cohort: $5K; **C-corps are ineligible**, so confirm the entity type; closes 15 Oct.
+  - Pave HER Way Disruptor Award: up to $90K to the woman founder personally, for a project benefiting women and girls; closes 16 Oct.
+  - Emergent Ventures: rolling.
+  - Founders Live 99-second video: $1K regional, $5K grand prize; due 9 Nov.
+  - Sengo monthly pitch: $1K+; one free slot per cycle.
+- **Hackathons:**
+  - Amazon Developer Hackathon: Bee wearable-AI track $12K, Fire TV fitness track $25K; due 23 Oct.
+  - Nebius x NVIDIA: $20K/$10K/$6K; due 30 Oct.
+  - Rutgers Health Hack: $10K pool, 9–11 Oct, in person.
+  - Latinos x AI NYC healthcare track: $1.5K pool, 10 Oct.
+  - Innovation World Cup IoT/WT: wearables pitch; Feb 2027.
+  - **Open-source code rule:** both Devpost hackathons require public code, so enter with a separate demo, never the core engine.
+- **Free credits:**
+  - PostHog: $50K. Mixpanel: one year, valued at $145K. Retool: one year. Amplitude: one year.
+  - Algolia: $10K. Sentry: $5K.
+  - Zendesk: 6 months. Intercom: 93% off. Notion. Carta Launch.
+  - **No PHI through Mixpanel or PostHog;** their startup plans don't cover a BAA.
+- **Free legal and IP help:** Ohio Patent Pro Bono (income cap), Case Western IP clinic, University of Akron trademark clinic.
+- **Free sensor samples:** Analog Devices (ECG/PPG front ends), Renesas, Murata.
+
+**Watch list:**
+- AdIQ Cares (quarterly $2.5K, hardship-focused)
+- Awesome Foundation Cleveland ($1K, community projects only)
+- RIHOF Women in MedTech ($2.5K in-kind; ask whether a non-medical wearable qualifies)
+- DMEA nova Award 2027 (€3K, Munich, Jan window)
+- MIT GrandHack 2027 (dates in December)
+- InterSystems FHIR contests (recurring, Nov–Dec)
+- Women in AI pitch SF (no page yet)
+
+## Rejected on inspection — 2 Oct 2026 (small-and-available sweep)
+
+- **Grow Your Reach Grant ($1,000)** — The page says 'October 11th' with no year, so a 2026 round cannot be confirmed. It also requires an existing business, and the money is limited to marketing.
+- **Coach K Legacy Christmas Grant ($500)** — The page says 'by December 25th' with no year, so a 2026 round cannot be confirmed. It is a coaching lead-generation micro-grant.
+- **Hustler's MicroGrant (HerSuiteSpot / Yva Jourdan Foundation)** — Charges an application fee ($15, per its FAQ and trackers).
+- **National Fund for Women — monthly microgrants** — Grants go to individuals only ('we do not grant funds to organizations or companies'), and you need a $15/yr membership.
+- **UpGreyed Her 2026 (Grey)** — Closed 20 Apr 2026. It also requires 3+ years in operation and a founder aged 23–40.
+- **Consumers Cooperative Association (CCU) Business Incubator Grant 2026** — Open only to businesses in Lake, DuPage, Cook, Kane or McHenry County, Illinois, and the final pitch is in person in Lake Forest, IL.
+- **Intuit QuickBooks & Mailchimp Small Business Hero Program** — A third party must nominate the business, and it must have been established for at least 1 year (per trackers). Vybe is under 1 year old.
+- **Tech Turtle Small Business Growth Grant** — Wisconsin only, in-kind only, and the 2026 round is fully allocated and closed.
+- **Big Idea Grant (YippityDoo)** — Charges an application fee ($15).
+- **Gracefully Hers Funded Business Boost (Jan 2027)** — Charges an application fee ($10).
+- **Visionaries Pitch Competition** — Charges a fee ($20) and closed 18 Jun 2026.
+- **Makers Mindset x The Equity Studio 2026 Grant** — Requires beauty or wellness consumer-packaged goods (supplements, skincare and the like) with $50K+ revenue and at least 1 year of revenue. Vybe is pre-revenue hardware.
+- **Sengo Pitch Competitions** — Effectively a paid membership: priority spots and full grant eligibility need the $30/month Founder plan. Free accounts get one shared spot per cycle.
+- **Simply Business x Sky's the Limit Big Dreams Grant 2026** — Closed 18 Jun 2026.
+- **Rippling $50K Small Business Grant** — Closed 30 Sep 2026, and it requires 10–50 full-time employees.
+- **Credibly Small Business Awards 2026** — Closed 30 Sep 2026.
+- **Spectrum Reach Pay It Forward** — Requires at least 1 year of operation and a participating Spectrum market. The award is in-kind TV advertising, not cash.
+- **Black & Brown Founders Empower Growth Fund** — Requires revenue in the last 12 months (one tracker also says 18+ months operating), and the current cycle tied to the 31 Aug 2026 deadline has passed.
+- **Seed to Scale Grant (Fifteen Percent Pledge x Nordstrom)** — The monthly awards ran Sep 2025 to Mar 2026. It also requires community membership, 1+ year in business and a product already being sold.
+- **Amex Shop Small Grants Program (Main Street America)** — The last round closed in Jan 2026. No 2026-27 round is announced on the official page; the previous round opened on Small Business Saturday.
+- **Red Letter Grant (Fall 2026)** — Limited to 18 counties in western Wisconsin.
+- **Lifting Up Small Business Grant (Optimum / Georgetown Chamber)** — Requires a brick-and-mortar location in listed Georgetown, TX zip codes.
+- **Impact Week TLH Pitch Competition** — Requires a business already selling a product and in-person pitching in Tallahassee. It closes 9 Oct, so it is effectively local.
+- **AwardX International 26 (LaunchX)** — Students only (high-school and university-aged founders).
+- **GIST Catalyst Virtual Pitch Competition 2026** — Closed 22 Sep. It is also for founders aged 18–40 in GIST (non-US) economies.
+- **Zensurance Small Business Grant** — Canada only, and the 2026 round closed 9 Sep.
+- **Allstate Main Street Grants (Hello Alice)** — Closed 23 Jun 2026, and it requires $25K+ revenue in 2025.
+- **AT&T Small Business Contest 2026** — Closed 31 Jul 2026.
+- **Hustle-style fee grants re-checked (Outta Excuses, Secretsos, Women Founders Grant, Hey Helen, HerRise, Amber)** — All charge application fees ($15–$25). Several are already on the master list.
+- **Impact Week TLH Pitch Competition (Tallahassee, $6,750)** — Requires an 'identifiable product or service currently being offered to customers', a business bank account and an operating (not concept-only) business. Vybe is pre-launch. It is also in-person in Tallahassee on Nov 17-19, and the deadline is Oct 9.
+- **HealthTech Week Startup Pitch Competition @ JPM (Aiify.io x MedStartr, SF Jan 12/14 2027)** — No cash prize is stated anywhere. The fast track runs through a paid $1,194 Demo Station, and other applicants must select a 'pitch' ticket (the finals ticket is $39). The pitch ticket price is not stated, so it may effectively be a fee.
+- **Pitch Perfect Grant (Mommy to Millionaire / Pink Print via Skip, $5K)** — The official Skip page shows 'Current Status Closed'. An Oct 15, 2026 date appears only on an aggregator (grantaura) and is unverified.
+- **Angel Club Pitch Slam (monthly, virtual)** — No cash. The prize is a feature, a package and advisory. Free and virtual monthly, but not a cash prize.
+- **The Pitch podcast (live taping, SF, Nov 2026)** — Not a prize. VCs invest on air (equity round, at least $300K left to raise). It also requires in-person taping in SF.
+- **Startup Grind Pitch Battle Royale 2027** — The 2026 cycle is closed. 2027 has only a notification list, with no open application or dates.
+- **MedTech Innovator 2027 cohort** — No open window. The site shows a 2027 waitlist only. Current portal terms say awards may be equity/SAFEs and fees may exist. Above the small-prize band.
+- **Venture Café Cambridge pitch sessions / Pitch2Tokyo** — No cash prize. Pitch nights are for visibility only. Pitch2Tokyo is limited to individuals residing in the host city, pays travel only, and its 2026 cycle has passed.
+- **Venture Café Miami Pitch Night MIA** — Venture Café Miami has suspended operations.
+- **WhaleTank Crazy Idea Pitch Contest ($250)** — Entries closed Sep 30, 2026.
+- **Women in AI Pitch Competition — SF Fall '26 (Oasis Collective)** — The calendar lists an SF Fall '26 event, but there is no public page with a date, deadline or prize, so it cannot be verified. The NYC Fall '26 edition is already in the rejected list. Re-check in November.
+- **shesquared 'Women In Business' Pitch Competition** — Requires a business that is 100% female owned and operated. Vybe is 51%+ woman-owned, not 100%.
+- **WT Innovation World Cup USA / 18th Healthcare Innovation World Cup (wearables)** — Closed: the Healthcare IWC deadline was Sep 10, 2026 and the WT USA deadline was Jul 14, 2026. No cash amount is stated.
+- **Prep to Pitch (weekly, $1,000 grand prize)** — $59 evaluation fee per pitch submission.
+- **Biotech Showcase DigiMed Showcase (JPM week)** — Presenting fee ($5,715+ for private companies). No cash prize.
+- **RESI JPM Innovator's Pitch Challenge** — Pitch fee (non-transferable). No cash prize stated.
+- **The Pitch by Deel** — The prize is a mandatory SAFE investment (equity). The 2026 season is wrapped and 2027 is waitlist-only.
+- **CORI Small Towns, Big Ideas ($10K)** — Limited to startups from CORI's Rural Innovation Network communities. The event is Oct 29, 2026 with finalists already selected.
+- **Mid-Continent Public Library Square One Pitch Competition / Brooklyn PowerUP (library pitch contests)** — Local-residency gated (KC metro / Brooklyn) and closed for 2026. No nationally open library pitch contest was found.
+- **AgeTech Collaborative Open Mic Pitch Challenges (Oct/Nov 2026)** — All listed open-mic deadlines have passed (Sep 30, 2026). No Dec or Jan open mic is posted, and the open mics carry no stated cash prize.
+- **Pitch to the Sharks (B3 Elevation / IGNITE)** — The page shows only 2025 city dates, with no 2026 cycle posted. Prizes are vague ('funding opportunities').
+- **KOKUYO DESIGN AWARD 2027** — IP transfer: all patent/design/copyright rights in a winning entry go to KOKUYO, with the prize as 'full consideration'. Only unpublished designs qualify, and the category is stationery, furniture or tools. Closes Oct 7, 2026.
+- **OpenCV AI Competition 2026 (AWS)** — Off-theme: requires OpenCV 5 image/video analysis on AWS (computer vision). Vybe is a screenless, camera-free sensor platform. Due Oct 26.
+- **HackStorm 3.0: Sense, Think and Act (SF, Nov 6-8)** — Registration closed on the official Luma page; curated in-person event.
+- **MIT Hacking Medicine GrandHack 2027** — Not open: no 2027 dates or application posted (the 2026 application closed Jan 15). Re-check Dec 2026.
+- **Siriraj x MIT Hacking Medicine 2026 / KFSH&RC x MIT HackMed (Riyadh) / MIT HackMed Malaysia** — Non-US events (Bangkok, Riyadh, Kuala Lumpur); Siriraj applications closed Jul 31, 2026.
+- **InterSystems Developer Community programming contests (FHIR / AI agents)** — No contest open now; the FHIR contest ran May-Jun 2026. Recurring (a Nov-Dec contest ran in 2025), so watch for one.
+- **Medblocks FHIR App Challenge (Nov 11, 2026 cohort)** — Entry fee ($27); prizes are non-cash (subscriptions/bootcamp seats).
+- **CUHK-X Multimodal Human Activity Challenge (Kaggle / UbiComp 2026)** — Closed: Kaggle leaderboard froze Sep 15, 2026; only finalists remain.
+- **RSNA Knee Abnormality Detection (Kaggle)** — Off-theme single-domain radiology imaging. Entry deadline Oct 15, final Oct 22, 2026.
+- **DrivenData DaT Parkinson's Challenge** — Single-disease imaging (DaT scans); not wearable or general health.
+- **DSH Hacks V2 / CodeTheCure / Cosmo Hacks / United Hacks V8 / EurekaDev / BioHacks McMaster / H.A.R.D. Hack 2027** — Student-only (Devpost eligibility: 'Students only', 'Companies/professional organizations excluded').
+- **Health-a-thon 2026 (Koita Foundation / IIT Bombay)** — India-focused; teams must include a practising doctor as Clinical Lead; finals in Mumbai; registration window Aug 1 - Sep 11.
+- **Since AI Hackathon 2026 (Turku, Finland)** — In person in Finland (Nov 6-8); no health or wearable challenge track verified; poor fit for travel cost.
+- **Design Intelligence Award (DIA) 2026** — Free registration closed Jul 1, 2026; paid additional registration closed Sep 1, 2026.
+- **A' Design Award — Wearable Technologies / Health Monitor / Preventive Care categories** — Upload is free, but nominating for jury judging carries a fee.
+- **Red Dot Award: Product Design 2027 / Red Dot Design Concept 2027** — Registration fees (Product Design) and winner-package fees (Design Concept).
+- **TITAN Health Awards** — Entry fee ($140-$445).
+- **Healthcare Innovation World Cup 2026 (MEDICA)** — Closed Sep 10, 2026; next edition deadline Sep 9, 2027.
+- **Resilient America Preparedness Challenge (Qualcomm x EDGE AI Foundation)** — Proposals closed Sep 6, 2026; only semi-finalists build to Nov 8.
+- **Oxidize XIAO quarterly build challenge (Seeed / Embedded Rustacean)** — Non-cash random-draw prize pack; requires a newsletter subscription and a XIAO+Rust project.
+- **Seeed Interactive Signage Contest 2026 / Meshtastic Build-Off 2026** — Closed (Aug 31 and Jun 25, 2026). Meshtastic also has a possible 10-20% revenue-share co-creation clause.
+- **HackFW: MADE Challenge (Fort Worth)** — Off-theme (manufacturing, supply chain, rail); in-person Demo Day in Fort Worth required.
+- **Hack2Heal 2.0 / Omi Apps Hackathon** — Ended (Hack2Heal is student-only and closed Sep 10, 2026; the Omi Devpost hackathon ran Nov 2024).
+- **HubSpot for Startups** — Discounts need an approved HubSpot partner affiliation or verified venture funding (90% tier) or an approved entrepreneurial organization (30% tier); no direct track. Discount only, Professional/Enterprise products.
+- **Figma for Startups** — Official page not reachable for verification; aggregators state it requires a partner VC/accelerator affiliation. Not verified, so excluded.
+- **Atlassian for Startups** — Requires being VC funded or associated with a partner accelerator/incubator.
+- **GitHub for Startups** — $10,000 credits only for partner-affiliated startups ('Apply through a GitHub for Startups partner').
+- **Vercel for Startups** — Must be affiliated with an approved Vercel Startups Partner and show proof.
+- **Linear startup program** — 'Only companies affiliated with an official Linear partner can participate.'
+- **Slack for Startups** — Slack discount runs through Salesforce Launchpad, which is 'open to venture-backed startups' with proof of funding; discount only (25%).
+- **Airtable for Startups** — Official page not readable; credits appear only through partner channels (HubSpot for Startups, accelerators). No direct track verified.
+- **Twilio Segment startup program** — Page now redirects to generic Twilio Startups resources; no startup credit amount or program terms stated.
+- **Firebase / Google for Startups** — Already listed (Google for Startups Cloud Program covers Firebase/GCP).
+- **Canva for startups** — No official Canva startup credit program page could be verified.
+- **Deel startup perk** — Deel's own startup page states no discount or credit; perks (20% off/$1,500) exist only through partners such as Ramp or Clerky.
+- **Gusto startup discount** — Gusto's own page states no startup discount; 6-months-free offers are only via partners (Clerky, accelerators, Brex).
+- **Mercury Perks** — Perk bundles listed but no terms, values or eligibility visible on the official page; could not verify.
+- **Clerky perks** — Perks are only for Clerky customers, which requires buying Clerky products ($427+ one-time); effectively a fee.
+- **Apple Developer Program fee waiver** — Only for nonprofits, accredited educational institutions and government entities; for-profit Vybe is ineligible ($99/yr fee applies).
+- **Google Play developer registration fee waiver** — No waiver exists; one-time $25 fee for full distribution (limited distribution to 20 devices is free).
+- **Infineon free online samples** — Samples free but 'shipping and handling fees may apply' and info only on a community KB page; lower fit than ADI/Renesas.
+
 ## Promoted to the board — 2 Oct 2026 (no-SAM-only sweep)
 
 The founder asked for opportunities that need no SAM.gov. Four lanes were searched, every
