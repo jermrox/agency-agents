@@ -408,6 +408,197 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 2 Oct 2026 (no-SAM-only sweep)
+
+The founder asked for opportunities that need no SAM.gov. Four lanes were searched, every
+result had to be SAM-free to apply and to be paid, and cash was ranked first:
+- Akron and northeast Ohio local money
+- national pitch prizes
+- sports, sleep, women's health and longevity prizes
+- corporate and hospital challenges
+
+**The honest finding: the no-SAM cash pool for this stage is small, and most of it is
+already on the board.** This round added 7 rows:
+
+- **Cash:**
+  - InsurTech America Innovation Challenge ($10K per category; **closes 7 Oct**)
+  - Shophand ($2.5K plus services)
+  - Business Freedom Grant ($1K)
+  - Next Era Founders Fellowship ($3K; women founders; 9 Nov – 4 Dec)
+- **Free pilot and partner doors:**
+  - USOPC Performance Innovation intake
+  - OhioHealth NVBI
+  - University Hospitals Ventures
+
+**Watch list:**
+- JumpStart Trailblazer Software Accelerator: $50K in covered services; page shows 10 Nov but still says "closed"; intent to raise VC required.
+- DADC Business Development Grant: Knight-funded, rolling; reimburses 1/3 of property improvements inside the Downtown Akron district only.
+- Heighten The Hustle Cleveland pitch: 24 Oct; prize unstated.
+- Psychiatry Innovation Lab 2027: portal opens November; amount unstated.
+- TechCrunch Startup Battlefield 2027: $100K equity-free; window not posted.
+- YBI Shark Tank: Medical Mutual sponsor, $10K; opens ~June.
+- BCBS Kansas pilot competition: mid-March.
+- Mass General Brigham Kraft Prize: $100K; opens January.
+
+**Learned:**
+- **Ohio foundations fund founders only through intermediaries.** That covers Akron Community Foundation, Knight, GAR, Burton D. Morgan and the Cleveland Foundation; the intermediaries are DADC, Bounce, JumpStart and MORTAR.
+- **Ohio's minority-business and CDFI programs are loans, not grants.**
+- **Best Buy has no startup program.** Best Buy Health serves health plans, and the Marketplace is a paid sales channel; revisit at the May 2027 launch.
+
+## Rejected on inspection — 2 Oct 2026 (no-SAM-only sweep)
+
+- **Startup World Cup — Ohio Regional (Kickstart Midwest, Columbus, 24 Oct 2026)** — Not non-dilutive. The grand prize is a $1M investment 'in exchange for a portion of equity ... or a convertible note', and no cash prize is stated for the regional. The page shows 10/15 (likely the application deadline). Free visibility only, so it is worth a look if the founder wants investor exposure.
+- **Cuyahoga County Business Boost Initiative ($1K–$10K)** — Cuyahoga County businesses only; Vybe is in Summit County. Window 16 Sep–16 Oct 2026 (lead source was news, not verified on the county page).
+- **City of Akron Great Streets Micro Enterprise / Business Improvement Grant** — The 2025 round closed 30 Sep 2025 and has been awarded; the city page shows grant programming 'Pending Federal Funding'. Limited to the 13 Neighborhood Business Districts and businesses with 5 or fewer employees. HUD CDBG money.
+- **City of Akron Small Business Enterprise (SBE) program** — A procurement set-aside program (city contracts such as sidewalks and hydrants), not a grant. Not relevant to Vybe.
+- **Akron Community Foundation — Community Fund / Civic Affairs grants** — Grants go to nonprofits (e.g., Bounce, ECDI, MORTAR, SCORE), not to for-profit startups. Reach this money through the programs it funds.
+- **Knight Foundation (Akron)** — No direct application route for for-profit startups. Its Akron entrepreneur money reaches businesses through the DADC Business Development Grant (listed as an entry).
+- **GAR Foundation / Elevate Greater Akron** — A regional economic-development collaborative and funder. I found no open application for a for-profit startup.
+- **Burton D. Morgan Foundation** — Funds intermediaries (JumpStart mentoring, the StartUp Akron library pitch, youth pitch challenges). I found no direct application for a startup. Its open 2026 pitch items are K-12 youth only (Young Entrepreneur Pitch Challenge) or closed (Lakeland WAVE Maker's Pitch, July 2026).
+- **Fund for Our Economic Future** — A funder collaborative and think tank; it does not make grants to individual companies.
+- **Cleveland Foundation (incl. Technovation @ Accelerate)** — Accelerate 2026 is closed. Ideas 'cannot be affiliated with an established organization or business', and Technovation is limited to Cuyahoga County social-good ideas.
+- **StartUp Akron Pitch Competition (Akron-Summit County Public Library)** — The last edition I found was May 2023. No 2026 or 2027 round is posted.
+- **Kent State Idea Pitch (Fall 2026) / Spring Pitch / LaunchNET** — Student-only (Kent State students only for prizes); the application closed 24 Sep 2026. LaunchNET serves Kent State students, alumni, faculty and staff only.
+- **CWRU Venture4Impact 2026 / Morgenthaler-Pavey** — Student-only (CWRU students); registration closed 1 Oct 2026.
+- **University of Akron LaunchTown Entrepreneurship Awards** — Student-only.
+- **Cleveland State Startup Vikes** — Student-only (enrolled college students).
+- **University of Dayton Flyer Pitch (2026-27)** — Open only to UD affiliates and Greater Dayton residents; the funding round requires a UD student, faculty member, staff member or alumnus on the team.
+- **JumpStart Trailblazer HealthTech Accelerator** — Applications closed 2 Aug 2026 (cohort runs 17 Sep–10 Dec 2026); the next date is TBD.
+- **JumpStart Stark County Small Business Impact Program** — Stark County businesses only, with more than $100,000 annual revenue; the application closed 7 Sep.
+- **Cleveland Chain Reaction (COSE) Season 9** — Closed; the next season is 2027 (date not posted).
+- **Bounce I-Pitch / MORTAR 'Life's a Pitch' / Akron Urban League MORTAR Pitch** — Invitation-only for I-Corps or MORTAR cohort graduates; the 2026 events are past.
+- **Ohio Micro-Loan Program / Women's Business Enterprise Loan / Minority Business Direct Loan (MBDD)** — Loans, not grants. They also require state MBE/WBE certification (which needs 1+ year in business), and the micro-loan is capped at 2x revenue, which is near zero for a pre-revenue company.
+- **Ohio Microenterprise Business Development Program (OMBDP) IDA match** — INCOME GATE: participants must be at or below 50% of Area Median Income. Funds go through nonprofits as an 8:1 savings match ($2,000). Lead source only, not verified on the state page.
+- **ECDI / Women's Business Centers of Ohio** — Loans plus coaching; WBC membership costs $100 a year. I found no grant program on ECDI's pages.
+- **Western Reserve Community Fund (CDFI) / Ohio CDFI Loan Participation Program** — Loans only ($10K–$500K microloans and subordinated debt). I found no open CDFI grant for NE Ohio startups (the Buckeye State CU CDFI grant is already on the list and closed 30 Sep).
+- **WCEO Amplify (Women's Center for Economic Opportunity)** — The application closed 15 Sep 2026.
+- **FundHERbiz Startup Showdown 2026 (NAWBO Columbus / Accelerating Angels)** — The application closed 15 June 2026 (event 22 July).
+- **Les Dames d'Escoffier Cleveland Pitch Competition** — Food, beverage and hospitality only; closed (event 29 Aug 2026).
+- **Lakeland WAVE Maker's Pitch Competition** — Lake and Geauga County founders only; closed 10 July 2026.
+- **Summit County Land Bank Combined Grant Program** — Only local governments, schools and nonprofits are eligible.
+- **Ohio Veteran-Friendly Business Enterprise (VBE) certification** — A procurement bid preference, not cash. I found no foundation-funded (non-government) veteran-business cash grant for Ohio companies that is open now; national veteran grants (Tadlock, Warrior Rising, Second Service, Women Veterans Giving) are already on the board.
+- **Hiring Our Heroes Small Business Grant** — The 2026 cycle closed 15 Dec 2025, and it requires 3–20 employees in a distressed area or with financial need. The next cycle date is not posted.
+- **TechCrunch Startup Battlefield (Disrupt 2026)** — Closed. The prize is $100K EQUITY-FREE and it is free to apply, but the page says 'Applications have closed for 2026, but please consider applying next year!' No 2027 window is posted. Watch for it in early 2027.
+- **Startup Grind: Startup Mania (Austin) / Startup Grind Global Conference exhibition** — 2026 edition held 11 Mar 2026; apps closed 22 Feb 2026; no 2027 window posted. Selection is limited to Seed and Series A startups (Vybe is pre-seed). The prize was $5,000 cash plus non-cash items. The SG Conference startup exhibition is a paid exhibitor package, not a prize.
+- **Venture Atlanta (Startup Showcase)** — Southeast investor showcase. The 2026 application cycle is past (conference Oct 2026). Its prize is an investment (equity), not a grant.
+- **Revolution Rise of the Rest pitch events** — The prize is an EQUITY investment from the Rise of the Rest Seed Fund; winners 'will join its portfolio'. No 2026-27 pitch event is announced.
+- **Web Summit Vancouver PITCH (May 25-28, 2027)** — To enter PITCH you must first be accepted to the startup program, which is a ticketed package ('Our 2026 startup program is now sold out ... Apply for 2027'); the price is not stated on the page. No cash prize is stated. Treated as a fee and no cash.
+- **Collision (Toronto)** — Discontinued; Web Summit's North American event is now Web Summit Vancouver (see above).
+- **1 Million Cups** — Weekly community presentation format; no cash prize.
+- **Pipeline Angels Pitch Summit (now IFEL)** — Funding is an angel EQUITY investment from members, not a prize. The page is stale: the latest schedule shown is the Fall 2024 summits (apply by June 30, 2024), and no current window exists.
+- **Pitch Black (We Pitch Black) 2027** — Already on the rejected list. Its own page also restricts entry to businesses established in NE, IA, MO, MN or KS; Ohio is not eligible.
+- **Startup World Cup (Pegasus) regionals / $1M prize** — Headline prize is a '$1 MILLION' INVESTMENT PRIZE (equity), not a grant.
+- **Black Girl Ventures Pull Up & Pitch** — Could not verify any upcoming event on BGV's own site; the program page failed to load and only aggregators list dates. It is also an in-person, city-specific event. Re-check BGV's Eventbrite.
+- **Pathway to Opportunity Competition (formerly National Black Business Pitch)** — Runs a spring/summer cycle (live finals Aug 20, 2025). No open 2026-27 window is shown. Prize $5,000; corporate supplier-diversity focus.
+- **Hey Helen Grant (Visionaries)** — Application fee ($15 administrative fee).
+- **Women Founders Grant** — Application fee ($25), per an aggregator. Not pursued further.
+- **Her Agenda Breakthrough Grant** — Application fee ($25 standard) and closed (deadline Sept 18, 2026).
+- **SPARK Biz Grants (women)** — Requires paid SPARK membership ($99/quarter), which is effectively a fee. Also requires 12+ months since registration (Vybe is under 1 year old).
+- **Entreprenista Evolve Grant** — Requires $100K+ annual revenue and 1+ year operating; Vybe fails both.
+- **Breva Thrive Grant** — Current program page is for construction trade contractors/GCs only, requires prior commercial revenue, and says 'Applications are closed right now.'
+- **Nav Small Business Grant** — Nav says 'The Nav Small Business Grant is currently paused.'
+- **Skip $10K Grants (helloskip)** — The open round closed Oct 2, 2026 (extended deadline). Most later rounds are 'open exclusively to Skip Plus or Pro members', a paid membership.
+- **Lenovo Evolve Small grant** — Closed ('Our grant contest is now closed'). Restricted to certain metro areas (not Akron) and requires Microsoft 365.
+- **Hello Alice: Main Street Rising Tour pitch (New York)** — City-specific live pitch (New York stop); the prize amount is not stated. Hello Alice's other live listings are Fund Her Future (already on the board) and the Spokane-fire DoorDash relief, which closed Oct 1 and was disaster-specific.
+- **eBay Up & Running Grants 2026** — Closed June 25, 2026; also requires being an active eBay seller.
+- **MassChallenge U.S. (Early Stage / Traction)** — No US general program open. The 2027 Healthcare program (already on the rejected list) is 'later this year'. Security & Resiliency closed July 9, 2026.
+- **Echoing Green Fellowship** — The official apply page still shows a closed (2024) cycle, so no verifiable open window. For-profits get 'recoverable grants' (repayable), not cash grants. Focus is racial-equity social enterprise.
+- **America's Startup (America250)** — Student-only (current undergraduates); closes Oct 8, 2026.
+- **Honors Fund $150k Bay Area Pitch** — Student startups only; the prize is a $150K SAFE (equity).
+- **University business-plan competitions (Baylor NVC, Tulane TBMC, Rice RBPC, MIT $100K, Imagine Cup, Wege Prize)** — All restricted to students or recent alumni. No national university-run competition was found that is open to all founders in this window.
+- **Flywheel Investment Conference 2027** — Already on the rejected list. Also requires a Washington State presence; the main prize is a $150K+ investment (equity), with only $5K cash.
+- **LatinTech Pitch 2026 / Latino Entrepreneur Week / Celebrar (eMerge)** — LatinTech requires Texas HQ and outside seed funding, and closed Aug 29. LEW is a Houston local event (Oct 5). Not national or not open.
+- **Black Ambition Prize** — Already on the rejected list; the page says it is 'not accepting new applications for the Prize Competition in 2026'.
+- **Enthuse Foundation Pitch Competition** — Closed Sept 23, 2026. Food, beverage and CPG only. Requires $100K+ revenue.
+- **National Sleep Foundation 9th Annual SleepTech Award** — Application fee ($500/$600 for non-members), and the window closed on 25 Sep 2026. No cash prize stated. Revisit for 2027 only if Vybe joins the SleepTech Network, which waives the fee.
+- **Leaders Sports Awards 2026** — Closed. Entries ran 29 Apr to 29 May 2026; the ceremony is 6 Oct 2026. No startup cash prize.
+- **NFL HealthTECH Challenge II (helmet/facemask)** — Closed 28 May 2026, and the topic is helmet/facemask hardware, outside Vybe's scope. Watch for the next HealthTECH round (sensor technology is listed as a series interest).
+- **NFL Innovation Hub Challenge (Draft 2026)** — Closed 22 Mar 2026. Fan-experience/OnePass categories, and recognition only (rules say no guaranteed compensation).
+- **NHL/NHLPA Hockey Innovation Competition** — Student-only (Bay Area universities). Closed 26 Apr 2026.
+- **AWS World Sports Innovation Cup 2026 (DFL, AWS, adidas)** — Student-only hackathon. Ended May 2026.
+- **MIT Sloan Sports Analytics Conference 2027 Research Paper Competition** — Abstracts closed 1 Oct 2026, before the 3 Oct cutoff.
+- **GSIC Groundbreakers Pitch Sessions (Valencia 2026) / Groundbreakers Challenge PEAK Las Vegas** — Closed (7 Sep 2026; PEAK closed 15 Mar 2026). Visibility only, no cash.
+- **IBM Sports Tech Startup Challenge / Prize Competition (Web Summit Lisbon)** — Invite-only final. The prize is a paid proof of concept, not cash. Targets Seed to Series B 'not MVP to Seed', so pre-revenue Vybe does not fit.
+- **ThinkSport Challenges (Future of Play / AI & Robotics 2026)** — Closed; the finals were 5 May 2026.
+- **MotionLabs SportsTech Accelerator** — Scotland-only, and closed 24 Sep 2026.
+- **ASPN Sports Tech Accelerator Batch 3** — Closed 18 Apr 2026. Taiwan/APEC focus.
+- **Stadia Ventures Accelerator** — Equity investment (up to $100K for equity), not non-dilutive. Wants revenue-generating startups. Possibly dormant.
+- **Zero Labs Innovation Launchpad 2027 (Las Vegas)** — Free and equity-free, but no cash. A 3-day program for gaming, sports and hospitality startups with a Nevada angle. Low value for a pre-launch wearable; not worth an entry under the cash-first rule.
+- **HFA Show 2027 Innovation Alley Pitch Fest** — No cash; the 2026 winner got a free booth. Pitchers come from Innovation Alley exhibitors, which implies paid exhibiting (price not stated).
+- **One Mind Accelerator 2027** — Takes a 'small advisory stake' (equity). No non-dilutive cash stated. Built for mental-health companies, with a preference for founders who have a clinical or scientific background.
+- **Wellcome Prize for Mental Health Science with Nature** — Closed 18 Sep 2026. Requires demonstrated clinical benefit for anxiety, depression or psychosis, so it is effectively a clinical-evidence requirement.
+- **Wellcome Mental Health Data Prize (UK)** — UK-only. Closed 8 May 2026.
+- **HealthTechNode 2026 Mental & Behavioral HealthTech Award** — Entry fee ($395/$495). Closed 18 Sep 2026.
+- **Headstream Accelerator 2026** — Closed 17 Mar 2026. Youth mental health only.
+- **Mental Health America innovation awards** — Searches found no open startup innovation award with cash. MHA's site was not fetched, so this is unverified and not listed.
+- **Pivotal (Melinda French Gates) open calls: Action for Women's Health / WIN Challenge** — No open call. Action for Women's Health closed Jan 2025 (awarded Nov 2025); WIN Challenge registration is closed. Pivotal takes proposals by invitation only.
+- **Organon Women's Health Accelerator (META) / Organon Accelerator Program** — Closed (12 Feb / 26 Feb 2026). META edition is Middle East/Turkey/Africa only; the R&D program is for therapeutics.
+- **Bayer Foundation Women Entrepreneurs Award 2026** — Closed. Africa, Middle East, Asia and Latin America only.
+- **Women's Health Europe Forum Startup Pitch / PiLeJe and Garmin corporate challenges** — The pitch is EU/UK-incorporated only (deadline 8 Oct 2026). Corporate challenges give trophies and sessions only, no cash; the PiLeJe challenge is European-only.
+- **Fenix Women's Health Tech Demo Day @ SF Tech Week ($100K)** — No official program page; LinkedIn only. The $100K is 'seed funding' from Shopline (an investment, not a grant). Tied to SF Tech Week (5-11 Oct 2026), so the intake is very likely closed. Could not verify.
+- **UNICEF Venture Fund FemTech call** — Low- and middle-income countries only. Closed 8 May 2025.
+- **FemTech Breakfast Club 2027** — Canada-incorporated only. Closed 25 Sep 2026.
+- **Femtech Canada wHealth Ignite** — Canadian (Ontario) companies only, and the prize is equity. Closed 17 May 2026.
+- **Eir Growth Programme (women's health, Finland)** — Closed. Next call is summer 2027.
+- **Village Capital US Women in Tech 2026 Accelerator** — Closed (2026 cohort announced Jan 2026). Requires revenue-generating companies; Vybe is pre-revenue.
+- **Hevolution Foundation grants (HF-GRO, HF-AGE, etc.)** — Academic-PI only (independent investigators at government or nonprofit institutions). No open startup program on its funding page.
+- **The Longevity Prize (VitaDAO): Million Molecule Challenge / Biomarker Assessment Prize** — Single-domain research prizes (C. elegans compound combinations; aging-biomarker panels on Synapse), not startup programs, and not a fit for a wearable.
+- **Longevity World Forum 2027 Startup Competition (Madrid)** — Already on rejected.txt. No cash prizes (mentoring, visibility, tickets).
+- **Longevity 5.0 Pitch Competition (Rome)** — Already on rejected.txt. Prizes not announced.
+- **The Longevity Show Pitch Competition (London)** — 2026 closed; reopens 2027. No cash prize stated.
+- **Longevity Global pitch competitions (NYC / Aging Code Summit)** — Closed (May/June 2026). Prizes are lab/desk residencies only, and it wants Seed/Series A companies with biological validation.
+- **INNOWEEK 2026 SpinUp Award (Longevity ERA, Italy)** — Closed 19 Sep 2026. Mediterranean-basin focus.
+- **XPRIZE Healthspan (late registration)** — Already on rejected.txt. $100,000 late-registration fee; requires clinical trials.
+- **NIST PSCR Open Innovation prize challenges** — No current or upcoming challenge is listed. PSIAP funds have expired.
+- **Wildfire Safety Equipment Prize Challenge (Navy SERDP / Central Florida Tech Grove)** — Closed (submissions 3 Jun 2026; demo day 21 Jul 2026).
+- **Darley / NFFF Fire Service Thought Leadership Essay Contest** — For fire and rescue personnel only (essay). Closed 21 Jun 2026.
+- **2026 Health Security Innovation Prize Challenge (TechConnect, $200K)** — Already on the rejected list; the window opened 17 Feb 2026 and has passed. Federally linked (CWMD/MCDC consortia).
+- **DIU / G-TEAD AI Assisted Triage & Treatment Prize Challenge** — Closed 2 Mar 2026. Needs SAM.gov for the follow-on OT ('must register in SAM').
+- **J&J Innovations for Vets QuickFire Challenge** — Closed (Aug 2022). No current veterans QuickFire is open.
+- **Paratus Digital Health Accelerator (BARDA, TBI)** — Already on the rejected list. Closed 15 Jan 2026; single-condition (blast TBI) and clinical-data pathway.
+- **IAFF / FirstNet startup challenges** — Searches found no open startup prize or challenge from IAFF or FirstNet as of 2 Oct 2026. Their official pages were not fetched, so this is unverified.
+- **Hyrox, Lululemon, Peloton, Gatorade, Under Armour, Nike, adidas startup programs** — Searches found no open startup challenge or grant program with cash from these brands as of 2 Oct 2026 (brand pages were not fetched one by one). Under Armour's only known challenge was in 2013. HYROX appears only as an event partner at the HFA Show 2027.
+- **Sports Innovation Lab / SportsTechX / Sport Tech Hub** — Market-research and data firms. No open prize or grant program found for any of them.
+- **T Challenge 2026 (Deutsche Telekom × T-Mobile US)** — Closed: submissions ran 29 Sep – 5 Dec 2025 and the awards were in April 2026. No 2027 call is published yet, and the theme is AI-native telco networks, which does not fit Vybe.
+- **Samsung Solve for Tomorrow (17th annual)** — Student-only: open to US public school classrooms, grades 6–12.
+- **Samsung Next** — Equity venture investment, not a non-dilutive challenge.
+- **Qualcomm Innovation Fellowship North America 2026** — Student-only: PhD students at listed universities, and the money goes to university departments.
+- **Qualcomm Innovate in Taiwan Challenge 2026** — Non-US-only (Taiwan-incorporated companies), and it closed 31 Mar 2026.
+- **Google.org Impact Challenge: Tech for Social Good** — Nonprofits and 501(c)(3)s only; a for-profit cannot apply. This comes from secondary coverage, not the official page, which was not read.
+- **Verizon Frontline App Developer Challenge** — Closed: call for entry ended 2 Apr 2026.
+- **Verizon Smart Campus Competition (Northeastern)** — Student-only (Northeastern University student teams).
+- **Elevance Health Foundation Patient Safety Prize ($5M)** — Closed: registration ended 17 Mar 2026 and applications 7 Apr 2026. It is also patient-safety themed, a poor fit.
+- **NXTSTAGE Community Health & Vibrancy Pilot Competition (BCBS Kansas / NXTUS)** — Closed for 2026: finalists were announced 7 Jul 2026. Worth watching for the 2027 call (it opened mid-March this year).
+- **Independence Blue Cross 2027 Clinical Care Innovation Grants** — Closed 17 Sep 2026, and only for in-network health systems and large specialty groups with value-based contracts.
+- **BCBS Illinois / BCBS Texas Blue Impact grants; Highmark BCBS Blue Fund; Excellus Health Equity Innovation Awards** — Nonprofit (501(c)(3)) community grants only, and the 2026 windows are closed (Jan 30 / Mar 16).
+- **BCBS Foundation of Louisiana Innovation Grant** — Closed 1 Sep 2026 (per an aggregator; not verified on the official page). Louisiana-focused.
+- **Cigna Healthcare Future of Health Experience Challenge** — Non-US (Cigna Middle East & Africa, GCC deployment). It closed 8 Jun 2026.
+- **Techstars Healthcare Accelerator powered by Permanente Medicine (Kaiser, Mid-Atlantic)** — Closed (deadline 10 Jun 2026; the cohort started 14 Sep 2026). The $220K is a Techstars equity investment, not a grant.
+- **UnitedHealthcare Accelerator** — The official site shows no live application or dates. The cohort runs each fall, so 2026 is already underway. Could not verify an open window.
+- **HMH Emerge North America (Hackensack Meridian Health)** — Closed: deadline 24 Jun 2026 (the portal shows 5 Jul). No fixed cash prize either.
+- **Kraft Prize for Excellence and Innovation in Community Health (Mass General Brigham)** — Closed: 2026 applications were due 30 Apr 2026. The priority areas (cancer, cardiometabolic, SUD, maternal, social drivers) need measured community outcomes Vybe does not have yet. Watch for the January 2027 opening.
+- **MGB MESH Core Disruptive Innovation Prize ($5,000)** — Closed: the 2026 prize was judged at MESH Core on 4–5 May 2026. Attendance is a paid ticket ($649).
+- **Nationwide Children's Hospital: Entrepreneurs for Kids Everywhere** — A philanthropic engagement council for entrepreneurs (giving), not a funding or pilot program. Pediatric focus.
+- **Cleveland Clinic Innovations: Incubator / industry partnerships** — No open challenge or intake form. The incubator is paid lab and office space ('lab space for rent'), and partnerships focus on licensing Cleveland Clinic IP.
+- **Johns Hopkins HopStart / JHTV pitch competitions** — Student-only (Johns Hopkins students); the JHTV pitch events are for JHU FastForward startups.
+- **Echoing Green Fellowship 2027** — Not open: the official apply page shows the application 'is now closed'. Aggregators report the 2027 cycle opened in July 2026 with a roughly two-week window. For-profit funding is a recoverable grant, and the fellowship requires a full-time social-enterprise founder.
+- **Kauffman Foundation grants (Project / Capacity Building / Research / Collective Impact)** — All pathways are 'currently closed'. They fund organizations closing economic-mobility gaps in the Kansas City region, not individual startups (the Project grant is $250K+/yr for multi-partner ecosystem projects).
+- **RWJF Health Policy Fellows / Connecting Champions for DEI&B** — Health Policy Fellows is an individual mid-career fellowship, not company funding. Connecting Champions closed 24 Sep 2026 and is a single $2M network-weaver award. No open RWJF call fits a for-profit wearable.
+- **Build with Gemini XPRIZE ($2M) and other open XPRIZEs** — Build with Gemini closed 17 Aug 2026. Other XPRIZEs (Quantum, Water) are closed to new registration and off-topic. Healthspan is excluded by the brief (and its late registration costs $100K).
+- **Sanofi iNext 2025–2026** — Closed (pre-proposals were due 31 Jan 2026). It is for academic labs and biotechs, and lifestyle/digital companion products are explicitly out of scope.
+- **Opella (ex-Sanofi Consumer Healthcare) Open Innovation Portal** — No cash. The posted challenges are OTC formulations, bioactives, packaging and diagnostics; none is a wearable-wellness fit, so it is not clearly valuable to Vybe now.
+- **Haleon Startup Challenge @ VivaTech 2026** — Closed 13 Apr 2026. Its categories (pain, oral, respiratory, VMS, digestive, skin) do not include wearables.
+- **Boehringer Ingelheim Horizon HealthTech Startup Challenge (Tenity)** — Run by BI Türkiye (Istanbul hub) with no cash stated. The focus is disease detection and diagnostics (CKD, heart-failure prediction, rare-disease diagnostics, radiology), which conflicts with Vybe's no-diagnostic-claims stance. The page also gives contradictory dates (close 18 Oct vs 1 Jan; event 17 Jun 2026).
+- **P&G Ventures Innovation Challenge** — No current edition found; the last verified editions were 2020–2022 (CES). P&G Connect+Develop is a rolling invention-submission portal for fast-moving consumable goods with filed IP, with no cash and a poor fit for hardware.
+- **Best Buy Marketplace vendor / Best Buy Partner Portal** — A sales channel, not funding: a $29.99/month platform fee plus commission (Marketplace Program Policies §4). Revisit at the May 2027 launch. For core in-store retail, the route is the Best Buy category buyer, not a challenge.
+- **Best Buy Health** — No startup challenge, accelerator or open call. Best Buy Health is a B2B AgeTech/care-at-home service (Medicare Advantage, Medicaid, senior living). Possibly a later partner, but there is nothing to apply to.
+- **Walgreens / IRMA Retail Challenge** — Student-only (a high-school scholarship competition). No Walgreens or CVS startup challenge is open.
+- **YBI Shark Tank 2026 (presented by Medical Mutual of Ohio)** — Closed: pitch applications closed 4 Aug 2026 (the event is 29 Oct 2026; $10K/$5K/$2.5K prizes). Watch for the June 2027 opening, since it is Ohio and payer-sponsored.
+- **CareSource Grant Challenge** — A foundation grant for community organizations and programs; no open for-profit startup call or date is shown.
+- **EML Mutual Benefits Pitch Off ($50K AUD)** — Non-US-only (Australian providers) and closed 24 Jul 2026.
+- **WE AT Challenge 2026 (Tokyo well-being pitch)** — Japan-based and Japan-focused. The open window and US eligibility could not be confirmed on the official page, and finals are in Tokyo.
+- **CHAI Catalyst Competition (Edinburgh)** — Non-US: UK causal-AI-in-healthcare seed award that requires UK impact.
+
 ## Promoted to the board — 1 Oct 2026 (platform-lane sweep, after the founder's 1-pager)
 
 Once the founders made clear that Vybe is a developer platform (see `VYBE_PROFILE.md`),
