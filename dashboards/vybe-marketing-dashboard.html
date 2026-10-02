@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Marketing Scoreboard</title>
+<meta name="description" content="Vybe Health marketing scoreboard: waitlist signups, traffic, search and Instagram, pulled from the connected sources.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #FBF9F5;
+  --surface: #FFFFFF;
+  --ink: #161C22;
+  --ink-2: #4A5058;
+  --muted: #7A7F86;
+  --hair: #E6E2DA;
+  --axis: #C9C6BF;
+  --brand: #1F8E78;
+  --brand-soft: #E3F3EC;
+  --deemph: #C9C6BF;
+  --good: #0ca30c;
+  --warn: #b37a00;
+  --crit: #d03b3b;
+  --crit-soft: #FBEAEA;
+  --ring: rgba(22,28,34,0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0F1215;
+    --surface: #15191D;
+    --ink: #F2F1EC;
+    --ink-2: #C3C2B7;
+    --muted: #8E9298;
+    --hair: #262B30;
+    --axis: #3A3F44;
+    --brand: #2A9C83;
+    --brand-soft: #16302A;
+    --deemph: #4C4B48;
+    --good: #0ca30c;
+    --warn: #fab219;
+    --crit: #e66767;
+    --crit-soft: #2E1C1C;
+    --ring: rgba(255,255,255,0.10);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0F1215;
+  --surface: #15191D;
+  --ink: #F2F1EC;
+  --ink-2: #C3C2B7;
+  --muted: #8E9298;
+  --hair: #262B30;
+  --axis: #3A3F44;
+  --brand: #2A9C83;
+  --brand-soft: #16302A;
+  --deemph: #4C4B48;
+  --good: #0ca30c;
+  --warn: #fab219;
+  --crit: #e66767;
+  --crit-soft: #2E1C1C;
+  --ring: rgba(255,255,255,0.10);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 28px 16px 64px; }
+header { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
+h1 { font-size: 24px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+h1 span { color: var(--brand); }
+.meta { color: var(--muted); font-size: 13px; }
+h2 { font-size: 16px; margin: 0 0 4px; }
+.sub { color: var(--ink-2); font-size: 13px; margin: 0 0 14px; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.grid { display: grid; gap: 16px; }
+@media (min-width: 860px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+.alert { background: var(--crit-soft); border-color: transparent; display: flex; gap: 12px; align-items: flex-start; }
+.alert .icon { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--crit); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 14px; margin-top: 1px; }
+.alert p { margin: 2px 0 0; color: var(--ink-2); }
+.alert strong { color: var(--ink); }
+.kpis { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+@media (min-width: 720px) { .kpis { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (min-width: 1000px) { .kpis { grid-template-columns: repeat(6, minmax(0,1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 14px; min-width: 0; }
+.tile .label { color: var(--ink-2); font-size: 12.5px; }
+.tile .value { font-size: 28px; font-weight: 650; line-height: 1.15; margin-top: 4px; }
+.tile .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.tile.hero .value { font-size: 44px; color: var(--ink); }
+.tile.hero { border-color: var(--brand); box-shadow: inset 0 0 0 1px var(--brand); }
+.funnel { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+@media (min-width: 720px) { .funnel { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.step { border-top: 3px solid var(--brand); padding-top: 8px; }
+.step .n { font-size: 22px; font-weight: 650; }
+.step .t { color: var(--ink-2); font-size: 13px; }
+.step .r { color: var(--muted); font-size: 12px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--muted); font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; }
+svg .vlabel { fill: var(--ink-2); font-size: 12px; }
+svg .clabel { fill: var(--ink); font-size: 12.5px; }
+.chart { position: relative; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--page); font-size: 12.5px; padding: 6px 9px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -110%); opacity: 0; transition: opacity .08s; }
+.tip.on { opacity: 1; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: var(--ink-2); font-size: 13px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+a { color: var(--brand); }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.s-open .dot, .s-missing .dot { background: var(--crit); } .s-open, .s-missing { color: var(--crit); }
+.s-partial .dot { background: var(--warn); } .s-partial { color: var(--warn); }
+.s-done .dot, .s-connected .dot { background: var(--good); } .s-done, .s-connected { color: var(--good); }
+.actions li { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid var(--hair); }
+.actions li:last-child { border-bottom: 0; }
+.actions .why { grid-column: 2; color: var(--ink-2); font-size: 13px; }
+.actions .owner { grid-column: 2; color: var(--muted); font-size: 12px; }
+ul.plain { list-style: none; margin: 0; padding: 0; }
+.sources { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px 16px; }
+.sources li { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--hair); font-size: 13.5px; }
+footer { color: var(--muted); font-size: 12.5px; margin-top: 24px; }
+footer p { margin: 4px 0; }
+.toggle { background: none; border: 1px solid var(--ring); color: var(--ink-2); border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 12.5px; cursor: pointer; }
+@media print { .toggle, .tip { display: none; } }
+@media (forced-colors: active) { .bar-us { forced-color-adjust: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1><span>Vybe Health</span> marketing scoreboard</h1>
+      <div class="meta" id="pulled">Pulled from the connected sources</div>
+    </div>
+    <button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+  </header>
+
+  <section class="card alert" id="alert" aria-live="polite">
+    <span class="icon" aria-hidden="true">!</span>
+    <div>
+      <strong>Critical: paid traffic is landing outside the founding-batch market.</strong>
+      <p id="alert-text"></p>
+    </div>
+  </section>
+
+  <section class="kpis" id="kpis" aria-label="Headline numbers"></section>
+
+  <section class="card">
+    <h2>Where visitors drop out</h2>
+    <p class="sub">From everyone who visited to a recorded waitlist signup, last 30 days. Signup events may be under-counted; see the open actions.</p>
+    <div class="funnel" id="funnel"></div>
+  </section>
+
+  <section class="card">
+    <h2>Daily sessions</h2>
+    <p class="sub">Two paid bursts, then a tail. Hover a day for its count.</p>
+    <div class="chart" id="daily"></div>
+    <details><summary>Show as table</summary><div class="scroll" id="daily-table"></div></details>
+  </section>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Sessions by country</h2>
+      <p class="sub">The United States, where the founding batch ships, is highlighted.</p>
+      <div class="chart" id="countries"></div>
+      <div class="legend"><span><span class="sw" style="background:var(--brand)"></span>Founding-batch market</span><span><span class="sw" style="background:var(--deemph)"></span>Other countries</span></div>
+      <details><summary>Show as table</summary><div class="scroll" id="countries-table"></div></details>
+    </section>
+    <section class="card">
+      <h2>Sessions by channel</h2>
+      <p class="sub">Label shows sessions and the share that engaged.</p>
+      <div class="chart" id="channels"></div>
+      <details><summary>Show as table</summary><div class="scroll" id="channels-table"></div></details>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Week 1 actions</h2>
+    <p class="sub">Ordered. Nothing below these is worth doing until they are done.</p>
+    <ul class="plain actions" id="actions"></ul>
+  </section>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Instagram posts</h2>
+      <p class="sub" id="ig-sub"></p>
+      <div class="scroll" id="ig"></div>
+    </section>
+    <section class="card">
+      <h2>Pages Google has shown</h2>
+      <p class="sub">Search Console. Every page has zero clicks so far.</p>
+      <div class="scroll" id="search"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Data sources</h2>
+    <p class="sub">Every number on this page is pulled through these connections. Unknown is shown as unknown.</p>
+    <ul class="plain sources" id="sources"></ul>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script type="application/json" id="fallback">{
+ "schema": 1,
+ "pulled_at": "2026-09-30T19:20:00Z",
+ "scoreboard_file": "vybe-marketing/scoreboard-2026-09-30.md",
+ "windows": {
+  "ga4": "30 days to 29 Sep 2026",
+  "search_console": "31 Aug to 27 Sep 2026",
+  "instagram_account": "28 days to 29 Sep 2026",
+  "instagram_posts": "lifetime"
+ },
+ "kpis": {
+  "waitlist_signups": 4,
+  "form_submits": 41,
+  "sessions": 10242,
+  "users": 8467,
+  "us_sessions": 131,
+  "waitlist_page_users": 104,
+  "organic_search_clicks": 0,
+  "search_impressions": 15,
+  "ig_followers": 29,
+  "ig_following": 117,
+  "ig_posts": 4,
+  "ig_account_reach_28d": 2207,
+  "cost_per_signup": null,
+  "ad_spend": null
+ },
+ "daily_sessions": [
+  [
+   "2026-09-15",
+   1
+  ],
+  [
+   "2026-09-16",
+   1516
+  ],
+  [
+   "2026-09-17",
+   1985
+  ],
+  [
+   "2026-09-18",
+   2922
+  ],
+  [
+   "2026-09-19",
+   395
+  ],
+  [
+   "2026-09-20",
+   60
+  ],
+  [
+   "2026-09-21",
+   34
+  ],
+  [
+   "2026-09-22",
+   16
+  ],
+  [
+   "2026-09-23",
+   410
+  ],
+  [
+   "2026-09-24",
+   1832
+  ],
+  [
+   "2026-09-25",
+   699
+  ],
+  [
+   "2026-09-26",
+   150
+  ],
+  [
+   "2026-09-27",
+   111
+  ],
+  [
+   "2026-09-28",
+   94
+  ],
+  [
+   "2026-09-29",
+   42
+  ]
+ ],
+ "channels": [
+  {
+   "name": "Paid Search",
+   "sessions": 6644,
+   "engaged": 1291
+  },
+  {
+   "name": "Display",
+   "sessions": 2961,
+   "engaged": 711
+  },
+  {
+   "name": "Cross-network",
+   "sessions": 383,
+   "engaged": 226
+  },
+  {
+   "name": "Direct",
+   "sessions": 190,
+   "engaged": 70
+  },
+  {
+   "name": "Unassigned",
+   "sessions": 37,
+   "engaged": 0
+  },
+  {
+   "name": "Organic Social",
+   "sessions": 21,
+   "engaged": 16
+  },
+  {
+   "name": "Organic Search",
+   "sessions": 2,
+   "engaged": 2
+  },
+  {
+   "name": "Paid Video",
+   "sessions": 2,
+   "engaged": 1
+  },
+  {
+   "name": "Referral",
+   "sessions": 2,
+   "engaged": 1
+  }
+ ],
+ "countries": [
+  {
+   "name": "India",
+   "sessions": 6636,
+   "engaged": 1523
+  },
+  {
+   "name": "Bangladesh",
+   "sessions": 1594,
+   "engaged": 321
+  },
+  {
+   "name": "Pakistan",
+   "sessions": 899,
+   "engaged": 221
+  },
+  {
+   "name": "Egypt",
+   "sessions": 164,
+   "engaged": 47
+  },
+  {
+   "name": "United States",
+   "sessions": 131,
+   "engaged": 85,
+   "target": true
+  },
+  {
+   "name": "Others (79)",
+   "sessions": 818,
+   "engaged": null
+  }
+ ],
+ "signups_by_channel": [
+  {
+   "name": "Display",
+   "waitlist_signup": 2,
+   "form_submit": 2
+  },
+  {
+   "name": "Organic Social",
+   "waitlist_signup": 1,
+   "form_submit": 1
+  },
+  {
+   "name": "Paid Search",
+   "waitlist_signup": 1,
+   "form_submit": 24
+  },
+  {
+   "name": "Cross-network",
+   "waitlist_signup": 0,
+   "form_submit": 14
+  }
+ ],
+ "key_events": {
+  "keep": [
+   "waitlist_signup",
+   "form_submit",
+   "purchase"
+  ],
+  "unmark": [
+   "page_view",
+   "session_start",
+   "first_visit",
+   "scroll",
+   "user_engagement",
+   "cta_click",
+   "nav_click",
+   "not_found_view",
+   "form_start",
+   "content_engagement",
+   "faq_open"
+  ]
+ },
+ "search_pages": [
+  {
+   "page": "/",
+   "impressions": 2,
+   "position": 1.5
+  },
+  {
+   "page": "/ecosystem",
+   "impressions": 2,
+   "position": 6
+  },
+  {
+   "page": "/compare/oura-ring-alternative/",
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "page": "/learn/screenless-health-wearable/",
+   "impressions": 1,
+   "position": 8
+  },
+  {
+   "page": "/learn/heart-rate-variability-explained/",
+   "impressions": 6,
+   "position": 74.8
+  }
+ ],
+ "ig_posts": [
+  {
+   "date": "2026-09-23",
+   "title": "No Subscription. Now that's a Vybe",
+   "reach": 21,
+   "likes": 3,
+   "comments": 1,
+   "saves": 0,
+   "shares": 0,
+   "url": "https://www.instagram.com/p/DdodZiyRFY0/"
+  },
+  {
+   "date": "2026-09-25",
+   "title": "30 days of battery",
+   "reach": 17,
+   "likes": 1,
+   "comments": 0,
+   "saves": 0,
+   "shares": 0,
+   "url": "https://www.instagram.com/p/DduMCHHqDz_/"
+  },
+  {
+   "date": "2026-09-26",
+   "title": "A health band you forget you're wearing",
+   "reach": 19,
+   "likes": 2,
+   "comments": 0,
+   "saves": 0,
+   "shares": 0,
+   "url": "https://www.instagram.com/p/DdxPAVSNEVR/"
+  },
+  {
+   "date": "2026-09-29",
+   "title": "Why rent access to your own health data?",
+   "reach": 6,
+   "likes": 0,
+   "comments": 0,
+   "saves": 0,
+   "shares": 0,
+   "url": "https://www.instagram.com/p/Dd4pO7zKyTl/"
+  }
+ ],
+ "actions": [
+  {
+   "id": "geo",
+   "title": "Set Google Ads location to the founding-batch market",
+   "why": "About 90% of paid sessions came from India, Bangladesh and Pakistan.",
+   "owner": "Founder, or the agent once Google Ads is connected",
+   "status": "open"
+  },
+  {
+   "id": "key-events",
+   "title": "Unmark 11 GA4 key events; keep waitlist_signup, form_submit, purchase",
+   "why": "Page views and session starts are counted as conversions.",
+   "owner": "Founder or agent",
+   "status": "open"
+  },
+  {
+   "id": "ads-conversions",
+   "title": "Import only waitlist_signup into Google Ads",
+   "why": "Bidding should optimise for signups, not page views.",
+   "owner": "Founder",
+   "status": "open"
+  },
+  {
+   "id": "signup-audit",
+   "title": "Find why 41 form submits became 4 signup events",
+   "why": "The north-star number may be under-counted.",
+   "owner": "Agent + founder",
+   "status": "open"
+  },
+  {
+   "id": "facebook",
+   "title": "Reconnect Facebook with Vybe Page access",
+   "why": "The Page's followers and posts are unreadable today.",
+   "owner": "Founder (one click)",
+   "status": "open"
+  },
+  {
+   "id": "google-ads",
+   "title": "Connect Google Ads to Composio",
+   "why": "Spend and cost per signup are unknown.",
+   "owner": "Founder (one click)",
+   "status": "open"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Google Analytics 4",
+   "state": "connected"
+  },
+  {
+   "name": "Google Search Console",
+   "state": "connected"
+  },
+  {
+   "name": "Instagram @vybehealthinc",
+   "state": "connected"
+  },
+  {
+   "name": "Firecrawl (vybe.health)",
+   "state": "connected"
+  },
+  {
+   "name": "Airtable",
+   "state": "connected"
+  },
+  {
+   "name": "Netlify",
+   "state": "connected"
+  },
+  {
+   "name": "Facebook Page",
+   "state": "partial"
+  },
+  {
+   "name": "Google Ads",
+   "state": "missing"
+  },
+  {
+   "name": "LinkedIn",
+   "state": "missing"
+  },
+  {
+   "name": "Reddit",
+   "state": "missing"
+  }
+ ],
+ "next_pull": "2026-10-05"
+}</script>
+<script>
+(function () {
+  "use strict";
+  var NF = new Intl.NumberFormat("en-US");
+  var fmt = function (n) { return n == null ? "Unknown" : NF.format(n); };
+  var pct = function (a, b) { if (!b || !a) return "0%"; var p = 100 * a / b; return (p < 10 ? p.toFixed(1).replace(/\.0$/, "") : Math.round(p)) + "%"; };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var dayFmt = function (iso, opts) { var d = new Date(iso + "T12:00:00Z"); return d.toLocaleDateString("en-US", Object.assign({ timeZone: "UTC" }, opts)); };
+  var $ = function (id) { return document.getElementById(id); };
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) { var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+
+  // Theme toggle (per-viewer convenience only).
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem("vybe-mkt-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  $("theme").addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("vybe-mkt-theme", next); } catch (e) {}
+  });
+
+  function table(cols, rows) {
+    var h = "<table><thead><tr>" + cols.map(function (c) { return '<th class="' + (c.num ? "num" : "") + '" scope="col">' + esc(c.label) + "</th>"; }).join("") + "</tr></thead><tbody>";
+    rows.forEach(function (r) { h += "<tr>" + cols.map(function (c) { var v = c.get(r); return '<td class="' + (c.num ? "num" : "") + '">' + (c.html ? v : esc(v)) + "</td>"; }).join("") + "</tr>"; });
+    return h + "</tbody></table>";
+  }
+
+  function tipFor(container) { var t = document.createElement("div"); t.className = "tip"; t.setAttribute("role", "status"); container.appendChild(t); return t; }
+
+  function hbars(container, rows, opts) {
+    container.innerHTML = "";
+    var W = Math.max(300, container.clientWidth || 520), narrow = W < 460, rowH = 30, labelW = narrow ? Math.min(opts.labelW || 130, 112) : (opts.labelW || 130), valueW = narrow ? 92 : 120, H = rows.length * rowH;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": opts.aria }, container);
+    var max = Math.max.apply(null, rows.map(function (r) { return r.v; })) || 1;
+    var plotW = W - labelW - valueW;
+    var tip = tipFor(container);
+    rows.forEach(function (r, i) {
+      var y = i * rowH, w = Math.max(2, plotW * r.v / max), cy = y + rowH / 2;
+      el("text", { x: labelW - 10, y: cy + 4, "text-anchor": "end", class: "clabel" }, svg).textContent = r.label;
+      var bar = el("rect", { x: labelW, y: y + 7, width: w, height: rowH - 14, rx: 4, fill: r.color || "var(--brand)" }, svg);
+      if (r.cls) bar.setAttribute("class", r.cls);
+      el("text", { x: labelW + w + 8, y: cy + 4, class: "vlabel" }, svg).textContent = r.text;
+      var hit = el("rect", { x: 0, y: y, width: W, height: rowH, fill: "transparent", tabindex: 0, "aria-label": r.label + ": " + r.text }, svg);
+      var show = function () { var b = container.getBoundingClientRect(), s = svg.getBoundingClientRect(); tip.textContent = r.label + " · " + r.tip; tip.style.left = ((labelW + w / 2) / W * s.width + s.left - b.left) + "px"; tip.style.top = ((y + 7) / H * s.height + s.top - b.top) + "px"; tip.classList.add("on"); };
+      var hide = function () { tip.classList.remove("on"); };
+      hit.addEventListener("mouseenter", show); hit.addEventListener("focus", show);
+      hit.addEventListener("mouseleave", hide); hit.addEventListener("blur", hide);
+    });
+  }
+
+  function columns(container, series) {
+    container.innerHTML = "";
+    var W = Math.max(300, container.clientWidth || 1000), H = W < 560 ? 200 : 260, padL = 44, padB = 26, padT = 18, n = series.length, every = W < 560 ? 4 : 2;
+    var max = Math.max.apply(null, series.map(function (d) { return d[1]; }));
+    var step = Math.pow(10, Math.floor(Math.log10(max))) / 2, top = Math.ceil(max / step) * step;
+    var plotH = H - padB - padT, plotW = W - padL, slot = plotW / n, bw = Math.min(40, slot - 4);
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Daily sessions, " + series[0][0] + " to " + series[n - 1][0] }, container);
+    for (var g = 0; g <= 4; g++) {
+      var gv = top * g / 4, gy = padT + plotH - plotH * g / 4;
+      el("line", { x1: padL, x2: W, y1: gy, y2: gy, stroke: g === 0 ? "var(--axis)" : "var(--hair)", "stroke-width": 1 }, svg);
+      el("text", { x: padL - 8, y: gy + 4, "text-anchor": "end" }, svg).textContent = NF.format(gv);
+    }
+    var tip = tipFor(container);
+    var peak = series.reduce(function (a, b) { return b[1] > a[1] ? b : a; });
+    series.forEach(function (d, i) {
+      var h = plotH * d[1] / top, x = padL + i * slot + (slot - bw) / 2, y = padT + plotH - h;
+      var r = Math.min(4, h / 2);
+      var path = "M" + x + "," + (padT + plotH) + "V" + (y + r) + "Q" + x + "," + y + " " + (x + r) + "," + y + "H" + (x + bw - r) + "Q" + (x + bw) + "," + y + " " + (x + bw) + "," + (y + r) + "V" + (padT + plotH) + "Z";
+      el("path", { d: h > 0 ? path : "", fill: "var(--brand)" }, svg);
+      if (i % every === 0) el("text", { x: x + bw / 2, y: H - 8, "text-anchor": "middle" }, svg).textContent = dayFmt(d[0], { month: "short", day: "numeric" });
+      if (d === peak) el("text", { x: x + bw / 2, y: y - 6, "text-anchor": "middle", class: "vlabel" }, svg).textContent = NF.format(d[1]);
+      var hit = el("rect", { x: padL + i * slot, y: padT, width: slot, height: plotH, fill: "transparent", tabindex: 0, "aria-label": dayFmt(d[0], { weekday: "short", month: "short", day: "numeric" }) + ": " + NF.format(d[1]) + " sessions" }, svg);
+      var show = function () { var b = container.getBoundingClientRect(), s = svg.getBoundingClientRect(); tip.textContent = dayFmt(d[0], { weekday: "short", month: "short", day: "numeric" }) + " · " + NF.format(d[1]) + " sessions"; tip.style.left = ((x + bw / 2) / W * s.width + s.left - b.left) + "px"; tip.style.top = (Math.max(y, padT + 20) / H * s.height + s.top - b.top) + "px"; tip.classList.add("on"); };
+      var hide = function () { tip.classList.remove("on"); };
+      hit.addEventListener("mouseenter", show); hit.addEventListener("focus", show);
+      hit.addEventListener("mouseleave", hide); hit.addEventListener("blur", hide);
+    });
+  }
+
+  function render(d) {
+    var k = d.kpis;
+    var pulled = new Date(d.pulled_at);
+    $("pulled").textContent = "Pulled " + pulled.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }) + " · GA4 " + d.windows.ga4 + " · next pull " + dayFmt(d.next_pull, { weekday: "short", month: "short", day: "numeric" });
+
+    var targetRow = d.countries.filter(function (c) { return c.target; })[0];
+    var top3 = d.countries.slice().filter(function (c) { return !c.target && c.engaged != null; }).sort(function (a, b) { return b.sessions - a.sessions; }).slice(0, 3);
+    var top3s = top3.reduce(function (a, c) { return a + c.sessions; }, 0);
+    $("alert-text").textContent = pct(top3s, k.sessions) + " of " + fmt(k.sessions) + " sessions came from " + top3.map(function (c) { return c.name; }).join(", ") + ". " + (targetRow ? targetRow.name + " had " + fmt(targetRow.sessions) + ". " : "") + "Fix the Google Ads location setting before spending more.";
+    if (targetRow && targetRow.sessions / k.sessions > 0.5) $("alert").hidden = true;
+
+    var tiles = [
+      { label: "Waitlist signups", value: fmt(k.waitlist_signups), note: "waitlist_signup events, 30 days", hero: true },
+      { label: "Form submits", value: fmt(k.form_submits), note: "any form on the site" },
+      { label: "Sessions", value: fmt(k.sessions), note: pct(d.channels.filter(function (c) { return /^Paid|Display|Cross/.test(c.name); }).reduce(function (a, c) { return a + c.sessions; }, 0), k.sessions) + " paid" },
+      { label: "US share of sessions", value: pct(k.us_sessions, k.sessions), note: fmt(k.us_sessions) + " sessions" },
+      { label: "Instagram followers", value: fmt(k.ig_followers), note: fmt(k.ig_posts) + " posts, 0 Reels" },
+      { label: "Search clicks", value: fmt(k.organic_search_clicks), note: fmt(k.search_impressions) + " impressions" }
+    ];
+    $("kpis").innerHTML = tiles.map(function (t) { return '<div class="tile' + (t.hero ? " hero" : "") + '"><div class="label">' + esc(t.label) + '</div><div class="value">' + esc(t.value) + '</div><div class="note">' + esc(t.note) + "</div></div>"; }).join("");
+
+    var steps = [
+      { n: k.users, t: "Visitors", r: "all channels" },
+      { n: k.waitlist_page_users, t: "Reached the waitlist page", r: pct(k.waitlist_page_users, k.users) + " of visitors" },
+      { n: k.form_submits, t: "Submitted a form", r: "event count, any form" },
+      { n: k.waitlist_signups, t: "Recorded as signups", r: fmt(k.waitlist_signups) + " of " + fmt(k.form_submits) + " submits" }
+    ];
+    $("funnel").innerHTML = steps.map(function (s) { return '<div class="step"><div class="n">' + fmt(s.n) + '</div><div class="t">' + esc(s.t) + '</div><div class="r">' + esc(s.r) + "</div></div>"; }).join("");
+
+    columns($("daily"), d.daily_sessions);
+    $("daily-table").innerHTML = table([{ label: "Day", get: function (r) { return dayFmt(r[0], { weekday: "short", month: "short", day: "numeric" }); } }, { label: "Sessions", num: 1, get: function (r) { return NF.format(r[1]); } }], d.daily_sessions);
+
+    hbars($("countries"), d.countries.map(function (c) {
+      var eng = c.engaged == null ? "" : ", " + pct(c.engaged, c.sessions) + " engaged";
+      return { label: c.name, v: c.sessions, color: c.target ? "var(--brand)" : "var(--deemph)", cls: c.target ? "bar-us" : "", text: NF.format(c.sessions) + (c.engaged == null ? "" : " · " + pct(c.engaged, c.sessions)), tip: NF.format(c.sessions) + " sessions" + eng };
+    }), { aria: "Sessions by country", labelW: 150 });
+    $("countries-table").innerHTML = table([{ label: "Country", get: function (r) { return r.name; } }, { label: "Sessions", num: 1, get: function (r) { return NF.format(r.sessions); } }, { label: "Engaged", num: 1, get: function (r) { return r.engaged == null ? "Unknown" : NF.format(r.engaged) + " (" + pct(r.engaged, r.sessions) + ")"; } }], d.countries);
+
+    var ch = d.channels.filter(function (c) { return c.sessions >= 10; });
+    var chRest = d.channels.filter(function (c) { return c.sessions < 10; });
+    if (chRest.length) ch.push({ name: "Other " + chRest.length, sessions: chRest.reduce(function (a, c) { return a + c.sessions; }, 0), engaged: chRest.reduce(function (a, c) { return a + c.engaged; }, 0) });
+    hbars($("channels"), ch.map(function (c) { return { label: c.name, v: c.sessions, text: NF.format(c.sessions) + " · " + pct(c.engaged, c.sessions), tip: NF.format(c.sessions) + " sessions, " + pct(c.engaged, c.sessions) + " engaged" }; }), { aria: "Sessions by channel", labelW: 130 });
+    $("channels-table").innerHTML = table([{ label: "Channel", get: function (r) { return r.name; } }, { label: "Sessions", num: 1, get: function (r) { return NF.format(r.sessions); } }, { label: "Engaged", num: 1, get: function (r) { return NF.format(r.engaged) + " (" + pct(r.engaged, r.sessions) + ")"; } }], d.channels);
+
+    var statusLabel = { open: "Open", done: "Done", partial: "In progress" };
+    $("actions").innerHTML = d.actions.map(function (a, i) {
+      return '<li><span class="chip s-' + esc(a.status) + '"><span class="dot" aria-hidden="true"></span>' + esc(statusLabel[a.status] || a.status) + '</span><span><strong>' + (i + 1) + ". " + esc(a.title) + '</strong></span><span class="why">' + esc(a.why) + '</span><span class="owner">' + esc(a.owner) + "</span></li>";
+    }).join("");
+
+    var reach = d.ig_posts.reduce(function (a, p) { return a + p.reach; }, 0);
+    $("ig-sub").textContent = "Lifetime per post. " + fmt(reach) + " accounts reached across all posts; 0 saves, 0 shares.";
+    $("ig").innerHTML = table([
+      { label: "Post", html: 1, get: function (p) { return '<a href="' + esc(p.url) + '" rel="noopener" target="_blank">' + esc(p.title) + '</a><div style="color:var(--muted);font-size:12px">' + esc(dayFmt(p.date, { month: "short", day: "numeric" })) + "</div>"; } },
+      { label: "Reach", num: 1, get: function (p) { return p.reach; } },
+      { label: "Likes", num: 1, get: function (p) { return p.likes; } },
+      { label: "Saves", num: 1, get: function (p) { return p.saves; } },
+      { label: "Shares", num: 1, get: function (p) { return p.shares; } }
+    ], d.ig_posts);
+
+    $("search").innerHTML = table([
+      { label: "Page", get: function (p) { return p.page; } },
+      { label: "Impressions", num: 1, get: function (p) { return p.impressions; } },
+      { label: "Avg position", num: 1, get: function (p) { return p.position.toFixed(1); } }
+    ], d.search_pages);
+
+    var stateLabel = { connected: "Connected", partial: "Partial", missing: "Not connected" };
+    $("sources").innerHTML = d.sources.map(function (s) { return '<li><span>' + esc(s.name) + '</span><span class="chip s-' + esc(s.state) + '"><span class="dot" aria-hidden="true"></span>' + esc(stateLabel[s.state] || s.state) + "</span></li>"; }).join("");
+
+    var dailySum = d.daily_sessions.reduce(function (a, r) { return a + r[1]; }, 0);
+    $("foot").innerHTML = "<p>Windows: GA4 " + esc(d.windows.ga4) + "; Search Console " + esc(d.windows.search_console) + "; Instagram account reach " + esc(d.windows.instagram_account) + ".</p>" +
+      "<p>The daily series comes from a separate GA4 query and totals " + fmt(dailySum) + " sessions, " + fmt(Math.abs(dailySum - k.sessions)) + " off the channel total.</p>" +
+      "<p>Ad spend and cost per signup: " + fmt(k.ad_spend) + " until Google Ads is connected.</p>" +
+      "<p>Source file: " + esc(d.scoreboard_file) + " in the agency-agents repository. Refreshed weekly by the Vybe Health Marketing Director agent.</p>";
+  }
+
+  var fallback = JSON.parse($("fallback").textContent), current = fallback, rt;
+  render(fallback);
+  addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { render(current); }, 150); });
+  if (location.protocol !== "file:") {
+    fetch("/vybe-marketing.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (live) {
+      if (live && live.schema === fallback.schema && new Date(live.pulled_at) > new Date(fallback.pulled_at)) { current = live; render(live); }
+    }).catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>

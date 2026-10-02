@@ -1,0 +1,122 @@
+---
+name: vybe-audience-targeting
+description: >
+  Find, size and reach Vybe Health's audiences the way the Marketing Director
+  agent should: pick a wedge with evidence, map the organisations, programmes,
+  roles, public creators, communities and events inside it, choose the channel
+  and buying path, and target within each ad platform's health rules and US
+  consumer-health-data law. Use this skill whenever the user asks who to
+  target, which audience or segment to win first, for a target list, creator
+  shortlist, ABM list, campaign targeting, a Meta/Google/LinkedIn/Reddit
+  audience, event or conference plans, or "how do we reach X" for Vybe, even
+  if they don't name the skill. Ends by scoring the output with the eval
+  rubric and guardrail in vybe-marketing/evals/.
+---
+
+# Vybe audience targeting
+
+The job is to name **who exactly** buys first and **how to reach them in ways
+that work and are allowed**. The baseline eval (2 Oct 2026) scored the agent
+17/30 and 19/30 because it was honest but vague on both. This skill closes
+that gap. Read `marketing/marketing-vybe-health-marketing-director.md` and
+`vybe-marketing/brand-brief.md` first; this skill does not repeat them.
+
+## The failure this exists to prevent
+
+Two expensive mistakes, both already seen in Vybe's own data:
+
+1. **Buying traffic from nobody.** In September 2026 about 90% of 10,242 paid
+   sessions came from India, Bangladesh and Pakistan for a US founding batch,
+   and produced 4 signups. Every plan names its market and audience before it
+   names a channel.
+2. **Targeting the way platforms forbid.** Health-interest targeting, health
+   conversion events on a classified site, or pixels firing on health answers
+   without consent get an account restricted and can breach state law. Every
+   targeting choice names the rule it respects.
+
+## Procedure
+
+Do these in order. Skip none.
+
+### 1. Name one segment
+Write: who they are, the shared problem, the trigger that makes them switch
+now, and an estimated size **with a source and date**. "Health-conscious
+people" fails. If size is unknown, say unknown and how to find out.
+
+### 2. Run the wedge tests
+Score 0 to 3 with evidence: **Pain** (do they feel it today), **Fit** (is
+Vybe clearly better for them), **Moat** (would WHOOP, Oura or Garmin have to
+break their own model to follow). Name the weakest test out loud.
+"No subscription" alone fails Moat: Garmin Cirqa, Fitbit Air, Amazfit Helio,
+Polar Loop and Hume all offer it.
+
+### 3. Map the targets
+List organisations, programmes, roles, public creators, communities, events
+and publications, each with **why it matters** and a **source**. Never list
+private individuals' names with contact details; name roles ("H2F Integrator",
+"health and safety chief") and public figures speaking publicly. Check
+community names are what you think (r/HRV is the Honda HR-V car subreddit).
+
+### 4. Choose the channel and buying path
+Match each target to where it gathers and how it buys: consumer checkout,
+unit purchase card (up to $15,000), simplified acquisition (up to $350,000,
+small-business set-aside), SBIR/STTR, DIU or AFWERX, a prime contractor, a
+research grant, or a developer self-serve plan. Consumer social stays on
+Instagram and Facebook unless the founder opens another channel.
+
+### 5. Check the targeting rules
+
+| Platform | Never | Use instead |
+|---|---|---|
+| Meta | Health-condition interests (removed Jan 2022); renaming events to dodge health classification; health answers in pixel parameters | Broad or Advantage+ audiences with creative that self-selects; partnership (creator) ads; neutral URLs and event names; consented first-party lists; Vybe's own signup count as the source of truth |
+| Google Ads / YouTube | Claims or landing copy that put Vybe in the "Health" sensitive category (conditions, medical devices), which strips remarketing, Customer Match and lookalikes | Wellness wording from the Claim Register; search on comparison and no-subscription queries; Consent Mode with `ad_user_data` and `ad_personalization` |
+| LinkedIn | Nothing health-specific found; still no personal data scraping | Job title, function, seniority, company lists and Groups for B2B and ABM; expect $6 to $15 CPCs |
+| Reddit | Targeting on health, biometric or genetic data; Medical & Mental Health communities | Fitness, Wellness and Nutrition interests; named community and keyword targeting; organic 90/10 participation with affiliation disclosed |
+| X | Sensitive-category (health) targeting | Keyword and conversation targeting; mostly listening |
+| Podcasts | Implying a host's medical endorsement | Host-read reads with the host's own experience |
+
+**Privacy law musts (US):** opt-in consent before collecting consumer health
+data, a separate Consumer Health Privacy Policy link on the homepage
+(Washington My Health My Data Act; Nevada and Connecticut similar), honour
+Global Privacy Control, no geofencing within 2,000 feet of health-care sites,
+and treat unauthorised sharing with ad platforms as a breach under the FTC
+Health Breach Notification Rule. Not legal advice; counsel confirms.
+
+### 6. Write the message from the Claim Register
+One audience, one message, claims at their ladder level with the source
+beside each. "Heart rhythm", "ECG" and anything near AFib carry the highest
+regulatory risk; do not use them in ads until counsel clears the wording.
+
+### 7. Design the test
+Metric, source, minimum sample, decision rule, review date, and what result
+would make you drop the segment.
+
+### 8. Score it
+Run `python3 vybe-marketing/evals/check_marketing.py` (must pass), then score
+against `vybe-marketing/evals/rubric.md` and log the run in
+`vybe-marketing/evals/results-YYYY-MM-DD.md`. Below 24/30, or a gate
+dimension below 2, means rework before it ships.
+
+## Output template
+
+```markdown
+# Audience: [segment]
+**Who / problem / trigger / size (source, date):** ...
+**Wedge:** Pain [0-3] · Fit [0-3] · Moat [0-3] · weakest: ...
+
+| Target | Type | Why it matters | Channel | Buying path | Source |
+|---|---|---|---|---|---|
+
+**Targeting rules respected:** ...
+**Message (Register claims + sources):** ...
+**Test:** metric · source · sample · decision rule · review date
+**Eval:** guardrail pass/fail · rubric score · lowest dimensions
+```
+
+## Where the current answers live
+
+`vybe-marketing/marksom.json` holds the current segments, targets, channels,
+platform rules and eval runs, and powers the Marksom hub
+(`vybe-marketing/hub/`). Update it when an answer changes, keep the embedded
+copy in the hub page identical (same snippet as the scoreboard, pointed at
+`marksom.json`), and re-run the eval.
