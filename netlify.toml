@@ -24,11 +24,15 @@
 # building for them: `ignore` exits 0 (skip) when nothing outside baby-scout/
 # changed, and non-zero (build) otherwise -- including when the diff itself
 # fails, e.g. on a first deploy with no cached ref.
+#
+# The Vybe Growth Scout dashboard is the same kind of separate project
+# (growth-scout/netlify.toml, base directory "growth-scout"), so its commits
+# are excluded here too.
 
 [build]
   command = "bash scripts/build-netlify-site.sh site"
   publish = "site"
-  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)baby-scout'"
+  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)baby-scout' ':(exclude)growth-scout'"
 
 [build.environment]
   # The build installs its own Tailwind toolchain from scripts/netlify/package.json.

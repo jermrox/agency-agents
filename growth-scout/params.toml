@@ -1,0 +1,188 @@
+# Vybe Growth Scout: search parameters.
+#
+# The scout reads this file before every sweep. Change the scope here, not in
+# the agent prompt. Everything under growth-scout/ belongs to the scout alone;
+# no other agent or site reads or writes it.
+
+[scope]
+company = "Vybe Health"
+site = "https://vybe.health"
+one_liner = "The developer platform for wearable health: we build the wearable, they build what's possible with it."
+# The scout covers the whole wearables category, not only Vybe's own niche:
+# every company, investor and community in wearable tech is in range, and the
+# fit score decides who reaches the board.
+category = "wearable technology and health wearables"
+home_region = "Akron, Ohio"
+priority_regions = ["Ohio", "Midwest", "US"]
+founder_identity = ["veteran-owned", "woman-owned", "minority-owned"]  # use in outreach only with founder approval
+
+# ---------------------------------------------------------------------------
+# The four hunts (investor, growth, social, sponsorship). Each lane is a separate research pass with its own output
+# file in data/raw/. A sweep runs every enabled lane in parallel.
+# ---------------------------------------------------------------------------
+
+[[lanes]]
+id = "vc"
+hunt = "investor"
+title = "VCs investing in health wearables"
+types = ["vc", "corporate-vc"]
+target_rows = [20, 30]
+queries = [
+  "wearable startup raises seed {year}",
+  "health wearable pre-seed round {year}",
+  "smart ring startup raises",
+  "HRV wearable startup funding",
+  "continuous monitoring wearable seed round led by",
+  "wearable health data platform raises",
+  "digital health hardware seed fund thesis",
+]
+
+[[lanes]]
+id = "angels"
+hunt = "investor"
+title = "Angels, angel groups and syndicates"
+types = ["angel", "angel-group", "syndicate"]
+target_rows = [20, 30]
+queries = [
+  "angel investor wearables portfolio",
+  "Ohio angel network health tech",
+  "veteran founder angel network",
+  "women founders angel fund health hardware",
+  "AngelList syndicate digital health hardware",
+]
+
+[[lanes]]
+id = "accel_events"
+hunt = "investor"
+title = "Equity accelerators, corporate VCs and investor events"
+types = ["accelerator", "corporate-vc", "event"]
+target_rows = [20, 30]
+queries = [
+  "health hardware accelerator applications open",
+  "corporate venture wearable sensor investment {year}",
+  "digital health pitch competition startup track {next_year}",
+  "Ohio startup pitch night health",
+]
+
+[[lanes]]
+id = "builders"
+hunt = "growth"
+title = "Builders and design-partner targets"
+types = ["builder", "research-lab"]
+target_rows = [20, 30]
+queries = [
+  "Fitbit Web API deprecation alternative",
+  "Google Fit API shutdown developers",
+  "wearable ECG study university partner",
+  "Show HN wearable",
+  "H2F wearable pilot",
+]
+
+[[lanes]]
+id = "social"
+hunt = "social"
+title = "Social amplifiers, communities and listings"
+types = ["amplifier", "community", "listing"]
+target_rows = [25, 35]
+queries = [
+  "wearable reviewer HRV sleep tracker",
+  "wearables journalist {year}",
+  "quantified self community",
+  "HYROX gym Ohio",
+  "launch directory pre-launch hardware",
+]
+
+[[lanes]]
+id = "signals"
+hunt = "investor"
+title = "Market signals (why-now moments)"
+types = ["signal"]
+target_rows = [20, 30]
+queries = [
+  "wearables funding round {year}",
+  "wearable acquisition {year}",
+  "Fitbit Health Connect API change",
+  "WHOOP Oura Ultrahuman price launch {year}",
+]
+
+[[lanes]]
+id = "sponsor_competitors"
+hunt = "sponsorship"
+title = "What competing wearables sponsor"
+types = ["competitor-deal", "program"]
+target_rows = [25, 35]
+queries = [
+  "WHOOP official partner {year}",
+  "Oura ring sponsorship league {year}",
+  "Garmin athlete ambassador program",
+  "HYROX official wearable partner",
+  "Ultrahuman sponsorship team",
+  "wearable brand NIL deal college athletes",
+]
+
+[[lanes]]
+id = "sponsor_targets"
+hunt = "sponsorship"
+title = "Athletes, teams and events Vybe could sponsor"
+types = ["athlete", "team", "event"]
+target_rows = [30, 45]
+queries = [
+  "HYROX athlete recovery HRV",
+  "Ohio NIL athletes wearable",
+  "Akron Marathon sponsorship packages",
+  "HYROX Chicago expo vendor",
+  "firefighter combat challenge sponsors",
+  "tactical athlete ambassador",
+]
+
+# ---------------------------------------------------------------------------
+# Quality gates. The build drops any row that fails them.
+# ---------------------------------------------------------------------------
+
+[gates]
+min_fit = 7
+min_evidence_urls = 1
+# Investor deals older than this no longer count as "recent wearable activity".
+max_signal_age_days = 730
+# Exclude: unrelated companies that share the name, and programs out of scope.
+exclude_names = ["VybeBand", "Vybe Band", "Vybe Network", "Vybe Funding"]
+exclude_types = []
+# Grants, SBIR/STTR and cloud credits belong to the funding sweep, not here.
+exclude_keywords = ["SBIR", "STTR", "grant program", "cloud credits"]
+
+# ---------------------------------------------------------------------------
+# Priority. score = fit*10, plus bonuses, capped at 100.
+# ---------------------------------------------------------------------------
+
+[priority]
+deadline_window_days = 45
+deadline_bonus = 10
+recent_signal_days = 120
+recent_signal_bonus = 5
+verified_bonus = 5
+open_channel_bonus = 5
+high = 100
+medium = 90
+
+# ---------------------------------------------------------------------------
+# Today's sprint: a three-hour push. Wave 1 runs immediately; each later wave
+# re-runs the lanes that came back thin, verifies new rows, and rebuilds the
+# dashboard.
+# ---------------------------------------------------------------------------
+
+[sprint]
+start_utc = "2026-10-02T18:30:00Z"
+hours = 3
+waves = [
+  { at_minutes = 0,   focus = "all six lanes, first pass" },
+  { at_minutes = 60,  focus = "deepen investor lanes: partners behind each wearable round, warm paths" },
+  { at_minutes = 120, focus = "deepen growth and social: builders hurt by API sunsets, Ohio communities, creators" },
+  { at_minutes = 180, focus = "verify every link, de-duplicate, rank, publish the final board" },
+]
+
+[outreach]
+weekly_targets = 10
+max_follow_ups = 1
+follow_up_after_days = [5, 7]
+open_channels = ["Instagram", "Facebook"]       # confirmed by the founder
+pending_channels = ["LinkedIn", "X", "email"]  # list targets; flag until confirmed
