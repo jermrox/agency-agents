@@ -77,9 +77,11 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
     for bad in gates["exclude_names"]:
         if norm(bad) and norm(bad) in name_blob:
             problems.append(f"excluded name {bad}")
-    text_blob = f"{row.get('name')} {row.get('why')}".lower()
+    # Only the target's own name decides the lane: a VC whose deal note
+    # mentions SBIR is still a VC, but "Acme SBIR Program" is a grant.
+    name_text = f"{row.get('name')}".lower()
     for kw in gates["exclude_keywords"]:
-        if kw.lower() in text_blob and row.get("type") not in {"signal"}:
+        if kw.lower() in name_text and row.get("type") not in {"signal"}:
             problems.append(f"out of lane ({kw}: funding sweep owns it)")
     deadline = parse_date(row.get("deadline"))
     if deadline and deadline < today:

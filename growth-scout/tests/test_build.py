@@ -40,7 +40,8 @@ def test_rejects_past_deadline_stale_investor_and_unrelated_vybe():
 
 
 def test_grants_belong_to_funding_sweep():
-    assert any("funding sweep" in r for r in build.validate(row(why="An SBIR Phase I topic"), PARAMS, TODAY))
+    assert any("funding sweep" in r for r in build.validate(row(name="Acme SBIR Phase I"), PARAMS, TODAY))
+    assert build.validate(row(why="Backed a wearable with DoD SBIR support"), PARAMS, TODAY) == []
 
 
 def test_score_bonuses_and_cap():
