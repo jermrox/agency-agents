@@ -1,11 +1,13 @@
 {
-  "generated": "2026-10-02T12:22:13+00:00",
+  "generated": "2026-10-02T13:48:53+00:00",
   "as_of": "2026-10-02",
   "count": 156,
   "source_errors": [
-    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>"
+    "sbir: https://api.www.sbir.gov/public/api/solicitations?open=1&rows=300&format=json returned HTTP 403; https://www.sbir.gov/api/solicitations.json?open=1&rows=300&format=json returned HTTP 404; https://www.sbir.gov/api/solicitation?open=1&rows=300&format=json did not return JSON: '\\n\\n<!DOCTYPE html>\\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\\n  <head>\\n    <meta charset=\"utf-8\" />\\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2JN1MJTXM1\"></script'; https://legacy.www.sbir.gov/api/solicitations?open=1&rows=300&format=json failed: <urlopen error [Errno -2] Name or service not known>",
+    "dod_sbir: https://www.dodsbirsttr.mil/topics/api/public/topics/search returned HTTP 503; https://www.dodsbirsttr.mil/topics/api/public/topics/search?size=100&page=0 returned HTTP 503; https://www.dodsbirsttr.mil/topics/api/public/topics returned HTTP 500"
   ],
   "stale_sources": [
+    "dod_sbir",
     "sbir"
   ],
   "opportunities": [
@@ -635,7 +637,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -802,7 +804,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -924,7 +926,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1074,7 +1076,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1093,7 +1095,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Public and State controlled institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits that do not have a 501(c)(3) status wit",
+      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Private institutions of higher education; Public and State controlled institutions of higher education",
       "documents": [],
       "sam": "required"
     },
