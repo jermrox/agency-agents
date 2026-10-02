@@ -27,6 +27,13 @@ from every saved report:
 - **What changed:** today's differences from the previous report, such as new
   recalls, buy-now prices, items hitting your target, new 12-month lows, price
   moves of 3% or more, stock changes, purchases, and sale windows opening.
+- **Baby & kid recalls:** every U.S. CPSC recall from the last 60 days that
+  involves baby, toddler or kid products, or is a childproofing (child
+  poisoning) hazard. Filter buttons sort them into groups: Sleep, Car seats &
+  travel, Feeding & teething, Baby gear, Nursery furniture (tip-over),
+  Clothing, Toys, Childproofing and Other kids' products. New ones show up
+  under "What changed". This needs no watchlist, so it catches things you
+  were given or bought second-hand.
 - **Watchlist:** each item's verdict, best price, 90-day median, 12-month low,
   a price-history line you can hover over (or step through with the arrow keys),
   and its safety checks.
@@ -124,6 +131,25 @@ factors get half credit and are listed as unverified.
 **The buy plan** picks the latest historical sale window that closes before
 each item's need-by date. Sale windows are patterns from past years, not
 announcements, so confirm the dates each year.
+
+## Recall watch
+
+`baby_scout/watch.py` pulls every CPSC recall from the last `--watch-days`
+(default 60) days and keeps the child-related ones. CPSC leaves the product
+"Type" blank on about 40% of recalls, so it matches on titles, descriptions
+and product names. It has been checked against real CPSC data, which turned
+up two cases it now handles:
+
+- CPSC writes "Children’s" with a curly apostrophe.
+- "Child-resistant cap" and "keep out of reach of children" describe
+  packaging, not who the product is for. Recalls where the hazard is child
+  poisoning (fuel cans, medicines, cleaners) go to a separate
+  **Childproofing** group.
+
+The first report that includes the watch is a baseline, so it announces
+nothing. After that, up to 6 new recalls a day go into "What changed" and the
+rest are counted. Offline runs, or a day when CPSC can't be reached, mark the
+watch as unavailable rather than empty.
 
 ## Data collection rules
 

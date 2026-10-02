@@ -10,7 +10,7 @@ import statistics
 import sys
 from pathlib import Path
 
-from . import board, config, dashboard, deals, plan, recalls, report, safety
+from . import board, config, dashboard, deals, plan, recalls, report, safety, watch
 from .collect import CollectError, collect, extract_products
 from .http import FetchError
 from .models import Observation, utcnow
@@ -45,6 +45,20 @@ def _paths(args: argparse.Namespace) -> dict[str, Path]:
 
 def _today(args: argparse.Namespace) -> dt.date:
     return dt.date.fromisoformat(args.today) if getattr(args, "today", None) else dt.date.today()
+
+
+def _load_watch(args: argparse.Namespace, today: dt.date) -> list[dict] | None:
+    """Recent child-related recalls from a saved API response, or live, or None offline."""
+    since = today - dt.timedelta(days=args.watch_days)
+    if getattr(args, "watch_file", None):
+        return watch.select(json.loads(Path(args.watch_file).read_text(encoding="utf-8")), since)
+    if args.offline:
+        return None
+    try:
+        return watch.fetch(today, args.watch_days)
+    except FetchError as exc:
+        log.warning("CPSC recall watch failed: %s", exc)
+        return None
 
 
 def cmd_run(args: argparse.Namespace) -> int:
@@ -87,7 +101,8 @@ def cmd_run(args: argparse.Namespace) -> int:
     archive = report.ReportArchive(paths["reports"])
     purchases = [p for p in PurchaseStore(paths["purchases"]).all() if p["date"] <= today.isoformat()]
     daily = report.build(results, buy_plan, purchases, wl.household.budget,
-                         wl.household.due_date, archive.previous(today.isoformat()), today)
+                         wl.household.due_date, archive.previous(today.isoformat()), today,
+                         watch=_load_watch(args, today), watch_days=args.watch_days)
     report_path = archive.save(daily)
     index = dashboard.write(results, buy_plan, archive, args.site)
 
@@ -97,7 +112,10 @@ def cmd_run(args: argparse.Namespace) -> int:
         print("\nChanges since the last report:")
         for e in daily["events"]:
             print(f"  [{e['severity']}] {e['name']}: {e['detail']}")
-    print(f"\nSaved {report_path} and {index}")
+    rw = daily["recall_watch"]
+    print(f"\nRecall watch: {len(rw['items'])} baby/kid recalls in the last {rw['days']} days"
+          if rw["available"] else "\nRecall watch: not run (offline or CPSC unreachable)")
+    print(f"Saved {report_path} and {index}")
     return 0
 
 
@@ -199,6 +217,8 @@ def build_parser() -> argparse.ArgumentParser:
     r.add_argument("--site", default="site", help="where the dashboard is written")
     r.add_argument("--offline", action="store_true", help="no network: use logged prices only")
     r.add_argument("--recalls-file", help="saved CPSC API JSON to use instead of a live lookup")
+    r.add_argument("--watch-file", help="saved CPSC API JSON for the recall watch instead of a live lookup")
+    r.add_argument("--watch-days", type=int, default=60, help="how far back the recall watch looks (default 60)")
     r.add_argument("--today", help=argparse.SUPPRESS)
     r.set_defaults(func=cmd_run)
 
