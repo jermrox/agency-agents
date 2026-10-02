@@ -32,18 +32,53 @@ LIVE_VERDICT_MAX_AGE_DAYS = 7
 """A liveness verdict older than this says nothing about the posting today."""
 
 
+BLOCKED_GRACE_DAYS = 14
+"""How long a posting last seen open survives a source that stops answering."""
+
+
+def _parse(value: object) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(str(value or ""))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
 def _verified_live(job: dict, now: datetime) -> bool:
     """True when the liveness sweep recently confirmed the posting is open."""
     liveness = job.get("liveness")
     if not isinstance(liveness, dict) or liveness.get("state") != "live":
         return False
-    try:
-        checked = datetime.fromisoformat(str(liveness.get("checked_at") or ""))
-    except ValueError:
+    checked = _parse(liveness.get("checked_at"))
+    return bool(checked and checked >= now - timedelta(days=LIVE_VERDICT_MAX_AGE_DAYS))
+
+
+def _blocked_since_it_was_open(job: dict, now: datetime) -> bool:
+    """True when we cannot reach the posting but recently saw it open.
+
+    Liveness returns ``unknown`` when a site blocks us -- a 403, a timeout, a
+    WAF challenge -- and being blocked is not evidence that a job closed. On
+    2026-10-02 the NSCA board went from serving a sitemap to 403-ing both the
+    sitemap and every job page. A Serco H2FIT posting confirmed live three
+    days earlier was 56 days old, so nothing vouched for it and the retention
+    rule aged it out. The board deleted a job no one had reason to think had
+    closed.
+
+    The clock that matters is when we last SAW it open, not when we last
+    tried. Checking the ``unknown`` verdict's own timestamp would be useless:
+    every run re-checks, every run fails the same way, and the timestamp
+    refreshes forever -- a site that blocked us permanently would pin its
+    postings to the board for good. ``last_live_at`` is stamped only by a
+    real ``live`` verdict, so this grace is finite whatever the site does.
+
+    ``gone`` is untouched: a page that says the announcement has closed still
+    ages out, because that is the site telling us, not refusing to.
+    """
+    liveness = job.get("liveness")
+    if not isinstance(liveness, dict) or liveness.get("state") != "unknown":
         return False
-    if checked.tzinfo is None:
-        checked = checked.replace(tzinfo=timezone.utc)
-    return checked >= now - timedelta(days=LIVE_VERDICT_MAX_AGE_DAYS)
+    last_live = _parse(job.get("last_live_at"))
+    return bool(last_live and last_live >= now - timedelta(days=BLOCKED_GRACE_DAYS))
 
 
 def _as_datetime(value: str | None) -> datetime:
@@ -174,13 +209,40 @@ class JSONFeedPublisher(Publisher):
         cutoff = now.timestamp() - retain_days * 86400
         resent = {posting.identity for posting in postings}
         kept = []
+        pruned = []
         for job in merged.values():
+            # Remember the last time a page actually answered that it was
+            # open. Only a real "live" verdict sets it, which is what keeps
+            # the grace below finite.
+            liveness = job.get("liveness")
+            if isinstance(liveness, dict) and liveness.get("state") == "live":
+                job["last_live_at"] = liveness.get("checked_at") or now.isoformat()
             try:
                 listed = datetime.fromisoformat(job.get("listed_at", "")).timestamp()
             except ValueError:
                 listed = now.timestamp()
-            if listed >= cutoff or job.get("id") in resent or _verified_live(job, now):
+            if (
+                listed >= cutoff
+                or job.get("id") in resent
+                or _verified_live(job, now)
+                or _blocked_since_it_was_open(job, now)
+            ):
                 kept.append(job)
+            else:
+                pruned.append(job)
+
+        # Say why, for every single one. A retirement has always logged its
+        # reason; pruning never did, so an entry could leave the board with
+        # nothing anywhere to explain it. That is indistinguishable from a bug
+        # -- which is exactly how the NSCA case above presented, as a posting
+        # that simply was not there any more. Anything that leaves the board
+        # now leaves a line behind it.
+        for job in pruned:
+            state = (job.get("liveness") or {}).get("state") or "never checked"
+            print(
+                f"pruning {job.get('url')} (listed {str(job.get('listed_at'))[:10]}, "
+                f"past {retain_days} days, not re-listed, liveness {state})"
+            )
 
         kept.sort(key=lambda j: (j.get("listed_at") or "", j.get("score", 0)), reverse=True)
         payload = {

@@ -102,6 +102,126 @@ def test_a_posting_the_source_still_lists_outlives_retain_days(tmp_path):
     assert board["jobs"][0]["listed_at"] == "2020-01-01T00:00:00+00:00"
 
 
+def test_a_blocked_source_does_not_delete_its_postings(tmp_path):
+    # NSCA, 2026-10-02: the board went from serving a sitemap to 403-ing both
+    # the sitemap and every job page. A Serco H2FIT posting listed on 7 August
+    # was 56 days old with nothing left to vouch for it, and aged out. Being
+    # blocked is not evidence a job closed.
+    now = datetime.now(timezone.utc)
+    path = tmp_path / "jobs.json"
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 1,
+                "jobs": [
+                    {
+                        "id": "nsca-1",
+                        "title": "H2FIT: Strength and Conditioning Coaches",
+                        "url": "https://nsca.careerwebsite.com/job/h2fit/80404193/",
+                        "listed_at": (now - timedelta(days=56)).isoformat(),
+                        "last_live_at": (now - timedelta(days=3)).isoformat(),
+                        "liveness": {
+                            "state": "unknown",
+                            "reason": "HTTP 403",
+                            "checked_at": now.isoformat(),
+                        },
+                    }
+                ],
+            }
+        )
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([])
+    assert len(json.loads(path.read_text())["jobs"]) == 1
+
+
+def test_a_posting_the_page_says_is_closed_still_ages_out(tmp_path):
+    # The other direction: "unknown" buys patience, "gone" does not.
+    now = datetime.now(timezone.utc)
+    path = tmp_path / "jobs.json"
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 1,
+                "jobs": [
+                    {
+                        "id": "closed-1",
+                        "title": "Closed Announcement",
+                        "url": "https://example.test/job/1",
+                        "listed_at": (now - timedelta(days=56)).isoformat(),
+                        "liveness": {
+                            "state": "gone",
+                            "reason": "page says announcement has closed",
+                            "checked_at": now.isoformat(),
+                        },
+                    }
+                ],
+            }
+        )
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([])
+    assert json.loads(path.read_text())["jobs"] == []
+
+
+def test_a_source_blocked_for_good_stops_vouching(tmp_path):
+    # The grace runs from the last time the page answered, not the last time
+    # we tried -- otherwise a permanent block pins its postings forever.
+    now = datetime.now(timezone.utc)
+    path = tmp_path / "jobs.json"
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 1,
+                "jobs": [
+                    {
+                        "id": "stale-1",
+                        "title": "Long Blocked",
+                        "url": "https://example.test/job/2",
+                        "listed_at": (now - timedelta(days=56)).isoformat(),
+                        "last_live_at": (now - timedelta(days=20)).isoformat(),
+                        "liveness": {
+                            "state": "unknown",
+                            "reason": "HTTP 403",
+                            "checked_at": now.isoformat(),
+                        },
+                    }
+                ],
+            }
+        )
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([])
+    assert json.loads(path.read_text())["jobs"] == []
+
+
+def test_every_pruned_entry_says_why(tmp_path, capsys):
+    # Retirement has always logged its reason; pruning logged nothing, so an
+    # entry could leave the board with no explanation anywhere.
+    now = datetime.now(timezone.utc)
+    path = tmp_path / "jobs.json"
+    path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "count": 1,
+                "jobs": [
+                    {
+                        "id": "old-1",
+                        "title": "Ancient",
+                        "url": "https://example.test/job/3",
+                        "listed_at": (now - timedelta(days=90)).isoformat(),
+                    }
+                ],
+            }
+        )
+    )
+    JSONFeedPublisher({"path": str(path)}).publish([])
+    out = capsys.readouterr().out
+    assert "pruning https://example.test/job/3" in out
+    assert "past 45 days" in out
+
+
 def test_a_verified_live_entry_outlives_retain_days(tmp_path):
     """Not re-sent this run (a detail fetch failed, say), but the liveness
     sweep just confirmed the link is open: that is proof enough to keep it."""
