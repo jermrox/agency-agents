@@ -10,6 +10,9 @@ agent. The Reels program has its own dashboard and lives with the
 | `plan-2026-q4.md` | The quarter's plan, with the week-1 fixes at the top. |
 | `brand-brief.md` | Messaging House and Claim Register. The Claim Register is the gate every piece of copy passes. |
 | `scoreboard.json` | The latest scoreboard as data. The dashboard reads it. |
+| `marksom.json` | Audiences, wedge scores, 35 sourced targets, channels, platform targeting rules and eval runs. The Marksom hub reads it. |
+| `hub/` | The Marksom hub page. `template.html` is the source; `index.html` is the template with `marksom.json` embedded. |
+| `evals/` | The agent's self-evaluation: `rubric.md`, `cases.md`, `check_marketing.py` (guardrail) and dated results. |
 | `seo-plan.md` | Search plan: commercial pages, pillar pages, headline bank, and what must be measured before production order is locked. |
 
 ## Dashboard
@@ -61,3 +64,21 @@ Ask the Marketing Director agent to "pull the scoreboard". It reads GA4
 pages), Instagram (profile, media, per-post insights) and writes a new dated
 `scoreboard-YYYY-MM-DD.md`, rewrites `scoreboard.json`, and re-embeds it in the
 dashboard. A weekly routine does this every Monday morning.
+
+## Marksom (the agent's own site)
+
+The Netlify site `agentmarksom` builds from this repository with
+`scripts/build-netlify-site.sh` (target `marksom`): the hub at `/`, the
+scoreboard at `/scoreboard.html`, and both JSON feeds. After changing
+`marksom.json` or `hub/template.html`, rebuild the hub page:
+
+```
+python3 - <<'PY'
+h = open("vybe-marketing/hub/template.html").read()
+feed = open("vybe-marketing/marksom.json").read().replace("</", "<\\/")
+open("vybe-marketing/hub/index.html", "w").write(h.replace("__DATA__", feed))
+PY
+```
+
+Then run `python3 vybe-marketing/evals/check_marketing.py`. Like the
+scoreboard, the hub is public; `noindex` keeps it out of search results only.

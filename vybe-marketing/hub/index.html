@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Marksom Marketing Hub</title>
+<meta name="description" content="Vybe Health Marketing Director: who to reach, how to reach them within the rules, and how well the agent is doing.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #FBF9F5; --surface: #FFFFFF; --ink: #161C22; --ink-2: #4A5058; --muted: #7A7F86;
+  --hair: #E6E2DA; --ring: rgba(22,28,34,0.10); --brand: #1F8E78; --brand-soft: #E3F3EC;
+  --s0: #EEF0EC; --s1: #C7E6DA; --s2: #6DBFA4; --s3: #1F8E78; --s3-ink: #FFFFFF; --s2-ink: #0E3B31;
+  --deemph: #C9C6BF; --good: #0a7d0a; --warn: #8a5d00; --crit: #c03535; --crit-soft: #FBEAEA; --warn-soft: #FFF4D9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0F1215; --surface: #15191D; --ink: #F2F1EC; --ink-2: #C3C2B7; --muted: #8E9298;
+    --hair: #262B30; --ring: rgba(255,255,255,0.10); --brand: #2A9C83; --brand-soft: #16302A;
+    --s0: #20262B; --s1: #1E3A33; --s2: #23735F; --s3: #2FB08F; --s3-ink: #0B1F1A; --s2-ink: #EAF7F2;
+    --deemph: #4C4B48; --good: #2bbf2b; --warn: #fab219; --crit: #e66767; --crit-soft: #2E1C1C; --warn-soft: #2D2513;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0F1215; --surface: #15191D; --ink: #F2F1EC; --ink-2: #C3C2B7; --muted: #8E9298;
+  --hair: #262B30; --ring: rgba(255,255,255,0.10); --brand: #2A9C83; --brand-soft: #16302A;
+  --s0: #20262B; --s1: #1E3A33; --s2: #23735F; --s3: #2FB08F; --s3-ink: #0B1F1A; --s2-ink: #EAF7F2;
+  --deemph: #4C4B48; --good: #2bbf2b; --warn: #fab219; --crit: #e66767; --crit-soft: #2E1C1C; --warn-soft: #2D2513;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--page); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+header { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+h1 { font-size: 24px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+h1 span { color: var(--brand); }
+.meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav a, .toggle { border: 1px solid var(--ring); border-radius: 999px; padding: 5px 12px; font-size: 13px; color: var(--ink-2); text-decoration: none; background: none; font-family: inherit; cursor: pointer; }
+nav a[aria-current="page"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+h2 { font-size: 17px; margin: 0 0 4px; }
+h3 { font-size: 15px; margin: 14px 0 6px; }
+.sub { color: var(--ink-2); font-size: 13.5px; margin: 0 0 14px; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 18px; margin-bottom: 16px; min-width: 0; }
+.kpis { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+@media (min-width: 760px) { .kpis { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 14px; min-width: 0; }
+.tile .label { color: var(--ink-2); font-size: 12.5px; }
+.tile .value { font-size: 26px; font-weight: 650; line-height: 1.15; margin-top: 4px; overflow-wrap: anywhere; }
+.tile .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.tile.hero { box-shadow: inset 0 0 0 2px var(--brand); border-color: transparent; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+td.num, th.num { text-align: center; }
+.cell { display: inline-flex; align-items: center; justify-content: center; min-width: 74px; padding: 4px 8px; border-radius: 6px; font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.c0 { background: var(--s0); color: var(--ink-2); } .c1 { background: var(--s1); color: var(--s2-ink); }
+.c2 { background: var(--s2); color: var(--s2-ink); } .c3 { background: var(--s3); color: var(--s3-ink); }
+.pick { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); margin-left: 6px; white-space: nowrap; }
+.role { color: var(--muted); font-size: 12.5px; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.tabs button { border: 1px solid var(--ring); background: none; color: var(--ink-2); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+.grid2 { display: grid; gap: 16px; }
+@media (min-width: 860px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+ul.list { margin: 0; padding-left: 18px; } ul.list li { margin: 4px 0; }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; font-size: 13.5px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.ok { color: var(--good); } .ok .dot { background: var(--good); }
+.no { color: var(--crit); } .no .dot { background: var(--crit); }
+.mid { color: var(--warn); } .mid .dot { background: var(--warn); }
+.note-box { background: var(--warn-soft); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--muted); font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; }
+svg .clabel { fill: var(--ink); font-size: 12.5px; } svg .vlabel { fill: var(--ink-2); font-size: 12px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+a { color: var(--brand); }
+details { margin-top: 10px; } summary { cursor: pointer; color: var(--ink-2); font-size: 13px; }
+@media (max-width: 640px) {
+  table.stack thead { display: none; }
+  table.stack tr { display: block; border-bottom: 1px solid var(--hair); padding: 10px 0; }
+  table.stack td { display: block; border: 0; padding: 2px 0; }
+  table.stack td[data-label]::before { content: attr(data-label); display: block; color: var(--muted); font-size: 11.5px; margin-top: 4px; }
+}
+footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1><span>Marksom</span> · Vybe Health Marketing Director</h1>
+      <div class="meta" id="meta"></div>
+    </div>
+    <nav aria-label="Pages">
+      <a href="./" aria-current="page">Hub</a>
+      <a href="scoreboard.html">Scoreboard</a>
+      <button class="toggle" id="theme" type="button">Theme</button>
+    </nav>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Agent status"></section>
+
+  <section class="card">
+    <h2>Who to win first</h2>
+    <p class="sub" id="wedge-sub"></p>
+    <div class="scroll" id="wedge"></div>
+    <div class="legend"><span><span class="sw" style="background:var(--s3)"></span>3 strong</span><span><span class="sw" style="background:var(--s2)"></span>2 good</span><span><span class="sw" style="background:var(--s1)"></span>1 weak</span><span><span class="sw" style="background:var(--s0);outline:1px solid var(--hair)"></span>0 fails</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Segments, targets and how to reach them</h2>
+    <p class="sub">Organisations, programmes, roles, public creators, events and communities. No private individuals' details are kept here.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="segment" role="tabpanel"></div>
+  </section>
+
+  <section class="card">
+    <h2>Targeting rules by platform</h2>
+    <p class="sub">What each platform allows a wellness advertiser to do, and what Vybe does instead.</p>
+    <div class="scroll" id="rules"></div>
+  </section>
+
+  <section class="card">
+    <h2>How well the agent is doing</h2>
+    <p class="sub" id="eval-sub"></p>
+    <div id="evalchart"></div>
+    <div class="legend"><span><span class="sw" style="background:var(--deemph)"></span>Baseline</span><span><span class="sw" style="background:var(--brand)"></span>Latest</span><span>Pass mark 24</span></div>
+    <details><summary>Show as table</summary><div class="scroll" id="evaltable"></div></details>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+<script type="application/json" id="fallback">{
+ "schema": 1,
+ "updated_at": "2026-10-02T18:00:00Z",
+ "stage": "Pre-launch · US founding batch",
+ "wedge_note": "Scored 0 to 3 on pain (felt today), fit (Vybe clearly better) and moat (incumbents would have to break their own model to copy). Hover a score for the reason. Tactical teams are the strongest wedge but buy slowly, so builders and baseline nerds carry the near-term signal this quarter. Self-scored from the 2 Oct 2026 research; treat as hypotheses until the tests run.",
+ "guardrail": {
+  "blocking": 0,
+  "note": "check_marketing.py, 2 Oct 2026"
+ },
+ "segments": [
+  {
+   "id": "tactical",
+   "short": "Tactical teams",
+   "name": "Tactical and performance teams",
+   "pick": "wedge",
+   "pick_note": "Best fit, slowest buying: start now, expect months",
+   "one_line": "Army H2F, SOF, Air Force, Navy, Space Force, fire and police wellness programmes.",
+   "scores": {
+    "pain": 3,
+    "fit": 3,
+    "moat": 2
+   },
+   "score_why": {
+    "pain": "Navy CREW: only 27% of 1,362 sailors were heavy users; sailors want assurance data won't be used punitively.",
+    "fit": "AFSOC's 2023 WHOOP buy required no screen, no GPS, exportable data and about 5-day battery. Bluetooth-only devices are allowed in secure spaces under the 2016 DoD CIO memo.",
+    "moat": "Weakest test. Oura counts DoD as its largest enterprise customer and WHOOP holds AFSOC and Navy work; Vybe's edge is design (no GPS, user-owned data, aggregate-only), not incumbency."
+   },
+   "weakest": "Moat: Oura and WHOOP already hold DoD relationships.",
+   "who": "Human-performance staff who run readiness programmes and the offices that buy their tools.",
+   "problem": "Adherence is low, data reaches commanders months late from fragmented sources, and service members fear punitive use of their data.",
+   "trigger": "New Army H2F platform buying, the SOCOM POTFF III recompete, and tightening location-data rules after repeated Strava leaks.",
+   "size": "Army H2F: 66 brigade teams now, 129 brigades by FY2029, about 22 staff per team.",
+   "size_sources": [
+    {
+     "label": "AUSA",
+     "url": "https://www.ausa.org/news/army-invests-h2f-program-boost-soldier-lethality"
+    }
+   ],
+   "buying_path": "Unit purchase card up to $15,000 for a pilot; simplified acquisition up to $350,000 (small-business set-aside); SBIR/STTR (reauthorised April 2026); DIU prototype awards; subcontract to the POTFF prime.",
+   "message": "Designed for secure spaces: no screen, no GPS, Bluetooth-only, data owned by the service member, and a command view that shows the unit, never the individual.",
+   "test": "By 30 Nov 2026: five conversations with H2F programme directors or POTFF performance staff, and one written purchase-card pilot quote. Drop the wedge if none of the five would pilot without individual-level command access.",
+   "caution": "Commanders ask for individual, real-time data. Offer opt-in sharing with a coach or clinician that stays separate from the command view. Never claim DoD approval, an ATO or OPSEC compliance until a security review confirms it. Selling to the military can damage a privacy brand: Oura's DoD and Palantir announcement (Aug 2025) set off a consumer backlash. Publish a consumer-data firewall and transparency note before announcing any DoD pilot.",
+   "targets": [
+    {
+     "name": "Army H2F brigade teams",
+     "role": "Programme director, strength coaches, H2F Integrator and H2F Advisor NCOs",
+     "type": "Programme / roles",
+     "why": "Largest military human-performance programme, expanding to 129 brigades.",
+     "sources": [
+      {
+       "label": "AUSA",
+       "url": "https://www.ausa.org/news/army-invests-h2f-program-boost-soldier-lethality"
+      }
+     ]
+    },
+    {
+     "name": "PdM H2F (Army product office)",
+     "role": "H2F Management System platform buyer",
+     "type": "Programme office",
+     "why": "Its Sept 2025 Call for Solutions seeks a platform that ingests wearable data.",
+     "sources": [
+      {
+       "label": "SAM.gov",
+       "url": "https://sam.gov/workspace/contract/opp/6c0f25d6bd0d4d0a8878cad9626c1cf1/view"
+      }
+     ]
+    },
+    {
+     "name": "AFSOC",
+     "role": "Human-performance staff",
+     "type": "Command",
+     "why": "Bought 450 WHOOP devices for $450,377.60 (June 2023) on a no-screen, no-GPS, exportable-data requirement.",
+     "sources": [
+      {
+       "label": "Award notice",
+       "url": "https://www.highergov.com/contract-opportunity/sole-source-award-notice-whoop-fa441723p0061ja-u-853a0/"
+      }
+     ]
+    },
+    {
+     "name": "SOCOM POTFF III",
+     "role": "Prime contractor and POTFF performance staff",
+     "type": "Contract",
+     "why": "Recompete RFP expected October 2026; asks for data analytics and IL5 secure data services.",
+     "sources": [
+      {
+       "label": "SOCOM forecast",
+       "url": "https://www.socom.mil/SOF-ATL/OSBP%20documents/ACQUISITION%20FORECAST_April2026_FINAL.pdf"
+      }
+     ]
+    },
+    {
+     "name": "Navy CREW fatigue programme",
+     "role": "Programme staff with MIT Lincoln Laboratory",
+     "type": "Programme",
+     "why": "WHOOP integration announced April 2026; documented adherence and trust problems.",
+     "sources": [
+      {
+       "label": "WHOOP press",
+       "url": "https://www.whoop.com/us/en/press-center/whoop-awarded-contract-with-mit-lincoln-laboratory-to-advance-us-navy-operational-readiness-through-wearable-tech/"
+      }
+     ]
+    },
+    {
+     "name": "US Space Force fitness programme",
+     "role": "Programme staff",
+     "type": "Programme",
+     "why": "Issued thousands of smartwatches to replace PT tests; follow-on study under way.",
+     "sources": [
+      {
+       "label": "Defense One",
+       "url": "https://www.defenseone.com/defense-systems/2024/09/space-force-issued-thousands-smartwatches-replace-pt-tests/399762/"
+      }
+     ]
+    },
+    {
+     "name": "Fire and police wellness programmes",
+     "role": "Health and safety chiefs, wellness coordinators",
+     "type": "Roles",
+     "why": "Grant-funded wellness programmes; device-only purchases are not fundable, so pair the band with a programme.",
+     "sources": [
+      {
+       "label": "DOJ LEMHWA",
+       "url": "https://cops.usdoj.gov/lemhwa"
+      }
+     ]
+    },
+    {
+     "name": "AUSA Annual Meeting",
+     "role": "12–14 Oct 2026, Washington DC",
+     "type": "Event",
+     "why": "Army buyers and H2F leadership in one place, ten days out.",
+     "sources": [
+      {
+       "label": "AUSA 2026",
+       "url": "https://meetings.ausa.org/annual/2026/"
+      }
+     ]
+    },
+    {
+     "name": "SOF Week 2027",
+     "role": "Booth intake closes 29 Nov 2026",
+     "type": "Event",
+     "why": "The SOF community's main gathering.",
+     "sources": [
+      {
+       "label": "SOF Week",
+       "url": "https://sofweek.org/"
+      }
+     ]
+    },
+    {
+     "name": "NSCA Tactical Annual Training",
+     "role": "Tactical strength and conditioning coaches",
+     "type": "Event",
+     "why": "Where the coaches who run unit programmes train.",
+     "sources": [
+      {
+       "label": "NSCA",
+       "url": "https://www.nsca.com/events/conferences/tactical-training/Schedule/"
+      }
+     ]
+    },
+    {
+     "name": "IACP and FDIC",
+     "role": "IACP 24–27 Oct 2026 Orlando; FDIC Apr 2027 Indianapolis",
+     "type": "Event",
+     "why": "Police and fire leadership conferences.",
+     "sources": [
+      {
+       "label": "IACP",
+       "url": "https://www.theiacpconference.org/"
+      },
+      {
+       "label": "FDIC",
+       "url": "https://www.fdic.com/event-information/faqs"
+      }
+     ]
+    },
+    {
+     "name": "MOPs & MOEs",
+     "role": "Your own H2F research board and job board",
+     "type": "Owned channel",
+     "why": "Already reaches tactical human-performance staff; presented at the H2F Symposium.",
+     "sources": [
+      {
+       "label": "mopsnmoes.com",
+       "url": "https://mopsnmoes.com"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Direct conversations",
+     "method": "Founder-led meetings at AUSA and with H2F brigade teams; a one-page security fact sheet.",
+     "rule": "No claims of DoD approval; every security statement checked against the 2016 CIO and 2018 geolocation memos."
+    },
+    {
+     "channel": "LinkedIn",
+     "method": "ABM by job title (H2F, human performance, strength and conditioning, POTFF) and company list; founder posts.",
+     "rule": "Targeting by role and company only; no scraped personal data."
+    },
+    {
+     "channel": "Procurement",
+     "method": "Purchase-card pilot first, then SBIR or DIU; explore a subcontract under the POTFF prime.",
+     "rule": "Small-business set-aside eligibility confirmed before quoting."
+    },
+    {
+     "channel": "MOPs & MOEs",
+     "method": "Research summaries and job-board placement that point to a Vybe readiness brief.",
+     "rule": "Editorial content stays editorial; sponsorship labelled."
+    }
+   ]
+  },
+  {
+   "id": "builders",
+   "short": "Builders",
+   "name": "Builders blocked by closed wearable APIs",
+   "pick": "timely",
+   "pick_note": "",
+   "one_line": "Research labs, digital-health startups and developers hit by the Fitbit Web API shutdown and closed APIs.",
+   "scores": {
+    "pain": 3,
+    "fit": 2,
+    "moat": 3
+   },
+   "score_why": {
+    "pain": "The Fitbit Web API was due to shut down on 30 Sep 2026; the Google Health API needs re-consent, caps unverified apps at 100 users and requires a yearly security assessment. A trade site reports user migration extended to 30 Oct 2026 (not confirmed in Google's docs).",
+    "fit": "Weakest test. Vybe's SDK must actually ship defined raw and processed data; DevKit v0.1 is still pre-release.",
+    "moat": "WHOOP's API needs a membership and bans building databases; Oura blocks API access for users without a membership; Garmin is business-only and discretionary."
+   },
+   "weakest": "Fit: the DevKit is not in builders' hands yet.",
+   "who": "Teams that need wearable data but don't want to become a hardware company.",
+   "problem": "Their data source just closed or changed terms, and the alternatives are aggregators priced per user or closed vendor APIs.",
+   "trigger": "Fitbit Web API shutdown (due 30 Sep 2026; migration reportedly extended to 30 Oct) and Google Health API migration rules.",
+   "size": "Fitabase, which depends on Fitbit and Garmin, has supported more than 450 institutions and 1,100 studies.",
+   "size_sources": [
+    {
+     "label": "JMIR mHealth 2024",
+     "url": "https://mhealth.jmir.org/2024/1/e50043"
+    }
+   ],
+   "buying_path": "Design-partner agreement, then usage-based API or research licence; university purchasing for labs.",
+   "message": "A socket, not the recipe: licensed access to defined raw and processed data from a band you can deploy, without becoming a hardware company.",
+   "test": "By 15 Dec 2026: ten conversations with labs or startups affected by the Fitbit change; three signed design-partner letters for DevKit v0.1.",
+   "caution": "Only promise data streams the SDK delivers today. No research-grade or validation claims until Vybe publishes its own validation.",
+   "targets": [
+    {
+     "name": "Research groups on Fitabase pipelines",
+     "role": "Principal investigators and study coordinators",
+     "type": "Organisation type",
+     "why": "Their Fitbit-based studies are exposed by the shutdown.",
+     "sources": [
+      {
+       "label": "JMIR mHealth",
+       "url": "https://mhealth.jmir.org/2024/1/e50043"
+      },
+      {
+       "label": "Gadgets & Wearables",
+       "url": "https://gadgetsandwearables.com/2026/09/28/fitbit-api-migration-deadline-october-30/"
+      }
+     ]
+    },
+    {
+     "name": "Apps that dropped Fitbit support",
+     "role": "For example RunGap and Intervals.icu",
+     "type": "Companies",
+     "why": "Publicly dropped or declined Fitbit support over the migration rules.",
+     "sources": [
+      {
+       "label": "RunGap",
+       "url": "https://rungap.zendesk.com/hc/en-us/articles/36889355646994-RIP-Fitbit-Integration-Cause-of-Death-Google"
+      },
+      {
+       "label": "Intervals.icu forum",
+       "url": "https://forum.intervals.icu/t/new-fitbit-api-google-health-integration/129111/22"
+      }
+     ]
+    },
+    {
+     "name": "Open Wearables",
+     "role": "Open-source wearable data layer (MIT licence)",
+     "type": "Partner channel",
+     "why": "A free integration point builders already use; listing Vybe there reaches them where they work.",
+     "sources": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/the-momentum/open-wearables"
+      }
+     ]
+    },
+    {
+     "name": "Terra and Junction",
+     "role": "Wearable data aggregators",
+     "type": "Partner channel",
+     "why": "Builders pay roughly $0.50 to $1 per user per month through them; a Vybe integration puts the band in their catalogue.",
+     "sources": [
+      {
+       "label": "Terra pricing",
+       "url": "https://tryterra.co/pricing"
+      },
+      {
+       "label": "Junction pricing",
+       "url": "https://www.tryvital.com/pricing"
+      }
+     ]
+    },
+    {
+     "name": "HLTH 2026",
+     "role": "15–18 Nov 2026, Las Vegas",
+     "type": "Event",
+     "why": "Digital-health founders and buyers.",
+     "sources": [
+      {
+       "label": "HLTH",
+       "url": "https://hlth.com/events/usa/"
+      }
+     ]
+    },
+    {
+     "name": "SLEEP 2027",
+     "role": "6–9 Jun 2027, Denver",
+     "type": "Event",
+     "why": "Sleep researchers who need overnight wearable data.",
+     "sources": [
+      {
+       "label": "SLEEP meeting",
+       "url": "https://www.sleepmeeting.org/about/"
+      }
+     ]
+    },
+    {
+     "name": "Health API Guy (Brendan Keeler)",
+     "role": "Public newsletter on health interoperability",
+     "type": "Public creator",
+     "why": "Mapped the wearables aggregator market in May 2026.",
+     "sources": [
+      {
+       "label": "Substack",
+       "url": "https://healthapiguy.substack.com/p/the-wearables-interoperability-stack"
+      }
+     ]
+    },
+    {
+     "name": "Out-Of-Pocket (Nikhil Krishnan)",
+     "role": "Public health-tech newsletter",
+     "type": "Public creator",
+     "why": "Widely read by digital-health operators.",
+     "sources": [
+      {
+       "label": "Out-Of-Pocket",
+       "url": "https://www.outofpocket.health/"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Developer page",
+     "method": "One page listing data streams, rates, licence and consent model; linked from the ecosystem page.",
+     "rule": "Lists only what ships."
+    },
+    {
+     "channel": "LinkedIn",
+     "method": "ABM to digital-health engineering leads and research coordinators at named organisation types.",
+     "rule": "Role and company targeting; no scraped emails."
+    },
+    {
+     "channel": "Integrations",
+     "method": "Open Wearables connector first; then aggregator listings.",
+     "rule": "Partnership language only after agreement."
+    },
+    {
+     "channel": "Events and newsletters",
+     "method": "Meetings at HLTH; a guest post or interview on the Fitbit transition.",
+     "rule": "Disclose any sponsorship."
+    }
+   ]
+  },
+  {
+   "id": "baseline",
+   "short": "Baseline nerds",
+   "name": "Baseline nerds and quantified-self",
+   "pick": "second",
+   "pick_note": "",
+   "one_line": "HRV and self-tracking enthusiasts who distrust black-box scores.",
+   "scores": {
+    "pain": 2,
+    "fit": 3,
+    "moat": 3
+   },
+   "score_why": {
+    "pain": "Weakest test. Loud and specific (Marco Altini calls readiness scores made-up), but a small, picky group.",
+    "fit": "Vybe reads change against your own baseline, shows competing explanations and states confidence.",
+    "moat": "WHOOP and Oura are built around one daily score; dropping it breaks their product."
+   },
+   "weakest": "Pain: small audience; influence matters more than volume.",
+   "who": "People who read their own HRV trends and want the method shown.",
+   "problem": "Scores they can't audit and data they can't export freely.",
+   "trigger": "Oura retiring Oura on the Web in 2026; exports that take days; score changes without explanation.",
+   "size": "r/QuantifiedSelf about 27K members (reddapi index, 2 Oct 2026).",
+   "size_sources": [
+    {
+     "label": "reddapi",
+     "url": "https://reddapi.dev/subreddits/QuantifiedSelf/insights"
+    }
+   ],
+   "buying_path": "Founding-batch reservation.",
+   "message": "Your own baseline, the method shown, and every number labelled with where it came from.",
+   "test": "Submit a founder talk to the QS NYC Show&Tell (13 Oct). Publish three baseline Reels and compare saves and sends per 1,000 reach with the account baseline.",
+   "caution": "Altini advises Oura and Galpin has co-written with WHOOP: cite their public work, never imply endorsement.",
+   "targets": [
+    {
+     "name": "Quantified Self NYC Show&Tell",
+     "role": "13 Oct 2026, Civic Hall; talk submissions open",
+     "type": "Event",
+     "why": "First NYC QS event since 2017, tied to Gary Wolf's new book (6 Oct).",
+     "sources": [
+      {
+       "label": "Quantified Self",
+       "url": "https://quantifiedself.com/events/new-york-show-and-tell/"
+      }
+     ]
+    },
+    {
+     "name": "Quantified Self SF and Stanford talks",
+     "role": "8 Oct and 20 Oct 2026",
+     "type": "Event",
+     "why": "Same book tour, West Coast audience.",
+     "sources": [
+      {
+       "label": "Quantified Self",
+       "url": "https://quantifiedself.com/events/san-francisco/"
+      }
+     ]
+    },
+    {
+     "name": "DC Rainmaker",
+     "role": "About 652K YouTube subscribers",
+     "type": "Public creator",
+     "why": "Tested Cirqa, WHOOP, Fitbit Air, Helio and Polar Loop in August 2026; a review there would set the record.",
+     "sources": [
+      {
+       "label": "Accuracy deep dive",
+       "url": "https://www.dcrainmaker.com/2026/08/accuracy-deep-dive-garmin-cirqa-whoop-fitbit-air-amazfit-helio-polar-loop-testing.html"
+      }
+     ]
+    },
+    {
+     "name": "The Quantified Scientist",
+     "role": "About 416K YouTube subscribers",
+     "type": "Public creator",
+     "why": "Accuracy-first reviewer trusted by this group.",
+     "sources": [
+      {
+       "label": "Social counts",
+       "url": "https://socialcounts.org/youtube-channel-analytics/UChNWxrTlmh4IRSevon1X93g"
+      }
+     ]
+    },
+    {
+     "name": "Marco Altini (HRV4Training)",
+     "role": "Public researcher and writer",
+     "type": "Public creator",
+     "why": "Recommends reading HRV against a personal normal range, the same idea Vybe is built on.",
+     "sources": [
+      {
+       "label": "Substack",
+       "url": "https://marcoaltini.substack.com/p/sorting-out-metrics-confusion"
+      }
+     ]
+    },
+    {
+     "name": "Andy Galpin (Perform podcast)",
+     "role": "Public scientist and host",
+     "type": "Public creator",
+     "why": "Talks about the 21 to 30 days a baseline takes.",
+     "sources": [
+      {
+       "label": "Men's Health",
+       "url": "https://www.menshealth.com/fitness/a61111064/andy-galpin-perform-podcast-interview/"
+      }
+     ]
+    },
+    {
+     "name": "r/QuantifiedSelf",
+     "role": "About 27K members",
+     "type": "Community",
+     "why": "The core community; listen and help, 90/10.",
+     "sources": [
+      {
+       "label": "reddapi",
+       "url": "https://reddapi.dev/subreddits/QuantifiedSelf/insights"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Instagram Reels",
+     "method": "Baseline explainers built to be sent; the evidence library behind every claim.",
+     "rule": "Claim Register only; sleep stages labelled as estimates."
+    },
+    {
+     "channel": "Partnership ads",
+     "method": "Creator-led partnership ads once a creator agrees; Meta's own tests show higher CTR and lower CPA.",
+     "rule": "Paid partnership label; no implied endorsement before an agreement."
+    },
+    {
+     "channel": "Events",
+     "method": "Founder Show&Tell talk on building a baseline-first band.",
+     "rule": "Talk about method, not medical outcomes."
+    }
+   ]
+  },
+  {
+   "id": "quitters",
+   "short": "Subscription quitters",
+   "name": "Subscription quitters",
+   "pick": "door",
+   "pick_note": "",
+   "one_line": "WHOOP, Oura, Garmin and Fitbit users angry about paying to see their own data.",
+   "scores": {
+    "pain": 3,
+    "fit": 2,
+    "moat": 1
+   },
+   "score_why": {
+    "pain": "WHOOP's May 2025 tier change, Garmin Connect+ (March 2025, a boycott post with about 10K upvotes), Oura web retirement, Fitbit's Google-account move.",
+    "fit": "Vybe needs no consumer subscription and exports data, but so do several rivals.",
+    "moat": "Weakest test. Garmin Cirqa, Fitbit Air, Amazfit Helio and Polar Loop all sell without a required subscription."
+   },
+   "weakest": "Moat: \"no subscription\" is shared by at least four rivals.",
+   "who": "Current wearable owners reconsidering their membership.",
+   "problem": "Recurring fees and locked data.",
+   "trigger": "Price or tier changes and export limits.",
+   "size": "r/garmin about 694K, r/ouraring 235K, r/fitbit 164K, r/whoop 157K members (reddapi, 2 Oct 2026).",
+   "size_sources": [
+    {
+     "label": "reddapi",
+     "url": "https://reddapi.dev/subreddits/whoop/insights"
+    }
+   ],
+   "buying_path": "Founding-batch reservation.",
+   "message": "Search for \"no subscription\", stay for your own baseline and data you can take with you.",
+   "test": "Ship the WHOOP-alternative page from the search plan; measure organic sessions and signups by page for four weeks.",
+   "caution": "Never compare price or battery against a named competitor. Never target competitor customers by health traits.",
+   "targets": [
+    {
+     "name": "Search intent",
+     "role": "\"whoop alternative no subscription\" and related queries",
+     "type": "Search",
+     "why": "Highest commercial intent; see the search plan.",
+     "sources": [
+      {
+       "label": "Search plan",
+       "url": "https://github.com/jermrox/agency-agents/blob/main/vybe-marketing/seo-plan.md"
+      }
+     ]
+    },
+    {
+     "name": "r/whoop, r/ouraring, r/garmin, r/fitbit",
+     "role": "157K to 694K members each",
+     "type": "Communities",
+     "why": "Where switching is discussed; listening and honest help only.",
+     "sources": [
+      {
+       "label": "reddapi",
+       "url": "https://reddapi.dev/subreddits/Garmin/insights"
+      }
+     ]
+    },
+    {
+     "name": "DC Rainmaker comment threads",
+     "role": "Cirqa and WHOOP coverage",
+     "type": "Public creator",
+     "why": "Where buyers compare no-subscription options.",
+     "sources": [
+      {
+       "label": "Cirqa coverage",
+       "url": "https://www.dcrainmaker.com/2026/07/garmin-cirqa-everything-you-need-to-know.html/comment-page-1"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Google search",
+     "method": "Commercial and comparison pages from the search plan.",
+     "rule": "Wellness wording only, so the ads stay out of Google's Health category."
+    },
+    {
+     "channel": "Meta",
+     "method": "Broad or Advantage+ audience; creative about ownership and export does the targeting.",
+     "rule": "No health-condition interests; neutral URLs and event names; consented signups as the source of truth."
+    },
+    {
+     "channel": "Reddit",
+     "method": "Organic participation, affiliation disclosed; Fitness and Wellness interest targeting if paid.",
+     "rule": "No health or biometric targeting; no Medical & Mental Health communities."
+    }
+   ]
+  },
+  {
+   "id": "privacy",
+   "short": "Privacy-first",
+   "name": "Privacy-first trackers",
+   "pick": "",
+   "pick_note": "",
+   "one_line": "Buyers who choose a tracker by where the data goes.",
+   "scores": {
+    "pain": 2,
+    "fit": 2,
+    "moat": 2
+   },
+   "score_why": {
+    "pain": "Worry is broad (KFF Sept 2025: 75% would worry about a tech-company health app), but no large survey shows willingness to pay more.",
+    "fit": "Phone-first storage and export fit, but EFF (Jul 2026) found only Apple end-to-end encrypts health data; Vybe must prove its model.",
+    "moat": "Cloud-AI competitors would have to change architecture; Apple already holds the privacy story."
+   },
+   "weakest": "Every test is middling: worry is wide, proof of paying is thin.",
+   "who": "People who read privacy policies and switched after a scandal.",
+   "problem": "Health data shared with partners, brokers or government programmes.",
+   "trigger": "Oura's DoD and Palantir backlash (Aug–Sep 2025) and the Ultrahuman breach (notified Jun 2026).",
+   "size": "KFF Sept 2025 (n=1,334): 75% would worry; Cisco 2024: 38% have switched a provider over data practices.",
+   "size_sources": [
+    {
+     "label": "KFF",
+     "url": "https://www.kff.org/public-opinion/kff-health-tracking-poll-public-use-and-trust-in-health-care-apps-and-websites/"
+    },
+    {
+     "label": "Cisco 2024",
+     "url": "https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-consumer-privacy-report-2024.pdf"
+    }
+   ],
+   "buying_path": "Founding-batch reservation.",
+   "message": "See where your data sits, export it, delete it. The data screen is the ad.",
+   "test": "One Reel showing the data screen; compare saves and sends with other Reels. Pitch one privacy writer once the privacy model is documented.",
+   "caution": "Treat privacy as proof inside every message, not a separate campaign. Never claim encryption or HIPAA terms counsel has not cleared.",
+   "targets": [
+    {
+     "name": "EFF wearable reviews",
+     "role": "Published July 2026",
+     "type": "Publication",
+     "why": "The current reference on which wearables keep data on the phone.",
+     "sources": [
+      {
+       "label": "EFF, Jul 2026",
+       "url": "https://www.eff.org/deeplinks/2026/07/most-smart-watches-rings-and-bands-lack-basic-transparency-reports-and-key-privacy"
+      }
+     ]
+    },
+    {
+     "name": "Mozilla Nothing Personal",
+     "role": "Successor to Privacy Not Included (Aug 2026)",
+     "type": "Publication",
+     "why": "Rated Oura Ring 4 at 6/10 in June 2026.",
+     "sources": [
+      {
+       "label": "Oura review",
+       "url": "https://www.mozillafoundation.org/en/nothing-personal/oura-ring-privacy-review/"
+      },
+      {
+       "label": "Sunset notice",
+       "url": "https://www.mozillafoundation.org/en/nothing-personal/privacy-not-included-sunset/"
+      }
+     ]
+    },
+    {
+     "name": "Tech press on the Oura and Ultrahuman stories",
+     "role": "Fortune, TechCrunch",
+     "type": "Publication",
+     "why": "Reporters already covering wearable privacy.",
+     "sources": [
+      {
+       "label": "Fortune",
+       "url": "https://fortune.com/2025/09/09/oura-ceo-tom-hale-data-privacy-oura-ring-defense-department-palantir/"
+      },
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/06/03/ultrahuman-says-hackers-accessed-customers-wellness-data-via-internal-tool/"
+      }
+     ]
+    },
+    {
+     "name": "Privacy Guides",
+     "role": "Community-run privacy recommendations",
+     "type": "Publication / community",
+     "why": "Members say there is no replacement source for hardware privacy reviews since Mozilla's change.",
+     "sources": [
+      {
+       "label": "Privacy Guides forum",
+       "url": "https://discuss.privacyguides.net/t/mozillas-privacy-not-included-has-moved/39887"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Instagram",
+     "method": "Show the data screen and export in motion.",
+     "rule": "Privacy claims match the shipped product and privacy policy."
+    },
+    {
+     "channel": "PR",
+     "method": "Pitch the privacy model once documented.",
+     "rule": "No \"military-grade\" or \"100% safe\" language."
+    }
+   ]
+  },
+  {
+   "id": "hybrid",
+   "short": "Hybrid racers",
+   "name": "Hybrid racers (HYROX community)",
+   "pick": "",
+   "pick_note": "",
+   "one_line": "Athletes training for hybrid fitness races, often with a partner.",
+   "scores": {
+    "pain": 1,
+    "fit": 2,
+    "moat": 0
+   },
+   "score_why": {
+    "pain": "Weakest with moat: they already wear trackers and are not complaining loudly.",
+    "fit": "Recovery against your own baseline across a training block fits.",
+    "moat": "Amazfit holds a three-year exclusive HYROX deal from April 2026; Garmin and Coros ship HYROX features."
+   },
+   "weakest": "Moat: an exclusive competitor partnership.",
+   "who": "Hybrid racers and their doubles partners.",
+   "problem": "Managing recovery through a training block and race week.",
+   "trigger": "Race registration and race week.",
+   "size": "About 1.5M HYROX athletes in 2025/26; 2M+ projected for 2026/27.",
+   "size_sources": [
+    {
+     "label": "Endurance Business",
+     "url": "https://endurance.biz/2026/industry-news/targeting-2-million-athletes-hyrox-expands-global-calendar-for-2026-27-season/"
+    }
+   ],
+   "buying_path": "Founding-batch reservation.",
+   "message": "Recovery across your block against your own baseline, built to share with your training partner.",
+   "test": "Keep the one Reel a week in the Reels plan; judge by follows per 1,000 reach against other categories.",
+   "caution": "Never use HYROX branding, logos or footage; say \"hybrid racers\". No implied partnership.",
+   "targets": [
+    {
+     "name": "Rox Lyfe and HYROX Rundown podcasts",
+     "role": "Community podcasts",
+     "type": "Public creators",
+     "why": "Where racers talk training and recovery.",
+     "sources": [
+      {
+       "label": "Apple Podcasts",
+       "url": "https://podcasts.apple.com/us/podcast/rox-lyfe-the-hyrox-podcast/id1648250425"
+      }
+     ]
+    },
+    {
+     "name": "r/hybridathlete",
+     "role": "About 48K members",
+     "type": "Community",
+     "why": "Hybrid-training community without the race brand.",
+     "sources": [
+      {
+       "label": "reddapi",
+       "url": "https://reddapi.dev/subreddits/HybridAthlete/insights"
+      }
+     ]
+    }
+   ],
+   "channels": [
+    {
+     "channel": "Instagram Reels",
+     "method": "\"Hybrid racing\" in on-screen text and first caption line.",
+     "rule": "No HYROX marks; no partnership language."
+    }
+   ]
+  }
+ ],
+ "platform_rules": [
+  {
+   "platform": "Meta",
+   "not_allowed": "Health-condition interests (removed Jan 2022); detailed-targeting exclusions (2025); renaming events to avoid health classification.",
+   "allowed": "Broad and Advantage+ audiences, custom-audience exclusions, partnership ads, Conversions API.",
+   "vybe": "Creative does the targeting; neutral URLs and event names; Vybe's own signup count is the source of truth if lower-funnel events are blocked.",
+   "sources": [
+    {
+     "label": "Meta 2021",
+     "url": "https://www.facebook.com/business/news/removing-certain-ad-targeting-options-and-expanding-our-ad-controls"
+    },
+    {
+     "label": "Meta help",
+     "url": "https://www.facebook.com/business/help/423150200627651"
+    }
+   ]
+  },
+  {
+   "platform": "Google Ads / YouTube",
+   "not_allowed": "Ads or pages that fall in the Health sensitive category lose remarketing, Customer Match and lookalikes.",
+   "allowed": "Search on comparison and no-subscription queries; Google's predefined audiences.",
+   "vybe": "Wellness wording from the Claim Register; Consent Mode with ad_user_data and ad_personalization.",
+   "sources": [
+    {
+     "label": "Google policy",
+     "url": "https://support.google.com/adspolicy/answer/16258024?hl=en"
+    },
+    {
+     "label": "Consent Mode",
+     "url": "https://support.google.com/google-ads/answer/10000067?hl=en"
+    }
+   ]
+  },
+  {
+   "platform": "LinkedIn",
+   "not_allowed": "No health-specific rule found; no scraping personal data.",
+   "allowed": "Job title, function, seniority, company lists, Groups (US).",
+   "vybe": "ABM for tactical and builder targets; budget for $6 to $15 CPCs.",
+   "sources": [
+    {
+     "label": "LinkedIn help",
+     "url": "https://www.linkedin.com/help/lms/answer/a424655"
+    }
+   ]
+  },
+  {
+   "platform": "Reddit",
+   "not_allowed": "Targeting on health, biometric or genetic data; Medical & Mental Health communities.",
+   "allowed": "Fitness, Wellness and Nutrition interests; community and keyword targeting.",
+   "vybe": "Organic first with affiliation disclosed; paid only on fitness interests.",
+   "sources": [
+    {
+     "label": "Reddit policy",
+     "url": "https://business.reddithelp.com/s/article/Reddit-Advertising-Policy-Targeting-Guidelines"
+    }
+   ]
+  },
+  {
+   "platform": "US privacy law",
+   "not_allowed": "Sharing consumer health data with ad platforms without opt-in consent; geofencing within 2,000 ft of health-care sites (Washington).",
+   "allowed": "Consented first-party signups; a separate Consumer Health Privacy Policy link.",
+   "vybe": "Opt-in consent on the waitlist, honour Global Privacy Control, keep health answers out of pixels. Counsel to confirm.",
+   "sources": [
+    {
+     "label": "Washington RCW 19.373",
+     "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.373&full=true"
+    },
+    {
+     "label": "FTC HBNR",
+     "url": "https://www.ftc.gov/news-events/news/press-releases/2024/04/ftc-finalizes-changes-health-breach-notification-rule"
+    }
+   ]
+  },
+  {
+   "platform": "FDA wellness line",
+   "not_allowed": "Naming diseases, diagnostic thresholds, \"clinical grade\", prompting clinical action; heart-rhythm or AFib wording is the highest risk.",
+   "allowed": "HRV, trends and baselines in a sleep, stress or recovery context.",
+   "vybe": "Claim Register gate on every ad and page; counsel review of \"heart rhythm\" and \"ECG\".",
+   "sources": [
+    {
+     "label": "King & Spalding",
+     "url": "https://www.kslaw.com/insights/articles/fda-updates-general-wellness-and-clinical-decision-support-guidance-documents"
+    }
+   ]
+  }
+ ],
+ "eval": {
+  "note": "Mean rubric score across the cases run, out of 30. Self-scored by the agent, which is the weakest kind of review; a person or a fresh session should re-score.",
+  "runs": [
+   {
+    "date": "2026-10-02 baseline",
+    "cases": [
+     {
+      "id": "c1",
+      "name": "Pick the wedge",
+      "total": 17,
+      "pass": false,
+      "gaps": "Evidence, targeting compliance"
+     },
+     {
+      "id": "c7",
+      "name": "Read the scoreboard",
+      "total": 19,
+      "pass": false,
+      "gaps": "Targeting compliance, wedge"
+     }
+    ]
+   },
+   {
+    "date": "2026-10-02 after research",
+    "cases": [
+     {
+      "id": "c1",
+      "name": "Pick the wedge",
+      "total": 27,
+      "pass": true,
+      "gaps": "Sources beside claims; minimum samples"
+     },
+     {
+      "id": "c2",
+      "name": "Tactical buyer map",
+      "total": 25,
+      "pass": true,
+      "gaps": "Ranking inside the list; procurement timelines"
+     },
+     {
+      "id": "c3",
+      "name": "Meta campaign for quitters",
+      "total": 21,
+      "pass": false,
+      "gaps": "No creative set, budget or decision rule yet"
+     },
+     {
+      "id": "c7",
+      "name": "Read the scoreboard",
+      "total": 24,
+      "pass": true,
+      "gaps": "Measurability, target specificity"
+     }
+    ]
+   }
+  ]
+ },
+ "footer": "Research from 2 Oct 2026: four sourced briefs on tactical buyers, consumer communities, privacy and builders, and platform targeting rules. Names organisations, programmes, roles and public figures only."
+}</script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) { var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  var WORD = ["fails", "weak", "good", "strong"];
+  var root = document.documentElement;
+  try { var t = localStorage.getItem("marksom-theme"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  $("theme").addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = dark ? "light" : "dark"; root.setAttribute("data-theme", next);
+    try { localStorage.setItem("marksom-theme", next); } catch (e) {}
+  });
+  function src(s) { if (!s) return ""; return s.url ? '<a href="' + esc(s.url) + '" rel="noopener" target="_blank">' + esc(s.label || "source") + "</a>" : esc(s.label || s); }
+  function srcs(list) { return (list || []).map(src).join(" · "); }
+
+  var current, selected;
+  function render(d) {
+    current = d;
+    var dt = new Date(d.updated_at);
+    $("meta").textContent = "Updated " + dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) + " · " + d.stage;
+    var ev = d.eval, latest = ev.runs[ev.runs.length - 1], base = ev.runs[0];
+    var lt = latest.cases.reduce(function (a, c) { return a + c.total; }, 0), ln = latest.cases.length;
+    var bt = base.cases.reduce(function (a, c) { return a + c.total; }, 0), bn = base.cases.length;
+    var pick = d.segments.filter(function (s) { return s.pick === "wedge"; })[0];
+    var tiles = [
+      { label: "Wedge to win first", value: pick ? pick.short : "Undecided", note: pick ? pick.pick_note : "", hero: true },
+      { label: "Agent eval, latest", value: (lt / ln).toFixed(1) + " / 30", note: "baseline " + (bt / bn).toFixed(1) + " · pass 24" },
+      { label: "Guardrail check", value: d.guardrail.blocking === 0 ? "Pass" : d.guardrail.blocking + " issues", note: d.guardrail.note },
+      { label: "Named targets", value: String(d.segments.reduce(function (a, s) { return a + s.targets.length; }, 0)), note: "orgs, programmes, roles, creators, events" }
+    ];
+    $("kpis").innerHTML = tiles.map(function (t) { return '<div class="tile' + (t.hero ? " hero" : "") + '"><div class="label">' + esc(t.label) + '</div><div class="value">' + esc(t.value) + '</div><div class="note">' + esc(t.note) + "</div></div>"; }).join("");
+
+    $("wedge-sub").textContent = d.wedge_note;
+    var h = '<table><thead><tr><th scope="col">Segment</th><th class="num" scope="col">Pain</th><th class="num" scope="col">Fit</th><th class="num" scope="col">Moat</th><th scope="col">Weakest test</th></tr></thead><tbody>';
+    d.segments.forEach(function (s) {
+      h += "<tr><td><strong>" + esc(s.name) + "</strong>" + (s.pick ? '<span class="pick">' + esc(s.pick === "wedge" ? "Wedge" : s.pick === "second" ? "Second" : s.pick === "door" ? "Door, not wedge" : s.pick === "timely" ? "Timely now" : s.pick) + "</span>" : "") + '<div class="role">' + esc(s.one_line) + "</div></td>";
+      ["pain", "fit", "moat"].forEach(function (k) { var v = s.scores[k]; h += '<td class="num"><span class="cell c' + v + '" title="' + esc(s.score_why[k]) + '">' + v + " " + WORD[v] + "</span></td>"; });
+      h += "<td>" + esc(s.weakest) + "</td></tr>";
+    });
+    $("wedge").innerHTML = h + "</tbody></table>";
+
+    if (!selected || !d.segments.some(function (s) { return s.id === selected; })) selected = (pick || d.segments[0]).id;
+    $("tabs").innerHTML = d.segments.map(function (s) { return '<button role="tab" type="button" data-id="' + esc(s.id) + '" aria-selected="' + (s.id === selected) + '">' + esc(s.short) + "</button>"; }).join("");
+    Array.prototype.forEach.call($("tabs").querySelectorAll("button"), function (b) { b.addEventListener("click", function () { selected = b.getAttribute("data-id"); render(current); }); });
+    var s = d.segments.filter(function (x) { return x.id === selected; })[0];
+    var tg = '<table class="stack"><thead><tr><th scope="col">Target</th><th scope="col">Type</th><th scope="col">Why it matters</th><th scope="col">Source</th></tr></thead><tbody>' +
+      s.targets.map(function (t) { return "<tr><td><strong>" + esc(t.name) + "</strong>" + (t.role ? '<div class="role">' + esc(t.role) + "</div>" : "") + '</td><td data-label="Type">' + esc(t.type) + '</td><td data-label="Why it matters">' + esc(t.why) + '</td><td data-label="Source">' + srcs(t.sources) + "</td></tr>"; }).join("") + "</tbody></table>";
+    var ch = '<table class="stack"><thead><tr><th scope="col">Channel</th><th scope="col">Method</th><th scope="col">Rule to respect</th></tr></thead><tbody>' +
+      s.channels.map(function (c) { return "<tr><td><strong>" + esc(c.channel) + '</strong></td><td data-label="Method">' + esc(c.method) + '</td><td data-label="Rule to respect">' + esc(c.rule) + "</td></tr>"; }).join("") + "</tbody></table>";
+    $("segment").innerHTML =
+      '<div class="grid2"><div><dl class="kv"><dt>Who</dt><dd>' + esc(s.who) + "</dd><dt>Problem</dt><dd>" + esc(s.problem) + "</dd><dt>Switch trigger</dt><dd>" + esc(s.trigger) + "</dd><dt>Size</dt><dd>" + esc(s.size) + (s.size_sources ? " " + srcs(s.size_sources) : "") + "</dd><dt>Buying path</dt><dd>" + esc(s.buying_path) + "</dd></dl></div>" +
+      '<div><h3 style="margin-top:0">Message that fits</h3><p style="margin:0 0 8px">' + esc(s.message) + '</p><h3>Test to run next</h3><p style="margin:0">' + esc(s.test) + "</p></div></div>" +
+      '<h3>Targets</h3><div class="scroll">' + tg + "</div>" +
+      '<h3>Channels and methods</h3><div class="scroll">' + ch + "</div>" +
+      (s.caution ? '<div class="note-box"><strong>Caution.</strong> ' + esc(s.caution) + "</div>" : "");
+
+    $("rules").innerHTML = '<table class="stack"><thead><tr><th scope="col">Platform</th><th scope="col">Not allowed</th><th scope="col">Allowed</th><th scope="col">What Vybe does</th><th scope="col">Source</th></tr></thead><tbody>' +
+      d.platform_rules.map(function (r) { return "<tr><td><strong>" + esc(r.platform) + '</strong></td><td data-label="Not allowed">' + esc(r.not_allowed) + '</td><td data-label="Allowed">' + esc(r.allowed) + '</td><td data-label="What Vybe does">' + esc(r.vybe) + '</td><td data-label="Source">' + srcs(r.sources) + "</td></tr>"; }).join("") + "</tbody></table>";
+
+    $("eval-sub").textContent = ev.note;
+    evalChart($("evalchart"), ev);
+    var names = {};
+    ev.runs.forEach(function (r) { r.cases.forEach(function (c) { names[c.id] = c.name; }); });
+    var rows = Object.keys(names).map(function (id) {
+      var b = base.cases.filter(function (c) { return c.id === id; })[0], l = latest.cases.filter(function (c) { return c.id === id; })[0];
+      return { name: names[id], b: b ? b.total : null, l: l ? l.total : null, pass: l ? l.pass : null, gaps: l ? l.gaps : "" };
+    });
+    $("evaltable").innerHTML = '<table><thead><tr><th scope="col">Case</th><th class="num" scope="col">Baseline</th><th class="num" scope="col">Latest</th><th scope="col">Result</th><th scope="col">Lowest dimensions</th></tr></thead><tbody>' +
+      rows.map(function (r) { return "<tr><td>" + esc(r.name) + '</td><td class="num">' + (r.b == null ? "not run" : r.b) + '</td><td class="num">' + (r.l == null ? "not run" : r.l) + "</td><td>" + (r.pass == null ? "" : '<span class="chip ' + (r.pass ? "ok" : "no") + '"><span class="dot" aria-hidden="true"></span>' + (r.pass ? "Pass" : "Fail") + "</span>") + "</td><td>" + esc(r.gaps) + "</td></tr>"; }).join("") + "</tbody></table>";
+
+    $("foot").innerHTML = "<p>" + esc(d.footer) + "</p><p>Baseline run " + esc(base.date) + "; latest run " + esc(latest.date) + ". Scored against vybe-marketing/evals/rubric.md.</p>";
+  }
+
+  function evalChart(container, ev) {
+    container.innerHTML = "";
+    var base = ev.runs[0], latest = ev.runs[ev.runs.length - 1];
+    var ids = latest.cases.map(function (c) { return c.id; });
+    var W = Math.max(300, container.clientWidth || 700), narrow = W < 520, labelW = narrow ? 120 : 190, rowH = 44, H = ids.length * rowH + 22;
+    var plotW = W - labelW - 46;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Eval score per case, baseline and latest, out of 30" }, container);
+    var x = function (v) { return labelW + plotW * v / 30; };
+    [0, 10, 20, 30].forEach(function (v) { el("line", { x1: x(v), x2: x(v), y1: 0, y2: H - 18, stroke: "var(--hair)" }, svg); el("text", { x: x(v), y: H - 4, "text-anchor": "middle" }, svg).textContent = v; });
+    el("line", { x1: x(24), x2: x(24), y1: 0, y2: H - 18, stroke: "var(--ink-2)", "stroke-dasharray": "4 3" }, svg);
+    ids.forEach(function (id, i) {
+      var l = latest.cases[i], b = base.cases.filter(function (c) { return c.id === id; })[0], y = i * rowH;
+      el("text", { x: labelW - 10, y: y + 22, "text-anchor": "end", class: "clabel" }, svg).textContent = narrow && l.name.length > 16 ? l.name.slice(0, 15) + "…" : l.name;
+      if (b) { el("rect", { x: labelW, y: y + 6, width: Math.max(2, x(b.total) - labelW), height: 12, rx: 4, fill: "var(--deemph)" }, svg); el("text", { x: x(b.total) + 6, y: y + 16, class: "vlabel" }, svg).textContent = b.total; }
+      el("rect", { x: labelW, y: y + 21, width: Math.max(2, x(l.total) - labelW), height: 12, rx: 4, fill: "var(--brand)" }, svg);
+      el("text", { x: x(l.total) + 6, y: y + 31, class: "vlabel" }, svg).textContent = l.total;
+    });
+  }
+
+  var fallback = JSON.parse($("fallback").textContent), rt;
+  render(fallback);
+  addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { render(current); }, 150); });
+  if (location.protocol !== "file:") {
+    fetch("marksom.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (live) {
+      if (live && live.schema === fallback.schema && new Date(live.updated_at) > new Date(fallback.updated_at)) render(live);
+    }).catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>
