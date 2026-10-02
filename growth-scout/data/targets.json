@@ -66,8 +66,8 @@
       "id": "builders",
       "title": "Builders and design-partner targets",
       "hunt": "growth",
-      "raw": 0,
-      "kept": 0
+      "raw": 24,
+      "kept": 24
     },
     {
       "id": "social",
@@ -99,16 +99,16 @@
     }
   ],
   "summary": {
-    "total": 122,
+    "total": 146,
     "investor": 55,
-    "growth": 7,
+    "growth": 31,
     "social": 28,
     "sponsorship": 0,
     "competitor_deals": 0,
     "signals": 32,
-    "high": 62,
+    "high": 77,
     "deadlines_30d": 2,
-    "ready_to_send": 77
+    "ready_to_send": 103
   },
   "targets": [
     {
@@ -573,6 +573,50 @@
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
     {
+      "name": "Human Performance Collaborative (Ohio State)",
+      "org": "The Ohio State University, Office of Research",
+      "role": "Faculty Director Joshua Hagen; Michael Dial (corresponding author)",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "HPC published an ECG-referenced validation of nocturnal RHR/HRV across Garmin, Oura Gen3/4, Polar and Whoop (Dial et al., Physiological Reports, 2025) with AFRL STRONG Lab co-authors, and runs HRV-based recovery science with U.S. Soccer. A defined wearable HRV validation use case, in Ohio.",
+      "why_now": "OSU-U.S. Soccer recovery-science partnership publicized 2026-04-02 with findings slated for spring release",
+      "evidence": [
+        "https://physoc.onlinelibrary.wiley.com/doi/10.14814/phy2.70527",
+        "https://engineering.osu.edu/news/2026/04/buckeye-engineers-team-u.s.-soccer-advance-recovery-science"
+      ],
+      "channel": "email listed on publication / warm intro",
+      "contact_url": "https://physoc.onlinelibrary.wiley.com/doi/10.14814/phy2.70527",
+      "warm_path": "Ohio; AFRL 711th HPW STRONG Lab shared affiliation",
+      "fit": 9,
+      "ice": {
+        "i": 9,
+        "c": 8,
+        "e": 7
+      },
+      "ask": "20-min call on running Vybe DevKit units through the HPC nocturnal HRV validation protocol against Polar H10",
+      "opener": "Dr. Dial, your 2025 nocturnal HRV validation paper is the clearest device comparison I've read. We're Vybe, an Akron team building a screenless ECG/HRV band with raw-data SDK access. We're choosing a handful of DevKit design partners and would value an independent validation protocol run by Ohio researchers. Would you and Dr. Hagen be open to a 20-minute call?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": "2026-04-02",
+      "confidence": "verified",
+      "tags": [
+        "research",
+        "ohio",
+        "hrv",
+        "ecg",
+        "validation",
+        "sports",
+        "tactical"
+      ],
+      "lane": "builders",
+      "score": 100,
+      "priority": "High",
+      "rank": 13,
+      "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
+    },
+    {
       "name": "Khosla Ventures",
       "org": "Khosla Ventures",
       "role": null,
@@ -609,7 +653,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 13,
+      "rank": 14,
       "id": "khosla-ventures-khosla-ventures"
     },
     {
@@ -647,7 +691,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 14,
+      "rank": 15,
       "id": "kiva-dickinson-selva-ventures"
     },
     {
@@ -686,7 +730,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 15,
+      "rank": 16,
       "id": "kristina-simmons-overwater-ventures"
     },
     {
@@ -723,7 +767,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 16,
+      "rank": 17,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
     {
@@ -759,7 +803,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 17,
+      "rank": 18,
       "id": "labcorp-venture-fund-labcorp"
     },
     {
@@ -797,7 +841,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 18,
+      "rank": 19,
       "id": "marco-altini-hrv4training"
     },
     {
@@ -833,8 +877,52 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 19,
+      "rank": 20,
       "id": "meredith-dietz-lifehacker"
+    },
+    {
+      "name": "Open Wearables",
+      "org": "Momentum (the-momentum)",
+      "role": "Maintainer (Bart Michalak)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "MIT-licensed self-hosted wearable API (2.3k GitHub stars) normalizing Garmin/Whoop/Oura/Apple Health; maintainer's Show HN lists 'direct wearable connections via BLE/ANT+' on the roadmap and the team publishes Fitbit-shutdown migration guides. A new BLE ECG/HRV source with an open SDK is exactly a provider they could add.",
+      "why_now": "Fitbit Web API shutdown (now 2026-10-30) pushing developers to re-integrate; Product Hunt launch thread 2026-04-29",
+      "evidence": [
+        "https://news.ycombinator.com/item?id=47274252",
+        "https://github.com/the-momentum/open-wearables",
+        "https://openwearables.io/wearable-api",
+        "https://www.producthunt.com/p/open-wearables/we-integrated-10-wearable-apis-so-you-don-t-have-to"
+      ],
+      "channel": "community (Discord) / GitHub issue",
+      "contact_url": "https://github.com/the-momentum/open-wearables",
+      "warm_path": null,
+      "fit": 9,
+      "ice": {
+        "i": 9,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "Open a provider-integration issue and do a 15-min call on adding a Vybe BLE provider using DevKit v0.1",
+      "opener": "Bart, I read your Show HN and saw direct BLE connections on the Open Wearables roadmap. We're building Vybe, a screenless ECG/HRV band with an open SDK and no subscription, out of Akron. We're picking 5-10 DevKit design partners and would love to write the Open Wearables provider ourselves if you're open to it. Could we do 15 minutes to agree on the adapter shape?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-04-29",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "open-source",
+        "hrv",
+        "aggregator"
+      ],
+      "lane": "builders",
+      "score": 100,
+      "priority": "High",
+      "rank": 21,
+      "id": "open-wearables-momentum-the-momentum"
     },
     {
       "name": "Oscar Moralez",
@@ -870,7 +958,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 20,
+      "rank": 22,
       "id": "oscar-moralez-boomerang-ventures"
     },
     {
@@ -912,7 +1000,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 21,
+      "rank": 23,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
     {
@@ -949,7 +1037,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 22,
+      "rank": 24,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
     {
@@ -986,7 +1074,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 23,
+      "rank": 25,
       "id": "pankaj-kedia-2468-ventures"
     },
     {
@@ -1025,7 +1113,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 24,
+      "rank": 26,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
     {
@@ -1063,7 +1151,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 25,
+      "rank": 27,
       "id": "ray-maker-dc-rainmaker"
     },
     {
@@ -1100,7 +1188,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 26,
+      "rank": 28,
       "id": "resolute-ventures-resolute-ventures"
     },
     {
@@ -1138,7 +1226,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 27,
+      "rank": 29,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
     {
@@ -1175,7 +1263,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 28,
+      "rank": 30,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
     {
@@ -1213,8 +1301,53 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 29,
+      "rank": 31,
       "id": "sosv-hax-sosv"
+    },
+    {
+      "name": "STRONG Lab, 711th Human Performance Wing",
+      "org": "Air Force Research Laboratory (AFRL/RH)",
+      "role": "Director Nicole T. Ray, PhD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "STRONG Lab 'develops, validates and transitions human performance technologies,' runs a 50-70 Airman/Guardian cohort with 'continuous data collection through integrated wearable sensors,' explicitly collaborates with commercial industry, and supports the Space Force Continuous Fitness Assessment wearables study (now CFA PRIME).",
+      "why_now": "2026 Repperger intern topic AFRL-RHB-26-08 on wearable-informed training prescription; DVIDS 711 HPW physiological data-collection imagery 2026-04-24",
+      "evidence": [
+        "https://www.afrl.af.mil/711HPW/RH/STRONG-Lab/",
+        "https://orise.orau.gov/afrl/documents/repperger-docs/2026/afrl-rhb-26-08-ray.pdf",
+        "https://news.clearancejobs.com/2026/01/14/from-wearables-to-waist-ratios-updates-made-to-the-space-force-fitness-rules/",
+        "https://www.dvidshub.net/image/9683248/afrls-711th-human-performance-wing-advances-air-force-readiness-research"
+      ],
+      "channel": "warm intro needed (via OSU HPC co-authors) / CRADA",
+      "contact_url": "https://www.afrl.af.mil/711HPW/RH/STRONG-Lab/",
+      "warm_path": "Ohio (Wright-Patterson); veteran-owned; OSU HPC shared authors",
+      "fit": 9,
+      "ice": {
+        "i": 10,
+        "c": 7,
+        "e": 5
+      },
+      "ask": "Intro via OSU HPC to discuss a CRADA-style evaluation of DevKit units in the STRONG cohort",
+      "opener": "Dr. Ray, STRONG Lab's model of validating and transitioning wearable tech with commercial partners is why I'm writing. Vybe is a veteran-owned Akron team building a screenless ECG/HRV band with a licensed SDK and raw beat-to-beat data. We're selecting 5-10 DevKit design partners. Would a short call on whether an evaluation in your cohort makes sense be possible?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Wright-Patterson AFB, Dayton, OH",
+      "deadline": null,
+      "last_signal_date": "2026-04-24",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "research",
+        "ohio",
+        "veteran",
+        "hrv",
+        "military"
+      ],
+      "lane": "builders",
+      "score": 100,
+      "priority": "High",
+      "rank": 32,
+      "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
     {
       "name": "Seaside Ventures",
@@ -1252,7 +1385,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 30,
+      "rank": 33,
       "id": "seaside-ventures-seaside-ventures"
     },
     {
@@ -1290,7 +1423,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 31,
+      "rank": 34,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
     {
@@ -1328,7 +1461,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 32,
+      "rank": 35,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
     {
@@ -1365,7 +1498,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 33,
+      "rank": 36,
       "id": "victoria-song-the-verge"
     },
     {
@@ -1401,7 +1534,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 34,
+      "rank": 37,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
     {
@@ -1439,7 +1572,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 35,
+      "rank": 38,
       "id": "the5krunner-the5krunner"
     },
     {
@@ -1481,7 +1614,7 @@
       "lane": "signals",
       "score": 97,
       "priority": "High",
-      "rank": 36,
+      "rank": 39,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
     {
@@ -1522,7 +1655,7 @@
       "lane": "signals",
       "score": 96,
       "priority": "High",
-      "rank": 37,
+      "rank": 40,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
     {
@@ -1563,7 +1696,7 @@
       "lane": "signals",
       "score": 96,
       "priority": "High",
-      "rank": 38,
+      "rank": 41,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
     {
@@ -1589,7 +1722,7 @@
       "stage": null,
       "geo": "Cleveland, OH",
       "deadline": "2026-10-22",
-      "last_signal_date": "2026-10-22",
+      "last_signal_date": null,
       "confidence": "single-source",
       "tags": [
         "ohio",
@@ -1599,7 +1732,7 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 39,
+      "rank": 42,
       "id": "health2tech-cleveland-health2tech"
     },
     {
@@ -1625,7 +1758,7 @@
       "stage": null,
       "geo": "Akron, OH",
       "deadline": "2026-10-28",
-      "last_signal_date": "2026-10-28",
+      "last_signal_date": null,
       "confidence": "single-source",
       "tags": [
         "ohio",
@@ -1635,8 +1768,91 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 40,
+      "rank": 43,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
+    },
+    {
+      "name": "Emotion, Culture, and Psychophysiology Lab (Stress Watch)",
+      "org": "Arizona State University",
+      "role": "Director Nicole Roberts, PhD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "Built 'Stress Watch' on Fitbit-based technology plus ML to alert police officers to rising stress; 26-week data collection with Phoenix Police Regional Training Academy cadets. The project depends on the Fitbit platform, now moving to the Google Health API.",
+      "why_now": "ASU News feature 2026-04-28; Fitbit Web API shutdown 2026-10-30",
+      "evidence": [
+        "https://news.asu.edu/20260428-science-and-technology-wearable-tech-device-created-help-police-officers-see-their-stress"
+      ],
+      "channel": "email listed on site / university profile",
+      "contact_url": "https://news.asu.edu/20260428-science-and-technology-wearable-tech-device-created-help-police-officers-see-their-stress",
+      "warm_path": null,
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 6
+      },
+      "ask": "Call on whether raw beat-to-beat access from a Vybe DevKit could replace or supplement the Fitbit layer",
+      "opener": "Dr. Roberts, the Stress Watch work with Phoenix academy cadets is the kind of field study our band is built for. Vybe is a screenless ECG/HRV wellness band with raw beat-to-beat data and an SDK, no subscription. With Fitbit's API changing, would a DevKit be useful as an alternate sensor layer? I'd value 15 minutes to learn your requirements.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Phoenix, AZ",
+      "deadline": null,
+      "last_signal_date": "2026-04-28",
+      "confidence": "single-source",
+      "tags": [
+        "research",
+        "first-responders",
+        "hrv",
+        "fitbit-sunset",
+        "tactical"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 44,
+      "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
+    },
+    {
+      "name": "Fitabase",
+      "org": "Fitabase (Small Steps Labs)",
+      "role": "CEO Aaron Coleman",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Research data platform that has synced participant Fitbit data for 14 years; it is migrating every study to the Google Health API and needs every active participant to reauthorize. Research teams on single-vendor pipelines are exposed to this kind of platform risk.",
+      "why_now": "Researcher webinar 2026-09-22; KB updated 2026-09-23; Fitbit Web API off end of Oct 2026",
+      "evidence": [
+        "https://www.fitabase.com/resources/knowledge-base/google-health-api-migration/migration-overview/",
+        "https://www.fitabase.com/blog/post/webinar-fitbit-api-transition-for-researchers/",
+        "https://www.fitabase.com/resources/knowledge-base/google-health-api-migration/key-dates/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.fitabase.com/blog/post/webinar-fitbit-api-transition-for-researchers/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 5
+      },
+      "ask": "Short call after the cutover on whether a second, open-SDK device would matter to Fitabase research customers",
+      "opener": "Aaron, the Fitabase migration hub is the clearest Fitbit-cutover guide for researchers I've seen. We're Vybe, building a general-wellness ECG/HRV band with an open SDK and raw beat-to-beat data. Once the October cutover settles, would you take a 15-minute call on whether research customers ask for a second device option?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-23",
+      "confidence": "verified",
+      "tags": [
+        "research",
+        "fitbit-sunset",
+        "dev-platform",
+        "wearables"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 45,
+      "id": "fitabase-fitabase-small-steps-labs"
     },
     {
       "name": "Golden Seeds",
@@ -1672,8 +1888,49 @@
       "lane": "angels",
       "score": 95,
       "priority": "High",
-      "rank": 41,
+      "rank": 46,
       "id": "golden-seeds-golden-seeds"
+    },
+    {
+      "name": "INVI MindHealth",
+      "org": "INVI MindHealth",
+      "role": "Founder Jonathan Wilson (former Navy SEAL)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Device-agnostic mental-resilience platform for veterans that combines wearable HRV, sleep and recovery with EEG and peer support under ARPA-H's EVIDENT program; it just selected Oura as a wearable data vendor. A veteran-founded team that buys wearable data.",
+      "why_now": "Oura vendor selection announced 2026-06-17 for ARPA-H EVIDENT work",
+      "evidence": [
+        "https://www.prweb.com/releases/invi-mindhealth-selects-ura-as-wearable-data-collaborator-for-arpa-h-evident-mental-health-platform-302803327.html"
+      ],
+      "channel": "LinkedIn / warm intro",
+      "contact_url": null,
+      "warm_path": "veteran network (SOF founder; Vybe veteran-owned)",
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 6
+      },
+      "ask": "Intro call on adding a chest/arm ECG-grade HRV source as a second device in INVI's platform",
+      "opener": "Jonathan, congrats on the EVIDENT work and the Oura selection. Vybe is a veteran-owned Akron team building a screenless ECG/HRV band with an SDK and raw beat-to-beat data. INVI is device-agnostic, so I wanted to ask whether a second, ECG-based signal source would help your study design. Open to a 15-minute call?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Denver, CO",
+      "deadline": null,
+      "last_signal_date": "2026-06-17",
+      "confidence": "single-source",
+      "tags": [
+        "veteran",
+        "hrv",
+        "sleep",
+        "tactical",
+        "mental-health"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 47,
+      "id": "invi-mindhealth-invi-mindhealth"
     },
     {
       "name": "Level Zero Health $6.9M pre-seed for continuous hormone wearable",
@@ -1709,8 +1966,91 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 42,
+      "rank": 48,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
+    },
+    {
+      "name": "NOOP",
+      "org": "ryanbr/noop (open source)",
+      "role": "Maintainer (ryanbr)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Offline WHOOP companion that pairs over BLE and keeps data on-device with no cloud, account or subscription. It reached 787 stars and 234 forks within months of its June 2026 creation, which shows strong developer demand for subscription-free raw wearable data.",
+      "why_now": "Repo created 2026-06-11 and actively developed",
+      "evidence": [
+        "https://github.com/ryanbr/noop",
+        "https://github.com/ryanbr/noop/blob/ef165de4/docs/BLE_REVERSE_ENGINEERING.md"
+      ],
+      "channel": "GitHub / Discord",
+      "contact_url": "https://github.com/ryanbr/noop",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "Offer a DevKit and documented BLE spec so NOOP can support an officially open band",
+      "opener": "Hi Ryan, NOOP's growth says a lot about how many people want their own strap data with no subscription. We're Vybe, building a screenless ECG/HRV band that ships with a documented SDK and no subscription, so no reverse engineering is needed. Would you want a DevKit and the spec to see if supporting it in NOOP is worthwhile?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-06-11",
+      "confidence": "verified",
+      "tags": [
+        "open-source",
+        "wearables",
+        "hrv",
+        "quantified-self",
+        "dev-platform"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 49,
+      "id": "noop-ryanbr-noop-open-source"
+    },
+    {
+      "name": "Neurovus",
+      "org": "Neurovus",
+      "role": "Founder & CEO Gary Roberts",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Recovery-intelligence platform for first responders that reads HRV and recovery drift from wearables users already own (Apple Watch, Oura, Garmin, WHOOP). It is non-diagnostic, explicitly general-wellness, and its HRV advisor works on wearable research. A department-issued no-subscription band would remove the 'bring your own device' gap.",
+      "why_now": "Department pilot applications open; cohort launches Q1 2027; 5 departments in conversation",
+      "evidence": [
+        "https://neurovus.com/"
+      ],
+      "channel": "pilot application / contact form",
+      "contact_url": "https://neurovus.com/",
+      "warm_path": "first-responder / veteran network (medical director is USAF veteran)",
+      "fit": 9,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "15-min call on supplying DevKit bands to one Q1 2027 pilot department",
+      "opener": "Gary, Neurovus reading HRV drift against a personal baseline, without flagging anyone to command, is a design I respect. We're Vybe, a veteran-owned team building a screenless ECG/HRV band with no subscription and an open SDK. For departments whose crews don't already own a wearable, could our DevKit fill that gap in your Q1 2027 pilot? 15 minutes?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-04-28",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "first-responders",
+        "hrv",
+        "sleep",
+        "veteran"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 50,
+      "id": "neurovus-neurovus"
     },
     {
       "name": "Open Wearables",
@@ -1746,7 +2086,7 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 43,
+      "rank": 51,
       "id": "open-wearables-momentum-open-wearables-project"
     },
     {
@@ -1782,7 +2122,7 @@
       "lane": "vc",
       "score": 95,
       "priority": "High",
-      "rank": 44,
+      "rank": 52,
       "id": "quinn-li-qualcomm-ventures"
     },
     {
@@ -1819,7 +2159,7 @@
       "lane": "vc",
       "score": 95,
       "priority": "High",
-      "rank": 45,
+      "rank": 53,
       "id": "redalpine-redalpine"
     },
     {
@@ -1858,8 +2198,51 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 46,
+      "rank": 54,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
+    },
+    {
+      "name": "Wearables-HF registry (NCT07650669)",
+      "org": "Cleveland Clinic with Case Western Reserve University",
+      "role": "PI W. H. Wilson Tang, MD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "Cleveland Clinic-led 10-year registry integrating consumer wearable data (Fitbit, Apple Watch) captured by the HeartBit app and a CWRU-based platform with EHR data; sleep and heart-rate metrics are outcome variables. Device-agnostic ingestion makes an open SDK band relevant, and its Fitbit dependency meets the Fitbit API cutover.",
+      "why_now": "Registered 2026-06-16, updated 2026-09-28, not yet recruiting, estimated start 2027-01",
+      "evidence": [
+        "https://clinicaltrials.gov/study/NCT07650669",
+        "https://clinicaltrials.gov/api/v2/studies/NCT07650669?fields=protocolSection.identificationModule,protocolSection.contactsLocationsModule,protocolSection.statusModule,protocolSection.sponsorCollaboratorsModule"
+      ],
+      "channel": "study contact listed on ClinicalTrials.gov",
+      "contact_url": "https://clinicaltrials.gov/study/NCT07650669",
+      "warm_path": "Ohio (Cleveland); CWRU",
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 7,
+        "e": 5
+      },
+      "ask": "15-min call with the CWRU platform team about adding a raw-data wellness band as a supported device before 2027 enrollment",
+      "opener": "Dr. Tang's team, I saw Wearables-HF will pull consumer wearable data through HeartBit and a CWRU platform starting 2027. We're Vybe, an Akron company building a general-wellness ECG/HRV band with an open SDK. Before enrollment opens, would the CWRU platform team take a 15-minute call on whether supporting an open-SDK band fits the protocol?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-09-28",
+      "confidence": "verified",
+      "tags": [
+        "research",
+        "ohio",
+        "wearables",
+        "sleep",
+        "hrv",
+        "fitbit-sunset"
+      ],
+      "lane": "builders",
+      "score": 95,
+      "priority": "High",
+      "rank": 55,
+      "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
     {
       "name": "Wearlinq $14M Series A (AIX Ventures) for wireless 6-lead ECG wearable",
@@ -1895,7 +2278,7 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 47,
+      "rank": 56,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
     {
@@ -1932,7 +2315,7 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 48,
+      "rank": 57,
       "id": "r-quantifiedself-reddit"
     },
     {
@@ -1972,7 +2355,7 @@
       "lane": "signals",
       "score": 92,
       "priority": "High",
-      "rank": 49,
+      "rank": 58,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
     {
@@ -2013,8 +2396,48 @@
       "lane": "signals",
       "score": 91,
       "priority": "High",
-      "rank": 50,
+      "rank": 59,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
+    },
+    {
+      "name": "SparkyFitness",
+      "org": "CodeWithCJ/SparkyFitness (open source)",
+      "role": "Maintainer",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Open-source fitness app (6.2k GitHub stars) that integrates Fitbit, Garmin and other wearables; a May 2026 issue flagged the Fitbit Web API deprecation as 'blocking me from using SparkyFitness' until a Google Health API provider was shipped. Its users depend on third-party wearable APIs.",
+      "why_now": "Fitbit Web API shutdown 2026-10-30; issue #1236 opened 2026-05-05",
+      "evidence": [
+        "https://github.com/CodeWithCJ/SparkyFitness/issues/1236"
+      ],
+      "channel": "GitHub issue / discussion",
+      "contact_url": "https://github.com/CodeWithCJ/SparkyFitness",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 8,
+        "e": 8
+      },
+      "ask": "Propose a Vybe external-data-provider PR and ask for maintainer feedback",
+      "opener": "Hi CJ, saw issue #1236 and how much the Fitbit cutover rippled through SparkyFitness users. We're building Vybe, a no-subscription ECG/HRV band with an open SDK, and want to contribute a native provider ourselves rather than ask you to. Would you be open to reviewing a provider PR once DevKit units ship?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-05-05",
+      "confidence": "verified",
+      "tags": [
+        "open-source",
+        "wearables",
+        "fitbit-sunset",
+        "dev-platform"
+      ],
+      "lane": "builders",
+      "score": 91,
+      "priority": "High",
+      "rank": 60,
+      "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
     {
       "name": "Accelerating Angels",
@@ -2050,7 +2473,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 51,
+      "rank": 61,
       "id": "accelerating-angels-accelerating-angels"
     },
     {
@@ -2092,7 +2515,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 52,
+      "rank": 62,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
     {
@@ -2128,8 +2551,49 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 53,
+      "rank": 63,
       "id": "conor-allison-wareable"
+    },
+    {
+      "name": "Exposure Awareness System (CRG + VigiLife)",
+      "org": "Cornerstone Research Group (CRG Defense)",
+      "role": "Strategic Director Mark Cridge",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Dayton-built firefighter monitoring system pairing smartwatch-class wearable sensors (heart rate, core temp) with environmental sensing on VigiLife's SafeGuard platform. It was piloted with Miami Valley departments and at Wright-Patterson training burns. An Ohio tactical builder integrating wearables.",
+      "why_now": "Miami Valley pilots reported 2025-01-16 (CRG post republished 2025-11-17)",
+      "evidence": [
+        "https://dayton247now.com/news/local/dayton-companies-create-technology-that-tracks-firefighters-real-time-health-via-sensors",
+        "https://crgdefense.com/2025/01/16/from-ohio-to-the-fire-lines-technology-that-saves-firefighters-lives/"
+      ],
+      "channel": "website contact",
+      "contact_url": "https://crgdefense.com/2025/01/16/from-ohio-to-the-fire-lines-technology-that-saves-firefighters-lives/",
+      "warm_path": "Ohio (Dayton); AFRL ecosystem",
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "15-min call on Vybe as an HR/HRV sensor option inside EAS",
+      "opener": "Mark, the EAS pilots with Miami Valley departments caught my eye. We're Vybe, a veteran-owned Akron team building a screenless ECG/HRV band with an SDK. Since EAS already fuses wearable and environmental data, would an ECG-based heart-rate source be worth testing? I'd like 15 minutes to learn your sensor requirements.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Dayton, OH",
+      "deadline": null,
+      "last_signal_date": "2025-11-17",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "first-responders",
+        "ohio",
+        "hrv"
+      ],
+      "lane": "builders",
+      "score": 90,
+      "priority": "High",
+      "rank": 64,
+      "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
     {
       "name": "Google Health API adds ECG, IRN and HRV webhooks",
@@ -2168,7 +2632,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 54,
+      "rank": 65,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
     {
@@ -2204,7 +2668,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 55,
+      "rank": 66,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
     {
@@ -2240,7 +2704,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 56,
+      "rank": 67,
       "id": "healthtech-capital-healthtech-capital"
     },
     {
@@ -2275,7 +2739,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 57,
+      "rank": 68,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
     {
@@ -2311,7 +2775,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 58,
+      "rank": 69,
       "id": "julien-blin-the-upside-newsletter"
     },
     {
@@ -2347,7 +2811,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 59,
+      "rank": 70,
       "id": "lunar-ventures-lunar-ventures"
     },
     {
@@ -2382,7 +2846,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 60,
+      "rank": 71,
       "id": "michael-l-hicks-android-central"
     },
     {
@@ -2417,8 +2881,49 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 61,
+      "rank": 72,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
+    },
+    {
+      "name": "OpenStrap",
+      "org": "OpenStrap (open source)",
+      "role": "Maintainer",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Local-first app that gives post-subscription WHOOP 4.0 bands 'a second life', computing recovery, strain and sleep on-device from raw streams using cited methods. The edge app has 490 stars. The team is blocked by an undocumented protocol and is a natural first adopter of an open band.",
+      "why_now": "GitHub org created 2026-04-02; active repos",
+      "evidence": [
+        "https://github.com/OpenStrap",
+        "https://github.com/OpenStrap/protocol"
+      ],
+      "channel": "GitHub",
+      "contact_url": "https://github.com/OpenStrap",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 7,
+        "e": 7
+      },
+      "ask": "Feedback on Vybe's BLE data spec and an offer of a DevKit",
+      "opener": "Hi, OpenStrap's 'published, cited methods only' approach is refreshing. We're Vybe, building a screenless ECG/HRV band that ships an open SDK and raw RR intervals, no subscription. Would you review our BLE data spec and tell us what's missing for an app like edge? Happy to send a DevKit.",
+      "check_size": null,
+      "stage": null,
+      "geo": "India",
+      "deadline": null,
+      "last_signal_date": "2026-04-02",
+      "confidence": "verified",
+      "tags": [
+        "open-source",
+        "hrv",
+        "wearables",
+        "quantified-self"
+      ],
+      "lane": "builders",
+      "score": 90,
+      "priority": "High",
+      "rank": 73,
+      "id": "openstrap-openstrap-open-source"
     },
     {
       "name": "Point Nine",
@@ -2453,7 +2958,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 62,
+      "rank": 74,
       "id": "point-nine-point-nine"
     },
     {
@@ -2489,7 +2994,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 63,
+      "rank": 75,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
     {
@@ -2527,7 +3032,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 64,
+      "rank": 76,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
     {
@@ -2563,7 +3068,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 65,
+      "rank": 77,
       "id": "robb-sutton-robbsutton-com"
     },
     {
@@ -2588,7 +3093,7 @@
         "e": 6
       },
       "ask": "Apply for VOSB certification (requires 51% veteran ownership and a SAM.gov profile).",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -2603,7 +3108,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 66,
+      "rank": 78,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
     {
@@ -2640,7 +3145,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 67,
+      "rank": 79,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
     {
@@ -2676,7 +3181,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 68,
+      "rank": 80,
       "id": "t3-performance-t3-performance"
     },
     {
@@ -2712,7 +3217,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 69,
+      "rank": 81,
       "id": "true-ventures-true-ventures"
     },
     {
@@ -2747,7 +3252,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 70,
+      "rank": 82,
       "id": "vaark-ventures-vaark-ventures"
     },
     {
@@ -2783,8 +3288,88 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 71,
+      "rank": 83,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
+    },
+    {
+      "name": "MyDataHelps",
+      "org": "CareEvolution",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Research and digital-health platform that collects Fitbit data for many studies and published a migration guide requiring every project and participant to reconnect through Google Health. It ingests multiple sensor sources and so can add new devices.",
+      "why_now": "Google Health auto-enabled for production projects 2026-08-10; Fitbit API shutdown",
+      "evidence": [
+        "https://support.mydatahelps.org/migrating-fitbit-to-google-health"
+      ],
+      "channel": "contact form / partnerships",
+      "contact_url": "https://support.mydatahelps.org/migrating-fitbit-to-google-health",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 6,
+        "e": 4
+      },
+      "ask": "Partnerships intro: what it takes to become a supported sensor data source",
+      "opener": "Hi MyDataHelps team, your Fitbit-to-Google Health guide shows how much studies depend on a single vendor's API. We're Vybe, building a general-wellness ECG/HRV band with a licensed SDK and raw data access. What does it take to become a supported sensor source? We're choosing DevKit design partners now.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-10",
+      "confidence": "single-source",
+      "tags": [
+        "research",
+        "dev-platform",
+        "fitbit-sunset"
+      ],
+      "lane": "builders",
+      "score": 89,
+      "priority": "High",
+      "rank": 84,
+      "id": "mydatahelps-careevolution"
+    },
+    {
+      "name": "Synheart",
+      "org": "Synheart (Mila Ventures)",
+      "role": "Founder",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Builds an open 'Human State Interface' standard that turns physiological signals 'from any device reading the body' plus behavioral signals into on-device focus/stress/recovery reads. Its Life app integrates Apple Watch, Garmin, Health Connect and BLE heart-rate monitors.",
+      "why_now": "Launched Life app 2026-07-10",
+      "evidence": [
+        "https://synheart.ai/",
+        "https://synheart.ai/blog/introducing-life-by-synheart-human-state-ai-companion"
+      ],
+      "channel": "website contact",
+      "contact_url": "https://synheart.ai/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 7
+      },
+      "ask": "Explore Vybe as a reference ECG/HRV input device for the HSI standard",
+      "opener": "Hi Synheart team, an open on-device standard for human state is a smart bet. Vybe is building a screenless ECG/HRV band with an SDK that exposes raw RR intervals. Would you want a DevKit to test as an HSI input, and give us feedback on what signal format makes integration trivial?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-10",
+      "confidence": "single-source",
+      "tags": [
+        "dev-platform",
+        "hrv",
+        "ai",
+        "open-standard"
+      ],
+      "lane": "builders",
+      "score": 89,
+      "priority": "High",
+      "rank": 85,
+      "id": "synheart-synheart-mila-ventures"
     },
     {
       "name": "HHS Secretary Kennedy: 'every American wearing a wearable within four years'",
@@ -2823,7 +3408,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 72,
+      "rank": 86,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
     {
@@ -2865,7 +3450,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 73,
+      "rank": 87,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
     {
@@ -2906,7 +3491,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 74,
+      "rank": 88,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
     {
@@ -2947,7 +3532,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 75,
+      "rank": 89,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
     {
@@ -2984,7 +3569,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 76,
+      "rank": 90,
       "id": "aix-ventures-aix-ventures"
     },
     {
@@ -3020,7 +3605,7 @@
       "lane": "angels",
       "score": 85,
       "priority": "High",
-      "rank": 77,
+      "rank": 91,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
     {
@@ -3056,7 +3641,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 78,
+      "rank": 92,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
     {
@@ -3092,7 +3677,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 79,
+      "rank": 93,
       "id": "blume-ventures-blume-ventures"
     },
     {
@@ -3128,7 +3713,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 80,
+      "rank": 94,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
     {
@@ -3162,7 +3747,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 81,
+      "rank": 95,
       "id": "humba-ventures-humba-ventures"
     },
     {
@@ -3198,8 +3783,51 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 82,
+      "rank": 96,
       "id": "jumpstart-ventures-jumpstart-inc"
+    },
+    {
+      "name": "Pace",
+      "org": "Pace (pacetraining.co)",
+      "role": "Founder (anton_salcher on HN)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Claude MCP connector for wearable data (sleep, HRV, training). Founder told HN he relies on Terra for normalization and that Apple Watch is unsupported because it needs an SDK app. A band with a direct SDK widens his device coverage.",
+      "why_now": "Second Show HN post on reworked data layer, 2026",
+      "evidence": [
+        "https://news.ycombinator.com/item?id=47658617",
+        "https://news.ycombinator.com/item?id=48179849",
+        "https://pacetraining.co"
+      ],
+      "channel": "Hacker News / website",
+      "contact_url": "https://pacetraining.co",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 7,
+        "e": 8
+      },
+      "ask": "Feedback call: would an open BLE/SDK band be worth a native connector in Pace?",
+      "opener": "Anton, enjoyed both Pace Show HNs, especially the JSONB normalization thread. We're Vybe, building a screenless ECG/HRV band with a licensed SDK and no subscription. Since you mentioned SDK-only devices are the hard part, would a DevKit be useful for a native Pace connector? Happy to send one and hear blunt feedback.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "ai",
+        "mcp",
+        "hrv",
+        "sleep",
+        "dev-platform"
+      ],
+      "lane": "builders",
+      "score": 85,
+      "priority": "High",
+      "rank": 97,
+      "id": "pace-pace-pacetraining-co"
     },
     {
       "name": "Quantified Self (Show & Tell meetups + QS Forum)",
@@ -3234,7 +3862,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 83,
+      "rank": 98,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
     {
@@ -3268,7 +3896,7 @@
       "lane": "angels",
       "score": 85,
       "priority": "High",
-      "rank": 84,
+      "rank": 99,
       "id": "veteran-angel-network-van-context-ventures"
     },
     {
@@ -3304,7 +3932,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 85,
+      "rank": 100,
       "id": "wearable-data-builders-by-rook-rook"
     },
     {
@@ -3339,7 +3967,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 86,
+      "rank": 101,
       "id": "r-hyrox-reddit"
     },
     {
@@ -3380,7 +4008,7 @@
       "lane": "signals",
       "score": 81,
       "priority": "Medium",
-      "rank": 87,
+      "rank": 102,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
     {
@@ -3416,7 +4044,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 88,
+      "rank": 103,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
     {
@@ -3452,7 +4080,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 89,
+      "rank": 104,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
     {
@@ -3490,7 +4118,7 @@
       "lane": "signals",
       "score": 80,
       "priority": "Medium",
-      "rank": 90,
+      "rank": 105,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
     {
@@ -3525,7 +4153,7 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 91,
+      "rank": 106,
       "id": "greg-morris-gregmorris-co-uk"
     },
     {
@@ -3566,7 +4194,7 @@
       "lane": "signals",
       "score": 80,
       "priority": "Medium",
-      "rank": 92,
+      "rank": 107,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
     {
@@ -3600,7 +4228,7 @@
       "lane": "vc",
       "score": 80,
       "priority": "Medium",
-      "rank": 93,
+      "rank": 108,
       "id": "interlagos-interlagos"
     },
     {
@@ -3636,7 +4264,7 @@
       "lane": "vc",
       "score": 80,
       "priority": "Medium",
-      "rank": 94,
+      "rank": 109,
       "id": "inventure-inventure-vc"
     },
     {
@@ -3671,7 +4299,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 95,
+      "rank": 110,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
     {
@@ -3705,7 +4333,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 96,
+      "rank": 111,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
     {
@@ -3741,8 +4369,49 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 97,
+      "rank": 112,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
+    },
+    {
+      "name": "SweatID",
+      "org": "SweatID",
+      "role": "Chief Exercise Scientist Ronald Otterstetter, PhD (Univ. of Akron)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Akron-headquartered sweat-sensor startup ($631K raised) spun from University of Akron fabric-sensor research. It is building wearable hydration analytics that could pair with HR/HRV for training load.",
+      "why_now": "Otterstetter profile shows current SweatID role (snapshot 2026-09-13)",
+      "evidence": [
+        "https://www.linkedin.com/in/ronald-otterstetter-aba46a73",
+        "https://urop.uakron.edu/wearable-health-sensors/"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/ronald-otterstetter-aba46a73",
+      "warm_path": "Akron; University of Akron",
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 6,
+        "e": 9
+      },
+      "ask": "Coffee to explore a joint Akron hydration + HRV pilot in the UA Human Performance Lab",
+      "opener": "Dr. Otterstetter, fellow Akron builders here. Vybe is making a screenless ECG/HRV band with an SDK. SweatID's hydration signal and our HRV data could make an interesting combined training-load study in your Human Performance Lab. Would you be open to coffee to explore it?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": null,
+      "last_signal_date": "2026-09-13",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "akron",
+        "sports",
+        "wearables"
+      ],
+      "lane": "builders",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 113,
+      "id": "sweatid-sweatid"
     },
     {
       "name": "Veteran Owned Business Directory (VeteranOwnedBusiness.com)",
@@ -3766,7 +4435,7 @@
         "e": 9
       },
       "ask": "Create the free basic listing with wearables/health-tech keywords and Akron OH.",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -3780,8 +4449,86 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 98,
+      "rank": 114,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
+    },
+    {
+      "name": "Pulsetto",
+      "org": "Pulsetto",
+      "role": "Povilas Sabaliauskas",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Neck-worn vagus-nerve stimulation device maker that integrated Apple Health, Oura, Garmin, Whoop and Fitbit via Spike so users can see HRV, sleep and recovery around sessions. Its product story depends on third-party HRV data it doesn't control.",
+      "why_now": "Spike partnership announced 2026-01-08",
+      "evidence": [
+        "https://www.einpresswire.com/article/881446254/pulsetto-partners-with-spike-api-to-power-seamless-wearable-integration-for-stress-management"
+      ],
+      "channel": "LinkedIn / website",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 6,
+        "e": 5
+      },
+      "ask": "Call on a bundled HRV band or SDK integration for session-level measurement",
+      "opener": "Hi Povilas, saw the Spike integration so Pulsetto users can see HRV around sessions. We're Vybe, building a screenless ECG/HRV band with an SDK and raw beat-to-beat data, no subscription. If session-level HRV matters to you, could a DevKit integration be worth a 15-minute conversation?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-01-08",
+      "confidence": "single-source",
+      "tags": [
+        "hrv",
+        "stress",
+        "dev-platform"
+      ],
+      "lane": "builders",
+      "score": 79,
+      "priority": "Medium",
+      "rank": 115,
+      "id": "pulsetto-pulsetto"
+    },
+    {
+      "name": "Sahha",
+      "org": "Sahha",
+      "role": "Sugam Budhraja (author)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Health-data SDK company that published a detailed Fitbit-shutdown migration plan for developers, showing it serves app builders who just lost a major data source. A potential channel to put a new device in front of many apps.",
+      "why_now": "Post updated 2026-10-01 after Google moved the shutdown to 2026-10-30",
+      "evidence": [
+        "https://sahha.ai/blog/fitbit-api-sunset-migration/"
+      ],
+      "channel": "website contact",
+      "contact_url": "https://sahha.ai/blog/fitbit-api-sunset-migration/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 6
+      },
+      "ask": "Partnerships call on listing Vybe as a supported device source",
+      "opener": "Hi Sugam, your Fitbit migration post was the most practical one I found. We're Vybe, building a screenless ECG/HRV band with a licensed SDK and raw beat-to-beat access. As apps diversify away from single vendors, would Sahha consider Vybe as a device source? Happy to send a DevKit.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-10-01",
+      "confidence": "single-source",
+      "tags": [
+        "dev-platform",
+        "fitbit-sunset",
+        "aggregator"
+      ],
+      "lane": "builders",
+      "score": 79,
+      "priority": "Medium",
+      "rank": 116,
+      "id": "sahha-sahha"
     },
     {
       "name": "Ohio Office of Business Certifications (MBE / EDGE / WBE / VFBE)",
@@ -3805,7 +4552,7 @@
         "e": 5
       },
       "ask": "Check eligibility (EDGE requires 1 year in business); apply for VFBE/WBE/MBE through the Unified Application.",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": "Ohio",
@@ -3821,7 +4568,7 @@
       "lane": "social",
       "score": 78,
       "priority": "Medium",
-      "rank": 99,
+      "rank": 117,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
     {
@@ -3855,7 +4602,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 100,
+      "rank": 118,
       "id": "37-angels-37-angels"
     },
     {
@@ -3890,7 +4637,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 101,
+      "rank": 119,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
     {
@@ -3924,7 +4671,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 102,
+      "rank": 120,
       "id": "dvc-health-duro-ventures-collective"
     },
     {
@@ -3960,7 +4707,7 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 103,
+      "rank": 121,
       "id": "elevate-human-performance-elevate-human-performance"
     },
     {
@@ -3994,7 +4741,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 104,
+      "rank": 122,
       "id": "hpa-hyde-park-angels-hpa"
     },
     {
@@ -4029,7 +4776,7 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 105,
+      "rank": 123,
       "id": "heather-landi-fierce-healthcare"
     },
     {
@@ -4064,8 +4811,48 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 106,
+      "rank": 124,
       "id": "jim-mcdonald-tactical-training-conditioning"
+    },
+    {
+      "name": "Kye-Shin Lee lab (ECE)",
+      "org": "The University of Akron",
+      "role": "Associate Professor Kye-Shin Lee, PhD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "NIH-funded work on a fully analog ECG motion-artifact and baseline-wander elimination front end meant for wearable ECG (Apple Watch, Galaxy Watch, Fitbit class). It was tested in walking, typing and sleeping. Directly relevant to a screenless ECG band, in Vybe's hometown.",
+      "why_now": null,
+      "evidence": [
+        "https://www.uakron.edu/im/news/university-of-akron-researchers-develop-algorithm-benefiting-healthcare-monitoring-devices"
+      ],
+      "channel": "university profile / email",
+      "contact_url": "https://www.uakron.edu/im/news/university-of-akron-researchers-develop-algorithm-benefiting-healthcare-monitoring-devices",
+      "warm_path": "Akron (same city); University of Akron",
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 7,
+        "e": 9
+      },
+      "ask": "Coffee and lab visit on motion-artifact testing with Vybe DevKit units",
+      "opener": "Dr. Lee, I read about your analog ECG motion-artifact front end. We're Vybe, an Akron team building a screenless ECG/HRV band, and motion artifact during sleep and daily wear is our hardest problem. Could I buy you coffee or visit the lab to compare notes? We'd also be happy to share DevKit hardware for student projects.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": null,
+      "last_signal_date": "2023-05-30",
+      "confidence": "single-source",
+      "tags": [
+        "research",
+        "ohio",
+        "ecg",
+        "akron"
+      ],
+      "lane": "builders",
+      "score": 75,
+      "priority": "Medium",
+      "rank": 125,
+      "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
     {
       "name": "Life Science Angels",
@@ -4098,7 +4885,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 107,
+      "rank": 126,
       "id": "life-science-angels-life-science-angels"
     },
     {
@@ -4132,7 +4919,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 108,
+      "rank": 127,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
     {
@@ -4168,7 +4955,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 109,
+      "rank": 128,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
     {
@@ -4204,7 +4991,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 110,
+      "rank": 129,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
     {
@@ -4239,7 +5026,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 111,
+      "rank": 130,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
     {
@@ -4274,8 +5061,48 @@
       "lane": "vc",
       "score": 75,
       "priority": "Medium",
-      "rank": 112,
+      "rank": 131,
       "id": "rev1-ventures-rev1-ventures"
+    },
+    {
+      "name": "SHIPP Lab (Science of Health Interventions and Peak Performance)",
+      "org": "Kent State University, Dept. of Psychological Sciences",
+      "role": "Director John Gunstad, PhD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "Running a pilot with KSU Athletics, Cleveland Clinic Sports Medicine and startup Joystik Life on whether an app teaching autogenic (autonomic) regulation helps student-athletes under pressure. Autonomic change is what wrist-free HRV measurement captures.",
+      "why_now": "Pilot announced 2026-04-09",
+      "evidence": [
+        "https://www.kent.edu/sh/news/can-smartphone-app-help-student-athletes-perform-better-under-pressure"
+      ],
+      "channel": "university profile / email",
+      "contact_url": "https://www.kent.edu/sh/news/can-smartphone-app-help-student-athletes-perform-better-under-pressure",
+      "warm_path": "Ohio (Kent, ~15 mi from Akron); Cleveland Clinic",
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 8
+      },
+      "ask": "Offer DevKit units as an objective HRV measure in the follow-on study",
+      "opener": "Dr. Gunstad, the Joystik Life pilot with KSU Athletics is a neat test of autonomic regulation at scale. We're Vybe, an Akron team building a screenless ECG/HRV band with raw data access. If an objective HRV measure would strengthen the next phase, we'd be glad to loan DevKit units. Could we talk for 15 minutes?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Kent, OH",
+      "deadline": null,
+      "last_signal_date": "2026-04-09",
+      "confidence": "single-source",
+      "tags": [
+        "research",
+        "ohio",
+        "hrv",
+        "sports"
+      ],
+      "lane": "builders",
+      "score": 75,
+      "priority": "Medium",
+      "rank": 132,
+      "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
     {
       "name": "Samsung completes Xealth acquisition to wire wearable data into clinical workflows",
@@ -4314,7 +5141,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 113,
+      "rank": 133,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
     {
@@ -4348,7 +5175,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 114,
+      "rank": 134,
       "id": "sand-hill-angels-sand-hill-angels"
     },
     {
@@ -4383,7 +5210,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 115,
+      "rank": 135,
       "id": "startup-health-syndicate-startup-health"
     },
     {
@@ -4419,7 +5246,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 116,
+      "rank": 136,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
     {
@@ -4460,7 +5287,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 117,
+      "rank": 137,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
     {
@@ -4484,7 +5311,7 @@
         "e": 8
       },
       "ask": "Create a free company profile and a DevKit product profile (wellness, no medical claims).",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -4498,8 +5325,129 @@
       "lane": "social",
       "score": 74,
       "priority": "Low",
-      "rank": 118,
+      "rank": 138,
       "id": "digital-health-digital-health"
+    },
+    {
+      "name": "H2F Management System",
+      "org": "U.S. Army H2F program (GDIT supporting)",
+      "role": "Tyler Christiansen, GDIT senior operations manager (quoted)",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Army is 'pre-piloting' apps and dashboards for the H2F Management System. GDIT says lowest-level data 'may be HRV, sleep' and leaders want insights, not raw-data fatigue. Defined wearable use case at force scale.",
+      "why_now": "Army Times report 2026-09-28 on H2F MS rollout",
+      "evidence": [
+        "https://www.armytimes.com/news/your-military/2026/09/28/army-leaders-wary-of-data-fatigue-as-fitness-management-system-rolls-out/"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": "veteran network; H2F community",
+      "fit": 7,
+      "ice": {
+        "i": 9,
+        "c": 5,
+        "e": 3
+      },
+      "ask": "Intro to the H2F MS integration team on device-data intake requirements",
+      "opener": "Mr. Christiansen, I read your Army Times comments on surfacing HRV and sleep without data fatigue. Vybe is a veteran-owned team building a screenless ECG/HRV band with a licensed SDK and no subscription. Could we get 15 minutes to understand what device data formats the H2F Management System expects?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-28",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "military",
+        "h2f",
+        "hrv",
+        "sleep",
+        "veteran"
+      ],
+      "lane": "builders",
+      "score": 74,
+      "priority": "Low",
+      "rank": 139,
+      "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
+    },
+    {
+      "name": "Notus Labs",
+      "org": "Notus Labs",
+      "role": null,
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Cleveland-area startup building the Notus One wearable for continuous biomechanical monitoring in sports medicine and return-to-play. A complementary Ohio performance builder that could pair movement data with ECG/HRV recovery signals.",
+      "why_now": "Readying 'full-scale commercialization' (LinkedIn, 2024-05-10)",
+      "evidence": [
+        "https://linkedin.com/company/notus-labs"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://linkedin.com/company/notus-labs",
+      "warm_path": "Ohio (Cleveland / Cuyahoga Falls, near Akron)",
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 8
+      },
+      "ask": "Coffee chat on data interoperability between biomechanics and HRV for athlete recovery",
+      "opener": "Hi Notus team, we're neighbors. Vybe is an Akron team building a screenless ECG/HRV band with an SDK. Notus One covers movement and we cover heart-rate variability, which seems complementary for return-to-play. Would you be up for coffee in Cuyahoga Falls to see if a data handshake makes sense?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland / Cuyahoga Falls, OH",
+      "deadline": null,
+      "last_signal_date": "2024-05-10",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "sports",
+        "wearables",
+        "akron"
+      ],
+      "lane": "builders",
+      "score": 74,
+      "priority": "Low",
+      "rank": 140,
+      "id": "notus-labs-notus-labs"
+    },
+    {
+      "name": "UC Heart, Lung and Vascular Institute",
+      "org": "University of Cincinnati College of Medicine",
+      "role": "Director Richard Becker, MD",
+      "type": "research-lab",
+      "hunt": "growth",
+      "why": "Becker publicly argued that single-lead smartwatch ECG plus AI 'opens the door' to wearable ECG in screening dialogue, and noted that integration, not capability, is the bottleneck. An Ohio academic voice with a defined single-lead ECG interest.",
+      "why_now": "UC News coverage 2025-11-10 of AHA 2025 commentary",
+      "evidence": [
+        "https://www.uc.edu/news/articles/2025/11/app-turns-smartwatch-into-detector-of-structural-heart-disease.html"
+      ],
+      "channel": "university profile",
+      "contact_url": "https://www.uc.edu/news/articles/2025/11/app-turns-smartwatch-into-detector-of-structural-heart-disease.html",
+      "warm_path": "Ohio (Cincinnati)",
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 5
+      },
+      "ask": "20-min research conversation on what single-lead data quality wellness-grade bands need for academic use",
+      "opener": "Dr. Becker, your AHA 2025 comment that integration, not technology, is the gap resonated. We're Vybe, an Ohio team building a general-wellness single-lead ECG/HRV band with raw data access for researchers. We make no medical claims. We'd value 20 minutes on what data quality academic groups need from devices like ours.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cincinnati, OH",
+      "deadline": null,
+      "last_signal_date": "2025-11-10",
+      "confidence": "single-source",
+      "tags": [
+        "research",
+        "ohio",
+        "ecg"
+      ],
+      "lane": "builders",
+      "score": 74,
+      "priority": "Low",
+      "rank": 141,
+      "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
     {
       "name": "Wearables.com - Submit a Product or Company",
@@ -4522,7 +5470,7 @@
         "e": 8
       },
       "ask": "Submit Vybe company info; confirm listing is free before agreeing to anything.",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -4536,7 +5484,7 @@
       "lane": "social",
       "score": 74,
       "priority": "Low",
-      "rank": 119,
+      "rank": 142,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
     {
@@ -4560,7 +5508,7 @@
         "e": 8
       },
       "ask": "Submit if a free tier exists; low-competition category.",
-      "opener": null,
+      "opener": "Listing copy: Vybe (Akron, OH) is a pre-launch screenless ECG/HRV band built as a developer platform: licensed SDK/API, DevKit v0.1 for 5-10 design partners, no subscription, general wellness use. Veteran-, woman- and minority-owned.",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -4575,7 +5523,7 @@
       "lane": "social",
       "score": 73,
       "priority": "Low",
-      "rank": 120,
+      "rank": 143,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
     {
@@ -4615,7 +5563,7 @@
       "lane": "signals",
       "score": 70,
       "priority": "Low",
-      "rank": 121,
+      "rank": 144,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
     {
@@ -4650,8 +5598,48 @@
       "lane": "social",
       "score": 70,
       "priority": "Low",
-      "rank": 122,
+      "rank": 145,
       "id": "jessica-hagen-mobihealthnews"
+    },
+    {
+      "name": "DC Fire and EMS Health and Safety Division",
+      "org": "District of Columbia Fire and EMS Department",
+      "role": "Deputy Fire Chief Shawn Downs",
+      "type": "builder",
+      "hunt": "growth",
+      "why": "Deputy Chief Downs co-developed a faceless wrist wearable (HR, HRV, respiratory rate, sleep) with Ascent Tech to flag cardiac-risk conditions. All 55 recruits volunteered to wear it 24/7. The department ran its own wearable pilot.",
+      "why_now": "FirstNet profile 2025-01-22",
+      "evidence": [
+        "https://firstnet.gov/newsroom/blog/intersection-tech-and-safety-firefighter-wearables-cardiac-events"
+      ],
+      "channel": "LinkedIn / department contact",
+      "contact_url": null,
+      "warm_path": "first-responder network",
+      "fit": 7,
+      "ice": {
+        "i": 7,
+        "c": 5,
+        "e": 4
+      },
+      "ask": "Feedback call on lessons from the recruit pilot and form-factor requirements",
+      "opener": "Deputy Chief Downs, the FirstNet piece on your recruit wearable pilot stuck with me, especially the 55-of-55 opt-in. We're Vybe, building a screenless ECG/HRV wellness band with an SDK. I'd value 15 minutes of your lessons on form factor and connectivity for crews. No pitch, just learning.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Washington, DC",
+      "deadline": null,
+      "last_signal_date": "2025-01-22",
+      "confidence": "single-source",
+      "tags": [
+        "first-responders",
+        "tactical",
+        "hrv",
+        "sleep"
+      ],
+      "lane": "builders",
+      "score": 68,
+      "priority": "Low",
+      "rank": 146,
+      "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
   ],
   "rejected_count": 0
