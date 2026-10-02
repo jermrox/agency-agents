@@ -31,8 +31,11 @@ npx expo start
 - **OnboardingScreen** *(30 Sep)* — first run: pair the Band, choose what
   Vybe may read, see what you agreed to, and see what it can actually tell you
   yet. The app opens here.
-- **PatternHistoryScreen** *(new, 1 Oct)* — twelve weeks of one claim, and the
+- **PatternHistoryScreen** *(1 Oct)* — twelve weeks of one claim, and the
   weeks it broke. Reached from the pattern section of NourishScreen.
+- **OutcomeScreen** *(new, 2 Oct)* — Vybe grading itself: every suggestion it
+  made, what it predicted, what happened, and the ones it got wrong. Reached
+  from the "did it work last time" block on RestoreScreen.
 
 ## The three decisions worth keeping
 
@@ -275,6 +278,47 @@ The closing dark block says Vybe has shown two things that moved together in the
 person's own data and the weeks they did not, and that it cannot tell them
 eating earlier would have fixed those weeks — only that trying it for three weeks
 would tell them something this screen cannot.
+
+## The outcome screen, and why it looks like that
+
+This is the screen the rest of the app points at. Every other screen ends with
+one suggestion; this one comes back and says whether the suggestion was any good.
+
+**The criterion is written down before the attempt.**
+Each row carries the range Vybe committed to at the time — the metric, the
+numbers, the units, the window. *"Said 44–50 ms within three nights · was 47."*
+Deciding after the fact what counted as working is how every product in this
+category wins every time, and it is why none of them are believed.
+
+**Not doing it is a third outcome, not a failure.**
+Three of the ten were never attempted, so the advice was never tested and Vybe
+learned nothing. Scoring those against the person would make the tally
+flattering — it would hide Vybe's weak suggestions behind somebody's difficult
+week. The screen says the opposite outright: the untried ones are *"the clearest
+signal on this screen that Vybe asked for something that did not fit your week."*
+
+**The record is a fraction, not a percentage.**
+`4 of 7`, set large on bare paper. "57%" would throw away the sample size, which
+is the most important thing about it. The reading beside it is equally plain:
+*"Vybe is right more often than not, and not by much."*
+
+**There is a section called What Vybe Got Wrong.**
+Three tested suggestions missed, and each one says what changed as a result —
+including one where the honest answer is *"Nothing yet. Three days is not enough
+to tell a weak suggestion from a half-done one, and Vybe will not pretend
+otherwise."* It gets the outlined block, the same treatment the Ask screen gives
+a refusal, because both are the app admitting a limit.
+
+**The tally is arithmetic over the ledger.**
+`4 of 7`, the miss count and every row's verdict are computed at render from
+`adherence`, `actual` and the predicted range. On a screen whose whole claim is
+"we are not marking our own homework", a headline that disagreed with its own
+rows would be the only bug that matters.
+
+**This row is type, not a plot.**
+The app has three plots already. A predicted *range*, one actual, and whether one
+fell inside the other is three numbers and a word — it reads faster set as type,
+and drawing it would be a picture of a sentence.
 
 ## Non-negotiables held
 

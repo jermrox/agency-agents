@@ -19,7 +19,7 @@ const D = dimensions.restore;
  * action is the one dark block on the screen — four different treatments, so
  * the hierarchy is legible before a single word is read.
  */
-export default function RestoreScreen({ onBack }) {
+export default function RestoreScreen({ onBack, onOpenOutcomes }) {
   return (
     <ScrollView
       style={styles.page}
@@ -97,6 +97,22 @@ export default function RestoreScreen({ onBack }) {
         <Text style={styles.outcomeLabel}>Did it work last time</Text>
         <Text style={styles.outcomeText}>{restoreDay.lastOutcome.text}</Text>
         <Text style={styles.outcomeWhen}>{restoreDay.lastOutcome.when}</Text>
+        {/* One outcome is an anecdote. The full record — including the
+            suggestions that missed and the ones never tried — is the claim
+            worth standing behind, so this block is the way in to it. */}
+        {onOpenOutcomes ? (
+          <Pressable
+            onPress={onOpenOutcomes}
+            accessibilityRole="button"
+            accessibilityLabel="See every suggestion and whether it worked"
+            accessibilityHint="Opens the outcome record, including the suggestions that missed"
+            style={({ pressed }) => [styles.outcomeLink, pressed && styles.pressed]}
+          >
+            <Text style={styles.outcomeLinkText}>
+              See every suggestion and whether it worked
+            </Text>
+          </Pressable>
+        ) : null}
       </View>
     </ScrollView>
   );
@@ -146,4 +162,6 @@ const styles = StyleSheet.create({
   outcomeLabel: { ...type.label, color: colors.brand },
   outcomeText: { ...type.body, color: colors.ink },
   outcomeWhen: { ...type.small, color: colors.faint },
+  outcomeLink: { alignSelf: 'flex-start', paddingVertical: space(1), marginTop: space(0.5) },
+  outcomeLinkText: { ...type.body, color: colors.brand, fontWeight: '600' },
 });

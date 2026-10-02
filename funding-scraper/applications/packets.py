@@ -57,6 +57,10 @@ GATES = [
     # And the payroll test. Contractors and 1099 workers count for nothing here,
     # so a founding team drawing no wage has nobody eligible to train.
     ("w2ohio", "Ohio-resident W-2 employees reported to Ohio unemployment insurance"),
+    # Distinct from `inperson`, where the programme pays. Here the ticket is
+    # covered and the flight is not, and CES week in Las Vegas is the most
+    # expensive week of the year there — so it is a real gate, not a detail.
+    ("travelself", "Able to travel to pitch in person at your own cost"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -854,6 +858,130 @@ PACKETS = [
                 "Bands for the next few outside testers, or the VYBE trademark filing. A "
                 "$500 answer that reads like a $50,000 plan is the fastest way to look like "
                 "you have not thought about it.]"},
+        ],
+    },
+    {
+        "id": "agetech",
+        "name": "AgeTech After Dark @ CES 2027 — AARP pitch",
+        "funder": "AgeTech Collaborative from AARP",
+        "amount": "$10,000 grand prize to the pitch winner; every selected finalist gets a complimentary CES 2027 ticket, and finalists may be invited into the AgeTech Collaborative accelerator",
+        "deadline": "2026-10-12",
+        "fee": None,
+        "url": "https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/",
+        "submit": "Online application on the event page. It opened 1 September 2026 and closes 12 October 2026 at 11:59pm. A selection committee picks the startups invited to pitch; selected finalists then give a 3-minute pitch to a live panel in Las Vegas on the evening of 7 January 2027.",
+        "gates": ["travelself"],
+        "confirmed": [
+            "No ownership, revenue or age-of-business gate is published for this pitch",
+        ],
+        "why": "The nearest deadline on the board and the cheapest $10,000 to try for: one online application, then three minutes. It is also the only wearable-adjacent prize currently open that a pre-revenue company under a year old can enter without a fee, a trial or a licence. Pitching also puts Vybe in front of the AARP accelerator already on this board.",
+        "docs": [
+            "Online application via the event page",
+            "A 3-minute pitch, ready by early January",
+            "Product description and current stage",
+            "Your own travel and lodging for Las Vegas — the CES ticket is covered, getting there is not",
+        ],
+        "note": (
+            "TEN DAYS OUT. The application form itself is not readable from the event "
+            "page, so the sections below are drafted against what AARP publishes that it "
+            "asks and judges: the challenge question, the eligibility door, and the "
+            "three-minute pitch. Open the form first and map these across.\n\n"
+            "THE HONEST POSITIONING, AND IT MATTERS MORE THAN THE WORDING. Vybe is not "
+            "an ageing product and should not become one for a $10,000 application. AARP "
+            "publishes a second door for exactly this case: “If you are not currently "
+            "focused on the AgeTech space, we are also looking for solutions related to "
+            "healthspan and wellness. Do you have a product that helps people stay in the "
+            "game as they age?” That door is a true fit and the answers below go through "
+            "it. This board made the same call about AARP's accelerator on 25 September — "
+            "make the honest case that personal health intelligence serves people over 50, "
+            "rather than retrofitting the product as an ageing device.\n\n"
+            "ONE SOFT GATE TO READ HONESTLY. The page says “We love prototypes but are "
+            "looking for products and services that are ready for the market.” Vybe has a "
+            "working Band prototype and an app in private beta, which is not market-ready. "
+            "That is a preference rather than a stated requirement, so it is not a gate "
+            "here — but it is the thing most likely to lose the application, and the answer "
+            "to it should be a date and a plan rather than a claim.\n\n"
+            "Travel is the real cost. The CES ticket comes with being a finalist; flights "
+            "and a Las Vegas hotel in CES week do not, and CES week is the most expensive "
+            "week of the year there. Decide whether that is affordable before applying, "
+            "because withdrawing after being selected costs more than not entering."
+        ),
+        "fields": [
+            {"q": "How does your tech solution help make aging easier? (the challenge question)", "a":
+                "Most people over fifty already have years of their own health data and no "
+                "idea what any of it means. The interpretation problem does not stay the "
+                "same with age — it gets harder. More things interact: sleep breaks up, "
+                "recovery slows, medications arrive, and a bad week has a longer tail. The "
+                "number on the screen explains less and less of what is going on.\n\n"
+                "Vybe is built for the step after the number. The screenless Band reads "
+                "heart, sleep and movement, and Vybe Intelligence reads those signals next "
+                "to the life around them — a hard week, a long flight, a heat wave — and "
+                "answers the plain question: why am I tired today, and what is worth doing "
+                "about it.\n\n"
+                "Three things make that easier rather than harder as somebody ages.\n\n"
+                "There is no screen on the wrist and no monthly fee. The Band is bought "
+                "once and the answers come with it. A subscription that gates somebody's own "
+                "history is a bad deal at any age and a worse one on a fixed income.\n\n"
+                "It says what it could not see. Every answer states its own blind spots, "
+                "which is what makes it usable by somebody who is also managing real "
+                "conditions with a real clinician.\n\n"
+                "And it will not diagnose. Asked a clinical question it declines, says to "
+                "see a clinician, and still shows the reading — so it can be taken to an "
+                "appointment rather than replacing one."},
+            {"q": "Which eligibility door are you applying through?", "a":
+                "Healthspan and wellness. Vybe is not an AgeTech product and we are not "
+                "going to describe it as one. It is a consumer health wearable whose value "
+                "rises with the complexity of the person's week, which is why it serves "
+                "people over fifty well — not because it was designed for them.\n\n"
+                "Said plainly, because a selection committee that reads a repositioned "
+                "pitch will recognise it: Vybe helps people stay in the game by answering "
+                "why their body did what it did, from their own data, with the evidence "
+                "shown."},
+            {"q": "What the product is", "a": SHORT},
+            {"q": "Current stage, and how close to market", "a":
+                "Where the product is today: {{STAGE}}. Traction: {{TRACTION}}. Team of "
+                "{{EMPLOYEES}}. Revenue over the last 12 months: {{REVENUE}}.\n\n"
+                "[This is the answer most likely to decide the application, because AARP "
+                "says it is looking for products ready for the market. Do not claim "
+                "market-ready if it is not. Give them a date and the two or three things "
+                "between here and it — the manufacturing step, the certification step, the "
+                "beta you are running — and what the pitch in January would be "
+                "demonstrating. A dated plan from a prototype reads better than a vague "
+                "claim of readiness, and the committee has seen both.]"},
+            {"q": "Three-minute pitch spine", "a":
+                "Every wearable hands you a number. None of them tell you why it moved.\n\n"
+                "[Hold up the Band.] No screen, on purpose. It reads your heart, your "
+                "sleep and how you move, and the app reads those signals next to the week "
+                "you actually had.\n\n"
+                "You ask it a plain question — why am I tired today — and you get an answer "
+                "out of your own data, the evidence behind it, and one thing to do. It also "
+                "tells you what it could not see, which is the part nobody else ships.\n\n"
+                "Bought once. No subscription. The interpretation comes with the Band.\n\n"
+                "For anybody over fifty this gets more useful, not less: the older the "
+                "body, the more things interact, and the less a single score explains.\n\n"
+                "[Close in your own words, and keep it yours — why you are the person "
+                "building this. Three minutes is short enough that the close is most of "
+                "what they remember.]\n\n"
+                "[If you can demonstrate anything live on the night, do. A working answer "
+                "on a real wrist beats any slide in a three-minute slot.]"},
+            {"q": "Why the AgeTech Collaborative accelerator, if invited", "a":
+                "The thing Vybe cannot buy is a route to the 50+ audience that does not "
+                "run through consumer-scale marketing, and research on what that audience "
+                "actually wants from health technology rather than what a founder assumes. "
+                "AARP has both.\n\n"
+                "What we would bring to it: a product whose honesty rules — states its "
+                "blind spots, refuses clinical questions, no subscription — are already "
+                "shipped behaviour rather than intentions, which is the harder half to "
+                "retrofit later."},
+            {"q": "Practicalities", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, operating from "
+                "{{CITY}}. Website {{WEBSITE}}. Contact {{CEO}}, {{EMAIL}}.\n\n"
+                "Dates to hold: application closes 12 October 2026 at 11:59pm. The pitch is "
+                "the evening of 7 January 2027 in Las Vegas, 7:00 to 9:00pm, during CES "
+                "week.\n\n"
+                "[Before submitting, confirm somebody can be in Las Vegas on 7 January at "
+                "Vybe's own expense. The CES ticket comes with being a finalist; the flight "
+                "and the hotel do not, and CES week is the most expensive week of the year "
+                "in that city.]"},
         ],
     },
     {
