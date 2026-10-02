@@ -224,6 +224,8 @@ const DATA = /*__DATA__*/null;
       `<span class="pill hunt">${esc(t.hunt)}</span><span class="pill">${esc(TYPE_LABEL[t.type] || t.type)}</span>` +
       (d !== null && d >= 0 ? `<span class="pill due">Due in ${d}d</span>` : "") +
       (t.confidence === "single-source" ? `<span class="pill">single source</span>` : "") +
+      (t.link_status === "verified" ? `<span class="pill High" title="Links re-checked in the final sweep">links checked</span>` : "") +
+      (t.link_status === "contact dead" ? `<span class="pill due" title="${esc(t.contact_note || "")}">contact link dead</span>` : "") +
       (t.identity_needs_ok ? `<span class="pill due" title="The opener says Vybe is veteran-, woman- or minority-owned. Founder approval needed before sending.">Founder identity: needs OK</span>` : "");
   };
   const statusSel = (t) => `<select class="status" data-id="${esc(t.id)}" aria-label="Status for ${esc(t.name)}">${STATUSES.map((x) => `<option${x === statusOf(t) ? " selected" : ""}>${x}</option>`).join("")}</select>`;

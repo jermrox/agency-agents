@@ -83,3 +83,25 @@ def test_founder_identity_openers_are_flagged():
     assert build.uses_founder_identity(row(opener="I'm a veteran founder in Akron"))
     assert not build.uses_founder_identity(row(opener="Our cohort gets monthly calls with veteran mentors"))
     assert not build.uses_founder_identity(row(opener="We're building Vybe Health in Akron, Ohio"))
+
+
+def test_link_check_drops_dead_links(tmp_path, monkeypatch):
+    checks = {
+        "https://example.com/a": {"status": "dead", "note": "404"},
+        "https://example.com/b": {"status": "ok", "note": "live"},
+        "https://example.com/pitch": {"status": "dead", "note": "form removed"},
+    }
+    r = row(evidence=["https://example.com/a", "https://example.com/b"])
+    assert build.apply_link_check(r, checks) is None
+    assert r["evidence"] == ["https://example.com/b"]
+    assert r["contact_url"] is None and r["link_status"] == "contact dead"
+
+    gone = row(evidence=["https://example.com/a"])
+    assert "dead" in build.apply_link_check(gone, checks)
+
+    fresh = row(evidence=["https://example.com/b"], contact_url=None)
+    build.apply_link_check(fresh, checks)
+    assert fresh["link_status"] == "verified"
+    unchecked = row(evidence=["https://example.com/zzz"], contact_url=None)
+    build.apply_link_check(unchecked, checks)
+    assert unchecked["link_status"] == "not checked"

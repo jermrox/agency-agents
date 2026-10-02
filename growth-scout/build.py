@@ -27,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 SITE = ROOT / "site"
+LINK_CHECK = ROOT / "data" / "link_check.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
@@ -126,6 +127,37 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     return s, label
 
 
+def load_link_check() -> dict:
+    """{url: {"status": "ok" | "dead" | "unverified", "note": str}} from the last link check."""
+    if not LINK_CHECK.exists():
+        return {}
+    data = json.loads(LINK_CHECK.read_text())
+    return data.get("urls", {})
+
+
+def apply_link_check(row: dict, checks: dict) -> str | None:
+    """Drop dead links from a row. Returns a rejection reason when nothing citable is left."""
+    status = lambda u: (checks.get(u) or {}).get("status")  # noqa: E731
+    dead = [u for u in row["evidence"] if status(u) == "dead"]
+    row["evidence"] = [u for u in row["evidence"] if status(u) != "dead"]
+    if not row["evidence"]:
+        return f"every evidence link is dead ({len(dead)} checked)"
+    contact = row.get("contact_url")
+    if contact and status(contact) == "dead":
+        row["contact_url"] = None
+        row["contact_note"] = f"contact link dead: {(checks[contact].get('note') or '').strip()}"
+    checked = [u for u in row["evidence"] + ([row["contact_url"]] if row.get("contact_url") else []) if u in checks]
+    if row.get("contact_note"):
+        row["link_status"] = "contact dead"
+    elif checked and all(status(u) == "ok" for u in checked):
+        row["link_status"] = "verified"
+    elif checked:
+        row["link_status"] = "partly verified"
+    else:
+        row["link_status"] = "not checked"
+    return None
+
+
 def dedupe_key(row: dict) -> str:
     if row.get("type") in {"signal", "competitor-deal"}:
         return row["type"] + ":" + norm(row.get("name"))
@@ -136,6 +168,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     kept: dict[str, dict] = {}
     rejected: list[dict] = []
     lanes = {}
+    checks = load_link_check()
     for path in sorted(RAW.glob("*.json")):
         lane = path.stem
         try:
@@ -156,6 +189,10 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
             row = dict(row)
             row["lane"] = lane
             row["evidence"] = [u for u in row["evidence"] if isinstance(u, str) and u.startswith("http")]
+            dead = apply_link_check(row, checks)
+            if dead:
+                rejected.append({"lane": lane, "name": row.get("name"), "reasons": [dead]})
+                continue
             row["score"], row["priority"] = score(row, params, today)
             row["identity_needs_ok"] = (
                 uses_founder_identity(row) and not params["outreach"].get("founder_identity_approved", False)
