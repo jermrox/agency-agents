@@ -231,7 +231,7 @@ const DATA = /*__DATA__*/null;
   const statusSel = (t) => `<select class="status" data-id="${esc(t.id)}" aria-label="Status for ${esc(t.name)}">${STATUSES.map((x) => `<option${x === statusOf(t) ? " selected" : ""}>${x}</option>`).join("")}</select>`;
 
   // Send today
-  const ready = T.filter((t) => !["signal","competitor-deal"].includes(t.type) && safeUrl(t.contact_url) && t.opener && !t.identity_needs_ok && !["Passed","Dead"].includes(statusOf(t))).slice(0, 10);
+  const ready = T.filter((t) => t.sendable && safeUrl(t.contact_url) && !["Passed","Dead"].includes(statusOf(t))).slice(0, 10);
   $("#cards").innerHTML = ready.length ? ready.map((t) => `
     <article class="card">
       <div class="row">${pills(t)}</div>
@@ -260,7 +260,7 @@ const DATA = /*__DATA__*/null;
     const h = $("#f-hunt").value, ty = $("#f-type").value, pr = $("#f-pri").value, st = $("#f-status").value;
     const rd = $("#f-ready").checked, sig = $("#f-signals").checked || ty === "signal" || ty === "competitor-deal";
     return T.filter((t) => (sig || !["signal","competitor-deal"].includes(t.type)) && (!h || t.hunt === h) && (!ty || t.type === ty) && (!pr || t.priority === pr) &&
-      (!st || statusOf(t) === st) && (!rd || (safeUrl(t.contact_url) && t.opener)) &&
+      (!st || statusOf(t) === st) && (!rd || t.sendable) &&
       (!q || [t.name, t.org, t.role, t.why, t.why_now, t.geo, (t.tags || []).join(" ")].join(" ").toLowerCase().includes(q)))
       .sort((a, b) => {
         const x = a[sortK] ?? "", y = b[sortK] ?? "";

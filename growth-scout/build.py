@@ -100,6 +100,17 @@ IDENTITY_RE = re.compile(
 )
 
 
+def is_sendable(row: dict) -> bool:
+    """A drafted opener the founder can send today through a public channel."""
+    return bool(
+        row["type"] not in {"signal", "competitor-deal"}
+        and row.get("contact_url")
+        and row.get("opener")
+        and "warm intro" not in (row.get("channel") or "").lower()
+        and not row.get("identity_needs_ok")
+    )
+
+
 def uses_founder_identity(row: dict) -> bool:
     """True when the drafted opener tells the founder-identity story."""
     return bool(IDENTITY_RE.search(row.get("opener") or ""))
@@ -211,6 +222,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     targets = sorted(kept.values(), key=lambda r: (-r["score"], r.get("deadline") or "9999", r["name"]))
     for i, row in enumerate(targets, 1):
         row["rank"] = i
+        row["sendable"] = is_sendable(row)
         row["id"] = re.sub(r"\s+", "-", norm(f"{row['name']} {row.get('org') or ''}"))[:80]
     return targets, rejected, lanes
 
@@ -230,8 +242,7 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "signals": count(lambda t: t["type"] == "signal"),
         "high": count(lambda t: t["priority"] == "High" and t["type"] != "signal"),
         "deadlines_30d": len(soon),
-        "ready_to_send": count(lambda t: t["type"] not in {"signal", "competitor-deal"} and t.get("contact_url")
-                               and t.get("opener") and not t.get("identity_needs_ok")),
+        "ready_to_send": count(lambda t: t.get("sendable")),
         "identity_needs_ok": count(lambda t: t.get("identity_needs_ok")),
     }
 

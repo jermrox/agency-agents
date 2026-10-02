@@ -105,3 +105,10 @@ def test_link_check_drops_dead_links(tmp_path, monkeypatch):
     unchecked = row(evidence=["https://example.com/zzz"], contact_url=None)
     build.apply_link_check(unchecked, checks)
     assert unchecked["link_status"] == "not checked"
+
+
+def test_warm_intro_rows_are_not_sendable():
+    assert build.is_sendable(row())
+    assert not build.is_sendable(row(channel="warm intro needed"))
+    assert not build.is_sendable(row(contact_url=None))
+    assert not build.is_sendable(row(type="signal"))
