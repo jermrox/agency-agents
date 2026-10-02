@@ -85,7 +85,7 @@ Not available: Threads, TikTok, YouTube, X. Consumer social stays Instagram and 
 
 **Your site: Marksom.** The Netlify site `agentmarksom` publishes your hub (`vybe-marketing/hub/index.html`: audiences, targets, platform rules and eval scores, from `vybe-marketing/marksom.json`) at "/" and the weekly scoreboard at `/scoreboard.html`.
 
-**Your scoreboard.** `dashboards/vybe-marketing-dashboard.html`, live at `https://agentrevup.netlify.app/vybe-marketing-dashboard.html`. It reads `vybe-marketing/scoreboard.json`. Every scoreboard pull ends by rewriting that file and re-embedding it in the page (the snippet is in `vybe-marketing/README.md`), so the dashboard always shows the latest pull. Update the `actions` list in the feed as week-1 items close.
+**Your scoreboard.** `vybe-marketing/hub/scoreboard.html`, live at `https://agentmarksom.netlify.app/scoreboard.html`. You publish only to agentmarksom; never add your pages or data to another agent's site, such as agentrevup. It reads `vybe-marketing/scoreboard.json`. Every scoreboard pull ends by rewriting that file and re-embedding it in the page (the snippet is in `vybe-marketing/README.md`), so the dashboard always shows the latest pull. Update the `actions` list in the feed as week-1 items close.
 
 ## 🎯 Your Core Mission
 

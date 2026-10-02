@@ -55,7 +55,8 @@ mkdir -p "$OUT"
 
 want_research() { [ "$TARGET" = "research" ] || [ "$TARGET" = "all" ]; }
 want_rev()      { [ "$TARGET" = "rev" ]      || [ "$TARGET" = "all" ]; }
-want_marksom()  { [ "$TARGET" = "marksom" ]  || [ "$TARGET" = "all" ]; }
+# The marketing agent publishes only to its own site, never to rev or "all".
+want_marksom()  { [ "$TARGET" = "marksom" ]; }
 
 # ------------------------------------------------------------------ boards ---
 if want_research; then
@@ -93,18 +94,6 @@ if want_rev; then
   fi
 fi
 
-# The Vybe marketing scoreboard feed. dashboards/vybe-marketing-dashboard.html
-# fetches /vybe-marketing.json and falls back to the copy built into the page,
-# so a missing feed must not fail the build either.
-MARKETING_FEED="vybe-marketing/scoreboard.json"
-if want_rev; then
-  if [ -f "$MARKETING_FEED" ]; then
-    cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
-  else
-    echo "note: $MARKETING_FEED not present; the marketing dashboard will use its built-in copy."
-  fi
-fi
-
 # Any other standalone dashboard still gets a URL on the rev site.
 if want_rev && [ -d "dashboards" ]; then
   for f in dashboards/*.html; do
@@ -117,23 +106,20 @@ fi
 # agentmarksom is the Vybe Health Marketing Director's own site: the agent hub
 # (audiences, targets, targeting playbook, eval scores) at "/", and the weekly
 # scoreboard at /scoreboard.html. Both read JSON feeds published alongside them
-# and fall back to the copies embedded in each page.
+# and fall back to the copies embedded in each page. Nothing from
+# vybe-marketing/ is published to any other site.
 MARKSOM_HUB="vybe-marketing/hub/index.html"
+MARKSOM_SCOREBOARD="vybe-marketing/hub/scoreboard.html"
+MARKETING_FEED="vybe-marketing/scoreboard.json"
 MARKSOM_FEED="vybe-marketing/marksom.json"
-if want_marksom && [ ! -f "$MARKSOM_HUB" ]; then
-  if [ "$TARGET" = "marksom" ]; then
+if want_marksom; then
+  if [ ! -f "$MARKSOM_HUB" ]; then
     echo "error: $MARKSOM_HUB is missing; nothing to publish for the marksom site." >&2
     exit 1
   fi
-  echo "note: $MARKSOM_HUB not built yet; skipping the marksom hub."
-elif want_marksom; then
-  if [ "$TARGET" = "marksom" ]; then
-    cp -f "$MARKSOM_HUB" "$OUT/index.html"
-  else
-    cp -f "$MARKSOM_HUB" "$OUT/marksom.html"
-  fi
+  cp -f "$MARKSOM_HUB" "$OUT/index.html"
   [ -f "$MARKSOM_FEED" ] && cp -f "$MARKSOM_FEED" "$OUT/marksom.json"
-  [ -f "dashboards/vybe-marketing-dashboard.html" ] && cp -f "dashboards/vybe-marketing-dashboard.html" "$OUT/scoreboard.html"
+  [ -f "$MARKSOM_SCOREBOARD" ] && cp -f "$MARKSOM_SCOREBOARD" "$OUT/scoreboard.html"
   [ -f "$MARKETING_FEED" ] && cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
 fi
 
