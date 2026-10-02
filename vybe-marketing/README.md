@@ -11,16 +11,17 @@ agent. The Reels program has its own dashboard and lives with the
 | `brand-brief.md` | Messaging House and Claim Register. The Claim Register is the gate every piece of copy passes. |
 | `scoreboard.json` | The latest scoreboard as data. The dashboard reads it. |
 | `marksom.json` | Audiences, wedge scores, 35 sourced targets, channels, platform targeting rules and eval runs. The Marksom hub reads it. |
-| `hub/` | The Marksom hub page. `template.html` is the source; `index.html` is the template with `marksom.json` embedded. |
+| `hub/` | The Marksom site. `template.html` is the hub source; `index.html` is the template with `marksom.json` embedded; `scoreboard.html` is the weekly scoreboard. |
 | `evals/` | The agent's self-evaluation: `rubric.md`, `cases.md`, `check_marketing.py` (guardrail) and dated results. |
 | `seo-plan.md` | Search plan: commercial pages, pillar pages, headline bank, and what must be measured before production order is locked. |
 
 ## Dashboard
 
-[`dashboards/vybe-marketing-dashboard.html`](../dashboards/vybe-marketing-dashboard.html)
-is published by the agentrevup Netlify site at
-`https://agentrevup.netlify.app/vybe-marketing-dashboard.html`. The build
-(`scripts/build-netlify-site.sh`) copies `scoreboard.json` to
+[`hub/scoreboard.html`](hub/scoreboard.html) is published only by the
+agent's own Netlify site, agentmarksom, at
+`https://agentmarksom.netlify.app/scoreboard.html`. No other site (agentrevup,
+agentresearchsum) publishes anything from this folder. The build
+(`scripts/build-netlify-site.sh`, target `marksom`) copies `scoreboard.json` to
 `/vybe-marketing.json`; the page fetches it and falls back to the copy built
 into the page if the feed is missing. When the feed changes, also re-embed it
 in the page so both stay identical:
@@ -28,7 +29,7 @@ in the page so both stay identical:
 ```
 python3 - <<'PY'
 import re
-p = "dashboards/vybe-marketing-dashboard.html"
+p = "vybe-marketing/hub/scoreboard.html"
 h = open(p).read()
 feed = open("vybe-marketing/scoreboard.json").read().replace("</", "<\\/")
 h = re.sub(r'(<script type="application/json" id="fallback">).*?(</script>)',

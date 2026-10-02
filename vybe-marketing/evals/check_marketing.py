@@ -19,7 +19,7 @@ ALLOW_MARKERS. Every finding prints file:line and the rule, and the script
 exits 1 if any finding is not allowed, so it can run in CI or before a commit.
 
 Usage: python3 vybe-marketing/evals/check_marketing.py [paths...]
-       (defaults to vybe-marketing/ and dashboards/vybe-marketing-dashboard.html)
+       (defaults to vybe-marketing/, which includes the hub and scoreboard)
 """
 import json
 import re
@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT = [ROOT / "vybe-marketing", ROOT / "dashboards" / "vybe-marketing-dashboard.html"]
+DEFAULT = [ROOT / "vybe-marketing"]
 SKIP_PARTS = {"evals"}  # the rubric and this checker quote the rules on purpose
 
 RULES = [
