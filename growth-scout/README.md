@@ -49,7 +49,7 @@ params.toml ──▶ research lanes (parallel) ──▶ data/raw/<lane>.json
 `score = fit × 10`, plus 10 for a deadline in the next 45 days, 5 for a signal in
 the last 120 days, 5 for a verified (primary or two-source) row and 5 for an open
 public channel. Growth rows also move up or down by their ICE average. The score is
-capped at 100. High is 85 or more and Medium is 75 or more.
+capped at 100. High is a full 100 (roughly the top 15%) and Medium is 90 or more, so "High" stays a short list worth acting on today.
 
 ## Run a sweep
 
