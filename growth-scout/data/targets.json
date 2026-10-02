@@ -46,7 +46,7 @@
       "title": "VCs investing in health wearables",
       "hunt": "investor",
       "raw": 27,
-      "kept": 27
+      "kept": 25
     },
     {
       "id": "angels",
@@ -59,8 +59,8 @@
       "id": "accel_events",
       "title": "Equity accelerators, corporate VCs and investor events",
       "hunt": "investor",
-      "raw": 0,
-      "kept": 0
+      "raw": 29,
+      "kept": 27
     },
     {
       "id": "builders",
@@ -99,18 +99,56 @@
     }
   ],
   "summary": {
-    "total": 146,
-    "investor": 55,
+    "total": 171,
+    "investor": 80,
     "growth": 31,
     "social": 28,
     "sponsorship": 0,
     "competitor_deals": 0,
     "signals": 32,
-    "high": 77,
-    "deadlines_30d": 2,
-    "ready_to_send": 103
+    "high": 94,
+    "deadlines_30d": 3,
+    "ready_to_send": 126
   },
   "targets": [
+    {
+      "name": "a16z speedrun (SR008)",
+      "org": "Andreessen Horowitz",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Invests up to $1M ($500K for 10% on a SAFE upfront + $500K in next round within 18 months). Backed Clair Health's $11M seed (June 2026), a 10-biosensor wrist wearable reading HRV, skin temp and EDA, so it has a recent wearable-health check on record.",
+      "why_now": "SR008 priority application window Oct 12 - Nov 1, 2026; cohort runs late Jan - Apr 2027 in San Francisco.",
+      "evidence": [
+        "https://speedrun.a16z.com/apply",
+        "https://a16z.com/applications-for-a16z-speedrun-sr007-are-now-open/",
+        "https://fortune.com/2026/06/17/clair-khosla-anne-wojcicki-wearble-oura-whoop-hormone-women-health/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://speedrun.a16z.com/apply",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Submit SR008 application inside the Oct 12 - Nov 1 priority window.",
+      "opener": "Hi speedrun team - I'm the founder of Vybe Health in Akron, OH. We're building a screenless ECG/HRV band with a licensed SDK/API so developers can build on clean wearable data; DevKit v0.1 is going to our first design partners now. You backed Clair Health's wrist biosensor, so I'd value a short conversation about whether a developer-platform wearable fits SR008.",
+      "check_size": "Up to $1M ($500K for 10% SAFE + $500K next round)",
+      "stage": "pre-seed/seed",
+      "geo": "San Francisco, CA (in person)",
+      "deadline": "2026-11-01",
+      "last_signal_date": "2026-06-17",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "hrv",
+        "dev-platform"
+      ],
+      "lane": "accel_events",
+      "score": 100,
+      "priority": "High",
+      "rank": 1,
+      "id": "a16z-speedrun-sr008-andreessen-horowitz"
+    },
     {
       "name": "Alumni Ventures",
       "org": "Alumni Ventures",
@@ -146,7 +184,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 1,
+      "rank": 2,
       "id": "alumni-ventures-alumni-ventures"
     },
     {
@@ -184,7 +222,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 2,
+      "rank": 3,
       "id": "anne-wojcicki-treehub-ai-health-fund-operating-partner-23andme-co-founder"
     },
     {
@@ -220,7 +258,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 3,
+      "rank": 4,
       "id": "brydge-club-brydge-club"
     },
     {
@@ -256,7 +294,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 4,
+      "rank": 5,
       "id": "cade-ventures-why-we-haven-t-invested-in-a-wearable-yet-and-what-would-change-ou"
     },
     {
@@ -294,7 +332,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 5,
+      "rank": 6,
       "id": "cheryl-mccolgan-heal-nourish-grow"
     },
     {
@@ -332,7 +370,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 6,
+      "rank": 7,
       "id": "clair-health-11m-seed-led-by-khosla-for-women-s-hormone-wristband-clair-health"
     },
     {
@@ -369,7 +407,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 7,
+      "rank": 8,
       "id": "crosslink-capital-crosslink-capital"
     },
     {
@@ -407,7 +445,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 8,
+      "rank": 9,
       "id": "e14-fund-e14-fund-mit-affiliated"
     },
     {
@@ -448,7 +486,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 9,
+      "rank": 10,
       "id": "fda-2026-general-wellness-guidance-explicitly-covers-wearables-measuring-hrv-bp-"
     },
     {
@@ -491,7 +529,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 10,
+      "rank": 11,
       "id": "fitbit-web-api-shuts-down-30-oct-2026-tokens-do-not-migrate-google"
     },
     {
@@ -527,7 +565,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 11,
+      "rank": 12,
       "id": "fortify-ventures-fortify-ventures"
     },
     {
@@ -569,7 +607,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 12,
+      "rank": 13,
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
     {
@@ -613,7 +651,7 @@
       "lane": "builders",
       "score": 100,
       "priority": "High",
-      "rank": 13,
+      "rank": 14,
       "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
     },
     {
@@ -653,7 +691,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 14,
+      "rank": 15,
       "id": "khosla-ventures-khosla-ventures"
     },
     {
@@ -691,7 +729,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 15,
+      "rank": 16,
       "id": "kiva-dickinson-selva-ventures"
     },
     {
@@ -730,7 +768,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 16,
+      "rank": 17,
       "id": "kristina-simmons-overwater-ventures"
     },
     {
@@ -767,43 +805,45 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 17,
+      "rank": 18,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
     {
       "name": "Labcorp Venture Fund",
       "org": "Labcorp",
-      "role": "Corporate venture arm",
+      "role": "Megann Vaughn Watters, VP New Ventures & Strategic Alliances (quoted in Emm release)",
       "type": "corporate-vc",
       "hunt": "investor",
-      "why": "Labcorp Venture Fund joined Emm's $9M smart-cup seed. Labcorp also invested in Ultrahuman's $70M smart-ring round in Sept 2026. It is a strategic diagnostics investor active in both seed and growth wearable rounds.",
-      "why_now": "2026-09-03: Labcorp in Ultrahuman $70M round; 2025-11-18 Emm seed",
+      "why": "Joined Emm's $9M seed for a biowearable menstrual device (Nov 2025) and Ultrahuman's $70M round (Sep 2026). It's a diagnostics strategic actively writing seed checks into biowearables, including women's health.",
+      "why_now": "Ultrahuman round Sep 3, 2026; Emm seed Nov 19, 2025.",
       "evidence": [
+        "https://techcrunch.com/2025/11/18/emm-raises-9m-seed-to-create-to-launch-one-of-the-worlds-first-smart-menstrual-cups/",
+        "https://www.setsquared.co.uk/emm-raises-over-9-million-6-8m-to-launch-worlds-first-smart-menstrual-solution/",
         "https://techcrunch.com/2026/09/03/qualcomm-backs-ultrahuman-in-70m-round-on-bet-to-turn-smart-rings-into-computers/",
         "https://techcrunch.com/2025/11/18/emm-raises-9m-seed-to-create-to-launch-one-of-the-worlds-first-smart-menstrual-cups"
       ],
-      "channel": "warm intro needed",
+      "channel": "LinkedIn",
       "contact_url": null,
-      "warm_path": null,
+      "warm_path": "Women founders angle (Emm, women's health thesis)",
       "fit": 9,
       "ice": null,
-      "ask": "15-min intro call",
-      "opener": "Hi - I'm the founder of Vybe Health, building a screenless ECG/HRV band with a licensed SDK/API, no subscription, general wellness. Labcorp's moves into Ultrahuman and Emm suggest you see wearables as a front door to diagnostics partnerships. Could we have a 15-minute conversation about how the venture fund approaches seed-stage hardware?",
+      "ask": "15-min call with the Labcorp Venture Fund team about wearable-data partnerships.",
+      "opener": "Hi Megann - your note on Emm about giving people actionable data on their own health stuck with me. Vybe Health (Akron, OH; veteran-, woman- and minority-owned) builds a screenless ECG/HRV band with a licensed SDK so developers and partners can use clean physiological data. Would you be open to a 15-minute conversation?",
       "check_size": null,
-      "stage": "seed through growth",
-      "geo": null,
+      "stage": "seed+",
+      "geo": "Burlington, NC",
       "deadline": null,
       "last_signal_date": "2026-09-03",
       "confidence": "verified",
       "tags": [
         "wearables",
-        "health-hardware",
+        "women-founders",
         "digital-health"
       ],
-      "lane": "vc",
+      "lane": "accel_events",
       "score": 100,
       "priority": "High",
-      "rank": 18,
+      "rank": 19,
       "id": "labcorp-venture-fund-labcorp"
     },
     {
@@ -841,7 +881,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 19,
+      "rank": 20,
       "id": "marco-altini-hrv4training"
     },
     {
@@ -877,7 +917,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 20,
+      "rank": 21,
       "id": "meredith-dietz-lifehacker"
     },
     {
@@ -921,7 +961,7 @@
       "lane": "builders",
       "score": 100,
       "priority": "High",
-      "rank": 21,
+      "rank": 22,
       "id": "open-wearables-momentum-the-momentum"
     },
     {
@@ -958,7 +998,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 22,
+      "rank": 23,
       "id": "oscar-moralez-boomerang-ventures"
     },
     {
@@ -1000,7 +1040,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 23,
+      "rank": 24,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
     {
@@ -1037,7 +1077,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 24,
+      "rank": 25,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
     {
@@ -1074,7 +1114,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 25,
+      "rank": 26,
       "id": "pankaj-kedia-2468-ventures"
     },
     {
@@ -1113,7 +1153,7 @@
       "lane": "angels",
       "score": 100,
       "priority": "High",
-      "rank": 26,
+      "rank": 27,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
     {
@@ -1151,7 +1191,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 27,
+      "rank": 28,
       "id": "ray-maker-dc-rainmaker"
     },
     {
@@ -1188,7 +1228,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 28,
+      "rank": 29,
       "id": "resolute-ventures-resolute-ventures"
     },
     {
@@ -1226,7 +1266,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 29,
+      "rank": 30,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
     {
@@ -1263,7 +1303,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 30,
+      "rank": 31,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
     {
@@ -1301,7 +1341,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 31,
+      "rank": 32,
       "id": "sosv-hax-sosv"
     },
     {
@@ -1346,7 +1386,7 @@
       "lane": "builders",
       "score": 100,
       "priority": "High",
-      "rank": 32,
+      "rank": 33,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
     {
@@ -1385,7 +1425,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 33,
+      "rank": 34,
       "id": "seaside-ventures-seaside-ventures"
     },
     {
@@ -1423,7 +1463,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 34,
+      "rank": 35,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
     {
@@ -1461,7 +1501,7 @@
       "lane": "signals",
       "score": 100,
       "priority": "High",
-      "rank": 35,
+      "rank": 36,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
     {
@@ -1498,7 +1538,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 36,
+      "rank": 37,
       "id": "victoria-song-the-verge"
     },
     {
@@ -1534,7 +1574,7 @@
       "lane": "vc",
       "score": 100,
       "priority": "High",
-      "rank": 37,
+      "rank": 38,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
     {
@@ -1572,7 +1612,7 @@
       "lane": "social",
       "score": 100,
       "priority": "High",
-      "rank": 38,
+      "rank": 39,
       "id": "the5krunner-the5krunner"
     },
     {
@@ -1614,7 +1654,7 @@
       "lane": "signals",
       "score": 97,
       "priority": "High",
-      "rank": 39,
+      "rank": 40,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
     {
@@ -1655,7 +1695,7 @@
       "lane": "signals",
       "score": 96,
       "priority": "High",
-      "rank": 40,
+      "rank": 41,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
     {
@@ -1696,7 +1736,7 @@
       "lane": "signals",
       "score": 96,
       "priority": "High",
-      "rank": 41,
+      "rank": 42,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
     {
@@ -1732,7 +1772,7 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 42,
+      "rank": 43,
       "id": "health2tech-cleveland-health2tech"
     },
     {
@@ -1768,8 +1808,118 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 43,
+      "rank": 44,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
+    },
+    {
+      "name": "Y Combinator (Winter 2027 batch)",
+      "org": "Y Combinator",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Standard deal $500K: $125K post-money SAFE for 7% plus $375K uncapped MFN SAFE. Hardware and health companies are eligible, and YC invests at acceptance rather than at batch start.",
+      "why_now": "W27 on-time deadline Nov 2, 2026 8pm PT; decisions by Dec 11; batch Jan-Mar 2027 in SF. Spring 2027 available via Early Decision.",
+      "evidence": [
+        "https://www.ycombinator.com/apply/",
+        "https://www.ycombinator.com/deal",
+        "https://trustlist.uk/news/y-combinator-winter-2027-deadline-2-november-techstars-spring-2027-deadline-18-november"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.ycombinator.com/apply/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Submit W27 application before Nov 2, 2026 8pm PT (or Early Decision for Spring 2027).",
+      "opener": "We're Vybe Health (Akron, OH): a screenless ECG/HRV band plus a licensed SDK/API so developers get raw, clean wearable signals without a subscription lock-in. DevKit v0.1 ships to 5-10 design partners ahead of a May 2027 consumer launch. Applying for W27 because we want to compress the path from design partners to developer adoption.",
+      "check_size": "$500K ($125K for 7% + $375K uncapped MFN SAFE)",
+      "stage": "pre-seed/seed",
+      "geo": "San Francisco, CA",
+      "deadline": "2026-11-02",
+      "last_signal_date": "2026-09-28",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 45,
+      "id": "y-combinator-winter-2027-batch-y-combinator"
+    },
+    {
+      "name": "SXSW Pitch 2027",
+      "org": "SXSW",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Long-running startup pitch showcase judged by investors and industry experts. Its 2027 'Life Sciences, Healthcare & AssistiveTech' category names wearable health devices and medical wearables; eligible companies have raised ≤$10M.",
+      "why_now": "Regular entry Sep 14 - Nov 13, 2026 ($225); event Mar 15-21, 2027 in Austin. One SXSW support page says Nov 11, so submit by Nov 11 to be safe.",
+      "evidence": [
+        "https://sxsw.com/pitch/",
+        "https://sxsw.com/news/2026/2027-pitch-applications/",
+        "https://support.sxsw.com/hc/en-us/articles/206423785-What-are-the-entry-categories-for-SXSW-Pitch-2027"
+      ],
+      "channel": "apply",
+      "contact_url": "https://sxsw.com/pitch/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Enter Life Sciences, Healthcare & AssistiveTech category before Nov 11, 2026.",
+      "opener": "Vybe Health (Akron, OH) - a screenless ECG/HRV band with a licensed SDK/API so developers can build wellness products on clean physiological data. Veteran-, woman- and minority-owned; DevKit v0.1 is with design partners; consumer launch May 2027.",
+      "check_size": null,
+      "stage": "<= $10M raised",
+      "geo": "Austin, TX",
+      "deadline": "2026-11-13",
+      "last_signal_date": "2026-06-23",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "digital-health"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 46,
+      "id": "sxsw-pitch-2027-sxsw"
+    },
+    {
+      "name": "CES 2027 - Eureka Park",
+      "org": "Consumer Technology Association",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Startup zone at CES (Jan 6-9, 2027, Las Vegas) that explicitly accepts wearables and health tech. CTA cites 1,300+ VC/PE/investment firms attending and $27B+ raised by Eureka alumni. Requirements: ≤5 years old, ≤Series B, demo-ready; costs no equity.",
+      "why_now": "CES 2027 Eureka Park application is live; space is allocated on a rolling basis and has historically sold out around Oct-Nov (third-party note).",
+      "evidence": [
+        "https://www.ces.tech/explore-ces/eureka-park/",
+        "https://www.cta.tech/cta-foundation/eureka-park-accessibility-contest/",
+        "https://www.sesamers.com/program/ces-eureka-park-2027/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.ces.tech/explore-ces/eureka-park/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Submit Eureka Park application now so the DevKit can be shown to investors Jan 6-9, 2027.",
+      "opener": "Applying to exhibit Vybe Health in Eureka Park: a screenless ECG/HRV band with a licensed developer SDK, demo-ready as DevKit v0.1, from a veteran-, woman- and minority-owned Akron startup ahead of a May 2027 consumer launch.",
+      "check_size": null,
+      "stage": "pre-seed to Series B",
+      "geo": "Las Vegas, NV",
+      "deadline": null,
+      "last_signal_date": "2026-08-06",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "dev-platform"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 47,
+      "id": "ces-2027-eureka-park-consumer-technology-association"
     },
     {
       "name": "Emotion, Culture, and Psychophysiology Lab (Stress Watch)",
@@ -1809,7 +1959,7 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 44,
+      "rank": 48,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
     {
@@ -1851,7 +2001,7 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 45,
+      "rank": 49,
       "id": "fitabase-fitabase-small-steps-labs"
     },
     {
@@ -1888,8 +2038,44 @@
       "lane": "angels",
       "score": 95,
       "priority": "High",
-      "rank": 46,
+      "rank": 50,
       "id": "golden-seeds-golden-seeds"
+    },
+    {
+      "name": "HAX",
+      "org": "SOSV",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "SOSV's hardware-only program. It invests in pre-seed/seed human-health companies 'through the use of sensor data' and IoT, with up to $550K pre-seed plus hands-on engineering, DFM and sourcing support, which fits a physical ECG/HRV band directly.",
+      "why_now": "Rolling applications; about 35 startups per year. No fixed deadline found.",
+      "evidence": [
+        "https://hax.co/faq/",
+        "https://www.failory.com/startups/hardware-accelerators-incubators"
+      ],
+      "channel": "apply",
+      "contact_url": "https://hax.co/faq/",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Submit HAX application and ask for a 15-min intro call with the health-hardware partner.",
+      "opener": "Hi HAX team - I'm building Vybe Health (Akron, OH): a screenless ECG/HRV band plus a licensed SDK/API for developers. DevKit v0.1 is going to 5-10 design partners now and we're heading toward a May 2027 consumer launch, so DFM and supply chain are our next bottleneck. Could we set up a short call about HAX?",
+      "check_size": "Up to $550K pre-seed (initial $250K: $150K cash + $100K in-kind on post-money SAFE, per third-party summary)",
+      "stage": "pre-seed/seed",
+      "geo": "Newark, NJ / Shenzhen",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "health-hardware",
+        "wearables",
+        "hrv"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 51,
+      "id": "hax-sosv"
     },
     {
       "name": "INVI MindHealth",
@@ -1929,8 +2115,45 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 47,
+      "rank": 52,
       "id": "invi-mindhealth-invi-mindhealth"
+    },
+    {
+      "name": "JumpStart Trailblazer HealthTech Accelerator",
+      "org": "JumpStart Inc.",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Ohio health-tech accelerator for pre-seed/seed startups planning a venture raise within 12 months, with mentors including Plug and Play Digital Health. JumpStart also runs JumpStart Ventures and Ohio VC Fest, giving direct access to Ohio capital.",
+      "why_now": "Fall 2026 cohort runs Sep 17 - Dec 10, 2026 (applications closed Aug 2); next cohort dates TBD, likely the 2027 intake.",
+      "evidence": [
+        "https://jumpstartinc.org/startups/healthtech",
+        "https://www.linkedin.com/posts/jumpstartinc_trailblazer-activity-7480606852423102464-V1FW",
+        "https://ohiovcfest.com/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://jumpstartinc.org/startups/healthtech",
+      "warm_path": "Ohio (Akron/Northeast Ohio ecosystem)",
+      "fit": 8,
+      "ice": null,
+      "ask": "Ask a JumpStart advisor for a 15-min intake call and a heads-up on the next Trailblazer HealthTech window.",
+      "opener": "Hi JumpStart team - I'm the founder of Vybe Health, an Akron-based company building a screenless ECG/HRV band with a licensed SDK for developers. We plan to raise within 12 months and want to build Ohio investor relationships early. Could I get 15 minutes with an advisor about the next Trailblazer HealthTech cohort?",
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-07-08",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "digital-health",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 53,
+      "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
     {
       "name": "Level Zero Health $6.9M pre-seed for continuous hormone wearable",
@@ -1966,8 +2189,44 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 48,
+      "rank": 54,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
+    },
+    {
+      "name": "MedTech Innovator 2027 Accelerator",
+      "org": "MedTech Innovator",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Largest medtech/digital-health accelerator; equity-free nonprofit. 20% of applicants pitch to judges from Dexcom, J&J, BD and other strategics and investors, and pre-Series B companies compete for up to $500K. Included because it's a direct pipeline to strategic CVCs.",
+      "why_now": "2027 application window expected Oct - Dec 2026; the 2026 cycle opened Oct 6 and closed Dec 16, 2025 (extended). Waitlist open now.",
+      "evidence": [
+        "https://medtechinnovator.org/apply/",
+        "https://hub.causo.ai/guides/how-to-apply-to-medtech-innovator-2026"
+      ],
+      "channel": "apply",
+      "contact_url": "https://medtechinnovator.org/apply/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Join 2027 waitlist and apply as soon as the window opens (Oct 2026).",
+      "opener": "Hello MedTech Innovator team - Vybe Health (Akron, OH) builds a screenless ECG/HRV band and a developer SDK, positioned as general wellness. We plan to apply for the 2027 cohort and want to confirm that a wellness wearable platform (not a regulated device yet) fits your digital-health track.",
+      "check_size": "Equity-free; up to $500K in competition awards",
+      "stage": "seed - Series C",
+      "geo": "Virtual (US)",
+      "deadline": null,
+      "last_signal_date": "2026-08-26",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "wearables",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 55,
+      "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
     {
       "name": "NOOP",
@@ -2008,7 +2267,7 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 49,
+      "rank": 56,
       "id": "noop-ryanbr-noop-open-source"
     },
     {
@@ -2049,7 +2308,7 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 50,
+      "rank": 57,
       "id": "neurovus-neurovus"
     },
     {
@@ -2086,8 +2345,44 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 51,
+      "rank": 58,
       "id": "open-wearables-momentum-open-wearables-project"
+    },
+    {
+      "name": "Qualcomm Ventures",
+      "org": "Qualcomm",
+      "role": null,
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "why": "Took part in Ultrahuman's $70M round (TechCrunch, Sep 3, 2026) on a thesis of running more software on-device in a ring, and is co-developing a Qualcomm-silicon ring; earlier portfolio includes Fitbit. Global head Quinn Li called it 'personal AI devices'.",
+      "why_now": "Ultrahuman deal announced Sep 3, 2026.",
+      "evidence": [
+        "https://techcrunch.com/2026/09/03/qualcomm-backs-ultrahuman-in-70m-round-on-bet-to-turn-smart-rings-into-computers/",
+        "https://www.qualcommventures.com/insights/blog/qualcomm-ventures-2025-year-in-review/"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://www.qualcommventures.com/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Intro conversation with Qualcomm Ventures' consumer/IoT team about developer-platform wearables.",
+      "opener": "Hi - I saw Qualcomm Ventures' backing of Ultrahuman and the push to let third-party developers build on the ring. Vybe Health (Akron, OH) is building that developer layer from the start: a screenless ECG/HRV band with a licensed SDK/API. We'd value a short conversation about how you think about on-device biosignal platforms.",
+      "check_size": null,
+      "stage": "seed to growth",
+      "geo": "San Diego, CA (global)",
+      "deadline": null,
+      "last_signal_date": "2026-09-03",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "hrv"
+      ],
+      "lane": "accel_events",
+      "score": 95,
+      "priority": "High",
+      "rank": 59,
+      "id": "qualcomm-ventures-qualcomm"
     },
     {
       "name": "Quinn Li",
@@ -2122,7 +2417,7 @@
       "lane": "vc",
       "score": 95,
       "priority": "High",
-      "rank": 52,
+      "rank": 60,
       "id": "quinn-li-qualcomm-ventures"
     },
     {
@@ -2159,7 +2454,7 @@
       "lane": "vc",
       "score": 95,
       "priority": "High",
-      "rank": 53,
+      "rank": 61,
       "id": "redalpine-redalpine"
     },
     {
@@ -2198,7 +2493,7 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 54,
+      "rank": 62,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
     {
@@ -2241,7 +2536,7 @@
       "lane": "builders",
       "score": 95,
       "priority": "High",
-      "rank": 55,
+      "rank": 63,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
     {
@@ -2278,7 +2573,7 @@
       "lane": "signals",
       "score": 95,
       "priority": "High",
-      "rank": 56,
+      "rank": 64,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
     {
@@ -2315,7 +2610,7 @@
       "lane": "social",
       "score": 95,
       "priority": "High",
-      "rank": 57,
+      "rank": 65,
       "id": "r-quantifiedself-reddit"
     },
     {
@@ -2355,7 +2650,7 @@
       "lane": "signals",
       "score": 92,
       "priority": "High",
-      "rank": 58,
+      "rank": 66,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
     {
@@ -2396,7 +2691,7 @@
       "lane": "signals",
       "score": 91,
       "priority": "High",
-      "rank": 59,
+      "rank": 67,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
     {
@@ -2436,7 +2731,7 @@
       "lane": "builders",
       "score": 91,
       "priority": "High",
-      "rank": 60,
+      "rank": 68,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
     {
@@ -2473,7 +2768,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 61,
+      "rank": 69,
       "id": "accelerating-angels-accelerating-angels"
     },
     {
@@ -2515,7 +2810,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 62,
+      "rank": 70,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
     {
@@ -2551,7 +2846,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 63,
+      "rank": 71,
       "id": "conor-allison-wareable"
     },
     {
@@ -2592,7 +2887,7 @@
       "lane": "builders",
       "score": 90,
       "priority": "High",
-      "rank": 64,
+      "rank": 72,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
     {
@@ -2632,7 +2927,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 65,
+      "rank": 73,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
     {
@@ -2668,7 +2963,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 66,
+      "rank": 74,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
     {
@@ -2704,7 +2999,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 67,
+      "rank": 75,
       "id": "healthtech-capital-healthtech-capital"
     },
     {
@@ -2739,7 +3034,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 68,
+      "rank": 76,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
     {
@@ -2775,7 +3070,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 69,
+      "rank": 77,
       "id": "julien-blin-the-upside-newsletter"
     },
     {
@@ -2811,7 +3106,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 70,
+      "rank": 78,
       "id": "lunar-ventures-lunar-ventures"
     },
     {
@@ -2846,7 +3141,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 71,
+      "rank": 79,
       "id": "michael-l-hicks-android-central"
     },
     {
@@ -2881,7 +3176,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 72,
+      "rank": 80,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
     {
@@ -2922,7 +3217,7 @@
       "lane": "builders",
       "score": 90,
       "priority": "High",
-      "rank": 73,
+      "rank": 81,
       "id": "openstrap-openstrap-open-source"
     },
     {
@@ -2958,7 +3253,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 74,
+      "rank": 82,
       "id": "point-nine-point-nine"
     },
     {
@@ -2994,7 +3289,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 75,
+      "rank": 83,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
     {
@@ -3032,8 +3327,44 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 76,
+      "rank": 84,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
+    },
+    {
+      "name": "Rev1 Ventures",
+      "org": "Rev1 Ventures",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Columbus venture studio and seed investor backing SaaS/AI, deep tech and life sciences, including sensor/health startups (SenseICs, Redi.health, Healthy Roster). It reports $262M+ in pre-seed/seed capital raised by its companies, and is aligned with Ohio TechAngels.",
+      "why_now": null,
+      "evidence": [
+        "https://www.rev1ventures.com/",
+        "https://www.prweb.com/releases/rev1-ventures-connects-investors-and-founders-to-drive-startup-growth-in-ohio-302194307.html"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.rev1ventures.com/",
+      "warm_path": "Ohio",
+      "fit": 8,
+      "ice": null,
+      "ask": "15-min intro call about the studio program and Ohio pre-seed capital.",
+      "opener": "Hi Rev1 team - I'm building Vybe Health in Akron: a screenless ECG/HRV band plus licensed SDK so developers can build on raw wearable data. DevKit v0.1 is heading to our first design partners. As an Ohio deep-tech/health studio, you seem like the right first conversation. Open to a 15-minute call?",
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "health-hardware",
+        "digital-health"
+      ],
+      "lane": "accel_events",
+      "score": 90,
+      "priority": "High",
+      "rank": 85,
+      "id": "rev1-ventures-rev1-ventures"
     },
     {
       "name": "Robb Sutton",
@@ -3068,7 +3399,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 77,
+      "rank": 86,
       "id": "robb-sutton-robbsutton-com"
     },
     {
@@ -3108,7 +3439,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 78,
+      "rank": 87,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
     {
@@ -3145,7 +3476,7 @@
       "lane": "signals",
       "score": 90,
       "priority": "High",
-      "rank": 79,
+      "rank": 88,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
     {
@@ -3181,7 +3512,7 @@
       "lane": "social",
       "score": 90,
       "priority": "High",
-      "rank": 80,
+      "rank": 89,
       "id": "t3-performance-t3-performance"
     },
     {
@@ -3217,7 +3548,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 81,
+      "rank": 90,
       "id": "true-ventures-true-ventures"
     },
     {
@@ -3252,7 +3583,7 @@
       "lane": "vc",
       "score": 90,
       "priority": "High",
-      "rank": 82,
+      "rank": 91,
       "id": "vaark-ventures-vaark-ventures"
     },
     {
@@ -3288,7 +3619,7 @@
       "lane": "angels",
       "score": 90,
       "priority": "High",
-      "rank": 83,
+      "rank": 92,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
     },
     {
@@ -3327,7 +3658,7 @@
       "lane": "builders",
       "score": 89,
       "priority": "High",
-      "rank": 84,
+      "rank": 93,
       "id": "mydatahelps-careevolution"
     },
     {
@@ -3368,7 +3699,7 @@
       "lane": "builders",
       "score": 89,
       "priority": "High",
-      "rank": 85,
+      "rank": 94,
       "id": "synheart-synheart-mila-ventures"
     },
     {
@@ -3408,7 +3739,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 86,
+      "rank": 95,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
     {
@@ -3450,7 +3781,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 87,
+      "rank": 96,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
     {
@@ -3491,7 +3822,7 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 88,
+      "rank": 97,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
     {
@@ -3532,8 +3863,81 @@
       "lane": "signals",
       "score": 86,
       "priority": "High",
-      "rank": 89,
+      "rank": 98,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
+    },
+    {
+      "name": "Techstars AI Health Baltimore (Spring 2027)",
+      "org": "Techstars",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Techstars' flagship healthcare accelerator, investing $220K per company, backed by Johns Hopkins, CareFirst, MedStar, UMB and UMMS for clinical-environment access. It's AI-led, so it fits only if Vybe pitches the on-device HRV/ECG analytics layer.",
+      "why_now": "Listed among Spring 2027 programs: final deadline Nov 18, 2026; program starts Mar 8, 2027; Demo Day Jun 3, 2027.",
+      "evidence": [
+        "https://www.techstars.com/accelerators/baltimore-ai-health",
+        "https://technext24.com/news/techstars-spring-2027-accelerator-applications/",
+        "https://innovation-village.com/techstars-opens-spring-2027-applications-with-220k/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.techstars.com/accelerators/baltimore-ai-health",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Apply before Nov 18, 2026; ask Investment Manager Emily McLanahan for a fit check.",
+      "opener": "Hi Emily - I'm the founder of Vybe Health (Akron, OH). We make a screenless ECG/HRV band and a licensed SDK that hands developers clean physiological signals for their own models. AI Health Baltimore's clinical partners are what we need to validate those data pipelines. Would you have 15 minutes before the Nov 18 deadline to tell me if we're in scope?",
+      "check_size": "$220K",
+      "stage": "pre-seed/seed",
+      "geo": "Baltimore, MD",
+      "deadline": "2026-11-18",
+      "last_signal_date": "2026-08-26",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "wearables",
+        "hrv"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 99,
+      "id": "techstars-ai-health-baltimore-spring-2027-techstars"
+    },
+    {
+      "name": "Techstars Anywhere Accelerator (Spring 2027)",
+      "org": "Techstars",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Remote-first Techstars program for North American time zones with emphasis on robotics, energy, applied/physical AI and materials. Spring 2027 terms: $220K ($200K uncapped MFN SAFE + $20K post-money convertible equity for at least 5% common).",
+      "why_now": "Final deadline Nov 18, 2026; program Mar 8 - Jun 3, 2027 (Demo Day Jun 3).",
+      "evidence": [
+        "https://www.techstars.com/accelerators/anywhere",
+        "https://innovation-village.com/techstars-opens-spring-2027-applications-with-220k/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.techstars.com/accelerators/anywhere",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Apply to Spring 2027 Anywhere before Nov 18, 2026; request a 15-min call with the MD.",
+      "opener": "Hi Kerty - I'm building Vybe Health from Akron: a screenless ECG/HRV band with a licensed SDK so developers can build on physical-sensor data. Anywhere's remote format fits an Ohio hardware team. Could we grab 15 minutes before the Nov 18 deadline to see whether a wearable dev-platform is a fit for the Spring cohort?",
+      "check_size": "$220K ($200K MFN SAFE + $20K for >=5% common)",
+      "stage": "pre-seed/seed",
+      "geo": "Remote (North America)",
+      "deadline": "2026-11-18",
+      "last_signal_date": "2026-09-28",
+      "confidence": "verified",
+      "tags": [
+        "health-hardware",
+        "wearables",
+        "dev-platform"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 100,
+      "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
     {
       "name": "AIX Ventures",
@@ -3569,7 +3973,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 90,
+      "rank": 101,
       "id": "aix-ventures-aix-ventures"
     },
     {
@@ -3605,7 +4009,7 @@
       "lane": "angels",
       "score": 85,
       "priority": "High",
-      "rank": 91,
+      "rank": 102,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
     {
@@ -3641,7 +4045,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 92,
+      "rank": 103,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
     {
@@ -3677,7 +4081,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 93,
+      "rank": 104,
       "id": "blume-ventures-blume-ventures"
     },
     {
@@ -3713,8 +4117,78 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 94,
+      "rank": 105,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
+    },
+    {
+      "name": "Founder Institute Veteran Accelerator",
+      "org": "Founder Institute (powered by JPMorganChase)",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Virtual accelerator for U.S. veteran founders. It uses FI's Equity Collective model and has a post-graduation Funding Lab with military-friendly investors; Mike Sherbakov (GP, The Veteran Fund) is on the leadership team.",
+      "why_now": "Current cohort runs Aug 25 - Nov 17, 2026; next cohort dates not yet posted.",
+      "evidence": [
+        "https://fi.co/veteran-and-military-family",
+        "https://www.veteran.fund/startup"
+      ],
+      "channel": "apply",
+      "contact_url": "https://fi.co/veteran-and-military-family",
+      "warm_path": "Veteran network; JPMorganChase-backed",
+      "fit": 7,
+      "ice": null,
+      "ask": "Join an online info session and ask about the next Veteran cohort / Funding Lab.",
+      "opener": "Hi FI Veteran team - I'm a veteran founder building Vybe Health (Akron, OH), a screenless ECG/HRV band with a developer SDK. We're in the design-partner phase and planning a raise. I'd appreciate a short conversation about the next Veteran cohort and how the Funding Lab connects founders with military-friendly investors.",
+      "check_size": null,
+      "stage": "idea/pre-seed",
+      "geo": "Virtual",
+      "deadline": null,
+      "last_signal_date": "2026-08-25",
+      "confidence": "verified",
+      "tags": [
+        "veteran",
+        "tactical"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 106,
+      "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
+    },
+    {
+      "name": "HLTH USA 2026 - Investor Connect",
+      "org": "HLTH",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Investor Connect matches health-tech founders with VCs in curated 15-minute 1:1s (1,645+ meetings in 2025). Pitch judges include a16z, GV, General Catalyst, Khosla and Cigna Ventures.",
+      "why_now": "HLTH USA Nov 15-18, 2026 at The Venetian Expo, Las Vegas; pitch finals Nov 18. Main-stage pitch was rolling 'until spots filled' and the page was last updated Jun 26, so it is likely closed.",
+      "evidence": [
+        "https://hlth.com/events/usa/who-attends/startups/",
+        "https://hlth.com/events/usa/startup-pitch-application/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://hlth.com/events/usa/who-attends/startups/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Register at startup rate and request Investor Connect matching for Nov 15-18.",
+      "opener": "Requesting Investor Connect matches for Vybe Health: a pre-seed wearable developer platform (screenless ECG/HRV band + licensed SDK) from Akron, OH, looking to meet seed investors in wearables and consumer health.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Las Vegas, NV",
+      "deadline": null,
+      "last_signal_date": "2026-08-28",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 107,
+      "id": "hlth-usa-2026-investor-connect-hlth"
     },
     {
       "name": "Humba Ventures",
@@ -3747,7 +4221,7 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 95,
+      "rank": 108,
       "id": "humba-ventures-humba-ventures"
     },
     {
@@ -3783,8 +4257,78 @@
       "lane": "vc",
       "score": 85,
       "priority": "High",
-      "rank": 96,
+      "rank": 109,
       "id": "jumpstart-ventures-jumpstart-inc"
+    },
+    {
+      "name": "Kickstart Midwest 2026 - Startup World Cup Ohio Regional",
+      "org": "Kickstart Midwest",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Three-day Ohio startup conference for founders and investors. It hosts a Startup World Cup Ohio regional pitch competition aimed at investor visibility, with a path to the global SWC stage.",
+      "why_now": "Conference Oct 22-24, 2026 in Columbus; startup submissions open (no posted deadline, so assume imminent).",
+      "evidence": [
+        "https://kickstartmidwest.com/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://kickstartmidwest.com/",
+      "warm_path": "Ohio",
+      "fit": 8,
+      "ice": null,
+      "ask": "Submit Vybe to the Startup World Cup Ohio regional immediately.",
+      "opener": "Submitting Vybe Health (Akron, OH) for the Startup World Cup Ohio Regional: a screenless ECG/HRV band with a licensed SDK so developers can build on clean wearable data. Veteran-, woman- and minority-owned; DevKit v0.1 with design partners; consumer launch May 2027.",
+      "check_size": null,
+      "stage": "early/growth",
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": "2026-10-22",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 110,
+      "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
+    },
+    {
+      "name": "Mayo Clinic Platform_Accelerate",
+      "org": "Mayo Clinic Platform",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "30-week accelerator, or a new multiyear pathway, giving health-tech companies de-identified Mayo clinical data and 1:1 technical mentorship. It suits validating HRV/ECG algorithms; equity/fee terms are not published.",
+      "why_now": "Multiyear pathway launched Sep 3, 2026 with 12 inaugural companies; applications reviewed on a rolling basis for upcoming cohorts.",
+      "evidence": [
+        "https://www.mayoclinicplatform.org/focus-areas/digital-health/accelerate/",
+        "https://www.newswise.com/articles/mayo-clinic-platform-accelerate-announces-inaugural-participants-of-its-new-multiyear-pathway-program"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.mayoclinicplatform.org/focus-areas/digital-health/accelerate/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Apply for the next cohort; ask whether consumer wellness wearables are in scope.",
+      "opener": "Hello - Vybe Health builds a screenless ECG/HRV band with a developer SDK. Before our May 2027 launch we want to benchmark our signal processing against de-identified clinical data. Could we have a short call on whether a general-wellness wearable platform fits Accelerate's next cohort?",
+      "check_size": null,
+      "stage": "early-stage",
+      "geo": "Rochester, MN (virtual)",
+      "deadline": null,
+      "last_signal_date": "2026-09-03",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "hrv",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 111,
+      "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
     {
       "name": "Pace",
@@ -3826,7 +4370,7 @@
       "lane": "builders",
       "score": 85,
       "priority": "High",
-      "rank": 97,
+      "rank": 112,
       "id": "pace-pace-pacetraining-co"
     },
     {
@@ -3862,8 +4406,44 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 98,
+      "rank": 113,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
+    },
+    {
+      "name": "Samsung NEXT",
+      "org": "Samsung Electronics",
+      "role": null,
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "why": "Joined Sibel Health's Series C extension (Oct 14, 2025). Sibel's ANNE One wearable monitoring platform runs on Samsung devices, and health is one of Samsung NEXT's stated focus areas.",
+      "why_now": "Sibel Health extension announced Oct 14, 2025.",
+      "evidence": [
+        "https://www.prnewswire.com/news-releases/sibel-health-secures-additional-series-c-extension-funding-to-39-million-from-key-strategic-investors-and-announces-new-board-of-director-appointments-302582505.html",
+        "https://www.finsmes.com/2025/10/sibel-health-extends-its-series-c-funding-to-39m.html"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Intro to Samsung NEXT health team for feedback on Galaxy-ecosystem SDK interoperability.",
+      "opener": "Hi - I noticed Samsung NEXT's participation in Sibel Health and the ANNE One integration with Samsung devices. Vybe Health builds a screenless ECG/HRV band with a licensed SDK so developers can pull clean signals into their own apps, including on Android. Would you be open to a short conversation about wearable developer platforms?",
+      "check_size": null,
+      "stage": "seed to growth",
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "last_signal_date": "2025-10-14",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "digital-health",
+        "dev-platform"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 114,
+      "id": "samsung-next-samsung-electronics"
     },
     {
       "name": "Veteran Angel Network (VAN)",
@@ -3896,8 +4476,44 @@
       "lane": "angels",
       "score": 85,
       "priority": "High",
-      "rank": 99,
+      "rank": 115,
       "id": "veteran-angel-network-van-context-ventures"
+    },
+    {
+      "name": "ViVE 2027 - Startup Pitch & Investor Connect",
+      "org": "HLTH / CHIME (ViVE)",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Digital-health buyer event with an Investor Connect 1:1 program and a main-stage startup pitch (<5 yrs old, <$8M raised). There's also an AARP AgeTech pitch open to healthspan/wellness products.",
+      "why_now": "ViVE 2027 is Mar 14-17, 2027 at Music City Center, Nashville; startup-rate/Investor Connect registration open; 2027 pitch deadline not yet posted.",
+      "evidence": [
+        "https://hlth.com/events/vive/agenda/programs/startup-pitch-competition/",
+        "https://registervive.hlth.com/2027/ic-connect",
+        "https://hlth.com/events/vive/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://registervive.hlth.com/2027/ic-connect",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Apply for Startup/Investor Connect and watch for 2027 pitch-application opening.",
+      "opener": "Vybe Health (Akron, OH) builds a screenless ECG/HRV band with a licensed SDK for wellness developers. Pre-seed, under $8M raised, design partners onboarding now. Requesting Investor Connect meetings with seed investors in wearables and consumer health.",
+      "check_size": null,
+      "stage": "<$8M raised",
+      "geo": "Nashville, TN",
+      "deadline": null,
+      "last_signal_date": "2026-07-24",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 85,
+      "priority": "High",
+      "rank": 116,
+      "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
     {
       "name": "Wearable Data Builders by ROOK",
@@ -3932,7 +4548,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 100,
+      "rank": 117,
       "id": "wearable-data-builders-by-rook-rook"
     },
     {
@@ -3967,7 +4583,7 @@
       "lane": "social",
       "score": 85,
       "priority": "High",
-      "rank": 101,
+      "rank": 118,
       "id": "r-hyrox-reddit"
     },
     {
@@ -4008,7 +4624,7 @@
       "lane": "signals",
       "score": 81,
       "priority": "Medium",
-      "rank": 102,
+      "rank": 119,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
     {
@@ -4044,8 +4660,118 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 103,
+      "rank": 120,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
+    },
+    {
+      "name": "Capital Factory - Texas Fund / Center for Dual-Use Innovation",
+      "org": "Capital Factory",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Austin hub whose Texas Fund invests Pre-Seed to Series B in national-security and healthcare tech. The Center for Dual-Use Innovation has helped portfolio companies win $735M+ in non-dilutive government funding, a route into tactical human-performance wearables.",
+      "why_now": "Texas Fund takes pitches on a rolling basis without a warm intro; Texas Fund II raising.",
+      "evidence": [
+        "https://texas-fund.webflow.io/",
+        "https://capitalfactory.com/government",
+        "https://acceleratoratlas.com/accelerators/defense_space/capital-factory-defense"
+      ],
+      "channel": "pitch form",
+      "contact_url": "https://texas-fund.webflow.io/",
+      "warm_path": "Veteran / defense network",
+      "fit": 7,
+      "ice": null,
+      "ask": "Submit a Texas Fund pitch and request a CDI intro on Army/SOF human-performance buyers.",
+      "opener": "Hi Capital Factory team - Vybe Health builds a screenless ECG/HRV band with a licensed SDK, and tactical human-performance teams are one of our target design-partner groups. We're veteran-owned and pre-seed. Could we have a 15-minute conversation about the Texas Fund and the Center for Dual-Use Innovation?",
+      "check_size": null,
+      "stage": "pre-seed to Series B",
+      "geo": "Austin, TX",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "veteran",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 121,
+      "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
+    },
+    {
+      "name": "Cedars-Sinai Accelerator+",
+      "org": "Cedars-Sinai",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Cedars-Sinai's accelerator, now a 12-month venture-building platform for Seed+/Late Seed healthcare companies. It provides capital investment and fast-track evaluation inside the Cedars-Sinai system; prior classes received $100K and medical devices are a listed focus area.",
+      "why_now": "Posted July 21, 2026 that it's supporting the NL USA Health Accelerator; no dated 2027 deadline found. Treat as rolling.",
+      "evidence": [
+        "https://www.csaccelerator.com/",
+        "https://www.cedars-sinai.org/newsroom/cedars-sinai-accelerator-welcomes-10th-class-of-health-tech-startups/",
+        "https://linkedin.com/company/csaccelerator"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.csaccelerator.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Request intake call to learn the next Accelerator+ application window.",
+      "opener": "Hi Cedars-Sinai Accelerator+ team - Vybe Health (Akron, OH) builds a screenless ECG/HRV band and SDK for developers building wellness products. We're seed-stage with DevKit v0.1 going out to design partners. Could we have a 15-minute call on when the next Accelerator+ window opens and whether a wearable platform fits?",
+      "check_size": "$100K per company in past classes; current Accelerator+ amount not published",
+      "stage": "seed+ / late seed",
+      "geo": "Los Angeles, CA",
+      "deadline": null,
+      "last_signal_date": "2026-07-21",
+      "confidence": "single-source",
+      "tags": [
+        "digital-health",
+        "health-hardware",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 122,
+      "id": "cedars-sinai-accelerator-cedars-sinai"
+    },
+    {
+      "name": "Dexcom (Dexcom Ventures)",
+      "org": "Dexcom",
+      "role": null,
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "why": "Co-invested with GV in Signos' $20M round (May 27, 2026) and distributes Signos on Stelo.com. Dexcom Ventures' portfolio also includes wearable sensors (Nutromics, Epitel, BioIntelliSense), with a thesis in sensing and remote monitoring.",
+      "why_now": "Signos round May 27, 2026.",
+      "evidence": [
+        "https://www.morningstar.com/news/business-wire/20260527908522/signos-inc-maker-of-the-first-fda-cleared-cgm-system-for-weight-management-raises-20-million-to-accelerate-growth",
+        "https://dexcomventures.com/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://dexcomventures.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Short call on whether ECG/HRV data platforms complement Stelo's consumer biosensor ecosystem.",
+      "opener": "Hi Dexcom Ventures team - the Signos partnership on Stelo.com shows how consumer biosensing is opening up. Vybe Health builds a screenless ECG/HRV band with a licensed SDK, so developers can combine cardiac and other biosensor signals. Would you be open to a 15-minute conversation about sensor-platform plays?",
+      "check_size": null,
+      "stage": "seed to growth",
+      "geo": "San Diego, CA",
+      "deadline": null,
+      "last_signal_date": "2026-05-27",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "digital-health",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 123,
+      "id": "dexcom-dexcom-ventures-dexcom"
     },
     {
       "name": "EC Angels",
@@ -4080,7 +4806,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 104,
+      "rank": 124,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
     {
@@ -4118,7 +4844,7 @@
       "lane": "signals",
       "score": 80,
       "priority": "Medium",
-      "rank": 105,
+      "rank": 125,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
     {
@@ -4153,8 +4879,43 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 106,
+      "rank": 126,
       "id": "greg-morris-gregmorris-co-uk"
+    },
+    {
+      "name": "HealthTech Week & Summit 2027 (JPM week) - Startup Pitch Competition",
+      "org": "HealthTech Week / MedStartr",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Runs in San Francisco during J.P. Morgan Healthcare week, with a startup pitch competition run with MedStartr. Investors on the program include MedStartr Capital (Alex Fair), ACTAI Global/Bill Tai and family offices.",
+      "why_now": "HealthTech Week Jan 9-15, 2027; Summit Jan 13-15; pitch finals Jan 14, 2027 (5-8PM). Application deadline not posted.",
+      "evidence": [
+        "https://healthtechweek.org/",
+        "https://luma.com/HT26Pitch"
+      ],
+      "channel": "apply",
+      "contact_url": "https://healthtechweek.org/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Apply to the JPM-week pitch competition once the 2027 form opens.",
+      "opener": "Vybe Health (Akron, OH) - screenless ECG/HRV band plus licensed SDK/API for wellness developers; veteran-, woman- and minority-owned; DevKit v0.1 with design partners and consumer launch planned for May 2027. We'd like to pitch at HealthTech Week during JPM.",
+      "check_size": null,
+      "stage": null,
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "last_signal_date": "2026-09-01",
+      "confidence": "single-source",
+      "tags": [
+        "digital-health",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 127,
+      "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
     {
       "name": "IDC: 611.5M wearables shipped in 2025; 625.2M forecast for 2026; wrist-worn down 4.3% in Q2 2026",
@@ -4194,7 +4955,7 @@
       "lane": "signals",
       "score": 80,
       "priority": "Medium",
-      "rank": 107,
+      "rank": 128,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
     {
@@ -4228,7 +4989,7 @@
       "lane": "vc",
       "score": 80,
       "priority": "Medium",
-      "rank": 108,
+      "rank": 129,
       "id": "interlagos-interlagos"
     },
     {
@@ -4264,7 +5025,7 @@
       "lane": "vc",
       "score": 80,
       "priority": "Medium",
-      "rank": 109,
+      "rank": 130,
       "id": "inventure-inventure-vc"
     },
     {
@@ -4299,8 +5060,43 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 110,
+      "rank": 131,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
+    },
+    {
+      "name": "Northwestern Medicine & Techstars Healthcare Accelerator (Class 3)",
+      "org": "Techstars / Northwestern Medicine",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Six-company health tech accelerator held in person at Northwestern Medicine's Mansueto Innovation Institute in Chicago, with access to clinicians and NM Ventures. Standard Techstars Spring 2027 investment applies.",
+      "why_now": "Applications opened Aug 24, 2026; program Mar 8 - Jun 3, 2027. Final deadline not stated in the announcement (other Spring 2027 Techstars programs close Nov 18, 2026).",
+      "evidence": [
+        "https://www.techstars.com/blog/program-news/applications-now-open-for-third-class-of-northwestern-medicine-techstars-healthcare-accelerator"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.techstars.com/blog/program-news/applications-now-open-for-third-class-of-northwestern-medicine-techstars-healthcare-accelerator",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Confirm final deadline and apply; ask MD Brad Schnitzer for a 15-min fit call.",
+      "opener": "Hi Brad - Vybe Health is a Midwest wearable company (Akron, OH) building a screenless ECG/HRV band with a licensed SDK for developers. Clinical feedback from Northwestern Medicine on signal quality would sharpen our design-partner program. Would you have 15 minutes to talk about whether we fit Class 3?",
+      "check_size": "$220K (Techstars Spring 2027 standard)",
+      "stage": "pre-seed/seed",
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": "2026-08-24",
+      "confidence": "single-source",
+      "tags": [
+        "digital-health",
+        "wearables",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 132,
+      "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
     {
       "name": "Pipeline Angels",
@@ -4333,7 +5129,7 @@
       "lane": "angels",
       "score": 80,
       "priority": "Medium",
-      "rank": 111,
+      "rank": 133,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
     {
@@ -4369,7 +5165,7 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 112,
+      "rank": 134,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
     {
@@ -4410,7 +5206,7 @@
       "lane": "builders",
       "score": 80,
       "priority": "Medium",
-      "rank": 113,
+      "rank": 135,
       "id": "sweatid-sweatid"
     },
     {
@@ -4449,8 +5245,44 @@
       "lane": "social",
       "score": 80,
       "priority": "Medium",
-      "rank": 114,
+      "rank": 136,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
+    },
+    {
+      "name": "Vetted Accelerator",
+      "org": "Vetted (The Vetted Fund)",
+      "role": null,
+      "type": "accelerator",
+      "hunt": "investor",
+      "why": "Accelerator for U.S./Israeli combat veterans at pre-seed or pre-incorporation, with direct investment from the Vetted Fund and a Miami Demo Day in front of dozens of investors. Vybe is veteran-owned; eligibility needs a combat-service check.",
+      "why_now": "Next cohort Feb 1 - Apr 8, 2027 (Tel Aviv bootcamp, online, Miami Work-Up). Applications 'notify me' status; deadline not yet posted.",
+      "evidence": [
+        "https://accelerator.thevetted.vc/program",
+        "https://accelerator.thevetted.vc/faqs"
+      ],
+      "channel": "apply",
+      "contact_url": "https://accelerator.thevetted.vc/program",
+      "warm_path": "Veteran network",
+      "fit": 7,
+      "ice": null,
+      "ask": "Sign up for application notice and confirm combat-veteran eligibility via info@thevetted.vc listed on site.",
+      "opener": "Hi Vetted team - I'm a veteran founder building Vybe Health in Akron, OH: a screenless ECG/HRV band with a licensed SDK for developers, with design partners now and a consumer launch planned for May 2027. I'd value a short conversation about the Feb 2027 cohort and whether we meet the service requirements.",
+      "check_size": "Direct Vetted Fund investment (amount not published on pages read)",
+      "stage": "pre-seed",
+      "geo": "Tel Aviv / Miami / online",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "veteran",
+        "tactical",
+        "wearables"
+      ],
+      "lane": "accel_events",
+      "score": 80,
+      "priority": "Medium",
+      "rank": 137,
+      "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
     {
       "name": "Pulsetto",
@@ -4488,7 +5320,7 @@
       "lane": "builders",
       "score": 79,
       "priority": "Medium",
-      "rank": 115,
+      "rank": 138,
       "id": "pulsetto-pulsetto"
     },
     {
@@ -4527,7 +5359,7 @@
       "lane": "builders",
       "score": 79,
       "priority": "Medium",
-      "rank": 116,
+      "rank": 139,
       "id": "sahha-sahha"
     },
     {
@@ -4568,7 +5400,7 @@
       "lane": "social",
       "score": 78,
       "priority": "Medium",
-      "rank": 117,
+      "rank": 140,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
     {
@@ -4602,7 +5434,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 118,
+      "rank": 141,
       "id": "37-angels-37-angels"
     },
     {
@@ -4637,8 +5469,43 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 119,
+      "rank": 142,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
+    },
+    {
+      "name": "Catalyst by Wellstar",
+      "org": "Wellstar Health System",
+      "role": "Jaimie Clark, Head of Innovation (quoted)",
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "why": "Health-system venture arm that invested in Armor Medical (June 2025), a smartwatch-style wrist wearable using light-based sensors, and in women-founded companies via Femovate. It's a strategic that pilots wearables inside a health system.",
+      "why_now": "Armor Medical investment post June 23, 2025.",
+      "evidence": [
+        "https://catalyst.wellstar.org/insights/wearable-could-help-end-leading-cause-of-maternal-death/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://catalyst.wellstar.org/",
+      "warm_path": "Women founders angle",
+      "fit": 7,
+      "ice": null,
+      "ask": "15-min call on health-system pilots for a wellness HRV wearable.",
+      "opener": "Hi Jaimie - your Armor Medical investment showed how Catalyst gets wearables into real care settings. Vybe Health (Akron, OH; woman-, veteran- and minority-owned) builds a screenless ECG/HRV band with a licensed SDK. We'd value a short conversation about how Catalyst evaluates wearable platforms for pilots.",
+      "check_size": null,
+      "stage": "early-stage",
+      "geo": "Atlanta, GA",
+      "deadline": null,
+      "last_signal_date": "2025-06-23",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "women-founders",
+        "digital-health"
+      ],
+      "lane": "accel_events",
+      "score": 75,
+      "priority": "Medium",
+      "rank": 143,
+      "id": "catalyst-by-wellstar-wellstar-health-system"
     },
     {
       "name": "DVC: Health",
@@ -4671,7 +5538,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 120,
+      "rank": 144,
       "id": "dvc-health-duro-ventures-collective"
     },
     {
@@ -4707,7 +5574,7 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 121,
+      "rank": 145,
       "id": "elevate-human-performance-elevate-human-performance"
     },
     {
@@ -4741,7 +5608,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 122,
+      "rank": 146,
       "id": "hpa-hyde-park-angels-hpa"
     },
     {
@@ -4776,7 +5643,7 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 123,
+      "rank": 147,
       "id": "heather-landi-fierce-healthcare"
     },
     {
@@ -4811,8 +5678,43 @@
       "lane": "social",
       "score": 75,
       "priority": "Medium",
-      "rank": 124,
+      "rank": 148,
       "id": "jim-mcdonald-tactical-training-conditioning"
+    },
+    {
+      "name": "KIRIN HEALTH INNOVATION FUND",
+      "org": "Kirin Holdings / Global Brain",
+      "role": null,
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "why": "CVC (5B yen AUM, GP Global Brain) that invested in Cala Health's wrist-worn tremor wearable (Apr 10, 2025) and in sensor/IoT platform MODE (Mar 2025). Mandate: health-science startups worldwide.",
+      "why_now": "Cala Health investment Apr 10, 2025.",
+      "evidence": [
+        "https://www.kirinholdings.com/en/newsroom/release/2025/0410_02.html",
+        "https://www.kirinholdings.com/en/newsroom/release/2025/0303_03.html"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Intro via Global Brain for a short conversation on wellness wearables.",
+      "opener": "Hello - I read about the KIRIN HEALTH INNOVATION FUND's investment in Cala Health's wrist wearable. Vybe Health (Akron, OH) builds a screenless ECG/HRV band with a licensed SDK for wellness developers. Would you be open to a short conversation about how the fund looks at wearable health platforms?",
+      "check_size": null,
+      "stage": "early to growth",
+      "geo": "Tokyo / global",
+      "deadline": null,
+      "last_signal_date": "2025-04-10",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "digital-health"
+      ],
+      "lane": "accel_events",
+      "score": 75,
+      "priority": "Medium",
+      "rank": 149,
+      "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
     {
       "name": "Kye-Shin Lee lab (ECE)",
@@ -4851,7 +5753,7 @@
       "lane": "builders",
       "score": 75,
       "priority": "Medium",
-      "rank": 125,
+      "rank": 150,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
     {
@@ -4885,7 +5787,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 126,
+      "rank": 151,
       "id": "life-science-angels-life-science-angels"
     },
     {
@@ -4919,7 +5821,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 127,
+      "rank": 152,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
     {
@@ -4955,7 +5857,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 128,
+      "rank": 153,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
     {
@@ -4991,7 +5893,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 129,
+      "rank": 154,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
     {
@@ -5026,43 +5928,8 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 130,
+      "rank": 155,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
-    },
-    {
-      "name": "Rev1 Ventures",
-      "org": "Rev1 Ventures",
-      "role": null,
-      "type": "vc",
-      "hunt": "investor",
-      "why": "Columbus venture studio and investor backing SaaS/AI, deep tech and life sciences startups across the Midwest. Rev1-supported founders were behind more than half of Central Ohio's 55 deals in 2025, which makes it the Ohio network path.",
-      "why_now": null,
-      "evidence": [
-        "https://www.rev1ventures.com/"
-      ],
-      "channel": "contact form",
-      "contact_url": "https://www.rev1ventures.com/",
-      "warm_path": "Ohio",
-      "fit": 7,
-      "ice": null,
-      "ask": "Intro meeting with Rev1 deep tech / life sciences team",
-      "opener": "Hi Rev1 team - Vybe Health is an Ohio company (Akron) building a screenless ECG/HRV band and licensed SDK/API, from a veteran/woman/minority-owned team. DevKit v0.1 goes to design partners this fall. Could we set up 15 minutes to see whether Rev1's studio or capital is a fit?",
-      "check_size": null,
-      "stage": "pre-seed, seed",
-      "geo": "Columbus, OH",
-      "deadline": null,
-      "last_signal_date": null,
-      "confidence": "single-source",
-      "tags": [
-        "ohio",
-        "health-hardware",
-        "veteran"
-      ],
-      "lane": "vc",
-      "score": 75,
-      "priority": "Medium",
-      "rank": 131,
-      "id": "rev1-ventures-rev1-ventures"
     },
     {
       "name": "SHIPP Lab (Science of Health Interventions and Peak Performance)",
@@ -5101,7 +5968,7 @@
       "lane": "builders",
       "score": 75,
       "priority": "Medium",
-      "rank": 132,
+      "rank": 156,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
     {
@@ -5141,7 +6008,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 133,
+      "rank": 157,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
     {
@@ -5175,7 +6042,7 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 134,
+      "rank": 158,
       "id": "sand-hill-angels-sand-hill-angels"
     },
     {
@@ -5210,8 +6077,43 @@
       "lane": "angels",
       "score": 75,
       "priority": "Medium",
-      "rank": 135,
+      "rank": 159,
       "id": "startup-health-syndicate-startup-health"
+    },
+    {
+      "name": "StartupCincy Week 2026",
+      "org": "Cintrifuse / StartupCincy",
+      "role": null,
+      "type": "event",
+      "hunt": "investor",
+      "why": "Ohio's largest startup week: 70+ VCs, a VentureHaus VC lounge and Capital & Venture Day with venture panels and a Best of Demo Night. A good place to meet Midwest seed investors in person.",
+      "why_now": "Oct 5-8, 2026 in Cincinnati; Capital day Tuesday Oct 6.",
+      "evidence": [
+        "https://startupcincyweek.com/",
+        "https://moversmakers.org/2025/09/08/200k-pitch-competition-to-anchor-startupcincy-week/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://startupcincyweek.com/",
+      "warm_path": "Ohio",
+      "fit": 7,
+      "ice": null,
+      "ask": "Register and book VC meetings for Capital day, Oct 6.",
+      "opener": "Hi - I'm the founder of Vybe Health in Akron, building a screenless ECG/HRV band with a licensed SDK for developers. I'll be at StartupCincy Week on Capital day. Could we grab 15 minutes to talk about how you look at Midwest health-hardware deals?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cincinnati, OH",
+      "deadline": null,
+      "last_signal_date": "2026-10-05",
+      "confidence": "single-source",
+      "tags": [
+        "ohio",
+        "health-hardware"
+      ],
+      "lane": "accel_events",
+      "score": 75,
+      "priority": "Medium",
+      "rank": 160,
+      "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
     {
       "name": "Xsensio €6M Series A (WI Harper) for wearable biochemical sensing chip",
@@ -5246,7 +6148,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 136,
+      "rank": 161,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
     {
@@ -5287,7 +6189,7 @@
       "lane": "signals",
       "score": 75,
       "priority": "Medium",
-      "rank": 137,
+      "rank": 162,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
     {
@@ -5325,7 +6227,7 @@
       "lane": "social",
       "score": 74,
       "priority": "Low",
-      "rank": 138,
+      "rank": 163,
       "id": "digital-health-digital-health"
     },
     {
@@ -5367,7 +6269,7 @@
       "lane": "builders",
       "score": 74,
       "priority": "Low",
-      "rank": 139,
+      "rank": 164,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
     {
@@ -5407,7 +6309,7 @@
       "lane": "builders",
       "score": 74,
       "priority": "Low",
-      "rank": 140,
+      "rank": 165,
       "id": "notus-labs-notus-labs"
     },
     {
@@ -5446,7 +6348,7 @@
       "lane": "builders",
       "score": 74,
       "priority": "Low",
-      "rank": 141,
+      "rank": 166,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
     {
@@ -5484,7 +6386,7 @@
       "lane": "social",
       "score": 74,
       "priority": "Low",
-      "rank": 142,
+      "rank": 167,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
     {
@@ -5523,7 +6425,7 @@
       "lane": "social",
       "score": 73,
       "priority": "Low",
-      "rank": 143,
+      "rank": 168,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
     {
@@ -5563,7 +6465,7 @@
       "lane": "signals",
       "score": 70,
       "priority": "Low",
-      "rank": 144,
+      "rank": 169,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
     {
@@ -5598,7 +6500,7 @@
       "lane": "social",
       "score": 70,
       "priority": "Low",
-      "rank": 145,
+      "rank": 170,
       "id": "jessica-hagen-mobihealthnews"
     },
     {
@@ -5638,9 +6540,9 @@
       "lane": "builders",
       "score": 68,
       "priority": "Low",
-      "rank": 146,
+      "rank": 171,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
   ],
-  "rejected_count": 0
+  "rejected_count": 2
 }
