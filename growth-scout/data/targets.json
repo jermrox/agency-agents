@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02 19:31 UTC",
+  "generated": "2026-10-02 19:36 UTC",
   "today": "2026-10-02",
   "scope": {
     "company": "Vybe Health",
@@ -99,19 +99,60 @@
     }
   ],
   "summary": {
-    "total": 251,
-    "investor": 81,
+    "total": 268,
+    "investor": 98,
     "growth": 31,
     "social": 28,
     "sponsorship": 44,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 40,
-    "deadlines_30d": 3,
-    "ready_to_send": 103,
+    "high": 49,
+    "deadlines_30d": 4,
+    "ready_to_send": 120,
     "identity_needs_ok": 74
   },
   "targets": [
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": "up to $1M (speedrun site)",
+      "stage": "pre-seed/seed",
+      "geo": "San Francisco, CA",
+      "deadline": "2026-11-01",
+      "warm_path": "Apply to SR008 during the priority window and reference the Clair deal; Clair's founders are speedrun alumni. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Emily Bennett",
+      "org": "Andreessen Horowitz (a16z speedrun)",
+      "role": "Investment Partner, a16z speedrun",
+      "why": "Bennett gave the speedrun quote on Clair Health's $11.6M seed (wrist hormone wearable). Speedrun invests up to $1M in very early startups and backed Clair in an earlier cohort.",
+      "why_now": "SR008 priority application window Oct 12 - Nov 1, 2026; Clair seed quote 2026-06-17",
+      "evidence": [
+        "https://www.forbes.com/sites/geristengel/2026/06/17/a-22-year-old-just-raised-116-million-to-read-womens-hidden-hormone-signals/",
+        "https://www.linkedin.com/in/emilybennett1",
+        "https://speedrun.a16z.com/apply",
+        "https://speedrun.a16z.com/companies/clair-health"
+      ],
+      "channel": "apply",
+      "contact_url": "https://speedrun.a16z.com/apply",
+      "fit": 9,
+      "ask": "Submit the SR008 application in the Oct 12 - Nov 1 window, then send Bennett a short note",
+      "opener": "Emily, your Clair Health note on making foundational biological signals measurable stuck with me. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band with a licensed SDK/API, so app teams get raw signal access without building hardware. DevKit v0.1 ships to 5-10 design partners this year, and we're applying to SR008 this window. Would you be open to a short conversation about whether we're a fit?",
+      "last_signal_date": "2026-06-17",
+      "tags": [
+        "wearables",
+        "accelerator",
+        "hrv",
+        "dev-platform",
+        "pre-seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 1,
+      "id": "emily-bennett-andreessen-horowitz-a16z-speedrun"
+    },
     {
       "name": "a16z speedrun (SR008)",
       "org": "Andreessen Horowitz",
@@ -148,7 +189,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 1,
+      "rank": 2,
       "id": "a16z-speedrun-sr008-andreessen-horowitz"
     },
     {
@@ -193,8 +234,48 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 2,
+      "rank": 3,
       "id": "akron-marathon-race-series-2027-akron-marathon-charitable-corporation"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "seed to late stage (KV bio: 'from seed stage funding to later stage')",
+      "geo": "Menlo Park, CA",
+      "deadline": null,
+      "warm_path": "Clair co-investors Brydge Club (women angels) and Treehub/Anne Wojcicki are already in angels.json; ask one of them for an intro. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Alex Morgan",
+      "org": "Khosla Ventures",
+      "role": "Partner",
+      "why": "Khosla led Clair Health's $11.6M seed for a 10-sensor wrist wearable (HRV, skin temp, EDA), and Morgan gave the investor quote on the deal. His KV bio says he ran early digital-health trials with connected wearables at Stanford.",
+      "why_now": "2026-06-17: Clair Health seed led by Khosla; Morgan quoted in Fortune",
+      "evidence": [
+        "https://fortune.com/2026/06/17/clair-khosla-anne-wojcicki-wearble-oura-whoop-hormone-women-health/",
+        "https://khoslaventures.com/team/alex-morgan",
+        "https://convention.bio.org/speakers/alex-morgan"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/genomicsdoc",
+      "fit": 10,
+      "ask": "20-minute call on whether a licensed sensor/SDK layer fits KV's wearable thesis",
+      "opener": "Dr. Morgan, I saw your Clair Health quote about wearables built for underserved users. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band that developers license through an SDK/API, so teams like Clair's don't have to build the sensor layer themselves. Our DevKit v0.1 goes to 5-10 design partners this year. Could we talk for 20 minutes about whether a sensor-platform play fits how KV thinks about wearables?",
+      "last_signal_date": "2026-06-17",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "hrv",
+        "women-founders",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 4,
+      "id": "alex-morgan-khosla-ventures"
     },
     {
       "name": "Alumni Ventures",
@@ -232,7 +313,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 3,
+      "rank": 5,
       "id": "alumni-ventures-alumni-ventures"
     },
     {
@@ -275,7 +356,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 4,
+      "rank": 6,
       "id": "amazfit-x-hyrox-official-wearable-now-global-3-year-exclusive-amazfit-zepp-healt"
     },
     {
@@ -314,8 +395,47 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 5,
+      "rank": 7,
       "id": "anne-wojcicki-treehub-ai-health-fund-operating-partner-23andme-co-founder"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": "up to $550K pre-seed (HAX, per accel_events.json)",
+      "stage": "pre-seed",
+      "geo": "Newark, NJ / global",
+      "deadline": null,
+      "warm_path": "Joining the HAX program is the route in. HAX alumni Level Zero and Samphire are wearable founders who could vouch. His LinkedIn headline lists an SOSV email. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Ben Joffe",
+      "org": "SOSV (HAX)",
+      "role": "Senior Partner",
+      "why": "Joffe wrote SOSV's announcement of Level Zero Health's $6.9M wearable pre-seed, which HAX joined. He has worked with HAX hardware startups since 2013 and covers health at SOSV. HAX invests in pre-seed human-health hardware and gives hands-on engineering and DFM support.",
+      "why_now": "2025-02-18: Level Zero Health pre-seed with HAX (Joffe's SOSV post); HAX applications rolling",
+      "evidence": [
+        "https://sosv.com/continuous-hormone-monitoring-startup-level-zero-health-raises-6-9m-pre-seed-round/",
+        "https://www.linkedin.com/in/benjaminjoffe",
+        "https://hax.co/company/level-zero-health/"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/benjaminjoffe",
+      "fit": 9,
+      "ask": "Feedback call before a HAX application; DFM help for the DevKit-to-production step",
+      "opener": "Ben, I read your post on Level Zero Health's pre-seed and how HAX supports wearable founders through hardware. Vybe, in Akron, Ohio, is a screenless ECG/HRV band with a licensed SDK/API. DevKit v0.1 goes to 5-10 design partners this year, and the next step is design for manufacturing. Could we talk for 20 minutes before I submit a HAX application?",
+      "last_signal_date": "2025-02-18",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "accelerator",
+        "pre-seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 8,
+      "id": "ben-joffe-sosv-hax"
     },
     {
       "name": "Brydge Club",
@@ -351,7 +471,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 6,
+      "rank": 9,
       "id": "brydge-club-brydge-club"
     },
     {
@@ -388,7 +508,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 7,
+      "rank": 10,
       "id": "cade-ventures-why-we-haven-t-invested-in-a-wearable-yet-and-what-would-change-ou"
     },
     {
@@ -427,7 +547,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 8,
+      "rank": 11,
       "id": "cheryl-mccolgan-heal-nourish-grow"
     },
     {
@@ -466,8 +586,45 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 9,
+      "rank": 12,
       "id": "clair-health-11m-seed-led-by-khosla-for-women-s-hormone-wristband-clair-health"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "early stage through growth (per LinkedIn and the WHOOP post)",
+      "geo": "New York, NY",
+      "deadline": null,
+      "warm_path": "His WHOOP intro came through Nicholas Negroponte, so MIT Media Lab circles are one route. No Ohio or accelerator tie found. The X handle @cshapiro appears on his Collab post.",
+      "confidence": "verified",
+      "name": "Craig Shapiro",
+      "org": "Collaborative Fund",
+      "role": "Founder & Managing Partner",
+      "why": "Shapiro led WHOOP's $575M Series G, which he called Collaborative's largest investment ever. He also wrote an early check into WHOOP from Fund II and has followed on since. The fund describes itself as early stage.",
+      "why_now": "2026-03-31: Collaborative Fund leads WHOOP Series G (Shapiro's term-sheet letter published)",
+      "evidence": [
+        "https://collabfund.com/blog/whoop/",
+        "https://www.linkedin.com/in/craigjshapiro"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/craigjshapiro",
+      "fit": 9,
+      "ask": "20-minute call on what an early-stage wearable needs to show Collaborative",
+      "opener": "Craig, your WHOOP letter called it the software layer for the human body. I'm building one layer down, in Akron, Ohio. Vybe is a screenless ECG/HRV band with no subscription, and developers license its signals through an SDK/API. DevKit v0.1 goes to 5-10 design partners this year. You saw WHOOP early. Would you give me 20 minutes on what you'd want to see from an early sensor-platform company?",
+      "last_signal_date": "2026-03-31",
+      "tags": [
+        "wearables",
+        "hrv",
+        "health-hardware"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 13,
+      "id": "craig-shapiro-collaborative-fund"
     },
     {
       "name": "Crosslink Capital",
@@ -504,7 +661,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 10,
+      "rank": 14,
       "id": "crosslink-capital-crosslink-capital"
     },
     {
@@ -548,7 +705,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 11,
+      "rank": 15,
       "id": "danielle-miranda-hyrox-pro-women-self-columbus-all-female-fitness-facility-found"
     },
     {
@@ -587,7 +744,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 12,
+      "rank": 16,
       "id": "e14-fund-e14-fund-mit-affiliated"
     },
     {
@@ -632,8 +789,46 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 13,
+      "rank": 17,
       "id": "eagle-up-ultra-2027-race-brimstone"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "early-stage (pre-revenue through scale per bio)",
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "warm_path": "Oura alumni and early Oura backers (for example co-founder Petteri Lahtela in angels.json) are the natural intro route. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Eurie Kim",
+      "org": "Forerunner Ventures",
+      "role": "Managing Partner; Chair of the Oura board",
+      "why": "Kim led Oura's 2019 Series B and has chaired Oura's board for six years. Forerunner is a pre-IPO Oura holder named in the Sep 2026 IPO coverage. She invests in health & wellness and consumer AI from pre-revenue onward.",
+      "why_now": "2026-09-29: Oura postpones its IPO (signals.json); Oct 2025 $11B Series E post by Kim",
+      "evidence": [
+        "https://forerunnerventures.com/team/eurie-kim",
+        "https://www.linkedin.com/posts/kirstengreen_my-partner-eurie-kim-has-been-chairwoman-activity-7383901286103982080-dn2R"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://forerunnerventures.com/team/eurie-kim",
+      "fit": 9,
+      "ask": "Short call on how Forerunner views infrastructure plays beneath the ring/band incumbents",
+      "opener": "Eurie, your note on Oura's rise, that health starts with sleep and not steps, is close to how we think. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band whose signals developers license through an SDK/API, so new sleep and recovery apps can launch without their own hardware. DevKit v0.1 goes to 5-10 design partners this year. Would you be open to a short conversation?",
+      "last_signal_date": "2026-09-29",
+      "tags": [
+        "wearables",
+        "sleep",
+        "hrv",
+        "health-hardware"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 18,
+      "id": "eurie-kim-forerunner-ventures"
     },
     {
       "name": "FDA 2026 General Wellness guidance explicitly covers wearables measuring HRV, BP, SpO2",
@@ -674,7 +869,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 14,
+      "rank": 19,
       "id": "fda-2026-general-wellness-guidance-explicitly-covers-wearables-measuring-hrv-bp-"
     },
     {
@@ -718,7 +913,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 15,
+      "rank": 20,
       "id": "fitbit-web-api-shuts-down-30-oct-2026-tokens-do-not-migrate-google"
     },
     {
@@ -755,7 +950,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 16,
+      "rank": 21,
       "id": "fortify-ventures-fortify-ventures"
     },
     {
@@ -798,7 +993,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 17,
+      "rank": 22,
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
     {
@@ -839,7 +1034,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 18,
+      "rank": 23,
       "id": "garmin-x-buena-tierra-run-club-milwaukee-garmin"
     },
     {
@@ -883,8 +1078,49 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 19,
+      "rank": 24,
       "id": "garmin-x-garmin-marathon-series-toledo-ohio-garmin"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "San Francisco, CA / Boston, MA",
+      "deadline": null,
+      "warm_path": "Kimba (Techstars alum) and Sahha founders are portfolio references. He writes at grayson.substack.com, and Supermoon publishes sleep-market research to respond to. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Grayson Judge",
+      "org": "Supermoon Capital",
+      "role": "Co-Founder & Managing Partner",
+      "why": "Judge runs Supermoon, a sleep and circadian specialist fund. It backed Sahha's wearable-data API (he gave the quote on the July 2025 round), Kimba's $6.5M sleep-device seed (June 2026) and Lume Health's hormone-monitoring wearable.",
+      "why_now": "2026-06-16: Kimba seed with Supermoon; Sahha round 2025-07-21; Lume Health investment Jan 2026",
+      "evidence": [
+        "https://sahha.ai/blog/sahha-series-seed-1-2m-funding/",
+        "https://supermooncapital.com/portfolio",
+        "https://www.linkedin.com/in/graysonjudge",
+        "https://www.linkedin.com/posts/kimba-ai_introducing-kimba-a-new-category-in-sleep-activity-7472721842617909248-_dH-"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/graysonjudge",
+      "fit": 9,
+      "ask": "20-minute call; ask whether Sahha or Kimba would test the DevKit",
+      "opener": "Grayson, Supermoon's 'market of insights into sleep' research maps where Vybe sits. Vybe, in Akron, Ohio, is a screenless ECG/HRV band with a licensed SDK/API, so sleep apps like your portfolio's can get raw overnight HRV without depending on closed wearables. DevKit v0.1 goes to 5-10 design partners this year. Would you be open to 20 minutes, and possibly an intro to a portfolio team that might test it?",
+      "last_signal_date": "2026-06-16",
+      "tags": [
+        "wearables",
+        "sleep",
+        "hrv",
+        "dev-platform",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 25,
+      "id": "grayson-judge-supermoon-capital"
     },
     {
       "name": "Human Performance Collaborative (Ohio State)",
@@ -928,7 +1164,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 20,
+      "rank": 26,
       "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
     },
     {
@@ -972,8 +1208,47 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 21,
+      "rank": 27,
       "id": "hunter-brancifort-akron-fire-department"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "early-stage",
+      "geo": "New York, NY",
+      "deadline": null,
+      "warm_path": "Her LinkedIn says she doesn't check DMs and lists her Reach email for contact. She is a JOURNEY fellow (women-leaders network). No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Jomayra Herrera",
+      "org": "Reach Capital",
+      "role": "Partner",
+      "why": "Herrera wrote Reach's 'Why We Invested in Clair' memo on a continuous wrist wearable. She names HRV, autonomic balance and multimodal sensor fusion as the core of the bet. Reach is an early-stage investor across learning, health and work.",
+      "why_now": "2026-02-04: Reach announces its Clair Health investment (Herrera byline)",
+      "evidence": [
+        "https://www.reachcapital.com/resources/news/hormone-intelligence-made-visible-why-we-invested-in-clair-health/",
+        "https://www.linkedin.com/in/jomayraherrera"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.linkedin.com/in/jomayraherrera",
+      "fit": 9,
+      "ask": "20-minute conversation on Reach's view of sensor platforms vs single-use-case wearables",
+      "opener": "Jomayra, your Clair memo framed HRV and autonomic signals as data that was always there but never captured well. That's the problem we're working on at Vybe in Akron, Ohio: a screenless ECG/HRV band whose raw signals developers license through an SDK/API. DevKit v0.1 goes to 5-10 design partners this year. Could we find 20 minutes to compare notes on where the platform layer fits in your health thesis?",
+      "last_signal_date": "2026-02-04",
+      "tags": [
+        "wearables",
+        "hrv",
+        "digital-health",
+        "women-founders",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 28,
+      "id": "jomayra-herrera-reach-capital"
     },
     {
       "name": "Khosla Ventures",
@@ -1013,7 +1288,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 22,
+      "rank": 29,
       "id": "khosla-ventures-khosla-ventures"
     },
     {
@@ -1052,8 +1327,48 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 23,
+      "rank": 30,
       "id": "kiva-dickinson-selva-ventures"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "seed (AIX self-description)",
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "warm_path": "He is a USAF Honorary Commander (60th Air Mobility Wing) and has advised DIU, DARPA and SOCOM's SOFWERX, so a tactical/readiness use case is a natural opening. Keep the opener product-led. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Krish Ramadurai",
+      "org": "AIX Ventures",
+      "role": "Partner",
+      "why": "Ramadurai was the AIX partner quoted on its lead of Wearlinq's $14M Series A (wireless 6-lead ECG wearable plus an AI stack). AIX describes itself as an AI-focused seed fund, and he covers its healthcare and life-sciences practice.",
+      "why_now": "2025-12-18: AIX leads Wearlinq $14M Series A; Ramadurai quoted",
+      "evidence": [
+        "https://startuprise.io/wearlinq-raises-14m-in-series-a-funding/",
+        "https://www.mddionline.com/cardiovascular/wearable-ecg-company-secures-14m-in-funding",
+        "https://www.linkedin.com/in/krishramadurai"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/krishramadurai",
+      "fit": 9,
+      "ask": "20-minute call on ECG wearables plus licensed data for performance and readiness use cases",
+      "opener": "Krish, your Wearlinq quote on multi-lead ECG plus an AI stack is the closest thesis I've seen to ours. Vybe, in Akron, Ohio, is a screenless ECG/HRV band for everyday wear. Developers and research teams license its signals through an SDK/API, and DevKit v0.1 goes to 5-10 design partners this year. Would you be open to 20 minutes to see whether we fit AIX's healthcare practice?",
+      "last_signal_date": "2025-12-18",
+      "tags": [
+        "wearables",
+        "ecg",
+        "tactical",
+        "seed",
+        "dev-platform"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 31,
+      "id": "krish-ramadurai-aix-ventures"
     },
     {
       "name": "Kristina Simmons",
@@ -1092,7 +1407,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 24,
+      "rank": 32,
       "id": "kristina-simmons-overwater-ventures"
     },
     {
@@ -1130,7 +1445,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 25,
+      "rank": 33,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
     {
@@ -1169,7 +1484,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 26,
+      "rank": 34,
       "id": "labcorp-venture-fund-labcorp"
     },
     {
@@ -1213,7 +1528,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 27,
+      "rank": 35,
       "id": "levels-x-crossfit-affiliate-network-partnership-levels"
     },
     {
@@ -1252,7 +1567,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 28,
+      "rank": 36,
       "id": "marco-altini-hrv4training"
     },
     {
@@ -1289,7 +1604,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 29,
+      "rank": 37,
       "id": "meredith-dietz-lifehacker"
     },
     {
@@ -1334,7 +1649,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 30,
+      "rank": 38,
       "id": "open-wearables-momentum-the-momentum"
     },
     {
@@ -1372,7 +1687,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 31,
+      "rank": 39,
       "id": "oscar-moralez-boomerang-ventures"
     },
     {
@@ -1415,7 +1730,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 32,
+      "rank": 40,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
     {
@@ -1453,7 +1768,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 33,
+      "rank": 41,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
     {
@@ -1491,7 +1806,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 34,
+      "rank": 42,
       "id": "pankaj-kedia-2468-ventures"
     },
     {
@@ -1531,7 +1846,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 35,
+      "rank": 43,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
     {
@@ -1570,7 +1885,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 36,
+      "rank": 44,
       "id": "ray-maker-dc-rainmaker"
     },
     {
@@ -1608,7 +1923,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 37,
+      "rank": 45,
       "id": "resolute-ventures-resolute-ventures"
     },
     {
@@ -1647,7 +1962,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 38,
+      "rank": 46,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
     {
@@ -1685,7 +2000,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 39,
+      "rank": 47,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
     {
@@ -1724,7 +2039,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 40,
+      "rank": 48,
       "id": "sosv-hax-sosv"
     },
     {
@@ -1770,7 +2085,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 41,
+      "rank": 49,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
     {
@@ -1810,7 +2125,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 42,
+      "rank": 50,
       "id": "seaside-ventures-seaside-ventures"
     },
     {
@@ -1849,8 +2164,48 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 43,
+      "rank": 51,
       "id": "sunil-nagaraj-ubiquity-ventures"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "seed (True: first-check investor)",
+      "geo": "San Francisco Bay Area",
+      "deadline": null,
+      "warm_path": "He has been Bluesky's interim CEO since Mar 2026, so his bandwidth is limited; mention Jon Callaghan (True co-founder, also posted on Sandbar) as a second True contact. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Toni Schneider",
+      "org": "True Ventures",
+      "role": "Partner",
+      "why": "True led Sandbar's seed for the Stream smart ring, and Schneider is the True partner on the deal (TechCrunch quote, StrictlyVC talk). True's own post cites its Fitbit, Peloton and Ring hardware history.",
+      "why_now": "2025-11-05: Stream ring launch, True-led seed; Sandbar Series A 2026-03-11 with True participating",
+      "evidence": [
+        "https://techcrunch.com/2025/11/05/former-meta-employees-launch-stream-a-smart-ring-that-takes-voice-notes-and-controls-music/",
+        "https://www.trueventures.com/blog/celebrating-sandbars-stream-launch",
+        "https://www.linkedin.com/in/tonischneider",
+        "https://kindredventures.com/announcement/building-new-interfaces-for-productivity-sandbar/"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/tonischneider",
+      "fit": 9,
+      "ask": "20-minute call, or a pointer to the right True partner for health wearables",
+      "opener": "Toni, you told TechCrunch you were skeptical of AI devices until a demo made sense. I'd like to earn the same test. Vybe, in Akron, Ohio, is a screenless ECG/HRV band with a licensed SDK/API, so developers build on the signals rather than another closed app. DevKit v0.1 goes to 5-10 design partners this year. Would you or a True colleague take a 20-minute look?",
+      "last_signal_date": "2026-03-11",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "dev-platform",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 52,
+      "id": "toni-schneider-true-ventures"
     },
     {
       "name": "Ultrahuman raises $70M led by Qualcomm Ventures and opens ring to third-party developers",
@@ -1888,7 +2243,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 44,
+      "rank": 53,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
     {
@@ -1926,7 +2281,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 45,
+      "rank": 54,
       "id": "victoria-song-the-verge"
     },
     {
@@ -1969,7 +2324,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 46,
+      "rank": 55,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
     {
@@ -2014,7 +2369,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 47,
+      "rank": 56,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
     {
@@ -2051,7 +2406,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 48,
+      "rank": 57,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
     {
@@ -2090,7 +2445,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 49,
+      "rank": 58,
       "id": "the5krunner-the5krunner"
     },
     {
@@ -2133,7 +2488,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 50,
+      "rank": 59,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
     {
@@ -2175,7 +2530,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 51,
+      "rank": 60,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
     {
@@ -2217,7 +2572,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 52,
+      "rank": 61,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
     {
@@ -2254,7 +2609,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 53,
+      "rank": 62,
       "id": "health2tech-cleveland-health2tech"
     },
     {
@@ -2291,7 +2646,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 54,
+      "rank": 63,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
     {
@@ -2329,7 +2684,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 55,
+      "rank": 64,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
     {
@@ -2366,7 +2721,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 56,
+      "rank": 65,
       "id": "sxsw-pitch-2027-sxsw"
     },
     {
@@ -2409,7 +2764,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 57,
+      "rank": 66,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
     },
     {
@@ -2447,7 +2802,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 58,
+      "rank": 67,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
     {
@@ -2491,7 +2846,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 59,
+      "rank": 68,
       "id": "chris-chartier-the-righteous-path-substack"
     },
     {
@@ -2534,7 +2889,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 60,
+      "rank": 69,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
     {
@@ -2576,7 +2931,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 61,
+      "rank": 70,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
     {
@@ -2621,7 +2976,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 62,
+      "rank": 71,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
     {
@@ -2664,7 +3019,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 63,
+      "rank": 72,
       "id": "fitabase-fitabase-small-steps-labs"
     },
     {
@@ -2702,7 +3057,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 64,
+      "rank": 73,
       "id": "golden-seeds-golden-seeds"
     },
     {
@@ -2739,7 +3094,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 65,
+      "rank": 74,
       "id": "hax-sosv"
     },
     {
@@ -2781,8 +3136,46 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 66,
+      "rank": 75,
       "id": "invi-mindhealth-invi-mindhealth"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed (earliest stage)",
+      "geo": "New York, NY",
+      "deadline": null,
+      "warm_path": "Reply directly to the post's own criteria. Co-author Ashley Pimlott is Cade's MBA Venture Fellow (Columbia). No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Isabel Glass",
+      "org": "Cade Ventures",
+      "role": "Chief of Staff & Investor",
+      "why": "Glass co-wrote Cade's June 2026 post 'Why we haven't invested in a wearable yet', which lists what would change their minds: a better feedback loop, integrations, and something incumbents can't build as a feature. Cade backs health tech and connected hardware at the earliest stage.",
+      "why_now": "2026-06-23: Cade's wearables post (Glass and Ashley Pimlott)",
+      "evidence": [
+        "https://www.cadeventure.com/news/why-we-havent-invested-in-a-wearable-yet",
+        "https://www.linkedin.com/in/isabelglass"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/isabelglass",
+      "fit": 8,
+      "ask": "20-minute call to test Vybe against the criteria in Cade's post",
+      "opener": "Isabel, your post said users switch wearables for better features and integrations, and that the decision layer is missing. Vybe, in Akron, Ohio, is a screenless ECG/HRV band whose signals developers license through an SDK/API, so app builders own that decision layer. DevKit v0.1 goes to 5-10 design partners this year. Would you give us 20 minutes to test it against your criteria?",
+      "last_signal_date": "2026-06-23",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "dev-platform",
+        "pre-seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 76,
+      "id": "isabel-glass-cade-ventures"
     },
     {
       "name": "JumpStart Trailblazer HealthTech Accelerator",
@@ -2819,7 +3212,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 67,
+      "rank": 77,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
     {
@@ -2857,7 +3250,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 68,
+      "rank": 78,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
     {
@@ -2894,7 +3287,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 79,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
     {
@@ -2939,7 +3332,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 70,
+      "rank": 80,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
     {
@@ -2982,7 +3375,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 71,
+      "rank": 81,
       "id": "noop-ryanbr-noop-open-source"
     },
     {
@@ -3024,7 +3417,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 72,
+      "rank": 82,
       "id": "neurovus-neurovus"
     },
     {
@@ -3062,7 +3455,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 73,
+      "rank": 83,
       "id": "open-wearables-momentum-open-wearables-project"
     },
     {
@@ -3099,7 +3492,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 74,
+      "rank": 84,
       "id": "qualcomm-ventures-qualcomm"
     },
     {
@@ -3136,7 +3529,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 75,
+      "rank": 85,
       "id": "quinn-li-qualcomm-ventures"
     },
     {
@@ -3174,8 +3567,45 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 76,
+      "rank": 86,
       "id": "redalpine-redalpine"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "New York, NY",
+      "deadline": null,
+      "warm_path": "Go through Isabel Glass, who co-wrote the post, or Cade venture partners Tom Cortese and Adam Cue (ex-Peloton operators). No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Ryan Engel",
+      "org": "Cade Ventures",
+      "role": "Founder & Managing Partner",
+      "why": "Engel founded and runs Cade, an operator-led fund (he came from Peloton) that published a wearable thesis in June 2026. His LinkedIn lists recent pre-seed health and wellness checks (Headquarters Health 2025, Alnu Health 2025).",
+      "why_now": "2026-06-23: Cade wearable thesis post; Cade AGM Mar 2026 (LinkedIn)",
+      "evidence": [
+        "https://www.linkedin.com/in/ryan-engel-b1566065",
+        "https://www.cadeventure.com/news/why-we-havent-invested-in-a-wearable-yet"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/ryan-engel-b1566065",
+      "fit": 8,
+      "ask": "20-minute call on what would make Cade's first wearable investment",
+      "opener": "Ryan, Cade's post on why you haven't backed a wearable yet was the most useful investor writing I've read this year. Vybe, in Akron, Ohio, isn't trying to be a better WHOOP. It's a screenless ECG/HRV band with no subscription, and developers license its signals through an SDK/API. DevKit v0.1 goes to 5-10 design partners this year. Would you be open to a 20-minute conversation?",
+      "last_signal_date": "2026-06-23",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "pre-seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 87,
+      "id": "ryan-engel-cade-ventures"
     },
     {
       "name": "Ultrahuman x HYROX Bengaluru (title partner)",
@@ -3216,7 +3646,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 88,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
     {
@@ -3256,7 +3686,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 78,
+      "rank": 89,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
     {
@@ -3298,7 +3728,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 90,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
     {
@@ -3342,7 +3772,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 80,
+      "rank": 91,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
     {
@@ -3380,7 +3810,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 81,
+      "rank": 92,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
     {
@@ -3421,7 +3851,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 82,
+      "rank": 93,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
     {
@@ -3459,7 +3889,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 83,
+      "rank": 94,
       "id": "r-quantifiedself-reddit"
     },
     {
@@ -3500,7 +3930,7 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 95,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
     {
@@ -3542,7 +3972,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 85,
+      "rank": 96,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
     {
@@ -3583,7 +4013,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 86,
+      "rank": 97,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
     {
@@ -3621,8 +4051,45 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 87,
+      "rank": 98,
       "id": "accelerating-angels-accelerating-angels"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "seed",
+      "geo": "Los Angeles, CA",
+      "deadline": null,
+      "warm_path": "He is a Midwest alum (WashU in St. Louis, BS Mechanical Engineering, Formula SAE president). That's a loose Midwest/engineering hook, not an Ohio tie.",
+      "confidence": "verified",
+      "name": "Achal Upadhyaya",
+      "org": "Interlagos",
+      "role": "Founder & CEO",
+      "why": "Interlagos led Adaptyx's $14M seed for a continuous multi-analyte biowearable, and Upadhyaya gave the lead-investor quote. He is a former SpaceX senior engineer who backs novel sensing hardware.",
+      "why_now": "2025-10-20: Interlagos leads Adaptyx $14M seed",
+      "evidence": [
+        "https://www.globenewswire.com/news-release/2025/10/20/3169287/0/en/Adaptyx-Raises-14M-in-Seed-Financing-to-Launch-Wearable-Platform-for-Continuous-Multi-Analyte-Molecular-Monitoring.html",
+        "https://www.linkedin.com/in/achalsu"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/achalsu",
+      "fit": 8,
+      "ask": "20-minute call on hardware risk at the wearable seed stage",
+      "opener": "Achal, your Adaptyx quote on new devices that sense biological data is why I'm writing. Vybe, in Akron, Ohio, is a screenless ECG/HRV band with a licensed SDK/API, built so developers get clean raw signals. We're an engineering-first team, and DevKit v0.1 goes to 5-10 design partners this year. Would you be up for 20 minutes on how Interlagos weighs hardware risk at seed?",
+      "last_signal_date": "2025-10-20",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 99,
+      "id": "achal-upadhyaya-interlagos"
     },
     {
       "name": "Amazfit Helio Strap ($99) and Helio Strap Pro for HYROX",
@@ -3664,7 +4131,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 100,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
     {
@@ -3707,7 +4174,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 101,
       "id": "barrett-piper-west-licking-oh-fire-district"
     },
     {
@@ -3750,7 +4217,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 90,
+      "rank": 102,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
     {
@@ -3787,7 +4254,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 91,
+      "rank": 103,
       "id": "conor-allison-wareable"
     },
     {
@@ -3829,7 +4296,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 92,
+      "rank": 104,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
     {
@@ -3870,7 +4337,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 105,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
     {
@@ -3907,7 +4374,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 94,
+      "rank": 106,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
     {
@@ -3944,7 +4411,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 95,
+      "rank": 107,
       "id": "healthtech-capital-healthtech-capital"
     },
     {
@@ -3980,7 +4447,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 96,
+      "rank": 108,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
     {
@@ -4022,7 +4489,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 109,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
     {
@@ -4059,8 +4526,48 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 98,
+      "rank": 110,
       "id": "julien-blin-the-upside-newsletter"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": "$750K-$1.5M (Humba site)",
+      "stage": "pre-seed/seed",
+      "geo": "San Francisco Bay Area",
+      "deadline": null,
+      "warm_path": "Humba's defense/aerospace theme overlaps Vybe's tactical lane. Co-partner Anna-Sofia Lesiv writes Humba's 'How It's Built' series, a possible content route. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Leo Polovets",
+      "org": "Humba Ventures",
+      "role": "Co-founder & General Partner",
+      "why": "Humba invested in Adaptyx's $14M biowearable seed and lists 'hardware device for continuous biomarker monitoring' in its portfolio. It writes $750K-$1.5M hard-tech checks and also covers defense.",
+      "why_now": "2025-10-20: Humba in Adaptyx $14M seed",
+      "evidence": [
+        "https://humbaventures.com/",
+        "https://www.globenewswire.com/news-release/2025/10/20/3169287/0/en/Adaptyx-Raises-14M-in-Seed-Financing-to-Launch-Wearable-Platform-for-Continuous-Multi-Analyte-Molecular-Monitoring.html",
+        "https://techcrunch.com/2024/12/12/humba-ventures-raises-a-40-million-fund-to-invest-in-deeptech-defense-tech/"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://humbaventures.com/",
+      "fit": 8,
+      "ask": "20-minute call on Humba's hardware-products theme",
+      "opener": "Leo, Humba's line about backing hardware others won't build caught my eye. Vybe, in Akron, Ohio, is a screenless ECG/HRV band that developers license through an SDK/API, with tactical and performance teams among our early design partners. DevKit v0.1 goes to 5-10 partners this year. Would you have 20 minutes to talk through whether it fits Humba's hardware-products theme?",
+      "last_signal_date": "2025-10-20",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "tactical",
+        "pre-seed",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 111,
+      "id": "leo-polovets-humba-ventures"
     },
     {
       "name": "Lunar Ventures",
@@ -4096,7 +4603,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 112,
       "id": "lunar-ventures-lunar-ventures"
     },
     {
@@ -4132,8 +4639,47 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 113,
       "id": "michael-l-hicks-android-central"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "Berlin, Germany",
+      "deadline": null,
+      "warm_path": "His May 2025 LinkedIn post invites technical founders to email Lunar's hello@ address as written there. Emm co-investor Harpreet Rai (ex-Oura CEO, angels.json) is an intro route. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Mick Halsband",
+      "org": "Lunar Ventures",
+      "role": "Founding Partner & CTO (General Partner)",
+      "why": "Halsband was the Lunar partner quoted on its lead of Emm's $9M seed for a sensor-embedded smart menstrual cup (biowearable). Lunar backs technical founders in hard domains and says commercial proof isn't required.",
+      "why_now": "2025-11-19: Lunar leads Emm $9M seed; Halsband quoted",
+      "evidence": [
+        "https://www.setsquared.co.uk/emm-raises-over-9-million-6-8m-to-launch-worlds-first-smart-menstrual-solution/",
+        "https://www.linkedin.com/posts/lunar-ventures_techbio-womenshealth-femtech-activity-7396900702352084992-v_DD",
+        "https://www.linkedin.com/in/mickhalsband"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.linkedin.com/in/mickhalsband",
+      "fit": 8,
+      "ask": "Short call on whether a US sensor-platform company fits Lunar",
+      "opener": "Mick, your Emm quote said Lunar backs hard engineering in data and biological systems, and that commercial proof isn't required. Vybe, in Akron, Ohio, is a screenless ECG/HRV band whose raw signals developers license through an SDK/API. The hard part is clean signal and an open data layer, and DevKit v0.1 goes to 5-10 design partners this year. Would you be open to a short conversation?",
+      "last_signal_date": "2025-11-19",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "women-founders",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 114,
+      "id": "mick-halsband-lunar-ventures"
     },
     {
       "name": "Mohican Trail Run 2027 (Mohican 100)",
@@ -4174,7 +4720,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 101,
+      "rank": 115,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
     },
     {
@@ -4210,7 +4756,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 102,
+      "rank": 116,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
     {
@@ -4255,7 +4801,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 117,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
     {
@@ -4297,7 +4843,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 118,
       "id": "openstrap-openstrap-open-source"
     },
     {
@@ -4341,8 +4887,48 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 105,
+      "rank": 119,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "Helsinki, Finland",
+      "deadline": null,
+      "warm_path": "His LinkedIn asks people not to message him there. Use an intro via Oura co-founders (Petteri Lahtela and Virpi Tuomivaara are in angels.json). No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Petteri Koponen",
+      "org": "Lifeline Ventures",
+      "role": "Founding Partner",
+      "why": "Lifeline was Oura's first institutional investor: seed in 2015, then Series A, B and C. It is a sector-agnostic pre-seed/seed fund, and Koponen still posts Oura milestones.",
+      "why_now": "2025-09-22: Koponen posts Oura milestone (5.5M rings sold); Oura IPO postponed 2026-09-29",
+      "evidence": [
+        "https://www.lifelineventures.com/companies/",
+        "https://www.lifelineventures.com/",
+        "https://www.linkedin.com/posts/petterikoponen_%C5%8Dura-has-progressed-exceptionally-well-and-activity-7375922680291643392-on4s",
+        "https://www.linkedin.com/in/petterikoponen"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://www.lifelineventures.com/",
+      "fit": 8,
+      "ask": "Intro via an Oura co-founder for a 20-minute call",
+      "opener": "Petteri, Lifeline wrote Oura's first seed check when a sleep ring was an odd idea. I'm building Vybe in Akron, Ohio: a screenless ECG/HRV band with a licensed SDK/API, so developers can build on raw signals instead of a closed app. DevKit v0.1 goes to 5-10 design partners this year. I know Lifeline is Helsinki-first, but I'd value 20 minutes of your view on early wearable platforms. Open to a call?",
+      "last_signal_date": "2025-09-22",
+      "tags": [
+        "wearables",
+        "sleep",
+        "pre-seed",
+        "seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 120,
+      "id": "petteri-koponen-lifeline-ventures"
     },
     {
       "name": "Point Nine",
@@ -4378,7 +4964,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 121,
       "id": "point-nine-point-nine"
     },
     {
@@ -4415,7 +5001,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 107,
+      "rank": 122,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
     {
@@ -4454,7 +5040,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 108,
+      "rank": 123,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
     {
@@ -4497,7 +5083,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 109,
+      "rank": 124,
       "id": "reach-fitness-reach-fitness-ohio"
     },
     {
@@ -4534,7 +5120,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 110,
+      "rank": 125,
       "id": "rev1-ventures-rev1-ventures"
     },
     {
@@ -4571,7 +5157,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 111,
+      "rank": 126,
       "id": "robb-sutton-robbsutton-com"
     },
     {
@@ -4612,7 +5198,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 112,
+      "rank": 127,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
     {
@@ -4650,7 +5236,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 113,
+      "rank": 128,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
     {
@@ -4692,7 +5278,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 114,
+      "rank": 129,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
     {
@@ -4728,7 +5314,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 115,
+      "rank": 130,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
     {
@@ -4765,8 +5351,46 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 116,
+      "rank": 131,
       "id": "t3-performance-t3-performance"
+    },
+    {
+      "type": "vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": "pre-seed/seed",
+      "geo": "New York (Long Island)",
+      "deadline": null,
+      "warm_path": "Theta is a Midwest (Chicago/UChicago Polsky) deal, so Midwest wearable founders are in his network. He is also involved with PhyCap Fund (physician LPs). No direct Ohio tie found.",
+      "confidence": "verified",
+      "name": "Timothy Martens",
+      "org": "Vaark Ventures",
+      "role": "Co-Founder & Syndicate Lead",
+      "why": "Martens is named as Vaark's lead on Theta Neurotech's pre-seed for a behind-the-ear EEG wearable (Chicago). He is a practicing congenital heart surgeon who also invests with PhyCap Fund, so he is a clinician-investor who can judge ECG signal quality.",
+      "why_now": "2026-03-18: Theta Neurotech pre-seed led by Vaark (Martens named); Neurofounders coverage 2026-04-04",
+      "evidence": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7440071659216158720",
+        "https://www.neurofounders.co/articles/theta-neuro-raises-2m-pre-seed-for-wearable-seizure-prediction",
+        "https://www.linkedin.com/in/timothy-martens-70311418"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/timothy-martens-70311418",
+      "fit": 8,
+      "ask": "20-minute call; clinician feedback on the DevKit's ECG data",
+      "opener": "Dr. Martens, I saw Vaark led Theta Neurotech's wearable EEG pre-seed. Vybe, in Akron, Ohio, is a screenless ECG/HRV band for everyday wellness use. Developers and researchers license its signals through an SDK/API, and DevKit v0.1 goes to 5-10 design partners this year. Given your cardiac background, would you be open to a 20-minute conversation about the company and what you'd look for at pre-seed?",
+      "last_signal_date": "2026-04-04",
+      "tags": [
+        "wearables",
+        "ecg",
+        "pre-seed"
+      ],
+      "lane": "vc_wave2",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 132,
+      "id": "timothy-martens-vaark-ventures"
     },
     {
       "name": "True Ventures",
@@ -4802,7 +5426,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 133,
       "id": "true-ventures-true-ventures"
     },
     {
@@ -4848,7 +5472,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 118,
+      "rank": 134,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
     {
@@ -4884,7 +5508,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 119,
+      "rank": 135,
       "id": "vaark-ventures-vaark-ventures"
     },
     {
@@ -4927,7 +5551,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 120,
+      "rank": 136,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
     {
@@ -4964,7 +5588,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 121,
+      "rank": 137,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
     },
     {
@@ -5004,7 +5628,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 122,
+      "rank": 138,
       "id": "mydatahelps-careevolution"
     },
     {
@@ -5046,7 +5670,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 123,
+      "rank": 139,
       "id": "synheart-synheart-mila-ventures"
     },
     {
@@ -5087,7 +5711,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 124,
+      "rank": 140,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
     {
@@ -5130,7 +5754,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 125,
+      "rank": 141,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
     {
@@ -5172,7 +5796,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 142,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
     {
@@ -5214,7 +5838,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 127,
+      "rank": 143,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
     {
@@ -5252,7 +5876,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 144,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
     {
@@ -5289,7 +5913,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 129,
+      "rank": 145,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
     {
@@ -5327,7 +5951,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 130,
+      "rank": 146,
       "id": "aix-ventures-aix-ventures"
     },
     {
@@ -5364,7 +5988,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 131,
+      "rank": 147,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
     {
@@ -5406,8 +6030,46 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 132,
+      "rank": 148,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
+    },
+    {
+      "type": "corporate-vc",
+      "hunt": "investor",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": "Bengaluru, India (Qualcomm Ventures, San Diego HQ)",
+      "deadline": null,
+      "warm_path": "He is based in Bengaluru and covers India, so expect him to route a US company to US colleagues. The Quinn Li row in vc.json is the global-head path. No Ohio tie found.",
+      "confidence": "verified",
+      "name": "Anirvan Chowdhury",
+      "org": "Qualcomm Ventures",
+      "role": "Investment Director; Ultrahuman board observer",
+      "why": "Chowdhury wrote Qualcomm Ventures' 'Beyond the Ring' memo on Qualcomm's lead of Ultrahuman's $70M round and sits as Ultrahuman's board observer. The memo backs wearables as computing platforms with edge AI.",
+      "why_now": "2026-09-24: 'Why we invested in Ultrahuman' post; round announced 2026-09-04",
+      "evidence": [
+        "https://www.qualcommventures.com/insights/blog/beyond-the-ring-why-we-invested-in-ultrahuman/",
+        "https://www.linkedin.com/in/anirvan-chowdhury-871a9513"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/anirvan-chowdhury-871a9513",
+      "fit": 7,
+      "ask": "15-minute call, or a referral to the right US Qualcomm Ventures colleague, on wearables as a developer platform",
+      "opener": "Anirvan, your Ultrahuman memo argued wearables become computing platforms once sensing and edge AI mature. That's our bet too. Vybe, in Akron, Ohio, is a screenless ECG/HRV band whose signals third-party developers license through an SDK/API, and DevKit v0.1 goes to 5-10 design partners this year. Could we have a short conversation, or could you point me to the right US colleague?",
+      "last_signal_date": "2026-09-24",
+      "tags": [
+        "wearables",
+        "dev-platform",
+        "corporate-vc",
+        "hrv"
+      ],
+      "lane": "vc_wave2",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 149,
+      "id": "anirvan-chowdhury-qualcomm-ventures"
     },
     {
       "name": "Bill Gordon",
@@ -5443,7 +6105,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 133,
+      "rank": 150,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
     {
@@ -5480,7 +6142,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 134,
+      "rank": 151,
       "id": "blume-ventures-blume-ventures"
     },
     {
@@ -5523,7 +6185,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 135,
+      "rank": 152,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
     {
@@ -5560,7 +6222,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 136,
+      "rank": 153,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
     {
@@ -5603,7 +6265,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 137,
+      "rank": 154,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
     },
     {
@@ -5639,7 +6301,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 138,
+      "rank": 155,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
     {
@@ -5682,7 +6344,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 156,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
     {
@@ -5718,7 +6380,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 140,
+      "rank": 157,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
     {
@@ -5753,7 +6415,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 141,
+      "rank": 158,
       "id": "humba-ventures-humba-ventures"
     },
     {
@@ -5790,7 +6452,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 142,
+      "rank": 159,
       "id": "jumpstart-ventures-jumpstart-inc"
     },
     {
@@ -5825,7 +6487,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 143,
+      "rank": 160,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
     {
@@ -5866,7 +6528,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 161,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
     {
@@ -5910,7 +6572,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 145,
+      "rank": 162,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
     {
@@ -5947,7 +6609,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 163,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
     {
@@ -5988,7 +6650,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 147,
+      "rank": 164,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
     {
@@ -6032,7 +6694,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 148,
+      "rank": 165,
       "id": "pace-pace-pacetraining-co"
     },
     {
@@ -6069,7 +6731,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 149,
+      "rank": 166,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
     {
@@ -6111,7 +6773,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 167,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
     {
@@ -6148,7 +6810,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 151,
+      "rank": 168,
       "id": "samsung-next-samsung-electronics"
     },
     {
@@ -6189,7 +6851,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 152,
+      "rank": 169,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
     {
@@ -6230,7 +6892,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 170,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
     {
@@ -6265,7 +6927,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 154,
+      "rank": 171,
       "id": "veteran-angel-network-van-context-ventures"
     },
     {
@@ -6302,7 +6964,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 155,
+      "rank": 172,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
     {
@@ -6343,7 +7005,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 156,
+      "rank": 173,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
     {
@@ -6380,7 +7042,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 157,
+      "rank": 174,
       "id": "wearable-data-builders-by-rook-rook"
     },
     {
@@ -6416,7 +7078,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 175,
       "id": "r-hyrox-reddit"
     },
     {
@@ -6458,7 +7120,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 159,
+      "rank": 176,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
     {
@@ -6495,7 +7157,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 160,
+      "rank": 177,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
     {
@@ -6537,7 +7199,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 161,
+      "rank": 178,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
     {
@@ -6580,7 +7242,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 162,
+      "rank": 179,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
     {
@@ -6623,7 +7285,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 163,
+      "rank": 180,
       "id": "austin-womack-rugged-athlete-training"
     },
     {
@@ -6665,7 +7327,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 181,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
     {
@@ -6703,7 +7365,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 165,
+      "rank": 182,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
     {
@@ -6741,7 +7403,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 166,
+      "rank": 183,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
     {
@@ -6778,7 +7440,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 184,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
     {
@@ -6815,7 +7477,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 168,
+      "rank": 185,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
     {
@@ -6854,7 +7516,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 169,
+      "rank": 186,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
     {
@@ -6895,7 +7557,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 170,
+      "rank": 187,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
     {
@@ -6940,7 +7602,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 171,
+      "rank": 188,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
     {
@@ -6976,7 +7638,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 172,
+      "rank": 189,
       "id": "greg-morris-gregmorris-co-uk"
     },
     {
@@ -7018,7 +7680,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 173,
+      "rank": 190,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
     {
@@ -7054,7 +7716,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 174,
+      "rank": 191,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
     {
@@ -7096,7 +7758,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 175,
+      "rank": 192,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
     {
@@ -7131,7 +7793,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 176,
+      "rank": 193,
       "id": "interlagos-interlagos"
     },
     {
@@ -7168,7 +7830,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 194,
       "id": "inventure-inventure-vc"
     },
     {
@@ -7204,7 +7866,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 178,
+      "rank": 195,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
     {
@@ -7240,7 +7902,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 179,
+      "rank": 196,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
     {
@@ -7284,7 +7946,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 180,
+      "rank": 197,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
     {
@@ -7325,7 +7987,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 198,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
     {
@@ -7366,7 +8028,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 182,
+      "rank": 199,
       "id": "oura-x-usta-us-open-oura"
     },
     {
@@ -7401,7 +8063,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 183,
+      "rank": 200,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
     {
@@ -7442,7 +8104,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 184,
+      "rank": 201,
       "id": "polar-x-team-essent-speed-skating-polar"
     },
     {
@@ -7479,7 +8141,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 185,
+      "rank": 202,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
     {
@@ -7521,7 +8183,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 186,
+      "rank": 203,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
     },
     {
@@ -7563,7 +8225,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 187,
+      "rank": 204,
       "id": "sweatid-sweatid"
     },
     {
@@ -7603,7 +8265,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 188,
+      "rank": 205,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
     {
@@ -7640,7 +8302,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 189,
+      "rank": 206,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
     {
@@ -7681,7 +8343,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 207,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
     {
@@ -7723,7 +8385,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 191,
+      "rank": 208,
       "id": "withings-x-boston-10k-for-women-withings"
     },
     {
@@ -7763,7 +8425,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 192,
+      "rank": 209,
       "id": "pulsetto-pulsetto"
     },
     {
@@ -7803,7 +8465,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 210,
       "id": "sahha-sahha"
     },
     {
@@ -7845,7 +8507,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 194,
+      "rank": 211,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
     {
@@ -7880,7 +8542,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 195,
+      "rank": 212,
       "id": "37-angels-37-angels"
     },
     {
@@ -7922,7 +8584,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 213,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
     {
@@ -7963,7 +8625,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 197,
+      "rank": 214,
       "id": "akron-running-project-akron-marathon-race-series"
     },
     {
@@ -7999,7 +8661,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 198,
+      "rank": 215,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
     {
@@ -8035,7 +8697,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 199,
+      "rank": 216,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
     {
@@ -8078,7 +8740,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 200,
+      "rank": 217,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
     {
@@ -8113,7 +8775,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 201,
+      "rank": 218,
       "id": "dvc-health-duro-ventures-collective"
     },
     {
@@ -8150,7 +8812,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 202,
+      "rank": 219,
       "id": "elevate-human-performance-elevate-human-performance"
     },
     {
@@ -8191,7 +8853,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 203,
+      "rank": 220,
       "id": "garmin-x-usa-triathlon-garmin"
     },
     {
@@ -8226,7 +8888,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 204,
+      "rank": 221,
       "id": "hpa-hyde-park-angels-hpa"
     },
     {
@@ -8262,7 +8924,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 205,
+      "rank": 222,
       "id": "heather-landi-fierce-healthcare"
     },
     {
@@ -8303,7 +8965,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 206,
+      "rank": 223,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
     {
@@ -8339,7 +9001,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 207,
+      "rank": 224,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
     {
@@ -8381,7 +9043,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 208,
+      "rank": 225,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
     {
@@ -8417,7 +9079,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 209,
+      "rank": 226,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
     {
@@ -8458,7 +9120,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 227,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
     {
@@ -8493,7 +9155,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 211,
+      "rank": 228,
       "id": "life-science-angels-life-science-angels"
     },
     {
@@ -8528,7 +9190,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 212,
+      "rank": 229,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
     {
@@ -8565,7 +9227,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 230,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
     {
@@ -8602,7 +9264,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 231,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
     {
@@ -8638,7 +9300,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 215,
+      "rank": 232,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
     {
@@ -8680,7 +9342,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 216,
+      "rank": 233,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
     {
@@ -8721,7 +9383,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 234,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
     {
@@ -8762,7 +9424,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 235,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
     {
@@ -8803,7 +9465,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 219,
+      "rank": 236,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
     {
@@ -8838,7 +9500,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 220,
+      "rank": 237,
       "id": "sand-hill-angels-sand-hill-angels"
     },
     {
@@ -8879,7 +9541,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 238,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
     },
     {
@@ -8915,7 +9577,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 222,
+      "rank": 239,
       "id": "startup-health-syndicate-startup-health"
     },
     {
@@ -8951,7 +9613,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 240,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
     {
@@ -8994,7 +9656,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 224,
+      "rank": 241,
       "id": "suunto-x-utmb-world-series-suunto"
     },
     {
@@ -9034,7 +9696,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 242,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
     {
@@ -9076,7 +9738,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 243,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
     },
     {
@@ -9113,7 +9775,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 227,
+      "rank": 244,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
     {
@@ -9155,7 +9817,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 245,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
     {
@@ -9196,7 +9858,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 246,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
     },
     {
@@ -9235,7 +9897,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 230,
+      "rank": 247,
       "id": "digital-health-digital-health"
     },
     {
@@ -9278,7 +9940,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 231,
+      "rank": 248,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
     {
@@ -9319,7 +9981,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 249,
       "id": "notus-labs-notus-labs"
     },
     {
@@ -9359,7 +10021,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 250,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
     {
@@ -9398,7 +10060,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 234,
+      "rank": 251,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
     {
@@ -9438,7 +10100,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 235,
+      "rank": 252,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
     {
@@ -9479,7 +10141,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 253,
       "id": "coros-x-jakob-ingebrigtsen-coros"
     },
     {
@@ -9520,7 +10182,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 237,
+      "rank": 254,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
     {
@@ -9561,7 +10223,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 255,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
     {
@@ -9602,7 +10264,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 256,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
     },
     {
@@ -9644,7 +10306,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 257,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
     {
@@ -9685,7 +10347,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 241,
+      "rank": 258,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
     {
@@ -9726,7 +10388,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 259,
       "id": "jacob-hart-independent-ultrarunner"
     },
     {
@@ -9762,7 +10424,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 243,
+      "rank": 260,
       "id": "jessica-hagen-mobihealthnews"
     },
     {
@@ -9803,7 +10465,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 244,
+      "rank": 261,
       "id": "john-miller-stormbound-crossfit"
     },
     {
@@ -9845,7 +10507,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 262,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
     {
@@ -9887,7 +10549,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 263,
       "id": "oura-x-u-s-soccer-oura"
     },
     {
@@ -9929,7 +10591,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 247,
+      "rank": 264,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
     {
@@ -9970,7 +10632,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 248,
+      "rank": 265,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
     {
@@ -10011,7 +10673,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 266,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
     {
@@ -10052,7 +10714,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 267,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
     {
@@ -10093,7 +10755,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 268,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
   ],
