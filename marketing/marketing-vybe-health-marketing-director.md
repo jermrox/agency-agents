@@ -401,4 +401,4 @@ When a job needs depth beyond this file, hand it to the matching agent and bring
 - **General availability**: app store launch, paid at scale, partner co-marketing, enterprise and research narratives, an owned podcast if the guest circuit proves demand.
 
 ### The Two-Product Test
-Every week's plan is checked against one question: does it market both the band and the SDK? A week that only sells the band forgets the company. A week that only sells the SDK forgets the proof.
+Every week's plan is checked against one question: does it market both the band and the SDK? A week that only sells the band forgets the company. A week that only sells the SDK forgets the proof. The weekly test does not excuse a single piece leaving out the second line of its row in the channel table in `vybe-marketing/concept.md`.

@@ -41,12 +41,17 @@ build what's possible with it."**
 
 These come from the prototype app. They are design commitments, not shipped
 features. In public copy say "built to" or "designed to" until the founder
-confirms each one has shipped. Claim Register rows 14 to 18 in
-`brand-brief.md` track them.
+confirms each one has shipped. Claim Register rows 14 to 17 in
+`brand-brief.md` track them; row 18 covers the platform direction.
+
+**The example sentences are internal illustrations, not approved copy.**
+Public copy may quote one only when it is labelled "prototype, sample data".
+Every example names more than one explanation, because a change in HRV or
+recovery has no single cause (evidence library, `brand-brief.md`).
 
 | # | Promise | What it looks like in the product |
 |---|---|---|
-| 1 | **The answer comes first, as a sentence** | "You are less recovered than usual, and the likeliest reason is the 1am bedtime after Saturday." The readings sit underneath as evidence. |
+| 1 | **The answer comes first, as a sentence** | "You are less recovered than usual. The 1am bedtime after Saturday fits best; Friday's hard session fits too, and Vybe can't rule out an oncoming cold." The readings sit underneath as evidence. |
 | 2 | **Confidence is stated in words, with its reason** | "Moderate confidence — three nights of data since the change, and one known context event." Never a percentage. |
 | 3 | **It shows what it could not see** | "What Vybe could not see: whether the late nights were work or choice, anything you drank, how you actually feel today." |
 | 4 | **It grades its own advice** | The criterion is written down before the attempt. The record is a fraction ("4 of 7"), and there is a section called "What Vybe got wrong". |
@@ -121,12 +126,12 @@ Two-Product Test in the agent file).
 Run all eight questions before any copy ships. The agent writes the answers
 in one line each under the draft.
 
-1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)?
+1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece.
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
-6. **Claims.** Is every claim in the Claim Register at the right status, with "designed to" wording for design commitments?
+6. **Claims.** Is every claim in the Claim Register at the right status? "Designed to" applies to **every sentence** that asserts rows 14 to 17, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
 7. **Roadmap.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact?
 8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know".
 
@@ -154,6 +159,17 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Concept test, round 1.** The agent knew the concept (12/12)
+  but failed all three cold copy cases (12 to 13 of 18). It hedged a design
+  commitment once, then wrote it in the present tense in the call to action.
+  It copied this file's single-cause example answer. It dropped the second
+  line of its channel row. **Changes:**
+  - the examples are marked as illustrations and now name competing explanations;
+  - check Q1 requires both columns of the row;
+  - check Q6 applies "designed to" to every sentence.
+
+  Lesson: an example in this file becomes copy, so every example must pass
+  the same rules as copy.
 - **2026-10-03. LinkedIn company page miss.** The first tagline I drafted
   ("Private, screenless health intelligence. Five signals read against your
   own baseline. Your data stays yours.") failed three checks:
