@@ -12,6 +12,7 @@ person in charge of the table and the bot in charge of the alarm.
 from __future__ import annotations
 
 import json
+from dataclasses import asdict
 import os
 import sys
 import urllib.error
@@ -25,6 +26,9 @@ from tactical_research.watch import missing_flags, report, stale_flags, sweep  #
 HERE = Path(__file__).resolve().parent
 STANDARDS = HERE / "tactical_research" / "standards.json"
 SNAPSHOT = HERE / "standards-snapshot.json"
+# The flags the board shows beside each row. Overwritten every run, so a flag
+# stays up only while the watcher still sees the change unacknowledged.
+FLAGS = HERE / "standards-flags.json"
 
 # Several .mil and .gov hosts sit behind filters that refuse a bare urllib
 # request outright. A full browser header set clears some of them; the ones it
@@ -93,6 +97,14 @@ def main() -> int:
     print("\n" + text)
 
     SNAPSHOT.write_text(json.dumps(updated, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    FLAGS.write_text(
+        json.dumps(
+            {"flags": [{**asdict(flag), "line": flag.line()} for flag in flags]},
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:

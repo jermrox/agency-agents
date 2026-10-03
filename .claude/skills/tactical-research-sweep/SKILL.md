@@ -26,6 +26,44 @@ Two rules run the whole routine:
 2. **No link, no claim.** Every entry says where its text came from — a fetched document,
    or a search-result snippet. Those are not the same thing and the board must not blur them.
 
+## The live board follows the v2 brief — read this first
+
+`agentresearchsum.netlify.app` is built to *Tactical HP Board: Brief for the Coder (v2)*,
+13 SEP 2026, which supersedes every earlier brief. Where it conflicts with Steps 3–4 below
+(evidence grades, caveats, the citation banner, the fetch-verified counter, the Squarespace
+template), **the brief wins for the board**. Steps 3–4 still describe the weekly summary.
+
+The engine is `research-board/` (see its README). The routine:
+
+1. Read `LEARNINGS.md` in this folder, then sweep the **last 30 days** across MIL, FIRE, EMS,
+   LE and CROSS, using `research-board/tactical_research/sources.json` (sources with a sector
+   field) and its `search_vocabulary` for the non-military sectors.
+2. **The document is the item, never the coverage.** Resolve every sighting to its official
+   host by identifier (DoDI/DoWI → esd.whs.mil, AR/Army Directive → armypubs, MARADMIN/NAVADMIN
+   → marines.mil / mynavyhr, DOI/PMID → journal/PubMed, NFPA number → nfpa.org, docket →
+   regulations.gov / federalregister.gov, GAO number → gao.gov). One item per document;
+   articles go in `coverage_urls`. A change message folds into its base; a replacing document
+   sets `supersedes`. Only events and program announcements may stand on coverage.
+3. **Write each blurb from the fetched primary document.** WebFetch and curl are blocked in
+   the cloud sandbox; `mcp__Exa__web_fetch_exa` reads pages and PDFs (incl. .mil) and the PubMed
+   connector reads abstracts. No document read, no item.
+4. Voice: a well-informed peer. Plain-English headline (not the document title), two to four
+   sentences: what happened, who it affects, why it matters to someone doing this work.
+   "Reported" once if unconfirmed. Program and funding items are hiring signals — say so.
+5. Schema (`tactical_research/models.py`): one type (Research / Policy / News), one sector,
+   one to three of the 14 tags, ISO `date_published` from the document, `identifier`,
+   `coverage_urls`, `score` 0–10 (reach × usefulness × hiring signal), `supersedes`.
+6. Merge into `research-board/findings.json` (dedupe by normalised URL and identifier; keep
+   everything — the window and the 12-month archive are computed at render time). Write a
+   plain-English paragraph per hot topic (a tag with 3+ independent items in the window) to
+   `research-board/hot-notes.json` as `{"notes": {"<tag>": "<paragraph>"}}`.
+7. `python research-board/sweep.py --publish` renders and writes
+   `healthcare/dashboards/h2f-scout-board.html` and `h2f-archive.html`. It refuses to render
+   if any item fails validation. Run `python -m pytest research-board/tests -q`.
+8. The standards panel (`tactical_research/standards.json`) is hand-edited. Never let the
+   routine change a row's values; the weekly `watch-standards` workflow only raises flags,
+   which the board shows beside the row.
+
 ## Modes
 
 - **Sweep** (default): sweep → verify → grade → deliver `findings.json` + `tactical-research-board.html`.
