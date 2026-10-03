@@ -63,6 +63,7 @@ RULES = [
     ("privacy-claim", re.compile(
         r"\bshar\w* only\b|\bonly (with|under) [^.]{0,40}\bconsent|\bnothing (is )?shared\b", re.I)),
 ]
+URL = re.compile(r"https?://\S+")
 EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 PHONE = re.compile(r"(?<!\d)(\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)")
 OWN_DOMAINS = ("vybe.health", "example.com", "hydrox.app")  # hydrox: published support address
@@ -171,8 +172,9 @@ def scan(path):
     for sentence, owner in units(path):
         low = sentence.lower()
         allowed = any(m in low for m in ALLOW_MARKERS)
+        text = URL.sub(lambda u: " " * len(u.group(0)), sentence)  # a web address is not copy
         for name, rx in RULES:
-            m = rx.search(sentence)
+            m = rx.search(text)
             if not m:
                 continue
             ok = allowed
