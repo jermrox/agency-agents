@@ -121,3 +121,20 @@ Cycle-1 copy, same grader standard: C5 16, C6 17 and C7 16 (pass).
 - Claims use the Register's own wording ("nothing shared without consent").
 - Search pages open the Vybe section on an unclaimed idea.
 - Device tables carry no per-brand price column, and Vybe's row says "pre-launch" with nothing unconfirmed.
+
+## Search briefs
+
+| Case | Score | Result |
+|---|---|---|
+| S1 What is a good HRV | **17/18** | Pass |
+| S3 Screenless fitness tracker | **16/18** | Pass |
+| S2 WHOOP vs Oura (fair comparison) | **16/18** | Pass |
+
+**S2.** Every WHOOP and Oura fact is sourced from the brand's own pages; the grader confirmed three and found one sourced to an older model.
+
+Weak spots:
+- an unsourced line about both competitors in Vybe's section;
+- a membership point listed as a downside;
+- uneven rows.
+
+New rule: on a vs page, Vybe's section never describes the compared products.
