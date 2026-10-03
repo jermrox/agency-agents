@@ -42,10 +42,10 @@ PALETTE = """
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; background: var(--ground); color: var(--ink);
+  margin: 0; padding: 0 var(--gutter); background: var(--ground); color: var(--ink);
   font: 16px/1.55 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-.wrap { max-width: 900px; margin: 0 auto; padding: 40px var(--gutter) 80px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 0 80px; }
 header h1 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -.01em; }
 header p.sub { margin: 0 0 28px; color: var(--muted); font-size: .95rem; }
 h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; margin: 36px 0 14px; }
@@ -55,7 +55,17 @@ h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; margi
 .hot h2 { margin-top: 0; }
 .hot p { margin: 0 0 14px; }
 .hot p:last-child { margin-bottom: 0; }
-.hot .links a { margin-right: 10px; font-size: .88rem; }
+.hot .topic { padding: 0 0 16px; margin: 0 0 16px; border-bottom: 1px solid var(--rule); }
+.hot .topic:last-of-type { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.hot .topic p { margin: 0 0 8px; }
+.hot ul { margin: 0 0 8px; padding-left: 18px; font-size: .9rem; }
+.hot li { margin: 2px 0; }
+.hot li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule);
+            text-underline-offset: 3px; }
+.hot li a:hover { text-decoration-color: var(--accent); }
+.hot .seeall { font: inherit; font-size: .82rem; padding: 3px 12px; border-radius: 999px; cursor: pointer;
+               border: 1px solid var(--accent); background: var(--ground); color: var(--accent); }
+.hot .also { color: var(--muted); font-size: .85rem; margin: 14px 0 0; }
 .hot .empty { color: var(--muted); }
 
 .controls { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92);
@@ -109,6 +119,18 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--rule);
 
 @media (max-width: 600px) {
   .wrap { padding-top: 24px; }
+  .standards .scroll { border: 0; }
+  /* One swipeable line per facet, so the sticky bar never covers half the screen. */
+  .controls fieldset { min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+                       scrollbar-width: none; padding-bottom: 2px; }
+  .controls fieldset::-webkit-scrollbar { display: none; }
+  .controls button, .controls .label { flex: 0 0 auto; white-space: nowrap; }
+  .standards thead { display: none; }
+  .standards tr { display: block; border: 1px solid var(--rule); border-radius: var(--radius); margin-bottom: 10px; padding: 8px 0; }
+  .standards td { display: block; border: 0; padding: 3px 12px; }
+  .standards td[data-label]::before { content: attr(data-label) ": "; color: var(--muted); font-size: .72rem;
+               text-transform: uppercase; letter-spacing: .06em; }
+  .standards td:first-child { font-weight: 600; }
   header h1 { font-size: 1.35rem; }
 }
 @media print {
@@ -169,6 +191,17 @@ FILTER_SCRIPT = """
     });
   });
 
+  document.querySelectorAll('[data-show-tag]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var tag = button.getAttribute('data-show-tag');
+      document.querySelectorAll('.controls [data-facet="tag"]').forEach(function (target) {
+        if (target.getAttribute('data-value') === tag) target.click();
+      });
+      var feed = document.getElementById('feed');
+      if (feed) feed.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   if (more) {
     more.querySelector('button').addEventListener('click', function () {
       expanded = true;
@@ -218,11 +251,17 @@ def render_card(item: BoardItem) -> str:
     )
 
 
+HOT_TOPICS_SHOWN = 6
+HOT_ITEMS_SHOWN = 4
+
+
 def render_hot(topics: list[HotTopic], notes: dict[str, str] | None = None) -> str:
     """The block at the top: one plain-English paragraph per topic, linking its items.
 
     ``notes`` maps a tag to the paragraph the sweep wrote naming the trend. A
     topic with no note falls back to a counted sentence rather than vanishing.
+    It is the front door, so it stays short: the strongest topics, each with its
+    highest-scoring items, and a button that filters the feed to the rest.
     """
     notes = notes or {}
     if not topics:
@@ -231,19 +270,29 @@ def render_hot(topics: list[HotTopic], notes: dict[str, str] | None = None) -> s
             "<p class=\"empty\">No topic drew three or more independent items this window. "
             "The feed below is the whole month.</p></section>"
         )
-    lines = []
-    for topic in topics:
+    blocks = []
+    for topic in topics[:HOT_TOPICS_SHOWN]:
+        best = sorted(topic.items, key=lambda i: i.score, reverse=True)[:HOT_ITEMS_SHOWN]
         links = "".join(
-            f'<a href="{escape(item.primary_url)}" rel="noopener noreferrer">{escape(_short(item.headline))}</a>'
-            for item in topic.items
+            f'<li><a href="{escape(item.primary_url)}" rel="noopener noreferrer">{escape(item.headline)}</a></li>'
+            for item in best
         )
-        text = notes.get(topic.tag) or _hot_sentence(topic)
-        lines.append(
-            f"<p><strong>{escape(topic.tag)}.</strong> {escape(text)}<br><span class=\"links\">{links}</span></p>"
+        lead = (
+            f"<strong>{escape(topic.tag)}.</strong> {escape(notes[topic.tag])}"
             if topic.tag in notes
-            else f"<p>{escape(text)}<br><span class=\"links\">{links}</span></p>"
+            else escape(_hot_sentence(topic))
         )
-    return '<section class="hot"><h2>Hot this month</h2>' + "".join(lines) + "</section>"
+        blocks.append(
+            f'<div class="topic"><p>{lead}</p><ul>{links}</ul>'
+            f'<button type="button" class="seeall" data-show-tag="{escape(topic.tag)}">'
+            f"See all {topic.count} in the feed</button></div>"
+        )
+    rest = topics[HOT_TOPICS_SHOWN:]
+    also = ""
+    if rest:
+        named = ", ".join(f"{t.tag} ({t.count})" for t in rest)
+        also = f'<p class="also">Also drawing three or more items: {escape(named)}.</p>'
+    return '<section class="hot"><h2>Hot this month</h2>' + "".join(blocks) + also + "</section>"
 
 
 def _hot_sentence(topic: HotTopic) -> str:
@@ -279,10 +328,10 @@ def render_standards(rows: list[dict], flags: list[dict] | None = None) -> str:
         body.append(
             "<tr>"
             f"<td>{escape(row.get('name', ''))}{notes}</td>"
-            f"<td>{escape(row.get('sector', ''))}</td>"
-            f"<td>{escape(_long_date(row['effective']) if row.get('effective') else '—')}</td>"
-            f"<td>{link}</td>"
-            f"<td>{escape(_long_date(row['last_verified']) if row.get('last_verified') else '—')}</td>"
+            f"<td data-label=\"Sector\">{escape(row.get('sector', ''))}</td>"
+            f"<td data-label=\"Effective\">{escape(_long_date(row['effective']) if row.get('effective') else '—')}</td>"
+            f"<td data-label=\"Official page\">{link}</td>"
+            f"<td data-label=\"Last verified\">{escape(_long_date(row['last_verified']) if row.get('last_verified') else '—')}</td>"
             "</tr>"
         )
     return (
@@ -354,7 +403,7 @@ def render_board(
     )
     body = (
         render_hot(hot_topics(board), hot_notes)
-        + "<h2>This month</h2>"
+        + '<h2 id="feed">This month</h2>'
         + controls
         + f'<p class="count" data-count>{len(board)} items</p>'
         + feed

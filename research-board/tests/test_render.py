@@ -178,7 +178,7 @@ class TestStandardsPanel:
     def test_a_missing_value_shows_a_dash_not_a_blank(self):
         html = render_board([item()], today=TODAY, standards=ROWS)
         cpat = html[html.index("CPAT"):]
-        assert "<td>—</td>" in cpat[: cpat.index("</tr>")]
+        assert 'data-label="Effective">—</td>' in cpat[: cpat.index("</tr>")]
 
     def test_a_flag_shows_beside_its_row_and_nowhere_else(self):
         flags = [{"row": "CPAT", "line": "CPAT: title changed from A to B"}]
@@ -217,3 +217,24 @@ class TestSiteBuild:
         # "</style>". Without it the site's index swallows the whole board into
         # the head and the published page renders empty.
         assert "\n</style>\n" in render_board([item()], today=TODAY)
+
+
+class TestHotBlockStaysShort:
+    def _items(self, tags, n):
+        return [
+            item(primary_url=f"https://a.mil/{t}/{k}", tags=[t], score=float(k))
+            for t in tags for k in range(n)
+        ]
+
+    def test_at_most_six_topics_and_the_rest_are_named(self):
+        tags = ["MSK injury", "Nutrition", "Sleep and fatigue", "Brain health",
+                "Wearables", "Environment", "Events", "Load and PPE"]
+        hot = render_board(self._items(tags, 3), today=TODAY).split('id="feed"')[0]
+        assert hot.count('class="topic"') == 6
+        assert "Also drawing three or more items" in hot
+
+    def test_each_topic_links_its_best_items_and_offers_the_rest(self):
+        hot = render_board(self._items(["Nutrition"], 9), today=TODAY).split('id="feed"')[0]
+        assert hot.count("<li>") == 4
+        assert "https://a.mil/Nutrition/8" in hot and "https://a.mil/Nutrition/0" not in hot
+        assert 'data-show-tag="Nutrition"' in hot and "See all 9 in the feed" in hot

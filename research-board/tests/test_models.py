@@ -117,3 +117,16 @@ class TestRoundTrip:
         """Grades, caveats and the fetch-verified counter are gone by design."""
         keys = set(item().to_dict())
         assert not keys & {"grade", "caveat", "secondary", "verified", "fetch_verified"}
+
+
+def test_a_superseded_item_leaves_the_board_but_stays_in_the_archive():
+    from datetime import date
+    from tactical_research.models import BoardItem, split_window
+    old = BoardItem(headline="Old", blurb="b", primary_url="https://x.mil/old", date_published="2026-09-01",
+                    type="Policy", sector="MIL", tags=["Standards and tests"])
+    new = BoardItem(headline="New", blurb="b", primary_url="https://x.mil/new", date_published="2026-09-10",
+                    type="Policy", sector="MIL", tags=["Standards and tests"], supersedes="https://x.mil/old")
+    board, _ = split_window([old, new], date(2026, 9, 13))
+    assert [i.headline for i in board] == ["New"]
+    _, archive = split_window([old, new], date(2026, 11, 1))
+    assert {i.headline for i in archive} == {"Old", "New"}
