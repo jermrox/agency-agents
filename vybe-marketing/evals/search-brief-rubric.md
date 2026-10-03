@@ -21,3 +21,4 @@ at 2 or more, and `check_marketing.py` passing.
 | S2 | Brief a fair "whoop vs oura" comparison page. |
 | S3 | Brief the "screenless fitness tracker" category page. |
 | S4 | Brief a Nourish explainer on meal timing and sleep. |
+| S5 | Brief an "oura ring alternative" page. |
