@@ -129,6 +129,12 @@ Claim Register, with "designed to" for rows 14 to 17 and 19.
 - When trials disagree, the page says so and shows both.
 - Observational findings use association words ("linked with"), never cause.
 - Disclose any author or funder tie to a competitor.
+- Every sentence of the answer-first paragraph is either a definition or
+  carries a source; it is the line most likely to be quoted. Never claim a
+  person's own data beats research ("the most useful evidence is your own
+  nights"): own data shows a pattern, not a cause.
+- Describe each study's comparison exactly as run (for example "higher vs
+  lower pre-sleep intake", not "snack vs no snack").
 
 ### 7. Check it
 

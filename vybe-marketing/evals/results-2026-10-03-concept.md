@@ -138,3 +138,4 @@ Weak spots:
 - uneven rows.
 
 New rule: on a vs page, Vybe's section never describes the compared products.
+| S4 Eating before bed (Nourish) | **16/18** | Pass. The grader checked five studies on PubMed: all match design, size and direction. It lost points for one unsourced line in the answer-first paragraph, one overstated study framing and one unsupported "size may matter as much" line. |
