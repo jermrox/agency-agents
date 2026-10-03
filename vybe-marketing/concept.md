@@ -135,7 +135,7 @@ in one line each under the draft.
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
 6. **Claims.** Is every claim in the Claim Register at the right status? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
 7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed.
-8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know".
+8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know". **Short formats** (a tagline, a subject line, an email's first line, a hook) put the unclaimed idea in the first ten words and stay under 25 words. They never open on context the reader already knows.
 
 ## Tensions only the founder can settle
 
@@ -161,6 +161,11 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Concept test, round 3 (lab email only).** The claims gate
+  now passes, with no unconfirmed offer, but the email still scored 13/18. It
+  opened on the lab's own work, which fits any competitor, and ran as one
+  63-word sentence. **Change:** a short-format rule in check Q8. Lesson: in
+  short copy, the distinctive idea has to arrive first or it does not arrive.
 - **2026-10-03. Concept test, round 2.** The homepage hero (18/18) and the
   Instagram caption (16/18) passed. The lab email failed again: it offered
   signal access and a device that nobody has confirmed. **Changes:**

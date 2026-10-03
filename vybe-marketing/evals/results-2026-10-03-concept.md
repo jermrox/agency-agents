@@ -68,6 +68,38 @@ causes were in `concept.md` itself:
 - New Claim Register row 19 covers "patterns, not causes".
 - The guardrail ignores review notes that quote a banned phrase.
 
-## Round 3
+## Round 3: C4 rerun cold
 
-Pending. C4 is being rerun cold.
+| Dimension | Score |
+|---|---|
+| D1 Distinctiveness | 2 |
+| D2 Channel and half | 2 |
+| D3 Show | 2 |
+| D4 Order | 2 |
+| D5 Claim status (gate) | 2 |
+| D6 Voice | 3 |
+| **Total** | **13/18, fail by one point** |
+
+The claims gate now passes: it uses "designed to" and "design partner", and
+promises no access, device, terms or date. The guardrail passes. It still
+fails because it opens on the lab's own work, which fits any competitor, and
+runs as one 63-word sentence.
+
+**Fix:** a short-format rule in check Q8. Put the unclaimed idea in the first
+ten words and stay under 25 words.
+
+C4 is the case to rerun first next time.
+
+## Where the agent stands
+
+| Measure | Result |
+|---|---|
+| Knowledge (Part A) | 12/12 |
+| LinkedIn page (C1) | 16/18, pass |
+| Homepage hero (C2) | 18/18, pass |
+| Instagram caption (C3) | 16/18, pass |
+| Lab email first line (C4) | 13/18, fail by one point |
+
+**Founder approvals that gate publication:**
+- Claim Register rows 14 to 17 and 19, for public copy in "designed to" form;
+- what a research lab would actually get as a design partner.
