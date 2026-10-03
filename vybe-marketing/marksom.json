@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-02T18:00:00Z",
+  "updated_at": "2026-10-03T16:00:00Z",
   "stage": "Pre-launch · US founding batch",
   "wedge_note": "Scored 0 to 3 on pain (felt today), fit (Vybe clearly better) and moat (incumbents would have to break their own model to copy). Hover a score for the reason. Tactical teams are the strongest wedge but buy slowly, so builders and baseline nerds carry the near-term signal this quarter. Self-scored from the 2 Oct 2026 research; treat as hypotheses until the tests run.",
   "guardrail": {
@@ -863,7 +863,7 @@
     }
   ],
   "eval": {
-    "note": "Mean rubric score across the cases run, out of 30. Self-scored by the agent, which is the weakest kind of review; a person or a fresh session should re-score.",
+    "note": "Mean rubric score across the cases run, out of 30. From 3 Oct, cases are written by a fresh session and scored by a separate fresh session that has not seen the work.",
     "runs": [
       {
         "date": "2026-10-02 baseline",
@@ -916,6 +916,46 @@
             "gaps": "Measurability, target specificity"
           }
         ]
+      },
+      {
+        "date": "2026-10-03 independent",
+        "cases": [
+          {
+            "id": "c1",
+            "name": "Pick the wedge",
+            "total": 27,
+            "pass": true,
+            "gaps": "Carried from 2 Oct; not rerun"
+          },
+          {
+            "id": "c2",
+            "name": "Tactical buyer map",
+            "total": 25,
+            "pass": true,
+            "gaps": "Carried from 2 Oct; not rerun"
+          },
+          {
+            "id": "c3",
+            "name": "Meta campaign for quitters",
+            "total": 27,
+            "pass": true,
+            "gaps": "Evidence, claim row lookup"
+          },
+          {
+            "id": "c5",
+            "name": "Twenty SDK organisations",
+            "total": 25,
+            "pass": true,
+            "gaps": "Segment size, bunched fit scores"
+          },
+          {
+            "id": "c7",
+            "name": "Read the scoreboard",
+            "total": 24,
+            "pass": true,
+            "gaps": "Carried from 2 Oct; not rerun"
+          }
+        ]
       }
     ]
   },
@@ -957,6 +997,84 @@
         "demand": "~2k consumer searches",
         "competition": "Garmin, Polar, Amazfit",
         "job": "Team and tactical buyers. For consumers: overtraining and rest days."
+      }
+    ]
+  },
+  "concept_test": {
+    "note": "Copy written cold by a fresh session, graded by a separate fresh session against evals/concept-test.md (pass 14 of 18) and evals/search-brief-rubric.md. First try and latest are out of 18.",
+    "knowledge": "knowledge 12/12",
+    "cases": [
+      {
+        "name": "C1 LinkedIn company page",
+        "first": 6,
+        "latest": 16,
+        "max": 18,
+        "pass": true,
+        "lesson": "Company channels lead with the company; hygiene is not a hook"
+      },
+      {
+        "name": "C2 Homepage hero",
+        "first": 13,
+        "latest": 18,
+        "max": 18,
+        "pass": true,
+        "lesson": "\"Designed to\" on every sentence, calls to action included"
+      },
+      {
+        "name": "C3 Reel showing an answer",
+        "first": 12,
+        "latest": 16,
+        "max": 18,
+        "pass": true,
+        "lesson": "Example answers name more than one everyday explanation"
+      },
+      {
+        "name": "C4 Lab email first line",
+        "first": 13,
+        "latest": 13,
+        "max": 18,
+        "pass": false,
+        "lesson": "Builder lines lead with what the builder gets"
+      },
+      {
+        "name": "C5 Nourish Reel",
+        "first": null,
+        "latest": 16,
+        "max": 18,
+        "pass": true,
+        "lesson": "Late dinner and HRV shows five signals as one system"
+      },
+      {
+        "name": "C6 Connect daylight post",
+        "first": null,
+        "latest": 17,
+        "max": 18,
+        "pass": true,
+        "lesson": "Teach daylight; never state what the band senses until confirmed"
+      },
+      {
+        "name": "C7 H2F team one-pager",
+        "first": null,
+        "latest": 16,
+        "max": 18,
+        "pass": true,
+        "lesson": "A Move piece shows a Move answer"
+      },
+      {
+        "name": "C8 Pricing line",
+        "first": null,
+        "latest": 11,
+        "max": 18,
+        "pass": false,
+        "lesson": "\"The answers come with the band\" fails the swap test alone"
+      },
+      {
+        "name": "S1 HRV search brief",
+        "first": null,
+        "latest": 17,
+        "max": 18,
+        "pass": true,
+        "lesson": "Check Search Console by query, not page"
       }
     ]
   }

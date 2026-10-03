@@ -87,12 +87,29 @@ One audience, one message, claims at their ladder level with the source
 beside each. "Heart rhythm", "ECG" and anything near AFib carry the highest
 regulatory risk; do not use them in ads until counsel clears the wording.
 
+- **Look up every claim's row.** Before writing a claim, find its row number
+  in the current Claim Register in `vybe-marketing/brand-brief.md` and put the
+  number beside it. Label a claim "New" only after searching the Register for
+  its phrase. A claim with no row blocks the piece from being scheduled; it
+  does not go out with a flag.
+- **No absolute promises.** Avoid "never", "always" and "every" about
+  outcomes ("a coach is never left trusting one number"). Absolutes are
+  allowed only for Vybe's own conduct rules ("never sold") that the Register
+  already approves.
+- Run the concept check in `vybe-marketing/concept.md` under every piece of copy.
+
+### 6b. Source every number
+
+Every number and every competitor fact carries a link and the date it was
+checked, or the word "(unsourced)". A citation to a repository file quotes
+the line it relies on; if the line is not there, the citation is wrong.
+
 ### 7. Design the test
 Metric, source, minimum sample, decision rule, review date, and what result
 would make you drop the segment.
 
 ### 8. Score it
-Run `python3 vybe-marketing/evals/check_marketing.py` (must pass), then score
+Run `python3 vybe-marketing/evals/check_marketing.py <your draft>` before handing anything back. Running the checker is always allowed, even when you have been asked not to read `evals/`. It must pass. Then score
 against `vybe-marketing/evals/rubric.md` and log the run in
 `vybe-marketing/evals/results-YYYY-MM-DD.md`. Below 24/30, or a gate
 dimension below 2, means rework before it ships.
