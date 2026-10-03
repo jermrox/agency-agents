@@ -40,6 +40,11 @@ RULES = [
         r"\b(target(ing)?|audience|interest)s?\b[^.\n]{0,40}\b(health condition|"
         r"heart disease|diabetes|depression|anxiety disorder|insomnia sufferers|"
         r"pregnan|sexual orientation|religion)\b", re.I)),
+    ("roadmap", re.compile(
+        r"\b(sdk|api|devkit|dev kit|developer api|ring)\b[^.\n]{0,30}\b(is |are )?"
+        r"(available now|now available|is live|are live|live now|ships? (today|now)|"
+        r"in stock|order (it )?now)\b|"
+        r"\b(available now|now available|order now)\b[^.\n]{0,30}\b(sdk|api|devkit|ring)\b", re.I)),
     ("partner", re.compile(
         r"\b(official|exclusive) (wearable|partner|sponsor)\b[^.\n]{0,40}\b(vybe)\b|"
         r"\bvybe\b[^.\n]{0,40}\b(official|exclusive) (wearable|partner|sponsor)\b", re.I)),
@@ -49,7 +54,7 @@ PHONE = re.compile(r"(?<!\d)(\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)")
 OWN_DOMAINS = ("vybe.health", "example.com", "hydrox.app")  # hydrox: published support address
 ALLOW_MARKERS = ("never", "do not", "don't", "avoid", "must not", "not a medical",
                  "outside wellness", "prohibit", "counsel", "unsafe", "banned",
-                 "no diagnosis", "never write", "rule")
+                 "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "no dates", '"available now"', "'available now'")
 
 
 def iter_files(paths):

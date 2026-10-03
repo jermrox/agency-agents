@@ -6,13 +6,15 @@ agent. The Reels program has its own dashboard and lives with the
 
 | File | What it is |
 |---|---|
+| `concept.md` | **Read first.** The concept in one line, the product promises, crowded vs unclaimed claims, which half leads on which channel, the eight-question concept check, open founder tensions and the learning log. |
 | `scoreboard-YYYY-MM-DD.md` | A dated scoreboard pulled from the connected sources. One per pull; the newest is current. |
 | `plan-2026-q4.md` | The quarter's plan, with the week-1 fixes at the top. |
 | `brand-brief.md` | Messaging House and Claim Register. The Claim Register is the gate every piece of copy passes. |
 | `scoreboard.json` | The latest scoreboard as data. The dashboard reads it. |
 | `marksom.json` | Audiences, wedge scores, 35 sourced targets, channels, platform targeting rules and eval runs. The Marksom hub reads it. |
 | `hub/` | The Marksom site. `template.html` is the hub source; `index.html` is the template with `marksom.json` embedded; `scoreboard.html` is the weekly scoreboard. |
-| `evals/` | The agent's self-evaluation: `rubric.md`, `cases.md`, `check_marketing.py` (guardrail) and dated results. |
+| `evals/` | The agent's self-evaluation: `rubric.md` and `cases.md` (targeting), `concept-test.md` (concept knowledge and copy fidelity), `check_marketing.py` (guardrail) and dated results. |
+| `linkedin-company-page.md` | LinkedIn company page tagline, About and fields, with the concept check. |
 | `seo-plan.md` | Search plan: commercial pages, pillar pages, headline bank, and what must be measured before production order is locked. |
 
 ## Dashboard

@@ -71,6 +71,12 @@ supported** → **hypothesis**. Health and science claims need a source.
 | 11 | First 1,000 on the waitlist are guaranteed a position to buy | Home | Offer term | Site copy | Approved. Any ad using it must match the site exactly. |
 | 12 | "Own your personalized SDK and Application" | IG bio | Platform claim | Unclear what a consumer "owns" | Founder to rewrite; suggested: "Build on it: SDK and API for teams" |
 | 13 | Not a medical device; no diagnosis | Implicit | Regulatory posture | Funding notes, product rule | Standing rule. Add a plain line to `/faq` if not already there. |
+| 14 | Answers in a plain sentence, with its confidence stated in words and the reason for it | Not public yet | Design commitment | `vybe-app/README.md` (Restore, Ask screens) | **Founder to approve for public copy.** Until it ships, write "built to" or "designed to". This is the lead claim; see `concept.md`. |
+| 15 | Every answer shows what Vybe could not see | Not public yet | Design commitment | `vybe-app/README.md` (Ask screen) | Founder to approve. Same "designed to" rule as row 14. |
+| 16 | Vybe checks whether its own suggestions worked, and shows the ones it got wrong | Not public yet | Design commitment | `vybe-app/README.md` (Outcome screen) | Founder to approve. Same "designed to" rule. Never quote the prototype's sample tally ("4 of 7") as a result. |
+| 17 | Nothing is on by default; export and delete take one tap | Not public yet | Design commitment, privacy | `vybe-app/README.md` (Onboarding, Data screens) | Founder to approve, and counsel to check against the privacy policy before paid use. |
+| 18 | Built open: others can build on the band | IG, 29 Sep; site `/developers` | Platform direction | The public FAQ dates API v1 to Jun 2028 and the SDK to Dec 2028 | Approved as a direction ("built open", "talk to us", "design partners"). Never "available now". |
+| 19 | Shows patterns, not causes: names the explanations that fit instead of one culprit | Not public yet | Design commitment | `vybe-app/README.md` (Pattern history screen); evidence library on HRV | Founder to approve. Same "designed to" rule as row 14. Explanations stay everyday ones (sleep, training, timing), never an illness. |
 
 **Claims never to make.** Any diagnosis or treatment; "clinical-grade" or
 "medical-grade"; any accuracy percentage without a cited method; any
