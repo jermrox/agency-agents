@@ -65,6 +65,12 @@ Vybe-vs-Oura table, and "no subscription" moves from the title to proof.
 Brief: `briefs/oura-ring-alternative.md`. The Oura-related trade-commission
 cases (337-TA-1398, 1468 and 1478) are rechecked monthly.
 
+**3 Oct 2026, first Move page.** No phase had a Move page. `/learn/overtraining-symptoms/`
+("overtraining symptoms", 3,600 a month, KD 8, from the 3 Oct table, not re-pulled)
+joins the Phase 2 recovery pillar and links both ways with the HRV explainer. Brief:
+`briefs/overtraining-symptoms.md`, not ready to publish until DataForSEO is funded
+and the results page is pulled.
+
 ## Phase 1: three commercial pages (weeks 3 to 6)
 
 | Page | Primary query cluster | Title (≤60 chars) |

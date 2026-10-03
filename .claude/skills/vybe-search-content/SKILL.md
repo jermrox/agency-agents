@@ -135,6 +135,7 @@ match wellness intent instead, and say why in the brief.
 | A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
 | A population comparison ("hrv by age") | Explainer section | A published reference range may be cited **as context**, with its source, its measurement method and its spread, and the line that it is not a target or a verdict. Then turn to the person's own baseline. |
 | A safety question ("what is an unsafe hrv") | One short answer | No number. Say that HRV alone does not tell anyone they are unwell, and that symptoms or worry are for a clinician. The boundary is on the claim, not on the person's data. |
+| A symptoms query ("overtraining symptoms") | Explainer with a clinician section | Urgent signs are split from routine ones, each with a source, and the page gives one consistent "when to see someone" rule. Any mention of low mood gives a crisis route (988 in the US). |
 
 ### 6. Write the brief
 
@@ -161,7 +162,11 @@ Claim Register, with "designed to" for rows 14 to 17 and 19.
   person's own data beats research ("the most useful evidence is your own
   nights"): own data shows a pattern, not a cause.
 - Describe each study's comparison exactly as run (for example "higher vs
-  lower pre-sleep intake", not "snack vs no snack").
+  lower pre-sleep intake", not "snack vs no snack"), and its participants'
+  state exactly (functionally overreached athletes who improved after rest
+  are not overtrained ones). Report only the results the source states.
+- Every health statement has its source beside it, including symptom lists,
+  everyday explanations and urgent-care signs, not only the headline claims.
 
 ### 7. Check it
 
@@ -210,6 +215,9 @@ Page type: <explainer | comparison | category>
 
 ## Measure
 <current position, target, review date, decision rule>
+
+## Before publishing
+<founder sign-off for any design commitment used (rows 14 to 17, 19, 22); fresh demand data if any figure was not re-pulled; dockets or programme statuses rechecked>
 
 ## Concept check
 <eight one-line answers>
