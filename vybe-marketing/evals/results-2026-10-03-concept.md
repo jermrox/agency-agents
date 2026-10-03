@@ -251,3 +251,23 @@ The row 21 tie is gone in all four, and C5's present-tense line and C6's sensing
 - Q1 carries the whole "then" cell, directly after the pointer.
 - Q6 treats call-to-action questions, pricing words and citations as claims.
 - Q8 and `check_marketing.py` count a sub-line or subhead as a short format; the checker now blocks C2's 55-word sub-line.
+
+## Retest of C5 and C6 (claim-like questions, whole then-cell)
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Before |
+|---|---|---|---|---|---|---|---|---|
+| C5 Nourish | 3 | 3 | 3 | 3 | 3 | 3 | **18** | 16 |
+| C6 Connect | 3 | 3 | 3 | 3 | 3 | 3 | **18** | 16 |
+
+All three earlier problems are fixed:
+- the call to action no longer assumes a cause;
+- there is no "buy once";
+- UK Biobank is held to day vs night light, and the whole "then" cell follows the pointer.
+
+Two gaps remain, now in the rules:
+- Row 21 can still come in through two adjacent sentences ("The band is designed to produce that answer." then "There's no required subscription for the band.").
+- Pieces in the same feed reused one hook template and closing line.
+
+Q1 now separates the two sentences, and the weekly Two-Product Test reads the week's pieces side by side.
+
+**End of block: all eight copy cases pass, between 16 and 18 on their latest runs.**
