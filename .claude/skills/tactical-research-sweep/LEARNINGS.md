@@ -6,17 +6,26 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
 
 ## Standing facts (keep current)
 
-- **Live board:** `healthcare/dashboards/h2f-scout-board.html` → `agentresearchsum.netlify.app`
-  via `scripts/build-netlify-site.sh` (Netlify builds from `main`). Do not edit the build script.
-- **Board v2 data:** three JS arrays in the page — `var ENTRIES = [...]`, `var WATCH = [...]`,
-  `var REGISTRY = [...]`, one per line. Entry keys: `id, headline, blurb, tags, type, sector
-  (MIL|FIRE|EMS|LE|CROSS), grade (Policy|A|B|C|D|S|Program), section (policy|research|surv|programs),
-  date_published, first_seen, primary_url, secondary, pub, caveat, verified`.
-  IDs are `<sector-lower>-NNNN`; continue the sequence, never reuse one.
-- **Footer stamp:** `Last sweep: DD Month YYYY` — update it every run, even with zero new entries.
-- **Dedupe by URL** (normalise trailing slash, `http`→`https`, strip query strings like `utm_*`).
+- **The brief is the spec:** `Tactical_HP_Board_Brief_for_Coder_v2.pdf` (13 SEP 2026). Read the
+  section in SKILL.md that summarises it. Check work against the brief, not against memory.
+- **Live board:** rendered by `research-board/sweep.py --publish` from `research-board/findings.json`
+  into `healthcare/dashboards/h2f-scout-board.html` (+ `h2f-archive.html`), then published to
+  `agentresearchsum.netlify.app` by `scripts/build-netlify-site.sh` when `main` changes.
+  Never hand-edit the HTML; edit the data and re-render.
+- **Fetch:** `mcp__Exa__web_fetch_exa` reads .mil pages and PDFs; PubMed connector reads abstracts.
+  WebFetch/curl are blocked in the cloud sandbox.
+- **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
-## 2026-10-03 — v2 rebuild (238 entries)
+## 2026-10-03 — rebuilt to the brief (second attempt)
+
+- First attempt (PR #56) ignored the brief and the existing `research-board/` engine: kept
+  grades, caveats, banner, sections, an 18-month archive as the main board. Only 2 of 238 items
+  were inside the 30-day window. Lesson: read the spec and the repo before building.
+- Exa fetch works where WebFetch is blocked — that is what makes "write from the document" possible.
+- The old 238 entries were snippet-written; only those whose primary document could be re-read
+  were carried into the archive.
+
+## 2026-10-03 — v2 rebuild (238 entries) — superseded
 
 - Outbound WebFetch was blocked (EGRESS_BLOCKED) for every domain; WebSearch worked. All
   entries ship `verified: false` with the red banner. Next run: also try `curl` through the

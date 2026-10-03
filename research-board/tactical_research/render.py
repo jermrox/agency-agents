@@ -95,6 +95,15 @@ a { color: var(--accent); }
         border: 1px solid var(--accent); background: var(--ground); color: var(--accent); cursor: pointer; }
 .hidden { display: none !important; }
 .count { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+.topnav { display: flex; gap: 16px; font-size: .9rem; margin: -16px 0 24px; }
+.standards { margin-top: 44px; }
+.standards p.note { color: var(--muted); font-size: .85rem; margin: 0 0 10px; }
+.standards .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); }
+.standards table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.standards th, .standards td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.standards th { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--raise); }
+.standards tr:last-child td { border-bottom: 0; }
+.standards .flag { display: block; margin-top: 4px; color: #8a5a00; font-size: .8rem; }
 footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--rule);
          color: var(--muted); font-size: .85rem; }
 
@@ -209,8 +218,13 @@ def render_card(item: BoardItem) -> str:
     )
 
 
-def render_hot(topics: list[HotTopic]) -> str:
-    """The block at the top: one plain-English line per topic, linking its items."""
+def render_hot(topics: list[HotTopic], notes: dict[str, str] | None = None) -> str:
+    """The block at the top: one plain-English paragraph per topic, linking its items.
+
+    ``notes`` maps a tag to the paragraph the sweep wrote naming the trend. A
+    topic with no note falls back to a counted sentence rather than vanishing.
+    """
+    notes = notes or {}
     if not topics:
         return (
             '<section class="hot"><h2>Hot this month</h2>'
@@ -223,7 +237,12 @@ def render_hot(topics: list[HotTopic]) -> str:
             f'<a href="{escape(item.primary_url)}" rel="noopener noreferrer">{escape(_short(item.headline))}</a>'
             for item in topic.items
         )
-        lines.append(f"<p>{escape(_hot_sentence(topic))}<br><span class=\"links\">{links}</span></p>")
+        text = notes.get(topic.tag) or _hot_sentence(topic)
+        lines.append(
+            f"<p><strong>{escape(topic.tag)}.</strong> {escape(text)}<br><span class=\"links\">{links}</span></p>"
+            if topic.tag in notes
+            else f"<p>{escape(text)}<br><span class=\"links\">{links}</span></p>"
+        )
     return '<section class="hot"><h2>Hot this month</h2>' + "".join(lines) + "</section>"
 
 
@@ -234,6 +253,47 @@ def _hot_sentence(topic: HotTopic) -> str:
     kinds = [t.lower() for t in topic.types]
     what = kinds[0] if len(kinds) == 1 else ", ".join(kinds[:-1]) + " and " + kinds[-1]
     return f"{topic.tag}: {topic.count} independent items this month across {where} — {what}."
+
+
+def render_standards(rows: list[dict], flags: list[dict] | None = None) -> str:
+    """Section 6: the hand-edited table, with the watcher's flags beside each row.
+
+    The flag is an alarm for the editor, not an edit. The row's own values are
+    only ever what a person typed into standards.json.
+    """
+    if not rows:
+        return ""
+    by_row: dict[str, list[str]] = {}
+    for flag in flags or []:
+        by_row.setdefault(flag.get("row", ""), []).append(flag.get("line", ""))
+    body = []
+    for row in rows:
+        url = row.get("url", "")
+        link = (
+            f'<a href="{escape(url)}" rel="noopener noreferrer">{escape(_host(url))}</a>' if url else "—"
+        )
+        notes = "".join(
+            f'<span class="flag">Page changed, editor to check: {escape(line)}</span>'
+            for line in by_row.get(row.get("name", ""), [])
+        )
+        body.append(
+            "<tr>"
+            f"<td>{escape(row.get('name', ''))}{notes}</td>"
+            f"<td>{escape(row.get('sector', ''))}</td>"
+            f"<td>{escape(_long_date(row['effective']) if row.get('effective') else '—')}</td>"
+            f"<td>{link}</td>"
+            f"<td>{escape(_long_date(row['last_verified']) if row.get('last_verified') else '—')}</td>"
+            "</tr>"
+        )
+    return (
+        '<section class="standards" id="standards"><h2>Current standards</h2>'
+        '<p class="note">The fitness test, body composition rule and medical standard in force for each '
+        "service and sector. Kept by an editor; a weekly check flags any row whose official page changes.</p>"
+        '<div class="scroll"><table><thead><tr><th>Standard</th><th>Sector</th><th>Effective</th>'
+        "<th>Official page</th><th>Last verified</th></tr></thead><tbody>"
+        + "".join(body)
+        + "</tbody></table></div></section>"
+    )
 
 
 def _facet_row(label: str, facet: str, values) -> str:
@@ -250,24 +310,33 @@ def _facet_row(label: str, facet: str, values) -> str:
     )
 
 
-def _page(title: str, subtitle: str, body: str, cap: int, generated: str) -> str:
+def _page(title: str, subtitle: str, body: str, cap: int, generated: str, nav: str = "") -> str:
+    # ``</style>`` sits on a line of its own: scripts/build-netlify-site.sh splits
+    # the page there to wrap the board in the site shell.
     return (
         "<!DOCTYPE html>\n"
         '<html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        f"<title>{escape(title)}</title><style>{PALETTE}</style></head>"
+        f"<title>{escape(title)}</title>\n<style>{PALETTE}\n</style>\n</head>"
         f'<body data-cap="{cap}"><div class="wrap">'
         f"<header><h1>{escape(title)}</h1><p class=\"sub\">{escape(subtitle)}</p></header>"
-        f"{body}"
-        f'<footer>Swept weekly. Generated {escape(generated)}. '
+        f"{nav}{body}"
+        f'<footer>Swept daily, 30-day lookback. Last sweep {escape(generated)}. '
         "Every blurb is written from the primary source, which is the link on each headline."
         "</footer>"
         f"</div><script>{FILTER_SCRIPT}</script></body></html>\n"
     )
 
 
-def render_board(items: list[BoardItem], today: date | None = None, generated: str = "") -> str:
-    """The 30-day main board: hot block, then one chronological feed."""
+def render_board(
+    items: list[BoardItem],
+    today: date | None = None,
+    generated: str = "",
+    standards: list[dict] | None = None,
+    flags: list[dict] | None = None,
+    hot_notes: dict[str, str] | None = None,
+) -> str:
+    """The 30-day main board: hot block, then one chronological feed, then standards."""
     board, _ = split_window(items, today)
     present = _present(board)
     controls = (
@@ -284,19 +353,22 @@ def render_board(items: list[BoardItem], today: date | None = None, generated: s
         else ""
     )
     body = (
-        render_hot(hot_topics(board))
+        render_hot(hot_topics(board), hot_notes)
         + "<h2>This month</h2>"
         + controls
         + f'<p class="count" data-count>{len(board)} items</p>'
         + feed
         + more
+        + render_standards(standards or [], flags)
     )
+    nav = '<nav class="topnav"><a href="#standards">Current standards</a><a href="archive.html">Archive</a></nav>'
     return _page(
         "Tactical Human Performance Board",
         "Research, policy, and news from the last 30 days — military, fire and rescue, EMS, and law enforcement.",
         body,
         VISIBLE_CAP,
         generated or _stamp(),
+        nav,
     )
 
 
@@ -322,6 +394,7 @@ def render_archive(items: list[BoardItem], today: date | None = None, generated:
         body,
         0,                       # no cap: the archive is what you came here for
         generated or _stamp(),
+        '<nav class="topnav"><a href="./">&larr; Back to this month</a></nav>',
     )
 
 

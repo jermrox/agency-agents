@@ -159,3 +159,61 @@ class TestArchivePage:
         ancient = item(headline="ancient", date_published="2024-01-01")
         assert "ancient" not in render_archive([ancient], today=TODAY)
         assert "ancient" not in render_board([ancient], today=TODAY)
+
+
+ROWS = [
+    {"name": "DoWI 1308.03", "sector": "MIL", "effective": "2026-08-31",
+     "url": "https://www.esd.whs.mil/x.pdf", "last_verified": "2026-10-03"},
+    {"name": "CPAT", "sector": "FIRE", "effective": "", "url": "https://www.iaff.org/cpat/", "last_verified": ""},
+]
+
+
+class TestStandardsPanel:
+    def test_board_carries_the_hand_edited_table_separate_from_the_feed(self):
+        html = render_board([item()], today=TODAY, standards=ROWS)
+        assert 'id="standards"' in html and "Current standards" in html
+        assert html.index('id="standards"') > html.index("data-item")
+        assert "DoWI 1308.03" in html and "31 Aug 2026" in html and "esd.whs.mil" in html
+
+    def test_a_missing_value_shows_a_dash_not_a_blank(self):
+        html = render_board([item()], today=TODAY, standards=ROWS)
+        cpat = html[html.index("CPAT"):]
+        assert "<td>—</td>" in cpat[: cpat.index("</tr>")]
+
+    def test_a_flag_shows_beside_its_row_and_nowhere_else(self):
+        flags = [{"row": "CPAT", "line": "CPAT: title changed from A to B"}]
+        html = render_board([item()], today=TODAY, standards=ROWS, flags=flags)
+        cpat_row = html[html.index("<td>CPAT"):]
+        cpat_row = cpat_row[: cpat_row.index("</tr>")]
+        assert "editor to check" in cpat_row
+        assert html.count("editor to check") == 1
+
+    def test_the_archive_has_no_standards_panel(self):
+        assert 'id="standards"' not in render_archive([item(date_published="2026-06-01")], today=TODAY)
+
+
+class TestHotParagraphs:
+    def test_a_written_paragraph_replaces_the_counted_sentence(self):
+        items = [item(primary_url=f"https://a.mil/{n}") for n in range(3)]
+        notes = {"Standards and tests": "Every service moved its test this month."}
+        html = render_board(items, today=TODAY, hot_notes=notes)
+        assert "Every service moved its test this month." in html
+        assert "independent items this month" not in html
+
+    def test_a_topic_without_a_paragraph_still_appears(self):
+        items = [item(primary_url=f"https://a.mil/{n}") for n in range(3)]
+        assert "independent items this month" in render_board(items, today=TODAY)
+
+
+class TestNavigation:
+    def test_board_and_archive_link_to_each_other(self):
+        assert 'href="archive.html"' in render_board([item()], today=TODAY)
+        assert 'href="./"' in render_archive([item()], today=TODAY)
+
+
+class TestSiteBuild:
+    def test_style_closes_on_its_own_line_for_the_site_shell(self):
+        # scripts/build-netlify-site.sh cuts the page at a line that is exactly
+        # "</style>". Without it the site's index swallows the whole board into
+        # the head and the published page renders empty.
+        assert "\n</style>\n" in render_board([item()], today=TODAY)

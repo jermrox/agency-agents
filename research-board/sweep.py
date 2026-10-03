@@ -15,6 +15,7 @@ never invents a blurb, and an unreadable page never becomes a candidate.
 
     python sweep.py                 # crawl, cluster, fetch, write candidates.json
     python sweep.py --render        # findings.json -> board.html + archive.html
+    python sweep.py --publish       # ...and copy both into the live site's sources
 """
 
 from __future__ import annotations
@@ -41,6 +42,12 @@ SOURCES = PKG / "sources.json"
 CANDIDATES = HERE / "candidates.json"
 FINDINGS = HERE / "findings.json"
 OUT = HERE / "site"
+STANDARDS = PKG / "standards.json"
+FLAGS = HERE / "standards-flags.json"
+HOT_NOTES = HERE / "hot-notes.json"
+# What scripts/build-netlify-site.sh publishes to agentresearchsum.
+LIVE_BOARD = HERE.parent / "healthcare" / "dashboards" / "h2f-scout-board.html"
+LIVE_ARCHIVE = HERE.parent / "healthcare" / "dashboards" / "h2f-archive.html"
 
 HEADERS = {
     "User-Agent": (
@@ -193,7 +200,11 @@ def read_documents(items, today) -> tuple[list[dict], dict]:
     return candidates, tally
 
 
-def render() -> int:
+def _read_json(path: Path, default):
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
+
+
+def render(publish: bool = False) -> int:
     """findings.json -> the two pages. Deterministic, no network."""
     if not FINDINGS.exists():
         print(f"No {FINDINGS.name}: nothing to render yet.", file=sys.stderr)
@@ -206,20 +217,31 @@ def render() -> int:
         print(f"{len(problems)} schema problem(s); refusing to render.", file=sys.stderr)
         return 1
 
+    standards = _read_json(STANDARDS, {}).get("rows", [])
+    flags = _read_json(FLAGS, {}).get("flags", [])
+    notes = _read_json(HOT_NOTES, {}).get("notes", {})
+
+    board_html = render_board(items, standards=standards, flags=flags, hot_notes=notes)
+    archive_html = render_archive(items)
     OUT.mkdir(exist_ok=True)
-    (OUT / "board.html").write_text(render_board(items), encoding="utf-8")
-    (OUT / "archive.html").write_text(render_archive(items), encoding="utf-8")
+    (OUT / "board.html").write_text(board_html, encoding="utf-8")
+    (OUT / "archive.html").write_text(archive_html, encoding="utf-8")
     board, archive = models.split_window(items)
     print(f"Rendered {len(board)} board items and {len(archive)} archive items into {OUT}/")
+    if publish:
+        LIVE_BOARD.write_text(board_html, encoding="utf-8")
+        LIVE_ARCHIVE.write_text(archive_html, encoding="utf-8")
+        print(f"Published to {LIVE_BOARD.relative_to(HERE.parent)} and {LIVE_ARCHIVE.relative_to(HERE.parent)}")
     return 0
 
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--render", action="store_true", help="render findings.json and stop")
+    parser.add_argument("--publish", action="store_true", help="render, then write the live site's board files")
     args = parser.parse_args(argv)
-    if args.render:
-        return render()
+    if args.render or args.publish:
+        return render(publish=args.publish)
 
     today = datetime.now(timezone.utc).date()
     sources = json.loads(SOURCES.read_text(encoding="utf-8"))["sources"]
