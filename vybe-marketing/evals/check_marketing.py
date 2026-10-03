@@ -12,10 +12,15 @@ regardless of how good the rest of the work is:
   targeting health-interest or sensitive-category ad targeting, which Meta and
             Google prohibit for this kind of advertiser
   partner   wording that implies a partnership that is not signed
+  privacy-claim
+            a sharing promise ("shared only with consent", "nothing shared")
+            that drops the privacy policy's exceptions; allowed only when the
+            same sentence names service providers and the law (Register row 4)
 
-Lines that discuss a rule rather than make a claim (for example the Claim
+Sentences that discuss a rule rather than make a claim (for example the Claim
 Register saying "never write diagnose") are allowed when they carry one of the
-ALLOW_MARKERS. Every finding prints file:line and the rule, and the script
+ALLOW_MARKERS. A marker covers its own sentence only, so one "not a medical
+device" cannot clear the rest of a paragraph. Every finding prints file:line and the rule, and the script
 exits 1 if any finding is not allowed, so it can run in CI or before a commit.
 
 Usage: python3 vybe-marketing/evals/check_marketing.py [paths...]
@@ -49,13 +54,16 @@ RULES = [
     ("partner", re.compile(
         r"\b(official|exclusive) (wearable|partner|sponsor)\b[^.\n]{0,40}\b(vybe)\b|"
         r"\bvybe\b[^.\n]{0,40}\b(official|exclusive) (wearable|partner|sponsor)\b", re.I)),
+    ("privacy-claim", re.compile(
+        r"\bshar\w* only\b|\bonly (with|under) [^.]{0,40}\bconsent|\bnothing (is )?shared\b", re.I)),
 ]
 EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 PHONE = re.compile(r"(?<!\d)(\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)")
 OWN_DOMAINS = ("vybe.health", "example.com", "hydrox.app")  # hydrox: published support address
 ALLOW_MARKERS = ("never", "do not", "don't", "avoid", "must not", "not a medical",
                  "outside wellness", "prohibit", "counsel", "unsafe", "banned",
-                 "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "nothing relies", "no ecg", "rules out", "no dates", '"available now"', "'available now'")
+                 "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "nothing relies", "no ecg", "rules out", "no dates", '"available now"', "'available now'", 'no "', '"not_allowed"', "overstates", "does anything rely",
+                 "roadmap:", "roadmap and offers", "makes no", "not medical advice")
 
 
 def iter_files(paths):
@@ -69,24 +77,66 @@ def iter_files(paths):
             yield p
 
 
+BLOCK_START = re.compile(r"^\s*(\||#|[-*] |\d+\. |```)")
+SENTENCE_END = re.compile(r"(?<=[.!?])\s+")
+
+
+def units(path):
+    """Yield (sentence, line_of_each_char) for every sentence in the file.
+
+    In markdown, wrapped lines are joined into one block (a blank line, a
+    table row, a heading or a list item starts a new block), then the block is
+    split into sentences, so rules and allow markers see whole sentences. A
+    table row is one unit: its cells read as one record. JSON and HTML lines
+    are never joined.
+    """
+    block, owner = "", []
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    joinable = path.suffix == ".md"
+
+    def flush():
+        start = 0
+        parts = [block] if block.lstrip().startswith("|") else SENTENCE_END.split(block)
+        for part in parts:
+            i = block.find(part, start)
+            yield part, owner[i:i + len(part)] or [owner[-1] if owner else 1]
+            start = i + len(part)
+
+    for n, line in enumerate(lines, 1):
+        if not line.strip() or not joinable or BLOCK_START.match(line):
+            if block:
+                yield from flush()
+            block, owner = "", []
+            if not line.strip():
+                continue
+        if block:
+            block += " "
+            owner.append(n)
+        block += line.strip()
+        owner.extend([n] * len(line.strip()))
+    if block:
+        yield from flush()
+
+
 def scan(path):
     findings = []
-    para_allowed = False  # a rule stated at the start of a paragraph covers its wrapped lines
-    for n, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
-        low = line.lower()
-        if not line.strip():
-            para_allowed = False
-        if any(m in low for m in ALLOW_MARKERS):
-            para_allowed = True
-        allowed = para_allowed
+    for sentence, owner in units(path):
+        low = sentence.lower()
+        allowed = any(m in low for m in ALLOW_MARKERS)
         for name, rx in RULES:
-            if rx.search(line):
-                findings.append((name, n, line.strip()[:140], allowed))
-        for m in EMAIL.finditer(line):
+            m = rx.search(sentence)
+            if not m:
+                continue
+            ok = allowed
+            if name == "privacy-claim" and "service provider" in low and "law" in low:
+                ok = True
+            findings.append((name, owner[min(m.start(), len(owner) - 1)], sentence[:140], ok))
+        for m in EMAIL.finditer(sentence):
             if not m.group(0).lower().endswith(OWN_DOMAINS):
-                findings.append(("privacy", n, m.group(0), False))
-        if PHONE.search(line):
-            findings.append(("privacy", n, PHONE.search(line).group(0), False))
+                findings.append(("privacy", owner[min(m.start(), len(owner) - 1)], m.group(0), False))
+        m = PHONE.search(sentence)
+        if m:
+            findings.append(("privacy", owner[min(m.start(), len(owner) - 1)], m.group(0), False))
     return findings
 
 

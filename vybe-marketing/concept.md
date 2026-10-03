@@ -120,8 +120,9 @@ come with the band".** Google, Garmin and Polar now charge for the AI coach
 on top of the device, so the paywall has moved from the data to the
 explanation. But Circular also includes its coach, so the line fails the swap
 test on its own. Use it only joined to calibration ("Answers that say how
-sure they are come with the band"), only in the same piece as "no required
-subscription", and only once the founder confirms it (Claim Register row 21).
+sure they are come with the band"), and only in the same piece as "no required
+subscription". A draft may carry it; nothing that carries it is scheduled until
+the founder confirms row 21 (Claim Register row 21 says the same).
 
 **The swap test.** Put a competitor's name in place of "Vybe" in the line. If
 it is still true, the line is hygiene, not the concept. "No screen, no
@@ -165,7 +166,7 @@ Two-Product Test in the agent file).
 | LinkedIn company page, founder LinkedIn | Builders, partners, researchers, tactical and performance buyers, investors, hires | The company: score-skeptic stance, calibrated answers, built to be built on | The band as the proof |
 | Instagram, Facebook | End users | One calibrated answer, shown, not described | No required subscription, data stays yours |
 | /developers, builder email | Developers, labs, startups | "Start at the interpretation, not at signal cleaning"; licensed, consented access | The band as the reference device |
-| Tactical and team buyers | H2F, POTFF, performance staff | Readiness in aggregate, with consent; screenless, no GPS | Calibrated answers keep athletes and operators from over-trusting a number |
+| Tactical and team buyers | H2F, POTFF, performance staff | Readiness in aggregate, with consent, in answers designed to say how sure they are (one first sentence carries both) | Screenless, so the data keeps arriving; per-person detail where the individual has consented to share it (/enterprise wording). No GPS waits for row 20 |
 | Waitlist, homepage | Mixed | Calibrated answers | Hygiene as proof points underneath |
 | Search pages | People asking a question | The direct answer to their question (HRV, alternatives, screenless) | Calibrated answers, then the waitlist. In search, "screenless fitness tracker" (~40k a month) and "whoop alternative" are worth ranking for even though they fail the swap test as hooks. |
 
@@ -177,13 +178,16 @@ copy that satisfy it**. If no words in the copy satisfy an item, the item
 fails; the notes cannot supply what the copy lacks (a sample answer "above
 it", an email body that is not written).
 
-1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner".
+1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner". Placement is part of the test:
+   - **The lead is in the first sentence** (the first ten words in a short format), in the row's own words.
+   - **The "then" column comes after the shown answer and points back to it** ("the band is what produces that answer", "no subscription stands between you and it"). A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
+   - **Row phrases go in word for word.** Rewording one ("with consent" turned into an "only" sharing promise, "reference device" into a present-tense promise) makes a new claim, and a new claim needs the Register first.
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
 6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording (row 4: "never sold; shared only with your consent, with service providers that run the service, or where the law requires", never "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
-7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed.
+7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed, and never states conversations, pilots or partners as happening ("we're talking with performance teams") unless the founder has confirmed them; invite instead ("we're looking for design partners").
 8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know". **Short formats** (a tagline, a subject line, an email's first line, a hook) put the unclaimed idea in the first ten words and stay under 25 words. They never open on context the reader already knows.
 
 ## Tensions only the founder can settle
@@ -199,12 +203,15 @@ Until each one is settled, copy takes the safe side shown.
 | ECG and heart-rhythm wording vs no FDA clearance | "HRV" and "heart rate" only, until counsel clears it (Claim Register 5, 5a). |
 | Band only (brand) vs a Vybe Ring on /hardware and the compare pages | "The band". Mention the ring only when the founder approves it. |
 | Platform today vs API v1 in June 2028 (public FAQ) | "Built open", "talk to us", "design partners". Never "available now". |
-| "Never sold" vs enterprise, research and data-services revenue | Enterprise and research copy says aggregate only, with revocable consent. The founder sets the exact wording. |
+| "Never sold" vs enterprise, research and data-services revenue | Enterprise and research copy uses the /enterprise wording: group-level views, "with per-person detail where the individual has consented to share it" (scraped 3 Oct 2026). Never "aggregate only" or "never the individual": the site allows consented per-person detail. The founder sets the final wording. |
 | "Vybe Intelligence, no hardware required" vs "We build the wearable" | Lead with the wearable; licensing is a builder-channel detail. |
 | Audience order: the founder pitched everyday people first; the plan's wedge is tactical and performance teams; the research put builders first | Company channels lead with the company story. Consumer channels lead with calibrated answers. The wedge stays as in `plan-2026-q4.md` until the founder decides. |
 | Founder-identity story (veteran-, woman- and minority-owned) | Only in a piece the founder has approved. |
 | Homepage "Nothing sold and nothing shared" vs the live privacy policy, which allows sharing with service providers and where the law requires | Use Claim Register row 4's wording. The founder fixes the homepage line. |
 | Homepage "first 1,000 guaranteed a position to buy" vs /waitlist "evaluated on eligibility" | Don't use the offer until the two pages agree. |
+| /research "Vybe's validated sleep, recovery and HRV interpretation" vs /developers "No clinical validation is claimed" (both scraped 3 Oct 2026) | Never say "validated". The founder fixes the /research line. |
+| /enterprise says a dip in readiness "can be traced to the things that actually caused it" (scraped 3 Oct 2026) | Copy names likely explanations, never causes ("fits most closely"). Counsel and the founder review the /enterprise line. |
+| /hardware lists no GPS line and says "Bluetooth-first", not "Bluetooth-only" (scraped 3 Oct 2026) | Say neither "no GPS" nor "Bluetooth-only" until the founder confirms the spec (Claim Register row 20). |
 
 ## Learning log
 
@@ -212,6 +219,27 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Regression run, C1 to C8 under the final rules.** A fresh
+  writer redid all eight cases and a separate grader scored the copy only.
+  Seven passed (C1 16, C2 17, C3 18, C4 15, C5 17, C6 16, C8 16). C7, the
+  H2F one-pager, failed the claims gate at 14: it wrote "shared only under
+  each soldier's revocable consent", which drops row 4's exceptions, and it
+  stated design-partner conversations as fact. The guardrail missed it
+  because one "not a medical device" cleared the whole paragraph. The weak
+  pattern across four pieces: the channel row's second column was tacked on,
+  not built in. **Changes:**
+  - Q1 now sets placement: the lead in the first sentence, the "then" column
+    after the shown answer and pointing back to it, and row phrases word for word.
+  - Q7 bars stating conversations, pilots or partners as happening.
+  - The tactical row's lead carries consent and calibration in one sentence,
+    and uses the /enterprise wording on per-person detail.
+  - Row 21 reads the same here and in the Register: drafts may carry it
+    joined to calibration; nothing carrying it is scheduled until confirmed.
+  - `check_marketing.py` checks sentence by sentence and has a blocking
+    `privacy-claim` rule. On the saved drafts it now catches C7's line and
+    the old "nothing shared" wording it used to pass.
+  - Three site conflicts were added to the tensions table (/research
+    "validated", the /enterprise cause line, no GPS line on /hardware).
 - **2026-10-03. Refinement block, cycles 1 and 2.** Fresh writers and graders.
   - Lab email: 13 → 15. Pricing line: 11 → 16. HRV brief: 17. Screenless brief: 16. Nourish, Connect and Move pieces: 16 to 17.
   - Misses that became rules:

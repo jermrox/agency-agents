@@ -139,3 +139,32 @@ Weak spots:
 
 New rule: on a vs page, Vybe's section never describes the compared products.
 | S4 Eating before bed (Nourish) | **16/18** | Pass. The grader checked five studies on PubMed: all match design, size and direction. It lost points for one unsourced line in the answer-first paragraph, one overstated study framing and one unsupported "size may matter as much" line. |
+
+## Regression run, C1 to C8 (final rules)
+
+A fresh writer redid every case; a separate grader scored only what the copy
+contains.
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Result |
+|---|---|---|---|---|---|---|---|---|
+| C1 LinkedIn tagline and About | 3 | 2 | 3 | 3 | 2 | 3 | 16 | Pass |
+| C2 Homepage hero | 3 | 3 | 3 | 3 | 3 | 2 | 17 | Pass |
+| C3 Instagram answer Reel | 3 | 3 | 3 | 3 | 3 | 3 | 18 | Pass |
+| C4 Lab email first line | 3 | 2 | 3 | 2 | 2 | 3 | 15 | Pass |
+| C5 Nourish Reel | 3 | 3 | 3 | 3 | 2 | 3 | 17 | Pass |
+| C6 Connect daylight | 2 | 2 | 3 | 3 | 3 | 3 | 16 | Pass |
+| C7 Move, H2F one-pager | 3 | 1 | 3 | 3 | **1** | 3 | 14 | **Fail (D5 gate)** |
+| C8 Pricing line | 3 | 3 | 3 | 3 | 2 | 2 | 16 | Pass |
+
+**C7 failure.** "Shared only under each soldier's revocable consent" drops
+row 4's exceptions; "talking with performance teams as design partners"
+states unconfirmed conversations as fact. The guardrail passed it because a
+paragraph-level allow marker covered the whole piece.
+
+**Pattern.** D2 lost points in C1, C4, C6 and C7: the row's second column was
+tacked on at the end or relabelled ("the band is the proof").
+
+**Fixes:** placement rules in Q1, a Q7 line on unconfirmed relationships, the
+tactical row rewritten, row 21 aligned, and a sentence-level guardrail with a
+blocking `privacy-claim` rule. C7 is retested below.
+

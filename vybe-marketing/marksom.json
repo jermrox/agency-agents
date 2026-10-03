@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-03T16:00:00Z",
+  "updated_at": "2026-10-03T16:30:00Z",
   "stage": "Pre-launch · US founding batch",
   "wedge_note": "Scored 0 to 3 on pain (felt today), fit (Vybe clearly better) and moat (incumbents would have to break their own model to copy). Hover a score for the reason. Tactical teams are the strongest wedge but buy slowly, so builders and baseline nerds carry the near-term signal this quarter. Self-scored from the 2 Oct 2026 research; treat as hypotheses until the tests run.",
   "guardrail": {
@@ -21,7 +21,7 @@
         "moat": 2
       },
       "score_why": {
-        "pain": "Navy CREW: only 27% of 1,362 sailors were heavy users; sailors want assurance data won't be used punitively.",
+        "pain": "Navy CREW, 1,362 sailors on 9 destroyers (2024-25 deployments): only 27% were super users who gave data on more than 75% of nights, and 34% wore the ring on fewer than 25% of nights (Wagner, MHSRS abstract, https://mhsrs.health.mil/MHSRS/download/downloadabstractfile/7156, checked 3 Oct 2026). Sailors want assurance data won't be used punitively.",
         "fit": "AFSOC's 2023 WHOOP buy required no screen, no GPS, exportable data and about 5-day battery. Bluetooth-only devices are allowed in secure spaces under the 2016 DoD CIO memo.",
         "moat": "Weakest test. Oura counts DoD as its largest enterprise customer and WHOOP holds AFSOC and Navy work; Vybe's edge is design (no GPS, user-owned data, aggregate-only), not incumbency."
       },
@@ -41,7 +41,7 @@
         }
       ],
       "buying_path": "Unit purchase card up to $15,000 for a pilot; simplified acquisition up to $350,000 (small-business set-aside); SBIR/STTR (reauthorised April 2026); DIU prototype awards; subcontract to the POTFF prime.",
-      "message": "Designed for secure spaces: no screen, no GPS, Bluetooth-only, data owned by the service member, and a command view that shows the unit, never the individual.",
+      "message": "Readiness in aggregate, with consent, in answers designed to say how sure they are. Screenless, so the data keeps arriving, with per-person detail where the individual has consented to share it (/enterprise wording). No-GPS and Bluetooth-only wait for the founder (Claim Register row 20).",
       "test": "By 30 Nov 2026: five conversations with H2F programme directors or POTFF performance staff, and one written purchase-card pilot quote. Drop the wedge if none of the five would pilot without individual-level command access.",
       "caution": "Commanders ask for individual, real-time data. Offer opt-in sharing with a coach or clinician that stays separate from the command view. Never claim DoD approval, an ATO or OPSEC compliance until a security review confirms it. Selling to the military can damage a privacy brand: Oura's DoD and Palantir announcement (Aug 2025) set off a consumer backlash. Publish a consumer-data firewall and transparency note before announcing any DoD pilot.",
       "targets": [
@@ -992,7 +992,7 @@
         "name": "Vitals",
         "reads": "HRV and heart rate against your own baseline",
         "demand": "~400k searches a month; \"what is a good hrv\" 14.8k at KD 17",
-        "competition": "Turning medical (blood pressure, ECG)",
+        "competition": "Turning medical (blood pressure, heart screening)",
         "job": "Search lead. Answer the HRV questions people ask. Never \"heart rhythm\" or \"ECG\"."
       },
       {
