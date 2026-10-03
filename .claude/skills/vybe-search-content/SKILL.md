@@ -56,6 +56,10 @@ Rules:
   fails with "payload too large" unless `sync_response_to_workbench` is on.
   Hold one call back for a late SERP retry; tasks can stay queued past two
   tries.
+- On 3 Oct 2026 the Labs keyword-difficulty call returned "40200 Payment
+  Required": that part of the account was not funded. If it fails, quote KD
+  from the dated priorities table below, write "KD not re-pulled (Labs
+  unfunded)", and flag the funding to the founder; never guess a KD.
 - Date every number, and say which pull backs each trend figure: the
   12-month Google Ads series (last 3 months against the first 3), or Google
   Trends (the same weeks a year apart). Never quote a growth percentage you

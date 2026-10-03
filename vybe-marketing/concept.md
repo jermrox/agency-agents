@@ -199,7 +199,7 @@ Until each one is settled, copy takes the safe side shown.
 
 | Tension | Safe side until decided |
 |---|---|
-| "No Subscription" (homepage) vs "no required consumer subscription" (site body) vs any paid feature the founder may add later | Say "no required subscription". Never say "free forever" or "$0, ever"; the /about page's "$0 Monthly subscription, ever" needs review. |
+| "No Subscription" (homepage) and "No subscription required" (site footer) vs "no required consumer subscription" (site body) vs any paid feature the founder may add later | Say "no required subscription". Never say "free forever" or "$0, ever"; the /about page's "$0 Monthly subscription, ever" needs review. |
 | Five-factor names: the site says Restore, Move, Nourish, Connect, Vitals. The 2 Sep kickoff used Move, Nourish, Recover, Mind, Health. | Use the site's names; they are the latest published version. |
 | The /about page says "4 Signals read as one"; everywhere else says five | Say five. The /about stat needs fixing. |
 | Battery: "30 days" (Instagram, 25 Sep) vs "lasts for days" (site) | "Lasts for days" until the founder confirms a number. |
