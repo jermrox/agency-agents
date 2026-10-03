@@ -160,8 +160,11 @@ page you scraped words it. If two pages disagree (for example /faq "without
 individual visibility" vs /enterprise "per-person detail where the individual
 has consented"), cite both and flag the conflict to the founder; never pick one.
 
-**Survey proxies keep their population.** When a survey figure stands in for
-a segment, quote its question or population word for word ("willingness to
+**Survey proxies keep their population.** When a survey figure or a
+company-defined metric (retention, paid members) stands in for a segment,
+quote its question, population or definition word for word, and say which way
+it biases the estimate (Oura's 12-month retention counts winbacks and grace
+periods, so 100 minus it understates lapse) ("willingness to
 share data *with clinicians*") and give one line on why it stands in for the
 segment's entry criterion. If it doesn't, find another proxy.
 
@@ -213,7 +216,7 @@ dimension below 2, means rework before it ships.
 | Target | Type | Why it matters | Channel | Buying path | Source |
 |---|---|---|---|---|---|
 
-**Targeting rules respected:** ...
+**Targeting rules respected:** ... (consent before any pixel, Global Privacy Control honoured, the consumer health privacy link, no health or competitor interests; and, while /privacy §3 is unresolved, one measurement option that sends Vybe no data to ad platforms, such as link-click optimisation with UTMs read in Vybe's own store)
 **Message (Register claims + sources):** ...
 **Test:** metric · source · sample · decision rule · review date
 **Eval:** guardrail pass/fail · rubric score · lowest dimensions

@@ -187,3 +187,25 @@ Weak spots:
 - On Meta, the unclaimed idea goes above the cut.
 - The policy's §3 line becomes Claim Register row 23.
 - The export conflict between §6, /faq and row 17 is logged for the founder.
+
+## Case 3, independent rerun
+
+**28/30, pass** (27 before; gates at 2, 3 and 3). The three ads score 18, 16
+and 17 as copy. The grader checked these claims:
+- Oura's S-1 (filed 3 Sep 2026): "approximately 5.0 million Paid Members" and the ~85% 12-month retention match word for word.
+- WHOOP's "over 2.5 million members".
+- Rock Health's switching figure.
+- Meta's 2025 health-advertiser event and audience restrictions.
+
+It confirmed the conflict between /privacy §3 ("We do not use your data for advertising targeting") and the plan's weeks 7 to 10 retargeting. The plan now holds retargeting, waitlist lookalikes and conversion events for counsel.
+
+Weak spots:
+- Oura's retention was used as the inverse of lapse without its definition (it counts winbacks and grace periods).
+- There was no measurement option that sends Meta nothing.
+- Global Privacy Control was missing.
+- Two Oura quotes had no URL.
+
+**New rules:**
+- Company metrics used as proxies quote their definition and the direction of bias.
+- The targeting template requires a zero-data option and GPC.
+- Rubric dimension 6, level 3, names both.
