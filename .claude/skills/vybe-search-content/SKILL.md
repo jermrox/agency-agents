@@ -48,8 +48,11 @@ Rules:
 - **Which volume to quote:** the 12-month average is the headline figure.
   Give the latest month and any peak in brackets ("40,500 a month on
   average; 60,500 in August; 110,000 at the May to July peak").
-- For People Also Ask and who ranks, prefer DataForSEO's live SERP endpoint
-  over task post and get, which can queue for minutes and costs extra calls.
+- Through Composio (checked 3 Oct 2026) the SERP tool is task post then get,
+  which can queue for minutes: post it first, do the volume work while it
+  runs, then get it. Composio has no live search-volume tool; the live
+  keywords-for-keywords endpoint returns volume, CPC and competition for the
+  seed and its relatives in one call, so use it when speed matters.
 - Date every number, and say which pull backs each trend figure: the
   12-month Google Ads series (last 3 months against the first 3), or Google
   Trends (the same weeks a year apart). Never quote a growth percentage you
@@ -74,9 +77,16 @@ answers feel unsatisfying, which is Vybe's opening.
 ### 4b. Check the plan
 
 Read `vybe-marketing/seo-plan.md`. If the demand data contradicts its phase
-order or its target queries, say so in the brief and propose the change.
-The agent then updates `seo-plan.md` with a dated note, so the plan and the
-data agree.
+order or its target queries, say so in the brief and write the dated note
+the plan needs. If the run can edit the repository, add the note to
+`seo-plan.md`; if it is read-only, the note stays in the brief for the
+agent to apply.
+
+### 4c. Read competitor pages
+
+Quote competitors from their own pages, with the URL and checked date. If a
+site blocks direct fetches, read it through Firecrawl (Composio) or Exa's
+fetch, and say which.
 
 ### 5. Choose the page type
 
@@ -84,6 +94,7 @@ data agree.
 |---|---|---|
 | A question ("what is a good hrv") | Explainer | Answer in the first 40 to 60 words, plainly, with no product mention. |
 | A comparison ("whoop alternative", "whoop vs oura") | Fair comparison | Grant each product its strength. No price mockery, no "best" unless the list is fair and includes other no-subscription devices. |
+| A "vs" page between two competitors | Fair comparison | Grant each its real strengths and name no winner. A membership model may be described factually (what is included, from their page), never compared on price. A competitor's regulated feature is described in plain words from its source ("an FDA-cleared heart-screening feature"), so Vybe's page never uses the regulated term as if it were its own. |
 | Any page with a device table | Table rules | No per-brand price or membership column (that is a price comparison). Every row cell is sourced and dated. Vybe's row says "pre-launch" in every cell, uses "designed to" for design commitments, and shows nothing that is unconfirmed (export, light sensing, battery). |
 | A category ("screenless fitness tracker") | Category page | Say what to look for in any device first, then where Vybe fits. Say "pre-launch". |
 | A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
