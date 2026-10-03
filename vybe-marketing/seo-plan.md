@@ -51,6 +51,12 @@ at the same difficulty. It joins Phase 1 as a fair two-product comparison
 at `/compare/whoop-vs-oura/`: no winner, no price column, with Vybe's
 section once. "WHOOP vs Vybe" headlines wait until Vybe has shipped.
 
+Nourish gets its first page: an explainer at `/learn/eating-before-bed-sleep/`
+targeting "how long before bed should you stop eating" (2,400 a month,
+KD 17). "Meal timing" (1,600, KD 7) is mostly weight-loss intent on the
+results page, which a wellness page must not serve. The page states no
+timing rule and shows where studies disagree.
+
 ## Phase 1: three commercial pages (weeks 3 to 6)
 
 | Page | Primary query cluster | Title (≤60 chars) |
