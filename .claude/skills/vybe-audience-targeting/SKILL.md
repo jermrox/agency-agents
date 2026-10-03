@@ -98,6 +98,10 @@ research grant, or a developer self-serve plan. Consumer social stays on
 Instagram and Facebook unless the founder opens another channel.
 Rank the targets in a table with columns for stage, **cost to Vybe** (founder
 hours, travel, cash) and evidence, so the order is argued, not asserted.
+Fill cash from the cited event page before writing "unknown", and label hour
+figures as estimates. Carry every `marksom.json` target for the segment into
+the answer or say why it was dropped, and give at least one publication or
+community per programme, or say there is none.
 
 ### 5. Check the targeting rules
 
@@ -156,7 +160,10 @@ round number.
 
 
 **When pages disagree.** Before writing or rejecting a claim, list how every
-page you scraped words it. If two pages disagree (for example /faq "without
+page you scraped words it. Also check each page against itself: a
+present-tense line ("deployments exist", "funded through pilots", "developers
+build through our API") that contradicts the same page's roadmap or
+"pre-launch" line is a conflict to flag. If two pages disagree (for example /faq "without
 individual visibility" vs /enterprise "per-person detail where the individual
 has consented"), cite both and flag the conflict to the founder; never pick one.
 
@@ -171,7 +178,11 @@ segment's entry criterion. If it doesn't, find another proxy.
 **Quotes and dated sources.** Text in quote marks is word for word from the
 source, cited to the exact page it is on; otherwise paraphrase without quote
 marks. A procurement or programme stage older than about six months carries a
-"status checked [date]" line. A dated event or figure
+"status checked [date]" line. Quote the stage in the notice's own words (draft
+RFP, presolicitation, solicitation, award), name any contractor the cited
+articles already name, and quote the scope clause of any policy you call a
+blocker (the 2016 DoD CIO wearables memo says it is "NOT intended to prohibit
+any devices"; devices outside it go through normal approval). A dated event or figure
 cites the primary page for that year (the organiser, the agency), not last
 year's page or an aggregator.
 

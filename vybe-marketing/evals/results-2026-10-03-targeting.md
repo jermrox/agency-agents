@@ -231,3 +231,30 @@ Weak spots:
 - Ad candidates need a live-channel handle with a dated count.
 - Quote each creator's public view on subscriptions and baselines.
 - Say how many names can actually be worked with.
+
+## Case 2, second independent rerun (all new rules)
+
+**28/30, pass** (25 before; gates at 2, 3 and 3). Fire sizing now counts only
+departments running a wellness-fitness programme (≈940 to 1,610, from NFPA,
+with the arithmetic checked). Costs, a zero-data LinkedIn option and Global
+Privacy Control are in, and every quote checked was word for word.
+
+The grader verified:
+- the 2016 DoD CIO memo's four device conditions, word for word, but its FAQ says it is "NOT intended to prohibit any devices", so calling it a blocker overreached;
+- the /faq FCC filing (Dec 2026) and pilot (Jan 2027) dates;
+- the POTFF III contact restriction (a draft RFP, not source selection);
+- the AUSA, FFCA and FDSOA dates.
+
+Weak spots:
+- The procurement stage was misnamed, and the article that named GDIT on H2FMS was missed.
+- The FFCA cash cost was left unknown although the page lists it.
+- NSCA TAT was dropped without a reason.
+- Pages contradicting themselves (/faq "funded through … pilots", /enterprise "deployments exist") were missed again.
+
+**New rules:**
+- Check each page against itself.
+- Quote procurement stages and a policy's scope clause.
+- Name contractors the cited articles name.
+- Fill cash from the page.
+- Carry every target over or give a reason.
+- Give a publication or community per programme.
