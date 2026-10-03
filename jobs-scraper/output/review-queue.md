@@ -1,3 +1,151 @@
+## Run 2026-10-03 07:29 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-10-02 19:36 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-10-02 07:30 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-10-01 19:31 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-10-01 07:31 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-30 19:32 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-30 07:25 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-29 19:31 UTC — 1 posting(s)
+
+### [Recreation Specialist (GEI)](https://www.usajobs.gov:443/job/882856600)
+- **Employer:** Commander, Navy Installations Command
+- **Location:** Virginia Beach, Virginia
+- **Score:** 13.5 | **Tags:** sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $19.5 - $21.5 PH
+- **Matched:** domain=service context | discipline=exercise science, sports medicine
+
+> Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. A qualified candidate must possess: QUALIFICATIONS REQUIRED…
+
+- [ ] Approve  - [ ] Reject
+
+
+## Run 2026-09-29 07:11 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-28 19:07 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-28 07:21 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-27 19:07 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-27 07:05 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-26 19:07 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-26 07:03 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-25 19:09 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-25 07:07 UTC — 1 posting(s)
+
+### [Occupational Therapy Assistant](https://www.usajobs.gov:443/job/885859600)
+- **Employer:** Military Treatment Facilities under DHA
+- **Location:** Fort Stewart, Georgia
+- **Score:** 11.5 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $50460 - $65599 PA
+- **Matched:** domain=military, service context | discipline=exercise science, sports medicine
+
+> Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g.,…
+
+- [ ] Approve  - [ ] Reject
+
+
+## Run 2026-09-24 19:08 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-24 07:06 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-23 19:07 UTC — 1 posting(s)
+
+### [SOCIAL WORKER](https://www.usajobs.gov:443/job/885960700)
+- **Employer:** U.S. Air Forces, Europe
+- **Location:** Alconbury, United Kingdom
+- **Score:** 11.5 | **Tags:** military
+- **Source:** `usajobs:federal`
+- **Compensation:** $76463 - $99404 PA
+- **Matched:** domain=dod, military | discipline=human performance
+
+> Conditions of Employment Continues: This position has been identified as having "regular contact with children". IAW Public Law 101-647 Section231, and Public Law 102-190, Section 1094 and DoD Instruction 1402.05, background checks are required. DD Form 2981 Basic Criminal History and Statement of…
+
+- [ ] Approve  - [ ] Reject
+
+
+## Run 2026-09-23 07:06 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-22 19:07 UTC — 0 posting(s)
+
+_No new postings._
+
+## Run 2026-09-22 10:45 UTC — 2 posting(s)
+
+### [Social Worker (Behavioral Health Interdisciplinary Program) - EDRP approved](https://www.usajobs.gov:443/job/884968800)
+- **Employer:** Veterans Health Administration
+- **Location:** Clovis, New Mexico
+- **Score:** 12.0 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $61722 - $97087 PA
+- **Matched:** domain=dod, military, veteran | discipline=physical therapist
+
+> Applicants pending the completion of educational or certification/licensure requirements may be referred and tentatively selected but may not be hired until all requirements are met. HPTs who are on track to graduate/complete the requirements should respond as if they have met the requirements.…
+
+- [ ] Approve  - [ ] Reject
+
+### [Social Worker (MH Residential Rehabilitation Program) - EDRP/Recruitment/Relocation Incentive](https://www.usajobs.gov:443/job/884741700)
+- **Employer:** Veterans Health Administration
+- **Location:** Big Spring, Texas
+- **Score:** 8.5 | **Tags:** military, sports-medicine
+- **Source:** `usajobs:federal`
+- **Compensation:** $71255 - $112082 PA
+- **Matched:** domain=military, veteran | discipline=physical therapist
+
+> Applicants pending the completion of educational or certification/licensure requirements may be referred and tentatively selected but may not be hired until all requirements are met. HPTs who are on track to graduate/complete the requirements should respond as if they have met the requirements.…
+
+- [ ] Approve  - [ ] Reject
+
+
 ## Run 2026-09-14 19:09 UTC — 0 posting(s)
 
 _No new postings._

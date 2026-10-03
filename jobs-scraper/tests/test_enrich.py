@@ -19,7 +19,12 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from tactical_jobs.enrich import Enrichment, enrich, enrich_text  # noqa: E402
+from tactical_jobs.enrich import (  # noqa: E402
+    Enrichment,
+    canonical_place_names,
+    enrich,
+    enrich_text,
+)
 from tactical_jobs.models import JobPosting  # noqa: E402
 
 
@@ -535,6 +540,12 @@ def test_no_employment_type_returns_none():
         ("Located at Hurlburt Field, FL.", "Hurlburt Field"),
         ("Located at Fort Moore, GA.", "Fort Benning"),
         ("Located at Fort Cavazos, TX.", "Fort Hood"),
+        ("Located at Fort Gregg-Adams, VA.", "Fort Lee"),
+        ("Located at Fort Lee, VA.", "Fort Lee"),
+        ("Located at Fort Barfoot, VA.", "Fort Pickett"),
+        ("Located at Fort Walker, VA.", "Fort A.P. Hill"),
+        ("Located at Fort A.P. Hill, VA.", "Fort A.P. Hill"),
+        ("Located at Fort Leonard Wood, MO.", "Fort Leonard Wood"),
         ("Located at Peterson SFB, CO.", "Peterson SFB"),
     ],
 )
@@ -547,6 +558,54 @@ def test_renamed_posts_collapse_to_one_installation():
     old = enrich_text("Coach", "", location="Fort Bragg, NC")
     new = enrich_text("Coach", "", location="Fort Liberty, NC")
     assert old.installation == new.installation == "Fort Bragg"
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("Fort Liberty, North Carolina", "Fort Bragg, North Carolina"),
+        ("Ft. Liberty, NC", "Ft. Bragg, NC"),
+        ("SOF Athletic Trainer (Fort Liberty, NC)", "SOF Athletic Trainer (Fort Bragg, NC)"),
+        ("FORT LIBERTY, NC", "FORT BRAGG, NC"),
+        ("USA GA Fort Moore", "USA GA Fort Benning"),
+        ("Fort Cavazos, TX", "Fort Hood, TX"),
+        ("Fort Eisenhower, GA", "Fort Gordon, GA"),
+        ("Fort Johnson, LA", "Fort Polk, LA"),
+        ("Fort Novosel, AL", "Fort Rucker, AL"),
+        ("Fort Gregg-Adams, Virginia", "Fort Lee, Virginia"),
+        ("Fort Gregg Adams, VA", "Fort Lee, VA"),
+        ("Fort Barfoot, VA", "Fort Pickett, VA"),
+        ("Fort Walker, VA", "Fort A.P. Hill, VA"),
+        # Already the current name: untouched, byte for byte.
+        ("Fort Bragg, North Carolina", "Fort Bragg, North Carolina"),
+        ("Fort Bragg, NC / Hurlburt Field, FL", "Fort Bragg, NC / Hurlburt Field, FL"),
+        # Not a renamed post: "Liberty" and "Walker" on their own are words.
+        ("Liberty Township, OH", "Liberty Township, OH"),
+        ("Walker Army Heliport", "Walker Army Heliport"),
+        ("", ""),
+    ],
+)
+def test_display_text_uses_the_current_post_names(text, expected):
+    """Fort Liberty is Fort Bragg: the reader sees the name in force today."""
+    assert canonical_place_names(text) == expected
+
+
+def test_a_location_list_naming_one_post_twice_loses_the_repeat():
+    """Serco lists the interim and the traditional name as two locations."""
+    serco = "Fort Gregg-Adams, Virginia, USA; Virginia, USA; Fort Lee, Virginia, USA"
+    assert canonical_place_names(serco) == "Fort Lee, Virginia, USA; Virginia, USA"
+    bragg = (
+        "Fort Bragg, North Carolina, USA; North Carolina, USA; "
+        "Fayetteville, North Carolina, USA; Fort Liberty, North Carolina, USA; "
+        "Raleigh, North Carolina, USA"
+    )
+    assert canonical_place_names(bragg) == (
+        "Fort Bragg, North Carolina, USA; North Carolina, USA; "
+        "Fayetteville, North Carolina, USA; Raleigh, North Carolina, USA"
+    )
+    # A list with nothing to rewrite is not reordered or deduplicated.
+    untouched = "Fort Bragg, NC; Camp Lejeune, NC; Fort Bragg, NC"
+    assert canonical_place_names(untouched) == untouched
 
 
 def test_location_field_is_used_for_installation():

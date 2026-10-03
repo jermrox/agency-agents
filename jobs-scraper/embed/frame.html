@@ -1,0 +1,68 @@
+<!--
+  MOPs & MOEs — tactical human performance job board (frame wrapper)
+  ==================================================================
+
+  The page an <iframe> on the Squarespace site points at. It carries the
+  board itself plus one job: telling the parent page how tall it is, so the
+  iframe can grow and the reader never gets a scrollbar inside a scrollbar.
+
+  Why a frame at all. The loader approach — fetch the component and re-run
+  its scripts inside the host page — asks a lot of the host: it must allow
+  the cross-origin fetch, keep the <script> tags intact through the CMS's
+  own sanitising, and re-execute them. A frame asks for none of that. The
+  browser loads a normal page from this host and runs it normally.
+
+  The head and body around this file are added by the site assembly.
+-->
+<script>
+(function () {
+  "use strict";
+  // Measure the CONTENT, not the document.
+  //
+  // scrollHeight is the obvious choice and it is wrong here: once the parent
+  // sizes the iframe to the reported height, the document inside stretches to
+  // fill it, reports that inflated height back, and the frame can then only
+  // ever grow. Filter the board down to 56 jobs and it would stay 300,000
+  // pixels tall. Measuring the bottom of the real content breaks that loop,
+  // so the frame shrinks as well as grows.
+  function height() {
+    var body = document.body;
+    if (!body) return 0;
+    var kids = body.children, bottom = 0;
+    for (var i = 0; i < kids.length; i++) {
+      var rect = kids[i].getBoundingClientRect();
+      if (!rect.height) continue;
+      var edge = rect.bottom + (window.pageYOffset || 0);
+      if (edge > bottom) bottom = edge;
+    }
+    var style = window.getComputedStyle(body);
+    bottom += parseFloat(style.paddingBottom || 0) + parseFloat(style.marginBottom || 0);
+    // A few pixels of slack: sub-pixel rounding otherwise shows a 1px scrollbar.
+    return Math.ceil(bottom) + 8;
+  }
+
+  var last = 0;
+  function post() {
+    var h = height();
+    // Ignore jitter so a one-pixel wobble does not ping the parent forever.
+    if (!h || Math.abs(h - last) < 4) return;
+    last = h;
+    try { parent.postMessage({ mmJobsHeight: h }, "*"); } catch (e) {}
+  }
+
+  // The board renders asynchronously and again on every filter change, so
+  // watch the DOM rather than measuring once.
+  if (window.ResizeObserver) {
+    new ResizeObserver(post).observe(document.documentElement);
+  }
+  if (window.MutationObserver) {
+    new MutationObserver(post).observe(document.documentElement, {
+      childList: true, subtree: true, attributes: true
+    });
+  }
+  window.addEventListener("load", post);
+  window.addEventListener("resize", post);
+  setInterval(post, 1000);
+  post();
+})();
+</script>

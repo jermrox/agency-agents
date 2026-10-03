@@ -1074,3 +1074,24 @@ def test_every_adapter_reports_its_missing_required_option():
     ):
         with pytest.raises(KeyError, match=option):
             list(cls("unconfigured", {}).fetch())
+
+
+def test_bamboohr_prefers_a_station_named_in_the_title(monkeypatch):
+    """The list says Fort Walton Beach for every overseas LMR billet; the title
+    says where the job is. The title wins."""
+    from tactical_jobs.sources.ats_extra import BambooHRSource
+
+    payloads = {
+        "https://acme.bamboohr.com/careers/list": {"result": [
+            {"id": 1, "jobOpeningName": "Physical Therapist (Position Located at Ramstein Air Base, Germany)",
+             "location": {"city": "Fort Walton Beach", "state": "Florida"}},
+            {"id": 2, "jobOpeningName": "Strength & Conditioning Coach (Tactical)",
+             "location": {"city": "Dallas", "state": "Texas"}},
+        ]},
+        "https://acme.bamboohr.com/careers/1/detail": {"result": {"jobOpening": {"description": "<p>Duties</p>"}}},
+        "https://acme.bamboohr.com/careers/2/detail": {"result": {"jobOpening": {"description": "<p>Duties</p>"}}},
+    }
+    monkeypatch.setattr("tactical_jobs.sources.ats_extra.fetch_json", lambda url, **kw: payloads[url])
+    postings = list(BambooHRSource("acme", {"subdomain": "acme", "employer": "Acme"}).fetch())
+    assert postings[0].location == "Ramstein Air Base, Germany"
+    assert postings[1].location == "Dallas, Texas"
