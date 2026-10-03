@@ -31,3 +31,22 @@ It lost points on evidence (one wrong citation to `concept.md`, a few unsourced 
 - It adds a sourcing step: a link and checked date, or "(unsourced)", with repository citations quoting their line.
 - It runs the guardrail before handing back.
 - The guardrail allows rule notes such as "nothing relies on…".
+
+## Cycle 3: cases 4 and 8
+
+| Case | Score | Result |
+|---|---|---|
+| 4 Creator shortlist for baseline nerds | **27/30** | Pass. Ten public creators in three tiers, ties to WHOOP and Oura stated, nobody paid or promised a device before launch, and FTC endorsement rules cited. |
+| 8 HYROX race weekend | 10/30 | Fail: it answered the wrong prompt. The orchestrator's task text substituted a general events plan, so the miss is in the test setup. Against that prompt it scored 26. A rerun with the real prompt is under way. |
+
+The grader also found:
+- **H2F figures:** "66 brigade teams now, 129 by FY2029" is correct but was cited to an older AUSA page that says "111 by FY2027". The writer proposed changing the number; the right fix was the citation (Army.mil 8 Dec 2025; Modern War Institute 3 Mar 2026). The citation is now fixed.
+- **Creator tie:** Dan Plews co-authored a WHOOP-led paper, which was not recorded.
+- **Outlet tie:** coverage by an owned or linked outlet was proposed without disclosing the connection.
+
+**Changes made to `vybe-audience-targeting`:**
+- Answer the prompt word for word, with an explicit "Scope change:" line if needed.
+- Search for a figure's real source before correcting it.
+- Check creators for competitor ties.
+- Never quote a creator's critique without written permission.
+- Disclose any owned or linked outlet.

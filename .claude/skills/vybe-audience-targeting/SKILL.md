@@ -36,6 +36,13 @@ Two expensive mistakes, both already seen in Vybe's own data:
 
 ## Procedure
 
+**Answer the question asked.** Copy the prompt word for word as the first
+line of the output. If it names a segment or an event (HYROX, a team, a
+lab), load that segment from `vybe-marketing/marksom.json` and answer for it.
+A wider or different scope needs a "Scope change:" line with the reason.
+Recommending a skip is allowed when the wedge scores argue for it (for
+example, Moat 0 because a competitor holds an exclusive).
+
 Do these in order. Skip none.
 
 ### 1. Name one segment
@@ -99,6 +106,20 @@ regulatory risk; do not use them in ads until counsel clears the wording.
 - Run the concept check in `vybe-marketing/concept.md` under every piece of copy.
 
 ### 6b. Source every number
+
+**Before correcting a figure already in the repository**, search for its
+real source. Prefer the newest official source. Fix only the citation unless
+a newer primary source contradicts the number.
+
+**Creators and outlets.**
+- Check every creator for ties to the competitive set (co-authored papers,
+  advisory roles, sponsored episodes with WHOOP, Oura, Garmin and the others),
+  and record the original publication date, not a republish date.
+- No partnership-ad candidate goes forward with an unreviewed competitor tie.
+- A creator's critique is never quoted, or shown as "reviewed by", without
+  their written permission.
+- Coverage by an outlet the founders own or are linked to (for example
+  mopsnmoes.com) always discloses the connection.
 
 Every number and every competitor fact carries a link and the date it was
 checked, or the word "(unsourced)". A citation to a repository file quotes
