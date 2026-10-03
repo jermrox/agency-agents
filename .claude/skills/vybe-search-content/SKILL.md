@@ -84,6 +84,7 @@ data agree.
 |---|---|---|
 | A question ("what is a good hrv") | Explainer | Answer in the first 40 to 60 words, plainly, with no product mention. |
 | A comparison ("whoop alternative", "whoop vs oura") | Fair comparison | Grant each product its strength. No price mockery, no "best" unless the list is fair and includes other no-subscription devices. |
+| Any page with a device table | Table rules | No per-brand price or membership column (that is a price comparison). Every row cell is sourced and dated. Vybe's row says "pre-launch" in every cell, uses "designed to" for design commitments, and shows nothing that is unconfirmed (export, light sensing, battery). |
 | A category ("screenless fitness tracker") | Category page | Say what to look for in any device first, then where Vybe fits. Say "pre-launch". |
 | A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
 | A population comparison ("hrv by age") | Explainer section | A published reference range may be cited **as context**, with its source, its measurement method and its spread, and the line that it is not a target or a verdict. Then turn to the person's own baseline. |
@@ -92,7 +93,9 @@ data agree.
 ### 6. Write the brief
 
 Use the template below. The page answers first. Then it shows Vybe's
-angle once, using the unclaimed ideas: a calibrated answer (its
+angle once. **The Vybe section opens on an unclaimed idea, never on hygiene**
+(screenless, own baseline and no required subscription come after, as
+proof). It uses the unclaimed ideas: a calibrated answer (its
 confidence with a countable reason, the likely explanations, one next
 step), and the person's own baseline. Every product claim comes from the
 Claim Register, with "designed to" for rows 14 to 17 and 19.

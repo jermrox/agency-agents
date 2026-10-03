@@ -103,3 +103,21 @@ C4 is the case to rerun first next time.
 **Founder approvals that gate publication:**
 - Claim Register rows 14 to 17 and 19, for public copy in "designed to" form;
 - what a research lab would actually get as a design partner.
+
+## Cycle 2 of the refinement block
+
+Cold writer under the cycle-1 rules; separate grader.
+
+| Case | Before | Now | Result |
+|---|---|---|---|
+| C4 Lab email first line, with companion line | 13 | **15** | Pass. "Vybe is designed to state how sure each answer is, so your lab could start at the interpretation. Pre-launch; seeking design partners." |
+| C8 Pricing line, with companion line | 11 | **16** | Pass. Calibration first, the add-on contrast second, "no required subscription" underneath. |
+| S3 Screenless category brief (search rubric) | — | **16** | Pass. The competitor table broke the table rules; it was fixed and saved to `briefs/`. |
+
+Cycle-1 copy, same grader standard: C5 16, C6 17 and C7 16 (pass).
+
+**New rules:**
+- Each concept-check answer quotes the copy words that satisfy it; the writer's notes had over-claimed in all three cases.
+- Claims use the Register's own wording ("nothing shared without consent").
+- Search pages open the Vybe section on an unclaimed idea.
+- Device tables carry no per-brand price column, and Vybe's row says "pre-launch" with nothing unconfirmed.

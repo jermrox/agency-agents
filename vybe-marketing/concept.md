@@ -172,14 +172,17 @@ Two-Product Test in the agent file).
 ## The concept check
 
 Run all eight questions before any copy ships. The agent writes the answers
-in one line each under the draft.
+in one line each under the draft, and **each answer quotes the words in the
+copy that satisfy it**. If no words in the copy satisfy an item, the item
+fails; the notes cannot supply what the copy lacks (a sample answer "above
+it", an email body that is not written).
 
 1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner".
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
-6. **Claims.** Is every claim in the Claim Register at the right status? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
+6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording ("nothing shared without consent", not "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
 7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed.
 8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know". **Short formats** (a tagline, a subject line, an email's first line, a hook) put the unclaimed idea in the first ten words and stay under 25 words. They never open on context the reader already knows.
 
@@ -207,6 +210,15 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Refinement block, cycles 1 and 2.** Fresh writers and graders.
+  - Lab email: 13 → 15. Pricing line: 11 → 16. HRV brief: 17. Screenless brief: 16. Nourish, Connect and Move pieces: 16 to 17.
+  - Misses that became rules:
+    - "the answers come with the band" alone fails the swap test (Claim Register row 21);
+    - a Move piece used a sleep answer;
+    - daylight copy stated what the band can't sense;
+    - concept-check notes claimed what the copy didn't contain.
+
+  Lesson: grade the copy, never the notes about the copy.
 - **2026-10-03. Five-pillar research.** Six research tracks (search demand,
   competitor messaging and ads, Connect science, launch playbooks, channel
   costs, proof by audience). **Changes:**

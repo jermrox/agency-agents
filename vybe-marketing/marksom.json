@@ -1031,10 +1031,10 @@
       {
         "name": "C4 Lab email first line",
         "first": 13,
-        "latest": 13,
+        "latest": 15,
         "max": 18,
-        "pass": false,
-        "lesson": "Builder lines lead with what the builder gets"
+        "pass": true,
+        "lesson": "Builder lines lead with what the builder gets; say pre-launch"
       },
       {
         "name": "C5 Nourish Reel",
@@ -1062,11 +1062,11 @@
       },
       {
         "name": "C8 Pricing line",
-        "first": null,
-        "latest": 11,
+        "first": 11,
+        "latest": 16,
         "max": 18,
-        "pass": false,
-        "lesson": "\"The answers come with the band\" fails the swap test alone"
+        "pass": true,
+        "lesson": "Calibration first; \"comes with the band\" second; hygiene underneath"
       },
       {
         "name": "S1 HRV search brief",
@@ -1075,6 +1075,14 @@
         "max": 18,
         "pass": true,
         "lesson": "Check Search Console by query, not page"
+      },
+      {
+        "name": "S3 Screenless category brief",
+        "first": null,
+        "latest": 16,
+        "max": 18,
+        "pass": true,
+        "lesson": "Device tables: no price column; Vybe's row says pre-launch"
       }
     ]
   }
