@@ -373,20 +373,28 @@ function renderPicks(r){
   var P = D.picks, box = $("picks"), tabs = $("picks-tabs"), note = $("picks-note"), dl = $("picks-dates");
   box.textContent = ""; tabs.textContent = ""; dl.textContent = "";
   if (!P){ note.textContent = "No safety picks file yet (data/gear_picks.json)."; return; }
-  note.textContent = P.summary + " Last reviewed " + fmtDate(P.reviewed) + ". " + P.caveats.join(" ");
+  note.textContent = P.summary + " Last reviewed " + fmtDate(P.reviewed) + ". " + (P.verified ? P.verified + " " : "") + P.caveats.join(" ");
   (P.dates || []).forEach(function(x){
     var li = el("li", {cls: x.date < r.date ? "past" : ""}, [el("strong", {text: fmtDate(x.date) + ": "}),
       el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.label})]);
     dl.appendChild(li);
   });
   var recallText = ((r.recall_watch && r.recall_watch.items) || []).map(function(x){ return ((x.title || "") + " " + (x.products || []).join(" ")).toLowerCase(); });
-  var cats = P.categories.map(function(c){ return c.name; }).concat(["Avoid / recalled"]);
+  var cats = P.categories.map(function(c){ return c.name; }).concat(["Avoid / recalled"], P.trust ? ["How much to trust the sources"] : []);
   cats.forEach(function(c, i){
     var b = el("button", {type:"button", "aria-pressed": String(i === pickCat), text:c});
     b.addEventListener("click", function(){ pickCat = i; renderPicks(r); });
     tabs.appendChild(b);
   });
   var link = function(s){ return el("a", {href:s[1], target:"_blank", rel:"noopener noreferrer", text:s[0]}); };
+  if (pickCat > P.categories.length){
+    var tl = el("ul", {cls:"recalls"});
+    P.trust.forEach(function(x){
+      tl.appendChild(el("li", {cls:"recall"}, [el("div", {}, [el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.name}),
+        document.createTextNode(" "), el("span", {cls:"flag", text:x.weight})]), el("div", {cls:"ink2", text:x.detail})]));
+    });
+    box.appendChild(tl); return;
+  }
   if (pickCat === P.categories.length){
     var ul = el("ul", {cls:"recalls"});
     P.avoid.forEach(function(x){

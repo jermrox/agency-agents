@@ -114,7 +114,8 @@ def test_dashboard_embeds_sourced_safety_picks(tmp_path):
     html = (tmp_path / "site" / "index.html").read_text()
     picks = json.loads(html.split('id="data">', 1)[1].split("</script>", 1)[0])["picks"]
     names = [c["name"] for c in picks["categories"]]
-    assert names == ["Infant car seats", "Convertible car seats", "Compact strollers"]
+    assert names == ["Infant car seats", "Convertible car seats", "Compact strollers", "Car seat + stroller combos"]
+    assert picks["trust"] and all(t["url"].startswith("https://") for t in picks["trust"])
     for cat in picks["categories"]:
         assert 3 <= len(cat["picks"]) <= 5
         for p in cat["picks"]:
