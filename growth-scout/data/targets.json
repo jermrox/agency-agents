@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03 15:10 UTC",
+  "generated": "2026-10-03 15:12 UTC",
   "today": "2026-10-03",
   "scope": {
     "company": "Vybe Health",
@@ -108,26 +108,76 @@
       "id": "sports_gaps",
       "title": "Sports where wearables aren't used yet",
       "hunt": "partnership",
-      "raw": 0,
-      "kept": 0
+      "raw": 13,
+      "kept": 13
     }
   ],
   "summary": {
-    "total": 317,
+    "total": 336,
     "investor": 97,
     "growth": 55,
     "social": 39,
     "sponsorship": 44,
-    "app_partners": 15,
-    "sports": 0,
+    "app_partners": 21,
+    "sports": 13,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 56,
-    "deadlines_30d": 7,
-    "ready_to_send": 151,
+    "high": 59,
+    "deadlines_30d": 8,
+    "ready_to_send": 168,
     "identity_needs_ok": 74
   },
   "targets": [
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": "2026-10-18",
+      "name": "Powerlifting (USA Powerlifting Ohio)",
+      "org": "USA Powerlifting - Ohio State Chairs (Rhonda Boer, Nick Neforos)",
+      "why": "Research on HRV in strength athletes is thin: a 2024/25 narrative review found no studies on HRV across powerlifting or Olympic weightlifting forms, and powerlifting HRV studies used smartphone finger sensors rather than wearables. Ohio has an active USAPL calendar with state chairs who publish an email.",
+      "why_now": "2026 USAPL Ohio State Championship on Nov 14, 2026 at Ohio State Fairgrounds, Columbus (registration deadline Oct 18, 2026).",
+      "evidence": [
+        "https://www.researchgate.net/publication/380903864_Heart_Rate_Variability_Applications_in_Strength_and_Conditioning_A_Narrative_Review",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7795557/",
+        "https://journal.iusca.org/index.php/Journal/article/view/115",
+        "https://www.usapowerlifting.com/athlete-representation-and-state-chairs",
+        "https://liftingcast.com/meets/m3oh2oo05m8i/registration"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://liftingcast.com/meets/m3oh2oo05m8i/registration",
+      "warm_path": "Ohio",
+      "fit": 8,
+      "ask": "Ask the Ohio co-state chair whether Vybe can recruit 10 adult lifters at the Nov 14 state meet for a peaking-block overnight-wear trial (vendor table if allowed).",
+      "opener": "Hi Nick - I'm the founder of Vybe Health in Akron. We make a screenless band worn overnight; strength athletes are mostly left out of wearable research and products. Ahead of the Ohio State Championship on Nov 14, could I ask whether there's a way to meet lifters there - a table or a flyer - for a small pre-launch trial during their peak? Happy to follow whatever meet rules you set.",
+      "geo": "Columbus / Bowling Green, OH",
+      "last_signal_date": "2026-10-18",
+      "confidence": "verified",
+      "tags": [
+        "powerlifting",
+        "strength",
+        "ohio",
+        "event",
+        "hrv",
+        "sleep",
+        "masters"
+      ],
+      "wearable_adoption": "Narrative review (ResearchGate, 2025-05-04 upload): 'no studies were found that investigated the changes in HRV associated with different forms of resistance training, such as Olympic weightlifting, powerlifting.' Williams et al. (2021) note HRV investigations in strength athletes 'are limited' and used a smartphone finger sensor (ithlete); Rowe-style peaking study (IJSC 2022) used the HRV4Training phone app. No wearable-use survey of powerlifters found.",
+      "competition_rule": null,
+      "opportunity": "USAPL Ohio State Championship (Nov 14, 2026, 120-lifter cap, Columbus) and Kings and Queens Fall Open (Bowling Green) run by co-state chair Nick Neforos, who lists nicknef1970@gmail.com on meet pages; recruit adult lifters for an overnight-wear trial through meet prep.",
+      "unknowns": "USAPL vendor/sponsor rules for state meets not read; whether lifters may wear devices on the platform not checked (irrelevant to overnight use); Rhonda Boer contact not found.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 1,
+      "sendable": true,
+      "id": "powerlifting-usa-powerlifting-ohio-usa-powerlifting-ohio-state-chairs-rhonda-boe"
+    },
     {
       "type": "vc",
       "hunt": "investor",
@@ -167,7 +217,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 1,
+      "rank": 2,
       "sendable": true,
       "id": "emily-bennett-andreessen-horowitz-a16z-speedrun"
     },
@@ -208,7 +258,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 2,
+      "rank": 3,
       "sendable": true,
       "id": "a16z-speedrun-sr008-andreessen-horowitz"
     },
@@ -269,7 +319,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 3,
+      "rank": 4,
       "sendable": true,
       "id": "ai-endurance-ai-endurance"
     },
@@ -316,7 +366,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 4,
+      "rank": 5,
       "sendable": false,
       "id": "akron-marathon-race-series-2027-akron-marathon-charitable-corporation"
     },
@@ -358,7 +408,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 5,
+      "rank": 6,
       "sendable": true,
       "id": "alex-morgan-khosla-ventures"
     },
@@ -399,7 +449,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 6,
+      "rank": 7,
       "sendable": false,
       "id": "alumni-ventures-alumni-ventures"
     },
@@ -444,7 +494,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 7,
+      "rank": 8,
       "sendable": false,
       "id": "amazfit-x-hyrox-official-wearable-now-global-3-year-exclusive-amazfit-zepp-healt"
     },
@@ -485,7 +535,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 8,
+      "rank": 9,
       "sendable": true,
       "id": "anne-wojcicki-treehub-ai-health-fund-operating-partner-23andme-co-founder"
     },
@@ -526,7 +576,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 9,
+      "rank": 10,
       "sendable": true,
       "id": "ben-joffe-sosv-hax"
     },
@@ -565,7 +615,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 10,
+      "rank": 11,
       "sendable": false,
       "id": "brydge-club-brydge-club"
     },
@@ -604,7 +654,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 11,
+      "rank": 12,
       "sendable": false,
       "id": "cade-ventures-why-we-haven-t-invested-in-a-wearable-yet-and-what-would-change-ou"
     },
@@ -645,7 +695,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 12,
+      "rank": 13,
       "sendable": true,
       "id": "cheryl-mccolgan-heal-nourish-grow"
     },
@@ -686,7 +736,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 13,
+      "rank": 14,
       "sendable": false,
       "id": "clair-health-11m-seed-led-by-khosla-for-women-s-hormone-wristband-clair-health"
     },
@@ -725,7 +775,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 14,
+      "rank": 15,
       "sendable": true,
       "id": "craig-shapiro-collaborative-fund"
     },
@@ -765,7 +815,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 15,
+      "rank": 16,
       "sendable": false,
       "id": "crosslink-capital-crosslink-capital"
     },
@@ -811,7 +861,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 16,
+      "rank": 17,
       "sendable": false,
       "id": "danielle-miranda-hyrox-pro-women-self-columbus-all-female-fitness-facility-found"
     },
@@ -858,7 +908,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 17,
+      "rank": 18,
       "sendable": false,
       "id": "eagle-up-ultra-2027-race-brimstone"
     },
@@ -898,7 +948,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 18,
+      "rank": 19,
       "sendable": false,
       "id": "eurie-kim-forerunner-ventures"
     },
@@ -942,9 +992,61 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 19,
+      "rank": 20,
       "sendable": false,
       "id": "fda-2026-general-wellness-guidance-explicitly-covers-wearables-measuring-hrv-bp-"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Firefighter Challenge competitors (Akron regional)",
+      "org": "First Responder Institute - SERVPRO FCL / TFT Firefighter Challenge Championship Series",
+      "why": "A fire-department survey found 53% of first responders do not wear wearables, citing cost and devices that break in bunker gear; a four-country survey ranked personal heart-rate monitoring low for on-duty PPE. Overnight off-shift wear sidesteps durability. Akron hosted the 2026 Northeast Regional Classic with 100+ firefighters from 18 states.",
+      "why_now": "2026 Northeast Regional Classic held in downtown Akron July 23-25, 2026 (News 5 Cleveland, 2026-07-23); Akron firefighters set records there.",
+      "evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10048923/",
+        "https://exa.ai/library/publication/7hqcg3vd357",
+        "https://www.jstage.jst.go.jp/article/indhealth/53/5/53_2015-0033/_pdf",
+        "https://firefighterchallenge.com/northeast-event-page/",
+        "https://akronohio.gov/news_detail_T17_R353.php",
+        "https://www.news5cleveland.com/news/local-news/akron-firefighters-shatter-records-at-northeast-regional-challenge-series"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://firefighterchallenge.com/northeast-event-page/",
+      "warm_path": "Akron - City of Akron hosted the event; Akron Fire Department competitors",
+      "fit": 9,
+      "ask": "Ask FCL / First Responder Institute about seeding bands to 5-10 Akron-area competitors for the 2027 season and the vendor options for the next regional.",
+      "opener": "Hi FCL team - I'm the founder of Vybe Health in Akron, where you just ran the Northeast Regional. We make a screenless band people wear off shift and overnight, so it never has to survive bunker gear. Firefighters keep telling researchers wearables cost too much and break on the job. Could we talk about a small pre-launch trial with competitors who train year-round?",
+      "geo": "Akron, OH (Northeast Region: 13 states)",
+      "last_signal_date": "2026-07-23",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "first-responders",
+        "firefighter",
+        "akron",
+        "ohio",
+        "event",
+        "sleep",
+        "hrv"
+      ],
+      "wearable_adoption": "Tucker et al. (survey administered 2019, 24 fire stations, n=112): 53% do not wear wearable technology; reasons include expense and bands breaking under bunker gear ('current wearable technology does not seem to be a viable solution'). Follow-up (2023-11-09): professional drivers 10x more likely than first responders to have used wearables. Lee et al. (Ind Health 2015, 763 US firefighters): heart-rate/BP/body-temp monitoring were low-priority PPE features.",
+      "competition_rule": null,
+      "opportunity": "Competitor-seeding and vendor presence with the First Responder Institute (CEO Russell A. Jackson quoted by City of Akron) at the next Northeast Regional; local start with Akron Fire Department competitors via the City of Akron's host relationship.",
+      "unknowns": "Whether Akron hosts again in 2027 not confirmed; vendor package prices not published on pages read; department policies on personal health data from wearables unknown.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 21,
+      "sendable": true,
+      "id": "firefighter-challenge-competitors-akron-regional-first-responder-institute-servp"
     },
     {
       "name": "Fitbit Web API shuts down 30 Oct 2026; tokens do not migrate",
@@ -988,7 +1090,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 20,
+      "rank": 22,
       "sendable": false,
       "id": "fitbit-web-api-shuts-down-30-oct-2026-tokens-do-not-migrate-google"
     },
@@ -1027,7 +1129,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 21,
+      "rank": 23,
       "sendable": false,
       "id": "fortify-ventures-fortify-ventures"
     },
@@ -1072,7 +1174,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 22,
+      "rank": 24,
       "sendable": false,
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
@@ -1115,7 +1217,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 23,
+      "rank": 25,
       "sendable": false,
       "id": "garmin-x-buena-tierra-run-club-milwaukee-garmin"
     },
@@ -1161,7 +1263,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 24,
+      "rank": 26,
       "sendable": false,
       "id": "garmin-x-garmin-marathon-series-toledo-ohio-garmin"
     },
@@ -1204,9 +1306,59 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 25,
+      "rank": 27,
       "sendable": true,
       "id": "grayson-judge-supermoon-capital"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "High-school wrestling (Ohio)",
+      "org": "Ohio High School Wrestling Coaches Association (OHSWCA) / OHSAA / NFHS",
+      "why": "NFHS wrestling rules bar wristbands/sleeves without pads and jewelry during a match, and OHSAA General Sports Regulation 20.3 says athletes in collision/contact sports should not wear heart-monitoring equipment in interscholastic contests. Wrestling is a weight-class sport with heavy in-season load, and HS wrestlers have no wearable built around an overnight-only routine.",
+      "why_now": "OHSAA October 7, 2025 officials update restated GSR 20.3 for contact sports; NFHS 2025-26 wrestling rules in force for the 2026-27 season starting this winter.",
+      "evidence": [
+        "https://cdn1.sportngin.com/attachments/document/239f-3089848/NFHS-WR-Rulebook.pdf",
+        "https://nfhs.org/resources/sports/wrestling-rules-changes-2025-26",
+        "https://ohsaaweb.blob.core.windows.net/files/Officiating/dod/CC/2025OctoberOfficialsUpdate.pdf",
+        "https://www.ohswca.org/membership",
+        "https://www.ohswca.org/coaching"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.ohswca.org/membership",
+      "warm_path": "Ohio (Akron-based founder; OHSWCA represents Ohio wrestling coaches to the OHSAA)",
+      "fit": 9,
+      "ask": "15-minute call with OHSWCA leadership about a coach-led overnight-wear pilot with 1-2 Northeast Ohio programs, plus a table at the OHSWCA coaches clinic/convention.",
+      "opener": "Hi OHSWCA team - I'm building Vybe Health in Akron, a screenless band worn overnight, never on the mat. Wrestling rules keep devices off athletes in matches, so most wrestling programs have no data tool built for them. I'd like to learn how Ohio coaches think about in-season load and whether an overnight-only pilot with one or two programs is worth trying. Could I get 15 minutes, or a slot at your next clinic?",
+      "geo": "Ohio",
+      "last_signal_date": "2025-10-07",
+      "confidence": "verified",
+      "tags": [
+        "wrestling",
+        "high-school",
+        "ohio",
+        "sleep",
+        "hrv",
+        "combat-sports",
+        "youth"
+      ],
+      "wearable_adoption": "No HS wrestling wearable-use survey found. Rules effectively keep devices off wrestlers during matches: NFHS 4-3-5 bars wristbands/sleeves without a pad and NFHS casebook says a wrestler cannot wear jewelry (NFHS 2025-26); OHSAA GSR 20.3 (restated Oct 7, 2025) says contact-sport athletes should not wear heart-monitoring equipment in contests. Closest data point: a 2023 Virginia Tech pilot had D1 college wrestlers wear a WHOOP strap day and night 'except during competition' (see college row).",
+      "competition_rule": "NFHS Rule 4-3-5 (no wristbands/sleeves without a pad during a match), NFHS 4-3-6 (no coach-to-wrestler communication devices), casebook 3.1.4 (no jewelry). OHSAA GSR 20.3: collision/contact-sport athletes should not wear heart monitoring equipment in interscholastic contests unless the sport code says otherwise. These are competition rules only; an overnight band worn at home is not addressed by them.",
+      "opportunity": "Coach-association route: OHSWCA (membership/clinic/convention) to recruit 1-2 Northeast Ohio HS programs for an overnight-only, parent-consented design-partner pilot; band stays home on match days.",
+      "unknowns": "No OHSWCA named contact person or email on the pages read (membership form only); minors' data requires parent consent and school/district approval; no data on how many Ohio programs already use any wearable; OHSAA has no stated position on overnight wear.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 28,
+      "sendable": true,
+      "id": "high-school-wrestling-ohio-ohio-high-school-wrestling-coaches-association-ohswca"
     },
     {
       "name": "Human Performance Collaborative (Ohio State)",
@@ -1251,7 +1403,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 26,
+      "rank": 29,
       "sendable": false,
       "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
     },
@@ -1297,7 +1449,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 27,
+      "rank": 30,
       "sendable": false,
       "id": "hunter-brancifort-akron-fire-department"
     },
@@ -1338,7 +1490,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 28,
+      "rank": 31,
       "sendable": true,
       "id": "jomayra-herrera-reach-capital"
     },
@@ -1381,7 +1533,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 29,
+      "rank": 32,
       "sendable": false,
       "id": "khosla-ventures-khosla-ventures"
     },
@@ -1422,7 +1574,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 30,
+      "rank": 33,
       "sendable": false,
       "id": "kiva-dickinson-selva-ventures"
     },
@@ -1464,7 +1616,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 31,
+      "rank": 34,
       "sendable": true,
       "id": "krish-ramadurai-aix-ventures"
     },
@@ -1506,7 +1658,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 32,
+      "rank": 35,
       "sendable": false,
       "id": "kristina-simmons-overwater-ventures"
     },
@@ -1550,7 +1702,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 33,
+      "rank": 36,
       "sendable": true,
       "id": "kygo-health-kygo-health"
     },
@@ -1590,7 +1742,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 34,
+      "rank": 37,
       "sendable": true,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
@@ -1631,7 +1783,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 35,
+      "rank": 38,
       "sendable": false,
       "id": "labcorp-venture-fund-labcorp"
     },
@@ -1677,7 +1829,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 36,
+      "rank": 39,
       "sendable": false,
       "id": "levels-x-crossfit-affiliate-network-partnership-levels"
     },
@@ -1718,7 +1870,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 37,
+      "rank": 40,
       "sendable": true,
       "id": "marco-altini-hrv4training"
     },
@@ -1757,7 +1909,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 38,
+      "rank": 41,
       "sendable": true,
       "id": "marko-maslakovic-gadgets-wearables"
     },
@@ -1796,7 +1948,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 39,
+      "rank": 42,
       "sendable": true,
       "id": "meredith-dietz-lifehacker"
     },
@@ -1838,7 +1990,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 40,
+      "rank": 43,
       "sendable": true,
       "id": "nikita-starov-aifitnessapi-aifitnessapi-com"
     },
@@ -1885,7 +2037,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 41,
+      "rank": 44,
       "sendable": true,
       "id": "open-wearables-momentum-the-momentum"
     },
@@ -1925,7 +2077,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 42,
+      "rank": 45,
       "sendable": true,
       "id": "oscar-moralez-boomerang-ventures"
     },
@@ -1970,7 +2122,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 43,
+      "rank": 46,
       "sendable": false,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
@@ -2010,7 +2162,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 44,
+      "rank": 47,
       "sendable": false,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
@@ -2050,7 +2202,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 45,
+      "rank": 48,
       "sendable": true,
       "id": "pankaj-kedia-2468-ventures"
     },
@@ -2092,7 +2244,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 46,
+      "rank": 49,
       "sendable": true,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
@@ -2138,7 +2290,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 47,
+      "rank": 50,
       "sendable": true,
       "id": "playerslab-playerslab"
     },
@@ -2179,7 +2331,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 48,
+      "rank": 51,
       "sendable": true,
       "id": "ray-maker-dc-rainmaker"
     },
@@ -2219,7 +2371,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 49,
+      "rank": 52,
       "sendable": true,
       "id": "resolute-ventures-resolute-ventures"
     },
@@ -2265,7 +2417,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 50,
+      "rank": 53,
       "sendable": true,
       "id": "restortrain-restortrain"
     },
@@ -2306,7 +2458,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 51,
+      "rank": 54,
       "sendable": true,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
@@ -2346,7 +2498,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 52,
+      "rank": 55,
       "sendable": false,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
@@ -2387,7 +2539,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 53,
+      "rank": 56,
       "sendable": false,
       "id": "sosv-hax-sosv"
     },
@@ -2435,7 +2587,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 54,
+      "rank": 57,
       "sendable": false,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
@@ -2477,7 +2629,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 55,
+      "rank": 58,
       "sendable": true,
       "id": "seaside-ventures-seaside-ventures"
     },
@@ -2517,7 +2669,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 56,
+      "rank": 59,
       "sendable": true,
       "id": "sunil-bhatt-smartwatch-insight"
     },
@@ -2558,7 +2710,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 57,
+      "rank": 60,
       "sendable": true,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
@@ -2600,7 +2752,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 58,
+      "rank": 61,
       "sendable": true,
       "id": "toni-schneider-true-ventures"
     },
@@ -2658,7 +2810,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 59,
+      "rank": 62,
       "sendable": true,
       "id": "tredict-tredict"
     },
@@ -2699,7 +2851,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 60,
+      "rank": 63,
       "sendable": false,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
@@ -2739,7 +2891,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 61,
+      "rank": 64,
       "sendable": false,
       "id": "victoria-song-the-verge"
     },
@@ -2784,7 +2936,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 62,
+      "rank": 65,
       "sendable": false,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
@@ -2831,7 +2983,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 63,
+      "rank": 66,
       "sendable": false,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
@@ -2870,7 +3022,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 64,
+      "rank": 67,
       "sendable": true,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
@@ -2911,7 +3063,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 65,
+      "rank": 68,
       "sendable": true,
       "id": "the5krunner-the5krunner"
     },
@@ -2956,7 +3108,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 66,
+      "rank": 69,
       "sendable": false,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
@@ -3000,7 +3152,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 67,
+      "rank": 70,
       "sendable": false,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
@@ -3045,7 +3197,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 68,
+      "rank": 71,
       "sendable": true,
       "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
@@ -3089,7 +3241,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 72,
       "sendable": false,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
@@ -3128,7 +3280,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 70,
+      "rank": 73,
       "sendable": true,
       "id": "health2tech-cleveland-health2tech"
     },
@@ -3172,7 +3324,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 71,
+      "rank": 74,
       "sendable": true,
       "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
@@ -3211,7 +3363,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 72,
+      "rank": 75,
       "sendable": true,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
@@ -3251,7 +3403,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 73,
+      "rank": 76,
       "sendable": true,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
@@ -3290,7 +3442,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 74,
+      "rank": 77,
       "sendable": false,
       "id": "sxsw-pitch-2027-sxsw"
     },
@@ -3335,7 +3487,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 75,
+      "rank": 78,
       "sendable": false,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
     },
@@ -3386,7 +3538,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 76,
+      "rank": 79,
       "sendable": true,
       "id": "breethe-kodeon-acquired-breethe-2026-08-19"
     },
@@ -3426,7 +3578,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 80,
       "sendable": true,
       "id": "brendan-keeler-health-api-guy-substack"
     },
@@ -3466,7 +3618,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 78,
+      "rank": 81,
       "sendable": false,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
@@ -3512,7 +3664,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 82,
       "sendable": true,
       "id": "chris-chartier-the-righteous-path-substack"
     },
@@ -3558,7 +3710,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 80,
+      "rank": 83,
       "sendable": true,
       "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
@@ -3603,7 +3755,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 81,
+      "rank": 84,
       "sendable": true,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
@@ -3647,7 +3799,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 82,
+      "rank": 85,
       "sendable": true,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
@@ -3694,7 +3846,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 83,
+      "rank": 86,
       "sendable": false,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
@@ -3739,9 +3891,68 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 87,
       "sendable": true,
       "id": "fitabase-fitabase-small-steps-labs"
+    },
+    {
+      "name": "Fitbod",
+      "org": "Fitbod Inc.",
+      "role": "Senior Head of Sales & Partnerships (Jesse Padilla)",
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "AI strength app whose workouts are built around a per-muscle recovery percentage; its own help center (updated 2026-09-15) says recovery 'is an estimate, not a measurement' and that it only sees what is logged or pulled from Apple Health/Health Connect. Multi-device already (Apple Watch, Wear OS, Fitbit, Strava, BLE heart-rate straps incl. Garmin/Polar/WHOOP broadcast), and a named partnerships lead (Jesse Padilla) owns B2B and partner relationships.",
+      "why_now": "Recovery help article updated 2026-09-15; Fitbod for Business page updated 2026-06-17 says it is 'open to discussing partnerships'.",
+      "evidence": [
+        "https://help.fitbod.me/hc/en-us/articles/43492170863895-How-does-Fitbod-know-my-muscles-are-still-recovering",
+        "https://help.fitbod.me/hc/en-us/sections/35305345636375-Integrations",
+        "https://help.fitbod.me/hc/en-us/articles/31891449815703-Fitbod-for-Business-Program-Overview-Benefits",
+        "https://www.linkedin.com/in/jesse-padilla-30582032"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/jesse-padilla-30582032",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "15-minute call with partnerships/product on adding overnight HRV + sleep as an optional input to the muscle-recovery model; offer a DevKit slot.",
+      "opener": "Hi Jesse, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG-based HRV and sleep data, with an open SDK and no subscription. Fitbod's help center calls recovery an estimate built from logged workouts. Would a measured overnight signal be useful as an optional input? We're choosing 5-10 DevKit design partners this fall. Open to 15 minutes?",
+      "check_size": null,
+      "stage": null,
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "last_signal_date": "2026-09-15",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "strength",
+        "recovery",
+        "hrv",
+        "dev-platform",
+        "healthkit",
+        "health-connect"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Apple Watch",
+        "Apple AirPods Pro",
+        "Health Connect on Android",
+        "Wear OS on Android",
+        "Fitbit (iOS only)",
+        "Strava",
+        "Bluetooth LE heart rate monitors (Garmin, Polar, WHOOP broadcast)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Vybe writes overnight HRV/sleep to HealthKit/Health Connect (which Fitbod already reads for activity) and pitches Fitbod to read those fields, or a direct SDK feed, so a low-readiness night nudges the muscle-recovery percentages or swaps in lower-intensity movements for today's workout; co-market to Fitbod's strength users.",
+      "unknowns": "Whether Fitbod reads HRV/sleep from HealthKit today (docs list workouts, energy, heart rate, body composition only); appetite for new data sources; size of partnerships team; any API terms.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 88,
+      "sendable": true,
+      "id": "fitbod-fitbod-inc"
     },
     {
       "name": "Golden Seeds",
@@ -3779,7 +3990,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 85,
+      "rank": 89,
       "sendable": false,
       "id": "golden-seeds-golden-seeds"
     },
@@ -3818,7 +4029,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 86,
+      "rank": 90,
       "sendable": true,
       "id": "hax-sosv"
     },
@@ -3862,7 +4073,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 87,
+      "rank": 91,
       "sendable": false,
       "id": "invi-mindhealth-invi-mindhealth"
     },
@@ -3902,7 +4113,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 92,
       "sendable": true,
       "id": "isabel-glass-cade-ventures"
     },
@@ -3942,7 +4153,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 93,
       "sendable": true,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
@@ -3982,7 +4193,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 90,
+      "rank": 94,
       "sendable": false,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
@@ -4021,7 +4232,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 91,
+      "rank": 95,
       "sendable": true,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
@@ -4068,7 +4279,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 92,
+      "rank": 96,
       "sendable": false,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
@@ -4113,7 +4324,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 97,
       "sendable": true,
       "id": "noop-ryanbr-noop-open-source"
     },
@@ -4157,7 +4368,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 94,
+      "rank": 98,
       "sendable": false,
       "id": "neurovus-neurovus"
     },
@@ -4197,7 +4408,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 95,
+      "rank": 99,
       "sendable": true,
       "id": "open-wearables-momentum-open-wearables-project"
     },
@@ -4236,7 +4447,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 96,
+      "rank": 100,
       "sendable": false,
       "id": "qualcomm-ventures-qualcomm"
     },
@@ -4275,7 +4486,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 101,
       "sendable": false,
       "id": "quinn-li-qualcomm-ventures"
     },
@@ -4315,7 +4526,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 98,
+      "rank": 102,
       "sendable": false,
       "id": "redalpine-redalpine"
     },
@@ -4354,7 +4565,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 103,
       "sendable": true,
       "id": "ryan-engel-cade-ventures"
     },
@@ -4398,7 +4609,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 104,
       "sendable": false,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
@@ -4440,7 +4651,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 101,
+      "rank": 105,
       "sendable": false,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
@@ -4484,7 +4695,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 102,
+      "rank": 106,
       "sendable": false,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
@@ -4530,7 +4741,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 107,
       "sendable": true,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
@@ -4570,7 +4781,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 108,
       "sendable": false,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
@@ -4613,9 +4824,61 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 109,
       "sendable": false,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
+    },
+    {
+      "name": "amp",
+      "org": "AMP Fit Inc.",
+      "role": "Founder & CEO (Shalom Meckenzie)",
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "amp makes a wall-mounted adaptive-resistance strength machine (not a wearable) whose site says 'each night of sleep teaches amp' and that resistance adapts 'heavier when you're energized, lighter when you're not', with 'sleep, nutrition, and recovery integrations' personalizing workouts; its sales page says the app 'syncs with Apple, Oura, and other fitness apps and trackers'. NY company with $45M total funding per its founder's LinkedIn, now selling into studios.",
+      "why_now": "2026-07-24 LinkedIn post launching studio/commercial channel (Core Collective) and inviting studios to reach its commercial team.",
+      "evidence": [
+        "https://amp.ai/",
+        "https://www.joinamp.com/a1b",
+        "https://www.linkedin.com/in/shalom-meckenzie-54015a256",
+        "https://www.linkedin.com/posts/ampinteractive_the-gym-studio-experience-hasnt-really-changed-activity-7486481721274810368-ABME"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/shalom-meckenzie-54015a256",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Intro call with product (founder or CPO) on adding Vybe as a sleep/recovery source next to Apple Health and Oura; offer a DevKit unit.",
+      "opener": "Hi Shalom, I'm the founder of Vybe Health in Akron, Ohio. amp's site says each night of sleep shapes how much resistance you get the next day. We're building a screenless band worn overnight that captures ECG-based HRV and sleep, licensed through an SDK, no subscription. Could Vybe sit next to Apple Health and Oura as a recovery source? We have 5-10 DevKit design-partner slots. Worth a short call?",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2026-07-24",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "strength",
+        "connected-fitness",
+        "sleep",
+        "hrv",
+        "dev-platform"
+      ],
+      "existing_wearables": [
+        "Apple (Apple Health)",
+        "Oura"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Add Vybe as a third overnight recovery source feeding amp's 'energized vs not' resistance and workout personalization; also a studio angle (amp commercial studios) for band pilots with members.",
+      "unknowns": "Exact integration method (HealthKit vs Oura API) and which metrics amp actually reads; whether amp builds integrations for small/pre-launch devices; no public partner page found (commercial email is only published for studio sales).",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 110,
+      "sendable": true,
+      "id": "amp-amp-fit-inc"
     },
     {
       "name": "r/QuantifiedSelf",
@@ -4653,7 +4916,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 111,
       "sendable": true,
       "id": "r-quantifiedself-reddit"
     },
@@ -4698,7 +4961,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 107,
+      "rank": 112,
       "sendable": true,
       "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
     },
@@ -4744,7 +5007,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 108,
+      "rank": 113,
       "sendable": true,
       "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
     },
@@ -4787,7 +5050,7 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 109,
+      "rank": 114,
       "sendable": false,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
@@ -4831,7 +5094,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 110,
+      "rank": 115,
       "sendable": false,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
@@ -4874,7 +5137,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 111,
+      "rank": 116,
       "sendable": true,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
@@ -4914,7 +5177,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 112,
+      "rank": 117,
       "sendable": false,
       "id": "accelerating-angels-accelerating-angels"
     },
@@ -4953,9 +5216,59 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 113,
+      "rank": 118,
       "sendable": true,
       "id": "achal-upadhyaya-interlagos"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Adaptive and wheelchair sports (Ohio)",
+      "org": "Adaptive Sports Ohio",
+      "why": "Systematic reviews show consumer trackers are 'ill-suited' for wheelchair users: step-based devices mis-count pushes (Fitbit Flex 2 ~60% error) and even Apple's wheelchair mode is task-dependent. An overnight HRV/ECG baseline does not depend on step or push counting. Adaptive Sports Ohio runs community and interscholastic programs from Wooster with satellites in Warrensville Heights and Austintown.",
+      "why_now": "Systematic review published 2023-09-15 concludes wheelchair fitness tracking research 'remains scarce'; Adaptive Sports Ohio programs run year-round.",
+      "evidence": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10577091/",
+        "https://www.sciencedirect.com/science/article/pii/S1877065720300804",
+        "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0191556&type=printable",
+        "https://adaptivesportsohio.org/contact/",
+        "https://adaptivesportsohio.org/interscholastic-sports/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://adaptivesportsohio.org/contact/",
+      "warm_path": "Northeast Ohio (Wooster HQ, Warrensville Heights and Austintown offices); serves disabled veterans",
+      "fit": 8,
+      "ask": "Call with Adaptive Sports Ohio's director about co-designing an adult athlete feedback group for the band and app.",
+      "opener": "Hi Adaptive Sports Ohio team - I'm the founder of Vybe Health in Akron. Most fitness trackers assume steps, and research shows they miss badly for wheelchair users. Our band is screenless and worn overnight, so it doesn't count steps at all. Before we launch, I'd like adaptive athletes to shape what we build. Would your team have 20 minutes to talk about a small adult feedback group?",
+      "geo": "Wooster / Cleveland / Youngstown area, OH",
+      "last_signal_date": "2023-09-15",
+      "confidence": "verified",
+      "tags": [
+        "adaptive",
+        "para-sports",
+        "wheelchair",
+        "ohio",
+        "veteran",
+        "accessibility",
+        "sleep"
+      ],
+      "wearable_adoption": "Byrne et al. systematic review (2023-09-15): wheelchair users report wearables 'not accurate for tracking steps and activities of daily living'; research 'remains scarce'. Kressler et al. (PLOS ONE 2018): Garmin VivoFit, Fitbit Flex, Jawbone UP24 'unlikely to accurately and precisely measure overall activity for most wheelchair users'. Apple Watch wheelchair mode poor at low-frequency/overground pushing (Ann Phys Rehabil Med).",
+      "competition_rule": null,
+      "opportunity": "Adult athlete co-design/feedback group through Adaptive Sports Ohio (info@adaptivesportsohio.org, 330-601-1400; Director@AdaptiveSportsOhio.org for interscholastic programs); wheelchair basketball and track athletes first.",
+      "unknowns": "Whether Vybe's algorithms are validated for wheelchair users or spinal-cord-injury autonomic profiles (must not imply they are); org's partnership policy for vendors unknown; no adaptive-specific competition device rule checked.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 119,
+      "sendable": true,
+      "id": "adaptive-and-wheelchair-sports-ohio-adaptive-sports-ohio"
     },
     {
       "name": "Alma: Nutrition Coach",
@@ -5008,7 +5321,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 114,
+      "rank": 120,
       "sendable": false,
       "id": "alma-nutrition-coach-alma-nutrition-inc"
     },
@@ -5053,7 +5366,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 115,
+      "rank": 121,
       "sendable": false,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
@@ -5098,9 +5411,60 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 116,
+      "rank": 122,
       "sendable": false,
       "id": "barrett-piper-west-licking-oh-fire-district"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Brazilian jiu-jitsu (Northeast Ohio academies)",
+      "org": "IBJJF-ruled competition; GT Brazilian Jiu-Jitsu (Tallmadge) and TKO Brazilian Jiu-Jitsu / Nova Uniao Ohio",
+      "why": "IBJJF rules forbid jewelry and any hard object that could harm an opponent, so nothing goes on the wrist in a match, and a 2024 qualitative study of BJJ competitors found wearable research in grappling 'relatively underexplored' with cost named as a barrier. Two Akron-area academies run competition teams.",
+      "why_now": "IBJJF rules book version dated June 2024 is the current competition standard; BJJ grappling self-tracking study published 2024-10-28.",
+      "evidence": [
+        "https://aajjb.com/wp-content/uploads/2024/10/2024JUN_IBJJF_Rules_EN.pdf",
+        "https://www.grapplearts.com/wp-content/uploads/2023/05/EN_IBJJF_RulesBook_Version5.2.pdf",
+        "https://exa.ai/library/publication/t87gv3qv6t1",
+        "https://www.gtbjjohio.com/",
+        "https://www.gtbjjohio.com/instructors",
+        "https://www.tkobjj.com/about-the-academy"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.gtbjjohio.com/",
+      "warm_path": "Akron / Tallmadge - local to Vybe",
+      "fit": 8,
+      "ask": "Coffee or 15-minute call with GT BJJ head instructors about an overnight-wear trial with 5-8 competition-team adults.",
+      "opener": "Hi Todd and Greg - I'm building Vybe Health a few miles away in Akron: a screenless band people wear overnight, so it stays off the mats. Grapplers can't wear anything in matches and most trackers aren't built around that. Could I buy you a coffee and hear how your competition team handles hard weeks? If it makes sense, I'd love a few adult athletes to try pre-launch bands and tell us what's useless.",
+      "geo": "Tallmadge / Akron, OH",
+      "last_signal_date": "2024-10-28",
+      "confidence": "verified",
+      "tags": [
+        "bjj",
+        "grappling",
+        "combat-sports",
+        "ohio",
+        "akron",
+        "sleep",
+        "hrv"
+      ],
+      "wearable_adoption": "Maliki (2024-10-28) interviewed 12 Alliance BJJ competitors: application of self-tracking tech in grappling 'remains relatively underexplored'; some athletes used WHOOP for sleep/recovery, but one said 'not everyone can afford these gadgets' (cost barrier). Elite sample only; no rec/amateur adoption survey found.",
+      "competition_rule": "IBJJF Rules (June 2024 edition / v5.2): use of jewelry or any protector fashioned of hard material that may cause harm to an opponent or the athlete is forbidden; no-gi shorts may have no plastic or metal. Applies to matches only; overnight wear is unaffected.",
+      "opportunity": "Local academy pilot: GT Brazilian Jiu-Jitsu (Tallmadge; Todd@gtbjjohio.com, 330-294-2600) and TKO Brazilian Jiu-Jitsu (Nova Uniao Ohio competition team) - seed bands to adult competitors in a camp block before a local IBJJF/NAGA event.",
+      "unknowns": "TKO contact details not captured on page read; whether academy members already wear WHOOP/Oura unknown; no Ohio BJJ federation body found; IBJJF/academy affiliation rules on sponsor logos not checked.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 123,
+      "sendable": true,
+      "id": "brazilian-jiu-jitsu-northeast-ohio-academies-ibjjf-ruled-competition-gt-brazilia"
     },
     {
       "name": "Chris Gammell",
@@ -5137,9 +5501,59 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 124,
       "sendable": true,
       "id": "chris-gammell-the-amp-hour-podcast"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "College club wrestling (NCWA, Ohio teams)",
+      "org": "National Collegiate Wrestling Association - Ohio State NCWA, University of Toledo, University of Dayton clubs",
+      "why": "NCAA rules bar any jewelry during competition, and the only US college-wrestler wearable study found (Virginia Tech, 2023) had athletes wear the band day and night except during competition - a 9-of-10 compliance pilot that shows overnight wear fits wrestlers. Club (NCWA) programs lack the varsity budgets that buy team wearables.",
+      "why_now": "NCWA 2026 National Championships held 3/26-3/28/2026; 2026-27 club season begins this fall.",
+      "evidence": [
+        "https://ncaaorg.s3.amazonaws.com/championships/sports/wrestling/rules/PRMWR_RulesBook.pdf",
+        "https://vtechworks.lib.vt.edu/server/api/core/bitstreams/1de27630-dea5-424a-97b2-e2a0d139729c/content",
+        "https://ncwa.net/teams/osu",
+        "https://ncwa.net/teams/TOL",
+        "https://ncwa.net/teams/DAY"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://ncwa.net/teams/osu",
+      "warm_path": "Ohio; university (Ohio State, Toledo, Dayton club teams)",
+      "fit": 8,
+      "ask": "15-minute call with the Ohio State NCWA head coach about a 6-week overnight-wear design-partner pilot with 8-10 adult wrestlers.",
+      "opener": "Hi Coach Rourke - I'm the founder of Vybe Health in Akron. We make a screenless band meant to be worn overnight, so it never goes on the mat. College wrestling rules keep anything off athletes in competition, and club programs rarely get the team tech varsity squads do. Would you be open to 15 minutes about a short overnight-only pilot with a few of your wrestlers, on their terms, with honest feedback as the only ask?",
+      "geo": "Columbus / Toledo / Dayton, OH",
+      "last_signal_date": "2026-03-28",
+      "confidence": "verified",
+      "tags": [
+        "wrestling",
+        "college",
+        "club-sports",
+        "ohio",
+        "hrv",
+        "sleep",
+        "combat-sports"
+      ],
+      "wearable_adoption": "Gerardi et al. (Virginia Tech, 2023-05-19) call WHOOP 'relatively new' and ran a feasibility pilot because use in college wrestlers was unproven; 9 D1 wrestlers wore it 'every day and night except during competition' with 90% compliance. No adoption survey for club (NCWA) wrestlers found.",
+      "competition_rule": "NCAA Wrestling Rules (2025-26/2026-27) Rule 1 Sec. 8 Art. 1: competitors shall not wear any type of jewelry during competition; hard special equipment must be padded. Competition-only, so overnight wear is unaffected.",
+      "opportunity": "Club-team pilot with Ohio State NCWA (head coach David Rourke, email on NCWA team page) and follow with Toledo and Dayton NCWA clubs in the Great Lakes Conference; adults, so simpler consent than HS.",
+      "unknowns": "Toledo and Dayton pages showed no cleared roster or coach email at read time; club budgets and university approval rules for research-style pilots unknown; whether any NCWA team already uses WHOOP/Oura not found.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 125,
+      "sendable": true,
+      "id": "college-club-wrestling-ncwa-ohio-teams-national-collegiate-wrestling-association"
     },
     {
       "name": "Columbus Fury",
@@ -5182,7 +5596,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 118,
+      "rank": 126,
       "sendable": false,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
@@ -5221,7 +5635,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 119,
+      "rank": 127,
       "sendable": true,
       "id": "conor-allison-wareable"
     },
@@ -5275,7 +5689,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 120,
+      "rank": 128,
       "sendable": true,
       "id": "endorphins-running-endorphins-running"
     },
@@ -5319,7 +5733,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 121,
+      "rank": 129,
       "sendable": false,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
@@ -5362,7 +5776,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 122,
+      "rank": 130,
       "sendable": false,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
@@ -5401,7 +5815,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 123,
+      "rank": 131,
       "sendable": false,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
@@ -5440,7 +5854,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 124,
+      "rank": 132,
       "sendable": false,
       "id": "healthtech-capital-healthtech-capital"
     },
@@ -5478,7 +5892,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 125,
+      "rank": 133,
       "sendable": false,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
@@ -5522,7 +5936,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 134,
       "sendable": false,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
@@ -5561,7 +5975,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 127,
+      "rank": 135,
       "sendable": false,
       "id": "julien-blin-the-upside-newsletter"
     },
@@ -5603,7 +6017,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 136,
       "sendable": false,
       "id": "leo-polovets-humba-ventures"
     },
@@ -5642,7 +6056,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 129,
+      "rank": 137,
       "sendable": true,
       "id": "lunar-ventures-lunar-ventures"
     },
@@ -5681,7 +6095,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 130,
+      "rank": 138,
       "sendable": true,
       "id": "matt-evans-techradar"
     },
@@ -5719,7 +6133,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 131,
+      "rank": 139,
       "sendable": true,
       "id": "michael-l-hicks-android-central"
     },
@@ -5760,7 +6174,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 132,
+      "rank": 140,
       "sendable": true,
       "id": "mick-halsband-lunar-ventures"
     },
@@ -5804,7 +6218,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 133,
+      "rank": 141,
       "sendable": false,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
     },
@@ -5863,7 +6277,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 134,
+      "rank": 142,
       "sendable": true,
       "id": "myfitnesspal-myfitnesspal"
     },
@@ -5901,7 +6315,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 135,
+      "rank": 143,
       "sendable": false,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
@@ -5948,7 +6362,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 136,
+      "rank": 144,
       "sendable": true,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
@@ -5992,7 +6406,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 137,
+      "rank": 145,
       "sendable": true,
       "id": "openstrap-openstrap-open-source"
     },
@@ -6038,7 +6452,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 138,
+      "rank": 146,
       "sendable": false,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
     },
@@ -6080,7 +6494,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 147,
       "sendable": false,
       "id": "petteri-koponen-lifeline-ventures"
     },
@@ -6119,7 +6533,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 140,
+      "rank": 148,
       "sendable": true,
       "id": "point-nine-point-nine"
     },
@@ -6158,7 +6572,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 141,
+      "rank": 149,
       "sendable": false,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
@@ -6199,7 +6613,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 142,
+      "rank": 150,
       "sendable": true,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
@@ -6244,7 +6658,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 143,
+      "rank": 151,
       "sendable": true,
       "id": "reach-fitness-reach-fitness-ohio"
     },
@@ -6282,7 +6696,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 152,
       "sendable": true,
       "id": "rachael-schultz-business-insider"
     },
@@ -6321,7 +6735,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 145,
+      "rank": 153,
       "sendable": true,
       "id": "rev1-ventures-rev1-ventures"
     },
@@ -6360,7 +6774,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 154,
       "sendable": true,
       "id": "robb-sutton-robbsutton-com"
     },
@@ -6399,7 +6813,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 147,
+      "rank": 155,
       "sendable": true,
       "id": "ryan-merket-runtimewire"
     },
@@ -6442,7 +6856,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 148,
+      "rank": 156,
       "sendable": false,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
@@ -6482,7 +6896,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 149,
+      "rank": 157,
       "sendable": false,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
@@ -6526,7 +6940,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 158,
       "sendable": false,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
@@ -6564,7 +6978,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 151,
+      "rank": 159,
       "sendable": false,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
@@ -6603,7 +7017,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 152,
+      "rank": 160,
       "sendable": true,
       "id": "t3-performance-t3-performance"
     },
@@ -6643,7 +7057,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 161,
       "sendable": true,
       "id": "timothy-martens-vaark-ventures"
     },
@@ -6682,7 +7096,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 154,
+      "rank": 162,
       "sendable": false,
       "id": "true-ventures-true-ventures"
     },
@@ -6730,7 +7144,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 155,
+      "rank": 163,
       "sendable": false,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
@@ -6768,7 +7182,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 156,
+      "rank": 164,
       "sendable": false,
       "id": "vaark-ventures-vaark-ventures"
     },
@@ -6813,7 +7227,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 157,
+      "rank": 165,
       "sendable": false,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
@@ -6852,9 +7266,59 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 166,
       "sendable": false,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Youth and adult bouldering (Akron)",
+      "org": "Rock Mill Climbing, Yoga & Fitness (Akron) / USA Climbing youth series",
+      "why": "HCI research says there are 'little to no consumer electronics' for climbing training and climbers are reluctant toward tech that conflicts with sport values; during climbing a wrist device is in the way. Rock Mill, one mile from the University of Akron, hosts USA Climbing youth comps (165 athletes at one 2023 event) and invites community partner nights.",
+      "why_now": "Rock Mill runs weekly route resets and youth programs; it hosted a USA Climbing youth qualifier in Nov 2023 and openly invites partner organizations.",
+      "evidence": [
+        "https://dl.acm.org/doi/10.1145/2858036.2858562",
+        "https://www.sciencedirect.com/science/article/abs/pii/S1071581918306384",
+        "https://www.rockmillclimbing.com/",
+        "https://www.adventuredirectory.org/partner/483",
+        "https://www.timesobserver.com/sports/local-sports/2023/11/thundering-herd-shines/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.adventuredirectory.org/partner/483",
+      "warm_path": "Akron - 1 mile from University of Akron; local to Vybe",
+      "fit": 8,
+      "ask": "Meet Rock Mill's owners about an adult-member overnight-wear trial and a co-hosted community night.",
+      "opener": "Hi Rock Mill team - I'm the founder of Vybe Health, a few minutes away in Akron. We make a screenless band worn overnight, so it never gets in the way on the wall. Research keeps saying climbers have almost no gear built for them. Could we talk about inviting a handful of adult members to try pre-launch bands and share honest feedback, maybe over a community night at the gym?",
+      "geo": "Akron, OH",
+      "last_signal_date": "2023-11-14",
+      "confidence": "verified",
+      "tags": [
+        "climbing",
+        "bouldering",
+        "akron",
+        "ohio",
+        "community",
+        "youth",
+        "sleep"
+      ],
+      "wearable_adoption": "ClimbAware (ACM CHI 2016, survey of 54 climbers): 'there are little to no consumer electronics available to support rock climbing training.' Mencarini et al. (IJHCS 2019): climbers 'usually are reluctant to the idea of using technology in their sport practice'. Both older; no 2024-26 climbing wearable survey found.",
+      "competition_rule": null,
+      "opportunity": "Adult-member pilot at Rock Mill (info@rockmillclimbing.com, 330-222-6419; 'Community Partner Night' application) and later its youth team with parent consent; Goat Fort-style visiting teams show regional USA Climbing traffic.",
+      "unknowns": "IFSC/USA Climbing competition rule on wearables not read; youth team size and coach unknown; climbing-specific evidence is 2016-2019.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 167,
+      "sendable": true,
+      "id": "youth-and-adult-bouldering-akron-rock-mill-climbing-yoga-fitness-akron-usa-climb"
     },
     {
       "role": null,
@@ -6913,7 +7377,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 159,
+      "rank": 168,
       "sendable": true,
       "id": "freddy-freddy-freddy-coach"
     },
@@ -6955,7 +7419,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 160,
+      "rank": 169,
       "sendable": true,
       "id": "mydatahelps-careevolution"
     },
@@ -6999,7 +7463,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 161,
+      "rank": 170,
       "sendable": true,
       "id": "synheart-synheart-mila-ventures"
     },
@@ -7042,7 +7506,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 162,
+      "rank": 171,
       "sendable": true,
       "id": "thryve-thryve"
     },
@@ -7085,7 +7549,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 163,
+      "rank": 172,
       "sendable": false,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
@@ -7130,7 +7594,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 173,
       "sendable": false,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
@@ -7174,7 +7638,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 165,
+      "rank": 174,
       "sendable": false,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
@@ -7218,7 +7682,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 166,
+      "rank": 175,
       "sendable": false,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
@@ -7258,7 +7722,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 176,
       "sendable": true,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
@@ -7297,7 +7761,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 168,
+      "rank": 177,
       "sendable": true,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
@@ -7337,7 +7801,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 169,
+      "rank": 178,
       "sendable": false,
       "id": "aix-ventures-aix-ventures"
     },
@@ -7376,7 +7840,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 170,
+      "rank": 179,
       "sendable": false,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
@@ -7420,7 +7884,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 171,
+      "rank": 180,
       "sendable": true,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
     },
@@ -7460,7 +7924,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 172,
+      "rank": 181,
       "sendable": true,
       "id": "anirvan-chowdhury-qualcomm-ventures"
     },
@@ -7508,7 +7972,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 173,
+      "rank": 182,
       "sendable": true,
       "id": "bathhouse-bathhouse"
     },
@@ -7547,7 +8011,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 174,
+      "rank": 183,
       "sendable": true,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
@@ -7586,7 +8050,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 175,
+      "rank": 184,
       "sendable": false,
       "id": "blume-ventures-blume-ventures"
     },
@@ -7631,7 +8095,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 176,
+      "rank": 185,
       "sendable": false,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
@@ -7670,7 +8134,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 186,
       "sendable": true,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
@@ -7715,7 +8179,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 178,
+      "rank": 187,
       "sendable": false,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
     },
@@ -7753,7 +8217,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 179,
+      "rank": 188,
       "sendable": false,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
@@ -7798,7 +8262,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 180,
+      "rank": 189,
       "sendable": false,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
@@ -7836,7 +8300,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 190,
       "sendable": true,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
@@ -7873,7 +8337,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 182,
+      "rank": 191,
       "sendable": true,
       "id": "humba-ventures-humba-ventures"
     },
@@ -7918,7 +8382,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 183,
+      "rank": 192,
       "sendable": true,
       "id": "joules-joules-joules-cc"
     },
@@ -7957,7 +8421,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 184,
+      "rank": 193,
       "sendable": false,
       "id": "jumpstart-ventures-jumpstart-inc"
     },
@@ -7994,7 +8458,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 185,
+      "rank": 194,
       "sendable": false,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
@@ -8037,7 +8501,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 186,
+      "rank": 195,
       "sendable": true,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
@@ -8083,7 +8547,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 187,
+      "rank": 196,
       "sendable": true,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
@@ -8122,7 +8586,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 188,
+      "rank": 197,
       "sendable": true,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
@@ -8165,7 +8629,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 189,
+      "rank": 198,
       "sendable": true,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
@@ -8211,7 +8675,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 199,
       "sendable": true,
       "id": "pace-pace-pacetraining-co"
     },
@@ -8263,7 +8727,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 191,
+      "rank": 200,
       "sendable": true,
       "id": "platelens-visiontech-solutions-llc"
     },
@@ -8302,7 +8766,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 192,
+      "rank": 201,
       "sendable": true,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
@@ -8346,7 +8810,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 202,
       "sendable": true,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
@@ -8385,7 +8849,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 194,
+      "rank": 203,
       "sendable": false,
       "id": "samsung-next-samsung-electronics"
     },
@@ -8428,9 +8892,106 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 195,
+      "rank": 204,
       "sendable": false,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Scholastic esports (Ohio)",
+      "org": "Esports Ohio (NASEF-certified affiliate; OHSAA-supported state tournament)",
+      "why": "Esports players show poor sleep (50.6% poor PSQI in one 2026 university sample) and research on sleep and stress in esports is 'lacking compared to many other sports'; no wearable is built for seated competitors. Esports Ohio is a teacher-run nonprofit with ~250 affiliated schools whose state tournament the OHSAA supports.",
+      "why_now": "Esports Ohio crowned 2026 OHSAA-sponsored state champions (Lorain, Sylvania Northview, Beavercreek, Groveport Madison); Nature Sci Rep esports sleep/HRV study published 2025-09-24.",
+      "evidence": [
+        "https://www.nature.com/articles/s41598-025-18228-y",
+        "https://www.mdpi.com/1660-4601/19/7/4146",
+        "https://exa.ai/library/publication/frl6r8vqpnp",
+        "https://www.ohsaa.org/news-media/ohsaa-to-support-esports-ohio-state-tournament",
+        "https://www.esportsohio.org/",
+        "https://www.esportsohio.org/results-and-awards/team-champions"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.esportsohio.org/",
+      "warm_path": "Ohio; University of Akron hosted the 2023 state tournament",
+      "fit": 7,
+      "ask": "20-minute call with Esports Ohio's board about a coach/adult-staff pilot first, then an opt-in student wellness unit with district approval.",
+      "opener": "Hi Esports Ohio team - I'm the founder of Vybe Health in Akron. We make a screenless band worn overnight. Researchers keep finding esports players sleep late and that the sport has far less recovery support than physical sports. I'd like to hear how your coaches think about player routines and whether a small opt-in pilot, starting with adult coaches, would ever fit your programs. 20 minutes?",
+      "geo": "Ohio (statewide)",
+      "last_signal_date": "2026-09-20",
+      "confidence": "verified",
+      "tags": [
+        "esports",
+        "high-school",
+        "ohio",
+        "sleep",
+        "youth",
+        "education"
+      ],
+      "wearable_adoption": "Hoang et al. (Sci Rep, 2025-09-24): studies on sleep, stress and esports performance 'are lacking compared to those conducted for many other sports'; their study had to supply Oura rings. Bonnar et al. (2022): first sleep intervention ever trialed with esports athletes. Yuksel et al. (2026-09-20): 50.6% of 164 university esports players had poor sleep quality. No survey of esports wearable ownership found.",
+      "competition_rule": null,
+      "opportunity": "Esports Ohio (Napoleon Area Schools tech director Jacob Gebers was board president in 2023) as a teacher network; begin with adult coaches/college players, then district-approved, parent-consented student wellness pilots.",
+      "unknowns": "Players are mostly minors - heavy consent, district and data-privacy requirements; Esports Ohio contact person and current board not verified; no evidence on student appetite.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 205,
+      "sendable": true,
+      "id": "scholastic-esports-ohio-esports-ohio-nasef-certified-affiliate-ohsaa-supported-s"
+    },
+    {
+      "name": "Simple Muscle",
+      "org": "Simple Muscle (Vladimir Haltakov)",
+      "role": "Founder / solo developer (Vladimir Haltakov)",
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Brand-new iPhone strength tracker (launched 2026-08-10) built so the user's own AI assistant (ChatGPT/Claude via MCP) writes the plan and reads training history. No wearable or Apple Health integration appears on its site; it exposes plans, sets and history only. A recovery signal is the missing context for 'adjust today's workout', and the solo founder ships fast and posts publicly on LinkedIn.",
+      "why_now": "App launched 2026-08-10 (founder LinkedIn post); MCP connector live in Claude per its site (Aug 2026).",
+      "evidence": [
+        "https://simplemuscle.ai/",
+        "https://www.linkedin.com/posts/haltakov_my-first-app-is-live-on-the-ios-app-store-activity-7492580702220378112-bwwL"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/posts/haltakov_my-first-app-is-live-on-the-ios-app-store-activity-7492580702220378112-bwwL",
+      "warm_path": "Both are MCP-native: Vybe's API/MCP plus Simple Muscle's MCP can be demoed together in one Claude chat",
+      "fit": 7,
+      "ice": null,
+      "ask": "Joint MCP demo: Claude reads last night's Vybe HRV/sleep plus Simple Muscle history and updates today's template; DevKit unit for the founder.",
+      "opener": "Hi Vladimir, I'm the founder of Vybe Health in Akron, Ohio. I love the idea behind Simple Muscle: the assistant plans, the app just tracks. We're building a screenless band worn overnight that records ECG-based HRV and sleep, with an SDK, no subscription. If an assistant could read last night's data next to your history, it could adjust today's template. Want a DevKit to try a joint demo?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-08-10",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "strength",
+        "mcp",
+        "ai-coach",
+        "dev-platform",
+        "indie"
+      ],
+      "existing_wearables": null,
+      "exclusive": null,
+      "partner_status": "no-wearable-yet",
+      "opportunity": "Be the first wearable signal in the Simple Muscle loop, either by adding an Apple Health/Vybe read or simply by pairing Vybe's API/MCP with Simple Muscle's MCP in the same assistant so readiness adjusts today's workout; co-publish the demo.",
+      "unknowns": "No wearable/HealthKit integration found, but not confirmed absent (so existing_wearables=null); tiny user base; founder location not verified; whether it is a side project or a business.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 206,
+      "sendable": true,
+      "id": "simple-muscle-simple-muscle-vladimir-haltakov"
     },
     {
       "name": "Summit Athletic Club",
@@ -8471,7 +9032,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 207,
       "sendable": true,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
@@ -8508,7 +9069,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 197,
+      "rank": 208,
       "sendable": false,
       "id": "veteran-angel-network-van-context-ventures"
     },
@@ -8547,7 +9108,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 198,
+      "rank": 209,
       "sendable": true,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
@@ -8590,7 +9151,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 199,
+      "rank": 210,
       "sendable": false,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
@@ -8629,7 +9190,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 200,
+      "rank": 211,
       "sendable": true,
       "id": "wearable-data-builders-by-rook-rook"
     },
@@ -8667,7 +9228,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 201,
+      "rank": 212,
       "sendable": true,
       "id": "r-hyrox-reddit"
     },
@@ -8711,7 +9272,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 202,
+      "rank": 213,
       "sendable": true,
       "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
     },
@@ -8754,7 +9315,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 203,
+      "rank": 214,
       "sendable": true,
       "id": "lightship-bootcamp-akron-black-tech-week"
     },
@@ -8798,7 +9359,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 204,
+      "rank": 215,
       "sendable": true,
       "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
     },
@@ -8842,7 +9403,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 205,
+      "rank": 216,
       "sendable": true,
       "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
     },
@@ -8886,7 +9447,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 206,
+      "rank": 217,
       "sendable": true,
       "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
     },
@@ -8929,7 +9490,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 207,
+      "rank": 218,
       "sendable": true,
       "id": "big-team-challenge-big-team-challenge"
     },
@@ -8973,7 +9534,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 208,
+      "rank": 219,
       "sendable": true,
       "id": "terra-terra-tryterra-co"
     },
@@ -9017,7 +9578,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 209,
+      "rank": 220,
       "sendable": false,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
@@ -9056,7 +9617,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 221,
       "sendable": false,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
@@ -9100,7 +9661,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 211,
+      "rank": 222,
       "sendable": false,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
@@ -9145,9 +9706,58 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 212,
+      "rank": 223,
       "sendable": false,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Amateur (Olympic-style) boxing - Ohio LBC",
+      "org": "USA Boxing Ohio Local Boxing Committee",
+      "why": "USA Boxing's national rulebook says no body jewelry or body accessories may be worn and boxers wear no objects beyond specified equipment, and combat-sport monitoring research shows low engagement. Ohio's LBC is run by named volunteers with public phones/emails and connects many youth and adult gyms.",
+      "why_now": "USA Boxing National Rule Book revisions effective 1.1.2026; Ohio LBC officers listed on USA Boxing directory.",
+      "evidence": [
+        "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt5ff28f6e78e9624d/695ed2d8b45570d8a64b74b9/USA_Boxing_Rule_Book_Revisions_-_1.1.2026.pdf",
+        "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt2aa4f9dd7f315e3e/658f4d40b05b9eca01d728d8/USA_Boxing_Rule_Book_Rev._1.1.2024.pdf",
+        "https://www.usaboxing.org/ohio",
+        "https://www.usaboxing.org/local-boxing-committees-directory",
+        "https://www.omicsdi.org/dataset/biostudies-literature/S-EPMC6231822"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.usaboxing.org/local-boxing-committees-directory",
+      "warm_path": "Ohio",
+      "fit": 7,
+      "ask": "15-minute call with the Ohio LBC president about introducing a 5-gym adult boxer overnight-wear pilot.",
+      "opener": "Hi James - I'm the founder of Vybe Health in Akron. We're building a screenless band worn overnight, never in the ring, so it stays clear of USA Boxing's no-accessories rule. Most amateur gyms have no tracking tools at all. Would you be open to 15 minutes on whether a few Ohio gyms might want to try pre-launch bands with adult boxers and give us blunt feedback?",
+      "geo": "Ohio",
+      "last_signal_date": "2026-01-01",
+      "confidence": "verified",
+      "tags": [
+        "boxing",
+        "combat-sports",
+        "ohio",
+        "amateur",
+        "hrv",
+        "sleep"
+      ],
+      "wearable_adoption": "No US amateur boxing wearable survey found. Australian Olympic combat sports study (incl. boxing): 13% compliance with online health monitoring; boxers' knee injuries most frequent and 97% of cases athletes trained through health problems (OmicsDI record).",
+      "competition_rule": "USA Boxing National Rule Book (rev. 1.1.2026, also 1.1.2024/2025): 'No type of body jewelry and no body accessories will be permitted to be worn'; boxer must wear no other objects except specified equipment. Competition/weigh-in rule; overnight wear unaffected.",
+      "opportunity": "Ohio LBC (President James Howe; VP Lamar Wright Jr., also Toledo Golden Gloves president) as a connector to gyms; start with adult (18+) boxers at 2-3 gyms.",
+      "unknowns": "Adult vs youth membership mix unknown; LBC appetite for vendor intros unknown; Golden Gloves tournament dates for 2027 not checked.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 224,
+      "sendable": true,
+      "id": "amateur-olympic-style-boxing-ohio-lbc-usa-boxing-ohio-local-boxing-committee"
     },
     {
       "name": "Austin Womack",
@@ -9190,7 +9800,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 213,
+      "rank": 225,
       "sendable": false,
       "id": "austin-womack-rugged-athlete-training"
     },
@@ -9230,7 +9840,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 226,
       "sendable": true,
       "id": "btw-meetup-akron-black-tech-week"
     },
@@ -9274,9 +9884,64 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 215,
+      "rank": 227,
       "sendable": false,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
+    },
+    {
+      "name": "Caliber",
+      "org": "Caliber Fitness, Inc.",
+      "role": "Co-Founder & CPO (Chris Muir)",
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Strength-training app plus paid 1:1 human coaching (NYC, ~40-60 staff). It syncs activity via Apple Health and Health Connect (Garmin routed through Apple Health) and has no direct wearable integration yet. Its public feature board shows users asking for a WHOOP integration, a direct Garmin integration ('Planned') and a 'Caliber API' (under consideration), and lists 'Suggested workout changes' as under consideration, so recovery data is in demand.",
+      "why_now": "Feature board active in 2026: the 'Caliber API' idea was posted 10 Feb by co-founder Chris Muir; Health Connect support shipped 2024-07-31.",
+      "evidence": [
+        "https://caliberstrong.freshdesk.com/support/solutions/articles/48001257617-connected-apps-and-data-syncing-user-guide",
+        "https://feedback.caliberstrong.com/b/7vz226vy/feature-ideas/whoop-integration-1",
+        "https://feedback.caliberstrong.com/announcements/caliber-413-android-health-connect-support",
+        "https://www.linkedin.com/in/chris-muir"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/chris-muir",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "15-minute call with Chris Muir on giving Caliber coaches a nightly HRV/sleep view for clients who wear a Vybe band; DevKit pilot with a few coaches.",
+      "opener": "Hi Chris, I'm the founder of Vybe Health in Akron, Ohio. I saw Caliber members asking for WHOOP and Garmin integrations on your feature board. We're building a screenless band worn overnight that records ECG-based HRV and sleep, with an SDK and no subscription. Could a few Caliber coaches pilot it to see clients' overnight data next to their training log? We're picking 5-10 design partners. Open to 15 minutes?",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2024-07-31",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "strength",
+        "coaching",
+        "hrv",
+        "sleep",
+        "healthkit",
+        "health-connect"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Health Connect",
+        "Garmin (via Apple Health)",
+        "Google Fit (legacy)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Coach-facing pilot: Caliber coaches see a client's overnight HRV/sleep trend (via HealthKit/Health Connect or Vybe API) and adjust that week's program; later, feed the planned 'suggested workout changes' feature. Co-market to the free-app audience.",
+      "unknowns": "Whether Caliber reads sleep/HRV from Apple Health today; whether the Garmin/WHOOP items moved since 2022; no partner page; the 2026 date on the 'Caliber API' idea is shown as '10 Feb' without a year, so it is inferred.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 228,
+      "sendable": true,
+      "id": "caliber-caliber-fitness-inc"
     },
     {
       "name": "Capital Factory - Texas Fund / Center for Dual-Use Innovation",
@@ -9314,7 +9979,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 216,
+      "rank": 229,
       "sendable": false,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
@@ -9354,7 +10019,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 230,
       "sendable": true,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
@@ -9393,7 +10058,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 231,
       "sendable": true,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
@@ -9432,7 +10097,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 219,
+      "rank": 232,
       "sendable": false,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
@@ -9473,7 +10138,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 220,
+      "rank": 233,
       "sendable": false,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
@@ -9516,7 +10181,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 234,
       "sendable": false,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
@@ -9563,7 +10228,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 235,
       "sendable": true,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
@@ -9601,7 +10266,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 236,
       "sendable": true,
       "id": "greg-morris-gregmorris-co-uk"
     },
@@ -9645,7 +10310,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 224,
+      "rank": 237,
       "sendable": true,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
@@ -9683,7 +10348,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 225,
+      "rank": 238,
       "sendable": false,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
@@ -9727,7 +10392,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 239,
       "sendable": false,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
@@ -9764,7 +10429,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 227,
+      "rank": 240,
       "sendable": false,
       "id": "interlagos-interlagos"
     },
@@ -9803,9 +10468,58 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 241,
       "sendable": false,
       "id": "inventure-inventure-vc"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Judo (Ohio clubs)",
+      "org": "USJF / USA Judo clubs in Ohio (Konan Yudanshakai) - e.g., Chu To Bu Judo Club (Avon), Black Swamp Judo (Toledo), Mid East Cudell Judo Club (Cleveland)",
+      "why": "Judo refereeing rules penalize wearing any hard or metallic object (British Judo calls it a disqualifiable offence), and a feasibility study of Australian Olympic combat athletes (boxing, judo, taekwondo, wrestling) found only 13% engagement with an online health-monitoring system - monitoring culture is thin.",
+      "why_now": "British Judo amendments to IJF contest rules dated 22 Feb 2025; USJF club directory lists Ohio clubs with FY2026/FY2027 registration.",
+      "evidence": [
+        "https://shufujudo.org/wp-content/uploads/2010USAJudoRefereeingRules128FINAL1.pdf",
+        "https://www.britishjudo.org.uk/wp-content/uploads/2025/02/BJA-Amendments-to-IJF-Contest-Rules-22-Feb-2025.pdf",
+        "https://www.usjf.com/judo-clubs/",
+        "http://www.ohiojudo.org/Judo_Clubs.htm",
+        "https://www.omicsdi.org/dataset/biostudies-literature/S-EPMC6231822"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.usjf.com/judo-clubs/",
+      "warm_path": "Ohio (Northeast Ohio clubs: Avon, Bedford Heights, Cleveland)",
+      "fit": 7,
+      "ask": "Short call with one Northeast Ohio club head instructor about seeding 5 bands to adult competitors.",
+      "opener": "Hello - I'm the founder of Vybe Health in Akron. We're building a screenless band worn overnight, so it never goes on the mat. Judo rules keep hard objects off judoka in contests, and few judo clubs use any tracking at all. I'm looking for one Ohio club willing to let a handful of adult players try pre-launch bands and tell us honestly what helps and what doesn't. Would you have 15 minutes?",
+      "geo": "Northeast and Northwest Ohio",
+      "last_signal_date": "2025-02-22",
+      "confidence": "verified",
+      "tags": [
+        "judo",
+        "combat-sports",
+        "ohio",
+        "club-sports",
+        "hrv",
+        "sleep"
+      ],
+      "wearable_adoption": "Australian Olympic combat sports feasibility study (boxing, judo, taekwondo, wrestling; 26 athletes): only 13% compliance with an online athlete-monitoring system over 12 weeks; authors cite combat-sports culture and lack of dedicated sports-science teams (OmicsDI record, date not shown). No US judo wearable survey found.",
+      "competition_rule": "USA Judo Refereeing Rules (2010 edition read): penalty (shido) 'to wear a hard or metallic object (covered or not)'. British Judo 2025 amendments: 'a disqualifiable offence to wear a hard or metallic object'. Contest-only; overnight wear unaffected. Current USA Judo edition not read.",
+      "opportunity": "Club pilot via USJF Konan Yudanshakai clubs listed with phones (Chu To Bu, Avon 440-541-1002; MaxOut Sports Judo, Bedford Heights 440-781-3444; Black Swamp Judo, Toledo 419-350-1505); OhioJudo.org list (older) gives instructor emails.",
+      "unknowns": "OhioJudo.org club list dates from 2010-2013 and may be stale; current USA Judo rule text not read; club sizes and adult competitor counts unknown.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 242,
+      "sendable": true,
+      "id": "judo-ohio-clubs-usjf-usa-judo-clubs-in-ohio-konan-yudanshakai-e-g-chu-to-bu-judo"
     },
     {
       "name": "Matteo Franceschetti",
@@ -9841,7 +10555,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 243,
       "sendable": false,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
@@ -9879,7 +10593,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 230,
+      "rank": 244,
       "sendable": true,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
@@ -9925,9 +10639,57 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 231,
+      "rank": 245,
       "sendable": true,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Ohio high-school contact sports (OHSAA GSR 20.3)",
+      "org": "Ohio High School Athletic Association (OHSAA)",
+      "why": "OHSAA's own regulation says athletes in collision/contact sports should not wear heart-monitoring equipment during interscholastic contests, and OHSAA treats smartwatches as allowed only when prohibited features are not used. That leaves contact-sport athletes (football, wrestling, etc.) without in-contest tracking, which is where an overnight-only band differs.",
+      "why_now": "OHSAA October 7, 2025 officials update restated GSR 20.3 and smartwatch interpretations; OHSAA 2025 football rule change added worn audio/video devices to illegal equipment.",
+      "evidence": [
+        "https://ohsaaweb.blob.core.windows.net/files/Officiating/dod/CC/2025OctoberOfficialsUpdate.pdf",
+        "https://www.ohsaa.org/news-media/player-equipment-changes-highlight-2025-high-school-football-rules-revisions",
+        "https://assets.nfhs.org/umbraco/media/7212265/nfhs-statement-on-medical-devices-april-2023-final.pdf",
+        "https://par.nsf.gov/biblio/10181313"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.ohsaa.org/news-media/player-equipment-changes-highlight-2025-high-school-football-rules-revisions",
+      "warm_path": "Ohio",
+      "fit": 7,
+      "ask": "Ask OHSAA's sports medicine staff for a 15-minute read on how an overnight, non-medical band would be viewed for athletes, before any school pilot.",
+      "opener": "Hello - I'm the founder of Vybe Health in Akron. We're building a screenless general-wellness band worn only overnight, not during contests. Before approaching any Ohio school, I want to understand how OHSAA views a band like this alongside GSR 20.3 and the smartwatch guidance. Would someone on your sports medicine side give us 15 minutes so we start the right way?",
+      "geo": "Columbus, OH (statewide)",
+      "last_signal_date": "2025-10-07",
+      "confidence": "verified",
+      "tags": [
+        "high-school",
+        "ohio",
+        "policy",
+        "football",
+        "wrestling",
+        "youth"
+      ],
+      "wearable_adoption": "Luczak et al. (NSF repository, 2020): wearables are 'fully entrenched' at NCAA and professional levels - the 113 interviews covered NCAA/pro staff only. No Ohio HS adoption data found; OHSAA rules restrict in-contest heart monitors in contact sports (Oct 2025).",
+      "competition_rule": "OHSAA GSR 20.3: unless the sport code says otherwise, collision/contact-sport athletes should not wear heart monitoring equipment or other diagnostic devices in interscholastic contests; non-contact sports need a physician note. NFHS 4-6 (track/XC): smartwatches may be worn but GPS/communication/recording use is prohibited. Football 1-5-3c(3): no worn audio/video devices. All are contest rules; overnight wear is not addressed.",
+      "opportunity": "Policy-first conversation with OHSAA, then a coach-led, parent-consented pilot in one Summit County program (wrestling or football) - the band stays home on game days.",
+      "unknowns": "No named OHSAA sports-medicine contact captured; OHSAA has no stated view on overnight wearables; district data-privacy rules for minors unknown.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 246,
+      "sendable": true,
+      "id": "ohio-high-school-contact-sports-ohsaa-gsr-20-3-ohio-high-school-athletic-associa"
     },
     {
       "name": "Oura x Professional Tennis Players Association (PTPA)",
@@ -9968,7 +10730,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 247,
       "sendable": false,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
@@ -10011,9 +10773,62 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 248,
       "sendable": false,
       "id": "oura-x-usta-us-open-oura"
+    },
+    {
+      "name": "Peloton",
+      "org": "Peloton Interactive, Inc.",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Peloton IQ already ingests Apple Health, Garmin Connect and Fitbit data; on the Q4 FY26 earnings call (reported 2026-08-12) CEO Peter Stern said Peloton will not build its own wearable and will 'play Switzerland', integrating with large companies and 'very innovative startups', pushing data back to wearables and doing co-marketing. Reporting on a March 2026 Bloomberg piece says Peloton is building a 'Daily Suggested Workout' from smartwatch/ring recovery data.",
+      "why_now": "Q4 FY26 earnings call (reported 2026-08-12): 'a couple more big ones on the way'; readiness-based daily workout in development.",
+      "evidence": [
+        "https://www.pelobuddy.com/peloton-wearable-switzerland/",
+        "https://theclipout.com/peloton-iq-biometric-integration/",
+        "https://www.onepeloton.com/blog/wearables-integration"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the Peloton IQ / wearables-partnerships owner via LinkedIn or a warm intro and ask for a 20-minute intro once DevKit data is shareable; realistic near-term goal is being on the list for a later integration wave.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. Peter said on the last earnings call that Peloton wants to work with startups as well as the big wearable brands. We're building a screenless band worn overnight that captures ECG-based HRV and sleep, with an open SDK and no subscription. When Peloton IQ looks at recovery-based daily suggestions, could we share sample data and our API? Happy to start small.",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2026-08-12",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "connected-fitness",
+        "recovery",
+        "hrv",
+        "sleep",
+        "enterprise"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Garmin Connect",
+        "Fitbit",
+        "Strava (export only)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Become a recovery data source for Peloton IQ's planned readiness-based 'Daily Suggested Workout' (low overnight HRV -> restorative class, high -> intervals), first via Apple Health/HealthKit, later a direct integration; possible co-marketing. Route is long: public company, 'big ones' are prioritized, pre-launch hardware unlikely to get a direct integration before consumer launch.",
+      "unknowns": "No public partner/developer program or contact found; the named partnerships owner is unknown; whether Peloton reads HRV/sleep from Apple Health today; the 'Daily Suggested Workout' has no launch date.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 249,
+      "sendable": false,
+      "id": "peloton-peloton-interactive-inc"
     },
     {
       "name": "Pipeline Angels",
@@ -10048,7 +10863,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 234,
+      "rank": 250,
       "sendable": false,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
@@ -10091,7 +10906,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 235,
+      "rank": 251,
       "sendable": false,
       "id": "polar-x-team-essent-speed-skating-polar"
     },
@@ -10130,7 +10945,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 252,
       "sendable": true,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
@@ -10174,7 +10989,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 237,
+      "rank": 253,
       "sendable": false,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
     },
@@ -10218,7 +11033,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 254,
       "sendable": true,
       "id": "sweatid-sweatid"
     },
@@ -10257,7 +11072,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 255,
       "sendable": true,
       "id": "tim-perkin-mountain-massif"
     },
@@ -10307,7 +11122,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 256,
       "sendable": true,
       "id": "vertical-vertical-getvertical-ai"
     },
@@ -10349,7 +11164,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 241,
+      "rank": 257,
       "sendable": false,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
@@ -10388,7 +11203,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 242,
+      "rank": 258,
       "sendable": false,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
@@ -10431,7 +11246,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 243,
+      "rank": 259,
       "sendable": false,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
@@ -10475,9 +11290,58 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 244,
+      "rank": 260,
       "sendable": false,
       "id": "withings-x-boston-10k-for-women-withings"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Youth and high-school rugby (Ohio)",
+      "org": "Rugby Ohio (Ohio Youth Rugby Association), sanctioned by USA Rugby",
+      "why": "World Rugby allows in-match player-monitoring devices only if lab-tested and approved to its PMD specification, and Rugby Ohio's own policy says 'anything with plastic or metal of any kind is not allowed' on players - so youth clubs play device-free. Rugby Ohio runs statewide boys' and girls' fall 7s and spring leagues.",
+      "why_now": "Rugby Ohio HS Fall 7s run Sundays Sept-Oct (2024 newsletter); fall season timing repeats annually.",
+      "evidence": [
+        "https://www.world.rugby/organisation/governance/regulations/reg-12?lang=en",
+        "https://www.world.rugby/the-game/facilities-equipment/equipment/specifications/pmds",
+        "https://rugbyohio.com/wp-content/uploads/2021/03/2021-03-15-RO-Policies-and-Procedures-.pdf",
+        "https://rugbyohio.com/wp-content/uploads/2024/10/The-Grubber-20240821-Issue-79-2024-HS-Fall-7s.pdf",
+        "https://www.guidestar.org/profile/26-1432066"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.guidestar.org/profile/26-1432066",
+      "warm_path": "Ohio (Westlake-based state governing body; Northern Ohio teams play in North Ridgeville/Vermilion)",
+      "fit": 7,
+      "ask": "Email Rugby Ohio's administrator to ask whether one adult/college-age club or coaching staff would trial overnight bands.",
+      "opener": "Hello Rugby Ohio - I'm the founder of Vybe Health in Akron. We're building a screenless band worn only overnight, so it never conflicts with the no-plastic-or-metal rule on match day. Rugby has almost no tracking below the pro level. I'd value 15 minutes to learn whether any Ohio club or coaching group would want to try a few pre-launch bands with adult players and tell us what's useful.",
+      "geo": "Ohio (statewide)",
+      "last_signal_date": "2024-08-21",
+      "confidence": "verified",
+      "tags": [
+        "rugby",
+        "youth",
+        "high-school",
+        "ohio",
+        "club-sports",
+        "sleep"
+      ],
+      "wearable_adoption": "No amateur/youth rugby wearable survey found. World Rugby Reg 12 permits only PMDs (GPS or instrumented mouthguard) meeting its performance specification and bearing the World Rugby Approved mark - aimed at pro/elite teams. Rugby Ohio policy (2021): 'anything with plastic or metal of any kind is not allowed.'",
+      "competition_rule": "World Rugby Law 4 / Regulation 12(e): a player may wear a player monitoring device only if it complies with the World Rugby PMD performance specification (jersey/harness pouch at T2-T6). Rugby Ohio (2021 policy): no plastic or metal on players. Match-day rules only; overnight wear unaffected.",
+      "opportunity": "Start with adult club or college-age players (not minors); use Rugby Ohio (info@rugbyohio.com per its 2024 newsletter) as a connector to clubs and coaches.",
+      "unknowns": "rugbyohio.com showed 'Website is Currently Disabled' on 2026-10-03, so current contact routing is unverified; youth programs involve minors (consent heavy); adult Ohio men's/women's club contacts not found yet.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 261,
+      "sendable": true,
+      "id": "youth-and-high-school-rugby-ohio-rugby-ohio-ohio-youth-rugby-association-sanctio"
     },
     {
       "name": "Cintrifuse Demo Night",
@@ -10522,7 +11386,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 262,
       "sendable": true,
       "id": "cintrifuse-demo-night-cintrifuse"
     },
@@ -10565,7 +11429,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 263,
       "sendable": true,
       "id": "oura-home-assistant-integration-louispires-oura-home-assistant-integration-open-"
     },
@@ -10607,7 +11471,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 247,
+      "rank": 264,
       "sendable": false,
       "id": "pulsetto-pulsetto"
     },
@@ -10649,7 +11513,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 248,
+      "rank": 265,
       "sendable": true,
       "id": "sahha-sahha"
     },
@@ -10693,7 +11557,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 266,
       "sendable": true,
       "id": "ai-brain-starter-health-mcp-google-health-connector-mycelium-hq-ai-brain-starter"
     },
@@ -10737,7 +11601,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 267,
       "sendable": true,
       "id": "oura-ring-mcp-server-jordanburke-oura-ring-mcp-server-open-source"
     },
@@ -10780,7 +11644,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 268,
       "sendable": true,
       "id": "home-assistant-fitbit-google-health-integration-home-assistant"
     },
@@ -10824,7 +11688,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 252,
+      "rank": 269,
       "sendable": false,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
@@ -10867,7 +11731,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 270,
       "sendable": true,
       "id": "soluno-soluno"
     },
@@ -10911,7 +11775,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 254,
+      "rank": 271,
       "sendable": true,
       "id": "timeless-timeless"
     },
@@ -10948,7 +11812,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 255,
+      "rank": 272,
       "sendable": false,
       "id": "37-angels-37-angels"
     },
@@ -10992,7 +11856,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 256,
+      "rank": 273,
       "sendable": true,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
@@ -11035,7 +11899,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 274,
       "sendable": true,
       "id": "akron-running-project-akron-marathon-race-series"
     },
@@ -11073,7 +11937,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 258,
+      "rank": 275,
       "sendable": false,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
@@ -11111,7 +11975,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 259,
+      "rank": 276,
       "sendable": false,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
@@ -11156,7 +12020,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 260,
+      "rank": 277,
       "sendable": true,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
@@ -11193,9 +12057,62 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 261,
+      "rank": 278,
       "sendable": false,
       "id": "dvc-health-duro-ventures-collective"
+    },
+    {
+      "name": "Do - AI Fitness & Wellness",
+      "org": "Do LLC",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Small AI fitness app (iPhone + Apple Watch) whose App Store listing promises 'Recovery Insights - Know exactly when to push and when to rest', 'Holistic View - Connects sleep, energy, nutrition, and workouts', and 'Device Sync - Works with Fitbit, Garmin, and Oura Ring'. Already multi-device and recovery-focused, but very early (7 App Store ratings), so a DevKit partnership is realistic.",
+      "why_now": "Do 2.0 relaunch (version 2.0.5 listed as Apr 2; App Store copyright 2026).",
+      "evidence": [
+        "https://apps.apple.com/us/app/do-ai-fitness-wellness/id1553153596",
+        "https://www.itsdoapp.com/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.itsdoapp.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Offer a DevKit slot so Genie's recovery insights can read Vybe overnight HRV/sleep next to Oura/Garmin/Fitbit.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. Do already pulls Oura, Garmin and Fitbit data into Genie's recovery insights. We're building a screenless band worn overnight that captures ECG-based HRV and sleep, with an SDK and no subscription. Would you want Vybe as another source in Genie? We're picking 5-10 DevKit design partners and would love a builder like you in the group. Quick call?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "app-partner",
+        "ai-coach",
+        "recovery",
+        "sleep",
+        "hrv",
+        "dev-platform",
+        "small-team"
+      ],
+      "existing_wearables": [
+        "Apple Watch",
+        "Fitbit",
+        "Garmin",
+        "Oura Ring"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Add Vybe as a device source in Do's 'Device Sync' so Genie's recovery insights (push vs rest) use overnight HRV/sleep; small team means a fast DevKit integration and a public case study.",
+      "unknowns": "Founder identity and a direct contact not confirmed (App Store seller 'Mikiyas Tadesse', copyright 'Do LLC'); integration method (direct APIs vs aggregator) unknown; user base very small; location unknown; exact release year of v2.0.5 not shown.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 279,
+      "sendable": true,
+      "id": "do-ai-fitness-wellness-do-llc"
     },
     {
       "name": "Elevate Human Performance",
@@ -11232,7 +12149,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 280,
       "sendable": true,
       "id": "elevate-human-performance-elevate-human-performance"
     },
@@ -11275,7 +12192,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 281,
       "sendable": false,
       "id": "garmin-x-usa-triathlon-garmin"
     },
@@ -11312,7 +12229,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 264,
+      "rank": 282,
       "sendable": true,
       "id": "hpa-hyde-park-angels-hpa"
     },
@@ -11350,7 +12267,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 265,
+      "rank": 283,
       "sendable": false,
       "id": "heather-landi-fierce-healthcare"
     },
@@ -11393,7 +12310,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 266,
+      "rank": 284,
       "sendable": true,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
@@ -11431,7 +12348,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 267,
+      "rank": 285,
       "sendable": false,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
@@ -11475,7 +12392,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 268,
+      "rank": 286,
       "sendable": true,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
@@ -11513,7 +12430,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 269,
+      "rank": 287,
       "sendable": false,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
@@ -11556,7 +12473,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 270,
+      "rank": 288,
       "sendable": true,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
@@ -11593,7 +12510,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 271,
+      "rank": 289,
       "sendable": false,
       "id": "life-science-angels-life-science-angels"
     },
@@ -11630,7 +12547,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 272,
+      "rank": 290,
       "sendable": false,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
@@ -11669,7 +12586,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 273,
+      "rank": 291,
       "sendable": true,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
@@ -11708,7 +12625,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 274,
+      "rank": 292,
       "sendable": false,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
@@ -11746,7 +12663,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 275,
+      "rank": 293,
       "sendable": false,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
@@ -11790,7 +12707,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 276,
+      "rank": 294,
       "sendable": true,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
@@ -11833,7 +12750,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 277,
+      "rank": 295,
       "sendable": true,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
@@ -11876,7 +12793,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 278,
+      "rank": 296,
       "sendable": true,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
@@ -11919,7 +12836,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 279,
+      "rank": 297,
       "sendable": false,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
@@ -11956,7 +12873,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 280,
+      "rank": 298,
       "sendable": false,
       "id": "sand-hill-angels-sand-hill-angels"
     },
@@ -11999,7 +12916,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 281,
+      "rank": 299,
       "sendable": true,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
     },
@@ -12037,7 +12954,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 282,
+      "rank": 300,
       "sendable": false,
       "id": "startup-health-syndicate-startup-health"
     },
@@ -12075,7 +12992,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 283,
+      "rank": 301,
       "sendable": true,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
@@ -12121,7 +13038,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 284,
+      "rank": 302,
       "sendable": true,
       "id": "stress-platform-health-hrv-stress-platform"
     },
@@ -12166,7 +13083,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 285,
+      "rank": 303,
       "sendable": false,
       "id": "suunto-x-utmb-world-series-suunto"
     },
@@ -12204,7 +13121,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 286,
+      "rank": 304,
       "sendable": true,
       "id": "techlife-columbus-2-0-launch-techlife-columbus"
     },
@@ -12246,7 +13163,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 287,
+      "rank": 305,
       "sendable": false,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
@@ -12290,7 +13207,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 288,
+      "rank": 306,
       "sendable": false,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
     },
@@ -12341,7 +13258,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 289,
+      "rank": 307,
       "sendable": false,
       "id": "weightwatchers-ww-international-inc"
     },
@@ -12380,7 +13297,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 290,
+      "rank": 308,
       "sendable": false,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
@@ -12424,7 +13341,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 291,
+      "rank": 309,
       "sendable": false,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
@@ -12467,7 +13384,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 292,
+      "rank": 310,
       "sendable": true,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
     },
@@ -12525,7 +13442,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 293,
+      "rank": 311,
       "sendable": true,
       "id": "trainedby-ai-trainedby"
     },
@@ -12566,7 +13483,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 294,
+      "rank": 312,
       "sendable": false,
       "id": "digital-health-digital-health"
     },
@@ -12611,7 +13528,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 295,
+      "rank": 313,
       "sendable": false,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
@@ -12654,7 +13571,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 296,
+      "rank": 314,
       "sendable": true,
       "id": "notus-labs-notus-labs"
     },
@@ -12696,7 +13613,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 297,
+      "rank": 315,
       "sendable": true,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
@@ -12737,7 +13654,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 298,
+      "rank": 316,
       "sendable": false,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
@@ -12781,7 +13698,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 299,
+      "rank": 317,
       "sendable": true,
       "id": "aha-scientific-sessions-2026-health-innovation-pavilion-american-heart-associati"
     },
@@ -12823,7 +13740,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 300,
+      "rank": 318,
       "sendable": false,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
@@ -12866,9 +13783,56 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 301,
+      "rank": 319,
       "sendable": false,
       "id": "coros-x-jakob-ingebrigtsen-coros"
+    },
+    {
+      "role": null,
+      "type": "sport",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "deadline": null,
+      "name": "Competitive cheerleading",
+      "org": "Competitive (all-star and scholastic) cheer programs - governing body contact not yet identified",
+      "why": "Cheer researchers say 'little is known' about fatigue and recovery in competitive cheer and that monitoring is an overlooked part of injury prevention, while overuse injuries are reported as 66% of cheer injuries. Studies had to bring their own HR/HRV kit - teams don't use wearables routinely.",
+      "why_now": "Physiological responses of elite cheerleaders study published 2025-01-09; fatigue/recovery study at ICU Worlds published 2023-03-06.",
+      "evidence": [
+        "https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2023.1105510/full",
+        "https://exa.ai/library/publication/63zcyf19tg0",
+        "https://exa.ai/library/publication/9mxbq0f40lr"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 7,
+      "ask": "Find one Northeast Ohio all-star gym or college cheer program and ask for a 15-minute coach conversation about an adult-athlete overnight-wear trial.",
+      "opener": "Hi Coach - I'm the founder of Vybe Health in Akron. We make a screenless band worn overnight, so it never interferes with stunting or uniforms. Researchers keep noting how little is known about recovery in competitive cheer. I'd love 15 minutes to hear how your program handles heavy weeks, and whether a few adult athletes would try pre-launch bands and tell us honestly what's useful.",
+      "geo": null,
+      "last_signal_date": "2025-01-09",
+      "confidence": "single-source",
+      "tags": [
+        "cheer",
+        "women",
+        "college",
+        "youth",
+        "sleep",
+        "hrv"
+      ],
+      "wearable_adoption": "Gavanda et al. (Frontiers, 2023-03-06): 'Little is known about the demands of competitive cheerleading'; fatigue/stress monitoring is 'often overlooked'; overuse injuries reported as 66% of cheer injuries (citing prior work). Riddell et al. (2025-01-09): 'lack of information regarding its acute physiological responses'. No adoption survey found.",
+      "competition_rule": null,
+      "opportunity": "College cheer and adult all-star (open) teams first; identify a Northeast Ohio program (University of Akron or Kent State spirit programs are candidates but not verified).",
+      "unknowns": "No governing body (USA Cheer/USASF/Varsity) rule on jewelry/devices read; no Ohio program or contact verified; many athletes are minors.",
+      "lane": "sports_gaps",
+      "link_status": "not checked",
+      "score": 70,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 320,
+      "sendable": false,
+      "id": "competitive-cheerleading-competitive-all-star-and-scholastic-cheer-programs-gove"
     },
     {
       "name": "Connor Voltz",
@@ -12909,7 +13873,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 302,
+      "rank": 321,
       "sendable": false,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
@@ -12952,7 +13916,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 303,
+      "rank": 322,
       "sendable": false,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
@@ -12995,7 +13959,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 304,
+      "rank": 323,
       "sendable": false,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
     },
@@ -13042,7 +14006,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 305,
+      "rank": 324,
       "sendable": false,
       "id": "flow-state-endurance-flow-state-endurance"
     },
@@ -13086,7 +14050,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 306,
+      "rank": 325,
       "sendable": false,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
@@ -13129,7 +14093,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 307,
+      "rank": 326,
       "sendable": false,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
@@ -13172,7 +14136,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 308,
+      "rank": 327,
       "sendable": false,
       "id": "jacob-hart-independent-ultrarunner"
     },
@@ -13210,7 +14174,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 309,
+      "rank": 328,
       "sendable": false,
       "id": "jessica-hagen-mobihealthnews"
     },
@@ -13253,7 +14217,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 310,
+      "rank": 329,
       "sendable": false,
       "id": "john-miller-stormbound-crossfit"
     },
@@ -13297,7 +14261,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 311,
+      "rank": 330,
       "sendable": false,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
@@ -13341,7 +14305,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 312,
+      "rank": 331,
       "sendable": false,
       "id": "oura-x-u-s-soccer-oura"
     },
@@ -13385,7 +14349,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 313,
+      "rank": 332,
       "sendable": false,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
@@ -13428,7 +14392,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 314,
+      "rank": 333,
       "sendable": false,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
@@ -13471,7 +14435,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 315,
+      "rank": 334,
       "sendable": false,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
@@ -13514,7 +14478,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 316,
+      "rank": 335,
       "sendable": false,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
@@ -13557,7 +14521,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 317,
+      "rank": 336,
       "sendable": false,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
