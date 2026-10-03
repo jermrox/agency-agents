@@ -120,7 +120,9 @@ def test_dashboard_embeds_sourced_safety_picks(tmp_path):
         assert 3 <= len(cat["picks"]) <= 5
         for p in cat["picks"]:
             assert p["sources"] and all(url.startswith("https://") for _, url in p["sources"])
-    assert all(a["url"].startswith("https://") for a in picks["avoid"])
+    assert all(a["url"].startswith("https://") for a in picks["avoid"] + picks["brands"] + picks["tech"])
+    assert len(picks["recall_db"]["items"]) > 50
+    assert all(x["url"].startswith("https://") for x in picks["recall_db"]["items"])
 
 
 def test_dashboard_without_picks_file(tmp_path):

@@ -1670,7 +1670,28 @@
       ]
      },
      {
-      "rank": 2,
+      "name": "Romer Juni",
+      "price": "$400\u2013$500",
+      "match": "juni",
+      "why": "Strongest two-lab agreement after the PIPA rx: Consumer Reports \"Best\" crash rating and BabyGearLab crash 8.8, with a load leg plus anti-rebound bar. No NHTSA recalls 2016\u20132026.",
+      "flags": [
+       "Fewer stroller adapters than Nuna/Cybex"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports",
+        "https://www.consumerreports.org/babies-kids/car-seats/romer-juni/m415813/"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/vehicle-safety/infant-car-seat/romer-juni"
+       ]
+      ],
+      "rank": 2
+     },
+     {
+      "rank": 3,
       "name": "Chicco KeyFit Max (replaces KeyFit 35)",
       "price": "$300",
       "match": "keyfit",
@@ -1696,7 +1717,7 @@
       ]
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "Britax Willow S",
       "price": "$280",
       "match": "willow",
@@ -1717,7 +1738,7 @@
       ]
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "Clek Liing",
       "price": "$500",
       "match": "liing",
@@ -1743,27 +1764,6 @@
        [
         "NHTSA 21C-007",
         "https://api.nhtsa.gov/safetyIssues/byNhtsaId?nhtsaId=21C007"
-       ]
-      ]
-     },
-     {
-      "rank": 5,
-      "name": "Graco SnugRide SnugFit 35 DLX",
-      "price": "$240",
-      "match": "snugfit",
-      "why": "Wirecutter's longtime top pick; anti-rebound bar; 30 lb limit (per Wirecutter). Graco says no other SnugRide is affected by the Turn & Slide recall.",
-      "flags": [
-       "No independent crash data"
-      ],
-      "recall": "None found",
-      "sources": [
-       [
-        "Wirecutter",
-        "https://www.nytimes.com/wirecutter/reviews/best-infant-car-seat/"
-       ],
-       [
-        "Graco recalls",
-        "https://recalls.gracobaby.com/"
        ]
       ]
      }
@@ -1916,7 +1916,32 @@
       ]
      },
      {
-      "rank": 2,
+      "name": "Joolz Aer+ / Aer2",
+      "price": "~$450\u2013$500",
+      "match": "joolz|aer2|aer\\+",
+      "why": "BabyGearLab 78\u201384 with a 9/10 brake score; Wirecutter's runner-up travel stroller (behind Minu V3). Takes Nuna PIPA, Cybex, Maxi-Cosi and Clek seats via adapters.",
+      "flags": [
+       "Aer2 car seat adapters recalled Jun 2026 (stroller not recalled): check adapter ID NL311"
+      ],
+      "recall": "Adapters only (CPSC 2026)",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/getting-around/travel-stroller/joolz-aer-plus"
+       ],
+       [
+        "Wirecutter",
+        "https://www.nytimes.com/wirecutter/reviews/best-travel-strollers/"
+       ],
+       [
+        "CPSC adapter recall",
+        "https://www.cpsc.gov/Recalls/2026/Joolz-Recalls-Aer2-Car-Seat-Adapters-for-Strollers-Due-to-Risk-of-Serious-Injury-from-Fall-Hazard"
+       ]
+      ],
+      "rank": 2
+     },
+     {
+      "rank": 3,
       "name": "Nuna TRVL lx",
       "price": "~$600",
       "match": "trvl",
@@ -1937,7 +1962,7 @@
       ]
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "gb Pockit+ All-City",
       "price": "$330",
       "match": "pockit",
@@ -1950,29 +1975,6 @@
        [
         "BabyGearLab",
         "https://www.babygearlab.com/topics/getting-around/best-travel-stroller"
-       ]
-      ]
-     },
-     {
-      "rank": 4,
-      "name": "Stokke YOYO\u00b3 / Bugaboo Butterfly 2",
-      "price": "$500",
-      "match": "yoyo|butterfly",
-      "why": "Cabin-size folds. BabyGearLab now scores the YOYO 3 just 56 overall (14.5 lb, $500); takes Nuna PIPA, Cybex, Maxi-Cosi and Clek seats via adapters.",
-      "flags": [
-       "YOYO\u00b3 parking-brake recall Nov 2024: check serial",
-       "Low current BabyGearLab score",
-       "Butterfly 2 has no independent score"
-      ],
-      "recall": "YOYO\u00b3: CPSC 25-044",
-      "sources": [
-       [
-        "BabyGearLab",
-        "https://www.babygearlab.com/topics/getting-around/best-travel-stroller"
-       ],
-       [
-        "CPSC YOYO\u00b3 recall",
-        "https://www.cpsc.gov/Recalls/2025/Stokke-Recalls-YOYO3-Strollers-Due-to-Injury-Hazard"
        ]
       ]
      },
@@ -2077,7 +2079,7 @@
        "Frame works only with this seat",
        "Weight: 20.1 lb measured vs 29 lb listed"
       ],
-      "recall": "None found",
+      "recall": "2025: missing registration card (25C-003)",
       "sources": [
        [
         "BabyGearLab review",
@@ -2086,6 +2088,10 @@
        [
         "Evenflo",
         "https://www.evenflo.com/pages/shyft-dualride-infant-car-seat-stroller-combo"
+       ],
+       [
+        "NHTSA 25C-003",
+        "https://www.nhtsa.gov/recalls?nhtsaId=25C003000"
        ]
       ]
      },
@@ -2093,7 +2099,7 @@
       "rank": 5,
       "name": "Graco Modes 3 Lite DLX + SnugRide 35 Lite LX (budget)",
       "price": "$400",
-      "match": "modes|snugride",
+      "match": "modes 3 lite|snugride 35 lite lx",
       "why": "Cheapest well-evidenced option: BabyGearLab \"Best Crash Test on the Tightest Budget\" (seat crash 7.4); native click-in.",
       "flags": [
        "Seat is hard to install (LATCH 3.0/10)",
@@ -2163,6 +2169,31 @@
     "name": "Unbranded or marketplace car seats",
     "detail": "Counterfeit seats sold on Temu and Amazon weren't certified for U.S. use. Buy from authorized retailers and check the FMVSS 213 label.",
     "url": "https://6abc.com/post/experts-warn-counterfeit-car-seats-being-sold-online/16064392/"
+   },
+   {
+    "name": "Zoe Traveler",
+    "detail": "Consumer Reports \"Do Not Buy\" (Feb 2026): tipped backward on a slope with the brakes on when loaded and reclined, in two samples. Zoe disputes it; BabyGearLab still lists it as a budget pick.",
+    "url": "https://www.consumerreports.org/babies-kids/strollers/zoe-traveler-stroller-safety-risks-a9557335817/"
+   },
+   {
+    "name": "Evenflo Revolve360 (open NHTSA investigation)",
+    "detail": "NHTSA compliance investigation AQ24-001 (opened Jan 2024) into seat shells separating from the rotating base; still open in NHTSA's investigations file.",
+    "url": "https://static.nhtsa.gov/odi/ffdd/inv/FLAT_INV.zip"
+   },
+   {
+    "name": "Peg Perego Primo Viaggio Urban Mobility",
+    "detail": "Consumer Reports crash rating \"Basic\": the shell cracked severely in all 4 tests. Peg Perego disputes the result.",
+    "url": "https://www.consumerreports.org/babies-kids/car-seats/peg-perego-primo-viaggio-urban-mobility/m419414/"
+   },
+   {
+    "name": "Maxi-Cosi Pria All-in-One",
+    "detail": "Poor crash results from both BabyGearLab and Consumer Reports, plus a strong odor.",
+    "url": "https://www.babygearlab.com/reviews/vehicle-safety/convertible-car-seat/maxi-cosi-pria-all-in-one"
+   },
+   {
+    "name": "Joolz Hub\u00b2 and iCandy Orange 4 (UK recalls, sold in the US)",
+    "detail": "UK recalls: Hub\u00b2 front wheels can detach (Oct 2025); Orange 4 front fork can crack (Aug 2024). Not recalled in the US; ask the retailer which production batch you're buying.",
+    "url": "https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-joolz-hub-pram-2510-0023"
    }
   ],
   "verified": "Every cited page was opened and checked against each claim on 2026-10-03; recalls were checked in NHTSA's recall data and CPSC's recall API. Corrections from that check are applied below.",
@@ -2172,6 +2203,12 @@
     "weight": "Strongest crash evidence",
     "detail": "Nonprofit, no ads, buys seats at retail. Crash-tests at 35 mph with a simulated front seatback (federal test: 30 mph, none); ~130 infant-seat tests; protocol reviewed by an outside biomechanics expert. Limits: single runs, crash grades paywalled, withdrew a faulty side-impact report in Jan 2007.",
     "url": "https://www.consumerreports.org/car-seats/how-consumer-reports-tests-child-car-seats/"
+   },
+   {
+    "name": "ADAC / Stiftung Warentest (Europe)",
+    "weight": "Strong, but tests EU versions",
+    "detail": "Consumer-club consortium (ADAC, Which?, Stiftung Warentest and others) that buys seats anonymously and crash-tests them front and side in a real car body shell; results twice a year, scoring safety 50%, ease of use 40%, ergonomics 10%, with harmful chemicals able to fail a seat. EU seats use different bases and standards, so a grade does not transfer automatically to the U.S. model of the same name.",
+    "url": "https://presse.adac.de/meldungen/adac-ev/tests/sechs-mal-gut-im-adac-kindersitztest.html"
    },
    {
     "name": "BabyGearLab",
@@ -2197,6 +2234,1425 @@
     "detail": "CHOP sled studies support load legs (lower head-injury measures). Rear-facing longer is still advised, but the best-known field study was retracted in 2017; support now comes from lab and non-U.S. data. No study shows CR or BabyGearLab ratings predict real-world injuries.",
     "url": "https://doi.org/10.1080/15389588.2024.2371522"
    }
-  ]
+  ],
+  "tech": [
+   {
+    "name": "Load leg",
+    "grade": "Moderate",
+    "detail": "Repeated CHOP/Ohio State sled studies show lower head-injury measures (one 2026 study: HIC down 16%). Must be deployed: 46% of parents skipped it on a first install.",
+    "url": "https://doi.org/10.1016/j.aap.2023.107137"
+   },
+   {
+    "name": "Rigid LATCH",
+    "grade": "Moderate (for correct installs)",
+    "detail": "About half of seats are misused (NHTSA survey: 46%). Rigid anchors were installed correctly 72% of the time vs 47% for flexible LATCH. No crash-outcome data.",
+    "url": "https://crashstats.nhtsa.dot.gov/Api/Public/Publication/812157"
+   },
+   {
+    "name": "Side-impact protection / FMVSS 213a",
+    "grade": "Moderate (deep side wings) / weak (add-on pods)",
+    "detail": "From Dec 5, 2026 new seats must pass a door-intrusion sled test. Brand figures like Cybex L.S.P. \"20\u201340%\" are the maker's own tests.",
+    "url": "https://www.federalregister.gov/documents/2026/09/09/2026-18380/federal-motor-vehicle-safety-standard-no-213a-child-restraint-systems-side-impact-protection-federal"
+   },
+   {
+    "name": "Anti-rebound bar",
+    "grade": "Weak / none",
+    "detail": "Benefit figures come from manufacturers; Transport Canada crash tests found the bars did not improve dummy kinematics.",
+    "url": "https://doi.org/10.1080/15389588.2022.2078812"
+   },
+   {
+    "name": "Rotating / swivel base",
+    "grade": "None (convenience only)",
+    "detail": "No safety benefit shown; several 2024\u201326 failures trace to the seat-to-rotating-base latch (Graco Turn & Slide recall, Evenflo Revolve360 investigation, Maxi-Cosi Emme 360 CR tests).",
+    "url": "https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26C003-2105.pdf"
+   },
+   {
+    "name": "Hot-car alerts (SensorSafe, smart clips)",
+    "grade": "Weak; none for preventing deaths",
+    "detail": "Consumer Reports found SensorSafe 2.0 worked consistently in 14 of 26 car brands and no fully electric car. Alerts can't help when a child gets in alone or is knowingly left (about 45% of hot-car deaths).",
+    "url": "https://www.noheatstroke.org/"
+   },
+   {
+    "name": "Flame-retardant-free fabric",
+    "grade": "Chemical choice, not crash safety",
+    "detail": "FR-free seats pass the same flammability test; they reduce chemical exposure (15 of 18 seats tested in 2018 contained flame retardants).",
+    "url": "https://www.consumerreports.org/car-seats/how-consumer-reports-tests-child-car-seats/"
+   },
+   {
+    "name": "Electric-assist strollers (e-Priam, e-Gazelle)",
+    "grade": "None",
+    "detail": "No U.S. rule beyond the general stroller standard (16 CFR 1227); nothing specific to motors, auto-brakes or batteries.",
+    "url": "https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1227"
+   }
+  ],
+  "brands": [
+   {
+    "name": "Babyark",
+    "verdict": "No independent data",
+    "detail": "Only U.S. convertible with load leg + rigid LATCH + anti-rebound bar ($790\u2013$990), but every crash claim is the company's own; no CR/BabyGearLab/Wirecutter crash test. Not FAA-approved; CPST site criticizes the newborn insert.",
+    "url": "https://www.safeintheseat.com/seats/babyark_classic_convertible"
+   },
+   {
+    "name": "BOB (Britax)",
+    "verdict": "Mixed",
+    "detail": "Revolution Flex 3.0 is BabyGearLab's best long-term jogger, but no hand brake. CPSC sued in 2018 over front-wheel detachments (~200 reports); settled without a recall; replacement axles recalled 2019.",
+    "url": "https://www.cpsc.gov/Newsroom/News-Releases/2019/cpsc-britax-settle-lawsuit-involving-bob-jogging-strollers"
+   },
+   {
+    "name": "Bugaboo",
+    "verdict": "Mixed",
+    "detail": "No Fox recall found. Dragonfly seat recalled (US, 2023\u201324) for dropping into negative recline. Butterfly 1 BabyGearLab 81; Butterfly 2 untested. Turtle Air Shield seat is made by Nuna.",
+    "url": "https://www.cpsc.gov/Recalls/2024/Bugaboo-Recalls-Dragonfly-Seat-Strollers-Due-to-Injury-Hazard-Recall-Alert"
+   },
+   {
+    "name": "Cybex",
+    "verdict": "Mixed",
+    "detail": "Strong in Europe (ADAC: Cloud T 1.7, Cloud G 1.8, no fails 2023\u201326) but U.S. versions use different bases: BabyGearLab rates U.S. Cloud G Lux crash 6.1 and Callisto G 360 6.6 (below average). New Aton G2 / Cloud G Pro / Cloud T U.S. untested. Recalls: 22C-001, 23C-001, 25C-002 (older models).",
+    "url": "https://www.babygearlab.com/reviews/vehicle-safety/infant-car-seat/cybex-cloud-g-lux"
+   },
+   {
+    "name": "Diono",
+    "verdict": "Caution",
+    "detail": "Radian: 519,052-seat recall (17C-003) and an NHTSA consent order ($120,000 penalty). CPST reviewers call the 3QXT hard to use correctly. Narrow (17 in) and FAA-approved.",
+    "url": "https://csftl.org/diono-radian-3qxt-multimode-car-seat-review/"
+   },
+   {
+    "name": "Doona",
+    "verdict": "Caution",
+    "detail": "Last of 16 in BabyGearLab infant crash tests; open NHTSA investigation PE26005 (carry handles, 2020\u201324 seats). Doona X (2026) adds a load leg but is untested.",
+    "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-PE26005-14415.pdf"
+   },
+   {
+    "name": "iCandy",
+    "verdict": "Caution",
+    "detail": "Orange 4 recalled in the UK (front fork can crack, Aug 2024) but sold in the U.S.; no U.S. independent tests.",
+    "url": "https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-icandy-orange-4-pushchair-2408-0128"
+   },
+   {
+    "name": "Inglesina",
+    "verdict": "Mixed",
+    "detail": "Quid 3 BabyGearLab 64 with a weak harness score (2.5). No recalls found. U.S. store: Aptica, Aptica XT, Quid 3.",
+    "url": "https://www.babygearlab.com/topics/getting-around/best-travel-stroller"
+   },
+   {
+    "name": "Joolz",
+    "verdict": "Recommended (Aer+)",
+    "detail": "Aer+/Aer2: BabyGearLab 78\u201384, Wirecutter runner-up. Aer2 car seat adapters recalled (US, Jun 2026); Hub\u00b2 recalled in the UK (wheels).",
+    "url": "https://www.babygearlab.com/reviews/getting-around/travel-stroller/joolz-aer-plus"
+   },
+   {
+    "name": "Maxi-Cosi / Safety 1st",
+    "verdict": "Mixed",
+    "detail": "Mico Luxe+ CR \"excellent\" crash protection; Pria All-in-One and Emme 360 rate poorly; Peri 180 CR fit 2\u20133/5. Recalls: 23C-002 (infant base anchors), 21C-003/004 (Pria), 25C-006 (Grow & Go Sprint foam).",
+    "url": "https://www.consumerreports.org/babies-kids/car-seats/maxi-cosi-peri-180/m415802/"
+   },
+   {
+    "name": "Mockingbird",
+    "verdict": "Mixed",
+    "detail": "Frame-cracking recalls 2022 (149k) and 2023 (25k singles), fixed with a reinforcement kit; nothing on the 3.0.",
+    "url": "https://www.cpsc.gov/Recalls/2023/Mockingbird-Expands-Recall-to-Include-Single-Strollers-Due-to-Fall-Hazard"
+   },
+   {
+    "name": "Peg Perego",
+    "verdict": "Caution",
+    "detail": "Primo Viaggio Urban Mobility CR \"Basic\" (shell cracked in 4 of 4 tests, disputed); convertible BabyGearLab 58. No recalls 2016\u201326. Seats are made in Italy, not the U.S.",
+    "url": "https://www.consumerreports.org/babies-kids/car-seats/peg-perego-primo-viaggio-urban-mobility/m419414/"
+   },
+   {
+    "name": "Romer",
+    "verdict": "Recommended (Juni)",
+    "detail": "Juni: CR \"Best\" + BabyGearLab 8.8, no recalls.",
+    "url": "https://www.babygearlab.com/reviews/vehicle-safety/infant-car-seat/romer-juni"
+   },
+   {
+    "name": "Silver Cross",
+    "verdict": "No independent data",
+    "detail": "U.S. range: Clic ($400, 13.9 lb), Nia ($550), Jet 5, Breez, Cove 2, Reef 2, Wave 3. No U.S. car seat (uses adapters for Nuna, Cybex, Maxi-Cosi, Clek, Joie). No U.S./UK/Canada recalls 2016\u201326 (Australia recalled the original Reef in 2024 for a chassis lock). No U.S. tester has scored it; Which? (UK) scores are paywalled.",
+    "url": "https://silvercrossus.com/product/clic-compact-travel-stroller/"
+   },
+   {
+    "name": "Stokke",
+    "verdict": "Caution",
+    "detail": "YOYO\u00b3: parking-brake recall (CPSC 25-044) and now BabyGearLab 56, 11th of 12, brake score 5/10.",
+    "url": "https://www.cpsc.gov/Recalls/2025/Stokke-Recalls-YOYO3-Strollers-Due-to-Injury-Hazard"
+   },
+   {
+    "name": "Thule",
+    "verdict": "Mixed",
+    "detail": "Urban Glide 3 / Glide 2: Thule's own sheet says \"not suitable for running\" (EU wording, per Thule); 49 lb max. Sleek recalls 2020 (adapters, handlebar).",
+    "url": "https://www.babygearlab.com/reviews/getting-around/jogging-stroller/thule-urban-glide-3"
+   },
+   {
+    "name": "UPPAbaby",
+    "verdict": "Mixed",
+    "detail": "Minu V3 is the top compact stroller; Mesa V3 seat is near the bottom of BabyGearLab crash tests (Aria V2 is UPPAbaby's better seat). NHTSA's Knox evaluation PE21-015 closed Aug 2026 with no recall. Ridge jogger recalled 2022 (disc brake fingertip injury).",
+    "url": "https://www.babygearlab.com/reviews/vehicle-safety/infant-car-seat/uppababy-mesa-v3"
+   },
+   {
+    "name": "Veer / Wonderfold (wagons)",
+    "verdict": "Mixed",
+    "detail": "No dedicated wagon standard yet (ASTM work item WK94774). Veer Cruiser tested best of 13 wagons (Wirecutter outdoor pick); Wonderfold W4 Elite scored lowest. No recalls 2016\u201326 for either.",
+    "url": "https://www.nytimes.com/wirecutter/reviews/best-stroller-wagons/"
+   },
+   {
+    "name": "Zoe",
+    "verdict": "Caution",
+    "detail": "Traveler: Consumer Reports \"Do Not Buy\" for tip-over (Feb 2026), disputed by Zoe.",
+    "url": "https://www.consumerreports.org/babies-kids/strollers/zoe-traveler-stroller-safety-risks-a9557335817/"
+   }
+  ],
+  "recall_db": {
+   "from": "2016-01-01",
+   "to": "2026-10-03",
+   "note": "Every U.S. child car seat recall (NHTSA) and stroller, travel system, wagon and car seat adapter recall (CPSC) from Jan 2016 to Oct 3 2026, pulled from the agencies' own data files. Severity is our label, not the agency's.",
+   "items": [
+    {
+     "id": "26C006000",
+     "date": "2026-08-20",
+     "brand": "Britax",
+     "products": "B-SAFE 35; B-SAFE GEN 2; B-SAFE GEN 2 FLEXFIT; B-SAFE GEN 2 FLEXFIT PLUS; B-SAFE ULTRA; ENDEAVOURS",
+     "type": "Car seats",
+     "hazard": "Britax Child Safety, Inc. (Britax) is recalling certain B-Safe Gen 2, B-Safe Gen 2 Flexfit, B-Safe Gen 2 Flexfit Plus, B-Safe 35, B-Safe Ultra, and Endeavours child seats. Please refer to Britax's recall report for the s",
+     "remedy": "The remedy is currently under development. Owner notification letters are expected to be mailed by October 19, 2026. Own",
+     "units": "114660",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C006000"
+    },
+    {
+     "id": "26C005000",
+     "date": "2026-08-06",
+     "brand": "Evenflo",
+     "products": "REVOLVE 180 LITEMAX NXT",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Revolve180 Litemax NXT child seats manufactured through March 31, 2025. Please refer to Evenflo's recall report for the specific models and production dates. Due to a ",
+     "remedy": "The remedy for this recall is currently under development. Interim letters, notifying owners of the safety risk, are exp",
+     "units": "35951",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C005000"
+    },
+    {
+     "id": "26639",
+     "date": "2026-07-23",
+     "brand": "Peony Design",
+     "products": "Personalized Baby Bibs and Stroller Bags",
+     "type": "Adapters & accessories",
+     "hazard": "The snap can detach from the recalled bibs and stroller bags, posing a risk of serious injury or death from a choking hazard to young children.",
+     "remedy": "Refund: Consumers should take the recalled baby bibs and stroller bags away from children immediately, stop using them, ",
+     "units": "About 52",
+     "severity": "LOW",
+     "injuries": "The firm received three reported incidents of a broken snap on a bib and a broken snap on two stroller bags. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2026/Peony-Design-Recalls-Personalized-Baby-Bibs-and-Stroller-Bags-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard"
+    },
+    {
+     "id": "26C004000",
+     "date": "2026-07-17",
+     "brand": "Evenflo",
+     "products": "REO BY REVOLVE 360",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Reo by Revolve360 child seats in color variants Nantucket, Danvers, Chelsea, Holden, Brookline, and Lenox. Please refer to Evenflo's recall report for the specific mod",
+     "remedy": "The remedy for this recall is currently under development. Interim letters, notifying owners of the safety risk, were ma",
+     "units": "59661",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C004000"
+    },
+    {
+     "id": "26568",
+     "date": "2026-06-18",
+     "brand": "Joolz",
+     "products": "Joolz Aer2 Car Seat Adapters for Joolz Aer 2 Stroller",
+     "type": "Adapters & accessories",
+     "hazard": "The recalled car seat adapters can fail to properly attach to the stroller, which may allow the car seat to fall, posing a risk of serious injury from a fall hazard.",
+     "remedy": "Refund: Consumers should stop using the Joolz Aer2 Car Seat Adapters immediately, detach them from the stroller and go t",
+     "units": "About 3,840 (In addition, about 148 were sold in Canada)",
+     "severity": "HIGH",
+     "injuries": "The firm has received one report of the car seat adapters detaching from the strollers. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2026/Joolz-Recalls-Aer2-Car-Seat-Adapters-for-Strollers-Due-to-Risk-of-Serious-Injury-from-Fall-Hazard"
+    },
+    {
+     "id": "26C003000",
+     "date": "2026-04-02",
+     "brand": "Graco",
+     "products": "MODES NEST TRAVEL SYSTEM W/SNUGRIDE TURN&SLIDE; SNUGRIDE TURN & SLIDE",
+     "type": "Car seats",
+     "hazard": "Graco Children's Products Inc. (Graco) is recalling certain SnugRide Turn & Slide and Modes Nest Travel Systems with Snugride Turn & Slide infant child seats. Please refer to Graco's recall report for specific model info",
+     "remedy": "Owners are advised to follow the instructions for installing the child seat with the vehicle seat belt (without the base",
+     "units": "5126",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C003000"
+    },
+    {
+     "id": "26C002000",
+     "date": "2026-02-25",
+     "brand": "Evenflo",
+     "products": "LITEMAX",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain LiteMax Factory Select child seats with model number CS100111198. The weight and height limitations are stated incorrectly in the Spanish language manual. As such, the",
+     "remedy": "Evenflo will mail owners a corrected Spanish language manual, free of charge. Owner notification letters were mailed Apr",
+     "units": "14020",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C002000"
+    },
+    {
+     "id": "26C001000",
+     "date": "2026-01-20",
+     "brand": "Evenflo",
+     "products": "TITAN",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Titan 65 child seats with model numbers CS200312198, CS200311198, 3712198, and 3711198. The child seats may have been manufactured without a tether strap.",
+     "remedy": "Evenflo will advise owners to inspect their child seat for a tether strap, and Evenflo will mail owners a tether strap w",
+     "units": "64031",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=26C001000"
+    },
+    {
+     "id": "25C011000",
+     "date": "2025-12-24",
+     "brand": "Evenflo",
+     "products": "ALL4ONE",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain All4One child seats. Please refer to Evenflo's recall report for specific model numbers. In rear-facing mode, the adjustable recline mechanism may shift out of proper ",
+     "remedy": "Evenflo will replace the child seat, free of charge. Owner notification letters were mailed beginning February 18, 2026.",
+     "units": "74710",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C011000"
+    },
+    {
+     "id": "26094",
+     "date": "2025-11-20",
+     "brand": "AliExpress seller (SX-BB Store)",
+     "products": "4-in-1 Baby Safety Cart Carriage",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller violates the mandatory standard for strollers because the restraint system can fail, posing a risk of serious injury or deadly fall hazard.",
+     "remedy": "Refund: Consumers should immediately stop using the recalled stroller and contact AliExpress to receive a full refund. C",
+     "units": "About 15",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2026/AliExpress-Recalls-Convertible-Strollers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fall-Hazard-Violates-Mandatory-Standard-for-Strollers"
+    },
+    {
+     "id": "26044",
+     "date": "2025-10-23",
+     "brand": "Olympia Tools (Pack-N-Stroll)",
+     "products": "Pack-N-Stroll Premium Folding Utility Wagon",
+     "type": "Strollers & wagons",
+     "hazard": "The utility wagon violates the mandatory standard for strollers because an opening between the organizational tray and the sidewall may cause a child's head to become entrapped, posing a risk of serious injury or death. ",
+     "remedy": "Refund: Consumers should stop using the utility wagons immediately and return the item to Costco to receive a full refun",
+     "units": "About 530",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2026/Olympia-Tools-International-Recalls-Pack-N-Stroll-Utility-Wagons-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Falls-Violates-Mandatory-Standard-for-Strollers"
+    },
+    {
+     "id": "25C010000",
+     "date": "2025-09-25",
+     "brand": "Evenflo",
+     "products": "GOLD REVOLVE360 SLIM; REVOLVE360 SLIM",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Gold Revolve360 Slim and Revolve360 Slim child seats manufactured between December 1, 2022 and December 8, 2024. Please refer to Evenflo's recall report for specific m",
+     "remedy": "Evenflo will mail owners additional tape seal and installation instructions, free of charge. Owner notification letters ",
+     "units": "324997",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C010000"
+    },
+    {
+     "id": "25476",
+     "date": "2025-09-25",
+     "brand": "Hoovy (AMTRADING)",
+     "products": "Hoovy Cooling Gel Insert Pads for Car Seats and Strollers",
+     "type": "Adapters & accessories",
+     "hazard": "The cooling gel pads can become hot if left in the sun or a hot car, posing a burn hazard to young children.",
+     "remedy": "Refund: Consumers should immediately stop using the recalled Cooling Gel Insert Pad and contact AMTRADING for instructio",
+     "units": "About 20,000",
+     "severity": "MEDIUM",
+     "injuries": "The firm has received one consumer report where the child experienced second degree burns to his back, requiring medical attention.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2025/AMTRADING-Recalls-Hoovy-Cooling-Gel-Insert-Pads-for-Car-Seats-and-Strollers-Due-to-Burn-Hazard"
+    },
+    {
+     "id": "25C008000",
+     "date": "2025-06-18",
+     "brand": "Evenflo",
+     "products": "TITAN 65",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Titan 65 child seats with model number 3712198 manufactured between March 17, 2025 and May 1, 2025. The child seat may have been packaged with an incorrect instruction",
+     "remedy": "Evenflo will mail owners information on how to inspect and replace the instruction manual, free of charge. Owner notific",
+     "units": "36694",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C008000"
+    },
+    {
+     "id": "25C006000",
+     "date": "2025-04-22",
+     "brand": "Safety 1st",
+     "products": "GROW & GO SPRINT",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Safety 1st Grow & Go Sprint child seats. The included model numbers are CC321GYU, CC321GYUD, CC321GYY, CC321GYYD, CC321HAO, and CC321HAR. The headrest foam pad is not ade",
+     "remedy": "Dorel will mail a replacement headrest pad assembly kit, free of charge. Owner notification letters were mailed July 31,",
+     "units": "179845",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C006000"
+    },
+    {
+     "id": "25215",
+     "date": "2025-04-10",
+     "brand": "Fisher-Price",
+     "products": "Brunch & Go Stroller Toys",
+     "type": "Adapters & accessories",
+     "hazard": "The yolk of the toy egg can crack and create small parts, posing a choking hazard to young children.",
+     "remedy": "Replace: Consumers should immediately stop using the recalled stroller toys, keep them away from children, and contact F",
+     "units": "About 253,000 (In addition, about 4,500 were sold in Canada)",
+     "severity": "LOW",
+     "injuries": "Fisher-Price has received five reports of the yolk of the toy egg cracking and breaking. In two reports, an infant had a small piece in their mouth. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2025/Fisher-Price-Recalls-Brunch-Go-Stroller-Toys-Due-to-Choking-Hazard"
+    },
+    {
+     "id": "25C005000",
+     "date": "2025-04-09",
+     "brand": "Chicco",
+     "products": "MYFIT",
+     "type": "Car seats",
+     "hazard": "Chicco USA, Inc. (Chicco) is recalling certain MyFit Zip Air Harness and Booster child restraint seats (CRS) with model numbers 07079561970070 and 04079561190070. In certain configurations, the child seat may allow exces",
+     "remedy": "Chicco will mail owners a remedy kit and installation instructions, free of charge. Owner notification letters were mail",
+     "units": "30984",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C005000"
+    },
+    {
+     "id": "25C003000",
+     "date": "2025-03-14",
+     "brand": "Evenflo",
+     "products": "AMP HIGH BACK; BIG KID; EVERYFIT; EVERYKID; EVERYSTAGE; FOLIO3 TRAVEL SYSTEM; GOLD PIVOT EXPD TRAVELSYS; GOLD REVOLVE360 EXTEND; GOLD SHYFT...",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain child seats and travel systems. Please refer to Evenflo's recall report for specific model numbers. The child seats and travel systems are missing the USA recall regis",
+     "remedy": "Evenflo will mail owners a recall registration card, free of charge. Owner notification letters were mailed May 13, 2025",
+     "units": "1068",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C003000"
+    },
+    {
+     "id": "25C004000",
+     "date": "2025-03-12",
+     "brand": "Safety 1st; Safety 1st (Disney Baby)",
+     "products": "BOOST & GO; BOOST & GO ESSENTIAL; COMFORT RIDE; MAGICSQUAD",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Safety 1st Comfort Ride 3-in-1, Boost & Go 3-in-1, Boost & Go Essential 3-in-1, and MagicSquad 3-in-1 harness booster child seats. Please refer to Dorel's recall report f",
+     "remedy": "Dorel will mail owners a new label, free of charge. Owner notification letters were mailed April 4, 2025. Owners may con",
+     "units": "73144",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C004000"
+    },
+    {
+     "id": "25160",
+     "date": "2025-03-06",
+     "brand": "Nuby (Luv n care)",
+     "products": "Nuby Stroller Fans",
+     "type": "Adapters & accessories",
+     "hazard": "The stroller fan's housing allows consumers' fingers to contact the fan's blade, posing a laceration injury hazard to small children.",
+     "remedy": "Replace: Consumers should stop using the stroller fan immediately and contact Luv n' care for information on how to retu",
+     "units": "About 33,600",
+     "severity": "MEDIUM",
+     "injuries": "Luv n' care has received seven reports of children's fingers accessing the fan blade, resulting in six laceration injuries.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2025/Luv-n-care-Recalls-Nuby-Stroller-Fans-Due-to-Laceration-Injury-Hazard"
+    },
+    {
+     "id": "25C002000",
+     "date": "2025-02-14",
+     "brand": "Cybex",
+     "products": "ATON G; ATON G SWIVEL; BEEZY TRAVEL SYSTEM; EOS TRAVEL SYSTEM; LIBELLE TRAVEL SYSTEM",
+     "type": "Car seats",
+     "hazard": "Columbus Trading-Partners USA, Inc. (CTP) is recalling certain Cybex Aton G, Aton G SensorSafe, Aton G Swivel, Aton G Swivel SensorSafe, Eos and Aton G Swivel Travel System, Eos and Aton G Travel System, Libelle and Aton",
+     "remedy": "CTP will mail owners a remedy kit and installation instructions, free of charge. Owner notification letters were mailed ",
+     "units": "23273",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=25C002000"
+    },
+    {
+     "id": "24C002000",
+     "date": "2024-11-27",
+     "brand": "Nuna",
+     "products": "RAVA",
+     "type": "Car seats",
+     "hazard": "Nuna Baby Essentials, Inc. (Nuna) is recalling certain Rava child seats with a plastic harness adjuster button, manufactured between July 16, 2016 and October 25, 2023. Please see the recall report for a complete list of",
+     "remedy": "Nuna will provide owners a remedy kit, free of charge. Owner notification letters were mailed February 14, 2025. Owners ",
+     "units": "608786",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=24C002000"
+    },
+    {
+     "id": "24C001000",
+     "date": "2024-11-19",
+     "brand": "Britax",
+     "products": "ONE4LIFE SLIM",
+     "type": "Car seats",
+     "hazard": "Britax Child Safety, Inc. (Britax) is recalling certain One4Life Slim ClickTight All-in-One car seats with model numbers E1D197A, E1D197B, E1D197F, and E1D197G. The labels and user guide incorrectly state the maximum rea",
+     "remedy": "Britax will mail owners new labels, free of charge. Owner notification letters were mailed beginning December 18, 2024. ",
+     "units": "1286",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=24C001000"
+    },
+    {
+     "id": "25044",
+     "date": "2024-11-14",
+     "brand": "Stokke",
+     "products": "YOYO\u00b3 strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The parking brake on the recalled strollers can disengage, posing an injury hazard.",
+     "remedy": "Refund: Consumers should immediately stop using the recalled strollers and go to https://recall.stokke.com/yoyo3 to regi",
+     "units": "About 2,890",
+     "severity": "MEDIUM",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2025/Stokke-Recalls-YOYO3-Strollers-Due-to-Injury-Hazard"
+    },
+    {
+     "id": "25032",
+     "date": "2024-11-07",
+     "brand": "Guava Family",
+     "products": "Guava Roam Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller's brakes can fail to engage or unexpectedly disengage, posing fall and injury hazards to children.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and contact Guava Family for instructions on how ",
+     "units": "About 8,500",
+     "severity": "MEDIUM",
+     "injuries": "The firm has received 67 reports of the brake lock disengaging. The firm has also received 152 reports of the brake pedal not engaging when pushed down. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2025/Guava-Family-Recalls-Roam-Strollers-Due-to-Fall-and-Injury-Hazards"
+    },
+    {
+     "id": "24316",
+     "date": "2024-07-25",
+     "brand": "Besrey (Stiger)",
+     "products": "Besrey Twins Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The twin stroller violates multiple safety regulations for strollers. The front seat in the forward-facing configuration poses an entrapment hazard to children. In addition, failures with the restraint system and rear se",
+     "remedy": "Refund: Consumers should stop using the stroller immediately and contact Stiger for information on how to dispose of the",
+     "units": "About 3,045",
+     "severity": "HIGH",
+     "injuries": "None reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2024/Stiger-Recalls-Besrey-Twins-Strollers-Due-to-Entrapment-Fall-and-Choking-Hazards-Violation-of-Federal-Regulation-for-Strollers-Sold-Exclusively-on-Amazon-com"
+    },
+    {
+     "id": "24730",
+     "date": "2023-12-07",
+     "brand": "Bugaboo",
+     "products": "Bugaboo Dragonfly Seat Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "In 'parent-facing' mode, the backrest of the seat can move downward, placing the infant in a negative recline. In this situation, an unrestrained infant could tumble from the seat, posing an injury hazard.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled seats and contact Bugaboo for a free replacement stroller s",
+     "units": "About 1,000 (In addition, about 200 were sold in Canada)",
+     "severity": "MEDIUM",
+     "injuries": "Bugaboo has received one report in the United States and seven reports in South Korea of the backrest of the seat moving downward during use when in parent-facing mode. No injuries have been reported...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2024/Bugaboo-Recalls-Dragonfly-Seat-Strollers-Due-to-Injury-Hazard-Recall-Alert"
+    },
+    {
+     "id": "24719",
+     "date": "2023-11-30",
+     "brand": "Peg Perego",
+     "products": "YPSI and Z4 Inclined Sleeper Bassinets",
+     "type": "Strollers & wagons",
+     "hazard": "The recalled bassinets violate the Safe Sleep for Babies Act because they were marketed for infant sleep and have an incline angle greater than 10 degrees. Infant fatalities have occurred in inclined sleeper products aft",
+     "remedy": "Refund;Repair: Consumers should immediately stop using the recalled bassinets and contact Peg Perego for instructions on",
+     "units": "About 550",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2024/Peg-Perego-Recalls-Inclined-Sleeper-Bassinets-for-YPSI-and-Z4-Strollers-Due-to-Risk-of-Suffocation-and-Fall-Hazard-Violation-of-Federal-Safety-Standards-Recall-Alert"
+    },
+    {
+     "id": "23C005000",
+     "date": "2023-11-06",
+     "brand": "Evenflo",
+     "products": "TITAN 65",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling one Titan 65 child seat. The child seat is missing the warning labels. As such, this child seat fails to comply with the requirements of Federal Motor Vehicle Safety Standard ",
+     "remedy": "The child seat has been returned to the manufacturer to be destroyed, and therefore, no owner notification letter will b",
+     "units": "1",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=23C005000"
+    },
+    {
+     "id": "23C004000",
+     "date": "2023-05-04",
+     "brand": "Baby Trend",
+     "products": "HYBRID 3-IN-1",
+     "type": "Car seats",
+     "hazard": "Baby Trend, Inc. (Baby Trend) is recalling certain Hybrid 3-in-1 Combination Booster Seat-Desert Blue child seats. The latch assembly webbing that secures the child restraint system to the lower anchorages may fray, whic",
+     "remedy": "Baby Trend, Inc. will mail owners a replacement latch assembly webbing and installation instructions, free of charge. Ow",
+     "units": "2600",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=23C004000"
+    },
+    {
+     "id": "23161",
+     "date": "2023-03-17",
+     "brand": "Mockingbird",
+     "products": "Mockingbird Single Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The lower side of the stroller frame can crack, posing a fall risk to children in the stroller.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled Single strollers and contact Mockingbird to receive a free ",
+     "units": "About 25,390 (149,000 Single-to-Double Strollers were previously recalled in November 2022)",
+     "severity": "HIGH",
+     "injuries": "The firm has received 13 reports of cracks in the frame of Single Strollers. No injuries to children in the strollers have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2023/Mockingbird-Expands-Recall-to-Include-Single-Strollers-Due-to-Fall-Hazard"
+    },
+    {
+     "id": "23C003000",
+     "date": "2023-03-14",
+     "brand": "Maxi-Cosi",
+     "products": "CORAL XP",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Maxi-Cosi Coral XP Rear-facing Infant Seats with model number IC313. The child seat inner carrier is not sufficient to restrain a child without the use of the outer carri",
+     "remedy": "Owners are advised to only use the inner carrier of the Coral XP when it is attached to the outer carrier and installed ",
+     "units": "14510",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=23C003000"
+    },
+    {
+     "id": "23C002000",
+     "date": "2023-03-03",
+     "brand": "Maxi-Cosi; Safety 1st",
+     "products": "CORAL XP; INFANT BASE; MICO LUXE+; MICO XP; MICO XP MAX; ONBOARD 35 SECURETECH; SECURETECH INFANT BASE",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Safety 1st onBoard 35 Secure Tech, Safety 1st Secure Tech Infant Base, Maxi-Cosi Coral XP, Maxi-Cosi Mico XP Max, Maxi-Cosi Mico XP, Maxi-Cosi Mico Luxe+, and Maxi-Cosi I",
+     "remedy": "Owners are advised to only secure their child seat(s) with the vehicle belt restraint system until the seat is remedied.",
+     "units": "59457",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=23C002000"
+    },
+    {
+     "id": "23C001000",
+     "date": "2023-02-10",
+     "brand": "Cybex",
+     "products": "ATON; ATON 2; ATON M; ATON Q; CLOUD Q",
+     "type": "Car seats",
+     "hazard": "Columbus Trading-Partners USA, Inc. (CTP) is recalling certain Cybex models Aton, Aton Q, Aton M, Aton 2, and Cloud Q rear facing infant seats. Please refer to CTP's recall report for specific model details. The webbing ",
+     "remedy": "CTP/CYBEX will mail owners a replacement front harness adjustment strap assembly and installation instructions, free of ",
+     "units": "31080",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=23C001000"
+    },
+    {
+     "id": "22C008000",
+     "date": "2022-12-29",
+     "brand": "Joybuy/Marainbow",
+     "products": "CARTOON STROLLER CUSHION; FARFI RUST-PROOF BOOSTER; FOLD WATERPROOF CAR SEAT; MARINBOW PORTABLE INFANT; PORTABLE BABY COVER SEAT; PORTABLE...",
+     "type": "Car seats",
+     "hazard": "JD E-Commerce America Limited (Joybuy Express) is recalling all Marainbow Portable Infant Safe Seat and materially similar child seats. Please refer to Joybuy Express' affected products attachment for specific child seat",
+     "remedy": "Joybuy Express will provide a refund to purchasers. Owner notification letters were mailed February 21, 2023. Owners may",
+     "units": "174",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=22C008000"
+    },
+    {
+     "id": "22C007000",
+     "date": "2022-11-28",
+     "brand": "Joybuy/Marainbow",
+     "products": "PORTABLE INFANT SAFE SEAT",
+     "type": "Car seats",
+     "hazard": "JD E-Commerce America Limited (JD E-Commerce) is recalling certain Marainbow Portable Infant Safe Seat child seats. The installation labels display incorrect instructions. The child seat's design also prohibits it from b",
+     "remedy": "No remedy has been established at this time. The manufacturer has not yet provided a schedule for recall notification. O",
+     "units": "174",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=22C007000"
+    },
+    {
+     "id": "23042",
+     "date": "2022-11-10",
+     "brand": "Mockingbird",
+     "products": "Mockingbird Single-to-Double Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The lower side of the stroller frame can crack, posing a fall risk to children in the stroller.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled Single-to-Double strollers and contact Mockingbird to recei",
+     "units": "About 149,000",
+     "severity": "HIGH",
+     "injuries": "The firm has received 138 reports of cracks in the frame, including eight injuries involving cuts, scratches or bruising to children in the strollers.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2023/Mockingbird-Recalls-Single-to-Double-Strollers-Due-to-Fall-Hazard"
+    },
+    {
+     "id": "22772",
+     "date": "2022-09-15",
+     "brand": "Baby Trend",
+     "products": "Cityscape Travel Jogger Strollers, Model TJ75B12A",
+     "type": "Travel systems",
+     "hazard": "The parking brake on the strollers can fail, posing fall and injury hazards to children.",
+     "remedy": "Refund: Consumers should immediately stop using the recalled strollers. Baby Trend and Amazon are contacting all purchas",
+     "units": "About 310",
+     "severity": "MEDIUM",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2022/Baby-Trend-Recalls-Cityscape-Travel-Jogger-Strollers-Due-to-Fall-and-Injury-Hazards-Recall-Alert"
+    },
+    {
+     "id": "22215",
+     "date": "2022-09-01",
+     "brand": "UPPAbaby",
+     "products": "UPPAbaby All-Terrain RIDGE Jogging Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller's rear disc brakes have openings that can cause amputation or laceration if a non-occupant child's fingertip gets caught in the openings while the stroller is in use.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and contact UPPAbaby to receive free replacement ",
+     "units": "About 14,400",
+     "severity": "HIGH",
+     "injuries": "The firm has received one reported incident, resulting in a fingertip amputation to a child who was not in the stroller while in use.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2022/UPPAbaby-Recalls-RIDGE-Jogging-Strollers-Due-to-Fingertip-Amputation-Hazard-One-Injury-to-Child-Reported"
+    },
+    {
+     "id": "22C002000",
+     "date": "2022-06-07",
+     "brand": "Clek",
+     "products": "OLLI; OZZI",
+     "type": "Car seats",
+     "hazard": "Clek, Inc. (Clek) is recalling certain Olli booster seats, model number OL12U2 manufactured between January 20, 2020 and May 10, 2022, and Ozzi booster seats, model number OZ11U2, manufactured between March 1, 2020 and M",
+     "remedy": "Clek will mail owners a new label, free of charge. Owner notification letters are expected to be mailed, beginning July ",
+     "units": "11123",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=22C002000"
+    },
+    {
+     "id": "22C001000",
+     "date": "2022-04-08",
+     "brand": "Cybex",
+     "products": "SIRONA M",
+     "type": "Car seats",
+     "hazard": "Columbus Trading-Partners USA, Inc. (CTP) is recalling certain CYBEX Sirona M Convertible Child Car Seat, model numbers 518000385, 518002153, 518000387, 518002145, 518002149, 518002151, and 519000211, manufactured betwee",
+     "remedy": "CTP will mail a kit with instructions on how to seal the headrest foam, free of charge. Owner notification letters were ",
+     "units": "20526",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=22C001000"
+    },
+    {
+     "id": "22083",
+     "date": "2022-02-16",
+     "brand": "Valco Baby",
+     "products": "Valco Baby Snap Duo Trend Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller's front wheels can break off while in use, causing the strollers to fall unexpectedly, posing a fall hazard to children in the stroller.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and contact Valco Baby to receive a free replacem",
+     "units": "About 1,290",
+     "severity": "MEDIUM",
+     "injuries": "Valco Baby has received 207 reports of front wheels cracking or breaking. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2022/Valco-Baby-Recalls-Snap-Duo-Trend-Strollers-Due-to-Fall-Hazard"
+    },
+    {
+     "id": "22715",
+     "date": "2022-01-06",
+     "brand": "Colony Brands",
+     "products": "Covered Wood Wagons",
+     "type": "Strollers & wagons",
+     "hazard": "Paint on the wood wagons, the plastic handles, and the red plastic cover contain levels of lead that exceed the maximums allowed. Excessive levels of lead can be toxic or cause other health problems to young children if ",
+     "remedy": "Refund: Consumers should immediately take the recalled wagons away from children and return them for a full refund. The ",
+     "units": "About 20",
+     "severity": "MEDIUM",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2022/Colony-Brands-Recalls-Childrens-Wood-Wagons-Due-to-Violation-of-Federal-Lead-Paint-Ban-and-Lead-Poisoning-Hazard-Recall-Alert"
+    },
+    {
+     "id": "21C007000",
+     "date": "2021-12-20",
+     "brand": "Clek",
+     "products": "LIING; LIINGO",
+     "type": "Car seats",
+     "hazard": "Clek, Inc. (Clek) is recalling certain Liing, model LG19U1, and Liingo, model number LGO20U1, infant child seats manufactured before February 22, 2021. The labels on the seat cover or infant insert may bubble up, allowin",
+     "remedy": "Clek will provide a replacement seat cover or infant insert, free of charge. Owner notification letters were mailed Janu",
+     "units": "596",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C007000"
+    },
+    {
+     "id": "21C005000",
+     "date": "2021-12-01",
+     "brand": "Clek",
+     "products": "FLLO; FOONF",
+     "type": "Car seats",
+     "hazard": "Clek, Inc. (Clek) is recalling certain Foonf, model numbers FO12 through FO19, and Fllo, model numbers FL15 through FL19, convertible child seats manufactured prior to May 21, 2021. A child may pick pieces of foam from t",
+     "remedy": "Clek will provide a molded plastic insert that prevents access to the foam, along with instructions on how to attach it ",
+     "units": "150599",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C005000"
+    },
+    {
+     "id": "21C006000",
+     "date": "2021-12-01",
+     "brand": "Clek",
+     "products": "LIING; LIINGO",
+     "type": "Car seats",
+     "hazard": "Clek, Inc. (Clek) is recalling certain Liing, model number LG19U1, and Liingo, model number LGO20U1, infant child seats manufactured before September 15, 2020. A small plastic portion of the child seat canopy support may",
+     "remedy": "Clek will provide a replacement canopy support along with instructions on how to replace it, free of charge. Owner notif",
+     "units": "5504",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C006000"
+    },
+    {
+     "id": "22701",
+     "date": "2021-10-07",
+     "brand": "Joovy",
+     "products": "Zoom 360 Ultralight jogging strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller's front wheel bearing can fail or detach, posing a fall and injury hazard.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and contact the firm for a free repair kit to rep",
+     "units": "About 9,200",
+     "severity": "MEDIUM",
+     "injuries": "There have been 25 incidents of restricted front wheel movement reported, including 12 incidents where the wheel fork bearing wore through the housing and detached, with one fall resulting in bruises...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2022/Joovy-Recalls-Zoom-360-Ultralight-Jogging-Strollers-Due-to-Fall-Hazard-Recall-Alert"
+    },
+    {
+     "id": "21C004000",
+     "date": "2021-09-08",
+     "brand": "Maxi-Cosi",
+     "products": "PRIA 70",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Maxi-Cosi Pria 70 Convertible child seats. When the seat is installed in the forward facing position and secured to the car using the lap belt without also using the top ",
+     "remedy": "Dorel will provide remedy kits containing replacement labels and instruction booklets and provide, at no charge, Maxi-Co",
+     "units": "4000",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C004000"
+    },
+    {
+     "id": "21C003000",
+     "date": "2021-08-24",
+     "brand": "Maxi-Cosi",
+     "products": "PRIA 85",
+     "type": "Car seats",
+     "hazard": "Dorel Juvenile Group (Dorel) is recalling certain Maxi-Cosi Pria 85 Convertible child seats. When the seat is installed in the forward facing position and secured to the car using the lap belt without also using the top ",
+     "remedy": "No remedy has been established at this time. Owner notification letters were mailed October 8, 2021. Owners may contact ",
+     "units": "119863",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C003000"
+    },
+    {
+     "id": "21158",
+     "date": "2021-06-30",
+     "brand": "UPPAbaby",
+     "products": "UPPAbaby adapters included with Rumbleseats",
+     "type": "Adapters & accessories",
+     "hazard": "The adapters can detach, posing a fall hazard to the child in the RumbleSeat.",
+     "remedy": "Replace: Consumers who own a RumbleSeat accessory, manufactured between September 2014 and July 2019, will be provided w",
+     "units": "About 86,000",
+     "severity": "HIGH",
+     "injuries": "The firm has received 135 reports of detachments, including 77 incidents resulting in bumps, scrapes and two reports of broken noses.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2021/UPPAbaby-Recalls-Adapters-Included-with-RumbleSeats-Due-to-Child-Fall-Hazard"
+    },
+    {
+     "id": "21139",
+     "date": "2021-05-26",
+     "brand": "Ergobaby",
+     "products": "METROUS1, METROUS2 and METROUS4 Compact City Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The button on some buckles that release the harness can break and detach when pressed by the user while the child is in the stroller, making it difficult to release, and posing a choking hazard to young children.",
+     "remedy": "Replace: Consumers should immediately stop using the recalled strollers and contact Ergobaby for instructions and a full",
+     "units": "About 2,800",
+     "severity": "MEDIUM",
+     "injuries": "The firm has received 15 consumer reports of the button on the buckle that releases the harness breaking and detaching when pressed by the user, making it difficult to release the buckle. No injuries...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2021/Ergobaby-Recalls-METROUS-Strollers-Due-to-Choking-Hazard"
+    },
+    {
+     "id": "21C002000",
+     "date": "2021-03-24",
+     "brand": "Diono",
+     "products": "CAMBRIA 2",
+     "type": "Car seats",
+     "hazard": "Diono is recalling certain Cambria 2 Booster Seats, model numbers 31200-US-01, 31201-US-01, and 31202-US-01. In the event of a crash, a crack between the headrest and backrest can occur, allowing the headrest to separate",
+     "remedy": "Diono will provide a replacement backrest with headrest assembly, free of charge. Diono recommends converting the seat i",
+     "units": "6920",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C002000"
+    },
+    {
+     "id": "21C001000",
+     "date": "2021-03-08",
+     "brand": "Combi",
+     "products": "BABYRIDE",
+     "type": "Car seats",
+     "hazard": "Combi USA, Inc. (Combi) is recalling certain Combi BabyRide Infant Car Seats, model 378099 with dates of manufacture of 5/1/2016 thru 8/31/2019. The 1-inch-wide webbing strap used in the center front adjuster to adjust t",
+     "remedy": "Combi will provide owners a replacement strap along with instructions for replacement. Owner notifications letters were ",
+     "units": "13880",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=21C001000"
+    },
+    {
+     "id": "20164",
+     "date": "2020-08-12",
+     "brand": "Thule",
+     "products": "Thule Sleek strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller's handlebar can detach, posing an injury hazard to children.",
+     "remedy": "Replace: Consumers should immediately stop using the recalled strollers and contact Thule Group to arrange for the retur",
+     "units": "About 4,000 (In addition, about 880 were sold in Canada)",
+     "severity": "MEDIUM",
+     "injuries": "Thule has received one report of the stroller's handlebar detaching. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard"
+    },
+    {
+     "id": "20755",
+     "date": "2020-07-02",
+     "brand": "Belecoo (A Better You!)",
+     "products": "Belecoo 535-S Baby Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The recalled strollers violate the federal Carriages and Strollers standard. A child's torso can pass through the opening between the activity tray and the seat bottom and his/her head can become entrapped, posing entrap",
+     "remedy": "Refund: Consumers should immediately stop using the recalled baby stroller and contact A Better You! for instructions on",
+     "units": "About 750",
+     "severity": "HIGH",
+     "injuries": "None reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/A-Better-You-Recalls-Belecoo-Strollers-Due-to-Violation-of-Federal-Stroller-and-Carriage-Safety-Standard-Fall-Entrapment-and-Strangulation-Hazards-Recall-Alert"
+    },
+    {
+     "id": "20753",
+     "date": "2020-06-25",
+     "brand": "Costway",
+     "products": "Baby Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The recalled strollers violate the Federal Standard for Carriages and Strollers. A child's torso can pass through the opening between the activity tray and the seat bottom and his/her head can become entrapped, posing en",
+     "remedy": "Refund: Consumers should immediately stop using the recalled baby strollers and contact Costway for instructions on how ",
+     "units": "About 16,000",
+     "severity": "HIGH",
+     "injuries": "None reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/Costway-Recalls-Baby-Strollers-Due-to-Violation-of-Federal-Stroller-and-Carriage-Safety-Standard-Fall-Entrapment-and-Strangulation-Hazards-Recall-Alert"
+    },
+    {
+     "id": "20132",
+     "date": "2020-06-10",
+     "brand": "Island Wear",
+     "products": "Umbrella strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The recalled strollers violate the federal Carriages and Strollers Safety standard. The location of the restraint system creates a large gap between the restraint and the seat. The child can slip through the gap, posing ",
+     "remedy": "Refund: Consumers should immediately stop using the recalled strollers and contact Island Wear for instructions on how t",
+     "units": "About 940",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/Island-Wear-Recalls-Strollers-Due-to-Violation-of-Federal-Stroller-and-Carriage-Safety-Standard-Fall-and-Choking-Hazards"
+    },
+    {
+     "id": "20096",
+     "date": "2020-03-19",
+     "brand": "Thule",
+     "products": "Thule Sleek Car Seat Adapters",
+     "type": "Adapters & accessories",
+     "hazard": "The plastic brackets on the car seat adapter can break, posing a fall hazard to infants.",
+     "remedy": "Refund;Replace: Consumers should immediately stop using the recalled Sleek Car Seat Adapter and contact Thule Group to a",
+     "units": "About 1,430 (In addition, about 116 in Canada)",
+     "severity": "HIGH",
+     "injuries": "Thule has received three reports of the plastic brackets on the car seat adapters cracking or breaking while in use. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Thule-Sleek-Car-Seat-Adapters-Due-to-Fall-Hazard"
+    },
+    {
+     "id": "20052",
+     "date": "2020-01-16",
+     "brand": "Baby Trend",
+     "products": "Tango Mini Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "Both of the stroller's hinge joints can release and collapse under pressure, posing a fall hazard to children in the stroller.",
+     "remedy": "Refund;Replace: Consumers should immediately stop using the recalled strollers and contact Baby Trend for a replacement ",
+     "units": "About 2,000",
+     "severity": "MEDIUM",
+     "injuries": "None reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2020/Baby-Trend-Recalls-Tango-Mini-Strollers-Due-to-Fall-Hazard"
+    },
+    {
+     "id": "19C003000",
+     "date": "2019-11-05",
+     "brand": "Angel Guard",
+     "products": "ANGEL RIDE",
+     "type": "Strollers & wagons",
+     "hazard": "Merritt Manufacturing Inc. (Merritt) is recalling certain Angel Guard Angel Ride car beds. The restraint harness may not have been properly sewed where the buckle is attached.",
+     "remedy": "Merritt will notify owners, and will provide replacement harnesses, free of charge. The recall began January 15, 2020. O",
+     "units": "216",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=19C003000"
+    },
+    {
+     "id": "19C002000",
+     "date": "2019-10-17",
+     "brand": "Babideal",
+     "products": "STORM BOOSTER",
+     "type": "Car seats",
+     "hazard": "Dorel China America, Inc. (DCA) is recalling certain Babideal Storm Booster Car Seats, model BC901BPXL, sold exclusively at Family Dollar Stores. The label attached to the fabric cover may not have the required safety wa",
+     "remedy": "DCA will notify the registered owners, and will provide a replacement fabric cover that has a compliant warning label in",
+     "units": "28800",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=19C002000"
+    },
+    {
+     "id": "19C001000",
+     "date": "2019-08-30",
+     "brand": "WAYB",
+     "products": "PICO",
+     "type": "Car seats",
+     "hazard": "ForB dba WAYB (WAYB) is recalling certain WAYB Pico child seats manufactured between February 1, 2019 and August 23, 2019. The headrest's aluminum tubular frame can break allowing the headrest to detach.",
+     "remedy": "WAYB will replace the headrest component with a new, redesigned headrest, free of charge. The recall began November 12, ",
+     "units": "6426",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=19C001000"
+    },
+    {
+     "id": "19763",
+     "date": "2019-07-25",
+     "brand": "BOB (Britax)",
+     "products": "Modified thru-bolt axles for use with BOB Jogging Strollers distributed through the BOB Information Campaign from January 10, 2019 to April...",
+     "type": "Strollers & wagons",
+     "hazard": "The modified thru-bolt on the front wheel can fracture, allowing the wheel to detach from the stroller, posing fall and injury hazards to children in the stroller and adults operating the stroller.",
+     "remedy": "Replace: Consumers should immediately stop using the modified thru-bolt axle installed on the front wheel of their BOB j",
+     "units": "About 200",
+     "severity": "MEDIUM",
+     "injuries": "Britax has received 8 reports of the modified thru-bolt fracturing. There are no reports of injuries with the modified thru-bolt axle.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2019/Britax-Recalls-Modified-Thru-Bolt-Axles-for-Use-with-BOB-Jogging-Strollers-Distributed-Through-the-BOB-Information-Campaign-Due-to-Fall-and-Injury-Hazards-Recall-Alert"
+    },
+    {
+     "id": "18167",
+     "date": "2018-05-24",
+     "brand": "Jane",
+     "products": "Jan\u00e9 Muum strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The recalled strollers violate the federal Stroller and Carriage standard. An infant can pass through the opening between the stroller armrest and the seat bottom and his/her head and neck can become entrapped by the arm",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and contact Jan\u00e9 for a free repair. The repair co",
+     "units": "About 800",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2018/Jane-Recalls-Strollers-Due-to-Violation-of-the-Federal-Stroller-and-Carriage-Safety-Standard-Entrapment-and-Strangulation-Hazards"
+    },
+    {
+     "id": "18C001000",
+     "date": "2018-04-17",
+     "brand": "Harmony",
+     "products": "BIG BOOST DELUXE",
+     "type": "Car seats",
+     "hazard": "Harmony Juvenile Products (Harmony) is recalling certain Harmony Big Boost Deluxe booster seats. In the event of a crash, the seat belt may cause excessive force to be applied to the restrained child's chest. As such, th",
+     "remedy": "Harmony will notify owners, and provide a replacement booster seat of a different model, free of charge to eligible U.S.",
+     "units": "148165",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=18C001000"
+    },
+    {
+     "id": "18122",
+     "date": "2018-03-14",
+     "brand": "Radio Flyer",
+     "products": "Children's eWagons",
+     "type": "Strollers & wagons",
+     "hazard": "Improper wiring can activate the wagon's motor unintentionally, posing an injury hazard.",
+     "remedy": "Refund: Consumers should immediately stop using the recalled wagons and contact Radio Flyer for a full refund.",
+     "units": "About 5,000",
+     "severity": "MEDIUM",
+     "injuries": "The firm has received two reports of the wagon's motor activating unintentionally. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2018/Radio-Flyer-Recalls-Electric-Wagons-Due-to-Injury-Hazard"
+    },
+    {
+     "id": "17231",
+     "date": "2017-09-25",
+     "brand": "Delta Children",
+     "products": "J is for Jeep brand cross-country all-terrain jogging strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The stroller leg bracket can break, posing a fall hazard to infants in the stroller.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers and can contact Delta for a free repair.",
+     "units": "About 28,000",
+     "severity": "MEDIUM",
+     "injuries": "The firm has received four reports of the stroller leg bracket breaking, including one report of a child falling from a stroller and receiving cuts and bruises.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Delta-Recalls-Strollers"
+    },
+    {
+     "id": "17C003000",
+     "date": "2017-09-14",
+     "brand": "Diono",
+     "products": "OLYMPIA; PACIFICA; RADIAN R100; RADIAN R120; RADIAN RXT; RAINIER",
+     "type": "Car seats",
+     "hazard": "Diono is recalling certain Radian R100, Radian R120, Radian RXT, Olympia, Pacifica, and Rainier convertible and booster car seats. When the seat is installed in the forward facing position and secured to the car using th",
+     "remedy": "Diono will notify owners, and provide a free remedy kit with an updated instruction manual, an energy absorbing pad, as ",
+     "units": "519052",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=17C003000"
+    },
+    {
+     "id": "17C002000",
+     "date": "2017-06-15",
+     "brand": "Britax; BOB",
+     "products": "B-SAFE 35; B-SAFE 35 ELITE; B-SAFE 35 ELITE TRAVEL SY; B-SAFE 35 TRAVEL SYSTEM; BOB B-SAFE 35",
+     "type": "Car seats",
+     "hazard": "Britax Child Safety, Inc. (Britax) is recalling certain B-Safe 35, B-Safe 35 Travel Systems, B-Safe 35 Elite, B-Safe 35 Elite Travel Systems and BOB B-Safe rear-facing infant child safety seats, model numbers E1A183F, E1",
+     "remedy": "Britax will notify owners and will provide a replacement chest clip marked 'PC', free of charge. The recall began on Jun",
+     "units": "207037",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=17C002000"
+    },
+    {
+     "id": "17C001000",
+     "date": "2017-05-10",
+     "brand": "Graco",
+     "products": "MY RIDE 65 BOOSTER",
+     "type": "Car seats",
+     "hazard": "Graco Children's Products Inc. (Graco) is recalling certain Graco My Ride 65 convertible child restraints, models 1871689, 1908152, 1813074, 1872691, 1853478, 1877535, 1813015, and 1794334. In the event of a crash, the c",
+     "remedy": "Graco will notify owners, and dealers will provide consumers with a replacement harness, free of charge. The recall bega",
+     "units": "25494",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=17C001000"
+    },
+    {
+     "id": "17146",
+     "date": "2017-05-04",
+     "brand": "Combi",
+     "products": "Combi Shuttle Travel System (stroller and car seat combos)",
+     "type": "Travel systems",
+     "hazard": "The car seat can disengage from the stroller's frame, posing a fall hazard to infants.",
+     "remedy": "Repair: Consumers should stop using the recalled strollers with the car seats attached and contact Combi for a free repa",
+     "units": "About 1,000",
+     "severity": "HIGH",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Combi-USA-Recalls-Stroller-and-Car-Seat-Combos"
+    },
+    {
+     "id": "17088",
+     "date": "2017-02-16",
+     "brand": "Britax; BOB",
+     "products": "Britax B-Agile and BOB Motion Strollers with Click & Go receivers",
+     "type": "Adapters & accessories",
+     "hazard": "A damaged receiver mount on the stroller can cause the car seat to disengage and fall unexpectedly, posing a fall hazard to infants in the car seat.",
+     "remedy": "Repair: Consumers should immediately stop using their Click & Go receiver mounts and contact Britax for a free repair ki",
+     "units": "About 676,000 (in addition, about 36,400 were sold in Canada and about 4,600 were sold in Mexico)",
+     "severity": "HIGH",
+     "injuries": "Britax has received 33 reports of car seats unexpectedly disconnecting from the strollers and falling to the ground, resulting in 26 reports of injuries to children, including scratches, bruises,...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Britax-Recalls-Strollers"
+    },
+    {
+     "id": "16C009000",
+     "date": "2016-12-30",
+     "brand": "4moms",
+     "products": "SELF INSTALLING CAR SEAT",
+     "type": "Car seats",
+     "hazard": "Thorley Industries LLC d/b/a 4moms (4moms) is recalling certain 4moms Self Installing Rear-facing Infant Car Seats, model number 1032, manufactured July 1, 2016, to October 31, 2016. Due to a tight rivet, the affected ca",
+     "remedy": "4moms will notify owners and will replace the infant carrier portion, free of charge. The recall began on January 10, 20",
+     "units": "1622",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C009000"
+    },
+    {
+     "id": "17057",
+     "date": "2016-12-20",
+     "brand": "Aria Child (Qbit)",
+     "products": "Qbit strollers",
+     "type": "Strollers & wagons",
+     "hazard": "A gap in the stroller's folding side hinge can pinch a caregiver's hand during unfolding, posing a laceration hazard. In addition, the stroller can fold unexpectedly during use, posing an injury and fall hazard to the ca",
+     "remedy": "Replace: Consumers should immediately stop using the recalled strollers and contact Aria Child for a free replacement st",
+     "units": "About 29,400",
+     "severity": "HIGH",
+     "injuries": "The firm has received five reports of consumers being pinched by the stroller hinge mechanism, resulting in four consumers needing stitches for cuts. In addition, there were 71 reports of the...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Aria-Child-Recalls-Strollers"
+    },
+    {
+     "id": "16C008000",
+     "date": "2016-12-19",
+     "brand": "Baby Trend",
+     "products": "HYBRID LX 3-IN-1",
+     "type": "Car seats",
+     "hazard": "Baby Trend, Inc. (Baby Trend) is recalling certain Hybrid LX 3-in-1 Centennial booster seats, model number FB58181, manufactured on July 23, 2016, and Hybrid LX 3-in-1 Kiwi booster seats, model number FB48417, manufactur",
+     "remedy": "Baby Trend will notify owners and replace the child seat or provide a full refund. The recall began on February 13, 2017",
+     "units": "34",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C008000"
+    },
+    {
+     "id": "17705",
+     "date": "2016-10-25",
+     "brand": "Fiddle Diddles",
+     "products": "LullaBelay car seat strap systems",
+     "type": "Adapters & accessories",
+     "hazard": "The carabiners attached to the strap system contain small internal parts that can become dislodged, posing a choking hazard to young children.",
+     "remedy": "Repair: Consumers should immediately stop using the LullaBelay strap system and contact Fiddle Diddles for a free repair",
+     "units": "About 250",
+     "severity": "LOW",
+     "injuries": "None reported",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Fiddle-Diddles-Recalls-Car-Seat-Strap-Systems-0"
+    },
+    {
+     "id": "17010",
+     "date": "2016-10-12",
+     "brand": "Mamas & Papas",
+     "products": "Mamas & Papas Armadillo Flip Strollers",
+     "type": "Strollers & wagons",
+     "hazard": "A loose latch on the stroller can cause the seat to tip back unexpectedly when infant is in the parent-facing position, posing a fall hazard to infants.",
+     "remedy": "Repair: Consumers should immediately stop using the strollers and contact Mamas & Papas for a free repair.",
+     "units": "About 3,000 (In addition one was sold in Canada)",
+     "severity": "MEDIUM",
+     "injuries": "There have been 10 reports of seats tipping back. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2017/Mamas-and-Papas-Recalls-Armadillo-Strollers"
+    },
+    {
+     "id": "16C007000",
+     "date": "2016-09-07",
+     "brand": "Evenflo",
+     "products": "EVOLVE 3-IN-1 SEAT",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Evolve 3-in-1 Combination Booster Seats, model number 34411700 manufactured February 26, 2015, to February 9, 2016 and model number 34411741 manufactured May 27, 2015,",
+     "remedy": "Evenflo will notify the registered owners, and will provide a remedy kit with a replacement harness adjustment button, f",
+     "units": "29742",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C007000"
+    },
+    {
+     "id": "16249",
+     "date": "2016-08-24",
+     "brand": "Safety 1st (Dorel)",
+     "products": "Safety 1st Step and Go Travel Systems",
+     "type": "Travel systems",
+     "hazard": "The stroller tray folding mechanism can partially disengage on one side when used with an infant car seat attached to the stroller, posing a fall hazard.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled strollers with the infant car seat and contact Safety 1st f",
+     "units": "About 20,000 (in addition, 5,800 were sold in Canada)",
+     "severity": "HIGH",
+     "injuries": "The firm has received 30 reports of the front stroller tray that supports the infant car seat disengaging on one side. No injuries reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2016/Dorel-Juvenile-Recalls-Safety-1st-Strollers"
+    },
+    {
+     "id": "16219",
+     "date": "2016-07-07",
+     "brand": "Pacific Cycle (InStep/Schwinn)",
+     "products": "Instep and Schwinn swivel wheel jogging strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The front wheel can become loose and detach, posing crash and fall hazards.",
+     "remedy": "Repair: Consumers should immediately stop using the recalled jogging strollers and contact Pacific Cycle to obtain a rep",
+     "units": "About 217,600",
+     "severity": "HIGH",
+     "injuries": "The firm has received 132 reports of the front wheel becoming loose or unstable, resulting in 215 injuries, including head injuries, sprains, lacerations, bumps, bruises, and abrasions.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2016/Pacific-Cycle-Recalls-Swivel-Wheel-Jogging-Strollers"
+    },
+    {
+     "id": "16C006000",
+     "date": "2016-07-05",
+     "brand": "Combi",
+     "products": "COCCORO",
+     "type": "Car seats",
+     "hazard": "Combi USA, Inc. (Combi) is recalling certain Coccoro Convertible Child Restraints, model number 8220, manufactured from January 1, 2009, to June 29, 2016. When the Coccoro car seat is installed in a forward facing positi",
+     "remedy": "Combi will notify owners, and provide them with a cover to be added to the bottom of the seat, free of charge. The recal",
+     "units": "39395",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C006000"
+    },
+    {
+     "id": "16163",
+     "date": "2016-05-18",
+     "brand": "phil&teds",
+     "products": "phil&teds dash strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The hinge used to fold the dash v5 stroller can become damaged while opening and closing the stroller, posing a pinch hazard to the consumer.",
+     "remedy": "Repair: Consumers should immediately stop using the dash v5 stroller and contact phil&teds to have the stroller frame re",
+     "units": "About 630 in the U.S. (in addition, 240 were sold in Canada)",
+     "severity": "LOW",
+     "injuries": "The firm has received one report of the stroller hinge joint separating. No injuries have been reported.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2016/philandteds-recalls-dash-strollers"
+    },
+    {
+     "id": "16C005000",
+     "date": "2016-04-29",
+     "brand": "Kiddy",
+     "products": "KIDDY WORLD PLUS",
+     "type": "Car seats",
+     "hazard": "Kiddy USA (Kiddy) is recalling certain World Plus combination forward facing child restraints that convert to a high back booster seat, model 51 100 WP, manufactured from July 2, 2012, through October 5, 2013. The buckle",
+     "remedy": "Kiddy will notify registered owners and will reimburse owners the full purchase price of the car seat plus packaging cos",
+     "units": "1429",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C005000"
+    },
+    {
+     "id": "16C004000",
+     "date": "2016-04-25",
+     "brand": "Graco",
+     "products": "TURBOBOOSTER",
+     "type": "Car seats",
+     "hazard": "Graco Children's Products Inc. (Graco) is recalling certain Graco TurboBooster booster seats, models 1967886, 1963973, 1963974, 1963975, 1963976, and 1975173, manufactured between December 22, 2015, and April 5, 2016. Th",
+     "remedy": "Graco will notify registered owners and provide the missing printed instructions, free of charge. Non-registered owners ",
+     "units": "20505",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C004000"
+    },
+    {
+     "id": "16C003000",
+     "date": "2016-02-18",
+     "brand": "Evenflo",
+     "products": "TRANSITIONS BOOSTER SEAT",
+     "type": "Car seats",
+     "hazard": "Evenflo Company, Inc. (Evenflo) is recalling certain Transitions 3-in-1 Combination Booster Seats, model numbers 34411686, 34411695, and 34411029, produced from December 18, 2014, through January 29, 2016. The central fr",
+     "remedy": "Evenflo will notify owners and provide a remedy kit that includes a newly-designed seat pad and CFA assembly, free of ch",
+     "units": "56247",
+     "severity": "MEDIUM",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C003000"
+    },
+    {
+     "id": "16C002000",
+     "date": "2016-02-02",
+     "brand": "Graco",
+     "products": "EXTEND2FIT CONVERTIBLE",
+     "type": "Car seats",
+     "hazard": "Graco Children's Products, Inc. (Graco) is recalling certain Extend2Fit Convertible child seats manufactured November 27, 2015, to January 20, 2016. The affected child seats may have the recline label affixed at the wron",
+     "remedy": "Graco will notify owners and provide a new corrected label with application instructions, free of charge. The recall beg",
+     "units": "15064",
+     "severity": "LOW",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C002000"
+    },
+    {
+     "id": "16080",
+     "date": "2016-01-21",
+     "brand": "Britax",
+     "products": "Britax B-Ready strollers",
+     "type": "Strollers & wagons",
+     "hazard": "The foam padding on the stroller's arm bar can come off in fragments if the child bites the arm bar, posing a choking hazard.",
+     "remedy": "Repair: Consumers should immediately remove the arm bar from recalled strollers and replacement top seats and contact Br",
+     "units": "About 49,000 in the U.S. (in addition, 11,000 were sold in Canada)",
+     "severity": "MEDIUM",
+     "injuries": "Britax has received 117 reports of children biting the arm bar foam padding, including five reports of children choking or gagging on foam fragments.",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2016/Britax-Recalls-Strollers-and-Replacement-Top-Seats"
+    },
+    {
+     "id": "16081",
+     "date": "2016-01-21",
+     "brand": "Britax",
+     "products": "Britax B-Safe 35 and B-Safe 35 Elite infant car seats and travel systems",
+     "type": "Car seats",
+     "hazard": "The car seat carry handle can crack and break allowing the seat to fall unexpectedly, posing a risk of injury to the infant.",
+     "remedy": "Repair: Consumers should immediately stop carrying the car seat by the handle until the repair is installed. All consume",
+     "units": "About 71,000 units (in addition 3,900 units were sold in Canada and 990 units in Mexico)",
+     "severity": "HIGH",
+     "injuries": "Britax has received 74 reports of handles developing fractures, cracks and/or breaking while in use, including one report of an infant who received a bump on the head when the carrier fell to the...",
+     "source": "CPSC",
+     "url": "https://www.cpsc.gov/Recalls/2016/CPSC-NHTSA-and-Britax-Announce-Recall-of-Infant-Car-Seats"
+    },
+    {
+     "id": "16C001000",
+     "date": "2016-01-08",
+     "brand": "Britax",
+     "products": "B-SAFE 35 ELITE; B-SAFE 35 ELITE TRAVEL SY; B-SAFE 35 TRAVEL SYSTEM",
+     "type": "Car seats",
+     "hazard": "Britax Child Safety, Inc. (Britax) is recalling certain B-Safe 35 child seats, models E9LU65M, E9LU65P, E9LU63F, E9LU66R, E9LS63F and EXLU65M, B-Safe 35 Elite child seats, models E9LS55T, E9LS56P, E9LS55U, E9LS66C and E9",
+     "remedy": "Britax will notify all registered owners, and will ship them a remedy kit that includes a carry handle reinforcing brack",
+     "units": "71454",
+     "severity": "HIGH",
+     "injuries": "",
+     "source": "NHTSA",
+     "url": "https://www.nhtsa.gov/recalls?nhtsaId=16C001000"
+    }
+   ]
+  }
  }
 }

@@ -155,6 +155,7 @@ tr.sel td{background:var(--page);font-weight:600}
 .flag.hot{border-color:var(--critical);color:var(--critical)}
 .srcs{font-size:12px;display:flex;flex-wrap:wrap;gap:4px 10px}
 .dates{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:4px;font-size:13px}
+.search{width:100%;max-width:420px;margin:0 0 10px;font:inherit;color:var(--ink);background:var(--raised);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
 .dates .past{color:var(--muted);text-decoration:line-through}
 a{color:var(--series-1)}
 </style>
@@ -368,52 +369,95 @@ function renderRecalls(r){
   box.appendChild(ul);
 }
 
-var pickCat = 0;
+var pickCat = 0, recallType = "All", recallQuery = "";
 function renderPicks(r){
   var P = D.picks, box = $("picks"), tabs = $("picks-tabs"), note = $("picks-note"), dl = $("picks-dates");
   box.textContent = ""; tabs.textContent = ""; dl.textContent = "";
   if (!P){ note.textContent = "No safety picks file yet (data/gear_picks.json)."; return; }
   note.textContent = P.summary + " Last reviewed " + fmtDate(P.reviewed) + ". " + (P.verified ? P.verified + " " : "") + P.caveats.join(" ");
   (P.dates || []).forEach(function(x){
-    var li = el("li", {cls: x.date < r.date ? "past" : ""}, [el("strong", {text: fmtDate(x.date) + ": "}),
-      el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.label})]);
-    dl.appendChild(li);
+    dl.appendChild(el("li", {cls: x.date < r.date ? "past" : ""}, [el("strong", {text: fmtDate(x.date) + ": "}),
+      el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.label})]));
   });
-  var recallText = ((r.recall_watch && r.recall_watch.items) || []).map(function(x){ return ((x.title || "") + " " + (x.products || []).join(" ")).toLowerCase(); });
-  var cats = P.categories.map(function(c){ return c.name; }).concat(["Avoid / recalled"], P.trust ? ["How much to trust the sources"] : []);
-  cats.forEach(function(c, i){
-    var b = el("button", {type:"button", "aria-pressed": String(i === pickCat), text:c});
+  var link = function(t, u){ return el("a", {href:u, target:"_blank", rel:"noopener noreferrer", text:t}); };
+  var db = (P.recall_db && P.recall_db.items) || [];
+  var watchText = ((r.recall_watch && r.recall_watch.items) || []).map(function(x){ return ((x.title || "") + " " + (x.products || []).join(" ")).toLowerCase(); });
+  var views = P.categories.map(function(c){ return {name:c.name, kind:"picks", cat:c}; });
+  if (P.brands) views.push({name:"Brands A–Z", kind:"brands"});
+  if (P.tech) views.push({name:"Safety tech: what's proven", kind:"tech"});
+  if (db.length) views.push({name:"All recalls 2016–2026 (" + db.length + ")", kind:"recalls"});
+  views.push({name:"Avoid / recalled", kind:"avoid"});
+  if (P.trust) views.push({name:"How much to trust the sources", kind:"trust"});
+  if (pickCat >= views.length) pickCat = 0;
+  views.forEach(function(v, i){
+    var b = el("button", {type:"button", "aria-pressed": String(i === pickCat), text:v.name});
     b.addEventListener("click", function(){ pickCat = i; renderPicks(r); });
     tabs.appendChild(b);
   });
-  var link = function(s){ return el("a", {href:s[1], target:"_blank", rel:"noopener noreferrer", text:s[0]}); };
-  if (pickCat > P.categories.length){
-    var tl = el("ul", {cls:"recalls"});
-    P.trust.forEach(function(x){
-      tl.appendChild(el("li", {cls:"recall"}, [el("div", {}, [el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.name}),
-        document.createTextNode(" "), el("span", {cls:"flag", text:x.weight})]), el("div", {cls:"ink2", text:x.detail})]));
-    });
-    box.appendChild(tl); return;
-  }
-  if (pickCat === P.categories.length){
+  var v = views[pickCat];
+  var list = function(items, tagOf){
     var ul = el("ul", {cls:"recalls"});
-    P.avoid.forEach(function(x){
-      ul.appendChild(el("li", {cls:"recall"}, [el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.name}), el("div", {cls:"ink2", text:x.detail})]));
+    items.forEach(function(x){
+      var head = el("div", {}, [link(x.name, x.url)]);
+      var tag = tagOf && tagOf(x);
+      if (tag){ head.appendChild(document.createTextNode(" ")); head.appendChild(el("span", {cls:"flag" + (/caution|none|weak/i.test(tag) ? " hot" : ""), text:tag})); }
+      ul.appendChild(el("li", {cls:"recall"}, [head, el("div", {cls:"ink2", text:x.detail})]));
     });
-    box.appendChild(ul); return;
+    box.appendChild(ul);
+  };
+  if (v.kind === "trust") return list(P.trust, function(x){ return x.weight; });
+  if (v.kind === "avoid") return list(P.avoid);
+  if (v.kind === "brands") return list(P.brands, function(x){ return x.verdict; });
+  if (v.kind === "tech") return list(P.tech, function(x){ return "Evidence: " + x.grade; });
+  if (v.kind === "recalls"){
+    box.appendChild(el("p", {cls:"muted", style:"margin-bottom:8px", text:P.recall_db.note}));
+    var types = ["All"], counts = {};
+    db.forEach(function(x){ counts[x.type] = (counts[x.type] || 0) + 1; if (types.indexOf(x.type) < 0) types.push(x.type); });
+    var bar = el("div", {cls:"chips"});
+    types.forEach(function(t){
+      var b = el("button", {type:"button", "aria-pressed": String(t === recallType), text: t + " (" + (t === "All" ? db.length : counts[t]) + ")"});
+      b.addEventListener("click", function(){ recallType = t; renderPicks(r); });
+      bar.appendChild(b);
+    });
+    box.appendChild(bar);
+    var q = el("input", {type:"search", placeholder:"Search brand or model (e.g. Graco, Doona, YOYO)", "aria-label":"Search recalls", value:recallQuery, cls:"search"});
+    box.appendChild(q);
+    var holder = el("div");
+    box.appendChild(holder);
+    var draw = function(){
+      holder.textContent = "";
+      var needle = recallQuery.toLowerCase();
+      var rows = db.filter(function(x){ return (recallType === "All" || x.type === recallType) &&
+        (!needle || (x.brand + " " + x.products + " " + x.id).toLowerCase().indexOf(needle) >= 0); });
+      var tb = el("tbody");
+      rows.forEach(function(x){
+        tb.appendChild(el("tr", {}, [el("td", {cls:"nw", text:fmtDate(x.date)}), el("td", {text:x.brand}),
+          el("td", {}, [el("div", {text:x.products}), el("div", {cls:"muted", text:x.hazard})]),
+          el("td", {}, [el("span", {cls:"flag" + (x.severity === "HIGH" ? " hot" : ""), text:x.severity})]),
+          el("td", {cls:"nw"}, [link(x.source + " " + x.id, x.url)])]));
+      });
+      var head = el("thead", {}, [el("tr", {}, [el("th",{text:"Date"}), el("th",{text:"Brand"}), el("th",{text:"Product and hazard"}), el("th",{text:"Severity"}), el("th",{text:"Record"})])]);
+      holder.appendChild(el("p", {cls:"muted", text: rows.length + " recalls shown"}));
+      holder.appendChild(el("div", {cls:"scroll"}, [el("table", {}, [head, tb])]));
+    };
+    q.addEventListener("input", function(){ recallQuery = q.value; draw(); });
+    draw();
+    return;
   }
   var grid = el("div", {cls:"picks"});
-  P.categories[pickCat].picks.forEach(function(p){
+  v.cat.picks.forEach(function(p){
     var re = null; try { re = new RegExp(p.match, "i"); } catch(e) {}
-    var hit = re && recallText.some(function(t){ return re.test(t); });
+    var inWatch = re && watchText.some(function(t){ return re.test(t); });
+    var inDb = re && p.recall === "None found" && db.some(function(x){ return re.test(x.products + " " + x.brand); });
     var flags = el("div", {cls:"flags"});
-    if (hit) flags.appendChild(el("span", {cls:"flag hot", text:"In this report's CPSC recall watch: check it"}));
+    if (inWatch) flags.appendChild(el("span", {cls:"flag hot", text:"In this report's CPSC recall watch: check it"}));
+    if (inDb) flags.appendChild(el("span", {cls:"flag hot", text:"Name matches a recall in the 2016–26 list: check it"}));
     flags.appendChild(el("span", {cls:"flag" + (p.recall === "None found" ? "" : " hot"), text:"Recalls: " + p.recall}));
     p.flags.forEach(function(f){ flags.appendChild(el("span", {cls:"flag", text:f})); });
     grid.appendChild(el("div", {cls:"card pick-card"}, [
       el("header", {}, [el("h3", {}, [el("span", {cls:"rank", text:"#" + p.rank + " "}), document.createTextNode(p.name)]), el("span", {cls:"price", text:p.price})]),
       el("p", {cls:"ink2", text:p.why}), flags,
-      el("div", {cls:"srcs"}, [el("span", {cls:"muted", text:"Sources:"})].concat(p.sources.map(link)))]));
+      el("div", {cls:"srcs"}, [el("span", {cls:"muted", text:"Sources:"})].concat(p.sources.map(function(s){ return link(s[0], s[1]); })))]));
   });
   box.appendChild(grid);
 }
