@@ -54,6 +54,20 @@ causes were in `concept.md` itself:
 - The key: Q9 now matches.
 - The guardrail: allow markers are added for review notes.
 
-## Round 2
+## Round 2: rerun cold after the fixes
 
-Pending. The same three cases are being rerun cold after the fixes.
+| Case | Round 1 | Round 2 | Result |
+|---|---|---|---|
+| C2 Homepage hero | 13 | **18** | Pass. H1: "A health band designed to tell you how sure it is." |
+| C3 Instagram Reel caption | 12 (gate) | **16** | Pass. Shows one sample answer with three explanations. |
+| C4 Cold email to a lab | 13 | 13 (gate) | Fail. It offered a lab "licensed, consented access to the signals" and implied a testable band, neither confirmed. |
+
+**Fixes applied:**
+- Check Q7 now covers offers. Builder, lab and team copy invites a design-partner conversation and never promises access, a device, terms or a date.
+- Example explanations stay everyday ones; an illness is never offered ("an oncoming cold" removed).
+- New Claim Register row 19 covers "patterns, not causes".
+- The guardrail ignores review notes that quote a banned phrase.
+
+## Round 3
+
+Pending. C4 is being rerun cold.

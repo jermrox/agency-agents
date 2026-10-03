@@ -22,7 +22,7 @@ Most wearables hand you a score and leave you to work out what it means. Vybe He
 
 Our band is screenless. It reads five connected signals, Restore, Move, Nourish, Connect and Vitals, against your own changing baseline rather than a population average. The app is designed to answer in a plain sentence, say how confident it is and why, name what it could not see, and later check whether its own suggestion worked, including the times it got it wrong. An example from our prototype, built on sample data:
 
-"You are less recovered than usual. The 1am bedtime after Saturday fits best; Friday's hard session fits too. Moderate confidence: three nights of data since the change. What Vybe could not see: how you actually feel today."
+"You are less recovered than usual. The 1am bedtime after Saturday fits best; Friday's hard session and two short nights fit too. Moderate confidence: three nights of data since the change. What Vybe could not see: how you actually feel today."
 
 You buy the band once. There is no required subscription to understand your own body, and your health data is never sold.
 

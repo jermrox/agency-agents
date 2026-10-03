@@ -76,6 +76,7 @@ supported** → **hypothesis**. Health and science claims need a source.
 | 16 | Vybe checks whether its own suggestions worked, and shows the ones it got wrong | Not public yet | Design commitment | `vybe-app/README.md` (Outcome screen) | Founder to approve. Same "designed to" rule. Never quote the prototype's sample tally ("4 of 7") as a result. |
 | 17 | Nothing is on by default; export and delete take one tap | Not public yet | Design commitment, privacy | `vybe-app/README.md` (Onboarding, Data screens) | Founder to approve, and counsel to check against the privacy policy before paid use. |
 | 18 | Built open: others can build on the band | IG, 29 Sep; site `/developers` | Platform direction | The public FAQ dates API v1 to Jun 2028 and the SDK to Dec 2028 | Approved as a direction ("built open", "talk to us", "design partners"). Never "available now". |
+| 19 | Shows patterns, not causes: names the explanations that fit instead of one culprit | Not public yet | Design commitment | `vybe-app/README.md` (Pattern history screen); evidence library on HRV | Founder to approve. Same "designed to" rule as row 14. Explanations stay everyday ones (sleep, training, timing), never an illness. |
 
 **Claims never to make.** Any diagnosis or treatment; "clinical-grade" or
 "medical-grade"; any accuracy percentage without a cited method; any

@@ -54,7 +54,7 @@ PHONE = re.compile(r"(?<!\d)(\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)")
 OWN_DOMAINS = ("vybe.health", "example.com", "hydrox.app")  # hydrox: published support address
 ALLOW_MARKERS = ("never", "do not", "don't", "avoid", "must not", "not a medical",
                  "outside wellness", "prohibit", "counsel", "unsafe", "banned",
-                 "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "no dates")
+                 "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "no dates", '"available now"', "'available now'")
 
 
 def iter_files(paths):
