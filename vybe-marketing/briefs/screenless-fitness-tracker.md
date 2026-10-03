@@ -114,7 +114,7 @@ later whether its own suggestion worked, and to show the ones it got wrong
 
 Show one answer, labelled **"Prototype, sample data"**:
 
-> Your HRV is below your own range for the second morning. Short sleep fits best; Tuesday's hard session fits too. Moderate confidence: 19 days of data. What Vybe could not see: anything you drank, how you feel today. Next: an easy day.
+> Your HRV is below your own range for the second morning. Short sleep fits most closely; Tuesday's hard session fits too. Moderate confidence: 19 days of data. What Vybe could not see: anything you drank, how you feel today. Next: an easy day.
 
 Then the proof underneath. Vybe is a screenless band, and it is
 pre-launch (row 1). It reads five connected signals against your own
@@ -181,6 +181,6 @@ PerplexityBot and Google-Extended in `robots.txt`. Add the page to
 3. **Show it.** One real-shaped answer, labelled "Prototype, sample data": the sentence "Your HRV is below your own range for the second morning", the confidence "Moderate confidence: 19 days of data", the blind spot "What Vybe could not see: anything you drank, how you feel today", and the step "Next: an easy day."
 4. **Order.** The Vybe section opens on "designed to come as a plain sentence that says how sure Vybe is and why" and "designed to check later whether its own suggestion worked"; hygiene follows under "Then the proof underneath": "a screenless band", "against your own baseline", "no required consumer subscription".
 5. **Two products.** The page sells the band ("join the waitlist") and names the platform once: "It is built open, so others can build on the band (row 18)."
-6. **Claims.** Rows 14, 15, 16 and 19 each sit in a "designed to" sentence ("designed to come as a plain sentence", "designed to name what Vybe could not see", "designed to check later"); privacy uses the Register's own wording, "Health data never sold, nothing shared without consent"; the sample answer gives two explanations: "Short sleep fits best; Tuesday's hard session fits too."
+6. **Claims.** Rows 14, 15, 16 and 19 each sit in a "designed to" sentence ("designed to come as a plain sentence", "designed to name what Vybe could not see", "designed to check later"); privacy uses the Register's own wording, "Health data never sold, nothing shared without consent"; the sample answer gives two explanations: "Short sleep fits most closely; Tuesday's hard session fits too."
 7. **Roadmap and offers.** Nothing relies on an unconfirmed spec or feature: "no battery line of any kind (row 7 unconfirmed), no data-export or one-tap claim (row 17 unconfirmed)", "no light-sensing line"; the only offer is the site's exact term, "The first 1,000 on the waitlist are guaranteed a position to buy a band."; the section heading says "Where Vybe fits (pre-launch)".
 8. **Voice.** Plain and declarative, with one action ("One: join the waitlist") and no "best" for Vybe ("Name no 'best'"); it says "not yet" where it should: "Apple has announced nothing".

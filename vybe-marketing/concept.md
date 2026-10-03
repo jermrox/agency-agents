@@ -53,7 +53,7 @@ never offered as an explanation.
 
 | # | Promise | What it looks like in the product |
 |---|---|---|
-| 1 | **The answer comes first, as a sentence** | "You are less recovered than usual. The 1am bedtime after Saturday fits best; Friday's hard session and two short nights fit too." The readings sit underneath as evidence. |
+| 1 | **The answer comes first, as a sentence** | "You are less recovered than usual. The 1am bedtime after Saturday fits most closely; Friday's hard session and two short nights fit too." The readings sit underneath as evidence. |
 | 2 | **Confidence is stated in words, with its reason** | "Moderate confidence — three nights of data since the change, and one known context event." Never a percentage. |
 | 3 | **It shows what it could not see** | "What Vybe could not see: whether the late nights were work or choice, anything you drank, how you actually feel today." |
 | 4 | **It grades its own advice** | The criterion is written down before the attempt. The record is a fraction ("4 of 7"), and there is a section called "What Vybe got wrong". |
@@ -150,8 +150,8 @@ sample data"):
 
 | Pillar | Shape |
 |---|---|
-| Vitals | "Your HRV is below your own range for the second morning. Short sleep fits best; Tuesday's hard session fits too. Moderate confidence: 19 days of data. Next: an easy day." |
-| Move | "Your training load is above your own normal for the third week. The added interval session fits best; shorter sleep fits too. Moderate confidence: 21 days of data. Next: keep Thursday easy." |
+| Vitals | "Your HRV is below your own range for the second morning. Short sleep fits most closely; Tuesday's hard session fits too. Moderate confidence: 19 days of data. Next: an easy day." |
+| Move | "Your training load is above your own normal for the third week. The added interval session fits most closely; shorter sleep fits too. Moderate confidence: 21 days of data. Next: keep Thursday easy." |
 | Nourish | "On nights you ate after 21:00, your HRV ran lower. Late dinners fit; so do the later bedtimes on those nights. Low confidence: six such nights. Next: try an earlier dinner twice this week." |
 
 ## Two halves, one company
