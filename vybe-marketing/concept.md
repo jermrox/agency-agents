@@ -183,13 +183,13 @@ it", an email body that is not written).
 
 1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner". Placement is part of the test:
    - **The lead is in the first sentence** (the first ten words in a short format): the row's idea, with any quoted wording exact.
-   - **The "then" column comes after the shown answer and points back to it** ("the band is designed to produce that answer"; "no subscription stands between you and it" is row 21 wording and carries row 21's hold). A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
+   - **The "then" column comes after the shown answer and points back to it** ("the band is designed to produce that answer"). Any sentence that ties the answer to "no (required) subscription" ("that answer, with no required subscription", "no subscription stands between you and it") is row 21 and carries its hold. Without a hold, "no required subscription" gets its own sentence about the band, apart from the answer. Vary the "then" line across a feed: one stamped closing sentence reads as boilerplate.. A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
    - **Quoted wording goes in exactly; directions get carried out, never printed.** Wording in quotation marks in the table, or marked as /enterprise or Claim Register wording, goes into the copy exactly. Rewording it ("with consent" turned into an "only" sharing promise) makes a new claim, and a new claim needs the Register first. Every other cell is a direction: "One calibrated answer, shown, not described" means show one answer; it is never the post's opening line. Test: if a sentence only makes sense to someone who has read this table, rewrite it. A copy sentence never reuses a direction cell's wording beyond its quoted phrases.
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
-6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording (row 4: "never sold; shared only with your consent, with service providers that run the service, or where the law requires", never "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17, 19 or 22, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). "Designed to" must govern the sentence's main verb: a hedge in a later clause does not cover "Vybe shows…" at the start. The same goes for noun phrases that assume a design commitment already works ("the record of what worked", "the times it got it wrong"): rewrite them as "designed to" sentences. Does every example answer give more than one explanation?
+6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording (row 4: "never sold; shared only with your consent, with service providers that run the service, or where the law requires", never "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17, 19 or 22, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). "Designed to" must govern the sentence's main verb: a hedge in a later clause does not cover "Vybe shows…" at the start. The same goes for noun phrases that assume a design commitment already works ("the record of what worked", "the times it got it wrong"): rewrite them as "designed to" sentences. Does every example answer give more than one explanation? Blind spots are claims too: a "what Vybe could not see" line never names a gap in what the band senses while that spec is unconfirmed (being outside, daylight, location); write it as a gap in the person's log or context ("mornings you didn't log").
 7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed, and never states conversations, pilots or partners as happening ("we're talking with performance teams") unless the founder has confirmed them; invite instead ("we're looking for design partners").
 8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know". **Short formats** (a tagline, a subject line, an email's first line, a hook) put the unclaimed idea in the first ten words and stay under 25 words. They never open on context the reader already knows.
 
@@ -224,6 +224,12 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Final regression, all rules in force.** All eight copy cases
+  pass (C1 18, C2 17, C3 17, C4 17, C5 17, C6 17, C7 16, C8 18). Four pieces
+  ended on the same stamped line tying the answer to "no required
+  subscription", which is row 21 made without a hold. Q1 and the Register now
+  say so, Q6 adds that blind spots are claims, and the guardrail blocks the
+  pattern section by section.
 - **2026-10-03. Retests after the regression.** C1 rose to 18. The
   placement rules lifted D2 to 3 in every retested piece, but the "word for
   word" rule made writers print the table's directions as copy. The fix: quoted
@@ -267,7 +273,7 @@ changes.
   - pillars now have jobs: Vitals leads search, Nourish leads social, Connect is daylight, Move goes to teams;
   - calibration must carry a countable reason, ranked explanations and a next step;
   - new crowded phrases: Apple's score transparency, user-habit grading, Circular's "checked than trusted", Ultrahuman's "platform";
-  - "The answers come with the band" replaces "no subscription" as the pricing line.
+  - "The answers come with the band" (row 21) replaces "no subscription" as the pricing line.
 
   Lesson: the open ground moves monthly, so the swap test needs this table kept current.
 - **2026-10-03. Concept test, round 3 (lab email only).** The claims gate

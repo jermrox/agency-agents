@@ -14,6 +14,10 @@ regardless of how good the rest of the work is:
   partner   wording that implies a partnership that is not signed
   short     a short format (a line labelled tagline, first line, subject line
             or hook) of 25 words or more; the concept check says under 25
+  row21     a sentence tying an answer to "no (required) subscription", which
+            is Claim Register row 21's scope claim; allowed when the sentence
+            names row 21 or a hold, or its markdown section (## heading)
+            carries a scheduling hold
   privacy-claim
             a sharing promise ("shared only with consent", "nothing shared")
             that drops the privacy policy's exceptions; allowed only when the
@@ -145,8 +149,22 @@ def short_formats(path):
             yield at + 1, len(text.split()), text
 
 
+ANSWER = r"\b(?:that|the|this|its|your|each|every) (?:\w+ )?answers?\b"
+ROW21 = re.compile(ANSWER + r"[^.]{0,80}\bno (required )?subscription|"
+                   r"\bno (required )?subscription\b[^.]{0,60}" + ANSWER, re.I)
+HOLD = re.compile(r"cannot be scheduled|can't be scheduled|scheduling hold|\bhold:", re.I)
+
+
 def scan(path):
     findings = []
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    section_of, section, held_sections = [], 0, set()
+    for line in lines:
+        if line.startswith("## "):
+            section += 1
+        section_of.append(section)
+        if HOLD.search(line):
+            held_sections.add(section)
     for n, words, text in short_formats(path):
         if words >= 25:
             findings.append(("short", n, f"{words} words: {text[:110]}", False))
@@ -161,6 +179,13 @@ def scan(path):
             if name == "privacy-claim" and "service provider" in low and "law" in low:
                 ok = True
             findings.append((name, owner[min(m.start(), len(owner) - 1)], sentence[:140], ok))
+        m = ROW21.search(sentence)
+        if m:
+            line = owner[min(m.start(), len(owner) - 1)]
+            held = section_of[line - 1] in held_sections if line - 1 < len(section_of) else False
+            note = re.match(r"\W*(audience and channel|swap test|show it|order|two products|claims|roadmap|voice|hygiene comes)\b", low)
+            ok = held or bool(note) or "row 21" in low or "hold" in low or 'not "no subscription"' in low
+            findings.append(("row21", owner[min(m.start(), len(owner) - 1)], sentence[:140], ok))
         for m in EMAIL.finditer(sentence):
             if not m.group(0).lower().endswith(OWN_DOMAINS):
                 findings.append(("privacy", owner[min(m.start(), len(owner) - 1)], m.group(0), False))

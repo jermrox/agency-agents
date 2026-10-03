@@ -209,3 +209,25 @@ All eight copy cases now pass. Two problems remained:
 - `check_marketing.py` now counts the words in any line labelled tagline, first line, subject line or hook, and blocks at 25 or more.
 - The tactical and builder direction cells now state the reason, and row 22's subject is the team view.
 - Q1 adds that a copy sentence never reuses a direction cell's wording beyond its quoted phrases.
+
+## Final regression, C1 to C8 (all rules in force)
+
+A fresh writer redid all eight cases, and a separate grader scored only the copy.
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Result |
+|---|---|---|---|---|---|---|---|---|
+| C1 LinkedIn | 3 | 3 | 3 | 3 | 3 | 3 | **18** | Pass |
+| C2 Hero | 3 | 3 | 3 | 3 | 2 | 3 | **17** | Pass |
+| C3 Reel caption | 3 | 3 | 3 | 3 | 2 | 3 | **17** | Pass |
+| C4 Lab email | 3 | 3 | 3 | 2 | 3 | 3 | **17** | Pass |
+| C5 Nourish | 3 | 3 | 3 | 3 | 2 | 3 | **17** | Pass |
+| C6 Connect | 3 | 3 | 3 | 3 | 2 | 3 | **17** | Pass |
+| C7 H2F | 3 | 2 | 3 | 3 | 2 | 3 | **16** | Pass (held for row 22) |
+| C8 Pricing | 3 | 3 | 3 | 3 | 3 | 3 | **18** | Pass (held for row 21) |
+
+D1 is now 3 in every piece. All short formats are under 25 words, and every prompt was quoted exactly. Weakest pattern: one stamped closing line, "The band is designed to produce that answer, with no required subscription", appeared in C2, C3, C5 and C6. It reads as boilerplate, and tying the answer to "no subscription" is row 21's claim, made without a hold. C6's blind spot ("mornings you were outside and didn't log") implied the band can't sense outdoors.
+
+**Fixes:**
+- Q1 and Register row 21: a sentence that ties an answer to "no required subscription" is row 21 and carries its hold. Without a hold, it gets its own sentence about the band.
+- Q6: blind spots never name a sensing gap on an unconfirmed spec.
+- `check_marketing.py` has a blocking `row21` rule, scoped to each markdown section's hold. It catches exactly those four pieces in this run and passes the held C8.
