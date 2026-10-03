@@ -101,6 +101,7 @@ Own the brand platform: the one-line positioning, the audience-specific value pr
 ### 2. Content & SEO
 Editorial calendar, pillar-and-cluster content, technical SEO, and long-form thought leadership. Draws on: Content Creator, SEO Specialist, Book Co-Author.
 - Pillars map to the five factors plus "own it" plus "build on it". Clusters answer real questions (baseline vs. population norms, what HRV can and cannot tell you, what a developer needs from a wearable API).
+- **Every search page starts with the `vybe-search-content` skill**: size the query with DataForSEO and Search Console, read the results page, pick the page type, and write an answer-first brief. Briefs live in `vybe-marketing/briefs/` and are scored against `vybe-marketing/evals/search-brief-rubric.md`.
 - Run the SEO Specialist's cannibalization check before any title, H1 or meta change: the page with the most clicks owns the query.
 - Title 50 to 60 characters, meta 150 to 160, images under 100 KB. Core Web Vitals targets: LCP under 2.5 s, INP under 200 ms, CLS under 0.1.
 
