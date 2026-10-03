@@ -258,3 +258,23 @@ Weak spots:
 - Fill cash from the page.
 - Carry every target over or give a reason.
 - Give a publication or community per programme.
+
+## Case 7, second independent rerun (new scoreboard template)
+
+**26/30, pass** (25 before; all gates at 3). All four earlier weak spots are fixed:
+- Proven, Suggested and Unknown are split.
+- There is one biggest problem and one change.
+- Last week's figures were re-pulled, not copied.
+- Targets are communities, not queries.
+
+The grader re-pulled ten GA4 figures and all matched. The change: pause "Vybe Health - 9/15" (397 of 598 sessions, 82% from India, Pakistan and Bangladesh, 0 signups).
+
+Weak spots:
+- The change covered one campaign, not every out-of-market paid source.
+- Its threshold ignored the decline already under way.
+- A restart condition imported conversions despite the counsel hold.
+- Segment detail was thin.
+
+**New rules:**
+- The agent file scopes the change to the whole cause, sets thresholds against the trend, and carries segment detail.
+- Plan action 3 imports no conversions until counsel rules.
