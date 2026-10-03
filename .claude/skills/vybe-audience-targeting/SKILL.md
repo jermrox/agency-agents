@@ -107,6 +107,7 @@ community per programme, or say there is none.
 
 | Platform | Never | Use instead |
 |---|---|---|
+| Meta (creative and policy) | Second-person statements about the reader's body or health ("Your HRV is below…", "you are less recovered"), which Meta's Personal Attributes policy restricts; an image card that shows an answer with one explanation or none | Frame example answers as a labelled sample screen in the third person ("Prototype, sample data: the wearer's HRV…"). Card text goes into the draft and passes concept checks Q3 and Q6 on its own: two explanations, or no answer sentence at all |
 | Meta (placement) | A primary text whose first line could be any competitor's, with the distinctive idea below the "See more" cut (about 125 characters) or only in the headline, which feed placements often hide | The unclaimed idea (confidence or a blind spot) above the cut or on the creative itself. When the data screen can't be shown honestly, use a privacy proof the live policy supports (Register row 23), not the same row 4 sentence in every ad |
 | Meta | Health-condition interests (removed Jan 2022); renaming events to dodge health classification; health answers in pixel parameters | Broad or Advantage+ audiences with creative that self-selects; partnership (creator) ads; neutral URLs and event names; consented first-party lists; Vybe's own signup count as the source of truth |
 | Google Ads / YouTube | Claims or landing copy that put Vybe in the "Health" sensitive category (conditions, medical devices), which strips remarketing, Customer Match and lookalikes | Wellness wording from the Claim Register; search on comparison and no-subscription queries; Consent Mode with `ad_user_data` and `ad_personalization` |
@@ -169,7 +170,8 @@ has consented"), cite both and flag the conflict to the founder; never pick one.
 
 **Survey proxies keep their population.** When a survey figure or a
 company-defined metric (retention, paid members) stands in for a segment,
-quote its question, population or definition word for word, and say which way
+quote its question, population or definition word for word from the source
+actually cited (not from general knowledge), and say which way
 it biases the estimate (Oura's 12-month retention counts winbacks and grace
 periods, so 100 minus it understates lapse) ("willingness to
 share data *with clinicians*") and give one line on why it stands in for the
@@ -236,7 +238,7 @@ dimension below 2, means rework before it ships.
 | Target | Type | Why it matters | Channel | Buying path | Source |
 |---|---|---|---|---|---|
 
-**Targeting rules respected:** ... (consent before any pixel, Global Privacy Control honoured, the consumer health privacy link, no health or competitor interests; and, while /privacy §3 is unresolved, one measurement option that sends Vybe no data to ad platforms, such as link-click optimisation with UTMs read in Vybe's own store)
+**Targeting rules respected:** ... (launch gate: scrape the exact landing URL and list every third-party script; no ad or analytics tag fires before consent, and GPC is honoured; consent before any pixel, Global Privacy Control honoured, the consumer health privacy link, no health or competitor interests; and, while /privacy §3 is unresolved, one measurement option that sends Vybe no data to ad platforms, such as link-click optimisation with UTMs read in Vybe's own store)
 **Message (Register claims + sources):** ...
 **Test:** metric · source · sample · decision rule · review date
 **Eval:** guardrail pass/fail · rubric score · lowest dimensions

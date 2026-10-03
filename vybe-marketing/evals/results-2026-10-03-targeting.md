@@ -278,3 +278,29 @@ Weak spots:
 **New rules:**
 - The agent file scopes the change to the whole cause, sets thresholds against the trend, and carries segment detail.
 - Plan action 3 imports no conversions until counsel rules.
+
+## Case 6, second independent rerun
+
+**28/30, pass** (26 before; gates at 3, 2 and 2). Each ad scores 17 as copy. All four earlier weak spots are fixed:
+- the proxies quote their definitions;
+- "designed to" is used throughout;
+- the confidence clause lands within 66 to 119 characters, above the cut;
+- each ad has its own privacy proof.
+
+The grader confirmed:
+- HINTS 2024's 108M;
+- Cisco's 38% "Privacy Actives";
+- the Oura CEO's "We will never sell your data";
+- that **/waitlist loads a Google Ads tag, GA4 and a Replit analytics script with no visible consent step or GPC check**.
+
+Weak spots:
+- The "zero-data" option sent clicks to that page.
+- The image cards showed an answer with no explanation.
+- Second-person body statements were not checked against Meta's Personal Attributes policy.
+
+**New rules:**
+- A landing-page tag scrape is a launch gate.
+- Meta creative is framed in the third person as a labelled sample screen.
+- Card text passes Q3 and Q6 on its own.
+- Proxy populations come from the source actually cited.
+- The plan adds week-1 action 7 (a consent gate on /waitlist), and the tensions table records it.

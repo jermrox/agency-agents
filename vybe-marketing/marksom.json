@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-03T17:45:00Z",
+  "updated_at": "2026-10-03T17:50:00Z",
   "stage": "Pre-launch · US founding batch",
   "wedge_note": "Scored 0 to 3 on pain (felt today), fit (Vybe clearly better) and moat (incumbents would have to break their own model to copy). Hover a score for the reason. Tactical teams are the strongest wedge but buy slowly, so builders and baseline nerds carry the near-term signal this quarter. Self-scored from the 2 Oct 2026 research; treat as hypotheses until the tests run.",
   "guardrail": {
@@ -976,9 +976,9 @@
           {
             "id": "c6",
             "name": "Privacy-first ads",
-            "total": 26,
+            "total": 28,
             "pass": true,
-            "gaps": "Survey proxy lost its population; one present-tense noun phrase"
+            "gaps": "Landing page fires tags before consent (now a launch gate); image card had one explanation"
           }
         ]
       }
