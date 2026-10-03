@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03 15:07 UTC",
+  "generated": "2026-10-03 15:10 UTC",
   "today": "2026-10-03",
   "scope": {
     "company": "Vybe Health",
@@ -96,21 +96,35 @@
       "hunt": "sponsorship",
       "raw": 37,
       "kept": 36
+    },
+    {
+      "id": "partners",
+      "title": "Health and fitness app partners",
+      "hunt": "partnership",
+      "raw": 0,
+      "kept": 0
+    },
+    {
+      "id": "sports_gaps",
+      "title": "Sports where wearables aren't used yet",
+      "hunt": "partnership",
+      "raw": 0,
+      "kept": 0
     }
   ],
   "summary": {
-    "total": 302,
+    "total": 317,
     "investor": 97,
     "growth": 55,
     "social": 39,
     "sponsorship": 44,
-    "app_partners": 0,
+    "app_partners": 15,
     "sports": 0,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 54,
+    "high": 56,
     "deadlines_30d": 7,
-    "ready_to_send": 139,
+    "ready_to_send": 151,
     "identity_needs_ok": 74
   },
   "targets": [
@@ -199,6 +213,67 @@
       "id": "a16z-speedrun-sr008-andreessen-horowitz"
     },
     {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": "Gear checklist listing overnight HRV sources updated 2026-08-31.",
+      "last_signal_date": "2026-08-31",
+      "name": "AI Endurance",
+      "org": "AI Endurance",
+      "why": "AI running/cycling/triathlon coach whose recovery model uses overnight HR and HRV; it already imports overnight data from Oura, Whoop, Garmin, Suunto, Coros and Polar, and tells users of other HRV devices to route via Intervals.icu or manual entry.",
+      "evidence": [
+        "https://aiendurance.com/blog/gear-checklist-for-optimal-data-flow-into-ai-endurance",
+        "https://aiendurance.com/en/faq"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://aiendurance.com/en/faq",
+      "fit": 9,
+      "ask": "15-min call to scope a direct Vybe overnight HRV/RHR import (or confirm the Intervals.icu path) and DevKit loan for their recovery model.",
+      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that captures ECG-derived HRV and resting heart rate, no subscription. Your gear checklist lists Oura and Whoop for overnight HRV and says other devices go via Intervals.icu. We'd like to be a direct source for your recovery model. Could I send a DevKit and set up a short call on the data you need?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "endurance",
+        "dev-platform"
+      ],
+      "existing_wearables": [
+        "Garmin",
+        "Suunto",
+        "Coros",
+        "Polar",
+        "Wahoo",
+        "Hammerhead",
+        "Oura",
+        "Whoop",
+        "Apple Watch (via Watchletic)",
+        "Intervals.icu",
+        "Strava",
+        "Zwift",
+        "Rouvy",
+        "TrainerDay"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Add Vybe as a direct overnight HR/HRV source for the AI Endurance recovery model (today 'Others' must go through Intervals.icu); DevKit design-partner pilot.",
+      "unknowns": "No dedicated partner/API intake page found; contact is a general contact link; whether they accept new device integrations at Vybe's scale unverified.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 3,
+      "sendable": true,
+      "id": "ai-endurance-ai-endurance"
+    },
+    {
       "name": "Akron Marathon Race Series 2027",
       "org": "Akron Marathon Charitable Corporation",
       "role": "Sponsorship (Anne Bitong) / Expo (Katie Riley)",
@@ -241,7 +316,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 3,
+      "rank": 4,
       "sendable": false,
       "id": "akron-marathon-race-series-2027-akron-marathon-charitable-corporation"
     },
@@ -283,7 +358,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 4,
+      "rank": 5,
       "sendable": true,
       "id": "alex-morgan-khosla-ventures"
     },
@@ -324,7 +399,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 5,
+      "rank": 6,
       "sendable": false,
       "id": "alumni-ventures-alumni-ventures"
     },
@@ -369,7 +444,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 6,
+      "rank": 7,
       "sendable": false,
       "id": "amazfit-x-hyrox-official-wearable-now-global-3-year-exclusive-amazfit-zepp-healt"
     },
@@ -410,7 +485,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 7,
+      "rank": 8,
       "sendable": true,
       "id": "anne-wojcicki-treehub-ai-health-fund-operating-partner-23andme-co-founder"
     },
@@ -451,7 +526,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 8,
+      "rank": 9,
       "sendable": true,
       "id": "ben-joffe-sosv-hax"
     },
@@ -490,7 +565,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 9,
+      "rank": 10,
       "sendable": false,
       "id": "brydge-club-brydge-club"
     },
@@ -529,7 +604,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 10,
+      "rank": 11,
       "sendable": false,
       "id": "cade-ventures-why-we-haven-t-invested-in-a-wearable-yet-and-what-would-change-ou"
     },
@@ -570,7 +645,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 11,
+      "rank": 12,
       "sendable": true,
       "id": "cheryl-mccolgan-heal-nourish-grow"
     },
@@ -611,7 +686,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 12,
+      "rank": 13,
       "sendable": false,
       "id": "clair-health-11m-seed-led-by-khosla-for-women-s-hormone-wristband-clair-health"
     },
@@ -650,7 +725,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 13,
+      "rank": 14,
       "sendable": true,
       "id": "craig-shapiro-collaborative-fund"
     },
@@ -690,7 +765,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 14,
+      "rank": 15,
       "sendable": false,
       "id": "crosslink-capital-crosslink-capital"
     },
@@ -736,7 +811,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 15,
+      "rank": 16,
       "sendable": false,
       "id": "danielle-miranda-hyrox-pro-women-self-columbus-all-female-fitness-facility-found"
     },
@@ -783,7 +858,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 16,
+      "rank": 17,
       "sendable": false,
       "id": "eagle-up-ultra-2027-race-brimstone"
     },
@@ -823,7 +898,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 17,
+      "rank": 18,
       "sendable": false,
       "id": "eurie-kim-forerunner-ventures"
     },
@@ -867,7 +942,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 18,
+      "rank": 19,
       "sendable": false,
       "id": "fda-2026-general-wellness-guidance-explicitly-covers-wearables-measuring-hrv-bp-"
     },
@@ -913,7 +988,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 19,
+      "rank": 20,
       "sendable": false,
       "id": "fitbit-web-api-shuts-down-30-oct-2026-tokens-do-not-migrate-google"
     },
@@ -952,7 +1027,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 20,
+      "rank": 21,
       "sendable": false,
       "id": "fortify-ventures-fortify-ventures"
     },
@@ -997,7 +1072,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 21,
+      "rank": 22,
       "sendable": false,
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
@@ -1040,7 +1115,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 22,
+      "rank": 23,
       "sendable": false,
       "id": "garmin-x-buena-tierra-run-club-milwaukee-garmin"
     },
@@ -1086,7 +1161,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 23,
+      "rank": 24,
       "sendable": false,
       "id": "garmin-x-garmin-marathon-series-toledo-ohio-garmin"
     },
@@ -1129,7 +1204,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 24,
+      "rank": 25,
       "sendable": true,
       "id": "grayson-judge-supermoon-capital"
     },
@@ -1176,7 +1251,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 25,
+      "rank": 26,
       "sendable": false,
       "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
     },
@@ -1222,7 +1297,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 26,
+      "rank": 27,
       "sendable": false,
       "id": "hunter-brancifort-akron-fire-department"
     },
@@ -1263,7 +1338,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 27,
+      "rank": 28,
       "sendable": true,
       "id": "jomayra-herrera-reach-capital"
     },
@@ -1306,7 +1381,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 28,
+      "rank": 29,
       "sendable": false,
       "id": "khosla-ventures-khosla-ventures"
     },
@@ -1347,7 +1422,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 29,
+      "rank": 30,
       "sendable": false,
       "id": "kiva-dickinson-selva-ventures"
     },
@@ -1389,7 +1464,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 30,
+      "rank": 31,
       "sendable": true,
       "id": "krish-ramadurai-aix-ventures"
     },
@@ -1431,7 +1506,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 31,
+      "rank": 32,
       "sendable": false,
       "id": "kristina-simmons-overwater-ventures"
     },
@@ -1475,7 +1550,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 32,
+      "rank": 33,
       "sendable": true,
       "id": "kygo-health-kygo-health"
     },
@@ -1515,7 +1590,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 33,
+      "rank": 34,
       "sendable": true,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
@@ -1556,7 +1631,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 34,
+      "rank": 35,
       "sendable": false,
       "id": "labcorp-venture-fund-labcorp"
     },
@@ -1602,7 +1677,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 35,
+      "rank": 36,
       "sendable": false,
       "id": "levels-x-crossfit-affiliate-network-partnership-levels"
     },
@@ -1643,7 +1718,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 36,
+      "rank": 37,
       "sendable": true,
       "id": "marco-altini-hrv4training"
     },
@@ -1682,7 +1757,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 37,
+      "rank": 38,
       "sendable": true,
       "id": "marko-maslakovic-gadgets-wearables"
     },
@@ -1721,7 +1796,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 38,
+      "rank": 39,
       "sendable": true,
       "id": "meredith-dietz-lifehacker"
     },
@@ -1763,7 +1838,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 39,
+      "rank": 40,
       "sendable": true,
       "id": "nikita-starov-aifitnessapi-aifitnessapi-com"
     },
@@ -1810,7 +1885,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 40,
+      "rank": 41,
       "sendable": true,
       "id": "open-wearables-momentum-the-momentum"
     },
@@ -1850,7 +1925,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 41,
+      "rank": 42,
       "sendable": true,
       "id": "oscar-moralez-boomerang-ventures"
     },
@@ -1895,7 +1970,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 42,
+      "rank": 43,
       "sendable": false,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
@@ -1935,7 +2010,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 43,
+      "rank": 44,
       "sendable": false,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
@@ -1975,7 +2050,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 44,
+      "rank": 45,
       "sendable": true,
       "id": "pankaj-kedia-2468-ventures"
     },
@@ -2017,7 +2092,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 45,
+      "rank": 46,
       "sendable": true,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
@@ -2063,7 +2138,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 46,
+      "rank": 47,
       "sendable": true,
       "id": "playerslab-playerslab"
     },
@@ -2104,7 +2179,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 47,
+      "rank": 48,
       "sendable": true,
       "id": "ray-maker-dc-rainmaker"
     },
@@ -2144,7 +2219,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 48,
+      "rank": 49,
       "sendable": true,
       "id": "resolute-ventures-resolute-ventures"
     },
@@ -2190,7 +2265,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 49,
+      "rank": 50,
       "sendable": true,
       "id": "restortrain-restortrain"
     },
@@ -2231,7 +2306,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 50,
+      "rank": 51,
       "sendable": true,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
@@ -2271,7 +2346,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 51,
+      "rank": 52,
       "sendable": false,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
@@ -2312,7 +2387,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 52,
+      "rank": 53,
       "sendable": false,
       "id": "sosv-hax-sosv"
     },
@@ -2360,7 +2435,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 53,
+      "rank": 54,
       "sendable": false,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
@@ -2402,7 +2477,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 54,
+      "rank": 55,
       "sendable": true,
       "id": "seaside-ventures-seaside-ventures"
     },
@@ -2442,7 +2517,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 55,
+      "rank": 56,
       "sendable": true,
       "id": "sunil-bhatt-smartwatch-insight"
     },
@@ -2483,7 +2558,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 56,
+      "rank": 57,
       "sendable": true,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
@@ -2525,9 +2600,67 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 57,
+      "rank": 58,
       "sendable": true,
       "id": "toni-schneider-true-ventures"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "Tredict",
+      "org": "Tredict",
+      "why": "Manufacturer-independent endurance planning/analysis platform that already ingests nightly HRV, sleep and resting HR from Oura, Garmin, Coros, Suunto and Polar, and publishes a Tredict API for platforms that includes a health-data receiving endpoint.",
+      "evidence": [
+        "https://www.tredict.com/faq/which-recording-devices-and-services-are-supported/",
+        "https://www.tredict.com/faq/oura-ring---connect-and-synchronise/",
+        "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/",
+      "fit": 9,
+      "ask": "Register for Tredict API credentials and a 15-min call on pushing Vybe overnight HRV/RHR/sleep into the health-data endpoint.",
+      "opener": "Hi, I'm building Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription. Tredict already pulls nightly HRV from Oura into the form curve, and your API has a health-data endpoint. I'd like to push Vybe's overnight data there for our DevKit testers. Could we do a quick call on credentials and data format?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "dev-platform",
+        "endurance"
+      ],
+      "existing_wearables": [
+        "Garmin",
+        "Coros",
+        "Suunto",
+        "Polar",
+        "Wahoo",
+        "Hammerhead",
+        "Oura",
+        "Apple Watch (via Watchletic)",
+        "Concept2",
+        "Zwift"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Become a Tredict health-data source via the public Tredict API health-data receiving endpoint (same slot Oura fills: nightly HRV, sleep, resting HR in the form curve).",
+      "unknowns": "API terms/approval criteria and pricing not read; user count unknown; named partner contact not found (application form only).",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 59,
+      "sendable": true,
+      "id": "tredict-tredict"
     },
     {
       "name": "Ultrahuman raises $70M led by Qualcomm Ventures and opens ring to third-party developers",
@@ -2566,7 +2699,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 58,
+      "rank": 60,
       "sendable": false,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
@@ -2606,7 +2739,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 59,
+      "rank": 61,
       "sendable": false,
       "id": "victoria-song-the-verge"
     },
@@ -2651,7 +2784,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 60,
+      "rank": 62,
       "sendable": false,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
@@ -2698,7 +2831,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 61,
+      "rank": 63,
       "sendable": false,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
@@ -2737,7 +2870,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 62,
+      "rank": 64,
       "sendable": true,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
@@ -2778,7 +2911,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 63,
+      "rank": 65,
       "sendable": true,
       "id": "the5krunner-the5krunner"
     },
@@ -2823,7 +2956,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 64,
+      "rank": 66,
       "sendable": false,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
@@ -2867,7 +3000,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 65,
+      "rank": 67,
       "sendable": false,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
@@ -2912,7 +3045,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 66,
+      "rank": 68,
       "sendable": true,
       "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
@@ -2956,7 +3089,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 67,
+      "rank": 69,
       "sendable": false,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
@@ -2995,7 +3128,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 68,
+      "rank": 70,
       "sendable": true,
       "id": "health2tech-cleveland-health2tech"
     },
@@ -3039,7 +3172,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 71,
       "sendable": true,
       "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
@@ -3078,7 +3211,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 70,
+      "rank": 72,
       "sendable": true,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
@@ -3118,7 +3251,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 71,
+      "rank": 73,
       "sendable": true,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
@@ -3157,7 +3290,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 72,
+      "rank": 74,
       "sendable": false,
       "id": "sxsw-pitch-2027-sxsw"
     },
@@ -3202,9 +3335,60 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 73,
+      "rank": 75,
       "sendable": false,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
+    },
+    {
+      "name": "Breethe",
+      "org": "Kodeon (acquired Breethe 2026-08-19)",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Sleep and meditation app (18M+ downloads per Kodeon) that writes Mindful Minutes to Apple Health. It was acquired 2026-08-19 by Kodeon, whose co-founder said 'Imagine your fitness app knowing you slept badly and adjusting tomorrow's workout', a cross-app sleep-data idea that fits an overnight band. Breethe has run B2B content partnerships (WW 2021, ClassPass 2023) and keeps partnership landing pages (e.g. /partnerships/iin).",
+      "why_now": "Kodeon acquisition announced 2026-08-19, with 'further announcements planned in the months ahead'.",
+      "evidence": [
+        "https://kodeon.ai/press/kodeon-acquires-breethe",
+        "https://apps.apple.com/us/app/breethe-sleep-meditation/id920161006",
+        "https://breethe.com/partnerships/iin",
+        "https://www.prnewswire.com/news-releases/breethe-becomes-new-mindset-partner-of-ww-international-301402853.html",
+        "https://blog.classpass.com/classpass-partners-with-breethe/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://kodeon.ai/press/kodeon-acquires-breethe",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "15-minute call with Kodeon on piloting overnight sleep timing as a signal that personalizes Breethe's wind-down recommendations.",
+      "opener": "Hi Jon, I read the Breethe announcement, especially your point about apps knowing when someone slept badly. I'm building Vybe Health, a screenless band worn overnight with a licensed SDK that captures sleep timing and HRV for general wellness. That could be one input to Breethe's recommendations. Would you be open to a 15-minute call about a small pilot?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Toronto, Canada",
+      "deadline": null,
+      "last_signal_date": "2026-08-19",
+      "confidence": "verified",
+      "tags": [
+        "sleep",
+        "hrv",
+        "digital-health",
+        "meditation",
+        "wearables"
+      ],
+      "existing_wearables": [
+        "Apple Health (Mindful Minutes)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Restore factor: Vybe's overnight data could personalize Breethe's sleep content (e.g. a wind-down suggestion after a short night), plus co-marketing to Breethe's sleep audience; pitch to Kodeon while it integrates Breethe into its 'AppLife' ecosystem.",
+      "unknowns": "Breethe's App Store listing confirms only Mindful Minutes written to Apple Health, with no wearable data read in. Kodeon's integration roadmap is not public. The only published contact is a media address (mediarelations@kodeon.ai); no BD contact.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 76,
+      "sendable": true,
+      "id": "breethe-kodeon-acquired-breethe-2026-08-19"
     },
     {
       "name": "Brendan Keeler",
@@ -3242,7 +3426,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 74,
+      "rank": 77,
       "sendable": true,
       "id": "brendan-keeler-health-api-guy-substack"
     },
@@ -3282,7 +3466,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 75,
+      "rank": 78,
       "sendable": false,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
@@ -3328,7 +3512,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 76,
+      "rank": 79,
       "sendable": true,
       "id": "chris-chartier-the-righteous-path-substack"
     },
@@ -3374,7 +3558,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 80,
       "sendable": true,
       "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
@@ -3419,7 +3603,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 78,
+      "rank": 81,
       "sendable": true,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
@@ -3463,7 +3647,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 82,
       "sendable": true,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
@@ -3510,7 +3694,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 80,
+      "rank": 83,
       "sendable": false,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
@@ -3555,7 +3739,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 81,
+      "rank": 84,
       "sendable": true,
       "id": "fitabase-fitabase-small-steps-labs"
     },
@@ -3595,7 +3779,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 82,
+      "rank": 85,
       "sendable": false,
       "id": "golden-seeds-golden-seeds"
     },
@@ -3634,7 +3818,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 83,
+      "rank": 86,
       "sendable": true,
       "id": "hax-sosv"
     },
@@ -3678,7 +3862,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 84,
+      "rank": 87,
       "sendable": false,
       "id": "invi-mindhealth-invi-mindhealth"
     },
@@ -3718,7 +3902,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 85,
+      "rank": 88,
       "sendable": true,
       "id": "isabel-glass-cade-ventures"
     },
@@ -3758,7 +3942,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 86,
+      "rank": 89,
       "sendable": true,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
@@ -3798,7 +3982,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 87,
+      "rank": 90,
       "sendable": false,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
@@ -3837,7 +4021,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 91,
       "sendable": true,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
@@ -3884,7 +4068,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 89,
+      "rank": 92,
       "sendable": false,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
@@ -3929,7 +4113,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 90,
+      "rank": 93,
       "sendable": true,
       "id": "noop-ryanbr-noop-open-source"
     },
@@ -3973,7 +4157,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 91,
+      "rank": 94,
       "sendable": false,
       "id": "neurovus-neurovus"
     },
@@ -4013,7 +4197,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 92,
+      "rank": 95,
       "sendable": true,
       "id": "open-wearables-momentum-open-wearables-project"
     },
@@ -4052,7 +4236,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 96,
       "sendable": false,
       "id": "qualcomm-ventures-qualcomm"
     },
@@ -4091,7 +4275,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 94,
+      "rank": 97,
       "sendable": false,
       "id": "quinn-li-qualcomm-ventures"
     },
@@ -4131,7 +4315,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 95,
+      "rank": 98,
       "sendable": false,
       "id": "redalpine-redalpine"
     },
@@ -4170,7 +4354,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 96,
+      "rank": 99,
       "sendable": true,
       "id": "ryan-engel-cade-ventures"
     },
@@ -4214,7 +4398,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 100,
       "sendable": false,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
@@ -4256,7 +4440,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 98,
+      "rank": 101,
       "sendable": false,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
@@ -4300,7 +4484,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 102,
       "sendable": false,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
@@ -4346,7 +4530,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 103,
       "sendable": true,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
@@ -4386,7 +4570,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 101,
+      "rank": 104,
       "sendable": false,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
@@ -4429,7 +4613,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 102,
+      "rank": 105,
       "sendable": false,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
@@ -4469,7 +4653,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 106,
       "sendable": true,
       "id": "r-quantifiedself-reddit"
     },
@@ -4514,7 +4698,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 107,
       "sendable": true,
       "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
     },
@@ -4560,7 +4744,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 108,
       "sendable": true,
       "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
     },
@@ -4603,7 +4787,7 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 109,
       "sendable": false,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
@@ -4647,7 +4831,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 107,
+      "rank": 110,
       "sendable": false,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
@@ -4690,7 +4874,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 108,
+      "rank": 111,
       "sendable": true,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
@@ -4730,7 +4914,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 109,
+      "rank": 112,
       "sendable": false,
       "id": "accelerating-angels-accelerating-angels"
     },
@@ -4769,9 +4953,64 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 110,
+      "rank": 113,
       "sendable": true,
       "id": "achal-upadhyaya-interlagos"
+    },
+    {
+      "name": "Alma: Nutrition Coach",
+      "org": "Alma Nutrition, Inc.",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "AI nutrition coach (Menlo Ventures-backed per its Feb 2025 launch release) whose App Store listing says it connects Apple Health and supported wearables to bring 'food, movement, sleep, workouts' together, and it supports sleep goals. Its help center says Garmin, Oura and WHOOP connect through Apple Health, so it is device-agnostic.",
+      "why_now": "App Store listing shows an active release cadence (TrainingPeaks nutrition sync, Apple Health background updates).",
+      "evidence": [
+        "https://www.alma.food/help",
+        "https://apps.apple.com/us/app/alma-nutrition-coach/id6736372798",
+        "https://www.prnewswire.com/news-releases/alma-launches-first-ai-powered-nutrition-companion-app-to-make-healthy-eating-simple-personalized-and-effortless-302367923.html",
+        "https://www.alma.food/llms.txt"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://www.alma.food/help",
+      "warm_path": "Menlo Ventures portfolio (per launch release)",
+      "fit": 8,
+      "ice": null,
+      "ask": "Ask whether the Coach reads Apple Health sleep/HRV today and whether they'd test a Vybe DevKit as a design partner.",
+      "opener": "Hi Alma team, I'm the founder of Vybe Health, a screenless band worn overnight with a licensed SDK. Your help center says Garmin, Oura and WHOOP reach Alma through Apple Health, and you support sleep goals. Vybe writes overnight data to Apple Health too. Would you be open to a short call about including last night's rest in Coach context, and possibly trying our DevKit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "San Francisco, CA",
+      "deadline": null,
+      "last_signal_date": "2025-11-12",
+      "confidence": "verified",
+      "tags": [
+        "nutrition",
+        "digital-health",
+        "wearables",
+        "sleep",
+        "hrv",
+        "dev-platform"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Garmin (via Apple Health)",
+        "Oura (via Apple Health)",
+        "WHOOP (via Apple Health)",
+        "TrainingPeaks"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Zero-build path: Vybe writes sleep/HRV to HealthKit and Alma's Coach can read it like Oura/WHOOP; co-market a 'sleep + nutrition' view (Nourish x Restore) and invite Alma as a DevKit design partner.",
+      "unknowns": "Which Apple Health categories Alma reads (sleep confirmed in listing; HRV not); iOS only; no public partnerships contact (developers page did not load); funding stage beyond launch release unknown.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 114,
+      "sendable": false,
+      "id": "alma-nutrition-coach-alma-nutrition-inc"
     },
     {
       "name": "Amazfit Helio Strap ($99) and Helio Strap Pro for HYROX",
@@ -4814,7 +5053,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 111,
+      "rank": 115,
       "sendable": false,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
@@ -4859,7 +5098,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 112,
+      "rank": 116,
       "sendable": false,
       "id": "barrett-piper-west-licking-oh-fire-district"
     },
@@ -4898,7 +5137,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 113,
+      "rank": 117,
       "sendable": true,
       "id": "chris-gammell-the-amp-hour-podcast"
     },
@@ -4943,7 +5182,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 114,
+      "rank": 118,
       "sendable": false,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
@@ -4982,9 +5221,63 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 115,
+      "rank": 119,
       "sendable": true,
       "id": "conor-allison-wareable"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "Endorphins Running",
+      "org": "Endorphins Running",
+      "why": "Running training app and in-person community (site says 100,000+ runners; App Store says 1,500+ free group runs a year in 12+ cities) that syncs WHOOP, Oura, Garmin, Apple Health, COROS, Polar and Suunto and links a Developers page.",
+      "evidence": [
+        "https://endorphinsrunning.com/features/integrations",
+        "https://apps.apple.com/us/app/endorphins-running/id6736627957"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://endorphinsrunning.com/features/integrations",
+      "fit": 8,
+      "ask": "Intro call about adding Vybe to their integrations list and seeding DevKits with a run-club pace group.",
+      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. Endorphins already syncs Oura and WHOOP, and your group runs are exactly the runners we want feedback from. Could we talk about adding Vybe as an integration and lending a few DevKits to one run club for a month?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "running",
+        "community"
+      ],
+      "existing_wearables": [
+        "WHOOP",
+        "Garmin",
+        "Apple Health",
+        "COROS",
+        "Oura",
+        "Polar",
+        "Suunto"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Join their integrations list next to Oura/WHOOP and co-market overnight recovery to their run-club community (device seeding at group runs).",
+      "unknowns": "Developers page did not render, so API terms unknown; whether integrations are direct or via an aggregator unknown; Ohio presence not verified.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 120,
+      "sendable": true,
+      "id": "endorphins-running-endorphins-running"
     },
     {
       "name": "Exposure Awareness System (CRG + VigiLife)",
@@ -5026,7 +5319,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 116,
+      "rank": 121,
       "sendable": false,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
@@ -5069,7 +5362,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 122,
       "sendable": false,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
@@ -5108,7 +5401,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 118,
+      "rank": 123,
       "sendable": false,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
@@ -5147,7 +5440,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 119,
+      "rank": 124,
       "sendable": false,
       "id": "healthtech-capital-healthtech-capital"
     },
@@ -5185,7 +5478,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 120,
+      "rank": 125,
       "sendable": false,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
@@ -5229,7 +5522,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 121,
+      "rank": 126,
       "sendable": false,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
@@ -5268,7 +5561,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 122,
+      "rank": 127,
       "sendable": false,
       "id": "julien-blin-the-upside-newsletter"
     },
@@ -5310,7 +5603,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 123,
+      "rank": 128,
       "sendable": false,
       "id": "leo-polovets-humba-ventures"
     },
@@ -5349,7 +5642,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 124,
+      "rank": 129,
       "sendable": true,
       "id": "lunar-ventures-lunar-ventures"
     },
@@ -5388,7 +5681,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 125,
+      "rank": 130,
       "sendable": true,
       "id": "matt-evans-techradar"
     },
@@ -5426,7 +5719,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 131,
       "sendable": true,
       "id": "michael-l-hicks-android-central"
     },
@@ -5467,7 +5760,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 127,
+      "rank": 132,
       "sendable": true,
       "id": "mick-halsband-lunar-ventures"
     },
@@ -5511,9 +5804,68 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 133,
       "sendable": false,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
+    },
+    {
+      "name": "MyFitnessPal",
+      "org": "MyFitnessPal",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Largest nutrition logger with an App Gallery of device partners; its help center lists 'Total Energy Partners' (Fitbit/Google Health, Garmin Connect, Withings, Polar, Samsung Health, Google Fit, Health Connect, Apple Watch) and its developer portal invites developers of 'apps, devices, and services' to apply for its private API. No overnight HRV/recovery band is listed among those partners.",
+      "why_now": "Help center integrations article updated 2026-05-14.",
+      "evidence": [
+        "https://support.myfitnesspal.com/hc/en-us/articles/360032274232-What-kind-of-products-and-apps-work-with-MyFitnessPal",
+        "https://www.myfitnesspal.com/apps/api"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.myfitnesspal.com/apps/api",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Request API documentation and partner terms via the developer portal contact (API@myfitnesspal.com, as published) to scope a device integration.",
+      "opener": "Hi MyFitnessPal API team, I'm building Vybe Health, a screenless band worn overnight that captures ECG-based HRV and sleep timing for general wellness. Your developer portal invites devices to apply, so I'd like to explore how Vybe could become a data source in your App Gallery, so members can see last night's rest next to what they logged. Could you share the current API docs and partner process?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-05-14",
+      "confidence": "verified",
+      "tags": [
+        "nutrition",
+        "digital-health",
+        "dev-platform",
+        "wearables",
+        "sleep",
+        "hrv"
+      ],
+      "existing_wearables": [
+        "Fitbit/Google Health",
+        "Garmin Connect",
+        "Withings Health Mate",
+        "Polar",
+        "Samsung Health",
+        "Google Fit",
+        "Health Connect",
+        "Apple Watch",
+        "VeSync",
+        "Renpho Health",
+        "Qardio Scale"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Apply to the private MyFitnessPal API as a device partner so Vybe overnight recovery/sleep context appears alongside food logs (Nourish x Restore); near-term, Vybe data reaching MFP via Health Connect/Apple Health, which MFP already reads.",
+      "unknowns": "Whether MFP's API accepts sleep/HRV data types (published categories are weight, workouts, steps/energy, glucose); approval criteria and any partner fee unknown; no named partnerships lead found.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 134,
+      "sendable": true,
+      "id": "myfitnesspal-myfitnesspal"
     },
     {
       "name": "Ohio Angel Collective",
@@ -5549,7 +5901,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 129,
+      "rank": 135,
       "sendable": false,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
@@ -5596,7 +5948,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 130,
+      "rank": 136,
       "sendable": true,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
@@ -5640,7 +5992,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 131,
+      "rank": 137,
       "sendable": true,
       "id": "openstrap-openstrap-open-source"
     },
@@ -5686,7 +6038,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 132,
+      "rank": 138,
       "sendable": false,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
     },
@@ -5728,7 +6080,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 133,
+      "rank": 139,
       "sendable": false,
       "id": "petteri-koponen-lifeline-ventures"
     },
@@ -5767,7 +6119,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 134,
+      "rank": 140,
       "sendable": true,
       "id": "point-nine-point-nine"
     },
@@ -5806,7 +6158,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 135,
+      "rank": 141,
       "sendable": false,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
@@ -5847,7 +6199,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 136,
+      "rank": 142,
       "sendable": true,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
@@ -5892,7 +6244,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 137,
+      "rank": 143,
       "sendable": true,
       "id": "reach-fitness-reach-fitness-ohio"
     },
@@ -5930,7 +6282,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 138,
+      "rank": 144,
       "sendable": true,
       "id": "rachael-schultz-business-insider"
     },
@@ -5969,7 +6321,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 145,
       "sendable": true,
       "id": "rev1-ventures-rev1-ventures"
     },
@@ -6008,7 +6360,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 140,
+      "rank": 146,
       "sendable": true,
       "id": "robb-sutton-robbsutton-com"
     },
@@ -6047,7 +6399,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 141,
+      "rank": 147,
       "sendable": true,
       "id": "ryan-merket-runtimewire"
     },
@@ -6090,7 +6442,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 142,
+      "rank": 148,
       "sendable": false,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
@@ -6130,7 +6482,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 143,
+      "rank": 149,
       "sendable": false,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
@@ -6174,7 +6526,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 150,
       "sendable": false,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
@@ -6212,7 +6564,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 145,
+      "rank": 151,
       "sendable": false,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
@@ -6251,7 +6603,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 152,
       "sendable": true,
       "id": "t3-performance-t3-performance"
     },
@@ -6291,7 +6643,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 147,
+      "rank": 153,
       "sendable": true,
       "id": "timothy-martens-vaark-ventures"
     },
@@ -6330,7 +6682,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 148,
+      "rank": 154,
       "sendable": false,
       "id": "true-ventures-true-ventures"
     },
@@ -6378,7 +6730,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 149,
+      "rank": 155,
       "sendable": false,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
@@ -6416,7 +6768,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 156,
       "sendable": false,
       "id": "vaark-ventures-vaark-ventures"
     },
@@ -6461,7 +6813,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 151,
+      "rank": 157,
       "sendable": false,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
@@ -6500,9 +6852,70 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 152,
+      "rank": 158,
       "sendable": false,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "freddy",
+      "org": "freddy (freddy.coach)",
+      "why": "MCP server that plugs 29 wearable/CGM/gym sources (Oura, WHOOP, Polar, Garmin, Withings, Ultrahuman, Apple Health/Health Connect bridges) into Claude, ChatGPT and agents, and invites users to request new connectors.",
+      "evidence": [
+        "https://freddy.coach/",
+        "https://freddy.coach/help"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://freddy.coach/help",
+      "fit": 8,
+      "ask": "Get Vybe added as a native freddy source (Vybe API) and list it in their 'request a connector' queue; 15-min call.",
+      "opener": "Hi, I run Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription and shipping with an open API. freddy already pulls Oura and WHOOP into Claude and ChatGPT. We'd like Vybe to be a native freddy source so our DevKit users can query nights in their own AI. Open to a short call on what your connector needs?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "dev-platform",
+        "ai"
+      ],
+      "existing_wearables": [
+        "Oura",
+        "WHOOP",
+        "Polar",
+        "Garmin",
+        "Suunto",
+        "Wahoo",
+        "Withings",
+        "Ultrahuman",
+        "Dexcom",
+        "Hevy",
+        "Intervals.icu",
+        "Airthings",
+        "Apple Health",
+        "Health Connect"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Be added as a native freddy data source via Vybe's API; interim path is Vybe writing to Apple Health/Health Connect, which freddy already bridges.",
+      "unknowns": "No named partner contact or email read; company/legal entity and location not verified; connector-request process details not read.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 159,
+      "sendable": true,
+      "id": "freddy-freddy-freddy-coach"
     },
     {
       "name": "MyDataHelps",
@@ -6542,7 +6955,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 160,
       "sendable": true,
       "id": "mydatahelps-careevolution"
     },
@@ -6586,7 +6999,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 154,
+      "rank": 161,
       "sendable": true,
       "id": "synheart-synheart-mila-ventures"
     },
@@ -6629,7 +7042,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 155,
+      "rank": 162,
       "sendable": true,
       "id": "thryve-thryve"
     },
@@ -6672,7 +7085,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 156,
+      "rank": 163,
       "sendable": false,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
@@ -6717,7 +7130,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 157,
+      "rank": 164,
       "sendable": false,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
@@ -6761,7 +7174,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 165,
       "sendable": false,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
@@ -6805,7 +7218,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 159,
+      "rank": 166,
       "sendable": false,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
@@ -6845,7 +7258,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 160,
+      "rank": 167,
       "sendable": true,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
@@ -6884,7 +7297,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 161,
+      "rank": 168,
       "sendable": true,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
@@ -6924,7 +7337,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 162,
+      "rank": 169,
       "sendable": false,
       "id": "aix-ventures-aix-ventures"
     },
@@ -6963,7 +7376,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 163,
+      "rank": 170,
       "sendable": false,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
@@ -7007,7 +7420,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 171,
       "sendable": true,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
     },
@@ -7047,9 +7460,57 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 165,
+      "rank": 172,
       "sendable": true,
       "id": "anirvan-chowdhury-qualcomm-ventures"
+    },
+    {
+      "name": "Bathhouse",
+      "org": "Bathhouse",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "NYC 'social wellness' sauna and cold-plunge venues (Flatiron, Williamsburg, Atlantic Ave) with a public brand-partnership form. Recent recovery-positioned deals include NY Liberty (2026-09-23), Cove Circle's 'Official NYC Recovery & Wellness Partner' (2026-06) and a Superior Saunas mobile sauna at the NYU Langone HYROX event (2026-07). Forbes reports expansion to LA, Chicago and Nashville.",
+      "why_now": "NY Liberty partnership posted 2026-09-23.",
+      "evidence": [
+        "https://www.abathhouse.com/partnerships",
+        "https://www.linkedin.com/posts/kelstinker_home-court-advantage-isnt-just-for-game-activity-7508567577984491520-IuHu",
+        "https://www.linkedin.com/posts/angelina-perino_proud-to-have-bathhouse-as-the-official-nyc-activity-7472397806696280064-qvGd",
+        "https://www.linkedin.com/posts/superiorsaunas_our-airsteam-tour-in-collab-with-bathhouse-activity-7488703600211394560-We0o"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.abathhouse.com/partnerships",
+      "warm_path": "HYROX community (Bathhouse activated at NYU Langone HYROX NYC)",
+      "fit": 7,
+      "ice": null,
+      "ask": "Submit a partnership request proposing a small member pilot: guests wear a Vybe band for two weeks and see their own overnight data after sauna days, as content, not claims.",
+      "opener": "Hi Bathhouse team, I'm the founder of Vybe Health, a screenless band worn overnight that records sleep timing and HRV for general wellness. Your guests already care about recovery, and many are curious what their night looks like after a sauna session. Would you consider a small pilot where a few members wear Vybe and share what they notice? Happy to supply bands.",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2026-09-23",
+      "confidence": "verified",
+      "tags": [
+        "sleep",
+        "hrv",
+        "recovery",
+        "community",
+        "wearables"
+      ],
+      "existing_wearables": null,
+      "exclusive": null,
+      "partner_status": "open",
+      "opportunity": "Co-marketing pilot (Restore factor): seed bands to members or staff and make 'my night after the sauna' content; HYROX-event activations as a second channel. This is a venue partnership, not a data integration.",
+      "unknowns": "Whether Bathhouse already has a wearable partner (none found, not confirmed); what its app/connector does; deal terms; any claim about sauna and sleep must be avoided.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 173,
+      "sendable": true,
+      "id": "bathhouse-bathhouse"
     },
     {
       "name": "Bill Gordon",
@@ -7086,7 +7547,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 166,
+      "rank": 174,
       "sendable": true,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
@@ -7125,7 +7586,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 175,
       "sendable": false,
       "id": "blume-ventures-blume-ventures"
     },
@@ -7170,7 +7631,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 168,
+      "rank": 176,
       "sendable": false,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
@@ -7209,7 +7670,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 169,
+      "rank": 177,
       "sendable": true,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
@@ -7254,7 +7715,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 170,
+      "rank": 178,
       "sendable": false,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
     },
@@ -7292,7 +7753,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 171,
+      "rank": 179,
       "sendable": false,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
@@ -7337,7 +7798,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 172,
+      "rank": 180,
       "sendable": false,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
@@ -7375,7 +7836,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 173,
+      "rank": 181,
       "sendable": true,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
@@ -7412,9 +7873,54 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 174,
+      "rank": 182,
       "sendable": true,
       "id": "humba-ventures-humba-ventures"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": "Device integrations described as roadmap; setup guide dated 2026-06-27.",
+      "last_signal_date": "2026-06-27",
+      "name": "Joules",
+      "org": "Joules (joules.cc)",
+      "why": "AI cycling coach inside ChatGPT/Claude that is deliberately device-free at launch and says device and platform integrations are on the roadmap.",
+      "evidence": [
+        "https://joules.cc/",
+        "https://joules.cc/blog/add-joules-to-claude-chatgpt"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://joules.cc/blog/add-joules-to-claude-chatgpt",
+      "fit": 7,
+      "ask": "Offer Vybe as a first overnight recovery input for their roadmap and a DevKit for testing.",
+      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. I saw Joules is device-free for now with integrations on the roadmap. Overnight recovery data could help your coach adjust a week after a rough night. Would you want a DevKit to try as an early input?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "cycling",
+        "ai"
+      ],
+      "existing_wearables": [],
+      "exclusive": false,
+      "partner_status": "no-wearable-yet",
+      "opportunity": "Be the first wearable data source in Joules (integrations explicitly on roadmap).",
+      "unknowns": "Roadmap priorities (they name Strava, Garmin, Wahoo, Coros, intervals.icu) may come first; company and team not identified; beta-stage scale unknown.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 183,
+      "sendable": true,
+      "id": "joules-joules-joules-cc"
     },
     {
       "name": "JumpStart Ventures",
@@ -7451,7 +7957,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 175,
+      "rank": 184,
       "sendable": false,
       "id": "jumpstart-ventures-jumpstart-inc"
     },
@@ -7488,7 +7994,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 176,
+      "rank": 185,
       "sendable": false,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
@@ -7531,7 +8037,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 186,
       "sendable": true,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
@@ -7577,7 +8083,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 178,
+      "rank": 187,
       "sendable": true,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
@@ -7616,7 +8122,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 179,
+      "rank": 188,
       "sendable": true,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
@@ -7659,7 +8165,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 180,
+      "rank": 189,
       "sendable": true,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
@@ -7705,9 +8211,61 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 190,
       "sendable": true,
       "id": "pace-pace-pacetraining-co"
+    },
+    {
+      "name": "PlateLens",
+      "org": "VisionTech Solutions LLC",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "AI photo calorie tracker (iOS, Android, Apple Watch, web) whose site says it syncs with Apple Health and Google Health Connect and that its AI coach uses steps, activity and weight data; it also runs a read-only MCP server exposing activity data. An independent review (updated 2026-10-01) reports Garmin Connect, Whoop and Oura syncing in testing, so it already courts wearable users.",
+      "why_now": "Review Bench review last updated 2026-10-01; PlateLens MCP server live.",
+      "evidence": [
+        "https://platelens.app/features",
+        "https://platelens.app/about",
+        "https://platelens.app/mcp",
+        "https://thereviewbench.com/reviews/platelens-review/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://platelens.app/about",
+      "warm_path": "Caplight lists Y Combinator as an investor (search snippet only, not opened)",
+      "fit": 7,
+      "ice": null,
+      "ask": "15-minute call on adding overnight recovery/sleep context to the coach, starting with Vybe writing to Apple Health / Health Connect.",
+      "opener": "Hi PlateLens team, I'm the founder of Vybe Health, a screenless overnight band (ECG-based HRV, sleep timing) with a licensed SDK. Your coach already reads activity and weight via Apple Health and Health Connect. I'd like to explore giving it last night's rest as context too, so nutrition guidance can reflect how someone slept. Open to a 15-minute call?",
+      "check_size": null,
+      "stage": null,
+      "geo": "The Woodlands, TX",
+      "deadline": null,
+      "last_signal_date": "2026-10-01",
+      "confidence": "verified",
+      "tags": [
+        "nutrition",
+        "digital-health",
+        "wearables",
+        "sleep",
+        "hrv"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Google Health Connect",
+        "Apple Watch"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Vybe data enters PlateLens via Apple Health / Health Connect, which it already reads; next step a direct integration so the AI coach adds sleep/HRV context to its nutrition advice (Nourish x Restore).",
+      "unknowns": "PlateLens's own pages list only Apple Health / Health Connect; the Garmin/Whoop/Oura sync is from a third-party review, not the company. Whether it reads sleep/HRV from Apple Health is unconfirmed. No partnerships contact; only support@platelens.app is published.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 191,
+      "sendable": true,
+      "id": "platelens-visiontech-solutions-llc"
     },
     {
       "name": "Quantified Self (Show & Tell meetups + QS Forum)",
@@ -7744,7 +8302,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 182,
+      "rank": 192,
       "sendable": true,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
@@ -7788,7 +8346,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 183,
+      "rank": 193,
       "sendable": true,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
@@ -7827,7 +8385,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 184,
+      "rank": 194,
       "sendable": false,
       "id": "samsung-next-samsung-electronics"
     },
@@ -7870,7 +8428,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 185,
+      "rank": 195,
       "sendable": false,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
@@ -7913,7 +8471,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 186,
+      "rank": 196,
       "sendable": true,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
@@ -7950,7 +8508,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 187,
+      "rank": 197,
       "sendable": false,
       "id": "veteran-angel-network-van-context-ventures"
     },
@@ -7989,7 +8547,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 188,
+      "rank": 198,
       "sendable": true,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
@@ -8032,7 +8590,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 189,
+      "rank": 199,
       "sendable": false,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
@@ -8071,7 +8629,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 200,
       "sendable": true,
       "id": "wearable-data-builders-by-rook-rook"
     },
@@ -8109,7 +8667,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 191,
+      "rank": 201,
       "sendable": true,
       "id": "r-hyrox-reddit"
     },
@@ -8153,7 +8711,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 192,
+      "rank": 202,
       "sendable": true,
       "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
     },
@@ -8196,7 +8754,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 203,
       "sendable": true,
       "id": "lightship-bootcamp-akron-black-tech-week"
     },
@@ -8240,7 +8798,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 194,
+      "rank": 204,
       "sendable": true,
       "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
     },
@@ -8284,7 +8842,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 195,
+      "rank": 205,
       "sendable": true,
       "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
     },
@@ -8328,7 +8886,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 206,
       "sendable": true,
       "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
     },
@@ -8371,7 +8929,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 197,
+      "rank": 207,
       "sendable": true,
       "id": "big-team-challenge-big-team-challenge"
     },
@@ -8415,7 +8973,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 198,
+      "rank": 208,
       "sendable": true,
       "id": "terra-terra-tryterra-co"
     },
@@ -8459,7 +9017,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 199,
+      "rank": 209,
       "sendable": false,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
@@ -8498,7 +9056,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 200,
+      "rank": 210,
       "sendable": false,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
@@ -8542,7 +9100,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 201,
+      "rank": 211,
       "sendable": false,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
@@ -8587,7 +9145,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 202,
+      "rank": 212,
       "sendable": false,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
@@ -8632,7 +9190,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 203,
+      "rank": 213,
       "sendable": false,
       "id": "austin-womack-rugged-athlete-training"
     },
@@ -8672,7 +9230,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 204,
+      "rank": 214,
       "sendable": true,
       "id": "btw-meetup-akron-black-tech-week"
     },
@@ -8716,7 +9274,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 205,
+      "rank": 215,
       "sendable": false,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
@@ -8756,7 +9314,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 206,
+      "rank": 216,
       "sendable": false,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
@@ -8796,7 +9354,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 207,
+      "rank": 217,
       "sendable": true,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
@@ -8835,7 +9393,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 208,
+      "rank": 218,
       "sendable": true,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
@@ -8874,7 +9432,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 209,
+      "rank": 219,
       "sendable": false,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
@@ -8915,7 +9473,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 220,
       "sendable": false,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
@@ -8958,7 +9516,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 211,
+      "rank": 221,
       "sendable": false,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
@@ -9005,7 +9563,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 212,
+      "rank": 222,
       "sendable": true,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
@@ -9043,7 +9601,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 223,
       "sendable": true,
       "id": "greg-morris-gregmorris-co-uk"
     },
@@ -9087,7 +9645,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 224,
       "sendable": true,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
@@ -9125,7 +9683,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 215,
+      "rank": 225,
       "sendable": false,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
@@ -9169,7 +9727,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 216,
+      "rank": 226,
       "sendable": false,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
@@ -9206,7 +9764,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 227,
       "sendable": false,
       "id": "interlagos-interlagos"
     },
@@ -9245,7 +9803,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 228,
       "sendable": false,
       "id": "inventure-inventure-vc"
     },
@@ -9283,7 +9841,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 219,
+      "rank": 229,
       "sendable": false,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
@@ -9321,7 +9879,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 220,
+      "rank": 230,
       "sendable": true,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
@@ -9367,7 +9925,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 231,
       "sendable": true,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
@@ -9410,7 +9968,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 232,
       "sendable": false,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
@@ -9453,7 +10011,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 233,
       "sendable": false,
       "id": "oura-x-usta-us-open-oura"
     },
@@ -9490,7 +10048,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 224,
+      "rank": 234,
       "sendable": false,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
@@ -9533,7 +10091,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 235,
       "sendable": false,
       "id": "polar-x-team-essent-speed-skating-polar"
     },
@@ -9572,7 +10130,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 236,
       "sendable": true,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
@@ -9616,7 +10174,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 227,
+      "rank": 237,
       "sendable": false,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
     },
@@ -9660,7 +10218,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 238,
       "sendable": true,
       "id": "sweatid-sweatid"
     },
@@ -9699,9 +10257,59 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 239,
       "sendable": true,
       "id": "tim-perkin-mountain-massif"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "Vertical",
+      "org": "Vertical (getvertical.ai)",
+      "why": "AI running coach that syncs Garmin, COROS, Polar and Suunto through official device APIs, computes readiness, runs an MCP server, and says it prioritizes new watch integrations by request volume.",
+      "evidence": [
+        "https://www.getvertical.ai/mcp/",
+        "https://www.getvertical.ai/integrations/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.getvertical.ai/mcp/",
+      "fit": 7,
+      "ask": "Submit Vybe through their 'missing your watch' request and ask for a call on feeding overnight HRV into readiness.",
+      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that records ECG-based HRV and resting heart rate, sold without a subscription. Vertical already computes readiness from Garmin, COROS, Polar and Suunto. Runners who sleep without their watch could feed you overnight data from Vybe instead. Would you be open to a DevKit and a short call?",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "hrv",
+        "running",
+        "ai"
+      ],
+      "existing_wearables": [
+        "Garmin",
+        "COROS",
+        "Polar",
+        "Suunto"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Add Vybe as an overnight recovery input to Vertical's readiness score alongside their watch integrations (they invite integration requests).",
+      "unknowns": "Small user base (site says 200+ athletes); whether readiness uses overnight HRV today not confirmed; no named contact.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 240,
+      "sendable": true,
+      "id": "vertical-vertical-getvertical-ai"
     },
     {
       "name": "Veteran Owned Business Directory (VeteranOwnedBusiness.com)",
@@ -9741,7 +10349,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 230,
+      "rank": 241,
       "sendable": false,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
@@ -9780,7 +10388,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 231,
+      "rank": 242,
       "sendable": false,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
@@ -9823,7 +10431,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 243,
       "sendable": false,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
@@ -9867,7 +10475,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 233,
+      "rank": 244,
       "sendable": false,
       "id": "withings-x-boston-10k-for-women-withings"
     },
@@ -9914,7 +10522,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 234,
+      "rank": 245,
       "sendable": true,
       "id": "cintrifuse-demo-night-cintrifuse"
     },
@@ -9957,7 +10565,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 235,
+      "rank": 246,
       "sendable": true,
       "id": "oura-home-assistant-integration-louispires-oura-home-assistant-integration-open-"
     },
@@ -9999,7 +10607,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 247,
       "sendable": false,
       "id": "pulsetto-pulsetto"
     },
@@ -10041,7 +10649,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 237,
+      "rank": 248,
       "sendable": true,
       "id": "sahha-sahha"
     },
@@ -10085,7 +10693,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 249,
       "sendable": true,
       "id": "ai-brain-starter-health-mcp-google-health-connector-mycelium-hq-ai-brain-starter"
     },
@@ -10129,7 +10737,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 250,
       "sendable": true,
       "id": "oura-ring-mcp-server-jordanburke-oura-ring-mcp-server-open-source"
     },
@@ -10172,7 +10780,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 251,
       "sendable": true,
       "id": "home-assistant-fitbit-google-health-integration-home-assistant"
     },
@@ -10216,7 +10824,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 241,
+      "rank": 252,
       "sendable": false,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
@@ -10259,7 +10867,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 253,
       "sendable": true,
       "id": "soluno-soluno"
     },
@@ -10303,7 +10911,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 243,
+      "rank": 254,
       "sendable": true,
       "id": "timeless-timeless"
     },
@@ -10340,7 +10948,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 244,
+      "rank": 255,
       "sendable": false,
       "id": "37-angels-37-angels"
     },
@@ -10384,7 +10992,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 256,
       "sendable": true,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
@@ -10427,7 +11035,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 257,
       "sendable": true,
       "id": "akron-running-project-akron-marathon-race-series"
     },
@@ -10465,7 +11073,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 247,
+      "rank": 258,
       "sendable": false,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
@@ -10503,7 +11111,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 248,
+      "rank": 259,
       "sendable": false,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
@@ -10548,7 +11156,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 260,
       "sendable": true,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
@@ -10585,7 +11193,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 250,
+      "rank": 261,
       "sendable": false,
       "id": "dvc-health-duro-ventures-collective"
     },
@@ -10624,7 +11232,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 262,
       "sendable": true,
       "id": "elevate-human-performance-elevate-human-performance"
     },
@@ -10667,7 +11275,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 252,
+      "rank": 263,
       "sendable": false,
       "id": "garmin-x-usa-triathlon-garmin"
     },
@@ -10704,7 +11312,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 264,
       "sendable": true,
       "id": "hpa-hyde-park-angels-hpa"
     },
@@ -10742,7 +11350,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 254,
+      "rank": 265,
       "sendable": false,
       "id": "heather-landi-fierce-healthcare"
     },
@@ -10785,7 +11393,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 255,
+      "rank": 266,
       "sendable": true,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
@@ -10823,7 +11431,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 256,
+      "rank": 267,
       "sendable": false,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
@@ -10867,7 +11475,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 268,
       "sendable": true,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
@@ -10905,7 +11513,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 258,
+      "rank": 269,
       "sendable": false,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
@@ -10948,7 +11556,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 259,
+      "rank": 270,
       "sendable": true,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
@@ -10985,7 +11593,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 260,
+      "rank": 271,
       "sendable": false,
       "id": "life-science-angels-life-science-angels"
     },
@@ -11022,7 +11630,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 261,
+      "rank": 272,
       "sendable": false,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
@@ -11061,7 +11669,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 273,
       "sendable": true,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
@@ -11100,7 +11708,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 274,
       "sendable": false,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
@@ -11138,7 +11746,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 264,
+      "rank": 275,
       "sendable": false,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
@@ -11182,7 +11790,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 265,
+      "rank": 276,
       "sendable": true,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
@@ -11225,7 +11833,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 266,
+      "rank": 277,
       "sendable": true,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
@@ -11268,7 +11876,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 267,
+      "rank": 278,
       "sendable": true,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
@@ -11311,7 +11919,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 268,
+      "rank": 279,
       "sendable": false,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
@@ -11348,7 +11956,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 269,
+      "rank": 280,
       "sendable": false,
       "id": "sand-hill-angels-sand-hill-angels"
     },
@@ -11391,7 +11999,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 270,
+      "rank": 281,
       "sendable": true,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
     },
@@ -11429,7 +12037,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 271,
+      "rank": 282,
       "sendable": false,
       "id": "startup-health-syndicate-startup-health"
     },
@@ -11467,9 +12075,55 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 272,
+      "rank": 283,
       "sendable": true,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": "2026-01-16",
+      "name": "Stress Platform - Health & HRV",
+      "org": "Stress Platform",
+      "why": "HRV-focused iPhone app that reads HRV, resting HR and sleep from Apple Health (read-only) to generate baseline and recovery insights; any device writing those metrics to Apple Health can feed it.",
+      "evidence": [
+        "https://apps.apple.com/us/app/stress-platform-health-hrv/id6756083530"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://apps.apple.com/us/app/stress-platform-health-hrv/id6756083530",
+      "fit": 7,
+      "ask": "Confirm Vybe HRV written to Apple Health appears correctly in their app and co-list it as a supported non-Apple-Watch source.",
+      "opener": "Hi, I'm building Vybe, a screenless band worn overnight that writes HRV and resting heart rate to Apple Health, no subscription. Stress Platform reads those exact metrics, so people without an Apple Watch could still use your app. Could we test that our data shows up correctly and, if it does, mention each other to users?",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "apple-health"
+      ],
+      "existing_wearables": [
+        "Apple Health (Apple Watch)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Co-market Vybe as a non-Apple-Watch overnight HRV source flowing through Apple Health into Stress Platform.",
+      "unknowns": "Very small (17 App Store ratings); company identity and location not verified; whether they accept non-Apple-Watch HRV samples untested.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 284,
+      "sendable": true,
+      "id": "stress-platform-health-hrv-stress-platform"
     },
     {
       "name": "Suunto x UTMB World Series",
@@ -11512,7 +12166,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 273,
+      "rank": 285,
       "sendable": false,
       "id": "suunto-x-utmb-world-series-suunto"
     },
@@ -11550,7 +12204,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 274,
+      "rank": 286,
       "sendable": true,
       "id": "techlife-columbus-2-0-launch-techlife-columbus"
     },
@@ -11592,7 +12246,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 275,
+      "rank": 287,
       "sendable": false,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
@@ -11636,9 +12290,60 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 276,
+      "rank": 288,
       "sendable": false,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
+    },
+    {
+      "name": "WeightWatchers",
+      "org": "WW International, Inc.",
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "WW's own app guide lists compatible sources: Apple Health, Garmin, Fitbit, Google Fit and Health Connect. WW calls its program 'food, activity, mindset and sleep' and in 2021 brought in Breethe as an outside content partner for mindset, so it has partnered with smaller wellness brands before.",
+      "why_now": "WW device-sync guide last updated 2024-07-18.",
+      "evidence": [
+        "https://www.weightwatchers.com/au/blog/ww-app-sync-device",
+        "https://www.prnewswire.com/news-releases/breethe-becomes-new-mindset-partner-of-ww-international-301402853.html"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Intro to WW's partnerships/product team to ask whether sleep data from Health Connect/Apple Health is on their roadmap and whether a small pilot is possible.",
+      "opener": "Hi, I'm the founder of Vybe Health, a screenless band worn overnight with an SDK that writes to Apple Health and Health Connect, both of which WeightWatchers already supports. Sleep is one of your program pillars, so I'd value 15 minutes with whoever owns device integrations to see whether overnight rest data could be useful to members.",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2024-07-18",
+      "confidence": "verified",
+      "tags": [
+        "nutrition",
+        "digital-health",
+        "wearables",
+        "sleep"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Garmin",
+        "Fitbit",
+        "Google Fit",
+        "Health Connect"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Vybe reaches WW members through Apple Health / Health Connect, which WW already supports; pitch overnight sleep context for the program's sleep pillar (Restore), building on WW's precedent of bringing in outside wellness partners (Breethe 2021).",
+      "unknowns": "The guide shows WW uses device data for activity Points; no evidence it ingests sleep. WW allows only one connected device at a time. No public partner/BD contact found; large-company decision process; 2025 corporate restructuring not researched.",
+      "lane": "partners_wellness",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 289,
+      "sendable": false,
+      "id": "weightwatchers-ww-international-inc"
     },
     {
       "name": "Xsensio €6M Series A (WI Harper) for wearable biochemical sensing chip",
@@ -11675,7 +12380,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 277,
+      "rank": 290,
       "sendable": false,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
@@ -11719,7 +12424,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 278,
+      "rank": 291,
       "sendable": false,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
     },
@@ -11762,9 +12467,67 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 279,
+      "rank": 292,
       "sendable": true,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "trainedby.ai",
+      "org": "TrainedBy",
+      "why": "Chat-first data bridge that pipes wearable HRV, sleep, training load and recovery into ChatGPT/Claude via MCP and advertises 62+ integrations (Garmin, Oura, Polar, Fitbit, COROS, Suunto, Wahoo, Zepp, Ultrahuman...).",
+      "evidence": [
+        "https://trainedby.ai/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://trainedby.ai/",
+      "fit": 7,
+      "ask": "Ask which aggregator/API they use and whether Vybe can be added as an integration; 15-min call.",
+      "opener": "Hi, I'm building Vybe, a screenless band worn overnight that records HRV and resting heart rate, no subscription, with an open API. trainedby.ai turns HRV trends and sleep into context for ChatGPT and Claude, which is exactly what our nights produce. Could Vybe join your integrations list? Happy to share DevKit access and our data format.",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "dev-platform",
+        "ai"
+      ],
+      "existing_wearables": [
+        "Garmin",
+        "Oura",
+        "Polar",
+        "Strava",
+        "Fitbit",
+        "COROS",
+        "Suunto",
+        "Wahoo",
+        "Zepp",
+        "TrainingPeaks",
+        "Zwift",
+        "Ultrahuman"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Be added to their 62+ integration list; if their breadth comes from an aggregator, Vybe listing on that aggregator would make it reachable.",
+      "unknowns": "Which aggregator (if any) powers the 62+ integrations is not stated; no partner page or named contact found; team size/location not verified from a read page.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 293,
+      "sendable": true,
+      "id": "trainedby-ai-trainedby"
     },
     {
       "name": "Digital.Health",
@@ -11803,7 +12566,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 280,
+      "rank": 294,
       "sendable": false,
       "id": "digital-health-digital-health"
     },
@@ -11848,7 +12611,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 281,
+      "rank": 295,
       "sendable": false,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
@@ -11891,7 +12654,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 282,
+      "rank": 296,
       "sendable": true,
       "id": "notus-labs-notus-labs"
     },
@@ -11933,7 +12696,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 283,
+      "rank": 297,
       "sendable": true,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
@@ -11974,7 +12737,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 284,
+      "rank": 298,
       "sendable": false,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
@@ -12018,7 +12781,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 285,
+      "rank": 299,
       "sendable": true,
       "id": "aha-scientific-sessions-2026-health-innovation-pavilion-american-heart-associati"
     },
@@ -12060,7 +12823,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 286,
+      "rank": 300,
       "sendable": false,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
@@ -12103,7 +12866,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 287,
+      "rank": 301,
       "sendable": false,
       "id": "coros-x-jakob-ingebrigtsen-coros"
     },
@@ -12146,7 +12909,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 288,
+      "rank": 302,
       "sendable": false,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
@@ -12189,7 +12952,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 289,
+      "rank": 303,
       "sendable": false,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
@@ -12232,9 +12995,56 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 290,
+      "rank": 304,
       "sendable": false,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
+    },
+    {
+      "role": null,
+      "type": "app-partner",
+      "hunt": "partnership",
+      "ice": null,
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "warm_path": null,
+      "why_now": null,
+      "last_signal_date": null,
+      "name": "Flow State Endurance",
+      "org": "Flow State Endurance",
+      "why": "AI training calendar for endurance athletes with a free tier showing load, readiness, HRV, sleep and recovery context, but data sources listed are only Garmin and Strava.",
+      "evidence": [
+        "https://www.reachflowstate.ai/"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "fit": 7,
+      "ask": "Find a founder contact and propose Vybe as a second HRV/sleep source for non-Garmin athletes.",
+      "opener": "Hi, I'm building Vybe, a screenless band worn overnight that records HRV and resting heart rate, no subscription. Flow State already uses HRV and sleep context but pulls it only from Garmin. Vybe could give athletes on other watches the same overnight inputs. Would a DevKit and a short call on your data format be useful?",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "hrv",
+        "sleep",
+        "endurance"
+      ],
+      "existing_wearables": [
+        "Garmin",
+        "Strava"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Be the first non-Garmin HRV/sleep source for their readiness and recovery context.",
+      "unknowns": "No contact, partner page or company details found; only a single source read; scale unknown.",
+      "lane": "partners_endurance",
+      "link_status": "not checked",
+      "score": 70,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 305,
+      "sendable": false,
+      "id": "flow-state-endurance-flow-state-endurance"
     },
     {
       "name": "Garmin x Supertri E World Triathlon Championship",
@@ -12276,7 +13086,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 291,
+      "rank": 306,
       "sendable": false,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
@@ -12319,7 +13129,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 292,
+      "rank": 307,
       "sendable": false,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
@@ -12362,7 +13172,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 293,
+      "rank": 308,
       "sendable": false,
       "id": "jacob-hart-independent-ultrarunner"
     },
@@ -12400,7 +13210,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 294,
+      "rank": 309,
       "sendable": false,
       "id": "jessica-hagen-mobihealthnews"
     },
@@ -12443,7 +13253,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 295,
+      "rank": 310,
       "sendable": false,
       "id": "john-miller-stormbound-crossfit"
     },
@@ -12487,7 +13297,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 296,
+      "rank": 311,
       "sendable": false,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
@@ -12531,7 +13341,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 297,
+      "rank": 312,
       "sendable": false,
       "id": "oura-x-u-s-soccer-oura"
     },
@@ -12575,7 +13385,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 298,
+      "rank": 313,
       "sendable": false,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
@@ -12618,7 +13428,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 299,
+      "rank": 314,
       "sendable": false,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
@@ -12661,7 +13471,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 300,
+      "rank": 315,
       "sendable": false,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
@@ -12704,7 +13514,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 301,
+      "rank": 316,
       "sendable": false,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
@@ -12747,7 +13557,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 302,
+      "rank": 317,
       "sendable": false,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
