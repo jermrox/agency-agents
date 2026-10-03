@@ -12,6 +12,8 @@ regardless of how good the rest of the work is:
   targeting health-interest or sensitive-category ad targeting, which Meta and
             Google prohibit for this kind of advertiser
   partner   wording that implies a partnership that is not signed
+  short     a short format (a line labelled tagline, first line, subject line
+            or hook) of 25 words or more; the concept check says under 25
   privacy-claim
             a sharing promise ("shared only with consent", "nothing shared")
             that drops the privacy policy's exceptions; allowed only when the
@@ -119,8 +121,35 @@ def units(path):
         yield from flush()
 
 
+SHORT_LABEL = re.compile(r"^\s*(#+\s*)?\**\s*(tagline|first line|subject line|hook)\b[^:\n]*:?\**\s*(.*)$", re.I)
+JUST_LABEL = re.compile(r"^\s*\**[^*]{0,40}:\**\s*$")
+
+
+def short_formats(path):
+    """Yield (line, words, text) for each labelled short format in a markdown file."""
+    if path.suffix != ".md":
+        return
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    for n, line in enumerate(lines):
+        m = SHORT_LABEL.match(line)
+        if not m:
+            continue
+        text, at = m.group(3).strip(" *"), n
+        while not text and at + 1 < len(lines) and at - n < 4:
+            at += 1
+            nxt = lines[at].strip()
+            if nxt and not JUST_LABEL.match(nxt):
+                text = nxt
+        text = re.sub(r"^[>\-*\s\"“]+|[\"”\s]+$", "", text)
+        if text:
+            yield at + 1, len(text.split()), text
+
+
 def scan(path):
     findings = []
+    for n, words, text in short_formats(path):
+        if words >= 25:
+            findings.append(("short", n, f"{words} words: {text[:110]}", False))
     for sentence, owner in units(path):
         low = sentence.lower()
         allowed = any(m in low for m in ALLOW_MARKERS)

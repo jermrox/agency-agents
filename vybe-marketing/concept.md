@@ -165,8 +165,8 @@ Two-Product Test in the agent file).
 |---|---|---|---|
 | LinkedIn company page, founder LinkedIn | Builders, partners, researchers, tactical and performance buyers, investors, hires | The company: score-skeptic stance, calibrated answers, built to be built on | The band as the proof |
 | Instagram, Facebook | End users | One calibrated answer, shown, not described | No required subscription, data stays yours |
-| /developers, builder email | Developers, labs, startups | "Start at the interpretation, not at signal cleaning"; licensed, consented access | Show the band as the hardware the answers are designed around. Never "reference device" or "reference standard" in lab or research copy: in validation science it means the criterion measure |
-| Tactical and team buyers | H2F, POTFF, performance staff | "Designed to show readiness in aggregate, with consent, in answers that say how sure they are" (Claim Register row 22) | Screenless, so the data keeps arriving. Per-person detail only in the /enterprise wording, "with per-person detail where the individual has consented to share it", and flag that /faq disagrees. No GPS waits for row 20 |
+| /developers, builder email | Developers, labs, startups | "Start at the interpretation, not at signal cleaning"; licensed, consented access | Tie the answer back to the band that produces it, in the builder's terms (what they can build on). Never "reference device" or "reference standard" in lab or research copy: in validation science it means the criterion measure |
+| Tactical and team buyers | H2F, POTFF, performance staff | "Designed to show readiness in aggregate, with consent, in answers that say how sure they are" (Claim Register row 22) | Give the reason no screen matters to a team: there is nothing to check or switch off, so it stays on through a training cycle and the group's record has fewer gaps. Row 22's subject is the team view, not the band. Per-person detail only in the /enterprise wording, "with per-person detail where the individual has consented to share it", and flag that /faq disagrees. No GPS waits for row 20 |
 | Waitlist, homepage | Mixed | Calibrated answers | Hygiene as proof points underneath |
 
 Cells in quotation marks are wording to use exactly. Every other cell is a
@@ -184,7 +184,7 @@ it", an email body that is not written).
 1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner". Placement is part of the test:
    - **The lead is in the first sentence** (the first ten words in a short format): the row's idea, with any quoted wording exact.
    - **The "then" column comes after the shown answer and points back to it** ("the band is what produces that answer"; "no subscription stands between you and it" is row 21 wording and carries row 21's hold). A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
-   - **Quoted wording goes in exactly; directions get carried out, never printed.** Wording in quotation marks in the table, or marked as /enterprise or Claim Register wording, goes into the copy exactly. Rewording it ("with consent" turned into an "only" sharing promise) makes a new claim, and a new claim needs the Register first. Every other cell is a direction: "One calibrated answer, shown, not described" means show one answer; it is never the post's opening line. Test: if a sentence only makes sense to someone who has read this table, rewrite it.
+   - **Quoted wording goes in exactly; directions get carried out, never printed.** Wording in quotation marks in the table, or marked as /enterprise or Claim Register wording, goes into the copy exactly. Rewording it ("with consent" turned into an "only" sharing promise) makes a new claim, and a new claim needs the Register first. Every other cell is a direction: "One calibrated answer, shown, not described" means show one answer; it is never the post's opening line. Test: if a sentence only makes sense to someone who has read this table, rewrite it. A copy sentence never reuses a direction cell's wording beyond its quoted phrases.
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
@@ -222,6 +222,13 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Retests after the regression.** C1 rose to 18. The
+  placement rules lifted D2 to 3 in every retested piece, but the "word for
+  word" rule made writers print the table's directions as copy. The fix: quoted
+  cells stay exact, and every other cell is a direction to carry out. C7 then
+  failed on "Vybe shows…", so "designed to" now governs the main verb, and
+  Register row 22 holds the team view. Round 3: C4 16, C6 17, C7 17, so all
+  eight cases pass. The guardrail now counts short formats.
 - **2026-10-03. Regression run, C1 to C8 under the final rules.** A fresh
   writer redid all eight cases and a separate grader scored the copy only.
   Seven passed (C1 16, C2 17, C3 18, C4 15, C5 17, C6 16, C8 16). C7, the

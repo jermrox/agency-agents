@@ -190,3 +190,20 @@ word for word" rule made writers print the table's directions:
 - The builder row no longer says "reference device".
 - The tactical lead is quoted copy backed by a new Register row 22 (founder to confirm).
 - Q1's row 21 example carries row 21's hold.
+
+## Round 3: C4, C6 and C7 (directions vs quoted wording)
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Result |
+|---|---|---|---|---|---|---|---|---|
+| C4 Lab email first line | 2 | 3 | 3 | 3 | 3 | 2 | **16** | Pass |
+| C6 Connect daylight | 2 | 3 | 3 | 3 | 3 | 3 | **17** | Pass |
+| C7 H2F one-pager | 3 | 2 | 3 | 3 | 3 | 3 | **17** | Pass (draft: row 22 holds scheduling) |
+
+All eight copy cases now pass. Two problems remained:
+- C4's first line was 25 words against "under 25", and the writer miscounted.
+- C7 lightly reworded a direction cell ("no screen, so the data keeps arriving") without giving the reason, and credited the team view to the band.
+
+**Fixes:**
+- `check_marketing.py` now counts the words in any line labelled tagline, first line, subject line or hook, and blocks at 25 or more.
+- The tactical and builder direction cells now state the reason, and row 22's subject is the team view.
+- Q1 adds that a copy sentence never reuses a direction cell's wording beyond its quoted phrases.

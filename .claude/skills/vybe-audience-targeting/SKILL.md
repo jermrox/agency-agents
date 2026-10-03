@@ -67,6 +67,10 @@ year's finisher count for one race, times the share of US residents), label
 it "estimate" and show the method.
 
 ### 3. Map the targets
+When the answer narrows to a segment already in `vybe-marketing/marksom.json`,
+carry that segment's evidence into the answer: its `score_why` lines for Pain,
+Fit and Moat, and its named targets (communities, creators, publications,
+programmes). Search queries and pages are channels, not targets.
 List organisations, programmes, roles, public creators, communities, events
 and publications, each with **why it matters** and a **source**. Never list
 private individuals' names with contact details; name roles ("H2F Integrator",

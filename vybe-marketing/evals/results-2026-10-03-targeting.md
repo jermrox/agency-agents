@@ -128,3 +128,19 @@ close date and the Washington MHMDA employment exclusion. Weak spots:
 rank targets with a cost column; when site pages disagree, cite both and flag
 it; quotes word for word and dated sources from the right year; the first test
 checkpoint within 30 days.
+
+## Case 7, independent rerun
+
+**25/30, pass** (24 before; gates 3, 6 and 7 all at 3). A second check
+re-pulled 12 of the numbers from GA4 and Search Console, read-only, and all of
+them matched. Weak spots:
+- the targets were search queries and pages, not communities or creators;
+- there was no proven / suggested split, and the answer gave seven changes instead of one;
+- the "last week" Search Console figure was copied from the old scoreboard;
+- a stale read produced a false "Register ends at row 21" note.
+
+**New rules:**
+- The agent file's scoreboard template now has Proven, Suggested and Unknown blocks, one biggest problem and one change.
+- "Last week" is re-pulled with the same window length.
+- Any "the file says" note re-reads the file first.
+- The targeting skill carries a segment's `marksom.json` evidence and named targets into the answer.

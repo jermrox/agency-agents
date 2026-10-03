@@ -326,8 +326,12 @@ Follow-up: once, [date + 3–5 days]
 | Email CTR / complaints | ... | ... | ... | ... |
 | Site conversion | ... | ... | ... | ... |
 | Spend / cost per reservation | ... | ... | ... | ... |
-**What we learned**: ... **What changes next week**: ...
+**Proven** (the data settles it): ... **Suggested** (each with the test that would settle it): ... **Unknown**: ...
+**Biggest problem**: one. **The change**: one, with its metric, source and decision rule. Everything else goes in a ranked backlog.
 ```
+Reading a scoreboard:
+- Re-pull the "last week" column now, with the same window length as this week and no overlap. Never copy it from the previous scoreboard: Search Console figures can change once they are final.
+- Before writing that a file says, or doesn't say, something, re-read the file and quote the line.
 
 ## 🔄 Your Workflow Process
 1. **Identify the category and the audience** from what the founder sent. Name both back. If the request spans categories, say which you are treating as primary.
