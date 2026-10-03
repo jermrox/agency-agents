@@ -104,3 +104,27 @@ It lost points on:
 - Thresholds need a number or a named placeholder.
 
 **Targeting cases graded independently today:** 3 (27), 4 (27), 5 (25), 6 (24) and 8 (28). All pass.
+
+## Cases 1 and 2, independent rerun (corrected prompts)
+
+A fresh writer answered the exact prompts from `cases.md`; a separate grader
+scored them against `rubric.md` and spot-checked the sources.
+
+| Case | Score | Gates (3, 6, 7) | Result |
+|---|---|---|---|
+| 1 Pick the wedge | **28/30** | 3, 3, 3 | Pass (Strong) |
+| 2 Tactical buyer map | **25/30** | 2, 3, 2 | Pass |
+
+The grader confirmed the Army Times (28 Sep 2026) pilot timing, the FAR
+thresholds and set-aside rule, the POTFF III award estimate, the AFG FY2025
+close date and the Washington MHMDA employment exclusion. Weak spots:
+- case 1's first checkpoint fell 58 days out, not within 30;
+- neither case weighed cost;
+- case 2 sized all career fire departments, not those with a wellness programme;
+- one quote was a paraphrase in quote marks, and two event dates cited the wrong year's or an aggregator's page;
+- case 2 took /enterprise's wording without noticing that /faq disagrees.
+
+**New rules in the skill:** size only accounts that meet the entry criterion;
+rank targets with a cost column; when site pages disagree, cite both and flag
+it; quotes word for word and dated sources from the right year; the first test
+checkpoint within 30 days.

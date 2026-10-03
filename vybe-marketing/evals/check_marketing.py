@@ -63,7 +63,8 @@ OWN_DOMAINS = ("vybe.health", "example.com", "hydrox.app")  # hydrox: published 
 ALLOW_MARKERS = ("never", "do not", "don't", "avoid", "must not", "not a medical",
                  "outside wellness", "prohibit", "counsel", "unsafe", "banned",
                  "no diagnosis", "never write", "rule", "not available", "never say", "nothing is", "nothing relies", "no ecg", "rules out", "no dates", '"available now"', "'available now'", 'no "', '"not_allowed"', "overstates", "does anything rely",
-                 "roadmap:", "roadmap and offers", "makes no", "not medical advice")
+                 "roadmap:", "roadmap and offers", "makes no", "not medical advice",
+                 "failed the claims gate", "used to pass")
 
 
 def iter_files(paths):

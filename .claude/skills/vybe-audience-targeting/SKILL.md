@@ -49,6 +49,10 @@ Do these in order. Skip none.
 Write: who they are, the shared problem, the trigger that makes them switch
 now, and an estimated size **with a source and date**. "Health-conscious
 people" fails. If size is unknown, say unknown and how to find out.
+Size only the accounts that meet the entry criterion you named (for example,
+fire departments that run a wellness-fitness programme, not all career
+departments). If that count is unknown, say so and how to find it; never use
+the parent total as the high end.
 
 ### 2. Run the wedge tests
 Score 0 to 3 with evidence: **Pain** (do they feel it today), **Fit** (is
@@ -81,6 +85,8 @@ unit purchase card (up to $15,000), simplified acquisition (up to $350,000,
 small-business set-aside), SBIR/STTR, DIU or AFWERX, a prime contractor, a
 research grant, or a developer self-serve plan. Consumer social stays on
 Instagram and Facebook unless the founder opens another channel.
+Rank the targets in a table with columns for stage, **cost to Vybe** (founder
+hours, travel, cash) and evidence, so the order is argued, not asserted.
 
 ### 5. Check the targeting rules
 
@@ -137,6 +143,16 @@ rule). Justify the minimum sample from the expected conversion rate, not a
 round number.
 
 
+**When pages disagree.** Before writing or rejecting a claim, list how every
+page you scraped words it. If two pages disagree (for example /faq "without
+individual visibility" vs /enterprise "per-person detail where the individual
+has consented"), cite both and flag the conflict to the founder; never pick one.
+
+**Quotes and dated sources.** Text in quote marks is word for word from the
+source; otherwise paraphrase without quote marks. A dated event or figure
+cites the primary page for that year (the organiser, the agency), not last
+year's page or an aggregator.
+
 **Before correcting a figure already in the repository**, search for its
 real source. Prefer the newest official source. Fix only the citation unless
 a newer primary source contradicts the number.
@@ -157,7 +173,10 @@ the line it relies on; if the line is not there, the citation is wrong.
 
 ### 7. Design the test
 Metric, source, minimum sample, decision rule, review date, and what result
-would make you drop the segment.
+would make you drop the segment. **The first decision checkpoint lands within
+30 days** (or the window the case names), using the cheapest signal that could
+prove the pick wrong, such as meetings booked at the next event. Later
+checkpoints may follow.
 
 ### 8. Score it
 Run `python3 vybe-marketing/evals/check_marketing.py <your draft>` before handing anything back. Running the checker is always allowed, even when you have been asked not to read `evals/`. It must pass. Then score
