@@ -103,6 +103,7 @@ hours, travel, cash) and evidence, so the order is argued, not asserted.
 
 | Platform | Never | Use instead |
 |---|---|---|
+| Meta (placement) | A primary text whose first line could be any competitor's, with the distinctive idea below the "See more" cut (about 125 characters) or only in the headline, which feed placements often hide | The unclaimed idea (confidence or a blind spot) above the cut or on the creative itself. When the data screen can't be shown honestly, use a privacy proof the live policy supports (Register row 23), not the same row 4 sentence in every ad |
 | Meta | Health-condition interests (removed Jan 2022); renaming events to dodge health classification; health answers in pixel parameters | Broad or Advantage+ audiences with creative that self-selects; partnership (creator) ads; neutral URLs and event names; consented first-party lists; Vybe's own signup count as the source of truth |
 | Google Ads / YouTube | Claims or landing copy that put Vybe in the "Health" sensitive category (conditions, medical devices), which strips remarketing, Customer Match and lookalikes | Wellness wording from the Claim Register; search on comparison and no-subscription queries; Consent Mode with `ad_user_data` and `ad_personalization` |
 | LinkedIn | Nothing health-specific found; still no personal data scraping | Job title, function, seniority, company lists and Groups for B2B and ABM; expect $6 to $15 CPCs |
@@ -158,6 +159,11 @@ round number.
 page you scraped words it. If two pages disagree (for example /faq "without
 individual visibility" vs /enterprise "per-person detail where the individual
 has consented"), cite both and flag the conflict to the founder; never pick one.
+
+**Survey proxies keep their population.** When a survey figure stands in for
+a segment, quote its question or population word for word ("willingness to
+share data *with clinicians*") and give one line on why it stands in for the
+segment's entry criterion. If it doesn't, find another proxy.
 
 **Quotes and dated sources.** Text in quote marks is word for word from the
 source, cited to the exact page it is on; otherwise paraphrase without quote

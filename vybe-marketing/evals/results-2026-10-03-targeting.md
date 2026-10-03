@@ -164,3 +164,26 @@ No private contact details appear. The fit scores range from 5 to 9. Weak spots:
 - Builder Moat is tested against open SDKs.
 - Fit scores quote their band and apply one test to every row.
 - Quotes cite their exact page, and old programme stages carry a status-checked date.
+
+## Case 6, independent rerun
+
+**26/30, pass** (24 before; gates at 2, 3 and 2). The three ads score 17, 16
+and 17 as copy (Part B). The grader verified on the live site:
+- /privacy §3 ("We do not use your data for advertising targeting"), §4 and §6 ("export … by contacting us");
+- the homepage "nothing shared" line;
+- the /faq answers.
+
+It also confirmed HINTS 2024's 41.1% and Cisco's 38% "Privacy Actives".
+
+Weak spots:
+- The low-end proxy (23.8%) dropped its population. The survey measured willingness to share data *with clinicians*.
+- Ad 2's "the record of what worked is your health data" presumed row 16 works.
+- Every primary text opened on a line a competitor could print, with the distinctive idea below Meta's "See more" cut.
+- With no honest data screen to show, every ad used the same row 4 sentence.
+
+**New rules:**
+- Noun phrases that presume a design commitment need "designed to".
+- Survey proxies quote their question and population.
+- On Meta, the unclaimed idea goes above the cut.
+- The policy's §3 line becomes Claim Register row 23.
+- The export conflict between §6, /faq and row 17 is logged for the founder.
