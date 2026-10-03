@@ -29,6 +29,7 @@ params.toml ──▶ research lanes (parallel) ──▶ data/raw/<lane>.json
 | `build.py` | Validates, de-duplicates, scores and ranks the rows, then writes the record and the dashboard. Standard library only. |
 | `template.html` | The dashboard page. `build.py` fills in the data. |
 | `site/` | What Netlify publishes. |
+| `applications/` | Drafted accelerator application answers (a16z speedrun, YC, Techstars) and a federal capability statement. Founder-only fields are marked `[FOUNDER]`. Nothing is submitted. |
 | `tests/` | `python3 -m pytest tests -q` |
 
 ## Lanes
