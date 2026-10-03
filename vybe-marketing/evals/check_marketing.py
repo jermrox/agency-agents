@@ -40,6 +40,7 @@ RULES = [
         r"\b(target(ing)?|audience|interest)s?\b[^.\n]{0,40}\b(health condition|"
         r"heart disease|diabetes|depression|anxiety disorder|insomnia sufferers|"
         r"pregnan|sexual orientation|religion)\b", re.I)),
+    ("risk-term", re.compile(r"\b(ecg|ekg|heart rhythm|afib|atrial fibrillation|arrhythmia)\b", re.I)),
     ("roadmap", re.compile(
         r"\b(sdk|api|devkit|dev kit|developer api|ring)\b[^.\n]{0,30}\b(is |are )?"
         r"(available now|now available|is live|are live|live now|ships? (today|now)|"

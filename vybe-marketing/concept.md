@@ -115,10 +115,13 @@ with each of these.
    FAQ dates API v1 to June 2028 and the SDK to December 2028, so say "built
    open from day one" and "talk to us". Never say "available now".
 
-5. **The answers come with the band.** Google, Garmin and Polar now charge
-   for the AI coach on top of the device. The paywall has moved from the data
-   to the explanation. "The answers come with the band" is sharper than "no
-   subscription".
+**Not Vybe's alone, but useful with the calibration clause: "the answers
+come with the band".** Google, Garmin and Polar now charge for the AI coach
+on top of the device, so the paywall has moved from the data to the
+explanation. But Circular also includes its coach, so the line fails the swap
+test on its own. Use it only joined to calibration ("Answers that say how
+sure they are come with the band"), only in the same piece as "no required
+subscription", and only once the founder confirms it (Claim Register row 21).
 
 **The swap test.** Put a competitor's name in place of "Vybe" in the line. If
 it is still true, the line is hygiene, not the concept. "No screen, no
@@ -135,11 +138,21 @@ repository). US monthly searches are from DataForSEO.
 | **Vitals** (HRV, heart rate) | ~400k a month; "what is a good hrv" 14.8k at KD 17 | Turning medical (Apple, Oura and WHOOP blood pressure, ECG) | **Search lead.** Answer the HRV questions people ask. Say "HRV and heart rate", never "heart rhythm" or "ECG". |
 | **Restore** (sleep) | ~239k a month; "sleep tracker" down 42% | Most crowded: 8 of 11 brands lead with it | Proof, not hook. Show a sleep answer that names its confidence. |
 | **Nourish** (food timing) | ~30k a month and rising; "meal timing" KD 7 | Nobody leads with it | **Social lead.** "Late dinner, lower HRV?" shows five signals as one system. |
-| **Connect** | Daylight cluster ~22k and rising ("sunlight exposure" +97%) | Nobody measures it | Launch as **daylight and daily rhythm**, only if the band has a light sensor. People time and alone time are logged by the user, and are never scored against each other. |
-| **Move** (training load) | ~2k consumer searches | Garmin, Polar, Amazfit | Team and tactical channels. For consumers use "overtraining" and "rest day". |
+| **Connect** | Daylight cluster ~22k and rising ("sunlight exposure" +97%) | Nobody measures it | Launch as **daylight and daily rhythm**, only if the band has a light sensor. People time and alone time are logged by the user, and are never scored against each other. **Until the sensor is confirmed**, Connect content teaches daylight itself (evidence library) and uses what the person logs; it never states what the band does or does not sense. |
+| **Move** (training load) | ~2k consumer searches | Garmin, Polar, Amazfit | Team and tactical channels. For consumers use "overtraining" and "rest day". A Move piece shows a Move answer (load against the person's own normal), not a sleep answer. |
 
 Never say Vybe detects loneliness or stress from HRV: wrist HRV explains
-about 1–2% of perceived stress.
+about 1–2% of perceived stress. Never say which pillar ships first; sequencing
+is roadmap.
+
+**Example answer shapes** (internal illustrations; quote only as "prototype,
+sample data"):
+
+| Pillar | Shape |
+|---|---|
+| Vitals | "Your HRV is below your own range for the second morning. Short sleep fits best; Tuesday's hard session fits too. Moderate confidence: 19 days of data. Next: an easy day." |
+| Move | "Your training load is above your own normal for the third week. The added interval session fits best; shorter sleep fits too. Moderate confidence: 21 days of data. Next: keep Thursday easy." |
+| Nourish | "On nights you ate after 21:00, your HRV ran lower. Late dinners fit; so do the later bedtimes on those nights. Low confidence: six such nights. Next: try an earlier dinner twice this week." |
 
 ## Two halves, one company
 
@@ -161,7 +174,7 @@ Two-Product Test in the agent file).
 Run all eight questions before any copy ships. The agent writes the answers
 in one line each under the draft.
 
-1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece.
+1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner".
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?

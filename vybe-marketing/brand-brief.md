@@ -32,7 +32,7 @@ Algorithm Licensing; OEM / Embedded Vybe; Strategic Partnerships.
 - Move: training load, weighed against your own norm
 - Nourish: food, timing and hydration, in plain language
 - Connect: time with people, alone and outside
-- Vitals: heart rhythm and HRV against your baseline
+- Vitals: heart rhythm and HRV against your baseline (site wording as read; counsel to review, see rows 5 and 5a)
 
 **The offer right now.** Pre-launch. The call to action is "just vybe", which
 leads to the waitlist. "The first 1,000 on the waitlist are guaranteed a
@@ -78,6 +78,7 @@ supported** → **hypothesis**. Health and science claims need a source.
 | 18 | Built open: others can build on the band | IG, 29 Sep; site `/developers` | Platform direction | The public FAQ dates API v1 to Jun 2028 and the SDK to Dec 2028 | Approved as a direction ("built open", "talk to us", "design partners"). Never "available now". |
 | 19 | Shows patterns, not causes: names the explanations that fit instead of one culprit | Not public yet | Design commitment | `vybe-app/README.md` (Pattern history screen); evidence library on HRV | Founder to approve. Same "designed to" rule as row 14. Explanations stay everyday ones (sleep, training, timing), never an illness. |
 | 20 | No GPS; Bluetooth-only pairing | `/hardware` lists Bluetooth-first and no GPS sensor | Product spec | Site hardware table; matters to tactical buyers (DoD geolocation rules) | **Founder to confirm** there is no GPS in the band at launch before any tactical copy uses it. |
+| 21 | "The answers come with the band" | Not public yet | Pricing scope, derived from row 2 | Competitors charging for AI coaches (research, 3 Oct 2026) | **Founder to confirm** it holds against any future paid feature. Until then, never use it alone: join it to calibration and carry "no required subscription" in the same piece. |
 
 **Claims never to make.** Any diagnosis or treatment; "clinical-grade" or
 "medical-grade"; any accuracy percentage without a cited method; any
