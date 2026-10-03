@@ -139,6 +139,7 @@ Weak spots:
 
 New rule: on a vs page, Vybe's section never describes the compared products.
 | S4 Eating before bed (Nourish) | **16/18** | Pass. The grader checked five studies on PubMed: all match design, size and direction. It lost points for one unsourced line in the answer-first paragraph, one overstated study framing and one unsupported "size may matter as much" line. |
+| S5 Oura ring alternative | **17/18** | Pass. The grader verified the ITC 337-TA-1398 notices, the competitor quotes and the live Vybe page. It found the brief had missed two open cases (337-TA-1468 with Oura as complainant, 337-TA-1478 with Oura as respondent). I verified both from the Federal Register and fixed the brief before saving it to `briefs/`. New rules: search the dockets both ways for legal questions; Vybe's table row uses approved rows only; answer-first sources show in the copy; disclose an author's own app. |
 
 ## Regression run, C1 to C8 (final rules)
 

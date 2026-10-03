@@ -104,6 +104,15 @@ has consented"), cite both and flag it to the founder; never pick one. Text in
 quote marks is word for word from its source, and a dated figure or event
 cites the primary page for that year, not last year's page or an aggregator.
 
+### 4c-2. Check the dockets for legal questions
+
+When a People Also Ask question or a device in the table touches a lawsuit
+or a ban ("why is Oura being sued"), search the primary dockets (USITC
+EDIS and news releases, the Federal Register, court dockets) for every
+named brand as both complainant and respondent. A fair comparison shows
+both directions. Each case is dated, and its status is rechecked before
+publishing.
+
 ### 4d. Check the intent
 
 If the results for a head term are mostly an intent Vybe must not serve
@@ -117,7 +126,7 @@ match wellness intent instead, and say why in the brief.
 | A question ("what is a good hrv") | Explainer | Answer in the first 40 to 60 words, plainly, with no product mention. |
 | A comparison ("whoop alternative", "whoop vs oura") | Fair comparison | Grant each product its strength. No price mockery, no "best" unless the list is fair and includes other no-subscription devices. |
 | A "vs" page between two competitors | Fair comparison | Grant each its real strengths and name no winner. Vybe's section says nothing about the two products: it states Vybe's design positively ("A score is one number. Vybe's answers are designed to say how sure they are, and why."). Membership models go in a neutral "what's included" row, never in a list of downsides. Rows are even: the same kind of detail, sourced from the current model, for both products. A membership model may be described factually (what is included, from their page), never compared on price. A competitor's regulated feature is described in plain words from its source ("an FDA-cleared heart-screening feature"), so Vybe's page never uses the regulated term as if it were its own. |
-| Any page with a device table | Table rules | No per-brand price or membership column (that is a price comparison). Every row cell is sourced and dated. Vybe's row says "pre-launch" in every cell, uses "designed to" for design commitments, and shows nothing that is unconfirmed (export, light sensing, battery). |
+| Any page with a device table | Table rules | No per-brand price or membership column (that is a price comparison). Every row cell is sourced and dated. Vybe's row says "pre-launch" in every cell and shows nothing that is unconfirmed (export, light sensing, battery). It uses approved rows only (1, 2, 3, 9); a design commitment (rows 14 to 17, 19, 22) in the row carries the same founder sign-off gate as the Vybe section. |
 | A category ("screenless fitness tracker") | Category page | Say what to look for in any device first, then where Vybe fits. Say "pre-launch". |
 | A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
 | A population comparison ("hrv by age") | Explainer section | A published reference range may be cited **as context**, with its source, its measurement method and its spread, and the line that it is not a target or a verdict. Then turn to the person's own baseline. |
@@ -139,9 +148,12 @@ Claim Register, with "designed to" for rows 14 to 17 and 19.
   adults", "an observational study of 1,800 people"), not only in the sources.
 - When trials disagree, the page says so and shows both.
 - Observational findings use association words ("linked with"), never cause.
-- Disclose any author or funder tie to a competitor.
+- Disclose any author or funder tie to a competitor, including an author's
+  own consumer app or company that supplied the data.
 - Every sentence of the answer-first paragraph is either a definition or
-  carries a source; it is the line most likely to be quoted. Never claim a
+  carries a source, shown in the copy (an inline citation or link), not only
+  in the brief's notes. On comparison pages, naming the compared products
+  is allowed there; naming Vybe is not; it is the line most likely to be quoted. Never claim a
   person's own data beats research ("the most useful evidence is your own
   nights"): own data shows a pattern, not a cause.
 - Describe each study's comparison exactly as run (for example "higher vs

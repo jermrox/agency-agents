@@ -57,6 +57,14 @@ KD 17). "Meal timing" (1,600, KD 7) is mostly weight-loss intent on the
 results page, which a wellness page must not serve. The page states no
 timing rule and shows where studies disagree.
 
+**3 Oct 2026, Oura page.** `/compare/oura-ring-alternative/` is rewritten in
+place, not replaced. It now targets "oura ring alternative" (6,600 a month,
+KD 2, DataForSEO) instead of "oura ring alternative no subscription" (about
+260). It becomes a fair alternatives page with a sourced device table, not a
+Vybe-vs-Oura table, and "no subscription" moves from the title to proof.
+Brief: `briefs/oura-ring-alternative.md`. The Oura-related trade-commission
+cases (337-TA-1398, 1468 and 1478) are rechecked monthly.
+
 ## Phase 1: three commercial pages (weeks 3 to 6)
 
 | Page | Primary query cluster | Title (≤60 chars) |
