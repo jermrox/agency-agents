@@ -168,3 +168,25 @@ tacked on at the end or relabelled ("the band is the proof").
 tactical row rewritten, row 21 aligned, and a sentence-level guardrail with a
 blocking `privacy-claim` rule. C7 is retested below.
 
+
+## Retest of C1, C4, C6 and C7 (placement rules)
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Result | Before |
+|---|---|---|---|---|---|---|---|---|---|
+| C1 LinkedIn tagline and About | 3 | 3 | 3 | 3 | 3 | 3 | **18** | Pass | 16 |
+| C4 Lab email first line | 2 | 3 | 3 | 2 | 2 | 3 | **15** | Pass | 15 |
+| C6 Connect daylight | 2 | 3 | 3 | 3 | 3 | 2 | **16** | Pass | 16 |
+| C7 H2F one-pager | 2 | 3 | 3 | 3 | **1** | 2 | **14** | **Fail (D5)** | 14 |
+
+D2 went to 3 in all four: the placement rules worked. But the "row phrases
+word for word" rule made writers print the table's directions:
+- C6 opened on "One calibrated answer, shown, not described.";
+- C4 told a validation lab the band is "the reference device", which reads as a criterion measure;
+- C7's "designed to" sat in a later clause, leaving "Vybe shows readiness…" unhedged, so it failed again.
+
+**Fixes:**
+- Quoted cells are used exactly; every other cell is a direction to carry out, never print.
+- "Designed to" governs the main verb.
+- The builder row no longer says "reference device".
+- The tactical lead is quoted copy backed by a new Register row 22 (founder to confirm).
+- Q1's row 21 example carries row 21's hold.
