@@ -115,8 +115,27 @@ regulatory risk; do not use them in ads until counsel clears the wording.
   allowed only for Vybe's own conduct rules ("never sold") that the Register
   already approves.
 - Run the concept check in `vybe-marketing/concept.md` under every piece of copy.
+- **Privacy claims match the live policy.** Before any privacy claim goes in
+  copy, read vybe.health/privacy, /learn/health-data-privacy-ownership and the
+  homepage privacy block, and quote the matching policy clause beside the
+  claim. Use only wording the policy supports; if it allows exceptions (the
+  law, service providers), say so or drop the claim. "Share" means data
+  leaving Vybe; a permission the person left off is "what you left switched
+  off", not "what you chose not to share".
+- Re-read the Claim Register at the moment of writing; it changes.
 
 ### 6b. Source every number
+
+**Read vybe.health with Firecrawl** (Composio; `onlyMainContent: false`,
+`waitFor` about 3000 ms), not a quick fetch: the site renders in the browser
+and short fetches cut it off. Every site fact, and every "not on the site" or
+"doesn't exist", cites the scrape's URL and time.
+
+**Measures need numbers.** A keep or kill threshold is a number, or a named
+placeholder the founder fills in (for example `MAX_CPR` from the budget
+rule). Justify the minimum sample from the expected conversion rate, not a
+round number.
+
 
 **Before correcting a figure already in the repository**, search for its
 real source. Prefer the newest official source. Fix only the citation unless

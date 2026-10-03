@@ -91,7 +91,9 @@ agent to apply.
 
 Quote competitors from their own pages, with the URL and checked date. If a
 site blocks direct fetches, read it through Firecrawl (Composio) or Exa's
-fetch, and say which.
+fetch, and say which. Read vybe.health itself with Firecrawl (`onlyMainContent: false`,
+`waitFor` about 3000 ms): the site renders in the browser and short fetches
+cut it off. Any "not on the site" statement cites that scrape.
 
 ### 4d. Check the intent
 

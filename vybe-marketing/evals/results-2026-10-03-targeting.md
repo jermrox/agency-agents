@@ -78,3 +78,29 @@ It uses no geofencing, a consented QR form, and a Register row beside every clai
 | 8 | 28 |
 
 All pass.
+
+## Cycle 7: case 6
+
+**Case 6 privacy-first ads: 24/30, pass, just.**
+
+Three ads lead with calibrated answers, with privacy as the proof. Every claim has a Register row, there is no HIPAA wording, the pixel waits for consent, and the Washington health-data law is covered.
+
+It lost points on:
+- **Evidence:** it said "no privacy policy we can check yet", but vybe.health/privacy is live (Oct 2026). Its site reader cut the page short.
+- **Claims:** "nothing shared without consent" doesn't match that policy, which allows sharing with service providers and where the law requires.
+- **Measurability:** a blank keep threshold.
+
+**Site facts found by the grader (Firecrawl, 3 Oct 2026):**
+- The homepage still says "The first 1,000 on the waitlist are guaranteed a position to buy a band."
+- /waitlist says sign-up "is not a device order" and is "evaluated on eligibility".
+
+**Changes made:**
+- Claim Register row 4 now matches the live policy.
+- Row 11 is marked as a page conflict.
+- Two founder rows are added to the tensions table.
+- Both skills now read vybe.health with Firecrawl and cite it for any "not found".
+- Privacy claims quote the policy clause.
+- "Share" is reserved for data leaving Vybe.
+- Thresholds need a number or a named placeholder.
+
+**Targeting cases graded independently today:** 3 (27), 4 (27), 5 (25), 6 (24) and 8 (28). All pass.

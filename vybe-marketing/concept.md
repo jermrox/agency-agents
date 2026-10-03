@@ -182,7 +182,7 @@ it", an email body that is not written).
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
 4. **Order.** Are the unclaimed ideas first and hygiene second?
 5. **Two products.** Over the week, does this piece and its neighbours market both the band and the platform?
-6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording ("nothing shared without consent", not "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
+6. **Claims.** Is every claim in the Claim Register at the right status, in the Register's own wording (row 4: "never sold; shared only with your consent, with service providers that run the service, or where the law requires", never "nothing shared")? "Designed to" applies to **every sentence** that asserts rows 14 to 17 or 19, calls to action included. Before launch, never write in the present tense that Vybe *does* something ("every answer is", "the answer Vybe gets wrong"). Does every example answer give more than one explanation?
 7. **Roadmap and offers.** Does anything rely on an unreleased feature, an unconfirmed spec (battery life, "validated", ECG, the ring) or an internal fact? Builder, lab and team copy invites a conversation as a design partner (row 18). It never promises signal access, a device to test, terms or a date the founder has not confirmed.
 8. **Voice.** Plain and declarative, one action instead of a list, no hype, and willing to say "not yet" or "we don't know". **Short formats** (a tagline, a subject line, an email's first line, a hook) put the unclaimed idea in the first ten words and stay under 25 words. They never open on context the reader already knows.
 
@@ -203,6 +203,8 @@ Until each one is settled, copy takes the safe side shown.
 | "Vybe Intelligence, no hardware required" vs "We build the wearable" | Lead with the wearable; licensing is a builder-channel detail. |
 | Audience order: the founder pitched everyday people first; the plan's wedge is tactical and performance teams; the research put builders first | Company channels lead with the company story. Consumer channels lead with calibrated answers. The wedge stays as in `plan-2026-q4.md` until the founder decides. |
 | Founder-identity story (veteran-, woman- and minority-owned) | Only in a piece the founder has approved. |
+| Homepage "Nothing sold and nothing shared" vs the live privacy policy, which allows sharing with service providers and where the law requires | Use Claim Register row 4's wording. The founder fixes the homepage line. |
+| Homepage "first 1,000 guaranteed a position to buy" vs /waitlist "evaluated on eligibility" | Don't use the offer until the two pages agree. |
 
 ## Learning log
 
