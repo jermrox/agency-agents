@@ -31,13 +31,27 @@ one signal, and data you own. "No subscription" is the door; the argument is
 behind it. This keeps the agent's rule that crowded claims are proof points,
 not the whole hook.
 
+## Update, 3 Oct 2026: demand data moves "screenless" into Phase 1
+
+DataForSEO (US, 3 Oct 2026) puts "screenless fitness tracker" at about
+40,500 searches a month on a 12-month average (60,500 in August, 110,000 at
+the May to July peak), KD 41, CPC $1.72. The original Phase 1 category
+cluster ("health band no subscription" and its variants) gets about 10 to
+200 a month. So the Phase 1 category page now targets the screenless
+cluster, starting with the easy long-tails: "fitness tracker no screen"
+(KD 7), "best screenless fitness tracker" (KD 9) and "screenless fitness
+band" (KD 12). "No subscription" stays in the page as proof. Its brief goes in
+`briefs/` once graded; the Phase 2 screenless pillar becomes a supporting
+guide that links to it. HRV explainers (Vitals) also move up; see
+`briefs/what-is-a-good-hrv.md`.
+
 ## Phase 1: three commercial pages (weeks 3 to 6)
 
 | Page | Primary query cluster | Title (≤60 chars) |
 |---|---|---|
 | WHOOP alternative | whoop alternative no subscription, whoop without membership, whoop monthly fee alternative, screenless whoop alternative | WHOOP Alternative Without a Subscription: Meet Vybe |
 | Oura alternative (expand the existing page) | oura alternative no subscription, oura ring alternative no membership, health band vs smart ring | Oura Ring Alternative With No Monthly Membership |
-| Category | health band no subscription, fitness tracker no subscription, wearable no subscription | The Screenless Health Band With No Subscription |
+| Category (updated 3 Oct) | screenless fitness tracker, fitness tracker no screen, best screenless fitness tracker, screenless fitness band; then fitness tracker no subscription | Screenless Fitness Trackers: What to Look For, and Vybe |
 
 Each page carries: a plain feature comparison that only lists what Vybe can
 substantiate, a "what you own" section, FAQ schema, transparent limitations,

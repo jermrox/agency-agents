@@ -45,6 +45,11 @@ Rules:
 - Volumes are rounded into buckets. Report them as buckets, not exact counts.
 - Compare the same weeks a year apart for trend; a 2026 bump in every
   Trends series is probably an artifact.
+- **Which volume to quote:** the 12-month average is the headline figure.
+  Give the latest month and any peak in brackets ("40,500 a month on
+  average; 60,500 in August; 110,000 at the May to July peak").
+- For People Also Ask and who ranks, prefer DataForSEO's live SERP endpoint
+  over task post and get, which can queue for minutes and costs extra calls.
 - Date every number, and say which pull backs each trend figure: the
   12-month Google Ads series (last 3 months against the first 3), or Google
   Trends (the same weeks a year apart). Never quote a growth percentage you
@@ -53,7 +58,8 @@ Rules:
 ### 3. Check what Vybe already earns
 
 Google Search Console via Composio, property `sc-domain:vybe.health`, last
-90 days, by query and page. Check the **query**, not just the page: if a
+90 days, by query and page. Search Console hides some low-volume query
+names, so also pull by page alone. Check the **query**, not just the page: if a
 page already gets impressions for this exact question, improve it. If its
 impressions come from a different question, write a new page and link the
 two.
@@ -64,6 +70,13 @@ From the SERP pull: who ranks in the top five, whether there is an AI
 Overview and what it says, the People Also Ask questions, and any Reddit
 or forum result. A Reddit thread in the top three means the existing
 answers feel unsatisfying, which is Vybe's opening.
+
+### 4b. Check the plan
+
+Read `vybe-marketing/seo-plan.md`. If the demand data contradicts its phase
+order or its target queries, say so in the brief and propose the change.
+The agent then updates `seo-plan.md` with a dated note, so the plan and the
+data agree.
 
 ### 5. Choose the page type
 
@@ -146,7 +159,7 @@ on them after January 2027.
 | what is a good hrv | 14,800 | 17 | Moved up a volume bucket over the year (12,100 to 14,800). Vybe has no impressions for it yet: the HRV page's ~63 impressions are definition queries, so this needs its own page |
 | what does hrv mean | 5,400 | low | The existing HRV page's natural target |
 | hrv tracker | 2,400 | 8 | Commercial; rising (last 3 vs first 3 months of the 12-month series) |
-| screenless fitness tracker | ~40,500 (110,000 at the mid-2026 peak) | to check | Surged after Fitbit Air; commercial |
+| screenless fitness tracker | 40,500 average (60,500 Aug; 110,000 May to Jul peak) | 41 | Surged after Fitbit Air; start with "fitness tracker no screen" (KD 7), "best screenless fitness tracker" (KD 9), "screenless fitness band" (KD 12) |
 | best fitness tracker without subscription | 1,600 | 29 | Grew from 210 |
 | whoop alternative | 2,400 | 0 | Easy to rank; Reddit holds position 2 |
 | oura ring alternative | 6,600 | 2 | Easy to rank |
