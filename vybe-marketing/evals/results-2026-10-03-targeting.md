@@ -144,3 +144,23 @@ them matched. Weak spots:
 - "Last week" is re-pulled with the same window length.
 - Any "the file says" note re-reads the file first.
 - The targeting skill carries a segment's `marksom.json` evidence and named targets into the answer.
+
+## Case 5, independent rerun
+
+**28/30, pass at the Strong level** (25 before; gates 3, 6 and 7 all at 3).
+The grader checked the triggers:
+- The Fitbit Web API end date: trade reports say 30 Oct, while Google's page still says September 2026.
+- The Google Fit end-2026 date was confirmed word for word.
+- The yearly security assessment was confirmed.
+- RunGap and Intervals.icu declining it, and Labfront listing the Garmin CIRQA band, were both confirmed.
+- The POTFF III and H2FMS details were confirmed.
+
+No private contact details appear. The fit scores range from 5 to 9. Weak spots:
+- Moat was scored 3 without testing open developer devices (Polar BLE SDK, Movesense). This is the second run with the same miss.
+- Teams already moving to Google's new API were still scored 9.
+- One programme stage was a year old with no status check.
+
+**New rules in the skill:**
+- Builder Moat is tested against open SDKs.
+- Fit scores quote their band and apply one test to every row.
+- Quotes cite their exact page, and old programme stages carry a status-checked date.

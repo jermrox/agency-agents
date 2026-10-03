@@ -59,7 +59,14 @@ Score 0 to 3 with evidence: **Pain** (do they feel it today), **Fit** (is
 Vybe clearly better for them), **Moat** (would WHOOP, Oura or Garmin have to
 break their own model to follow). Name the weakest test out loud.
 "No subscription" alone fails Moat: Garmin Cirqa, Fitbit Air, Amazfit Helio,
-Polar Loop and Hume all offer it.
+Polar Loop and Hume all offer it. For builders, test Moat against the open
+developer devices too (the Polar BLE SDK, Movesense, and any device already in
+the target's own device list) before scoring it 3.
+
+**Fit scores are consistent.** Each 1-to-10 score quotes the agent file's band
+it meets, and one test applies to every row: a team that has moved, or is
+moving, to a replacement API is not "blocked", so it scores 8 at most. The
+rank order follows fit, or says why it does not.
 
 **A worldwide total is not a segment size.** Give a low-to-high estimate
 for the segment itself from a countable public source (for example last
@@ -153,7 +160,9 @@ individual visibility" vs /enterprise "per-person detail where the individual
 has consented"), cite both and flag the conflict to the founder; never pick one.
 
 **Quotes and dated sources.** Text in quote marks is word for word from the
-source; otherwise paraphrase without quote marks. A dated event or figure
+source, cited to the exact page it is on; otherwise paraphrase without quote
+marks. A procurement or programme stage older than about six months carries a
+"status checked [date]" line. A dated event or figure
 cites the primary page for that year (the organiser, the agency), not last
 year's page or an aggregator.
 
