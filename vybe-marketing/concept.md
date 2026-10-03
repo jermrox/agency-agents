@@ -81,17 +81,28 @@ with each of these.
 | Answers in plain sentences | Circular's Kira ("in sentences instead of charts"), Ultrahuman's Jade ("No more dashboards to decode") |
 | Data never sold | Oura and others |
 | "Developer platform" / "health data API" | WHOOP Developer Platform; Terra, ROOK, Spike, Thryve, Junction |
+| "A platform for apps and plugins built on top" | Ultrahuman PowerPlugs. Say "invites builders in". |
+| "See how the score is calculated" / "which factors drive it" | Apple Readiness and Sleep Score (Sep 2026) |
+| "Which habits are working" / "recalibrates as you implement" | WHOOP Behavior Trends, Ultrahuman Dynamic Recovery, Samsung habit rate. These grade **the user**, not the advice. |
+| "We would rather you checked than trusted a banner" | Circular |
 
 **Vybe's alone: lead with these.**
 
 1. **Calibrated answers.** It tells you how sure it is and what it couldn't
-   see. No consumer brand claims this. Every AI coach in the category sells
+   see. No consumer brand claims this (8 AI coaches checked on 3 Oct 2026).
+   It builds trust only in one shape: a reason you can count ("three nights of
+   data"), the likely explanations in order, and one next step. A bare "not
+   sure" lowers trust. Every AI coach in the category sells
    fluency, and the only admission of limits is a disclaimer ("Advisor can
    make mistakes"). Vybe's /learn articles already write this way ("Read the
    evidence and the limits together"), so the claim is credible.
 2. **It keeps score on itself.** No one publicly tracks whether their own
-   suggestions worked.
-3. **Score-skeptic as a stance.** Vybe takes this position in its own name
+   suggestions worked. Three brands grade the user's habits, so always say
+   "Vybe grades its own advice", never "see what's working". A public,
+   time-stamped log of graded suggestions would be proof no wearable publishes.
+3. **Score-skeptic as a stance.** Apple now shows how its scores are
+   calculated, so the stance is no longer "scores are opaque". It is "a score
+   can't tell you how sure it is or what it missed". Vybe takes this position in its own name
    ("a proprietary readiness score and no way to inspect, reproduce or justify
    how it was derived", from /research). Today it is buried on /research and in
    a WHOOP explainer.
@@ -104,10 +115,31 @@ with each of these.
    FAQ dates API v1 to June 2028 and the SDK to December 2028, so say "built
    open from day one" and "talk to us". Never say "available now".
 
+5. **The answers come with the band.** Google, Garmin and Polar now charge
+   for the AI coach on top of the device. The paywall has moved from the data
+   to the explanation. "The answers come with the band" is sharper than "no
+   subscription".
+
 **The swap test.** Put a competitor's name in place of "Vybe" in the line. If
 it is still true, the line is hygiene, not the concept. "No screen, no
 subscription" passes for Polar. "It tells you how sure it is, and checks
 whether its advice worked" passes for no one.
+
+## The five pillars, by job
+
+Evidence: `reports/Vybe five pillars marketing.md` (3 Oct 2026, not in the
+repository). US monthly searches are from DataForSEO.
+
+| Pillar | Demand | Competition | Its job in the marketing |
+|---|---|---|---|
+| **Vitals** (HRV, heart rate) | ~400k a month; "what is a good hrv" 14.8k at KD 17 | Turning medical (Apple, Oura and WHOOP blood pressure, ECG) | **Search lead.** Answer the HRV questions people ask. Say "HRV and heart rate", never "heart rhythm" or "ECG". |
+| **Restore** (sleep) | ~239k a month; "sleep tracker" down 42% | Most crowded: 8 of 11 brands lead with it | Proof, not hook. Show a sleep answer that names its confidence. |
+| **Nourish** (food timing) | ~30k a month and rising; "meal timing" KD 7 | Nobody leads with it | **Social lead.** "Late dinner, lower HRV?" shows five signals as one system. |
+| **Connect** | Daylight cluster ~22k and rising ("sunlight exposure" +97%) | Nobody measures it | Launch as **daylight and daily rhythm**, only if the band has a light sensor. People time and alone time are logged by the user, and are never scored against each other. |
+| **Move** (training load) | ~2k consumer searches | Garmin, Polar, Amazfit | Team and tactical channels. For consumers use "overtraining" and "rest day". |
+
+Never say Vybe detects loneliness or stress from HRV: wrist HRV explains
+about 1–2% of perceived stress.
 
 ## Two halves, one company
 
@@ -122,6 +154,7 @@ Two-Product Test in the agent file).
 | /developers, builder email | Developers, labs, startups | "Start at the interpretation, not at signal cleaning"; licensed, consented access | The band as the reference device |
 | Tactical and team buyers | H2F, POTFF, performance staff | Readiness in aggregate, with consent; screenless, no GPS | Calibrated answers keep athletes and operators from over-trusting a number |
 | Waitlist, homepage | Mixed | Calibrated answers | Hygiene as proof points underneath |
+| Search pages | People asking a question | The direct answer to their question (HRV, alternatives, screenless) | Calibrated answers, then the waitlist. In search, "screenless fitness tracker" (~40k a month) and "whoop alternative" are worth ranking for even though they fail the swap test as hooks. |
 
 ## The concept check
 
@@ -161,6 +194,15 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-03. Five-pillar research.** Six research tracks (search demand,
+  competitor messaging and ads, Connect science, launch playbooks, channel
+  costs, proof by audience). **Changes:**
+  - pillars now have jobs: Vitals leads search, Nourish leads social, Connect is daylight, Move goes to teams;
+  - calibration must carry a countable reason, ranked explanations and a next step;
+  - new crowded phrases: Apple's score transparency, user-habit grading, Circular's "checked than trusted", Ultrahuman's "platform";
+  - "The answers come with the band" replaces "no subscription" as the pricing line.
+
+  Lesson: the open ground moves monthly, so the swap test needs this table kept current.
 - **2026-10-03. Concept test, round 3 (lab email only).** The claims gate
   now passes, with no unconfirmed offer, but the email still scored 13/18. It
   opened on the lab's own work, which fits any competitor, and ran as one
