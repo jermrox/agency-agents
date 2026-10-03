@@ -52,7 +52,10 @@ Rules:
   which can queue for minutes: post it first, do the volume work while it
   runs, then get it. Composio has no live search-volume tool; the live
   keywords-for-keywords endpoint returns volume, CPC and competition for the
-  seed and its relatives in one call, so use it when speed matters.
+  seed and its relatives in one call, so use it when speed matters. It
+  fails with "payload too large" unless `sync_response_to_workbench` is on.
+  Hold one call back for a late SERP retry; tasks can stay queued past two
+  tries.
 - Date every number, and say which pull backs each trend figure: the
   12-month Google Ads series (last 3 months against the first 3), or Google
   Trends (the same weeks a year apart). Never quote a growth percentage you
@@ -61,8 +64,10 @@ Rules:
 ### 3. Check what Vybe already earns
 
 Google Search Console via Composio, property `sc-domain:vybe.health`, last
-90 days, by query and page. Search Console hides some low-volume query
-names, so also pull by page alone. Check the **query**, not just the page: if a
+90 days, by query and page. Use `data_state: final` and a range that ends
+3 days ago, and write the exact range, dimensions and filters into the
+brief, so pulls on different days can be reconciled. Search Console hides
+some low-volume query names, so also pull by page alone. Check the **query**, not just the page: if a
 page already gets impressions for this exact question, improve it. If its
 impressions come from a different question, write a new page and link the
 two.
@@ -88,6 +93,12 @@ Quote competitors from their own pages, with the URL and checked date. If a
 site blocks direct fetches, read it through Firecrawl (Composio) or Exa's
 fetch, and say which.
 
+### 4d. Check the intent
+
+If the results for a head term are mostly an intent Vybe must not serve
+(weight loss, disease, medication), target a question variant whose results
+match wellness intent instead, and say why in the brief.
+
 ### 5. Choose the page type
 
 | Searcher intent | Page type | Rule |
@@ -110,6 +121,14 @@ proof). It uses the unclaimed ideas: a calibrated answer (its
 confidence with a countable reason, the likely explanations, one next
 step), and the person's own baseline. Every product claim comes from the
 Claim Register, with "designed to" for rows 14 to 17 and 19.
+
+### 6b. Write the evidence honestly
+
+- Each study's design and size go into the page copy itself ("a trial of 12
+  adults", "an observational study of 1,800 people"), not only in the sources.
+- When trials disagree, the page says so and shows both.
+- Observational findings use association words ("linked with"), never cause.
+- Disclose any author or funder tie to a competitor.
 
 ### 7. Check it
 
