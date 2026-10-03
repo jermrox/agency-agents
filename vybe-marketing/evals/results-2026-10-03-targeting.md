@@ -209,3 +209,25 @@ Weak spots:
 - Company metrics used as proxies quote their definition and the direction of bias.
 - The targeting template requires a zero-data option and GPC.
 - Rubric dimension 6, level 3, names both.
+
+## Case 4, independent rerun
+
+**29/30, pass at the Strong level** (27 before; all gates at 3). The grader checked:
+- the Social Blade counts for The Quantified Scientist (417K), DC Rainmaker (652K) and Andy Galpin (200K);
+- Altini's Oura advisor role;
+- the WHOOP-led paper (27 Nov 2025) co-authored by Altini and Galpin;
+- the QS NYC Show&Tell on 13 Oct at Civic Hall.
+
+No private contact details appear.
+
+Weak spots:
+- The two paid candidates had no verified Instagram handle, and DesFit's was missed.
+- DesFit's tie row dropped Polar and Coros from the tracker's list.
+- What each creator has said about subscriptions was missing.
+- Four of the ten were event hosts or citation-only.
+
+**New rules in the skill:**
+- Copy every brand a tie source names.
+- Ad candidates need a live-channel handle with a dated count.
+- Quote each creator's public view on subscriptions and baselines.
+- Say how many names can actually be worked with.

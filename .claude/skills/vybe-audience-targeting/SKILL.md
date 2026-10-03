@@ -184,6 +184,15 @@ a newer primary source contradicts the number.
   advisory roles, sponsored episodes with WHOOP, Oura, Garmin and the others),
   and record the original publication date, not a republish date.
 - No partnership-ad candidate goes forward with an unreviewed competitor tie.
+- Copy every competitor-set brand a tie source names (if a sponsor tracker
+  lists Garmin, Amazfit, Coros and Polar, all four go in the row).
+- A partnership-ad candidate needs a handle on the live channel (Instagram or
+  Facebook) with a follower count, source and date; otherwise mark it "not an
+  ad candidate".
+- For each creator, quote what they have said publicly about subscriptions
+  and about baselines, or write "nothing found".
+- State how many of the N names can actually be worked with (not event hosts
+  or citation-only names); if fewer than asked, fill the gap or say why not.
 - A creator's critique is never quoted, or shown as "reviewed by", without
   their written permission.
 - Coverage by an outlet the founders own or are linked to (for example
