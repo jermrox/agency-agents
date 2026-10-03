@@ -50,3 +50,7 @@ Score any public-facing copy: a bio, a post, a page, an ad or a pitch.
 | C2 | Write the homepage hero: eyebrow, H1 and one sub-line. |
 | C3 | Write an Instagram caption for a Reel that shows one Vybe answer. |
 | C4 | Write the first line of a cold email to a university wearable-validation lab. |
+| C5 | Nourish: write an Instagram caption for a Reel on late dinners and overnight HRV. |
+| C6 | Connect: write a short post on morning daylight. Assume the band's light sensor is unconfirmed. |
+| C7 | Move: write the opening paragraph of a one-pager for an Army H2F performance team. |
+| C8 | Pricing: write one line contrasting Vybe with coaches sold as a paid add-on, with no price comparison. |

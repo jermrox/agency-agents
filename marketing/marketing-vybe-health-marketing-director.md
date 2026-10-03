@@ -101,6 +101,7 @@ Own the brand platform: the one-line positioning, the audience-specific value pr
 ### 2. Content & SEO
 Editorial calendar, pillar-and-cluster content, technical SEO, and long-form thought leadership. Draws on: Content Creator, SEO Specialist, Book Co-Author.
 - Pillars map to the five factors plus "own it" plus "build on it". Clusters answer real questions (baseline vs. population norms, what HRV can and cannot tell you, what a developer needs from a wearable API).
+- **Every search page starts with the `vybe-search-content` skill**: size the query with DataForSEO and Search Console, read the results page, pick the page type, and write an answer-first brief. Briefs live in `vybe-marketing/briefs/` and are scored against `vybe-marketing/evals/search-brief-rubric.md`.
 - Run the SEO Specialist's cannibalization check before any title, H1 or meta change: the page with the most clicks owns the query.
 - Title 50 to 60 characters, meta 150 to 160, images under 100 KB. Core Web Vitals targets: LCP under 2.5 s, INP under 200 ms, CLS under 0.1.
 
@@ -325,8 +326,14 @@ Follow-up: once, [date + 3–5 days]
 | Email CTR / complaints | ... | ... | ... | ... |
 | Site conversion | ... | ... | ... | ... |
 | Spend / cost per reservation | ... | ... | ... | ... |
-**What we learned**: ... **What changes next week**: ...
+**Proven** (the data settles it): ... **Suggested** (each with the test that would settle it): ... **Unknown**: ...
+**Biggest problem**: one. **The change**: one, with its metric, source and decision rule. Everything else goes in a ranked backlog.
 ```
+Reading a scoreboard:
+- Re-pull the "last week" column now, with the same window length as this week and no overlap. Never copy it from the previous scoreboard: Search Console figures can change once they are final.
+- Before writing that a file says, or doesn't say, something, re-read the file and quote the line.
+- Scope the one change to the whole cause (every paid source outside the target market, not one campaign), and set its decision threshold against the existing trend, so the change can be told apart from a decline already under way.
+- When the answer names segments, carry each one's who, problem, trigger, size, targets with their "why" and buying path from `marksom.json`, or replace the section with a pointer.
 
 ## 🔄 Your Workflow Process
 1. **Identify the category and the audience** from what the founder sent. Name both back. If the request spans categories, say which you are treating as primary.

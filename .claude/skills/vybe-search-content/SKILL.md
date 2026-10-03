@@ -1,0 +1,254 @@
+---
+name: vybe-search-content
+description: Size a search opportunity for Vybe Health with real data and turn it into a page brief that answers the searcher first and tells Vybe's concept second. Use whenever the user asks for SEO, a search page, an explainer, a blog post, a "vs" or "alternative" page, keywords, People Also Ask, AI-search (AEO) visibility, or "what should we write about" for Vybe, even if they don't name the skill. Uses DataForSEO and Google Search Console through Composio, and ends with the concept check and the marketing guardrail.
+---
+
+# Vybe search content
+
+The job: find questions real people search for, prove the demand with
+numbers, and write a page brief that answers the question in its first
+lines and then shows what only Vybe can add. Search is the one channel
+where crowded phrases ("screenless fitness tracker", "whoop alternative")
+are worth using, because the searcher typed them. The hook can be hygiene;
+the answer must still pass the concept check.
+
+Read first: `vybe-marketing/concept.md` (the pillars-by-job table and the
+crowded list), `vybe-marketing/brand-brief.md` (the Claim Register) and
+`vybe-marketing/seo-plan.md`.
+
+## Procedure
+
+### 1. Name the question and the pillar
+
+Write the searcher's question in their words, and the pillar it belongs
+to. Vitals leads search; Restore is proof; Nourish, Connect (daylight) and
+Move have smaller, more specific demand (see `concept.md`).
+
+### 2. Size it with DataForSEO
+
+Load Composio (`ToolSearch "select:mcp__Composio__COMPOSIO_SEARCH_TOOLS,mcp__Composio__COMPOSIO_MULTI_EXECUTE_TOOL,mcp__Composio__COMPOSIO_GET_TOOL_SCHEMAS"`)
+and search for the DataForSEO tools. The ones used so far:
+
+| Need | DataForSEO endpoint |
+|---|---|
+| Monthly volume, CPC, competition, 12-month series | Keywords Data, Google Ads search volume (task post, then get) |
+| Keyword difficulty, 0 to 100 | Labs, Google bulk keyword difficulty (live) |
+| Related keywords | Keywords Data, Google Ads keywords for keywords (live) |
+| People Also Ask, who ranks, AI Overview | SERP, Google organic (task post, then get) |
+| Trend over 5 years | Keywords Data, Google Trends explore (task post, then get) |
+
+Rules:
+- US, English, `location_code 2840`. Batch keywords; one batch of up to
+  about 150 terms costs cents. Stay under about 10 calls a session.
+- Google Ads **merges close variants** ("hrv" and "heart rate variability"
+  both return 110,000). Never add merged variants together.
+- Volumes are rounded into buckets. Report them as buckets, not exact counts.
+- Compare the same weeks a year apart for trend; a 2026 bump in every
+  Trends series is probably an artifact.
+- **Which volume to quote:** the 12-month average is the headline figure.
+  Give the latest month and any peak in brackets ("40,500 a month on
+  average; 60,500 in August; 110,000 at the May to July peak").
+- Through Composio (checked 3 Oct 2026) the SERP tool is task post then get,
+  which can queue for minutes: post it first, do the volume work while it
+  runs, then get it. Composio has no live search-volume tool; the live
+  keywords-for-keywords endpoint returns volume, CPC and competition for the
+  seed and its relatives in one call, so use it when speed matters. It
+  fails with "payload too large" unless `sync_response_to_workbench` is on.
+  Hold one call back for a late SERP retry; tasks can stay queued past two
+  tries.
+- **Check the balance first.** By the afternoon of 3 Oct 2026 every
+  DataForSEO call (SERP, search volume, keyword difficulty) returned "40200
+  Payment Required", with a balance under $1. Before sizing, make one cheap
+  call; if it fails, quote volume and KD from the dated priorities table
+  below with "(not re-pulled: DataForSEO unfunded, [date])", stand in for the
+  results page with a labelled Firecrawl or Exa search, mark the brief "not
+  ready to publish until the Google results page is pulled", and flag the
+  funding to the founder. Never guess a figure.
+- Date every number, and say which pull backs each trend figure: the
+  12-month Google Ads series (last 3 months against the first 3), or Google
+  Trends (the same weeks a year apart). Never quote a growth percentage you
+  cannot point to.
+
+### 3. Check what Vybe already earns
+
+Google Search Console via Composio, property `sc-domain:vybe.health`, last
+90 days, by query and page. Use `data_state: final` and a range that ends
+3 days ago, and write the exact range, dimensions and filters into the
+brief, so pulls on different days can be reconciled. Search Console hides
+some low-volume query names, so also pull by page alone. Check the **query**, not just the page: if a
+page already gets impressions for this exact question, improve it. If its
+impressions come from a different question, write a new page and link the
+two.
+
+### 4. Read the results page
+
+From the SERP pull: who ranks in the top five, whether there is an AI
+Overview and what it says, the People Also Ask questions, and any Reddit
+or forum result. A Reddit thread in the top three means the existing
+answers feel unsatisfying, which is Vybe's opening.
+
+### 4b. Check the plan
+
+Read `vybe-marketing/seo-plan.md`. If the demand data contradicts its phase
+order or its target queries, say so in the brief and write the dated note
+the plan needs. If the run can edit the repository, add the note to
+`seo-plan.md`; if it is read-only, the note stays in the brief for the
+agent to apply.
+
+### 4c. Read competitor pages
+
+Quote competitors from their own pages, with the URL and checked date. If a
+site blocks direct fetches, read it through Firecrawl (Composio) or Exa's
+fetch, and say which. Read vybe.health itself with Firecrawl (`onlyMainContent: false`,
+`waitFor` about 3000 ms): the site renders in the browser and short fetches
+cut it off. Any "not on the site" statement cites that scrape.
+If two Vybe pages word the same fact differently (for example /faq "without
+individual visibility" vs /enterprise "per-person detail where the individual
+has consented"), cite both and flag it to the founder; never pick one. Text in
+quote marks is word for word from its source, and a dated figure or event
+cites the primary page for that year, not last year's page or an aggregator.
+
+### 4c-2. Check the dockets for legal questions
+
+When a People Also Ask question or a device in the table touches a lawsuit
+or a ban ("why is Oura being sued"), search the primary dockets (USITC
+EDIS and news releases, the Federal Register, court dockets) for every
+named brand as both complainant and respondent. A fair comparison shows
+both directions. Each case is dated, and its status is rechecked before
+publishing.
+
+### 4d. Check the intent
+
+If the results for a head term are mostly an intent Vybe must not serve
+(weight loss, disease, medication), target a question variant whose results
+match wellness intent instead, and say why in the brief.
+
+### 5. Choose the page type
+
+| Searcher intent | Page type | Rule |
+|---|---|---|
+| A question ("what is a good hrv") | Explainer | Answer in the first 40 to 60 words, plainly, with no product mention. |
+| A comparison ("whoop alternative", "whoop vs oura") | Fair comparison | Grant each product its strength. No price mockery, no "best" unless the list is fair and includes other no-subscription devices. |
+| A "vs" page between two competitors | Fair comparison | Grant each its real strengths and name no winner. Vybe's section says nothing about the two products: it states Vybe's design positively ("A score is one number. Vybe's answers are designed to say how sure they are, and why."). Membership models go in a neutral "what's included" row, never in a list of downsides. Rows are even: the same kind of detail, sourced from the current model, for both products. A membership model may be described factually (what is included, from their page), never compared on price. A competitor's regulated feature is described in plain words from its source ("an FDA-cleared heart-screening feature"), so Vybe's page never uses the regulated term as if it were its own. |
+| Any page with a device table | Table rules | No per-brand price or membership column (that is a price comparison). Every row cell is sourced and dated. Vybe's row says "pre-launch" in every cell and shows nothing that is unconfirmed (export, light sensing, battery). It uses approved rows only (1, 2, 3, 9); a design commitment (rows 14 to 17, 19, 22) in the row carries the same founder sign-off gate as the Vybe section. |
+| A category ("screenless fitness tracker") | Category page | Say what to look for in any device first, then where Vybe fits. Say "pre-launch". |
+| A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
+| A population comparison ("hrv by age") | Explainer section | A published reference range may be cited **as context**, with its source, its measurement method and its spread, and the line that it is not a target or a verdict. Then turn to the person's own baseline. |
+| A safety question ("what is an unsafe hrv") | One short answer | No number. Say that HRV alone does not tell anyone they are unwell, and that symptoms or worry are for a clinician. The boundary is on the claim, not on the person's data. |
+| A symptoms query ("overtraining symptoms") | Explainer with a clinician section | Urgent signs are split from routine ones, each with a source, and the page gives one consistent "when to see someone" rule. Any mention of low mood gives a crisis route (988 in the US). |
+
+### 6. Write the brief
+
+Use the template below. The page answers first. Then it shows Vybe's
+angle once. **The Vybe section opens on an unclaimed idea, never on hygiene**
+(screenless, own baseline and no required subscription come after, as
+proof). It uses the unclaimed ideas: a calibrated answer (its
+confidence with a countable reason, the likely explanations, one next
+step), and the person's own baseline. Every product claim comes from the
+Claim Register, with "designed to" for rows 14 to 17 and 19.
+
+### 6b. Write the evidence honestly
+
+- Each study's design and size go into the page copy itself ("a trial of 12
+  adults", "an observational study of 1,800 people"), not only in the sources.
+- When trials disagree, the page says so and shows both.
+- Observational findings use association words ("linked with"), never cause.
+- Disclose any author or funder tie to a competitor, including an author's
+  own consumer app or company that supplied the data.
+- Every sentence of the answer-first paragraph is either a definition or
+  carries a source, shown in the copy (an inline citation or link), not only
+  in the brief's notes. On comparison pages, naming the compared products
+  is allowed there; naming Vybe is not; it is the line most likely to be quoted. Never claim a
+  person's own data beats research ("the most useful evidence is your own
+  nights"): own data shows a pattern, not a cause.
+- Describe each study's comparison exactly as run (for example "higher vs
+  lower pre-sleep intake", not "snack vs no snack"), and its participants'
+  state exactly (functionally overreached athletes who improved after rest
+  are not overtrained ones). Report only the results the source states.
+- Every health statement has its source beside it, including symptom lists,
+  everyday explanations and urgent-care signs, not only the headline claims.
+
+### 7. Check it
+
+- Run the concept check from `concept.md` and write the answers under the brief.
+- Run `python3 vybe-marketing/evals/check_marketing.py <file>`. It must pass.
+- No medical thresholds, no diagnosis, no "detects". HRV and heart rate only;
+  never "heart rhythm" or "ECG".
+
+### 8. Set the measure
+
+Target query and page, the current position (Search Console), the target
+position, the review date (8 weeks after publishing) and the decision rule
+(for example, rewrite the title if impressions rise but the click rate
+stays under 1%).
+
+## Brief template
+
+```
+# Brief: <page title>
+
+Question: <the searcher's words>      Pillar: <pillar>
+Target query: <term> — <volume>/mo, KD <n>, CPC $<n> (DataForSEO, <date>)
+Supporting queries: <3 to 6, with volumes>
+People Also Ask to answer: <list>
+Vybe today: <Search Console impressions and position, or none>
+Who ranks: <top 3 and what they miss>
+Page type: <explainer | comparison | category>
+
+## Answer first (40 to 60 words)
+<the plain answer, no product>
+
+## Outline
+<H2s, each answering one PAA question>
+
+## The Vybe angle (one section)
+<what Vybe is designed to add, with Register row numbers>
+
+## Proof and sources
+<studies or primary pages for each health statement>
+
+## Call to action
+<one: waitlist, or "talk to us" for builders>
+
+## Schema and AI search
+<Article schema with clear question headings. FAQPage markup is optional: since 2023 Google shows FAQ rich results only for well-known government and health sites, so it earns no rich result here, though it does no harm. The answer-first paragraph is the AI Overview candidate.>
+
+## Measure
+<current position, target, review date, decision rule>
+
+## Before publishing
+<founder sign-off for any design commitment used (rows 14 to 17, 19, 22); fresh demand data if any figure was not re-pulled; dockets or programme statuses rechecked>
+
+## Concept check
+<eight one-line answers>
+```
+
+## Current priorities
+
+DataForSEO US figures pulled 3 October 2026. Refresh them before relying
+on them after January 2027.
+
+| Query | Vol/mo | KD | Why now |
+|---|---|---|---|
+| what is a good hrv | 14,800 | 17 | Moved up a volume bucket over the year (12,100 to 14,800). Vybe has no impressions for it yet: the HRV page's ~63 impressions are definition queries, so this needs its own page |
+| what does hrv mean | 5,400 | low | The existing HRV page's natural target |
+| hrv tracker | 2,400 | 8 | Commercial; rising (last 3 vs first 3 months of the 12-month series) |
+| screenless fitness tracker | 40,500 average (60,500 Aug; 110,000 May to Jul peak) | 41 | Surged after Fitbit Air; start with "fitness tracker no screen" (KD 7), "best screenless fitness tracker" (KD 9), "screenless fitness band" (KD 12) |
+| best fitness tracker without subscription | 1,600 | 29 | Grew from 210 |
+| whoop alternative | 2,400 | 0 | Easy to rank; Reddit holds position 2 |
+| oura ring alternative | 6,600 | 2 | Easy to rank |
+| whoop vs oura | 9,900 | 0 | Easy to rank; must be a fair comparison |
+| meal timing | low thousands | 7 | Nourish lead; CPC is high ($21.82), so organic only |
+| sunlight exposure / morning sunlight benefits | rising 73 to 97% | low | Connect as daylight, only if the band has a light sensor |
+| overtraining symptoms | 3,600 | 8 | Move for consumers |
+
+## Pitfalls
+
+- Writing for the keyword and forgetting the person: the first lines must
+  answer the question someone actually typed.
+- Turning an explainer into an ad. One Vybe section, once.
+- Quoting a population "good HRV" range. Explain the personal baseline instead.
+- Targeting emotional-distress searches ("im so lonely"). A wellness band
+  does not belong on those results.
+- Treating builder keywords as a paid channel: "wearable api" gets about
+  20 searches a month at $14 a click. Builders come from outreach.
