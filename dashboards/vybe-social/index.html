@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Vybe Reels Command</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --surface:#e3e5e8;--raised:#f7f7f5;--sunken:#c9c9c5;--line:#c9c9c5;
+  --ink:#131210;--muted:#4d4d4a;--forest:#064634;--on-forest:#f7f7f5;
+  --green:#0b7b5d;--green-deep:#08251d;--mint:#6cc7ae;--intel:#1d5c4d;--intel-glow:#1d5c4d22;
+  --vitals:#b03a45;--restore:#4a4fb0;--move:#a4461f;--nourish:#3d6b2b;--connect:#98406a;
+  --danger:#b5301f;--ok:#1d5c4d;--warn:#8a5a00;--focus:#0b7b5d;
+  --ig:#98406a;--fb:#4a4fb0;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Work Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--surface:#0a0c0b;--raised:#111916;--sunken:#0c221a;--line:#273249;
+  --ink:#eef4f1;--muted:#cfcfca;--intel:#4fcf9b;--intel-glow:#4fcf9b26;
+  --vitals:#ff7a78;--restore:#7f84ea;--move:#f19a7c;--nourish:#7fca5b;--connect:#d9699c;
+  --danger:#ff6b5e;--ok:#4fcf9b;--warn:#f0c060;--focus:#6cc7ae;--ig:#d9699c;--fb:#7f84ea;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;--surface:#0a0c0b;--raised:#111916;--sunken:#0c221a;--line:#273249;
+  --ink:#eef4f1;--muted:#cfcfca;--intel:#4fcf9b;--intel-glow:#4fcf9b26;
+  --vitals:#ff7a78;--restore:#7f84ea;--move:#f19a7c;--nourish:#7fca5b;--connect:#d9699c;
+  --danger:#ff6b5e;--ok:#4fcf9b;--warn:#f0c060;--focus:#6cc7ae;--ig:#d9699c;--fb:#7f84ea;
+}
+*{box-sizing:border-box}
+body{background:var(--surface);color:var(--ink);font:400 15px/1.55 var(--sans);padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance}
+.eyebrow{font:500 11px/1.6 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--intel)}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* header band */
+.band{background:var(--forest);color:var(--on-forest);margin-inline:-16px;padding:32px 16px 28px}
+.band .inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between}
+.band h1{font-size:clamp(40px,7vw,68px);line-height:.92;text-transform:uppercase}
+.band .eyebrow{color:var(--mint)}
+.band .meta{display:grid;gap:6px;justify-items:start}
+.band .pill{background:var(--mint);color:var(--green-deep);border-radius:999px;padding:6px 14px;font:600 12px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.progress{width:min(320px,100%);height:6px;background:#ffffff26;border-radius:999px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--mint)}
+.band small{opacity:.85}
+
+section{display:grid;gap:16px}
+.sec-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sec-head h2{font-size:32px;line-height:1;text-transform:uppercase}
+.note{color:var(--muted);font-size:13px}
+
+/* target tiles */
+.brief{display:grid;gap:16px}
+.brief pre{white-space:pre-wrap;font:inherit;margin:0;font-size:14px}
+.brief .cap{display:grid;gap:8px}
+.brief .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.brief .ritem{border-top:2px solid var(--ink);padding-top:10px;display:grid;gap:6px;font-size:14px}
+.brief .ritem p{margin:0}
+.brief .srcs a{word-break:break-all;font-size:12px}
+.brief select{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:6px 8px}
+.ftiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px}
+.ftiles .tile.primary{grid-column:span 2}
+@media (max-width:520px){.ftiles .tile.primary{grid-column:auto}}
+.funnel{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px}
+.funnel>div{background:var(--raised);padding:14px;display:grid;gap:6px;align-content:start}
+.trend{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+.chart{background:var(--raised);border:1px solid var(--line);padding:14px;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .ax{font:400 10px var(--mono);fill:var(--muted)} .chart .grid{stroke:var(--line)}
+.chart .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);padding:6px 8px;font:500 12px/1.3 var(--sans);white-space:nowrap;transform:translate(-50%,-110%)}
+.weekly{display:grid;gap:12px}
+.weekly .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.weekly .stats>div{background:var(--raised);padding:12px;display:grid;gap:4px}
+.weekly ul{margin:6px 0 0;padding-left:18px}
+.fbreak{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+.ptab{width:100%;border-collapse:collapse;font-size:13px}.ptab th,.ptab td{text-align:left;padding:6px 6px;border-bottom:1px solid var(--line);white-space:nowrap}.ptab th{font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.ptab .r{text-align:right}
+.live{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--raised);border:1px solid var(--line);padding:10px 14px;margin-bottom:12px;font-size:14px}
+.live #liveText{flex:1;min-width:200px}
+.ldot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.ldot.on{background:var(--ok);box-shadow:0 0 0 4px var(--intel-glow)} .ldot.bad{background:var(--danger)} .ldot.wait{background:var(--warn)}
+.imp p{margin:6px 0 12px;max-width:80ch}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.dseg{background:var(--raised);border:1px solid var(--line);padding:16px;display:grid;gap:10px;align-content:start}
+.dseg h3{font-size:20px} .dseg .size{font:400 15px/1.4 var(--sans)}
+.dseg ul{margin:0;padding-left:18px;font-size:13.5px;display:grid;gap:4px}
+.dseg .src{font-size:11px;margin-left:4px;white-space:nowrap}
+.dseg .gap{font-size:12px;color:var(--warn)}
+.vfy{font:600 10px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ok);border:1px solid currentColor;border-radius:999px;padding:2px 6px;margin-left:4px}
+.takeaways{margin:0 0 14px;padding-left:20px;display:grid;gap:6px}
+.fbreak table{width:100%;border-collapse:collapse;font-size:13px}
+.fbreak th,.fbreak td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--line)} .fbreak th{font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.fbreak td.r,.fbreak th.r{text-align:right}
+.rbar{display:inline-block;height:6px;background:var(--intel);vertical-align:middle;margin-right:6px;border-radius:3px}
+.flhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.fday{margin-top:14px} .fday h4{margin:0 0 4px;font:500 12px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.frow{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.frow .who a{font-family:var(--mono);font-size:13px} .frow .who .note{display:block}
+.frow label{display:flex;gap:6px;align-items:center;font-size:13px;white-space:nowrap}
+@media (max-width:620px){.frow{grid-template-columns:1fr 1fr}.frow .meta{grid-column:1/-1;order:2}}
+.funnel .k{font-size:12px;color:var(--muted)} .funnel .v{font:400 28px/1 var(--serif)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tile{background:var(--raised);border:1px solid var(--line);padding:18px;display:grid;gap:8px;align-content:start}
+.tile.primary{grid-column:span 2;border-color:var(--green)}
+.tiles .tile:nth-child(2){grid-column:span 2}
+@media (max-width:520px){.tiles .tile:nth-child(2){grid-column:auto}}
+@media (max-width:520px){.tile.primary{grid-column:auto}}
+.tile .big{font:400 40px/1 var(--serif)}
+.tile .sub{font-size:13px;color:var(--muted)}
+.bar{height:6px;background:var(--sunken);border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green)}
+.state{display:inline-flex;align-items:center;gap:6px;font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:999px;border:1px solid currentColor;width:max-content}
+.state.ok{color:var(--ok)} .state.warn{color:var(--warn)} .state.wait{color:var(--muted)} .state.bad{color:var(--danger)}
+.split{display:flex;gap:16px;font-size:13px}
+.split b{font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+
+/* weeks */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:var(--raised)}
+@media (max-width:800px){.weeks{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.weeks{grid-template-columns:1fr}}
+.week{padding:16px;border-right:1px solid var(--line);display:grid;gap:6px;align-content:start}
+.week:last-child{border-right:0}
+.week.now{background:var(--green);color:var(--on-forest)}
+.week.now .eyebrow,.week.now .note{color:var(--on-forest);opacity:.9}
+.week h3{font-size:22px;line-height:1.1}
+
+/* reels */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.reel{background:var(--raised);border:1px solid var(--line);padding:16px;display:grid;gap:10px;align-content:start}
+.reel.backup{background:transparent;border-style:dashed}
+.reel-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.reel .hook{font:400 22px/1.15 var(--serif)}
+.kv{display:grid;grid-template-columns:88px 1fr;gap:4px 10px;font-size:13px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.tag{font:600 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:4px 7px;border-radius:999px;border:1px solid currentColor}
+.reel-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.btn{border:1px solid var(--green);background:transparent;color:var(--ink);border-radius:999px;padding:7px 14px;font:600 12px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.btn.fill{background:var(--green);color:var(--on-forest)}
+.btn.ghost{border-color:var(--line)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* script + hooks */
+.two{display:grid;grid-template-columns:3fr 2fr;gap:16px}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+.panel{background:var(--raised);border:1px solid var(--line);padding:18px;display:grid;gap:12px;align-content:start;min-width:0}
+.panel h3{font-size:26px;line-height:1.1}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11px/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+td.t{font-family:var(--mono);font-size:12px;white-space:nowrap}
+ol.hooks{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:h}
+ol.hooks li{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:start;counter-increment:h;padding-bottom:8px;border-bottom:1px solid var(--line)}
+ol.hooks li::before{content:counter(h);font:400 22px/1 var(--serif);color:var(--intel)}
+.copy{border:1px solid var(--line);background:transparent;border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
+.claim{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+
+/* log */
+form.log{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end}
+form.log label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
+form.log input,form.log select{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:8px 10px;width:100%;min-width:0}
+form.log .full{grid-column:1/-1}
+.formmsg{font-size:13px;min-height:1.2em}
+.formmsg.err{color:var(--danger)} .formmsg.ok{color:var(--ok)}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-family:var(--sans)}
+.chart text.m{font-family:var(--mono)}
+.empty{border:1px dashed var(--line);padding:18px;color:var(--muted);font-size:14px}
+
+/* news */
+.news{display:grid;gap:0;border-top:1px solid var(--line)}
+.news article{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+@media (max-width:700px){.news article{grid-template-columns:1fr;gap:6px}}
+.news b{font-weight:600}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.rules div{border-top:2px solid var(--ink);padding-top:10px;font-size:14px}
+.rules h3{font-size:20px;margin-bottom:4px}
+.comp{display:grid;gap:0;border-top:1px solid var(--line)}
+.comp details{border-bottom:1px solid var(--line);padding:12px 0}
+.comp summary{display:grid;grid-template-columns:minmax(120px,1.1fr) 1.4fr 1fr auto;gap:12px;align-items:center;cursor:pointer;list-style:none}
+.comp summary::-webkit-details-marker{display:none}
+.comp summary h3{font-size:24px;line-height:1}
+.comp .price{font-family:var(--mono);font-size:12px}
+.comp .body{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 24px;padding-top:12px;font-size:14px}
+.comp .body h4{margin:0 0 4px;font:600 11px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.comp .body p{margin:0}
+.comp .why{grid-column:1/-1;background:var(--intel-glow);padding:10px 12px;border-left:0}
+.comp .src{grid-column:1/-1;font-size:12px;color:var(--muted)}
+@media (max-width:700px){.comp summary{grid-template-columns:1fr auto}.comp summary .hide-sm{display:none}}
+.threat{font:600 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.threat.high{color:var(--danger)} .threat.med{color:var(--warn)} .threat.low{color:var(--ok)}
+.whitespace{background:var(--forest);color:var(--on-forest);padding:20px;display:grid;gap:8px}
+.whitespace .eyebrow{color:var(--mint)}
+.whitespace p{margin:0;font:400 22px/1.25 var(--serif);max-width:60ch}
+.segs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.seg{background:var(--raised);border:1px solid var(--line);padding:16px;display:grid;gap:10px;align-content:start}
+.seg h3{font-size:24px;line-height:1.05}
+.seg .share{font:400 34px/1 var(--serif);color:var(--intel)}
+.seg ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:3px}
+.seg .why{font-size:13px;border-top:1px solid var(--line);padding-top:8px}
+.tier{display:grid;gap:10px;margin-top:18px}
+.tier h3{font-size:26px;text-transform:uppercase;line-height:1}
+.tier .tnote{font-size:13px;color:var(--muted);max-width:75ch}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.person{background:var(--raised);border:1px solid var(--line);padding:16px;display:grid;gap:8px;align-content:start}
+.person .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.person h4{margin:0;font:400 22px/1.1 var(--serif)}
+.person .handle{font-family:var(--mono);font-size:12px}
+.person .fol{font:400 22px/1 var(--serif);color:var(--intel);white-space:nowrap}
+.person p{margin:0;font-size:14px}
+.person .lbl{font:600 10px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.person .warn{font-size:13px;color:var(--warn)}
+.person select{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:6px 8px;font-size:13px}
+.playbook ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px}
+.follow{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.fgroup{border-top:2px solid var(--ink);padding-top:10px;display:grid;gap:10px;align-content:start}
+.fgroup h3{font-size:22px}
+.acct{display:grid;gap:2px;font-size:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.acct b{font-weight:600}
+.gstage{display:grid;gap:10px;margin-top:16px}
+.gstage h3{font-size:24px;text-transform:uppercase}
+.tactic{background:var(--raised);border:1px solid var(--line);padding:16px;display:grid;grid-template-columns:1.1fr 1.4fr 1fr;gap:12px 20px}
+@media (max-width:760px){.tactic{grid-template-columns:1fr}}
+.tactic h4{margin:0;font:400 22px/1.1 var(--serif)}
+.tactic p{margin:0;font-size:14px}
+.tactic .lbl{font:600 10px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.banner{background:var(--raised);border:1px solid var(--line);padding:12px 16px;font-size:14px}
+@media (prefers-reduced-motion:no-preference){.progress i,.bar i{transition:width .6s ease}}
+</style>
+
+<header class="band">
+  <div class="inner">
+    <div>
+      <div class="eyebrow">Vybe Health · Instagram + Facebook Reels</div>
+      <h1>Reels<br>Command</h1>
+    </div>
+    <div class="meta">
+      <span class="pill" id="weekPill">Week 1 · Set the baseline</span>
+      <div class="progress" aria-hidden="true"><i id="dayBar" style="width:0%"></i></div>
+      <small id="dayLabel" class="num">30-day plan · Sep 24 – Oct 23, 2026</small>
+      <small>@vybehealthinc · Vybe Health Facebook Page · CTA: founding batch at vybe.health</small>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:32px">
+  <div class="banner" id="dbBanner" hidden></div>
+
+  <section aria-labelledby="t-followers">
+    <div class="sec-head"><h2 id="t-followers">Followers</h2><span class="note">Followers are the first audience for every Reel, so every follow, comment and Reel below counts toward this number. Log the totals from each profile once a day.</span></div>
+    <div class="live" id="live" role="status" aria-live="polite"><span class="ldot" id="liveDot"></span><span id="liveText">Connecting to Instagram…</span><button class="copy" id="liveRefresh" type="button">Refresh now</button></div>
+    <div class="ftiles" id="ftiles"></div>
+    <div class="funnel" id="funnel"></div>
+    <div class="trend" id="trend"></div>
+    <div class="eyebrow" style="margin:6px 0 8px">Instagram activity by day · pulled from the Instagram API, kept forever</div>
+    <div class="trend" id="actTrend"></div>
+    <div class="panel" style="margin-bottom:14px"><div class="eyebrow">Every post, latest numbers</div><div id="postTable" style="overflow-x:auto"></div></div>
+    <div class="panel">
+      <form class="log" id="folForm" novalidate>
+        <label>Date<input id="fl-date" type="date" required></label>
+        <label>Instagram followers (total)<input id="fl-ig" type="number" min="0" inputmode="numeric"></label>
+        <label>Facebook followers (total)<input id="fl-fb" type="number" min="0" inputmode="numeric"></label>
+        <label>Instagram goal by Oct 23<input id="fl-gig" type="number" min="1" inputmode="numeric"></label>
+        <label>Facebook goal by Oct 23<input id="fl-gfb" type="number" min="1" inputmode="numeric"></label>
+        <button class="btn fill" type="submit" id="fl-submit">Save today's count</button>
+        <div class="formmsg full" id="flMsg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-ftrack">
+    <div class="sec-head"><h2 id="t-ftrack">Follow tracker</h2><span class="note">Tick <b>Followed</b> when you follow from @vybehealthinc. Tick <b>Followed back</b> when they follow us. Each tick is dated, so we learn which kinds of accounts follow back and how fast.</span></div>
+    <div class="funnel" id="fbStats"></div>
+    <div class="fbreak" id="fbBreak"></div>
+    <div class="panel imp" id="impPanel"><div class="eyebrow">Auto-check from Instagram</div>
+      <p class="note">Instagram's API doesn't list who follows you, but its data export does. In the Instagram app: <b>Settings → Accounts Center → Your information and permissions → Download your information → Download or transfer information</b>, pick @vybehealthinc, choose <b>Some of your information → Followers and following</b>, format <b>JSON</b>, date range <b>All time</b>. Instagram emails a .zip, usually within minutes. Drop it here and every Followed / Followed back box ticks itself, dated from Instagram's own timestamps.</p>
+      <label class="btn fill" style="display:inline-flex;gap:8px;align-items:center;cursor:pointer;width:max-content"><input type="file" id="impFile" accept=".zip,.json,application/zip,application/json" multiple hidden>Choose export (.zip or .json)</label>
+      <div class="formmsg" id="impMsg" role="status" aria-live="polite"></div>
+    </div>
+    <div class="panel"><div class="flhead"><div class="eyebrow">Accounts by list day</div><label class="note">Show <select id="flFilter" aria-label="Filter the follow list"><option value="all">All</option><option value="todo">Not followed yet</option><option value="waiting">Followed, waiting on follow-back</option><option value="back">Followed back</option></select></label></div><div id="followList"></div></div>
+  </section>
+
+  <section aria-labelledby="t-weekly">
+    <div class="sec-head"><h2 id="t-weekly">Weekly analytics</h2><span class="note"><label>Week <select id="repPick" aria-label="Pick a week"></select></label></span></div>
+    <div class="weekly" id="weekly"><div class="empty">Every Monday morning a report lands here: follower gains, Reels posted, what worked, what didn't, and next week's focus.</div></div>
+  </section>
+
+  <section aria-labelledby="t-brief">
+    <div class="sec-head"><h2 id="t-brief">Daily brief</h2><span class="note"><label>Day <select id="briefPick" aria-label="Pick a day"></select></label></span></div>
+    <div class="brief" id="brief"><div class="empty">The 7am brief lands here each morning: captions, content ideas, and research on marketing the band and the SDK.</div></div>
+  </section>
+
+  <section aria-labelledby="t-targets">
+    <div class="sec-head"><h2 id="t-targets">30-day targets</h2><span class="note">Update live from the Insights you log below. Baselines come from week 1.</span></div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section aria-labelledby="t-weeks">
+    <div class="sec-head"><h2 id="t-weeks">Four-week map</h2><span class="note" id="pillars"></span></div>
+    <div class="weeks" id="weeks"></div>
+  </section>
+
+  <section aria-labelledby="t-strat">
+    <div class="sec-head"><h2 id="t-strat">Strategy</h2><span class="note" id="stratSrc"></span></div>
+    <div class="brief" id="strat"><div class="empty">Loading strategy…</div></div>
+  </section>
+
+  <section aria-labelledby="t-comp">
+    <div class="sec-head"><h2 id="t-comp">Competitor map</h2><span class="note" id="compDate"></span></div>
+    <div class="whitespace" id="whitespace"><div class="eyebrow">Where Vybe Health wins</div><p>Loading…</p></div>
+    <div class="panel"><div class="eyebrow">What it costs to keep using it for 2 years (required spend only, US list price)</div><div id="costChart"></div><div class="note" id="costNote"></div></div>
+    <div class="comp" id="comp"></div>
+  </section>
+
+  <section aria-labelledby="t-demo">
+    <div class="sec-head"><h2 id="t-demo">Target demographics &amp; interests</h2><span class="note" id="demoNote">Sourced research. Every figure links to where it was read; nothing is estimated.</span></div>
+    <div id="demo"><div class="empty">Loading research…</div></div>
+  </section>
+
+  <section aria-labelledby="t-ads">
+    <div class="sec-head"><h2 id="t-ads">Meta targeting</h2><span class="note" id="adsNote">Instagram and Facebook ads research. Reference for the founder's decision; no ads are running.</span></div>
+    <div id="ads"><div class="empty">Loading Meta targeting research…</div></div>
+  </section>
+
+  <section aria-labelledby="t-aud">
+    <div class="sec-head"><h2 id="t-aud">Who we're talking to</h2><span class="note">Every Reel names one of these. The share is our planning split, not a measured number.</span></div>
+    <div class="segs" id="segs"></div>
+  </section>
+
+  <section aria-labelledby="t-growth">
+    <div class="sec-head"><h2 id="t-growth">Growth playbook</h2><span class="note" id="growthDate"></span></div>
+    <div class="whitespace" id="growthRule"><div class="eyebrow">How Instagram decides who sees us</div><p>Loading…</p></div>
+    <div id="growth"></div>
+  </section>
+
+  <section aria-labelledby="t-cat">
+    <div class="sec-head"><h2 id="t-cat">Category scorecard</h2><span class="note">Targets per audience category. Inputs are what you do (follow, comment, post). The outcome is follows from Reels aimed at that category.</span></div>
+    <div class="tablewrap panel" id="catTable"></div>
+  </section>
+
+  <section aria-labelledby="t-people">
+    <div class="sec-head"><h2 id="t-people">People to target</h2><span class="note">Real creators whose followers are our buyers. Handles and follower counts confirmed by search on Sep 25, 2026; a dash means not checked. Set a status as you work each one.</span></div>
+    <div class="banner" id="peopleSummary"></div>
+    <div class="playbook panel"><div class="eyebrow">How to work this list</div><ol id="playbook"></ol></div>
+    <div id="people"></div>
+  </section>
+
+  <section aria-labelledby="t-plan">
+    <div class="sec-head"><h2 id="t-plan">This week's Reels</h2>
+      <div class="filters" role="group" aria-label="Filter Reels">
+        <button class="chip" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" data-f="post" aria-pressed="false">To post</button>
+        <button class="chip" data-f="backup" aria-pressed="false">Backups</button>
+        <button class="chip" data-f="logged" aria-pressed="false">Logged</button>
+      </div>
+    </div>
+    <div class="reels" id="reels"><div class="empty">Loading this week's plan…</div></div>
+    <div class="sec-head" style="margin-top:18px"><h3 id="t-stories" style="margin:0">Stories, one a day</h3><span class="note" id="storiesNote"></span></div>
+    <div class="tablewrap" id="stories"><div class="empty">No Stories planned for this week yet.</div></div>
+  </section>
+
+  <section aria-labelledby="t-script">
+    <div class="sec-head"><h2 id="t-script">Film first</h2><span class="note">Script, then the hooks to test on it.</span></div>
+    <div class="two">
+      <div class="panel" id="script"><div class="empty">Loading script…</div></div>
+      <div class="panel"><div class="eyebrow">Top 5 hooks · ranked</div><ol class="hooks" id="hooks"></ol></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-log">
+    <div class="sec-head"><h2 id="t-log">Insights log</h2><span class="note">One entry per Reel per platform, about 48 hours after posting.</span></div>
+    <div class="panel">
+      <form class="log" id="logForm" novalidate>
+        <label>Reel<select id="f-reel" required></select></label>
+        <label>Platform<select id="f-platform"><option value="instagram">Instagram</option><option value="facebook">Facebook</option></select></label>
+        <label>Reach<input id="f-reach" type="number" min="0" inputmode="numeric" required></label>
+        <label>Views<input id="f-views" type="number" min="0" inputmode="numeric"></label>
+        <label>3-sec hold %<input id="f-hold" type="number" min="0" max="100" step="0.1" inputmode="decimal"></label>
+        <label>Saves<input id="f-saves" type="number" min="0" inputmode="numeric"></label>
+        <label>Sends / shares<input id="f-sends" type="number" min="0" inputmode="numeric"></label>
+        <label>Profile visits<input id="f-profile" type="number" min="0" inputmode="numeric"></label>
+        <label>Link clicks<input id="f-clicks" type="number" min="0" inputmode="numeric"></label>
+        <label>New follows<input id="f-follows" type="number" min="0" inputmode="numeric"></label>
+        <label>Reservations<input id="f-res" type="number" min="0" inputmode="numeric"></label>
+        <label>Builder inquiries<input id="f-inq" type="number" min="0" inputmode="numeric"></label>
+        <button class="btn fill" type="submit" id="f-submit">Log Insights</button>
+        <div class="formmsg full" id="formMsg" role="status" aria-live="polite"></div>
+      </form>
+      <div id="chartWrap"></div>
+      <div class="tablewrap" id="logTable"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-news">
+    <div class="sec-head"><h2 id="t-news">What changed out there</h2><span class="note" id="newsDate"></span></div>
+    <div class="news" id="news"></div>
+  </section>
+
+  <section aria-labelledby="t-rules">
+    <div class="sec-head"><h2 id="t-rules">House rules</h2></div>
+    <div class="rules">
+      <div><h3>Vybe Health</h3>Always "Vybe Health" or "Vybe". Never "Vybe Band" as a brand. The hardware is "the band".</div>
+      <div><h3>Two channels</h3>Instagram first, cross-post to Facebook as a Reel. Nothing on Threads, TikTok or YouTube.</div>
+      <div><h3>Claim ladder</h3>Observed, associated, hypothesis. Never "caused". Sleep stages are estimates. Wellness insights, not medical advice.</div>
+      <div><h3>Real numbers only</h3>No invented stats or studies. A missing number stays blank until Insights fill it.</div>
+    </div>
+  </section>
+</main>
+
+<form name="vybe-edits" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<input type="hidden" name="form-name" value="vybe-edits">
+<input name="bot-field"><input name="op"><input name="coll"><input name="id"><input name="at"><input name="page">
+<textarea name="patch"></textarea><textarea name="base"></textarea>
+</form>
+<script>
+/* Stand-in for the claude.ai runtime on Netlify. Reads from all.json; every edit is
+   kept on this device and sent to Netlify Forms, and the daily pull writes it into the
+   claude.ai dashboard unless the same field changed there first (then it is held and
+   listed here as a conflict). */
+(function () {
+  var KEY = "vybe-edits";
+  var cols = {}, generatedAt = "", sync = null;
+  var colSubs = {}, docSubs = {};
+  function clone(v) { return v == null ? undefined : JSON.parse(JSON.stringify(v)); }
+  function snap(id, v) { return { id: id, exists: v != null, data: function () { return clone(v); } }; }
+  function pending() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
+  function remember(e) { try { var l = pending(); l.push(e); localStorage.setItem(KEY, JSON.stringify(l.slice(-500))); } catch (x) {} }
+  function applyLocal(e) {
+    var c = cols[e.coll] || (cols[e.coll] = {});
+    if (e.op === "delete") { delete c[e.id]; return; }
+    if (e.op === "set") { c[e.id] = clone(e.patch); return; }
+    var cur = c[e.id] || {}; var k; for (k in e.patch) { if (e.patch[k] === null) delete cur[k]; else cur[k] = clone(e.patch[k]); } c[e.id] = cur;
+  }
+  function notify(coll, id) {
+    (colSubs[coll] || []).forEach(function (cb) { var c = cols[coll] || {}; cb({ docs: Object.keys(c).sort().map(function (k) { return snap(k, c[k]); }) }); });
+    ((docSubs[coll] || {})[id] || []).forEach(function (cb) { cb(snap(id, (cols[coll] || {})[id])); });
+  }
+  function send(e) {
+    var body = new URLSearchParams();
+    body.set("form-name", "vybe-edits"); body.set("op", e.op); body.set("coll", e.coll); body.set("id", e.id);
+    body.set("at", e.at); body.set("page", e.page); body.set("patch", JSON.stringify(e.patch == null ? null : e.patch)); body.set("base", JSON.stringify(e.base == null ? null : e.base));
+    return fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() })
+      .then(function (r) { if (!r.ok) throw new Error("save failed " + r.status); });
+  }
+  function edit(op, coll, id, patch) {
+    var prev = (cols[coll] || {})[id];
+    var base = null;
+    if (op === "update" && prev) { base = {}; Object.keys(patch).forEach(function (k) { base[k] = prev[k] === undefined ? null : clone(prev[k]); }); }
+    else if (prev) { base = clone(prev); }
+    var e = { op: op, coll: coll, id: id, patch: patch == null ? null : clone(patch), base: base, at: new Date().toISOString(), page: generatedAt };
+    applyLocal(e); remember(e); notify(coll, id); banner();
+    return send(e);
+  }
+  function docRef(coll, id) {
+    return {
+      onSnapshot: function (cb) { ((docSubs[coll] = docSubs[coll] || {})[id] = (docSubs[coll][id] || [])).push(cb); ready.then(function () { cb(snap(id, (cols[coll] || {})[id])); }); return function () {}; },
+      set: function (d) { return edit("set", coll, id, d); },
+      update: function (d) { return edit("update", coll, id, d); },
+      delete: function () { return edit("delete", coll, id, null); }
+    };
+  }
+  var db = {
+    collection: function (name) {
+      return {
+        onSnapshot: function (cb) { (colSubs[name] = colSubs[name] || []).push(cb); ready.then(function () { var c = cols[name] || {}; cb({ docs: Object.keys(c).sort().map(function (k) { return snap(k, c[k]); }) }); }); return function () {}; },
+        doc: function (id) { return docRef(name, id); }
+      };
+    },
+    doc: function (path) { var p = path.split("/"); return docRef(p[0], p[1]); }
+  };
+  function banner() {
+    var el = document.getElementById("dbBanner"); if (!el) return;
+    var local = pending().filter(function (e) { return e.at > generatedAt; }).length;
+    var txt = "Live copy. Data as of " + new Date(generatedAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) + ". Edits save here and are written into the claude.ai dashboard at the next pull (6:38 ET).";
+    if (local) txt += " " + local + " edit" + (local > 1 ? "s" : "") + " from this device waiting to sync.";
+    if (sync && sync.conflicts && sync.conflicts.length) txt += " Held (changed on claude.ai first): " + sync.conflicts.map(function (c) { return c.coll + "/" + c.id + " " + (c.fields || []).join(", "); }).join("; ") + ".";
+    el.hidden = false; el.textContent = txt;
+  }
+  var ready = fetch("all.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+    cols = d.collections || {}; generatedAt = d.generatedAt || "";
+    sync = (cols.sync || {}).latest || null;
+    var keep = pending().filter(function (e) { return e.at > generatedAt; });
+    try { localStorage.setItem(KEY, JSON.stringify(keep)); } catch (x) {}
+    keep.forEach(applyLocal);
+    banner();
+  });
+  window.claude = {
+    use: function (name) {
+      if (name === "db") return ready.then(function () { return db; });
+      if (name === "user") return Promise.resolve({ canEdit: function () { return Promise.resolve(true); } });
+      return Promise.resolve(null);
+    }
+  };
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt = n => n == null || isNaN(n) ? "—" : Math.round(n).toLocaleString();
+  const pct = n => n == null || isNaN(n) ? "—" : (n >= 0 ? "+" : "") + Math.round(n) + "%";
+  const state = { growth:null, cats:null, comp:null, aud:null, follow:null, targets:null, week:null, weeks:{}, currentId:null, insights:[], filter:"all", db:null, canWrite:true };
+
+  // ---------- time ----------
+  function weekIndexFor(targets, now){
+    if (!targets) return 0;
+    for (let i = 0; i < targets.weeks.length; i++){
+      const w = targets.weeks[i];
+      if (now >= new Date(w.start + "T00:00:00") && now <= new Date(w.end + "T23:59:59")) return i;
+    }
+    return now < new Date(targets.weeks[0].start) ? 0 : targets.weeks.length - 1;
+  }
+  function renderHeader(){
+    const t = state.targets; if (!t) return;
+    const now = new Date(), start = new Date(t.start + "T00:00:00"), end = new Date(t.end + "T23:59:59");
+    const total = Math.round((end - start) / 864e5), day = Math.min(total, Math.max(1, Math.ceil((now - start) / 864e5)));
+    $("#dayBar").style.width = (day / total * 100).toFixed(1) + "%";
+    $("#dayLabel").textContent = `Day ${day} of ${total} · ${t.label}`;
+    const wi = weekIndexFor(t, now), w = t.weeks[wi];
+    $("#weekPill").textContent = `Week ${wi + 1} · ${w.focusShort}`;
+  }
+
+  // ---------- metrics ----------
+  function weekOf(doc){ return doc.weekIndex ?? 0; }
+  function agg(rows){
+    const s = { follows:0, reach:0, views:0, saves:0, sends:0, profile:0, clicks:0, res:0, inq:0, holdSum:0, holdN:0 };
+    rows.forEach(r => { s.reach += +r.reach||0; s.views += +r.views||0; s.saves += +r.saves||0; s.sends += +r.sends||0;
+      s.profile += +r.profileVisits||0; s.clicks += +r.linkClicks||0; s.res += +r.reservations||0; s.follows = (s.follows||0) + (+r.follows||0); s.inq += +r.inquiries||0;
+      if (r.hold3 != null && r.hold3 !== "") { s.holdSum += +r.hold3; s.holdN++; } });
+    s.hold = s.holdN ? s.holdSum / s.holdN : null;
+    s.engage = s.reach ? (s.saves + s.sends) / s.reach * 1000 : null;
+    return s;
+  }
+  function renderTiles(){
+    const t = state.targets; if (!t) return;
+    const all = state.insights, wi = weekIndexFor(t, new Date());
+    const base = agg(all.filter(r => weekOf(r) === 0));
+    const latestWeek = all.length ? Math.max(...all.map(weekOf)) : 0;
+    const cur = agg(all.filter(r => weekOf(r) === latestWeek));
+    const ig = agg(all.filter(r => r.platform === "instagram")), fb = agg(all.filter(r => r.platform === "facebook"));
+    const posted = new Set(all.map(r => r.reel)).size;
+    const tot = agg(all);
+    const baselineReady = latestWeek > 0 || wi > 0;
+
+    function st(ok, label){ return ok == null ? `<span class="state wait">${label||"Baseline week"}</span>` : ok ? `<span class="state ok">On track</span>` : `<span class="state warn">Behind</span>`; }
+    const holdDelta = base.hold && latestWeek > 0 ? (cur.hold / base.hold - 1) * 100 : null;
+    const engDelta = base.engage && latestWeek > 0 ? (cur.engage / base.engage - 1) * 100 : null;
+    const resBase = base.res, resCur = cur.res;
+    const resOk = latestWeek > 0 && resBase ? resCur >= resBase * 2 : null;
+    const paceTarget = Math.min(16, (wi + 1) * 4);
+
+    const fGoal = t.followerGoal || 0;
+    const tiles = [
+      `<div class="tile primary"><div class="eyebrow">Primary · new followers from Reels</div>
+        <div class="big num">${fmt(tot.follows)}${fGoal?`<span style="font-size:20px"> / ${fGoal}</span>`:""}</div>
+        <div class="split"><span><i class="dot" style="background:var(--ig)"></i>Instagram <b class="num">${fmt(ig.follows)}</b></span><span><i class="dot" style="background:var(--fb)"></i>Facebook <b class="num">${fmt(fb.follows)}</b></span></div>
+        ${fGoal?`<div class="bar"><i style="width:${Math.min(100, tot.follows/fGoal*100)}%"></i></div>`:""}
+        <div class="sub">${esc(t.followerNote||"Log each Reel's 'Follows' from Insights.")}</div>
+        ${all.length ? (fGoal ? (tot.follows >= fGoal*(wi+1)/4 ? `<span class="state ok">On pace</span>` : `<span class="state warn">Behind pace</span>`) : `<span class="state wait">Baseline week</span>`) : `<span class="state wait">No data yet</span>`}</div>`,
+      `<div class="tile"><div class="eyebrow">Founding-batch reservations from Reels</div>
+        <div class="big num">${fmt(tot.res)}</div>
+        <div class="split"><span><i class="dot" style="background:var(--ig)"></i>Instagram <b class="num">${fmt(ig.res)}</b></span><span><i class="dot" style="background:var(--fb)"></i>Facebook <b class="num">${fmt(fb.res)}</b></span></div>
+        <div class="sub">Target: double week 1's weekly reservations by week 4. Week 1: <span class="num">${fmt(resBase)}</span>${latestWeek>0?` · Week ${latestWeek+1}: <span class="num">${fmt(resCur)}</span>`:""}. Tag the reserve link with a UTM per platform.</div>
+        ${st(resOk, all.length ? "Baseline week" : "No data yet")}</div>`,
+      `<div class="tile"><div class="eyebrow">Reels posted</div><div class="big num">${posted}<span style="font-size:20px"> / 16</span></div>
+        <div class="bar"><i style="width:${Math.min(100, posted/16*100)}%"></i></div><div class="sub">Pace today: ${paceTarget} by end of week ${wi+1}.</div>
+        ${posted >= paceTarget ? `<span class="state ok">On pace</span>` : `<span class="state warn">${paceTarget - posted} to go this week</span>`}</div>`,
+      `<div class="tile"><div class="eyebrow">3-second hold</div><div class="big num">${base.hold!=null?Math.round(cur.hold ?? base.hold)+"%":"—"}</div>
+        <div class="sub">Goal +25% vs week 1${base.hold!=null?` (${Math.round(base.hold)}% → ${Math.round(base.hold*1.25)}%)`:""}. Now ${pct(holdDelta)}.</div>
+        ${st(holdDelta==null?null:holdDelta>=25)}</div>`,
+      `<div class="tile"><div class="eyebrow">Saves + sends per 1,000 reach</div><div class="big num">${base.engage!=null?(cur.engage??base.engage).toFixed(1):"—"}</div>
+        <div class="sub">Goal +50% vs week 1. Now ${pct(engDelta)}.</div>${st(engDelta==null?null:engDelta>=50)}</div>`,
+      `<div class="tile"><div class="eyebrow">Builder inquiries</div><div class="big num">${fmt(tot.inq)}<span style="font-size:20px"> / 3–5</span></div>
+        <div class="bar"><i style="width:${Math.min(100, tot.inq/3*100)}%"></i></div><div class="sub">DMs and For Enterprise / For Research form fills traced to a Reel.</div>
+        ${tot.inq >= 3 ? `<span class="state ok">Hit</span>` : `<span class="state wait">${3 - tot.inq} to minimum</span>`}</div>`
+    ];
+    $("#tiles").innerHTML = tiles.join("");
+  }
+
+  // ---------- weeks ----------
+  function renderWeeks(){
+    const t = state.targets; if (!t) return;
+    const wi = weekIndexFor(t, new Date());
+    $("#weeks").innerHTML = t.weeks.map((w,i) => `<div class="week${i===wi?" now":""}">
+      <div class="eyebrow">Week ${i+1} · <span class="num">${w.range}</span>${i===wi?" · now":""}</div>
+      <h3>${esc(w.focus)}</h3><div class="note">Checkpoint: ${esc(w.checkpoint)}</div></div>`).join("");
+    $("#pillars").textContent = "Pillars: " + t.pillars.join(" · ") + " · Mix: " + t.audienceMix;
+  }
+
+  // ---------- reels ----------
+  const worldColor = { Vitals:"var(--vitals)", Restore:"var(--restore)", Move:"var(--move)", Nourish:"var(--nourish)", Connect:"var(--connect)" };
+  function loggedSet(){ const m = {}; state.insights.forEach(r => { (m[r.reel] ||= new Set()).add(r.platform); }); return m; }
+  function renderReels(){
+    const w = state.week; if (!w) return;
+    const logged = loggedSet();
+    const list = w.reels.filter(r => {
+      if (state.filter === "post") return r.slot === "post";
+      if (state.filter === "backup") return r.slot === "backup";
+      if (state.filter === "logged") return logged[r.id];
+      return true; });
+    $("#reels").innerHTML = list.length ? list.map(r => {
+      const l = logged[r.id];
+      const status = l ? `<span class="state ok">Logged · ${[...l].map(p=>p==="instagram"?"IG":"FB").join(" + ")}</span>`
+        : r.slot === "post" ? `<span class="state warn">To post</span>` : `<span class="state wait">Backup</span>`;
+      const tagColor = worldColor[r.world] || "var(--intel)";
+      return `<article class="reel${r.slot==="backup"?" backup":""}">
+        <div class="reel-top"><span class="mono">${esc(r.day)}</span>${status}</div>
+        <div class="hook">“${esc(r.hook)}”</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="color:${tagColor}">${esc(r.world||"Vybe")}</span><span class="tag" style="color:var(--muted)">${esc(r.pillar)}</span><span class="tag" style="color:var(--muted)">Tests: ${esc(r.tests)}</span></div>
+        <dl class="kv"><dt>Viewer need</dt><dd>${esc(r.need)}</dd><dt>Angle</dt><dd>${esc(r.angle)}</dd><dt>Format</dt><dd>${esc(r.format)}</dd><dt>Takeaway</dt><dd>${esc(r.takeaway)}</dd>${r.question?`<dt>Ends on</dt><dd>${esc(r.question)}</dd>`:""}</dl>
+        <div class="reel-actions"><button class="btn ghost" data-log="${esc(r.id)}">Log Insights</button><button class="copy" data-copy="${esc(r.hook)}">Copy hook</button></div>
+      </article>`; }).join("") : `<div class="empty">Nothing here yet for this filter.</div>`;
+  }
+
+  // ---------- stories ----------
+  function renderStories(){
+    const w = state.week; const el = $("#stories"); if (!w || !el) return;
+    $("#storiesNote").textContent = w.storiesNote || "";
+    const list = w.stories || [];
+    el.innerHTML = list.length ? `<table><thead><tr><th>Day</th><th>Type</th><th>Idea</th><th>Sticker</th></tr></thead><tbody>${list.map(s => `<tr><td class="t">${esc(s.day)}</td><td>${esc(s.type)}</td><td>${esc(s.idea)}</td><td>${esc(s.sticker)} <button class="copy" data-copy="${esc(s.sticker)}">Copy</button></td></tr>`).join("")}</tbody></table>` : `<div class="empty">No Stories planned for this week yet.</div>`;
+  }
+
+  // ---------- script + hooks ----------
+  function renderScript(){
+    const w = state.week; if (!w) return;
+    const s = w.script;
+    $("#script").innerHTML = `<div class="eyebrow">${esc(s.audience)} · ~${esc(s.runtime)}</div><h3>${esc(s.title)}</h3>
+      <div class="tablewrap"><table><thead><tr><th>Time</th><th>Spoken</th><th>On screen</th><th>Visual</th></tr></thead><tbody>
+      ${s.rows.map(r => `<tr><td class="t">${esc(r.time)}</td><td>${esc(r.spoken)}</td><td>${esc(r.text)}</td><td>${esc(r.visual)}</td></tr>`).join("")}
+      </tbody></table></div>
+      <div class="claim"><b>Claim check.</b> ${esc(s.claimCheck)}</div>
+      <div class="claim"><b>Caption.</b> ${esc(s.caption)} <button class="copy" data-copy="${esc(s.caption)}">Copy</button></div>`;
+    $("#hooks").innerHTML = w.topHooks.map(h => `<li><span>${esc(h)}</span><button class="copy" data-copy="${esc(h)}">Copy</button></li>`).join("");
+  }
+
+  // ---------- news ----------
+  function renderNews(){
+    const w = state.week; if (!w) return;
+    $("#newsDate").textContent = "Researched " + w.researchedOn;
+    $("#news").innerHTML = w.news.map(n => `<article><div><b>${esc(n.headline)}</b><br><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.source)}</a></div><div>${esc(n.meaning)}</div></article>`).join("");
+  }
+
+  // ---------- log ----------
+  function allWeeks(){ return Object.values(state.weeks).sort((a,b) => (b.weekIndex??0) - (a.weekIndex??0)); }
+  function findReel(id){ for (const w of Object.values(state.weeks)){ const r = w.reels?.find(x => x.id === id); if (r) return {r, w}; } return null; }
+  function renderReelSelect(){
+    const ws = allWeeks(); if (!ws.length) return;
+    const sel = $("#f-reel"), keep = sel.value;
+    sel.innerHTML = ws.map(w => `<optgroup label="Week ${(w.weekIndex??0)+1}">` + (w.reels||[]).map(r => `<option value="${esc(r.id)}">${esc(r.day)} — ${esc(r.hook.slice(0,48))}${r.hook.length>48?"…":""}</option>`).join("") + `</optgroup>`).join("");
+    if (keep && findReel(keep)) sel.value = keep;
+  }
+  function renderLog(){
+    const rows = state.insights.slice().sort((a,b) => (b.loggedAt||"").localeCompare(a.loggedAt||""));
+    const reelName = id => { const f = findReel(id); return f ? f.r.day : id; };
+    if (!rows.length){
+      $("#logTable").innerHTML = `<div class="empty">No Insights logged yet. Post the first Reel, wait about 48 hours, then log Instagram and Facebook separately. Week 1's numbers become the baseline every target is measured against.</div>`;
+      $("#chartWrap").innerHTML = ""; return;
+    }
+    $("#logTable").innerHTML = `<table><thead><tr><th>Reel</th><th>Platform</th><th>Reach</th><th>Views</th><th>3s hold</th><th>Saves</th><th>Sends</th><th>Profile</th><th>Clicks</th><th>Reserv.</th><th>Inquiries</th><th></th></tr></thead><tbody>
+      ${rows.map(r => `<tr><td>${esc(reelName(r.reel))}</td><td><i class="dot" style="background:var(--${r.platform==="instagram"?"ig":"fb"})"></i>${r.platform==="instagram"?"Instagram":"Facebook"}</td>
+      <td class="num">${fmt(r.reach)}</td><td class="num">${fmt(r.views)}</td><td class="num">${r.hold3!=null&&r.hold3!==""?r.hold3+"%":"—"}</td><td class="num">${fmt(r.saves)}</td><td class="num">${fmt(r.sends)}</td><td class="num">${fmt(r.profileVisits)}</td><td class="num">${fmt(r.linkClicks)}</td><td class="num">${fmt(r.reservations)}</td><td class="num">${fmt(r.inquiries)}</td>
+      <td>${state.canWrite?`<button class="copy" data-del="${esc(r._id)}">Remove</button>`:""}</td></tr>`).join("")}</tbody></table>`;
+    renderChart(rows);
+  }
+  function renderChart(rows){
+    // reach per logged Reel, Instagram vs Facebook, one shared scale
+    const reels = [...new Set(rows.map(r => r.reel))].reverse();
+    if (!reels.length) { $("#chartWrap").innerHTML = ""; return; }
+    const val = (id,p) => rows.filter(r => r.reel===id && r.platform===p).reduce((a,r)=>a+(+r.reach||0),0);
+    const max = Math.max(1, ...reels.flatMap(id => [val(id,"instagram"), val(id,"facebook")]));
+    const W = 640, rowH = 34, left = 110, right = 70, H = reels.length*rowH + 30;
+    const x = v => (W-left-right) * v / max;
+    const label = id => (findReel(id)?.r.day || id);
+    let svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Reach per Reel, Instagram versus Facebook">
+      <text x="0" y="14" style="fill:var(--muted)" font-size="11">REACH PER REEL</text>
+      <g font-size="11">
+      <rect x="${W-190}" y="5" width="9" height="9" style="fill:var(--ig)"/><text x="${W-176}" y="14" style="fill:var(--ink)">Instagram</text>
+      <rect x="${W-104}" y="5" width="9" height="9" style="fill:var(--fb)"/><text x="${W-90}" y="14" style="fill:var(--ink)">Facebook</text></g>`;
+    reels.forEach((id,i) => {
+      const y = 26 + i*rowH, a = val(id,"instagram"), b = val(id,"facebook");
+      svg += `<text x="0" y="${y+17}" style="fill:var(--ink)" font-size="12" class="m">${esc(label(id))}</text>
+        <rect x="${left}" y="${y+4}" width="${Math.max(a?2:0,x(a))}" height="11" style="fill:var(--ig)"/>
+        <text x="${left+x(a)+6}" y="${y+13}" style="fill:var(--muted)" font-size="11">${a?a.toLocaleString():""}</text>
+        <rect x="${left}" y="${y+17}" width="${Math.max(b?2:0,x(b))}" height="11" style="fill:var(--fb)"/>
+        <text x="${left+x(b)+6}" y="${y+26}" style="fill:var(--muted)" font-size="11">${b?b.toLocaleString():""}</text>`;
+    });
+    $("#chartWrap").innerHTML = svg + `</svg>`;
+  }
+
+  function renderComp(){
+    const c = state.comp; if (!c) return;
+    $("#compDate").textContent = "Researched " + c.researchedOn;
+    $("#whitespace").innerHTML = `<div class="eyebrow">Where Vybe Health wins · our read</div><p>${esc(c.whitespace)}</p><div class="note" style="color:var(--on-forest);opacity:.85">${esc(c.whitespaceWhy)}</div>`;
+    $("#comp").innerHTML = c.items.map(x => `<details><summary><h3>${esc(x.name)}</h3><span class="hide-sm">${esc(x.positioning)}</span><span class="price hide-sm">${esc(x.price)}</span><span class="threat ${esc(x.threat)}">${x.threat==="high"?"High threat":x.threat==="med"?"Medium threat":"Low threat"}</span></summary>
+      <div class="body">
+        <div><h4>Pricing model</h4><p>${esc(x.model)}</p></div>
+        <div><h4>How they market</h4><p>${esc(x.reels)}</p></div>
+        <div><h4>Where they're strong</h4><p>${esc(x.strength)}</p></div>
+        <div><h4>The gap for Vybe Health</h4><p>${esc(x.gap)}</p></div>
+        <div class="why"><h4>Why it matters for our Reels</h4><p>${esc(x.why)}</p></div>
+        <div class="src">Sources: ${(x.sources||[]).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(" · ")}</div>
+      </div></details>`).join("");
+    const rows = c.items.filter(x => typeof x.twoYear === "number").sort((a,b) => b.twoYear - a.twoYear);
+    const W = 640, rowH = 26, left = 150, right = 70, H = rows.length*rowH + 8;
+    const max = Math.max(...rows.map(r => r.twoYear));
+    $("#costChart").innerHTML = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Two-year cost of ownership by brand">` + rows.map((r,i) => {
+      const y = 4 + i*rowH, w = (W-left-right) * r.twoYear / max, sub = r.subscription;
+      return `<text x="0" y="${y+15}" style="fill:var(--ink)" font-size="12">${esc(r.name)}</text>
+        <rect x="${left}" y="${y+4}" width="${w}" height="14" style="fill:${sub?"var(--vitals)":"var(--green)"}"/>
+        <text x="${left+w+6}" y="${y+15}" style="fill:var(--muted)" font-size="12" class="m">$${Math.round(r.twoYear)}</text>`; }).join("") + `</svg>`;
+    $("#costNote").innerHTML = `<i class="dot" style="background:var(--vitals)"></i>Needs a subscription to keep working &nbsp; <i class="dot" style="background:var(--green)"></i>Pay once. ${esc(c.costNote)}`;
+  }
+  function renderAud(){
+    const a = state.aud; if (!a) return;
+    $("#segs").innerHTML = a.segments.map(g => `<div class="seg"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span class="eyebrow">${esc(g.kind)}</span><span class="share num">${esc(g.share)}</span></div>
+      <h3>${esc(g.name)}</h3><div style="font-size:14px">${esc(g.who)}</div>
+      <div><div class="eyebrow">What bugs them</div><ul>${g.pains.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+      <div><div class="eyebrow">Hooks that fit</div><ul>${g.hooks.map(x=>`<li>“${esc(x)}”</li>`).join("")}</ul></div>
+      <div class="why"><b>Why them:</b> ${esc(g.why)}${g.source?` <a href="${esc(g.source.url)}" target="_blank" rel="noopener">${esc(g.source.label)}</a>`:""}</div></div>`).join("");
+  }
+  const STATUSES = ["Not started","Following","Engaging","Pitched","In talks","Yes","Pass"];
+  function renderPeople(){
+    const list = state.people; if (!list) return;
+    const tiers = state.tiers || [];
+    const count = st => list.filter(p => (p.status||"Not started") === st).length;
+    $("#peopleSummary").innerHTML = `<b class="num">${list.length}</b> people · ` + STATUSES.map(st => `${st} <b class="num">${count(st)}</b>`).join(" · ");
+    $("#playbook").innerHTML = (state.playbook||[]).map(x => `<li>${esc(x)}</li>`).join("");
+    const ordered = tiers.flatMap(t => list.filter(p => p.tier === t.id).sort((a,b)=>(a.order??0)-(b.order??0)));
+    $("#people").innerHTML = tiers.map(t => {
+      const ps = list.filter(p => p.tier === t.id).sort((a,b) => (a.order??0)-(b.order??0));
+      return `<div class="tier"><h3>${esc(t.name)}</h3><div class="tnote">${esc(t.note)}</div><div class="pgrid">${ps.map(p => `<article class="person">
+        <div class="top"><div><h4>${esc(p.name)}</h4><a class="handle" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.handle)}</a></div><span class="fol num" title="Followers">${esc(p.followers||"—")}</span></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">${p.offIg?`<span class="tag" style="color:var(--warn)">Not on Instagram</span>`:""}${(p.segments||[]).map(g=>`<span class="tag" style="color:var(--intel)">${esc(g)}</span>`).join("")}</div>
+        <div><div class="lbl">Who follows them</div><p>${esc(p.audience)}</p></div>
+        <div><div class="lbl">Why them</div><p>${esc(p.why)}</p></div>
+        <div><div class="lbl">Your move</div><p>${esc(p.action)}</p></div>
+        ${p.caution?`<div class="warn">Heads up: ${esc(p.caution)}</div>`:""}
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="note">Comments this week: <b class="num">${+(p.comments||{})[state.week?.id]||0}</b></span>${state.canWrite?`<button class="copy" data-comment="${esc(p._id)}">+1 comment</button>`:""}</div>
+        <label class="lbl" style="display:flex;gap:8px;align-items:center">Status <select data-person="${esc(p._id)}" ${state.canWrite?"":"disabled"}>${STATUSES.map(st=>`<option${(p.status||"Not started")===st?" selected":""}>${st}</option>`).join("")}</select></label>
+        ${p.source?`<div class="note">Source: <a href="${esc(p.source)}" target="_blank" rel="noopener">profile check</a></div>`:""}
+      </article>`).join("")}</div></div>`; }).join("");
+  }
+  const FOLLOWED = ["Following","Engaging","Pitched","In talks","Yes"];
+  const hnd = p => String(p.handle||p._id||"").replace(/^@/,"");
+  const igUrl = p => p.url || `https://www.instagram.com/${encodeURIComponent(hnd(p))}/`;
+  const isFollowed = p => FOLLOWED.includes(p.status) || !!p.followedAt;
+  const fcount = v => { const m = String(v||"").trim().match(/^([\d.,]+)\s*([KkMm]?)/); if (!m) return null; const n = parseFloat(m[1].replace(/,/g,"")); return m[2].toLowerCase()==="m" ? n*1e6 : m[2].toLowerCase()==="k" ? n*1e3 : n; };
+  const sizeBand = p => { const n = fcount(p.followers); return n==null ? "Unknown size" : n < 10e3 ? "Under 10K" : n < 100e3 ? "10K–100K" : n < 1e6 ? "100K–1M" : "1M+"; };
+  const daysBetween = (a,b) => Math.max(0, Math.round((new Date(b) - new Date(a)) / 864e5));
+  function renderFollowTracker(){
+    const el = $("#followList"); if (!el || !state.people) return;
+    const ps = state.people.filter(p => !p.offIg);
+    const fol = ps.filter(isFollowed), back = fol.filter(p => p.followedBack);
+    const rate = fol.length ? Math.round(back.length / fol.length * 100) : null;
+    const lags = back.filter(p => p.followedAt && p.followedBackAt).map(p => daysBetween(p.followedAt, p.followedBackAt));
+    const avgLag = lags.length ? (lags.reduce((a,b)=>a+b,0)/lags.length).toFixed(1) : null;
+    const stale = fol.filter(p => !p.followedBack && p.followedAt && daysBetween(p.followedAt, new Date()) >= 7).length;
+    const cell = (k, v, t, ok) => `<div><span class="k">${k}</span><span class="v num">${v}</span>${t?`<span class="state ${ok?"ok":"wait"}">${t}</span>`:""}</div>`;
+    $("#fbStats").innerHTML = cell("Accounts on the list", fmt(ps.length)) + cell("Followed", fmt(fol.length), `${fmt(ps.length - fol.length)} to go`, fol.length === ps.length && ps.length > 0)
+      + cell("Followed us back", fmt(back.length)) + cell("Follow-back rate", rate==null?"—":rate+"%", fol.length < 20 ? "Early read" : "Solid sample", fol.length >= 20)
+      + cell("Days to follow back (avg)", avgLag ?? "—") + cell("No follow-back after 7 days", fmt(stale));
+    const catName = id => (state.cats||[]).find(c => c.id === id)?.name || id || "Uncategorized";
+    const tierName = id => (state.tiers||[]).find(t => t.id === id)?.name || id || "—";
+    const table = (title, keyFn) => {
+      const g = {}; ps.forEach(p => { const k = keyFn(p); (g[k] ||= []).push(p); });
+      const rows = Object.entries(g).map(([k, arr]) => { const f = arr.filter(isFollowed), b = f.filter(p => p.followedBack); return { k, n: arr.length, f: f.length, b: b.length, r: f.length ? b.length / f.length : null }; })
+        .sort((a,b) => (b.r ?? -1) - (a.r ?? -1) || b.f - a.f);
+      return `<div class="panel"><div class="eyebrow">${title}</div><table><thead><tr><th></th><th class="r">Listed</th><th class="r">Followed</th><th class="r">Back</th><th class="r">Rate</th></tr></thead><tbody>${rows.map(r => `<tr><td>${esc(r.k)}</td><td class="r num">${r.n}</td><td class="r num">${r.f}</td><td class="r num">${r.b}</td><td class="r num">${r.r==null?"—":`<span class="rbar" style="width:${Math.round(r.r*40)}px"></span>${Math.round(r.r*100)}%`}</td></tr>`).join("")}</tbody></table></div>`;
+    };
+    $("#fbBreak").innerHTML = table("By category", p => catName(p.category)) + table("By their follower count", sizeBand) + table("By relationship tier", p => tierName(p.tier)) + table("By day added", p => p.addedOn || "Before daily lists");
+    const f = $("#flFilter")?.value || "all";
+    const keep = p => f === "all" || (f === "todo" && !isFollowed(p)) || (f === "waiting" && isFollowed(p) && !p.followedBack) || (f === "back" && p.followedBack);
+    const days = {}; ps.filter(keep).forEach(p => { (days[p.addedOn || "Earlier"] ||= []).push(p); });
+    const dis = state.canWrite ? "" : "disabled";
+    el.innerHTML = Object.keys(days).sort((a,b) => a === "Earlier" ? 1 : b === "Earlier" ? -1 : a < b ? 1 : -1).map(d => `<div class="fday"><h4>${d === today() ? "Today · " : ""}${esc(d)} · ${days[d].length}</h4>${days[d].map(p => {
+      const fd = isFollowed(p), lag = p.followedBack && p.followedAt && p.followedBackAt ? daysBetween(p.followedAt, p.followedBackAt) : null;
+      const wait = fd && !p.followedBack && p.followedAt ? daysBetween(p.followedAt, new Date()) : null;
+      return `<div class="frow"><div class="who"><a href="${esc(igUrl(p))}" target="_blank" rel="noopener">@${esc(hnd(p))}</a><span class="note">${esc(p.name||"")}</span></div>
+        <div class="meta note">${esc(catName(p.category))} · ${esc(p.followers||"—")}${lag!=null?` · back in ${lag}d`:wait!=null?` · waiting ${wait}d`:""}</div>
+        <label><input type="checkbox" data-follow="${esc(p._id)}" ${fd?"checked":""} ${dis}> Followed</label>
+        <label><input type="checkbox" data-back="${esc(p._id)}" ${p.followedBack?"checked":""} ${fd?"":"disabled"} ${dis}> Followed back</label></div>`; }).join("")}</div>`).join("") || `<div class="empty">Nothing matches this filter.</div>`;
+  }
+  $("#flFilter")?.addEventListener("change", renderFollowTracker);
+  // ---------- Instagram data-export import ----------
+  function igEntries(json){
+    const arr = Array.isArray(json) ? json : (json.relationships_following || json.relationships_followers || []);
+    return arr.map(e => { const s = (e.string_list_data||[])[0] || {}; let u = e.title || s.value || "";
+      if (!u && s.href) u = (s.href.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/)||[])[1] || "";
+      return { u: String(u).replace(/^@/,"").toLowerCase(), ts: s.timestamp ? new Date(s.timestamp*1000).toISOString() : null }; }).filter(x => x.u);
+  }
+  async function readExport(files){
+    const following = new Map(), followers = new Map(); let sawHtml = false;
+    const take = (name, text) => {
+      if (/\.html?$/i.test(name)) { if (/follow/i.test(name)) sawHtml = true; return; }
+      if (!/\.json$/i.test(name)) return;
+      let j; try { j = JSON.parse(text); } catch { return; }
+      const base = name.split("/").pop().toLowerCase();
+      if (base.startsWith("following")) igEntries(j).forEach(x => following.set(x.u, x.ts));
+      else if (base.startsWith("followers")) igEntries(j).forEach(x => followers.set(x.u, x.ts));
+    };
+    for (const f of files){
+      if (/\.zip$/i.test(f.name) || f.type === "application/zip"){
+        if (!window.JSZip) throw new Error("The zip reader didn't load. Unzip the file and choose following.json and followers_1.json instead.");
+        const z = await window.JSZip.loadAsync(f);
+        for (const name of Object.keys(z.files)) if (/followers_and_following|connections/i.test(name) && /follow/i.test(name.split("/").pop())) take(name, await z.files[name].async("string"));
+      } else take(f.name, await f.text());
+    }
+    return { following, followers, sawHtml };
+  }
+  $("#impFile")?.addEventListener("change", async e => {
+    const m = $("#impMsg"), say = (t, err) => { m.textContent = t; m.className = "formmsg " + (err ? "err" : "ok"); };
+    const files = [...(e.target.files||[])]; e.target.value = ""; if (!files.length) return;
+    if (!state.db || !state.canWrite){ say("Importing needs edit access on claude.ai.", true); return; }
+    say("Reading the export…");
+    try {
+      const { following, followers, sawHtml } = await readExport(files);
+      if (!following.size && !followers.size){ say(sawHtml ? "That export is in HTML. Request it again with format set to JSON." : "No followers or following lists found in that file. Make sure you chose 'Followers and following' in the export.", true); return; }
+      const people = state.people || []; let fNew = 0, bNew = 0, n = 0;
+      for (const p of people){
+        const h = hnd(p).toLowerCase(), upd = {};
+        if (following.has(h) && !p.followedAt){ upd.followedAt = following.get(h) || new Date().toISOString(); if (!FOLLOWED.includes(p.status)){ upd.status = "Following"; upd.statusAt = upd.followedAt; } fNew++; }
+        if (followers.has(h) && !p.followedBack){ upd.followedBack = true; upd.followedBackAt = followers.get(h) || new Date().toISOString(); bNew++; }
+        if (Object.keys(upd).length){ upd.checkedBy = "instagram-export"; try { await state.db.doc("people/" + p._id).update(upd); n++; } catch {} }
+      }
+      const listed = new Set(people.map(p => hnd(p).toLowerCase()));
+      const organic = [...followers.keys()].filter(u => !listed.has(u));
+      await state.db.doc("igexport/" + today()).set({ importedAt: new Date().toISOString(), followingCount: following.size, followersCount: followers.size, followers: [...followers].map(([u, ts]) => ({ u, ts })), following: [...following].map(([u, ts]) => ({ u, ts })), matchedFollowed: fNew, matchedBack: bNew, organicFollowers: organic.length });
+      say(`Done. Export has ${fmt(following.size)} following and ${fmt(followers.size)} followers. Ticked ${fNew} new Followed and ${bNew} new Followed back. ${organic.length} followers aren't on our list (found us on their own).`);
+    } catch (err){ say(err?.message || "Couldn't read that file.", true); }
+  });
+  function reelSegment(id){ return findReel(id)?.r.segment; }
+  function renderCats(){
+    const cats = state.cats, people = state.people || []; if (!cats) return;
+    const wid = state.week?.id, weekReels = state.week?.reels || [];
+    const totalFollows = state.insights.reduce((a,r)=>a+(+r.follows||0),0);
+    const row = c => {
+      const ps = people.filter(p => p.category === c.id);
+      const followed = ps.filter(p => FOLLOWED.includes(p.status)).length;
+      const comments = ps.reduce((a,p)=>a+(+(p.comments||{})[wid]||0),0);
+      const planned = weekReels.filter(r => r.segment === c.id && r.slot === "post").length;
+      const ins = state.insights.filter(r => reelSegment(r.reel) === c.id);
+      const f = ins.reduce((a,r)=>a+(+r.follows||0),0), reach = ins.reduce((a,r)=>a+(+r.reach||0),0);
+      const fIg = ins.filter(r=>r.platform==="instagram").reduce((a,r)=>a+(+r.follows||0),0);
+      const fFb = ins.filter(r=>r.platform==="facebook").reduce((a,r)=>a+(+r.follows||0),0);
+      const share = totalFollows ? Math.round(f/totalFollows*100) : null;
+      const per1k = reach ? (f/reach*1000).toFixed(1) : "—";
+      const cell = (v,t) => `<span class="num">${v}</span><span class="note"> / ${t}</span>`;
+      const ok = followed >= c.followTarget && comments >= c.commentsPerWeek;
+      return `<tr><td><b>${esc(c.name)}</b><div class="note">${esc(c.why)}</div></td>
+        <td>${cell(followed, c.followTarget)}</td><td>${cell(comments, c.commentsPerWeek)}</td>
+        <td>${cell(planned, c.reelsPerWeek)}</td>
+        <td class="num">${f?`${f} <span class="note">(IG ${fIg} · FB ${fFb})</span>`:"—"}</td>
+        <td class="num">${per1k}</td>
+        <td class="num">${share==null?"—":share+"%"}<span class="note"> / ${c.shareOfFollows}%</span></td>
+        <td>${ok?`<span class="state ok">Inputs done</span>`:`<span class="state warn">Inputs open</span>`}</td></tr>`;
+    };
+    $("#catTable").innerHTML = `<table><thead><tr><th>Category</th><th>Accounts followed</th><th>Comments this week</th><th>Reels this week</th><th>Follows from its Reels</th><th>Follows per 1k reach</th><th>Share of follows (goal)</th><th>This week</th></tr></thead><tbody>${cats.map(row).join("")}</tbody></table>
+      <div class="note" style="margin-top:8px">The follows goal is the share of new followers each category should bring in. It becomes a hard number once week 1 sets the baseline.</div>`;
+  }
+  function renderGrowth(){
+    const g = state.growth; if (!g) return;
+    $("#growthDate").textContent = "Researched " + g.researchedOn;
+    $("#growthRule").innerHTML = `<div class="eyebrow">How Instagram decides who sees us</div><p>${esc(g.rule)}</p><div class="note" style="color:var(--on-forest);opacity:.85">${esc(g.ruleWhy)}</div>`;
+    $("#growth").innerHTML = g.stages.map(st => `<div class="gstage"><h3>${esc(st.name)}</h3><div class="note">${esc(st.note)}</div>
+      ${st.tactics.map(t => `<div class="tactic"><div><h4>${esc(t.name)}</h4><div class="note" style="margin-top:6px">Track: ${esc(t.metric)}</div></div>
+        <div><div class="lbl">How Vybe Health does it</div><p>${esc(t.how)}</p></div>
+        <div><div class="lbl">Why it works</div><p>${esc(t.why)}</p>${t.source?`<div class="note" style="margin-top:4px"><a href="${esc(t.source.url)}" target="_blank" rel="noopener">${esc(t.source.label)}</a></div>`:""}</div></div>`).join("")}</div>`).join("");
+  }
+
+  // ---------- followers ----------
+  const today = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset()*6e4).toISOString().slice(0,10); };
+  function renderFollowers(){
+    const t = state.targets; if (!t || !$("#ftiles")) return;
+    const goal = t.followerTarget || { ig: 1000, fb: 250 };
+    const rows = (state.followers||[]).slice().sort((a,b) => a._id < b._id ? -1 : 1);
+    const end = new Date(t.end + "T23:59:59"), daysLeft = Math.max(1, Math.ceil((end - new Date()) / 864e5));
+    function tile(key, label, color, primary){
+      const pts = rows.filter(r => r[key] != null);
+      const first = pts[0], last = pts[pts.length-1], prev = pts[pts.length-2];
+      const now = last ? last[key] : null, g = goal[key];
+      const gained = first && last ? now - first[key] : null;
+      const day = last && prev ? now - prev[key] : null;
+      const need = now != null ? Math.max(0, Math.ceil((g - now) / daysLeft)) : null;
+      const onPace = now == null || !first || pts.length < 2 ? null : (now - first[key]) / Math.max(1, (new Date(last._id) - new Date(first._id)) / 864e5) >= need;
+      return `<div class="tile${primary?" primary":""}"><div class="eyebrow"><i class="dot" style="background:var(${color})"></i> ${label} followers</div>
+        <div class="big num">${fmt(now)}<span style="font-size:20px"> / ${fmt(g)}</span></div>
+        ${now!=null?`<div class="bar"><i style="width:${Math.min(100, now/g*100)}%"></i></div>`:""}
+        <div class="sub">${now==null?"Log today's total below to start tracking.":`Since first log <b class="num">${gained>=0?"+":""}${fmt(gained)}</b> · last day <b class="num">${day==null?"—":(day>=0?"+":"")+fmt(day)}</b> · need <b class="num">${fmt(need)}</b>/day for ${daysLeft} days`}</div>
+        ${now==null?`<span class="state wait">No data yet</span>`:now>=g?`<span class="state ok">Goal hit</span>`:onPace==null?`<span class="state wait">Log 2+ days for pace</span>`:onPace?`<span class="state ok">On pace</span>`:`<span class="state warn">Behind pace</span>`}</div>`;
+    }
+    $("#ftiles").innerHTML = tile("ig","Instagram","--ig",true) + tile("fb","Facebook","--fb",false);
+    const td = today(), people = state.people || [], wid = state.week?.id;
+    const followedToday = people.filter(p => p.status && p.status !== "Not started" && (p.statusAt||"").slice(0,10) === td).length;
+    const followedAll = people.filter(p => p.status && p.status !== "Not started").length;
+    const comments = wid ? people.reduce((a,p) => a + (+(p.comments||{})[wid]||0), 0) : 0;
+    const reelsWeek = new Set((state.insights||[]).filter(r => r.weekId === wid).map(r => r.reel)).size;
+    const newToday = people.filter(p => p.addedOn === td).length;
+    const cell = (k, v, goalTxt, ok) => `<div><span class="k">${k}</span><span class="v num">${v}</span><span class="state ${ok?"ok":"wait"}">${goalTxt}</span></div>`;
+    $("#funnel").innerHTML =
+      cell("Instagram following", fmt((rows.filter(r => r.igFollowing != null).pop()||{}).igFollowing), "Keep targeted", true) +
+      cell("New people on today's list", fmt(newToday), "15 a day", newToday >= 15) +
+      cell("Accounts followed today", fmt(followedToday), "Target 15", followedToday >= 15) +
+      cell("Accounts followed, total", fmt(followedAll), `of ${people.length}`, followedAll >= people.length && people.length > 0) +
+      cell("Comments this week", fmt(comments), "Target 35 (5/day)", comments >= 35) +
+      cell("Reels logged this week", fmt(reelsWeek), "Target 4", reelsWeek >= 4);
+    const gi = $("#fl-gig"), gf = $("#fl-gfb");
+    if (gi && document.activeElement !== gi && !gi.value) gi.value = goal.ig;
+    if (gf && document.activeElement !== gf && !gf.value) gf.value = goal.fb;
+  }
+  function trendChart(title, color, pts){
+    if (pts.length < 1) return `<div class="chart"><div class="eyebrow">${title}</div><div class="empty">No data yet.</div></div>`;
+    const W=320,H=140,L=34,R=8,T=10,B=22;
+    const xs = pts.map(p => new Date(p.d).getTime()), ys = pts.map(p => p.v);
+    let x0=Math.min(...xs), x1=Math.max(...xs); if (x0===x1){ x0-=864e5; x1+=864e5; }
+    let y0=Math.min(...ys), y1=Math.max(...ys); const pad=Math.max(2,(y1-y0)*.15); y0=Math.max(0,Math.floor(y0-pad)); y1=Math.ceil(y1+pad);
+    const X = t => L+(t-x0)/(x1-x0)*(W-L-R), Y = v => T+(1-(v-y0)/(y1-y0))*(H-T-B);
+    const line = pts.map((p,i) => `${i?"L":"M"}${X(xs[i]).toFixed(1)},${Y(p.v).toFixed(1)}`).join("");
+    const ticks = [y0, Math.round((y0+y1)/2), y1];
+    const last = pts[pts.length-1], first = pts[0], ch = last.v-first.v;
+    return `<div class="chart" data-pts='${esc(JSON.stringify(pts.map((p,i)=>({x:X(xs[i]),y:Y(p.v),d:p.d,v:p.v}))))}' data-w="${W}">
+      <div class="eyebrow"><i class="dot" style="background:var(${color})"></i> ${title} <span class="num" style="float:right">${fmt(last.v)} · ${ch>=0?"+":""}${fmt(ch)}</span></div>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}: ${fmt(first.v)} on ${first.d} to ${fmt(last.v)} on ${last.d}">
+        ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L-6}" y="${Y(v)+3}" text-anchor="end">${fmt(v)}</text>`).join("")}
+        <text class="ax" x="${L}" y="${H-6}">${first.d.slice(5)}</text><text class="ax" x="${W-R}" y="${H-6}" text-anchor="end">${last.d.slice(5)}</text>
+        <path d="${line}" fill="none" stroke="var(${color})" stroke-width="2"/>
+        ${pts.map((p,i) => `<circle cx="${X(xs[i])}" cy="${Y(p.v)}" r="${pts.length<15?3:0}" fill="var(${color})"/>`).join("")}
+        <line class="xh" y1="${T}" y2="${H-B}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/>
+      </svg><div class="tip" hidden></div></div>`;
+  }
+  function renderTrend(){
+    const el = $("#trend"); if (!el) return;
+    const rows = (state.followers||[]).slice().sort((a,b) => a._id < b._id ? -1 : 1);
+    const series = k => rows.filter(r => r[k] != null).map(r => ({ d:r._id, v:+r[k] }));
+    el.innerHTML = trendChart("Instagram followers","--ig",series("ig")) + trendChart("Instagram following","--restore",series("igFollowing")) + trendChart("Facebook followers","--fb",series("fb"));
+    wireCharts(el);
+  }
+  function wireCharts(el){
+    el.querySelectorAll(".chart[data-pts]").forEach(c => {
+      const pts = JSON.parse(c.dataset.pts), svg = c.querySelector("svg"), xh = c.querySelector(".xh"), tip = c.querySelector(".tip");
+      const move = e => { const r = svg.getBoundingClientRect(), sx = (e.clientX-r.left)/r.width*(+c.dataset.w);
+        const p = pts.reduce((a,b) => Math.abs(b.x-sx) < Math.abs(a.x-sx) ? b : a);
+        xh.setAttribute("x1",p.x); xh.setAttribute("x2",p.x); xh.setAttribute("visibility","visible");
+        tip.hidden = false; tip.textContent = `${p.d}: ${fmt(p.v)}`; tip.style.left = (svg.offsetLeft + p.x/(+c.dataset.w)*r.width)+"px"; tip.style.top = (svg.offsetTop + p.y/140*r.height)+"px"; };
+      svg.addEventListener("pointermove", move); svg.addEventListener("pointerleave", () => { xh.setAttribute("visibility","hidden"); tip.hidden = true; });
+    });
+  }
+  function renderActivity(){
+    const el = $("#actTrend"); if (!el) return;
+    const rows = (state.igdaily||[]).slice().sort((a,b) => a._id < b._id ? -1 : 1);
+    const ser = k => rows.filter(r => r[k] != null).map(r => ({ d:r._id, v:+r[k] }));
+    el.innerHTML = trendChart("Accounts reached","--intel",ser("reach")) + trendChart("Profile visits","--ig",ser("profileViews")) + trendChart("Views","--restore",ser("views")) + trendChart("Website link taps","--move",ser("websiteTaps"));
+    wireCharts(el);
+    const posts = (state.igposts||[]).slice().sort((a,b) => a.timestamp < b.timestamp ? 1 : -1);
+    $("#postTable").innerHTML = posts.length ? `<table class="ptab"><thead><tr><th>Posted</th><th>Type</th><th>Post</th><th class="r">Reach</th><th class="r">Views</th><th class="r">Likes</th><th class="r">Comments</th><th class="r">Saves</th><th class="r">Shares</th></tr></thead><tbody>${posts.map(p => `<tr><td class="num">${esc((p.timestamp||"").slice(0,10))}</td><td>${esc(p.product==="REELS"?"Reel":(p.type||"").toLowerCase())}</td><td><a href="${esc(p.permalink)}" target="_blank" rel="noopener">${esc((p.caption||"Open post").slice(0,60))}</a></td>${["reach","views","likes","comments","saved","shares"].map(k => `<td class="r num">${fmt(p[k])}</td>`).join("")}</tr>`).join("")}</tbody></table>` : `<div class="empty">Posts appear here after the next daily pull.</div>`;
+  }
+  // ---------- live Instagram (Composio connector, viewer's credentials) ----------
+  const isoDay = off => { const d = new Date(Date.now() + off*864e5); return new Date(d - d.getTimezoneOffset()*6e4).toISOString().slice(0,10); };
+  const live = { busy:false, at:null };
+  function setLive(kind, text){ const d = $("#liveDot"), t = $("#liveText"); if (!d) return; d.className = "ldot " + kind; t.innerHTML = text; }
+  const same = (a, b) => Object.keys(b).every(k => k === "loggedAt" || k === "pulledOn" || JSON.stringify(a?.[k]) === JSON.stringify(b[k]));
+  async function saveIf(path, existing, data){ if (!state.db || !state.canWrite) return; if (existing && same(existing, data)) return; const { _id, ...prev } = existing || {}; try { await state.db.doc(path).set({ ...prev, ...data }); } catch {} }
+  async function pullLive(force){
+    if (live.busy) return; live.busy = true;
+    let mcp = null; try { mcp = await window.claude?.use("mcp"); } catch {}
+    if (!mcp){ setLive("", "Live Instagram isn't available in this view. Showing saved history, pulled daily at 6:38am ET."); live.busy = false; return; }
+    setLive("wait", "Pulling live numbers from Instagram…");
+    for (let i = 0; i < 40 && (!state.followers || !state.igdaily || !state.igposts); i++) await new Promise(r => setTimeout(r, 250));
+    if (!state.followers || !state.igdaily || !state.igposts){ setLive("bad", "Saved history hasn't loaded yet, so nothing was pulled. Tap Refresh now."); live.busy = false; return; }
+    const U = "COMPOSIO_MULTI_EXECUTE_TOOL", tv = ["profile_views","accounts_engaged","total_interactions","views","website_clicks"];
+    const days = [-3,-2,-1].map(isoDay);
+    const tools = [
+      { tool_slug:"INSTAGRAM_GET_USER_INFO", arguments:{ ig_user_id:"me", fields:"id,username,followers_count,follows_count,media_count" } },
+      { tool_slug:"INSTAGRAM_GET_IG_USER_MEDIA", arguments:{ ig_user_id:"me", limit:100, fields:"id,caption,media_type,media_product_type,permalink,timestamp,like_count,comments_count" } },
+      { tool_slug:"INSTAGRAM_GET_USER_INSIGHTS", arguments:{ metric:["reach"], period:"day", metric_type:"time_series", since:isoDay(-8), until:isoDay(0) } },
+      ...days.map(d => ({ tool_slug:"INSTAGRAM_GET_USER_INSIGHTS", arguments:{ metric:tv, period:"day", metric_type:"total_value", since:d, until:isoDay(Math.round((new Date(d) - new Date(isoDay(0)))/864e5) + 1) } }))
+    ];
+    const results = r => { const p = r?.payload; const d = typeof p === "string" ? (()=>{ try { return JSON.parse(p); } catch { return null; } })() : p; return d?.data?.results || d?.results || []; };
+    const ok = x => x?.response?.successful ? x.response.data : null;
+    try {
+      const res = await mcp.callTool("Composio", U, { tools, sync_response_to_workbench:false, thought:"Vybe Health dashboard live refresh" }, { cache: force ? { refresh:true, staleTime:0 } : { staleTime:60000 } });
+      const out = results(res); const by = i => ok(out.find(x => x.index === i) || out[i]);
+      const info = by(0), media = by(1)?.data || [], reach = by(2)?.data?.[0]?.values || [];
+      if (!info || info.followers_count == null) throw { code:"tool_error", message:"Instagram didn't return account numbers." };
+      const td = isoDay(0), f = (state.followers||[]).find(r => r._id === td);
+      await saveIf("followers/" + td, f, { ig:info.followers_count, igFollowing:info.follows_count, igPosts:info.media_count, source:"Instagram Graph API via Composio (live, dashboard)", loggedAt:new Date().toISOString() });
+      const dayDocs = {};
+      reach.forEach(v => { const d = new Date(new Date(v.end_time) - 864e5).toISOString().slice(0,10); (dayDocs[d] ||= {}).reach = v.value; });
+      days.forEach((d, i) => { const m = by(3 + i)?.data || []; if (!m.length) return; const g = n => m.find(x => x.name === n)?.total_value?.value; Object.assign(dayDocs[d] ||= {}, { profileViews:g("profile_views"), accountsEngaged:g("accounts_engaged"), interactions:g("total_interactions"), views:g("views"), websiteTaps:g("website_clicks") }); });
+      for (const [d, v] of Object.entries(dayDocs)){ if (d >= td) continue; Object.keys(v).forEach(k => v[k] == null && delete v[k]); const ex = (state.igdaily||[]).find(r => r._id === d); await saveIf("igdaily/" + d, ex, { ...v, source:"Instagram Graph API via Composio (account insights, day)", pulledOn:td }); }
+      const recent = media.filter(m => new Date(m.timestamp) > Date.now() - 45*864e5).slice(0, 40);
+      let ins = [];
+      if (recent.length){
+        try { const r2 = await mcp.callTool("Composio", U, { tools: recent.map(m => ({ tool_slug:"INSTAGRAM_GET_IG_MEDIA_INSIGHTS", arguments:{ ig_media_id:m.id, metric:["views","reach","saved","shares","likes","comments"] } })), sync_response_to_workbench:false, thought:"Vybe Health post insights" }, { cache: force ? { refresh:true, staleTime:0 } : { staleTime:60000 } }); ins = results(r2); } catch {}
+      }
+      for (const [i, m] of media.entries()){
+        const ri = recent.indexOf(m), mi = ri >= 0 ? ok(ins.find(x => x.index === ri) || ins[ri])?.data || [] : [];
+        const g = n => mi.find(x => x.name === n)?.values?.[0]?.value;
+        const doc = { permalink:m.permalink, timestamp:m.timestamp, type:m.media_type, product:m.media_product_type, caption:(m.caption||"").split("\n")[0].slice(0,80), likes:g("likes") ?? m.like_count ?? null, comments:g("comments") ?? m.comments_count ?? null, pulledOn:td };
+        ["views","reach","saved","shares"].forEach(k => { const v = g(k); if (v != null) doc[k] = v; });
+        const ex = (state.igposts||[]).find(r => r._id === m.id); await saveIf("igposts/" + m.id, ex, doc);
+      }
+      live.at = res?.cache?.storedAt ? new Date(res.cache.storedAt) : new Date();
+      const reels = media.filter(m => m.media_product_type === "REELS").length;
+      setLive("on", `<b>Live from Instagram</b> · @${esc(info.username)} · <b class="num">${fmt(info.followers_count)}</b> followers · <b class="num">${fmt(info.follows_count)}</b> following · <b class="num">${fmt(info.media_count)}</b> posts (${reels} Reels) · updated ${live.at.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}${state.canWrite ? " · saved to history" : ""}`);
+    } catch (e) {
+      const c = e?.code, fix = { server_not_connected:"Add Composio in claude.ai Settings → Connectors.", needs_reauth:"Reconnect Composio in claude.ai Settings → Connectors.", not_in_manifest:"Instagram access is turned off for this page. Allow Composio for this dashboard to see live numbers.", selection_required:"Pick which Composio connection this page should use.", consent_required:"Allow Composio for this dashboard to see live numbers.", server_unavailable:"Instagram didn't answer. Try Refresh in a minute." }[c] || (e?.message ? esc(e.message) : "Couldn't reach Instagram.");
+      setLive("bad", `Live pull failed: ${fix} Showing saved history${live.at ? ` from ${live.at.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}` : ""}.`);
+    } finally { live.busy = false; }
+  }
+  $("#liveRefresh")?.addEventListener("click", () => pullLive(true));
+  document.addEventListener("visibilitychange", () => { if (!document.hidden && live.at && Date.now() - live.at > 15*6e4) pullLive(false); });
+  function renderDemo(){
+    const el = $("#demo"), d = state.demo; if (!el || !d) return;
+    const src = (u, v) => u ? `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">source</a>${v?'<span class="vfy">re-checked</span>':""}` : "";
+    const li = (arr, f) => (arr||[]).length ? `<ul>${arr.map(x => `<li>${f(x)}${src(x.source, x.verified)}</li>`).join("")}</ul>` : "";
+    const blk = (label, html) => html ? `<div><div class="lbl">${label}</div>${html}</div>` : "";
+    const fol = (state.followers||[]).slice().sort((a,b)=>a._id<b._id?-1:1).filter(r=>r.ig!=null).pop()?.ig ?? null;
+    const aud = (state.igaudience||[]).slice().sort((a,b)=>a._id<b._id?1:-1)[0];
+    const own = aud ? `<div class="panel"><div class="eyebrow">Our own audience · Instagram API · ${esc(aud._id)}</div>${["age","gender","country","city"].map(k => aud[k] ? `<div class="note"><b>${k}</b>: ${Object.entries(aud[k]).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([n,v])=>`${esc(n)} ${fmt(v)}`).join(" · ")}</div>` : "").join("")}</div>`
+      : `<div class="panel"><div class="eyebrow">Our own audience</div><p class="note" style="margin:6px 0 8px">${esc(d.own?.note||"")}</p>${fol!=null?`<div class="bar"><i style="width:${Math.min(100, fol/(d.own?.threshold||100)*100)}%"></i></div><div class="note num" style="margin-top:6px">${fmt(fol)} of ${d.own?.threshold||100} followers</div>`:""}</div>`;
+    const bench = (d.benchmarks||[]).length ? `<div class="panel" style="overflow-x:auto"><div class="eyebrow">Benchmark accounts · public stats</div><table class="ptab"><thead><tr><th>Account</th><th class="r">Followers</th><th class="r">Engagement</th><th>Content categories</th><th></th></tr></thead><tbody>${d.benchmarks.map(b => `<tr><td><a href="https://www.instagram.com/${esc(b.handle)}/" target="_blank" rel="noopener">@${esc(b.handle)}</a></td><td class="r num">${fmt(b.followers)}</td><td class="r num">${esc(b.er||"—")}</td><td style="white-space:normal">${esc((b.categories||[]).join(", "))}${b.note?`<div class="note">${esc(b.note)}</div>`:""}</td><td>${src(b.source)}</td></tr>`).join("")}</tbody></table><div class="note" style="margin-top:6px">Their audience age/gender/country sits behind a paywall, so it isn't shown here.</div></div>` : "";
+    const plat = d.platforms ? `<div class="dgrid" style="margin-bottom:12px">${["instagram","facebook"].map(k => `<div class="dseg"><h3>${k === "instagram" ? "Who's on Instagram" : "Who's on Facebook"}</h3>${li(d.platforms[k], x => esc(x.fact) + (x.date?` <span class="note">(${esc(x.date)})</span>`:""))}</div>`).join("")}</div>` : "";
+    el.innerHTML = `${(d.takeaways||[]).length?`<div class="panel" style="margin-bottom:12px"><div class="eyebrow">What the data says to do</div><ol class="takeaways">${d.takeaways.map(t=>`<li>${esc(t)}</li>`).join("")}</ol></div>`:""}
+      <div class="dgrid" style="margin-bottom:12px">${own}${bench}</div>${plat}
+      <div class="dgrid">${(d.segments||[]).map(sg => `<article class="dseg"><h3>${esc(sg.name)}</h3>
+        ${sg.size?`<div class="size"><b>${esc(sg.size.value)}</b>${src(sg.size.source, sg.size.verified)}${sg.size.date?` <span class="note">${esc(sg.size.date)}</span>`:""}</div>`:""}
+        ${blk("Age", li(sg.age, x => `${esc(x.bracket)}: <b>${esc(x.share)}</b>`))}
+        ${blk("Gender", li(sg.gender, x => `${esc(x.group)}: <b>${esc(x.share)}</b>`))}
+        ${blk("Where", li(sg.geo, x => `<b>${esc(x.place)}</b>: ${esc(x.note)}`))}
+        ${blk("Income & education", li(sg.incomeEducation, x => esc(x.fact)))}
+        ${blk("Interests", li(sg.interests, x => `<b>${esc(x.interest)}</b>: ${esc(x.evidence)}`))}
+        ${blk("Platforms", li(sg.platforms, x => esc(x.fact)))}
+        ${(sg.gaps||[]).length?`<div class="gap">Not found yet: ${esc(sg.gaps.join("; "))}</div>`:""}
+      </article>`).join("")}</div>`;
+    $("#demoNote").textContent = `Sourced research, as of ${d.asOf}. ${d.method||""}`;
+  }
+  function renderAds(){
+    const el = $("#ads"), a = state.ads; if (!el || !a) return;
+    const d = a.deepDive || {}, b = d.buyers || {}, t = d.metaToolbox2026 || {}, c = d.competitorsOnMeta || {}, s = d.referenceStructure || {};
+    const li = arr => (arr||[]).length ? `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+    const kv = obj => Object.keys(obj||{}).length ? `<ul>${Object.entries(obj).map(([k,v]) => `<li><b>${esc(k)}</b>: ${esc(Array.isArray(v)?v.join("; "):v)}</li>`).join("")}</ul>` : "";
+    const blk = (label, html) => html ? `<div><div class="lbl">${label}</div>${html}</div>` : "";
+    const card = (title, inner) => `<article class="dseg"><h3>${esc(title)}</h3>${inner}</article>`;
+    el.innerHTML =
+      `<div class="whitespace"><div class="eyebrow">What the research says · ${esc(d.savedOn||a.savedOn||"")}</div><p>${esc(d.headline||"")}</p><div class="note" style="color:var(--on-forest);opacity:.85">${esc(a.status||"")}</div></div>` +
+      `<div class="dgrid">` +
+      (a.adLibrary1001 ? (L => card("Live ad library · " + (L.pulledOn||""), `<p class="note">${esc(L.source||"")}</p>` + blk("Verified advertisers right now", `<ul>${(L.verifiedAdvertisers||[]).map(v => `<li><b>${esc(v.brand)}</b>: ${esc(v.activeAds)} active ads${v.longestRunningDays?`, longest ${esc(v.longestRunningDays)} days`:""}${v.estSpend?`, est. ${esc(v.estSpend)}`:""}${v.avgScore?`, avg score ${esc(v.avgScore)}`:""}${v.hooks?`. Hooks: ${esc(v.hooks)}`:""}${v.formats?`. Formats: ${esc(v.formats)}`:""}${v.note?` ${esc(v.note)}`:""}</li>`).join("")}</ul>`) + blk("Checked, not advertising", li(L.notAdvertising)) + blk("What the winners say", li(L.whatTheWinnersSay)) + blk("Open lane", li(L.openLane)) + blk("For Vybe", li(L.forVybe)) + blk("Gaps", li(L.gaps))))(a.adLibrary1001) : "") +
+      card("Who buys a WHOOP or Oura alternative", kv(b)) +
+      card("What Meta lets us fence in 2026", blk("Hard controls", li(t.hardControls)) + blk("Suggestion only", li(t.suggestionOnly)) + (t.stillFences?`<p class="note">${esc(t.stillFences)}</p>`:"") + blk("Interests that exist", li(t.interestsExist)) + blk("Interests not verified", li(t.interestsUnverified)) + blk("Removed by Meta", li(t.removed)) + (t.audiences?`<p class="note">${esc(t.audiences)}</p>`:"") + (t.learning?`<p class="note">${esc(t.learning)}</p>`:"")) +
+      card("Health & wellness rules", `<p style="margin:0;font-size:14px">${esc(d.healthRestrictions||"")}</p>` + (a.creativeRulesForAds?`<p class="note">${esc(a.creativeRulesForAds)}</p>`:"")) +
+      card("How competitors advertise on Meta", kv({whoop:c.whoop, oura:c.oura, garmin:c.garmin, amazfit:c.amazfit, others:c.others}) + blk("Nobody is speaking to", li(c.underServed))) +
+      card("Reference structure, if ads are ever approved", (s.status?`<p class="note">${esc(s.status)}</p>`:"") + blk("Campaigns", li(s.campaigns)) + (s.phases?`<p style="margin:0;font-size:13.5px">${esc(s.phases)}</p>`:"") + blk("Personas carried in creative", li(s.personasInCreative)) + blk("Measure", li(s.measure)) + (s.costProxies?`<p class="note">${esc(s.costProxies)}</p>`:"")) +
+      card("Hooks: approved and rejected", blk("Approved", li(a.approvedAdHooks)) + blk("Rejected", (a.rejectedHooks||[]).length?`<ul>${a.rejectedHooks.map(h => `<li>“${esc(h.hook)}” <span class="note">${esc(h.why)}</span></li>`).join("")}</ul>`:"")) +
+      card("Verify before quoting", li(d.unverified||a.unverified) + blk("Verified", li(a.verified))) +
+      card("Decisions only the founder can make", li(d.founderDecisions||a.openDecisions)) +
+      `</div>`;
+    $("#adsNote").textContent = `Instagram and Facebook ads research, as of ${d.savedOn||a.savedOn||""}. ${d.report?`Full report: ${d.report}.`:""} No ads are running.`;
+  }
+  function renderWeekly(){
+    const el = $("#weekly"), pick = $("#repPick"); if (!el || !pick) return;
+    const reps = (state.reports||[]).slice().sort((a,b) => a._id < b._id ? 1 : -1);
+    if (!reps.length) return;
+    const cur = pick.value && reps.find(r => r._id === pick.value) ? pick.value : reps[0]._id;
+    pick.innerHTML = reps.map(r => `<option value="${esc(r._id)}"${r._id===cur?" selected":""}>${esc(r._id)}</option>`).join("");
+    const r = reps.find(x => x._id === cur), s = r.stats || {};
+    const st = (k,v) => `<div><span class="note">${k}</span><span class="num" style="font:400 24px/1 var(--serif)">${v}</span></div>`;
+    const sg = v => v==null ? "—" : (v>=0?"+":"")+fmt(v);
+    const list = (h, a) => a && a.length ? `<div class="panel"><div class="lbl">${h}</div><ul>${a.map(x => `<li>${esc(typeof x==="string"?x:(x.title||x.name||"")+(x.why?" — "+x.why:""))}</li>`).join("")}</ul></div>` : "";
+    el.innerHTML = `${r.headline?`<h3>${esc(r.headline)}</h3>`:""}
+      <div class="stats">${st("Instagram followers",sg(s.igGain))}${st("Facebook followers",sg(s.fbGain))}${st("Reels posted",fmt(s.reelsPosted))}${st("Follows from Reels",fmt(s.followsFromReels))}${st("Avg hold",s.avgHold==null?"—":esc(s.avgHold)+(typeof s.avgHold==="number"?"%":""))}${st("Sends+saves / 1k",s.sendsSavesPer1k==null?"—":esc(s.sendsSavesPer1k))}${st("Accounts followed",fmt(s.accountsFollowed))}${st("Comments left",fmt(s.commentsLeft))}</div>
+      ${list("What worked", r.best)}${list("What didn't", r.worst)}${list("Next week", r.nextWeek)}${list("By category", r.byCategory)}${list("Data gaps", r.dataGaps)}`;
+  }
+  $("#repPick")?.addEventListener("change", renderWeekly);
+  $("#fl-date").value = today();
+  $("#folForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const m = $("#flMsg"), say = (t, err) => { m.textContent = t; m.className = "formmsg full " + (err?"err":"ok"); };
+    if (!state.db){ say("Saving isn't available in this view. Open the dashboard on claude.ai.", true); return; }
+    const v = id => { const x = $(id).value.trim(); return x === "" ? null : Number(x); };
+    const date = $("#fl-date").value, ig = v("#fl-ig"), fb = v("#fl-fb"), gig = v("#fl-gig"), gfb = v("#fl-gfb");
+    if (!date){ say("Pick a date.", true); return; }
+    if (ig == null && fb == null){ say("Enter at least one follower total.", true); $("#fl-ig").focus(); return; }
+    const btn = $("#fl-submit"); btn.disabled = true;
+    try {
+      const doc = { loggedAt: new Date().toISOString() }; if (ig != null) doc.ig = ig; if (fb != null) doc.fb = fb;
+      await state.db.collection("followers").doc(date).set(doc);
+      const cur = state.targets?.followerTarget || {};
+      if ((gig && gig !== cur.ig) || (gfb && gfb !== cur.fb)) await state.db.doc("plan/targets").update({ followerTarget: { ig: gig || cur.ig || 1000, fb: gfb || cur.fb || 250 } });
+      say(`Saved ${date}. Saving the same date again replaces it.`); $("#fl-ig").value = ""; $("#fl-fb").value = "";
+    } catch(err){ say("Couldn't save. Check your connection and try again.", true); }
+    finally { btn.disabled = false; }
+  });
+
+  // ---------- daily brief ----------
+  function renderBrief(){
+    const days = (state.daily||[]).map(d => d._id).sort().reverse(); if (!days.length || !$("#brief")) return;
+    const pick = $("#briefPick");
+    if (!state.briefDay || !days.includes(state.briefDay)) state.briefDay = days[0];
+    pick.innerHTML = days.map(d => `<option${d===state.briefDay?" selected":""}>${esc(d)}</option>`).join("");
+    const b = state.daily.find(d => d._id === state.briefDay) || {};
+    const links = src => String(src||"").split(/\s*;\s*|\s+(?=https?:)/).filter(Boolean).map(u => /^https?:/.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,"").split("/")[0])}</a>` : esc(u)).join(" · ");
+    const caps = (b.captions||[]).map(c => typeof c === "string" ? {label:"Caption", text:c} : c);
+    const track = t => (b.research||[]).filter(r => r.track === t);
+    const rblock = (t, title) => { const rs = track(t); return rs.length ? `<div class="panel"><div class="eyebrow">${title}</div><div class="rgrid">${rs.map(r => `<div class="ritem"><p>${esc(r.finding)}</p><p><b>Move:</b> ${esc(r.move)}</p><div class="srcs">${links(r.source)}</div></div>`).join("")}</div>${b.experiments?.[t]?`<div class="claim"><b>Try this week.</b> ${esc(b.experiments[t])}</div>`:""}</div>` : ""; };
+    $("#brief").innerHTML =
+      (caps.length ? `<div class="panel"><div class="eyebrow">Captions · ready to paste</div><div class="rgrid">${caps.map(c => `<div class="cap ritem"><div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${esc(c.label)}</b><button class="copy" data-copy="${esc(c.text)}">Copy</button></div><pre>${esc(c.text)}</pre></div>`).join("")}</div></div>` : "") +
+      ((b.ideas||[]).length ? `<div class="panel"><div class="eyebrow">Content ideas</div><div class="rgrid">${b.ideas.map(i => `<div class="ritem"><b>${esc(i.title)}</b><p>“${esc(i.hook)}”</p><p class="note">${esc(i.audience)} · ${esc(i.format)}</p></div>`).join("")}</div></div>` : "") +
+      rblock("band", "Research · marketing the band") + rblock("sdk", "Research · marketing the customizable SDK");
+  }
+  $("#briefPick").addEventListener("change", e => { state.briefDay = e.target.value; renderBrief(); });
+
+  // ---------- strategy ----------
+  function renderStrategy(){
+    const g = state.strategy; if (!g || !$("#strat")) return;
+    $("#stratSrc").textContent = g.source ? `From: ${g.source}` : "";
+    const m = g.messaging || {}, f = g.facts || {};
+    const li = a => (a||[]).map(x => `<li>${esc(x)}</li>`).join("");
+    const fx = g.fixFirst;
+    $("#strat").innerHTML =
+      (fx ? `<div class="panel" style="border-color:var(--warn)"><div class="eyebrow" style="color:var(--warn)">Fix first · website (checked ${esc(fx.checkedOn)})</div><p style="margin:0">${esc(fx.finding)}</p><p class="note" style="margin:0">${esc(fx.why)}</p><ol style="margin:0;padding-left:20px;font-size:14px;display:grid;gap:3px">${li(fx.fixes)}</ol><p class="note" style="margin:0">${esc(fx.caveat)}</p></div>` : "") +
+      (g.audit0930 ? (a => `<div class="panel"><div class="eyebrow">Account audit · ${esc(a.date)}</div><div class="rgrid">
+        <div class="ritem"><b>What the numbers say</b><p>${esc(a.numbers.followers)} followers · ${esc(a.numbers.following)} following · ${esc(a.numbers.posts)} posts. Reach ${esc(a.numbers.reach30d)} · views ${esc(a.numbers.views30d)} · profile visits ${esc(a.numbers.profileVisits30d)} · engaged accounts ${esc(a.numbers.accountsEngaged30d)} · comments ${esc(a.numbers.comments)} · saves ${esc(a.numbers.saves)} · shares ${esc(a.numbers.shares)}.</p><ul style="margin:0;padding-left:18px">${li(a.diagnosis)}</ul></div>
+        <div class="ritem"><b>Signal hygiene</b><ul style="margin:0;padding-left:18px">${li(a.signalHygiene)}</ul></div>
+        <div class="ritem"><b>Cadence</b><p>Reels: ${esc(a.cadence.reels)}</p><p>Stories: ${esc(a.cadence.stories)}</p><p>Replies: ${esc(a.cadence.replies)}</p><p class="note">Kept from the audit: ${esc((a.keptFromAudit||[]).join("; "))}. Not adopted: ${esc((a.notAdopted||[]).join("; "))}.</p></div>
+      </div></div>`)(g.audit0930) : "") +
+      `<div class="whitespace"><div class="eyebrow">Position · ${esc(f.category||"")}</div><p>${esc(m.position||"")}</p><div class="note" style="color:var(--on-forest);opacity:.85">Lead line: “${esc(m.primary||"")}” · Thesis: “${esc(f.thesis||"")}” · ${esc(f.launch||"")}</div></div>` +
+      `<div class="panel"><div class="rgrid">
+        <div class="ritem"><b>Say it this way</b><ul style="margin:0;padding-left:18px">${li(m.proof)}</ul><p class="note">Fair line: ${esc(m.fairLine||"")}</p></div>
+        <div class="ritem"><b>Never say</b><ul style="margin:0;padding-left:18px">${li(m.never)}</ul><p class="note">${esc(m.connectFrame||"")}</p></div>
+        <div class="ritem"><b>Search phrases for captions and on-screen text</b><p>${(g.searchLanguage||[]).map(x=>`<span class="tag" style="color:var(--intel);display:inline-block;margin:2px">${esc(x)}</span>`).join(" ")}</p></div>
+      </div></div>` +
+      `<div class="panel"><div class="eyebrow">Three social plays</div><div class="rgrid">${(g.socialPlays||[]).map(p => `<div class="ritem"><b>${esc(p.name)}</b><p>${esc(p.how)}</p><p class="note">Companion page: ${esc(p.companion)}</p></div>`).join("")}</div></div>` +
+      `<div class="panel"><div class="eyebrow">Connect topic bank · weak answers online, ours to own</div><ol style="margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px">${li(g.connectBank)}</ol></div>` +
+      ((g.pageBriefs||[]).length ? `<div class="panel"><div class="eyebrow">Pages to build on vybe.health · first four</div><div class="rgrid">${g.pageBriefs.map(b => `<div class="ritem"><span class="mono">${esc(b.url)}</span><b>${esc(b.title)}</b><p class="note">Targets: ${esc(b.targets)}</p><ol style="margin:0;padding-left:18px;font-size:13px;display:grid;gap:3px">${li(b.outline)}</ol><p class="note">Reel tie-in: ${esc(b.reelTieIn)}</p></div>`).join("")}</div>
+        <div class="note">Existing pages: ${(f.existingPages||[]).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace("https://vybe.health",""))}</a>`).join(" · ")}</div></div>` : "");
+  }
+  function renderAll(){ renderStrategy(); renderBrief(); renderFollowers(); renderFollowTracker(); renderTrend(); renderActivity(); renderWeekly(); renderDemo(); renderAds(); renderGrowth(); renderCats(); renderComp(); renderAud(); renderPeople(); renderHeader(); renderTiles(); renderWeeks(); renderReels(); renderStories(); renderScript(); renderNews(); renderReelSelect(); renderLog(); }
+
+  // ---------- interactions ----------
+  document.addEventListener("change", async e => {
+    const fc = e.target.closest("[data-follow]");
+    if (fc && state.db){
+      const p = (state.people||[]).find(x => x._id === fc.dataset.follow);
+      const next = fc.checked ? ((p?.status && p.status !== "Not started") ? p.status : "Following") : "Not started";
+      const now = new Date().toISOString();
+      const upd = fc.checked ? { status: next, statusAt: now, followedAt: p?.followedAt || now } : { status: next, statusAt: now, followedAt: null, followedBack: false, followedBackAt: null };
+      try { await state.db.collection("people").doc(fc.dataset.follow).update(upd); } catch { fc.checked = !fc.checked; }
+      return;
+    }
+    const fb = e.target.closest("[data-back]");
+    if (fb && state.db){
+      const upd = fb.checked ? { followedBack: true, followedBackAt: new Date().toISOString() } : { followedBack: false, followedBackAt: null };
+      try { await state.db.collection("people").doc(fb.dataset.back).update(upd); } catch { fb.checked = !fb.checked; }
+      return;
+    }
+    const sel = e.target.closest("[data-person]");
+    if (!sel || !state.db) return;
+    const sp = (state.people||[]).find(x => x._id === sel.dataset.person), sNow = new Date().toISOString();
+    const sUpd = { status: sel.value, statusAt: sNow }; if (FOLLOWED.includes(sel.value) && !sp?.followedAt) sUpd.followedAt = sNow;
+    try { await state.db.collection("people").doc(sel.dataset.person).update(sUpd); }
+    catch { sel.insertAdjacentHTML("afterend", `<span class="formmsg err"> Couldn't save. Try again.</span>`); }
+  });
+  document.addEventListener("click", async e => {
+    const c = e.target.closest("[data-copy]");
+    if (c){ const txt = c.dataset.copy, old = c.textContent;
+      try { await navigator.clipboard.writeText(txt); c.textContent = "Copied"; } catch { c.textContent = "Select + copy"; }
+      setTimeout(() => c.textContent = old, 1400); return; }
+    const f = e.target.closest("[data-f]");
+    if (f){ state.filter = f.dataset.f; document.querySelectorAll("[data-f]").forEach(b => b.setAttribute("aria-pressed", String(b===f))); renderReels(); return; }
+    const l = e.target.closest("[data-log]");
+    if (l){ $("#f-reel").value = l.dataset.log; $("#t-log").scrollIntoView({behavior:"smooth",block:"start"}); $("#f-reach").focus({preventScroll:true}); return; }
+    const cm = e.target.closest("[data-comment]");
+    if (cm && state.db && state.week?.id){
+      const p = (state.people||[]).find(x => x._id === cm.dataset.comment); const wid = state.week.id;
+      const n = (+(p?.comments||{})[wid]||0) + 1;
+      try { await state.db.collection("people").doc(cm.dataset.comment).update({ comments: { [wid]: n } }); } catch { cm.textContent = "Couldn't save"; }
+      return;
+    }
+    const d = e.target.closest("[data-del]");
+    if (d && state.db){
+      if (d.dataset.armed !== "1"){ d.dataset.armed = "1"; d.textContent = "Confirm remove"; setTimeout(()=>{ d.dataset.armed=""; d.textContent="Remove"; }, 3000); return; }
+      try { await state.db.collection("insights").doc(d.dataset.del).delete(); } catch(err){ msg("Couldn't remove that entry. Try again.", true); }
+    }
+  });
+  function msg(t, err){ const m = $("#formMsg"); m.textContent = t; m.className = "formmsg full " + (err?"err":"ok"); }
+  $("#logForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    if (!state.db){ msg("Saving isn't available in this view. Open the dashboard on claude.ai to log Insights.", true); return; }
+    const n = id => { const v = $(id).value.trim(); return v === "" ? null : Number(v); };
+    const reach = n("#f-reach");
+    if (reach == null || reach < 0){ msg("Enter the Reel's reach to log it.", true); $("#f-reach").focus(); return; }
+    const hold = n("#f-hold"); if (hold != null && (hold < 0 || hold > 100)){ msg("3-second hold is a percentage between 0 and 100.", true); return; }
+    const reel = $("#f-reel").value, platform = $("#f-platform").value;
+    const owner = findReel(reel)?.w;
+    const doc = { reel, platform, weekIndex: owner?.weekIndex ?? 0, weekId: owner?.id ?? "",
+      reach, views:n("#f-views"), hold3:hold, saves:n("#f-saves"), sends:n("#f-sends"), profileVisits:n("#f-profile"),
+      linkClicks:n("#f-clicks"), follows:n("#f-follows"), reservations:n("#f-res"), inquiries:n("#f-inq"), loggedAt:new Date().toISOString() };
+    const btn = $("#f-submit"); btn.disabled = true;
+    try {
+      await state.db.collection("insights").doc(`${reel}__${platform}`).set(doc);
+      msg(`Logged ${platform === "instagram" ? "Instagram" : "Facebook"} Insights. Logging the same Reel and platform again replaces this entry.`);
+      ["#f-reach","#f-views","#f-hold","#f-saves","#f-sends","#f-profile","#f-clicks","#f-follows","#f-res","#f-inq"].forEach(s => $(s).value = "");
+    } catch(err){
+      msg(err?.code === "quota_exceeded" ? "The log is full. Remove old entries, then try again." : "Couldn't save. Check your connection and try again.", true);
+    } finally { btn.disabled = false; }
+  });
+
+  // ---------- data ----------
+  async function boot(){
+    const db = window.claude ? await window.claude.use("db") : null;
+    if (!db){
+      const b = $("#dbBanner"); b.hidden = false;
+      b.textContent = "Live data isn't available in this view. Open the dashboard on claude.ai to see the plan and log Insights.";
+      return;
+    }
+    state.db = db;
+    try { const user = await window.claude.use("user"); if (user) state.canWrite = await user.canEdit(); } catch {}
+    if (!state.canWrite){ $("#logForm").hidden = true; $("#folForm").hidden = true; }
+    db.collection("research").onSnapshot(q => { q.docs.forEach(d => { const v = d.data(); if (d.id==="competitors") state.comp = v; if (d.id==="audience") state.aud = v; if (d.id==="categories") state.cats = v.items; if (d.id==="growth") state.growth = v; if (d.id==="strategy") state.strategy = v; if (d.id==="demographics") state.demo = v; if (d.id==="ads") state.ads = v; if (d.id==="peopleplan") { state.tiers = v.tiers; state.playbook = v.playbook; } }); renderAll(); });
+    db.collection("people").onSnapshot(q => { state.people = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.doc("plan/targets").onSnapshot(s => { state.targets = s.exists ? s.data() : null; renderAll(); });
+    const pickWeek = () => { state.week = state.weeks[state.currentId] || null; renderAll(); };
+    db.doc("plan/current").onSnapshot(s => { state.currentId = s.exists ? s.data().weekId : null; pickWeek(); });
+    db.collection("weeks").onSnapshot(q => { state.weeks = {}; q.docs.forEach(d => { state.weeks[d.id] = d.data(); }); pickWeek(); });
+    db.collection("daily").onSnapshot(q => { state.daily = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.collection("followers").onSnapshot(q => { state.followers = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.collection("igaudience").onSnapshot(q => { state.igaudience = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.collection("igdaily").onSnapshot(q => { state.igdaily = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.collection("igposts").onSnapshot(q => { state.igposts = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    setTimeout(() => pullLive(false), 1500);
+    db.collection("reports").onSnapshot(q => { state.reports = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); });
+    db.collection("insights").onSnapshot(q => { state.insights = q.docs.map(d => ({...d.data(), _id:d.id})); renderAll(); },
+      () => { msg("Live updates stopped. Reload the page to reconnect.", true); });
+  }
+  boot();
+})();
+</script>
+
+</body>
+</html>
