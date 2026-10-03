@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03 15:13 UTC",
+  "generated": "2026-10-03 22:38 UTC",
   "today": "2026-10-03",
   "scope": {
     "company": "Vybe Health",
@@ -124,7 +124,7 @@
     "signals": 32,
     "high": 60,
     "deadlines_30d": 8,
-    "ready_to_send": 189,
+    "ready_to_send": 191,
     "identity_needs_ok": 74
   },
   "targets": [
@@ -263,7 +263,7 @@
       "id": "a16z-speedrun-sr008-andreessen-horowitz"
     },
     {
-      "role": null,
+      "role": "Founder",
       "type": "app-partner",
       "hunt": "partnership",
       "ice": null,
@@ -271,7 +271,7 @@
       "stage": null,
       "geo": null,
       "deadline": null,
-      "warm_path": null,
+      "warm_path": "Contact: Markus Rummel, Founder (source: https://aiendurance.com/en/about)",
       "why_now": "Gear checklist listing overnight HRV sources updated 2026-08-31.",
       "last_signal_date": "2026-08-31",
       "name": "AI Endurance",
@@ -279,13 +279,14 @@
       "why": "AI running/cycling/triathlon coach whose recovery model uses overnight HR and HRV; it already imports overnight data from Oura, Whoop, Garmin, Suunto, Coros and Polar, and tells users of other HRV devices to route via Intervals.icu or manual entry.",
       "evidence": [
         "https://aiendurance.com/blog/gear-checklist-for-optimal-data-flow-into-ai-endurance",
-        "https://aiendurance.com/en/faq"
+        "https://aiendurance.com/en/faq",
+        "https://aiendurance.com/en/about"
       ],
-      "channel": "contact form",
-      "contact_url": "https://aiendurance.com/en/faq",
+      "channel": "company team page",
+      "contact_url": "https://aiendurance.com/en/about",
       "fit": 9,
       "ask": "15-min call to scope a direct Vybe overnight HRV/RHR import (or confirm the Intervals.icu path) and DevKit loan for their recovery model.",
-      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that captures ECG-derived HRV and resting heart rate, no subscription. Your gear checklist lists Oura and Whoop for overnight HRV and says other devices go via Intervals.icu. We'd like to be a direct source for your recovery model. Could I send a DevKit and set up a short call on the data you need?",
+      "opener": "Hi Markus, I'm the founder of Vybe, a screenless overnight band that captures ECG-derived HRV and resting heart rate, no subscription. Your gear checklist lists Oura and Whoop for overnight HRV and says other devices go via Intervals.icu. We'd like to be a direct source for your recovery model. Could I send a DevKit and set up a short call on the data you need?",
       "confidence": "verified",
       "tags": [
         "wearables",
@@ -2806,7 +2807,7 @@
       "id": "toni-schneider-true-ventures"
     },
     {
-      "role": null,
+      "role": "Founder & Developer",
       "type": "app-partner",
       "hunt": "partnership",
       "ice": null,
@@ -2814,7 +2815,7 @@
       "stage": null,
       "geo": null,
       "deadline": null,
-      "warm_path": null,
+      "warm_path": "Contact: Felix Gertz, Founder & Developer (source: https://www.tredict.com/blog/use%5Fai%5Fassistants%5Fand%5Fllms%5Fwith%5Fthe%5Ftredict%5Fmcp%5Fserver%5Fand%5Finteractive%5Fmcp%5Fapps/)",
       "why_now": null,
       "last_signal_date": null,
       "name": "Tredict",
@@ -2823,13 +2824,14 @@
       "evidence": [
         "https://www.tredict.com/faq/which-recording-devices-and-services-are-supported/",
         "https://www.tredict.com/faq/oura-ring---connect-and-synchronise/",
-        "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/"
+        "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/",
+        "https://www.tredict.com/blog/use%5Fai%5Fassistants%5Fand%5Fllms%5Fwith%5Fthe%5Ftredict%5Fmcp%5Fserver%5Fand%5Finteractive%5Fmcp%5Fapps/"
       ],
-      "channel": "apply",
+      "channel": "API application",
       "contact_url": "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/",
       "fit": 9,
       "ask": "Register for Tredict API credentials and a 15-min call on pushing Vybe overnight HRV/RHR/sleep into the health-data endpoint.",
-      "opener": "Hi, I'm building Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription. Tredict already pulls nightly HRV from Oura into the form curve, and your API has a health-data endpoint. I'd like to push Vybe's overnight data there for our DevKit testers. Could we do a quick call on credentials and data format?",
+      "opener": "Hi Felix, I'm building Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription. Tredict already pulls nightly HRV from Oura into the form curve, and your API has a health-data endpoint. I'd like to push Vybe's overnight data there for our DevKit testers. Could we do a quick call on credentials and data format?",
       "confidence": "verified",
       "tags": [
         "wearables",
@@ -3591,7 +3593,7 @@
     {
       "name": "Breethe",
       "org": "Kodeon (acquired Breethe 2026-08-19)",
-      "role": null,
+      "role": "Co-Founder, Kodeon (acquirer of Breethe)",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "Sleep and meditation app (18M+ downloads per Kodeon) that writes Mindful Minutes to Apple Health. It was acquired 2026-08-19 by Kodeon, whose co-founder said 'Imagine your fitness app knowing you slept badly and adjusting tomorrow's workout', a cross-app sleep-data idea that fits an overnight band. Breethe has run B2B content partnerships (WW 2021, ClassPass 2023) and keeps partnership landing pages (e.g. /partnerships/iin).",
@@ -3601,11 +3603,12 @@
         "https://apps.apple.com/us/app/breethe-sleep-meditation/id920161006",
         "https://breethe.com/partnerships/iin",
         "https://www.prnewswire.com/news-releases/breethe-becomes-new-mindset-partner-of-ww-international-301402853.html",
-        "https://blog.classpass.com/classpass-partners-with-breethe/"
+        "https://blog.classpass.com/classpass-partners-with-breethe/",
+        "https://www.linkedin.com/in/jonwalshkodeon"
       ],
-      "channel": "email listed on site",
-      "contact_url": "https://kodeon.ai/press/kodeon-acquires-breethe",
-      "warm_path": null,
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/jonwalshkodeon",
+      "warm_path": "Contact: Jon Walsh, Co-Founder, Kodeon (Breethe owner) (source: https://kodeon.ai/press/kodeon-acquires-breethe)",
       "fit": 8,
       "ice": null,
       "ask": "15-minute call with Kodeon on piloting overnight sleep timing as a signal that personalizes Breethe's wind-down recommendations.",
@@ -4043,7 +4046,7 @@
     {
       "name": "Fitbod",
       "org": "Fitbod Inc.",
-      "role": "Senior Head of Sales & Partnerships (Jesse Padilla)",
+      "role": "Senior Head of Sales & Partnerships",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "AI strength app whose workouts are built around a per-muscle recovery percentage; its own help center (updated 2026-09-15) says recovery 'is an estimate, not a measurement' and that it only sees what is logged or pulled from Apple Health/Health Connect. Multi-device already (Apple Watch, Wear OS, Fitbit, Strava, BLE heart-rate straps incl. Garmin/Polar/WHOOP broadcast), and a named partnerships lead (Jesse Padilla) owns B2B and partner relationships.",
@@ -4056,7 +4059,7 @@
       ],
       "channel": "LinkedIn",
       "contact_url": "https://www.linkedin.com/in/jesse-padilla-30582032",
-      "warm_path": null,
+      "warm_path": "Contact: Jesse Padilla, Senior Head of Sales & Partnerships (source: https://www.linkedin.com/in/jesse-padilla-30582032)",
       "fit": 8,
       "ice": null,
       "ask": "15-minute call with partnerships/product on adding overnight HRV + sleep as an optional input to the muscle-recovery model; offer a DevKit slot.",
@@ -4976,7 +4979,7 @@
     {
       "name": "amp",
       "org": "AMP Fit Inc.",
-      "role": "Founder & CEO (Shalom Meckenzie)",
+      "role": "Founder",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "amp makes a wall-mounted adaptive-resistance strength machine (not a wearable) whose site says 'each night of sleep teaches amp' and that resistance adapts 'heavier when you're energized, lighter when you're not', with 'sleep, nutrition, and recovery integrations' personalizing workouts; its sales page says the app 'syncs with Apple, Oura, and other fitness apps and trackers'. NY company with $45M total funding per its founder's LinkedIn, now selling into studios.",
@@ -4989,7 +4992,7 @@
       ],
       "channel": "LinkedIn",
       "contact_url": "https://www.linkedin.com/in/shalom-meckenzie-54015a256",
-      "warm_path": null,
+      "warm_path": "Contact: Shalom Meckenzie, Founder (source: https://www.linkedin.com/in/shalom-meckenzie-54015a256)",
       "fit": 8,
       "ice": null,
       "ask": "Intro call with product (founder or CPO) on adding Vybe as a sleep/recovery source next to Apple Health and Oura; offer a DevKit unit.",
@@ -5514,7 +5517,7 @@
     {
       "name": "Alma: Nutrition Coach",
       "org": "Alma Nutrition, Inc.",
-      "role": null,
+      "role": "Founder & CEO",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "AI nutrition coach (Menlo Ventures-backed per its Feb 2025 launch release) whose App Store listing says it connects Apple Health and supported wearables to bring 'food, movement, sleep, workouts' together, and it supports sleep goals. Its help center says Garmin, Oura and WHOOP connect through Apple Health, so it is device-agnostic.",
@@ -5523,15 +5526,17 @@
         "https://www.alma.food/help",
         "https://apps.apple.com/us/app/alma-nutrition-coach/id6736372798",
         "https://www.prnewswire.com/news-releases/alma-launches-first-ai-powered-nutrition-companion-app-to-make-healthy-eating-simple-personalized-and-effortless-302367923.html",
-        "https://www.alma.food/llms.txt"
+        "https://www.alma.food/llms.txt",
+        "https://www.linkedin.com/in/ramialhamad",
+        "https://techcrunch.com/2025/02/05/former-whoop-execs-new-app-alma-uses-ai-for-all-things-nutrition/"
       ],
-      "channel": "warm intro needed",
-      "contact_url": "https://www.alma.food/help",
-      "warm_path": "Menlo Ventures portfolio (per launch release)",
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/ramialhamad",
+      "warm_path": "Contact: Rami Alhamad, Founder & CEO (source: https://www.linkedin.com/in/ramialhamad)",
       "fit": 8,
       "ice": null,
       "ask": "Ask whether the Coach reads Apple Health sleep/HRV today and whether they'd test a Vybe DevKit as a design partner.",
-      "opener": "Hi Alma team, I'm the founder of Vybe Health, a screenless band worn overnight with a licensed SDK. Your help center says Garmin, Oura and WHOOP reach Alma through Apple Health, and you support sleep goals. Vybe writes overnight data to Apple Health too. Would you be open to a short call about including last night's rest in Coach context, and possibly trying our DevKit?",
+      "opener": "Hi Rami, I'm the founder of Vybe Health, building a screenless band worn overnight with a licensed SDK. Alma's help center says Garmin, Oura and WHOOP reach Alma through Apple Health, and you support sleep goals. Vybe writes overnight data to Apple Health too. Would you be open to a short call about including last night's rest in Coach context, and possibly trying our DevKit?",
       "check_size": null,
       "stage": null,
       "geo": "San Francisco, CA",
@@ -5563,7 +5568,7 @@
       "priority": "Medium",
       "identity_needs_ok": false,
       "rank": 125,
-      "sendable": false,
+      "sendable": true,
       "id": "alma-nutrition-coach-alma-nutrition-inc"
     },
     {
@@ -5881,7 +5886,7 @@
       "id": "conor-allison-wareable"
     },
     {
-      "role": null,
+      "role": "Founder",
       "type": "app-partner",
       "hunt": "partnership",
       "ice": null,
@@ -5889,7 +5894,7 @@
       "stage": null,
       "geo": null,
       "deadline": null,
-      "warm_path": null,
+      "warm_path": "Contact: Tyler Swartz, Founder (source: https://www.linkedin.com/in/tylermswartz)",
       "why_now": null,
       "last_signal_date": null,
       "name": "Endorphins Running",
@@ -5897,13 +5902,15 @@
       "why": "Running training app and in-person community (site says 100,000+ runners; App Store says 1,500+ free group runs a year in 12+ cities) that syncs WHOOP, Oura, Garmin, Apple Health, COROS, Polar and Suunto and links a Developers page.",
       "evidence": [
         "https://endorphinsrunning.com/features/integrations",
-        "https://apps.apple.com/us/app/endorphins-running/id6736627957"
+        "https://apps.apple.com/us/app/endorphins-running/id6736627957",
+        "https://www.linkedin.com/in/tylermswartz",
+        "https://endorphinsrunning.com/about"
       ],
-      "channel": "email listed on site",
-      "contact_url": "https://endorphinsrunning.com/features/integrations",
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/tylermswartz",
       "fit": 8,
       "ask": "Intro call about adding Vybe to their integrations list and seeding DevKits with a run-club pace group.",
-      "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. Endorphins already syncs Oura and WHOOP, and your group runs are exactly the runners we want feedback from. Could we talk about adding Vybe as an integration and lending a few DevKits to one run club for a month?",
+      "opener": "Hi Tyler, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. Endorphins already syncs Oura and WHOOP, and your group runs are exactly the runners we want feedback from. Could we talk about adding Vybe as an integration and lending a few DevKits to one run club for a month?",
       "confidence": "verified",
       "tags": [
         "wearables",
@@ -6562,22 +6569,23 @@
     {
       "name": "MyFitnessPal",
       "org": "MyFitnessPal",
-      "role": null,
+      "role": "VP, Partnerships",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "Largest nutrition logger with an App Gallery of device partners; its help center lists 'Total Energy Partners' (Fitbit/Google Health, Garmin Connect, Withings, Polar, Samsung Health, Google Fit, Health Connect, Apple Watch) and its developer portal invites developers of 'apps, devices, and services' to apply for its private API. No overnight HRV/recovery band is listed among those partners.",
       "why_now": "Help center integrations article updated 2026-05-14.",
       "evidence": [
         "https://support.myfitnesspal.com/hc/en-us/articles/360032274232-What-kind-of-products-and-apps-work-with-MyFitnessPal",
-        "https://www.myfitnesspal.com/apps/api"
+        "https://www.myfitnesspal.com/apps/api",
+        "https://www.linkedin.com/in/maxwellkate"
       ],
-      "channel": "email listed on site",
-      "contact_url": "https://www.myfitnesspal.com/apps/api",
-      "warm_path": null,
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/maxwellkate",
+      "warm_path": "Contact: Kate Maxwell, VP, Partnerships (source: https://www.linkedin.com/in/maxwellkate)",
       "fit": 8,
       "ice": null,
       "ask": "Request API documentation and partner terms via the developer portal contact (API@myfitnesspal.com, as published) to scope a device integration.",
-      "opener": "Hi MyFitnessPal API team, I'm building Vybe Health, a screenless band worn overnight that captures ECG-based HRV and sleep timing for general wellness. Your developer portal invites devices to apply, so I'd like to explore how Vybe could become a data source in your App Gallery, so members can see last night's rest next to what they logged. Could you share the current API docs and partner process?",
+      "opener": "Hi Kate, I'm the founder of Vybe Health, building a screenless band worn overnight that captures ECG-based HRV and sleep timing for general wellness. MyFitnessPal's developer portal invites devices to apply for the API, so I'd like to explore Vybe as a data source, letting members see last night's rest next to what they logged. Could we have a short call, or could you point me to the right partner process?",
       "check_size": null,
       "stage": null,
       "geo": null,
@@ -7705,7 +7713,7 @@
       "id": "youth-and-adult-bouldering-akron-rock-mill-climbing-yoga-fitness-akron-usa-climb"
     },
     {
-      "role": null,
+      "role": "Founder",
       "type": "app-partner",
       "hunt": "partnership",
       "ice": null,
@@ -7713,7 +7721,7 @@
       "stage": null,
       "geo": null,
       "deadline": null,
-      "warm_path": null,
+      "warm_path": "Contact: Tom Tomaszewski, Founder (source: https://www.linkedin.com/in/tomtms)",
       "why_now": null,
       "last_signal_date": null,
       "name": "freddy",
@@ -7721,13 +7729,14 @@
       "why": "MCP server that plugs 29 wearable/CGM/gym sources (Oura, WHOOP, Polar, Garmin, Withings, Ultrahuman, Apple Health/Health Connect bridges) into Claude, ChatGPT and agents, and invites users to request new connectors.",
       "evidence": [
         "https://freddy.coach/",
-        "https://freddy.coach/help"
+        "https://freddy.coach/help",
+        "https://www.linkedin.com/in/tomtms"
       ],
-      "channel": "contact form",
-      "contact_url": "https://freddy.coach/help",
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/tomtms",
       "fit": 8,
       "ask": "Get Vybe added as a native freddy source (Vybe API) and list it in their 'request a connector' queue; 15-min call.",
-      "opener": "Hi, I run Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription and shipping with an open API. freddy already pulls Oura and WHOOP into Claude and ChatGPT. We'd like Vybe to be a native freddy source so our DevKit users can query nights in their own AI. Open to a short call on what your connector needs?",
+      "opener": "Hi Tom, I run Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription and shipping with an open API. freddy already pulls Oura and WHOOP into Claude and ChatGPT. We'd like Vybe to be a native freddy source so our DevKit users can query nights in their own AI. Open to a short call on what your connector needs?",
       "confidence": "verified",
       "tags": [
         "wearables",
@@ -9208,6 +9217,60 @@
       "id": "pace-pace-pacetraining-co"
     },
     {
+      "name": "Peloton",
+      "org": "Peloton Interactive, Inc.",
+      "role": "VP, Global Head of Strategic Partnerships & Corporate Development",
+      "type": "app-partner",
+      "hunt": "partnership",
+      "why": "Peloton IQ already ingests Apple Health, Garmin Connect and Fitbit data; on the Q4 FY26 earnings call (reported 2026-08-12) CEO Peter Stern said Peloton will not build its own wearable and will 'play Switzerland', integrating with large companies and 'very innovative startups', pushing data back to wearables and doing co-marketing. Reporting on a March 2026 Bloomberg piece says Peloton is building a 'Daily Suggested Workout' from smartwatch/ring recovery data.",
+      "why_now": "Q4 FY26 earnings call (reported 2026-08-12): 'a couple more big ones on the way'; readiness-based daily workout in development.",
+      "evidence": [
+        "https://www.pelobuddy.com/peloton-wearable-switzerland/",
+        "https://theclipout.com/peloton-iq-biometric-integration/",
+        "https://www.onepeloton.com/blog/wearables-integration",
+        "https://www.linkedin.com/in/brad-fagan-8382a888"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/in/brad-fagan-8382a888",
+      "warm_path": "Contact: Brad Fagan, VP, Global Head of Strategic Partnerships & Corporate Development (source: https://www.linkedin.com/in/brad-fagan-8382a888)",
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the Peloton IQ / wearables-partnerships owner via LinkedIn or a warm intro and ask for a 20-minute intro once DevKit data is shareable; realistic near-term goal is being on the list for a later integration wave.",
+      "opener": "Hi Brad, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that captures ECG-based HRV and sleep, with an open SDK and no subscription. Peloton already works with wearable partners, and Peloton IQ looks at daily suggestions. Could we share sample data and our API with your team and see if a small pilot fits? Happy to start small.",
+      "check_size": null,
+      "stage": null,
+      "geo": "New York, NY",
+      "deadline": null,
+      "last_signal_date": "2026-08-12",
+      "confidence": "verified",
+      "tags": [
+        "app-partner",
+        "connected-fitness",
+        "recovery",
+        "hrv",
+        "sleep",
+        "enterprise"
+      ],
+      "existing_wearables": [
+        "Apple Health",
+        "Garmin Connect",
+        "Fitbit",
+        "Strava (export only)"
+      ],
+      "exclusive": false,
+      "partner_status": "open",
+      "opportunity": "Become a recovery data source for Peloton IQ's planned readiness-based 'Daily Suggested Workout' (low overnight HRV -> restorative class, high -> intervals), first via Apple Health/HealthKit, later a direct integration; possible co-marketing. Route is long: public company, 'big ones' are prioritized, pre-launch hardware unlikely to get a direct integration before consumer launch.",
+      "unknowns": "No public partner/developer program or contact found; the named partnerships owner is unknown; whether Peloton reads HRV/sleep from Apple Health today; the 'Daily Suggested Workout' has no launch date.",
+      "lane": "partners_strength",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 211,
+      "sendable": true,
+      "id": "peloton-peloton-interactive-inc"
+    },
+    {
       "name": "PlateLens",
       "org": "VisionTech Solutions LLC",
       "role": null,
@@ -9249,13 +9312,13 @@
       "exclusive": false,
       "partner_status": "open",
       "opportunity": "Vybe data enters PlateLens via Apple Health / Health Connect, which it already reads; next step a direct integration so the AI coach adds sleep/HRV context to its nutrition advice (Nourish x Restore).",
-      "unknowns": "PlateLens's own pages list only Apple Health / Health Connect; the Garmin/Whoop/Oura sync is from a third-party review, not the company. Whether it reads sleep/HRV from Apple Health is unconfirmed. No partnerships contact; only support@platelens.app is published.",
+      "unknowns": "PlateLens's own pages list only Apple Health / Health Connect; the Garmin/Whoop/Oura sync is from a third-party review, not the company. Whether it reads sleep/HRV from Apple Health is unconfirmed. No partnerships contact; only support@platelens.app is published. No named contact found (checked 2026-10-03).",
       "lane": "partners_wellness",
       "link_status": "not checked",
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 211,
+      "rank": 212,
       "sendable": true,
       "id": "platelens-visiontech-solutions-llc"
     },
@@ -9294,7 +9357,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 212,
+      "rank": 213,
       "sendable": true,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
@@ -9338,7 +9401,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 214,
       "sendable": true,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
@@ -9377,7 +9440,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 215,
       "sendable": false,
       "id": "samsung-next-samsung-electronics"
     },
@@ -9420,7 +9483,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 215,
+      "rank": 216,
       "sendable": false,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
@@ -9470,7 +9533,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 216,
+      "rank": 217,
       "sendable": true,
       "id": "scholastic-esports-ohio-esports-ohio-nasef-certified-affiliate-ohsaa-supported-s"
     },
@@ -9517,7 +9580,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 218,
       "sendable": true,
       "id": "simple-muscle-simple-muscle-vladimir-haltakov"
     },
@@ -9560,7 +9623,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 219,
       "sendable": true,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
@@ -9597,7 +9660,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 219,
+      "rank": 220,
       "sendable": false,
       "id": "veteran-angel-network-van-context-ventures"
     },
@@ -9636,7 +9699,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 220,
+      "rank": 221,
       "sendable": true,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
@@ -9679,7 +9742,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 222,
       "sendable": false,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
@@ -9718,7 +9781,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 223,
       "sendable": true,
       "id": "wearable-data-builders-by-rook-rook"
     },
@@ -9756,7 +9819,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 224,
       "sendable": true,
       "id": "r-hyrox-reddit"
     },
@@ -9800,7 +9863,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 224,
+      "rank": 225,
       "sendable": true,
       "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
     },
@@ -9843,7 +9906,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 226,
       "sendable": true,
       "id": "lightship-bootcamp-akron-black-tech-week"
     },
@@ -9887,7 +9950,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 227,
       "sendable": true,
       "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
     },
@@ -9931,7 +9994,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 227,
+      "rank": 228,
       "sendable": true,
       "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
     },
@@ -9975,7 +10038,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 229,
       "sendable": true,
       "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
     },
@@ -10018,7 +10081,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 230,
       "sendable": true,
       "id": "big-team-challenge-big-team-challenge"
     },
@@ -10062,7 +10125,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 230,
+      "rank": 231,
       "sendable": true,
       "id": "terra-terra-tryterra-co"
     },
@@ -10106,7 +10169,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 231,
+      "rank": 232,
       "sendable": false,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
@@ -10145,7 +10208,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 233,
       "sendable": false,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
@@ -10193,7 +10256,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 234,
       "sendable": true,
       "id": "akron-boxing-academy-akron-boxing-academy"
     },
@@ -10237,7 +10300,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 234,
+      "rank": 235,
       "sendable": false,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
@@ -10282,7 +10345,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 235,
+      "rank": 236,
       "sendable": false,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
@@ -10331,7 +10394,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 237,
       "sendable": true,
       "id": "amateur-olympic-style-boxing-ohio-lbc-usa-boxing-ohio-local-boxing-committee"
     },
@@ -10376,7 +10439,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 237,
+      "rank": 238,
       "sendable": false,
       "id": "austin-womack-rugged-athlete-training"
     },
@@ -10416,7 +10479,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 239,
       "sendable": true,
       "id": "btw-meetup-akron-black-tech-week"
     },
@@ -10464,7 +10527,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 240,
       "sendable": true,
       "id": "baldwin-wallace-university-women-s-wrestling-baldwin-wallace-university"
     },
@@ -10511,7 +10574,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 241,
       "sendable": true,
       "id": "bryce-hepner-ohio-state-buckeyes-wrestling"
     },
@@ -10555,14 +10618,14 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 241,
+      "rank": 242,
       "sendable": false,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
     {
       "name": "Caliber",
       "org": "Caliber Fitness, Inc.",
-      "role": "Co-Founder & CPO (Chris Muir)",
+      "role": "Co-Founder & CPO",
       "type": "app-partner",
       "hunt": "partnership",
       "why": "Strength-training app plus paid 1:1 human coaching (NYC, ~40-60 staff). It syncs activity via Apple Health and Health Connect (Garmin routed through Apple Health) and has no direct wearable integration yet. Its public feature board shows users asking for a WHOOP integration, a direct Garmin integration ('Planned') and a 'Caliber API' (under consideration), and lists 'Suggested workout changes' as under consideration, so recovery data is in demand.",
@@ -10575,7 +10638,7 @@
       ],
       "channel": "LinkedIn",
       "contact_url": "https://www.linkedin.com/in/chris-muir",
-      "warm_path": null,
+      "warm_path": "Contact: Chris Muir, Co-Founder & CPO (source: https://www.linkedin.com/in/chris-muir)",
       "fit": 7,
       "ice": null,
       "ask": "15-minute call with Chris Muir on giving Caliber coaches a nightly HRV/sleep view for clients who wear a Vybe band; DevKit pilot with a few coaches.",
@@ -10610,7 +10673,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 243,
       "sendable": true,
       "id": "caliber-caliber-fitness-inc"
     },
@@ -10650,7 +10713,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 243,
+      "rank": 244,
       "sendable": false,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
@@ -10690,7 +10753,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 244,
+      "rank": 245,
       "sendable": true,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
@@ -10735,7 +10798,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 246,
       "sendable": true,
       "id": "cleveland-fencing-academy-cleveland-fencing-academy"
     },
@@ -10774,7 +10837,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 247,
       "sendable": true,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
@@ -10813,7 +10876,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 247,
+      "rank": 248,
       "sendable": false,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
@@ -10854,7 +10917,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 248,
+      "rank": 249,
       "sendable": false,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
@@ -10901,7 +10964,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 250,
       "sendable": true,
       "id": "gabriel-feinberg-ohio-state-buckeyes-men-s-fencing"
     },
@@ -10944,7 +11007,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 251,
       "sendable": false,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
@@ -10991,7 +11054,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 252,
       "sendable": true,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
@@ -11037,7 +11100,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 252,
+      "rank": 253,
       "sendable": false,
       "id": "graham-fach-pba-touring-pro"
     },
@@ -11075,7 +11138,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 254,
       "sendable": true,
       "id": "greg-morris-gregmorris-co-uk"
     },
@@ -11119,7 +11182,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 254,
+      "rank": 255,
       "sendable": true,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
@@ -11157,7 +11220,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 255,
+      "rank": 256,
       "sendable": false,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
@@ -11201,7 +11264,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 256,
+      "rank": 257,
       "sendable": false,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
@@ -11238,7 +11301,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 258,
       "sendable": false,
       "id": "interlagos-interlagos"
     },
@@ -11277,7 +11340,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 258,
+      "rank": 259,
       "sendable": false,
       "id": "inventure-inventure-vc"
     },
@@ -11326,7 +11389,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 259,
+      "rank": 260,
       "sendable": true,
       "id": "judo-ohio-clubs-usjf-usa-judo-clubs-in-ohio-konan-yudanshakai-e-g-chu-to-bu-judo"
     },
@@ -11374,7 +11437,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 260,
+      "rank": 261,
       "sendable": false,
       "id": "matt-wenning-ludus-magnus-gym"
     },
@@ -11412,7 +11475,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 261,
+      "rank": 262,
       "sendable": false,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
@@ -11461,7 +11524,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 263,
       "sendable": true,
       "id": "mya-migliore-kent-state-golden-flashes-women-s-gymnastics"
     },
@@ -11499,7 +11562,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 264,
       "sendable": true,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
@@ -11545,7 +11608,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 264,
+      "rank": 265,
       "sendable": true,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
@@ -11593,7 +11656,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 265,
+      "rank": 266,
       "sendable": true,
       "id": "ohio-high-school-contact-sports-ohsaa-gsr-20-3-ohio-high-school-athletic-associa"
     },
@@ -11636,7 +11699,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 266,
+      "rank": 267,
       "sendable": false,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
@@ -11679,62 +11742,9 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 267,
-      "sendable": false,
-      "id": "oura-x-usta-us-open-oura"
-    },
-    {
-      "name": "Peloton",
-      "org": "Peloton Interactive, Inc.",
-      "role": null,
-      "type": "app-partner",
-      "hunt": "partnership",
-      "why": "Peloton IQ already ingests Apple Health, Garmin Connect and Fitbit data; on the Q4 FY26 earnings call (reported 2026-08-12) CEO Peter Stern said Peloton will not build its own wearable and will 'play Switzerland', integrating with large companies and 'very innovative startups', pushing data back to wearables and doing co-marketing. Reporting on a March 2026 Bloomberg piece says Peloton is building a 'Daily Suggested Workout' from smartwatch/ring recovery data.",
-      "why_now": "Q4 FY26 earnings call (reported 2026-08-12): 'a couple more big ones on the way'; readiness-based daily workout in development.",
-      "evidence": [
-        "https://www.pelobuddy.com/peloton-wearable-switzerland/",
-        "https://theclipout.com/peloton-iq-biometric-integration/",
-        "https://www.onepeloton.com/blog/wearables-integration"
-      ],
-      "channel": "warm intro needed",
-      "contact_url": null,
-      "warm_path": null,
-      "fit": 7,
-      "ice": null,
-      "ask": "Find the Peloton IQ / wearables-partnerships owner via LinkedIn or a warm intro and ask for a 20-minute intro once DevKit data is shareable; realistic near-term goal is being on the list for a later integration wave.",
-      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. Peter said on the last earnings call that Peloton wants to work with startups as well as the big wearable brands. We're building a screenless band worn overnight that captures ECG-based HRV and sleep, with an open SDK and no subscription. When Peloton IQ looks at recovery-based daily suggestions, could we share sample data and our API? Happy to start small.",
-      "check_size": null,
-      "stage": null,
-      "geo": "New York, NY",
-      "deadline": null,
-      "last_signal_date": "2026-08-12",
-      "confidence": "verified",
-      "tags": [
-        "app-partner",
-        "connected-fitness",
-        "recovery",
-        "hrv",
-        "sleep",
-        "enterprise"
-      ],
-      "existing_wearables": [
-        "Apple Health",
-        "Garmin Connect",
-        "Fitbit",
-        "Strava (export only)"
-      ],
-      "exclusive": false,
-      "partner_status": "open",
-      "opportunity": "Become a recovery data source for Peloton IQ's planned readiness-based 'Daily Suggested Workout' (low overnight HRV -> restorative class, high -> intervals), first via Apple Health/HealthKit, later a direct integration; possible co-marketing. Route is long: public company, 'big ones' are prioritized, pre-launch hardware unlikely to get a direct integration before consumer launch.",
-      "unknowns": "No public partner/developer program or contact found; the named partnerships owner is unknown; whether Peloton reads HRV/sleep from Apple Health today; the 'Daily Suggested Workout' has no launch date.",
-      "lane": "partners_strength",
-      "link_status": "not checked",
-      "score": 80,
-      "priority": "Low",
-      "identity_needs_ok": false,
       "rank": 268,
       "sendable": false,
-      "id": "peloton-peloton-interactive-inc"
+      "id": "oura-x-usta-us-open-oura"
     },
     {
       "name": "Pipeline Angels",

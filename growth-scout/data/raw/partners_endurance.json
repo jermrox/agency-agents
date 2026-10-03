@@ -1,6 +1,6 @@
 [
   {
-    "role": null,
+    "role": "Founder & Developer",
     "type": "app-partner",
     "hunt": "partnership",
     "ice": null,
@@ -8,7 +8,7 @@
     "stage": null,
     "geo": null,
     "deadline": null,
-    "warm_path": null,
+    "warm_path": "Contact: Felix Gertz, Founder & Developer (source: https://www.tredict.com/blog/use%5Fai%5Fassistants%5Fand%5Fllms%5Fwith%5Fthe%5Ftredict%5Fmcp%5Fserver%5Fand%5Finteractive%5Fmcp%5Fapps/)",
     "why_now": null,
     "last_signal_date": null,
     "name": "Tredict",
@@ -17,13 +17,14 @@
     "evidence": [
       "https://www.tredict.com/faq/which-recording-devices-and-services-are-supported/",
       "https://www.tredict.com/faq/oura-ring---connect-and-synchronise/",
-      "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/"
+      "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/",
+      "https://www.tredict.com/blog/use%5Fai%5Fassistants%5Fand%5Fllms%5Fwith%5Fthe%5Ftredict%5Fmcp%5Fserver%5Fand%5Finteractive%5Fmcp%5Fapps/"
     ],
-    "channel": "apply",
+    "channel": "API application",
     "contact_url": "https://www.tredict.com/faq/tredict-api---connect-your-platform-or-application/",
     "fit": 9,
     "ask": "Register for Tredict API credentials and a 15-min call on pushing Vybe overnight HRV/RHR/sleep into the health-data endpoint.",
-    "opener": "Hi, I'm building Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription. Tredict already pulls nightly HRV from Oura into the form curve, and your API has a health-data endpoint. I'd like to push Vybe's overnight data there for our DevKit testers. Could we do a quick call on credentials and data format?",
+    "opener": "Hi Felix, I'm building Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription. Tredict already pulls nightly HRV from Oura into the form curve, and your API has a health-data endpoint. I'd like to push Vybe's overnight data there for our DevKit testers. Could we do a quick call on credentials and data format?",
     "confidence": "verified",
     "tags": [
       "wearables",
@@ -50,7 +51,7 @@
     "unknowns": "API terms/approval criteria and pricing not read; user count unknown; named partner contact not found (application form only)."
   },
   {
-    "role": null,
+    "role": "Founder",
     "type": "app-partner",
     "hunt": "partnership",
     "ice": null,
@@ -58,7 +59,7 @@
     "stage": null,
     "geo": null,
     "deadline": null,
-    "warm_path": null,
+    "warm_path": "Contact: Markus Rummel, Founder (source: https://aiendurance.com/en/about)",
     "why_now": "Gear checklist listing overnight HRV sources updated 2026-08-31.",
     "last_signal_date": "2026-08-31",
     "name": "AI Endurance",
@@ -66,13 +67,14 @@
     "why": "AI running/cycling/triathlon coach whose recovery model uses overnight HR and HRV; it already imports overnight data from Oura, Whoop, Garmin, Suunto, Coros and Polar, and tells users of other HRV devices to route via Intervals.icu or manual entry.",
     "evidence": [
       "https://aiendurance.com/blog/gear-checklist-for-optimal-data-flow-into-ai-endurance",
-      "https://aiendurance.com/en/faq"
+      "https://aiendurance.com/en/faq",
+      "https://aiendurance.com/en/about"
     ],
-    "channel": "contact form",
-    "contact_url": "https://aiendurance.com/en/faq",
+    "channel": "company team page",
+    "contact_url": "https://aiendurance.com/en/about",
     "fit": 9,
     "ask": "15-min call to scope a direct Vybe overnight HRV/RHR import (or confirm the Intervals.icu path) and DevKit loan for their recovery model.",
-    "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that captures ECG-derived HRV and resting heart rate, no subscription. Your gear checklist lists Oura and Whoop for overnight HRV and says other devices go via Intervals.icu. We'd like to be a direct source for your recovery model. Could I send a DevKit and set up a short call on the data you need?",
+    "opener": "Hi Markus, I'm the founder of Vybe, a screenless overnight band that captures ECG-derived HRV and resting heart rate, no subscription. Your gear checklist lists Oura and Whoop for overnight HRV and says other devices go via Intervals.icu. We'd like to be a direct source for your recovery model. Could I send a DevKit and set up a short call on the data you need?",
     "confidence": "verified",
     "tags": [
       "wearables",
@@ -103,7 +105,7 @@
     "unknowns": "No dedicated partner/API intake page found; contact is a general contact link; whether they accept new device integrations at Vybe's scale unverified."
   },
   {
-    "role": null,
+    "role": "Founder",
     "type": "app-partner",
     "hunt": "partnership",
     "ice": null,
@@ -111,7 +113,7 @@
     "stage": null,
     "geo": null,
     "deadline": null,
-    "warm_path": null,
+    "warm_path": "Contact: Tom Tomaszewski, Founder (source: https://www.linkedin.com/in/tomtms)",
     "why_now": null,
     "last_signal_date": null,
     "name": "freddy",
@@ -119,13 +121,14 @@
     "why": "MCP server that plugs 29 wearable/CGM/gym sources (Oura, WHOOP, Polar, Garmin, Withings, Ultrahuman, Apple Health/Health Connect bridges) into Claude, ChatGPT and agents, and invites users to request new connectors.",
     "evidence": [
       "https://freddy.coach/",
-      "https://freddy.coach/help"
+      "https://freddy.coach/help",
+      "https://www.linkedin.com/in/tomtms"
     ],
-    "channel": "contact form",
-    "contact_url": "https://freddy.coach/help",
+    "channel": "LinkedIn",
+    "contact_url": "https://www.linkedin.com/in/tomtms",
     "fit": 8,
     "ask": "Get Vybe added as a native freddy source (Vybe API) and list it in their 'request a connector' queue; 15-min call.",
-    "opener": "Hi, I run Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription and shipping with an open API. freddy already pulls Oura and WHOOP into Claude and ChatGPT. We'd like Vybe to be a native freddy source so our DevKit users can query nights in their own AI. Open to a short call on what your connector needs?",
+    "opener": "Hi Tom, I run Vybe, a screenless band worn overnight that records ECG-based HRV and resting heart rate, sold without a subscription and shipping with an open API. freddy already pulls Oura and WHOOP into Claude and ChatGPT. We'd like Vybe to be a native freddy source so our DevKit users can query nights in their own AI. Open to a short call on what your connector needs?",
     "confidence": "verified",
     "tags": [
       "wearables",
@@ -156,7 +159,7 @@
     "unknowns": "No named partner contact or email read; company/legal entity and location not verified; connector-request process details not read."
   },
   {
-    "role": null,
+    "role": "Founder",
     "type": "app-partner",
     "hunt": "partnership",
     "ice": null,
@@ -164,7 +167,7 @@
     "stage": null,
     "geo": null,
     "deadline": null,
-    "warm_path": null,
+    "warm_path": "Contact: Tyler Swartz, Founder (source: https://www.linkedin.com/in/tylermswartz)",
     "why_now": null,
     "last_signal_date": null,
     "name": "Endorphins Running",
@@ -172,13 +175,15 @@
     "why": "Running training app and in-person community (site says 100,000+ runners; App Store says 1,500+ free group runs a year in 12+ cities) that syncs WHOOP, Oura, Garmin, Apple Health, COROS, Polar and Suunto and links a Developers page.",
     "evidence": [
       "https://endorphinsrunning.com/features/integrations",
-      "https://apps.apple.com/us/app/endorphins-running/id6736627957"
+      "https://apps.apple.com/us/app/endorphins-running/id6736627957",
+      "https://www.linkedin.com/in/tylermswartz",
+      "https://endorphinsrunning.com/about"
     ],
-    "channel": "email listed on site",
-    "contact_url": "https://endorphinsrunning.com/features/integrations",
+    "channel": "LinkedIn",
+    "contact_url": "https://www.linkedin.com/in/tylermswartz",
     "fit": 8,
     "ask": "Intro call about adding Vybe to their integrations list and seeding DevKits with a run-club pace group.",
-    "opener": "Hi, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. Endorphins already syncs Oura and WHOOP, and your group runs are exactly the runners we want feedback from. Could we talk about adding Vybe as an integration and lending a few DevKits to one run club for a month?",
+    "opener": "Hi Tyler, I'm the founder of Vybe, a screenless overnight band that records HRV and resting heart rate, no subscription. Endorphins already syncs Oura and WHOOP, and your group runs are exactly the runners we want feedback from. Could we talk about adding Vybe as an integration and lending a few DevKits to one run club for a month?",
     "confidence": "verified",
     "tags": [
       "wearables",
