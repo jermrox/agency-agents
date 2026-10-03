@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-02 21:32 UTC",
-  "today": "2026-10-02",
+  "generated": "2026-10-03 15:07 UTC",
+  "today": "2026-10-03",
   "scope": {
     "company": "Vybe Health",
     "site": "https://vybe.health",
@@ -104,10 +104,12 @@
     "growth": 55,
     "social": 39,
     "sponsorship": 44,
+    "app_partners": 0,
+    "sports": 0,
     "competitor_deals": 35,
     "signals": 32,
     "high": 54,
-    "deadlines_30d": 6,
+    "deadlines_30d": 7,
     "ready_to_send": 139,
     "identity_needs_ok": 74
   },
@@ -2870,6 +2872,51 @@
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
     {
+      "name": "Cleveland Hardware Meetup",
+      "org": "Cleveland Hardware Meetup (Hardware Meetup network)",
+      "role": "Hosts: Nate Padgett, Julian Lopresto and others",
+      "type": "community",
+      "hunt": "growth",
+      "why": "New Cleveland community for people building physical products. Every meetup has a 2-minute community open-mic for demoing prototypes. Landi Industries (NE Ohio prototype-to-production shop that works with health-tech founders) is a partner.",
+      "why_now": "First meetup held during Cleveland Tech Week (2026-09-26 to 10-03) at Baldwin Wallace; the series continues.",
+      "evidence": [
+        "https://luma.com/fxlo2ybj",
+        "https://cletechweek.kit.com/posts/save-the-date-host-an-event-during-cleveland-tech-week-2026"
+      ],
+      "channel": "Luma",
+      "contact_url": "https://luma.com/fxlo2ybj",
+      "warm_path": "Ohio hardware network; Landi Industries",
+      "fit": 8,
+      "ice": {
+        "i": 6,
+        "c": 8,
+        "e": 9
+      },
+      "ask": "Take a 2-minute open-mic slot at the next meetup to show the DevKit band; meet Landi Industries about production.",
+      "opener": "Hi Nate and Julian, I'm building Vybe in Akron, a screenless wearable band with a developer SDK. We're a hardware team 40 minutes down I-77 and would love to bring the DevKit to the next Cleveland Hardware Meetup open mic. Could you add us to the list for the next one?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-10-03",
+      "confidence": "verified",
+      "tags": [
+        "ohio",
+        "cleveland",
+        "hardware",
+        "community",
+        "demo"
+      ],
+      "lane": "growth_wave3",
+      "link_status": "not checked",
+      "score": 96,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 66,
+      "sendable": true,
+      "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
+    },
+    {
       "name": "Google Fit APIs (incl. REST) deprecated in 2026; no REST replacement",
       "org": "Google",
       "role": null,
@@ -2909,7 +2956,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 66,
+      "rank": 67,
       "sendable": false,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
@@ -2948,7 +2995,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 67,
+      "rank": 68,
       "sendable": true,
       "id": "health2tech-cleveland-health2tech"
     },
@@ -2992,7 +3039,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 68,
+      "rank": 69,
       "sendable": true,
       "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
@@ -3031,7 +3078,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 70,
       "sendable": true,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
@@ -3071,7 +3118,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 70,
+      "rank": 71,
       "sendable": true,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
@@ -3110,7 +3157,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 71,
+      "rank": 72,
       "sendable": false,
       "id": "sxsw-pitch-2027-sxsw"
     },
@@ -3155,7 +3202,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 72,
+      "rank": 73,
       "sendable": false,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
     },
@@ -3195,7 +3242,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 73,
+      "rank": 74,
       "sendable": true,
       "id": "brendan-keeler-health-api-guy-substack"
     },
@@ -3235,7 +3282,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 74,
+      "rank": 75,
       "sendable": false,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
@@ -3281,7 +3328,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 75,
+      "rank": 76,
       "sendable": true,
       "id": "chris-chartier-the-righteous-path-substack"
     },
@@ -3327,7 +3374,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 76,
+      "rank": 77,
       "sendable": true,
       "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
@@ -3372,7 +3419,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 78,
       "sendable": true,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
@@ -3416,7 +3463,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 78,
+      "rank": 79,
       "sendable": true,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
@@ -3463,7 +3510,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 79,
+      "rank": 80,
       "sendable": false,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
@@ -3508,7 +3555,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 80,
+      "rank": 81,
       "sendable": true,
       "id": "fitabase-fitabase-small-steps-labs"
     },
@@ -3548,7 +3595,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 81,
+      "rank": 82,
       "sendable": false,
       "id": "golden-seeds-golden-seeds"
     },
@@ -3587,7 +3634,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 82,
+      "rank": 83,
       "sendable": true,
       "id": "hax-sosv"
     },
@@ -3631,7 +3678,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 83,
+      "rank": 84,
       "sendable": false,
       "id": "invi-mindhealth-invi-mindhealth"
     },
@@ -3671,7 +3718,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 85,
       "sendable": true,
       "id": "isabel-glass-cade-ventures"
     },
@@ -3711,7 +3758,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 85,
+      "rank": 86,
       "sendable": true,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
@@ -3751,7 +3798,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 86,
+      "rank": 87,
       "sendable": false,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
@@ -3790,7 +3837,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 87,
+      "rank": 88,
       "sendable": true,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
@@ -3837,7 +3884,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 88,
+      "rank": 89,
       "sendable": false,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
@@ -3882,7 +3929,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 90,
       "sendable": true,
       "id": "noop-ryanbr-noop-open-source"
     },
@@ -3926,7 +3973,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 90,
+      "rank": 91,
       "sendable": false,
       "id": "neurovus-neurovus"
     },
@@ -3966,7 +4013,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 91,
+      "rank": 92,
       "sendable": true,
       "id": "open-wearables-momentum-open-wearables-project"
     },
@@ -4005,7 +4052,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 92,
+      "rank": 93,
       "sendable": false,
       "id": "qualcomm-ventures-qualcomm"
     },
@@ -4044,7 +4091,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 94,
       "sendable": false,
       "id": "quinn-li-qualcomm-ventures"
     },
@@ -4084,7 +4131,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 94,
+      "rank": 95,
       "sendable": false,
       "id": "redalpine-redalpine"
     },
@@ -4123,7 +4170,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 95,
+      "rank": 96,
       "sendable": true,
       "id": "ryan-engel-cade-ventures"
     },
@@ -4167,7 +4214,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 96,
+      "rank": 97,
       "sendable": false,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
@@ -4209,7 +4256,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 98,
       "sendable": false,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
@@ -4253,7 +4300,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 98,
+      "rank": 99,
       "sendable": false,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
@@ -4299,7 +4346,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 100,
       "sendable": true,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
@@ -4339,7 +4386,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 101,
       "sendable": false,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
@@ -4382,7 +4429,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 101,
+      "rank": 102,
       "sendable": false,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
@@ -4422,7 +4469,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 102,
+      "rank": 103,
       "sendable": true,
       "id": "r-quantifiedself-reddit"
     },
@@ -4467,7 +4514,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 104,
       "sendable": true,
       "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
     },
@@ -4513,7 +4560,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 105,
       "sendable": true,
       "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
     },
@@ -4556,54 +4603,9 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 106,
       "sendable": false,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
-    },
-    {
-      "name": "Cleveland Hardware Meetup",
-      "org": "Cleveland Hardware Meetup (Hardware Meetup network)",
-      "role": "Hosts: Nate Padgett, Julian Lopresto and others",
-      "type": "community",
-      "hunt": "growth",
-      "why": "New Cleveland community for people building physical products. Every meetup has a 2-minute community open-mic for demoing prototypes. Landi Industries (NE Ohio prototype-to-production shop that works with health-tech founders) is a partner.",
-      "why_now": "First meetup held during Cleveland Tech Week (2026-09-26 to 10-03) at Baldwin Wallace; the series continues.",
-      "evidence": [
-        "https://luma.com/fxlo2ybj",
-        "https://cletechweek.kit.com/posts/save-the-date-host-an-event-during-cleveland-tech-week-2026"
-      ],
-      "channel": "Luma",
-      "contact_url": "https://luma.com/fxlo2ybj",
-      "warm_path": "Ohio hardware network; Landi Industries",
-      "fit": 8,
-      "ice": {
-        "i": 6,
-        "c": 8,
-        "e": 9
-      },
-      "ask": "Take a 2-minute open-mic slot at the next meetup to show the DevKit band; meet Landi Industries about production.",
-      "opener": "Hi Nate and Julian, I'm building Vybe in Akron, a screenless wearable band with a developer SDK. We're a hardware team 40 minutes down I-77 and would love to bring the DevKit to the next Cleveland Hardware Meetup open mic. Could you add us to the list for the next one?",
-      "check_size": null,
-      "stage": null,
-      "geo": "Cleveland, OH",
-      "deadline": null,
-      "last_signal_date": "2026-10-03",
-      "confidence": "verified",
-      "tags": [
-        "ohio",
-        "cleveland",
-        "hardware",
-        "community",
-        "demo"
-      ],
-      "lane": "growth_wave3",
-      "link_status": "not checked",
-      "score": 91,
-      "priority": "Medium",
-      "identity_needs_ok": false,
-      "rank": 106,
-      "sendable": true,
-      "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
     {
       "name": "FDA closes WHOOP warning letter on Blood Pressure Insights",

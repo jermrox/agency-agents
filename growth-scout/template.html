@@ -133,7 +133,7 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   <p class="hint">Click a row for the evidence, the ask and the drafted opener. Your status marks are saved in this browser only.</p>
   <div class="filters" role="search">
     <input type="search" id="q" placeholder="Search names, orgs, reasons, tags" aria-label="Search">
-    <select id="f-hunt" aria-label="Hunt"><option value="">All hunts</option><option value="investor">Investor</option><option value="growth">Growth</option><option value="social">Social</option><option value="sponsorship">Sponsorship</option></select>
+    <select id="f-hunt" aria-label="Hunt"><option value="">All hunts</option><option value="investor">Investor</option><option value="growth">Growth</option><option value="social">Social</option><option value="sponsorship">Sponsorship</option><option value="partnership">Partnership</option></select>
     <select id="f-type" aria-label="Type"><option value="">All types</option></select>
     <select id="f-pri" aria-label="Priority"><option value="">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select>
     <select id="f-status" aria-label="My status"><option value="">Any status</option></select>
@@ -155,6 +155,14 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   <h2>Coverage by lane</h2>
   <p class="hint">Targets kept after verification, per research lane. A short bar is where the next wave digs.</p>
   <div class="chart" id="lanes"></div>
+
+  <h2>App partnership opportunities</h2>
+  <p class="hint">Health and fitness apps that could add Vybe as a data source or co-market with it. "Already works with" comes from each app's own integrations page or docs; "unknown" means it could not be confirmed.</p>
+  <div class="tablewrap"><table id="partners"><thead><tr><th>App</th><th>Already works with</th><th>Status</th><th>Opportunity</th><th>Still unknown</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+
+  <h2>Sports where wearables aren't used yet</h2>
+  <p class="hint">Sports and levels where wearables are rare or banned in competition. Vybe is worn overnight, so a competition-only ban is noted, not treated as a blocker.</p>
+  <div class="tablewrap"><table id="sports"><thead><tr><th>Sport</th><th>Wearable use today</th><th>Competition rule</th><th>Opportunity</th><th>Source</th></tr></thead><tbody></tbody></table></div>
 
   <h2>What competing wearables sponsor</h2>
   <p class="hint">Sports deals by other wearable brands, and the small version of each play Vybe could run.</p>
@@ -199,13 +207,13 @@ const DATA = /*__DATA__*/null;
   const statusOf = (t) => status[t.id] || "New";
   const today = new Date(DATA.today + "T00:00:00Z");
   const daysTo = (d) => d ? Math.round((new Date(d + "T00:00:00Z") - today) / 864e5) : null;
-  const TYPE_LABEL = {"vc":"VC","corporate-vc":"Corporate VC","angel":"Angel","angel-group":"Angel group","syndicate":"Syndicate","accelerator":"Accelerator","event":"Event","builder":"Builder","research-lab":"Research lab","amplifier":"Amplifier","community":"Community","listing":"Listing","signal":"Signal","competitor-deal":"Competitor deal","athlete":"Athlete","team":"Team","program":"Program"};
+  const TYPE_LABEL = {"vc":"VC","corporate-vc":"Corporate VC","angel":"Angel","angel-group":"Angel group","syndicate":"Syndicate","accelerator":"Accelerator","event":"Event","builder":"Builder","research-lab":"Research lab","amplifier":"Amplifier","community":"Community","listing":"Listing","signal":"Signal","competitor-deal":"Competitor deal","athlete":"Athlete","team":"Team","program":"Program","app-partner":"App partner","sport":"Sport"};
 
   // Tiles
   const s = DATA.summary;
   const tiles = [
     [s.total - s.signals, "verified targets"], [s.investor, "investor targets"], [s.growth, "growth wins"],
-    [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.deadlines_30d, "deadlines in 30 days"],
+    [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.app_partners, "app partners"], [s.sports, "sports without wearables"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.deadlines_30d, "deadlines in 30 days"],
   ];
   $("#tiles").innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join("");
 
@@ -332,6 +340,25 @@ const DATA = /*__DATA__*/null;
       <div class="bar-track"><div class="bar" style="width:${(l.kept / max) * 100}%"></div></div>
       <div class="v">${esc(l.kept)}</div>
     </div>`).join("");
+
+  // App partners and sports gaps
+  const STATUS_LABEL = {"open":"Open to devices","no-wearable-yet":"No wearable yet","unknown":"Unknown","competitor":"Competitor","exclusive":"Exclusive"};
+  const src = (t) => t.evidence.slice(0, 2).map((u) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">source</a>`).join(" · ");
+  const partners = T.filter((t) => t.type === "app-partner");
+  $("#partners tbody").innerHTML = partners.length ? partners.map((t) => `<tr>
+      <td><strong>${esc(t.name)}</strong><div style="color:var(--ink-3);font-size:13px">${esc(t.org && t.org !== t.name ? t.org : "")}</div><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span></td>
+      <td>${Array.isArray(t.existing_wearables) ? (t.existing_wearables.length ? esc(t.existing_wearables.join(", ")) : "None found") : "Unknown"}${t.exclusive ? ' <span class="pill due">exclusive</span>' : ""}</td>
+      <td><span class="pill">${esc(STATUS_LABEL[t.partner_status] || t.partner_status)}</span></td>
+      <td style="min-width:240px">${esc(t.opportunity)}</td>
+      <td style="min-width:160px">${esc(t.unknowns || "—")}</td>
+      <td>${src(t)}</td></tr>`).join("") : '<tr><td colspan="6" class="empty">No app partners yet.</td></tr>';
+  const sports = T.filter((t) => t.type === "sport");
+  $("#sports tbody").innerHTML = sports.length ? sports.map((t) => `<tr>
+      <td><strong>${esc(t.name)}</strong><br><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span></td>
+      <td style="min-width:220px">${esc(t.wearable_adoption)}</td>
+      <td style="min-width:160px">${esc(t.competition_rule || "No rule found")}</td>
+      <td style="min-width:240px">${esc(t.opportunity)}</td>
+      <td>${src(t)}</td></tr>`).join("") : '<tr><td colspan="5" class="empty">No sports yet.</td></tr>';
 
   // Competitor deals, grouped by brand
   const deals = T.filter((t) => t.type === "competitor-deal").sort((a, b) => String(a.org).localeCompare(String(b.org)) || b.score - a.score);

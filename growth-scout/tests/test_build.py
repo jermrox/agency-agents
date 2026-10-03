@@ -112,3 +112,19 @@ def test_warm_intro_rows_are_not_sendable():
     assert not build.is_sendable(row(channel="warm intro needed"))
     assert not build.is_sendable(row(contact_url=None))
     assert not build.is_sendable(row(type="signal"))
+
+
+def test_app_partner_rows_must_show_existing_integrations():
+    ok = row(type="app-partner", hunt="partnership", existing_wearables=["Garmin"], exclusive=False,
+             partner_status="open", opportunity="Add Vybe via their Terra integration")
+    assert build.validate(ok, PARAMS, TODAY) == []
+    no_list = dict(ok); del no_list["existing_wearables"]
+    assert any("existing_wearables" in r for r in build.validate(no_list, PARAMS, TODAY))
+    assert any("scored above 6" in r for r in build.validate(dict(ok, partner_status="exclusive"), PARAMS, TODAY))
+    assert any("opportunity" in r for r in build.validate(dict(ok, opportunity=""), PARAMS, TODAY))
+
+
+def test_sport_rows_need_adoption_evidence():
+    s = row(type="sport", hunt="partnership", wearable_adoption="Survey: 12% of clubs", opportunity="Club pilot")
+    assert build.validate(s, PARAMS, TODAY) == []
+    assert build.validate(dict(s, wearable_adoption=None), PARAMS, TODAY)

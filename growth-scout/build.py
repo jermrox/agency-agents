@@ -32,9 +32,10 @@ LINK_CHECK = ROOT / "data" / "link_check.json"
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
     "builder", "research-lab", "amplifier", "community", "event", "listing", "signal",
-    "competitor-deal", "athlete", "team", "program",
+    "competitor-deal", "athlete", "team", "program", "app-partner", "sport",
 }
-HUNTS = {"investor", "growth", "social", "sponsorship"}
+HUNTS = {"investor", "growth", "social", "sponsorship", "partnership"}
+PARTNER_STATUSES = {"open", "competitor", "exclusive", "no-wearable-yet", "unknown"}
 
 
 def load_params() -> dict:
@@ -65,6 +66,18 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
         problems.append(f"unknown type {row.get('type')!r}")
     if row.get("hunt") not in HUNTS:
         problems.append(f"unknown hunt {row.get('hunt')!r}")
+    # Partnerships must show what the app already works with, not assume it.
+    if row.get("type") == "app-partner":
+        if "existing_wearables" not in row:
+            problems.append("app-partner without existing_wearables (null if unknown)")
+        if row.get("partner_status") not in PARTNER_STATUSES:
+            problems.append(f"app-partner partner_status {row.get('partner_status')!r}")
+        elif row["partner_status"] in {"competitor", "exclusive"} and (row.get("fit") or 0) > 6:
+            problems.append(f"{row['partner_status']} app scored above 6")
+        if not row.get("opportunity"):
+            problems.append("app-partner without a stated opportunity")
+    if row.get("type") == "sport" and not (row.get("wearable_adoption") and row.get("opportunity")):
+        problems.append("sport without wearable_adoption evidence or opportunity")
     evidence = [u for u in row.get("evidence") or [] if isinstance(u, str) and u.startswith("http")]
     if len(evidence) < gates["min_evidence_urls"]:
         problems.append("no evidence URL")
@@ -238,6 +251,8 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "growth": count(lambda t: t["hunt"] == "growth" and t["type"] != "signal"),
         "social": count(lambda t: t["hunt"] == "social"),
         "sponsorship": count(lambda t: t["hunt"] == "sponsorship" and t["type"] != "competitor-deal"),
+        "app_partners": count(lambda t: t["type"] == "app-partner"),
+        "sports": count(lambda t: t["type"] == "sport"),
         "competitor_deals": count(lambda t: t["type"] == "competitor-deal"),
         "signals": count(lambda t: t["type"] == "signal"),
         "high": count(lambda t: t["priority"] == "High" and t["type"] != "signal"),

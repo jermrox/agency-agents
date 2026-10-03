@@ -17,7 +17,7 @@ priority_regions = ["Ohio", "Midwest", "US"]
 founder_identity = ["veteran-owned", "woman-owned", "minority-owned"]  # use in outreach only with founder approval
 
 # ---------------------------------------------------------------------------
-# The four hunts (investor, growth, social, sponsorship). Each lane is a separate research pass with its own output
+# The five hunts (investor, growth, social, sponsorship, partnership). Each lane is a separate research pass with its own output
 # file in data/raw/. A sweep runs every enabled lane in parallel.
 # ---------------------------------------------------------------------------
 
@@ -133,6 +133,33 @@ queries = [
   "HYROX Chicago expo vendor",
   "firefighter combat challenge sponsors",
   "tactical athlete ambassador",
+]
+
+[[lanes]]
+id = "partners"
+hunt = "partnership"
+title = "Health and fitness app partners"
+types = ["app-partner"]
+# Seed list: health and fitness apps in Claude's connector directory, supplied
+# by the founder on 2026-10-03. Each is checked for the wearables it already
+# supports and any exclusive deal before it can rank.
+target_rows = [20, 40]
+queries = [
+  "{app} integrations Garmin Apple Health Oura WHOOP",
+  "{app} API partners wearable",
+  "{app} Terra OR Junction OR Rook integration",
+]
+
+[[lanes]]
+id = "sports_gaps"
+hunt = "partnership"
+title = "Sports where wearables aren't used yet"
+types = ["sport", "athlete", "team"]
+target_rows = [25, 45]
+queries = [
+  "{sport} wearable ban competition rule",
+  "{sport} athletes wearable use survey",
+  "{sport} club Ohio recovery",
 ]
 
 # ---------------------------------------------------------------------------
