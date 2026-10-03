@@ -23,7 +23,7 @@ const D = dimensions.nourish;
  * a hairline list for the readings, a ruled pair for the pattern, and the one
  * dark block for the action.
  */
-export default function NourishScreen({ onBack }) {
+export default function NourishScreen({ onBack, onOpenHistory }) {
   const [selectedId, setSelectedId] = useState('dinner');
 
   const meals = nourishDay.meals;
@@ -155,6 +155,21 @@ export default function NourishScreen({ onBack }) {
         </Text>
         <Text style={styles.caveat}>{caveat}</Text>
         <Text style={styles.crossLink}>{crossLink}</Text>
+        {/* The day screen makes the claim; the history screen shows twelve
+            weeks of it, including the weeks it broke. Linking them here is the
+            honest place for a reader who has just been told a pattern exists
+            to go and check how often it has actually held. */}
+        {onOpenHistory ? (
+          <Pressable
+            onPress={onOpenHistory}
+            accessibilityRole="button"
+            accessibilityLabel="See twelve weeks of this pattern"
+            accessibilityHint="Opens the week-by-week history, including the weeks the pattern did not hold"
+            style={({ pressed }) => [styles.historyLink, pressed && styles.pressed]}
+          >
+            <Text style={styles.historyLinkText}>See twelve weeks of this pattern</Text>
+          </Pressable>
+        ) : null}
       </View>
 
       {/* ACTION — one, and the only dark block on the screen. */}
@@ -223,6 +238,8 @@ const styles = StyleSheet.create({
   patternRead: { ...type.body, color: colors.ink, marginTop: space(1) },
   caveat: { ...type.small, color: colors.faint },
   crossLink: { ...type.small, color: colors.muted, marginTop: space(1) },
+  historyLink: { alignSelf: 'flex-start', paddingVertical: space(1), marginTop: space(0.5) },
+  historyLinkText: { ...type.body, color: colors.brand, fontWeight: '600' },
 
   actionPanel: { backgroundColor: colors.ink, borderRadius: radius.card, padding: space(3), gap: space(1) },
   actionEyebrow: { ...type.label, color: colors.brandSoft },

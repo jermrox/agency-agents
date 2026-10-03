@@ -1,0 +1,105 @@
+# Concept test results, 3 Oct 2026
+
+Graders were fresh sessions that had not seen the work being graded. The
+writers were fresh sessions holding only the agent file and
+`vybe-marketing/`, with `evals/` closed to them.
+
+## C1: LinkedIn company page (blind A/B grade)
+
+| Dimension | New draft | First draft (2 Oct) |
+|---|---|---|
+| 1 Distinctiveness | 3 | 1 |
+| 2 Channel and half | 3 | 1 |
+| 3 Show, don't tell | 2 | 1 |
+| 4 Order | 3 | 1 |
+| 5 Claim status (gate) | 2 | **0** |
+| 6 Voice | 3 | 2 |
+| **Total** | **16/18, pass** | **6/18, fail** |
+
+The first draft failed the claims gate on a present-tense "Developer API"
+line, which the public FAQ dates to June 2028. The guardrail missed it.
+
+**Fixes applied:**
+- one labelled sample answer is now shown;
+- "aggregate only, with consent" now sits next to the team and research invitation;
+- "Our band" replaces "The Vybe band";
+- the guardrail gains a roadmap rule that blocks "available now"-style SDK, API, DevKit and ring claims.
+
+## Round 1: cold take
+
+**Part A, knowledge: 12/12, pass.**
+
+**Part B, copy:**
+
+| Case | Score | Result | Main miss |
+|---|---|---|---|
+| C2 Homepage hero | 13/18 | Fail | The platform half was missing, and "Every answer is…" read as shipped. |
+| C3 Instagram Reel caption | 12/18 | Fail (gate) | "an answer Vybe gets wrong" was in the present tense. The example gave one cause for an HRV change. |
+| C4 Cold email to a lab | 13/18 | Fail | The row's second line was left out, and the first line was a 48-word run-on. |
+
+**Diagnosis.** The agent knew the concept but applied it unevenly. The root
+causes were in `concept.md` itself:
+1. "Designed to" read as a once-per-piece label.
+2. The example answer in `concept.md` gave a single cause, against the evidence library.
+3. The concept check never said each piece must carry both columns of its channel row.
+
+**Fixes applied (same day):**
+- `concept.md`:
+  - the example sentences are now marked as internal illustrations;
+  - the example now names competing explanations;
+  - check Q1 requires both columns of the row;
+  - check Q6 applies "designed to" to every sentence, including calls to action, bans the present tense before launch, and requires more than one explanation.
+- The agent file: the weekly Two-Product Test no longer excuses a single piece.
+- The rubric: D2 and D5 are reworded to match.
+- The key: Q9 now matches.
+- The guardrail: allow markers are added for review notes.
+
+## Round 2: rerun cold after the fixes
+
+| Case | Round 1 | Round 2 | Result |
+|---|---|---|---|
+| C2 Homepage hero | 13 | **18** | Pass. H1: "A health band designed to tell you how sure it is." |
+| C3 Instagram Reel caption | 12 (gate) | **16** | Pass. Shows one sample answer with three explanations. |
+| C4 Cold email to a lab | 13 | 13 (gate) | Fail. It offered a lab "licensed, consented access to the signals" and implied a testable band, neither confirmed. |
+
+**Fixes applied:**
+- Check Q7 now covers offers. Builder, lab and team copy invites a design-partner conversation and never promises access, a device, terms or a date.
+- Example explanations stay everyday ones; an illness is never offered ("an oncoming cold" removed).
+- New Claim Register row 19 covers "patterns, not causes".
+- The guardrail ignores review notes that quote a banned phrase.
+
+## Round 3: C4 rerun cold
+
+| Dimension | Score |
+|---|---|
+| D1 Distinctiveness | 2 |
+| D2 Channel and half | 2 |
+| D3 Show | 2 |
+| D4 Order | 2 |
+| D5 Claim status (gate) | 2 |
+| D6 Voice | 3 |
+| **Total** | **13/18, fail by one point** |
+
+The claims gate now passes: it uses "designed to" and "design partner", and
+promises no access, device, terms or date. The guardrail passes. It still
+fails because it opens on the lab's own work, which fits any competitor, and
+runs as one 63-word sentence.
+
+**Fix:** a short-format rule in check Q8. Put the unclaimed idea in the first
+ten words and stay under 25 words.
+
+C4 is the case to rerun first next time.
+
+## Where the agent stands
+
+| Measure | Result |
+|---|---|
+| Knowledge (Part A) | 12/12 |
+| LinkedIn page (C1) | 16/18, pass |
+| Homepage hero (C2) | 18/18, pass |
+| Instagram caption (C3) | 16/18, pass |
+| Lab email first line (C4) | 13/18, fail by one point |
+
+**Founder approvals that gate publication:**
+- Claim Register rows 14 to 17 and 19, for public copy in "designed to" form;
+- what a research lab would actually get as a design partner.

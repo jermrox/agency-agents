@@ -32,6 +32,15 @@ from typing import Any
 _SLUG_STRIP = re.compile(r"[^a-z0-9]+")
 
 
+SAM_VALUES = ("required", "later", "none")
+
+FEDERAL_MARKERS = re.compile(
+    r"SAM\.gov|\bUEI\b|SBIR|STTR|Grants\.gov|eRA Commons|\bNIH\b|\bNSF\b|\bDoD\b|\bDoW\b|"
+    r"CDMRP|Department of|U\.S\. |\bUS Army\b|\bArmy\b|\bHHS\b|\bFDA\b|\bCDC\b|\bNIST\b|federal",
+    re.IGNORECASE,
+)
+
+
 def slugify(text: str) -> str:
     """Lowercase hyphenated slug, insensitive to HTML escaping.
 
@@ -95,6 +104,15 @@ class Opportunity:
     take weeks to clear and gate every federal row on the board, so they belong
     here where the lead time is visible rather than buried in a solicitation.
     """
+    sam: str = ""
+    """Whether SAM.gov registration stands between Vybe and this money.
+
+    ``required`` -- needed before the application can be submitted.
+    ``later`` -- not needed to enter; needed to be paid or for a follow-on stage.
+    ``none`` -- the programme does not use SAM.gov at all.
+    Left blank, it is derived by ``sam_status`` rather than guessed: a UEI takes
+    weeks, so a row that wrongly says "none" costs a founder the deadline.
+    """
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
 
     @property
@@ -127,6 +145,24 @@ class Opportunity:
         if (self.close_date - today).days <= 30:
             return "soon"
         return "open"
+
+    def sam_status(self) -> str:
+        """required | later | none | check -- see ``sam``.
+
+        Rows from the federal APIs (grants.gov, SBIR) are federal financial
+        assistance, which always needs a UEI. A hand-entered row that states
+        nothing gets ``none`` only when nothing about it looks federal;
+        otherwise ``check``, so an untagged federal programme can never be
+        presented as one that skips SAM.gov.
+        """
+        if self.sam:
+            return self.sam
+        if self.source != "curated":
+            return "required"
+        text = " ".join([self.name, self.agency, self.eligibility, *self.documents])
+        if FEDERAL_MARKERS.search(text):
+            return "check"
+        return "none"
 
     def days_left(self, today: date) -> int | None:
         if self.close_date is None:
@@ -164,4 +200,5 @@ class Opportunity:
             "kind": self.kind,
             "eligibility": self.eligibility,
             "documents": self.documents,
+            "sam": self.sam_status(),
         }

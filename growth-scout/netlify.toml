@@ -1,0 +1,37 @@
+# Vybe Growth Scout dashboard -- its own Netlify project, separate from the
+# sites that build from the repository root (../netlify.toml) and from the
+# Baby Gear dashboard (../baby-scout/netlify.toml). Nothing here is shared.
+#
+# Netlify setup (once): Add new site -> Import from Git -> this repository,
+# then set **Base directory** to `growth-scout`. Netlify reads THIS file from
+# the base directory; leave the build command and publish directory fields
+# empty so the values below apply.
+#
+# Nothing is built on Netlify. Each sweep runs build.py and commits the
+# finished dashboard to site/; this project just publishes that folder.
+
+[build]
+  # Fail the deploy loudly rather than publish an empty site.
+  command = "test -s site/index.html || (echo 'site/index.html missing: run python3 build.py first' >&2; exit 1)"
+  publish = "site"
+  # Only redeploy when something under growth-scout/ changed (runs from the
+  # base directory, so "." is growth-scout/). Exit 0 = skip; a failed diff builds.
+  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- ."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    # An outreach list with drafted messages: keep it out of search engines.
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

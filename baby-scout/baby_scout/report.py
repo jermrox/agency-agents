@@ -28,6 +28,7 @@ SEVERITY = {  # drives ordering and the status icon on the dashboard
     "window_open": "warning",
     "tracking": "info",
     "purchased": "good",
+    "recall_watch": "warning",
 }
 ORDER = {"critical": 0, "good": 1, "warning": 2, "info": 3}
 
@@ -137,9 +138,33 @@ def spending(purchases: list[dict[str, Any]], budget: float | None, plan: dict[s
     }
 
 
+WATCH_EVENT_LIMIT = 6
+
+
+def watch_events(prev: dict[str, Any] | None, watch: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
+    """New child-related recalls since the previous report.
+
+    The first report that has a recall watch is a baseline: everything in it
+    is "new", and announcing 30 recalls at once would bury the day's real
+    news, so it announces nothing and the dashboard lists them instead.
+    """
+    if not watch or not prev or "recall_watch" not in prev or not prev["recall_watch"].get("available"):
+        return []
+    seen = {r["number"] for r in prev["recall_watch"].get("items", [])}
+    new = [r for r in watch if r["number"] not in seen]
+    events = [{"type": "recall_watch", "severity": "warning", "key": r["number"], "name": r["title"],
+               "detail": f"New {r['group'].lower()} recall: {r['hazard'] or 'see notice'} {r['url']}".strip()}
+              for r in new[:WATCH_EVENT_LIMIT]]
+    if len(new) > WATCH_EVENT_LIMIT:
+        events.append({"type": "recall_watch", "severity": "warning", "key": "more", "name": "More new recalls",
+                       "detail": f"{len(new) - WATCH_EVENT_LIMIT} more new baby and kid recalls are listed on the dashboard."})
+    return events
+
+
 def build(results: list[dict[str, Any]], plan: dict[str, Any] | None, purchases: list[dict[str, Any]],
           budget: float | None, due_date: str | None, prev: dict[str, Any] | None,
-          today: dt.date) -> dict[str, Any]:
+          today: dt.date, watch: list[dict[str, Any]] | None = None, watch_days: int = 60) -> dict[str, Any]:
+    """``watch`` is the recall-watch list, or None when the lookup did not run."""
     bought = {p["key"] for p in purchases}
     items = [_compact(r, bought) for r in results]
     return {
@@ -156,8 +181,9 @@ def build(results: list[dict[str, Any]], plan: dict[str, Any] | None, purchases:
             "at_target": sum(bool(i["at_or_below_target"]) and i["verdict"] != "bought" for i in items),
         },
         "spending": spending(purchases, budget, plan),
-        "events": diff(prev, items, plan, today) + purchase_events(purchases, today),
+        "events": diff(prev, items, plan, today) + purchase_events(purchases, today) + watch_events(prev, watch),
         "items": items,
+        "recall_watch": {"available": watch is not None, "days": watch_days, "items": watch or []},
     }
 
 

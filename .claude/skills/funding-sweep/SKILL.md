@@ -30,6 +30,13 @@ needed it. Two invariants prevent that, and neither is optional:
 2. **Every hand-entered row carries `verified`,** the date a human last confirmed it. The
    run warns when one ages past `stale_days`. The curated layer must rot *visibly*.
 
+## Know the company first
+
+Read `funding-scraper/VYBE_PROFILE.md` before searching. Vybe is a developer platform
+for wearable health, with a DevKit for research, tactical and health partners, and a
+consumer band launching May 2027. It has no SAM.gov registration yet. Search every
+lane listed there, and tag each row with `sam = required | later | none`.
+
 ## Running it
 
 ```bash

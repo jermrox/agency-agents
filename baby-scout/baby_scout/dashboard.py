@@ -132,6 +132,13 @@ tbody tr.pick{cursor:pointer}tbody tr.pick:hover{background:var(--page)}
 tr.sel td{background:var(--page);font-weight:600}
 .empty{background:var(--surface);border:1px dashed var(--axis);border-radius:12px;padding:16px;color:var(--ink-2)}
 .foot{margin-top:36px;font-size:12px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chips button{font-size:13px;padding:4px 10px;border-radius:99px}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.recalls{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.recall{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
+.recall .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted)}
+.recall a{font-weight:600}
 a{color:var(--series-1)}
 </style>
 </head>
@@ -152,6 +159,7 @@ a{color:var(--series-1)}
   <div class="kpis" id="kpis"></div>
 
   <section aria-labelledby="h-changes"><h2 id="h-changes">What changed</h2><ul class="events" id="events"></ul></section>
+  <section aria-labelledby="h-recalls"><h2 id="h-recalls">Baby &amp; kid recalls</h2><p class="muted" id="recalls-note" style="margin-bottom:8px"></p><div class="chips" id="recall-filters" role="group" aria-label="Filter recalls by type"></div><div id="recalls"></div></section>
   <section aria-labelledby="h-watch"><h2 id="h-watch">Watchlist</h2><div class="grid" id="items"></div></section>
   <section aria-labelledby="h-plan"><h2 id="h-plan">Buy plan</h2><div id="plan"></div></section>
   <section aria-labelledby="h-spend"><h2 id="h-spend">Spending</h2><div id="spend"></div></section>
@@ -297,8 +305,49 @@ function renderKpis(r){
   var alerts = tile("Safety alerts", String(t.safety_fail), t.safety_fail ? "Items that fail a safety gate" : "No items failing a safety gate");
   if (t.safety_fail) alerts.querySelector(".label").prepend(badge("critical", "Alert"), " ");
   box.appendChild(alerts);
+  if (r.recall_watch && r.recall_watch.available){
+    var fresh = r.events.filter(function(e){ return e.type === "recall_watch" && e.key !== "more"; }).length
+      + r.events.filter(function(e){ return e.key === "more"; }).reduce(function(n, e){ return n + (parseInt(e.detail, 10) || 0); }, 0);
+    box.appendChild(tile("Baby & kid recalls", String(r.recall_watch.items.length),
+      "last " + r.recall_watch.days + " days" + (fresh ? " · " + fresh + " new since the last report" : "")));
+  }
   box.appendChild(tile("Still to buy (estimate)", whole(s.still_to_buy_low) + "–" + whole(s.still_to_buy_high),
     s.budget ? "projected total up to " + whole(s.projected_high) : ""));
+}
+
+var recallGroup = "All";
+function renderRecalls(r){
+  var box = $("recalls"), chips = $("recall-filters"), note = $("recalls-note");
+  box.textContent = ""; chips.textContent = "";
+  var rw = r.recall_watch;
+  if (!rw){ note.textContent = "This report is from before the recall watch was added."; return; }
+  if (!rw.available){ note.textContent = "The CPSC recall database couldn't be reached for this report."; return; }
+  var items = rw.items || [];
+  note.textContent = items.length + " U.S. CPSC recalls of baby, toddler and kid products, and childproofing hazards, in the " + rw.days + " days before this report. Check anything you own, were given or bought second-hand.";
+  if (!items.length) return;
+  var counts = {};
+  items.forEach(function(x){ counts[x.group] = (counts[x.group] || 0) + 1; });
+  var groups = ["All"].concat(Object.keys(counts).sort(function(a, b){ return counts[b] - counts[a]; }));
+  if (groups.indexOf(recallGroup) < 0) recallGroup = "All";
+  groups.forEach(function(g){
+    var b = el("button", {type:"button", "aria-pressed": String(g === recallGroup), text: g + " (" + (g === "All" ? items.length : counts[g]) + ")"});
+    b.addEventListener("click", function(){ recallGroup = g; renderRecalls(r); });
+    chips.appendChild(b);
+  });
+  var ul = el("ul", {cls:"recalls"});
+  items.filter(function(x){ return recallGroup === "All" || x.group === recallGroup; }).forEach(function(x){
+    var title = x.url && /^https:\/\/(www\.)?(cpsc|saferproducts)\.gov\//.test(x.url)
+      ? el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.title})
+      : el("strong", {text:x.title});
+    var meta = el("div", {cls:"meta"}, [el("span", {text:fmtDate(x.date)}), el("span", {text:x.group})]);
+    if (x.units) meta.appendChild(el("span", {text:"Units: " + x.units}));
+    if (x.sold_at) meta.appendChild(el("span", {text:"Sold at: " + x.sold_at}));
+    var li = el("li", {cls:"recall"}, [title, meta]);
+    if (x.hazard) li.appendChild(el("div", {cls:"ink2", text:"Hazard: " + x.hazard}));
+    if (x.remedy) li.appendChild(el("div", {cls:"ink2", text:"Remedy: " + x.remedy}));
+    ul.appendChild(li);
+  });
+  box.appendChild(ul);
 }
 
 function renderEvents(r){
@@ -425,7 +474,7 @@ function select(d){
   $("day").value = d;
   var latest = d === D.latest;
   $("updated").textContent = (latest ? "Latest report · " : "Past report · ") + fmtDate(d) + " · generated " + r.generated_at.replace("T", " ").replace("Z", " UTC");
-  renderKpis(r); renderEvents(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
+  renderKpis(r); renderEvents(r); renderRecalls(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
   try { history.replaceState(null, "", latest ? location.pathname : "#" + d); } catch(e) {}
 }
 

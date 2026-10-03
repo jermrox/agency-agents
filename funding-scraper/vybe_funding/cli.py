@@ -193,6 +193,10 @@ def publish(
                     # existed may have no status key at all.
                     if row.get("status") != "forecast":
                         row["status"] = "soon" if row["days_left"] <= 30 else "open"
+                # Carried rows come only from the federal API sources, and a row
+                # written before the `sam` field existed must not render as
+                # "unconfirmed" when it is federal assistance by definition.
+                row.setdefault("sam", "required")
                 rows.append(row)
                 carried.append(row.get("source", "?"))
             if carried:

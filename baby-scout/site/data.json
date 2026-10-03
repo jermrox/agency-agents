@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-30T11:57:16Z",
- "latest": "2026-09-30",
+ "generated_at": "2026-10-02T11:56:46Z",
+ "latest": "2026-10-02",
  "reports": {
   "2026-09-29": {
    "date": "2026-09-29",
@@ -183,6 +183,188 @@
      "recalls": []
     }
    ]
+  },
+  "2026-10-01": {
+   "date": "2026-10-01",
+   "generated_at": "2026-10-01T11:57:39Z",
+   "due_date": "2027-02-10",
+   "days_to_due": 132,
+   "totals": {
+    "watched": 4,
+    "buy_now": 0,
+    "bought": 0,
+    "safety_fail": 0,
+    "tracking": 4,
+    "at_target": 0
+   },
+   "spending": {
+    "spent": 0,
+    "saved_vs_typical": 0,
+    "budget": 4500,
+    "remaining_budget": 4500,
+    "still_to_buy_low": 1090,
+    "still_to_buy_high": 3420,
+    "projected_high": 3420,
+    "purchases": []
+   },
+   "events": [],
+   "items": [
+    {
+     "key": "nestwell-cozy-dream",
+     "name": "Nestwell Cozy Dream Bassinet",
+     "category": "bassinet",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 80,
+     "recalls": []
+    },
+    {
+     "key": "bramble-roam-convertible",
+     "name": "Bramble & Co. Roam Convertible Car Seat",
+     "category": "car_seat.convertible",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 86,
+     "recalls": []
+    },
+    {
+     "key": "hand-me-down-infant-seat",
+     "name": "Bramble & Co. Snug Infant Car Seat",
+     "category": "car_seat.infant",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 62,
+     "recalls": []
+    },
+    {
+     "key": "store-brand-diapers-size1",
+     "name": "Store Brand Diapers Size 1",
+     "category": "diapers",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": true,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 70,
+     "recalls": []
+    }
+   ]
+  },
+  "2026-10-02": {
+   "date": "2026-10-02",
+   "generated_at": "2026-10-02T11:56:46Z",
+   "due_date": "2027-02-10",
+   "days_to_due": 131,
+   "totals": {
+    "watched": 4,
+    "buy_now": 0,
+    "bought": 0,
+    "safety_fail": 0,
+    "tracking": 4,
+    "at_target": 0
+   },
+   "spending": {
+    "spent": 0,
+    "saved_vs_typical": 0,
+    "budget": 4500,
+    "remaining_budget": 4500,
+    "still_to_buy_low": 1090,
+    "still_to_buy_high": 3420,
+    "projected_high": 3420,
+    "purchases": []
+   },
+   "events": [],
+   "items": [
+    {
+     "key": "nestwell-cozy-dream",
+     "name": "Nestwell Cozy Dream Bassinet",
+     "category": "bassinet",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 80,
+     "recalls": []
+    },
+    {
+     "key": "bramble-roam-convertible",
+     "name": "Bramble & Co. Roam Convertible Car Seat",
+     "category": "car_seat.convertible",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 86,
+     "recalls": []
+    },
+    {
+     "key": "hand-me-down-infant-seat",
+     "name": "Bramble & Co. Snug Infant Car Seat",
+     "category": "car_seat.infant",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": false,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 62,
+     "recalls": []
+    },
+    {
+     "key": "store-brand-diapers-size1",
+     "name": "Store Brand Diapers Size 1",
+     "category": "diapers",
+     "verdict": "tracking",
+     "price": null,
+     "per_unit": true,
+     "retailer": null,
+     "stock": null,
+     "median_90d": null,
+     "low_365d": null,
+     "at_or_below_target": false,
+     "safety_passed": true,
+     "safety_score": 70,
+     "recalls": []
+    }
+   ]
   }
  },
  "details": {
@@ -256,7 +438,7 @@
      "Sold by retailer or brand",
      "Ease of correct use"
     ],
-    "checked_at": "2026-09-30T11:57:14Z",
+    "checked_at": "2026-10-02T11:56:44Z",
     "links": []
    },
    "recalls": {
@@ -338,7 +520,7 @@
     "unverified": [
      "Sold by retailer or brand"
     ],
-    "checked_at": "2026-09-30T11:57:15Z",
+    "checked_at": "2026-10-02T11:56:45Z",
     "links": [
      "https://www.nhtsa.gov/recalls"
     ]
@@ -429,7 +611,7 @@
      "Sold by retailer or brand",
      "NHTSA ease-of-use rating"
     ],
-    "checked_at": "2026-09-30T11:57:15Z",
+    "checked_at": "2026-10-02T11:56:45Z",
     "links": [
      "https://www.nhtsa.gov/recalls"
     ]
@@ -510,7 +692,7 @@
      "Sold by retailer or brand",
      "Ease of correct use"
     ],
-    "checked_at": "2026-09-30T11:57:16Z",
+    "checked_at": "2026-10-02T11:56:46Z",
     "links": []
    },
    "recalls": {
@@ -521,7 +703,7 @@
  },
  "plan": {
   "due_date": "2027-02-10",
-  "generated": "2026-09-30",
+  "generated": "2026-10-02",
   "rows": [
    {
     "category": "breast_pump",

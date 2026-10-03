@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Growth Scout</title>
+<style>
+:root {
+  --bg: #f6f8f7; --surface: #ffffff; --surface-2: #eef3f1; --line: #dbe3e0;
+  --ink: #12201c; --ink-2: #44554f; --ink-3: #6b7a75;
+  --brand: #1f8e78; --brand-ink: #0f5e4f; --brand-soft: #dff1ec;
+  --bar: #1f8e78;
+  --good: #1d7a3a; --good-bg: #e3f3e7; --warn: #8a5a00; --warn-bg: #fbefd5;
+  --crit: #a3262a; --crit-bg: #fbe3e3; --info-bg: #e7eef9; --info: #234f8c;
+  --radius: 10px; --shadow: 0 1px 2px rgba(16,32,28,.06), 0 2px 8px rgba(16,32,28,.05);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513; --surface: #151f1c; --surface-2: #1b2824; --line: #2a3a35;
+    --ink: #e7efec; --ink-2: #b4c4be; --ink-3: #8a9c96;
+    --brand: #4cc3a8; --brand-ink: #8fe0cd; --brand-soft: #18342d; --bar: #4cc3a8;
+    --good: #7ad596; --good-bg: #173322; --warn: #f0c46b; --warn-bg: #352a12;
+    --crit: #f19a9a; --crit-bg: #3a1a1b; --info-bg: #182638; --info: #9cc1f2;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1513; --surface: #151f1c; --surface-2: #1b2824; --line: #2a3a35;
+  --ink: #e7efec; --ink-2: #b4c4be; --ink-3: #8a9c96;
+  --brand: #4cc3a8; --brand-ink: #8fe0cd; --brand-soft: #18342d; --bar: #4cc3a8;
+  --good: #7ad596; --good-bg: #173322; --warn: #f0c46b; --warn-bg: #352a12;
+  --crit: #f19a9a; --crit-bg: #3a1a1b; --info-bg: #182638; --info: #9cc1f2;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--brand-ink); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 24px 16px 64px; }
+header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 20px; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+h1 span { color: var(--brand); }
+.sub { color: var(--ink-2); margin: 4px 0 0; max-width: 70ch; }
+.meta { color: var(--ink-3); font-size: 13px; text-align: right; }
+.theme-btn { background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer; margin-top: 6px; }
+h2 { font-size: 18px; margin: 32px 0 4px; }
+h2 + .hint { color: var(--ink-3); font-size: 13px; margin: 0 0 12px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
+.tile .n { font-size: 30px; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .l { color: var(--ink-2); font-size: 13px; }
+.sprint { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.wave { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--ink-2); }
+.wave.done { background: var(--brand-soft); border-color: transparent; color: var(--brand-ink); }
+.wave.now { border-color: var(--brand); color: var(--ink); font-weight: 600; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px; }
+.card h3 { font-size: 16px; margin: 0; line-height: 1.3; }
+.card .org { color: var(--ink-2); font-size: 13px; }
+.card .why { font-size: 14px; color: var(--ink-2); margin: 0; }
+.card blockquote { margin: 0; padding: 10px 12px; background: var(--surface-2); border-radius: 8px; font-size: 14px; white-space: pre-wrap; }
+.row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.pill.High { background: var(--good-bg); color: var(--good); }
+.pill.Medium { background: var(--warn-bg); color: var(--warn); }
+.pill.Low { background: var(--surface-2); color: var(--ink-3); }
+.pill.due { background: var(--crit-bg); color: var(--crit); }
+.pill.hunt { background: var(--info-bg); color: var(--info); }
+.btn { font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+:root[data-theme="dark"] .btn.primary { color: #06231c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #06231c; } }
+select.status { font: inherit; font-size: 13px; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; position: sticky; top: 0; z-index: 2; }
+.filters input[type=search], .filters select { font: inherit; font-size: 14px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.filters input[type=search] { flex: 1 1 220px; min-width: 0; }
+.filters label { font-size: 13px; color: var(--ink-2); display: inline-flex; gap: 6px; align-items: center; }
+.count { color: var(--ink-3); font-size: 13px; margin-left: auto; }
+.tablewrap { overflow-x: auto; margin-top: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-3); background: var(--surface-2); position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+tbody tr.main { cursor: pointer; }
+tbody tr.main:hover { background: var(--surface-2); }
+tr.detail td { background: var(--surface-2); }
+td.num { font-variant-numeric: tabular-nums; text-align: right; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.detail-grid h4 { margin: 0 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-3); }
+.ev a { display: block; overflow-wrap: anywhere; font-size: 13px; }
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.bar-row { display: grid; grid-template-columns: minmax(120px, 260px) 1fr 40px; gap: 10px; align-items: center; padding: 4px 0; }
+.bar-row .lab { font-size: 13px; color: var(--ink-2); }
+.bar-track { height: 14px; position: relative; }
+.bar { height: 14px; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+.bar-row .v { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink); text-align: right; }
+.bar-row:hover .bar { filter: brightness(1.12); }
+.timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.timeline li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: grid; grid-template-columns: 96px 1fr; gap: 12px; }
+.timeline .d { color: var(--ink-3); font-size: 13px; font-variant-numeric: tabular-nums; }
+.timeline .t { font-weight: 600; }
+.timeline p { margin: 2px 0 0; color: var(--ink-2); font-size: 14px; }
+.rules { color: var(--ink-3); font-size: 13px; margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+.empty { color: var(--ink-3); padding: 20px; text-align: center; }
+@media (max-width: 640px) {
+  .meta { text-align: left; }
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  .bar-row { grid-template-columns: 110px 1fr 32px; }
+  .cards { grid-template-columns: 1fr; }
+}
+@media print { .filters, .theme-btn, select.status, .btn { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1><span>Vybe</span> Growth Scout</h1>
+      <p class="sub">Verified targets for Vybe Health across wearable technology: investors putting money into health wearables, quick growth wins, people to contact on social, and ways into sports sponsorship. Every row links to the source it came from.</p>
+    </div>
+    <div class="meta">Updated __GENERATED__<br><button class="theme-btn" id="theme" type="button">Theme: auto</button></div>
+  </header>
+
+  <section class="tiles" id="tiles" aria-label="Headline numbers"></section>
+  <div class="sprint" id="sprint" aria-label="Sprint waves"></div>
+
+  <h2>Send today</h2>
+  <p class="hint">The 10 highest-ranked targets with an open channel and a drafted opener. You send every message yourself; nothing here sends anything.</p>
+  <div class="cards" id="cards"></div>
+
+  <h2>All targets</h2>
+  <p class="hint">Click a row for the evidence, the ask and the drafted opener. Your status marks are saved in this browser only.</p>
+  <div class="filters" role="search">
+    <input type="search" id="q" placeholder="Search names, orgs, reasons, tags" aria-label="Search">
+    <select id="f-hunt" aria-label="Hunt"><option value="">All hunts</option><option value="investor">Investor</option><option value="growth">Growth</option><option value="social">Social</option><option value="sponsorship">Sponsorship</option></select>
+    <select id="f-type" aria-label="Type"><option value="">All types</option></select>
+    <select id="f-pri" aria-label="Priority"><option value="">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select>
+    <select id="f-status" aria-label="My status"><option value="">Any status</option></select>
+    <label><input type="checkbox" id="f-ready"> Ready to send</label>
+    <label><input type="checkbox" id="f-signals"> Show signals and competitor deals</label>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap">
+    <table id="tbl">
+      <thead><tr>
+        <th data-k="rank">#</th><th data-k="name">Target</th><th data-k="type">Type</th>
+        <th data-k="why">Why them</th><th data-k="why_now">Why now</th><th data-k="channel">Channel</th>
+        <th data-k="fit">Fit</th><th data-k="score">Score</th><th>My status</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <h2>Coverage by lane</h2>
+  <p class="hint">Targets kept after verification, per research lane. A short bar is where the next wave digs.</p>
+  <div class="chart" id="lanes"></div>
+
+  <h2>What competing wearables sponsor</h2>
+  <p class="hint">Sports deals by other wearable brands, and the small version of each play Vybe could run.</p>
+  <div class="tablewrap"><table id="deals"><thead><tr><th>Deal</th><th>What they did</th><th>Small move for Vybe</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+
+  <h2>Market signals</h2>
+  <p class="hint">Dated events in wearables that make outreach timely, newest first.</p>
+  <ul class="timeline" id="signals"></ul>
+
+  <div class="rules">
+    <strong>Rules this board follows.</strong> No invented people, contact details or numbers: every row links to a public source, and "unknown" stays unknown. Public professional information only. Drafts never mention valuation or terms, and make no health or medical claims. Sponsorship rows never promise athletic or health outcomes, and paid partners must disclose the relationship. Grants, SBIR/STTR and cloud credits are on the separate funding board, not here.
+    <span id="rejected"></span>
+  </div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const safeUrl = (u) => /^https?:\/\//i.test(u || "") ? u : "";
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  };
+
+  // Theme toggle: auto -> light -> dark.
+  const themes = ["auto", "light", "dark"];
+  let theme = store.get("gs-theme", "auto");
+  const applyTheme = () => {
+    if (theme === "auto") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", theme);
+    $("#theme").textContent = "Theme: " + theme;
+  };
+  $("#theme").onclick = () => { theme = themes[(themes.indexOf(theme) + 1) % 3]; store.set("gs-theme", theme); applyTheme(); };
+  applyTheme();
+
+  if (!DATA) { $("#cards").innerHTML = '<p class="empty">No data yet. Run build.py.</p>'; return; }
+  const T = DATA.targets;
+  const STATUSES = ["New", "Contacted", "Replied", "Meeting", "Passed", "Dead"];
+  const status = store.get("gs-status", {});
+  const statusOf = (t) => status[t.id] || "New";
+  const today = new Date(DATA.today + "T00:00:00Z");
+  const daysTo = (d) => d ? Math.round((new Date(d + "T00:00:00Z") - today) / 864e5) : null;
+  const TYPE_LABEL = {"vc":"VC","corporate-vc":"Corporate VC","angel":"Angel","angel-group":"Angel group","syndicate":"Syndicate","accelerator":"Accelerator","event":"Event","builder":"Builder","research-lab":"Research lab","amplifier":"Amplifier","community":"Community","listing":"Listing","signal":"Signal","competitor-deal":"Competitor deal","athlete":"Athlete","team":"Team","program":"Program"};
+
+  // Tiles
+  const s = DATA.summary;
+  const tiles = [
+    [s.total - s.signals, "verified targets"], [s.investor, "investor targets"], [s.growth, "growth wins"],
+    [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.deadlines_30d, "deadlines in 30 days"],
+  ];
+  $("#tiles").innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join("");
+
+  // Sprint waves
+  const start = new Date(DATA.sprint.start_utc), gen = new Date(DATA.generated.replace(" UTC", "Z").replace(" ", "T"));
+  const elapsed = (gen - start) / 6e4;
+  $("#sprint").innerHTML = '<span class="wave">Sprint ' + esc(DATA.sprint.hours) + 'h</span>' + DATA.sprint.waves.map((w, i, a) => {
+    const next = a[i + 1] ? a[i + 1].at_minutes : Infinity;
+    const cls = elapsed >= next ? "done" : elapsed >= w.at_minutes ? "now" : "";
+    return `<span class="wave ${cls}" title="${esc(w.focus)}">Wave ${i + 1} · +${w.at_minutes}m${cls === "done" ? " ✓" : cls === "now" ? " · now" : ""}</span>`;
+  }).join("");
+
+  const pills = (t) => {
+    const d = daysTo(t.deadline);
+    return `<span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span>` +
+      `<span class="pill hunt">${esc(t.hunt)}</span><span class="pill">${esc(TYPE_LABEL[t.type] || t.type)}</span>` +
+      (d !== null && d >= 0 ? `<span class="pill due">Due in ${d}d</span>` : "") +
+      (t.confidence === "single-source" ? `<span class="pill">single source</span>` : "");
+  };
+  const statusSel = (t) => `<select class="status" data-id="${esc(t.id)}" aria-label="Status for ${esc(t.name)}">${STATUSES.map((x) => `<option${x === statusOf(t) ? " selected" : ""}>${x}</option>`).join("")}</select>`;
+
+  // Send today
+  const ready = T.filter((t) => !["signal","competitor-deal"].includes(t.type) && safeUrl(t.contact_url) && t.opener && !["Passed","Dead"].includes(statusOf(t))).slice(0, 10);
+  $("#cards").innerHTML = ready.length ? ready.map((t) => `
+    <article class="card">
+      <div class="row">${pills(t)}</div>
+      <h3>${esc(t.name)}</h3>
+      <div class="org">${esc([t.role, t.org !== t.name ? t.org : null, t.geo].filter(Boolean).join(" · "))}</div>
+      <p class="why">${esc(t.why)}</p>
+      ${t.why_now ? `<p class="why"><strong>Why now:</strong> ${esc(t.why_now)}</p>` : ""}
+      <p class="why"><strong>Ask:</strong> ${esc(t.ask)}</p>
+      <blockquote>${esc(t.opener)}</blockquote>
+      <div class="row">
+        <button class="btn primary" type="button" data-copy="${esc(t.id)}">Copy opener</button>
+        <a class="btn" href="${esc(safeUrl(t.contact_url))}" target="_blank" rel="noopener">${esc(t.channel || "Open")}</a>
+        <a class="btn" href="${esc(safeUrl(t.evidence[0]))}" target="_blank" rel="noopener">Source</a>
+        ${statusSel(t)}
+      </div>
+    </article>`).join("") : '<p class="empty">No ready-to-send targets yet.</p>';
+
+  // Filters
+  const types = [...new Set(T.map((t) => t.type))].sort();
+  $("#f-type").innerHTML += types.map((x) => `<option value="${esc(x)}">${esc(TYPE_LABEL[x] || x)}</option>`).join("");
+  $("#f-status").innerHTML += STATUSES.map((x) => `<option>${x}</option>`).join("");
+  let sortK = "rank", sortDir = 1;
+  const open = new Set();
+  const view = () => {
+    const q = $("#q").value.trim().toLowerCase();
+    const h = $("#f-hunt").value, ty = $("#f-type").value, pr = $("#f-pri").value, st = $("#f-status").value;
+    const rd = $("#f-ready").checked, sig = $("#f-signals").checked || ty === "signal" || ty === "competitor-deal";
+    return T.filter((t) => (sig || !["signal","competitor-deal"].includes(t.type)) && (!h || t.hunt === h) && (!ty || t.type === ty) && (!pr || t.priority === pr) &&
+      (!st || statusOf(t) === st) && (!rd || (safeUrl(t.contact_url) && t.opener)) &&
+      (!q || [t.name, t.org, t.role, t.why, t.why_now, t.geo, (t.tags || []).join(" ")].join(" ").toLowerCase().includes(q)))
+      .sort((a, b) => {
+        const x = a[sortK] ?? "", y = b[sortK] ?? "";
+        return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y))) * sortDir;
+      });
+  };
+  const detail = (t) => `<tr class="detail"><td></td><td colspan="8"><div class="detail-grid">
+      <div><h4>Ask</h4>${esc(t.ask || "—")}<h4 style="margin-top:10px">Drafted opener</h4><blockquote style="margin:0;white-space:pre-wrap">${esc(t.opener || "—")}</blockquote>
+        ${t.opener ? `<div class="row" style="margin-top:8px"><button class="btn primary" type="button" data-copy="${esc(t.id)}">Copy opener</button></div>` : ""}</div>
+      <div><h4>Details</h4>
+        ${t.warm_path ? `<div><strong>Warm path:</strong> ${esc(t.warm_path)}</div>` : ""}
+        ${t.check_size ? `<div><strong>Check size:</strong> ${esc(t.check_size)}</div>` : ""}
+        ${t.stage ? `<div><strong>Stage:</strong> ${esc(t.stage)}</div>` : ""}
+        ${t.geo ? `<div><strong>Where:</strong> ${esc(t.geo)}</div>` : ""}
+        ${t.deadline ? `<div><strong>Deadline:</strong> ${esc(t.deadline)}</div>` : ""}
+        ${t.last_signal_date ? `<div><strong>Last signal:</strong> ${esc(t.last_signal_date)}</div>` : ""}
+        ${t.ice ? `<div><strong>ICE:</strong> I ${esc(t.ice.i)} · C ${esc(t.ice.c)} · E ${esc(t.ice.e)}</div>` : ""}
+        <div><strong>Confidence:</strong> ${esc(t.confidence || "—")}</div>
+        ${(t.tags || []).length ? `<div class="row" style="margin-top:6px">${t.tags.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div>` : ""}</div>
+      <div class="ev"><h4>Evidence</h4>${t.evidence.map((u) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}
+        ${safeUrl(t.contact_url) ? `<h4 style="margin-top:10px">Contact</h4><a href="${esc(safeUrl(t.contact_url))}" target="_blank" rel="noopener">${esc(t.contact_url)}</a>` : ""}</div>
+    </div></td></tr>`;
+  const renderTable = () => {
+    const rows = view();
+    $("#count").textContent = `${rows.length} shown`;
+    $("#tbl tbody").innerHTML = rows.length ? rows.map((t) => `
+      <tr class="main" data-id="${esc(t.id)}" tabindex="0" aria-expanded="${open.has(t.id)}">
+        <td class="num">${esc(t.rank)}</td>
+        <td><strong>${esc(t.name)}</strong><div style="color:var(--ink-3);font-size:13px">${esc([t.role, t.org !== t.name ? t.org : null].filter(Boolean).join(" · "))}</div></td>
+        <td><span class="pill">${esc(TYPE_LABEL[t.type] || t.type)}</span></td>
+        <td style="min-width:260px">${esc(t.why)}</td>
+        <td style="min-width:160px">${esc(t.why_now || "—")}</td>
+        <td>${safeUrl(t.contact_url) ? `<a href="${esc(t.contact_url)}" target="_blank" rel="noopener">${esc(t.channel || "link")}</a>` : esc(t.channel || "—")}</td>
+        <td class="num">${esc(t.fit)}</td>
+        <td><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span></td>
+        <td>${statusSel(t)}</td>
+      </tr>${open.has(t.id) ? detail(t) : ""}`).join("") : '<tr><td colspan="9" class="empty">No targets match these filters.</td></tr>';
+  };
+  ["#q", "#f-hunt", "#f-type", "#f-pri", "#f-status", "#f-ready", "#f-signals"].forEach((id) => $(id).addEventListener("input", renderTable));
+  document.querySelectorAll("th[data-k]").forEach((th) => th.addEventListener("click", () => {
+    const k = th.dataset.k; sortDir = sortK === k ? -sortDir : (k === "score" || k === "fit" ? -1 : 1); sortK = k; renderTable();
+  }));
+  const toggle = (tr) => { const id = tr.dataset.id; open.has(id) ? open.delete(id) : open.add(id); renderTable(); };
+  $("#tbl tbody").addEventListener("click", (e) => {
+    if (e.target.closest("select, a, button")) return;
+    const tr = e.target.closest("tr.main"); if (tr) toggle(tr);
+  });
+  $("#tbl tbody").addEventListener("keydown", (e) => {
+    const tr = e.target.closest("tr.main"); if (tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggle(tr); }
+  });
+  document.addEventListener("change", (e) => {
+    const sel = e.target.closest("select.status"); if (!sel) return;
+    status[sel.dataset.id] = sel.value; store.set("gs-status", status);
+    document.querySelectorAll(`select.status[data-id="${CSS.escape(sel.dataset.id)}"]`).forEach((o) => { o.value = sel.value; });
+  });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-copy]"); if (!b) return;
+    const t = T.find((x) => x.id === b.dataset.copy); if (!t) return;
+    const done = () => { const o = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = o; }, 1400); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t.opener).then(done, () => {});
+  });
+  renderTable();
+
+  // Lane coverage (one series, one hue; values labelled directly)
+  const max = Math.max(1, ...DATA.lanes.map((l) => l.kept));
+  $("#lanes").innerHTML = DATA.lanes.map((l) => `
+    <div class="bar-row" title="${esc(l.title)}: ${esc(l.kept)} kept of ${esc(l.raw)} found">
+      <div class="lab">${esc(l.title)}</div>
+      <div class="bar-track"><div class="bar" style="width:${(l.kept / max) * 100}%"></div></div>
+      <div class="v">${esc(l.kept)}</div>
+    </div>`).join("");
+
+  // Competitor deals, grouped by brand
+  const deals = T.filter((t) => t.type === "competitor-deal").sort((a, b) => String(a.org).localeCompare(String(b.org)) || b.score - a.score);
+  $("#deals tbody").innerHTML = deals.length ? deals.map((t) => `<tr>
+      <td><strong>${esc(t.name)}</strong><div style="color:var(--ink-3);font-size:13px">${esc([t.org, t.last_signal_date].filter(Boolean).join(" · "))}</div></td>
+      <td style="min-width:240px">${esc(t.why)}</td><td style="min-width:200px">${esc(t.ask || "—")}</td>
+      <td>${t.evidence.slice(0, 2).map((u) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">source</a>`).join(" · ")}</td></tr>`).join("")
+    : '<tr><td colspan="4" class="empty">No competitor deals yet.</td></tr>';
+
+  // Signals timeline
+  const sigs = T.filter((t) => t.type === "signal").sort((a, b) => String(b.last_signal_date || "").localeCompare(String(a.last_signal_date || "")));
+  $("#signals").innerHTML = sigs.length ? sigs.map((t) => `
+    <li><div class="d">${esc(t.last_signal_date || "—")}</div>
+      <div><div class="t">${esc(t.name)}</div><p>${esc(t.why)}</p>
+      ${t.ask ? `<p><strong>Move:</strong> ${esc(t.ask)}</p>` : ""}
+      <p>${t.evidence.slice(0, 2).map((u) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">source</a>`).join(" · ")}</p></div></li>`).join("")
+    : '<li class="empty">No signals yet.</li>';
+
+  if (DATA.rejected_count) $("#rejected").textContent = ` ${DATA.rejected_count} candidates were dropped this build for failing a check (no source, low fit, passed deadline, or out of lane).`;
+})();
+</script>
+</body>
+</html>
