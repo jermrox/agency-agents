@@ -234,3 +234,62 @@ the run summary, never a silent zero.
 [^serco]: [Serco Awarded $247M U.S. Army Holistic Health and Fitness (H2F) Contract](https://www.serco.com/na/media-and-news/2025/serco-awarded-247m-us-army-holistic-health-and-fitness-h2f-contract), January 2025. Team Serco comprises Serco, HigherEchelon, Hyperion Biotechnology, Resolution Think, and The Geneva Foundation.
 [^kbr]: [KBRwyle Provides Holistic Care to U.S. Special Ops Forces and Their Families under New Contract](https://www.kbr.com/en/insights-news/stories/kbrwyle-provides-holistic-care-us-special-ops-forces-and-their-families-under). Staffing includes clinical psychologists, social workers, physical therapists, athletic trainers, nurses, dietitians, strength and conditioning coaches, and data scientists.
 [^gap]: [GAP Solutions Receives $100M+ Contract Award for US Army Holistic Health & Fitness](https://www.gapsi.com/gap-solutions-receives-100m-contract-award-for-us-army-holistic-health-fitness/).
+
+---
+
+## State of the sources, 3 October 2026
+
+What a future run should know before it re-probes anything. Everything here
+was checked live on the date given, from the same egress the nightly uses.
+
+**Running nightly (28):** kbr, gdit, geneva, acuity, bah, reef, lmr, psi,
+chenega, hjf, cherokee, magellan, dlh, serco, loyalsource, resolutionthink,
+o2x, federal (USAJOBS), simplifaster, nsca, and eight NEOGOV agencies
+(pwcgov, stpaul, seattle, chulavista, browardsheriff, huntingtonbeach,
+burnsvillemn, lacity). Loyal Source alone is 388 of ~700 board entries: it
+posts one requisition per city, so a single POTFF role becomes forty cards.
+
+**Blocked at the edge, not by us (checked 2 Oct):** `nsca.careerwebsite.com`
+403s on everything including `robots.txt`; a control from the same egress
+in the same second got 200 from Serco and USAJOBS, so it is their WAF, not
+our proxy. Do not evade it: the project treats a deliberate block as a stop
+(NEOGOV national search, NATA, APTA, ACSM are recorded the same way). It
+costs almost nothing -- NSCA's whole contribution to the archive is one
+Serco posting we already read at source with far more detail -- and the
+source resumes by itself if the block lifts. `careers.usmc-mccs.org` is
+also 403; that one matters more, because MCCS is where Semper Fit, HITT and
+installation fitness staff are hired and the board sees none of it except
+what reaches USAJOBS. Both are a conversation with the organisation, not a
+scraping problem.
+
+**Checked and dead (2 Oct):** HigherEchelon, EXOS, GAP Solutions, Hyperion,
+QuarterLine 404 at their careers paths; Sword Performance, Amentum, V2X do
+not resolve; Leidos and SAIC 403. `nafjobs.org` answers 200 on every path
+with identical bytes and carries a domain-for-sale link -- the domain is
+parked. Do not write an adapter against it.
+
+**Reachable but unproductive:** Peraton (iCIMS), CACI (Phenom/Eightfold),
+Maximus (Avature), Goldbelt (JS-rendered). Peraton and CACI were probed in
+September and carried zero tactical human performance postings. Worth one
+more look only if someone sees a posting there by hand.
+
+**Keys that would open real doors, in order of value.** SAM.gov (free,
+login.gov) for pre-award solicitations: H2F and POTFF recompetes appear
+there months before a job is posted, and `contracts.py` already names it as
+the one thing it cannot reach without a key. CareerOneStop (free, Dept of
+Labor) and Adzuna / Jooble (free) are aggregators that fit the `genericjson`
+adapter; they bring noise the classifier can handle and duplicates of
+employer-direct postings that URL-dedupe cannot, so measure before trusting.
+ClearanceJobs has no public API and is the most relevant population on this
+list.
+
+**How the board reaches the site.** The nightly commits a board to `main`
+twice a day but its mirror step exits early while `JOBS_MIRROR_REPO`,
+`JOBS_FEED_ORIGIN` and `JOBS_MIRROR_TOKEN` are unset. Until the owner sets
+them, a daily Routine publishes `main`'s board at 20:00 UTC, taking the
+component from commit `ed6c20b` (the last before the map, which is on hold)
+and refusing if the component carries `mm-map` or differs from what is
+deployed. A posting that disappears is fetched before it is allowed to go:
+404/410 means closed, 403/timeout means blocked and it is carried forward.
+Setting the three repository values makes all of that unnecessary -- and
+publishes the map, so the owner decides when.
