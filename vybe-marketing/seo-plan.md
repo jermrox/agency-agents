@@ -45,6 +45,12 @@ band" (KD 12). "No subscription" stays in the page as proof. Its brief goes in
 guide that links to it. HRV explainers (Vitals) also move up; see
 `briefs/what-is-a-good-hrv.md`.
 
+"whoop vs oura" (9,900 a month, KD 0; "whoop vs oura ring" 5,400 more) is
+not in this plan, and has about four times the demand of "whoop alternative"
+at the same difficulty. It joins Phase 1 as a fair two-product comparison
+at `/compare/whoop-vs-oura/`: no winner, no price column, with Vybe's
+section once. "WHOOP vs Vybe" headlines wait until Vybe has shipped.
+
 ## Phase 1: three commercial pages (weeks 3 to 6)
 
 | Page | Primary query cluster | Title (≤60 chars) |
