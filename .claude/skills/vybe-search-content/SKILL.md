@@ -45,13 +45,18 @@ Rules:
 - Volumes are rounded into buckets. Report them as buckets, not exact counts.
 - Compare the same weeks a year apart for trend; a 2026 bump in every
   Trends series is probably an artifact.
-- Date every number.
+- Date every number, and say which pull backs each trend figure: the
+  12-month Google Ads series (last 3 months against the first 3), or Google
+  Trends (the same weeks a year apart). Never quote a growth percentage you
+  cannot point to.
 
 ### 3. Check what Vybe already earns
 
 Google Search Console via Composio, property `sc-domain:vybe.health`, last
-90 days, by query and page. If a page already gets impressions for the
-question, improve that page instead of writing a new one.
+90 days, by query and page. Check the **query**, not just the page: if a
+page already gets impressions for this exact question, improve it. If its
+impressions come from a different question, write a new page and link the
+two.
 
 ### 4. Read the results page
 
@@ -68,6 +73,8 @@ answers feel unsatisfying, which is Vybe's opening.
 | A comparison ("whoop alternative", "whoop vs oura") | Fair comparison | Grant each product its strength. No price mockery, no "best" unless the list is fair and includes other no-subscription devices. |
 | A category ("screenless fitness tracker") | Category page | Say what to look for in any device first, then where Vybe fits. Say "pre-launch". |
 | A number ("is 37 a low HRV") | Explainer section | Explain why a single number means little without the person's own baseline. Never give a diagnostic threshold. |
+| A population comparison ("hrv by age") | Explainer section | A published reference range may be cited **as context**, with its source, its measurement method and its spread, and the line that it is not a target or a verdict. Then turn to the person's own baseline. |
+| A safety question ("what is an unsafe hrv") | One short answer | No number. Say that HRV alone does not tell anyone they are unwell, and that symptoms or worry are for a clinician. The boundary is on the claim, not on the person's data. |
 
 ### 6. Write the brief
 
@@ -120,7 +127,7 @@ Page type: <explainer | comparison | category>
 <one: waitlist, or "talk to us" for builders>
 
 ## Schema and AI search
-<FAQPage or Article schema; the answer-first paragraph doubles as the AI Overview candidate>
+<Article schema with clear question headings. FAQPage markup is optional: since 2023 Google shows FAQ rich results only for well-known government and health sites, so it earns no rich result here, though it does no harm. The answer-first paragraph is the AI Overview candidate.>
 
 ## Measure
 <current position, target, review date, decision rule>
@@ -136,9 +143,9 @@ on them after January 2027.
 
 | Query | Vol/mo | KD | Why now |
 |---|---|---|---|
-| what is a good hrv | 14,800 | 17 | Rising about 30%; Vybe's HRV page already holds 62 of its 68 impressions, at position 75 to 100 |
-| what does hrv mean | 5,400 | low | Rising about 40% |
-| hrv tracker | 2,400 | 8 | Rising about 125% |
+| what is a good hrv | 14,800 | 17 | Moved up a volume bucket over the year (12,100 to 14,800). Vybe has no impressions for it yet: the HRV page's ~63 impressions are definition queries, so this needs its own page |
+| what does hrv mean | 5,400 | low | The existing HRV page's natural target |
+| hrv tracker | 2,400 | 8 | Commercial; rising (last 3 vs first 3 months of the 12-month series) |
 | screenless fitness tracker | ~40,500 (110,000 at the mid-2026 peak) | to check | Surged after Fitbit Air; commercial |
 | best fitness tracker without subscription | 1,600 | 29 | Grew from 210 |
 | whoop alternative | 2,400 | 0 | Easy to rank; Reddit holds position 2 |
