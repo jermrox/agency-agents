@@ -57,12 +57,23 @@ break their own model to follow). Name the weakest test out loud.
 "No subscription" alone fails Moat: Garmin Cirqa, Fitbit Air, Amazfit Helio,
 Polar Loop and Hume all offer it.
 
+**A worldwide total is not a segment size.** Give a low-to-high estimate
+for the segment itself from a countable public source (for example last
+year's finisher count for one race, times the share of US residents), label
+it "estimate" and show the method.
+
 ### 3. Map the targets
 List organisations, programmes, roles, public creators, communities, events
 and publications, each with **why it matters** and a **source**. Never list
 private individuals' names with contact details; name roles ("H2F Integrator",
 "health and safety chief") and public figures speaking publicly. Check
 community names are what you think (r/HRV is the Honda HR-V car subreddit).
+
+**In-person activations** (a race weekend, a meetup, an event):
+- Name at least three local public reach points that sit outside any competitor's exclusive network (run clubs, independent gyms, local public creators), each with an invite method and expected reach. If there are none, estimate turnout from owned channels alone.
+- Check the time against the official event schedule so the activation doesn't clash.
+- Put "not affiliated with any event or organiser" on every printed and posted piece.
+- Treat association by time and place in race week as an ambush-marketing risk for counsel.
 
 ### 4. Choose the channel and buying path
 Match each target to where it gathers and how it buys: consumer checkout,

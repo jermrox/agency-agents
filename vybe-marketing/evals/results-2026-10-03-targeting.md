@@ -50,3 +50,31 @@ The grader also found:
 - Check creators for competitor ties.
 - Never quote a creator's critique without written permission.
 - Disclose any owned or linked outlet.
+
+## Cycle 5: case 8 rerun with the real prompt
+
+**Case 8 HYROX race weekend: 28/30, pass, "Strong"** (all three gates at 3).
+
+The plan:
+- No sponsorship and no activity inside the venue. HYROX US terms clauses 9.8 and 10.3 rule it out, and Amazfit's exclusive covers smart straps.
+- Tampa is a content-only test.
+- One off-site meetup with no HYROX marks at Dallas, behind three dated gates. The default is no trip.
+
+It uses no geofencing, a consented QR form, and a Register row beside every claim. The grader confirmed the Amazfit deal, both race dates and the terms quotes.
+
+**Changes made to `vybe-audience-targeting`:**
+- A worldwide total is not a segment size; give a counted low-to-high estimate.
+- In-person activations need three local reach points outside the exclusive partner's network and a schedule-clash check.
+- "Not affiliated" goes on every piece.
+- Association by time and place goes to counsel as ambush risk.
+
+**Independent targeting scores today:**
+
+| Case | Score |
+|---|---|
+| 3 | 27 |
+| 4 | 27 |
+| 5 | 25 |
+| 8 | 28 |
+
+All pass.
