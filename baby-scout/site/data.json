@@ -1616,5 +1616,416 @@
   "over_budget_risk": false,
   "registry_completion_window": "typically opens ~Dec 16, 2026 (verify with your registry)",
   "caveat": "Estimates are planning placeholders; replace with tracked prices. Sale windows are historical patterns -- confirm dates each year."
+ },
+ "picks": {
+  "reviewed": "2026-10-03",
+  "title": "Car seat & stroller safety picks",
+  "summary": "Ranked by independent crash testing (BabyGearLab sled tests, Consumer Reports), recall records and safety features. No U.S. government crash rating exists for car seats: NHTSA's stars rate ease of use, not safety.",
+  "caveats": [
+   "Current NHTSA Ease-of-Use stars could not be retrieved for 2026 models; Consumer Reports crash grades are paywalled.",
+   "\"No recall found\" means targeted searches found none, not a confirmed clean record. Check your exact model number and manufacture date at NHTSA.gov/recalls.",
+   "Where Consumer Reports and BabyGearLab disagree, both are shown."
+  ],
+  "dates": [
+   {
+    "date": "2026-10-03",
+    "label": "Target car seat trade-in closes (20% coupon valid to Oct 17)",
+    "url": "https://corporate.target.com/press/fact-sheet/2026/09/target-car-seat-trade-in-fall-2026"
+   },
+   {
+    "date": "2026-10-06",
+    "label": "Amazon Prime Big Deal Days (Oct 6\u20137)",
+    "url": "https://www.aboutamazon.com/news/retail/amazon-prime-big-deals-day-2026-when-october-6-7"
+   },
+   {
+    "date": "2026-10-17",
+    "label": "Target trade-in coupons expire",
+    "url": "https://corporate.target.com/press/fact-sheet/2026/09/target-car-seat-trade-in-fall-2026"
+   },
+   {
+    "date": "2026-12-05",
+    "label": "Seats made on or after this date must meet FMVSS 213a side-impact and 213b frontal rules (older seats stay legal)",
+    "url": "https://www.federalregister.gov/documents/2026/09/09/2026-18380/federal-motor-vehicle-safety-standard-no-213a-child-restraint-systems-side-impact-protection-federal"
+   }
+  ],
+  "categories": [
+   {
+    "name": "Infant car seats",
+    "picks": [
+     {
+      "rank": 1,
+      "name": "Nuna PIPA rx",
+      "price": "$550",
+      "match": "nuna.*pipa|pipa rx",
+      "why": "Lowest crash forces BabyGearLab has recorded (crash 9.0). Load leg + rebound panel, rigid LATCH, baseless belt install, FAA label. Fits the most compact strollers (TRVL natively; Minu V3, YOYO, Butterfly via adapter).",
+      "flags": [
+       "No FMVSS 213a statement from Nuna",
+       "CR crash grade paywalled"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-infant-car-seat"
+       ],
+       [
+        "Nuna",
+        "https://nunababy.com/usa/pipa-rx-infant-car-seat-with-relx-base"
+       ]
+      ]
+     },
+     {
+      "rank": 2,
+      "name": "Chicco KeyFit 35 / KeyFit Max",
+      "price": "$300 / $250",
+      "match": "keyfit",
+      "why": "Consumer Reports: 5/5 ease of use and 5/5 belt fit, one of the easiest seats to install correctly. Chicco states the Max meets FMVSS 213a + 213b; FAA label (Max).",
+      "flags": [
+       "Conflict: BabyGearLab crash score only 6.7 (KeyFit 35, 2023)",
+       "No confirmed adapter for most premium compact strollers"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports",
+        "https://www.consumerreports.org/babies-kids/car-seats/chicco-keyfit-35/m403644/"
+       ],
+       [
+        "Chicco",
+        "https://www.chiccousa.com/shop-our-products/car-seats/keyfit-max-zip-cleartex-infant-car-seat/87113.html"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/vehicle-safety/infant-car-seat/chicco-keyfit-35"
+       ]
+      ]
+     },
+     {
+      "rank": 3,
+      "name": "Britax Willow S",
+      "price": "$280",
+      "match": "willow",
+      "why": "BabyGearLab Best Budget, crash 7.8, stability bar. Not part of the Aug 2026 Britax B-Safe handle recall.",
+      "flags": [
+       "213a and FAA status not verified"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-infant-car-seat"
+       ],
+       [
+        "Britax recall page",
+        "https://us.britax.com/support/safety-notices-recalls/b-safe-and-endeavours-crs-hub-recall"
+       ]
+      ]
+     },
+     {
+      "rank": 4,
+      "name": "Clek Liing",
+      "price": "$500",
+      "match": "liing",
+      "why": "Wirecutter's rigid-LATCH pick; load leg; BabyGearLab reports better-than-average crash results.",
+      "flags": [
+       "213a and FAA status not verified"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Wirecutter",
+        "https://www.nytimes.com/wirecutter/reviews/best-infant-car-seat/"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-infant-car-seat"
+       ]
+      ]
+     },
+     {
+      "rank": 5,
+      "name": "Graco SnugRide SnugFit 35 DLX",
+      "price": "$250",
+      "match": "snugfit",
+      "why": "Wirecutter's longtime top pick; 35 lb limit; anti-rebound bar. Graco says no other SnugRide is affected by the Turn & Slide recall.",
+      "flags": [
+       "No independent crash data"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Wirecutter",
+        "https://www.nytimes.com/wirecutter/reviews/best-infant-car-seat/"
+       ],
+       [
+        "Graco recalls",
+        "https://recalls.gracobaby.com/"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Convertible car seats",
+    "picks": [
+     {
+      "rank": 1,
+      "name": "Graco Extend2Fit / Extend2Fit 3-in-1",
+      "price": "$270",
+      "match": "extend2fit",
+      "why": "Most agreement across sources: Wirecutter top pick, Consumer Reports crash \"Best\" (3-in-1), BabyGearLab crash 8.5. Rear-faces to 50 lb, as the AAP advises.",
+      "flags": [
+       "CR pages dated 2021/2018"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Wirecutter",
+        "https://www.nytimes.com/wirecutter/reviews/best-convertible-car-seats/"
+       ],
+       [
+        "Consumer Reports",
+        "https://www.consumerreports.org/babies-kids/car-seats/graco-extend2fit-3-in-1/m399639/"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-convertible-car-seat"
+       ]
+      ]
+     },
+     {
+      "rank": 2,
+      "name": "Graco 4Ever DLX",
+      "price": "$330",
+      "match": "4ever",
+      "why": "BabyGearLab's top crash analysis (8.7), Best for Most Families. Only pick with verified NHTSA stars (2021: RF 4, FF 5, booster 4).",
+      "flags": [
+       "Rear-faces to 40 lb, not 50"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-convertible-car-seat"
+       ],
+       [
+        "NHTSA 2021 ratings (mirror)",
+        "https://lindseyresearch.com/wp-content/uploads/2022/04/NHTSA-2006-25344-0056-2021-NHTSA-Child-Restraint-Ease-of-Use-Submission-1.pdf"
+       ]
+      ]
+     },
+     {
+      "rank": 3,
+      "name": "Britax Poplar / Poplar S",
+      "price": "$400",
+      "match": "poplar",
+      "why": "Consumer Reports 2026 Value Pick, \"excellent crash protection\"; under 17 in wide (3-across); rear-faces to 50 lb; 10-year life.",
+      "flags": [
+       "Conflict: BabyGearLab crash only 7.3 (Poplar S)",
+       "Rear-facing recline may be too upright for newborns"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports",
+        "https://www.consumerreports.org/babies-kids/car-seats/top-picks-for-convertible-car-seats-a1079496804/"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-convertible-car-seat"
+       ]
+      ]
+     },
+     {
+      "rank": 4,
+      "name": "Chicco Fit360 or Graco Turn2Me (rotating)",
+      "price": "$440 / $400",
+      "match": "fit360|turn2me",
+      "why": "Fit360: Consumer Reports 2026 Top Pick with its highest crash rating, easiest install in BabyGearLab testing. Turn2Me: BabyGearLab crash 8.7 with among the lowest head-injury readings.",
+      "flags": [
+       "Conflict: BabyGearLab rated Fit360 crash 7.1 (below average)",
+       "Fit360 RF LATCH limit 30 lb"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports",
+        "https://www.consumerreports.org/babies-kids/car-seats/top-picks-for-convertible-car-seats-a1079496804/"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-convertible-car-seat"
+       ]
+      ]
+     },
+     {
+      "rank": 5,
+      "name": "Nuna RAVA Next",
+      "price": "$580",
+      "match": "rava",
+      "why": "BabyGearLab overall 80, crash 8.4; rear-faces to 50 lb. Recall 24C-002 covers only original RAVAs made before Oct 26, 2023.",
+      "flags": [
+       "CR crash grade paywalled"
+      ],
+      "recall": "Older RAVA only (24C-002)",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/vehicle-safety/best-convertible-car-seat"
+       ],
+       [
+        "NHTSA 24C-002",
+        "https://static.nhtsa.gov/odi/rcl/2024/RCLRPT-24C002-2945.PDF"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Compact strollers",
+    "picks": [
+     {
+      "rank": 1,
+      "name": "UPPAbaby Minu V3",
+      "price": "~$500",
+      "match": "minu",
+      "why": "Only compact stroller at the top of both BabyGearLab (81, Best Overall) and Consumer Reports (top-rated lightweight, strong safety results). ~17 lb. Adapters for Mesa, Nuna PIPA, Maxi-Cosi, Clek.",
+      "flags": [
+       "No Chicco KeyFit adapter"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/getting-around/travel-stroller/uppababy-minu-v3"
+       ],
+       [
+        "Consumer Reports (via Quartz)",
+        "https://qz.com/best-travel-strollers-consumer-reports"
+       ]
+      ]
+     },
+     {
+      "rank": 2,
+      "name": "Nuna TRVL lx",
+      "price": "~$600",
+      "match": "trvl",
+      "why": "Consumer Reports recommended, 14.6 lb; original TRVL had BabyGearLab's best maneuverability (9.4). Nuna PIPA clicks in with no adapter.",
+      "flags": [
+       "Fold exceeds cabin guidelines: plan to gate-check"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports (via Quartz)",
+        "https://qz.com/best-travel-strollers-consumer-reports"
+       ],
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/getting-around/travel-stroller/nuna-trvl"
+       ]
+      ]
+     },
+     {
+      "rank": 3,
+      "name": "gb Pockit+ All-City",
+      "price": "not verified",
+      "match": "pockit",
+      "why": "Smallest fold BabyGearLab measured (score 73, Most Compact), 13.1 lb; includes Cybex car seat adapters.",
+      "flags": [
+       "Weakest maneuverability (5.5)"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/topics/getting-around/best-travel-stroller"
+       ]
+      ]
+     },
+     {
+      "rank": 4,
+      "name": "Stokke YOYO\u00b3 / Bugaboo Butterfly 2",
+      "price": "not verified",
+      "match": "yoyo|butterfly",
+      "why": "Cabin-size folds (13.6 lb / 16 lb); BabyGearLab rated the YOYO2 76. Both take Nuna PIPA, Cybex, Maxi-Cosi and Clek via adapters.",
+      "flags": [
+       "YOYO\u00b3 parking-brake recall Nov 2024: check serial",
+       "Butterfly 2 has no independent score"
+      ],
+      "recall": "YOYO\u00b3: CPSC 25-044",
+      "sources": [
+       [
+        "BabyGearLab",
+        "https://www.babygearlab.com/reviews/getting-around/travel-stroller/babyzen-yoyo2"
+       ],
+       [
+        "CPSC YOYO\u00b3 recall",
+        "https://www.cpsc.gov/Recalls/2025/Stokke-Recalls-YOYO3-Strollers-Due-to-Injury-Hazard"
+       ]
+      ]
+     },
+     {
+      "rank": 5,
+      "name": "Chicco Bravo Trio (newborn travel system)",
+      "price": "~$450",
+      "match": "bravo",
+      "why": "Consumer Reports' top-rated travel system for newborns; KeyFit 30 clicks in natively.",
+      "flags": [
+       "Weight and fold not verified"
+      ],
+      "recall": "None found",
+      "sources": [
+       [
+        "Consumer Reports (via Quartz)",
+        "https://qz.com/best-travel-strollers-consumer-reports"
+       ]
+      ]
+     }
+    ]
+   }
+  ],
+  "avoid": [
+   {
+    "name": "Evenflo REO by Revolve360",
+    "detail": "NHTSA 26C-004 (Jul 2026): headrest shifted in NHTSA's own crash test; 59,661 seats; no fix yet.",
+    "url": "https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26C004-1274.pdf"
+   },
+   {
+    "name": "Graco SnugRide Turn & Slide",
+    "detail": "NHTSA 26C-003 (Apr 2026): carrier may detach from base in a crash; free replacement.",
+    "url": "https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26C003-2105.pdf"
+   },
+   {
+    "name": "Evenflo Revolve180 LiteMax NXT",
+    "detail": "NHTSA 26C-005 (Aug 2026): recline indicator leaves baby too upright; repair kit expected Nov 2026.",
+    "url": "https://www.consumerreports.org/babies-kids/baby-product-recalls/evenflo-revolve180-litemax-nxt-recall-a1541663858/"
+   },
+   {
+    "name": "Britax B-Safe Gen2 / 35 / Ultra, Endeavours",
+    "detail": "Aug 2026: carry handle can partially detach; 114,660 seats; free clip kit. Fine in the car, don't carry by the handle.",
+    "url": "https://us.britax.com/support/safety-notices-recalls/b-safe-and-endeavours-crs-hub-recall"
+   },
+   {
+    "name": "Joolz Aer2 car seat adapters",
+    "detail": "CPSC (Jun 2026): \"false lock\" lets the car seat fall; refund.",
+    "url": "https://www.cpsc.gov/Recalls/2026/Joolz-Recalls-Aer2-Car-Seat-Adapters-for-Strollers-Due-to-Risk-of-Serious-Injury-from-Fall-Hazard"
+   },
+   {
+    "name": "UPPAbaby Mesa V3 and Doona",
+    "detail": "Lowest crash results in BabyGearLab's 2026 infant seat tests, despite Mesa V3's 213a claim.",
+    "url": "https://www.babygearlab.com/topics/vehicle-safety/best-infant-car-seat"
+   },
+   {
+    "name": "Maxi-Cosi Emme 360",
+    "detail": "Consumer Reports crash rating \"Basic\"; shell didn't stay well attached to the base forward-facing.",
+    "url": "https://www.consumerreports.org/babies-kids/car-seats/maxi-cosi-emme-360/m408795/"
+   },
+   {
+    "name": "Unbranded or marketplace car seats",
+    "detail": "Counterfeit seats sold on Temu and Amazon weren't certified for U.S. use. Buy from authorized retailers and check the FMVSS 213 label.",
+    "url": "https://6abc.com/post/experts-warn-counterfeit-car-seats-being-sold-online/16064392/"
+   }
+  ]
  }
 }

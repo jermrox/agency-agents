@@ -102,3 +102,31 @@ def test_backfilled_report_ignores_later_prices(tmp_path):
     store.append(Observation("k", "A", 50, observed_at="2026-09-10T10:00:00Z"))
     assert store.latest("k", until=dt.date(2026, 9, 5))[0].price == 100
     assert store.history("k", until=dt.date(2026, 9, 5)) == [(dt.date(2026, 9, 1), 100)]
+
+
+def test_dashboard_embeds_sourced_safety_picks(tmp_path):
+    data = tmp_path / "data"
+    data.mkdir()
+    shutil.copy(ROOT / "watchlist.example.toml", data / "watchlist.toml")
+    shutil.copy(ROOT / "data" / "gear_picks.json", data / "gear_picks.json")
+    assert main(["run", "--data", str(data), "--site", str(tmp_path / "site"), "--offline",
+                 "--recalls-file", str(FIX / "cpsc_sample.json"), "--today", "2026-10-03"]) == 0
+    html = (tmp_path / "site" / "index.html").read_text()
+    picks = json.loads(html.split('id="data">', 1)[1].split("</script>", 1)[0])["picks"]
+    names = [c["name"] for c in picks["categories"]]
+    assert names == ["Infant car seats", "Convertible car seats", "Compact strollers"]
+    for cat in picks["categories"]:
+        assert 3 <= len(cat["picks"]) <= 5
+        for p in cat["picks"]:
+            assert p["sources"] and all(url.startswith("https://") for _, url in p["sources"])
+    assert all(a["url"].startswith("https://") for a in picks["avoid"])
+
+
+def test_dashboard_without_picks_file(tmp_path):
+    data = tmp_path / "data"
+    data.mkdir()
+    shutil.copy(ROOT / "watchlist.example.toml", data / "watchlist.toml")
+    assert main(["run", "--data", str(data), "--site", str(tmp_path / "site"), "--offline",
+                 "--recalls-file", str(FIX / "cpsc_sample.json"), "--today", "2026-10-03"]) == 0
+    html = (tmp_path / "site" / "index.html").read_text()
+    assert json.loads(html.split('id="data">', 1)[1].split("</script>", 1)[0])["picks"] is None
