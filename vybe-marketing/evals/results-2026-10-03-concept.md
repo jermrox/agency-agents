@@ -231,3 +231,23 @@ D1 is now 3 in every piece. All short formats are under 25 words, and every prom
 - Q1 and Register row 21: a sentence that ties an answer to "no required subscription" is row 21 and carries its hold. Without a hold, it gets its own sentence about the band.
 - Q6: blind spots never name a sensing gap on an unconfirmed spec.
 - `check_marketing.py` has a blocking `row21` rule, scoped to each markdown section's hold. It catches exactly those four pieces in this run and passes the held C8.
+
+## Retest of C2, C3, C5 and C6 (row 21 rule)
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | Total | Before |
+|---|---|---|---|---|---|---|---|---|
+| C2 Hero | 3 | 3 | 3 | 3 | 3 | 3 | **18** | 17 |
+| C3 Reel caption | 3 | 3 | 3 | 3 | 3 | 3 | **18** | 17 |
+| C5 Nourish | 3 | 2 | 3 | 3 | 2 | 3 | **16** | 17 |
+| C6 Connect | 3 | 2 | 3 | 3 | 2 | 3 | **16** | 17 |
+
+The row 21 tie is gone in all four, and C5's present-tense line and C6's sensing blind spot are fixed. New misses:
+- C5's call to action asked "what your own late dinners do", which assumes a cause.
+- C6 answered "Why mornings?" with UK Biobank's day-vs-night finding, and wrote "buy the band once".
+- Both carried only half of the Instagram "then" cell, or carried it after an evidence paragraph.
+- C2's sub-line was 55 words.
+
+**Fixes:**
+- Q1 carries the whole "then" cell, directly after the pointer.
+- Q6 treats call-to-action questions, pricing words and citations as claims.
+- Q8 and `check_marketing.py` count a sub-line or subhead as a short format; the checker now blocks C2's 55-word sub-line.

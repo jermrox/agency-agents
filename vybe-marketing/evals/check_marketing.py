@@ -12,8 +12,8 @@ regardless of how good the rest of the work is:
   targeting health-interest or sensitive-category ad targeting, which Meta and
             Google prohibit for this kind of advertiser
   partner   wording that implies a partnership that is not signed
-  short     a short format (a line labelled tagline, first line, subject line
-            or hook) of 25 words or more; the concept check says under 25
+  short     a short format (a line labelled tagline, first line, subject line,
+            hook, sub-line or subhead) of 25 words or more; the concept check says under 25
   row21     a sentence tying an answer to "no (required) subscription", which
             is Claim Register row 21's scope claim; allowed when the sentence
             names row 21 or a hold, or its markdown section (## heading)
@@ -125,7 +125,7 @@ def units(path):
         yield from flush()
 
 
-SHORT_LABEL = re.compile(r"^\s*(#+\s*)?\**\s*(tagline|first line|subject line|hook)\b[^:\n]*:?\**\s*(.*)$", re.I)
+SHORT_LABEL = re.compile(r"^\s*(#+\s*)?\**\s*(tagline|first line|subject line|hook|sub-?line|subhead)\b[^:\n]*:?\**\s*(.*)$", re.I)
 JUST_LABEL = re.compile(r"^\s*\**[^*]{0,40}:\**\s*$")
 
 
