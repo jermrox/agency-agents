@@ -22,3 +22,4 @@ at 2 or more, and `check_marketing.py` passing.
 | S3 | Brief the "screenless fitness tracker" category page. |
 | S4 | Brief a Nourish explainer on meal timing and sleep. |
 | S5 | Brief an "oura ring alternative" page. |
+| S6 | Move: brief an explainer for "overtraining symptoms". |
