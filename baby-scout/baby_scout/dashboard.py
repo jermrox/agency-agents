@@ -17,7 +17,15 @@ from .models import utcnow
 from .report import ReportArchive
 
 
-def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive) -> dict[str, Any]:
+def load_picks(path: str | Path | None) -> dict[str, Any] | None:
+    """The curated, sourced car seat and stroller safety picks, if the file exists."""
+    if not path or not Path(path).exists():
+        return None
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive,
+            picks: dict[str, Any] | None = None) -> dict[str, Any]:
     dates = archive.dates()
     return {
         "generated_at": utcnow(),
@@ -25,14 +33,15 @@ def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive:
         "reports": {d: archive.load(d) for d in dates[-120:]},
         "details": {r["key"]: r for r in results},
         "plan": plan,
+        "picks": picks,
     }
 
 
 def write(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive,
-          site_dir: str | Path) -> Path:
+          site_dir: str | Path, picks_path: str | Path | None = None) -> Path:
     site = Path(site_dir)
     site.mkdir(parents=True, exist_ok=True)
-    data = payload(results, plan, archive)
+    data = payload(results, plan, archive, load_picks(picks_path))
     (site / "data.json").write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8")
     reports_out = site / "reports"
     reports_out.mkdir(exist_ok=True)
@@ -139,6 +148,14 @@ tr.sel td{background:var(--page);font-weight:600}
 .recall{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
 .recall .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted)}
 .recall a{font-weight:600}
+.picks{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.pick-card .rank{font-size:12px;font-weight:700;color:var(--accent)}
+.flags{display:flex;flex-wrap:wrap;gap:4px}
+.flag{font-size:12px;border-radius:6px;padding:1px 6px;background:var(--page);border:1px solid var(--border);color:var(--ink-2)}
+.flag.hot{border-color:var(--critical);color:var(--critical)}
+.srcs{font-size:12px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.dates{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:4px;font-size:13px}
+.dates .past{color:var(--muted);text-decoration:line-through}
 a{color:var(--series-1)}
 </style>
 </head>
@@ -160,6 +177,7 @@ a{color:var(--series-1)}
 
   <section aria-labelledby="h-changes"><h2 id="h-changes">What changed</h2><ul class="events" id="events"></ul></section>
   <section aria-labelledby="h-recalls"><h2 id="h-recalls">Baby &amp; kid recalls</h2><p class="muted" id="recalls-note" style="margin-bottom:8px"></p><div class="chips" id="recall-filters" role="group" aria-label="Filter recalls by type"></div><div id="recalls"></div></section>
+  <section aria-labelledby="h-picks"><h2 id="h-picks">Car seat &amp; stroller safety picks</h2><p class="muted" id="picks-note" style="margin-bottom:8px"></p><ul class="dates" id="picks-dates"></ul><div class="chips" id="picks-tabs" role="group" aria-label="Choose a category"></div><div id="picks"></div></section>
   <section aria-labelledby="h-watch"><h2 id="h-watch">Watchlist</h2><div class="grid" id="items"></div></section>
   <section aria-labelledby="h-plan"><h2 id="h-plan">Buy plan</h2><div id="plan"></div></section>
   <section aria-labelledby="h-spend"><h2 id="h-spend">Spending</h2><div id="spend"></div></section>
@@ -350,6 +368,48 @@ function renderRecalls(r){
   box.appendChild(ul);
 }
 
+var pickCat = 0;
+function renderPicks(r){
+  var P = D.picks, box = $("picks"), tabs = $("picks-tabs"), note = $("picks-note"), dl = $("picks-dates");
+  box.textContent = ""; tabs.textContent = ""; dl.textContent = "";
+  if (!P){ note.textContent = "No safety picks file yet (data/gear_picks.json)."; return; }
+  note.textContent = P.summary + " Last reviewed " + fmtDate(P.reviewed) + ". " + P.caveats.join(" ");
+  (P.dates || []).forEach(function(x){
+    var li = el("li", {cls: x.date < r.date ? "past" : ""}, [el("strong", {text: fmtDate(x.date) + ": "}),
+      el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.label})]);
+    dl.appendChild(li);
+  });
+  var recallText = ((r.recall_watch && r.recall_watch.items) || []).map(function(x){ return ((x.title || "") + " " + (x.products || []).join(" ")).toLowerCase(); });
+  var cats = P.categories.map(function(c){ return c.name; }).concat(["Avoid / recalled"]);
+  cats.forEach(function(c, i){
+    var b = el("button", {type:"button", "aria-pressed": String(i === pickCat), text:c});
+    b.addEventListener("click", function(){ pickCat = i; renderPicks(r); });
+    tabs.appendChild(b);
+  });
+  var link = function(s){ return el("a", {href:s[1], target:"_blank", rel:"noopener noreferrer", text:s[0]}); };
+  if (pickCat === P.categories.length){
+    var ul = el("ul", {cls:"recalls"});
+    P.avoid.forEach(function(x){
+      ul.appendChild(el("li", {cls:"recall"}, [el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.name}), el("div", {cls:"ink2", text:x.detail})]));
+    });
+    box.appendChild(ul); return;
+  }
+  var grid = el("div", {cls:"picks"});
+  P.categories[pickCat].picks.forEach(function(p){
+    var re = null; try { re = new RegExp(p.match, "i"); } catch(e) {}
+    var hit = re && recallText.some(function(t){ return re.test(t); });
+    var flags = el("div", {cls:"flags"});
+    if (hit) flags.appendChild(el("span", {cls:"flag hot", text:"In this report's CPSC recall watch: check it"}));
+    flags.appendChild(el("span", {cls:"flag" + (p.recall === "None found" ? "" : " hot"), text:"Recalls: " + p.recall}));
+    p.flags.forEach(function(f){ flags.appendChild(el("span", {cls:"flag", text:f})); });
+    grid.appendChild(el("div", {cls:"card pick-card"}, [
+      el("header", {}, [el("h3", {}, [el("span", {cls:"rank", text:"#" + p.rank + " "}), document.createTextNode(p.name)]), el("span", {cls:"price", text:p.price})]),
+      el("p", {cls:"ink2", text:p.why}), flags,
+      el("div", {cls:"srcs"}, [el("span", {cls:"muted", text:"Sources:"})].concat(p.sources.map(link)))]));
+  });
+  box.appendChild(grid);
+}
+
 function renderEvents(r){
   var ul = $("events"); ul.textContent = "";
   if (!r.events.length){
@@ -474,7 +534,7 @@ function select(d){
   $("day").value = d;
   var latest = d === D.latest;
   $("updated").textContent = (latest ? "Latest report · " : "Past report · ") + fmtDate(d) + " · generated " + r.generated_at.replace("T", " ").replace("Z", " UTC");
-  renderKpis(r); renderEvents(r); renderRecalls(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
+  renderKpis(r); renderEvents(r); renderRecalls(r); renderPicks(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
   try { history.replaceState(null, "", latest ? location.pathname : "#" + d); } catch(e) {}
 }
 
