@@ -94,6 +94,11 @@ site blocks direct fetches, read it through Firecrawl (Composio) or Exa's
 fetch, and say which. Read vybe.health itself with Firecrawl (`onlyMainContent: false`,
 `waitFor` about 3000 ms): the site renders in the browser and short fetches
 cut it off. Any "not on the site" statement cites that scrape.
+If two Vybe pages word the same fact differently (for example /faq "without
+individual visibility" vs /enterprise "per-person detail where the individual
+has consented"), cite both and flag it to the founder; never pick one. Text in
+quote marks is word for word from its source, and a dated figure or event
+cites the primary page for that year, not last year's page or an aggregator.
 
 ### 4d. Check the intent
 
