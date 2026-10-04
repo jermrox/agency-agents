@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-04 01:51 UTC",
+  "generated": "2026-10-04 01:52 UTC",
   "today": "2026-10-04",
   "scope": {
     "company": "Vybe Health",
@@ -113,18 +113,18 @@
     }
   ],
   "summary": {
-    "total": 513,
+    "total": 553,
     "investor": 128,
-    "growth": 79,
-    "social": 39,
+    "growth": 100,
+    "social": 58,
     "sponsorship": 71,
     "app_partners": 53,
     "sports": 13,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 75,
+    "high": 76,
     "deadlines_30d": 8,
-    "ready_to_send": 314,
+    "ready_to_send": 348,
     "identity_needs_ok": 74
   },
   "targets": [
@@ -3493,6 +3493,46 @@
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
     {
+      "name": "The Hardtech Podcast",
+      "org": "The Hardtech Podcast",
+      "role": "Hosts: DeAndre Harakas, Grant Chapman (co-host Elijah Clark)",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Hardware-founder interviews with a wearables streak: Alenthia Run's sacrum-worn running sensor (29 Jun 2026) and Sensoria Health (13 Jan 2026). A Jun 2026 crossover covered how investors underwrite hard tech at pre-seed to Series A with Elevate Ventures and others. No guest form was visible in the excerpt read.",
+      "why_now": "Latest episode found: 29 Jun 2026 (Season 3).",
+      "evidence": [
+        "https://www.thehardtechpodcast.com",
+        "https://www.thehardtechpodcast.com/40"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://www.thehardtechpodcast.com",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Find the show's contact route on the site and pitch a hardware-plus-SDK story.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Your Alenthia Run episode on shrinking a lab into a sensor was close to our problem. I'd welcome a conversation on firmware, data licensing and the first 10 design partners.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-06-29",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "hardware",
+        "podcast",
+        "health-hardware"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 77,
+      "sendable": false,
+      "id": "the-hardtech-podcast-the-hardtech-podcast"
+    },
+    {
       "type": "vc",
       "hunt": "investor",
       "ice": null,
@@ -3530,7 +3570,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 78,
       "sendable": true,
       "id": "toni-schneider-true-ventures"
     },
@@ -3589,7 +3629,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 78,
+      "rank": 79,
       "sendable": true,
       "id": "tredict-tredict"
     },
@@ -3630,7 +3670,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 80,
       "sendable": false,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
@@ -3670,7 +3710,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 80,
+      "rank": 81,
       "sendable": false,
       "id": "victoria-song-the-verge"
     },
@@ -3715,7 +3755,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 81,
+      "rank": 82,
       "sendable": false,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
@@ -3762,7 +3802,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 82,
+      "rank": 83,
       "sendable": false,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
@@ -3801,7 +3841,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 83,
+      "rank": 84,
       "sendable": true,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
@@ -3842,9 +3882,55 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 85,
       "sendable": true,
       "id": "the5krunner-the5krunner"
+    },
+    {
+      "name": "SOF Week 2027 - Accelerator Alley",
+      "org": "SOF Week (Global SOF Foundation)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Curated exhibit for small companies new to the SOF market (under 250 employees, no existing SOF business, capability tied to SOCOM priorities). 18 companies were chosen in 2025 and 44 in 2026; selected firms get a 6-ft table, 2 exhibit-hall entries ($1,200+ value) and may be asked to speak in the Pitch Theater. The 2027 sales page lists cognitive readiness and holistic human performance among priority capabilities. Fees: the 2027 sales page lists Accelerator Alley tabletops at $2,000 (Corporate Partners) / $2,700 (non-partners) per 8x6 ft; the Alley page itself lists the table and 2 entries as included, so confirm the price at selection.",
+      "why_now": "Application form launches 5 Oct 2026; deadline 6 Nov 2026; notifications 4 Dec 2026; accept by 6 Jan 2027. Event 3-6 May 2027 (exhibits 4-6 May), Tampa.",
+      "evidence": [
+        "https://sofweek.org/exhibit-at-accelerator-alley/",
+        "https://sofweek.org/2027-sales-process/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://sofweek.org/exhibit-at-accelerator-alley/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 4,
+        "e": 6
+      },
+      "ask": "Submit an Accelerator Alley application by 6 Nov 2026 with a human-performance sensing and developer-platform capability statement.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. We are new to the SOF market and would like to apply to Accelerator Alley. Before the form closes, is there guidance on how the panel weighs early-stage hardware with a software layer?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Tampa, FL",
+      "deadline": "2026-11-06",
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "events",
+        "human-performance",
+        "dev-platform",
+        "hrv",
+        "h2f"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 99,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 86,
+      "sendable": true,
+      "id": "sof-week-2027-accelerator-alley-sof-week-global-sof-foundation"
     },
     {
       "name": "Google launches $99 screenless Fitbit Air; Fitbit app becomes Google Health",
@@ -3887,7 +3973,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 85,
+      "rank": 87,
       "sendable": false,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
@@ -3931,7 +4017,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 86,
+      "rank": 88,
       "sendable": false,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
@@ -3976,7 +4062,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 87,
+      "rank": 89,
       "sendable": true,
       "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
@@ -4020,7 +4106,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 90,
       "sendable": false,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
@@ -4059,7 +4145,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 91,
       "sendable": true,
       "id": "health2tech-cleveland-health2tech"
     },
@@ -4103,7 +4189,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 90,
+      "rank": 92,
       "sendable": true,
       "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
@@ -4142,7 +4228,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 91,
+      "rank": 93,
       "sendable": true,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
@@ -4182,7 +4268,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 92,
+      "rank": 94,
       "sendable": true,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
@@ -4221,7 +4307,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 93,
+      "rank": 95,
       "sendable": false,
       "id": "sxsw-pitch-2027-sxsw"
     },
@@ -4261,7 +4347,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 94,
+      "rank": 96,
       "sendable": true,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
@@ -4300,7 +4386,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 95,
+      "rank": 97,
       "sendable": true,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
@@ -4345,7 +4431,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 96,
+      "rank": 98,
       "sendable": false,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
     },
@@ -4393,7 +4479,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 99,
       "sendable": true,
       "id": "akron-rugby-football-club-akron-rugby-football-club"
     },
@@ -4437,7 +4523,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 98,
+      "rank": 100,
       "sendable": true,
       "id": "best-buy-marketplace-vendor-program-best-buy"
     },
@@ -4489,7 +4575,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 99,
+      "rank": 101,
       "sendable": true,
       "id": "breethe-kodeon-acquired-breethe-2026-08-19"
     },
@@ -4529,7 +4615,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 102,
       "sendable": true,
       "id": "brendan-keeler-health-api-guy-substack"
     },
@@ -4569,7 +4655,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 101,
+      "rank": 103,
       "sendable": false,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
@@ -4615,7 +4701,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 102,
+      "rank": 104,
       "sendable": true,
       "id": "chris-chartier-the-righteous-path-substack"
     },
@@ -4656,7 +4742,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 103,
+      "rank": 105,
       "sendable": false,
       "id": "cincytech-cincytech"
     },
@@ -4704,7 +4790,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 106,
       "sendable": true,
       "id": "cleveland-women-s-rugby-football-club-iron-maidens-cleveland-women-s-rugby-footb"
     },
@@ -4750,7 +4836,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 107,
       "sendable": true,
       "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
@@ -4795,7 +4881,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 108,
       "sendable": true,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
@@ -4839,7 +4925,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 107,
+      "rank": 109,
       "sendable": true,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
@@ -4886,7 +4972,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 108,
+      "rank": 110,
       "sendable": false,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
@@ -4931,7 +5017,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 109,
+      "rank": 111,
       "sendable": true,
       "id": "fitabase-fitabase-small-steps-labs"
     },
@@ -4990,7 +5076,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 110,
+      "rank": 112,
       "sendable": true,
       "id": "fitbod-fitbod-inc"
     },
@@ -5030,7 +5116,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 111,
+      "rank": 113,
       "sendable": false,
       "id": "golden-seeds-golden-seeds"
     },
@@ -5069,7 +5155,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 112,
+      "rank": 114,
       "sendable": true,
       "id": "hax-sosv"
     },
@@ -5113,7 +5199,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 113,
+      "rank": 115,
       "sendable": false,
       "id": "invi-mindhealth-invi-mindhealth"
     },
@@ -5153,7 +5239,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 114,
+      "rank": 116,
       "sendable": true,
       "id": "isabel-glass-cade-ventures"
     },
@@ -5193,7 +5279,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 115,
+      "rank": 117,
       "sendable": true,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
     },
@@ -5259,7 +5345,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 116,
+      "rank": 118,
       "sendable": true,
       "id": "junction-formerly-vital-junction-formerly-vital"
     },
@@ -5303,7 +5389,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 119,
       "sendable": true,
       "id": "kyros-engineering-kyros-engineering"
     },
@@ -5343,7 +5429,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 118,
+      "rank": 120,
       "sendable": false,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
@@ -5382,7 +5468,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 119,
+      "rank": 121,
       "sendable": true,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
@@ -5429,7 +5515,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 120,
+      "rank": 122,
       "sendable": false,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
@@ -5474,7 +5560,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 121,
+      "rank": 123,
       "sendable": true,
       "id": "noop-ryanbr-noop-open-source"
     },
@@ -5527,7 +5613,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 122,
+      "rank": 124,
       "sendable": true,
       "id": "nowfit-nowfit"
     },
@@ -5571,7 +5657,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 123,
+      "rank": 125,
       "sendable": false,
       "id": "neurovus-neurovus"
     },
@@ -5611,9 +5697,48 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 124,
+      "rank": 126,
       "sendable": true,
       "id": "open-wearables-momentum-open-wearables-project"
+    },
+    {
+      "name": "PULSE by Wareable",
+      "org": "Wareable (Candr Media)",
+      "role": "Editor: James Stables",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Wearables and digital-health newsletter and insider community; free weekly issue, $19/month paid tier with CEO interviews, and a $15,000/year consultation tier. The ask here is editorial: a briefing, not a paid tier.",
+      "why_now": null,
+      "evidence": [
+        "https://wareable.substack.com/about"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://wareable.substack.com/about",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Offer an embargoed briefing on the DevKit to the editor.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. May I send a short briefing on how a screenless band with an SDK differs from current devices? I'm happy to share a sample and specs.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "newsletter",
+        "press",
+        "hrv"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 127,
+      "sendable": true,
+      "id": "pulse-by-wareable-wareable-candr-media"
     },
     {
       "name": "Qualcomm Ventures",
@@ -5650,7 +5775,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 125,
+      "rank": 128,
       "sendable": false,
       "id": "qualcomm-ventures-qualcomm"
     },
@@ -5689,7 +5814,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 129,
       "sendable": false,
       "id": "quinn-li-qualcomm-ventures"
     },
@@ -5729,7 +5854,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 127,
+      "rank": 130,
       "sendable": false,
       "id": "redalpine-redalpine"
     },
@@ -5768,7 +5893,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 131,
       "sendable": true,
       "id": "ryan-engel-cade-ventures"
     },
@@ -5820,9 +5945,48 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 129,
+      "rank": 132,
       "sendable": true,
       "id": "sleep-cycle-sleep-cycle"
+    },
+    {
+      "name": "The Healthtech Podcast",
+      "org": "The Healthtech Podcast / SomX",
+      "role": "Host: Dr James Somauroo",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Weekly founder and leader interviews on health technology; episode #459 (18 Aug 2026) covered remote monitoring after hospital discharge. The site has a Guest application page and a sponsor deck address.",
+      "why_now": "Latest episode found: #459 on 18 Aug 2026.",
+      "evidence": [
+        "https://www.thehealthtechpodcast.com",
+        "https://pitchcentric.com/podcast/the-healthtech-podcast"
+      ],
+      "channel": "pitch form",
+      "contact_url": "https://www.thehealthtechpodcast.com/apply",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Submit the guest application with a wearable-data-access angle.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'd like to offer a conversation on why wearable data access is the bottleneck for health apps and what a licensed, device-agnostic SDK changes. Happy to share a short outline.",
+      "check_size": null,
+      "stage": null,
+      "geo": "UK (host base per site links)",
+      "deadline": null,
+      "last_signal_date": "2026-08-18",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "podcast",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 133,
+      "sendable": true,
+      "id": "the-healthtech-podcast-the-healthtech-podcast-somx"
     },
     {
       "name": "The O.H.I.O. Fund",
@@ -5860,7 +6024,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 130,
+      "rank": 134,
       "sendable": false,
       "id": "the-o-h-i-o-fund-the-o-h-i-o-fund"
     },
@@ -5904,7 +6068,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 131,
+      "rank": 135,
       "sendable": false,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
@@ -5946,7 +6110,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 132,
+      "rank": 136,
       "sendable": false,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
@@ -5990,7 +6154,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 133,
+      "rank": 137,
       "sendable": false,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
@@ -6036,7 +6200,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 134,
+      "rank": 138,
       "sendable": true,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
@@ -6076,7 +6240,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 135,
+      "rank": 139,
       "sendable": false,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
@@ -6138,7 +6302,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 136,
+      "rank": 140,
       "sendable": true,
       "id": "welltory-welltory"
     },
@@ -6181,7 +6345,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 137,
+      "rank": 141,
       "sendable": false,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
@@ -6233,7 +6397,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 138,
+      "rank": 142,
       "sendable": true,
       "id": "amp-amp-fit-inc"
     },
@@ -6273,7 +6437,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 143,
       "sendable": true,
       "id": "r-quantifiedself-reddit"
     },
@@ -6318,9 +6482,55 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 140,
+      "rank": 144,
       "sendable": true,
       "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
+    },
+    {
+      "name": "The HFA Show 2027 - Innovation Alley and Pitch Fest",
+      "org": "Health & Fitness Association",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Trade show for gym and studio operators and suppliers (380 exhibitors, 10,000+ attendees in 2026). Innovation Alley spotlights startups; the inaugural 2026 Pitch Fest had 16 startups under two years old giving 3-minute pitches, and the winner got a free 10x10 booth for 2027. HYROX Las Vegas runs 12-14 Mar and a limited number of HYROX athletes, spectators and HYROX-affiliated gyms get trade-floor access on 12 Mar. Innovation Alley application terms and fees not found.",
+      "why_now": "10-12 Mar 2027 (trade show 11-12 Mar), Mandalay Bay, Las Vegas; registration opened 30 Sep 2026.",
+      "evidence": [
+        "https://www.healthandfitness.org/health-fitness-association-opens-registration-for-the-hfa-show-2027/",
+        "https://www.healthandfitness.org/hfa-and-hyrox-join-forces-for-the-hfa-show-2027/",
+        "https://www.healthandfitness.org/onsight-wins-inaugural-innovation-alley-pitch-fest-at-the-hfa-show-2026-sponsored-by-sweatworks/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://hub.healthandfitness.org/hfa-show",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 6,
+        "e": 5
+      },
+      "ask": "Ask for Innovation Alley eligibility, price and 2027 Pitch Fest entry rules.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. How do early-stage companies get into Innovation Alley and the 2027 Pitch Fest, and what does it cost? Our audience overlap is HYROX-style athletes and the gyms that serve them.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Las Vegas, NV",
+      "deadline": null,
+      "last_signal_date": "2026-09-30",
+      "confidence": "verified",
+      "tags": [
+        "hyrox",
+        "fitness",
+        "events",
+        "wearables",
+        "sports"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 94,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 145,
+      "sendable": true,
+      "id": "the-hfa-show-2027-innovation-alley-and-pitch-fest-health-fitness-association"
     },
     {
       "name": "UH Haslam Sports Innovation Center",
@@ -6364,9 +6574,101 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 141,
+      "rank": 146,
       "sendable": true,
       "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
+    },
+    {
+      "name": "Human Performance & Biosystems Summit 2027 (DSI)",
+      "org": "DSI Group",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Annual DoD human-performance summit; the 2026 edition (10-11 Jun, National Harbor MD) covered H2F and wearable biosensor integration and offered exhibit space, round tables and demos. 2027 details marked as 'coming soon'; price by inquiry.",
+      "why_now": "2026 edition held 10-11 Jun 2026; 2027 dates not yet announced.",
+      "evidence": [
+        "https://humanperformance.dsigroup.org/",
+        "https://www.asdevents.com/event.asp?id=26020"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://humanperformance.dsigroup.org/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 4,
+        "e": 4
+      },
+      "ask": "Ask DSI for 2027 dates and exhibit or round-table pricing.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. When will the 2027 summit dates and exhibit options be published? We're interested in a round-table slot on overnight wearable data.",
+      "check_size": null,
+      "stage": null,
+      "geo": "National Harbor, MD (2026)",
+      "deadline": null,
+      "last_signal_date": "2026-06-11",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "human-performance",
+        "events",
+        "h2f",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 93,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 147,
+      "sendable": true,
+      "id": "human-performance-biosystems-summit-2027-dsi-dsi-group"
+    },
+    {
+      "name": "MHSRS 2027 (Military Health System Research Symposium)",
+      "org": "Defense Health Agency",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "DoD's premier military medical research meeting. 2026 edition (3-6 Aug, Kissimmee) drew 3,800+ attendees, 138 vendor exhibits and breakouts on wearable sensor data for readiness and on sleep. On 26 Aug 2026 DHA issued an RFI for 2027 symposium support (exhibitor fees fund it). 2026 abstract call closed 31 Mar 2026. 2027 dates and abstract call not yet found.",
+      "why_now": "2026 edition ended 6 Aug 2026; DHA RFI for 2027 planning posted 26 Aug 2026; 2027 dates not yet published.",
+      "evidence": [
+        "https://mhsrs.health.mil/MHSRS/",
+        "https://app.govly.com/public/opportunities/17014389",
+        "https://hpc.osu.edu/story/hpc-mhsrs"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://mhsrs.health.mil/MHSRS/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 3,
+        "e": 3
+      },
+      "ask": "Watch mhsrs.health.mil for the 2027 call and exhibitor contact; consider a research-partner abstract.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Is there a 2027 exhibitor contact for MHSRS and a date for the call for abstracts? We'd like to pair with a research group for a wearable-data session.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Date/location TBA",
+      "deadline": null,
+      "last_signal_date": "2026-08-26",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "sleep",
+        "hrv",
+        "events",
+        "research",
+        "h2f"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 93,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 148,
+      "sendable": true,
+      "id": "mhsrs-2027-military-health-system-research-symposium-defense-health-agency"
     },
     {
       "name": "Oura API cuts off Gen3 users without paid membership",
@@ -6407,7 +6709,7 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 142,
+      "rank": 149,
       "sendable": false,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
@@ -6451,7 +6753,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 143,
+      "rank": 150,
       "sendable": false,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
@@ -6494,7 +6796,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 151,
       "sendable": true,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
@@ -6540,9 +6842,54 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 145,
+      "rank": 152,
       "sendable": true,
       "id": "iafc-technology-council-fire-service-vendor-engagement-international-association"
+    },
+    {
+      "name": "ACSM Annual Meeting 2027 - exhibit hall",
+      "org": "American College of Sports Medicine",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "4,000+ sports-medicine and exercise-science professionals; exhibit hall open 15.5 hours. Published fees: 10x10 standard $1,785 early bird / $1,890 late; 10x10 corner $1,995 / $2,100; 10x20 standard $3,465 / $3,675. Early-bird deadline 30 Apr 2027. Indianapolis is a short drive from Akron.",
+      "why_now": "1-4 Jun 2027, Indiana Convention Center, Indianapolis; exhibit hall open 2-4 Jun; early-bird deadline 30 Apr 2027.",
+      "evidence": [
+        "https://acsm.org/wp-content/uploads/27AM-exhibit-prospectus.pdf"
+      ],
+      "channel": "apply",
+      "contact_url": "https://acsm.org/wp-content/uploads/27AM-exhibit-prospectus.pdf",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 8,
+        "e": 6
+      },
+      "ask": "Reserve a 10x10 at the early-bird rate by 30 Apr 2027 or ask about a shared table.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. We're considering a first booth at ACSM 2027. Do you have first-time or startup pricing, and which exhibit-hall areas draw sports-science researchers rather than product vendors?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Indianapolis, IN",
+      "deadline": "2027-04-30",
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "sports",
+        "human-performance",
+        "events",
+        "ohio",
+        "paid-fee",
+        "research"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 153,
+      "sendable": true,
+      "id": "acsm-annual-meeting-2027-exhibit-hall-american-college-of-sports-medicine"
     },
     {
       "name": "AIN Ventures",
@@ -6580,7 +6927,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 154,
       "sendable": true,
       "id": "ain-ventures-ain-ventures-academy-investor-network"
     },
@@ -6620,7 +6967,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 147,
+      "rank": 155,
       "sendable": false,
       "id": "accelerating-angels-accelerating-angels"
     },
@@ -6659,7 +7006,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 148,
+      "rank": 156,
       "sendable": true,
       "id": "achal-upadhyaya-interlagos"
     },
@@ -6709,7 +7056,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 149,
+      "rank": 157,
       "sendable": true,
       "id": "adaptive-and-wheelchair-sports-ohio-adaptive-sports-ohio"
     },
@@ -6765,7 +7112,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 158,
       "sendable": true,
       "id": "aere-aere"
     },
@@ -6814,7 +7161,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 151,
+      "rank": 159,
       "sendable": true,
       "id": "akron-zips-esports-the-university-of-akron-esports"
     },
@@ -6861,7 +7208,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 152,
+      "rank": 160,
       "sendable": true,
       "id": "allie-reichert-allie-reichert-pb-the-pickle-lodge"
     },
@@ -6918,7 +7265,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 161,
       "sendable": true,
       "id": "alma-nutrition-coach-alma-nutrition-inc"
     },
@@ -6963,7 +7310,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 154,
+      "rank": 162,
       "sendable": false,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
     },
@@ -7008,7 +7355,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 155,
+      "rank": 163,
       "sendable": true,
       "id": "amazon-seller-central-brand-registry-amazon"
     },
@@ -7054,7 +7401,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 156,
+      "rank": 164,
       "sendable": true,
       "id": "ambiq-heartkit-sleepkit-ai-developer-kits-ambiq-heartkit-sleepkit-ai-developer-k"
     },
@@ -7099,7 +7446,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 157,
+      "rank": 165,
       "sendable": false,
       "id": "barrett-piper-west-licking-oh-fire-district"
     },
@@ -7154,7 +7501,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 166,
       "sendable": true,
       "id": "bevel-bevel"
     },
@@ -7205,7 +7552,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 159,
+      "rank": 167,
       "sendable": true,
       "id": "brazilian-jiu-jitsu-northeast-ohio-academies-ibjjf-ruled-competition-gt-brazilia"
     },
@@ -7244,7 +7591,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 160,
+      "rank": 168,
       "sendable": true,
       "id": "chris-gammell-the-amp-hour-podcast"
     },
@@ -7289,7 +7636,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 161,
+      "rank": 169,
       "sendable": true,
       "id": "cloud2gnd-cloud2gnd"
     },
@@ -7339,7 +7686,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 162,
+      "rank": 170,
       "sendable": true,
       "id": "college-club-wrestling-ncwa-ohio-teams-national-collegiate-wrestling-association"
     },
@@ -7384,7 +7731,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 163,
+      "rank": 171,
       "sendable": false,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
@@ -7423,7 +7770,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 172,
       "sendable": true,
       "id": "conor-allison-wareable"
     },
@@ -7479,7 +7826,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 165,
+      "rank": 173,
       "sendable": true,
       "id": "endorphins-running-endorphins-running"
     },
@@ -7523,7 +7870,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 166,
+      "rank": 174,
       "sendable": false,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
@@ -7573,7 +7920,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 175,
       "sendable": true,
       "id": "fueld-fueld"
     },
@@ -7621,7 +7968,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 168,
+      "rank": 176,
       "sendable": true,
       "id": "gt-brazilian-jiu-jitsu-gt-brazilian-jiu-jitsu-academy"
     },
@@ -7664,7 +8011,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 169,
+      "rank": 177,
       "sendable": false,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
@@ -7703,7 +8050,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 170,
+      "rank": 178,
       "sendable": false,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
@@ -7742,7 +8089,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 171,
+      "rank": 179,
       "sendable": false,
       "id": "healthtech-capital-healthtech-capital"
     },
@@ -7780,7 +8127,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 172,
+      "rank": 180,
       "sendable": false,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
@@ -7832,7 +8179,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 173,
+      "rank": 181,
       "sendable": true,
       "id": "humango-humango"
     },
@@ -7876,7 +8223,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 174,
+      "rank": 182,
       "sendable": false,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
@@ -7915,7 +8262,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 175,
+      "rank": 183,
       "sendable": false,
       "id": "julien-blin-the-upside-newsletter"
     },
@@ -7963,7 +8310,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 176,
+      "rank": 184,
       "sendable": true,
       "id": "kent-state-esports-kent-state-university-esports"
     },
@@ -8004,7 +8351,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 185,
       "sendable": true,
       "id": "lead-sports-health-tech-partners-lake-nona-fund-lead-lake-nona-fund"
     },
@@ -8046,7 +8393,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 178,
+      "rank": 186,
       "sendable": false,
       "id": "leo-polovets-humba-ventures"
     },
@@ -8098,7 +8445,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 179,
+      "rank": 187,
       "sendable": true,
       "id": "load-metric-pro-load-metric-pro"
     },
@@ -8137,7 +8484,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 180,
+      "rank": 188,
       "sendable": true,
       "id": "lunar-ventures-lunar-ventures"
     },
@@ -8183,7 +8530,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 189,
       "sendable": true,
       "id": "magnet-manufacturing-advocacy-growth-network-magnet-manufacturing-advocacy-growt"
     },
@@ -8222,7 +8569,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 182,
+      "rank": 190,
       "sendable": true,
       "id": "matt-evans-techradar"
     },
@@ -8260,7 +8607,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 183,
+      "rank": 191,
       "sendable": true,
       "id": "michael-l-hicks-android-central"
     },
@@ -8301,7 +8648,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 184,
+      "rank": 192,
       "sendable": true,
       "id": "mick-halsband-lunar-ventures"
     },
@@ -8345,7 +8692,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 185,
+      "rank": 193,
       "sendable": false,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
     },
@@ -8402,7 +8749,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 186,
+      "rank": 194,
       "sendable": true,
       "id": "moody-month-moody-month"
     },
@@ -8462,7 +8809,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 187,
+      "rank": 195,
       "sendable": true,
       "id": "myfitnesspal-myfitnesspal"
     },
@@ -8507,7 +8854,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 188,
+      "rank": 196,
       "sendable": true,
       "id": "namsa-northwood-oh-namsa-northwood-oh"
     },
@@ -8548,7 +8895,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 189,
+      "rank": 197,
       "sendable": true,
       "id": "next-ventures-next-ventures"
     },
@@ -8613,7 +8960,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 198,
       "sendable": true,
       "id": "nolio-nolio"
     },
@@ -8658,7 +9005,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 191,
+      "rank": 199,
       "sendable": true,
       "id": "nordic-semiconductor-partner-program-design-partners-nordic-semiconductor-partne"
     },
@@ -8696,7 +9043,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 192,
+      "rank": 200,
       "sendable": false,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
@@ -8741,7 +9088,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 201,
       "sendable": false,
       "id": "ohio-fire-chiefs-association-odc-vendor-expo-sponsorship-ohio-fire-chiefs-associ"
     },
@@ -8788,7 +9135,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 194,
+      "rank": 202,
       "sendable": true,
       "id": "ohio-regional-training-center-ohio-rtc-ohio-rtc"
     },
@@ -8835,7 +9182,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 195,
+      "rank": 203,
       "sendable": true,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
@@ -8894,7 +9241,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 204,
       "sendable": true,
       "id": "omnio-omnio"
     },
@@ -8938,7 +9285,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 197,
+      "rank": 205,
       "sendable": true,
       "id": "openstrap-openstrap-open-source"
     },
@@ -8984,7 +9331,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 198,
+      "rank": 206,
       "sendable": false,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
     },
@@ -9031,7 +9378,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 199,
+      "rank": 207,
       "sendable": true,
       "id": "pear-health-labs-aaptiv-pear-health-labs-aaptiv"
     },
@@ -9073,7 +9420,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 200,
+      "rank": 208,
       "sendable": false,
       "id": "petteri-koponen-lifeline-ventures"
     },
@@ -9112,7 +9459,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 201,
+      "rank": 209,
       "sendable": true,
       "id": "point-nine-point-nine"
     },
@@ -9151,7 +9498,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 202,
+      "rank": 210,
       "sendable": false,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
@@ -9192,7 +9539,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 203,
+      "rank": 211,
       "sendable": true,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
@@ -9237,7 +9584,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 204,
+      "rank": 212,
       "sendable": true,
       "id": "reach-fitness-reach-fitness-ohio"
     },
@@ -9296,7 +9643,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 205,
+      "rank": 213,
       "sendable": true,
       "id": "rise-science-rise-sleep-rise-science-rise-sleep"
     },
@@ -9353,7 +9700,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 206,
+      "rank": 214,
       "sendable": true,
       "id": "rook-rook"
     },
@@ -9391,7 +9738,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 207,
+      "rank": 215,
       "sendable": true,
       "id": "rachael-schultz-business-insider"
     },
@@ -9443,7 +9790,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 208,
+      "rank": 216,
       "sendable": true,
       "id": "radianthealth-radianthealth"
     },
@@ -9489,7 +9836,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 209,
+      "rank": 217,
       "sendable": true,
       "id": "rangeme-retail-product-discovery-platform-rangeme"
     },
@@ -9540,7 +9887,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 218,
       "sendable": true,
       "id": "rekova-rekova"
     },
@@ -9579,7 +9926,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 211,
+      "rank": 219,
       "sendable": true,
       "id": "rev1-ventures-rev1-ventures"
     },
@@ -9618,7 +9965,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 212,
+      "rank": 220,
       "sendable": true,
       "id": "robb-sutton-robbsutton-com"
     },
@@ -9657,7 +10004,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 221,
       "sendable": true,
       "id": "ryan-merket-runtimewire"
     },
@@ -9700,7 +10047,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 214,
+      "rank": 222,
       "sendable": false,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
@@ -9740,7 +10087,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 215,
+      "rank": 223,
       "sendable": false,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
@@ -9784,7 +10131,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 216,
+      "rank": 224,
       "sendable": false,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
@@ -9822,7 +10169,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 217,
+      "rank": 225,
       "sendable": false,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
@@ -9875,7 +10222,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 226,
       "sendable": true,
       "id": "sathi-fit-sathi-fit"
     },
@@ -9916,7 +10263,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 219,
+      "rank": 227,
       "sendable": true,
       "id": "scalewolf-scalewolf"
     },
@@ -9955,7 +10302,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 220,
+      "rank": 228,
       "sendable": true,
       "id": "seveno-capital-seveno-capital"
     },
@@ -10015,7 +10362,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 229,
       "sendable": true,
       "id": "spike-api-spike-api"
     },
@@ -10074,7 +10421,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 230,
       "sendable": true,
       "id": "strove-strove"
     },
@@ -10113,7 +10460,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 231,
       "sendable": true,
       "id": "t3-performance-t3-performance"
     },
@@ -10176,7 +10523,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 224,
+      "rank": 232,
       "sendable": true,
       "id": "terra-api-terra-api"
     },
@@ -10216,7 +10563,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 233,
       "sendable": true,
       "id": "timothy-martens-vaark-ventures"
     },
@@ -10255,7 +10602,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 234,
       "sendable": false,
       "id": "true-ventures-true-ventures"
     },
@@ -10303,7 +10650,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 227,
+      "rank": 235,
       "sendable": false,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
@@ -10355,7 +10702,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 236,
       "sendable": true,
       "id": "v-o2-v-o2"
     },
@@ -10400,7 +10747,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 237,
       "sendable": true,
       "id": "va-pathfinder-vha-innovation-ecosystem-u-s-department-of-veterans-affairs"
     },
@@ -10438,7 +10785,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 230,
+      "rank": 238,
       "sendable": false,
       "id": "vaark-ventures-vaark-ventures"
     },
@@ -10483,7 +10830,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 231,
+      "rank": 239,
       "sendable": false,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
@@ -10522,7 +10869,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 240,
       "sendable": false,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
     },
@@ -10572,7 +10919,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 241,
       "sendable": true,
       "id": "wild-ai-wild-ai"
     },
@@ -10622,7 +10969,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 234,
+      "rank": 242,
       "sendable": true,
       "id": "youth-and-adult-bouldering-akron-rock-mill-climbing-yoga-fitness-akron-usa-climb"
     },
@@ -10684,9 +11031,98 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 235,
+      "rank": 243,
       "sendable": true,
       "id": "freddy-freddy-freddy-coach"
+    },
+    {
+      "name": "SOF Week 2027 - Human Performance Zone exhibit lottery",
+      "org": "SOF Week (Global SOF Foundation)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "The Human Performance, Education and Space Capability Zones sit at Marriott Water Street, next to the POTFF-anchored Performance Community Corridor. Exhibit space is allocated by lottery from an intake form. Published prices: 10x10 at $34/sq ft (Corporate Partners) or $46/sq ft (non-partners); 8x6 tabletop in the Grand Ballroom Foyer $2,000 (Corporate Partners) / $2,700 (non-partners), 2 badges included. Small businesses (under $40M revenue, under 250 employees) are capped at 600 sq ft.",
+      "why_now": "Intake form open since 17 Aug 2026; deadline 29 Nov 2026; lottery drawn 30 Nov 2026; booth sales contact 8 Dec 2026 to 5 Jan 2027 (notice of intent to buy due within 5 business days). Event 3-6 May 2027, Tampa.",
+      "evidence": [
+        "https://sofweek.org/2027-sales-process/",
+        "https://sofweek.org/exhibit-inthe-nonprofit-community-corridors/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://sofweek.org/2027-sales-process/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 5,
+        "e": 4
+      },
+      "ask": "Submit the exhibition intake form by 29 Nov 2026 naming the Human Performance zone as first choice.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. I'd like to enter the Human Performance zone lottery for a tabletop. Could you confirm whether first-time exhibitors without SOF sales can enter as non-partners?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Tampa, FL",
+      "deadline": "2026-11-29",
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "events",
+        "human-performance",
+        "h2f",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 89,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 244,
+      "sendable": true,
+      "id": "sof-week-2027-human-performance-zone-exhibit-lottery-sof-week-global-sof-foundat"
+    },
+    {
+      "name": "SPORT[GEN] Summit 2027 - The Draft startup competition",
+      "org": "SPORT[GEN]",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Paris sport-business summit (1,500+ leaders, 200+ investors) with The Draft: startups that raised under $5M, operate under 4 years, in Sport Tech, Health or Wellness can apply; Top 20 chosen 1 May, 10 finalists pitch on the main stage; exhibition booths in the Startup Area (price not published). Application fee not mentioned. The page does not print the year beside Feb 18 - Apr 24; it is on the 2027 competition page.",
+      "why_now": "Summit 26-27 May 2027, Paris; applications open 18 Feb, close 24 Apr, finalists announced 6 May, winner 28 May.",
+      "evidence": [
+        "https://sportgensummit.com/startup-competition",
+        "https://sportgensummit.com/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://sportgensummit.com/startup-competition",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 6,
+        "e": 6
+      },
+      "ask": "Apply to The Draft once applications open on 18 Feb; ask about Startup Area booth pricing.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. We'd like to apply to The Draft. Is travel support or a discounted Startup Area booth offered to finalists?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Paris, France",
+      "deadline": "2027-04-24",
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "sports",
+        "wearables",
+        "events",
+        "startup-pitch"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 89,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 245,
+      "sendable": true,
+      "id": "sport-gen-summit-2027-the-draft-startup-competition-sport-gen"
     },
     {
       "name": "AFRL 711th Human Performance Wing, Space Force Continuous Fitness Assessment (Dr. James Christensen, Dr. Adam Strang)",
@@ -10732,7 +11168,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 236,
+      "rank": 246,
       "sendable": false,
       "id": "afrl-711th-human-performance-wing-space-force-continuous-fitness-assessment-dr-j"
     },
@@ -10778,7 +11214,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 237,
+      "rank": 247,
       "sendable": true,
       "id": "cleveland-browns-health-and-performance-innovation-ryan-curtis-phd-cleveland-bro"
     },
@@ -10824,7 +11260,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 238,
+      "rank": 248,
       "sendable": false,
       "id": "michigan-performance-research-laboratory-adam-lepley-mipr-director-university-of"
     },
@@ -10866,7 +11302,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 249,
       "sendable": true,
       "id": "mydatahelps-careevolution"
     },
@@ -10910,7 +11346,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 250,
       "sendable": true,
       "id": "synheart-synheart-mila-ventures"
     },
@@ -10953,9 +11389,98 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 241,
+      "rank": 251,
       "sendable": true,
       "id": "thryve-thryve"
+    },
+    {
+      "name": "WT | Wearable Technologies Conference and Show at MEDICA 2026",
+      "org": "WT Service GmbH",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "The most wearables-specific B2B stage found: a closed-door conference (Hall 12) and a WT Pavilion of 45+ companies at MEDICA. Speaker slots and exhibition options are offered to selected companies. Published fee: conference admission 450 EUR; speaker and exhibit prices are not published (contact required).",
+      "why_now": "Conference 16-17 Nov 2026; WT Pavilion runs 16-19 Nov 2026. About six weeks out.",
+      "evidence": [
+        "https://www.medica-tradefair.com/en/program/conferences/wt-wearable-technologies-conference",
+        "https://wearable-technologies.com/events/wt-wearable-technologies-show-2026-medica"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://wearable-technologies.com/events/wt-wearable-technologies-show-2026-medica",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 7,
+        "c": 6,
+        "e": 5
+      },
+      "ask": "Ask for a speaker-slot or pavilion quote for a pre-launch wearable platform and the 450 EUR conference-only option.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. I'd like to understand the cheapest way to take part in the WT Pavilion at MEDICA, or to apply for a speaking slot. Is there a startup rate?",
+      "check_size": null,
+      "stage": null,
+      "geo": "MEDICA trade fair, Hall 12",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "events",
+        "digital-health",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 89,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 252,
+      "sendable": true,
+      "id": "wt-wearable-technologies-conference-and-show-at-medica-2026-wt-service-gmbh"
+    },
+    {
+      "name": "H2F Symposium 2027 (Army Holistic Health and Fitness)",
+      "org": "U.S. Army H2F proponent",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Annual Army H2F meeting; 2026 (12-14 May, Hampton Roads Convention Center, Hampton VA) had 1,156 registered, 63 industry exhibitors and a session on scaling wearable technology to advance readiness. Exhibit hosting and agenda sit on militaryexpos.com. 2027 dates not found.",
+      "why_now": "2026 edition held 12-14 May 2026; 2027 dates not yet found.",
+      "evidence": [
+        "https://www.dvidshub.net/feature/2026H2FSymposium",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7459973070028701696",
+        "https://www.militaryexpos.com/h2f/agenda/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.militaryexpos.com/h2f/agenda/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 3,
+        "e": 4
+      },
+      "ask": "Check the Military Expos H2F page for 2027 dates and the exhibitor prospectus.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Where can we find the 2027 H2F Symposium exhibitor prospectus and dates?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Hampton, VA (2026)",
+      "deadline": null,
+      "last_signal_date": "2026-05-18",
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "h2f",
+        "events",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 88,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 253,
+      "sendable": true,
+      "id": "h2f-symposium-2027-army-holistic-health-and-fitness-u-s-army-h2f-proponent"
     },
     {
       "name": "HHS Secretary Kennedy: 'every American wearing a wearable within four years'",
@@ -10996,7 +11521,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 254,
       "sendable": false,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
@@ -11041,7 +11566,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 243,
+      "rank": 255,
       "sendable": false,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
@@ -11085,7 +11610,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 244,
+      "rank": 256,
       "sendable": false,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
@@ -11129,7 +11654,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 257,
       "sendable": false,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
@@ -11169,7 +11694,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 258,
       "sendable": false,
       "id": "aix-ventures-aix-ventures"
     },
@@ -11208,7 +11733,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 247,
+      "rank": 259,
       "sendable": false,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
@@ -11257,7 +11782,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 248,
+      "rank": 260,
       "sendable": true,
       "id": "aaron-handy-legacy-martial-arts-academy-ohio-judo"
     },
@@ -11301,7 +11826,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 261,
       "sendable": true,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
     },
@@ -11341,7 +11866,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 262,
       "sendable": true,
       "id": "anirvan-chowdhury-qualcomm-ventures"
     },
@@ -11389,7 +11914,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 263,
       "sendable": true,
       "id": "bathhouse-bathhouse"
     },
@@ -11428,7 +11953,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 252,
+      "rank": 264,
       "sendable": true,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
@@ -11467,7 +11992,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 265,
       "sendable": false,
       "id": "blume-ventures-blume-ventures"
     },
@@ -11512,7 +12037,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 254,
+      "rank": 266,
       "sendable": false,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
@@ -11560,7 +12085,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 255,
+      "rank": 267,
       "sendable": true,
       "id": "chris-kriebel-tko-brazilian-jiu-jitsu-academy-team-kriebel-ohio-nova-uniao-ohio"
     },
@@ -11599,7 +12124,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 256,
+      "rank": 268,
       "sendable": true,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
@@ -11646,7 +12171,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 269,
       "sendable": true,
       "id": "clue-clue"
     },
@@ -11691,9 +12216,48 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 258,
+      "rank": 270,
       "sendable": false,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
+    },
+    {
+      "name": "Fitt Insider",
+      "org": "Fitt",
+      "role": null,
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Newsletter and podcast for fitness and wellness founders, executives and investors; sponsorship is by contact form. Price not published.",
+      "why_now": null,
+      "evidence": [
+        "https://insider.fitt.co/sponsorship/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://insider.fitt.co/sponsorship/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Ask for the rate card for the newsletter and podcast and any early-stage rate.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Could you share the rate card and any early-stage options for the newsletter?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2025-03-28",
+      "confidence": "single-source",
+      "tags": [
+        "fitness",
+        "newsletter",
+        "paid-fee",
+        "wellness"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 271,
+      "sendable": true,
+      "id": "fitt-insider-fitt"
     },
     {
       "name": "Founder Institute Veteran Accelerator",
@@ -11729,7 +12293,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 259,
+      "rank": 272,
       "sendable": false,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
@@ -11774,7 +12338,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 260,
+      "rank": 273,
       "sendable": false,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
@@ -11814,7 +12378,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 261,
+      "rank": 274,
       "sendable": false,
       "id": "hjf-mdc-venture-fund-hjf-mdc-venture-fund"
     },
@@ -11852,7 +12416,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 275,
       "sendable": true,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
@@ -11889,7 +12453,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 276,
       "sendable": true,
       "id": "humba-ventures-humba-ventures"
     },
@@ -11928,7 +12492,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 264,
+      "rank": 277,
       "sendable": true,
       "id": "icon-sports-ventures-icon-sports-ventures"
     },
@@ -11973,7 +12537,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 265,
+      "rank": 278,
       "sendable": true,
       "id": "joules-joules-joules-cc"
     },
@@ -12012,9 +12576,48 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 266,
+      "rank": 279,
       "sendable": false,
       "id": "jumpstart-ventures-jumpstart-inc"
+    },
+    {
+      "name": "Keep IT Healthy Podcast",
+      "org": "Momentum",
+      "role": "Host and co-founder: Jan Kaminski",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Podcast for founders, product leaders and innovators in HealthTech with an open guest application. Momentum also builds Open Wearables, an open-source wearable-data project already tracked in this pipeline.",
+      "why_now": null,
+      "evidence": [
+        "https://www.themomentum.ai/keep-it-healthy-podcast-guest-application"
+      ],
+      "channel": "pitch form",
+      "contact_url": "https://www.themomentum.ai/keep-it-healthy-podcast-guest-application",
+      "warm_path": "Open Wearables community",
+      "fit": 8,
+      "ice": null,
+      "ask": "Apply as a guest on building a device layer under open wearable-data tools.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Your Open Wearables work overlaps with our hardware side. I'd like to share what we learned building a band whose raw ECG/HRV is licensed to developers.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "digital-health",
+        "podcast",
+        "dev-platform",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 280,
+      "sendable": true,
+      "id": "keep-it-healthy-podcast-momentum"
     },
     {
       "name": "Kickstart Midwest 2026 - Startup World Cup Ohio Regional",
@@ -12049,7 +12652,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 267,
+      "rank": 281,
       "sendable": false,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
@@ -12096,7 +12699,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 268,
+      "rank": 282,
       "sendable": true,
       "id": "leyen-zulueta-mat-lab-bjj"
     },
@@ -12139,7 +12742,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 269,
+      "rank": 283,
       "sendable": true,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
@@ -12185,7 +12788,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 270,
+      "rank": 284,
       "sendable": true,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
@@ -12224,7 +12827,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 271,
+      "rank": 285,
       "sendable": true,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
@@ -12271,7 +12874,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 272,
+      "rank": 286,
       "sendable": true,
       "id": "migraine-buddy-migraine-buddy"
     },
@@ -12314,7 +12917,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 273,
+      "rank": 287,
       "sendable": true,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
@@ -12360,7 +12963,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 274,
+      "rank": 288,
       "sendable": true,
       "id": "pace-pace-pacetraining-co"
     },
@@ -12414,7 +13017,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 275,
+      "rank": 289,
       "sendable": true,
       "id": "peloton-peloton-interactive-inc"
     },
@@ -12466,7 +13069,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 276,
+      "rank": 290,
       "sendable": true,
       "id": "platelens-visiontech-solutions-llc"
     },
@@ -12509,7 +13112,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 277,
+      "rank": 291,
       "sendable": true,
       "id": "priority-designs-priority-designs"
     },
@@ -12552,7 +13155,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 278,
+      "rank": 292,
       "sendable": true,
       "id": "punch-through-punch-through"
     },
@@ -12591,7 +13194,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 279,
+      "rank": 293,
       "sendable": true,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
@@ -12635,7 +13238,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 280,
+      "rank": 294,
       "sendable": true,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
@@ -12674,7 +13277,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 281,
+      "rank": 295,
       "sendable": false,
       "id": "samsung-next-samsung-electronics"
     },
@@ -12717,7 +13320,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 282,
+      "rank": 296,
       "sendable": false,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
@@ -12767,7 +13370,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 283,
+      "rank": 297,
       "sendable": true,
       "id": "scholastic-esports-ohio-esports-ohio-nasef-certified-affiliate-ohsaa-supported-s"
     },
@@ -12814,7 +13417,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 284,
+      "rank": 298,
       "sendable": true,
       "id": "simple-muscle-simple-muscle-vladimir-haltakov"
     },
@@ -12853,7 +13456,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 285,
+      "rank": 299,
       "sendable": true,
       "id": "spartan-tech-ventures-spartan-tech-ventures"
     },
@@ -12896,7 +13499,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 286,
+      "rank": 300,
       "sendable": true,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
     },
@@ -12942,7 +13545,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 287,
+      "rank": 301,
       "sendable": true,
       "id": "texas-instruments-tida-010270-010280-010288-ecg-reference-designs-texas-instrume"
     },
@@ -12981,7 +13584,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 288,
+      "rank": 302,
       "sendable": true,
       "id": "the-new-era-fund-the-new-era-fund"
     },
@@ -13024,7 +13627,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 289,
+      "rank": 303,
       "sendable": true,
       "id": "theoryex-validation-sprint-susie-reiner-phd-theoryex-seton-hall-university-exerc"
     },
@@ -13061,7 +13664,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 290,
+      "rank": 304,
       "sendable": false,
       "id": "veteran-angel-network-van-context-ventures"
     },
@@ -13100,7 +13703,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 291,
+      "rank": 305,
       "sendable": true,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
@@ -13143,7 +13746,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 292,
+      "rank": 306,
       "sendable": false,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
@@ -13182,9 +13785,86 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 293,
+      "rank": 307,
       "sendable": true,
       "id": "wearable-data-builders-by-rook-rook"
+    },
+    {
+      "name": "Wearable Takeover Podcast",
+      "org": "Wearable Tech Ventures",
+      "role": "Host: Lakisha Greenwade (Coach L)",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Interviews wearable founders worldwide. Guest process on the host page: survey, talent release, Calendly booking, 15-60 minute Zencastr interview. The page promised Season 5 in 2025; recent 2026 episodes not confirmed.",
+      "why_now": null,
+      "evidence": [
+        "https://www.lakishagreenwade.com/podcastguests"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.lakishagreenwade.com/podcastguests",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Confirm the show is still recording and request the guest survey.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Are you booking Season 6 guests? I'd like to share how we're approaching a screenless band and developer licensing.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "podcast",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 308,
+      "sendable": true,
+      "id": "wearable-takeover-podcast-wearable-tech-ventures"
+    },
+    {
+      "name": "Zelos Podcast",
+      "org": "Zelos Podcast",
+      "role": "Host: Rocky Snyder",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Weekly Monday episodes with strength, conditioning and sports-medicine staff from NFL, MLB, NHL, NBA, MLS and NWSL teams (297+ episodes). Guest booking via a talks.co application; no appearance fee. Reaches the performance staff who would pilot recovery data.",
+      "why_now": null,
+      "evidence": [
+        "https://talks.co/rockysnyder/"
+      ],
+      "channel": "pitch form",
+      "contact_url": "https://talks.co/rockysnyder/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Apply as a guest on overnight heart-rate data in team performance workflows.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'd like to talk about what performance staff want from overnight data and what is missing from today's wearables. Is there room on the Zelos schedule?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "sports",
+        "podcast",
+        "human-performance",
+        "performance-staff"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 309,
+      "sendable": true,
+      "id": "zelos-podcast-zelos-podcast"
     },
     {
       "name": "Zero (fasting app)",
@@ -13231,7 +13911,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 294,
+      "rank": 310,
       "sendable": true,
       "id": "zero-fasting-app-zero-fasting-app"
     },
@@ -13269,7 +13949,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 295,
+      "rank": 311,
       "sendable": true,
       "id": "r-hyrox-reddit"
     },
@@ -13313,7 +13993,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 296,
+      "rank": 312,
       "sendable": true,
       "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
     },
@@ -13356,7 +14036,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 297,
+      "rank": 313,
       "sendable": true,
       "id": "lightship-bootcamp-akron-black-tech-week"
     },
@@ -13400,7 +14080,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 298,
+      "rank": 314,
       "sendable": true,
       "id": "fc-cincinnati-sport-science-phil-keehne-fc-cincinnati"
     },
@@ -13445,7 +14125,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 299,
+      "rank": 315,
       "sendable": false,
       "id": "jagim-lab-mayo-clinic-health-system-andrew-jagim-phd-mayo-clinic-health-system"
     },
@@ -13489,9 +14169,55 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 300,
+      "rank": 316,
       "sendable": true,
       "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
+    },
+    {
+      "name": "PEAK 2027 SportsTech - Tech Expo and Startup World Cup",
+      "org": "PEAK / Profluence",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Sports-technology conference with a demo Tech Expo of 150+ wearables, software and hardware vendors and a Startup World Cup (eligibility on the page: under 5 years old, under $5M raised, under 25 employees, under $1M revenue). The World Cup page still shows the previous cycle: virtual qualifiers in Dec/Jan, finalists get a free booth valued at $7,500 plus tickets, and runners-up win PEAK 2027 booths. 2027 qualifier dates are not posted; the booth value suggests the standard price.",
+      "why_now": "31 Mar - 2 Apr 2027, Las Vegas; qualifier dates for the 2027 cycle not yet posted.",
+      "evidence": [
+        "https://peakconf.com/sportstechx/",
+        "https://peakconf.com/world-cup/",
+        "https://peakconf.com/wise/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://peakconf.com/world-cup/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": {
+        "i": 8,
+        "c": 5,
+        "e": 5
+      },
+      "ask": "Watch for the 2027 qualifier application and enter the Athletes category.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. When do the 2027 Startup World Cup qualifier applications open? We fit the eligibility checklist and would enter the athlete category.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Las Vegas, NV",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "sports",
+        "wearables",
+        "events",
+        "startup-pitch",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 84,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 317,
+      "sendable": true,
+      "id": "peak-2027-sportstech-tech-expo-and-startup-world-cup-peak-profluence"
     },
     {
       "name": "fitbit-grafana",
@@ -13533,7 +14259,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 301,
+      "rank": 318,
       "sendable": true,
       "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
     },
@@ -13577,7 +14303,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 302,
+      "rank": 319,
       "sendable": true,
       "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
     },
@@ -13620,9 +14346,99 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 303,
+      "rank": 320,
       "sendable": true,
       "id": "big-team-challenge-big-team-challenge"
+    },
+    {
+      "name": "Biohackers World Miami 2027",
+      "org": "Biohackers World (Mick Safron, founder)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Two-day biohacking conference and expo (InterContinental Miami) with online exhibitor and speaker applications. The New York edition (June 2026) was reported at 1,500+ attendees, 30+ speakers and 60+ companies. Prices not published. A separate organizer, Apex Biohacker Worlds, lists a Miami event on 23-24 Jan 2027, so confirm which one you are applying to.",
+      "why_now": "16-17 Jan 2027, InterContinental Miami.",
+      "evidence": [
+        "https://www.biohackers.world/events/miami",
+        "https://www.biohackers.world/",
+        "https://lifestyle.healthsourcemag.com/story/712750/biohackers-world-to-host-first-new-york-conference-june-27-28-2026/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.biohackers.world/events/miami",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 5
+      },
+      "ask": "Submit the exhibitor form and ask for the price list; consider a speaker application on data-ownership in wearables.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Please send exhibitor pricing and the speaker criteria for Biohackers World Miami. We're interested in a demo table with hands-on device data.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Miami, FL",
+      "deadline": null,
+      "last_signal_date": "2026-06-10",
+      "confidence": "verified",
+      "tags": [
+        "biohacking",
+        "wearables",
+        "events",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 83,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 321,
+      "sendable": true,
+      "id": "biohackers-world-miami-2027-biohackers-world-mick-safron-founder"
+    },
+    {
+      "name": "HL7 FHIR DevDays 2027",
+      "org": "HL7 / Firely",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "The main FHIR developer conference, week of 14-18 Jun 2027 in Amsterdam (2026 was in Minneapolis). The 2026 call for presentations closed 31 Jan 2026; the 2027 CFP is not yet posted. Talks must be implementation stories, not product demos; speakers get a 25% registration discount; brand visibility is via sponsorship. Wearable data interoperability was a 2026 keynote theme.",
+      "why_now": "14-18 Jun 2027, Amsterdam; 2027 CFP not yet open (previous year closed 31 Jan).",
+      "evidence": [
+        "https://www.devdays.com/hl7-fhir-devdays-conference/",
+        "https://www.devdays.com/call-for-presentations-2026/",
+        "https://www.devdays.com/keynotes-2026/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.devdays.com/call-for-presentations-2026/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 4
+      },
+      "ask": "Watch for the 2027 CFP and pitch a wearable-data-to-FHIR implementation story.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. When does the DevDays 2027 call for presentations open? We'd propose a short talk on mapping overnight heart-rate data into FHIR Observations.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Amsterdam, Netherlands",
+      "deadline": null,
+      "last_signal_date": "2026-07-31",
+      "confidence": "verified",
+      "tags": [
+        "dev-platform",
+        "events",
+        "digital-health",
+        "fhir"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 83,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 322,
+      "sendable": true,
+      "id": "hl7-fhir-devdays-2027-hl7-firely"
     },
     {
       "name": "Terra",
@@ -13664,7 +14480,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 304,
+      "rank": 323,
       "sendable": true,
       "id": "terra-terra-tryterra-co"
     },
@@ -13708,7 +14524,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 305,
+      "rank": 324,
       "sendable": false,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
@@ -13748,7 +14564,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 306,
+      "rank": 325,
       "sendable": true,
       "id": "359-capital-formerly-sapphire-sport-359-capital"
     },
@@ -13787,7 +14603,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 307,
+      "rank": 326,
       "sendable": false,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
@@ -13826,7 +14642,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 308,
+      "rank": 327,
       "sendable": true,
       "id": "ajay-surie-beeler-street-ventures-former-fitbit"
     },
@@ -13874,7 +14690,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 309,
+      "rank": 328,
       "sendable": true,
       "id": "akron-boxing-academy-akron-boxing-academy"
     },
@@ -13918,7 +14734,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 310,
+      "rank": 329,
       "sendable": false,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
@@ -13963,7 +14779,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 311,
+      "rank": 330,
       "sendable": false,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
@@ -14012,7 +14828,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 312,
+      "rank": 331,
       "sendable": true,
       "id": "amateur-olympic-style-boxing-ohio-lbc-usa-boxing-ohio-local-boxing-committee"
     },
@@ -14057,7 +14873,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 313,
+      "rank": 332,
       "sendable": false,
       "id": "austin-womack-rugged-athlete-training"
     },
@@ -14097,7 +14913,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 314,
+      "rank": 333,
       "sendable": true,
       "id": "btw-meetup-akron-black-tech-week"
     },
@@ -14145,7 +14961,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 315,
+      "rank": 334,
       "sendable": true,
       "id": "baldwin-wallace-university-women-s-wrestling-baldwin-wallace-university"
     },
@@ -14187,9 +15003,46 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 316,
+      "rank": 335,
       "sendable": false,
       "id": "best-buy-new-core-vendor-onboarding-traditional-domestic-sdf-best-buy"
+    },
+    {
+      "name": "BetterHealthTech Podcast",
+      "org": "BetterHealthTech",
+      "role": "Host: Muhammad Atif",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "On 9 Jul 2026 the host publicly invited founders, CTOs and digital-health experts to message him about being a guest.",
+      "why_now": "Open invitation posted 9 Jul 2026.",
+      "evidence": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7480998346774593536"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://www.linkedin.com/feed/update/urn:li:activity:7480998346774593536",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Message the host with a one-line guest pitch.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Saw your call for guests. I can speak to wearable data access for health apps. Would a short conversation fit your show?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-09",
+      "confidence": "single-source",
+      "tags": [
+        "digital-health",
+        "podcast"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 336,
+      "sendable": true,
+      "id": "betterhealthtech-podcast-betterhealthtech"
     },
     {
       "hunt": "sponsorship",
@@ -14234,7 +15087,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 317,
+      "rank": 337,
       "sendable": true,
       "id": "bryce-hepner-ohio-state-buckeyes-wrestling"
     },
@@ -14280,7 +15133,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 318,
+      "rank": 338,
       "sendable": true,
       "id": "built-with-science-built-with-science"
     },
@@ -14324,7 +15177,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 319,
+      "rank": 339,
       "sendable": false,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
@@ -14379,7 +15232,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 320,
+      "rank": 340,
       "sendable": true,
       "id": "caliber-caliber-fitness-inc"
     },
@@ -14419,7 +15272,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 321,
+      "rank": 341,
       "sendable": false,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
@@ -14459,7 +15312,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 322,
+      "rank": 342,
       "sendable": true,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
@@ -14505,7 +15358,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 323,
+      "rank": 343,
       "sendable": true,
       "id": "cleveland-clinic-innovations-industry-partnerships-cleveland-clinic"
     },
@@ -14550,7 +15403,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 324,
+      "rank": 344,
       "sendable": true,
       "id": "cleveland-fencing-academy-cleveland-fencing-academy"
     },
@@ -14589,7 +15442,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 325,
+      "rank": 345,
       "sendable": true,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
@@ -14628,7 +15481,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 326,
+      "rank": 346,
       "sendable": false,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
@@ -14669,7 +15522,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 327,
+      "rank": 347,
       "sendable": false,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
     },
@@ -14712,7 +15565,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 328,
+      "rank": 348,
       "sendable": true,
       "id": "flexipcb-flexipcb"
     },
@@ -14759,7 +15612,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 329,
+      "rank": 349,
       "sendable": true,
       "id": "gabriel-feinberg-ohio-state-buckeyes-men-s-fencing"
     },
@@ -14802,7 +15655,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 330,
+      "rank": 350,
       "sendable": false,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
@@ -14849,7 +15702,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 331,
+      "rank": 351,
       "sendable": true,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
@@ -14895,7 +15748,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 332,
+      "rank": 352,
       "sendable": false,
       "id": "graham-fach-pba-touring-pro"
     },
@@ -14933,7 +15786,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 333,
+      "rank": 353,
       "sendable": true,
       "id": "greg-morris-gregmorris-co-uk"
     },
@@ -14977,7 +15830,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 334,
+      "rank": 354,
       "sendable": true,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
@@ -15015,9 +15868,47 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 335,
+      "rank": 355,
       "sendable": false,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
+    },
+    {
+      "name": "Healthomics",
+      "org": "Healthomics",
+      "role": "Editor: Kevin McDonnell",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "HealthTech newsletter for founders, CEOs and clinicians (37% average open rate claimed). Sponsor slot is a 3-4 sentence text ad with one link; cost 1 edition = GBP 750; ad deadline 72 hours before send.",
+      "why_now": "Sponsor page dated 13 Jan 2026.",
+      "evidence": [
+        "https://healthomics.substack.com/p/sponsor-healthomics"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://healthomics.substack.com/p/sponsor-healthomics",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask for the next open date and the audience size for one GBP 750 slot.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'm considering one sponsored slot to find developer design partners. What are your next open dates and your audience split between founders and clinicians?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-01-13",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "newsletter",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 356,
+      "sendable": true,
+      "id": "healthomics-healthomics"
     },
     {
       "name": "IDC: 611.5M wearables shipped in 2025; 625.2M forecast for 2026; wrist-worn down 4.3% in Q2 2026",
@@ -15059,7 +15950,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 336,
+      "rank": 357,
       "sendable": false,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
     },
@@ -15102,7 +15993,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 337,
+      "rank": 358,
       "sendable": true,
       "id": "illuminious-illuminious"
     },
@@ -15139,7 +16030,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 338,
+      "rank": 359,
       "sendable": false,
       "id": "interlagos-interlagos"
     },
@@ -15178,7 +16069,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 339,
+      "rank": 360,
       "sendable": false,
       "id": "inventure-inventure-vc"
     },
@@ -15227,7 +16118,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 340,
+      "rank": 361,
       "sendable": true,
       "id": "judo-ohio-clubs-usjf-usa-judo-clubs-in-ohio-konan-yudanshakai-e-g-chu-to-bu-judo"
     },
@@ -15270,7 +16161,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 341,
+      "rank": 362,
       "sendable": true,
       "id": "lipol-battery-north-america-lipol-battery-north-america"
     },
@@ -15315,7 +16206,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 342,
+      "rank": 363,
       "sendable": true,
       "id": "libra-industries-libra-industries"
     },
@@ -15365,7 +16256,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 343,
+      "rank": 364,
       "sendable": true,
       "id": "longevo-longevo"
     },
@@ -15413,7 +16304,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 344,
+      "rank": 365,
       "sendable": false,
       "id": "matt-wenning-ludus-magnus-gym"
     },
@@ -15451,7 +16342,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 345,
+      "rank": 366,
       "sendable": false,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
@@ -15500,7 +16391,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 346,
+      "rank": 367,
       "sendable": true,
       "id": "mya-migliore-kent-state-golden-flashes-women-s-gymnastics"
     },
@@ -15538,7 +16429,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 347,
+      "rank": 368,
       "sendable": true,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
     },
@@ -15583,7 +16474,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 348,
+      "rank": 369,
       "sendable": true,
       "id": "novel-bits-novel-bits"
     },
@@ -15629,7 +16520,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 349,
+      "rank": 370,
       "sendable": true,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
@@ -15677,7 +16568,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 350,
+      "rank": 371,
       "sendable": true,
       "id": "ohio-high-school-contact-sports-ohsaa-gsr-20-3-ohio-high-school-athletic-associa"
     },
@@ -15721,7 +16612,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 351,
+      "rank": 372,
       "sendable": true,
       "id": "ohiohealth-new-ventures-business-incubation-nvbi-ohiohealth"
     },
@@ -15764,7 +16655,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 352,
+      "rank": 373,
       "sendable": false,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
@@ -15807,7 +16698,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 353,
+      "rank": 374,
       "sendable": false,
       "id": "oura-x-usta-us-open-oura"
     },
@@ -15844,7 +16735,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 354,
+      "rank": 375,
       "sendable": false,
       "id": "pipeline-angels-pipeline-angels-ifel"
     },
@@ -15889,7 +16780,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 355,
+      "rank": 376,
       "sendable": true,
       "id": "pliant-medical-pliant-medical"
     },
@@ -15928,7 +16819,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 356,
+      "rank": 377,
       "sendable": true,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
     },
@@ -15972,7 +16863,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 357,
+      "rank": 378,
       "sendable": true,
       "id": "rapid-circuitry-rapid-circuitry"
     },
@@ -16019,7 +16910,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 358,
+      "rank": 379,
       "sendable": true,
       "id": "rock-mill-climbing-team-rock-mill-rock-mill-climbing-yoga-fitness"
     },
@@ -16063,9 +16954,49 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 359,
+      "rank": 380,
       "sendable": false,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
+    },
+    {
+      "name": "Security Halt! Podcast",
+      "org": "Security Halt",
+      "role": "Host: Deny Caballero",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Ep. 446 and 450 (7 and 16 Jul 2026) cover a founder's path from idea to patent, manufacturing, fundraising and product launch. Booking route not shown.",
+      "why_now": "Latest episode found: Ep. 450 on 16 Jul 2026.",
+      "evidence": [
+        "https://securityhalt.buzzsprout.com/1113407/episodes/19501593-james-hills-on-veteran-entrepreneurship-innovation-and-building-tac-valve-security-halt-podcast-ep-450",
+        "https://securityhalt.buzzsprout.com/1113407/episodes/19457367-james-hills-on-innovation-veteran-entrepreneurship-and-building-tac-valve-security-halt-podcast-ep-446"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://securityhalt.buzzsprout.com/1113407/episodes/19501593-james-hills-on-veteran-entrepreneurship-innovation-and-building-tac-valve-security-halt-podcast-ep-450",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the booking route and offer a product-launch story.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'd be glad to share the practical side of taking a hardware product from first prototype to design-partner units.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-16",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "podcast",
+        "founders",
+        "hardware"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 381,
+      "sendable": false,
+      "id": "security-halt-podcast-security-halt"
     },
     {
       "name": "Sequence",
@@ -16101,7 +17032,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 360,
+      "rank": 382,
       "sendable": false,
       "id": "sequence-sequence"
     },
@@ -16147,7 +17078,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 361,
+      "rank": 383,
       "sendable": false,
       "id": "summa-health-hatco-akron-technology-partnerships-summa-health-general-catalyst-h"
     },
@@ -16191,9 +17122,48 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 362,
+      "rank": 384,
       "sendable": true,
       "id": "sweatid-sweatid"
+    },
+    {
+      "name": "Tactical Wealth: From Military to Money",
+      "org": "Tactical Wealth",
+      "role": null,
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Weekly founder interviews; recent episodes include Velocity AI's Max Darsonval on the future of human performance (11 Aug 2026) and VC Craig Cummings (15 Sep 2026). Host name and booking route not shown in the excerpt read.",
+      "why_now": "Latest episode found: 15 Sep 2026 (S2 E20).",
+      "evidence": [
+        "https://tacticalwealth.transistor.fm/episodes"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://tacticalwealth.transistor.fm/episodes",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the show's booking route and pitch a human-performance hardware story.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Your Velocity AI episode on human performance is close to our lane. I can discuss building a data layer for readiness work.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-09-15",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "podcast",
+        "human-performance",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 385,
+      "sendable": false,
+      "id": "tactical-wealth-from-military-to-money-tactical-wealth"
     },
     {
       "name": "Target Accelerators supplier intake",
@@ -16234,9 +17204,47 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 363,
+      "rank": 386,
       "sendable": true,
       "id": "target-accelerators-supplier-intake-target"
+    },
+    {
+      "name": "The Heart of Healthcare Podcast",
+      "org": "The Heart of Healthcare",
+      "role": null,
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Monday digital-health interviews, mostly founders and CEOs; prioritizes timely news such as a funding round. About 35 guest spots from 1,000+ pitches a year, so long odds; a launch announcement or design-partner news would be the hook. Host name is not shown on the page read.",
+      "why_now": null,
+      "evidence": [
+        "https://www.heartofhealthcarepodcast.com/join-us"
+      ],
+      "channel": "pitch form",
+      "contact_url": "https://www.heartofhealthcarepodcast.com/join-us",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Submit a pitch tied to the DevKit design-partner announcement.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Our DevKit goes to 5-10 design partners soon. I can speak to the gap between consumer wearable data and what developers can actually license.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "podcast",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 387,
+      "sendable": true,
+      "id": "the-heart-of-healthcare-podcast-the-heart-of-healthcare"
     },
     {
       "name": "The Ohio State University supplier registration (Ariba Discovery / Supplier Registration)",
@@ -16280,9 +17288,48 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 364,
+      "rank": 388,
       "sendable": true,
       "id": "the-ohio-state-university-supplier-registration-ariba-discovery-supplier-registr"
+    },
+    {
+      "name": "The Science Behind Wearables",
+      "org": "Open Wearables by Momentum",
+      "role": "Author: Anna D. Zych, PhD",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Free weekly Substack explaining the science behind wearable health metrics by the health science lead at Open Wearables; a directory page lists 9 issues, with the last about a month before 27 Feb 2026. Activity since then unknown.",
+      "why_now": "Directory snapshot dated 27 Feb 2026.",
+      "evidence": [
+        "https://reletter.com/publications/the-science-behind-wearables"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": null,
+      "warm_path": "Open Wearables community",
+      "fit": 8,
+      "ice": null,
+      "ask": "Offer a data-source or measurement-accuracy collaboration through Open Wearables.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Your explainer on HRV measurement fits our approach. Could we share raw ECG-derived intervals for an issue?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-02-27",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "newsletter",
+        "hrv",
+        "open-source"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 389,
+      "sendable": false,
+      "id": "the-science-behind-wearables-open-wearables-by-momentum"
     },
     {
       "name": "The Veteran Fund",
@@ -16321,7 +17368,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 365,
+      "rank": 390,
       "sendable": true,
       "id": "the-veteran-fund-the-veteran-fund"
     },
@@ -16360,7 +17407,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 366,
+      "rank": 391,
       "sendable": true,
       "id": "thirty-5-capital-thirty-5-capital"
     },
@@ -16399,7 +17446,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 367,
+      "rank": 392,
       "sendable": true,
       "id": "tim-perkin-mountain-massif"
     },
@@ -16438,9 +17485,48 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 368,
+      "rank": 393,
       "sendable": true,
       "id": "tim-rosa-somnee-former-fitbit-cmo"
+    },
+    {
+      "name": "VET S.O.S. Presents: Operation Startup",
+      "org": "VET S.O.S. (501(c)(3))",
+      "role": "Host: Maurice Murphy",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Entrepreneur-spotlight show in a podcast network with 445+ episodes; recent episodes 9 and 30 Jul 2026. Booking route not found.",
+      "why_now": "Latest episode found: 30 Jul 2026.",
+      "evidence": [
+        "https://podcasts.apple.com/us/podcast/vet-s-o-s-presents-operation-startup/id1775197458",
+        "https://vetsospodcast.com"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://linkedin.com/company/vetsospodcast",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Message the network to ask how guests are booked.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Could I share the startup story, including what slowed us down? How do you book guests?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-07-30",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "podcast",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 394,
+      "sendable": true,
+      "id": "vet-s-o-s-presents-operation-startup-vet-s-o-s-501-c-3"
     },
     {
       "role": null,
@@ -16488,7 +17574,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 369,
+      "rank": 395,
       "sendable": true,
       "id": "vertical-vertical-getvertical-ai"
     },
@@ -16530,7 +17616,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 370,
+      "rank": 396,
       "sendable": false,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
@@ -16571,7 +17657,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 371,
+      "rank": 397,
       "sendable": true,
       "id": "veteran-ventures-capital-veteran-ventures-capital"
     },
@@ -16610,7 +17696,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 372,
+      "rank": 398,
       "sendable": false,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
@@ -16653,7 +17739,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 373,
+      "rank": 399,
       "sendable": false,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
@@ -16697,7 +17783,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 374,
+      "rank": 400,
       "sendable": true,
       "id": "walgreens-new-supplier-submissions-rangeme-walgreens"
     },
@@ -16740,7 +17826,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 375,
+      "rank": 401,
       "sendable": true,
       "id": "walmart-marketplace-seller-onboarding-walmart"
     },
@@ -16779,7 +17865,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 376,
+      "rank": 402,
       "sendable": false,
       "id": "wildwood-ventures-wildwood-ventures-backed-by-vf-corporation"
     },
@@ -16823,7 +17909,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 377,
+      "rank": 403,
       "sendable": false,
       "id": "withings-x-boston-10k-for-women-withings"
     },
@@ -16872,7 +17958,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 378,
+      "rank": 404,
       "sendable": true,
       "id": "youth-and-high-school-rugby-ohio-rugby-ohio-ohio-youth-rugby-association-sanctio"
     },
@@ -16916,9 +18002,53 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 379,
+      "rank": 405,
       "sendable": true,
       "id": "mhub-chicago-mhub-chicago"
+    },
+    {
+      "name": "ACSM & ACE Health & Fitness Summit 2027 - sponsor marketplace",
+      "org": "ACSM / ACE",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Exercise-professional audience (longevity, AI and technology, behavior change tracks). The sponsor prospectus lists a Sponsor Marketplace tabletop, a branded Innovation Spotlight Session for a newly launched or upcoming product, and dedicated email sends. Fees are not shown in the excerpt; the prospectus names a sales contact. Session proposals closed 30 Jul 2026.",
+      "why_now": "6-8 Mar 2027, Hilton Chicago.",
+      "evidence": [
+        "https://acsm.org/wp-content/uploads/Summit-2027-Prospectus.pdf",
+        "https://acsm.org/acsm-summit-home/session-proposals/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://acsm.org/wp-content/uploads/Summit-2027-Prospectus.pdf",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 5
+      },
+      "ask": "Request pricing for a Sponsor Marketplace tabletop and the Innovation Spotlight Session.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Could you share pricing for a Sponsor Marketplace tabletop at the 2027 Summit, and whether an upcoming product qualifies for the Innovation Spotlight Session?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "sports",
+        "events",
+        "midwest",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 79,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 406,
+      "sendable": true,
+      "id": "acsm-ace-health-fitness-summit-2027-sponsor-marketplace-acsm-ace"
     },
     {
       "name": "Cintrifuse Demo Night",
@@ -16963,7 +18093,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 380,
+      "rank": 407,
       "sendable": true,
       "id": "cintrifuse-demo-night-cintrifuse"
     },
@@ -17006,7 +18136,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 381,
+      "rank": 408,
       "sendable": true,
       "id": "columbus-crew-sport-science-chris-shenberger-columbus-crew"
     },
@@ -17052,7 +18182,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 382,
+      "rank": 409,
       "sendable": true,
       "id": "michigan-state-athletics-sport-science-bill-burghardt-michigan-state-university-"
     },
@@ -17098,7 +18228,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 383,
+      "rank": 410,
       "sendable": true,
       "id": "notre-dame-sports-performance-john-wagle-university-of-notre-dame-athletics"
     },
@@ -17141,7 +18271,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 384,
+      "rank": 411,
       "sendable": false,
       "id": "ohio-football-performance-noah-spielman-ohio-university-athletics"
     },
@@ -17184,7 +18314,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 385,
+      "rank": 412,
       "sendable": true,
       "id": "oura-home-assistant-integration-louispires-oura-home-assistant-integration-open-"
     },
@@ -17226,7 +18356,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 386,
+      "rank": 413,
       "sendable": false,
       "id": "pulsetto-pulsetto"
     },
@@ -17268,7 +18398,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 387,
+      "rank": 414,
       "sendable": true,
       "id": "smartwatch-accuracy-study-paul-hibbing-phd-university-of-illinois-chicago-applie"
     },
@@ -17312,7 +18442,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 388,
+      "rank": 415,
       "sendable": true,
       "id": "ai-brain-starter-health-mcp-google-health-connector-mycelium-hq-ai-brain-starter"
     },
@@ -17356,7 +18486,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 389,
+      "rank": 416,
       "sendable": true,
       "id": "oura-ring-mcp-server-jordanburke-oura-ring-mcp-server-open-source"
     },
@@ -17399,9 +18529,55 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 390,
+      "rank": 417,
       "sendable": true,
       "id": "cleveland-cavaliers-applied-sports-science-juan-aquino-cleveland-cavaliers"
+    },
+    {
+      "name": "HIMSS27 Global Health Conference - Emerge Experience",
+      "org": "HIMSS",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Digital-health conference with Emerge, a one-day program with a startup pitch competition, curated investor meetings and health-system and payer executive meetings. Emerge targets health-system and payer solutions, so Vybe's developer-platform angle is a stretch. Pricing is not published; the HIMSS27 prospectus routes to a sales team. The HIMSS27 call for proposals closed 30 Jun 2026.",
+      "why_now": "5-8 Apr 2027, McCormick Place, Chicago.",
+      "evidence": [
+        "https://www.himssconference.com/emerge/",
+        "https://www.himssconference.com/blog/himss27-heads-to-chicago/",
+        "https://www.himssconference.com/faqs/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.himssconference.com/himss27-prospectus/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 3
+      },
+      "ask": "Ask whether a pre-launch developer platform fits Emerge and request startup pricing.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Does Emerge accept infrastructure and developer-platform companies, or only solutions sold to health systems and payers? Also curious about startup pricing for HIMSS27.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": "2026-04-28",
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "events",
+        "midwest",
+        "dev-platform",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 418,
+      "sendable": true,
+      "id": "himss27-global-health-conference-emerge-experience-himss"
     },
     {
       "name": "Home Assistant Fitbit / Google Health integration",
@@ -17442,9 +18618,52 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 391,
+      "rank": 419,
       "sendable": true,
       "id": "home-assistant-fitbit-google-health-integration-home-assistant"
+    },
+    {
+      "name": "Modern Day Marine 2027",
+      "org": "Marine Military Expos (Emerald)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Marine Corps equipment and technology expo (400+ exhibitors at the 2026 edition) with 1-on-1 meetings between Marine Corps Systems Command program managers and industry, plus a Contracts Industry Day for small businesses. Booth price is by quote only; the FAQ names a sales contact. Non-exhibiting manufacturers pay $300 floor admission.",
+      "why_now": "Show 13-15 Apr 2027, Walter E. Washington Convention Center, Washington DC; attendee registration opens January 2027.",
+      "evidence": [
+        "https://marinemilitaryexpos.com/faq/",
+        "https://marinemilitaryexpos.com/attending-mdm/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://marinemilitaryexpos.com/faq/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 5,
+        "e": 4
+      },
+      "ask": "Request a booth quote and ask about small-business or first-time-exhibitor options.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Is there a small or first-time exhibitor option at Modern Day Marine 2027, and a rough price range for a 10x10? We'd also like to know how the Systems Command industry meetings are scheduled.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Washington, DC",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "tactical",
+        "events",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 420,
+      "sendable": true,
+      "id": "modern-day-marine-2027-marine-military-expos-emerald"
     },
     {
       "name": "Ohio Office of Business Certifications (MBE / EDGE / WBE / VFBE)",
@@ -17486,9 +18705,54 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 392,
+      "rank": 421,
       "sendable": false,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
+    },
+    {
+      "name": "SLEEP 2027 (APSS annual meeting)",
+      "org": "Associated Professional Sleep Societies (AASM + SRS)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "The main US sleep-science meeting, in Denver, with an exhibit hall. 2027 exhibitor prospectus is not published; for 2026 a third-party exhibitor guide reports a 22 Feb booth-priority deadline and a 25 May exhibit-application deadline (treat as a pattern only). Also noted: SLEEP 2029 is listed for Columbus, OH.",
+      "why_now": "6-9 Jun 2027, Colorado Convention Center, Denver (postgraduate courses 5-6 Jun); registration opens January 2027.",
+      "evidence": [
+        "https://aasm.org/event/sleep-2027/",
+        "https://shaer.io/resources/exhibiting-at-sleep/",
+        "https://www.sleepmeeting.org/about/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.sleepmeeting.org/about/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 3
+      },
+      "ask": "Ask the meeting department for the SLEEP 2027 exhibitor prospectus and dates.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Could you send the SLEEP 2027 exhibitor prospectus and booth-priority deadlines? We are an early-stage company and want to plan a first appearance.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Denver, CO",
+      "deadline": null,
+      "last_signal_date": "2026-08-29",
+      "confidence": "single-source",
+      "tags": [
+        "sleep",
+        "hrv",
+        "events",
+        "research"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 422,
+      "sendable": true,
+      "id": "sleep-2027-apss-annual-meeting-associated-professional-sleep-societies-aasm-srs"
     },
     {
       "name": "Soluno",
@@ -17529,7 +18793,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 393,
+      "rank": 423,
       "sendable": true,
       "id": "soluno-soluno"
     },
@@ -17573,7 +18837,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 394,
+      "rank": 424,
       "sendable": true,
       "id": "timeless-timeless"
     },
@@ -17616,9 +18880,97 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 395,
+      "rank": 425,
       "sendable": false,
       "id": "us-army-sustainment-command-ready-and-resilient-division-meghan-mcandrew-us-army"
+    },
+    {
+      "name": "Web Summit Lisbon 2026 - startup program (Alpha tier)",
+      "org": "Web Summit",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Startups apply through the startup program and are tiered; ALPHA is for pre-investment or under $1M raised. Package: three tickets, one day of exhibition space, eligibility for PITCH, Startup Showcase, lounge access. Eligibility per a regional partner: own software or connected hardware at MVP stage, active website, under 150 staff, founded under six years ago. A third-party guide dated 21 Sep 2026 says applications are still open through the startup team (late, not closed). Package price not stated in sources.",
+      "why_now": "9-12 Nov 2026, Lisbon (exhibition 10-12 Nov).",
+      "evidence": [
+        "https://tradeshowbuzz.com/articles/web-summit-2026-guide",
+        "https://valenciainnovationcapital.com/program/take-your-startup-to-web-summit-lisbon-2026-with-valencia-innovation-capital/?lang=en"
+      ],
+      "channel": "apply",
+      "contact_url": "https://tradeshowbuzz.com/articles/web-summit-2026-guide",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 5,
+        "e": 3
+      },
+      "ask": "Check with Web Summit's startup team whether Alpha applications still open and the package price.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Are Alpha-tier applications still open for Web Summit Lisbon, and what is the package price for a US pre-launch hardware company?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Lisbon, Portugal",
+      "deadline": null,
+      "last_signal_date": "2026-09-21",
+      "confidence": "single-source",
+      "tags": [
+        "events",
+        "startup-pitch",
+        "hardware",
+        "europe",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 426,
+      "sendable": true,
+      "id": "web-summit-lisbon-2026-startup-program-alpha-tier-web-summit"
+    },
+    {
+      "name": "health.tech global summit Basel 2027 - startup package",
+      "org": "health.tech",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Digital-health summit with a Startup Studio stage, 2 sqm startup booth, four tickets, Investor Speed Dating and a startup award. This is pay-to-participate: each startup package costs CHF 3,500 and applicants agree to buy it if selected. Included because the fee is stated and the audience (400+ investors) is real; weigh against cost.",
+      "why_now": "2-4 Mar 2027, Basel, Switzerland.",
+      "evidence": [
+        "https://www.health.tech/startups"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.health.tech/startups",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 6,
+        "e": 3
+      },
+      "ask": "Only apply if budget allows CHF 3,500; otherwise attend and use investor speed dating through a ticket.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Could you confirm the application deadline for the 2027 startup package and whether pre-revenue hardware companies are eligible?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Basel, Switzerland",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "digital-health",
+        "events",
+        "europe",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 78,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 427,
+      "sendable": true,
+      "id": "health-tech-global-summit-basel-2027-startup-package-health-tech"
     },
     {
       "name": "USAFA Dean of Faculty Biology wearable smart ring sources sought",
@@ -17660,7 +19012,7 @@
       "score": 77,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 396,
+      "rank": 428,
       "sendable": true,
       "id": "usafa-dean-of-faculty-biology-wearable-smart-ring-sources-sought-us-air-force-ac"
     },
@@ -17697,7 +19049,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 397,
+      "rank": 429,
       "sendable": false,
       "id": "37-angels-37-angels"
     },
@@ -17741,7 +19093,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 398,
+      "rank": 430,
       "sendable": true,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
@@ -17784,7 +19136,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 399,
+      "rank": 431,
       "sendable": true,
       "id": "akron-running-project-akron-marathon-race-series"
     },
@@ -17828,7 +19180,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 400,
+      "rank": 432,
       "sendable": true,
       "id": "anytime-fitness-preferred-vendor-program-anytime-fitness"
     },
@@ -17869,7 +19221,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 401,
+      "rank": 433,
       "sendable": false,
       "id": "aptima-ventures-aptima-ventures-aptima-inc"
     },
@@ -17907,7 +19259,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 402,
+      "rank": 434,
       "sendable": true,
       "id": "athleteiq-ventures-athleteiq-ventures"
     },
@@ -17946,7 +19298,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 403,
+      "rank": 435,
       "sendable": false,
       "id": "bearcat-ventures-bearcat-ventures-university-of-cincinnati"
     },
@@ -17984,7 +19336,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 404,
+      "rank": 436,
       "sendable": false,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
@@ -18026,7 +19378,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 405,
+      "rank": 437,
       "sendable": true,
       "id": "cvs-launch-emerging-brands-invite-only-cvs-health"
     },
@@ -18064,7 +19416,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 406,
+      "rank": 438,
       "sendable": false,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
@@ -18111,7 +19463,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 407,
+      "rank": 439,
       "sendable": false,
       "id": "chris-via-pba-team-usa-tv-bowling-supply"
     },
@@ -18156,7 +19508,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 408,
+      "rank": 440,
       "sendable": true,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
@@ -18203,7 +19555,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 409,
+      "rank": 441,
       "sendable": true,
       "id": "columbus-weightlifting-club-columbus-weightlifting"
     },
@@ -18245,7 +19597,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 410,
+      "rank": 442,
       "sendable": true,
       "id": "costco-vendor-inquiries-supplier-inclusion-costco"
     },
@@ -18282,7 +19634,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 411,
+      "rank": 443,
       "sendable": false,
       "id": "dvc-health-duro-ventures-collective"
     },
@@ -18326,7 +19678,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 412,
+      "rank": 444,
       "sendable": true,
       "id": "dick-s-sporting-goods-new-vendor-submission-dick-s-sporting-goods"
     },
@@ -18370,7 +19722,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 413,
+      "rank": 445,
       "sendable": false,
       "id": "discovery-vitality-vitality-group-device-ecosystem-vitality-discovery"
     },
@@ -18423,7 +19775,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 414,
+      "rank": 446,
       "sendable": true,
       "id": "do-ai-fitness-wellness-do-llc"
     },
@@ -18462,7 +19814,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 415,
+      "rank": 447,
       "sendable": true,
       "id": "elevate-human-performance-elevate-human-performance"
     },
@@ -18505,7 +19857,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 416,
+      "rank": 448,
       "sendable": false,
       "id": "garmin-x-usa-triathlon-garmin"
     },
@@ -18553,7 +19905,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 417,
+      "rank": 449,
       "sendable": true,
       "id": "golden-oak-combat-club-golden-oak-combat-club"
     },
@@ -18590,7 +19942,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 418,
+      "rank": 450,
       "sendable": true,
       "id": "hpa-hyde-park-angels-hpa"
     },
@@ -18630,7 +19982,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 419,
+      "rank": 451,
       "sendable": false,
       "id": "heartland-ventures-heartland-ventures"
     },
@@ -18668,7 +20020,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 420,
+      "rank": 452,
       "sendable": false,
       "id": "heather-landi-fierce-healthcare"
     },
@@ -18711,7 +20063,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 421,
+      "rank": 453,
       "sendable": true,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
@@ -18749,7 +20101,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 422,
+      "rank": 454,
       "sendable": false,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
@@ -18793,7 +20145,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 423,
+      "rank": 455,
       "sendable": true,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
@@ -18831,7 +20183,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 424,
+      "rank": 456,
       "sendable": false,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
     },
@@ -18875,7 +20227,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 425,
+      "rank": 457,
       "sendable": true,
       "id": "kinetic-neomed-bounce-innovation-hub-medic-lab-kinetic-neomed-bounce-innovation-"
     },
@@ -18918,7 +20270,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 426,
+      "rank": 458,
       "sendable": true,
       "id": "konark-silicone-technologies-konark-silicone-technologies"
     },
@@ -18961,7 +20313,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 427,
+      "rank": 459,
       "sendable": true,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
@@ -18998,9 +20350,47 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 428,
+      "rank": 460,
       "sendable": false,
       "id": "life-science-angels-life-science-angels"
+    },
+    {
+      "name": "Manufacturing Runs The World",
+      "org": "Manufacturing Runs The World",
+      "role": "Host: Justin (surname not shown)",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Podcast for manufacturers, engineers and founders who build things; application form, 45-60 minute remote conversation, clips supplied. Page dated 8 Apr 2026. Useful for contract-manufacturing leads.",
+      "why_now": "Guest page updated 8 Apr 2026.",
+      "evidence": [
+        "https://manufacturingrunstheworld.com/apply-to-be-a-guest/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://manufacturingrunstheworld.com/apply-to-be-a-guest/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Submit the guest application.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. We're working through first-run manufacturing choices and I'd like to tell that story, including what we'd ask a contract manufacturer.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-04-08",
+      "confidence": "single-source",
+      "tags": [
+        "hardware",
+        "oem",
+        "podcast"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 461,
+      "sendable": true,
+      "id": "manufacturing-runs-the-world-manufacturing-runs-the-world"
     },
     {
       "name": "Match Ventures",
@@ -19036,7 +20426,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 429,
+      "rank": 462,
       "sendable": true,
       "id": "match-ventures-match-ventures"
     },
@@ -19073,7 +20463,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 430,
+      "rank": 463,
       "sendable": false,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
     },
@@ -19115,7 +20505,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 431,
+      "rank": 464,
       "sendable": true,
       "id": "nissha-medical-technologies-wearables-lab-accelerator-nissha-medical-technologie"
     },
@@ -19156,7 +20546,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 432,
+      "rank": 465,
       "sendable": true,
       "id": "nocturnal-product-development-nocturnal-product-development"
     },
@@ -19195,7 +20585,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 433,
+      "rank": 466,
       "sendable": true,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
     },
@@ -19237,7 +20627,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 434,
+      "rank": 467,
       "sendable": true,
       "id": "onu-health-wearable-aggregation-api-onu-for-companies-onu-health"
     },
@@ -19281,7 +20671,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 435,
+      "rank": 468,
       "sendable": false,
       "id": "ohio-association-of-professional-fire-fighters-oapff-health-and-wellness-oapff-i"
     },
@@ -19324,7 +20714,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 436,
+      "rank": 469,
       "sendable": true,
       "id": "ohio-state-ossip-nanotech-west-lab-ohio-state-ossip-nanotech-west-lab"
     },
@@ -19363,7 +20753,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 437,
+      "rank": 470,
       "sendable": false,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
@@ -19406,9 +20796,47 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 438,
+      "rank": 471,
       "sendable": false,
       "id": "polar-x-team-essent-speed-skating-polar"
+    },
+    {
+      "name": "Product Startup Podcast",
+      "org": "Product Startup",
+      "role": "Host: Kevin Mako",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "200+ episodes with hardware founders, investors and manufacturing experts on validation, factories and capital; host advises 1,500+ hardware founders. No guest form was seen on the site excerpt.",
+      "why_now": null,
+      "evidence": [
+        "https://productstartup.com/"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://productstartup.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the host contact on the site and offer an episode on a pre-launch hardware plus SDK model.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'd love to share what we're learning on tooling, firmware and licensing a sensor stream instead of selling a subscription.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "hardware",
+        "podcast",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 472,
+      "sendable": false,
+      "id": "product-startup-podcast-product-startup"
     },
     {
       "name": "QCA Ventures",
@@ -19444,7 +20872,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 439,
+      "rank": 473,
       "sendable": false,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
@@ -19486,7 +20914,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 440,
+      "rank": 474,
       "sendable": true,
       "id": "rei-co-op-greenlight-rei"
     },
@@ -19530,7 +20958,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 441,
+      "rank": 475,
       "sendable": true,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
@@ -19573,7 +21001,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 442,
+      "rank": 476,
       "sendable": true,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
@@ -19616,7 +21044,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 443,
+      "rank": 477,
       "sendable": true,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
     },
@@ -19659,7 +21087,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 444,
+      "rank": 478,
       "sendable": true,
       "id": "simtec-silicone-parts-simtec-silicone-parts"
     },
@@ -19702,7 +21130,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 445,
+      "rank": 479,
       "sendable": true,
       "id": "smc-ltd-medical-design-center-ohio-smc-ltd-medical-design-center-ohio"
     },
@@ -19745,7 +21173,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 446,
+      "rank": 480,
       "sendable": true,
       "id": "stride-accelerator-university-of-akron-research-foundation-stride-accelerator-un"
     },
@@ -19788,7 +21216,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 447,
+      "rank": 481,
       "sendable": false,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
@@ -19825,7 +21253,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 448,
+      "rank": 482,
       "sendable": false,
       "id": "sand-hill-angels-sand-hill-angels"
     },
@@ -19868,7 +21296,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 449,
+      "rank": 483,
       "sendable": true,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
     },
@@ -19911,7 +21339,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 450,
+      "rank": 484,
       "sendable": true,
       "id": "spartronics-strongsville-oh-spartronics-strongsville-oh"
     },
@@ -19949,7 +21377,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 451,
+      "rank": 485,
       "sendable": false,
       "id": "startup-health-syndicate-startup-health"
     },
@@ -19987,7 +21415,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 452,
+      "rank": 486,
       "sendable": true,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
@@ -20033,7 +21461,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 453,
+      "rank": 487,
       "sendable": true,
       "id": "stress-platform-health-hrv-stress-platform"
     },
@@ -20076,7 +21504,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 454,
+      "rank": 488,
       "sendable": true,
       "id": "sugamed-ecg-patch-pcba-sugamed-ecg-patch-pcba"
     },
@@ -20121,7 +21549,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 455,
+      "rank": 489,
       "sendable": false,
       "id": "suunto-x-utmb-world-series-suunto"
     },
@@ -20164,7 +21592,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 456,
+      "rank": 490,
       "sendable": true,
       "id": "tt-electronics-npi-center-of-excellence-cleveland-tt-electronics-npi-center-of-e"
     },
@@ -20202,9 +21630,86 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 457,
+      "rank": 491,
       "sendable": true,
       "id": "techlife-columbus-2-0-launch-techlife-columbus"
+    },
+    {
+      "name": "TheMilVet Podcast",
+      "org": "TheMilVet",
+      "role": "Host: Beau Higgins",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Interviews with founders in defense tech and transitioning-service-member entrepreneurship; Ep. 167 (13 May 2026) with the founder of OODAx. Booking route not shown.",
+      "why_now": "Latest episode found: Ep. 167 on 13 May 2026.",
+      "evidence": [
+        "https://www.buzzsprout.com/2028513/episodes/19130372-ep-167-from-marine-to-founder-giles-walger-on-building-a-defense-tech-company-that-solves-real-warfighter-problems",
+        "https://podcasts.apple.com/us/podcast/ep-149-from-marine-to-founder-clint-alanis-on-transitioning/id1649929453?i=1000744120514"
+      ],
+      "channel": "warm intro needed",
+      "contact_url": "https://www.buzzsprout.com/2028513/episodes/19130372-ep-167-from-marine-to-founder-giles-walger-on-building-a-defense-tech-company-that-solves-real-warfighter-problems",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Find the booking route and offer a dual-use hardware story.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I'd like to talk about the path from prototype to design partners for hardware that serves both consumer and tactical users.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-05-13",
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "podcast",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 492,
+      "sendable": false,
+      "id": "themilvet-podcast-themilvet"
+    },
+    {
+      "name": "Vetted Sports Weekly",
+      "org": "Vetted",
+      "role": null,
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Weekly sports-technology newsletter (3,500+ to 5,000 founders, investors and executives claimed). Main Ad Placement (one per Sunday issue; logo plus up to 200 words) is bookable through Passionfroot. Price not shown in the excerpt.",
+      "why_now": null,
+      "evidence": [
+        "https://www.passionfroot.me/vettedsports"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.passionfroot.me/vettedsports",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Check the price on the booking page and book one issue if within a small budget.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. Please confirm the price and the next open Sunday slot for the main placement.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "sports",
+        "newsletter",
+        "paid-fee"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 493,
+      "sendable": true,
+      "id": "vetted-sports-weekly-vetted"
     },
     {
       "name": "WHOOP x Dubai Fitness Challenge 2025",
@@ -20244,7 +21749,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 458,
+      "rank": 494,
       "sendable": false,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
@@ -20288,7 +21793,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 459,
+      "rank": 495,
       "sendable": false,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
     },
@@ -20330,7 +21835,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 460,
+      "rank": 496,
       "sendable": true,
       "id": "walkingspree-channel-partner-program-walkingspree"
     },
@@ -20373,7 +21878,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 461,
+      "rank": 497,
       "sendable": true,
       "id": "walmart-sam-s-club-open-call-via-rangeme-walmart"
     },
@@ -20421,7 +21926,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 462,
+      "rank": 498,
       "sendable": true,
       "id": "walsh-university-stunt-walsh-university-athletics"
     },
@@ -20472,7 +21977,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 463,
+      "rank": 499,
       "sendable": false,
       "id": "weightwatchers-ww-international-inc"
     },
@@ -20516,7 +22021,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 464,
+      "rank": 500,
       "sendable": true,
       "id": "wellable-employee-wellness-platform-reseller-program-wellable"
     },
@@ -20555,7 +22060,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 465,
+      "rank": 501,
       "sendable": false,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
@@ -20599,9 +22104,47 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 466,
+      "rank": 502,
       "sendable": false,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
+    },
+    {
+      "name": "Zeroed In: Tactical Business Growth",
+      "org": "Zeroed In",
+      "role": "Host: Brian (surname not shown)",
+      "type": "amplifier",
+      "hunt": "social",
+      "why": "Invites people building real businesses in the tactical niche; show notes list an email address and Instagram handle for guest outreach. Episode date not shown in the excerpt.",
+      "why_now": null,
+      "evidence": [
+        "https://open.spotify.com/show/3sl2OCKDVXPXEDUvkNJc0k"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://open.spotify.com/show/3sl2OCKDVXPXEDUvkNJc0k",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Email the address in the show notes with a short guest pitch.",
+      "opener": "I'm building a screenless ECG/HRV band with a licensed SDK/API for developers, pre-launch. I build for the tactical and endurance market, and I'd like to share lessons on launching hardware with a small team.",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "tactical",
+        "podcast",
+        "founders"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 503,
+      "sendable": true,
+      "id": "zeroed-in-tactical-business-growth-zeroed-in"
     },
     {
       "name": "Zufek",
@@ -20641,7 +22184,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 467,
+      "rank": 504,
       "sendable": true,
       "id": "zufek-zufek"
     },
@@ -20682,7 +22225,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 468,
+      "rank": 505,
       "sendable": true,
       "id": "flexpcb-com-flex-pcb-usa-prototype-flexpcb-com-flex-pcb-usa-prototype"
     },
@@ -20725,7 +22268,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 469,
+      "rank": 506,
       "sendable": true,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
     },
@@ -20783,7 +22326,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 470,
+      "rank": 507,
       "sendable": true,
       "id": "trainedby-ai-trainedby"
     },
@@ -20826,7 +22369,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 471,
+      "rank": 508,
       "sendable": true,
       "id": "bearcat-performance-lab-matt-chatlaong-phd-university-of-cincinnati-school-of-hu"
     },
@@ -20869,7 +22412,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 472,
+      "rank": 509,
       "sendable": true,
       "id": "cincinnati-reds-applied-sports-science-aaron-cunanan-phd-cincinnati-reds"
     },
@@ -20910,7 +22453,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 473,
+      "rank": 510,
       "sendable": false,
       "id": "digital-health-digital-health"
     },
@@ -20955,7 +22498,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 474,
+      "rank": 511,
       "sendable": false,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
@@ -20998,7 +22541,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 475,
+      "rank": 512,
       "sendable": true,
       "id": "iu-luddy-wearables-study-katie-siek-phd-indiana-university-luddy-school"
     },
@@ -21041,7 +22584,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 476,
+      "rank": 513,
       "sendable": true,
       "id": "notre-dame-sleep-and-health-research-lab-ivan-vargas-phd-university-of-notre-dam"
     },
@@ -21084,7 +22627,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 477,
+      "rank": 514,
       "sendable": true,
       "id": "notre-dame-wearable-and-stress-sensing-project-zhi-zheng-phd-university-of-notre"
     },
@@ -21127,7 +22670,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 478,
+      "rank": 515,
       "sendable": true,
       "id": "notus-labs-notus-labs"
     },
@@ -21169,7 +22712,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 479,
+      "rank": 516,
       "sendable": true,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
@@ -21212,9 +22755,52 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 480,
+      "rank": 517,
       "sendable": true,
       "id": "university-of-cincinnati-football-sport-science-jason-stone-university-of-cincin"
+    },
+    {
+      "name": "Wearables RESHAPED 2027",
+      "org": "TechBlick",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Two-day conference and exhibition on soft, stretchable, textile and printed wearables and sensors (550+ attendees at the Computer History Museum). Useful for sensor, materials and manufacturing partners as well as visibility. Ticket prices not shown on the page read.",
+      "why_now": "9-10 Jun 2027, Computer History Museum, Mountain View CA.",
+      "evidence": [
+        "https://www.techblick.com/wearablesreshapedusa"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.techblick.com/wearablesreshapedusa",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 6,
+        "e": 6
+      },
+      "ask": "Attend or ask about a startup exhibit table; collect sensor and flexible-electronics vendor contacts.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Do you offer a startup exhibit or demo option at Wearables RESHAPED 2027, and when does speaker selection close?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Mountain View, CA",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "events",
+        "sensors",
+        "oem"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 74,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 518,
+      "sendable": true,
+      "id": "wearables-reshaped-2027-techblick"
     },
     {
       "name": "Wearables.com - Submit a Product or Company",
@@ -21253,7 +22839,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 481,
+      "rank": 519,
       "sendable": false,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
@@ -21297,7 +22883,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 482,
+      "rank": 520,
       "sendable": true,
       "id": "aha-scientific-sessions-2026-health-innovation-pavilion-american-heart-associati"
     },
@@ -21342,9 +22928,53 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 483,
+      "rank": 521,
       "sendable": false,
       "id": "army-center-for-initial-military-training-h2f-wearables-pilot-maj-gen-john-kline"
+    },
+    {
+      "name": "Biohackers World Chicago 2027",
+      "org": "Biohackers World (Mick Safron, founder)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Chicago edition, announced for spring 2027, with exhibitor, sponsor and speaker applications. Exact dates and venue not yet announced. Midwest location suits a bootstrapped first booth.",
+      "why_now": "Spring 2027, Chicago (dates to be announced).",
+      "evidence": [
+        "https://www.biohackers.world/events/chicago-2027"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.biohackers.world/events/chicago-2027",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 6,
+        "c": 4,
+        "e": 6
+      },
+      "ask": "Apply as exhibitor and speaker once dates post.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Do you have dates and a price list for the spring 2027 Chicago event? We're in Akron and would like to plan a demo table.",
+      "check_size": null,
+      "stage": null,
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "biohacking",
+        "wearables",
+        "events",
+        "midwest",
+        "ohio"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 73,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 522,
+      "sendable": true,
+      "id": "biohackers-world-chicago-2027-biohackers-world-mick-safron-founder"
     },
     {
       "name": "EarlyHunt - Wearables category",
@@ -21384,9 +23014,52 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 484,
+      "rank": 523,
       "sendable": false,
       "id": "earlyhunt-wearables-category-earlyhunt"
+    },
+    {
+      "name": "Future Health, Medical Technology & Biohacking Festival - San Juan 2027",
+      "org": "Viva Vita Expos (Apex Master Expos)",
+      "role": null,
+      "type": "event",
+      "hunt": "growth",
+      "why": "Three-day expo with exhibitor stands, a Hosted Buyer Programme, live demos and product launches; attendees listed include performance coaches and sleep, recovery and nutrition experts. Exhibitor and sponsor prices not published; one contact form covers stands, speaking and sponsorship. Vendor-run expo, so treat as pay-to-exhibit and verify attendance claims.",
+      "why_now": "26-28 Feb 2027, San Juan, Puerto Rico.",
+      "evidence": [
+        "https://vivavitaexpos.com/medical/san-juan-2027/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://vivavitaexpos.com/medical/san-juan-2027/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": {
+        "i": 5,
+        "c": 4,
+        "e": 5
+      },
+      "ask": "Request the exhibitor price sheet and past-attendee numbers.",
+      "opener": "I'm building a screenless ECG/HRV wearable band with a licensed SDK/API, pre-launch, with a DevKit going to a handful of design partners. Could you send exhibitor pricing for the San Juan festival and how many consumer versus trade attendees you expect?",
+      "check_size": null,
+      "stage": null,
+      "geo": "San Juan, Puerto Rico",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "biohacking",
+        "events",
+        "paid-fee",
+        "wearables"
+      ],
+      "lane": "stages_podcasts",
+      "link_status": "not checked",
+      "score": 73,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 524,
+      "sendable": true,
+      "id": "future-health-medical-technology-biohacking-festival-san-juan-2027-viva-vita-exp"
     },
     {
       "name": "Milwaukee Bucks Performance and Innovation (Dr. Troy Flanagan)",
@@ -21427,7 +23100,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 485,
+      "rank": 525,
       "sendable": true,
       "id": "milwaukee-bucks-performance-and-innovation-dr-troy-flanagan-milwaukee-bucks"
     },
@@ -21473,7 +23146,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 486,
+      "rank": 526,
       "sendable": false,
       "id": "abby-walker-columbus-fury-major-league-volleyball"
     },
@@ -21518,7 +23191,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 487,
+      "rank": 527,
       "sendable": false,
       "id": "blake-eiland-maryland-whipsnakes-pll-ohio-state-alum"
     },
@@ -21561,7 +23234,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 488,
+      "rank": 528,
       "sendable": false,
       "id": "coros-x-jakob-ingebrigtsen-coros"
     },
@@ -21603,7 +23276,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 489,
+      "rank": 529,
       "sendable": false,
       "id": "caresource-dayton-oh-innovation-pilots-caresource"
     },
@@ -21650,7 +23323,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 490,
+      "rank": 530,
       "sendable": false,
       "id": "competitive-cheerleading-competitive-all-star-and-scholastic-cheer-programs-gove"
     },
@@ -21693,7 +23366,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 491,
+      "rank": 531,
       "sendable": false,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
@@ -21736,7 +23409,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 492,
+      "rank": 532,
       "sendable": false,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
@@ -21779,7 +23452,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 493,
+      "rank": 533,
       "sendable": false,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
     },
@@ -21826,7 +23499,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 494,
+      "rank": 534,
       "sendable": false,
       "id": "flow-state-endurance-flow-state-endurance"
     },
@@ -21863,7 +23536,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 495,
+      "rank": 535,
       "sendable": false,
       "id": "forma-capital-the-cashmere-fund-forma-capital"
     },
@@ -21907,7 +23580,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 496,
+      "rank": 536,
       "sendable": false,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
@@ -21950,7 +23623,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 497,
+      "rank": 537,
       "sendable": false,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
@@ -21987,7 +23660,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 498,
+      "rank": 538,
       "sendable": false,
       "id": "instudio-ventures-instudio-ventures"
     },
@@ -22030,7 +23703,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 499,
+      "rank": 539,
       "sendable": false,
       "id": "jacob-hart-independent-ultrarunner"
     },
@@ -22068,7 +23741,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 500,
+      "rank": 540,
       "sendable": false,
       "id": "jessica-hagen-mobihealthnews"
     },
@@ -22111,7 +23784,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 501,
+      "rank": 541,
       "sendable": false,
       "id": "john-miller-stormbound-crossfit"
     },
@@ -22155,7 +23828,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 502,
+      "rank": 542,
       "sendable": false,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
@@ -22200,7 +23873,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 503,
+      "rank": 543,
       "sendable": false,
       "id": "medical-mutual-of-ohio-medmutual-well-vitality-powered-medical-mutual"
     },
@@ -22245,7 +23918,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 504,
+      "rank": 544,
       "sendable": false,
       "id": "nathan-jackson-university-of-rio-grande-archery"
     },
@@ -22284,7 +23957,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 505,
+      "rank": 545,
       "sendable": false,
       "id": "ndamukong-suh-house-of-spears-management"
     },
@@ -22328,7 +24001,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 506,
+      "rank": 546,
       "sendable": false,
       "id": "oura-x-u-s-soccer-oura"
     },
@@ -22372,7 +24045,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 507,
+      "rank": 547,
       "sendable": false,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
@@ -22414,7 +24087,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 508,
+      "rank": 548,
       "sendable": false,
       "id": "vha-innovators-network-greenhouse-initiative-u-s-department-of-veterans-affairs-"
     },
@@ -22457,7 +24130,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 509,
+      "rank": 549,
       "sendable": false,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
@@ -22500,7 +24173,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 510,
+      "rank": 550,
       "sendable": false,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
@@ -22543,7 +24216,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 511,
+      "rank": 551,
       "sendable": false,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
@@ -22586,7 +24259,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 512,
+      "rank": 552,
       "sendable": false,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     },
@@ -22629,7 +24302,7 @@
       "score": 67,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 513,
+      "rank": 553,
       "sendable": false,
       "id": "devcom-soldier-center-ohws-joseph-patterson-us-army-devcom-soldier-center"
     }
