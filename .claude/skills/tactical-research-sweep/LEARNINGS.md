@@ -16,6 +16,19 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-04 — first daily run
+
+- +4 items, all research from PubMed: MIL 2 (SF selection ruck times; neuroticism and fitness in
+  airmen/guardians), LE 1, CROSS 1 (WTC exposure and cortical thinning). Board 64, archive 53.
+- **Exa ran out of credits (HTTP 402) mid-run.** Without it no .mil/.gov page can be read here, so
+  policy checks were search-only and nothing policy-side could be added. PubMed still worked.
+  If Exa is down, say so in the report and treat "no new policy" as unverified, not as a quiet day.
+- Items age out daily: two 03 Sep items left the window and two hot-topic paragraphs still named
+  them. Re-read every hot note against the current window each run, not only new topics.
+- PR #56 was unmerged, so the run stacked on its branch instead of branching from main.
+- Next gaps: COPS LEMHWA/CHP awards, POTFF III final RFP, NHRC shipboard sleep study (DVIDS),
+  any NAVADMIN/MARADMIN/ALCOAST — all need a working fetch.
+
 ## 2026-10-03 — rebuilt to the brief (second attempt)
 
 - First attempt (PR #56) ignored the brief and the existing `research-board/` engine: kept
