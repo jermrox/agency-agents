@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 120 120%27%3E%3Cpolygon points=%276,6 30,6 60,70 90,6 114,6 66,112 54,112%27 fill=%27%232b3547%27/%3E%3Cpolyline points=%2730,62 48,62 54,52 62,76 68,60 90,60%27 fill=%27none%27 stroke=%27%235fc7a6%27 stroke-width=%275%27/%3E%3C/svg%3E">
 <title>Vybe Growth Scout</title>
 <style>
 :root {
@@ -42,6 +43,11 @@ a { color: var(--brand-ink); }
 header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 20px; }
 h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
 h1 span { color: var(--brand); }
+.brand-row { display: flex; align-items: center; gap: 14px; }
+.logo { width: 52px; height: 52px; flex: none; }
+:root[data-theme="dark"] .logo polygon { fill: #c9d3e3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo polygon { fill: #c9d3e3; } }
+.tag { color: #5fc7a6; font-size: 11px; letter-spacing: .12em; margin-top: 2px; }
 .sub { color: var(--ink-2); margin: 4px 0 0; max-width: 70ch; }
 .meta { color: var(--ink-3); font-size: 13px; text-align: right; }
 .theme-btn { background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer; margin-top: 6px; }
@@ -117,7 +123,11 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
 <div class="wrap">
   <header class="top">
     <div>
-      <h1><span>Vybe</span> Growth Scout</h1>
+      <div class="brand-row"><svg class="logo" viewBox="0 0 120 120" role="img" aria-label="Vybe Health logo" xmlns="http://www.w3.org/2000/svg">
+        <title>Vybe Health</title>
+        <polygon points="6,6 30,6 60,70 90,6 114,6 66,112 54,112" fill="#2b3547"/>
+        <polyline points="30,62 48,62 54,52 62,76 68,60 90,60" fill="none" stroke="#5fc7a6" stroke-width="5" stroke-linejoin="miter"/>
+      </svg><div><h1><span>Vybe</span> Growth Scout</h1><div class="tag">V Y B E &nbsp;H E A L T H</div></div></div>
       <p class="sub">Verified targets for Vybe Health across wearable technology: investors putting money into health wearables, quick growth wins, people to contact on social, and ways into sports sponsorship. Every row links to the source it came from.</p>
     </div>
     <div class="meta">Updated __GENERATED__<br><button class="theme-btn" id="theme" type="button">Theme: auto</button></div>
