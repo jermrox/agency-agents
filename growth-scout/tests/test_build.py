@@ -128,3 +128,12 @@ def test_sport_rows_need_adoption_evidence():
     s = row(type="sport", hunt="partnership", wearable_adoption="Survey: 12% of clubs", opportunity="Club pilot")
     assert build.validate(s, PARAMS, TODAY) == []
     assert build.validate(dict(s, wearable_adoption=None), PARAMS, TODAY)
+
+
+def test_partner_extras_load_and_recheck_overrides_first_pass():
+    combos, screened = build.load_partner_extras()
+    assert len(combos["combos"]) >= 6
+    assert all(c["partners"] and c["offer"] and c["unknown"] for c in combos["combos"])
+    names = {r["app"]: r for r in screened}
+    assert len(names) == len(screened) >= 55
+    assert names["Selah"]["recheck"] is True

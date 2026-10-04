@@ -28,6 +28,9 @@ ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 SITE = ROOT / "site"
 LINK_CHECK = ROOT / "data" / "link_check.json"
+COMBOS = ROOT / "data" / "combos.json"
+SCREENED = ROOT / "data" / "screened_apps.json"
+IDENTIFIED = ROOT / "data" / "identified_apps.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
@@ -182,6 +185,25 @@ def apply_link_check(row: dict, checks: dict) -> str | None:
     return None
 
 
+def load_partner_extras() -> tuple[dict, list[dict]]:
+    """Combos, and the apps that were checked and not kept (the 9 re-checked apps use their newer verdicts)."""
+    combos = json.loads(COMBOS.read_text()) if COMBOS.exists() else {"note": "", "combos": []}
+    screened = {}
+    if SCREENED.exists():
+        for r in json.loads(SCREENED.read_text()).get("screened_out", []):
+            screened[r["app"]] = {"app": r["app"], "reason": r.get("reason", ""), "recheck": False}
+    if IDENTIFIED.exists():
+        for r in json.loads(IDENTIFIED.read_text()):
+            who = r.get("company") if r.get("identified") else None
+            reason = r.get("reason", "")
+            screened[r["app"]] = {
+                "app": r["app"],
+                "reason": (f"Re-checked: identified as {who}. " if who else "Re-checked: could not be tied to a real app. ") + reason,
+                "recheck": True,
+            }
+    return combos, sorted(screened.values(), key=lambda r: r["app"].lower())
+
+
 def dedupe_key(row: dict) -> str:
     if row.get("type") in {"signal", "competitor-deal"}:
         return row["type"] + ":" + norm(row.get("name"))
@@ -280,6 +302,7 @@ def main() -> int:
     params = load_params()
     today = dt.date.fromisoformat(args.today) if args.today else dt.datetime.now(dt.timezone.utc).date()
     targets, rejected, lanes = build(params, today)
+    combos, screened_apps = load_partner_extras()
 
     print(f"{len(targets)} targets kept, {len(rejected)} rejected")
     for lane, c in lanes.items():
@@ -299,6 +322,9 @@ def main() -> int:
                   for l in params["lanes"]],
         "summary": summary(targets, today),
         "targets": targets,
+        "combos": combos["combos"],
+        "combos_note": combos.get("note", ""),
+        "screened_apps": screened_apps,
         "rejected_count": len(rejected),
     }
     (ROOT / "data" / "targets.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")

@@ -63,6 +63,7 @@ h2 + .hint { color: var(--ink-3); font-size: 13px; margin: 0 0 12px; }
 .card blockquote { margin: 0; padding: 10px 12px; background: var(--surface-2); border-radius: 8px; font-size: 14px; white-space: pre-wrap; }
 .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .pill { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.card .pill { white-space: normal; }
 .pill.High { background: var(--good-bg); color: var(--good); }
 .pill.Medium { background: var(--warn-bg); color: var(--warn); }
 .pill.Low { background: var(--surface-2); color: var(--ink-3); }
@@ -158,7 +159,15 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
 
   <h2>App partnership opportunities</h2>
   <p class="hint">Health and fitness apps that could add Vybe as a data source or co-market with it. "Already works with" comes from each app's own integrations page or docs; "unknown" means it could not be confirmed.</p>
-  <div class="tablewrap"><table id="partners"><thead><tr><th>App</th><th>Already works with</th><th>Status</th><th>Opportunity</th><th>Still unknown</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+  <div class="tablewrap"><table id="partners"><thead><tr><th>App</th><th>Already works with</th><th>Status</th><th>Opportunity</th><th>Contact</th><th>Still unknown</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+
+  <h2>Partnership combos</h2>
+  <p class="hint" id="combos-note">Ideas built from facts already sourced above. Nothing is agreed with anyone, and no Vybe integration exists yet, so none of this should be described to a partner as existing.</p>
+  <div class="cards" id="combos"></div>
+  <details style="margin-top:16px"><summary style="cursor:pointer;font-weight:600">Apps checked and not kept (<span id="nscr">0</span>)</summary>
+    <p class="hint">Every app from the founder's list that was looked at and not pursued, with the reason. "Re-checked" apps could not be identified the first time and were searched again.</p>
+    <div class="tablewrap"><table id="screened"><thead><tr><th>App</th><th>Why not</th></tr></thead><tbody></tbody></table></div>
+  </details>
 
   <h2>Sports where wearables aren't used yet</h2>
   <p class="hint">Sports and levels where wearables are rare or banned in competition. Vybe is worn overnight, so a competition-only ban is noted, not treated as a blocker.</p>
@@ -350,8 +359,23 @@ const DATA = /*__DATA__*/null;
       <td>${Array.isArray(t.existing_wearables) ? (t.existing_wearables.length ? esc(t.existing_wearables.join(", ")) : "None found") : "Unknown"}${t.exclusive ? ' <span class="pill due">exclusive</span>' : ""}</td>
       <td><span class="pill">${esc(STATUS_LABEL[t.partner_status] || t.partner_status)}</span></td>
       <td style="min-width:240px">${esc(t.opportunity)}</td>
+      <td style="min-width:180px">${t.warm_path ? esc(String(t.warm_path).replace(/\s*\(source:[^)]*\)/, "")) : ""}${safeUrl(t.contact_url) ? `<div><a href="${esc(safeUrl(t.contact_url))}" target="_blank" rel="noopener">${esc(t.channel || "contact")}</a></div>` : (t.warm_path ? "" : "No named contact found")}</td>
       <td style="min-width:160px">${esc(t.unknowns || "—")}</td>
-      <td>${src(t)}</td></tr>`).join("") : '<tr><td colspan="6" class="empty">No app partners yet.</td></tr>';
+      <td>${src(t)}</td></tr>`).join("") : '<tr><td colspan="7" class="empty">No app partners yet.</td></tr>';
+
+  // Partnership combos and the apps that were checked and not kept
+  $("#combos").innerHTML = (DATA.combos || []).map((c) => `
+    <article class="card">
+      <h3>${esc(c.title)}</h3>
+      <div class="row">${c.partners.map((p) => `<span class="pill">${esc(p)}</span>`).join("")}</div>
+      <p class="why">${esc(c.facts)}</p>
+      <p class="why"><strong>The offer (idea):</strong> ${esc(c.offer)}</p>
+      <p class="why"><strong>First move:</strong> ${esc(c.first_move)}</p>
+      <p class="why"><strong>Not yet known:</strong> ${esc(c.unknown)}</p>
+    </article>`).join("") || '<p class="empty">No combos yet.</p>';
+  const scr = DATA.screened_apps || [];
+  $("#nscr").textContent = scr.length;
+  $("#screened tbody").innerHTML = scr.map((r) => `<tr><td><strong>${esc(r.app)}</strong>${r.recheck ? ' <span class="pill">re-checked</span>' : ""}</td><td>${esc(r.reason)}</td></tr>`).join("");
   const sports = T.filter((t) => t.type === "sport");
   $("#sports tbody").innerHTML = sports.length ? sports.map((t) => `<tr>
       <td><strong>${esc(t.name)}</strong><br><span class="pill ${esc(t.priority)}">${esc(t.priority)} · ${esc(t.score)}</span></td>
