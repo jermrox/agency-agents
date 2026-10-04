@@ -135,6 +135,69 @@
  },
  {
   "rank": 3,
+  "name": "Guava Roam",
+  "brand": "Guava Family",
+  "category": "Full-size & modular strollers",
+  "price_usd": 749.95,
+  "price_note": "List (compare-at) price on guavafamily.com, sold as Roam Stroller & Organizer Bundle; it was on sale for $599.95 in the Sep 3, 2026 snapshot (Labor Day). BabyGearLab list $750. Car-seat adapter extra.",
+  "price_source_url": "https://web.archive.org/web/20260903104717/https://www.guavafamily.com/products/roam-stroller",
+  "image_url": "https://www.guavafamily.com/cdn/shop/products/roam_slider-1.jpg?v=1634088927",
+  "image_check": "200 image/jpeg",
+  "product_url": "https://www.guavafamily.com/products/roam-stroller",
+  "scores": {
+   "bgl_overall": 72,
+   "bgl_crash": null,
+   "cr_crash": null,
+   "cr_overall": null,
+   "adac": null,
+   "wirecutter": null
+  },
+  "specs": {
+   "weight_lb": 28.4,
+   "child_range": "Seat 6 months–60 lb; from birth only with infant car seat + adapter",
+   "rear_facing_max_lb": null,
+   "width_in": null,
+   "fold": "29 x 15 x 17 in (Guava)",
+   "expiration_years": null
+  },
+  "features": [],
+  "recall_status": "CPSC 25-032 (Nov 7, 2024): ~8,500 FIRST-GENERATION Roam strollers made July 2020–Dec 2021; brakes can fail to engage or disengage (67 lock-disengage + 152 pedal-not-engaging reports, no injuries); free repair kit. Units made after Dec 2021 are outside the recall, so new current-production units are post-fix; check the date label on used ones.",
+  "recall_ids": [
+   "25032"
+  ],
+  "investigation": null,
+  "evidence_level": "Moderate",
+  "why": "BabyGearLab scores it 72 in its full-size test (#3 of 20, Aug 2026) and names it Best Overall jogger (88), and it praises the single-action colour-coded brakes. It sits below the UPPAbabys because of the 2024 brake recall, which covered only first-generation 2020–21 units, and because the seat starts at 6 months.",
+  "cautions": [
+   "Check the manufacture date on used units: Jul 2020–Dec 2021 = recalled brakes (CPSC 25-032)",
+   "Seat from 6 months; newborns need a car seat and adapter",
+   "Lower basket limit than rivals (BabyGearLab); 28.4 lb"
+  ],
+  "sources": [
+   [
+    "BabyGearLab review (Aug 5, 2026)",
+    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/guava-roam"
+   ],
+   [
+    "BabyGearLab best jogging strollers",
+    "https://www.babygearlab.com/topics/getting-around/best-jogging-stroller"
+   ],
+   [
+    "CPSC 25-032",
+    "https://www.cpsc.gov/Recalls/2025/Guava-Family-Recalls-Roam-Strollers-Due-to-Fall-and-Injury-Hazards"
+   ],
+   [
+    "CPSC API 25032",
+    "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallNumber=25032"
+   ],
+   [
+    "Guava (archived Sep 3, 2026)",
+    "https://web.archive.org/web/20260903104717/https://www.guavafamily.com/products/roam-stroller"
+   ]
+  ]
+ },
+ {
+  "rank": 4,
   "name": "Nuna SWIV",
   "brand": "Nuna",
   "category": "Full-size & modular strollers",
@@ -165,7 +228,7 @@
   "recall_ids": [],
   "investigation": null,
   "evidence_level": "Moderate",
-  "why": "Consumer Reports' 2026 Top Pick for travel systems is the SWIV + PIPA aire rx, with 'near-perfect ratings' for the stroller in CR's ease-of-use, safety and maneuverability tests; no recall. Ranked below the UPPAbabys because only one lab has tested it and CR's numbers are paywalled.",
+  "why": "Consumer Reports' 2026 Top Pick for travel systems is the SWIV + PIPA aire rx, with 'near-perfect ratings' for the stroller in CR's ease-of-use, safety and maneuverability tests; no recall. Ranked below the UPPAbabys and the Guava Roam because only one lab has tested it and CR's numbers are paywalled.",
   "cautions": [
    "CR says it 'feels a little heavy and large'",
    "Evidence comes from CR's travel-system test; no BabyGearLab or Wirecutter result",
@@ -187,7 +250,7 @@
   ]
  },
  {
-  "rank": 4,
+  "rank": 5,
   "name": "Baby Jogger City Mini GT2",
   "brand": "Baby Jogger",
   "category": "Full-size & modular strollers",
@@ -221,7 +284,7 @@
   "recall_ids": [],
   "investigation": null,
   "evidence_level": "Moderate",
-  "why": "Wirecutter's pick for off-roading among full-size strollers and its top side-by-side double (GT2 Double); BabyGearLab scores it 59 (#8 of 20). Clean recall record and a 65 lb limit, but BabyGearLab calls it below average overall.",
+  "why": "Two labs agree it is a solid pick: Wirecutter's off-road pick and top side-by-side double (GT2 Double), and BabyGearLab 59 (#8 of 20). Clean recall record and a 65 lb limit, but the GT2 is out of stock at Baby Jogger and its GT3 successor is untested.",
   "cautions": [
    "Being replaced by the GT3; GT2 out of stock on babyjogger.com",
    "Hand-operated parking brake 'takes some finessing' (BabyGearLab)",
@@ -247,7 +310,66 @@
   ]
  },
  {
-  "rank": 5,
+  "rank": 6,
+  "name": "Thule Spring (now Spring 2)",
+  "brand": "Thule",
+  "category": "Full-size & modular strollers",
+  "price_usd": 499.95,
+  "price_note": "thule.com now sells the Spring 2 at $499.95; the tested original Spring had a BabyGearLab list price of $500, and Wirecutter (Mar 2026) says it is still available while it tests the Spring 2.",
+  "price_source_url": "https://www.thule.com/en-us/strollers/compact-strollers/thule-spring-2-_-11300252",
+  "image_url": "https://www.thule.com/-/p/DFrVBKMKuKKU2ycjb3liYkPaJ0_4AsAwlRJz-2RtTsU/rs:fit/h:900/cb:2.1/w:900/plain/approved/std.lang.all/12/65/1571265.png",
+  "image_check": "200 image/png",
+  "product_url": "https://www.thule.com/en-us/strollers/compact-strollers/thule-spring-2-_-11300252",
+  "scores": {
+   "bgl_overall": 59,
+   "bgl_crash": null,
+   "cr_crash": null,
+   "cr_overall": null,
+   "adac": null,
+   "wirecutter": "Top pick"
+  },
+  "specs": {
+   "weight_lb": 23.1,
+   "child_range": "Seat from 6 months to 64 lb / 44 in (BabyGearLab, original Spring); Spring 2: max 55 lb, from birth with bassinet or car seat + adapter",
+   "rear_facing_max_lb": null,
+   "width_in": null,
+   "fold": "Spring 2: 19.5 x 17.7 x 15.3 in",
+   "expiration_years": null
+  },
+  "features": [
+   "one-hand fold"
+  ],
+  "recall_status": "None found 2016–2026 for the Spring. Thule's stroller-related recalls in the window are the Sleek handlebar (20-164) and Sleek car-seat adapters (20-096).",
+  "recall_ids": [],
+  "investigation": null,
+  "evidence_level": "Moderate",
+  "why": "Wirecutter's easy-fold top pick and BabyGearLab 59 (#9 of 20), with a single-action brake and no recall. Ranked mid-table because the tested original is being replaced by the untested Spring 2, and newborns need an adapter for a car seat.",
+  "cautions": [
+   "Test results are for the original Spring; Spring 2 is untested",
+   "Car seat needs an adapter",
+   "Wirecutter: harness must be buckled in a fixed order; narrow frame is weaker off-road"
+  ],
+  "sources": [
+   [
+    "BabyGearLab review",
+    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/thule-spring"
+   ],
+   [
+    "Wirecutter best strollers",
+    "https://www.nytimes.com/wirecutter/reviews/best-strollers/"
+   ],
+   [
+    "Thule Spring 2",
+    "https://www.thule.com/en-us/strollers/compact-strollers/thule-spring-2-_-11300252"
+   ],
+   [
+    "CPSC 20-164 (Sleek, other model)",
+    "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard"
+   ]
+  ]
+ },
+ {
+  "rank": 7,
   "name": "Nuna MIXX next",
   "brand": "Nuna",
   "category": "Full-size & modular strollers",
@@ -280,7 +402,7 @@
   "recall_ids": [],
   "investigation": null,
   "evidence_level": "Moderate",
-  "why": "Tested by two labs: BabyGearLab 62 (#6 of 20) and a Wirecutter 'worth considering' mention for the easiest fold. Both flagged stability: Wirecutter said big bumps 'threatened to tip it over' with 36 lb aboard, and BabyGearLab notes a 'possible tip-over risk' from the short wheelbase off-road.",
+  "why": "Tested by two labs (BabyGearLab 62, #6 of 20; Wirecutter 'worth considering'), but both flag stability. With 36 lb aboard, Wirecutter said big bumps 'threatened to tip it over', and BabyGearLab notes a 'possible tip-over risk' off-road, which drops it below the clean two-lab picks.",
   "cautions": [
    "Tip-over concern on bumps/rough ground (Wirecutter, BabyGearLab)",
    "Brake-adjacent pocket gets kicked when setting the brake",
@@ -306,126 +428,18 @@
   ]
  },
  {
-  "rank": 6,
-  "name": "Baby Jogger City Select 2",
-  "brand": "Baby Jogger",
-  "category": "Full-size & modular strollers",
-  "price_usd": 659.99,
-  "price_note": "Standard City Select 2 on babyjogger.com (archived Sep 6, 2026); Eco Collection $749.99. Second seat extra.",
-  "price_source_url": "https://web.archive.org/web/20260906150559/https://www.babyjogger.com/strollers/shop-all-strollers/all-terrain/city-select-2/city-select-2-stroller/SAP_2148584.html",
-  "image_url": "https://s7d1.scene7.com/is/image/NewellBrands/2148584_atf1?wid=1000&hei=1000",
-  "image_check": "200 image/jpeg",
-  "product_url": "https://www.babyjogger.com/strollers/shop-all-strollers/all-terrain/city-select-2/city-select-2-stroller/SAP_2148584.html",
-  "scores": {
-   "bgl_overall": 56,
-   "bgl_crash": null,
-   "cr_crash": null,
-   "cr_overall": null,
-   "adac": null,
-   "wirecutter": null
-  },
-  "specs": {
-   "weight_lb": 27.2,
-   "child_range": "Seat from 6 months, up to 45 lb / 40 in (BabyGearLab)",
-   "rear_facing_max_lb": null,
-   "width_in": 23.8,
-   "fold": null,
-   "expiration_years": null
-  },
-  "features": [],
-  "recall_status": "None found 2016–2026 for Baby Jogger strollers.",
-  "recall_ids": [],
-  "investigation": null,
-  "evidence_level": "Limited",
-  "why": "Single-to-double with a lab score: BabyGearLab 56 (#13 of 20), 'not a good single stroller' because of weight, but single-action brakes and no recall. Wirecutter found the fold on the closely related City Select Lux sometimes stuck.",
-  "cautions": [
-   "Heavy (27.2 lb measured, one seat)",
-   "Wirecutter: City Select Lux fold 'seemed to stick' (same fold mechanism)",
-   "Seat from 6 months; newborns need car seat or bassinet"
-  ],
-  "sources": [
-   [
-    "BabyGearLab review",
-    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/baby-jogger-city-select-2"
-   ],
-   [
-    "Wirecutter best double strollers",
-    "https://www.nytimes.com/wirecutter/reviews/best-double-strollers/"
-   ],
-   [
-    "Baby Jogger (archived)",
-    "https://web.archive.org/web/20260906150559/https://www.babyjogger.com/strollers/shop-all-strollers/all-terrain/city-select-2/city-select-2-stroller/SAP_2148584.html"
-   ]
-  ]
- },
- {
-  "rank": 7,
-  "name": "Britax Brook+",
-  "brand": "Britax",
-  "category": "Full-size & modular strollers",
-  "price_usd": 329.99,
-  "price_note": "Stroller only on us.britax.com; BabyGearLab list $330.",
-  "price_source_url": "https://us.britax.com/shop/strollers/brook-plus-stroller",
-  "image_url": "https://cdne1britaxus.azureedge.net/bri/uploads/Strollers/Brook-Stroller/_1200x630_crop_center-center_82_none/Brook_Cafe_TSMode1_Toddler_2-300RGB.jpg?mtime=1790813392",
-  "image_check": "200 image/jpeg",
-  "product_url": "https://us.britax.com/shop/strollers/brook-plus-stroller",
-  "scores": {
-   "bgl_overall": 56,
-   "bgl_crash": null,
-   "cr_crash": null,
-   "cr_overall": null,
-   "adac": null,
-   "wirecutter": null
-  },
-  "specs": {
-   "weight_lb": 23,
-   "child_range": "Up to 50 lb / 44 in; newborn via Britax infant car seat",
-   "rear_facing_max_lb": null,
-   "width_in": 23.75,
-   "fold": "16 x 23.5 x 36 in",
-   "expiration_years": null
-  },
-  "features": [
-   "adapter-free car seat"
-  ],
-  "recall_status": "None found 2016–2026 for the Brook/Brook+. Britax stroller recalls in the window are B-Ready (16-080) and B-Agile/BOB Click & Go (17-088), different models.",
-  "recall_ids": [],
-  "investigation": null,
-  "evidence_level": "Limited",
-  "why": "BabyGearLab scores it 56 (#12 of 20) and calls it basic but light and cheap; ranked below the City Select 2 because BabyGearLab warns its double-action brakes are easy to half-set.",
-  "cautions": [
-   "Double-action (two-pedal) parking brake",
-   "Hard to push and turn in BabyGearLab tests",
-   "Bulky fold for its size"
-  ],
-  "sources": [
-   [
-    "BabyGearLab review",
-    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/britax-brook-plus"
-   ],
-   [
-    "Britax",
-    "https://us.britax.com/shop/strollers/brook-plus-stroller"
-   ],
-   [
-    "CPSC API (Britax)",
-    "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Britax"
-   ]
-  ]
- },
- {
   "rank": 8,
-  "name": "Chicco Corso Primo Modular Stroller",
-  "brand": "Chicco",
+  "name": "Joie Ginger dlx",
+  "brand": "Joie",
   "category": "Full-size & modular strollers",
-  "price_usd": 599.99,
-  "price_note": "Corso Primo stroller only on chiccousa.com (Summit colour).",
-  "price_source_url": "https://www.chiccousa.com/shop-our-products/strollers/corso-primo-modular-stroller---summit/05087204950070.html",
-  "image_url": "https://www.chiccousa.com/on/demandware.static/-/Sites-chicco_catalog/default/dw84f3754c/images/products/Gear/corso-primo/Chicco-Corso-Primo-Stroller-Summit.jpg",
+  "price_usd": 399.99,
+  "price_note": "joiebaby.com/us price (archived Jun 6, 2026; live site returns 403 to automated requests). BabyGearLab list $400.",
+  "price_source_url": "https://web.archive.org/web/20260606110110/https://joiebaby.com/us/pushchairs/prams/joie-ginger-dlx-pramette-all-terrain-stroller",
+  "image_url": "https://dd.joiebaby.com/media/catalog/product/p/1/p1-gingerdlx-shale-stroller_3.jpg",
   "image_check": "200 image/jpeg",
-  "product_url": "https://www.chiccousa.com/shop-our-products/strollers/corso-primo-modular-stroller---summit/05087204950070.html",
+  "product_url": "https://joiebaby.com/us/pushchairs/prams/joie-ginger-dlx-pramette-all-terrain-stroller",
   "scores": {
-   "bgl_overall": null,
+   "bgl_overall": 59,
    "bgl_crash": null,
    "cr_crash": null,
    "cr_overall": null,
@@ -433,55 +447,58 @@
    "wirecutter": null
   },
   "specs": {
-   "weight_lb": 26.0,
-   "child_range": "Up to 50 lb; newborn via infant insert or Chicco car seat",
+   "weight_lb": 24.9,
+   "child_range": "Birth (pramette mode) to 50 lb / 45 in",
    "rear_facing_max_lb": null,
    "width_in": null,
-   "fold": "15.5 x 24.8 x 32 in",
+   "fold": "21 x 24.5 x 31.7 in",
    "expiration_years": null
   },
   "features": [
-   "adapter-free car seat",
-   "one-hand fold",
    "lie-flat/newborn"
   ],
-  "recall_status": "None found 2016–2026 for Chicco strollers (only Chicco recall in the window is the MyFit booster, 25C-005).",
+  "recall_status": "None found 2016–2026 (CPSC title search for Joie returned no recalls; not in recall CSV).",
   "recall_ids": [],
   "investigation": null,
   "evidence_level": "Limited",
-  "why": "Consumer Reports has tested the Corso Primo, but its score is paywalled; no BabyGearLab or Wirecutter result. Clean recall record and native click-in for every Chicco infant seat (KeyFit family) put it above strollers with weaker records.",
+  "why": "BabyGearLab's Best Budget full-size stroller, scoring 59 (#7 of 20, Aug 2026). It is usable from birth in pramette mode, has a single-pedal brake and no recall. Only one lab has tested it.",
   "cautions": [
-   "CR rating not visible; no published independent score",
-   "Heavier than it looks (26 lb with toddler seat)"
+   "Brake has no engaged/released colour indicator (BabyGearLab)",
+   "Heavy for its class and one of the largest when folded",
+   "Only one independent test"
   ],
   "sources": [
    [
-    "Consumer Reports model page",
-    "https://www.consumerreports.org/babies-kids/strollers/chicco-corso-primo/m422744/"
+    "BabyGearLab review (Aug 5, 2026)",
+    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/joie-ginger-dlx"
    ],
    [
-    "Chicco",
-    "https://www.chiccousa.com/shop-our-products/strollers/corso-primo-modular-stroller---summit/05087204950070.html"
+    "BabyGearLab best full-size",
+    "https://www.babygearlab.com/topics/getting-around/best-full-size-stroller"
    ],
    [
-    "NHTSA 25C-005 (MyFit only)",
-    "https://www.nhtsa.gov/recalls?nhtsaId=25C005000"
+    "Joie US (archived)",
+    "https://web.archive.org/web/20260606110110/https://joiebaby.com/us/pushchairs/prams/joie-ginger-dlx-pramette-all-terrain-stroller"
+   ],
+   [
+    "CPSC API (Joie)",
+    "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Joie"
    ]
   ]
  },
  {
   "rank": 9,
-  "name": "Mockingbird Single-to-Double 3.0",
-  "brand": "Mockingbird",
+  "name": "Cybex Balios S Lux",
+  "brand": "Cybex",
   "category": "Full-size & modular strollers",
-  "price_usd": 549,
-  "price_note": "Frame + one seat; 2nd Seat Kit $175, bassinet and car-seat adapter extra. Some colours sold out on Oct 4, 2026.",
-  "price_source_url": "https://hellomockingbird.com/products/mockingbird-double-stroller",
-  "image_url": "https://hellomockingbird.com/cdn/shop/files/S2D_default_image.png?v=1778771336&width=2048",
-  "image_check": "200 image/png",
-  "product_url": "https://hellomockingbird.com/products/mockingbird-double-stroller",
+  "price_usd": 699.95,
+  "price_note": "cybex-online.com US price.",
+  "price_source_url": "https://www.cybex-online.com/en/us/p/st-go-balios-s-lux-3.html",
+  "image_url": "https://www.cybex-online.com/on/demandware.static/-/Sites-cybex-master-catalog/default/dwe4a6bfa8/images/products/10104266/cyb_24_int_y045_baliosslux_tpe_albe_19112626c5064370.jpeg",
+  "image_check": "200 image/jpeg",
+  "product_url": "https://www.cybex-online.com/en/us/p/st-go-balios-s-lux-3.html",
   "scores": {
-   "bgl_overall": null,
+   "bgl_overall": 64,
    "bgl_crash": null,
    "cr_crash": null,
    "cr_overall": null,
@@ -489,110 +506,99 @@
    "wirecutter": null
   },
   "specs": {
-   "weight_lb": 28,
-   "child_range": "3 months–50 lb (45 lb per seat as a double); from birth with insert, bassinet or car-seat adapter",
+   "weight_lb": 25.8,
+   "child_range": "Seat 6 months to ~55 lb; from birth with Cybex car seat or cot (sold separately)",
    "rear_facing_max_lb": null,
-   "width_in": 26,
-   "fold": "34 x 26 x 18 in",
+   "width_in": 23.6,
+   "fold": "17.3 x 23.8 x 30.3 in",
    "expiration_years": null
   },
   "features": [
    "one-hand fold"
   ],
-  "recall_status": "Earlier versions recalled: CPSC 23-042 (Nov 2022, ~149,000 Single-to-Double, frame cracks, 138 reports, 8 injuries) and 23-161 (Mar 2023, Single). No recall found for the 3.0.",
-  "recall_ids": [
-   "23042",
-   "23161"
-  ],
+  "recall_status": "None found 2016–2026 for Cybex strollers (CPSC 'Cybex' hits are the unrelated fitness firm; Cybex car-seat recalls 23C-001/25C-002 do not involve this stroller).",
+  "recall_ids": [],
   "investigation": null,
   "evidence_level": "Limited",
-  "why": "Consumer Reports has tested the sibling Mockingbird 3.0 Single (score paywalled; the Single-to-Double itself is untested) and Mockingbird says it meets ASTM F833-21, but the brand's 2022–23 frame-crack recalls of about 174,000 strollers and Wirecutter finding earlier versions 'a little precarious' keep it near the bottom.",
+  "why": "BabyGearLab scores it 64 (#5 of 20) and praises its single-action rocker brake, and it has no recall. But that review dates from March 2024, no second lab has tested it, and the seat starts at 6 months.",
   "cautions": [
-   "Prior frame-crack recalls (check lot numbers on used units)",
-   "The Bump tester reported a near-tip in tandem mode (anecdote)",
-   "Wide 26 in frame; 36 lb with two seats"
+   "Seat from 6 months (Cybex); newborns need a cot or car seat",
+   "Leg rest end is only fabric (BabyGearLab)",
+   "Single 2024 test"
   ],
   "sources": [
    [
-    "Consumer Reports model page",
-    "https://www.consumerreports.org/babies-kids/strollers/mockingbird-3-0-single/m422742/"
+    "BabyGearLab review",
+    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/cybex-balios-s-lux"
    ],
    [
-    "Mockingbird",
-    "https://hellomockingbird.com/products/mockingbird-double-stroller"
+    "Cybex US",
+    "https://www.cybex-online.com/en/us/p/st-go-balios-s-lux-3.html"
    ],
    [
-    "CPSC 23-042",
-    "https://www.cpsc.gov/Recalls/2023/Mockingbird-Recalls-Single-to-Double-Strollers-Due-to-Fall-Hazard"
-   ],
+    "NHTSA 25C-002 (Aton G seats, not this stroller)",
+    "https://www.nhtsa.gov/recalls?nhtsaId=25C002000"
+   ]
+  ]
+ },
+ {
+  "rank": 10,
+  "name": "Evenflo Pivot Xpand Modular Stroller",
+  "brand": "Evenflo",
+  "category": "Full-size & modular strollers",
+  "price_usd": 439.99,
+  "price_note": "evenflo.com price (archived Sep 3, 2026; live site rate-limits automated requests). A newer Pivot Xpand NXT ($349.99) is also listed and untested.",
+  "price_source_url": "https://web.archive.org/web/20260903104704/https://www.evenflo.com/products/pivot-xpand-modular-single-double-strollers",
+  "image_url": "https://www.evenflo.com/cdn/shop/files/22799795746ea10457ec66eba2bb378dc4ba2eb6.jpg?v=1784827493",
+  "image_check": "200 image/jpeg",
+  "product_url": "https://www.evenflo.com/products/pivot-xpand-modular-single-double-strollers",
+  "scores": {
+   "bgl_overall": 46,
+   "bgl_crash": null,
+   "cr_crash": null,
+   "cr_overall": null,
+   "adac": null,
+   "wirecutter": "Top pick"
+  },
+  "specs": {
+   "weight_lb": 30.0,
+   "child_range": "Lay-flat carriage mode from birth (Evenflo: 4–55 lb); BabyGearLab: birth–55 lb / 43 in",
+   "rear_facing_max_lb": null,
+   "width_in": null,
+   "fold": null,
+   "expiration_years": null
+  },
+  "features": [
+   "lie-flat/newborn"
+  ],
+  "recall_status": "No stroller recall found 2016–2026. NHTSA 25C-003 (Mar 2025) covered some Evenflo seats and travel systems, including 'Gold Pivot Xpand' travel systems, shipped without the recall registration card (labeling only).",
+  "recall_ids": [
+   "25C003000"
+  ],
+  "investigation": null,
+  "evidence_level": "Limited",
+  "why": "The labs disagree. Wirecutter's less-expensive top pick ('similar to the Cruz') scored last of 20 at BabyGearLab (46). It has single-action brakes and converts single-to-double, but it is heavy.",
+  "cautions": [
+   "BabyGearLab: lowest score of 20",
+   "Heaviest of Wirecutter's picks (30 lb measured); 'not great on rougher surfaces'",
+   "Evenflo warranty only 90 days (Wirecutter)"
+  ],
+  "sources": [
    [
-    "CPSC 23-161",
-    "https://www.cpsc.gov/Recalls/2023/Mockingbird-Expands-Recall-to-Include-Single-Strollers-Due-to-Fall-Hazard"
+    "BabyGearLab review",
+    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/evenflo-pivot-xpand"
    ],
    [
     "Wirecutter best strollers",
     "https://www.nytimes.com/wirecutter/reviews/best-strollers/"
    ],
    [
-    "The Bump review",
-    "https://www.thebump.com/a/mockingbird-stroller-review"
-   ]
-  ]
- },
- {
-  "rank": 10,
-  "name": "Graco Modes Nest Stroller",
-  "brand": "Graco",
-  "category": "Full-size & modular strollers",
-  "price_usd": 379.99,
-  "price_note": "Stroller only on gracobaby.com (archived Sep 3, 2026); travel system with SnugRide DLX $479.99.",
-  "price_source_url": "https://web.archive.org/web/20260903104319/https://www.gracobaby.com/shop/strollers/full-size-strollers/modes-nest-stroller/SP_1961558.html",
-  "image_url": "https://s7d1.scene7.com/is/image/NewellBrands/2173824_atf1?wid=1000&hei=1000",
-  "image_check": "200 image/jpeg",
-  "product_url": "https://www.gracobaby.com/shop/strollers/full-size-strollers/modes-nest-stroller/SP_1961558.html",
-  "scores": {
-   "bgl_overall": 52,
-   "bgl_crash": null,
-   "cr_crash": null,
-   "cr_overall": null,
-   "adac": null,
-   "wirecutter": null
-  },
-  "specs": {
-   "weight_lb": 21.96,
-   "child_range": "Up to 50 lb; from birth with a Graco infant car seat",
-   "rear_facing_max_lb": null,
-   "width_in": null,
-   "fold": "26 x 18.5 x 35.5 in (BabyGearLab measured)",
-   "expiration_years": null
-  },
-  "features": [
-   "adapter-free car seat"
-  ],
-  "recall_status": "Stroller not recalled. NHTSA 26C-003 (Apr 2026) covers the Modes Nest Travel System bundled with the SnugRide Turn & Slide seat (model 7DP08NRI, made Dec 2025–Mar 2026): carrier may detach from base in a crash.",
-  "recall_ids": [
-   "26C003000"
-  ],
-  "investigation": null,
-  "evidence_level": "Limited",
-  "why": "Lowest-scoring candidate with a lab result: BabyGearLab 52 (#17 of 20, 'meh'), with double-action brakes it warns are easy to half-set, and a 2026 recall of one travel-system bundle's car seat.",
-  "cautions": [
-   "Double-action (two-pedal) parking brake",
-   "Poor canopy coverage; bulky fold",
-   "If bought as Turn & Slide bundle, check 26C-003"
-  ],
-  "sources": [
-   [
-    "BabyGearLab review",
-    "https://www.babygearlab.com/reviews/getting-around/full-size-stroller/graco-modes-nest-stroller"
+    "Evenflo (archived)",
+    "https://web.archive.org/web/20260903104704/https://www.evenflo.com/products/pivot-xpand-modular-single-double-strollers"
    ],
    [
-    "Graco (archived Sep 3, 2026)",
-    "https://web.archive.org/web/20260903104319/https://www.gracobaby.com/shop/strollers/full-size-strollers/modes-nest-stroller/SP_1961558.html"
-   ],
-   [
-    "NHTSA 26C-003 Part 573",
-    "https://static.nhtsa.gov/odi/rcl/2026/RCLRPT-26C003-2105.pdf"
+    "NHTSA 25C-003",
+    "https://www.nhtsa.gov/recalls?nhtsaId=25C003000"
    ]
   ]
  }
