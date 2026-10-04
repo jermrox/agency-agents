@@ -114,12 +114,17 @@ def test_dashboard_embeds_sourced_safety_picks(tmp_path):
     html = (tmp_path / "site" / "index.html").read_text()
     picks = json.loads(html.split('id="data">', 1)[1].split("</script>", 1)[0])["picks"]
     names = [c["name"] for c in picks["categories"]]
-    assert names == ["Infant car seats", "Convertible car seats", "Compact strollers"]
+    assert names == ["Infant car seats", "Convertible car seats", "Compact strollers", "Car seat + stroller combos"]
+    assert picks["trust"] and all(t["url"].startswith("https://") for t in picks["trust"])
     for cat in picks["categories"]:
         assert 3 <= len(cat["picks"]) <= 5
         for p in cat["picks"]:
             assert p["sources"] and all(url.startswith("https://") for _, url in p["sources"])
-    assert all(a["url"].startswith("https://") for a in picks["avoid"])
+    assert all(a["url"].startswith("https://") for a in picks["avoid"] + picks["brands"] + picks["tech"])
+    assert len(picks["recall_db"]["items"]) > 50
+    guide_html = (tmp_path / "site" / "guide.html").read_text()
+    assert "Baby Gear Safety Guide" in guide_html and 'href="guide.html"' in html
+    assert all(x["url"].startswith("https://") for x in picks["recall_db"]["items"])
 
 
 def test_dashboard_without_picks_file(tmp_path):
@@ -130,3 +135,13 @@ def test_dashboard_without_picks_file(tmp_path):
                  "--recalls-file", str(FIX / "cpsc_sample.json"), "--today", "2026-10-03"]) == 0
     html = (tmp_path / "site" / "index.html").read_text()
     assert json.loads(html.split('id="data">', 1)[1].split("</script>", 1)[0])["picks"] is None
+
+
+def test_top10_lists_are_complete_and_sourced():
+    for path in sorted((ROOT / "data" / "top10").glob("*.json")):
+        items = json.loads(path.read_text())
+        assert [x["rank"] for x in sorted(items, key=lambda x: x["rank"])] == list(range(1, 11)), path.name
+        for x in items:
+            assert x["name"] and x["brand"] and x["sources"], (path.name, x.get("name"))
+            for url in [x.get("image_url"), x.get("product_url"), x.get("price_source_url")] + [s[1] for s in x["sources"]]:
+                assert url is None or url.startswith("https://"), (path.name, x["name"], url)
