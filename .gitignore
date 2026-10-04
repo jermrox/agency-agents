@@ -57,6 +57,9 @@ dist/
 build/
 *.egg-info/
 
+# Claude Code worktrees and session data
+.claude/
+
 # Personal notes and scratch files
 scratch/
 notes/
