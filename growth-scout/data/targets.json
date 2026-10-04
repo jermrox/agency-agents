@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-04 01:47 UTC",
+  "generated": "2026-10-04 01:49 UTC",
   "today": "2026-10-04",
   "scope": {
     "company": "Vybe Health",
@@ -113,7 +113,7 @@
     }
   ],
   "summary": {
-    "total": 363,
+    "total": 396,
     "investor": 97,
     "growth": 55,
     "social": 39,
@@ -122,9 +122,9 @@
     "sports": 13,
     "competitor_deals": 35,
     "signals": 32,
-    "high": 60,
+    "high": 63,
     "deadlines_30d": 8,
-    "ready_to_send": 191,
+    "ready_to_send": 224,
     "identity_needs_ok": 74
   },
   "targets": [
@@ -325,6 +325,51 @@
       "id": "ai-endurance-ai-endurance"
     },
     {
+      "name": "ANZER USA",
+      "org": "ANZER USA",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Akron, Ohio EMS with a dedicated prototype line separate from volume lines, no minimum order quantity stated for prototypes, SMT/THT/mixed, box build, conformal coating/potting, AOI/X-ray/functional test and ISO 13485:2016 listed. Same city as Vybe.",
+      "why_now": null,
+      "evidence": [
+        "https://www.anzer-usa.com/resources/prototype-pcb-assembly-anzer/",
+        "https://www.anzer-usa.com/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.anzer-usa.com/",
+      "warm_path": "Same city (Akron, OH).",
+      "fit": 9,
+      "ice": null,
+      "ask": "Request a quote and a DFM review for a 5-10 unit DevKit v0.1 board build.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your Akron prototype line with no stated minimum caught my eye for our first 5-10 DevKit boards. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": null,
+      "last_signal_date": "2026-09-08",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "akron",
+        "ems",
+        "prototype"
+      ],
+      "opportunity": "Local build partner for DevKit v0.1 boards (5-10 units) and the pilot builds before the May 2027 launch, with a path from prototype to production under one roof.",
+      "unknowns": "Flex/rigid-flex and 01005-scale wearable assembly capability not stated; pricing and lead times unpublished; startup payment terms unknown; whether medical-grade ISO 13485 scope covers consumer wearables.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 5,
+      "sendable": true,
+      "id": "anzer-usa-anzer-usa"
+    },
+    {
       "name": "Akron Marathon Race Series 2027",
       "org": "Akron Marathon Charitable Corporation",
       "role": "Sponsorship (Anne Bitong) / Expo (Katie Riley)",
@@ -367,7 +412,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 5,
+      "rank": 6,
       "sendable": false,
       "id": "akron-marathon-race-series-2027-akron-marathon-charitable-corporation"
     },
@@ -409,7 +454,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 6,
+      "rank": 7,
       "sendable": true,
       "id": "alex-morgan-khosla-ventures"
     },
@@ -450,7 +495,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 7,
+      "rank": 8,
       "sendable": false,
       "id": "alumni-ventures-alumni-ventures"
     },
@@ -495,9 +540,55 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 8,
+      "rank": 9,
       "sendable": false,
       "id": "amazfit-x-hyrox-official-wearable-now-global-3-year-exclusive-amazfit-zepp-healt"
+    },
+    {
+      "name": "Analog Devices (MAX86178 / MAXREFDES104 health sensor platform)",
+      "org": "Analog Devices (MAX86178 / MAXREFDES104 health sensor platform)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own pages: MAX86178 integrated PPG+ECG+BioZ AFE (IEC 60601-2-47 designed, wearable), and the MAXREFDES104 wrist reference design (MAX86176 ECG+PPG AFE, MAX32666 BLE MCU, algorithm hub with HRV/sleep) with design files; access requires an NDA request subject to ADI approval.",
+      "why_now": null,
+      "evidence": [
+        "https://www.analog.com/en/products/max86178.html",
+        "https://www.analog.com/en/resources/reference-designs/maxrefdes104.html",
+        "https://www.analog.com/en/products/max30001.html"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.analog.com/en/resources/reference-designs/maxrefdes104.html",
+      "warm_path": null,
+      "fit": 9,
+      "ice": null,
+      "ask": "Submit the MAXREFDES104 NDA request and ask ADI sales for a field applications engineer.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to request the MAXREFDES104 NDA package and ask about field applications engineering for a small-volume design. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "afe",
+        "ecg",
+        "reference-design",
+        "chip-vendor"
+      ],
+      "opportunity": "Reference-design shortcut for the ECG AFE and BLE MCU, plus FAE support and ADI sleep/HRV algorithm blocks to benchmark Vybe's own signal processing.",
+      "unknowns": "NDA approval not guaranteed; no startup program page found on ADI; pricing/availability of MAX86178 unverified; ADI algorithms may overlap Vybe's proprietary DSP.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 10,
+      "sendable": true,
+      "id": "analog-devices-max86178-maxrefdes104-health-sensor-platform-analog-devices-max86"
     },
     {
       "name": "Anne Wojcicki",
@@ -536,7 +627,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 9,
+      "rank": 11,
       "sendable": true,
       "id": "anne-wojcicki-treehub-ai-health-fund-operating-partner-23andme-co-founder"
     },
@@ -577,7 +668,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 10,
+      "rank": 12,
       "sendable": true,
       "id": "ben-joffe-sosv-hax"
     },
@@ -616,7 +707,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 11,
+      "rank": 13,
       "sendable": false,
       "id": "brydge-club-brydge-club"
     },
@@ -655,7 +746,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 12,
+      "rank": 14,
       "sendable": false,
       "id": "cade-ventures-why-we-haven-t-invested-in-a-wearable-yet-and-what-would-change-ou"
     },
@@ -696,7 +787,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 13,
+      "rank": 15,
       "sendable": true,
       "id": "cheryl-mccolgan-heal-nourish-grow"
     },
@@ -737,7 +828,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 14,
+      "rank": 16,
       "sendable": false,
       "id": "clair-health-11m-seed-led-by-khosla-for-women-s-hormone-wristband-clair-health"
     },
@@ -786,7 +877,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 15,
+      "rank": 17,
       "sendable": true,
       "id": "clay-wenger-kent-state-university-women-s-wrestling"
     },
@@ -825,7 +916,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 16,
+      "rank": 18,
       "sendable": true,
       "id": "craig-shapiro-collaborative-fund"
     },
@@ -865,7 +956,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 17,
+      "rank": 19,
       "sendable": false,
       "id": "crosslink-capital-crosslink-capital"
     },
@@ -911,7 +1002,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 18,
+      "rank": 20,
       "sendable": false,
       "id": "danielle-miranda-hyrox-pro-women-self-columbus-all-female-fitness-facility-found"
     },
@@ -958,7 +1049,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 19,
+      "rank": 21,
       "sendable": false,
       "id": "eagle-up-ultra-2027-race-brimstone"
     },
@@ -998,9 +1089,56 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 20,
+      "rank": 22,
       "sendable": false,
       "id": "eurie-kim-forerunner-ventures"
+    },
+    {
+      "name": "F2 Labs (Middlefield, OH)",
+      "org": "F2 Labs (Middlefield, OH)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Accredited EMC/regulatory lab with an Ohio facility (A2LA ISO/IEC 17025; FCC/ISED-accredited for wireless; 10 m and 3 m chambers); offers pre-compliance, FCC Part 15 for Bluetooth/BLE, IEC 60601-1-2 and is FDA ASCA enrolled.",
+      "why_now": null,
+      "evidence": [
+        "https://f2labs.com/emc-testing-services",
+        "https://f2labs.com/fcc-testing-certification",
+        "https://accredisource.com/labs/f2-labs-middlefield-oh",
+        "https://www.emclatest.com/labs/f2-labs"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://f2labs.com/emc-testing-services",
+      "warm_path": "Ohio lab ~45 miles from Akron.",
+      "fit": 9,
+      "ice": null,
+      "ask": "Book a pre-compliance session on DevKit boards and request a quote for FCC Part 15C BLE certification.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a pre-compliance session on early boards and a certification quote for a BLE device. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Middlefield, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "emc",
+        "fcc",
+        "test-lab"
+      ],
+      "opportunity": "Nearest accredited EMC/FCC lab for pre-compliance now and FCC/IEC 60601-1-2 certification ahead of launch.",
+      "unknowns": "Pricing and queue times unpublished; whether to use Part 15 modular approval of a pre-certified BLE module not discussed.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 100,
+      "priority": "High",
+      "identity_needs_ok": false,
+      "rank": 23,
+      "sendable": true,
+      "id": "f2-labs-middlefield-oh-f2-labs-middlefield-oh"
     },
     {
       "name": "FDA 2026 General Wellness guidance explicitly covers wearables measuring HRV, BP, SpO2",
@@ -1042,7 +1180,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 21,
+      "rank": 24,
       "sendable": false,
       "id": "fda-2026-general-wellness-guidance-explicitly-covers-wearables-measuring-hrv-bp-"
     },
@@ -1094,7 +1232,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 22,
+      "rank": 25,
       "sendable": true,
       "id": "firefighter-challenge-competitors-akron-regional-first-responder-institute-servp"
     },
@@ -1140,7 +1278,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 23,
+      "rank": 26,
       "sendable": false,
       "id": "fitbit-web-api-shuts-down-30-oct-2026-tokens-do-not-migrate-google"
     },
@@ -1179,7 +1317,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 24,
+      "rank": 27,
       "sendable": false,
       "id": "fortify-ventures-fortify-ventures"
     },
@@ -1224,7 +1362,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 25,
+      "rank": 28,
       "sendable": false,
       "id": "garmin-launches-cirqa-screenless-band-at-199-99-no-subscription-garmin"
     },
@@ -1267,7 +1405,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 26,
+      "rank": 29,
       "sendable": false,
       "id": "garmin-x-buena-tierra-run-club-milwaukee-garmin"
     },
@@ -1313,7 +1451,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 27,
+      "rank": 30,
       "sendable": false,
       "id": "garmin-x-garmin-marathon-series-toledo-ohio-garmin"
     },
@@ -1356,7 +1494,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 28,
+      "rank": 31,
       "sendable": true,
       "id": "grayson-judge-supermoon-capital"
     },
@@ -1406,7 +1544,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 29,
+      "rank": 32,
       "sendable": true,
       "id": "high-school-wrestling-ohio-ohio-high-school-wrestling-coaches-association-ohswca"
     },
@@ -1453,7 +1591,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 30,
+      "rank": 33,
       "sendable": false,
       "id": "human-performance-collaborative-ohio-state-the-ohio-state-university-office-of-r"
     },
@@ -1499,7 +1637,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 31,
+      "rank": 34,
       "sendable": false,
       "id": "hunter-brancifort-akron-fire-department"
     },
@@ -1540,7 +1678,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 32,
+      "rank": 35,
       "sendable": true,
       "id": "jomayra-herrera-reach-capital"
     },
@@ -1583,7 +1721,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 33,
+      "rank": 36,
       "sendable": false,
       "id": "khosla-ventures-khosla-ventures"
     },
@@ -1624,7 +1762,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 34,
+      "rank": 37,
       "sendable": false,
       "id": "kiva-dickinson-selva-ventures"
     },
@@ -1666,7 +1804,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 35,
+      "rank": 38,
       "sendable": true,
       "id": "krish-ramadurai-aix-ventures"
     },
@@ -1708,7 +1846,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 36,
+      "rank": 39,
       "sendable": false,
       "id": "kristina-simmons-overwater-ventures"
     },
@@ -1752,7 +1890,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 37,
+      "rank": 40,
       "sendable": true,
       "id": "kygo-health-kygo-health"
     },
@@ -1792,7 +1930,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 38,
+      "rank": 41,
       "sendable": true,
       "id": "lordofthesmartrings-lordofthesmartrings"
     },
@@ -1833,7 +1971,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 39,
+      "rank": 42,
       "sendable": false,
       "id": "labcorp-venture-fund-labcorp"
     },
@@ -1879,7 +2017,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 40,
+      "rank": 43,
       "sendable": false,
       "id": "levels-x-crossfit-affiliate-network-partnership-levels"
     },
@@ -1920,7 +2058,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 41,
+      "rank": 44,
       "sendable": true,
       "id": "marco-altini-hrv4training"
     },
@@ -1959,7 +2097,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 42,
+      "rank": 45,
       "sendable": true,
       "id": "marko-maslakovic-gadgets-wearables"
     },
@@ -1998,7 +2136,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 43,
+      "rank": 46,
       "sendable": true,
       "id": "meredith-dietz-lifehacker"
     },
@@ -2040,7 +2178,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 44,
+      "rank": 47,
       "sendable": true,
       "id": "nikita-starov-aifitnessapi-aifitnessapi-com"
     },
@@ -2087,7 +2225,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 45,
+      "rank": 48,
       "sendable": true,
       "id": "open-wearables-momentum-the-momentum"
     },
@@ -2127,7 +2265,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 46,
+      "rank": 49,
       "sendable": true,
       "id": "oscar-moralez-boomerang-ventures"
     },
@@ -2172,7 +2310,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 47,
+      "rank": 50,
       "sendable": false,
       "id": "oura-files-s-1-1-21b-revenue-in-9-months-5m-paid-members-oura"
     },
@@ -2212,7 +2350,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 48,
+      "rank": 51,
       "sendable": false,
       "id": "oura-postpones-2-1b-ipo-early-backers-forerunner-and-lifeline-named-oura"
     },
@@ -2252,7 +2390,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 49,
+      "rank": 52,
       "sendable": true,
       "id": "pankaj-kedia-2468-ventures"
     },
@@ -2294,7 +2432,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 50,
+      "rank": 53,
       "sendable": true,
       "id": "petteri-lahtela-oura-co-founder-independent-angel"
     },
@@ -2340,7 +2478,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 51,
+      "rank": 54,
       "sendable": true,
       "id": "playerslab-playerslab"
     },
@@ -2381,7 +2519,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 52,
+      "rank": 55,
       "sendable": true,
       "id": "ray-maker-dc-rainmaker"
     },
@@ -2421,7 +2559,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 53,
+      "rank": 56,
       "sendable": true,
       "id": "resolute-ventures-resolute-ventures"
     },
@@ -2467,7 +2605,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 54,
+      "rank": 57,
       "sendable": true,
       "id": "restortrain-restortrain"
     },
@@ -2508,7 +2646,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 55,
+      "rank": 58,
       "sendable": true,
       "id": "rob-ter-horst-the-quantified-scientist"
     },
@@ -2548,7 +2686,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 56,
+      "rank": 59,
       "sendable": false,
       "id": "sond-exits-stealth-with-7m-e14-fund-lead-for-hrv-sensing-sleep-earbuds-sond"
     },
@@ -2589,7 +2727,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 57,
+      "rank": 60,
       "sendable": false,
       "id": "sosv-hax-sosv"
     },
@@ -2637,7 +2775,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 58,
+      "rank": 61,
       "sendable": false,
       "id": "strong-lab-711th-human-performance-wing-air-force-research-laboratory-afrl-rh"
     },
@@ -2679,7 +2817,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 59,
+      "rank": 62,
       "sendable": true,
       "id": "seaside-ventures-seaside-ventures"
     },
@@ -2719,7 +2857,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 60,
+      "rank": 63,
       "sendable": true,
       "id": "sunil-bhatt-smartwatch-insight"
     },
@@ -2760,7 +2898,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 61,
+      "rank": 64,
       "sendable": true,
       "id": "sunil-nagaraj-ubiquity-ventures"
     },
@@ -2802,7 +2940,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 62,
+      "rank": 65,
       "sendable": true,
       "id": "toni-schneider-true-ventures"
     },
@@ -2861,7 +2999,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 63,
+      "rank": 66,
       "sendable": true,
       "id": "tredict-tredict"
     },
@@ -2902,7 +3040,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 64,
+      "rank": 67,
       "sendable": false,
       "id": "ultrahuman-raises-70m-led-by-qualcomm-ventures-and-opens-ring-to-third-party-dev"
     },
@@ -2942,7 +3080,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 65,
+      "rank": 68,
       "sendable": false,
       "id": "victoria-song-the-verge"
     },
@@ -2987,7 +3125,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 66,
+      "rank": 69,
       "sendable": false,
       "id": "whoop-x-u-s-air-force-1st-fighter-wing-aircrew-trackers-whoop"
     },
@@ -3034,7 +3172,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": true,
-      "rank": 67,
+      "rank": 70,
       "sendable": false,
       "id": "whoop-x-university-of-north-georgia-institute-for-peak-performance-corps-of-cade"
     },
@@ -3073,7 +3211,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 68,
+      "rank": 71,
       "sendable": true,
       "id": "a16z-speedrun-andreessen-horowitz-speedrun"
     },
@@ -3114,7 +3252,7 @@
       "score": 100,
       "priority": "High",
       "identity_needs_ok": false,
-      "rank": 69,
+      "rank": 72,
       "sendable": true,
       "id": "the5krunner-the5krunner"
     },
@@ -3159,7 +3297,7 @@
       "score": 97,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 70,
+      "rank": 73,
       "sendable": false,
       "id": "google-launches-99-screenless-fitbit-air-fitbit-app-becomes-google-health-google"
     },
@@ -3203,7 +3341,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 71,
+      "rank": 74,
       "sendable": false,
       "id": "apple-prototyping-screenless-fitness-band-gurman-launch-not-before-2028-apple"
     },
@@ -3248,7 +3386,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 72,
+      "rank": 75,
       "sendable": true,
       "id": "cleveland-hardware-meetup-cleveland-hardware-meetup-hardware-meetup-network"
     },
@@ -3292,7 +3430,7 @@
       "score": 96,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 73,
+      "rank": 76,
       "sendable": false,
       "id": "google-fit-apis-incl-rest-deprecated-in-2026-no-rest-replacement-google"
     },
@@ -3331,7 +3469,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 74,
+      "rank": 77,
       "sendable": true,
       "id": "health2tech-cleveland-health2tech"
     },
@@ -3375,7 +3513,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 75,
+      "rank": 78,
       "sendable": true,
       "id": "innovation-day-2026-northeast-ohio-public-university-research-alliance-neo-pura-"
     },
@@ -3414,7 +3552,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 76,
+      "rank": 79,
       "sendable": true,
       "id": "bounce-innovation-hub-bounce-innovation-hub"
     },
@@ -3454,7 +3592,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 77,
+      "rank": 80,
       "sendable": true,
       "id": "y-combinator-winter-2027-batch-y-combinator"
     },
@@ -3493,7 +3631,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 78,
+      "rank": 81,
       "sendable": false,
       "id": "sxsw-pitch-2027-sxsw"
     },
@@ -3533,7 +3671,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 79,
+      "rank": 82,
       "sendable": true,
       "id": "techstars-ai-health-baltimore-spring-2027-techstars"
     },
@@ -3572,7 +3710,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 80,
+      "rank": 83,
       "sendable": true,
       "id": "techstars-anywhere-accelerator-spring-2027-techstars"
     },
@@ -3617,7 +3755,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 81,
+      "rank": 84,
       "sendable": false,
       "id": "adaptive-sports-connection-adaptive-sports-connection"
     },
@@ -3665,7 +3803,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 82,
+      "rank": 85,
       "sendable": true,
       "id": "akron-rugby-football-club-akron-rugby-football-club"
     },
@@ -3717,7 +3855,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 83,
+      "rank": 86,
       "sendable": true,
       "id": "breethe-kodeon-acquired-breethe-2026-08-19"
     },
@@ -3757,7 +3895,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 84,
+      "rank": 87,
       "sendable": true,
       "id": "brendan-keeler-health-api-guy-substack"
     },
@@ -3797,7 +3935,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 85,
+      "rank": 88,
       "sendable": false,
       "id": "ces-2027-eureka-park-consumer-technology-association"
     },
@@ -3843,7 +3981,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 86,
+      "rank": 89,
       "sendable": true,
       "id": "chris-chartier-the-righteous-path-substack"
     },
@@ -3891,7 +4029,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 87,
+      "rank": 90,
       "sendable": true,
       "id": "cleveland-women-s-rugby-football-club-iron-maidens-cleveland-women-s-rugby-footb"
     },
@@ -3937,7 +4075,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 88,
+      "rank": 91,
       "sendable": true,
       "id": "columbus-hardware-meetup-columbus-hardware-meetup-rev1-labs"
     },
@@ -3982,7 +4120,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 89,
+      "rank": 92,
       "sendable": true,
       "id": "creapure-hyrox-chicago-2027-hyrox-north-america"
     },
@@ -4026,7 +4164,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 90,
+      "rank": 93,
       "sendable": true,
       "id": "emotion-culture-and-psychophysiology-lab-stress-watch-arizona-state-university"
     },
@@ -4073,7 +4211,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 91,
+      "rank": 94,
       "sendable": false,
       "id": "firefighter-challenge-league-2027-series-tft-championship-series-servpro-firefig"
     },
@@ -4118,7 +4256,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 92,
+      "rank": 95,
       "sendable": true,
       "id": "fitabase-fitabase-small-steps-labs"
     },
@@ -4177,7 +4315,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 93,
+      "rank": 96,
       "sendable": true,
       "id": "fitbod-fitbod-inc"
     },
@@ -4217,7 +4355,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 94,
+      "rank": 97,
       "sendable": false,
       "id": "golden-seeds-golden-seeds"
     },
@@ -4256,7 +4394,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 95,
+      "rank": 98,
       "sendable": true,
       "id": "hax-sosv"
     },
@@ -4300,7 +4438,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 96,
+      "rank": 99,
       "sendable": false,
       "id": "invi-mindhealth-invi-mindhealth"
     },
@@ -4340,7 +4478,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 97,
+      "rank": 100,
       "sendable": true,
       "id": "isabel-glass-cade-ventures"
     },
@@ -4380,9 +4518,53 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 98,
+      "rank": 101,
       "sendable": true,
       "id": "jumpstart-trailblazer-healthtech-accelerator-jumpstart-inc"
+    },
+    {
+      "name": "Kyros Engineering",
+      "org": "Kyros Engineering",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Cleveland, Ohio medical-device engineering firm listing analog front-end and low-noise sensing, BLE, power management and PCB through rigid-flex, IEC 60601-1/ISO 13485 aligned, with a free consultation and customer ownership of source code, schematics and Gerbers.",
+      "why_now": null,
+      "evidence": [
+        "https://kyrosengineering.com/medical-devices"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://kyrosengineering.com/medical-devices",
+      "warm_path": "Northeast Ohio.",
+      "fit": 9,
+      "ice": null,
+      "ask": "Book the free consultation to review our AFE/BLE architecture and a DevKit-to-production plan.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your analog front-end and rigid-flex work in Cleveland is the exact skill set I'd like a second review from. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "afe",
+        "firmware",
+        "design-services"
+      ],
+      "opportunity": "Ohio hardware/firmware design partner for ECG analog front-end review, rigid-flex layout and design-for-manufacture handoff.",
+      "unknowns": "Rates and project minimums unpublished; consumer wearable references not shown; capacity unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 95,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 102,
+      "sendable": true,
+      "id": "kyros-engineering-kyros-engineering"
     },
     {
       "name": "Level Zero Health $6.9M pre-seed for continuous hormone wearable",
@@ -4420,7 +4602,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 99,
+      "rank": 103,
       "sendable": false,
       "id": "level-zero-health-6-9m-pre-seed-for-continuous-hormone-wearable-level-zero-healt"
     },
@@ -4459,7 +4641,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 100,
+      "rank": 104,
       "sendable": true,
       "id": "medtech-innovator-2027-accelerator-medtech-innovator"
     },
@@ -4506,7 +4688,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 101,
+      "rank": 105,
       "sendable": false,
       "id": "meredith-kessler-meredith-kessler-inc"
     },
@@ -4551,7 +4733,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 102,
+      "rank": 106,
       "sendable": true,
       "id": "noop-ryanbr-noop-open-source"
     },
@@ -4595,7 +4777,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 103,
+      "rank": 107,
       "sendable": false,
       "id": "neurovus-neurovus"
     },
@@ -4635,7 +4817,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 104,
+      "rank": 108,
       "sendable": true,
       "id": "open-wearables-momentum-open-wearables-project"
     },
@@ -4674,7 +4856,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 105,
+      "rank": 109,
       "sendable": false,
       "id": "qualcomm-ventures-qualcomm"
     },
@@ -4713,7 +4895,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 106,
+      "rank": 110,
       "sendable": false,
       "id": "quinn-li-qualcomm-ventures"
     },
@@ -4753,7 +4935,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 107,
+      "rank": 111,
       "sendable": false,
       "id": "redalpine-redalpine"
     },
@@ -4792,7 +4974,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 108,
+      "rank": 112,
       "sendable": true,
       "id": "ryan-engel-cade-ventures"
     },
@@ -4836,7 +5018,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 109,
+      "rank": 113,
       "sendable": false,
       "id": "ultrahuman-x-hyrox-bengaluru-title-partner-ultrahuman"
     },
@@ -4878,7 +5060,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 110,
+      "rank": 114,
       "sendable": false,
       "id": "whoop-raises-575m-series-g-at-10-1b-led-by-collaborative-fund-whoop"
     },
@@ -4922,7 +5104,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 111,
+      "rank": 115,
       "sendable": false,
       "id": "whoop-x-diplo-s-run-club-whoop"
     },
@@ -4968,7 +5150,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 112,
+      "rank": 116,
       "sendable": true,
       "id": "wearables-hf-registry-nct07650669-cleveland-clinic-with-case-western-reserve-uni"
     },
@@ -5008,7 +5190,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 113,
+      "rank": 117,
       "sendable": false,
       "id": "wearlinq-14m-series-a-aix-ventures-for-wireless-6-lead-ecg-wearable-wearlinq"
     },
@@ -5051,7 +5233,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 114,
+      "rank": 118,
       "sendable": false,
       "id": "withings-x-triathlon-annette-k-paris-indoor-triathlon-withings"
     },
@@ -5103,7 +5285,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 115,
+      "rank": 119,
       "sendable": true,
       "id": "amp-amp-fit-inc"
     },
@@ -5143,7 +5325,7 @@
       "score": 95,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 116,
+      "rank": 120,
       "sendable": true,
       "id": "r-quantifiedself-reddit"
     },
@@ -5188,7 +5370,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 117,
+      "rank": 121,
       "sendable": true,
       "id": "techdoctor-selfbase-health-portal-techdoctor-inc"
     },
@@ -5234,7 +5416,7 @@
       "score": 94,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 118,
+      "rank": 122,
       "sendable": true,
       "id": "uh-haslam-sports-innovation-center-university-hospitals-cleveland"
     },
@@ -5277,7 +5459,7 @@
       "score": 92,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 119,
+      "rank": 123,
       "sendable": false,
       "id": "oura-api-cuts-off-gen3-users-without-paid-membership-oura"
     },
@@ -5321,7 +5503,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 120,
+      "rank": 124,
       "sendable": false,
       "id": "fda-closes-whoop-warning-letter-on-blood-pressure-insights-whoop-us-fda"
     },
@@ -5364,7 +5546,7 @@
       "score": 91,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 121,
+      "rank": 125,
       "sendable": true,
       "id": "sparkyfitness-codewithcj-sparkyfitness-open-source"
     },
@@ -5404,7 +5586,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 122,
+      "rank": 126,
       "sendable": false,
       "id": "accelerating-angels-accelerating-angels"
     },
@@ -5443,7 +5625,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 123,
+      "rank": 127,
       "sendable": true,
       "id": "achal-upadhyaya-interlagos"
     },
@@ -5493,7 +5675,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 124,
+      "rank": 128,
       "sendable": true,
       "id": "adaptive-and-wheelchair-sports-ohio-adaptive-sports-ohio"
     },
@@ -5542,7 +5724,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 125,
+      "rank": 129,
       "sendable": true,
       "id": "akron-zips-esports-the-university-of-akron-esports"
     },
@@ -5589,7 +5771,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 126,
+      "rank": 130,
       "sendable": true,
       "id": "allie-reichert-allie-reichert-pb-the-pickle-lodge"
     },
@@ -5646,7 +5828,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 127,
+      "rank": 131,
       "sendable": true,
       "id": "alma-nutrition-coach-alma-nutrition-inc"
     },
@@ -5691,9 +5873,55 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 128,
+      "rank": 132,
       "sendable": false,
       "id": "amazfit-helio-strap-99-and-helio-strap-pro-for-hyrox-zepp-health-amazfit"
+    },
+    {
+      "name": "Ambiq (heartKIT / sleepKIT AI Developer Kits)",
+      "org": "Ambiq (heartKIT / sleepKIT AI Developer Kits)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own pages: open-source ADKs for cardiac signal processing (denoise, ECG/PPG segmentation, rhythm) and on-device sleep staging for Apollo ultra-low-power SoCs, plus neuralSPOT SDK, aimed at wearables, smart rings and health devices.",
+      "why_now": null,
+      "evidence": [
+        "https://ambiq.com/ai/ai-developer-kits-adks/",
+        "https://ambiq.com/ai/sdk/",
+        "https://ambiq.com/partnerships/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://ambiq.com/ai/ai-developer-kits-adks/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Evaluate heartKIT/sleepKIT on a dev board and ask Ambiq about a design-partner path for a ring.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your heartKIT and sleepKIT workspaces look like a useful baseline for our ring roadmap. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2026-04-22",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "mcu",
+        "ring",
+        "sleep",
+        "chip-vendor"
+      ],
+      "opportunity": "Ultra-low-power MCU candidate for the later ring and a source of open ECG/sleep model baselines.",
+      "unknowns": "No explicit startup program found; Vybe's proprietary DSP may not need these models; sample/FAE access unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 133,
+      "sendable": true,
+      "id": "ambiq-heartkit-sleepkit-ai-developer-kits-ambiq-heartkit-sleepkit-ai-developer-k"
     },
     {
       "name": "Barrett Piper",
@@ -5736,7 +5964,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 129,
+      "rank": 134,
       "sendable": false,
       "id": "barrett-piper-west-licking-oh-fire-district"
     },
@@ -5787,7 +6015,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 130,
+      "rank": 135,
       "sendable": true,
       "id": "brazilian-jiu-jitsu-northeast-ohio-academies-ibjjf-ruled-competition-gt-brazilia"
     },
@@ -5826,9 +6054,54 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 131,
+      "rank": 136,
       "sendable": true,
       "id": "chris-gammell-the-amp-hour-podcast"
+    },
+    {
+      "name": "Cloud2GND",
+      "org": "Cloud2GND",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Bluetooth engineering firm listed as a Nordic Design Partner (Kentucky): protocol stacks, product development, Bluetooth qualification help, test automation with PTS, and review of hardware for battery life and RF range.",
+      "why_now": null,
+      "evidence": [
+        "https://cloud2gnd.com/product-development/",
+        "https://www.nordicsemi.com/Resources/Nordic-Partners/Design-Partners"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://cloud2gnd.com/product-development/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Ask for scoping help on Bluetooth qualification and a Nordic-based firmware review.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your Bluetooth qualification and Nordic firmware experience is what I'd like to scope. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Kentucky",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "midwest",
+        "ble",
+        "qualification",
+        "nordic"
+      ],
+      "opportunity": "Nearby-region BLE firmware and Bluetooth qualification consultant.",
+      "unknowns": "Rates unpublished; startup minimum engagement unknown; wearable ECG references not named.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 137,
+      "sendable": true,
+      "id": "cloud2gnd-cloud2gnd"
     },
     {
       "role": null,
@@ -5876,7 +6149,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 132,
+      "rank": 138,
       "sendable": true,
       "id": "college-club-wrestling-ncwa-ohio-teams-national-collegiate-wrestling-association"
     },
@@ -5921,7 +6194,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 133,
+      "rank": 139,
       "sendable": false,
       "id": "columbus-fury-columbus-fury-major-league-volleyball"
     },
@@ -5960,7 +6233,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 134,
+      "rank": 140,
       "sendable": true,
       "id": "conor-allison-wareable"
     },
@@ -6016,7 +6289,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 135,
+      "rank": 141,
       "sendable": true,
       "id": "endorphins-running-endorphins-running"
     },
@@ -6060,7 +6333,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 136,
+      "rank": 142,
       "sendable": false,
       "id": "exposure-awareness-system-crg-vigilife-cornerstone-research-group-crg-defense"
     },
@@ -6108,7 +6381,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 137,
+      "rank": 143,
       "sendable": true,
       "id": "gt-brazilian-jiu-jitsu-gt-brazilian-jiu-jitsu-academy"
     },
@@ -6151,7 +6424,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 138,
+      "rank": 144,
       "sendable": false,
       "id": "google-health-api-adds-ecg-irn-and-hrv-webhooks-google"
     },
@@ -6190,7 +6463,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 139,
+      "rank": 145,
       "sendable": false,
       "id": "harpreet-rai-former-oura-ceo-independent-angel"
     },
@@ -6229,7 +6502,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 140,
+      "rank": 146,
       "sendable": false,
       "id": "healthtech-capital-healthtech-capital"
     },
@@ -6267,7 +6540,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 141,
+      "rank": 147,
       "sendable": false,
       "id": "hivers-strivers-hivers-strivers-capital"
     },
@@ -6311,7 +6584,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 142,
+      "rank": 148,
       "sendable": false,
       "id": "hume-health-x-cowdray-park-polo-club-hume-health"
     },
@@ -6350,7 +6623,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 143,
+      "rank": 149,
       "sendable": false,
       "id": "julien-blin-the-upside-newsletter"
     },
@@ -6398,7 +6671,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 144,
+      "rank": 150,
       "sendable": true,
       "id": "kent-state-esports-kent-state-university-esports"
     },
@@ -6440,7 +6713,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 145,
+      "rank": 151,
       "sendable": false,
       "id": "leo-polovets-humba-ventures"
     },
@@ -6479,9 +6752,55 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 146,
+      "rank": 152,
       "sendable": true,
       "id": "lunar-ventures-lunar-ventures"
+    },
+    {
+      "name": "MAGNET (Manufacturing Advocacy & Growth Network)",
+      "org": "MAGNET (Manufacturing Advocacy & Growth Network)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Cleveland nonprofit whose New Ventures team works with physical-product and hard-tech startups on prototyping and scale-up; runs the Mspire annual pitch competition for Ohio startups (prizes as MAGNET project services) and the Advanced Manufacturing Fund with JumpStart.",
+      "why_now": null,
+      "evidence": [
+        "https://www.manufacturingsuccess.org/services/consulting-services/new-ventures",
+        "https://www.manufacturingsuccess.org/services/consulting-services/new-product-design-launch",
+        "https://jumpstartinc.org/coe/advanced-manufacturing"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.manufacturingsuccess.org/services/consulting-services/new-ventures",
+      "warm_path": "Ohio hardware network.",
+      "fit": 8,
+      "ice": null,
+      "ask": "Request a New Ventures intake and ask for supplier introductions for flex/PCBA and enclosures.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a New Ventures intake to get supplier introductions and a manufacturing roadmap. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Cleveland, OH",
+      "deadline": null,
+      "last_signal_date": "2026-02-12",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "accelerator",
+        "prototyping",
+        "non-dilutive"
+      ],
+      "opportunity": "Ohio supplier introductions, prototyping and scale-up advice, and non-dilutive Mspire prize services.",
+      "unknowns": "Fees unpublished; Mspire deadline for 2026-27 not found; electronics-specific depth unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 153,
+      "sendable": true,
+      "id": "magnet-manufacturing-advocacy-growth-network-magnet-manufacturing-advocacy-growt"
     },
     {
       "name": "Matt Evans",
@@ -6518,7 +6837,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 147,
+      "rank": 154,
       "sendable": true,
       "id": "matt-evans-techradar"
     },
@@ -6556,7 +6875,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 148,
+      "rank": 155,
       "sendable": true,
       "id": "michael-l-hicks-android-central"
     },
@@ -6597,7 +6916,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 149,
+      "rank": 156,
       "sendable": true,
       "id": "mick-halsband-lunar-ventures"
     },
@@ -6641,7 +6960,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 150,
+      "rank": 157,
       "sendable": false,
       "id": "mohican-trail-run-2027-mohican-100-ombc-ohio-mountain-bike-championship-series"
     },
@@ -6701,9 +7020,99 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 151,
+      "rank": 158,
       "sendable": true,
       "id": "myfitnesspal-myfitnesspal"
+    },
+    {
+      "name": "NAMSA (Northwood, OH)",
+      "org": "NAMSA (Northwood, OH)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Medical-device testing company headquartered in Northwood, Ohio; ISO/IEC 17025 and FDA ASCA biocompatibility accreditation at its Ohio lab; tests include cytotoxicity, sensitization, skin irritation (ISO 10993-23); states testing since 1967.",
+      "why_now": null,
+      "evidence": [
+        "https://namsa.com/services/testing/biocompatibility-testing/",
+        "https://namsa.com/wp-content/uploads/2024/11/ISO-17025-2017-OH-17OCT2024-09MAR2026-v018.pdf"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://namsa.com/services/testing/biocompatibility-testing/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Request a biological evaluation plan for skin-contact materials (housing, strap, electrodes).",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a biological evaluation plan for the skin-contact materials on an overnight band. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Northwood, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "biocompatibility",
+        "skin-contact",
+        "test-lab"
+      ],
+      "opportunity": "Ohio biocompatibility lab for skin-contact materials of an overnight band before consumer launch.",
+      "unknowns": "Prices and minimum study sizes unpublished; whether general-wellness skin-contact products need the full panel is a regulatory question for Vybe.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 159,
+      "sendable": true,
+      "id": "namsa-northwood-oh-namsa-northwood-oh"
+    },
+    {
+      "name": "Nordic Semiconductor Partner Program (Design Partners)",
+      "org": "Nordic Semiconductor Partner Program (Design Partners)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Nordic's own pages list Design Partners (hardware/RF, embedded software, antenna) and Solution Partners; customers reach them through the Nordic sales team and partner contact forms. Includes US firms such as CA Engineering (UT), Cloud2GND (KY), Softeq (TX) and S3 Connected Health (Ireland, wearable/implantable).",
+      "why_now": null,
+      "evidence": [
+        "https://www.nordicsemi.com/Resources/Nordic-Partners/Design-Partners",
+        "https://www.nordicsemi.com/Nordic-news/2021/06/The-Nordic-Partner-Program-strengthens-ties-with-design-and-solution-partners",
+        "https://blog.nordicsemi.com/getconnected/accelerating-customer-iot-journeys-with-the-nordic-partner-program"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.nordicsemi.com/Resources/Nordic-Partners/Design-Partners",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Contact Nordic sales via the partner contact form to be matched with a design partner for wearable BLE firmware and certification.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to be matched with a Nordic design partner experienced in wearable ECG. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ble",
+        "chip-vendor",
+        "firmware"
+      ],
+      "opportunity": "Vetted shortlist of BLE design/firmware partners and a route to Nordic field engineering.",
+      "unknowns": "Partner qualification requires an existing Nordic relationship; whether Vybe's chosen SoC is Nordic is unconfirmed; no startup-specific grants found.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 90,
+      "priority": "Medium",
+      "identity_needs_ok": false,
+      "rank": 160,
+      "sendable": true,
+      "id": "nordic-semiconductor-partner-program-design-partners-nordic-semiconductor-partne"
     },
     {
       "name": "Ohio Angel Collective",
@@ -6739,7 +7148,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 152,
+      "rank": 161,
       "sendable": false,
       "id": "ohio-angel-collective-ohio-angel-collective-managed-by-vessel"
     },
@@ -6786,7 +7195,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 153,
+      "rank": 162,
       "sendable": true,
       "id": "ohio-regional-training-center-ohio-rtc-ohio-rtc"
     },
@@ -6833,7 +7242,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 154,
+      "rank": 163,
       "sendable": true,
       "id": "ohiohealth-capital-city-half-quarter-marathon-2027-m3s-sports"
     },
@@ -6877,7 +7286,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 155,
+      "rank": 164,
       "sendable": true,
       "id": "openstrap-openstrap-open-source"
     },
@@ -6923,7 +7332,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 156,
+      "rank": 165,
       "sendable": false,
       "id": "oura-x-u-s-department-of-defense-navy-crew-study-army-afrl-oura"
     },
@@ -6965,7 +7374,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 157,
+      "rank": 166,
       "sendable": false,
       "id": "petteri-koponen-lifeline-ventures"
     },
@@ -7004,7 +7413,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 158,
+      "rank": 167,
       "sendable": true,
       "id": "point-nine-point-nine"
     },
@@ -7043,7 +7452,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 159,
+      "rank": 168,
       "sendable": false,
       "id": "portfolia-portfolia-women-s-health-femtech-active-aging-funds"
     },
@@ -7084,7 +7493,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 160,
+      "rank": 169,
       "sendable": true,
       "id": "product-hunt-coming-soon-launch-teaser-product-hunt"
     },
@@ -7129,7 +7538,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 161,
+      "rank": 170,
       "sendable": true,
       "id": "reach-fitness-reach-fitness-ohio"
     },
@@ -7167,7 +7576,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 162,
+      "rank": 171,
       "sendable": true,
       "id": "rachael-schultz-business-insider"
     },
@@ -7206,7 +7615,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 163,
+      "rank": 172,
       "sendable": true,
       "id": "rev1-ventures-rev1-ventures"
     },
@@ -7245,7 +7654,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 164,
+      "rank": 173,
       "sendable": true,
       "id": "robb-sutton-robbsutton-com"
     },
@@ -7284,7 +7693,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 165,
+      "rank": 174,
       "sendable": true,
       "id": "ryan-merket-runtimewire"
     },
@@ -7327,7 +7736,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 166,
+      "rank": 175,
       "sendable": false,
       "id": "sba-veteran-small-business-certification-vetcert-u-s-small-business-administrati"
     },
@@ -7367,7 +7776,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 167,
+      "rank": 176,
       "sendable": false,
       "id": "sahha-raises-1-2m-for-wearable-data-api-antler-supermoon-func-ventures-sahha"
     },
@@ -7411,7 +7820,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 168,
+      "rank": 177,
       "sendable": false,
       "id": "samsung-galaxy-x-nyc-run-clubs-almost-friday-run-club-midnight-runners-nycruns-s"
     },
@@ -7449,7 +7858,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 169,
+      "rank": 178,
       "sendable": false,
       "id": "samsung-ventures-samsung-venture-investment-corp-samsung-electronics"
     },
@@ -7488,7 +7897,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 170,
+      "rank": 179,
       "sendable": true,
       "id": "t3-performance-t3-performance"
     },
@@ -7528,7 +7937,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 171,
+      "rank": 180,
       "sendable": true,
       "id": "timothy-martens-vaark-ventures"
     },
@@ -7567,7 +7976,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 172,
+      "rank": 181,
       "sendable": false,
       "id": "true-ventures-true-ventures"
     },
@@ -7615,7 +8024,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 173,
+      "rank": 182,
       "sendable": false,
       "id": "university-hospitals-cleveland-marathon-2027-50th-anniversary-cleveland-marathon"
     },
@@ -7653,7 +8062,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 174,
+      "rank": 183,
       "sendable": false,
       "id": "vaark-ventures-vaark-ventures"
     },
@@ -7698,7 +8107,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": true,
-      "rank": 175,
+      "rank": 184,
       "sendable": false,
       "id": "veteran-recreation-ohio-veteran-recreation-ohio"
     },
@@ -7737,7 +8146,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 176,
+      "rank": 185,
       "sendable": false,
       "id": "virpi-tuomivaara-oura-co-founder-angel"
     },
@@ -7787,7 +8196,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 177,
+      "rank": 186,
       "sendable": true,
       "id": "youth-and-adult-bouldering-akron-rock-mill-climbing-yoga-fitness-akron-usa-climb"
     },
@@ -7849,7 +8258,7 @@
       "score": 90,
       "priority": "Medium",
       "identity_needs_ok": false,
-      "rank": 178,
+      "rank": 187,
       "sendable": true,
       "id": "freddy-freddy-freddy-coach"
     },
@@ -7891,7 +8300,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 179,
+      "rank": 188,
       "sendable": true,
       "id": "mydatahelps-careevolution"
     },
@@ -7935,7 +8344,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 180,
+      "rank": 189,
       "sendable": true,
       "id": "synheart-synheart-mila-ventures"
     },
@@ -7978,7 +8387,7 @@
       "score": 89,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 181,
+      "rank": 190,
       "sendable": true,
       "id": "thryve-thryve"
     },
@@ -8021,7 +8430,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 182,
+      "rank": 191,
       "sendable": false,
       "id": "hhs-secretary-kennedy-every-american-wearing-a-wearable-within-four-years-us-hhs"
     },
@@ -8066,7 +8475,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 183,
+      "rank": 192,
       "sendable": false,
       "id": "itc-bans-ultrahuman-rings-in-us-over-oura-patents-ringconn-takes-license-oura-ul"
     },
@@ -8110,7 +8519,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 184,
+      "rank": 193,
       "sendable": false,
       "id": "polar-loop-199-99-screenless-band-no-subscription-polar"
     },
@@ -8154,7 +8563,7 @@
       "score": 86,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 185,
+      "rank": 194,
       "sendable": false,
       "id": "whoop-5-0-mg-launch-with-199-359-yr-membership-tiers-whoop"
     },
@@ -8194,7 +8603,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 186,
+      "rank": 195,
       "sendable": false,
       "id": "aix-ventures-aix-ventures"
     },
@@ -8233,7 +8642,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 187,
+      "rank": 196,
       "sendable": false,
       "id": "archangels-akron-regional-change-angels-university-of-akron-research-foundation"
     },
@@ -8282,7 +8691,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 188,
+      "rank": 197,
       "sendable": true,
       "id": "aaron-handy-legacy-martial-arts-academy-ohio-judo"
     },
@@ -8326,7 +8735,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 189,
+      "rank": 198,
       "sendable": true,
       "id": "adaptive-sports-ohio-adaptive-sports-ohio"
     },
@@ -8366,7 +8775,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 190,
+      "rank": 199,
       "sendable": true,
       "id": "anirvan-chowdhury-qualcomm-ventures"
     },
@@ -8414,7 +8823,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 191,
+      "rank": 200,
       "sendable": true,
       "id": "bathhouse-bathhouse"
     },
@@ -8453,7 +8862,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 192,
+      "rank": 201,
       "sendable": true,
       "id": "bill-gordon-beyond-the-stack-substack"
     },
@@ -8492,7 +8901,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 193,
+      "rank": 202,
       "sendable": false,
       "id": "blume-ventures-blume-ventures"
     },
@@ -8537,7 +8946,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 194,
+      "rank": 203,
       "sendable": false,
       "id": "buckeye-wheelchair-games-paralyzed-veterans-of-america-buckeye-chapter"
     },
@@ -8585,7 +8994,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 195,
+      "rank": 204,
       "sendable": true,
       "id": "chris-kriebel-tko-brazilian-jiu-jitsu-academy-team-kriebel-ohio-nova-uniao-ohio"
     },
@@ -8624,7 +9033,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 196,
+      "rank": 205,
       "sendable": true,
       "id": "cleveland-entrepreneurs-by-ohio-startup-network-ohio-startup-network"
     },
@@ -8669,7 +9078,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 197,
+      "rank": 206,
       "sendable": false,
       "id": "elizabeth-neag-u-s-paralympics-cycling"
     },
@@ -8707,7 +9116,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 198,
+      "rank": 207,
       "sendable": false,
       "id": "founder-institute-veteran-accelerator-founder-institute-powered-by-jpmorganchase"
     },
@@ -8752,7 +9161,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 199,
+      "rank": 208,
       "sendable": false,
       "id": "gina-mancuso-competitive-hyrox-athlete-uva-online-m-s-in-data-science"
     },
@@ -8790,7 +9199,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 200,
+      "rank": 209,
       "sendable": true,
       "id": "hlth-usa-2026-investor-connect-hlth"
     },
@@ -8827,7 +9236,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 201,
+      "rank": 210,
       "sendable": true,
       "id": "humba-ventures-humba-ventures"
     },
@@ -8872,7 +9281,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 202,
+      "rank": 211,
       "sendable": true,
       "id": "joules-joules-joules-cc"
     },
@@ -8911,7 +9320,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 203,
+      "rank": 212,
       "sendable": false,
       "id": "jumpstart-ventures-jumpstart-inc"
     },
@@ -8948,7 +9357,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 204,
+      "rank": 213,
       "sendable": false,
       "id": "kickstart-midwest-2026-startup-world-cup-ohio-regional-kickstart-midwest"
     },
@@ -8995,7 +9404,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 205,
+      "rank": 214,
       "sendable": true,
       "id": "leyen-zulueta-mat-lab-bjj"
     },
@@ -9038,7 +9447,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 206,
+      "rank": 215,
       "sendable": true,
       "id": "mogl-nil-marketplace-for-brands-mogl"
     },
@@ -9084,7 +9493,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 207,
+      "rank": 216,
       "sendable": true,
       "id": "matthew-marquardt-pro-ironman-triathlete-the-ohio-state-university-college-of-me"
     },
@@ -9123,7 +9532,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 208,
+      "rank": 217,
       "sendable": true,
       "id": "mayo-clinic-platform-accelerate-mayo-clinic-platform"
     },
@@ -9166,7 +9575,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 209,
+      "rank": 218,
       "sendable": true,
       "id": "opendorse-brand-nil-marketplace-opendorse"
     },
@@ -9212,7 +9621,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 210,
+      "rank": 219,
       "sendable": true,
       "id": "pace-pace-pacetraining-co"
     },
@@ -9266,7 +9675,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 211,
+      "rank": 220,
       "sendable": true,
       "id": "peloton-peloton-interactive-inc"
     },
@@ -9318,9 +9727,95 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 212,
+      "rank": 221,
       "sendable": true,
       "id": "platelens-visiontech-solutions-llc"
+    },
+    {
+      "name": "Priority Designs",
+      "org": "Priority Designs",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Columbus, Ohio product development firm (ISO 13485 certified for design and development) with a 50,000 sq ft facility, nearly half given to prototyping, soft tooling, and wearables a stated big part of business; built OSU's Conity Motion Kit wearable. Hands off to manufacturing partners.",
+      "why_now": null,
+      "evidence": [
+        "https://www.todaysmedicaldevelopments.com/article/designing-medical-devices-for-every-user-priority-design-ohio-state-university/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.todaysmedicaldevelopments.com/article/designing-medical-devices-for-every-user-priority-design-ohio-state-university/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Ask for an intro call on industrial design, strap/enclosure prototyping and soft tooling.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your wearable prototyping lab in Columbus is relevant to our strap and housing design. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": "2024-09-03",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "industrial-design",
+        "prototyping"
+      ],
+      "opportunity": "Ohio industrial design and prototyping studio for enclosure, strap and ring form-factor work and user testing.",
+      "unknowns": "Own website not fetched, so contact URL not confirmed (article only, 2024); fees unpublished; electronics depth not stated.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 222,
+      "sendable": true,
+      "id": "priority-designs-priority-designs"
+    },
+    {
+      "name": "Punch Through",
+      "org": "Punch Through",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "BLE design and engineering for connected medical devices, 15 years at protocol level, FDA/IEC 62304 documentation, plus the LightBlue debugging app used by 125,000+ engineers monthly.",
+      "why_now": null,
+      "evidence": [
+        "https://punchthrough.com/services/bluetooth-low-energy/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://punchthrough.com/services/bluetooth-low-energy/",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Request a BLE architecture review covering bonding, GATT design and OTA for a streaming ECG band.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your BLE-as-a-system approach matters because our SDK depends on a stable GATT design. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": "2025-08-12",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ble",
+        "sdk",
+        "firmware"
+      ],
+      "opportunity": "BLE architecture and security specialist for the SDK-facing GATT design and iOS/Android pairing robustness.",
+      "unknowns": "Location, rates and startup engagement size unpublished; focus skews to regulated/implantable devices.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 223,
+      "sendable": true,
+      "id": "punch-through-punch-through"
     },
     {
       "name": "Quantified Self (Show & Tell meetups + QS Forum)",
@@ -9357,7 +9852,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 213,
+      "rank": 224,
       "sendable": true,
       "id": "quantified-self-show-tell-meetups-qs-forum-quantified-self-labs"
     },
@@ -9401,7 +9896,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 214,
+      "rank": 225,
       "sendable": true,
       "id": "runreach-run-club-and-race-sponsorship-network-runreach"
     },
@@ -9440,7 +9935,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 215,
+      "rank": 226,
       "sendable": false,
       "id": "samsung-next-samsung-electronics"
     },
@@ -9483,7 +9978,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 216,
+      "rank": 227,
       "sendable": false,
       "id": "samsung-team-galaxy-x-college-nil-cade-klubnik-jeremiyah-love-flau-jae-johnson-s"
     },
@@ -9533,7 +10028,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 217,
+      "rank": 228,
       "sendable": true,
       "id": "scholastic-esports-ohio-esports-ohio-nasef-certified-affiliate-ohsaa-supported-s"
     },
@@ -9580,7 +10075,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 218,
+      "rank": 229,
       "sendable": true,
       "id": "simple-muscle-simple-muscle-vladimir-haltakov"
     },
@@ -9623,9 +10118,55 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 219,
+      "rank": 230,
       "sendable": true,
       "id": "summit-athletic-club-summit-athletic-club-sarc"
+    },
+    {
+      "name": "Texas Instruments (TIDA-010270 / 010280 / 010288 ECG reference designs)",
+      "org": "Texas Instruments (TIDA-010270 / 010280 / 010288 ECG reference designs)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own reference-design pages for BLE ECG patch/Holter designs using AFE4960 and AFE159RP4 with CC2674R10/CC2340R5 BLE MCUs, with design guides, files and firmware; the boards are not for sale. The TIDA-010288 adds an edge-AI arrhythmia accelerator.",
+      "why_now": null,
+      "evidence": [
+        "https://www.ti.com/tool/TIDA-010270",
+        "https://www.ti.com/tool/TIDA-010280",
+        "https://www.ti.com/tool/TIDA-010288"
+      ],
+      "channel": "apply",
+      "contact_url": "https://www.ti.com/tool/TIDA-010280",
+      "warm_path": null,
+      "fit": 8,
+      "ice": null,
+      "ask": "Download the design files and open a TI E2E/support request for the AFE4960 on a single-lead band.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your TIDA ECG reference designs are the baseline I'd like to compare against and ask support questions on. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "afe",
+        "ecg",
+        "reference-design",
+        "chip-vendor"
+      ],
+      "opportunity": "Free ECG + BLE reference designs to cross-check Vybe's AFE and layout choices; second-source chain to ADI.",
+      "unknowns": "No TI startup-program page found; boards not for sale (self-build); support level for small customers unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 85,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 231,
+      "sendable": true,
+      "id": "texas-instruments-tida-010270-010280-010288-ecg-reference-designs-texas-instrume"
     },
     {
       "name": "Veteran Angel Network (VAN)",
@@ -9660,7 +10201,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 220,
+      "rank": 232,
       "sendable": false,
       "id": "veteran-angel-network-van-context-ventures"
     },
@@ -9699,7 +10240,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 221,
+      "rank": 233,
       "sendable": true,
       "id": "vive-2027-startup-pitch-investor-connect-hlth-chime-vive"
     },
@@ -9742,7 +10283,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 222,
+      "rank": 234,
       "sendable": false,
       "id": "whoop-x-notre-dame-athletics-whoop"
     },
@@ -9781,7 +10322,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 223,
+      "rank": 235,
       "sendable": true,
       "id": "wearable-data-builders-by-rook-rook"
     },
@@ -9819,7 +10360,7 @@
       "score": 85,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 224,
+      "rank": 236,
       "sendable": true,
       "id": "r-hyrox-reddit"
     },
@@ -9863,7 +10404,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 225,
+      "rank": 237,
       "sendable": true,
       "id": "ieee-young-professionals-amplified-cleveland-2026-ieee-cleveland-section"
     },
@@ -9906,7 +10447,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 226,
+      "rank": 238,
       "sendable": true,
       "id": "lightship-bootcamp-akron-black-tech-week"
     },
@@ -9950,7 +10491,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 227,
+      "rank": 239,
       "sendable": true,
       "id": "justin-github-rlarson7-ilfirin-longevity-coaching-project"
     },
@@ -9994,7 +10535,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 228,
+      "rank": 240,
       "sendable": true,
       "id": "fitbit-grafana-arpanghosh8453-fitbit-grafana-open-source"
     },
@@ -10038,7 +10579,7 @@
       "score": 84,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 229,
+      "rank": 241,
       "sendable": true,
       "id": "oura-toolkit-spxrogers-oura-toolkit-open-source"
     },
@@ -10081,7 +10622,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 230,
+      "rank": 242,
       "sendable": true,
       "id": "big-team-challenge-big-team-challenge"
     },
@@ -10125,7 +10666,7 @@
       "score": 83,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 231,
+      "rank": 243,
       "sendable": true,
       "id": "terra-terra-tryterra-co"
     },
@@ -10169,7 +10710,7 @@
       "score": 81,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 232,
+      "rank": 244,
       "sendable": false,
       "id": "rock-health-h1-2026-7-4b-digital-health-funding-wearables-are-the-platform-story"
     },
@@ -10208,7 +10749,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 233,
+      "rank": 245,
       "sendable": false,
       "id": "71-70-angels-71-70-angels-rev1-ventures"
     },
@@ -10256,7 +10797,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 234,
+      "rank": 246,
       "sendable": true,
       "id": "akron-boxing-academy-akron-boxing-academy"
     },
@@ -10300,7 +10841,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 235,
+      "rank": 247,
       "sendable": false,
       "id": "akron-rubberducks-akron-rubberducks-double-a-cleveland-guardians-affiliate"
     },
@@ -10345,7 +10886,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 236,
+      "rank": 248,
       "sendable": false,
       "id": "akron-zips-nil-marketplace-opendorse-opendorse-university-of-akron-athletics"
     },
@@ -10394,7 +10935,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 237,
+      "rank": 249,
       "sendable": true,
       "id": "amateur-olympic-style-boxing-ohio-lbc-usa-boxing-ohio-local-boxing-committee"
     },
@@ -10439,7 +10980,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 238,
+      "rank": 250,
       "sendable": false,
       "id": "austin-womack-rugged-athlete-training"
     },
@@ -10479,7 +11020,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 239,
+      "rank": 251,
       "sendable": true,
       "id": "btw-meetup-akron-black-tech-week"
     },
@@ -10527,7 +11068,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 240,
+      "rank": 252,
       "sendable": true,
       "id": "baldwin-wallace-university-women-s-wrestling-baldwin-wallace-university"
     },
@@ -10574,7 +11115,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 241,
+      "rank": 253,
       "sendable": true,
       "id": "bryce-hepner-ohio-state-buckeyes-wrestling"
     },
@@ -10618,7 +11159,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 242,
+      "rank": 254,
       "sendable": false,
       "id": "coros-x-nextgen-high-school-runners-program-nil-coros"
     },
@@ -10673,7 +11214,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 243,
+      "rank": 255,
       "sendable": true,
       "id": "caliber-caliber-fitness-inc"
     },
@@ -10713,7 +11254,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 244,
+      "rank": 256,
       "sendable": false,
       "id": "capital-factory-texas-fund-center-for-dual-use-innovation-capital-factory"
     },
@@ -10753,7 +11294,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 245,
+      "rank": 257,
       "sendable": true,
       "id": "cedars-sinai-accelerator-cedars-sinai"
     },
@@ -10798,7 +11339,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 246,
+      "rank": 258,
       "sendable": true,
       "id": "cleveland-fencing-academy-cleveland-fencing-academy"
     },
@@ -10837,7 +11378,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 247,
+      "rank": 259,
       "sendable": true,
       "id": "dexcom-dexcom-ventures-dexcom"
     },
@@ -10876,7 +11417,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 248,
+      "rank": 260,
       "sendable": false,
       "id": "ec-angels-the-entrepreneurs-center-dayton"
     },
@@ -10917,9 +11458,52 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 249,
+      "rank": 261,
       "sendable": false,
       "id": "eli-lilly-makes-equity-investment-in-oura-after-lillydirect-glp-1-tie-up-eli-lil"
+    },
+    {
+      "name": "FlexiPCB",
+      "org": "FlexiPCB",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own medical page: ISO 13485 flex, prototype quantities as low as 5 pieces for medical, no MOQ and no film tooling fee on prototypes via LDI, 24-hour express, free DFM review.",
+      "why_now": null,
+      "evidence": [
+        "https://flexipcb.com/solutions/by-industry/medical-flex-pcb/",
+        "https://flexipcb.com/services/flex-prototype/"
+      ],
+      "channel": "quote form",
+      "contact_url": "https://flexipcb.com/services/flex-prototype/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Request a DFM-checked quote for a 1-8 layer flex ECG tail.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a DFM-checked flex prototype quote. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Shijiazhuang, China",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "flex-pcb",
+        "offshore"
+      ],
+      "opportunity": "Low-cost flex iterations during DevKit design.",
+      "unknowns": "Located in Hebei, China; pricing unpublished; IP/export considerations.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 262,
+      "sendable": true,
+      "id": "flexipcb-flexipcb"
     },
     {
       "hunt": "sponsorship",
@@ -10964,7 +11548,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 250,
+      "rank": 263,
       "sendable": true,
       "id": "gabriel-feinberg-ohio-state-buckeyes-men-s-fencing"
     },
@@ -11007,7 +11591,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 251,
+      "rank": 264,
       "sendable": false,
       "id": "google-fitbit-pixel-watch-x-stephen-curry-performance-advisor-google-fitbit"
     },
@@ -11054,7 +11638,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 252,
+      "rank": 265,
       "sendable": true,
       "id": "grace-norman-team-usa-para-triathlon-para-cycling"
     },
@@ -11100,7 +11684,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 253,
+      "rank": 266,
       "sendable": false,
       "id": "graham-fach-pba-touring-pro"
     },
@@ -11138,7 +11722,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 254,
+      "rank": 267,
       "sendable": true,
       "id": "greg-morris-gregmorris-co-uk"
     },
@@ -11182,7 +11766,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 255,
+      "rank": 268,
       "sendable": true,
       "id": "hyrox-sponsorships-brand-partner-inquiry-form-hyrox"
     },
@@ -11220,7 +11804,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 256,
+      "rank": 269,
       "sendable": false,
       "id": "healthtech-week-summit-2027-jpm-week-startup-pitch-competition-healthtech-week-m"
     },
@@ -11264,9 +11848,52 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 257,
+      "rank": 270,
       "sendable": false,
       "id": "idc-611-5m-wearables-shipped-in-2025-625-2m-forecast-for-2026-wrist-worn-down-4-"
+    },
+    {
+      "name": "Illuminious",
+      "org": "Illuminious",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "US-headquartered (Palo Alto) electronics manufacturing partner advertising a 'Startup Bridge Program' with no MOQ, 72-hour quick-turn PCBA, 24-hour DFM feedback and a US project manager; PCB/flex/rigid-flex, wearable enclosures, NPI EVT/DVT/PVT, ISO 13485. Production is offshore (Batam, Shenzhen) with US fulfillment per its own posts.",
+      "why_now": null,
+      "evidence": [
+        "https://linkedin.com/company/illuminious"
+      ],
+      "channel": "LinkedIn",
+      "contact_url": "https://linkedin.com/company/illuminious",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask for Startup Bridge Program terms and a DFM review of a flex-based band.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your Startup Bridge Program with no MOQ is relevant to our early builds. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Palo Alto, CA (production Indonesia/China)",
+      "deadline": null,
+      "last_signal_date": "2026-08-26",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "startup-program",
+        "flex",
+        "offshore"
+      ],
+      "opportunity": "Startup-oriented NPI route with no MOQ for early builds and a path to offshore volume if US capacity is too costly.",
+      "unknowns": "Only LinkedIn evidence read, own website not fetched; offshore production; 'no MOQ' scope and program terms unverified; small team (5 employees per LinkedIn).",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 271,
+      "sendable": true,
+      "id": "illuminious-illuminious"
     },
     {
       "name": "Interlagos",
@@ -11301,7 +11928,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 258,
+      "rank": 272,
       "sendable": false,
       "id": "interlagos-interlagos"
     },
@@ -11340,7 +11967,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 259,
+      "rank": 273,
       "sendable": false,
       "id": "inventure-inventure-vc"
     },
@@ -11389,9 +12016,97 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 260,
+      "rank": 274,
       "sendable": true,
       "id": "judo-ohio-clubs-usjf-usa-judo-clubs-in-ohio-konan-yudanshakai-e-g-chu-to-bu-judo"
+    },
+    {
+      "name": "LiPol Battery North America",
+      "org": "LiPol Battery North America",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "North American subsidiary of a Shenzhen lithium-polymer maker: 1,700+ models, ultra-thin (0.5 mm), round cells for smart rings (10-50 mm), custom cells from 5 mAh, 3-5 day samples, and copy about serving 5 prototype cells up to 500,000 units.",
+      "why_now": null,
+      "evidence": [
+        "https://www.lipolbatteries.com/battery",
+        "https://www.lipolbatteries.com/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.lipolbatteries.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Request prototype cells for a curved band cell and a round ring cell.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like prototype curved and round cells for an overnight wearable. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "North America (remote), manufacturing in China",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "battery",
+        "ring"
+      ],
+      "opportunity": "Small-lot sample cells for the band now and ring-shaped cells later.",
+      "unknowns": "Formal MOQ and pricing not published; cells made in China; UN38.3/IEC 62133 documents to be requested.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 275,
+      "sendable": true,
+      "id": "lipol-battery-north-america-lipol-battery-north-america"
+    },
+    {
+      "name": "Libra Industries",
+      "org": "Libra Industries",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Ohio EMS (Dayton and Willoughby Hills) with ISO 13485, IPC Class 2/3, fine-pitch BGA/QFN, rapid-turn prototyping/NPI readiness and high-mix low-to-mid volume stated on its PCBA capabilities page. A 2014 trade-magazine profile said working with startups is 'rare' for Libra, so fit is conditional.",
+      "why_now": null,
+      "evidence": [
+        "https://www.libraindustries.com/capabilities/pcba/",
+        "https://www.libraindustries.com/",
+        "https://circuitsassembly.com/ca/index.php/magazine/24214-libra-industries-1409"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.libraindustries.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask whether Libra takes early-stage hardware programs and at what volume it becomes interesting.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'm planning a later low-volume build and wanted to ask whether early-stage programs fit Libra. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Dayton and Willoughby Hills, OH",
+      "deadline": null,
+      "last_signal_date": "2026-02-17",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "ems",
+        "iso13485"
+      ],
+      "opportunity": "Regional EMS for a later scale-up (hundreds to thousands of units) once DevKit learning is done.",
+      "unknowns": "Startup appetite (2014 article is dated and says startups are rare); minimums and pricing unpublished; wearable/flex experience not stated.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 276,
+      "sendable": true,
+      "id": "libra-industries-libra-industries"
     },
     {
       "hunt": "sponsorship",
@@ -11437,7 +12152,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 261,
+      "rank": 277,
       "sendable": false,
       "id": "matt-wenning-ludus-magnus-gym"
     },
@@ -11475,7 +12190,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 262,
+      "rank": 278,
       "sendable": false,
       "id": "matteo-franceschetti-eight-sleep-co-founder-ceo"
     },
@@ -11524,7 +12239,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 263,
+      "rank": 279,
       "sendable": true,
       "id": "mya-migliore-kent-state-golden-flashes-women-s-gymnastics"
     },
@@ -11562,9 +12277,54 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 264,
+      "rank": 280,
       "sendable": true,
       "id": "northwestern-medicine-techstars-healthcare-accelerator-class-3-techstars-northwe"
+    },
+    {
+      "name": "Novel Bits",
+      "org": "Novel Bits",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Indiana-based vendor-neutral Bluetooth LE consulting and training (listed as a Nordic Partner): architecture and GATT review, packet sniffing, power analysis; ships a sniffer loaner within the US. On-site workshops paused per its page.",
+      "why_now": null,
+      "evidence": [
+        "https://novelbits.io/consulting/",
+        "https://novelbits.io/",
+        "https://response.nordicsemi.com/en/partner-program-novel-bits"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://novelbits.io/consulting/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Book a scoping call for a BLE power and capture review.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. A vendor-neutral BLE power and capture review is what I'd like to book. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Indiana",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "midwest",
+        "ble",
+        "power"
+      ],
+      "opportunity": "Low-cost BLE debugging and battery-life review before DevKit v0.1 ships.",
+      "unknowns": "Rates unpublished; solo practice, capacity limited; no wearable ECG references.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 281,
+      "sendable": true,
+      "id": "novel-bits-novel-bits"
     },
     {
       "name": "Ohio State Triathlon Club",
@@ -11608,7 +12368,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 265,
+      "rank": 282,
       "sendable": true,
       "id": "ohio-state-triathlon-club-the-ohio-state-university-triathlon-club-tribucks"
     },
@@ -11656,7 +12416,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 266,
+      "rank": 283,
       "sendable": true,
       "id": "ohio-high-school-contact-sports-ohsaa-gsr-20-3-ohio-high-school-athletic-associa"
     },
@@ -11699,7 +12459,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 267,
+      "rank": 284,
       "sendable": false,
       "id": "oura-x-professional-tennis-players-association-ptpa-oura"
     },
@@ -11742,7 +12502,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 268,
+      "rank": 285,
       "sendable": false,
       "id": "oura-x-usta-us-open-oura"
     },
@@ -11779,9 +12539,54 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 269,
+      "rank": 286,
       "sendable": false,
       "id": "pipeline-angels-pipeline-angels-ifel"
+    },
+    {
+      "name": "Pliant Medical",
+      "org": "Pliant Medical",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Michigan medical contract manufacturer with ISO Class 7 cleanroom molding, laser welding and assembly; its case study took a Michigan startup's wearable device to tooling and a first 5,000 sellable units. Describes itself as 'small enough to move fast'.",
+      "why_now": null,
+      "evidence": [
+        "https://pliantmedical.com/scaling-a-wearable-medical-device-from-startup-to-market/",
+        "https://pliantmedical.com/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://pliantmedical.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask about enclosure tooling and assembly for a sealed skin-contact wearable at 1,000-5,000 units.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your wearable startup case study is close to the housing and assembly path I need to scope. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Michigan",
+      "deadline": null,
+      "last_signal_date": "2026-01-09",
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "midwest",
+        "enclosure",
+        "molding",
+        "startup-case-study"
+      ],
+      "opportunity": "Midwest enclosure molding plus assembly partner for a sealed, wearable housing.",
+      "unknowns": "Electronics (PCBA) capability not shown, mainly molding/assembly; minimums and tooling prices unpublished.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 287,
+      "sendable": true,
+      "id": "pliant-medical-pliant-medical"
     },
     {
       "name": "REACH Fitness Ohio",
@@ -11818,9 +12623,53 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 270,
+      "rank": 288,
       "sendable": true,
       "id": "reach-fitness-ohio-reach-fitness-ohio"
+    },
+    {
+      "name": "Rapid Circuitry",
+      "org": "Rapid Circuitry",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Wearable device engineering page: miniaturised PCB, ECG/PPG/SpO2, BLE 5.x/6.x, IEC 62304-oriented firmware and an nRF52840/ADS1292R ECG case study; states it holds no ISO certificates, and quotes fixed-scope proposals within 3-5 business days of a discovery call.",
+      "why_now": null,
+      "evidence": [
+        "https://www.rapidcircuitry.com/services/wearable-devices",
+        "https://www.rapidcircuitry.com/case-studies/medical-wearable-device"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.rapidcircuitry.com/services/wearable-devices",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Send a short NDA brief and request a fixed-scope proposal for a firmware/AFE review.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your ECG wearable case study on nRF52840 is close to our stack. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "firmware",
+        "ecg",
+        "design-services"
+      ],
+      "opportunity": "Outsourced ECG AFE + BLE firmware capacity for specific modules.",
+      "unknowns": "Location not stated on pages read; no ISO certification (self-stated); pricing unpublished.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 289,
+      "sendable": true,
+      "id": "rapid-circuitry-rapid-circuitry"
     },
     {
       "hunt": "sponsorship",
@@ -11865,7 +12714,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 271,
+      "rank": 290,
       "sendable": true,
       "id": "rock-mill-climbing-team-rock-mill-rock-mill-climbing-yoga-fitness"
     },
@@ -11909,7 +12758,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 272,
+      "rank": 291,
       "sendable": false,
       "id": "samsung-galaxy-x-unrivaled-women-s-3x3-basketball-league-samsung"
     },
@@ -11953,7 +12802,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 273,
+      "rank": 292,
       "sendable": true,
       "id": "sweatid-sweatid"
     },
@@ -11992,7 +12841,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 274,
+      "rank": 293,
       "sendable": true,
       "id": "tim-perkin-mountain-massif"
     },
@@ -12042,7 +12891,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 275,
+      "rank": 294,
       "sendable": true,
       "id": "vertical-vertical-getvertical-ai"
     },
@@ -12084,7 +12933,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 276,
+      "rank": 295,
       "sendable": false,
       "id": "veteran-owned-business-directory-veteranownedbusiness-com-veteran-owned-business"
     },
@@ -12123,7 +12972,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 277,
+      "rank": 296,
       "sendable": false,
       "id": "vetted-accelerator-vetted-the-vetted-fund"
     },
@@ -12166,7 +13015,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 278,
+      "rank": 297,
       "sendable": false,
       "id": "whoop-x-cristiano-ronaldo-ambassador-investor-whoop"
     },
@@ -12210,7 +13059,7 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 279,
+      "rank": 298,
       "sendable": false,
       "id": "withings-x-boston-10k-for-women-withings"
     },
@@ -12259,9 +13108,53 @@
       "score": 80,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 280,
+      "rank": 299,
       "sendable": true,
       "id": "youth-and-high-school-rugby-ohio-rugby-ohio-ohio-youth-rugby-association-sanctio"
+    },
+    {
+      "name": "mHUB (Chicago)",
+      "org": "mHUB (Chicago)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Hardtech accelerator: 6-month program, 11 prototyping labs ($6M equipment), 18 months follow-on; its page lists wearables and remote patient monitoring among MedTech focus. Published terms: $200,000 initial ($142,500 cash plus $60,000 in-kind) for 6.5% equity, so this is dilutive.",
+      "why_now": null,
+      "evidence": [
+        "https://mhub.org/medtech-accelerator-for-startups",
+        "https://mhub.org/accelerator"
+      ],
+      "channel": "apply",
+      "contact_url": "https://mhub.org/accelerator",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Check current cohort application dates and eligibility.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to know current accelerator application windows and fit for a wearable. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Chicago, IL",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "verified",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "midwest",
+        "accelerator",
+        "prototyping"
+      ],
+      "opportunity": "Midwest hardware prototyping labs, mentors and supplier connections; also an investor route.",
+      "unknowns": "Equity terms published; current deadline not read; Chicago presence may be required.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 80,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 300,
+      "sendable": true,
+      "id": "mhub-chicago-mhub-chicago"
     },
     {
       "name": "Cintrifuse Demo Night",
@@ -12306,7 +13199,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 281,
+      "rank": 301,
       "sendable": true,
       "id": "cintrifuse-demo-night-cintrifuse"
     },
@@ -12349,7 +13242,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 282,
+      "rank": 302,
       "sendable": true,
       "id": "oura-home-assistant-integration-louispires-oura-home-assistant-integration-open-"
     },
@@ -12391,7 +13284,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 283,
+      "rank": 303,
       "sendable": false,
       "id": "pulsetto-pulsetto"
     },
@@ -12433,7 +13326,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 284,
+      "rank": 304,
       "sendable": true,
       "id": "sahha-sahha"
     },
@@ -12477,7 +13370,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 285,
+      "rank": 305,
       "sendable": true,
       "id": "ai-brain-starter-health-mcp-google-health-connector-mycelium-hq-ai-brain-starter"
     },
@@ -12521,7 +13414,7 @@
       "score": 79,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 286,
+      "rank": 306,
       "sendable": true,
       "id": "oura-ring-mcp-server-jordanburke-oura-ring-mcp-server-open-source"
     },
@@ -12564,7 +13457,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 287,
+      "rank": 307,
       "sendable": true,
       "id": "home-assistant-fitbit-google-health-integration-home-assistant"
     },
@@ -12608,7 +13501,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 288,
+      "rank": 308,
       "sendable": false,
       "id": "ohio-office-of-business-certifications-mbe-edge-wbe-vfbe-ohio-department-of-deve"
     },
@@ -12651,7 +13544,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 289,
+      "rank": 309,
       "sendable": true,
       "id": "soluno-soluno"
     },
@@ -12695,7 +13588,7 @@
       "score": 78,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 290,
+      "rank": 310,
       "sendable": true,
       "id": "timeless-timeless"
     },
@@ -12732,7 +13625,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 291,
+      "rank": 311,
       "sendable": false,
       "id": "37-angels-37-angels"
     },
@@ -12776,7 +13669,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 292,
+      "rank": 312,
       "sendable": true,
       "id": "akron-running-club-university-of-akron-university-of-akron-club-running"
     },
@@ -12819,7 +13712,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 293,
+      "rank": 313,
       "sendable": true,
       "id": "akron-running-project-akron-marathon-race-series"
     },
@@ -12857,7 +13750,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 294,
+      "rank": 314,
       "sendable": false,
       "id": "bluetree-allied-angels-bluetree-allied-angels"
     },
@@ -12895,7 +13788,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 295,
+      "rank": 315,
       "sendable": false,
       "id": "catalyst-by-wellstar-wellstar-health-system"
     },
@@ -12942,7 +13835,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 296,
+      "rank": 316,
       "sendable": false,
       "id": "chris-via-pba-team-usa-tv-bowling-supply"
     },
@@ -12987,7 +13880,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 297,
+      "rank": 317,
       "sendable": true,
       "id": "columbus-marathon-1-2-marathon-2026-columbus-marathon"
     },
@@ -13034,7 +13927,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 298,
+      "rank": 318,
       "sendable": true,
       "id": "columbus-weightlifting-club-columbus-weightlifting"
     },
@@ -13071,7 +13964,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 299,
+      "rank": 319,
       "sendable": false,
       "id": "dvc-health-duro-ventures-collective"
     },
@@ -13124,7 +14017,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 300,
+      "rank": 320,
       "sendable": true,
       "id": "do-ai-fitness-wellness-do-llc"
     },
@@ -13163,7 +14056,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 301,
+      "rank": 321,
       "sendable": true,
       "id": "elevate-human-performance-elevate-human-performance"
     },
@@ -13206,7 +14099,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 302,
+      "rank": 322,
       "sendable": false,
       "id": "garmin-x-usa-triathlon-garmin"
     },
@@ -13254,7 +14147,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 303,
+      "rank": 323,
       "sendable": true,
       "id": "golden-oak-combat-club-golden-oak-combat-club"
     },
@@ -13291,7 +14184,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 304,
+      "rank": 324,
       "sendable": true,
       "id": "hpa-hyde-park-angels-hpa"
     },
@@ -13329,7 +14222,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 305,
+      "rank": 325,
       "sendable": false,
       "id": "heather-landi-fierce-healthcare"
     },
@@ -13372,7 +14265,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 306,
+      "rank": 326,
       "sendable": true,
       "id": "icon-source-athlete-endorsement-marketplace-icon-source"
     },
@@ -13410,7 +14303,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 307,
+      "rank": 327,
       "sendable": false,
       "id": "jim-mcdonald-tactical-training-conditioning"
     },
@@ -13454,7 +14347,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 308,
+      "rank": 328,
       "sendable": true,
       "id": "john-benham-mason-city-schools-educator-sponsored-endurance-athlete"
     },
@@ -13492,9 +14385,96 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 309,
+      "rank": 329,
       "sendable": false,
       "id": "kirin-health-innovation-fund-kirin-holdings-global-brain"
+    },
+    {
+      "name": "Kinetic (NEOMED + Bounce Innovation Hub) / MEDIC lab",
+      "org": "Kinetic (NEOMED + Bounce Innovation Hub) / MEDIC lab",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Healthcare innovation program of Northeast Ohio Medical University and Bounce (Akron): startup-friendly-fee access to the MEDIC prototyping lab and commercialization support incl. prototyping, testing, regulatory and go-to-market. Bounce itself is already on file as a community row; this row is the medtech prototyping program.",
+      "why_now": null,
+      "evidence": [
+        "https://bouncehub.org/kinetic"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://bouncehub.org/kinetic",
+      "warm_path": "Akron.",
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask for a Kinetic intake and a tour of the MEDIC prototyping lab.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to understand Kinetic and MEDIC lab access for an Akron hardware startup. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron/Rootstown, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "akron",
+        "accelerator",
+        "prototyping"
+      ],
+      "opportunity": "Akron-area prototyping/testing access and EIR advice at startup fees.",
+      "unknowns": "Fees 'scoped individually' and unpublished; electronics lab depth not stated; focus is medtech rather than consumer wearables.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 330,
+      "sendable": true,
+      "id": "kinetic-neomed-bounce-innovation-hub-medic-lab-kinetic-neomed-bounce-innovation-"
+    },
+    {
+      "name": "Konark Silicone Technologies",
+      "org": "Konark Silicone Technologies",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "California silicone molder: rapid prototypes, short runs, LSR/HCR and compression, low-temp cure for overmolding or encapsulating heat-sensitive materials; says silicone suits wearables.",
+      "why_now": null,
+      "evidence": [
+        "https://konarksilicones.com/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://konarksilicones.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask about overmolding or encapsulation for a skin-contact housing and strap in short runs.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to scope short-run silicone overmolding for a wearable. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "California",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "strap",
+        "silicone",
+        "enclosure"
+      ],
+      "opportunity": "US short-run silicone strap/overmold supplier for DevKit and pilot runs.",
+      "unknowns": "Minimums and tooling costs unpublished; electronics encapsulation specifics unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 331,
+      "sendable": true,
+      "id": "konark-silicone-technologies-konark-silicone-technologies"
     },
     {
       "name": "Kye-Shin Lee lab (ECE)",
@@ -13535,7 +14515,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 310,
+      "rank": 332,
       "sendable": true,
       "id": "kye-shin-lee-lab-ece-the-university-of-akron"
     },
@@ -13572,7 +14552,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 311,
+      "rank": 333,
       "sendable": false,
       "id": "life-science-angels-life-science-angels"
     },
@@ -13609,9 +14589,92 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 312,
+      "rank": 334,
       "sendable": false,
       "id": "mid-atlantic-bio-angels-maba-mid-atlantic-bio-angels"
+    },
+    {
+      "name": "Nissha Medical Technologies Wearables Lab Accelerator",
+      "org": "Nissha Medical Technologies Wearables Lab Accelerator",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own page for a 'Wearables Lab Accelerator': an on-site cross-functional event combining design, materials, testing and rapid prototyping for wearables applications.",
+      "why_now": null,
+      "evidence": [
+        "https://dm.nisshamedical.com/en/accelerator-programs/wearables-lab/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://dm.nisshamedical.com/en/accelerator-programs/wearables-lab/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask whether the Wearables Lab accepts early-stage OEM teams and what a session costs.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to learn if the Wearables Lab suits an early-stage OEM. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "materials",
+        "skin-interface"
+      ],
+      "opportunity": "Materials, skin-interface and test-method support for the electrode/strap.",
+      "unknowns": "Location and pricing not stated; likely aimed at established OEMs.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 335,
+      "sendable": true,
+      "id": "nissha-medical-technologies-wearables-lab-accelerator-nissha-medical-technologie"
+    },
+    {
+      "name": "Nocturnal Product Development",
+      "org": "Nocturnal Product Development",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Durham, NC wearable/implantable medical device design firm with milestone-based fixed-cost pricing, ISO 13485-aligned documentation and low-volume manufacturing support.",
+      "why_now": null,
+      "evidence": [
+        "https://nocturnalpd.com/wearable-medical-devices/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://nocturnalpd.com/wearable-medical-devices/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask about a fixed-price milestone for design-for-manufacture review.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Milestone-based pricing suits our stage. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Durham, NC",
+      "deadline": null,
+      "last_signal_date": "2026-03-19",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "design-services"
+      ],
+      "opportunity": "Fixed-cost design partner for cash-constrained early stage.",
+      "unknowns": "Prices unpublished; consumer-wellness fit unknown.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 336,
+      "sendable": true,
+      "id": "nocturnal-product-development-nocturnal-product-development"
     },
     {
       "name": "North Coast Ventures",
@@ -13648,9 +14711,52 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 313,
+      "rank": 337,
       "sendable": true,
       "id": "north-coast-ventures-north-coast-ventures-formerly-north-coast-angel-fund"
+    },
+    {
+      "name": "Ohio State OSSIP / Nanotech West Lab",
+      "org": "Ohio State OSSIP / Nanotech West Lab",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Ohio Sensor and Semiconductor Innovation Platform: Nanotech West Lab's team partners with Ohio companies on microfabrication; page states five companies have been helped to market-ready solutions.",
+      "why_now": null,
+      "evidence": [
+        "https://ossip.osu.edu/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://ossip.osu.edu/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask whether sensor/electrode or flex-interconnect characterization fits OSSIP.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to ask if OSSIP can help with electrode and interconnect characterization. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Columbus, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "university",
+        "sensors"
+      ],
+      "opportunity": "Ohio university fab and characterization access for electrodes and sensors.",
+      "unknowns": "Fit for a band's dry electrodes is speculative; fees and eligibility unpublished.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 338,
+      "sendable": true,
+      "id": "ohio-state-ossip-nanotech-west-lab-ohio-state-ossip-nanotech-west-lab"
     },
     {
       "name": "Oura raises $900M+ Series E at $11B (Fidelity lead)",
@@ -13687,7 +14793,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 314,
+      "rank": 339,
       "sendable": false,
       "id": "oura-raises-900m-series-e-at-11b-fidelity-lead-oura"
     },
@@ -13730,7 +14836,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 315,
+      "rank": 340,
       "sendable": false,
       "id": "polar-x-team-essent-speed-skating-polar"
     },
@@ -13768,7 +14874,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 316,
+      "rank": 341,
       "sendable": false,
       "id": "qca-ventures-qca-ventures-formerly-queen-city-angels"
     },
@@ -13812,7 +14918,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 317,
+      "rank": 342,
       "sendable": true,
       "id": "recess-venue-sampling-network-incl-endurance-races-and-gyms-recess"
     },
@@ -13855,7 +14961,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 318,
+      "rank": 343,
       "sendable": true,
       "id": "run-this-club-platform-with-brand-partnerships-run-this"
     },
@@ -13898,9 +15004,138 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 319,
+      "rank": 344,
       "sendable": true,
       "id": "shipp-lab-science-of-health-interventions-and-peak-performance-kent-state-univer"
+    },
+    {
+      "name": "SIMTEC Silicone Parts",
+      "org": "SIMTEC Silicone Parts",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Florida-based US LSR specialist: LSR overmolded and 2-shot components, ISO class 8 cleanroom, medical/consumer, prototype support to high volume.",
+      "why_now": null,
+      "evidence": [
+        "https://www.simtec-silicone.com/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.simtec-silicone.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Request design review for an LSR strap and sensor-window overmold.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a design review for an LSR strap and seal. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Miramar, FL",
+      "deadline": null,
+      "last_signal_date": "2021-04-06",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "strap",
+        "silicone",
+        "enclosure"
+      ],
+      "opportunity": "US LSR overmolding supplier for production-grade straps and seals.",
+      "unknowns": "Optimised for high volume; minimums and tooling prices unpublished.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 345,
+      "sendable": true,
+      "id": "simtec-silicone-parts-simtec-silicone-parts"
+    },
+    {
+      "name": "SMC Ltd (Medical Design Center, Ohio)",
+      "org": "SMC Ltd (Medical Design Center, Ohio)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Medical-only contract manufacturer whose page describes a design and development center in Ohio with a cleanroom for small-batch builds, limited market release production, then transfer to volume sites; 10 locations incl. Ohio and Wisconsin.",
+      "why_now": null,
+      "evidence": [
+        "https://www.smcltd.com/contract-manufacturing/design-development/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.smcltd.com/contract-manufacturing/design-development/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask whether the Ohio design center takes consumer-adjacent wearable programs and early-stage budgets.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your Ohio design center and small-batch cleanroom builds are what I'd like to understand. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Ohio (city not stated)",
+      "deadline": null,
+      "last_signal_date": "2024-06-25",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "medical",
+        "design-transfer"
+      ],
+      "opportunity": "Design-to-manufacture partner if Vybe later needs ISO 13485-grade assembly for a sensor or ring form factor.",
+      "unknowns": "Medical-device focus may be too heavy for a general-wellness band; minimums, pricing and startup acceptance unpublished; exact Ohio city not stated on the page.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 346,
+      "sendable": true,
+      "id": "smc-ltd-medical-design-center-ohio-smc-ltd-medical-design-center-ohio"
+    },
+    {
+      "name": "STRIDE Accelerator (University of Akron Research Foundation)",
+      "org": "STRIDE Accelerator (University of Akron Research Foundation)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Deep-tech startup accelerator: cohorts of 3-5 companies, two a year, 20 weeks, no equity or cash required, from UARF.",
+      "why_now": null,
+      "evidence": [
+        "https://strideaccelerator.com/"
+      ],
+      "channel": "apply",
+      "contact_url": "https://strideaccelerator.com/",
+      "warm_path": "Akron / UA.",
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask for the next cohort window.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like to ask whether STRIDE is running a cohort. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Akron, OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "akron",
+        "accelerator"
+      ],
+      "opportunity": "Akron-based mentorship and UA engineering connections for hardware validation.",
+      "unknowns": "Site is dated (2021 footer) and may be inactive; no hardware lab access stated.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 347,
+      "sendable": true,
+      "id": "stride-accelerator-university-of-akron-research-foundation-stride-accelerator-un"
     },
     {
       "name": "Samsung completes Xealth acquisition to wire wearable data into clinical workflows",
@@ -13941,7 +15176,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 320,
+      "rank": 348,
       "sendable": false,
       "id": "samsung-completes-xealth-acquisition-to-wire-wearable-data-into-clinical-workflo"
     },
@@ -13978,7 +15213,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 321,
+      "rank": 349,
       "sendable": false,
       "id": "sand-hill-angels-sand-hill-angels"
     },
@@ -14021,9 +15256,52 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 322,
+      "rank": 350,
       "sendable": true,
       "id": "spartan-cincinnati-trifecta-weekend-2027-spartan-race"
+    },
+    {
+      "name": "Spartronics (Strongsville, OH)",
+      "org": "Spartronics (Strongsville, OH)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Strongsville, Ohio site assembles instrumentation and medical devices (ISO 13485:2016, IEC 60601/62304 listed, FDA registered contract manufacturer) with pre-production builds and process development.",
+      "why_now": null,
+      "evidence": [
+        "https://www.spartronics.com/locations/medical-device-manufacturing-strongsville-ohio/"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.spartronics.com/locations/medical-device-manufacturing-strongsville-ohio/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask whether a wearable electronics sub-assembly at low volume is in scope for the Strongsville site.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'm mapping Ohio build partners for pre-production wearable electronics. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Strongsville, OH",
+      "deadline": null,
+      "last_signal_date": "2026-01-14",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "ems",
+        "iso13485"
+      ],
+      "opportunity": "Ohio medical-grade assembler as a second source or a later regulated-product path.",
+      "unknowns": "Page lists fluidics/instrument work; wearable and flex experience not shown; minimums and pricing unpublished.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 351,
+      "sendable": true,
+      "id": "spartronics-strongsville-oh-spartronics-strongsville-oh"
     },
     {
       "name": "StartUp Health Syndicate",
@@ -14059,7 +15337,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 323,
+      "rank": 352,
       "sendable": false,
       "id": "startup-health-syndicate-startup-health"
     },
@@ -14097,7 +15375,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 324,
+      "rank": 353,
       "sendable": true,
       "id": "startupcincy-week-2026-cintrifuse-startupcincy"
     },
@@ -14143,9 +15421,52 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 325,
+      "rank": 354,
       "sendable": true,
       "id": "stress-platform-health-hrv-stress-platform"
+    },
+    {
+      "name": "SugaMed (ECG Patch PCBA)",
+      "org": "SugaMed (ECG Patch PCBA)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own page on wearable cardiac patch PCBA: rigid-flex assembly, ISO 13485 QMS, 100% functional test, and an FAQ stating first-article runs as small as 25 units and production MOQs depending on BOM/AFE availability.",
+      "why_now": null,
+      "evidence": [
+        "https://www.sugamed.com/patient-monitoring-device/ecg-patch-pcb-assembly/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://www.sugamed.com/patient-monitoring-device/ecg-patch-pcb-assembly/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Request a first-article quote for a small rigid-flex ECG board.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your ECG patch page, with first-article runs as small as 25 units, matches our stage. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Dongguan/Shenzhen, China",
+      "deadline": null,
+      "last_signal_date": "2026-05-08",
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ecg",
+        "flex",
+        "offshore"
+      ],
+      "opportunity": "Offshore ECG-specific rigid-flex builder for cost-sensitive volume or an alternate quote benchmark.",
+      "unknowns": "China-based; IP and export considerations; pricing unpublished; production MOQ stated only as BOM-dependent.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 355,
+      "sendable": true,
+      "id": "sugamed-ecg-patch-pcba-sugamed-ecg-patch-pcba"
     },
     {
       "name": "Suunto x UTMB World Series",
@@ -14188,9 +15509,52 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 326,
+      "rank": 356,
       "sendable": false,
       "id": "suunto-x-utmb-world-series-suunto"
+    },
+    {
+      "name": "TT Electronics NPI Center of Excellence (Cleveland)",
+      "org": "TT Electronics NPI Center of Excellence (Cleveland)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own overview describes a 125,000 sq ft Cleveland (Perry, OH) facility, ISO 13485 and FDA registered, a dedicated prototype SMT line, 2-week PCBA prototype turnaround 'from material and design clearance', and transfer to volume in the US, Mexico, Malaysia or China.",
+      "why_now": null,
+      "evidence": [
+        "https://www.ttelectronics.com/getmedia/3406f298-6927-4eb0-89de-470ef1c8cb4f/NPI_COE_Overview.pdf"
+      ],
+      "channel": "contact form",
+      "contact_url": "https://www.ttelectronics.com/getmedia/3406f298-6927-4eb0-89de-470ef1c8cb4f/NPI_COE_Overview.pdf",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Ask the NPI team whether a 10-unit prototype run and a later low-volume program are in scope.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. Your Cleveland NPI Center of Excellence looks like a fit for a prototype-to-production path. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Perry (Cleveland), OH",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "ohio",
+        "ems",
+        "iso13485"
+      ],
+      "opportunity": "Prototype-to-volume manufacturer with a US site 40 miles from Akron; credible for a scale-up beyond DevKit volumes.",
+      "unknowns": "Minimum order sizes and startup eligibility unpublished; a large EMS may prioritise bigger programs; pricing unknown; overview is a PDF so the exact NPI contact form URL was not confirmed.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 357,
+      "sendable": true,
+      "id": "tt-electronics-npi-center-of-excellence-cleveland-tt-electronics-npi-center-of-e"
     },
     {
       "name": "TechLife Columbus 2.0 Launch",
@@ -14226,7 +15590,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 327,
+      "rank": 358,
       "sendable": true,
       "id": "techlife-columbus-2-0-launch-techlife-columbus"
     },
@@ -14268,7 +15632,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 328,
+      "rank": 359,
       "sendable": false,
       "id": "whoop-x-dubai-fitness-challenge-2025-whoop"
     },
@@ -14312,7 +15676,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 329,
+      "rank": 360,
       "sendable": false,
       "id": "whoop-x-pga-tour-extension-through-2028-whoop"
     },
@@ -14360,7 +15724,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 330,
+      "rank": 361,
       "sendable": true,
       "id": "walsh-university-stunt-walsh-university-athletics"
     },
@@ -14411,7 +15775,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 331,
+      "rank": 362,
       "sendable": false,
       "id": "weightwatchers-ww-international-inc"
     },
@@ -14450,7 +15814,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 332,
+      "rank": 363,
       "sendable": false,
       "id": "xsensio-6m-series-a-wi-harper-for-wearable-biochemical-sensing-chip-xsensio"
     },
@@ -14494,9 +15858,92 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 333,
+      "rank": 364,
       "sendable": false,
       "id": "yc-w26-fort-building-a-screenless-strength-tracking-band-fort-yc-w26"
+    },
+    {
+      "name": "Zufek",
+      "org": "Zufek",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Lithium battery maker with published terms: catalogue cells MOQ 500; custom designs typically start at 3,000 pcs; NPI samples 50-200 pcs; 5-day feasibility on a STEP model; wearables cells 25-600 mAh (curved, round).",
+      "why_now": null,
+      "evidence": [
+        "https://zufek.com/"
+      ],
+      "channel": "email listed on site",
+      "contact_url": "https://zufek.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Send a STEP model for a 5-day feasibility note and 50-200 NPI samples.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a feasibility note and NPI samples for a curved cell. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": "Shenzhen/Dongguan, China",
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "battery",
+        "ring"
+      ],
+      "opportunity": "Custom curved/round cell source with published NPI sample quantities.",
+      "unknowns": "3,000-piece custom MOQ is high for launch; China-based; certifications to be verified.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 365,
+      "sendable": true,
+      "id": "zufek-zufek"
+    },
+    {
+      "name": "flexpcb.com (Flex PCB, USA prototype)",
+      "org": "flexpcb.com (Flex PCB, USA prototype)",
+      "role": null,
+      "type": "oem-partner",
+      "hunt": "partnership",
+      "why": "Own page: prototype and production rigid-flex/flex fabrication in a USA facility or offshore, quick-turn prototyping, HDI, and flex assembly with component sourcing.",
+      "why_now": null,
+      "evidence": [
+        "https://flexpcb.com/"
+      ],
+      "channel": "quote form",
+      "contact_url": "https://flexpcb.com/",
+      "warm_path": null,
+      "fit": 7,
+      "ice": null,
+      "ask": "Upload Gerbers for a quick-turn rigid-flex prototype quote.",
+      "opener": "Hi, I'm the founder of Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records ECG and heart rate variability, with a licensed SDK, aimed at a May 2027 consumer launch and a small DevKit run before that. I'd like a quick-turn rigid-flex prototype quote. Could we set up a short call to see whether it's a fit?",
+      "check_size": null,
+      "stage": null,
+      "geo": null,
+      "deadline": null,
+      "last_signal_date": null,
+      "confidence": "single-source",
+      "tags": [
+        "wearables",
+        "health-hardware",
+        "oem-partner",
+        "flex-pcb"
+      ],
+      "opportunity": "US quick-turn flex/rigid-flex for the band's sensor tail and ring flex.",
+      "unknowns": "Minimum order and prices unpublished; exact US location not stated; may be a broker with factories in China.",
+      "lane": "oem_partners",
+      "link_status": "not checked",
+      "score": 75,
+      "priority": "Low",
+      "identity_needs_ok": false,
+      "rank": 366,
+      "sendable": true,
+      "id": "flexpcb-com-flex-pcb-usa-prototype-flexpcb-com-flex-pcb-usa-prototype"
     },
     {
       "name": "onbrand (run club and fitness event brand-partner marketplace)",
@@ -14537,7 +15984,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 334,
+      "rank": 367,
       "sendable": true,
       "id": "onbrand-run-club-and-fitness-event-brand-partner-marketplace-onbrand"
     },
@@ -14595,7 +16042,7 @@
       "score": 75,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 335,
+      "rank": 368,
       "sendable": true,
       "id": "trainedby-ai-trainedby"
     },
@@ -14636,7 +16083,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 336,
+      "rank": 369,
       "sendable": false,
       "id": "digital-health-digital-health"
     },
@@ -14681,7 +16128,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 337,
+      "rank": 370,
       "sendable": false,
       "id": "h2f-management-system-u-s-army-h2f-program-gdit-supporting"
     },
@@ -14724,7 +16171,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 338,
+      "rank": 371,
       "sendable": true,
       "id": "notus-labs-notus-labs"
     },
@@ -14766,7 +16213,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 339,
+      "rank": 372,
       "sendable": true,
       "id": "uc-heart-lung-and-vascular-institute-university-of-cincinnati-college-of-medicin"
     },
@@ -14807,7 +16254,7 @@
       "score": 74,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 340,
+      "rank": 373,
       "sendable": false,
       "id": "wearables-com-submit-a-product-or-company-wearables-com"
     },
@@ -14851,7 +16298,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 341,
+      "rank": 374,
       "sendable": true,
       "id": "aha-scientific-sessions-2026-health-innovation-pavilion-american-heart-associati"
     },
@@ -14893,7 +16340,7 @@
       "score": 73,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 342,
+      "rank": 375,
       "sendable": false,
       "id": "earlyhunt-wearables-category-earlyhunt"
     },
@@ -14939,7 +16386,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 343,
+      "rank": 376,
       "sendable": false,
       "id": "abby-walker-columbus-fury-major-league-volleyball"
     },
@@ -14984,7 +16431,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 344,
+      "rank": 377,
       "sendable": false,
       "id": "blake-eiland-maryland-whipsnakes-pll-ohio-state-alum"
     },
@@ -15027,7 +16474,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 345,
+      "rank": 378,
       "sendable": false,
       "id": "coros-x-jakob-ingebrigtsen-coros"
     },
@@ -15074,7 +16521,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 346,
+      "rank": 379,
       "sendable": false,
       "id": "competitive-cheerleading-competitive-all-star-and-scholastic-cheer-programs-gove"
     },
@@ -15117,7 +16564,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 347,
+      "rank": 380,
       "sendable": false,
       "id": "connor-voltz-train-volt-sponsored-athlete"
     },
@@ -15160,7 +16607,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 348,
+      "rank": 381,
       "sendable": false,
       "id": "eight-sleep-x-charles-leclerc-ambassador-investor-and-300-athlete-roster-eight-s"
     },
@@ -15203,7 +16650,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 349,
+      "rank": 382,
       "sendable": false,
       "id": "eight-sleep-x-ef-pro-cycling-tour-de-france-eight-sleep"
     },
@@ -15250,7 +16697,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 350,
+      "rank": 383,
       "sendable": false,
       "id": "flow-state-endurance-flow-state-endurance"
     },
@@ -15294,7 +16741,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 351,
+      "rank": 384,
       "sendable": false,
       "id": "garmin-x-supertri-e-world-triathlon-championship-garmin"
     },
@@ -15337,7 +16784,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 352,
+      "rank": 385,
       "sendable": false,
       "id": "hume-band-2-0-249-one-time-no-subscription-bp-trend-insights-hume-health"
     },
@@ -15380,7 +16827,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 353,
+      "rank": 386,
       "sendable": false,
       "id": "jacob-hart-independent-ultrarunner"
     },
@@ -15418,7 +16865,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 354,
+      "rank": 387,
       "sendable": false,
       "id": "jessica-hagen-mobihealthnews"
     },
@@ -15461,7 +16908,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 355,
+      "rank": 388,
       "sendable": false,
       "id": "john-miller-stormbound-crossfit"
     },
@@ -15505,7 +16952,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 356,
+      "rank": 389,
       "sendable": false,
       "id": "lauryn-deluca-usa-fencing-team-usa-athletes-commission"
     },
@@ -15550,7 +16997,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 357,
+      "rank": 390,
       "sendable": false,
       "id": "nathan-jackson-university-of-rio-grande-archery"
     },
@@ -15594,7 +17041,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 358,
+      "rank": 391,
       "sendable": false,
       "id": "oura-x-u-s-soccer-oura"
     },
@@ -15638,7 +17085,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 359,
+      "rank": 392,
       "sendable": false,
       "id": "ultrahuman-x-uae-team-emirates-xrg-ultrahuman"
     },
@@ -15681,7 +17128,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": true,
-      "rank": 360,
+      "rank": 393,
       "sendable": false,
       "id": "whoop-x-paris-saint-germain-whoop"
     },
@@ -15724,7 +17171,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 361,
+      "rank": 394,
       "sendable": false,
       "id": "whoop-x-ryder-cup-2025-whoop"
     },
@@ -15767,7 +17214,7 @@
       "score": 70,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 362,
+      "rank": 395,
       "sendable": false,
       "id": "whoop-x-scuderia-ferrari-hp-whoop"
     },
@@ -15810,7 +17257,7 @@
       "score": 68,
       "priority": "Low",
       "identity_needs_ok": false,
-      "rank": 363,
+      "rank": 396,
       "sendable": false,
       "id": "dc-fire-and-ems-health-and-safety-division-district-of-columbia-fire-and-ems-dep"
     }
