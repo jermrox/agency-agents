@@ -411,7 +411,7 @@ function card(it){
   if (sc.wirecutter) labels.appendChild(el("span", {cls:"lab", text:"Wirecutter: " + sc.wirecutter}));
   if (sc.adac) labels.appendChild(el("span", {cls:"lab", text:"ADAC (EU): " + sc.adac}));
   var specs = el("div", {cls:"specs"});
-  [["⚖️", sp.weight_lb != null ? sp.weight_lb + " lb" : null], ["👶", sp.child_range], ["↩️", sp.rear_facing_max_lb != null ? "RF to " + sp.rear_facing_max_lb + " lb" : null],
+  [["⚖️", sp.weight_lb != null ? sp.weight_lb + " lb" : null], ["🪑", sp.carrier_weight_lb != null ? "carrier " + sp.carrier_weight_lb + " lb" : null], ["👶", sp.child_range], ["↩️", sp.rear_facing_max_lb != null ? "RF to " + sp.rear_facing_max_lb + " lb" : null],
    ["↔️", sp.width_in != null ? sp.width_in + " in wide" : null], ["📦", sp.fold], ["⏳", sp.expiration_years != null ? sp.expiration_years + "-yr life" : null]]
    .forEach(function(s){ if (s[1]) specs.appendChild(el("span", {text:s[0] + " " + s[1]})); });
   var recalled = isRecalled(it);
@@ -430,7 +430,7 @@ function card(it){
     el("h3", {cls:"name", text:it.name}),
     el("div", {cls:"pricerow"}, [el("span", {cls:"price"}, [money(it.price_usd), it.price_note ? el("small", {text:it.price_note}) : null]),
       el("span", {cls:"pill ev-" + evKey(it), text:"Evidence: " + (it.evidence_level || "Limited")})]),
-    el("div", {cls:"scores"}, [bar("Crash (BGL)", sc.bgl_crash, 10), bar("Overall (BGL)", sc.bgl_overall, 100)]),
+    el("div", {cls:"scores"}, [bar("Crash (BGL)", sc.bgl_crash, 10), bar("Overall (BGL)", sc.bgl_overall, 100), bar("Brakes (BGL)", sc.bgl_brakes, 10)]),
     labels.childNodes.length ? labels : null,
     specs.childNodes.length ? specs : null,
     (it.features && it.features.length) ? el("div", {cls:"feats"}, it.features.map(function(f){ return el("span", {cls:"feat", text:f}); })) : null,
@@ -479,6 +479,7 @@ function openCompare(){
     ["Evidence", function(it){ return it.evidence_level || ""; }],
     ["BGL crash /10", function(it){ return it.scores && it.scores.bgl_crash != null ? String(it.scores.bgl_crash) : "—"; }, function(it){ return it.scores && it.scores.bgl_crash; }, true],
     ["BGL overall", function(it){ return it.scores && it.scores.bgl_overall != null ? String(it.scores.bgl_overall) : "—"; }, function(it){ return it.scores && it.scores.bgl_overall; }, true],
+    ["BGL brakes /10", function(it){ return it.scores && it.scores.bgl_brakes != null ? String(it.scores.bgl_brakes) : "—"; }, function(it){ return it.scores && it.scores.bgl_brakes; }, true],
     ["CR crash", function(it){ return (it.scores && it.scores.cr_crash) || "—"; }],
     ["Wirecutter", function(it){ return (it.scores && it.scores.wirecutter) || "—"; }],
     ["Weight", function(it){ return it.specs && it.specs.weight_lb != null ? it.specs.weight_lb + " lb" : "—"; }, function(it){ return it.specs && it.specs.weight_lb; }, false],
