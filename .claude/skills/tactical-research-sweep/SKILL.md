@@ -53,8 +53,10 @@ The engine is `research-board/` (see its README). The routine:
 5. Schema (`tactical_research/models.py`): one type (Research / Policy / News), one sector,
    one to three of the 14 tags, ISO `date_published` from the document, `identifier`,
    `coverage_urls`, `score` 0–10 (reach × usefulness × hiring signal), `supersedes`.
-6. Merge into `research-board/findings.json` (dedupe by normalised URL and identifier; keep
-   everything — the window and the 12-month archive are computed at render time). Write a
+6. Write each sweep slice as `{"items": [...], "coverage_additions": [...]}` and merge with
+   `python research-board/merge_items.py <slice.json> ...` — it dedupes by normalised URL and
+   identifier, folds coverage into the existing document, keeps everything already on file, and
+   validates before writing (the window and the 12-month archive are computed at render time). Write a
    plain-English paragraph per hot topic (a tag with 3+ independent items in the window) to
    `research-board/hot-notes.json` as `{"notes": {"<tag>": "<paragraph>"}}`.
 7. `python research-board/sweep.py --publish` renders and writes
