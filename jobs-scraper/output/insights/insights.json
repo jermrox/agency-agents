@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-03T20:08:36.212761+00:00",
+  "generated_at": "2026-10-04T09:12:39.407201+00:00",
   "totals": {
-    "postings": 1326,
+    "postings": 1327,
     "employers": 42,
-    "unique_jobs": 774,
+    "unique_jobs": 775,
     "with_salary": 238,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-03T00:00:00+00:00"
+      "latest": "2026-10-04T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -65,7 +65,7 @@
     },
     {
       "name": "Serco USA",
-      "count": 35,
+      "count": 36,
       "disciplines": [
         "strength-conditioning",
         "cognitive",
@@ -190,67 +190,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 410,
-      "share": 0.6755,
+      "count": 411,
+      "share": 0.676,
       "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
       "count": 346,
-      "share": 0.57,
+      "share": 0.5691,
       "median_salary": 74455.5
     },
     {
       "name": "cognitive",
       "count": 175,
-      "share": 0.2883,
+      "share": 0.2878,
       "median_salary": 84869.0
     },
     {
       "name": "research",
       "count": 120,
-      "share": 0.1977,
+      "share": 0.1974,
       "median_salary": 78110.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1664,
+      "share": 0.1661,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 34,
-      "share": 0.056,
+      "share": 0.0559,
       "median_salary": 63440.0
     },
     {
       "name": "sport-science",
       "count": 10,
-      "share": 0.0165,
+      "share": 0.0164,
       "median_salary": 100644.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 732,
-      "share": 0.9581
+      "count": 733,
+      "share": 0.9582
     },
     {
       "name": "sof",
       "count": 373,
-      "share": 0.4882
+      "share": 0.4876
     },
     {
       "name": "first-responder",
       "count": 54,
-      "share": 0.0707
+      "share": 0.0706
     },
     {
       "name": "training-pipeline",
-      "count": 41,
-      "share": 0.0537
+      "count": 42,
+      "share": 0.0549
     }
   ],
   "by_branch": [
@@ -260,7 +260,7 @@
     },
     {
       "name": "Army",
-      "count": 181
+      "count": 182
     },
     {
       "name": "Air Force",
@@ -286,7 +286,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Coronado",
@@ -360,7 +360,7 @@
     },
     {
       "code": "GA",
-      "count": 43
+      "count": 44
     },
     {
       "code": "TX",
@@ -410,33 +410,33 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 293,
-      "share": 0.5992
+      "count": 294,
+      "share": 0.6
     },
     {
       "name": "ATC",
       "count": 207,
-      "share": 0.4233
+      "share": 0.4224
     },
     {
       "name": "RD",
       "count": 64,
-      "share": 0.1309
+      "share": 0.1306
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.1002
+      "share": 0.1
     },
     {
       "name": "DPT",
       "count": 15,
-      "share": 0.0307
+      "share": 0.0306
     },
     {
       "name": "LAT",
       "count": 8,
-      "share": 0.0164
+      "share": 0.0163
     },
     {
       "name": "TSAC-F",
@@ -575,12 +575,12 @@
     },
     {
       "month": "2026-10",
-      "count": 36
+      "count": 37
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-05T00:00:00+00:00",
+    "pivot": "2026-07-06T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -590,9 +590,9 @@
       },
       {
         "name": "Serco USA",
-        "recent": 35,
+        "recent": 36,
         "previous": 0,
-        "change": 35
+        "change": 36
       },
       {
         "name": "LMR Technical Group",
@@ -676,9 +676,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 266,
+        "recent": 267,
         "previous": 2,
-        "change": 264
+        "change": 265
       },
       {
         "name": "ATC",
