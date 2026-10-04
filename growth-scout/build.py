@@ -36,6 +36,7 @@ TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
     "builder", "research-lab", "amplifier", "community", "event", "listing", "signal",
     "competitor-deal", "athlete", "team", "program", "app-partner", "sport",
+    "oem-partner", "channel-partner",
 }
 HUNTS = {"investor", "growth", "social", "sponsorship", "partnership"}
 PARTNER_STATUSES = {"open", "competitor", "exclusive", "no-wearable-yet", "unknown"}
@@ -79,6 +80,8 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
             problems.append(f"{row['partner_status']} app scored above 6")
         if not row.get("opportunity"):
             problems.append("app-partner without a stated opportunity")
+    if row.get("type") in {"oem-partner", "channel-partner"} and not (row.get("opportunity") and row.get("unknowns")):
+        problems.append(f"{row['type']} without opportunity and unknowns")
     if row.get("type") == "sport" and not (row.get("wearable_adoption") and row.get("opportunity")):
         problems.append("sport without wearable_adoption evidence or opportunity")
     evidence = [u for u in row.get("evidence") or [] if isinstance(u, str) and u.startswith("http")]

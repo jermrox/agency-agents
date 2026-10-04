@@ -57,3 +57,8 @@ type "sport" (a sport or competition level where wearables are rare, banned in c
 - "opportunity": the concrete first move (club pilot, federation partnership, coach community), plus named clubs/federations/athletes when found.
 - "unknowns".
 Athletes found in these sports use type "athlete" (hunt "sponsorship") and must say whether a source shows them using any wearable (and which) or "no wearable found in public posts".
+
+MORE PARTNER TYPES (added 2026-10-04), hunt "partnership" unless stated:
+- "oem-partner": contract manufacturers/ODMs/EMS firms, sensor and chip vendors, reference-design and firmware partners that could help Vybe build or scale hardware. Required: "opportunity" (what they could do for Vybe), "unknowns". Evidence = the company's own page (capabilities, startup/partner program, minimums if published).
+- "channel-partner": ways to reach buyers at scale: retailers and marketplaces, corporate-wellness and benefits platforms, employers, insurers, health-system innovation programs, gym chains, military/first-responder procurement channels. Required: "opportunity", "unknowns", and the entry route (vendor onboarding page, partner form, named program).
+Both types: fit >= 7, never invent minimums/prices, Ohio and Midwest first when equal. Openers: founder voice, <80 words, no health claims, do NOT say Vybe is veteran-, woman- or minority-owned, never guess an email.

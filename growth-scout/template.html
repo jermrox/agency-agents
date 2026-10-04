@@ -216,7 +216,7 @@ const DATA = /*__DATA__*/null;
   const statusOf = (t) => status[t.id] || "New";
   const today = new Date(DATA.today + "T00:00:00Z");
   const daysTo = (d) => d ? Math.round((new Date(d + "T00:00:00Z") - today) / 864e5) : null;
-  const TYPE_LABEL = {"vc":"VC","corporate-vc":"Corporate VC","angel":"Angel","angel-group":"Angel group","syndicate":"Syndicate","accelerator":"Accelerator","event":"Event","builder":"Builder","research-lab":"Research lab","amplifier":"Amplifier","community":"Community","listing":"Listing","signal":"Signal","competitor-deal":"Competitor deal","athlete":"Athlete","team":"Team","program":"Program","app-partner":"App partner","sport":"Sport"};
+  const TYPE_LABEL = {"vc":"VC","corporate-vc":"Corporate VC","angel":"Angel","angel-group":"Angel group","syndicate":"Syndicate","accelerator":"Accelerator","event":"Event","builder":"Builder","research-lab":"Research lab","amplifier":"Amplifier","community":"Community","listing":"Listing","signal":"Signal","competitor-deal":"Competitor deal","athlete":"Athlete","team":"Team","program":"Program","app-partner":"App partner","sport":"Sport","oem-partner":"Hardware partner","channel-partner":"Channel partner"};
 
   // Tiles
   const s = DATA.summary;
