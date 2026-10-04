@@ -27,13 +27,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 SITE = ROOT / "site"
+LINK_CHECK = ROOT / "data" / "link_check.json"
+COMBOS = ROOT / "data" / "combos.json"
+SCREENED = ROOT / "data" / "screened_apps.json"
+IDENTIFIED = ROOT / "data" / "identified_apps.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
     "builder", "research-lab", "amplifier", "community", "event", "listing", "signal",
-    "competitor-deal", "athlete", "team", "program",
+    "competitor-deal", "athlete", "team", "program", "app-partner", "sport",
+    "oem-partner", "channel-partner",
 }
-HUNTS = {"investor", "growth", "social", "sponsorship"}
+HUNTS = {"investor", "growth", "social", "sponsorship", "partnership"}
+PARTNER_STATUSES = {"open", "competitor", "exclusive", "no-wearable-yet", "unknown"}
 
 
 def load_params() -> dict:
@@ -64,6 +70,20 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
         problems.append(f"unknown type {row.get('type')!r}")
     if row.get("hunt") not in HUNTS:
         problems.append(f"unknown hunt {row.get('hunt')!r}")
+    # Partnerships must show what the app already works with, not assume it.
+    if row.get("type") == "app-partner":
+        if "existing_wearables" not in row:
+            problems.append("app-partner without existing_wearables (null if unknown)")
+        if row.get("partner_status") not in PARTNER_STATUSES:
+            problems.append(f"app-partner partner_status {row.get('partner_status')!r}")
+        elif row["partner_status"] in {"competitor", "exclusive"} and (row.get("fit") or 0) > 6:
+            problems.append(f"{row['partner_status']} app scored above 6")
+        if not row.get("opportunity"):
+            problems.append("app-partner without a stated opportunity")
+    if row.get("type") in {"oem-partner", "channel-partner"} and not (row.get("opportunity") and row.get("unknowns")):
+        problems.append(f"{row['type']} without opportunity and unknowns")
+    if row.get("type") == "sport" and not (row.get("wearable_adoption") and row.get("opportunity")):
+        problems.append("sport without wearable_adoption evidence or opportunity")
     evidence = [u for u in row.get("evidence") or [] if isinstance(u, str) and u.startswith("http")]
     if len(evidence) < gates["min_evidence_urls"]:
         problems.append("no evidence URL")
@@ -93,6 +113,28 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
     return problems
 
 
+IDENTITY_RE = re.compile(
+    r"\bveteran[- ](?:owned|founder|led)|\bveteran-,|\b(?:woman|women)[- ](?:owned|led|founder)|\bwoman-,|\bminority[- ]owned",
+    re.I,
+)
+
+
+def is_sendable(row: dict) -> bool:
+    """A drafted opener the founder can send today through a public channel."""
+    return bool(
+        row["type"] not in {"signal", "competitor-deal"}
+        and row.get("contact_url")
+        and row.get("opener")
+        and "warm intro" not in (row.get("channel") or "").lower()
+        and not row.get("identity_needs_ok")
+    )
+
+
+def uses_founder_identity(row: dict) -> bool:
+    """True when the drafted opener tells the founder-identity story."""
+    return bool(IDENTITY_RE.search(row.get("opener") or ""))
+
+
 def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     p = params["priority"]
     s = int(row["fit"]) * 10
@@ -115,6 +157,56 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     return s, label
 
 
+def load_link_check() -> dict:
+    """{url: {"status": "ok" | "dead" | "unverified", "note": str}} from the last link check."""
+    if not LINK_CHECK.exists():
+        return {}
+    data = json.loads(LINK_CHECK.read_text())
+    return data.get("urls", {})
+
+
+def apply_link_check(row: dict, checks: dict) -> str | None:
+    """Drop dead links from a row. Returns a rejection reason when nothing citable is left."""
+    status = lambda u: (checks.get(u) or {}).get("status")  # noqa: E731
+    dead = [u for u in row["evidence"] if status(u) == "dead"]
+    row["evidence"] = [u for u in row["evidence"] if status(u) != "dead"]
+    if not row["evidence"]:
+        return f"every evidence link is dead ({len(dead)} checked)"
+    contact = row.get("contact_url")
+    if contact and status(contact) == "dead":
+        row["contact_url"] = None
+        row["contact_note"] = f"contact link dead: {(checks[contact].get('note') or '').strip()}"
+    checked = [u for u in row["evidence"] + ([row["contact_url"]] if row.get("contact_url") else []) if u in checks]
+    if row.get("contact_note"):
+        row["link_status"] = "contact dead"
+    elif checked and all(status(u) == "ok" for u in checked):
+        row["link_status"] = "verified"
+    elif checked:
+        row["link_status"] = "partly verified"
+    else:
+        row["link_status"] = "not checked"
+    return None
+
+
+def load_partner_extras() -> tuple[dict, list[dict]]:
+    """Combos, and the apps that were checked and not kept (the 9 re-checked apps use their newer verdicts)."""
+    combos = json.loads(COMBOS.read_text()) if COMBOS.exists() else {"note": "", "combos": []}
+    screened = {}
+    if SCREENED.exists():
+        for r in json.loads(SCREENED.read_text()).get("screened_out", []):
+            screened[r["app"]] = {"app": r["app"], "reason": r.get("reason", ""), "recheck": False}
+    if IDENTIFIED.exists():
+        for r in json.loads(IDENTIFIED.read_text()):
+            who = r.get("company") if r.get("identified") else None
+            reason = r.get("reason", "")
+            screened[r["app"]] = {
+                "app": r["app"],
+                "reason": (f"Re-checked: identified as {who}. " if who else "Re-checked: could not be tied to a real app. ") + reason,
+                "recheck": True,
+            }
+    return combos, sorted(screened.values(), key=lambda r: r["app"].lower())
+
+
 def dedupe_key(row: dict) -> str:
     if row.get("type") in {"signal", "competitor-deal"}:
         return row["type"] + ":" + norm(row.get("name"))
@@ -125,6 +217,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     kept: dict[str, dict] = {}
     rejected: list[dict] = []
     lanes = {}
+    checks = load_link_check()
     for path in sorted(RAW.glob("*.json")):
         lane = path.stem
         try:
@@ -145,7 +238,14 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
             row = dict(row)
             row["lane"] = lane
             row["evidence"] = [u for u in row["evidence"] if isinstance(u, str) and u.startswith("http")]
+            dead = apply_link_check(row, checks)
+            if dead:
+                rejected.append({"lane": lane, "name": row.get("name"), "reasons": [dead]})
+                continue
             row["score"], row["priority"] = score(row, params, today)
+            row["identity_needs_ok"] = (
+                uses_founder_identity(row) and not params["outreach"].get("founder_identity_approved", False)
+            )
             key = dedupe_key(row)
             prior = kept.get(key)
             if prior:
@@ -160,6 +260,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     targets = sorted(kept.values(), key=lambda r: (-r["score"], r.get("deadline") or "9999", r["name"]))
     for i, row in enumerate(targets, 1):
         row["rank"] = i
+        row["sendable"] = is_sendable(row)
         row["id"] = re.sub(r"\s+", "-", norm(f"{row['name']} {row.get('org') or ''}"))[:80]
     return targets, rejected, lanes
 
@@ -175,11 +276,14 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "growth": count(lambda t: t["hunt"] == "growth" and t["type"] != "signal"),
         "social": count(lambda t: t["hunt"] == "social"),
         "sponsorship": count(lambda t: t["hunt"] == "sponsorship" and t["type"] != "competitor-deal"),
+        "app_partners": count(lambda t: t["type"] == "app-partner"),
+        "sports": count(lambda t: t["type"] == "sport"),
         "competitor_deals": count(lambda t: t["type"] == "competitor-deal"),
         "signals": count(lambda t: t["type"] == "signal"),
         "high": count(lambda t: t["priority"] == "High" and t["type"] != "signal"),
         "deadlines_30d": len(soon),
-        "ready_to_send": count(lambda t: t["type"] not in {"signal", "competitor-deal"} and t.get("contact_url") and t.get("opener")),
+        "ready_to_send": count(lambda t: t.get("sendable")),
+        "identity_needs_ok": count(lambda t: t.get("identity_needs_ok")),
     }
 
 
@@ -201,6 +305,7 @@ def main() -> int:
     params = load_params()
     today = dt.date.fromisoformat(args.today) if args.today else dt.datetime.now(dt.timezone.utc).date()
     targets, rejected, lanes = build(params, today)
+    combos, screened_apps = load_partner_extras()
 
     print(f"{len(targets)} targets kept, {len(rejected)} rejected")
     for lane, c in lanes.items():
@@ -220,6 +325,9 @@ def main() -> int:
                   for l in params["lanes"]],
         "summary": summary(targets, today),
         "targets": targets,
+        "combos": combos["combos"],
+        "combos_note": combos.get("note", ""),
+        "screened_apps": screened_apps,
         "rejected_count": len(rejected),
     }
     (ROOT / "data" / "targets.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")

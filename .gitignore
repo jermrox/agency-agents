@@ -91,6 +91,8 @@ graphify-out/
 site/
 # ...except the Baby Gear dashboard, which the baby-scout daily workflow commits.
 !baby-scout/site/
+# ...and the Vybe Growth Scout dashboard, which build.py writes and the push publishes.
+!growth-scout/site/
 
 # Tailwind toolchain for the Netlify site build
 scripts/netlify/node_modules/

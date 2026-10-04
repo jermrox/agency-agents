@@ -76,3 +76,64 @@ def test_sponsorship_rows_are_valid_and_competitor_deals_dedupe_by_headline():
     assert build.validate(a, PARAMS, TODAY) == []
     assert build.dedupe_key(a) == build.dedupe_key(dict(a, org="Whoop Inc"))
     assert build.validate(row(type="athlete", hunt="sponsorship"), PARAMS, TODAY) == []
+
+
+def test_founder_identity_openers_are_flagged():
+    assert build.uses_founder_identity(row(opener="Hi - Vybe is a woman-, veteran- and minority-owned startup"))
+    assert build.uses_founder_identity(row(opener="I'm a veteran founder in Akron"))
+    assert not build.uses_founder_identity(row(opener="Our cohort gets monthly calls with veteran mentors"))
+    assert not build.uses_founder_identity(row(opener="We're building Vybe Health in Akron, Ohio"))
+
+
+def test_link_check_drops_dead_links(tmp_path, monkeypatch):
+    checks = {
+        "https://example.com/a": {"status": "dead", "note": "404"},
+        "https://example.com/b": {"status": "ok", "note": "live"},
+        "https://example.com/pitch": {"status": "dead", "note": "form removed"},
+    }
+    r = row(evidence=["https://example.com/a", "https://example.com/b"])
+    assert build.apply_link_check(r, checks) is None
+    assert r["evidence"] == ["https://example.com/b"]
+    assert r["contact_url"] is None and r["link_status"] == "contact dead"
+
+    gone = row(evidence=["https://example.com/a"])
+    assert "dead" in build.apply_link_check(gone, checks)
+
+    fresh = row(evidence=["https://example.com/b"], contact_url=None)
+    build.apply_link_check(fresh, checks)
+    assert fresh["link_status"] == "verified"
+    unchecked = row(evidence=["https://example.com/zzz"], contact_url=None)
+    build.apply_link_check(unchecked, checks)
+    assert unchecked["link_status"] == "not checked"
+
+
+def test_warm_intro_rows_are_not_sendable():
+    assert build.is_sendable(row())
+    assert not build.is_sendable(row(channel="warm intro needed"))
+    assert not build.is_sendable(row(contact_url=None))
+    assert not build.is_sendable(row(type="signal"))
+
+
+def test_app_partner_rows_must_show_existing_integrations():
+    ok = row(type="app-partner", hunt="partnership", existing_wearables=["Garmin"], exclusive=False,
+             partner_status="open", opportunity="Add Vybe via their Terra integration")
+    assert build.validate(ok, PARAMS, TODAY) == []
+    no_list = dict(ok); del no_list["existing_wearables"]
+    assert any("existing_wearables" in r for r in build.validate(no_list, PARAMS, TODAY))
+    assert any("scored above 6" in r for r in build.validate(dict(ok, partner_status="exclusive"), PARAMS, TODAY))
+    assert any("opportunity" in r for r in build.validate(dict(ok, opportunity=""), PARAMS, TODAY))
+
+
+def test_sport_rows_need_adoption_evidence():
+    s = row(type="sport", hunt="partnership", wearable_adoption="Survey: 12% of clubs", opportunity="Club pilot")
+    assert build.validate(s, PARAMS, TODAY) == []
+    assert build.validate(dict(s, wearable_adoption=None), PARAMS, TODAY)
+
+
+def test_partner_extras_load_and_recheck_overrides_first_pass():
+    combos, screened = build.load_partner_extras()
+    assert len(combos["combos"]) >= 6
+    assert all(c["partners"] and c["offer"] and c["unknown"] for c in combos["combos"])
+    names = {r["app"]: r for r in screened}
+    assert len(names) == len(screened) >= 55
+    assert names["Selah"]["recheck"] is True
