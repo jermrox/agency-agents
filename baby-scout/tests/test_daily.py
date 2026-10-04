@@ -122,6 +122,8 @@ def test_dashboard_embeds_sourced_safety_picks(tmp_path):
             assert p["sources"] and all(url.startswith("https://") for _, url in p["sources"])
     assert all(a["url"].startswith("https://") for a in picks["avoid"] + picks["brands"] + picks["tech"])
     assert len(picks["recall_db"]["items"]) > 50
+    guide_html = (tmp_path / "site" / "guide.html").read_text()
+    assert "Baby Gear Safety Guide" in guide_html and 'href="guide.html"' in html
     assert all(x["url"].startswith("https://") for x in picks["recall_db"]["items"])
 
 

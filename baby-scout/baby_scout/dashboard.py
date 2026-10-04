@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from .models import utcnow
+from . import guide
 from .report import ReportArchive
 
 
@@ -38,7 +39,8 @@ def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive:
 
 
 def write(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive,
-          site_dir: str | Path, picks_path: str | Path | None = None) -> Path:
+          site_dir: str | Path, picks_path: str | Path | None = None,
+          top10_dir: str | Path | None = None) -> Path:
     site = Path(site_dir)
     site.mkdir(parents=True, exist_ok=True)
     data = payload(results, plan, archive, load_picks(picks_path))
@@ -50,6 +52,7 @@ def write(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: R
     embedded = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     index = site / "index.html"
     index.write_text(TEMPLATE.replace("__DATA__", embedded), encoding="utf-8")
+    guide.write(site, data["picks"], guide.load_top10(top10_dir), data["generated_at"])
     return index
 
 
@@ -158,6 +161,7 @@ tr.sel td{background:var(--page);font-weight:600}
 .search{width:100%;max-width:420px;margin:0 0 10px;font:inherit;color:var(--ink);background:var(--raised);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
 .dates .past{color:var(--muted);text-decoration:line-through}
 a{color:var(--series-1)}
+.guide-link{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:650;border-radius:10px;padding:8px 14px}
 </style>
 </head>
 <body>
@@ -170,6 +174,7 @@ a{color:var(--series-1)}
     <div class="controls">
       <label for="day" class="muted">Report</label>
       <select id="day"></select>
+      <a class="guide-link" href="guide.html" style="padding:6px 12px">🛡️ Safety Guide</a>
       <button id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
     </div>
   </div>
@@ -178,7 +183,7 @@ a{color:var(--series-1)}
 
   <section aria-labelledby="h-changes"><h2 id="h-changes">What changed</h2><ul class="events" id="events"></ul></section>
   <section aria-labelledby="h-recalls"><h2 id="h-recalls">Baby &amp; kid recalls</h2><p class="muted" id="recalls-note" style="margin-bottom:8px"></p><div class="chips" id="recall-filters" role="group" aria-label="Filter recalls by type"></div><div id="recalls"></div></section>
-  <section aria-labelledby="h-picks"><h2 id="h-picks">Car seat &amp; stroller safety picks</h2><p class="muted" id="picks-note" style="margin-bottom:8px"></p><ul class="dates" id="picks-dates"></ul><div class="chips" id="picks-tabs" role="group" aria-label="Choose a category"></div><div id="picks"></div></section>
+  <section aria-labelledby="h-picks"><h2 id="h-picks">Car seat &amp; stroller safety picks</h2><p style="margin:0 0 10px"><a class="guide-link" href="guide.html">Open the full Safety Guide: top 10 per category with photos, prices, filters and side-by-side compare →</a></p><p class="muted" id="picks-note" style="margin-bottom:8px"></p><ul class="dates" id="picks-dates"></ul><div class="chips" id="picks-tabs" role="group" aria-label="Choose a category"></div><div id="picks"></div></section>
   <section aria-labelledby="h-watch"><h2 id="h-watch">Watchlist</h2><div class="grid" id="items"></div></section>
   <section aria-labelledby="h-plan"><h2 id="h-plan">Buy plan</h2><div id="plan"></div></section>
   <section aria-labelledby="h-spend"><h2 id="h-spend">Spending</h2><div id="spend"></div></section>

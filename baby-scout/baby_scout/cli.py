@@ -104,7 +104,8 @@ def cmd_run(args: argparse.Namespace) -> int:
                          wl.household.due_date, archive.previous(today.isoformat()), today,
                          watch=_load_watch(args, today), watch_days=args.watch_days)
     report_path = archive.save(daily)
-    index = dashboard.write(results, buy_plan, archive, args.site, picks_path=Path(args.data) / "gear_picks.json")
+    index = dashboard.write(results, buy_plan, archive, args.site, picks_path=Path(args.data) / "gear_picks.json",
+                             top10_dir=Path(args.data) / "top10")
 
     for r in daily["items"]:
         print(f"{deals.VERDICT_LABELS[r['verdict']]:34} {r['name']}")
