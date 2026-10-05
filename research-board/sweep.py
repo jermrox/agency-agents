@@ -35,6 +35,7 @@ from tactical_research import models  # noqa: E402
 from tactical_research.cluster import Sighting, cluster  # noqa: E402
 from tactical_research.extract import document, links  # noqa: E402
 from tactical_research.identifiers import is_fetchable  # noqa: E402
+from tactical_research.hot import stale_notes  # noqa: E402
 from tactical_research.render import render_archive, render_board  # noqa: E402
 
 PKG = HERE / "tactical_research"
@@ -219,7 +220,15 @@ def render(publish: bool = False) -> int:
 
     standards = _read_json(STANDARDS, {}).get("rows", [])
     flags = _read_json(FLAGS, {}).get("flags", [])
-    notes = _read_json(HOT_NOTES, {}).get("notes", {})
+    hot = _read_json(HOT_NOTES, {})
+    notes = hot.get("notes", {})
+    board_now, _ = models.split_window(items)
+    stale = stale_notes(notes, hot.get("cites", {}), board_now)
+    if stale:
+        for problem in stale:
+            print(f"  hot-notes: {problem}", file=sys.stderr)
+        print(f"{len(stale)} hot-topic problem(s); rewrite hot-notes.json. Refusing to render.", file=sys.stderr)
+        return 1
 
     board_html = render_board(items, standards=standards, flags=flags, hot_notes=notes)
     archive_html = render_archive(items)

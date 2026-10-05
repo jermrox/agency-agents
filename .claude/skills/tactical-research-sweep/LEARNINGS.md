@@ -16,6 +16,16 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-05 — daily run
+
+- +1 item (MIL: USARIEM review, cadets injured about as often as soldiers in initial training).
+  Board 62, archive 56. Exa still out of credits (402): PubMed-only again, Monday link re-check
+  skipped. Unverified leads to confirm when fetch returns: COPS FY26 LEMHWA NOFO (due 22 Oct),
+  Fairmont WV $246K AFG health/cancer-screening award.
+- Stale hot-topic paragraphs happened again (caffeine meta-analysis, 15 kg kit study aged out).
+  Second time in two days, so it is now enforced in code: hot-notes.json carries `cites` and
+  `sweep.py --publish` refuses while any cited item is out of the window.
+
 ## 2026-10-04 — first daily run
 
 - +4 items, all research from PubMed: MIL 2 (SF selection ruck times; neuroticism and fitness in

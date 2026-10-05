@@ -58,7 +58,9 @@ The engine is `research-board/` (see its README). The routine:
    identifier, folds coverage into the existing document, keeps everything already on file, and
    validates before writing (the window and the 12-month archive are computed at render time). Write a
    plain-English paragraph per hot topic (a tag with 3+ independent items in the window) to
-   `research-board/hot-notes.json` as `{"notes": {"<tag>": "<paragraph>"}}`.
+   `research-board/hot-notes.json` as `{"notes": {"<tag>": "<paragraph>"}, "cites": {"<tag>":
+   ["<primary_url>", ...]}}` — every item a paragraph names goes in its `cites`. Rendering refuses
+   while any cited item has left the 30-day window, so rewrite affected paragraphs every run.
 7. `python research-board/sweep.py --publish` renders and writes
    `healthcare/dashboards/h2f-scout-board.html` and `h2f-archive.html`. It refuses to render
    if any item fails validation. Run `python -m pytest research-board/tests -q`.
