@@ -985,6 +985,130 @@ PACKETS = [
         ],
     },
     {
+        "id": "charmhealth",
+        "name": "CharmHealth Innovation Challenge and Pitch Competition (2026)",
+        "funder": "CharmHealth (MedicalMine Inc.)",
+        "amount": "$10,000 first / $5,000 second / $2,500 third, up to $17,500 total, plus access to CharmVentures and a listing on the CharmHealthHub marketplace",
+        "deadline": "2026-11-01",
+        "fee": None,
+        "url": "https://www.charmhealth.com/innovation-challenge/",
+        "submit": "Online submission on the Innovation Challenge page. CharmHealth's own page says applications are accepted on a rolling basis until November 2026. Shortlisted finalists present a poster in person at Pitch Day during the Charmalot user conference; an audience vote then picks six for live pitches.",
+        "gates": ["travelself"],
+        "confirmed": [
+            "Open to digital health startups, individuals and organisations — no ownership, age-of-business or revenue gate is published",
+            "CharmHealth's February 2026 press release states submission is free of charge",
+        ],
+        "why": "The largest free-entry cash prize currently open in the digital-health lane: $10,000 for first with no fee, no equity and no clinical requirement, and the brief is digital health broadly rather than clinical workflow. Past winners have included consumer-facing products, so a screenless band that answers plain questions about a person's own data is in scope rather than a stretch. It is also the only open prize on this board where the funder runs its own venture arm and marketplace, so a shortlist place is worth something even without the cash.",
+        "docs": [
+            "Online submission form on the Innovation Challenge page",
+            "Product description and the problem it solves",
+            "A poster, if shortlisted for Pitch Day",
+            "A short live pitch, if the audience vote selects you",
+            "Your own travel to Pitch Day — the date and location are not published",
+        ],
+        "note": (
+            "APPLY THIS WEEK, AND EMAIL THEM FIRST. The window is genuinely unclear: "
+            "CharmHealth's own page now reads \u201cDeadline: November 2026\u201d and "
+            "\u201capplications are now being accepted on a rolling basis, until November "
+            "2026\u201d, while their 23 February 2026 press release gave 31 July 2026. "
+            "This packet is dated to 1 November because that is the later of the two and "
+            "the page is the more recent source \u2014 but treat it as unconfirmed. Send "
+            "one line to innovate@charmhealth.com asking for the closing date and the "
+            "Pitch Day date and location, then submit without waiting for the reply.\n\n"
+            "THE PITCH DAY LOGISTICS ARE AN UNPRICED GATE. Finalists present a poster in "
+            "person at the Charmalot user conference, and neither the date nor the city is "
+            "stated anywhere on the page. That is why `travelself` is on this packet. "
+            "Do not commit to the shortlist before knowing where it is.\n\n"
+            "POSITION IT AS DIGITAL HEALTH, NOT AS A MEDICAL DEVICE. CharmHealth is an EHR "
+            "company and its audience is clinicians, so the temptation is to dress Vybe up "
+            "in clinical language. Resist it. The honest and stronger framing for this "
+            "audience is the handoff: Vybe is what the patient brings to the appointment. "
+            "It refuses clinical questions, states its blind spots, and shows the reading "
+            "so a clinician can see what the person saw. An EHR audience has watched "
+            "consumer wearables generate noise for a decade; a product that declines to "
+            "diagnose is the interesting one in that room.\n\n"
+            "The audience vote decides the final six. That rewards a poster somebody can "
+            "understand from four feet away \u2014 one question, one answer, the evidence "
+            "under it \u2014 over a dense one."
+        ),
+        "fields": [
+            {"q": "Company and contact", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, operating from "
+                "{{CITY}}. Website {{WEBSITE}}. Contact {{CEO}}, {{EMAIL}}."},
+            {"q": "Describe your innovation", "a": SHORT},
+            {"q": "What problem does it solve?", "a":
+                "Wearables have solved measurement and left interpretation undone. A person "
+                "wakes up with a heart-rate variability number that is down, a sleep score "
+                "that is amber, and no idea which of the four things they did yesterday "
+                "caused it or what to do today. The data is accurate and useless.\n\n"
+                "That gap has a cost on both sides of an appointment. The person stops "
+                "looking at their own data, or worse, reads a dip as a diagnosis and "
+                "arrives frightened. The clinician gets handed a screenshot with no context "
+                "and no indication of what the device could not see.\n\n"
+                "Vybe answers the question the number does not: why did my body do that, "
+                "given the week I actually had. And it says what it could not see, every "
+                "time, so the answer can be checked rather than believed."},
+            {"q": "How is it different from what exists?", "a": WHY_NOW + "\n\n"
+                "Two differences matter to a clinical audience specifically.\n\n"
+                "Vybe reads context, not just signals. Five parts of a person\u2019s life "
+                "\u2014 Restore, Move, Nourish, Connect and Vitals \u2014 and Connect is "
+                "the one other products miss: work, travel, stress and weather. A reading "
+                "moves for reasons no sensor can see, and a product that ignores those "
+                "reasons will keep attributing a hot week to a training error.\n\n"
+                "Vybe refuses to diagnose, and shows its own limits. Asked a clinical "
+                "question it declines, says to see a clinician, and still shows the reading "
+                "so it can be taken to the appointment. Every answer carries its basis and "
+                "its blind spots. That is shipped behaviour, not a disclaimer at the bottom "
+                "of a screen."},
+            {"q": "Stage, traction and what you would do with the prize", "a":
+                "Where the product is today: {{STAGE}}. Traction: {{TRACTION}}. Team of "
+                "{{EMPLOYEES}}. Revenue over the last 12 months: {{REVENUE}}.\n\n"
+                "[Name one use for the money and make it finishable at $10,000 \u2014 and "
+                "write the answer so it still makes sense at $2,500, because third place is "
+                "the likeliest outcome of any pitch competition. A $10,000 answer that "
+                "reads like a Series A plan is the fastest way to look like you have not "
+                "thought about it. Candidates, pick one: the radio pre-scan ahead of the "
+                "Band\u2019s FCC work, a run of at-cost Bands for outside testers, or the "
+                "clinician-facing export that this audience would actually use.]"},
+            {"q": "Who benefits, and how would you measure it?", "a":
+                "The person wearing it, first: they get an answer they can act on out of "
+                "data they already generate, without a subscription gating their own "
+                "history.\n\n"
+                "The clinician, second, and this is the part worth saying to a CharmHealth "
+                "audience. What arrives at the appointment is not a score and not a "
+                "diagnosis. It is a reading, the context around it, and an explicit list of "
+                "what the device could not see.\n\n"
+                "[How you would measure it is a real question and it should get a real "
+                "answer, not an impact adjective. Vybe already records whether its own "
+                "suggestions worked \u2014 the prediction is written down before the "
+                "attempt, and the app shows the record including the misses. Describe that "
+                "as the measurement, and give the current numbers only if they exist. Do "
+                "not invent a figure here; an honest \u2018this is how we will know\u2019 "
+                "beats a number nobody can source.]"},
+            {"q": "The regulatory position, stated plainly", "a":
+                "Vybe is not a medical device and makes no diagnostic claims. It is a "
+                "consumer wellness product. It does not screen for, diagnose or treat any "
+                "condition, and when asked to, it declines and says to see a clinician.\n\n"
+                "That is a product decision rather than a regulatory hedge, and it is worth "
+                "one sentence in front of this audience: the moment a consumer wearable "
+                "starts making clinical claims it becomes a device, and the people in that "
+                "room are the ones who deal with the consequences."},
+            {"q": "Poster spine, if shortlisted", "a":
+                "[A poster that an audience votes on gets about four feet and ten seconds. "
+                "Four blocks, in this order.]\n\n"
+                "ONE QUESTION, at the top, large: \u201cWhy am I tired today?\u201d\n\n"
+                "THE ANSWER Vybe gives, in a sentence a stranger can read without "
+                "context.\n\n"
+                "THE EVIDENCE under it \u2014 the readings the answer rests on, and the "
+                "week around them.\n\n"
+                "WHAT IT COULD NOT SEE, stated as plainly as the answer. On a wall of "
+                "posters claiming certainty, this is the block people stop at.\n\n"
+                "[If a Band can be on a wrist at the table, put it there. The screenless "
+                "band is the thing nobody else in the room has, and it explains the product "
+                "faster than the poster does.]"},
+        ],
+    },
+    {
         "id": "credits",
         "name": "Cloud and AI credits — five programs, one description",
         "funder": "NVIDIA, Microsoft, AWS, Google, Anthropic",
@@ -1015,18 +1139,31 @@ PACKETS = [
     },
     {
         "id": "veterans",
-        "name": "Veteran pitch circuit — Second Service Foundation and Warrior Rising",
-        "funder": "Second Service Foundation · Warrior Rising",
-        "amount": "Second Service: $1,000–$15,000 per regional event · Warrior Rising: up to $20,000 through business showers",
+        "name": "Veteran pitch circuit — Warrior Rising and the regional events",
+        "funder": "Warrior Rising, plus the regional veteran pitch events on the board",
+        "amount": "Warrior Rising: up to $20,000 through business showers · the regional events on the board run $1,000–$30,000 each",
         "deadline": "rolling",
         "fee": None,
-        "url": "https://secondservicefoundation.org/",
-        "submit": "Second Service runs regional Military Entrepreneur Challenge pitch events; register for the next one near you. Warrior Rising is training-first: complete its program to become eligible for business-shower awards (warriorrising.org). Both require 51%+ veteran (or eligible military-family) ownership.",
+        "url": "https://warriorrising.org/",
+        "submit": "Warrior Rising is training-first: complete its program to become eligible for business-shower awards. The dated regional events each have their own application — see the board rows for Veterans Business Battle, VETCON, Veteran Shark Tank, eMerge NatSec and the Blake Family competition. All of them require 51%+ veteran or eligible military-family ownership.",
         "gates": [],
         "confirmed": ["Veteran-owned 51%+ (confirmed 20 Sep)"],
-        "why": "Repeatable. Each Second Service event is a new chance at cash with the same pitch, and a win is a line in every later application.",
+        "why": "Repeatable. The same sixty seconds works at every event on the circuit, and a win is a line in every later application.",
         "docs": [],
-        "note": "",
+        "note": (
+            "CORRECTED 5 OCT 2026: THE SECOND SERVICE FOUNDATION IS GONE. This packet used "
+            "to lead with its Military Entrepreneur Challenge. Their own site now states "
+            "the foundation \u201chas been voluntarily shut down following ten years\u201d "
+            "and is \u201cstepping away from the pitch competition space\u201d. There is "
+            "no 2026 or 2027 cycle and there will not be one \u2014 do not look for a "
+            "regional event near you. Its board row has been deleted.\n\n"
+            "That removed one of the two national circuits, so the veteran lane now runs "
+            "through the dated events rather than a standing calendar. Warrior Rising is "
+            "the one that stays open all year, and it is training-first: the grant is the "
+            "back end of a programme, not a form, so start it well before you need the "
+            "money.\n\n"
+            "The pitch below is the reusable part. Everything else is per-event."
+        ),
         "fields": [
             {"q": "60-second pitch", "a":
                 "I'm {{VETERAN_OWNER}}, and I'm building Vybe.\n\n"

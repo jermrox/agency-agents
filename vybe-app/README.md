@@ -33,9 +33,12 @@ npx expo start
   yet. The app opens here.
 - **PatternHistoryScreen** *(1 Oct)* — twelve weeks of one claim, and the
   weeks it broke. Reached from the pattern section of NourishScreen.
-- **OutcomeScreen** *(new, 2 Oct)* — Vybe grading itself: every suggestion it
+- **OutcomeScreen** *(2 Oct)* — Vybe grading itself: every suggestion it
   made, what it predicted, what happened, and the ones it got wrong. Reached
   from the "did it work last time" block on RestoreScreen.
+- **ConnectScreen** *(new, 5 Oct)* — one week of outside load: thirty-eight
+  hours of elevated readings, what each of them is being blamed on, and the
+  seven that nothing explains. Tap the Connect card on Home.
 
 ## The three decisions worth keeping
 
@@ -319,6 +322,53 @@ rows would be the only bug that matters.
 The app has three plots already. A predicted *range*, one actual, and whether one
 fell inside the other is three numbers and a word — it reads faster set as type,
 and drawing it would be a picture of a sentence.
+
+## The connect screen, and why it looks like that
+
+Four of the five dimensions read the body. Connect reads what happened *to* it —
+the calendar, the time zones, the weather — then asks what the body did about it.
+That makes it the only dimension whose inputs are not measurements, and the only
+one that is structurally incomplete: a hard week has causes that never reach a
+wrist sensor or a calendar invite.
+
+**So the claim is an attribution, and attribution needs a form that shows
+composition.**
+`38h` of elevated readings, broken into four named parts. Restore's hairline list
+cannot show that one quantity is *made of* other quantities; a single bar read
+left to right can. The app's two existing bar treatments answer a different
+question — `TrendColumns` is one value per week across twenty-six weeks,
+`PatternWeeks` is one value per week against a line — so neither was reusable.
+
+**The hours nothing explains are drawn, ranked and given a block of their own.**
+Seven of the thirty-eight have no cause beside them: clear calendar, ordinary
+weather, home all week. Every product in this category hands those to the busy
+week and shows a tidy pie. This one says it *"would rather leave them blank than
+hand them to the nearest cause on the list"*, and the remainder gets a segment
+with an outline and no fill, at the end of the bar and the bottom of the list.
+A screen that can only produce complete explanations is a screen that invents
+them.
+
+**A source with too few comparable days says so instead of reporting an
+effect.**
+Two time-zone changes are the single largest thing that happened this week, and
+Vybe still refuses to say what travel does to you, because two days is a story.
+The floor is four comparable days, printed on screen, and the screen adds up what
+it is holding open rather than explaining: 7 unexplained hours plus 11 under thin
+sources is **47% of the week**.
+
+**The bar is the second reading, never the only one.**
+Its segments are steps of the one Connect hue, applied as opacity rather than new
+tokens — and steps of a single hue are exactly what somebody with low contrast
+sensitivity cannot separate. So every segment's name, hours and share are printed
+in the list beneath it, the bar is hidden from screen readers, and removing it
+loses nothing.
+
+**Every figure is arithmetic over the sources.**
+The named total, each share, the remainder, the 14-hour difference from a usual
+week and the count of sources Vybe will not read are computed at render. The
+shares sum to exactly 100, so the bar fills without overflowing. `unexplainedOf`
+clamps at zero and the screen swaps in an overlap note, so a future data source
+that double-counts produces a caveat rather than a backwards bar.
 
 ## Non-negotiables held
 

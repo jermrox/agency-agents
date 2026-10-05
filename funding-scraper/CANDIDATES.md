@@ -1281,3 +1281,191 @@ Standing rejections:
   membership, which is the same barrier wearing a different hat.
 - Any programme requiring a clinical trial (see the blocklist in
   `sources.toml`): Vybe has no trial arm, no IRB, no clinical infrastructure.
+
+## Monday sweep — 5 Oct 2026
+
+**Read this first: today's verification route was degraded.** The sandbox's
+egress proxy refused every direct page fetch (`wearable.su.domains`,
+`events.stanford.edu`, `www.innovationworldcup.com`, `www.sbir.gov`,
+`healthtechchallengers.com` — and `curl` to any host returns `CONNECT tunnel
+failed, 403`), and the Exa account that normally carries the fetches is out of
+credits. Everything below was verified through search restricted to the
+programme's **own domain**, so the text is the programme's own page text as
+indexed, not a listicle — but it is not a live read, and two findings below turn
+on exactly that distinction. **To restore live reads:** allow the funding hosts
+in the environment's Network access setting, or top up Exa.
+
+### Removed from the board
+
+- **Second Service Foundation — Military Entrepreneur Challenge** — **DEAD, and
+  it was live on the board until today.** Their own site states the foundation
+  "has been voluntarily shut down following ten years" and is "stepping away
+  from the pitch competition space to allow for others to give the military
+  entrepreneur community the financial support they deserve." No 2026 or 2027
+  cycle exists and none will. The row is deleted from `sources.toml` rather than
+  marked closed, because a shut-down organisation has no next date. Note for the
+  veteran lane: this removes one of the two national veteran pitch circuits, so
+  the remaining ones (Veterans Business Battle, VETCON, Veteran Shark Tank,
+  eMerge NatSec, Blake Family, Warrior Rising) now carry that whole lane.
+
+### Added to the board
+
+- **Arm Flexible Access for Startups** — rolling, $0, verified on arm.com: $0
+  access to the SoC design portfolio, $0 licence fee for prototype production,
+  $0 tools/training/support, fees only at production silicon. Gates are
+  privately owned, ≤$50M total funding, ≤$5M annual revenue — recently raised
+  from $20M/$1M, so older write-ups understate eligibility. Not cash; it removes
+  a licence from the hardware path.
+- **STMicroelectronics Free Sample Request** — rolling, business or university
+  email domain required, generally up to three per part where the Free badge
+  shows. Fourth row of the same shape as the ADI, Murata and Renesas entries,
+  and the most relevant of the four for a wrist device: ST's six-axis IMUs carry
+  an on-sensor machine-learning core.
+
+### Unresolved, and it blocks a row
+
+- **Hey Helen Grant (Visionaries)** — **$10,000 every month, and the fee
+  question is now a straight contradiction.** This file's standing rejections
+  list it among grants charging "$15–$25 per application," sourced from
+  NerdWallet's Sep 2026 roundup. Today's domain-restricted read of
+  `visionaries.co/helen-grant/` and its terms page returns **no mention of a fee
+  anywhere**. Absence of a fee line is not proof there is none, and the standing
+  rule is to trust the programme's own page over a roundup — so the row was
+  written, then pulled back out before commit rather than overriding a dated
+  rejection on weaker evidence than it was made with. **Everything else checks
+  out and is worth the five minutes to settle:** founder identifies as a woman
+  and owns 50%+ (confirmed for Vybe), legal US resident 18+, for-profit actively
+  operating under $1M annual revenue, US business bank account able to receive
+  ACH, and **pre-revenue applications are explicitly welcome**. One application
+  covers twelve monthly rounds. If someone loads the application and sees no
+  payment step, it is a one-line add — and file it **rolling**, not with a close
+  date, for the same reason the Amber Grant bit us: a monthly recurrence written
+  as a single `close_date` reads as a dead row the day after the deadline.
+
+### Corrections to earlier entries in this file
+
+- **Hiring Our Heroes Small Business Grant** — the 28 Sep note says their site
+  "no longer lists an entrepreneurship programme at all" and to drop it. That is
+  now wrong: `hiringourheroes.org/small-business-grant/` is live with programme
+  rules, five awards (four at $10,000, one at $25,000), and the 2026 round shown
+  as closed. **The real blocker is the gate, not the programme's existence: 3 to
+  20 employees**, counting owners, full and part-time staff and 1099
+  contractors. Vybe's headcount is one of the deck's open brackets, so nobody
+  can score this row yet. 51%+ veteran or military-spouse ownership is
+  confirmed. The next round was described as opening "October or November of
+  2026" with no published date — **diary: re-check the start of each month until
+  a date appears.**
+- **Google for Startups Accelerator** — confirms the 28 Sep rejection rather
+  than changing it. North America applications are closed across all tracks (AI
+  First, Cloud AI, AI for Energy, Women Founders, Black Founders), the US
+  programme is equity-free, and no 2027 window is published. The 5+ employee
+  gate and the "Seed to Series A traction" entry criterion both still stand, and
+  both still exclude Vybe today.
+
+### Dead or ineligible on inspection, 5 Oct 2026
+
+- **eWEAR Health Prize @ Stanford** — $25,000 cash, wearables explicitly in
+  scope, pitch on 6 Nov 2026. Rejected on **two** gates. First, per the most
+  recent published criteria the founder must be **18 to 35 years old** — a
+  founder attribute nobody has stated and not something a board row should
+  invite a claim about. Second, applications were to "open in summer 2026" with
+  the event seven weeks away and no window published anywhere; the programme's
+  own page is one of the hosts the proxy refuses, so the state of the window
+  cannot be read. Company must be US-incorporated with a US business location,
+  which Vybe clears. Worth one look in **summer 2027** if the age gate is ever
+  resolvable.
+- **EBV Innovation Hero (9th), Innovation World Cup special prize** — closes
+  **11 Feb 2027**, free of charge, and the scope is almost written for Vybe:
+  "sensor-based devices, wearables, IoT, Edge AI, robotics." Killed by one line
+  on its own second page: **"All eligible EMEA start-ups"** — it is a European
+  prize and Vybe is in Ohio. It also pays no cash; the award is EBV engineering
+  and supply-chain support, a pitch slot at Hannover Messe 2027 and visibility.
+  Recorded so nobody chases it from the category page, which does not mention
+  the region.
+- **Hong Kong MedTech Innovation World Cup** — closes 29 Jan 2027, free.
+  Excluded by the blocklist, not by eligibility: its three areas are Patient
+  Treatment Innovations, Rehabilitation Solutions and Monitoring Systems, which
+  is a medical-device and clinical-monitoring posture. Vybe does not take one.
+- **National Sleep Foundation SleepTech Award** — the closest thing to a
+  purpose-built Vybe prize found in months, and twice disqualified: applications
+  closed **25 Sep 2026**, and non-members pay **$500** (early bird) or **$600**
+  to apply. Free only to SleepTech Network members, which is a membership fee
+  wearing a different hat — same shape as the NASE rejection. Genuinely good
+  news in the eligibility text, though, worth keeping for the fee-free day:
+  **pre-market and pre-launch products are eligible**, and the Sleep Health and
+  Wellness category is consumer wellness, not sleep disorders. Diary: check
+  whether 2027 membership is cheaper than the $500 entry.
+- **HRX Pitch Competition** — $30,000 / $15,000 / $10,000 People's Choice.
+  Applications closed for 2026, next window unpublished.
+- **AHA Health Tech Competition 2026** — closed 18 Sep 2026; finalists notified
+  7 Oct. Scope is cardiovascular care with AI, wearables and remote monitoring —
+  a real fit on paper, but it runs through the American Heart Association and
+  reads clinical. Re-check when the 2027 window posts (applications opened 22
+  Jun in 2026).
+- **MEDICA Start-up Competition (15th)** — participation free of charge, closed
+  **10 Sep 2026**, next cycle unpublished. Worth a note in August.
+- **DHN HealthTech Innovation Challenge 2026** — India-based, closed 30 Sep.
+- **Create the Future Design Contest (Tech Briefs / COMSOL / Mouser)** — **no
+  cost to enter**, $25,000 grand prize, and a Medical category. The 2026 cycle
+  ran 2 Mar to 1 Jul 2026, so it is closed and the 2027 window is unpublished.
+  The pattern is a March open and a 1 July close. **Diary: re-check early March
+  2027.** Best unclaimed free-entry cash prize found this sweep.
+- **MassChallenge** — zero equity, zero cost, **no application fee**, and the
+  early-stage gates fit exactly (raised under $1M, revenue under $2M). Not added
+  because no window Vybe could enter is published: the **2027 Healthcare
+  Challenge Program** applications "will open later this year" with no date, and
+  the US Early Stage 2027 page is last year's. The only dated rows are other
+  sectors (SMU Cox FinTech closes 19 Nov 2026; Sustainable Food Challenge 2027
+  closes 25 Nov). **Diary: re-check monthly for the 2027 Healthcare Challenge
+  opening** — this one is a strong fit the day it has a date.
+- **3rd WEAR Dataset Challenge @ HASCA 2026 (Kaggle)** — wearable activity
+  recognition from inertial and egocentric data, which is the Band's own
+  problem. Not worth a row even when open: prizes are €300 / €150 / €75, the
+  deadline was 5 Jul 2026, and eligibility requires submitting a technical
+  paper to an academic workshop in Shanghai. Noted so it is not re-checked.
+- **SoGal Black Founder Startup Grant** — $10,000, rolling. Gated on the
+  founder being a Black or multiracial-Black woman or nonbinary founder.
+  "Minority-owned, 51%+" is confirmed for Vybe but does not establish that, and
+  it is not something a board row should invite a claim about. Same handling as
+  the Founders First Pride and Kitty Fund rows above: if the founders say it
+  applies, it is a one-line add.
+- **SBA Veteran Small Business of the Year** — nominations close **3:00 p.m. ET,
+  7 Dec 2026**, free, and 51%+ veteran ownership is confirmed. Deliberately not
+  added: it is a nomination-based recognition award carrying **no cash**, and it
+  needs a third party to nominate. Left here because it costs a founder nothing
+  to ask a customer or a mentor to file one.
+- **HealthTech Week Startup Pitch @ JPM (15 Jan 2027)** — no application
+  deadline published, and the programme states that "Demo Station" purchasers
+  get fast-track review and approval. Pay-to-play adjacency with an unpublished
+  window; not board material.
+- **47pitches "Health Tech" online elevator pitch contest** — no charge to
+  submit, but equity-based fees apply to anything ranking top three, and the
+  product is a directory listing rather than an award.
+
+### DoD lane — what is confirmed and what is still blocked, 5 Oct 2026
+
+- **DoW SBIR/STTR Release 6 (`DOD_SBIR_2026_P1_CBZ`)** dates now verified from
+  DSIP itself: **pre-release 2 Sep 2026, open 23 Sep 2026, close 21 Oct 2026**,
+  and the BAA carries **22 topics**. The board row's close date is right.
+- **The topic list is still unread, and it is the one thing that matters.** The
+  topic titles live behind DSIP's JavaScript topics app
+  (`dodsbirsttr.mil/topics-app/?baa=DOD_SBIR_2026_P1_CBZ`), which cannot be
+  rendered from here with egress blocked and Exa out of credits. **Sixteen days
+  to close.** This needs either the network setting opened or a human to search
+  that page for "sleep", "wearable", "physiological", "fatigue" and "human
+  performance" and report the topic numbers.
+- **One 26.B sleep topic found and already expired**, which is the evidence that
+  this cycle does carry them: DARPA **DPA26BZ03-DV012, "Engineering Sleep for
+  Cognitive Performance"**, opened 24 Jun 2026 and closed 22 Jul 2026. A direct
+  hit on Vybe's thesis that went by unnoticed. Confirms the standing diary item
+  is the highest-value recurring task on this board.
+- **Monthly pre-release cadence confirmed from a second source.** AFWERX states
+  that "in accordance with OUSW SBIR office, new solicitations will go into
+  pre-release on the **first Wednesday of every month**" — matching the existing
+  diary item. **Next pre-release: Wed 7 Oct 2026, two days out.** AFWERX also
+  says it "will follow what OUSW sets up for the DOW and will start in FY 27,"
+  and that focused open topics replace the traditional open-topic model — so the
+  AFWERX open-topic lane has no published FY27 window yet and should be checked
+  on that same first-Wednesday rhythm.
+- **BARDA DRIVe / ENACT** — looked at and not pursued. Early-detection-of-
+  infection wearables are a diagnostic posture, which is on the blocklist.
