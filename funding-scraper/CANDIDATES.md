@@ -408,6 +408,118 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 5 Oct 2026 (round 6, scheduled)
+
+Four lanes: a watch-list re-check, accessibility and aging, worker safety and heat stress,
+and retail launch. All rows need no SAM.
+
+Added:
+- **Washington L&I SHIP grant:** up to $175K; closes 13 Nov.
+  - Needs a Washington employer, association or union partner.
+  - **All outputs go into the public domain**, so propose a pilot built on top of Vybe's IP.
+  - Fatigue and recovery fits the trucking, construction, hospital and public-safety priorities.
+- **Kickstarter x Google Next Wave Fund:** a $10K pledge, paid only if the campaign funds; rolling. The campaign must launch within 6 months of selection, so apply Nov–Jan.
+- **National Braille Press Touch of Genius:** $10K; closes 5 Feb 2027. It is a stretch: it only fits if the haptic output is framed as non-visual information.
+- **DMEA nova Award 2027:** €3K plus a €7K media package; 4–31 Jan 2027; pitch in Munich.
+- **Target Accelerators supplier intake** and **Costco Supplier Inclusion:** free retail doors.
+
+**Watch list:**
+- What's Next Longevity $10K business plan competition: opens January 2027.
+- EPRI Incubatenergy Labs 2027: paid utility pilots; usually Sep–Nov.
+- NSC Work to Zero Safety Innovation Challenge: fatigue and heat-stress topics in the past.
+- IU Health gBETA: closes 10 Jan; needs Indianapolis roots; email the director.
+- Walmart Marketplace: after launch, once there is sales history.
+- Walmart Open Call 2027: requires US-made products.
+- QVC Product Pitch: unverified.
+- Next check dates: MedTech Innovator and NIDILRR, 12–20 Oct.
+
+**Dead:** Pitch@Palace (casino domain), Best Buy Ignite (no program; Best Buy's way in is the free partner registration), b8ta.
+
+## Rejected on inspection — 5 Oct 2026 (round 6)
+
+- **MedTech Innovator 2027 Accelerator (US)** — Still closed. The page says 'Applications for the 2026 cohort are now closed. Sign up to be notified when 2027 applications open' and gives no 2027 date. Re-check 12-15 Oct 2026 and join the waitlist.
+- **NIDILRR SBIR Phase I FY2027 (HHS-2027-ACL-NIDILRR-BISA-0308)** — Grants.gov still lists it as FORECASTED (updated 25 Sep 2026). The dates are estimates, not confirmed: posting about 16 Oct 2026 and closing about 16 Dec 2026. It pays $95,000-$100,000, is for small businesses, and needs SAM.gov. Its focus is R&D products for people with disabilities, so Vybe would need a disability angle. Re-check 16-20 Oct 2026. If it posts, start SAM.gov registration at once (it takes weeks).
+- **NIDILRR Field Initiated Projects Program (Development), FY2027 (HHS-2027-ACL-NIDILRR-IFDV-0304)** — Still FORECASTED on Grants.gov. Estimated posting is 12 Oct 2026 and estimated close 14 Dec 2026, for $245,000-$250,000; for-profits and small businesses are eligible. It needs SAM.gov and a disability-inclusion development project. Re-check 12-15 Oct 2026.
+- **InterSystems Developer Community programming contests** — The last contest ('Build Your Own Management Portal', $12K pool) ran 14 Sep to 4 Oct 2026 and is now judging. No next contest has been announced on the contest tag page. Re-check about 1 Nov 2026.
+- **Psychiatry Innovation Lab 2027 (APA)** — Not open. The page says 'The submission portal for the 2027 Psychiatry Innovation Lab will open in November 2026.' No exact date. Re-check about 10-15 Nov 2026.
+- **a2 Collective / NIA AITC Pilot Awards (next cycle)** — Closed. The page says the 5th competition was the last of the initial 5-year cycle, and the next one depends on NIA renewal ('mid- to late 2026'). No new RFA is posted. Re-check about 1 Dec 2026.
+- **MIT Hacking Medicine GrandHack 2027** — No participant application is open. The site only invites mentors to 'register your interest' for GrandHack 2027. Past editions charged participation fees (Golden Ticket prizes cover 'participation fees'), so check for a fee when it opens. Re-check early Dec 2026.
+- **Ohio Federal Research Network (OFRN) Round 8** — The solicitations menu lists only Rounds 1-7, all closed; Round 8 is not posted. The FAQ says future rounds will happen but gives no date. Re-check January 2027.
+- **Babson WIN Lab (Women Innovating Now)** — APPLICATION/PROGRAM FEE: 'Program Investment: $995' for non-Babson founders (free only for Babson/Olin/Wellesley students and alumnae). Partial or full scholarships are limited. Excluded under the no-fee rule unless a full scholarship is confirmed.
+- **JumpStart Trailblazer HealthTech Accelerator** — Not open. The page (updated 29 Sep 2026) shows 'Next Application Close TBD / Next Cohort Announcement TBD / Next Cohort Program Dates TBD' and a notify-me form. It is free, no equity, and for Ohio startups, so it is a strong fit when it opens. Fill in the notify form and re-check in November 2026.
+- **FedTech Crucible Accelerator (U.S. Navy), Spring 2027 cohort** — Registration is closed. The Fall 2026 cohort closed 1 Sep 2026, and no Spring 2027 date is posted. It also wants TRL 4-6 and founders who have 'done this before'. Re-check in December 2026. Related: Crucible Ignitor opened today (5 Oct to 3 Dec 2026), but it is a startup studio that pairs teams with federal or university technology to license, not a program for Vybe's own product, so it does not fit.
+- **Black Ambition Prize** — Not accepting applications: 'we won't be accepting new applications for the Prize Competition in 2026'. It now focuses on existing portfolio founders. Re-check February 2027.
+- **AWS Impact Accelerator** — No change. No Impact Accelerator cohort is listed (the program was replaced by short AWS x Techstars bootcamps, already rejected). Re-check quarterly.
+- **Get in the Ring** — The homepage says 'Currently no upcoming events'. Its recent awards targeted non-US regions (e.g., Sub-Saharan Africa, water). Re-check in Q1 2027.
+- **Pitch@Palace** — Dead. The domain now hosts a UK non-GamStop casino review site (updated 5 Oct 2026). Drop it from the watch list.
+- **Microsoft AI for Accessibility grants** — No live program page. The official URL now redirects to the general microsoft.com/en-us/accessibility page, which has no grant or application. The 'open until 31 Dec 2026' claim appears only on aggregators (grantedai, findgrants) and cannot be verified.
+- **Google.org accessibility challenges (Impact Challenge: Disabilities; Natively Adaptive Interfaces funding)** — No open call. The NAI funding went by invitation to nonprofits and universities (RIT/NTID, The Arc, RNID, Team Gleason). The 2026 Impact Challenges were for nonprofits, social enterprises and academics, and the one in this year's search closed 3 April 2026.
+- **Toyota Mobility Foundation x MaRS Mobility Unlimited Hub, Cohort 3** — Closed. Applications ran from 21 July to 28 August 2026 (up to $100K non-dilutive). The original Mobility Unlimited Challenge closed in 2018.
+- **Christopher & Dana Reeve Foundation Quality of Life Grants** — Only 501(c)(3) nonprofits, governments, schools, tribes and hospitals may apply; fiscal sponsors are not allowed. The 2026 first-cycle deadline was 12 March 2026.
+- **Craig H. Neilsen Foundation Creating Opportunity & Independence** — Nonprofit-only ('Grants are awarded only to qualifying non-profit organizations in the U.S. and Canada'). The 2026 LOI closed 26 January 2026. It is also limited to spinal cord injury.
+- **Assistive Technology of Ohio (AT Ohio, Ohio's state AT Act program)** — Not a funder. AT Ohio is the federally funded Tech Act program at Ohio State that runs device loans and information services; it does not award grants to companies. The site returned 403 to our fetch, and its 'not a grants-giving organization' statement is confirmed only through search snippets.
+- **Ohio DODD Technology First / Tech Hub Expansion and Innovation RFP (SFY26-27)** — Closed (proposals were due 18 September 2025). Eligibility was limited to county DD boards, DODD-certified providers, CILs, self-advocacy organizations and COGs. Watch for the next 'Innovative Technology Solutions' RFP, which has historically admitted technology companies.
+- **Ohio Developmental Disabilities Council 2027-2031 Notice of Funds Available** — Closed. Applications were due 10 July 2026, per search; the page now returns 404.
+- **AARP Foundation grants (Community Challenge; California Quality Employment RFA; Purpose Prize)** — AARP does not fund for-profit companies. The Community Challenge closed 4 March 2026, and the Purpose Prize is for leaders of nonprofits aged 50+. The AgeTech Collaborative events are already on the existing list.
+- **LeadingAge CAST (Center for Aging Services Technologies)** — No grant, prize or free startup program found. CAST is a paid-membership/partner network; the Annual Meeting (25-28 Oct 2026) offers sponsorships, not a startup competition.
+- **Global Ageing Network awards / Summit** — No startup cash program. Its awards (Excellence in Ageing Services / Applied Research) recognize provider and research organizations. The Summit is 24 October 2026 in Philadelphia.
+- **Milken Institute Future of Aging / Innovation Prizes** — No open aging prize for companies found. The Milken-Motsepe prizes and the Kissick FTD program are already on rejected.txt.
+- **CTA Foundation Pitch Competition presented by Next50 (CES 2027)** — Not open. The page still shows the CES 2026 edition with 'Submission period has closed', and no 2027 window is posted. It also requires being a CES exhibitor (a paid Eureka Park booth).
+- **CTA Foundation Eureka Park Accessibility Contest (CES 2027)** — Closed. The deadline was 14 August 2026 ('Application are closed for the CES 2027 Contest').
+- **SXSW Pitch 2027 (Life Sciences, Healthcare & AssistiveTech category)** — Application fee: the regular entry (14 Sep to 13 Nov 2026) costs $225 and is non-refundable.
+- **Remarkable US Accelerator (CPARF)** — Equity, not a grant: '$50,000 USD as a SAFE'. The 2025 cohort applications are closed and only an expression of interest is open.
+- **Kessler Foundation Signature / Community Employment Grants** — Nonprofit-only (search evidence; the official page was not fetched); grants fund employment programs for people with disabilities.
+- **Ability Central 2027-2028 Grant Cycle** — Only nonprofits and research institutions are eligible (search evidence; the official page was not fetched).
+- **AbleGamers / Video Game Accessibility Awards** — These are awards for accessible video games; there is no startup grant or prize for hardware or health.
+- **Assistive Technology Industry Association (ATIA 2027)** — No startup award or grant found. The only startup option is a paid 'Start Up Station' booth ($2,050, per search).
+- **'Reimagine Accessibility' challenge** — Only a 2013 OCAD University student design challenge (redesigning the accessibility symbol) exists; it is student-only and long closed.
+- **Zero Project Awards 2027 (#ZeroCall27, Assistive Technology)** — Closed. Nominations were due 21 June 2026. It also offers no cash.
+- **2026 NIH Prize for Excellence in Disability Health Research** — For academic or established investigators only (early-stage, midcareer or senior investigator with a peer-reviewed record). The prize is paid to the employing institution, which needs a UEI via SAM.gov.
+- **Make:able 3D Printing Challenge (PrintLab & Autodesk)** — An educational design challenge for school and student teams (3D-printed aids), not a company prize. It runs from 16 May 2026 to 15 May 2027.
+- **AscendRural Senior Care Innovation Accelerator** — Closed. Applications closed 9 January 2026, and the inaugural cohort was announced in March 2026. No next cohort is posted, so subscribe for the next call.
+- **Verizon Forward for Good Accelerator, Disability Innovation cohort** — Old cohort (about 2021-22). The 'through November 1' window refers to a past year, and VerizonForwardForGood.com no longer resolves.
+- **Hackster Build2gether Inclusive Innovation Challenge / Hackaday Prize Assistive Tech** — Not running. Hackster's live contest list has no Build2gether or accessibility contest, and the last Hackaday Prize Assistive Tech round was in 2023.
+- **Assistive Innovation Challenge 2026 (Devpost)** — Student-only and closed (deadline 1 August 2026).
+- **Elizabeth Dole Foundation / Rosalynn Carter Institute caregiver programs** — No caregiver-tech challenge for companies; the Dole Fellows program is for individual military caregivers.
+- **NSC Work to Zero Lockout/Tagout (Energy Control) Pilot Grant 2026** — Open until 30 Oct 2026, but it funds employers that pilot one of the nine named 2026 hazardous-energy (LOTO) Challenge solution providers. Vybe cannot apply as a technology provider, and LOTO is off-topic.
+- **NSC Work to Zero Safety Innovation Challenge (next cycle, after the 2026 Fatigue and Hazardous Energy challenges)** — Not open yet. The 2026 Fatigue challenge (TechConnect, due 16 Jan 2026) and the LOTO challenge are both closed, and TechConnect's active-opportunities page lists no new NSC challenge. Watch for it: past topics (fatigue, heat stress) fit Vybe exactly, and winners feed $20K employer pilot grants.
+- **NSC MSD Solutions Lab - Research to Solutions (R2S) and MSD Solutions Pilot Grants** — The 2026-2027 cycle has been awarded, and the page shows no open call for the next one. Pilot grants are only for MSD Pledge member employers working with past Challenge finalists.
+- **EPRI Incubatenergy Labs Challenge 2027 (utility paid demos, incl. Workforce/Safety)** — Not open yet. The IEL home page still links only to the 2026 Challenge, which closed 14 Nov 2025, and there is no 2027 page. Past cycles opened in September with mid-November deadlines, so check again soon.
+- **EPRI AI for Power 2026 Challenge** — Closed. Applications were due 31 May 2026, and Pitch Day was in August 2026.
+- **TechConnect Critical Technology Spotlights (TechConnect World 2027)** — Application fee: 'A registration fee is required to participate.' Only the top 50 finalists get free registration. It is visibility only, with no cash.
+- **Zurich Innovation Championship (venture-client, equity-free pilot funding)** — Rolling, but it requires 'at least one existing paying customer' and funding from institutional investors. Vybe is pre-launch (band ships May 2027), so it fails these gates today. Revisit after the first paying DevKit or enterprise customer.
+- **CPWR Small Study Program (construction safety seed grants, up to $30K, rolling)** — Needs SAM.gov. It is funded as a NIOSH cooperative-agreement subaward, and the LOI requires a 'Unique Employer Number' (UEI, issued via SAM.gov). It also requires a PHS 398 application and IRB review, and its guidance de-prioritizes tech-centric proposals.
+- **Oregon OSHA Safety & Health Education and Training Grant 2026-27** — Only nonprofits, labor/employer associations and educational institutions may apply. It funds training materials only (due 9 Oct 2026).
+- **IAFC TSI First Responder Innovation Award 2026** — Applicants must be active first-responder agencies reporting results from tech they already use. Vendors and startups are not eligible, and no cash is offered.
+- **Verizon Frontline App Developer Challenge ($25K)** — Closed. Idea submissions ran 28 Oct 2025 to 2 Apr 2026, and the winner was named in May 2026. No 2027 edition is announced.
+- **Safety National Safety First Grant Program** — Closed (1 Jun to 8 Sep 2026), and open only to Safety National policyholders.
+- **Wildfire Safety Equipment Prize Challenge (Central Florida Tech Grove)** — Closed (submissions due 3 Jun 2026). Already on rejected.txt.
+- **BuiltWorlds AEC Emerging Tech Demo Day (Boston, 18-19 Nov 2026)** — No cash prize, application deadline or presenter cost is stated, and startup membership gives 'priority access'. It is not clearly free or valuable enough for a no-cash entry.
+- **Suffolk Technologies BOOST (construction accelerator)** — Closed. BOOST 7 applications closed 5 Jun 2026, and no BOOST 8 call is out.
+- **Construction Startup Competition 2026 (CEMEX Ventures et al.)** — Closed. Applications were due 28 Jun 2026.
+- **Urban Future Prize Competition (climate adaptation track)** — Closed. The page says 'Applications for the 2026 Urban Future Prize Competition are now closed.'
+- **NIHHIS Heat Tabletop Exercise Design Challenge 2026** — Closed (due 12 Aug 2026), and for communities/local governments, not companies.
+- **Korey Stringer Institute / Heat Safety Performance Coalition** — No open grant, prize or challenge was found. KSI runs research partnerships and industry summits, not funding calls.
+- **FEMA AFG Fire Prevention & Safety grants / COPS LEMHWA / OSHA Susan Harwood** — Needs SAM.gov. These are federal awards. FP&S closed 22 Jun 2026 and LEMHWA closed 5 Aug 2026.
+- **DHS S&T prize challenges (Ready, Set...ID the Biothreat; RIVR)** — Off-topic (biodetection algorithms, identity verification). No open DHS S&T responder-wellness or wearable prize was found.
+- **Iberdrola PERSEO Smart Worker & Grid Work Safety challenge** — The 2025 call is closed, and the official PERSEO NewTech page lists no current open challenge (content was not readable). The window could not be verified.
+- **Enel Open Innovability worker-safety challenges (e.g., smart helmet)** — No open worker-safety or wearable challenge could be verified on the official challenge list (dynamic page). The smart-helmet call is an older one.
+- **Walmart Open Call 2026** — Closed. Applications closed 3 Aug 2026, invitees were notified 7-11 Sep, and the event is 7 Oct 2026. Products must also be 'made, grown or assembled in the U.S.' (FAQ), so the band qualifies only if it is at least assembled in the US. Applications go through RangeMe, where a free account works. Dates for 2027 are not announced; in 2026 the regional Road to Open Call stops took applications from March to June.
+- **Target Takeoff (direct application)** — No application exists. Takeoff is only for founders already invited onto Target shelves. The free Supplier Intake Form entry covers the way in.
+- **Target Forward Founders** — The program URL now redirects to an alumni page, and no open cohort or application is shown. Target says it has no applications, only the intake form.
+- **Amazon Launchpad (US)** — The US program page now 301-redirects to the generic sell.amazon.com/programs page and no live application exists. Secondary sources describe US Launchpad as invite-only. The Amazon Black Business Accelerator (already on rejected.txt) was discontinued, and I found no successor program.
+- **Amazon New Seller Incentives** — Could not verify: the official URL returned 'Page not found'. The program also needs a paid Professional selling plan.
+- **Best Buy Ignite (startup in-store/online program)** — The 2016 program URL does not respond and no current Best Buy startup or innovation program could be found. Best Buy Marketplace and the Partner Portal are already on rejected.txt. For reference, partners.bestbuy.com/become-a-partner still offers free 'Register as a Potential United States Partner' and Marketplace vendor registration, and says registering 'does not guarantee future business' and that suppliers must accept Best Buy's standard terms, indemnification and insurance requirements.
+- **QVC Sprouts** — The site returns an empty page, so the program appears defunct. It has been superseded by the QVC/HSN Product Pitch (listed as a low-priority entry).
+- **Ulta Beauty MUSE Accelerator** — Closed, and not a fit. The page says 'Applications are closed. Check back in next year when applications open for the 2027 cohort.' It is for beauty brands in Ulta's current categories, and it has no wearables or device track.
+- **Kohl's AccelerateHER** — No Kohl's program by this name could be found; 'AccelerateHER' programs belong to unrelated UK and Texas (TWU) organizations. Kohl's vendor pages return 403. Kohl's runs a Wellness Market shop-in-shop for emerging brands, but I found no public application to verify.
+- **Nordstrom vendor relations / New Concepts** — Unverifiable: the page renders only with JavaScript and its content could not be read. New Concepts was a fashion pop-up series with no open call. Seed to Scale is already on rejected.txt.
+- **The Workshop at Macy's** — The official site was unreachable, so I could not verify a current cycle. Recent cycles took applications in September to November.
+- **Kickstarter Culture Fund** — Not a fit: limited to Art, Photography, Dance, Theater, Film, Fashion or Music projects launching by 31 Dec 2026.
+- **Indiegogo partner / launch-support programs** — I found no fee-free launch-support program. Indiegogo is now run by Gamefound, its partner pages return 403, and the older Arrow partnership dates from 2016 with no current page.
+- **b8ta / Ark retail-as-a-service** — Not free and not open. b8ta closed its last US stores in Feb 2022, and its Ark successor is a paid platform charged by square footage. I found no free retail-as-a-service program.
+- **RangeMe Immediate Opportunities** — Fee: 'Applying to Immediate Opportunities requires a RangeMe Starter or higher plan... for $99/year.' A free RangeMe profile is enough for Walmart Open Call.
+
 ## Promoted to the board — 5 Oct 2026 (round 5)
 
 Four lanes: a watch-list re-check, certifications, stipend accelerators, and global prizes.
