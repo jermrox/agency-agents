@@ -4,6 +4,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import RestoreScreen from './src/screens/RestoreScreen';
 import MoveTrendScreen from './src/screens/MoveTrendScreen';
 import NourishScreen from './src/screens/NourishScreen';
+import ConnectScreen from './src/screens/ConnectScreen';
 import AskScreen from './src/screens/AskScreen';
 import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
@@ -14,11 +15,11 @@ import { colors } from './src/theme';
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are eight screens
+ * One piece of state instead of a navigation library. There are nine screens
  * now, and they are still a flat set: Nourish links across to the pattern
- * history and Restore links across to the outcome record, but both of those
- * return to Home like every other screen, so nothing stacks and there is still
- * no back stack for a router to manage. Pulling in
+ * history, and Restore and Connect link across to the outcome record, but all
+ * of those return to Home like every other screen, so nothing stacks and there
+ * is still no back stack for a router to manage. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -52,6 +53,11 @@ export default function App() {
           onBack={() => setScreen('home')}
           onOpenHistory={() => setScreen('pattern')}
         />
+      ) : screen === 'connect' ? (
+        <ConnectScreen
+          onBack={() => setScreen('home')}
+          onOpenOutcomes={() => setScreen('outcomes')}
+        />
       ) : screen === 'outcomes' ? (
         <OutcomeScreen onBack={() => setScreen('home')} />
       ) : screen === 'pattern' ? (
@@ -66,11 +72,12 @@ export default function App() {
           onOpenData={() => setScreen('data')}
           onAsk={() => setScreen('ask')}
           onOpenDimension={(key) => {
-            // Restore, Move and Nourish have detail screens; Connect and Vitals
-            // fall through rather than opening an empty shell.
+            // Four of the five dimensions have detail screens now; Vitals
+            // falls through rather than opening an empty shell.
             if (key === 'restore') setScreen('restore');
             if (key === 'move') setScreen('move');
             if (key === 'nourish') setScreen('nourish');
+            if (key === 'connect') setScreen('connect');
           }}
         />
       )}
