@@ -408,6 +408,131 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 5 Oct 2026 (round 5)
+
+Four lanes: a watch-list re-check, certifications, stipend accelerators, and global prizes.
+Exa ran out of credits mid-round, so pages were read through the Composio remote sandbox
+(see the funding-sweep skill).
+
+Added (all no-SAM):
+- **SPIE Startup Challenge, Healthcare track:** $10K/$5K/$2.5K; **closes 6 Oct**; optics angle (PPG).
+- **MIT Solve Global Health:** $10K per selected team, sponsor prizes up to $150K; closes 2 Nov.
+- **JumpStart Trailblazer Software Accelerator:** $50K of services covered; closes 10 Nov (the other JumpStart page says 17 Nov); now open.
+- **Entrepreneurship World Cup:** $200K early-stage grand prize, equity-free; rolling to 31 May 2027.
+- **AI for Good Innovation Factory:** $20K finale; monthly sessions; needs 6 months of operation.
+
+### Certification action list — not on the board
+
+These are a cost, not money, but they unlock certified-only programs. All need no SAM.
+
+- **WBENC WBE via WBEC Ohio River Valley.** $350, about 90 days, no time-in-business gate. A woman or women must own 51% AND hold the top office.
+- **NMSDC MBE via Ohio MSDC.** $300 for firms under $1M revenue, under 45 days. Minority owners must hold 51%.
+- **Veteran:**
+  - NaVOBA VBE accepts firms under a year old; the fee is not published.
+  - NVBDC is $350 for firms under $1M.
+  - Veteran owners must hold 51%.
+- **Ohio EDGE / MBE / WBE.** Free, but locked until 12 months in business. An NMSDC certificate cross-certifies to Ohio MBE in about 5 days.
+- **WBENC Women Owned in Retail.** Free webinars (Target, 4 Nov). The Retail-Ready Roster is for certified WBEs only and supports the Best Buy plan.
+
+**Check the cap table first: each certification counts only its own group toward 51%.**
+
+Certified-only cash programs are currently closed or gated on 2–3+ years in business and $500K+ revenue:
+- WBENCPitch ($20K per division): watch for 2027.
+- Capital One Catapult 15.
+- ORVBDP.
+
+### Watch list (round 5)
+
+- MedTech Innovator 2027: still closed; re-check about 12–15 Oct.
+- **NIDILRR SBIR Phase I FY27:** new. $95–100K; forecast to post about 16 Oct and close about 16 Dec; SAM required; disability-products focus.
+- NIDILRR Field Initiated Development: about 12 Oct.
+- InterSystems contests: about 1 Nov.
+- Psychiatry Innovation Lab: November.
+- a2/NIA AITC: about 1 Dec.
+- MIT GrandHack and DMEA: December.
+- Ohio Federal Research Network R8: January.
+- Babson WIN Lab: Nov–Dec.
+- JumpStart Trailblazer HealthTech: dates TBD.
+- FedTech Crucible spring cohort.
+- Black Ambition: about Feb 2027.
+- IU Health gBETA: closes 10 Jan 2027, but Indiana-based; email the director to ask about Ohio eligibility.
+
+**Dead:**
+- AWS Impact Accelerator: replaced by short bootcamps.
+- Get in the Ring.
+- Pitch@Palace: its domain is now a gambling site.
+
+## Rejected on inspection — 5 Oct 2026 (round 5)
+
+- **MedTech Innovator 2027 Accelerator (US)** — Still not open; check again ~Oct 12-15, 2026. As of 5 Oct the page says 'Applications for the 2026 cohort are now closed. Sign up to be notified when 2027 applications open. Join the Waitlist.' No open date or deadline is posted (last cycle's extended deadline was Dec 16, 2025). When it opens: no fee is stated, early-stage companies 'compete for up to $500,000 in funding', and SAM is none.
+- **NIDILRR Field Initiated Projects Program (Development), FY2027, HHS-2027-ACL-NIDILRR-IFDV-0304** — Still FORECASTED, not posted; check again ~Oct 12, 2026. Grants.gov lists an estimated post date of 2026-10-12 and an estimated due date of 2026-12-14 (both estimates), $245K-$250K per year, 36 months, 8 awards, and small businesses eligible. SAM: REQUIRED (federal grant: SAM.gov + UEI + Grants.gov registration). It needs a disability/independent-living outcome angle. Start SAM registration now if Vybe will pursue it.
+- **NIDILRR SBIR Phase I FY2027, HHS-2027-ACL-NIDILRR-BISA-0308 (new lead found while checking NIDILRR)** — FORECASTED, not posted; check again ~Oct 16, 2026. Grants.gov estimates a post date of 2026-10-16 and a due date of 2026-12-16, $95K-$100K, a 6-month Phase I, 11 awards, small businesses only, and products for people with disabilities. SAM: REQUIRED (plus SBA SBIR registration). It is likely a better fit than FIP-D for a small business.
+- **TechCrunch Startup Battlefield 2027** — Still not open; check again ~early 2027. The page is promoting Disrupt 2026 ('Disrupt doors open Oct. 13'), and no 2027 application window is posted. The prize is a '$100K equity-free prize'.
+- **InterSystems Developer Community programming contests (FHIR / AI)** — No contest open now; check again ~Nov 1, 2026. The latest contest ('Build Your Own Management Portal') closed submissions in September, and voting ended Oct 4, 2026. No new FHIR contest has been announced yet.
+- **Psychiatry Innovation Lab 2027 (APA Mental Health Innovation Zone)** — Still not open; check again ~Nov 12, 2026 (last cycle opened Nov 12). The page says: 'The submission portal for the 2027 Psychiatry Innovation Lab will open in November 2026. Stay tuned for more details!' No exact date and no prize amount are stated.
+- **a2 Collective / NIA AITC Pilot Awards (next cycle)** — Still not open; check again ~Dec 1, 2026 (the 5th cycle opened Dec 2, 2024). The page says 'Contingent on National Institute on Aging renewal of the program for another funding cycle, the a2 Collective anticipates sharing more details about the next pilot competition in mid- to late 2026.' No RFA is posted. In past cycles startups were eligible for up to $200K direct costs; NIH pass-through means SAM is likely 'later'.
+- **Ohio Federal Research Network (OFRN) Round 8** — Still not open; check again ~Jan 2027. The Solicitations menu lists only 'Round 7 (Closed)' through Round 1, and there is no Round 8 solicitation page.
+- **Women in AI Pitch Competition - SF Fall 2026 (Oasis Collective)** — No fall 2026 SF event is posted; check again ~Nov 2026 for a Spring 2027 call. The Oasis events found are past: SF Aug 22, 2025; SF Oct 10, 2025; SF May 14, 2026; Boston May 29, 2026. These offered a $10,000 cash prize and required at least 50% female founders. The NYC Fall '26 event (Sep 17) is already in rejected.txt.
+- **MIT Hacking Medicine GrandHack 2027** — Still not open; check again ~Dec 2026. The Upcoming Hacks page only says 'We are excited to see you all at Grand Hack 2027!' and gives no dates or application. GrandHack 2026 was March 13-15 in Boston. It is a hackathon, not a cash grant.
+- **DMEA nova Award 2027 (Munich)** — Not open, and not verifiable today: dmea.de returned 403 / 'Dieser Service steht zur Zeit leider nicht zur Verfügung'. Search snippets of the official page say submissions run 'mid-December 2026 to mid-January 2027', live pitches are April 13-14, 2027, the prize is worth EUR 7,500, and startups must be at most 5 years old. Check again ~Dec 15, 2026. It requires in-person pitching in Munich.
+- **Ohio EDGE certification (Encouraging Diversity, Growth and Equity)** — TIME-IN-BUSINESS GATE: must 'Have been in business for at least one year prior to applying.' Vybe is under 1 year old. There is also a personal-net-worth (economic disadvantage) test. Revisit once Vybe reaches 12 months with the same owners and percentages; it is free and needs no SAM.
+- **Ohio MBE certification (state, Ohio Dept of Development)** — TIME-IN-BUSINESS GATE: must 'Have been in business for at least one year prior to applying.' The owner must also be an Ohio resident from a listed minority group. Revisit at 12 months. Cross-certification from an NMSDC certificate later cuts processing to about 5 business days.
+- **Ohio WBE certification (state, Ohio Dept of Development)** — TIME-IN-BUSINESS GATE: must 'Have been in business for at least one year prior to applying.' Vybe is under 1 year old. Revisit at 12 months.
+- **NGLCC LGBTBE certification** — Not relevant: it requires majority LGBT ownership, and the brief does not say Vybe's owners qualify. NGLCC's page does not state the fee or a time gate. Revisit only if an LGBT owner holds 51%+.
+- **SBA VetCert (VOSB/SDVOSB) and SBA WOSB certification** — Needs SAM.gov: SBA uses the 'NAICS code listed in the business's SAM profile', and VetCert/WOSB applications are claimed with the SAM UEI.
+- **WBENCPitch 2026 Competition ($20,000 per division)** — Closed: '*All 1st Round Applications have now closed.' It also requires current WBENC certification. Watch for the 2027 cycle, which runs through the RPOs; get WBENC-certified first.
+- **WBEC ORV Ohio River Valley Business Development Program (ORVBDP 2027)** — Gates Vybe fails: 'minimum of two (2) years in business or comparable business experience, and at least $500,000 in annual gross revenue'. Program registration is $1,850 (scholarships available). WBE certification is also required.
+- **WBEC ORV Business Accelerator (ORVBA) 2027** — Not open: '2027 Cohort Information Coming Soon.' No dates are posted.
+- **WBENC WeTHRIVE / WeIGNITE executive education** — Closed: 'Applications for the 2026 WeTHRIVE Cohort are closed.' WeIGNITE: 'Applications are now closed for the 2025 Fall Cohort.' WeIGNITE also targets firms that have 'hit the ceiling' on growth.
+- **WBENC Dorothy B. Brothers Scholarship (up to $6,000)** — Not a standalone application: 'awarded by WBENC in coordination with a specific WBENC program. Once accepted to a WBENC program, participants will be provided instructions.' The eligible programs listed are currently closed, and it requires WBENC certification. It can be used later.
+- **WBENC Industry Accelerator | Kroger** — Closed: 'Applications for the Accelerator Program Are Now Closed' (2025 cycle). It is also a food and grocery channel.
+- **WBENC Entrepreneur Incubator** — Student-only: it is run at five named educational institutions (FAMU, NC A&T, NCCU, Paul Quinn, Virginia State) for their students.
+- **NMSDC Emerging Young Entrepreneurs (EYE) Program** — Closed ('Thank you to everyone who applied for the 2026 cohort'), and it has a FOUNDER AGE GATE of 19-35.
+- **NMSDC Centers of Excellence Certificate Program (COECP) 2.0** — Built for MBEs 'to scale beyond $50M in revenue'. Vybe is pre-revenue, and no open window is posted.
+- **Business Consortium Fund (BCF) loans (NMSDC-linked CDFI)** — A loan, not a grant. It requires 'Positive financial performance, including revenue growth and profitability' and 'At least one (1) new or existing primary or subcontract, or purchase order'. Vybe is pre-revenue with no contracts.
+- **NaVOBA / Capital One Catapult 15** — The application is open until 2 Nov 2026, but its gates are '3+ years in business' and '$1M - $15M in Revenue'. Participants also pay their own travel.
+- **Ohio MSDC Certification Assistance Program (CAP)** — Expired 2020 COVID program, for certifications expiring 'between May 1, 2020 and December 31, 2020'. It also needs current certification.
+- **NMSDC MBE Rebuilding Fund** — Expired 2020 grant round. No current cycle on nmsdc.org.
+- **AWS Impact Accelerator (Black / Women / Latino / LGBTQIA+ founders, $125K cash + $100K credits)** — ENDED. No $125K cohort is running. The last cohort found on AWS's own site is the Latino Founders cohort (announced 11 Jul 2024). AWS's 30 Jul 2025 release says the 'Impact Accelerator was a great first step' and replaces it with the AWS Impact Bootcamps: two-day events with $5,000 in AWS credits and a chance at up to $50K grant funding at a Founder Retreat. The bootcamp page lists only Atlanta, NYC, Mexico City and London (2025) and Tokyo (apply by 27 Feb 2026) and Berlin (apply by 13 Mar 2026). No US window is open now and none is announced.
+- **AWS Impact Bootcamps (AWS x Techstars)** — Closed. The last listed windows were Tokyo (apply by Feb 27, 2026) and Berlin (apply by Mar 13, 2026). No 2026-27 US date is posted. Re-check in early 2027.
+- **gBETA Charlotte Health (gener8tor x City of Charlotte x Advocate Health)** — Not accepting applications. The page's live feed has no upcoming program and shows 'We are not currently accepting applications for this program.' It also requires a commitment to relocate to, or establish a major presence in, Charlotte, NC.
+- **gBETA Prosper Healthtech (Birmingham, AL)** — Alabama-only ('Based in Alabama ... equity-free pre-accelerator for early-stage companies based in Alabama'). The Fall 2026 cohort kicks off 2026-10-08 and its applications closed 2026-09-13. The related Prosper HealthTech Accelerator Spring 2027 (due 2026-11-08) takes equity: '$50,000 for 5% of the Common Equity'.
+- **gener8tor Great Lakes Innovation Accelerator Winter 2027 ($100K non-dilutive)** — Closed 2026-09-14 per gener8tor's program feed. Also water-technology only.
+- **Curql Accelerate Spring 2027 (gener8tor, $7,000 non-dilutive grant)** — Out of scope: B2B fintech for credit unions only. It is open (due 2026-10-25), but Vybe does not fit.
+- **Google for Startups Accelerator: North America (2026 = AI for Energy)** — Closed. The official page says 'Applications are now closed', with key dates May 4 to June 30, 2026, and kickoff Sept 2026. The 2026 theme was AI for Energy, and the FAQ targets 'AI/ML-focused Pre-Seed to Series A revenue generating tech startups'. No 2027 US cohort is posted; the page offers only 'Register your interest'.
+- **Babson WIN Lab (Women Innovating Now)** — No open application window is posted. The page has no deadline or apply link. It is free (full scholarship, $5,000 value), takes no equity, gives no seed funding, and is open to US residents and non-Babson founders. Pre-revenue companies need customer discovery and a strong go-to-market plan, and the program supports companies up to $300K revenue. The FAQ says the cohort 'kicks off in February', so re-check in Nov-Dec 2026 for a Feb 2027 cohort.
+- **VentureWell E-Team (Pioneer $5K / Propel $20K)** — STUDENT-ONLY ('supports student ventures ... student inventors') and closed ('Applications are currently closed').
+- **Kauffman FastTrac** — A training curriculum, not an accelerator: no cash and no substantial resources. The free version is a self-paced online course. In-person cohorts run through local affiliates, many charge fees (e.g. UTRGV $250), and many are limited to residents.
+- **Lighthouse Network (formerly Lighthouse Labs RVA) Accelerator 2027** — Closed. The official site says 'Applications close October 2, 2026' for the 2027 cohort (March 2 - May 14, 2027, opening and closing in person in Richmond, VA; no cost to founders).
+- **FedTech Crucible Accelerator (U.S. Navy, no equity / no fee)** — Closed. Fall 2026 applications closed Sept 1, 2026, and the page shows 'Registration closed'. It runs 'Fall and Spring' cohorts, but no Spring 2027 date is posted. It requires TRL 4-6, a working product, and founders who have 'built a company, shipped a product, run a sales process'. Worth watching as a dual-use tactical human-performance angle.
+- **Nashville Entrepreneur Center Project Healthcare (Spring 2027)** — FEE and REGIONAL GATE. Spring 2027 applications are open and no equity is taken, but the FAQ says 'Is there a cost to participate? Yes, each program has a unique pricing structure', and the programs are 'open to founders based in Middle Tennessee or connected to the region'. The non-dilutive Impact Grants ($12K/$8K for Project Healthcare) are competitive in-program awards.
+- **JumpStart Trailblazer HealthTech Accelerator** — Still not open. The official page lists 'Next Application Close TBD / Next Cohort Announcement TBD / Next Cohort Program Dates TBD' and offers only a notify-me form. It is free, with no fees or ownership stakes, and Ohio-only, so it is a strong fit to watch.
+- **Black Ambition Prize** — Not running in 2026. The official page says 'we won't be accepting new applications for the Prize Competition in 2026' and that Black Ambition is focusing on its existing portfolio.
+- **AWS Healthcare Accelerator / Alchemist x AWS Health** — No 2026-27 US cohort was found (the latest cohorts were 2025 or earlier, per search). The Alchemist-run track takes equity (Alchemist typically about 5%).
+- **Goldman Sachs 10,000 Small Businesses** — REVENUE/AGE GATE (carried from the prior pass; aggregator-reported): $75K+ revenue and 2+ years in operation. Vybe fails both.
+- **Stanford Latino Entrepreneurship Initiative (SLEI)** — REVENUE GATE (carried from the prior pass): $1M+ revenue or $500K+ raised.
+- **Meta Llama Startup Program** — Closed (first cohort closed 30 May 2025). No 2026 window was found.
+- **Bunker Labs Veterans in Residence** — Folded into IVMF Military Founders Lab, which is already in existing.txt.
+- **Supernova 0X (Supernova Challenge) at Expand North Star / GITEX, Dubai** — Effectively a paid-entry program. The page says 'You must be an exhibiting startup at Expand North Star 2026 to apply for this competition' (book a pod), so the pod purchase is the entry fee. The $200K/$214K pool otherwise looks attractive; the deadline is 2 Nov 2026. Pre-seed entrants also need 'verifiable proof of funding stage'.
+- **4YFN Awards 2027 (MWC Barcelona)** — Vybe fails the stage gate: 'Applications are open to startups with solutions that have already achieved market launch and are commercially available.' Vybe launches in May 2027. Otherwise open until 26 Oct 2026, with a €20,000 cash prize and €1,500 for each of the Top 20; Top 20 must exhibit for 4 days in Barcelona.
+- **Slush 100 (2026) — €500,000 equity-free** — Closed. The page says 'Slush 100 applications closed on Sep 7.' The prize is equity-free (€500K, 0% equity), so watch for the 2027 call.
+- **Women Startup Competition (Global)** — Application fee: 'REGISTER FOR 2026 - €45' / 'Register & Pay €45'.
+- **Get in the Ring** — Dormant. The official page lists only past selection rounds (latest 2021); no 2026–27 call.
+- **Pitch@Palace** — Defunct. The official domain now serves an unrelated gambling site, and search results report the UK company Pitch@Palace Global Ltd dissolved on 3 Feb 2026.
+- **Falling Walls Venture (Science Breakthrough of the Year, Science Start-Ups)** — Closed for 2026: nominations ran Feb–Apr 2026 and finalists pitch in Berlin in November. The related Science Investment Prize (€100,000, 'APPLY UNTIL 14 SEPTEMBER 2026') is closed and for European research. The 2027 call is not yet dated on the official page.
+- **Cartier Women's Initiative (2027 edition)** — Not open. The site shows only the 2026 fellows (announced 26 Mar 2026, ceremony 10 Jun 2026); no 2027 application window is posted. Recheck in spring 2027.
+- **TiE Women Global Pitch Competition 2026** — Closed. The official timeline says 'Applications Close 30th June 2026' (global final 14–15 Dec 2026 in Indore). No 2027 call yet.
+- **K-Startup Grand Challenge 2026/2027** — The 2026 intake closed in June 2026 and the 2027 window is not announced. It also requires relocating to Korea and a non-Korean CEO.
+- **Zayed Sustainability Prize (Health category)** — Closed. The official cycle shows 'Open January 2026 Submissions Close June 2026'; finalists are already announced.
+- **Start-Up Chile** — Closed. The homepage says 'We're closed!' It would also require relocation to Chile.
+- **LEAP 2027 Rocket Fuel Pitch Competition (Riyadh)** — Not open. Per search results, Rocket Fuel applications are closed with only pre-registration for 2027; the official page could not be fetched to confirm. Recheck: it has a $1M equity-free pool and a $150K Shooting Star early-stage award, and LEAP 2027 runs 12–15 Apr 2027.
+- **SLINGSHOT 2026 (Enterprise Singapore, SWITCH)** — Closed. The application deadline was 27 Jul 2026 per search results; finals are 27–29 Oct 2026.
+- **Health Tech Challengers (Health Tech Forward)** — Closed. The page says 'Applications for this year's pitch battle are now closed.'
+- **Deep Tech CEE Challenge 2026 (Warsaw)** — Closed on 2 Oct 2026, and only for companies in 22 Central and Eastern European countries (non-US-only).
+- **sTARTUp Day 2027 pitching (Tartu, Estonia)** — The official site shows only paid tickets (€127–267); no free pitching application or cash prize is stated. Not verified as a no-fee cash competition.
+- **European Prize for Women Innovators 2027 (EIC)** — Open until 1 Dec 2026 (per search results), but the EIC prize is for women innovators based in EU member states or Horizon Europe associated countries, so it is non-US-only. Not fetched.
+- **Visa Everywhere Initiative** — A payments and commerce (fintech) challenge, run regionally, so it is off-sector for a wearable health company. Not pursued.
+
 ## Promoted to the board — 2 Oct 2026 (small-and-available sweep)
 
 The founder asked for small, easy, available-now money. Every row needs no SAM.gov and

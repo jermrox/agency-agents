@@ -3589,3 +3589,100 @@ documents = [
   "Per-part sample requests",
 ]
 verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "JumpStart Trailblazer Software Accelerator (Winter 2027 cohort, Jan 12 - Apr 29, 2027)"
+url = "https://jumpstartinc.org/startups/software"
+agency = "JumpStart Inc. (Cleveland, Ohio nonprofit)"
+amount = "In-kind: 'JumpStart fully covers the first $50K' of top-tier service providers, to be used within the 3-month accelerator. No cash grant stated. No fees or equity."
+close_date = "2026-11-10"
+pillar = 2
+kind = "accelerator"
+sam = "none"
+eligibility = "Ohio-based (or planning to relocate) pre-seed or seed tech startup with a venture-backable model that plans to raise venture capital within 12 months of finishing the program. The founding team must be able to reach an MVP and show evidence of market validation. Previous applicants can reapply."
+note = "MUST INTEND TO RAISE VC WITHIN 12 MONTHS; IN-KIND SERVICES, NOT CASH. This is now OPEN: rejected.txt has it as not open, but the program page now shows 'Apply Now' with a live embedded application form (tfaforms #5058360). DATE CONFLICT: the program page says 'Next Application Close November 10, 2026', but the jumpstartinc.org/startups overview says 'Winter 2027 Software Accelerator Applications Close: Nov. 17, 2026'. Treat Nov 10 as the deadline. The $50K covers firmware, SDK and API dev shops and legal/marketing providers, which fits the DevKit v0.1 milestone. Vybe is in Akron, so it meets the Ohio rule. The form asks about minority and woman co-founders. The program is software-focused; describe Vybe as the developer platform (SDK/API, data platform). JumpStart's HealthTech track is a separate cohort that closed Aug 2."
+documents = [
+  "Online application form (contact info, business details, Ohio address/county, founding year)",
+  "Narrative answers: what the product does, why this idea, evidence customers want it, technologies, competitors/market insight, business model ('who pays you, how much, how often')",
+  "Pitch deck (PDF/PPT up to 35MB, or link). A founder video is strongly recommended, and required if there is no deck",
+  "Stage, users/customers, revenue in the last 12 months, capital raised to date, intent to raise VC in 12 months, near-term milestone",
+  "Cap-table stakeholders with more than 20% equity: name, email, LinkedIn, role, full-time status, ethnicity, gender, equity %",
+]
+verified = "2026-10-05"
+
+[[sources.curated.entry]]
+name = "Entrepreneurship World Cup (EWC) 2026 cycle — Early Stage track"
+url = "https://entrepreneurshipworldcup.com/"
+agency = "Global Entrepreneurship Network (GEN) / Monsha'at; Global Finals at Biban, Riyadh"
+amount = "USD $1,000,000+ equity-free cash pool across 12 winners. Early Stage: $200,000 grand prize / $150,000 / $90,000 / $50,000. Idea Stage: $30,000 / $20,000. Plus four $50,000 AI sub-track prizes (none is health-specific)."
+close_date = "2027-05-31"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Open to legally registered entities (or individuals) in any country not under UN/OFAC sanctions; founder or representative must be 18 or older; startup under 10 years old; apply from the country where HQ sits (US). Early Track: a functional product or prototype with early users, or under $1M annual revenue. Idea Track: concept validated, no revenue needed. No application fee at any stage."
+note = "TRAVEL TO RIYADH, SAUDI ARABIA, IN NOVEMBER 2027 for the Global Finals. The site says this is an 'all-expenses-paid trip', and the funnel is long: EWC 250 in July 2027, a virtual bootcamp in August 2027, then EWC 100 in September 2027. This is the largest equity-free cash prize in this lane that Vybe can enter today. Applications are reviewed on a rolling basis, so apply early. Vybe probably fits the Idea or Early track; the Early track needs a working prototype with early users, so apply there once DevKit v0.1 is with design partners. Prizes are paid by international SWIFT wire, with no SAM.gov. Bank fees and local taxes fall on the winner. The site labels the cycle 'EWC 2026', but every date on it falls in 2027."
+documents = [
+  "Online application (HQ country = USA)",
+  "Pitch deck",
+  "On request: founder ID, incorporation papers, financial statements",
+  "Bank/SWIFT details within 10 days if a winner",
+]
+verified = "2026-10-05"
+
+[[sources.curated.entry]]
+name = "MIT Solve 2027 Global Health Challenge"
+url = "https://solve.mit.edu/challenges/2027-global-health-challenge"
+agency = "MIT Solve (Massachusetts Institute of Technology)"
+amount = "Every selected Solver team receives a $10,000 grant, and the page says teams average about $40K each. The pool is over $1M, with sponsor prizes Vybe could be eligible for: AI for Humanity Prize (Patrick J. McGovern Foundation, up to $150,000); Crescent Enterprises AI for Social Innovation Prize (up to $100,000, up to 4 teams); E Ink Innovation Prize ($100,000); Philips Foundation Social Impact Award and Morgridge Family Foundation Innovation Prize ('More details coming soon')."
+close_date = "2026-11-02"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Open globally to for-profit and nonprofit teams. The solution must be at least at the Prototype stage, defined as 'an initial working version … If for-profit, a solution that has raised little or no investment capital'. Concept-stage ideas are reviewed only under the Indigenous Communities Fellowship. No fee is stated, and no age or nationality gate is stated."
+note = "THE JUDGING REWARDS EQUITY AND UNDERSERVED COMMUNITIES. The criteria include 'Human-Centered Design: designed with and for underserved communities', so frame Vybe around one of the 2027 focus areas: 'prevention and management of noncommunicable diseases, mental health conditions, or the growing care needs associated with aging'. For example, a low-cost screenless band plus an open SDK for aging or veteran populations. Do not frame it as a premium consumer gadget. The deadline is 2 Nov 2026 at 12:00 pm EST. Finalists are notified in February 2027 and pitch virtually. Selected teams commit about 25 hours over nine months, plus TRAVEL to Cambridge, MA (4 days, April) and New York City (4 days, September). Solve is a private MIT program with no SAM.gov involvement."
+documents = [
+  "Online solution application (several hours; PDF of questions available on the page)",
+  "Description of the technology and the population served",
+  "Business/financial viability plan",
+  "Evidence that novel tech works (prototype data) for finalist stage",
+  "Virtual live pitch if a finalist",
+]
+verified = "2026-10-05"
+
+[[sources.curated.entry]]
+name = "SPIE Startup Challenge 2027 (Healthcare track) at Photonics West"
+url = "https://spie.org/conferences-and-exhibitions/photonics-west/program/industry-program/startup-challenge"
+agency = "SPIE, the international society for optics and photonics (cash prizes funded by Jenoptik)"
+amount = "Cash: 1st place US$10,000, 2nd US$5,000, 3rd US$2,500, plus the SPIE Jay Kumler Innovation Award of US$3,000 to one finalist. Every applicant gets written expert feedback."
+close_date = "2026-10-06"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "'Accepts applications from the worldwide community of entrepreneurs.' The applicant must have an optics or photonics technology or application as the basis of the business. Pre-seed track = pre-revenue, which is Vybe; seed track = under $500K product revenue. The 2027 focus areas are Healthcare (point-of-care tech and devices, 'anything improving health') and Deep Tech (no software-only apps). An SPIE account is needed. No application fee is stated."
+note = "DEADLINE IS TOMORROW: 6 OCT 2026, 11:59 PM PDT. THE PITCH MUST REST ON OPTICS OR PHOTONICS: lead with the PPG/optical sensing in the Band and Ring and the signal-processing engine, not with ECG or the app. The written application is long and needs a video pitch, so it may not be doable in one day. Finalists are notified 1 Dec 2026 and pitch live on 2 Feb 2027 at Moscone Center, San Francisco, so expect TRAVEL. SPIE is a private nonprofit with no SAM.gov involvement."
+documents = [
+  "SPIE web account",
+  "Extensive written application (business case, financial case, team)",
+  "Video pitch",
+  "Live 5-minute pitch + 5-minute Q&A if selected as finalist",
+]
+verified = "2026-10-05"
+
+[[sources.curated.entry]]
+name = "AI for Good Innovation Factory (ITU / UN) — monthly online pitching sessions, 2026–27 cycle"
+url = "https://aiforgood.itu.int/about-ai-for-good/innovation-factory/"
+agency = "International Telecommunication Union (ITU), AI for Good"
+amount = "The Grand Finale winner receives a $20,000 cash prize (USD). A session winner gets a Grand Finale ticket, a Speaker Pass, a startup pod and a Frontier Stage pitch at the AI for Good Global Summit 2027 in Geneva, plus the Startup Accelerator Programme 2027 and mentoring."
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "The application form's selection criteria: AI is a core component of the product; the AI solution addresses a global challenge; 'At least 6 months in operation: Your startup is registered and has been operational for at least six months'; under US$1 million total funding; a working company website and active social media; evidence of product development. The US is in the country list. No application fee is stated."
+note = "6-MONTH OPERATING GATE: Vybe is under 1 year old, so confirm its incorporation date is at least 6 months before the session. THE CASH IS A TWO-STEP PATH: win a monthly online session, then win the Grand Finale in person in Geneva (Summit 21–24 June 2027 per the timeline), so expect TRAVEL TO SWITZERLAND. The form currently offers the 'AI for Good Innovation Factory 2026 live pitching session' on 8 Dec 2026, which is the general track Vybe fits; the 27 Oct and 23 Feb sessions are Africa- and robotics-themed. No per-session application deadline is stated. Apply early and pitch the Vybe Health Intelligence AI layer and the HRV/ECG models. Monthly sessions run Sept 2026 to May 2027. This is a UN agency program with no SAM.gov involvement."
+documents = [
+  "Online startup application form (choose session)",
+  "Pitch deck (max 15MB)",
+  "Capital raised and funding sought",
+  "Company URL / social links",
+  "Answers on the AI's role and the global challenge addressed",
+]
+verified = "2026-10-05"
