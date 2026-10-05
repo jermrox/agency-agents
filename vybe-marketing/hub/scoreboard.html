@@ -157,13 +157,13 @@ footer p { margin: 4px 0; }
 
   <section class="card">
     <h2>Where visitors drop out</h2>
-    <p class="sub">From everyone who visited to a recorded waitlist signup, last 30 days. Signup events may be under-counted; see the open actions.</p>
+    <p class="sub">From everyone who visited to a recorded waitlist signup, in the GA4 window named at the foot of the page. Signup events may be under-counted; see the open actions.</p>
     <div class="funnel" id="funnel"></div>
   </section>
 
   <section class="card">
     <h2>Daily sessions</h2>
-    <p class="sub">Two paid bursts, then a tail. Hover a day for its count.</p>
+    <p class="sub">Sessions per day in the GA4 window. Hover a day for its count.</p>
     <div class="chart" id="daily"></div>
     <details><summary>Show as table</summary><div class="scroll" id="daily-table"></div></details>
   </section>
@@ -214,192 +214,163 @@ footer p { margin: 4px 0; }
 
 <script type="application/json" id="fallback">{
  "schema": 1,
- "pulled_at": "2026-09-30T19:20:00Z",
- "scoreboard_file": "vybe-marketing/scoreboard-2026-09-30.md",
+ "pulled_at": "2026-10-05T13:40:00Z",
+ "scoreboard_file": "vybe-marketing/scoreboard-2026-10-05.md",
  "windows": {
-  "ga4": "30 days to 29 Sep 2026",
-  "search_console": "31 Aug to 27 Sep 2026",
-  "instagram_account": "28 days to 29 Sep 2026",
-  "instagram_posts": "lifetime"
+  "ga4": "7 days, 28 Sep to 4 Oct 2026 (week before: 21 to 27 Sep)",
+  "search_console": "26 Sep to 2 Oct 2026, final (week before: 19 to 25 Sep)",
+  "google_ads": "28 Sep to 4 Oct 2026",
+  "instagram_account": "not read: Instagram disconnected on 5 Oct",
+  "instagram_posts": "not read: Instagram disconnected on 5 Oct"
  },
  "kpis": {
-  "waitlist_signups": 4,
-  "form_submits": 41,
-  "sessions": 10242,
-  "users": 8467,
-  "us_sessions": 131,
-  "waitlist_page_users": 104,
+  "waitlist_signups": 2,
+  "form_submits": 3,
+  "sessions": 385,
+  "users": 322,
+  "us_sessions": 117,
+  "waitlist_page_users": 24,
+  "organic_search_clicks": 1,
+  "search_impressions": 85,
+  "ig_followers": null,
+  "ig_following": null,
+  "ig_posts": null,
+  "ig_account_reach_28d": null,
+  "cost_per_signup": 78.21,
+  "ad_spend": 156.42
+ },
+ "last_week": {
+  "waitlist_signups": 2,
+  "form_submits": 9,
+  "sessions": 3239,
+  "users": 2635,
+  "us_sessions": 53,
+  "waitlist_page_users": 30,
   "organic_search_clicks": 0,
-  "search_impressions": 15,
-  "ig_followers": 29,
-  "ig_following": 117,
-  "ig_posts": 4,
-  "ig_account_reach_28d": 2207,
-  "cost_per_signup": null,
-  "ad_spend": null
+  "search_impressions": 0,
+  "ad_spend": 25.04,
+  "cost_per_signup": 12.52
  },
  "daily_sessions": [
-  [
-   "2026-09-15",
-   1
-  ],
-  [
-   "2026-09-16",
-   1516
-  ],
-  [
-   "2026-09-17",
-   1985
-  ],
-  [
-   "2026-09-18",
-   2922
-  ],
-  [
-   "2026-09-19",
-   395
-  ],
-  [
-   "2026-09-20",
-   60
-  ],
-  [
-   "2026-09-21",
-   34
-  ],
-  [
-   "2026-09-22",
-   16
-  ],
-  [
-   "2026-09-23",
-   410
-  ],
-  [
-   "2026-09-24",
-   1832
-  ],
-  [
-   "2026-09-25",
-   699
-  ],
-  [
-   "2026-09-26",
-   150
-  ],
-  [
-   "2026-09-27",
-   111
-  ],
   [
    "2026-09-28",
    94
   ],
   [
    "2026-09-29",
-   42
+   55
+  ],
+  [
+   "2026-09-30",
+   87
+  ],
+  [
+   "2026-10-01",
+   87
+  ],
+  [
+   "2026-10-02",
+   17
+  ],
+  [
+   "2026-10-03",
+   22
+  ],
+  [
+   "2026-10-04",
+   20
   ]
  ],
  "channels": [
   {
-   "name": "Paid Search",
-   "sessions": 6644,
-   "engaged": 1291
-  },
-  {
    "name": "Display",
-   "sessions": 2961,
-   "engaged": 711
-  },
-  {
-   "name": "Cross-network",
-   "sessions": 383,
-   "engaged": 226
+   "sessions": 212,
+   "engaged": 162
   },
   {
    "name": "Direct",
-   "sessions": 190,
-   "engaged": 70
+   "sessions": 82,
+   "engaged": 82
   },
   {
-   "name": "Unassigned",
-   "sessions": 37,
-   "engaged": 0
+   "name": "Paid Search",
+   "sessions": 55,
+   "engaged": 33
   },
   {
    "name": "Organic Social",
-   "sessions": 21,
+   "sessions": 16,
    "engaged": 16
   },
   {
-   "name": "Organic Search",
-   "sessions": 2,
-   "engaged": 2
+   "name": "Paid Video",
+   "sessions": 6,
+   "engaged": 6
   },
   {
-   "name": "Paid Video",
-   "sessions": 2,
-   "engaged": 1
+   "name": "Unassigned",
+   "sessions": 6,
+   "engaged": 0
+  },
+  {
+   "name": "Cross-network",
+   "sessions": 4,
+   "engaged": 3
   },
   {
    "name": "Referral",
-   "sessions": 2,
+   "sessions": 3,
+   "engaged": 3
+  },
+  {
+   "name": "Paid Social",
+   "sessions": 1,
    "engaged": 1
   }
  ],
  "countries": [
   {
    "name": "India",
-   "sessions": 6636,
-   "engaged": 1523
-  },
-  {
-   "name": "Bangladesh",
-   "sessions": 1594,
-   "engaged": 321
-  },
-  {
-   "name": "Pakistan",
-   "sessions": 899,
-   "engaged": 221
-  },
-  {
-   "name": "Egypt",
-   "sessions": 164,
-   "engaged": 47
+   "sessions": 168,
+   "engaged": 116
   },
   {
    "name": "United States",
-   "sessions": 131,
-   "engaged": 85,
+   "sessions": 117,
+   "engaged": 115,
    "target": true
   },
   {
-   "name": "Others (79)",
-   "sessions": 818,
+   "name": "Pakistan",
+   "sessions": 26,
+   "engaged": 16
+  },
+  {
+   "name": "Bangladesh",
+   "sessions": 25,
+   "engaged": 20
+  },
+  {
+   "name": "Canada",
+   "sessions": 4,
+   "engaged": 4
+  },
+  {
+   "name": "Others (25)",
+   "sessions": 45,
    "engaged": null
   }
  ],
  "signups_by_channel": [
   {
-   "name": "Display",
-   "waitlist_signup": 2,
+   "name": "Organic Social",
+   "waitlist_signup": 1,
    "form_submit": 2
   },
   {
-   "name": "Organic Social",
+   "name": "Unassigned",
    "waitlist_signup": 1,
    "form_submit": 1
-  },
-  {
-   "name": "Paid Search",
-   "waitlist_signup": 1,
-   "form_submit": 24
-  },
-  {
-   "name": "Cross-network",
-   "waitlist_signup": 0,
-   "form_submit": 14
   }
  ],
  "key_events": {
@@ -424,115 +395,135 @@ footer p { margin: 4px 0; }
  },
  "search_pages": [
   {
+   "page": "/learn/heart-rate-variability-explained/",
+   "impressions": 63,
+   "position": 85.5
+  },
+  {
    "page": "/",
-   "impressions": 2,
-   "position": 1.5
+   "impressions": 12,
+   "position": 8.1
+  },
+  {
+   "page": "/learn/whoop-recovery-score-meaning/",
+   "impressions": 8,
+   "position": 20.8
   },
   {
    "page": "/ecosystem",
-   "impressions": 2,
-   "position": 6
+   "impressions": 5,
+   "position": 3.6
+  },
+  {
+   "page": "/band",
+   "impressions": 4,
+   "position": 5.5
   },
   {
    "page": "/compare/oura-ring-alternative/",
-   "impressions": 1,
-   "position": 7
+   "impressions": 3,
+   "position": 11.7
   },
   {
    "page": "/learn/screenless-health-wearable/",
-   "impressions": 1,
-   "position": 8
+   "impressions": 3,
+   "position": 12.7
   },
   {
-   "page": "/learn/heart-rate-variability-explained/",
-   "impressions": 6,
-   "position": 74.8
+   "page": "/compare/whoop-alternative",
+   "impressions": 2,
+   "position": 12
   }
  ],
- "ig_posts": [
+ "ig_posts": [],
+ "ads": [
   {
-   "date": "2026-09-23",
-   "title": "No Subscription. Now that's a Vybe",
-   "reach": 21,
-   "likes": 3,
-   "comments": 1,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DdodZiyRFY0/"
+   "campaign": "Vybe Health - 9/15 (Display)",
+   "status": "Removed",
+   "spend": 122.26,
+   "clicks": 182,
+   "impressions": 11216,
+   "note": "US $96.64 for 129 clicks, Canada $22.60 for 34; GA4 saw 20 US Display sessions all week"
   },
   {
-   "date": "2026-09-25",
-   "title": "30 days of battery",
-   "reach": 17,
-   "likes": 1,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DduMCHHqDz_/"
-  },
-  {
-   "date": "2026-09-26",
-   "title": "A health band you forget you're wearing",
-   "reach": 19,
-   "likes": 2,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DdxPAVSNEVR/"
-  },
-  {
-   "date": "2026-09-29",
-   "title": "Why rent access to your own health data?",
-   "reach": 6,
-   "likes": 0,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/Dd4pO7zKyTl/"
+   "campaign": "Website traffic-Search-1",
+   "status": "Enabled",
+   "spend": 34.16,
+   "clicks": 28,
+   "impressions": 1333,
+   "note": "US $26.57, Canada $6.09, India $1.50; 19 'conversions' counted from page views"
   }
  ],
  "actions": [
   {
-   "id": "geo",
-   "title": "Set Google Ads location to the founding-batch market",
-   "why": "About 90% of paid sessions came from India, Bangladesh and Pakistan.",
-   "owner": "Founder, or the agent once Google Ads is connected",
+   "id": "pause-paid",
+   "title": "Pause all paid spend (Search-1) and keep it at $0",
+   "why": "$156.42 this week, 0 paid signups; US Ads clicks 150 vs about 33 paid GA4 sessions; consent gate on /waitlist not live.",
+   "owner": "Founder",
+   "status": "open"
+  },
+  {
+   "id": "consent-gate",
+   "title": "Consent gate on /waitlist with the health privacy link",
+   "why": "The Google Ads tag and GA4 load on /waitlist with no consent step or GPC check, whether or not ads run (plan action 7).",
+   "owner": "Founder + counsel",
    "status": "open"
   },
   {
    "id": "key-events",
    "title": "Unmark 11 GA4 key events; keep waitlist_signup, form_submit, purchase",
-   "why": "Page views and session starts are counted as conversions.",
-   "owner": "Founder or agent",
+   "why": "Still 14 key events on 5 Oct, so 306 of 385 sessions read as engaged.",
+   "owner": "Founder",
+   "status": "open"
+  },
+  {
+   "id": "instagram",
+   "title": "Reconnect Instagram in Composio",
+   "why": "The connection dropped; followers, reach and posts are unreadable this week.",
+   "owner": "Founder (one click)",
    "status": "open"
   },
   {
    "id": "ads-conversions",
-   "title": "Import only waitlist_signup into Google Ads",
-   "why": "Bidding should optimise for signups, not page views.",
+   "title": "Import no conversions into Google Ads until counsel rules on /privacy §3",
+   "why": "Search-1 counts page views as conversions (19 from 28 clicks); plan action 3 holds all imports until counsel rules.",
+   "owner": "Founder",
+   "status": "open"
+  },
+  {
+   "id": "geo",
+   "title": "When paid restarts: US only, people in or regularly in it",
+   "why": "Search-1 spent $7.59 in Canada and India this week; Display is removed.",
    "owner": "Founder",
    "status": "open"
   },
   {
    "id": "signup-audit",
-   "title": "Find why 41 form submits became 4 signup events",
-   "why": "The north-star number may be under-counted.",
+   "title": "Find why form submits and signup events differ",
+   "why": "3 form submits and 2 signup events this week; 9 and 2 the week before.",
    "owner": "Agent + founder",
    "status": "open"
   },
   {
    "id": "facebook",
    "title": "Reconnect Facebook with Vybe Page access",
-   "why": "The Page's followers and posts are unreadable today.",
+   "why": "Still no managed Pages on the connected profile (5 Oct).",
    "owner": "Founder (one click)",
+   "status": "open"
+  },
+  {
+   "id": "dataforseo",
+   "title": "Fund DataForSEO",
+   "why": "Search-volume calls return 40200 Payment Required, so search briefs use Search Console only.",
+   "owner": "Founder",
    "status": "open"
   },
   {
    "id": "google-ads",
    "title": "Connect Google Ads to Composio",
-   "why": "Spend and cost per signup are unknown.",
-   "owner": "Founder (one click)",
-   "status": "open"
+   "why": "Connected: spend and clicks read on 5 Oct.",
+   "owner": "Founder",
+   "status": "done"
   }
  ],
  "sources": [
@@ -545,8 +536,16 @@ footer p { margin: 4px 0; }
    "state": "connected"
   },
   {
-   "name": "Instagram @vybehealthinc",
+   "name": "Google Ads (read-only)",
    "state": "connected"
+  },
+  {
+   "name": "Meta Ads",
+   "state": "connected"
+  },
+  {
+   "name": "Instagram @vybehealthinc",
+   "state": "missing"
   },
   {
    "name": "Firecrawl (vybe.health)",
@@ -565,20 +564,21 @@ footer p { margin: 4px 0; }
    "state": "partial"
   },
   {
-   "name": "Google Ads",
-   "state": "missing"
+   "name": "LinkedIn",
+   "state": "partial"
   },
   {
-   "name": "LinkedIn",
-   "state": "missing"
+   "name": "DataForSEO",
+   "state": "partial"
   },
   {
    "name": "Reddit",
    "state": "missing"
   }
  ],
- "next_pull": "2026-10-05"
-}</script>
+ "next_pull": "2026-10-12"
+}
+</script>
 <script>
 (function () {
   "use strict";
@@ -671,11 +671,12 @@ footer p { margin: 4px 0; }
     if (targetRow && targetRow.sessions / k.sessions > 0.5) $("alert").hidden = true;
 
     var tiles = [
-      { label: "Waitlist signups", value: fmt(k.waitlist_signups), note: "waitlist_signup events, 30 days", hero: true },
+      { label: "Waitlist signups", value: fmt(k.waitlist_signups), note: "waitlist_signup events" + (d.last_week ? "; week before " + fmt(d.last_week.waitlist_signups) : ""), hero: true },
       { label: "Form submits", value: fmt(k.form_submits), note: "any form on the site" },
       { label: "Sessions", value: fmt(k.sessions), note: pct(d.channels.filter(function (c) { return /^Paid|Display|Cross/.test(c.name); }).reduce(function (a, c) { return a + c.sessions; }, 0), k.sessions) + " paid" },
       { label: "US share of sessions", value: pct(k.us_sessions, k.sessions), note: fmt(k.us_sessions) + " sessions" },
-      { label: "Instagram followers", value: fmt(k.ig_followers), note: fmt(k.ig_posts) + " posts, 0 Reels" },
+      { label: "Instagram followers", value: fmt(k.ig_followers), note: k.ig_followers == null ? "Not read: connection dropped" : fmt(k.ig_posts) + " posts" },
+      { label: "Ad spend", value: k.ad_spend == null ? "Unknown" : "$" + k.ad_spend.toFixed(2), note: k.cost_per_signup == null ? "Google Ads not connected" : "$" + k.cost_per_signup.toFixed(2) + " per recorded signup, blended" },
       { label: "Search clicks", value: fmt(k.organic_search_clicks), note: fmt(k.search_impressions) + " impressions" }
     ];
     $("kpis").innerHTML = tiles.map(function (t) { return '<div class="tile' + (t.hero ? " hero" : "") + '"><div class="label">' + esc(t.label) + '</div><div class="value">' + esc(t.value) + '</div><div class="note">' + esc(t.note) + "</div></div>"; }).join("");
@@ -709,7 +710,7 @@ footer p { margin: 4px 0; }
     }).join("");
 
     var reach = d.ig_posts.reduce(function (a, p) { return a + p.reach; }, 0);
-    $("ig-sub").textContent = "Lifetime per post. " + fmt(reach) + " accounts reached across all posts; 0 saves, 0 shares.";
+    $("ig-sub").textContent = d.ig_posts.length ? "Lifetime per post. " + fmt(reach) + " accounts reached across all posts." : "Not read this week: " + d.windows.instagram_posts + ".";
     $("ig").innerHTML = table([
       { label: "Post", html: 1, get: function (p) { return '<a href="' + esc(p.url) + '" rel="noopener" target="_blank">' + esc(p.title) + '</a><div style="color:var(--muted);font-size:12px">' + esc(dayFmt(p.date, { month: "short", day: "numeric" })) + "</div>"; } },
       { label: "Reach", num: 1, get: function (p) { return p.reach; } },
@@ -730,7 +731,7 @@ footer p { margin: 4px 0; }
     var dailySum = d.daily_sessions.reduce(function (a, r) { return a + r[1]; }, 0);
     $("foot").innerHTML = "<p>Windows: GA4 " + esc(d.windows.ga4) + "; Search Console " + esc(d.windows.search_console) + "; Instagram account reach " + esc(d.windows.instagram_account) + ".</p>" +
       "<p>The daily series comes from a separate GA4 query and totals " + fmt(dailySum) + " sessions, " + fmt(Math.abs(dailySum - k.sessions)) + " off the channel total.</p>" +
-      "<p>Ad spend and cost per signup: " + fmt(k.ad_spend) + " until Google Ads is connected.</p>" +
+      "<p>Ad spend and cost per signup: " + (k.ad_spend == null ? "unknown until Google Ads is connected." : "$" + k.ad_spend.toFixed(2) + " spent, " + esc(d.windows.google_ads || "") + (k.cost_per_signup == null ? "." : "; $" + k.cost_per_signup.toFixed(2) + " per recorded signup across all channels.")) + "</p>" +
       "<p>Source file: " + esc(d.scoreboard_file) + " in the agency-agents repository. Refreshed weekly by the Vybe Health Marketing Director agent.</p>";
   }
 
