@@ -1,8 +1,70 @@
 {
   "version": 2,
-  "generated_at": "2026-10-04T20:31:50.367118+00:00",
-  "count": 700,
+  "generated_at": "2026-10-05T07:55:33.631081+00:00",
+  "count": 701,
   "jobs": [
+    {
+      "id": "1467c35fb76708c12def",
+      "fingerprint": "df2732e5f9329ca97f7b",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887173900",
+      "title": "Physical Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Fort Bragg, North Carolina",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$95,786 - $124,534 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: Only applicants who meet one of the employment authority categories below are eligible to apply for this job. You will be asked to identify which category or categories you meet, and to provide documents which prove you meet the category or categories you selected. Current Civilian Employees of the Defense Health Agency (DHA) Interagency Career Transition Assistance Plan Land\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 95786.0,
+        "salary_max": 124534.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Bragg",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "North Carolina"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 95786.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-05T07:55:33.631081+00:00"
+    },
     {
       "id": "c816640e9ccd2c945197",
       "fingerprint": "e21a28dd349922a66579",
@@ -41865,7 +41927,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-04T20:31:33+00:00"
+        "checked_at": "2026-10-05T07:55:20+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
