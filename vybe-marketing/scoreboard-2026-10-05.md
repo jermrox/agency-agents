@@ -7,8 +7,9 @@ the same window length; nothing is copied from the 30 Sep baseline.
 
 Windows: GA4 is 28 Sep to 4 Oct, against 21 to 27 Sep. Search Console is
 26 Sep to 2 Oct (final data), against 19 to 25 Sep. Google Ads is 28 Sep to
-4 Oct, against 21 to 27 Sep. Instagram could not be read: the connection
-dropped before this pull.
+4 Oct, against 21 to 27 Sep. Instagram and the Facebook Page were read on
+5 Oct through the Meta connection, lifetime per post; last week's follower
+count can't be re-pulled, so Instagram has no week-on-week comparison.
 
 GA4 row sums differ from its own deduplicated totals by a few sessions,
 because GA4 estimates session counts. This file uses the row sums: 385
@@ -43,8 +44,8 @@ The 30 Sep pull was a 30-day baseline, so this is the first week-on-week read.
 |---|---|---|---|---|
 | Founding-batch reservations (`waitlist_signup`) | 2 | 2 | GA4 | Both US this week; both Pakistan the week before |
 | Builder inquiries (qualified) | unknown | unknown | — | Where partnership submissions land is not connected |
-| IG followers / FB followers | unknown / unknown | unknown / unknown | — | Instagram disconnected; Facebook profile has no Page access |
-| Follows per 1,000 reach | unknown | unknown | — | Instagram disconnected |
+| IG followers / FB followers | 1,088 / 1 | not re-pullable | Meta (Instagram Graph) | 30 Sep baseline read 29 Instagram followers; the jump is the 30 Sep bulk add, not organic growth |
+| Follows per 1,000 reach | unknown | unknown | — | Meta gives reach per post but not follows per post |
 | Email CTR / complaints | unknown | unknown | — | No email platform connected |
 | Site conversion (signups ÷ users) | 0.62% (2 of 322) | 0.08% (2 of 2,635) | GA4 | Small numbers; two signups are an anecdote |
 | Spend / cost per reservation | $156.42 / $78.21 blended | $25.04 / $12.52 blended | Google Ads + Meta Ads + GA4 | Meta Ads delivered nothing either week ($0). Paid-attributed signups this week: 0 |
@@ -111,6 +112,26 @@ Google Ads reports 117 "conversions" for the Display campaign and 19 for
 Search-1 this week. GA4 recorded no `waitlist_signup` from any paid channel,
 so these conversions are the page-view key events.
 
+## Instagram @vybehealthinc (read 5 Oct through Meta)
+
+1,088 followers, following 181, 6 posts. The Facebook Page "Vybe Health"
+has 1 follower.
+
+| Post (date) | Type | Reach | Views | Likes | Comments | Saves | Shares |
+|---|---|---|---|---|---|---|---|
+| "No Subscription. Now that's a Vybe" (23 Sep) | image | 38 | 261 | 4 | 1 | 0 | 0 |
+| "30 days of battery" (25 Sep) | image | 35 | 277 | 2 | 0 | 0 | 0 |
+| "A health band you forget you're wearing" (26 Sep) | image | 41 | 305 | 4 | 0 | 0 | 0 |
+| "Why rent access to your own health data?" (29 Sep) | image | 30 | 298 | 3 | 0 | 0 | 0 |
+| **Reel: "Your health has five dimensions" (1 Oct)** | **Reel** | **402** | **442** | 1 | 2 | 1 | 0 |
+| "No subscription hits different" (4 Oct) | image | 2 | 6 | 0 | 0 | 0 | 0 |
+
+The first Reel reached about ten times as many accounts as any static post.
+Across all six posts there are 0 shares, which is the Reels program's first
+metric. One Organic Social visit led to a signup this week. The 29 Sep caption
+still says "Vybe is built open", which the concept now holds until the
+founder confirms it.
+
 ## Search Console (26 Sep to 2 Oct, final)
 
 85 impressions and 1 click (to the homepage). Query-level rows add up to 68
@@ -162,7 +183,7 @@ explained" ranks at position 2, with 1 impression.
    devices. Test: read GA4 by city and device for those days, then define
    internal traffic.
 
-**Unknown**: Instagram followers, reach and posts; Facebook Page; email;
+**Unknown**: email;
 builder inquiries; where form submissions are stored; why Search Console
 returns nothing before 27 Sep.
 
@@ -225,14 +246,15 @@ targeting case 7, which caught that the first draft broke the plan's rules.
 2. Consent gate on /waitlist with GPC and the health privacy link (plan
    action 7): the tags fire without consent whether or not ads run.
 3. Unmark the 11 page-view key events in GA4 (open since 30 Sep).
-4. Reconnect Instagram in Composio (one click).
+4. Post the next Reel: this week's Reel reached 402 accounts, about ten times
+   any static post.
 5. Counsel ruling on /privacy §3 before any conversion import or
    retargeting.
 6. Founder sets the maximum cost per reservation and a test budget.
 7. Define internal traffic in GA4 (the US Direct jump on 30 Sep and 1 Oct).
 8. Signup audit: find where form submissions land, so builder inquiries can
    be counted.
-9. Reconnect Facebook with Vybe Page access.
+9. The Facebook Page has 1 follower: cross-post the Reels there.
 10. Fund DataForSEO: search-volume calls return 40200 Payment Required.
 
 ## Next scoreboard
