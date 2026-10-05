@@ -1,0 +1,1006 @@
+[
+ {
+  "name": "OneTwenty",
+  "org": "OneTwenty",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "US health-optimization membership that pairs quarterly lab panels with synced WHOOP recovery, sleep and strain data. Posted publicly on the WHOOP Community that three app-approval requests (7 Feb, 1 Jun, mid-Jul) to lift the 10-user API cap got no approval, rejection or timeline; says it would start at 50 users and expects a few hundred.",
+  "why_now": "Third WHOOP approval submission mid-July 2026 still unanswered; product growth capped at 10 WHOOP users",
+  "evidence": [
+   "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-february-still-no-response-onetwenty-us/15635",
+   "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-february-still-no-response/15635"
+  ],
+  "channel": "WHOOP Community thread reply / company site",
+  "contact_url": "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-february-still-no-response-onetwenty-us/15635",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 7,
+   "e": 7
+  },
+  "ask": "15-min call on adding Vybe DevKit v0.1 as a second recovery/HRV data source next to their lab panels",
+  "opener": "Saw your WHOOP Community post about three approval requests since February with no answer. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and are picking 5-10 DevKit design partners. If a second overnight HRV source your members could own outright would help OneTwenty, could we do 15 minutes?",
+  "check_size": null,
+  "stage": null,
+  "geo": "US",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "hrv",
+   "whoop-api-cap",
+   "longevity"
+  ]
+ },
+ {
+  "name": "Today AI",
+  "org": "Today AI",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "AI agent platform that turns WHOOP recovery, sleep, strain and HRV into personalized morning insights. Posted on the WHOOP Community that three requests to lift the 10-user cap (first in April 2026, latest 6 Aug) got no response and the delay is blocking its launch.",
+  "why_now": "Latest WHOOP approval resubmission 2026-08-06, launch blocked",
+  "evidence": [
+   "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-april-still-no-response-today-ai/15779"
+  ],
+  "channel": "WHOOP Community thread reply",
+  "contact_url": "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-april-still-no-response-today-ai/15779",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 8,
+   "c": 7,
+   "e": 7
+  },
+  "ask": "15-min call on piping Vybe HRV/sleep data into their morning-insight agent via DevKit v0.1",
+  "opener": "Read your WHOOP Community post: three submissions since April and launch still blocked at 10 users. We're building Vybe, a screenless ECG/HRV band with a licensed API built for developers, and we're choosing 5-10 DevKit design partners. If an HRV source without a per-app user cap fits Today AI's morning insights, could we talk for 15 minutes?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-08-06",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "hrv",
+   "ai-agent",
+   "whoop-api-cap"
+  ]
+ },
+ {
+  "name": "Infinity Medical Concierge",
+  "org": "Infinity Medical Concierge (IMC)",
+  "role": "Founders: Dr David Adler, Dr Martin Lebos",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Johannesburg medical concierge whose IMC Guardian feature reads members' WHOOP sleep and physiological summaries so clinicians can check in early. Posted that WHOOP approval requests on 16 Mar, 11 Jun and 8 Jul went unanswered; expects ~100 users.",
+  "why_now": "Three unanswered WHOOP approval requests through 2026-07-08",
+  "evidence": [
+   "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-3-submissions-since-march-still-no-response-infinity-medical-concierge-africa/15588",
+   "https://www.infinity-mc.com/",
+   "https://www.bizcommunity.com/article/africas-first-medical-concierge-service-launched-472929a"
+  ],
+  "channel": "contact form on site / WHOOP Community thread",
+  "contact_url": "https://www.infinity-mc.com/",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 7,
+   "e": 6
+  },
+  "ask": "20-min call on a small DevKit pilot for IMC Guardian members (wellness data only)",
+  "opener": "Dr Adler, I saw IMC's WHOOP Community post about three approval requests since March. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and we're selecting 5-10 DevKit design partners. If a wearable data source IMC controls end to end would help Guardian, would you be open to a 20-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Johannesburg, South Africa",
+  "deadline": null,
+  "last_signal_date": "2026-07-08",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "concierge-health",
+   "whoop-api-cap"
+  ]
+ },
+ {
+  "name": "Vita (iOS longevity app)",
+  "org": "Vita",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Consumer longevity app where ~95% of users wear an Apple Watch and the team steers them to WHOOP as the premium HRV/recovery upgrade. Its v2 OAuth WHOOP integration is built but new connections are blocked behind an 'under review' notice because of the 10-member cap.",
+  "why_now": "WHOOP approval submitted 2026-07-20 and resubmitted 2026-07-26; WHOOP connections still gated in-app",
+  "evidence": [
+   "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-submitted-jul-20-resubmitted-today-vita-ios-we-funnel-apple-watch-users-toward-whoop/15626"
+  ],
+  "channel": "WHOOP Community thread reply",
+  "contact_url": "https://www.community.whoop.com/t/app-approval-to-raise-the-10-user-limit-submitted-jul-20-resubmitted-today-vita-ios-we-funnel-apple-watch-users-toward-whoop/15626",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "15-min call on Vybe as the no-subscription HRV upgrade path for their Apple Watch users",
+  "opener": "Saw your post that Vita's WHOOP integration is built but parked behind the 10-user cap. We're building Vybe, a screenless ECG/HRV band with no subscription and a licensed SDK, and we're picking 5-10 DevKit design partners. If an HRV upgrade path you can actually ship would help Vita, could we grab 15 minutes?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-07-26",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "hrv",
+   "longevity",
+   "whoop-api-cap",
+   "apple-watch"
+  ]
+ },
+ {
+  "name": "Ultrax",
+  "org": "Ultrax (ultrax.ai)",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Cloud sports-performance and organisation-management platform that supports 150+ data sources (GPS, HR monitors, force plates, wellness). Posted on the WHOOP Community that its WHOOP integration is built and sports organisations are waiting to onboard pending API approval.",
+  "why_now": "WHOOP approval is the last blocker for onboarding clubs (thread date not shown in search result)",
+  "evidence": [
+   "https://www.community.whoop.com/t/api-approval-for-ultrax-sports-performance-platform/14946",
+   "https://www.ultrax.ai/trainings/ultrax-an-integrated-platform-for-sports-performance-and-organizational-management/"
+  ],
+  "channel": "WHOOP Community thread / company site",
+  "contact_url": "https://www.ultrax.ai/",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Add Vybe as a data source in Ultrax; 15-min call on adapter shape for DevKit v0.1",
+  "opener": "Saw Ultrax had clubs waiting on WHOOP API approval. We're building Vybe, a screenless overnight ECG/HRV band with a licensed SDK and API, and we're choosing 5-10 DevKit design partners. Ultrax already handles 150+ sources, so we'd like to write the adapter with you. Open to a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "sports-performance",
+   "teams",
+   "whoop-api-cap"
+  ]
+ },
+ {
+  "name": "Clean Dopamine",
+  "org": "Clean Dopamine",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "App posted in 'No response from WHOOP Development Support' that it is stuck at the 10-user cap, blocking release to its user pool, after repeated formal requests and emails.",
+  "why_now": "Open WHOOP Community thread on unanswered developer support (2026; exact date not in search result)",
+  "evidence": [
+   "https://www.community.whoop.com/t/no-response-from-whoop-development-support/16050"
+  ],
+  "channel": "WHOOP Community thread reply",
+  "contact_url": "https://www.community.whoop.com/t/no-response-from-whoop-development-support/16050",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Short call to see if a Vybe DevKit unit fits their roadmap",
+  "opener": "Saw your WHOOP Community thread about being stuck at 10 users. We're building Vybe, a screenless ECG/HRV band with a licensed API for developers, and we're picking 5-10 DevKit design partners. If an alternative data source would unblock part of Clean Dopamine's roadmap, happy to share docs or do a 15-minute call.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "whoop-api-cap"
+  ]
+ },
+ {
+  "name": "fitnick",
+  "org": "kcinnick (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source Fitbit data project; issue #86 tracks moving from the deprecated Fitbit Web API to Google Health API as primary provider.",
+  "why_now": "Fitbit Web API turns off 2026-10-30",
+  "evidence": [
+   "https://github.com/kcinnick/fitnick/issues/86"
+  ],
+  "channel": "GitHub issue",
+  "contact_url": "https://github.com/kcinnick/fitnick/issues/86",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 8
+  },
+  "ask": "Feedback on the DevKit v0.1 data schema from someone who just went through the Fitbit migration",
+  "opener": "Saw issue #86 on fitnick tracking the Fitbit-to-Google Health move. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and we're trying to avoid the mistakes that made this migration painful. Would you look at our draft data schema and tell us what you'd change?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "fitbit-sunset",
+   "dev-platform"
+  ]
+ },
+ {
+  "name": "fitness-dashboard (jlai)",
+  "org": "jlai (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source Fitbit dashboard; issue #151 quotes Google Health's 'Action Required' email that partner apps must update integrations by 30 Oct 2026.",
+  "why_now": "Google Health migration deadline 2026-10-30",
+  "evidence": [
+   "https://github.com/jlai/fitness-dashboard/issues/151"
+  ],
+  "channel": "GitHub issue",
+  "contact_url": "https://github.com/jlai/fitness-dashboard/issues/151",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 8
+  },
+  "ask": "Ask if they'd accept a Vybe data-source PR once DevKit v0.1 ships",
+  "opener": "Saw issue #151 about the Google Health migration email. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and owned raw-data access. Would you be open to a contributed data-source adapter for fitness-dashboard once our DevKit ships? Happy to do the work.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "fitbit-sunset",
+   "dashboard"
+  ]
+ },
+ {
+  "name": "openfit",
+  "org": "FlavioAdamo (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Desktop dashboard and Codex-powered assistant built on Fitbit data, so its only data source is affected by the Fitbit Web API turn-off and Google Health re-consent.",
+  "why_now": "Fitbit Web API turns off 2026-10-30",
+  "evidence": [
+   "https://github.com/FlavioAdamo/openfit"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/FlavioAdamo/openfit",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 5,
+   "e": 8
+  },
+  "ask": "Offer a DevKit unit in exchange for a second-provider adapter and feedback",
+  "opener": "Found openfit while looking at Fitbit-based projects ahead of the 30 Oct API turn-off. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and we're picking a few DevKit design partners. Would a second data source make sense for openfit? Glad to send docs.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "fitbit-sunset",
+   "ai-agent"
+  ]
+ },
+ {
+  "name": "kai",
+  "org": "rubengarciam (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source project with issue #54 'Google Health (Fitbit) data source: weight, sleep, HRV', explicitly wanting HRV and sleep; Google Health API scopes are restricted, so a shared client needs verification and a CASA review past 100 users.",
+  "why_now": "Fitbit Web API turn-off 2026-10-30 forces the Google Health path",
+  "evidence": [
+   "https://github.com/rubengarciam/kai/issues/54",
+   "https://developers.google.com/health/app-verification"
+  ],
+  "channel": "GitHub issue",
+  "contact_url": "https://github.com/rubengarciam/kai/issues/54",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 8
+  },
+  "ask": "Comment on issue #54 offering a Vybe HRV/sleep data source via DevKit v0.1",
+  "opener": "Saw issue #54 on kai asking for weight, sleep and HRV via Google Health. We're building Vybe, a screenless ECG/HRV band with a licensed SDK that doesn't need per-app restricted-scope reviews. We're picking a few DevKit design partners; would an HRV source like that be useful for kai?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "fitbit-sunset",
+   "hrv",
+   "sleep"
+  ]
+ },
+ {
+  "name": "dailybuild",
+  "org": "tsu-nera (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source personal data project whose issue #49 plans migration to Google Health API to handle the Fitbit Web API retirement.",
+  "why_now": "Fitbit Web API turn-off 2026-10-30",
+  "evidence": [
+   "https://github.com/tsu-nera/dailybuild/issues/49"
+  ],
+  "channel": "GitHub issue",
+  "contact_url": "https://github.com/tsu-nera/dailybuild/issues/49",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 4,
+   "c": 5,
+   "e": 8
+  },
+  "ask": "Feedback on Vybe SDK docs from a developer mid-migration",
+  "opener": "Saw issue #49 on dailybuild about moving off the Fitbit Web API. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and want to make the data access simpler than this migration. Would you be open to reviewing our draft docs?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Japan",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "fitbit-sunset"
+  ]
+ },
+ {
+  "name": "ai-running-coach",
+  "org": "mmornati (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source AI running coach; issue #217 is an audit of Open Wearables and a 'which source for my device?' guide, i.e. the maintainer is actively choosing wearable data providers.",
+  "why_now": "Active provider audit issue (2026; date not shown in search result)",
+  "evidence": [
+   "https://github.com/mmornati/ai-running-coach/issues/217"
+  ],
+  "channel": "GitHub issue",
+  "contact_url": "https://github.com/mmornati/ai-running-coach/issues/217",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 8
+  },
+  "ask": "Get Vybe listed in their device-source guide once DevKit v0.1 has an Open Wearables adapter",
+  "opener": "Read your Open Wearables audit in issue #217. We're building Vybe, a screenless overnight ECG/HRV band with a licensed SDK, and plan an Open Wearables adapter. Would HRV and sleep from a no-subscription band be useful for ai-running-coach? We're picking a few DevKit design partners.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "running",
+   "hrv",
+   "aggregator"
+  ]
+ },
+ {
+  "name": "Whoop-Apex",
+  "org": "Hruthik9 (GitHub)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Self-hosted, privacy-first WHOOP analytics engine (recovery, sleep architecture, VO2 max estimation); depends entirely on the WHOOP API, where third-party apps sit behind a 10-member cap until approved.",
+  "why_now": null,
+  "evidence": [
+   "https://github.com/Hruthik9/Whoop-Apex",
+   "https://developer.whoop.com/docs/developing/app-approval/"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/Hruthik9/Whoop-Apex",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 5,
+   "e": 8
+  },
+  "ask": "Ask if they'd add a Vybe provider using DevKit v0.1",
+  "opener": "Found Whoop-Apex, nice work on the self-hosted recovery engine. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and raw-data access, no subscription. We're picking a few DevKit design partners; would a second provider fit Whoop-Apex?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "self-hosted",
+   "hrv",
+   "whoop-api-cap"
+  ]
+ },
+ {
+  "name": "WHOOP API approval backlog: developers stuck at 10-user cap for months (2026)",
+  "org": "WHOOP",
+  "role": null,
+  "type": "signal",
+  "hunt": "growth",
+  "why": "A dozen-plus public WHOOP Community threads in 2026 report app-approval requests to lift the 10-member development cap going unanswered for 1-6 months (OneTwenty, Today AI, Infinity Medical Concierge, Vita, Ultrax, Clean Dopamine, plus Soluno and PlayersLab already on the board). WHOOP's reply cites high volume and first-in-first-out processing. These are ready-made design-partner leads for an open SDK.",
+  "why_now": "Threads span Feb-Aug 2026 and remain open",
+  "evidence": [
+   "https://developer.whoop.com/docs/developing/app-approval/",
+   "https://www.community.whoop.com/t/no-response-on-api-app-approval-to-raise-the-10-user-limit/15246",
+   "https://www.community.whoop.com/t/stuck-by-the-api-limits/16108",
+   "https://www.community.whoop.com/t/no-update-from-an-open-request-to-the-whoop-api-platform-team/16372",
+   "https://www.community.whoop.com/t/whoop-api-user-limit-increase-waiting-for-2-months-already/15522"
+  ],
+  "channel": null,
+  "contact_url": null,
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 8,
+   "e": 8
+  },
+  "ask": "Work the thread list as a design-partner pipeline; reply only where the poster invites alternatives",
+  "opener": "If your WHOOP integration is built but stuck at 10 users, we're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and picking 5-10 DevKit design partners. Happy to share docs or do a 15-minute call.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-08-06",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "whoop-api-cap",
+   "signal"
+  ]
+ },
+ {
+  "name": "Garmin pauses Connect Developer Program: no new API access since spring 2026",
+  "org": "Garmin",
+  "role": null,
+  "type": "signal",
+  "hunt": "growth",
+  "why": "Garmin stopped approving new Connect Developer Program applications in spring 2026 and removed the form; existing integrations keep working but new ones can't get in. Startups are asking on Garmin's forums 'what are startups supposed to do?'. Open Wearables logged the dead form as an issue. Another major source closed to new builders.",
+  "why_now": "the5krunner report 2026-09-14; developer told 2026-05-12 the form was unavailable",
+  "evidence": [
+   "https://the5krunner.com/2026/09/14/garmin-developer-api-access-paused/",
+   "https://forums.garmin.com/apps-software/mobile-apps-web/f/garmin-connect-mobile-andriod/441607/garmin-connect-api-access-paused-for-months-what-are-startups-supposed-to-do",
+   "https://forums.garmin.com/developer/connect-iq/f/discussion/434542/garmin-connect-developer-program---access-request-rejected-without-notification",
+   "https://github.com/the-momentum/open-wearables/issues/1117",
+   "https://www.themomentum.ai/blog/garmin-developer-program-closed-roadmap"
+  ],
+  "channel": null,
+  "contact_url": null,
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 8,
+   "e": 8
+  },
+  "ask": "Reply in the Garmin forum startup thread with DevKit design-partner info; add 'Garmin-blocked' to builder outreach copy",
+  "opener": "If you're a startup waiting on Garmin Connect API access, we're building Vybe, a screenless ECG/HRV band with a licensed SDK and API you can start on now. We're picking 5-10 DevKit design partners and would like to hear what you need.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-09-14",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "garmin",
+   "api-access",
+   "signal"
+  ]
+ },
+ {
+  "name": "Google Health API: all scopes restricted; unverified apps capped at 100 users, annual CASA review",
+  "org": "Google",
+  "role": null,
+  "type": "signal",
+  "hunt": "growth",
+  "why": "The Fitbit/Google Fit successor requires OAuth app verification for restricted scopes, caps unverified clients at 100 users, and requires an annual CASA security assessment by a third-party lab (Google cites 2-6 weeks and $500-$4,500). Google pushed the Fitbit turn-off to 30 Oct partly because of CASA delays. Heavy friction for indie and open-source builders.",
+  "why_now": "Fitbit Web API turn-off 2026-10-30; developers mid-migration now",
+  "evidence": [
+   "https://developers.google.com/health/app-verification",
+   "https://help.validic.com/space/VCS/5513478151/Fitbit+to+Google+Health+API+Developer+Transition+Guide",
+   "https://openwearables.io/blog/google-health-api-practical-guide-getting-started",
+   "https://gadgetsandwearables.com/2026/09/28/fitbit-api-migration-deadline-october-30/"
+  ],
+  "channel": null,
+  "contact_url": null,
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 8,
+   "e": 8
+  },
+  "ask": "Use as the contrast point in DevKit docs: what verification Vybe's API needs and what it doesn't",
+  "opener": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-09-28",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "fitbit-sunset",
+   "google-health",
+   "signal"
+  ]
+ },
+ {
+  "name": "wearable-api-field-guide",
+  "org": "antsal06 (GitHub)",
+  "role": "Maintainer",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Open GitHub field guide with per-provider pages (e.g. providers/garmin.md) documenting wearable API access, including the Garmin program pause. A neutral place builders check when picking a data source.",
+  "why_now": "Garmin page reflects the 2026 pause",
+  "evidence": [
+   "https://github.com/antsal06/wearable-api-field-guide/blob/main/providers/garmin.md"
+  ],
+  "channel": "GitHub pull request",
+  "contact_url": "https://github.com/antsal06/wearable-api-field-guide",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 8
+  },
+  "ask": "Open a PR adding a providers/vybe.md page once DevKit v0.1 docs are public",
+  "opener": "Your wearable API field guide is the clearest summary of provider access I've found. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API. When our DevKit docs go public, would you accept a PR adding a provider page, written to your format and flagged as pre-launch?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "dev-platform",
+   "listing",
+   "aggregator"
+  ]
+ },
+ {
+  "name": "Kent Hack Enough 2027",
+  "org": "Kent Hack Enough (Kent State University)",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Longest-running student-run hackathon in Ohio and an official MLH 2027 event, held in Kent, minutes from Akron. A small hardware prize (DevKit units for best wearable/HRV hack) is a cheap way to seed student builders locally.",
+  "why_now": "Event 2027-03-06 to 2027-03-07; sponsor slots usually close weeks ahead",
+  "evidence": [
+   "https://www.mlh.com/seasons/2027/events",
+   "https://khe-2027.devpost.com/",
+   "https://khe.io/"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://khe.io/",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 7,
+   "c": 8,
+   "e": 8
+  },
+  "ask": "Sponsor a 'best wearable data hack' prize with 5 DevKit units and a mentor table",
+  "opener": "We're Vybe, an Akron team building a screenless ECG/HRV band with a developer SDK. We'd like to sponsor a hardware prize at KHE 2027: DevKit units plus a mentor for the best wearable-data hack. Who should we talk to about sponsor options?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Kent, OH",
+  "deadline": "2027-03-06",
+  "last_signal_date": "2026-10-05",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "hackathon",
+   "students",
+   "dev-platform"
+  ]
+ },
+ {
+  "name": "HackOHI/O 2026",
+  "org": "OHI/O (The Ohio State University)",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Ohio State's largest hackathon: 24 hours, 800+ students from 60+ majors, Ohio Union and online. 2026 sponsors include AEP Foundation, AWS and 99P Labs.",
+  "why_now": "Event 2026-10-24 to 2026-10-25 (19 days out; late sponsor add may still be possible)",
+  "evidence": [
+   "https://hack.osu.edu/2026",
+   "https://engineering.osu.edu/events/2026/10/hackohio-2026-0"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://hack.osu.edu/2026",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 7,
+   "e": 5
+  },
+  "ask": "Ask for a late prize-sponsor or mentor slot; if closed, book MakeOHI/O or ShowOHI/O instead",
+  "opener": "We're Vybe, an Akron team building a screenless ECG/HRV band with a developer SDK. Is there still room for a small prize sponsor at HackOHI/O 2026, e.g. DevKit units for the best health-data hack? If not, we'd like to plan for your next event.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Columbus, OH",
+  "deadline": "2026-10-24",
+  "last_signal_date": "2026-10-05",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "hackathon",
+   "students"
+  ]
+ },
+ {
+  "name": "RevolutionUC 2027",
+  "org": "ACM@UC (University of Cincinnati)",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "24-hour in-person student hackathon at UC (300+ students), MLH member event. Past sponsors include Medpace and Kinetic Vision; 2027 sponsors not yet announced.",
+  "why_now": "Event 2027-02-27 to 2027-02-28; sponsor list still open",
+  "evidence": [
+   "https://www.revolutionuc.com/",
+   "https://www.mlh.com/seasons/2027/events"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://www.revolutionuc.com/",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 7,
+   "e": 7
+  },
+  "ask": "Sponsor a wearable-data prize track with DevKit units",
+  "opener": "We're Vybe, an Akron team building a screenless ECG/HRV band with a developer SDK. We'd like to sponsor a small hardware prize at RevolutionUC 2027. Could you send your sponsor options?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cincinnati, OH",
+  "deadline": "2027-02-27",
+  "last_signal_date": "2026-10-05",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "hackathon",
+   "students"
+  ]
+ },
+ {
+  "name": "Stanford Health Hacks 2026",
+  "org": "Stanford Health Hacks",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Health-focused hackathon at Stanford, free to participants thanks to Stanford Medicine Catalyst and BASES; a direct audience of health builders.",
+  "why_now": "Event 2026-11-06 to 2026-11-08",
+  "evidence": [
+   "https://stanfordhealthhacks.com/"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://stanfordhealthhacks.com/",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 5
+  },
+  "ask": "Prize sponsor: DevKit units for the best wearable/HRV project, or a remote API mentor",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. Is there room for a small hardware prize at Stanford Health Hacks this November, e.g. DevKit units for the best wearable-data project? Happy to provide a remote mentor too.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Stanford, CA",
+  "deadline": "2026-11-06",
+  "last_signal_date": "2026-10-05",
+  "confidence": "single-source",
+  "tags": [
+   "hackathon",
+   "health",
+   "students"
+  ]
+ },
+ {
+  "name": "TreeHacks 2027",
+  "org": "TreeHacks (Stanford University)",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Stanford's flagship hackathon: 1K+ hackers, 36 sponsors, $1M+ in prizes; hardware hacks are a standing prize category.",
+  "why_now": "Event 2027-02-12 to 2027-02-14",
+  "evidence": [
+   "https://treehacks.com/",
+   "https://stanforddaily.com/2026/02/15/12th-annual-treehacks/"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://treehacks.com/",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "ask": "Price a sponsor-prize slot for a wearable-health challenge with DevKit units",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. We'd like to explore a sponsor prize at TreeHacks 2027 for the best wearable-health hack, supplying DevKit units. Could you share the sponsor tiers?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Stanford, CA",
+  "deadline": "2027-02-12",
+  "last_signal_date": "2026-10-05",
+  "confidence": "verified",
+  "tags": [
+   "hackathon",
+   "students",
+   "hardware"
+  ]
+ },
+ {
+  "name": "Out-of-Pocket Healthcare Hardware Hackathon",
+  "org": "Out-Of-Pocket Health",
+  "role": "Founder: Nikhil Krishnan",
+  "type": "event",
+  "hunt": "growth",
+  "why": "Wearables-first health hackathon (SF, Apr 17-19, 2026): organizers supplied Oura rings, CGMs, Meta Ray-Bans and Samsung watches; sponsors included Samsung, Momentum/Open Wearables, Xmartlabs and Alyf. Out-of-Pocket has said it plans a larger hardware/robotics event ('Med Machina') for Q1 2027.",
+  "why_now": "Samsung recap 2026-06-10; Q1 2027 hardware event announced as planned (single source; name and date not confirmed)",
+  "evidence": [
+   "https://www.outofpocket.health/hackathon-hardware-edition",
+   "https://www.outofpocket.health/p/announcing-our-healthcare-hardware-hackathon",
+   "https://developer.samsung.com/health/blog/en/2026/06/10/samsung-sponsors-health-tech-hackathon",
+   "https://www.themomentum.ai/blog/oop-healthcare-hardware-hackathon-open-wearables-sponsor"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://www.outofpocket.health/hackathon-hardware-edition",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "Get on the Q1 2027 hardware event as a device sponsor supplying DevKit units",
+  "opener": "Your hardware hackathon recap was the best look at what builders do with wearables in 36 hours. We're Vybe, a screenless ECG/HRV band with a developer SDK. If the Q1 2027 hardware event happens, we'd like to supply DevKit units as a device sponsor. Who handles sponsors?",
+  "check_size": null,
+  "stage": null,
+  "geo": "San Francisco, CA",
+  "deadline": null,
+  "last_signal_date": "2026-06-10",
+  "confidence": "verified",
+  "tags": [
+   "hackathon",
+   "health",
+   "hardware",
+   "wearables"
+  ]
+ },
+ {
+  "name": "MedTech Hack (Georgia Tech) 2026-2027",
+  "org": "MedTech Hack",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Medical-device hackathon run as 3 months of training then a 36-hour build; one 2026-27 concentration area is Health Monitoring (wearables, trackable sensors).",
+  "why_now": "2026-27 cycle under way; build-weekend date not shown in search result",
+  "evidence": [
+   "https://www.medtechhack.com/"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://www.medtechhack.com/",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "Offer DevKit units and a mentor for the Health Monitoring track",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. Your Health Monitoring track looks like a fit; could we supply DevKit units and a mentor for teams building on wearable data? Please share sponsor options.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Atlanta, GA",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "hackathon",
+   "medtech",
+   "students",
+   "hardware"
+  ]
+ },
+ {
+  "name": "MIT Hacking Medicine GrandHack 2027",
+  "org": "MIT Hacking Medicine",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "MIT's flagship health hackathon in Boston; past sponsors include the VA, J&J, Samsung and Optum; regional feeder events (Siriraj x MIT) already award Golden Tickets to GrandHack 2027.",
+  "why_now": "GrandHack 2027 being promoted by feeder events; 2027 date not published in sources found",
+  "evidence": [
+   "https://grandhack.mit.edu/sponsor/",
+   "https://hackingmedicine.mit.edu/events/sponsor-info",
+   "https://sirirajxmithackmed.com/"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://grandhack.mit.edu/sponsor/",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 5
+  },
+  "ask": "Ask for a track or prize sponsorship with DevKit units",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. We'd like to explore a small prize or hardware sponsorship at GrandHack 2027, supplying DevKit units for a wearable-data track. Could you share sponsor options and dates?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cambridge, MA",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "verified",
+  "tags": [
+   "hackathon",
+   "health",
+   "mit"
+  ]
+ },
+ {
+  "name": "Cornell Health Tech Hackathon 2027",
+  "org": "Entrepreneurship at Cornell",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Health-tech hackathon (2026 edition March 6-8 at NextJump in NYC; 100+ students from Cornell and 17 other universities; sponsors J&J, NewYork-Presbyterian, NextJump). 2027 edition not yet announced.",
+  "why_now": "2026 edition ran in March; 2027 likely similar timing (not confirmed)",
+  "evidence": [
+   "https://news.cornell.edu/stories/2026/03/students-pitch-ai-inspired-solutions-cornell-health-hackathon",
+   "https://news.weill.cornell.edu/news/2026/03/students-design-ai-powered-health-solutions-at-cornell-health-hackathon",
+   "https://hackathon.cornell.edu/health"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://hackathon.cornell.edu/health",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "Get on the 2027 sponsor list with a wearable-data prize",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. We'd like to sponsor a small wearable-data prize at the 2027 Cornell Health Tech Hackathon. Could you share dates and sponsor options when ready?",
+  "check_size": null,
+  "stage": null,
+  "geo": "New York, NY",
+  "deadline": null,
+  "last_signal_date": "2026-03-08",
+  "confidence": "verified",
+  "tags": [
+   "hackathon",
+   "health",
+   "students"
+  ]
+ },
+ {
+  "name": "HackCWRU",
+  "org": "Case Western Reserve University",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Cleveland's student-run 36-hour hackathon at think[box], with healthcare among its problem areas and hardware projects common; $10K+ in prizes given in past editions.",
+  "why_now": "Most recent edition in sources: January 2025; next date not published",
+  "evidence": [
+   "https://case.edu/news/hackcwru",
+   "https://community.case.edu/HackCWRU/club_signup"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://community.case.edu/HackCWRU/club_signup",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 7
+  },
+  "ask": "Ask the organizers for the next date and offer a DevKit prize",
+  "opener": "We're Vybe, an Akron team building a screenless ECG/HRV band with a developer SDK. We'd like to sponsor a hardware prize at the next HackCWRU. When is it, and who handles sponsors?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cleveland, OH",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "ohio",
+   "hackathon",
+   "students",
+   "hardware"
+  ]
+ },
+ {
+  "name": "FIBRE Wearable Tech Hackathon",
+  "org": "KITE Research Institute (UHN)",
+  "role": null,
+  "type": "event",
+  "hunt": "growth",
+  "why": "Three-day interdisciplinary student hackathon on wearable and smart-textile solutions for healthcare and rehabilitation needs.",
+  "why_now": "Listed among upcoming wearable hackathons; next date not shown in search result",
+  "evidence": [
+   "https://kite-uhn.com/fibre/hackathon"
+  ],
+  "channel": "sponsor inquiry",
+  "contact_url": "https://kite-uhn.com/fibre/hackathon",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "Offer DevKit units as a hardware sponsor",
+  "opener": "We're Vybe, building a screenless ECG/HRV band with a developer SDK. FIBRE's wearable focus fits what we're building; could we supply DevKit units or a mentor at the next hackathon? Please share dates and sponsor options.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Toronto, Canada",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "hackathon",
+   "wearables",
+   "smart-textiles"
+  ]
+ }
+]
