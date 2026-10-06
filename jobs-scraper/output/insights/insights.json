@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-05T19:32:21.083616+00:00",
+  "generated_at": "2026-10-06T07:31:40.557432+00:00",
   "totals": {
-    "postings": 1334,
+    "postings": 1339,
     "employers": 42,
-    "unique_jobs": 777,
-    "with_salary": 239,
+    "unique_jobs": 780,
+    "with_salary": 242,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-05T00:00:00+00:00"
+      "latest": "2026-10-06T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -113,20 +113,20 @@
       "median_salary": 98738.0
     },
     {
-      "name": "Customs and Border Protection",
-      "count": 25,
-      "disciplines": [],
-      "median_salary": 139436.5
-    },
-    {
       "name": "Military Treatment Facilities under DHA",
-      "count": 25,
+      "count": 27,
       "disciplines": [
         "sports-medicine",
         "research",
         "leadership"
       ],
       "median_salary": 102935.0
+    },
+    {
+      "name": "Customs and Border Protection",
+      "count": 25,
+      "disciplines": [],
+      "median_salary": 139436.5
     },
     {
       "name": "Resolution Think",
@@ -190,67 +190,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 412,
-      "share": 0.6754,
+      "count": 413,
+      "share": 0.6737,
       "median_salary": 68796.0
     },
     {
       "name": "sports-medicine",
-      "count": 348,
-      "share": 0.5705,
-      "median_salary": 74485.0
+      "count": 351,
+      "share": 0.5726,
+      "median_salary": 74455.5
     },
     {
       "name": "cognitive",
       "count": 175,
-      "share": 0.2869,
+      "share": 0.2855,
       "median_salary": 84869.0
     },
     {
       "name": "research",
-      "count": 120,
-      "share": 0.1967,
-      "median_salary": 78110.0
+      "count": 121,
+      "share": 0.1974,
+      "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1656,
+      "share": 0.1648,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 34,
-      "share": 0.0557,
+      "share": 0.0555,
       "median_salary": 63440.0
     },
     {
       "name": "sport-science",
       "count": 10,
-      "share": 0.0164,
+      "share": 0.0163,
       "median_salary": 100644.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 735,
-      "share": 0.9583
+      "count": 737,
+      "share": 0.9571
     },
     {
       "name": "sof",
       "count": 373,
-      "share": 0.4863
+      "share": 0.4844
     },
     {
       "name": "first-responder",
       "count": 54,
-      "share": 0.0704
+      "share": 0.0701
     },
     {
       "name": "training-pipeline",
-      "count": 43,
-      "share": 0.0561
+      "count": 44,
+      "share": 0.0571
     }
   ],
   "by_branch": [
@@ -260,11 +260,11 @@
     },
     {
       "name": "Army",
-      "count": 184
+      "count": 186
     },
     {
       "name": "Air Force",
-      "count": 101
+      "count": 102
     },
     {
       "name": "Navy",
@@ -286,7 +286,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Coronado",
@@ -325,6 +325,10 @@
       "count": 8
     },
     {
+      "name": "Fort Riley",
+      "count": 8
+    },
+    {
       "name": "Fort Sill",
       "count": 8
     },
@@ -339,10 +343,6 @@
     {
       "name": "Fort Hood",
       "count": 7
-    },
-    {
-      "name": "Fort Riley",
-      "count": 7
     }
   ],
   "by_state": [
@@ -352,7 +352,7 @@
     },
     {
       "code": "NC",
-      "count": 65
+      "count": 66
     },
     {
       "code": "CA",
@@ -375,12 +375,12 @@
       "count": 33
     },
     {
-      "code": "KY",
+      "code": "CO",
       "count": 23
     },
     {
-      "code": "CO",
-      "count": 22
+      "code": "KY",
+      "count": 23
     },
     {
       "code": "HI",
@@ -463,28 +463,28 @@
     }
   ],
   "salary": {
-    "count": 239,
+    "count": 242,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 82724.5,
-    "p25": 62555.75,
-    "p75": 110000.0,
+    "median": 82450.25,
+    "p25": 62100.38,
+    "p75": 109713.25,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 62,
+        "count": 63,
         "min": 34320.0,
         "max": 1000000.0,
         "median": 68796.0,
-        "p25": 57850.0,
+        "p25": 57900.0,
         "p75": 85738.0
       },
       "sports-medicine": {
-        "count": 119,
+        "count": 122,
         "min": 10000.0,
         "max": 1000000.0,
-        "median": 74485.0,
+        "median": 74455.5,
         "p25": 60000.0,
-        "p75": 102935.0
+        "p75": 101885.75
       },
       "nutrition": {
         "count": 17,
@@ -511,12 +511,12 @@
         "p75": 104337.8
       },
       "research": {
-        "count": 33,
+        "count": 34,
         "min": 45655.0,
         "max": 170556.5,
-        "median": 78110.0,
-        "p25": 63560.5,
-        "p75": 98027.0
+        "median": 77015.0,
+        "p25": 63470.12,
+        "p75": 97933.12
       },
       "leadership": {
         "count": 21,
@@ -530,7 +530,7 @@
   },
   "remote": {
     "count": 3,
-    "share": 0.0039
+    "share": 0.0038
   },
   "timeline": [
     {
@@ -571,16 +571,16 @@
     },
     {
       "month": "2026-09",
-      "count": 531
+      "count": 529
     },
     {
       "month": "2026-10",
-      "count": 42
+      "count": 47
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-07T00:00:00+00:00",
+    "pivot": "2026-07-08T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -625,6 +625,12 @@
         "change": 28
       },
       {
+        "name": "Military Treatment Facilities under DHA",
+        "recent": 26,
+        "previous": 1,
+        "change": 25
+      },
+      {
         "name": "Customs and Border Protection",
         "recent": 25,
         "previous": 0,
@@ -635,12 +641,6 @@
         "recent": 25,
         "previous": 0,
         "change": 25
-      },
-      {
-        "name": "Military Treatment Facilities under DHA",
-        "recent": 24,
-        "previous": 1,
-        "change": 23
       },
       {
         "name": "U.S. Marine Corps",
@@ -766,12 +766,12 @@
       "count": 9
     },
     {
-      "title": "Fitness Specialist",
-      "count": 7
+      "title": "Physical Therapy Assistant",
+      "count": 8
     },
     {
-      "title": "Physical Therapy Assistant",
-      "count": 6
+      "title": "Fitness Specialist",
+      "count": 7
     }
   ]
 }
