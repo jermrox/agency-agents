@@ -32,6 +32,7 @@
 set -euo pipefail
 
 SRC_BOARD="healthcare/dashboards/h2f-scout-board.html"
+SRC_ARCHIVE="healthcare/dashboards/h2f-archive.html"
 SRC_FUNDING="dashboards/vybe-funding-tracker.html"
 FUNDING_FEED="funding-scraper/output/funding.json"
 SRC_APPLY="funding-scraper/applications/index.html"
@@ -66,6 +67,13 @@ if want_research; then
   fi
   # The embeddable board, byte-for-byte. Squarespace pulls this one.
   cp -f "$SRC_BOARD" "$OUT/h2f-scout-board.html"
+  # The 12-month archive the board links to as archive.html. Rendered alongside
+  # the board by research-board/sweep.py --publish.
+  if [ -f "$SRC_ARCHIVE" ]; then
+    cp -f "$SRC_ARCHIVE" "$OUT/archive.html"
+  else
+    echo "note: $SRC_ARCHIVE not present; /archive.html will not be published."
+  fi
 fi
 
 if want_rev; then
