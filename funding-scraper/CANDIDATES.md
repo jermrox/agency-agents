@@ -408,6 +408,102 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 6 Oct 2026 (round 7, scheduled)
+
+Four lanes: a watch-list re-check, Ohio and Midwest Q4 programs, newly announced
+health-AI prizes, and Oct–Dec micro-grants.
+
+Added:
+- **NIMHD SCHARE Smart Devices & Sensing Technologies Grand Challenge:** Phase 1 4 x $100K, Phase 2 $325K/$275K.
+  - **Register by 18 Dec**; proposal due 15 Feb 2027. Best federal fit found so far.
+  - SAM conflict on NIH's page, so tagged later. Start SAM.gov now or email NIMHD.
+- **NIMHD SCHARE Whole-Person Data Integration:** 10 x $10K; register by 23 Nov; tagged SAM later.
+- **NIH ODSS "It's About Time" temporal-reasoning challenge:** 10 x $25K for a concept paper; due 15 Jan 2027; no SAM.
+- **NCATS Real-World Evidence challenge:** 12 x $50K; due 26 Mar 2027; no SAM; stretch fit.
+- **Marshalls Good Stuff Accelerator:** $5K to the individual founder after a 12-month program; closes 13 Oct.
+- **Lightship Bootcamp, Akron, 16–18 Nov:** free, JobsOhio-backed, hotel and meals covered; first come, first served. Cleveland (2–4 Nov) is the backup.
+
+**Watch list:**
+- MedTech Innovator 2027: its page has an unpublished "Deadline: December 1, 2026" block; re-check 13 Oct.
+- NIDILRR SBIR Phase I: est. 16 Oct – 16 Dec; SAM required.
+- NIDILRR Field Initiated Development: est. 12 Oct – 14 Dec; SAM required.
+- Hiring Our Heroes 2027 cycle: about 15 Oct.
+- NSC Work to Zero: about 3 Nov.
+- EPRI: 20 Oct.
+- Ohio Third Frontier portal: Dec–Jan.
+- SEA Change: Jan.
+- What's Next Longevity: 5 Jan.
+- TechCrunch Battlefield 2027: mid-Jan.
+
+## Rejected on inspection — 6 Oct 2026 (round 7)
+
+- **HHS OMH Healthy Habits Challenge (Promoting Lifelong Healthy Habits Among Children and Adolescents from Medically Underserved Communities)** — Phase 1 (29 Sep 2026 to 31 Mar 2027; up to 6 x $254,900) rewards participants 'that operate programs that have demonstrated success' for children aged 5-19. Vybe has no operating youth program and is pre-launch. The SAM UEI is optional, so SAM.gov is not the blocker.
+- **ViVE 2027 Startup Pitch Competition** — Re-checked 6 Oct 2026. The page still shows the 2026 edition (winner Rovex, February dates) and no 2027 application or deadline. Watch it. The gates are under 5 years old and under $8M raised.
+- **HIMSS27 Emerge pitch** — Re-checked 6 Oct 2026. The URL now serves the general HIMSS27 page (5-8 Apr 2027, Chicago) with no startup pitch application or deadline posted.
+- **Panasonic Well Family Wellness Innovation Challenge** — No current edition found. The challenge page returns nothing, and the only documented round ran 1-25 Oct 2024 ($500K grand prize, US entity, CES 2025). Watch for a CES 2028 or later edition.
+- **Digital Health Hub Foundation Digital Health & AI Awards** — Recognition awards, not cash. The 2026 program is tied to HLTH 2026, and no 2027 call or fee terms are posted. Vybe's pre-launch stage would not fit the Rising Stars evaluation anyway.
+- **Hollomon Health Innovation Challenge (UW Buerk Center)** — Student-only (Washington-state university student teams). It opens 1 Dec 2026.
+- **Medical Innovation Expo Pitch Competition 2027** — Open only to medical, nursing and engineering students and residents at US institutions, and it requires an FDA 510(k) pathway.
+- **Gordon and Betty Moore Foundation / Kaiser Permanente AIM-HI RFP** — For health systems doing prospective evaluation of ML diagnostic decision-support tools. That requires a diagnostic claim and a health-system applicant.
+- **Wellcome Prize for Mental Health Science with Nature** — Closed 18 Sep 2026, and it is limited to interventions for anxiety, depression and psychosis. It is already on rejected.txt.
+- **NAACP Powershift Entrepreneur Grant ($25,000)** — Closed. NAACP's own grants page says 'all grant applications are closed for this season', and no new Powershift window is posted. It is also for Black entrepreneurs only, and Vybe's minority-ownership category is not confirmed.
+- **Square Cornerstone Grant ($10,000 x 4)** — Closed, and its gate is not a fit. The live page still shows 'Submit your application by September 30, 2025', with no 2026 round. It also requires being a 'Current Square seller, with at least 6 months of ongoing transactions', which a pre-revenue company cannot meet.
+- **Zoom Solopreneur 50 (ZSP50), $30,000 x 5** — Closed. Nominations ended 13 Feb 2026, and it is for one-person businesses only (Vybe has 2+ employees). Based on search results only; there is no new cycle to verify.
+- **GoDaddy x RIVET Social Innovation Challenge 2026** — Non-US only (UK and Canada). It targets young founders, and its 2026 recipients were already selected in June 2026.
+- **Shopify / Wix small-business grants** — No current grant program was found from either company. There is nothing to verify.
+- **Huntington Lift Local Business** — Loans, not grants: SBA-guaranteed loans of $1K–$150K. They need SBA loan underwriting and give no cash award.
+- **Fifth Third 'Swap, Snap, Share' holiday small-business grants ($5,300)** — There is no application route. Winners are drawn at random from businesses that Fifth Third employees tip and photograph in November, so it is aimed at storefronts and not open to apply.
+- **Amex Shop Small Grants Program 2026-27 (Main Street America, $20,000)** — Already listed in rejected.txt. It requires a brick-and-mortar storefront, and the next round would open on Small Business Saturday (late Nov 2026), which is not yet confirmed.
+- **Hiring Our Heroes Small Business Grant (2027 cycle)** — Not open. The rules page still shows the 2026 cycle, which closed 15 Dec 2025, and no 2027 window is posted. The last cycle opened about 15 Oct. It needs 3–20 employees and a location in an economically vulnerable community or proof of financial need. Re-check around 15 Oct 2026.
+- **Second Service Foundation, Military Entrepreneur Challenge ($1K–$15K)** — Not running. The site says the foundation is 'transitioning our resources into an existing faith-based nonprofit', and no challenge dates or application are posted.
+- **Hire Heroes USA 'Ripple Effect' grant** — Dead page: the application URL returns 'Page Not Found'.
+- **SoGal Foundation Black Founder Startup Grant** — Dead page: the official URL returns '404 Page Not Found' and the site footer reads © 2022. It was also gated to Black women or nonbinary founders.
+- **Women Who Tech Women Startup Challenge / grants** — No current round. The page lists only past grants (most recent July 2021).
+- **Google for Startups Women Founders Fund (US)** — No open US fund. Search results show no Women Founders Fund available, and past rounds are closed.
+- **BMO Celebrating Women Grant Program (US, $10,000 x 15)** — Closed. The 2026 window was 2–23 Apr 2026, and recipients were announced 27 Jul 2026.
+- **Citizens Small Business Community Champion Award** — Closed (10 Feb 2026), and it requires being a Citizens Business Banking customer. Citizens has no Ohio footprint.
+- **Zensurance Small Business Grant** — Canada only. It also requires an insurance quote, and the 2026 winner was named 1 Oct 2026.
+- **Visa Foundation small-business ecosystem RFP ($2M)** — Wrong applicant type: it funds entrepreneurial support organizations, not individual businesses.
+- **Ladies Who Launch 2026 Launch Program ($10,000)** — Closed 17 Mar 2026. It also requires $100,000–$499,999 in gross annual revenue.
+- **VETRN Online MBA Program (Fall 2026)** — No cash, and it requires an existing veteran-owned business with 'a sustainable revenue model'. The fall 2026 cohort window has passed.
+- **1517 Fund Medici Project ($1,000 stipends)** — Student or dropout gate: it is for 'high school, college students, and dropouts'.
+- **Seated Together Small Business Microgrant** — Has an application fee ($5, per NerdWallet). Priority goes to Volusia County, FL, and the maximum is $1,000.
+- **Women's Empire EmpowerHer Fund ($1,000 quarterly)** — Limited to New York City (NerdWallet lead; not pursued further).
+- **Founders First CDC Supplier Innovative Finance Program ($5,000)** — Revenue gate of $250K–$10M, and it needs a recognized diversity certification. Pre-revenue Vybe fails both.
+- **Awesome Foundation, Disability (worldwide chapter)** — Wrong fit (disability projects). The only Ohio chapter is Cleveland, which is already in rejected.txt, and there is no Akron chapter.
+- **Neutrogena x IFundWomen health & wellness grant** — Stale. It was a 2021 one-off that closed 26 Apr 2021.
+- **Ulta Beauty MUSE Accelerator 2027** — Closed. The 2026 deadline was 28 Jun 2026 and the 2027 cohort is not yet open. It is also for beauty brands.
+- **Military Veterans TechRise Pitch Competition (UChicago / P33)** — This was a 2025 Veterans Day event with no stated cash prize, and no 2026 call was found.
+- **MedTech Innovator 2027 Accelerator (US)** — Not open yet. The visible page says: 'Applications for the 2026 cohort are now closed. Sign up to be notified when 2027 applications open.' (waitlist only). The page HTML also holds a block hidden on all devices that reads 'Applications for the 2026 cohort are open! Deadline: December 1, 2026', with an APPLY NOW link to pro.innovator.org/applications. This looks like the next cycle being prepared, which would match last year's 6 Oct open and 1 Dec deadline, but it is not published, so the date is not confirmed. Re-check on 13 Oct.
+- **NIDILRR SBIR Phase I FY2027 (HHS-2027-ACL-NIDILRR-BISA-0308)** — As of 6 Oct the Grants.gov API (search2 and fetchOpportunity) still shows status 'forecasted'. The forecast estimates posting on 16 Oct 2026, applications due 16 Dec 2026, and award on 1 Jun 2027. The award is $95,000 to $100,000, with $1.1M in total estimated funding. Only small businesses are eligible, and the focus is R&D products for people with disabilities. Contact: brian.bard@acl.hhs.gov. The dates are estimates, so they are not confirmed. SAM.gov, UEI and Grants.gov registration are REQUIRED to apply, and SAM takes several weeks, so start it now if you plan to pursue this. Re-check on 17 Oct.
+- **NIDILRR Field Initiated Projects Program (Development) FY2027 (HHS-2027-ACL-NIDILRR-IFDV-0304)** — The Grants.gov API still shows status 'forecasted'. The forecast estimates posting on 12 Oct 2026, applications due 14 Dec 2026, and award on 1 Sep 2027. The award is $245,000 to $250,000, with $2M in total estimated funding. For-profit organizations and small businesses are eligible. The aim is to develop methods, products or technologies for people with disabilities. Contact: radha.holavanahalli@acl.hhs.gov. The dates are estimates, not confirmed. SAM.gov is REQUIRED. Re-check on 13 Oct.
+- **What's Next Longevity Venture Summit $10K Business Plan Competition (2027)** — The official page says: 'plan to enter your business plan in the 2027 What's Next Longevity Venture Summit Business Plan Competition. We will begin accepting submissions in January 2027.' The summit is on 'June 8-10, 2027'. The opening is given only as a month, with no exact date, and the 2026 deadline was extended to 7 May. Re-check on 5 Jan 2027.
+- **EPRI Incubatenergy Labs Challenge 2027** — labs.incubatenergy.org redirects to the IEL community page, whose navigation still shows only the '2026 Challenge'. The 2026 page's timeline reads 'Application Open & Startup Evaluation: Fall/Winter 2025', and the 2026 deadline was 14 Nov 2025. No 2027 call or dates are posted. Note that every unknown brightidea URL redirects to a login page, so that redirect says nothing about a 2027 call. Fit is weak: the call offers paid utility demos, and the closest category is 'Advanced Utility Operations' (safety, workforce). Re-check on 20 Oct.
+- **NSC Work to Zero Safety Innovation Challenge (next cycle)** — Both recent challenges are closed. Workplace Fatigue ran from 'Nov. 6 -- Application Opens' to 'Jan. 16 -- Application Closes', with the showcase on 7-8 May 2026. Energy Control ran from 28 Apr to 19 Jun 2026, and its apply page says 'This form is currently closed for submissions.' No new TechConnect/NSC challenge site has been found. nsc.org returns 403 to the fetcher. Incentives in past cycles: a $4,500 travel reimbursement, and eligibility for Work to Zero pilot grants of up to $20K. Last year's call opened 6 Nov, so re-check about 3 Nov.
+- **TechCrunch Startup Battlefield 2027** — The official page says: 'Applications have closed for 2026, but please consider applying next year!' Disrupt 2026 runs 13-15 Oct. No 2027 application date is posted. The 2026 window closed in early June. Re-check in mid-January 2027.
+- **Psychiatry Innovation Lab 2027 (APA)** — The official page says: 'The submission portal for the 2027 Psychiatry Innovation Lab will open in November 2026.' No exact date is given; the 2026 cycle opened on 12 Nov 2025. Re-check on 12 Nov.
+- **JumpStart Trailblazer HealthTech Accelerator** — The official page describes the program ('access to $50K in expert services ... five-month ... investor showcase') but shows no open application or dates. Companies must plan a VC raise within 12 months. Re-check on 1 Dec.
+- **Babson WIN Lab (2027 cohort)** — The text extracted from the apply page shows no window or deadline. Not confirmed open. Re-check in mid-November, or email the program director.
+- **MIT Hacking Medicine GrandHack 2027** — grandhack.mit.edu still redirects to the GrandHack 2025 event page. No 2026/27 event is posted. Re-check in December.
+- **InterSystems developer contests** — The /contests URL returns 404, and no current contest was verified. Carry forward to about 1 Nov.
+- **Other watch-list items not re-fetched this round (a2/NIA AITC pilot awards, Ohio Federal Research Network R8, FedTech Crucible spring, Black Ambition, IU Health gBETA, Walmart Marketplace / Open Call 2027, QVC Product Pitch)** — Lower priority; keep the dates already on the watch list: a2/NIA AITC about 1 Dec, OFRN R8 January, Black Ambition about Feb 2027, gBETA closes 10 Jan (Indiana roots; email the director). Walmart Open Call requires US-made products, and QVC is still unverified. AWS Impact Accelerator (replaced by bootcamps), Get in the Ring and Pitch@Palace (domain is now a gambling site) stay dropped.
+- **Ohio Third Frontier: any TVSF round other than Phase 2 (incl. Phase 1 / a fall 2026 round)** — No Third Frontier round is open. The ODHE/OH-TECH RFP portal that hosts TVSF applications lists only HB96 WBL, RAPIDS 8, CDL student aid, Choose Ohio First and demolition-loan RFPs as of 6 Oct 2026. The 2026 TVSF rounds closed 6 Feb (Phase 1+2) and 7 May (Phase 2). Phase 1 is for research institutions only (with a 1:1 match), and Phase 2 requires licensing technology from an Ohio institution. Re-check the portal in Dec-Jan.
+- **JobsOhio Launchpad (6-week online cohort, operated by ThinkMODA)** — Possible fee, and the dates conflict. JobsOhio calls it 'Six Weeks of Free Online Training' for businesses under $100K revenue and lists a Nov 25 - Dec 30, 2026 cohort. But the operator's site (thinkmoda.co) mentions 'early bird pricing' and gives 'next cohort March 1st to April 15th'. There is no cash. Only worth doing if ThinkMODA confirms in writing that the JobsOhio-sponsored seat is free.
+- **Lightship Founder Gym** — Equity-free 4-week idea-to-execution course, but the page states no dates, cost or cohort window, and there is no cash. It targets the idea stage, which is below Vybe's stage.
+- **Morgan Startup Grants (Burton D. Morgan Foundation, NEO community round)** — Closed. The 2026 community round (typical grant $1,500, for businesses under $100K revenue with at least one employee) ran 16-27 March 2026, and the page says 'This opportunity closed on March 27'. Otherwise the grants go only through partner programs (Bounce, UA, Kent State, Tri-C, SEA Change, etc.).
+- **SEA Change Signature Cohort (Northeast Ohio / Central Ohio social-enterprise accelerator)** — Not open, no 2027 date posted ('2026 apps closed'; 2026 NEO window was Jan 9 - Feb 9). Free, no cash; for ventures with a 'non-negotiable positive social impact'. Likely reopens ~Jan 2027 — use 'Notify me'.
+- **Accelerate Michigan Innovation Competition** — Defunct. The official site still shows the 2019 competition and has no current cycle.
+- **Rally IN-Prize (Elevate Ventures, Indianapolis)** — The official IN-Prize page returns a 404. Per press coverage, the prize requires a 'significant Indiana presence', which in effect means relocating. The 2026 Rally was in August.
+- **Grainger Engineering Tech Startup Challenge (Chicago Venture Summit, Oct 20 2026)** — Student-only: open to current or recently graduated University of Illinois students.
+- **Cincinnati Children's x Cintrifuse Digital Health Hackathon** — Student-only ('current university students ... Register with your school (.edu) email'); registration closes Oct 15. Prizes are $2.5K/$1K/$500.
+- **EXPlore Pittsburgh Tech Week Startup Pitch ($10K)** — Past (Sept 10-16, 2026). The prize is 'invested directly into the winning company', and the event is for Pittsburgh-region founders.
+- **PITCH U Elevator Speech Competition (Burton D. Morgan Foundation, Nov 3)** — Open only to current students and graduates within 5 years of a Northeast Ohio college or university. It is undated (it may be a past year), so check whether a Vybe founder qualifies as an alumnus.
+- **Pitch & Pour (University of Toledo incubator)** — The official pages return 'page not found', and there is no 2026 edition. The only dates found are from past years (from news.utoledo.edu).
+- **StartUp Lehigh Valley (Lehigh University, PA)** — The 2026 event was Aug 4, and no 2027 window has been posted. It targets founders 'from across the region'.
+- **Pitch Cypher Finale ($25K grant, JumpStart Cleveland)** — The official page no longer carries the program, and no 2026 event was found.
+- **Venture Sharks (Venture Connectors, Louisville KY)** — The official site shows no competition details or open window.
+- **Ohio Minority/Women business programs (Women's Business Enterprise Loan, Ohio Micro-Loan, Minority Direct Loan)** — These are loans, not cash grants, and are already covered in rejected.txt. ODSA has no open grant for minority-, women- or veteran-owned startups.
+
 ## Promoted to the board — 5 Oct 2026 (round 6, scheduled)
 
 Four lanes: a watch-list re-check, accessibility and aging, worker safety and heat stress,
