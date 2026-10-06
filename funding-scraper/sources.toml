@@ -3847,3 +3847,108 @@ documents = [
   "Everything in accessible electronic formats, in English",
 ]
 verified = "2026-10-05"
+
+[[sources.curated.entry]]
+name = "NIH ODSS 'It's About Time: Temporal Reasoning in Biomedical Knowledge Graphs' Challenge, Phase 1"
+url = "https://www.nih.gov/challenges/its-about-time-temporal-reasoning-biomedical-knowledge-graphs-challenge"
+agency = "NIH Office of the Director, Office of Data Science Strategy (ODSS); portal run by CrowdPlat"
+amount = "Phase 1: up to 10 awards of $25,000 (up to $250,000). Phase 2 (Phase 1 winners only): $750,000. Total purse $1,000,000."
+close_date = "2027-01-15"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "A private entity must be incorporated in, and keep its primary place of business in, the US. Individuals must be US citizens or permanent residents. No federal grant funds may be used to build the entry. Registration is free and required before submitting. No fee, no clinical-trial or FDA requirement."
+note = "CONCEPT-PAPER PRIZE ABOUT METHODS, NOT A WEARABLE CALL. It fits the 'Vybe Health Intelligence' layer: a normalized personal health timeline (band data plus HealthKit, FHIR and Blue Button records) with AI reasoning over it is a temporal knowledge-graph problem, and Phase 1 pays for a framework, not a product. Launched 1 Sep 2026; submissions opened 5 Oct 2026. The SAM.gov UEI is 'encouraged, but not required' and only speeds up payment. Winners are announced 15 Mar 2027. Phase 2 (5 Apr to 12 Nov 2027) requires a working prototype. Lead with a consumer and clinical use case such as sleep/HRV trends against medication or diagnosis validity windows."
+documents = [
+  "Free registration on the CrowdPlat competition site (work.crowdplat.com/challenge/nih-temporal-knowledge-graph-challenge)",
+  "Phase 1 PDF of up to 10 pages (11-point font minimum) covering: the temporal reasoning framework or design; the temporal modeling approach (events, sequences, durations, validity periods, evolving evidence); the use case and potential impact; and feasibility and integration with existing KG standards and ontologies",
+]
+verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "NCATS Real-World Evidence (RWE) Innovation Challenge, Phase 1"
+url = "https://www.nih.gov/challenges/real-world-evidence-innovation-challenge"
+agency = "NIH National Center for Advancing Translational Sciences (NCATS), with HHS/ASPE"
+amount = "Phase 1: up to 12 awards of $50,000. Phase 2: up to 3 Grand Prizes of up to $1,000,000, 3 Runner-Up prizes of up to $600,000 and 6 Meritorious prizes of up to $100,000. Total up to $6,000,000."
+close_date = "2027-03-26"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Individuals, teams or entities. An entity must be incorporated in, and keep its primary place of business in, the US. A team lead must be a US citizen or permanent resident. Registration form by email no later than 2 Feb 2027, 5pm ET. No fee."
+note = "STRETCH FIT: THIS IS AN EHR-ANALYTICS METHODS PRIZE. Entries are predictive, causal or phenotyping methods on real-world clinical (EHR) data, validated in Phase 2 as containerized workflows inside the NIH N3C enclave. It fits only if Vybe pitches the Health Intelligence layer's clinical-record modeling and has a data scientist who can write a fully specified, reproducible method. Launched 22 Sep 2026; registration closes 2 Feb 2027; the Phase 1 package is due 26 Mar 2027. The UEI is 'encouraged, but not required'. Phase 1 needs no working container, but Phase 1 does need code or a complete training recipe that can run in Phase 2."
+documents = [
+  "Challenge Registration Form, emailed by 2 Feb 2027 (participant type, POC, scientific lead, member affiliations, citizenship or permanent-residency confirmation, federal-funds statement, rules certification)",
+  "Phase 1 PDF package, emailed by 26 Mar 2027: a cover page with the required terms statement, priority area or use case, and analytic type; a fully specified analytic approach and methodology; and model parameters or a training recipe for Phase 2 execution",
+]
+verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)"
+url = "https://www.mpoweredbymarshalls.com/accelerator-program.html"
+agency = "Marshalls / TJX Companies, Inc. (delivered with Luminary)"
+amount = "$5,000 one-time grant per participant (40 participants), plus Luminary Collective PLUS membership and peer coaching; total stated retail value of the prize is $8,588"
+close_date = "2026-10-13"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests in individuals, not businesses. Free; no purchase necessary."
+note = "THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program 'is designed to invest in individuals—not businesses', and benefits are 'reserved for the individual selected'. Cash arrives late: it is paid 'midway through the program year (summer 2027)', and only after the participant meets the attendance and engagement requirements. The participant must commit to 12 months of virtual sessions, January to December 2027, mostly 'during standard business hours on weekdays'. It fits because the woman co-founder can apply in about 20 minutes, with no fee, no SAM.gov and no revenue or stage gate. Its theme is helping women reach their ambitions, so frame Vybe as building women's health and wellness tech. Closes 13 Oct 2026 at 11:59 p.m. ET, so apply this week. Selection emails go out 18 Nov to 10 Dec 2026. Page read through the r.jina.ai renderer because the site returns 403 to a direct fetch; the PR Newswire release of 9 Sep 2026 states the same dates."
+documents = [
+  "Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant's personal and professional ambition (the exact questions are not stated on the overview page)",
+  "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
+  "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)",
+]
+verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "Lightship Bootcamp, Akron (Nov 16-18, 2026), backed by JobsOhio"
+url = "https://www.lightship.foundation/bootcamp/"
+agency = "Lightship Foundation (Cincinnati nonprofit; Hillman Accelerator LLC DBA Lightship Foundation), supported by JobsOhio"
+amount = "No cash. A free 2.5-3 day in-person bootcamp; Lightship covers hotel and meals. It includes an investment deck audit, a pitch audit, financial guidance, legal guidance, a brand audit, a customer insight report and landing-page review."
+pillar = 2
+kind = "accelerator"
+sam = "none"
+eligibility = "Early-stage founders in Ohio (first-time founders, small business owners or people exploring a new venture). Applications are rolling, first come, first served, and each city's cohort closes when it is full. JobsOhio lists the program under 'Build: for startups or businesses under $100K in revenue'."
+note = "NO CASH, AND THE COHORT CLOSES WHEN FULL: apply this week. The Akron stop (Nov 16-18) is in Vybe's home city, and Cleveland (Nov 2-4 per Lightship's page) is a backup. It is free, with meals and accommodation covered, and it ends in a pitch and deck review, which is useful before Vybe's DevKit and design-partner outreach. Lightship and JobsOhio use it as the on-ramp to the JobsOhio Small Business Grant (up to $50K). Vybe does not yet meet that grant's revenue gate ($100K+ revenue and one year of history), but the bootcamp puts the founder in front of JobsOhio staff for later. The two official pages disagree on Cleveland's date (JobsOhio's January release says Aug 10-12; Lightship's page now says Nov 2-4). Lightship also runs Black Tech Week, so founders can ask there about its pitch events."
+documents = [
+  "Online '2026 Application' / Bootcamp Interest Form at lightship.foundation/bootcamp/interest/",
+  "Company basics and stage (the form content is not shown publicly)",
+  "Availability for all 3 in-person days in Akron",
+]
+verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "NIMHD SCHARE Smart Devices and Sensing Technologies to Mitigate Chronic Disease Disparities Grand Challenge"
+url = "https://www.nih.gov/challenges/smart-devices-sensing-technologies-mitigate-chronic-disease-disparities-challenge"
+agency = "NIH / National Institute on Minority Health and Health Disparities (SCHARE)"
+amount = "Phase 1: 4 x $100,000; Phase 2: $325,000 and $275,000"
+close_date = "2026-12-18"
+pillar = 2
+kind = "grant"
+sam = "later"
+eligibility = "Eligible entities per NIH prize rules; the point of contact must be a US citizen; generative AI must not be used to write the submission."
+note = "BEST-FIT FEDERAL PRIZE ON THE BOARD: it asks for smart devices, wearable sensors, mobile technologies and digital biomarkers that produce AI-ready whole-person data for chronic-disease prevention. Registration closes 18 Dec 2026; the Phase 1 proposal (a 12-page project description plus summaries) is due 15 Feb 2027. SAM CONFLICT ON NIH'S PAGE: 'How to Enter' says to register for prize payment at SAM.gov by the registration deadline, while the payment section says a UEI is 'encouraged, but not required'. Treat it as SAM later and start SAM.gov now so payment is not at risk, or email NIMHD to confirm."
+documents = [
+  "Registration on the official challenge portal by 18 Dec 2026",
+  "SAM.gov entity registration for prize payment (see note)",
+  "Phase 1 proposal: 12-page project description plus summaries, due 15 Feb 2027",
+]
+verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "NIMHD SCHARE Advance Whole-Person Data Integration and Reimagine Data Science Computations and Analytics Grand Challenge"
+url = "https://www.nih.gov/challenges/advance-whole-person-data-integration-reimagine-data-science-computations-analytics-address-chronic-disease-disparity-grand-challenge"
+agency = "NIH / National Institute on Minority Health and Health Disparities (SCHARE)"
+amount = "Phase 1: 10 x $10,000; Phase 2: 4 x $100,000; Phase 3: $275,000 and $225,000"
+close_date = "2026-11-23"
+pillar = 2
+kind = "grant"
+sam = "later"
+eligibility = "Eligible entities per NIH prize rules; the deliverable must be accessible to other researchers."
+note = "REGISTER BY 23 NOV 2026; the submission is due 22 Jan 2027. Moderate fit: big-data and AI-ready dataset methods for health-disparities research, which suits the Health Intelligence data platform. It has the same SAM conflict as its sister Smart Devices challenge (prize payment says register at SAM.gov; the payment clause says a UEI is not required), so it is tagged SAM later."
+documents = [
+  "Registration form by 23 Nov 2026",
+  "SAM.gov entity registration for prize payment (see note)",
+  "Submission by 22 Jan 2027",
+]
+verified = "2026-10-06"
