@@ -6,6 +6,7 @@ import MoveTrendScreen from './src/screens/MoveTrendScreen';
 import NourishScreen from './src/screens/NourishScreen';
 import ConnectScreen from './src/screens/ConnectScreen';
 import AskScreen from './src/screens/AskScreen';
+import FollowUpScreen from './src/screens/FollowUpScreen';
 import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
@@ -15,11 +16,12 @@ import { colors } from './src/theme';
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are nine screens
+ * One piece of state instead of a navigation library. There are ten screens
  * now, and they are still a flat set: Nourish links across to the pattern
- * history, and Restore and Connect link across to the outcome record, but all
- * of those return to Home like every other screen, so nothing stacks and there
- * is still no back stack for a router to manage. Pulling in
+ * history, Restore and Connect link across to the outcome record, and Ask
+ * links across to the follow-up, but all of those return to Home like every
+ * other screen, so nothing stacks and there is still no back stack for a
+ * router to manage. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -63,7 +65,12 @@ export default function App() {
       ) : screen === 'pattern' ? (
         <PatternHistoryScreen onBack={() => setScreen('home')} />
       ) : screen === 'ask' ? (
-        <AskScreen onBack={() => setScreen('home')} />
+        <AskScreen
+          onBack={() => setScreen('home')}
+          onFollowUp={() => setScreen('followup')}
+        />
+      ) : screen === 'followup' ? (
+        <FollowUpScreen onBack={() => setScreen('home')} />
       ) : screen === 'data' ? (
         <DataSettingsScreen onBack={() => setScreen('home')} />
       ) : (
