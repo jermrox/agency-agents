@@ -11,7 +11,7 @@ import argparse, datetime as dt, html, json, pathlib
 
 ROOT = pathlib.Path(__file__).parent
 STATE = ROOT / "data" / "last_brief.json"
-DASH = "https://claude.ai/artifact/6Lp18yuh93GaXbuqjcjZbu"
+DASH = "https://agentgrowthscout.netlify.app"
 
 
 def load():
