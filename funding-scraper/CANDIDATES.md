@@ -1706,3 +1706,110 @@ in the environment's Network access setting, or top up Exa.
   on that same first-Wednesday rhythm.
 - **BARDA DRIVe / ENACT** — looked at and not pursued. Early-detection-of-
   infection wearables are a diagnostic posture, which is on the blocklist.
+
+## Tuesday sweep — 6 Oct 2026
+
+Verification route unchanged from yesterday and still degraded: direct page
+fetches are refused by the sandbox's egress proxy and the Exa account is still
+out of credits, so everything below was read through search restricted to each
+programme's own domain. Live reads come back when the funding hosts are allowed
+under Network access, or when Exa is topped up.
+
+### Added to the board
+
+- **RWJF Pioneering Ideas** — rolling, year-round, no fee, and a for-profit is
+  not barred: RWJF's own FAQ says legal status does not prevent a fair review,
+  while stating a preference for 501(c)(3)s. Grants from this team ran
+  $250k–$500k in 2023. It also funds **under 1% of the 1,000+ brief proposals
+  it gets a year**, which is in the row's note so nobody budgets a week for it.
+- **ARPA-H Open BAA — Mission Office ISOs** — rolling, four mission offices, and
+  this board carried only one of them (the Proactive Health ISO). **Resilient
+  Systems** is the door worth reading for a consumer wearable: health outside a
+  clinical setting. Live notices are on SAM.gov under "ARPA-H", and the entry
+  cost is a short Solution Summary rather than a full proposal.
+- **Global Health Accelerator 2026/27** — opened **today** and closes 16 Nov.
+  Stage gates fit (bootstrapping or seed, minimum proof of concept with
+  validation). Two things its own page does not state and the row flags: the
+  cost and equity terms, and where the four in-person bootcamps are held. A
+  third-party listing calls it cost and equity free; the programme does not say
+  so itself, so it is not recorded as a fact.
+
+### Dead, ineligible or closed on inspection, 6 Oct 2026
+
+- **NEI Vision Function Challenge (NIH)** — **$1,000,000** in prizes, registration
+  open to 11 Jul 2027, and its own page names "digital health, wearable
+  technologies, artificial intelligence". Not added, and it is the clearest
+  example this month of why the blocklist exists: the challenge is for better
+  ways to **measure visual function beyond acuity**, which is an assessment
+  instrument in a single condition area. That is a diagnostic posture, and Vybe
+  has no eye-related signal of any kind. Recorded so the dollar figure does not
+  pull somebody back to it.
+- **Labfront Sleep Science Research Grant** — $5,000 plus three Garmin vívosmart 5
+  devices, a Labfront Advanced plan and an analytics package, closing 27 Nov
+  2026, and explicitly for wearable-based sleep research. Ineligible: applicants
+  must be **academic institution faculty, research institute employees, or
+  enrolled students**. Labfront runs a Women's Health Research Award on the same
+  model with $100,000 committed, and presumably the same gate. Worth knowing if
+  Vybe ever works with a university partner — the partner could hold the grant.
+- **AASM Foundation Strategic Research Award** — LOI 19 Oct 2026, full
+  application 8 Mar 2027, and one named focus area is "leveraging consumer
+  wearables for promoting and improving sleep in patients". Excluded on posture:
+  the award funds research into diagnosis and care for people with **sleep
+  disorders**, which is clinical and single-condition. An academic partner could
+  hold it.
+- **Sleep Research Society Foundation Small Research Grant** — academic, and the
+  2027 cycle details are not published until late June 2027.
+- **SPIE Startup Challenge 2027 (Photonics West)** — **closes today**, 6 Oct 2026.
+  Prizes $10,000 / $5,000 / $2,500 plus a $3,000 Jay Kumler Innovation Award,
+  finalists notified 1 Dec, pitches 2 Feb 2027 at Moscone. Eligibility fits
+  exactly — pre-revenue at pre-seed, or under $500k revenue at seed. Not added
+  for two reasons: a row that closes the day it is created is a dead row by the
+  next sweep, and the fit is thin. SPIE judges photonics; the optics in a Band
+  are off-the-shelf PPG and the differentiator is the interpretation layer.
+  **The cycle is the useful part: applications open around June and close in
+  early October, pitching at Photonics West in February. Diary: June 2027.**
+- **CTA Foundation grants** — nonprofits only. Its 2026 round gave $700,000
+  across 32 **nonprofit** organisations. Vybe is for-profit.
+- **CTA Foundation Eureka Park Accessibility Contest, CES 2027** — closed 14 Aug
+  2026, and worth catching next year: five US or Canadian startups each win a
+  **free booth in the Accessibility Hub at CES 2027 plus $2,500**. The board
+  already carries "CES 2027 Eureka Park" as a rolling row — **this contest is
+  how a company gets that booth without paying for it.** Entries must show how
+  the technology helps older adults or people with disabilities, which is the
+  same healthspan door the AgeTech packet already uses. **Diary: June 2027.**
+- **AARP "Making Aging Easier" Pitch Competition @ HLTH** — $10,000 and a free
+  HLTH badge, event 16 Nov 2026, but applications ran 1 May to 26 Jun 2026 and
+  are closed. Same eligibility as AgeTech After Dark, including the healthspan
+  and wellness door for products not focused on ageing, and the same MVP floor.
+  **Diary: early May 2027.**
+- **The Veteran Fund / Founder Institute $100,000 Veteran Pitch Competition** —
+  Vybe clears the gates (a veteran on the executive team, under $4M raised, US
+  based), but the $100,000 is an **equity investment** via SAFE or priced round,
+  not a grant, with the fund able to go to $500,000. The cycle runs annually
+  around Veterans Day; the 2026 window is not published. **Diary: early October
+  each year**, and treat it as fundraising rather than non-dilutive money.
+- **MedTech Innovator** — 2026 cohort closes 1 Dec. Already rejected in
+  `DECKS.md` on posture: medical device, digital health and **diagnostics**.
+  Unchanged.
+- **Tenity Digital Health Accelerator** — no upfront cost or equity, but a
+  success fee capped at CHF 100,000 **or 2% equity** if a round closes. That is
+  dilutive with extra steps.
+- **MTEC (Medical Technology Enterprise Consortium)** — publishes a **Sleep and
+  Fatigue** capability area and issues Requests for Project Proposals against
+  DoD human-performance needs, which is the closest institutional fit found for
+  Vybe's thesis. Not added because membership carries an annual fee, which is
+  the NASE problem wearing a uniform. Worth pricing against the size of the RPPs
+  before dismissing permanently.
+
+### DoD lane — 15 days to Release 6, topics still unread
+
+- Two corrections to yesterday's note, both from DSIP's own documents:
+  **Release 6 carries 44 SBIR and STTR topics** across the component groups (the
+  22 figure was the `DOD_SBIR_2026_P1_CBZ` BAA alone, one of four), and it
+  **closes 21 Oct 2026 at 12:00 noon ET, not midnight.** A noon deadline is how
+  people lose a cycle.
+- The topic titles are still unreachable. They live behind the DSIP topics app,
+  which needs JavaScript this sandbox cannot run, and the search index does not
+  carry them. Fifteen days left.
+- **AFWERX's first-Wednesday pre-release cadence held:** the next monthly
+  pre-release was due 7 Oct, which is tomorrow.

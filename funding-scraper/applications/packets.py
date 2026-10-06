@@ -985,6 +985,130 @@ PACKETS = [
         ],
     },
     {
+        "id": "blake",
+        "name": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+        "funder": "Brook T. Smith Launchpad, Clemson University",
+        "amount": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500",
+        "deadline": "2026-10-16",
+        "fee": None,
+        "url": "https://blogs.clemson.edu/studentopportunities/the-blake-family-military-veterans-pitch-competition/",
+        "submit": "Online application, open now and closing 16 October. Up to 10 finalist teams are invited to Clemson, South Carolina for the live final on Friday 6 November, noon to 2pm at the Brook T. Smith Launchpad. Questions go to launchpadcompetition@clemson.edu.",
+        "gates": ["incorp", "travelself"],
+        "confirmed": [
+            "Veteran-owned 51%+ (confirmed 20 Sep) — the rule only asks for ONE military-connected founder",
+            "National: the competition states no geography limit",
+            "No application fee",
+        ],
+        "why": "Ten days out, free to enter, and Vybe clears every published rule: a C Corp, S Corp or LLC with at least one founder who is a veteran. The competition is national despite being hosted in South Carolina, and the prize table pays four places rather than one, so a strong pitch that is not the single best still takes money home. The judges are venture capitalists and angel investors, which makes this the one item on the board that is worth entering for the room as much as the cheque.",
+        "docs": [
+            "Online application via the Launchpad page",
+            "Proof of military connection for the qualifying founder",
+            "Entity type: C Corp, S Corp or LLC",
+            "A live pitch at Clemson on 6 November for finalists, with travel likely at your own cost",
+        ],
+        "note": (
+            "THE APPLICATION FORM ITSELF IS NOT READABLE FROM HERE, so the sections "
+            "below are drafted against what the competition publishes: who may enter, "
+            "that it is a pitch rather than a written grant, and that the judging panel "
+            "is venture capitalists and angel investors. Open the form first and map "
+            "these across.\n\n"
+            "JUDGED BY INVESTORS, NOT BY A GRANT COMMITTEE, AND THAT CHANGES THE PITCH. "
+            "A grant reviewer wants impact and eligibility. An angel wants to know why "
+            "this wins, who pays, and what the money unlocks in the next six months. "
+            "The answers below are written for the second audience. Do not reuse the "
+            "Buckeye or Tadlock community-benefit framing here; it reads as a charity "
+            "case to a room of investors and it will lose.\n\n"
+            "TRAVEL IS AN UNPRICED GATE. The competition says up to ten finalists are "
+            "invited to Clemson for the 6 November final and does not say who pays. "
+            "Ask launchpadcompetition@clemson.edu before applying, because a finalist "
+            "place you cannot take is worse than no place.\n\n"
+            "FOUR PLACES PAY. Pitch to win, but note that fourth place is $2,500 and "
+            "the room is full of early-stage funders either way."
+        ),
+        "fields": [
+            {"q": "Company and military connection", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, operating "
+                "from {{CITY}}. Website {{WEBSITE}}. Contact {{CEO}}, {{EMAIL}}.\n\n"
+                "Qualifying founder: {{VETERAN_OWNER}}.\n\n"
+                "The rule asks for at least one founder who is active duty, active ROTC, "
+                "Reserve, National Guard, a veteran or a military spouse. Vybe is "
+                "majority veteran-owned, which clears it with room to spare — say so "
+                "plainly and move on, because this is the only part of the application "
+                "that is a box rather than an argument."},
+            {"q": "What the company does", "a": SHORT},
+            {"q": "The problem, and why now", "a": WHY_NOW + "\n\n"
+                "The gap underneath those numbers is interpretation. A wearable reports "
+                "that heart-rate variability fell 18% and stops. The person is left to "
+                "guess whether it was the late dinner, the bad night, the flight or the "
+                "week they have had, and most of them stop opening the app. Measurement "
+                "is solved. Meaning is not."},
+            {"q": "The product, and what makes it hard to copy", "a":
+                "The Vybe Band is screenless and tracks ECG, heart-rate variability, "
+                "sleep and activity. Vybe Intelligence reads those signals across five "
+                "parts of a person's life, and the fifth is the one competitors leave "
+                "out: Connect, which reads work, travel, stress and weather — the "
+                "reasons a reading moves that no sensor can see.\n\n"
+                "Two things are hard to copy. A model of somebody's week is harder to "
+                "build than a score. And the buy-once position is one an incumbent with "
+                "subscription revenue cannot match without cutting its own revenue, "
+                "which is a strategic lock rather than a technical one."},
+            {"q": "Who buys it, and how you reach them", "a":
+                "The person who already owns a wearable and has stopped opening it. They "
+                "have years of their own data, no answers from it, and a monthly fee for "
+                "the privilege. That grievance is specific and easy to find.\n\n"
+                "Two routes beyond direct consumers, both reachable without consumer-"
+                "scale marketing: the veteran and military-family community, where "
+                "recovery and readiness are already the everyday language; and licensing "
+                "the interpretation layer to partners who have sensors and nothing to "
+                "say with the readings.\n\n"
+                "[Investors will push on acquisition cost. Give them what you actually "
+                "know: how many people you have spoken to, through which channel, and "
+                "what you have spent to learn it. If you do not know the number yet, say "
+                "that and say what you will test first. A made-up CAC is the fastest way "
+                "to lose a room of angels.]"},
+            {"q": "Where the business is today", "a":
+                "Stage: {{STAGE}}. Traction: {{TRACTION}}. Team of {{EMPLOYEES}}. "
+                "Revenue over the last 12 months: {{REVENUE}}.\n\n"
+                "[If revenue is zero, say zero. This panel has seen pre-revenue companies "
+                "before and has not seen a founder who could not say where they were.]"},
+            {"q": "What the prize money does", "a":
+                "[Name one thing and make it finishable at $10,000, then make sure the "
+                "same sentence still works at $2,500, because four places pay and fourth "
+                "is the likeliest. Candidates, pick one: the radio pre-scan ahead of the "
+                "Band's FCC work, a run of at-cost Bands for outside testers, or the "
+                "tooling for the first production batch.\n\n"
+                "Then say what it unlocks. An investor is not scoring the purchase, they "
+                "are scoring whether you know which single step the company is blocked "
+                "on.]"},
+            {"q": "Pitch spine for the live final", "a":
+                "Every wearable hands you a number. None of them tell you why it "
+                "moved.\n\n"
+                "[Hold up the Band.] No screen, on purpose. It reads your heart, your "
+                "sleep and how you move, and the app reads those signals next to the week "
+                "you actually had — the hard week, the long flight, the heat.\n\n"
+                "You ask a plain question, like why am I tired today, and you get an "
+                "answer out of your own data, the evidence behind it, and one thing to "
+                "do. It also tells you what it could not see, which is the part nobody "
+                "else ships.\n\n"
+                "Bought once. No subscription. The interpretation comes with the Band, "
+                "and that is a position the two biggest players cannot copy without "
+                "cutting their own recurring revenue.\n\n"
+                "[Close in your own words: why a veteran is the right person to build a "
+                "product about recovery and readiness, and what the next six months look "
+                "like. Keep the close yours — it is the part a room of investors "
+                "remembers.]"},
+            {"q": "Logistics to confirm before you submit", "a":
+                "Applications close 16 October. The live final is Friday 6 November, noon "
+                "to 2pm, at the Brook T. Smith Launchpad, Clemson University, South "
+                "Carolina. Up to ten teams are invited.\n\n"
+                "[Email launchpadcompetition@clemson.edu and ask two things: whether "
+                "finalist travel and lodging are covered, and what format the live pitch "
+                "takes — length, slides allowed, and whether a physical prototype can be "
+                "shown. A Band on a wrist in the room is worth more than any slide, and "
+                "it is worth knowing in advance whether you can bring one.]"},
+        ],
+    },
+    {
         "id": "charmhealth",
         "name": "CharmHealth Innovation Challenge and Pitch Competition (2026)",
         "funder": "CharmHealth (MedicalMine Inc.)",

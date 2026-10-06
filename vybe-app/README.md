@@ -36,9 +36,12 @@ npx expo start
 - **OutcomeScreen** *(2 Oct)* — Vybe grading itself: every suggestion it
   made, what it predicted, what happened, and the ones it got wrong. Reached
   from the "did it work last time" block on RestoreScreen.
-- **ConnectScreen** *(new, 5 Oct)* — one week of outside load: thirty-eight
+- **ConnectScreen** *(5 Oct)* — one week of outside load: thirty-eight
   hours of elevated readings, what each of them is being blamed on, and the
   seven that nothing explains. Tap the Connect card on Home.
+- **FollowUpScreen** *(new, 6 Oct)* — what happens when you tell Vybe it is
+  wrong: a correction, the parts of the reasoning it moves, and the parts still
+  standing. Reached from "That's not right" on AskScreen.
 
 ## The three decisions worth keeping
 
@@ -369,6 +372,47 @@ week and the count of sources Vybe will not read are computed at render. The
 shares sum to exactly 100, so the bar fills without overflowing. `unexplainedOf`
 clamps at zero and the screen swaps in an overlap note, so a future data source
 that double-counts produces a caveat rather than a backwards bar.
+
+## The follow-up screen, and why it looks like that
+
+`AskScreen` is the front door: a question in, an answer out with its basis and
+its blind spots. This is the half that comes after, and almost nothing in this
+category ships it — the person usually knows something the sensor does not, and
+the moment they say so decides whether a health assistant is useful or finished.
+
+**Vybe does not fold.**
+Three corrections are on offer and only one changes the answer. A product that
+accepts every correction will confirm whatever the person already believed and
+still sound certain doing it, which is worse than ignoring them, because it is
+wrong in the direction nobody checks. The third correction — *"I feel completely
+fine"* — is recorded, believed, and changes nothing: *"a reading above your
+baseline while you feel well is a reading above your baseline while you feel
+well."*
+
+**The part that gets overturned was labelled a guess first.**
+Every line of the basis carries `source`: measured, or inferred by Vybe. The
+inferred line — alcohol on two evenings, matched from a heart-rate pattern with
+nothing logged — is the one the night-shift correction overturns. The screen can
+then say, as arithmetic rather than as a claim, that 2 of 4 parts moved and 1 of
+them was something Vybe had already marked as a guess.
+
+**Three outcomes, and which one is derived.**
+`kindOf()` compares what moved against whether the answer text actually changed:
+a correction that moves a basis item *and* changes the answer is `changes`; one
+that closes a blind spot or shifts confidence is `narrows`; one that does
+neither is `recorded`. A label typed into the data could read "this changed the
+answer" above an answer identical to the one it replaced. Verified in node: one
+correction of each kind, every effect naming a real basis id, every basis item
+covered.
+
+**No left-border accent, and no colour alone.**
+The verdict is a word in its own fixed gutter — Held, Counts for less,
+Overturned — and an overturned line is struck through as well. The same three
+states survive being read aloud.
+
+**The blind-spot list stays on the page.**
+A correction can close one, and the closed item is struck through in place
+rather than disappearing. A list that quietly shrinks is a list nobody can audit.
 
 ## Non-negotiables held
 
