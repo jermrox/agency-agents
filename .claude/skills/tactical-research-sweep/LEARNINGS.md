@@ -16,6 +16,16 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-06 — daily run
+
+- +1 item (MIL: night-owl chronotype and PTSD/depression/insomnia in veterans). Board 62.
+  Exa still 402 (third day): PubMed-only. Lead: Army waist-to-height deadline ~5 Oct under
+  Directive 2026-13 (trade press only).
+- A container restart overnight wiped scratch space (sweep rules, merge script) and recreated
+  the local branch from main. Rules now live in `references/sweep-rules.md`; merging is
+  `research-board/merge_items.py`. On start, confirm the local branch matches its origin.
+- The cited-items check passed with no edits as items aged out — working as intended.
+
 ## 2026-10-05 — daily run
 
 - +1 item (MIL: USARIEM review, cadets injured about as often as soldiers in initial training).

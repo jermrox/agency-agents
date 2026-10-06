@@ -33,7 +33,9 @@ Two rules run the whole routine:
 (evidence grades, caveats, the citation banner, the fetch-verified counter, the Squarespace
 template), **the brief wins for the board**. Steps 3–4 still describe the weekly summary.
 
-The engine is `research-board/` (see its README). The routine:
+The engine is `research-board/` (see its README). Give every sweep subagent
+`references/sweep-rules.md` — it lives in the repo because scratch space is wiped on restart.
+The routine:
 
 1. Read `LEARNINGS.md` in this folder, then sweep the **last 30 days** across MIL, FIRE, EMS,
    LE and CROSS, using `research-board/tactical_research/sources.json` (sources with a sector
