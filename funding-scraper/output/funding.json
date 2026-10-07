@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-07T00:15:33+00:00",
+  "generated": "2026-10-07T12:20:40+00:00",
   "as_of": "2026-10-07",
-  "count": 210,
+  "count": 212,
   "source_errors": [],
   "stale_sources": [],
   "opportunities": [
@@ -908,30 +908,6 @@
       "sam": "none"
     },
     {
-      "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
-      "source": "curated",
-      "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
-      "url": "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge",
-      "agency": "NIH Office of Autoimmune Disease Research (OADR-ORWH)",
-      "amount": "Up to 10 \u00d7 $20,000 in Phase 1; up to $650,000 across three phases (5 \u00d7 $30K, then 3 \u00d7 $100K)",
-      "summary": "Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet \u2014 that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 \u2014 the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul\u2013Dec 2027 for invited Phase 1 entrants only.",
-      "open_date": null,
-      "close_date": "2026-12-11",
-      "status": "open",
-      "days_left": 65,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community",
-      "documents": [
-        "Registration form (nourishchallenge.org)",
-        "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
-        "Video demonstration of a working Phase 1 prototype",
-        "No HHS or NIH logos, and no claim of government endorsement"
-      ],
-      "sam": "none"
-    },
-    {
       "id": "curated-nimhd-schare-smart-devices-and-sensing-technologies-to-mitigate-chronic-",
       "source": "curated",
       "name": "NIMHD SCHARE Smart Devices and Sensing Technologies to Mitigate Chronic Disease Disparities Grand Challenge",
@@ -1021,6 +997,30 @@
       "sam": "required"
     },
     {
+      "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
+      "source": "curated",
+      "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
+      "url": "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge",
+      "agency": "NIH Office of Autoimmune Disease Research (OADR-ORWH)",
+      "amount": "Up to 10 \u00d7 $20,000 in Phase 1; up to $650,000 across three phases (5 \u00d7 $30K, then 3 \u00d7 $100K)",
+      "summary": "DATE CORRECTED 7 OCT 2026: this row carried close_date 2026-12-11, which is 28 days early. NIH's own challenge page and its challenges index both state Phase 1 runs 1 Oct 2026 to 8 Jan 2027. Twenty-eight days of runway on a $650,000 challenge is worth more than most rows on this board. Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet \u2014 that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 \u2014 the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul\u2013Dec 2027 for invited Phase 1 entrants only.",
+      "open_date": "2026-10-01",
+      "close_date": "2027-01-08",
+      "status": "open",
+      "days_left": 93,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community",
+      "documents": [
+        "Registration form (nourishchallenge.org)",
+        "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
+        "Video demonstration of a working Phase 1 prototype",
+        "No HHS or NIH logos, and no claim of government endorsement"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-nih-odss-it-s-about-time-temporal-reasoning-in-biomedical-knowledge-grap",
       "source": "curated",
       "name": "NIH ODSS 'It's About Time: Temporal Reasoning in Biomedical Knowledge Graphs' Challenge, Phase 1",
@@ -1057,7 +1057,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1279,7 +1279,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1320,7 +1320,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1423,7 +1423,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1442,7 +1442,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1530,7 +1530,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1573,7 +1573,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1592,7 +1592,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1611,7 +1611,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits having a 501(c)(3) status wit",
+      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Private institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofi",
       "documents": [],
       "sam": "required"
     },
@@ -1630,7 +1630,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
       "documents": [],
       "sam": "required"
     },
@@ -4300,6 +4300,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-vive-2027-startup-pitch-competition",
+      "source": "curated",
+      "name": "ViVE 2027 Startup Pitch Competition",
+      "url": "https://hlth.com/events/vive/agenda/programs/startup-pitch-competition/",
+      "agency": "ViVE (HLTH)",
+      "amount": "A grand prize to the winner; the amount is not stated on the event page",
+      "summary": "THE SISTER EVENT TO THE HLTH USA PITCH ALREADY ON THIS BOARD, and the one that lands in spring rather than autumn: ViVE 2027 is in Nashville, 14-17 March. The application form is live on the event page now. THE CLOSING DATE IS NOT PUBLISHED, which is why this is filed rolling rather than dated \u2014 apply early rather than waiting for a deadline that may never be announced, and check back monthly. The prize amount is not stated either; the HLTH USA sister competition pays $25,000, which is a reasonable expectation and not a fact. Travel to Nashville is the applicant's own cost.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Startups less than FIVE YEARS OLD that have raised under $8 MILLION. Three-minute pitch to a judging panel, then three minutes of questions. Vybe clears both gates comfortably.",
+      "documents": [
+        "Startup pitch application form on the ViVE event page",
+        "Evidence the company is under five years old",
+        "Total funding raised, under $8M",
+        "A three-minute pitch, and answers ready for three minutes of questions"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
       "source": "curated",
       "name": "W.M. Keck Foundation Science & Engineering Research Program",
@@ -4478,6 +4502,30 @@
         "NY State business registration / proof of NYS residency",
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
+      ],
+      "sam": "required"
+    },
+    {
+      "id": "curated-dow-sbir-sttr-fy2027-release-1",
+      "source": "curated",
+      "name": "DoW SBIR / STTR FY2027 Release 1",
+      "url": "https://www.dodsbirsttr.mil/submissions/solicitation-documents/active-solicitations",
+      "agency": "Department of War (DoW) SBIR/STTR, via DSIP",
+      "amount": "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken",
+      "summary": "PRE-RELEASED TODAY, 7 OCT 2026. Opens 28 Oct, closes 25 Nov. This is the first release of the FY27 cycle and the successor to Release 6, which closes 21 Oct at noon ET. The topic list is the whole value of this row and it is NOT READABLE from this sandbox: titles live behind the DSIP topics app, which needs JavaScript. SOMEBODY HAS TO OPEN dodsbirsttr.mil/topics-app AND SEARCH THE RELEASE 1 TOPICS for wearable, sleep, physiological, fatigue, readiness and human performance. Pre-release is the window where you can still ask a topic author questions directly; once it opens on 28 Oct that channel closes. The monthly rhythm is confirmed: new topics pre-release on the FIRST WEDNESDAY of every month, so the next one is 4 Nov. For reference, FY27 Release 7 is already scheduled \u2014 pre-release 7 Apr 2027, open 28 Apr, close 26 May 2027.",
+      "open_date": "2026-10-28",
+      "close_date": "2026-11-25",
+      "status": "forecast",
+      "days_left": 49,
+      "days_until_open": 21,
+      "pillar": 3,
+      "kind": "dod_sbir",
+      "eligibility": "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment \u2014 more than 50% \u2014 must be with the small business. All R&D performed in the United States.",
+      "documents": [
+        "SAM.gov registration with a UEI and a CAGE code",
+        "A topic number from the Release 1 list that actually fits",
+        "Phase I technical volume and cost volume through DSIP",
+        "Principal investigator employed more than 50% by the company"
       ],
       "sam": "required"
     },
