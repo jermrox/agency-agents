@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Vybe Reels Command</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +41,7 @@ button,select,input,textarea{font:inherit;color:inherit}
 /* header band */
 .band{background:var(--forest);color:var(--on-forest);margin-inline:-16px;padding:32px 16px 28px}
 .band .inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between}
+.brandrow{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}.band .logo{width:96px;height:96px;border-radius:12px;object-fit:cover;flex:none}
 .band h1{font-size:clamp(40px,7vw,68px);line-height:.92;text-transform:uppercase}
 .band .eyebrow{color:var(--mint)}
 .band .meta{display:grid;gap:6px;justify-items:start}
@@ -237,15 +239,18 @@ form.log .full{grid-column:1/-1}
 
 <header class="band">
   <div class="inner">
-    <div>
-      <div class="eyebrow">Vybe Health · Instagram + Facebook Reels</div>
-      <h1>Reels<br>Command</h1>
+    <div class="brandrow">
+      <img class="logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7QCEUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAGgcAigAYkZCTUQwYTAwMGFlZTAxMDAwMDRmMDYwMDAwMjkwOTAwMDAzMDBhMDAwMDBjMGIwMDAwNzEwZDAwMDAzMTEyMDAwMDZjMTMwMDAwYzMxNDAwMDBlMzE1MDAwMDVlMWUwMDAwAP/bAIQABQYGCwgLCwsLCw0LCwsNDg4NDQ4ODw0ODg4NDxAQEBEREBAQEA8TEhMPEBETFBQTERMWFhYTFhUVFhkWGRYWEgEFBQUKBwoICQkICwgKCAsKCgkJCgoMCQoJCgkMDQsKCwsKCw0MCwsICwsMDAwNDQwMDQoLCg0MDQ0MExQTExOc/8IAEQgBQAFAAwEiAAIRAQMRAf/EALkAAAMAAwEBAQAAAAAAAAAAAAABAgQFBgMHCAEBAAMBAQAAAAAAAAAAAAAAAAECBAMFEAABBAEDAwQCAwEAAAAAAAACAAEDBBIQERMFFUAUIDBQISIxM4AyEQABAwAHBAcHBAMAAAAAAAABAAIRAxASITFBcSAyUWEiMEBCkaGxEzNQYoHR8FJgweFygIISAAIBAwEGBwEBAQEBAAAAAAERABAhMUEgUWFxgZEwQKGxwdHw8VDhYHD/2gAMAwEAAhEDEQAAAfqwGHSxAAAISDQhoSpCTQhoQ5BAIAQISYIEKWhxUklIlNClybwTAATAQMQ0CaCWhACVISYJMEqgE0IAQISckjQJyKbgQw3KGAIaYJpiBACAciABNCTBACTRJUgASNCmpJTAloU3JKqTcghgQAUmgBBABiVBBRKByAIaQAAlaJVIhVITSJTRIwIqATk3AiFJAxIolggKrz9JeC02D349JfG+Eu9nxyM/aFUiBhS9JjDxPnel08Prh8ZcT91Wo22bulUCQCAFFwJMNqDEBAEA0ADkOWYXL9vyHbnhY3pjaeGf2nzLu8mjapPncRUq0HRfIu/HT+D8tefwysPqc/brOh1ezyaPVASCEOQQEzaNoJgNCBwAAEpMEemvzrmPm/htNLtzee40PlD616azZY9TuPaY5/5Hu+b3ZPTwJmM/vtF2uHXlZUelLA0JNCTQkIE0bNoGSxiAcsaQMQO4Zr/m/wBc+b6OWhwvTH1Zu07n4z9Zxa9not/8ctXQeMRszPcantM3fot9jZ+XvVACcilggCUwlNGzEwEFIAaAABNA0Hpqtncx8N8Ot5zfjnttZrObv/i3TaG04XjmVauz7/Qdti2ZPvNUs2gQBKaATJVIUUjYtAwQwQNAxA0mAgd+bMP5h9d+YaOHOe+FlacmVqcjn5nZ7zme5zaek3mLn5tDGyUwkchLQCYpqRTUmzEwQDTQ0A0CQBCASmhFaTckx8NW95P0MSwfTITufoGh7PDry/abpYYgQhpMmaQgBTckpo2FSwBDBiaBiQ0A0gaQDQaX4x+gvj+njyHUaXvEb7d+GZm71SBy5GmCTQlSJQAmhImWwacE0FCBs56Y34OJB83MdC1USlg49o2rcRN8/wCHRTHy3s9h7wv14/xvXt3wu0h0k3NLprAlnriIvTujg95E71NUtLQKaRnOQpANyF/PfoGLauq6L5L9NtHLaLQfS7V6H0iuPXz+X/U8K9cf55rM/rz2n0LW7Th1bKifiPZ8DsNWfsOX8NQn7HuOc6HN3rlup5O9ON6Lg87pTrNhxv07l0yaRSwgEhGcMATBNFCDhuL+0cD25eP0DA23LrTFABHzHp6z+lNjYc71UM+JdvrdVo49Zyayonedlot5x6XyvU6q0fN+i0vl0pv93w27pbuTy9ed5TkARnCYwRSEMNPNdz56RzXdXptzFvM0esvy7PD9udi28ytJvq38PTjtjfl0Pj7c1W/Q6nb60x83Wb1bF9ePzbcupJ0lOu28dYTXY1ibOLzScSotCTJZdSQaYMlghkjYqlnjGSyMHYJGp3ECdfWdMr0e6EY3taT4e4jEnOmAmS8nRBJoAAlzIEGapqA5YxAxAxAxA3LBACYS0DSBpoEIpIENAhDloE0EuQTRmOQpyxpyMTATAEMQDQMSKkkbQNElJBSQCENCBAIAJpCmpllNOFEosQNwFEhRLGkFKWMSGgASGCGhFSgYkMSGJDSAQpCJP//aAAgBAQABBQL/ACZyCuUVzChkEvhOUQXqol6uJDZjJ/InbEndOs+NwPL3/wAK1NyG7p1AeJQTZN484ZtlunTqrJimf3dQmwB3TonUQKu2zN5E4Yk6dZYvCe/uuT8h6fy9eNRsm8ixHmO6d06pyJvZ1CfjB3W6d1EChDZC3lWgwJ06E8CiPfVlescp6C271o0ApvKtRcgp3TqjNuzadQn4o3fR3UQKEEzeZdi4zdOoJMDjLdMr9jlk0jbd68aBvNtw8gOnUdfkahNmN+fijd9YY1CGybzrlUmPhNCfplCXBPdmeeR68i9PIo4n3rxoG8+yxOD2ZUZOat/uNQuKJ7sy9ZMo/wBlECZvoLkPGZKP9gs/oKiHd64IG+huQ8gEoT4zmPMlDGoQTN9FfhwMk6hHd68aBvo7sHKBJ1CCiDZN9J1KDjOAN1XjQt9Ldr8wBWcVEGyZvJC+JFo77NF1AZC0nn4Rr2xm0MmBoeojKSeNMyfq0Yv3qNd6jUHUo5X1sTtCPeo13qNd6jVW8Nj5uow4vTscgrqtrBqMaHQm3axEVY6toZRv3HnKpBsh1GNpJW6cC7aCv1mgVaXIdOqf1VKoyt24V28VFWYE3yyxsYwG9eU5mjBneeStFizayRsbWYyrvVrqMNvY5E0mdpZ2keeVVvxp1X+qIpts7KiKxkD7/P1Svu01spApwIW9vWP+6w/hvZGTNK1mFepgXULEZtQ/A6dV/qpzCI+qhXq4VBOEnzk26fprAUUePuuU2mUIYt7JumNv25duZR0cVDHjragaYX6au3Mu3Mq1biQ/PtqRsyI2HSScI0E4SaGbA2gmxJ2UkgA4SAaxQOxITYtXFYrFbfMRS75TLKZM82lx3Z5CkdxVrfkg30tSsclSXdlVfZ91ZbcK4/qygORU3fTKZZTLeZRvJv4ZgxIo2JMpoBkUdcQdcLMmjZnR1Ad4xxYm3YQx0GJhQxMP+Jf/2gAIAQMRAT8B/axcQhSbPtU2kJ62kFTDIrpHVUbeuIhMdBqKcZKAlNHXUgzqo3SFSGKqNvXlOuzVC+/XBUj78U284oDsFK3NPug8PQpt9/H8Co2dhKe3EFNCA7FStzVG3rZqmqasVC9oOKtjjVML2g4oPB23CU112mKZffU5sq913DGthuwlPPyxzqfgUD8qbflHUOZP1xQrAgnnWA4cEQ48KnCQha5ITnG2TGU6K38p8vugZyjX+kaUibsHNE6xznNUrrIu4j8xCaZH5/fqmUsujLumDljy05Jz4IHEHyj7qkJDSRkJQwvVHSl1m6JbPphfzRMZE6R/JVv5D5fdAzlHXR+xv//aAAgBAhEBPwH9rCjBRotiEKDmnUIAx62iOVVI2DrXQtk1UrutCaZVI2RpUExsBOMJx66hdlVSNslULZOlVK7rwU10qkEjS9UYshOdCcewULsqoVK7sIMJpkJxgJx7FQOyVM7rQJqiqznVe1Er2TuCNGRlUBK9k7gjRkZbbHQU5l92eCfd0amOj+VAZfxw5ImqkbfvQmNg708qqPeCc35067OeoZSQL8sETW50gcq3Oa7igWtvEophggo2TxTrOU7YCjmEVZ9CmiUUWQPVAYpoRTmRPIoBRzCP7U//2gAIAQEBBj8C/wBTMVisVcZ6npOhb4W+EAHgk9p/z9R9x6V2uGOnUk12uHaeeWuxZ4em3Zzd6bEdq5O9c6weHptk5ZV6dr55a7EcNmM3bEds5Ov+uf3rB2TwFwr07bzxGuxHCvm7YA7dydf9c/vWOBurPAXCvTt54i8a1vd+kfnktLiubrhsAfADZaSHX3DBbjvBUQPeJLxyNyLMiY+yhoJs4Qvdu8FuO8FeIj4CbBh2S945S4yVR0nKydWqlpO9ut1K947xXvHeKvvPH4EeDr/vVSMz3m/RUdHwFo6mqeHwPmLxrU135Cc7iao+CTk6/wCudcqfghGeI1qhAfBpyff9c1PwcjPI81Ha7MFuV/EZVzwVkA612iCRnGSMXEZGouNwCshp12Ism7RbrvJbrvJRe0nCc9i0RK3HeS3HeIW47xCMCI49dbGBx1yK551WBicfsvM7Ac3dy5ctFOEY8lYZuj8lDYIPP1WCwQIu5fyhONf1V4WCwV3XEHNWTof4KLzki48fPZIOBRANzvTmvXZdYxv9VvHxW8fFTSSdUK/quhcFvHxTZcYm+/sFsZY6f0mUf5KG0zT+dp04X+q3wveBBtH0kBwr+oXSMLeC3wuiZjsEt2w7MbRib+az8Vn4rDYsmrPxX9q7sYB72CE53CrpOiV0TNUuMV3aVQ4wV0TNVyu07IYsRliu55ruea7nnVRRjJx0TLcb10VMiMDjgr7P/NVkglrOH6lH6fwVPy6ZqdyBQ0qNizFo46p0/qNXc813PNdzzXSsxy7IJyQ5YVXiYUgRVcMVOdU2QoUca7rld/pL/9oACAEBAgE/If8ABP8A8lP+Cf8AfXhmLwj5DPbYkHORY+sP5n6nB+v1HIGQT649odsRWAGbhw/2vqH8f1MMYAMnXd5cQS4jHsvgoDgMI4s4jz2zBg6HZsBJsBc9ITQcDgBQKFSzYPn6hhEx+WEagWyLcFx6+kCHjhuIsR0NoUKEIkeDmx9dI7ZAluGoihxwOcxQgheXzO9vT8hfoYUKHuFzfWYlHUQWucCbiFuQQmEwdKzrr9R14nzARsBjflY+jwMvD/CpTfn2aQ3USxzp9NaBhYtnA5zDCw2g+UzGp4L2PzfChztgeR+jFNgxfQCEwmXvSzrr9Rl6AeZBjUDHsvvHWE0jlwG9h+PSG4I0A3Y5axkJm6zgczSFgecsxgRrh7H5qYcOPHEfB7+8WocB9ZHCZctLBz1+o68XB5sRcAfaWnUMdYdBxzN8DecmFjz3A+8xqvjNTSJhO7JsJgIoIPinxxQyb/kxyD1v1hx+viuZ0mYPL4hiduUbz6gqFwiCAHjJg/26ODcx6Dm+s1omAedBjrM5DNtOuIBjvQm2pM5UJBks9r09pv5Xdd50z0o8S2DziAJ3kmSyeJiwPJT8e0BmHgdHe/WFDtrRXHL0nFnsL6e8M4AsHPX6mtTHn3HwHxLTqLQJu0BvzZh9+x5DQdoWbDJsJgCKAivEPlSHH4a4ex89anAIsPn6pkwD/CTmPZfeOtDEpk4mE0iwg/4ZvHIj2mh894wekfM14uAefWzpLluAihcRKgovLg5nMsi/A9o6AMVgDMR7WSS4DreC9BXCtDqPD2mTOYFv5UKTqDE5VkkhuHWG8A4uGBXSzoh/60f3oDuUBFuBGuw1YGkMz+hVBBdsZgJLscNo+BogTDQfcXccYrJwsHEQRSbUT06oUEPLZxP1iYUGYG4MsptdvHXxadt0uO2E/ltxg19lxfExGB3J3mYRRQbzDgtj2E4HsJl6LKaKCGaAfOoejHED5cZwfYQ7n2EO2LlbxuJIEYaYSeB9B+ZggDudBLmfu/4EQbAQDAiDHnAWvctjkOs3+dW+LwV3sHBAV+fpP1/qGh9m5tceG6AcCwQ3zgNPb/MEEEeAV8T8/wCo+LQIFmN2Im/Hs9e3j3+r0MGDIzxwB7XMVhYRQg2MTgkSwNg7EA1xjX+pPyn6hlGByBv0EIkdAHaChL9tYCJ/qfiM/gH6jBetAfGAJBuDbvLkFxJKBiwEGyfM8ObJvETA7DjtkE5awh/SfgUAbF283MWgpcZlhFXEGN/cz8CnP7o/x5u/IC0AoRMRIjiID9oikn5hTopVpZvHACYubH5iiIAaZ3mOjN2iS5jMZEQkukfqHyAmA9YJGM2GR1BRjpmiS5jOwEYsCwUPhj6gyDLjefuPvP3H3jQdjugy70PAjCuXZMQukI0PGFaYk/LrjlAcu2nB3MEDWPYF3DOVYS927L2K3ukEukjeSBrEOLwJeqXaLKtECWJGgEn1TQXAw9fWForKs98P8/2h/n+0/MfaewAX6+IIaKKKtlGTY4S/A2fAYCiFWhFJaLRwHEgDM8zFiEVid6oTFcLxrAiDAxAmIMAiOEECGBRmqEtCGSiZfUwQiL/Tf+OKvyh8Y+WP+6P8pxx+bfgGf//aAAwDAQICEgMSAAAQXppM0g00ymO6O6u7xybvYAg424FZyZh2Cu2unOxra2Qow0k1A7LG3aqTdW/uEq0477T4knJl5L+33TWDjPPD7Idhs/5v7fmV5jXTpzPrxYg7W6IcC12Tb2K60g3Dc2RPH0cWPPy++HPShZlpNOCQ3qm8q2qW7j3/APTXYQV6Z4PRHyTqqmow2/QdIeeAckz7Gwko/W201wgQVVAdK87D5cviq0f867VcQZfUzfwJ/pl431z57Grlq/oivKHJ/r86OzK6+jul67d0Yev2z5HBTtng8+itUW0h52QykXqdfPi5q2kvs3V4LSsMw1blm6C+has+9+runzvGYHJoM+tvaGqynt3u0k6zomhovjsnujy13u5y79z5xninrvrmkXRtyp+z1ou99vkpspu4NP/aAAgBAxIBPxD/AMqYUvCMNLYJUJsoCFAEOPitD3U6Zaqgt9Nbf7eKQ44ROUGxoUeRwCI8btswzmQsYst9Nbf44OKZBALjEmDi/kx+5wBKwLeYqgB5EG0V4i2NyxmHzZHse6lrqdP+Iq6z7bR2zUwGCDrOemOhjSB+UV4z2O0seUtPf4pAIHXFCAIDuaK077oSoCB3gwJPyBgPYUELjgT9gYQQL77aRHbnGsf4S4+uOVOQIwd0dxb1DAFROXK8aORdpBPTS2LjC+x4D1rDBygKrzvVto90sJQaqC0cAaiIto5y/ocHtmwLoW7kRp58i6HyMMC5GBJX3qXYCxCgKMgvfPMHqIYBJZO63sQ9UbIidgfENzymgmM4gAlm1yT3Q6wZLgwUHoRHyAneAh2Z94QEm0ZKuRuitdnhDovSnYjR1G3AU/QkevhKEPN4AsWihA5D51X/AIP/2gAIAQISAT8Qj8qvKiP/ACRBALMGiQS9gNAoMnDotwi8JUWeL3gnKrqCXTQU090PiEukTB3zn9woEVesXJjvGucWII93G4lw0upp7veHxlEEaQIA75+4tFm83MABLjvIXPRsI+QIQIyImO+nM8lf47iNK3e/ilYgNZoDIJVhk0ZWW3wB2EIJuIjJ+JEDMnbrQhIXJn6kfcFsoOm2iPcbxFJ/RLadedG94OG8TA3iZRmCP0Ywz1suGyD4CBvEWVQarlGcB4wnGRoZlTY1OO2zVc5+z+oC1B5f9gG18kWtnw4QZX3E/rH2go/v+RQdeIa4tnm9TGgtQR6v6gCQDqQN2TMrQGV2PfNs2jNQOb+AYv8Ab6gLV+E4DHHAVHR/+D//2gAIAQECAT8QBj2FRww0cNHCY6GGOOjoCoSzDBQmCpQxUMBTgEI8FUUMIoamLYMzFsEUdoYoaGGGOOh2Ads7BqYodhbBNDHDDCaHZW2aHwSYTQxRR0MIhFSakQ48Jwmiiq9hVOwoRQ0NHQmo1B2HsOOhO0dhQipNTtFCKKhq6HYFTU7BqaEQw0NDQ0No7Qww7Dj2HQUUVChFTsqBDBEIhiihhOwMJh2DHDHVwGKBgbgRIqMZAEGAaO0CH6oFRAkAbAZkQLFu0CKGhqEPgJQzW+wMCiDi/fMHaUjiSAGzkBMMIhoaGjhghjo46Gg2BRCBXjwvPVcy30nQ8qYHeB6oA8jvgeBF4RQqKAQMJMk3AGT2m9cTyQFHfQ83p8cn7d0yOkQQTDDsmKhqdhx1KFLsG8FvLA8RitC2SyQxxAeikHnwM0yjn+DBeGhmaWBWfgH2fYxhhCEtZWeLH3yEvC6nfvPUxM4SxHDDQ0NDVjwBQQhFMXZw8A2dvno+SIHh9Z3LugB3gaoRQJEAkk6AXJ7Q+vCt1gUVQb/BcTy6D3R4LFhAppDQQ0MUIVB4BNSh9Hht1/oPcJZBZ6HJag8QWDxFIhg3eeUujXUOOv2tzBi0MUGOUrDh92OhrR9Qdnix9nhMdffx3nqZjEWIBRbAmhjhMEFqExQBQ0J2AZgonAncEfet1V9cNB9ez2DycVlxwRAySgAyTgAZMODP6T9q6j0guf4D3RoGLxAERBsGhG04TVmOCGjo6Rv51EchJPhFt7739jy14xGs39wZnkfnb3X1OIQII79L1PjvM6iQDekB34PvkJjep37z1MBy0RAIIYoYTQ1Ow4446CPZEFihQRch/aID4pcougpHUPpWQqnYBk7ock0nhq6/cOdHetvM5dB7o8DGYkIEEEMJhMVHU3h2VDQWjoKiHFbdgJ9VRBzB4Q5Bz0T9NBfoXVAjkmfhaWhSc0zm1yAcT9ZlnRfiepiQsCLEEBoTHCfAA7AMceyTHULhQ5NL7l2gw7PNujkOr34phdBWMuhJoBkU/No4E33YRh0gNbxOVh1jiwzFhQVHHDVwmh2BR0JjgNHQx0dJa8AJojf0j3IwXcudfvG1YvwcP2clkwaGAdoHdAD9PaKWSuJAwpZ1nSZvMBaRAiqYobQmHYJrmAww4DQ0cMBihjjgMNwo4I4J+3Lw4YrE08beccc/dLRP5E4SJznM9w/N8OSD1iAIFFUw0GyoY44Y9gQ7Do44IR9k/S1j10GwUj2vov0h2WUjodAQIBBkOofrPSAA0y/vWJy0ikdHRxwiGHYGNQmmI9h7Dh2DBEIiC4SH3iB5t1BRwWp8783xyLXEWERBVQ0McMdCIoYYKvadXCdhxE9U7Y5Czglb+jgYiy6+3QXgbKyCkE0WwaKGLZMN9kR7DjhO2CS1GwN3ymPOCHBYf9Xx0mIhmKCgI6GpMMJhD2SXDRwmgmYooYBAIRRUEUVAAzuk9IezB4GGbAKO0UWiqBChhqoRFFCIamjoY4DBBwz2hwowg1i1KT7CADBDitCbgI/NBkpPeaFwAvkQoMXqUIrGgDvWJ6rXAlJS6nPArLW4Gx0agcYbJ7DidJvad3+4TuaC54oPOXBXgYerk7BAqAWOuGDtAuAFPS8bhFE8QGQLudoYGaQwi2NBCyGIbh2QgtQmCghg2yb8w7CAelKZuhyOBgwT2QHJfMh4vP8ABYCzgJghMCkAEQbgveIcI/iReD5YJl5uzG/+jnOBRfn0zFFcfUE1JmCGMYATqAnBfu4T8d8TujZMQGl4XC7sV/Wor93ywSNXaL3T898T8+9oAEXKDc1LBDQ0MEcBjgMEBgV2fvL4I4gojiJZT5nfOduCHNywPwMzCULq/rnLgF9ZZQmDLmMAQZZ+vi/NDPeFsQZdR9DQQIEKnac6aYJcwOssgB0SJuLfDcmO59CBAQgA1Rug4cq7LqXrgzXTSsl5TJwQUTgtRx0bgDgj2HRXbdjU+R3N04jv6y5SDHqO86nmTEwoccUABDMjitIkUE0gMakU7Pp9J/MhflCTACbA/Jl3T0QIdoDLz+lAcRb+aBXxfSBsAOXCARhEhjIGkARDLCExwwGE1VXBlAAkDggEQeBEy0GuEgP3gAgxBWw4ZwRoiBajecNoKAVMPGQuDLnvgOfw5zhfjxgbzQPQeOkTesxjhycAjjITWRfEJ/v6w/ofMG4/XjGNwBguTLnCsHCIRHCKCr2SIGEwRPFCjkA3DmhQGeu5SbhYawGKphiJBWZSBhMOIQBA20CAY/BgHQBb9rABuLwQYYRzkI6C8FAkIAAiWPEJpHRwEAQayQBA7ojW8BwBfcRApDHOAjoL7jRQB0m4ThQOiAo6FQiDZccATndDLEe+cOII4doZvMusGoDCMPFhwI4Y7Yb4d5stIUhMtMt+4XHRx1NMvAsbhmdaFQFc7Ym5cYyvbHxYN+HSXKARyzcN65gBBIAQwQQQRwItDhAJdtDA0QG52mCCBWarmvojwE13iMO6FgLm4ss1dPMBoxZ2sZFfUtVtMiIqqG1QY6OoIQrACAxlCQKrkQijxGYATJ1qpMHS1pgwO/MxFwDpyj0ghkTEBCP0IgJ3CephWAAALEMAd60gtHIRCsuVye8GGrYaAbhwgNRwq4JZBgCJAQ5ChhEhgBm5XWEkYmICwyE9TUGQIqqhoauGAzNXsOhENHHRw32CYYY4TU0BhhMNHAaBHBB4Dj2HQxxxx1Jhi2DRxx0NBgLoccFCYDsOj2DHsjQQmE0ccJjoaBDRwRQUdQY6OGOhoaBHQmGCHaNHHQzEJpiDwXV0NCYai9DHHVx7Bo1DDsAaOjgMcdSYI6uE7Ro444aOOOOGOONwmCOoIccccccMccd446OOOOjjhMMdHCYYcNDDDV//2Q==" alt="Vybe Health logo" width="96" height="96">
+      <div>
+        <div class="eyebrow">Vybe Health · Instagram + Facebook Reels</div>
+        <h1>Reels<br>Command</h1>
+      </div>
     </div>
     <div class="meta">
       <span class="pill" id="weekPill">Week 1 · Set the baseline</span>
       <div class="progress" aria-hidden="true"><i id="dayBar" style="width:0%"></i></div>
       <small id="dayLabel" class="num">30-day plan · Sep 24 – Oct 23, 2026</small>
-      <small>@vybehealthinc · Vybe Health Facebook Page · CTA: founding batch at vybe.health</small>
+      <small>@vybehealthinc · Vybe Health Facebook Page · Goal: followers · CTA: follow + a question</small>
     </div>
   </div>
 </header>
@@ -346,9 +351,10 @@ form.log .full{grid-column:1/-1}
   </section>
 
   <section aria-labelledby="t-people">
-    <div class="sec-head"><h2 id="t-people">People to target</h2><span class="note">Real creators whose followers are our buyers. Handles and follower counts confirmed by search on Sep 25, 2026; a dash means not checked. Set a status as you work each one.</span></div>
+    <div class="sec-head"><h2 id="t-people">People to target</h2><span class="note">Real people, grouped by category. Every handle is checked against Meta (followers, last post, full bio) on the date shown. Accounts with a wearable sponsor are marked Follow only. Switched-off segments are hidden.</span></div>
     <div class="banner" id="peopleSummary"></div>
     <div class="playbook panel"><div class="eyebrow">How to work this list</div><ol id="playbook"></ol></div>
+    <label class="note" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="showPass"> Show switched-off and passed accounts</label>
     <div id="people"></div>
   </section>
 
@@ -479,7 +485,7 @@ form.log .full{grid-column:1/-1}
         ${fGoal?`<div class="bar"><i style="width:${Math.min(100, tot.follows/fGoal*100)}%"></i></div>`:""}
         <div class="sub">${esc(t.followerNote||"Log each Reel's 'Follows' from Insights.")}</div>
         ${all.length ? (fGoal ? (tot.follows >= fGoal*(wi+1)/4 ? `<span class="state ok">On pace</span>` : `<span class="state warn">Behind pace</span>`) : `<span class="state wait">Baseline week</span>`) : `<span class="state wait">No data yet</span>`}</div>`,
-      `<div class="tile"><div class="eyebrow">Founding-batch reservations from Reels</div>
+      `<div class="tile"><div class="eyebrow">Reservations from Reels (secondary, not the CTA)</div>
         <div class="big num">${fmt(tot.res)}</div>
         <div class="split"><span><i class="dot" style="background:var(--ig)"></i>Instagram <b class="num">${fmt(ig.res)}</b></span><span><i class="dot" style="background:var(--fb)"></i>Facebook <b class="num">${fmt(fb.res)}</b></span></div>
         <div class="sub">Target: double week 1's weekly reservations by week 4. Week 1: <span class="num">${fmt(resBase)}</span>${latestWeek>0?` · Week ${latestWeek+1}: <span class="num">${fmt(resCur)}</span>`:""}. Tag the reserve link with a UTM per platform.</div>
@@ -633,6 +639,12 @@ form.log .full{grid-column:1/-1}
     $("#costNote").innerHTML = `<i class="dot" style="background:var(--vitals)"></i>Needs a subscription to keep working &nbsp; <i class="dot" style="background:var(--green)"></i>Pay once. ${esc(c.costNote)}`;
   }
   function renderAud(){
+    if (state.cats && state.cats.length){
+      const people = (state.people||[]).filter(p => !isOff(p));
+      $("#segs").innerHTML = state.cats.map(c => { const n = people.filter(p => p.category === c.id).length;
+        return `<div class="seg"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span class="eyebrow">${n} on the list</span><span class="share num">${esc(c.shareOfFollows)}%</span></div><h3>${esc(c.name)}</h3><div class="why">${esc(c.why)}</div></div>`; }).join("");
+      return;
+    }
     const a = state.aud; if (!a) return;
     $("#segs").innerHTML = a.segments.map(g => `<div class="seg"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span class="eyebrow">${esc(g.kind)}</span><span class="share num">${esc(g.share)}</span></div>
       <h3>${esc(g.name)}</h3><div style="font-size:14px">${esc(g.who)}</div>
@@ -641,26 +653,32 @@ form.log .full{grid-column:1/-1}
       <div class="why"><b>Why them:</b> ${esc(g.why)}${g.source?` <a href="${esc(g.source.url)}" target="_blank" rel="noopener">${esc(g.source.label)}</a>`:""}</div></div>`).join("");
   }
   const STATUSES = ["Not started","Following","Engaging","Pitched","In talks","Yes","Pass"];
+  const isOff = p => p.status === "Pass" || p.auditVerdict === "drop" || p.segmentOff;
   function renderPeople(){
     const list = state.people; if (!list) return;
-    const tiers = state.tiers || [];
-    const count = st => list.filter(p => (p.status||"Not started") === st).length;
-    $("#peopleSummary").innerHTML = `<b class="num">${list.length}</b> people · ` + STATUSES.map(st => `${st} <b class="num">${count(st)}</b>`).join(" · ");
+    const showPass = $("#showPass")?.checked;
+    const live = list.filter(p => !isOff(p)), off = list.length - live.length;
+    const count = st => live.filter(p => (p.status||"Not started") === st).length;
+    $("#peopleSummary").innerHTML = `<b class="num">${live.length}</b> active people · ` + STATUSES.filter(s => s !== "Pass").map(st => `${st} <b class="num">${count(st)}</b>`).join(" · ") + ` · <span class="note">${off} switched off or passed (hidden)</span>`;
     $("#playbook").innerHTML = (state.playbook||[]).map(x => `<li>${esc(x)}</li>`).join("");
-    const ordered = tiers.flatMap(t => list.filter(p => p.tier === t.id).sort((a,b)=>(a.order??0)-(b.order??0)));
-    $("#people").innerHTML = tiers.map(t => {
-      const ps = list.filter(p => p.tier === t.id).sort((a,b) => (a.order??0)-(b.order??0));
-      return `<div class="tier"><h3>${esc(t.name)}</h3><div class="tnote">${esc(t.note)}</div><div class="pgrid">${ps.map(p => `<article class="person">
-        <div class="top"><div><h4>${esc(p.name)}</h4><a class="handle" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.handle)}</a></div><span class="fol num" title="Followers">${esc(p.followers||"—")}</span></div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap">${p.offIg?`<span class="tag" style="color:var(--warn)">Not on Instagram</span>`:""}${(p.segments||[]).map(g=>`<span class="tag" style="color:var(--intel)">${esc(g)}</span>`).join("")}</div>
-        <div><div class="lbl">Who follows them</div><p>${esc(p.audience)}</p></div>
+    const shown = showPass ? list : live;
+    const cats = (state.cats||[]).slice();
+    const known = new Set(cats.map(c => c.id));
+    const extra = [...new Set(shown.map(p => p.category||"other").filter(id => !known.has(id)))].map(id => ({ id, name: id === "other" ? "Uncategorized" : id, why: "" }));
+    const card = p => `<article class="person">
+        <div class="top"><div><h4>${esc(p.name||hnd(p))}</h4><a class="handle" href="${esc(igUrl(p))}" target="_blank" rel="noopener">@${esc(hnd(p))}</a></div><span class="fol num" title="Followers">${esc(p.followers||"—")}</span></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">${p.followOnly?`<span class="tag" style="color:var(--danger)">Follow only${p.sponsorConflict?": "+esc(p.sponsorConflict).slice(0,40):""}</span>`:p.auditedOn?`<span class="tag" style="color:var(--ok)">Clean</span>`:""}${p.tier==="study"?`<span class="tag" style="color:var(--muted)">Study</span>`:""}${isOff(p)?`<span class="tag" style="color:var(--muted)">Off</span>`:""}${p.lastPost?`<span class="tag" style="color:var(--muted)">Last post ${esc(p.lastPost)}</span>`:""}${p.auditedOn?`<span class="tag" style="color:var(--muted)">Checked ${esc(p.auditedOn)}</span>`:""}</div>
         <div><div class="lbl">Why them</div><p>${esc(p.why)}</p></div>
         <div><div class="lbl">Your move</div><p>${esc(p.action)}</p></div>
         ${p.caution?`<div class="warn">Heads up: ${esc(p.caution)}</div>`:""}
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="note">Comments this week: <b class="num">${+(p.comments||{})[state.week?.id]||0}</b></span>${state.canWrite?`<button class="copy" data-comment="${esc(p._id)}">+1 comment</button>`:""}</div>
         <label class="lbl" style="display:flex;gap:8px;align-items:center">Status <select data-person="${esc(p._id)}" ${state.canWrite?"":"disabled"}>${STATUSES.map(st=>`<option${(p.status||"Not started")===st?" selected":""}>${st}</option>`).join("")}</select></label>
-        ${p.source?`<div class="note">Source: <a href="${esc(p.source)}" target="_blank" rel="noopener">profile check</a></div>`:""}
-      </article>`).join("")}</div></div>`; }).join("");
+      </article>`;
+    $("#people").innerHTML = cats.concat(extra).map(c => {
+      const ps = shown.filter(p => (p.category||"other") === c.id).sort((a,b) => (isOff(a)-isOff(b)) || (!!a.followOnly - !!b.followOnly) || String(b.addedOn||"").localeCompare(String(a.addedOn||"")));
+      if (!ps.length) return `<div class="tier"><h3>${esc(c.name)} · 0</h3><div class="tnote">No verified people yet. ${esc(c.why||"")}</div></div>`;
+      return `<div class="tier"><h3>${esc(c.name)} · ${ps.length}</h3>${c.why?`<div class="tnote">${esc(c.why)}</div>`:""}<div class="pgrid">${ps.map(card).join("")}</div></div>`;
+    }).join("");
   }
   const FOLLOWED = ["Following","Engaging","Pitched","In talks","Yes"];
   const hnd = p => String(p.handle||p._id||"").replace(/^@/,"");
@@ -671,7 +689,7 @@ form.log .full{grid-column:1/-1}
   const daysBetween = (a,b) => Math.max(0, Math.round((new Date(b) - new Date(a)) / 864e5));
   function renderFollowTracker(){
     const el = $("#followList"); if (!el || !state.people) return;
-    const ps = state.people.filter(p => !p.offIg);
+    const ps = state.people.filter(p => !p.offIg && !isOff(p));
     const fol = ps.filter(isFollowed), back = fol.filter(p => p.followedBack);
     const rate = fol.length ? Math.round(back.length / fol.length * 100) : null;
     const lags = back.filter(p => p.followedAt && p.followedBackAt).map(p => daysBetween(p.followedAt, p.followedBackAt));
@@ -703,6 +721,7 @@ form.log .full{grid-column:1/-1}
         <label><input type="checkbox" data-back="${esc(p._id)}" ${p.followedBack?"checked":""} ${fd?"":"disabled"} ${dis}> Followed back</label></div>`; }).join("")}</div>`).join("") || `<div class="empty">Nothing matches this filter.</div>`;
   }
   $("#flFilter")?.addEventListener("change", renderFollowTracker);
+  $("#showPass")?.addEventListener("change", renderPeople);
   // ---------- Instagram data-export import ----------
   function igEntries(json){
     const arr = Array.isArray(json) ? json : (json.relationships_following || json.relationships_followers || []);
@@ -756,8 +775,8 @@ form.log .full{grid-column:1/-1}
     const wid = state.week?.id, weekReels = state.week?.reels || [];
     const totalFollows = state.insights.reduce((a,r)=>a+(+r.follows||0),0);
     const row = c => {
-      const ps = people.filter(p => p.category === c.id);
-      const followed = ps.filter(p => FOLLOWED.includes(p.status)).length;
+      const ps = people.filter(p => p.category === c.id && !isOff(p));
+      const followed = ps.filter(isFollowed).length;
       const comments = ps.reduce((a,p)=>a+(+(p.comments||{})[wid]||0),0);
       const planned = weekReels.filter(r => r.segment === c.id && r.slot === "post").length;
       const ins = state.insights.filter(r => reelSegment(r.reel) === c.id);
@@ -799,30 +818,38 @@ form.log .full{grid-column:1/-1}
     function tile(key, label, color, primary){
       const pts = rows.filter(r => r[key] != null);
       const first = pts[0], last = pts[pts.length-1], prev = pts[pts.length-2];
-      const now = last ? last[key] : null, g = goal[key];
+      // A one-day jump over 300 is treated as an unverified bulk add; drops right after it are that bulk leaving.
+      let trusted = first ? first[key] : null, bulk = 0, inBulk = false, lastDelta = null;
+      for (let i = 1; i < pts.length; i++){ const d = pts[i][key] - pts[i-1][key];
+        if (key === "ig" && d > 300){ bulk += d; inBulk = true; continue; }
+        if (inBulk && d < 0){ bulk += d; continue; }
+        inBulk = false; trusted += d; lastDelta = d; }
+      const raw = last ? last[key] : null, now = raw == null ? null : (bulk ? trusted : raw), g = goal[key];
       const gained = first && last ? now - first[key] : null;
-      const day = last && prev ? now - prev[key] : null;
+      const day = bulk ? lastDelta : (last && prev ? now - prev[key] : null);
       const need = now != null ? Math.max(0, Math.ceil((g - now) / daysLeft)) : null;
       const onPace = now == null || !first || pts.length < 2 ? null : (now - first[key]) / Math.max(1, (new Date(last._id) - new Date(first._id)) / 864e5) >= need;
       return `<div class="tile${primary?" primary":""}"><div class="eyebrow"><i class="dot" style="background:var(${color})"></i> ${label} followers</div>
         <div class="big num">${fmt(now)}<span style="font-size:20px"> / ${fmt(g)}</span></div>
+        ${bulk?`<div class="warn" style="font-size:13px;color:var(--warn)">Instagram shows ${fmt(raw)}. ${fmt(raw - now)} of those come from an unverified one-day jump, so they're left out of the goal.</div>`:""}
         ${now!=null?`<div class="bar"><i style="width:${Math.min(100, now/g*100)}%"></i></div>`:""}
         <div class="sub">${now==null?"Log today's total below to start tracking.":`Since first log <b class="num">${gained>=0?"+":""}${fmt(gained)}</b> · last day <b class="num">${day==null?"—":(day>=0?"+":"")+fmt(day)}</b> · need <b class="num">${fmt(need)}</b>/day for ${daysLeft} days`}</div>
         ${now==null?`<span class="state wait">No data yet</span>`:now>=g?`<span class="state ok">Goal hit</span>`:onPace==null?`<span class="state wait">Log 2+ days for pace</span>`:onPace?`<span class="state ok">On pace</span>`:`<span class="state warn">Behind pace</span>`}</div>`;
     }
     $("#ftiles").innerHTML = tile("ig","Instagram","--ig",true) + tile("fb","Facebook","--fb",false);
     const td = today(), people = state.people || [], wid = state.week?.id;
-    const followedToday = people.filter(p => p.status && p.status !== "Not started" && (p.statusAt||"").slice(0,10) === td).length;
-    const followedAll = people.filter(p => p.status && p.status !== "Not started").length;
+    const active = people.filter(p => !isOff(p));
+    const followedToday = active.filter(p => isFollowed(p) && ((p.followedAt||p.statusAt||"").slice(0,10) === td)).length;
+    const followedAll = active.filter(isFollowed).length;
     const comments = wid ? people.reduce((a,p) => a + (+(p.comments||{})[wid]||0), 0) : 0;
     const reelsWeek = new Set((state.insights||[]).filter(r => r.weekId === wid).map(r => r.reel)).size;
-    const newToday = people.filter(p => p.addedOn === td).length;
+    const newToday = people.filter(p => p.addedOn === td && !isOff(p)).length;
     const cell = (k, v, goalTxt, ok) => `<div><span class="k">${k}</span><span class="v num">${v}</span><span class="state ${ok?"ok":"wait"}">${goalTxt}</span></div>`;
     $("#funnel").innerHTML =
-      cell("Instagram following", fmt((rows.filter(r => r.igFollowing != null).pop()||{}).igFollowing), "Keep targeted", true) +
+      cell("Instagram following (API, unconfirmed)", fmt((rows.filter(r => r.igFollowing != null).pop()||{}).igFollowing), "Check in app", false) +
       cell("New people on today's list", fmt(newToday), "15 a day", newToday >= 15) +
       cell("Accounts followed today", fmt(followedToday), "Target 15", followedToday >= 15) +
-      cell("Accounts followed, total", fmt(followedAll), `of ${people.length}`, followedAll >= people.length && people.length > 0) +
+      cell("Accounts followed, total", fmt(followedAll), `of ${active.length}`, followedAll >= active.length && active.length > 0) +
       cell("Comments this week", fmt(comments), "Target 35 (5/day)", comments >= 35) +
       cell("Reels logged this week", fmt(reelsWeek), "Target 4", reelsWeek >= 4);
     const gi = $("#fl-gig"), gf = $("#fl-gfb");
@@ -1157,3 +1184,5 @@ form.log .full{grid-column:1/-1}
   boot();
 })();
 </script>
+
+</body></html>
