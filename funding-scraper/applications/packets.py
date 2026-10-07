@@ -61,6 +61,11 @@ GATES = [
     # covered and the flight is not, and CES week in Las Vegas is the most
     # expensive week of the year there — so it is a real gate, not a detail.
     ("travelself", "Able to travel to pitch in person at your own cost"),
+    # NIA's Start-Up Challenge bars anyone who is the principal investigator on
+    # an NIH SBIR/STTR award that is still active when submissions close. It is
+    # not the duplicate-proposal rule above: you can have applied, you just
+    # cannot be running one.
+    ("nonihsbir", "Not the PI on an NIH SBIR/STTR award active at the close date"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -1230,6 +1235,164 @@ PACKETS = [
                 "[If a Band can be on a wrist at the table, put it there. The screenless "
                 "band is the thing nobody else in the room has, and it explains the product "
                 "faster than the poster does.]"},
+        ],
+    },
+    {
+        "id": "nia",
+        "name": "2027 NIA Start-Up Challenge and Accelerator",
+        "funder": "National Institute on Aging (NIH / HHS), Office of Strategic Extramural Programs",
+        "amount": "Up to $994,000 total. Up to 21 Stage 1 finalists get $24,000 each plus a free five-month accelerator; up to 7 Stage 2 winners get a further $70,000, so up to $94,000 per team",
+        "deadline": "2027-01-15",
+        "fee": None,
+        "url": "https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator",
+        "submit": "Online submission on the NIH challenge page. SUBMISSIONS DO NOT OPEN UNTIL 1 DECEMBER 2026 and close 15 January 2027 at 11:59 pm ET. Register for the 3 December 2026 webinar at 1pm ET. There is no SAM.gov gate to enter; a UEI only speeds up payment.",
+        "gates": ["incorp", "uscitizen", "nonihsbir", "travelself"],
+        "confirmed": [
+            "Veteran-, woman- and minority-owned 51%+ (confirmed 20 Sep) — relevant to the scored 'challenge impact on the submitter' criterion",
+            "No application fee",
+            "Prize money is non-dilutive; NIA takes no equity",
+        ],
+        "why": "The largest non-dilutive award on this board that Vybe can enter without a clinical trial, a device classification or an institutional partner, and the only one where a quarter of the score is explicitly about the founder's lack of access to resources and networks. $24,000 lands at the finalist stage, which is a real outcome rather than a lottery ticket, and the five-month accelerator is free. Ten weeks of runway from today to the close.",
+        "docs": [
+            "Registration as an individual, team or entity",
+            "Submission narrative against the six scored criteria below",
+            "A statement of how the solution differs from existing commercial products and from NIA-funded SBIR/STTR work — check NIH RePORTER before writing it",
+            "Certification that a SBIR-eligible US small business is formed, or will be by 1 November 2027",
+            "If selected: winner verification and payment documents within three business days",
+            "Stage 2 adds a one-page impact document, a seven-minute pitch video and a meeting with an NIH program officer",
+        ],
+        "note": (
+            "TEN WEEKS, AND THE WINDOW HAS NOT OPENED YET. Submissions open 1 Dec "
+            "2026. Everything below can be written now; nothing can be filed "
+            "before then.\n\n"
+            "THE FRAMING DECISION, AND IT IS THE WHOLE APPLICATION. NIA funds "
+            "healthy ageing. Vybe is not an ageing product and should not be "
+            "rewritten as one — that reads as a retrofit to a panel that sees "
+            "dozens of them. The honest case is the one the AgeTech packet "
+            "already makes and this board has now made three times: the "
+            "interpretation problem gets HARDER with age, because more things "
+            "interact, recovery slows, medications arrive, and a single score "
+            "explains less and less. Vybe serves people over 60 well because of "
+            "what it is, not because it was aimed at them.\n\n"
+            "WHAT MAKES THIS DIFFERENT FROM EVERY OTHER PACKET HERE: 25 of the "
+            "100 Stage 1 points are 'challenge impact on the submitter' — a lack "
+            "of access to resources and networks. Vybe's veteran founder and "
+            "lived experience count here, and race and sex may not be scored. "
+            "That section is not a diversity paragraph; it is a quarter of the "
+            "mark. Write it properly or lose a quarter of the score.\n\n"
+            "TWO GATES TO CHECK BEFORE SPENDING THE TIME. Nobody at Vybe may be "
+            "the principal investigator on an NIH SBIR/STTR award that is still "
+            "active when submissions close, and nobody may have been a finalist "
+            "in an earlier NIA Start-Up Challenge. Both are simple yes/no "
+            "questions and both disqualify outright.\n\n"
+            "THE COMMITMENT IF YOU WIN. Finalists give 6 to 8 hours a week from "
+            "June to November 2027 and attend two in-person events. Registration "
+            "is covered; travel is not. Decide now whether that is affordable in "
+            "the middle of a hardware year."
+        ),
+        "fields": [
+            {"q": "The solution, in plain terms", "a": LONG},
+            {"q": "Significance — the problem, and why it matters more with age", "a":
+                "Most people over sixty already have years of their own health data "
+                "and no idea what any of it means. The interpretation problem does "
+                "not hold steady with age, it gets harder: sleep breaks up, recovery "
+                "slows, medications arrive, and a bad week has a longer tail. More "
+                "things interact, so the single number on the screen explains less "
+                "and less of what is actually going on.\n\n"
+                "The cost of that gap is not abstract. People stop opening the app, "
+                "or they read an ordinary dip as something frightening and arrive at "
+                "an appointment with a screenshot and no context. The measurement "
+                "problem is solved. The meaning problem is not, and it is the one "
+                "that decides whether any of this changes what somebody does on a "
+                "Tuesday.\n\n"
+                "Vybe answers the question the number raises — why did my body do "
+                "that, given the week I actually had — and says what it could not "
+                "see, every time."},
+            {"q": "Innovation — how this differs from what is already sold", "a": WHY_NOW + "\n\n"
+                "Two differences matter to this panel specifically.\n\n"
+                "The interpretation is not a subscription. The Band is bought once "
+                "and the answers come with it. On a fixed income, a monthly fee that "
+                "gates your own history is a bad deal, and it is the single most "
+                "common reason a wearable ends up in a drawer.\n\n"
+                "Vybe reads context, not just signals. Five parts of a life, and "
+                "Connect is the one competitors leave out: work, travel, stress and "
+                "weather — the reasons a reading moves that no sensor can see. A "
+                "score is easy to copy. A model of somebody's week is not.\n\n"
+                "[Before submitting, search NIH RePORTER for NIA-funded SBIR/STTR "
+                "work in consumer wearables and ageing, and name the closest one and "
+                "how Vybe differs. The challenge asks for this explicitly, and an "
+                "answer that shows you looked beats an answer that asserts novelty.]"},
+            {"q": "Commercialisation — who pays, and how it reaches people", "a":
+                "Hardware sold once, at a margin, with the intelligence included. No "
+                "required subscription, which is the position rather than a "
+                "discount.\n\n"
+                "Then licensing: the interpretation layer sold to partners who have "
+                "sensors and nothing to say with the readings.\n\n"
+                "Where it is today: {{STAGE}}. Traction: {{TRACTION}}. Revenue over "
+                "the last 12 months: {{REVENUE}}.\n\n"
+                "[The panel scores commercial plausibility, not ambition. Give them "
+                "the unit economics you actually know — what a Band costs to build "
+                "and what it sells for — and the two or three steps between today "
+                "and a first production run. A projection whose assumptions you "
+                "cannot name is worse than a smaller number you can defend.]"},
+            {"q": "Team — who is building it and why them", "a":
+                "Team of {{EMPLOYEES}}. Led by {{CEO}}. Ownership: {{OWNERSHIP}}.\n\n"
+                "[This is yours to write and nobody should draft it for you. What "
+                "the panel is looking for is whether this specific group can get a "
+                "consumer hardware product built and sold. Two short paragraphs: "
+                "what each person has actually done that bears on that, and the gap "
+                "you know you still have. Naming the gap reads as judgement, not "
+                "weakness — and the accelerator exists to fill exactly that kind of "
+                "gap.]"},
+            {"q": "Challenge impact on the submitter — 25 of the 100 points", "a":
+                "[THIS IS A QUARTER OF THE SCORE AND IT MUST BE IN YOUR OWN WORDS. "
+                "The criterion is about a lack of access to resources and networks — "
+                "what this prize and this accelerator would change that you cannot "
+                "currently buy or borrow.\n\n"
+                "The confirmed facts are available to you: {{LEGAL_NAME}} is "
+                "majority veteran-, woman- and minority-owned. {{VETERAN_OWNER}}. "
+                "Race and sex may not be scored, so the weight here is on access, "
+                "not identity.\n\n"
+                "Write about the concrete things: which doors have not opened, what "
+                "capital was not available and on what terms, what a first-time "
+                "founder outside a coastal network cannot get a meeting for. Be "
+                "specific and do not perform hardship — a panel reading twenty of "
+                "these can tell the difference between a real account and a pitch.]"},
+            {"q": "Impact on NIA's SBIR/STTR pipeline", "a":
+                "Vybe intends to enter the NIH SBIR pipeline rather than treat this "
+                "prize as an end in itself. The certification this challenge asks "
+                "for — that a SBIR-eligible US small business is formed, or will be "
+                "by 1 November 2027 — is already true: {{LEGAL_NAME}} is "
+                "incorporated in {{STATE}} and is majority owned and controlled by "
+                "US citizens.\n\n"
+                "What the accelerator would most change is the shape of a future "
+                "Phase I: a consumer wellness product has to work out which parts of "
+                "its claim are testable and which are marketing, and that is exactly "
+                "the question five months of structured work would settle before any "
+                "federal money is spent on it.\n\n"
+                "[If there is a specific NIA interest area you intend to align with "
+                "— healthy ageing, ageing in place, AI-enabled personalised "
+                "intervention are the named ones — say which, and say it once.]"},
+            {"q": "The regulatory position, stated once", "a":
+                "Vybe is a consumer wellness product. It is not a medical device, it "
+                "makes no diagnostic claim, and asked a clinical question it "
+                "declines, says to see a clinician, and still shows the reading so it "
+                "can be taken to the appointment.\n\n"
+                "That is worth one sentence to a panel at NIH: it is why Vybe can "
+                "reach people now rather than after a clearance process, and it is a "
+                "product rule rather than a regulatory hedge."},
+            {"q": "Practicalities", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, "
+                "operating from {{CITY}}. EIN {{EIN}}. Website {{WEBSITE}}. Contact "
+                "{{CEO}}, {{EMAIL}}.\n\n"
+                "Dates to hold: submissions open 1 Dec 2026 and close 15 Jan 2027 at "
+                "11:59 pm ET. Webinar 3 Dec 2026, 1pm ET. Finalists commit 6 to 8 "
+                "hours a week from June to November 2027 and attend two in-person "
+                "events, with registration covered and travel not.\n\n"
+                "[Before writing a word, confirm two things that disqualify "
+                "outright: that nobody here is the PI on an NIH SBIR/STTR award "
+                "still active on 15 January, and that nobody here was a finalist in "
+                "an earlier NIA Start-Up Challenge.]"},
         ],
     },
     {
