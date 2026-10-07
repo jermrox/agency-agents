@@ -49,6 +49,19 @@ default_amount = "Phase I scale"
 
 # -----------------------------------------------------------------------------
 # 2. Grants.gov -- everything federal that is not SBIR/STTR
+[sources.sam_contracts]
+# SAM.gov Contract Opportunities: BAAs, solicitations, presolicitations and
+# sources-sought notices that never reach grants.gov. Every row is tagged
+# sam = "required" -- a contract award needs an active SAM.gov registration.
+# Needs the SAM_API_KEY secret in GitHub Actions; without it the source skips
+# itself quietly. One API call per keyword (personal keys are rate-limited),
+# so keep this list short.
+kind = "sam_gov"
+keywords = ["wearable", "physiological monitoring", "human performance", "biosensor", "sleep"]
+posted_within_days = 90
+rows = 100
+exclude_any = ["construction", "janitorial", "mattress", "bedding", "sleeping bag", "berthing", "barracks"]
+
 # -----------------------------------------------------------------------------
 # One block per keyword: the API takes a single keyword string, and separate
 # blocks keep a zero-result term visible in the run summary instead of hiding
