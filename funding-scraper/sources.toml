@@ -27,6 +27,13 @@ stale_days = 45
 # 1. SBIR.gov -- all eleven federal SBIR/STTR agencies in one keyless call
 # -----------------------------------------------------------------------------
 [sources.sbir]
+# DISABLED 7 Oct 2026. api.www.sbir.gov answers 403 Forbidden to every request
+# (from GitHub's runners and from an outside sandbox alike) and the older
+# www.sbir.gov/api paths now 404. It has not contributed a single row since
+# 12 Sep, and its failure put "1 source unreachable" on the live board every
+# day. SBIR/STTR topics that fit Vybe are carried as curated rows instead.
+# Re-test with: python3 -m vybe_funding run --config sources.toml --only sbir
+enabled = false
 kind = "sbir_gov"
 rows = 300
 # Keyword gate. A solicitation must mention one of these in its title or
