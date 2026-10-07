@@ -526,9 +526,12 @@
     var el = document.getElementById('stamp');
     if(!el) return;
     var when = TODAY.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+    // Expired rows are dropped from the table, not shown greyed out: a row
+    // whose deadline has passed is not something anyone can act on, and the
+    // founders asked not to see them. The count stays so the hiding is visible.
     var state = counts.closed === 0
       ? 'nothing on this board has expired'
-      : counts.closed + (counts.closed === 1 ? ' row has' : ' rows have') + ' closed and stayed on, for the record';
+      : counts.closed + (counts.closed === 1 ? ' expired row' : ' expired rows') + ' hidden';
     el.innerHTML = 'As of ' + esc(when) + ' · ' + state + feedNote;
   }
 
@@ -553,7 +556,8 @@
       else if(g.cls==='closed') counts.closed++;
       else counts.open++;
     });
-    var noSam = data.filter(function(g){ return g.sam==='none' && g.cls!=='closed'; }).length;
+    data = data.filter(function(g){ return g.cls!=='closed'; });
+    var noSam = data.filter(function(g){ return g.sam==='none'; }).length;
     var nosamEl = document.getElementById('nosamNote');
     if(nosamEl) nosamEl.innerHTML = '<b>' + noSam + ' live opportunities need none of this.</b> Rows tagged <span class="sam-tag none">No SAM.gov</span> are private, state or prize programmes you can apply to this week. <span class="sam-tag">SAM.gov later</span> means you can enter without it but need it to be paid or to go further. Use the "No SAM.gov needed" filter to see only those.';
     document.getElementById('stats').innerHTML =

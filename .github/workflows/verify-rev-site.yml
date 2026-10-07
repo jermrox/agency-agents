@@ -34,9 +34,15 @@ on:
     # enough for Netlify to deploy its commit. Running before the sweep would
     # check yesterday's data every day and call it fresh.
     - cron: '20 14 * * *'
+    # A second look late in the day. GitHub drops or delays scheduled runs under
+    # load; if the 13:40 sweep or the 14:20 check was one of them, this catches
+    # it the same day instead of leaving the board a day behind.
+    - cron: '20 21 * * *'
 
 permissions:
   contents: read
+  # To start the funding sweep when the live feed is stale (step below).
+  actions: write
 
 jobs:
   verify:
@@ -182,3 +188,39 @@ jobs:
             exit 1
           fi
           echo "Rev site verification passed."
+
+      # Self-repair. A stale live feed has one cause this repo can fix on its
+      # own: the daily sweep did not run (a dropped schedule) or did not reach
+      # the site. Re-running it is cheap and idempotent, so do that instead of
+      # waiting for someone to notice. Only on staleness: a 401, a missing page
+      # or leaked research content is a configuration problem a sweep cannot
+      # fix, and the red run above is the signal for those.
+      - name: Re-run the funding sweep if the live feed is stale
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE: ${{ inputs.site || 'https://agentrevup.netlify.app' }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          if [ "$SITE" != "https://agentrevup.netlify.app" ]; then
+            echo "Checked a preview ($SITE), not production; not starting a sweep."
+            exit 0
+          fi
+          curl -sS -L --max-time 30 "$SITE/funding.json" -o /tmp/feed || true
+          stale=$(python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          try:
+              gen = json.load(open('/tmp/feed')).get('generated')
+              age = (datetime.now(timezone.utc) - datetime.fromisoformat(gen)).total_seconds() / 3600
+              print('yes' if age > 30 else 'no')
+          except Exception:
+              print('unknown')
+          PY
+          )
+          echo "live feed stale: $stale"
+          if [ "$stale" = "yes" ]; then
+            gh workflow run funding-sweep.yml --repo "$REPO" --ref main
+            echo "::warning::The live funding feed was stale; started funding-sweep.yml to refresh it."
+          fi
