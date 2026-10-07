@@ -1,8 +1,259 @@
 {
   "version": 2,
-  "generated_at": "2026-10-07T07:31:25.854741+00:00",
-  "count": 696,
+  "generated_at": "2026-10-07T19:33:34.302390+00:00",
+  "count": 697,
   "jobs": [
+    {
+      "id": "37e95d3b024e632cfe87",
+      "fingerprint": "fc25782df62ddcf88fa6",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887901100",
+      "title": "Occupational Therapist (Holistic Health and Fitness)",
+      "employer": "U.S. Army Forces Command",
+      "location": "Fort Drum, New York",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": "Fort Drum",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "New York"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-07T19:33:34.302390+00:00"
+    },
+    {
+      "id": "c770a3037e2e8d068795",
+      "fingerprint": "bac3ab9f932e0bf4799f",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887931600",
+      "title": "SOCIAL WORKER",
+      "employer": "Air Force Special Operations Command",
+      "location": "Hurlburt Field, Florida",
+      "remote": false,
+      "telework": true,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "CONTINUATION OF CONDITIONS OF EMPLOYMENT.... This position has been designated by the Air Force as a Testing Designated Position (TDP) under the Air Force Civilian Drug Demand Reduction Program. Employee must pass initial and periodic short notice drug testing. Illegal drug use by employees in sensitive positions presents a clear threat to the mission of the Air Force, national security, and\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": "Part-time",
+        "installation": "Hurlburt Field",
+        "service_branch": "Air Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": false,
+        "branches": [
+          "air-force",
+          "joint"
+        ],
+        "branch_labels": [
+          "Air Force",
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus",
+          "telework"
+        ],
+        "location_regions": {
+          "conus": [
+            "Florida"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T19:33:34.302390+00:00"
+    },
+    {
+      "id": "377c10edfd1dfc69b7d1",
+      "fingerprint": "92dbc141326c7a6515d4",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/882596200",
+      "title": "Recreation Specialist - Fitness Specialist",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Virginia Beach, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$19.50 - $20.50 /hr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs.A qualified candidate must possess: Knowledge of exercise principles and health promotion sufficient to design, deliver, and evaluate safe, effective fitness\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 19.5,
+        "salary_max": 20.5,
+        "salary_period": "hour",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 40560.0,
+        "mwr": true
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T19:33:34.302390+00:00"
+    },
+    {
+      "id": "8bc6db13dc66ba79e6e9",
+      "fingerprint": "432b61c3941c3992bafd",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/883735000",
+      "title": "Recreation Specialist (Group Exercise Instructor)",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Virginia Beach, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$20.00 - $21.00 /hr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs.A qualified candidate must possess: Knowledge of exercise principles and health promotion sufficient to design, deliver, and evaluate safe, effective fitness\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 20.0,
+        "salary_max": 21.0,
+        "salary_period": "hour",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 41600.0,
+        "mwr": true
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T19:33:34.302390+00:00"
+    },
     {
       "id": "0be37b0c0635a8aad8ad",
       "fingerprint": "f258d748d0d125acf306",
@@ -79,7 +330,7 @@
       "telework": true,
       "contingency": "unknown",
       "department": null,
-      "compensation": "$146,632 - $197,200 /yr",
+      "compensation": "$104,349 - $161,313 /yr",
       "posted_at": null,
       "description": "The 0633 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements, you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
       "score": 0.0,
@@ -90,8 +341,8 @@
           "DPT"
         ],
         "clearance": null,
-        "salary_min": 146632.0,
-        "salary_max": 197200.0,
+        "salary_min": 104349.0,
+        "salary_max": 161313.0,
         "salary_period": "year",
         "education": "Doctorate",
         "years_experience_min": 3,
@@ -120,7 +371,7 @@
           ]
         },
         "contingency": "unknown",
-        "salary_floor_annual": 146632.0,
+        "salary_floor_annual": 104349.0,
         "mwr": false
       },
       "matched": {
@@ -553,68 +804,6 @@
         "location_regions": {
           "conus": [
             "Oklahoma"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-10-05T19:32:20.423828+00:00"
-    },
-    {
-      "id": "b4b07e9102ad0e63c837",
-      "fingerprint": "8431e156005f75cc1b7c",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35274EXTERNALENUS/H2FIT-Cognitive-Performance-Specialist-Fort-Benning-GA",
-      "title": "H2FIT: Cognitive Performance Specialist - Fort Benning, GA",
-      "employer": "Serco USA",
-      "location": "Fort Benning, Georgia, USA; Georgia, USA; Columbus, Georgia, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Benning",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Georgia"
           ]
         },
         "contingency": "unknown",
@@ -15375,7 +15564,7 @@
       "location": "Key West, Florida",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15416,7 +15605,7 @@
             "Florida"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15440,7 +15629,7 @@
       "location": "Albuquerque, New Mexico",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15481,7 +15670,7 @@
             "New Mexico"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15505,7 +15694,7 @@
       "location": "Monterey, California",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15546,7 +15735,7 @@
             "California"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15570,7 +15759,7 @@
       "location": "Tampa, Florida",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15611,7 +15800,7 @@
             "Florida"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15635,7 +15824,7 @@
       "location": "Columbus, Georgia",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15676,7 +15865,7 @@
             "Georgia"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15700,7 +15889,7 @@
       "location": "Fayetteville, North Carolina",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15741,7 +15930,7 @@
             "North Carolina"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15830,7 +16019,7 @@
       "location": "Colorado Springs, Colorado",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15871,7 +16060,7 @@
             "Colorado"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -15895,7 +16084,7 @@
       "location": "Harrisburg, Pennsylvania",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -15936,7 +16125,7 @@
             "Pennsylvania"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16025,7 +16214,7 @@
       "location": "Homestead, Florida",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16066,7 +16255,7 @@
             "Florida"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16090,7 +16279,7 @@
       "location": "Savannah, Georgia",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16131,7 +16320,7 @@
             "Georgia"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -17379,7 +17568,7 @@
       "location": "Monterey, California",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -17420,7 +17609,7 @@
             "California"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -41504,68 +41693,6 @@
       "listed_at": "2026-09-11T07:04:24.616728+00:00"
     },
     {
-      "id": "dc995fa5e056eb803732",
-      "fingerprint": "7a264473ee6823d6c659",
-      "source": "workday:gdit",
-      "url": "https://gdit.wd5.myworkdayjobs.com/External_Career_Site/job/USA-NC-Fort-Bragg---Fort-Bragg-NCC004/Human-Performance-Program-Manager_RQ211383-1",
-      "title": "Human Performance Program Manager",
-      "employer": "General Dynamics Information Technology",
-      "location": "USA NC Fort Bragg - Fort Bragg (NCC004)",
-      "remote": false,
-      "telework": false,
-      "contingency": "contingent",
-      "department": null,
-      "compensation": "from $147,292",
-      "posted_at": null,
-      "description": "Type of Requisition: Regular Clearance Level Must Currently Possess: Secret Clearance Level Must Be Able to Obtain: Top Secret Public Trust/Other Required: None Job Family: Program Delivery and Execution Job Qualifications: Skills: Life Support, Meeting Organization, Planning, Professional Development, Scheduling Certifications: None Experience: 10 + years of related experience US Citizenship\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Top Secret",
-        "salary_min": 147292.0,
-        "salary_max": 199278.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 10,
-        "employment_type": "Full-time",
-        "installation": "Fort Bragg",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": true,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "North Carolina"
-          ]
-        },
-        "contingency": "contingent",
-        "salary_floor_annual": 147292.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-10T19:08:03.209133+00:00"
-    },
-    {
       "id": "92ea98c767f4332bb0d2",
       "fingerprint": "36edb8332ec6228901e8",
       "source": "usajobs:federal",
@@ -41689,7 +41816,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-06T19:27:45+00:00"
+        "checked_at": "2026-10-07T19:33:14+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -42565,68 +42692,6 @@
         "location_regions": {
           "conus": [
             "Missouri"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "37d23fafa54acac69479",
-      "fingerprint": "e0a53a3348a63fc66371",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS34092EXTERNALENUS/H2FIT-Cognitive-Performance-Specialist-Fort-Bliss-TX",
-      "title": "H2FIT: Cognitive Performance Specialist - Fort Bliss, TX",
-      "employer": "Serco USA",
-      "location": "Fort Bliss, Texas, USA; Texas, USA; El Paso, Texas, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Bliss",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Texas"
           ]
         },
         "contingency": "unknown",

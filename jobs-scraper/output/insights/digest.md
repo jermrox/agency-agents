@@ -4,16 +4,16 @@
 
 ## Headline
 
-- **783 open jobs** from **43 employers**.
+- **785 open jobs** from **43 employers**.
 - Posted between **2025-12-03** and **2026-10-07**.
-- **$82,176 median** annualized pay across the 245 postings that publish one -- $62,000 to $110,000 covers the middle half.
+- **$82,724 median** annualized pay across the 247 postings that publish one -- $62,000 to $109,426 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 561 of 1,344 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 740, Special Operations 373, Fire / EMS / Law Enforcement 54, Training Pipeline 44.
+- 575 of 1,360 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 742, Special Operations 374, Fire / EMS / Law Enforcement 55, Training Pipeline 44.
 
 ## Month over month
 
-Postings are **down -477** in 2026-10 (528 to 51), 90% against 2026-09.
+Postings are **down -452** in 2026-10 (517 to 65), 87% against 2026-09.
 
 ```
 2025-12     1  #
@@ -24,9 +24,9 @@ Postings are **down -477** in 2026-10 (528 to 51), 90% against 2026-09.
 2026-05     5  #
 2026-06     9  #
 2026-07    19  #
-2026-08    98  #####
-2026-09   528  ############################
-2026-10    51  ###
+2026-08    97  #####
+2026-09   517  ############################
+2026-10    65  ####
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -65,7 +65,7 @@ Postings are **down -477** in 2026-10 (528 to 51), 90% against 2026-09.
 | Discipline | Jobs | Share |
 |---|---|---|
 | Strength & Conditioning | 414 | 67% |
-| Sports Medicine | 354 | 57% |
+| Sports Medicine | 355 | 58% |
 | Cognitive Performance | 175 | 28% |
 | Research & Analytics | 122 | 20% |
 | Performance Nutrition | 101 | 16% |
@@ -93,7 +93,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$82,176**, middle half $62,000 to $110,000.
+- Median **$82,724**, middle half $62,000 to $109,426.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -102,7 +102,7 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 42 | $63,588 | $84,869 | $111,441 |
 | Research & Analytics | 35 | $63,282 | $75,920 | $97,839 |
-| Sports Medicine | 125 | $59,750 | $74,426 | $102,935 |
+| Sports Medicine | 126 | $59,812 | $74,456 | $102,935 |
 | Strength & Conditioning | 64 | $57,950 | $69,589 | $86,090 |
 | Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
 
@@ -111,22 +111,22 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (74), NC (66), CA (61), GA (44), TX (42), NM (36), VA (34), CO (23), KY (23), HI (21)
+**States:** FL (75), NC (66), CA (61), GA (44), TX (42), NM (36), VA (34), CO (23), KY (23), HI (21)
 
 | Installation | Jobs |
 |---|---|
 | Fort Bragg | 50 |
 | Coronado | 13 |
+| Hurlburt Field | 11 |
 | Fort Leonard Wood | 10 |
 | Fort Stewart | 10 |
-| Hurlburt Field | 10 |
 | Fort Bliss | 9 |
+| Fort Drum | 9 |
 | Cannon AFB | 8 |
 | Fort Benning | 8 |
 | Fort Campbell | 8 |
-| Fort Drum | 8 |
 
-**Branches and services:** Joint (270), Army (187), Air Force (102), Navy (38), Marine Corps (25), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (188), Air Force (103), Navy (38), Marine Corps (25), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 

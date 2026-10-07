@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-07T07:31:26.478858+00:00",
+  "generated_at": "2026-10-07T19:33:34.979090+00:00",
   "totals": {
-    "postings": 1344,
+    "postings": 1360,
     "employers": 43,
-    "unique_jobs": 783,
-    "with_salary": 245,
+    "unique_jobs": 785,
+    "with_salary": 247,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-07T00:00:00+00:00"
+      "latest": "2026-10-07T18:14:30+00:00"
     }
   },
   "by_employer": [
@@ -191,37 +191,37 @@
     {
       "name": "strength-conditioning",
       "count": 414,
-      "share": 0.6721,
+      "share": 0.671,
       "median_salary": 69588.75
     },
     {
       "name": "sports-medicine",
-      "count": 354,
-      "share": 0.5747,
-      "median_salary": 74426.0
+      "count": 355,
+      "share": 0.5754,
+      "median_salary": 74455.5
     },
     {
       "name": "cognitive",
       "count": 175,
-      "share": 0.2841,
+      "share": 0.2836,
       "median_salary": 84869.0
     },
     {
       "name": "research",
       "count": 122,
-      "share": 0.1981,
+      "share": 0.1977,
       "median_salary": 75920.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.164,
+      "share": 0.1637,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 35,
-      "share": 0.0568,
+      "share": 0.0567,
       "median_salary": 63282.0
     },
     {
@@ -234,23 +234,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 740,
-      "share": 0.9573
+      "count": 742,
+      "share": 0.9574
     },
     {
       "name": "sof",
-      "count": 373,
-      "share": 0.4825
+      "count": 374,
+      "share": 0.4826
     },
     {
       "name": "first-responder",
-      "count": 54,
-      "share": 0.0699
+      "count": 55,
+      "share": 0.071
     },
     {
       "name": "training-pipeline",
       "count": 44,
-      "share": 0.0569
+      "share": 0.0568
     }
   ],
   "by_branch": [
@@ -260,11 +260,11 @@
     },
     {
       "name": "Army",
-      "count": 187
+      "count": 188
     },
     {
       "name": "Air Force",
-      "count": 102
+      "count": 103
     },
     {
       "name": "Navy",
@@ -293,6 +293,10 @@
       "count": 13
     },
     {
+      "name": "Hurlburt Field",
+      "count": 11
+    },
+    {
       "name": "Fort Leonard Wood",
       "count": 10
     },
@@ -301,11 +305,11 @@
       "count": 10
     },
     {
-      "name": "Hurlburt Field",
-      "count": 10
+      "name": "Fort Bliss",
+      "count": 9
     },
     {
-      "name": "Fort Bliss",
+      "name": "Fort Drum",
       "count": 9
     },
     {
@@ -318,10 +322,6 @@
     },
     {
       "name": "Fort Campbell",
-      "count": 8
-    },
-    {
-      "name": "Fort Drum",
       "count": 8
     },
     {
@@ -348,7 +348,7 @@
   "by_state": [
     {
       "code": "FL",
-      "count": 74
+      "count": 75
     },
     {
       "code": "NC",
@@ -463,12 +463,12 @@
     }
   ],
   "salary": {
-    "count": 245,
+    "count": 247,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 82176.0,
-    "p25": 62000.0,
-    "p75": 110000.0,
+    "median": 82724.5,
+    "p25": 62000.25,
+    "p75": 109426.5,
     "by_discipline": {
       "strength-conditioning": {
         "count": 64,
@@ -479,11 +479,11 @@
         "p75": 86089.75
       },
       "sports-medicine": {
-        "count": 125,
+        "count": 126,
         "min": 10000.0,
         "max": 1000000.0,
-        "median": 74426.0,
-        "p25": 59750.0,
+        "median": 74455.5,
+        "p25": 59812.5,
         "p75": 102935.0
       },
       "nutrition": {
@@ -567,20 +567,20 @@
     },
     {
       "month": "2026-08",
-      "count": 98
+      "count": 97
     },
     {
       "month": "2026-09",
-      "count": 528
+      "count": 517
     },
     {
       "month": "2026-10",
-      "count": 51
+      "count": 65
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-09T00:00:00+00:00",
+    "pivot": "2026-07-09T18:14:30+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -669,8 +669,8 @@
       {
         "name": "The Geneva Foundation",
         "recent": 7,
-        "previous": 2,
-        "change": 5
+        "previous": 1,
+        "change": 6
       }
     ],
     "emerging_certifications": [
