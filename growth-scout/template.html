@@ -43,6 +43,12 @@ a { color: var(--brand-ink); }
 header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 20px; }
 h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
 h1 span { color: var(--brand); }
+.oq-item { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin: 0 0 10px; }
+.oq-item summary { cursor: pointer; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; list-style: none; }
+.oq-item summary::-webkit-details-marker { display: none; }
+.oq-item .subj { font-weight: 600; flex: 1 1 260px; min-width: 0; overflow-wrap: anywhere; }
+.oq-item pre { white-space: pre-wrap; font: inherit; font-size: 14px; background: var(--surface-2); border-radius: 8px; padding: 10px 12px; margin: 10px 0; overflow-wrap: anywhere; }
+
 .brand-row { display: flex; align-items: center; gap: 14px; }
 .logo { width: 52px; height: 52px; flex: none; }
 :root[data-theme="dark"] .logo polygon { fill: #c9d3e3; }
@@ -140,6 +146,16 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   <p class="hint">The 10 highest-ranked targets with an open channel and a drafted opener. You send every message yourself; nothing here sends anything.</p>
   <div class="cards" id="cards"></div>
 
+  <h2 id="outreach">Outreach queue: sponsors and partners</h2>
+  <p class="hint">Every sponsorship and partner target with a public contact route and a drafted email, best first. Copy the email, open their contact page, send it yourself, then mark the status. Nothing here sends anything. Emails that mention founder identity stay out until that wording is approved.</p>
+  <div class="filters" role="search">
+    <select id="oq-hunt" aria-label="Queue hunt"><option value="">Sponsors and partners</option><option value="sponsorship">Sponsorship only</option><option value="partnership">Partners only</option></select>
+    <select id="oq-status" aria-label="Queue status"><option value="todo">Not contacted yet</option><option value="">Any status</option></select>
+    <span class="hint" id="oq-count" style="margin:0"></span>
+  </div>
+  <div id="oq"></div>
+  <div class="row" style="margin-top:10px"><button class="btn" type="button" id="oq-more">Show more</button><button class="btn" type="button" id="oq-csv">Download queue (CSV)</button></div>
+
   <h2>All targets</h2>
   <p class="hint">Click a row for the evidence, the ask and the drafted opener. Your status marks are saved in this browser only.</p>
   <div class="filters" role="search">
@@ -232,7 +248,7 @@ const DATA = /*__DATA__*/null;
   const s = DATA.summary;
   const tiles = [
     [s.total - s.signals, "verified targets"], [s.investor, "investor targets"], [s.growth, "growth wins"],
-    [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.app_partners, "app partners"], [s.sports, "sports without wearables"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.deadlines_30d, "deadlines in 30 days"],
+    [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.app_partners, "app partners"], [s.sports, "sports without wearables"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.outreach_queue, "sponsor and partner emails queued"], [s.deadlines_30d, "deadlines in 30 days"],
   ];
   $("#tiles").innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join("");
 
@@ -350,6 +366,56 @@ const DATA = /*__DATA__*/null;
     if (navigator.clipboard) navigator.clipboard.writeText(t.opener).then(done, () => {});
   });
   renderTable();
+
+  // Outreach queue (sponsors and partners)
+  const Q = DATA.outreach || [];
+  let oqShown = 25;
+  const oqView = () => {
+    const h = $("#oq-hunt").value, st = $("#oq-status").value;
+    return Q.filter((q) => (!h || q.hunt === h) && (st !== "todo" || ["New"].includes(status[q.id] || "New")));
+  };
+  const emailText = (q) => `Subject: ${q.subject}\n\n${q.body}`;
+  const renderQueue = () => {
+    const rows = oqView();
+    $("#oq-count").textContent = `${rows.length} emails queued`;
+    $("#oq").innerHTML = rows.length ? rows.slice(0, oqShown).map((q, i) => {
+      const d = daysTo(q.deadline);
+      const mail = `mailto:?subject=${encodeURIComponent(q.subject)}&body=${encodeURIComponent(q.body)}`;
+      return `<details class="oq-item"${i < 3 ? " open" : ""}><summary>
+        <span class="pill ${esc(q.priority)}">${esc(q.priority)}</span><span class="pill hunt">${esc(q.hunt)}</span><span class="pill">${esc(TYPE_LABEL[q.type] || q.type)}</span>
+        ${d !== null && d >= 0 ? `<span class="pill due">Due in ${d}d</span>` : ""}
+        <span class="subj">${esc(q.name)}</span><span class="pill">${esc(q.channel || "")}</span></summary>
+        <p class="why" style="margin:10px 0 0"><strong>Subject:</strong> ${esc(q.subject)}</p>
+        <pre>${esc(q.body)}</pre>
+        <div class="row">
+          <button class="btn primary" type="button" data-copy-email="${esc(q.id)}">Copy email</button>
+          <a class="btn" href="${esc(safeUrl(q.contact_url))}" target="_blank" rel="noopener">Open ${esc(q.channel || "contact")}</a>
+          <a class="btn" href="${esc(mail)}">Open in my email</a>
+          ${q.evidence ? `<a class="btn" href="${esc(safeUrl(q.evidence))}" target="_blank" rel="noopener">Source</a>` : ""}
+          ${statusSel(T.find((t) => t.id === q.id) || q)}
+        </div></details>`;
+    }).join("") : '<p class="empty">Everything in the queue has been contacted.</p>';
+    $("#oq-more").hidden = rows.length <= oqShown;
+  };
+  $("#oq-hunt").addEventListener("change", () => { oqShown = 25; renderQueue(); });
+  $("#oq-status").addEventListener("change", () => { oqShown = 25; renderQueue(); });
+  $("#oq-more").addEventListener("click", () => { oqShown += 25; renderQueue(); });
+  $("#oq-csv").addEventListener("click", () => {
+    const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const lines = [["name","org","hunt","type","priority","deadline","channel","contact_url","subject","body","status"].join(",")]
+      .concat(oqView().map((q) => [q.name, q.org, q.hunt, q.type, q.priority, q.deadline, q.channel, q.contact_url, q.subject, q.body, status[q.id] || "New"].map(cell).join(",")));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], {type: "text/csv"}));
+    a.download = "vybe-outreach-queue.csv"; a.click();
+  });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-copy-email]"); if (!b) return;
+    const q = Q.find((x) => x.id === b.dataset.copyEmail); if (!q) return;
+    const done = () => { const o = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = o; }, 1400); };
+    if (navigator.clipboard) navigator.clipboard.writeText(emailText(q)).then(done, () => {});
+  });
+  document.addEventListener("change", (e) => { if (e.target.closest("select.status")) setTimeout(renderQueue, 0); });
+  renderQueue();
 
   // Lane coverage (one series, one hue; values labelled directly)
   const max = Math.max(1, ...DATA.lanes.map((l) => l.kept));

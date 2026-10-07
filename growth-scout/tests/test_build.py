@@ -137,3 +137,20 @@ def test_partner_extras_load_and_recheck_overrides_first_pass():
     names = {r["app"]: r for r in screened}
     assert len(names) == len(screened) >= 55
     assert names["Selah"]["recheck"] is True
+
+
+def test_outreach_queue_only_holds_sendable_sponsor_and_partner_emails():
+    base = dict(id="x", org="Org", priority="High", rank=1, contact_url="https://example.org/contact",
+                channel="contact form", evidence=["https://example.org"], ask="15-min call",
+                opener="Hi there, short note.", sendable=True)
+    rows = [
+        dict(base, id="s", name="Run Club", hunt="sponsorship", type="team"),
+        dict(base, id="p", name="Fit App", hunt="partnership", type="app-partner"),
+        dict(base, id="i", name="Fund", hunt="investor", type="vc"),
+        dict(base, id="h", name="Held", hunt="sponsorship", type="team", sendable=False),
+    ]
+    q = build.outreach_queue(rows)
+    assert [x["id"] for x in q] == ["s", "p"]
+    assert q[0]["subject"] == "Vybe Health x Run Club: small sponsorship idea"
+    assert "overnight data integration" in q[1]["subject"]
+    assert q[0]["body"].startswith("Hi there, short note.") and "[Your name]" in q[0]["body"]

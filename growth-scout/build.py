@@ -265,6 +265,42 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     return targets, rejected, lanes
 
 
+QUEUE_HUNTS = ("sponsorship", "partnership")
+SIGNOFF = "\n\n[Your name]\nFounder, Vybe Health\nvybe.health"
+
+
+def email_subject(row: dict) -> str:
+    """A plain subject line built only from fields already on the row."""
+    if row["hunt"] == "sponsorship":
+        return f"Vybe Health x {row['name']}: small sponsorship idea"
+    if row["type"] == "app-partner":
+        return f"Vybe Health x {row['name']}: overnight data integration"
+    if row["type"] == "oem-partner":
+        return f"Vybe Health: DevKit build inquiry for {row['org'] or row['name']}"
+    return f"Vybe Health x {row['name']}: partnership idea"
+
+
+def outreach_queue(targets: list[dict]) -> list[dict]:
+    """Ready-to-send emails for sponsorship and partner targets, best first.
+
+    Drafts only: nothing here is sent. Rows held for the founder-identity
+    decision, dead contact links and warm-intro-only rows are already excluded
+    by is_sendable().
+    """
+    queue = []
+    for t in targets:
+        if t["hunt"] not in QUEUE_HUNTS or not t.get("sendable"):
+            continue
+        queue.append({
+            "id": t["id"], "name": t["name"], "org": t["org"], "type": t["type"], "hunt": t["hunt"],
+            "priority": t["priority"], "rank": t["rank"], "deadline": t.get("deadline"),
+            "channel": t.get("channel"), "contact_url": t.get("contact_url"),
+            "evidence": (t.get("evidence") or [None])[0], "ask": t.get("ask"),
+            "subject": email_subject(t), "body": t["opener"].strip() + SIGNOFF,
+        })
+    return queue
+
+
 def summary(targets: list[dict], today: dt.date) -> dict:
     def count(pred):
         return sum(1 for t in targets if pred(t))
@@ -284,6 +320,7 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "deadlines_30d": len(soon),
         "ready_to_send": count(lambda t: t.get("sendable")),
         "identity_needs_ok": count(lambda t: t.get("identity_needs_ok")),
+        "outreach_queue": count(lambda t: t["hunt"] in QUEUE_HUNTS and t.get("sendable")),
     }
 
 
@@ -329,6 +366,7 @@ def main() -> int:
         "combos_note": combos.get("note", ""),
         "screened_apps": screened_apps,
         "rejected_count": len(rejected),
+        "outreach": outreach_queue(targets),
     }
     (ROOT / "data" / "targets.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     SITE.mkdir(exist_ok=True)
