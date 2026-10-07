@@ -63,7 +63,7 @@ const PAIR_STATUS = {
   paired: 'Paired',
 };
 
-export default function OnboardingScreen({ onFinish, onSkip }) {
+export default function OnboardingScreen({ onFinish, onSkip, onImport }) {
   const [step, setStep] = useState(0);
   const [pair, setPair] = useState('idle');
   const [sources, setSources] = useState(sampleSources);
@@ -226,6 +226,23 @@ export default function OnboardingScreen({ onFinish, onSkip }) {
               None of these are required, and every one can be turned off later on
               the Data screen without losing the history you already have.
             </Text>
+
+            {/* A source with years already in it is a different conversation
+                from a source that starts empty, and it is the one that decides
+                what Vybe can say on day one. */}
+            {onImport ? (
+              <Pressable
+                onPress={onImport}
+                accessibilityRole="button"
+                accessibilityLabel="See what Vybe will do with your existing history"
+                accessibilityHint="Shows which imported records Vybe will compute with, which it will only display, and which it will not take"
+                style={({ pressed }) => [styles.importLink, pressed && styles.pressed]}
+              >
+                <Text style={styles.importLinkText}>
+                  Already have years of data? See what Vybe will do with it
+                </Text>
+              </Pressable>
+            ) : null}
           </View>
         ) : null}
 
@@ -369,6 +386,9 @@ const styles = StyleSheet.create({
 
   title: { ...type.display, color: colors.ink },
   lede: { ...type.body, color: colors.muted, maxWidth: 420 },
+  importLink: { alignSelf: 'flex-start', paddingVertical: space(1.5) },
+  importLinkText: { ...type.body, color: colors.brand, fontWeight: '600' },
+
   aside: { ...type.small, color: colors.faint, lineHeight: 20 },
 
   // Pairing: oversized type on bare paper, no container. The status is the

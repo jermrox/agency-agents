@@ -10,18 +10,19 @@ import FollowUpScreen from './src/screens/FollowUpScreen';
 import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
+import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are ten screens
+ * One piece of state instead of a navigation library. There are eleven screens
  * now, and they are still a flat set: Nourish links across to the pattern
- * history, Restore and Connect link across to the outcome record, and Ask
- * links across to the follow-up, but all of those return to Home like every
- * other screen, so nothing stacks and there is still no back stack for a
- * router to manage. Pulling in
+ * history, Restore and Connect link across to the outcome record, Ask links
+ * across to the follow-up, and onboarding links across to the history import —
+ * the one place a screen returns to where it came from rather than to Home,
+ * which one remembered string still covers. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -42,6 +43,12 @@ export default function App() {
         <OnboardingScreen
           onFinish={() => setScreen('home')}
           onSkip={() => setScreen('home')}
+          onImport={() => setScreen('import')}
+        />
+      ) : screen === 'import' ? (
+        <ImportScreen
+          onBack={() => setScreen('onboarding')}
+          onContinue={() => setScreen('onboarding')}
         />
       ) : screen === 'restore' ? (
         <RestoreScreen

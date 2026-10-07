@@ -1909,3 +1909,84 @@ under Network access, or when Exa is topped up.
   carry them. Fifteen days left.
 - **AFWERX's first-Wednesday pre-release cadence held:** the next monthly
   pre-release was due 7 Oct, which is tomorrow.
+
+## Wednesday sweep — 7 Oct 2026
+
+Verification route unchanged: direct page fetches refused by the sandbox's
+egress proxy, Exa still out of credits, so everything below is each programme's
+own page as indexed, read through domain-restricted search.
+
+**Two rows added and one live row corrected — and the correction is worth more
+than a third row would have been.**
+
+### Corrected on the board
+
+- **NIH NOURISH Autoimmunity Digital Health Challenge** — the row carried
+  `close_date = 2026-12-11`. NIH's own challenge page and its challenges index
+  **both** state Phase 1 runs **1 Oct 2026 to 8 Jan 2027**. Corrected to
+  2027-01-08 with `open_date = 2026-10-01`. That is **28 days of runway
+  recovered on a $650,000 challenge** — the row would have dropped off the
+  board four weeks before the real deadline. Worth noting for the future: two
+  independent nih.gov pages agreed, which is what made this safe to overwrite
+  where the Hey Helen fee question was not.
+
+### Added to the board
+
+- **DoW SBIR/STTR FY2027 Release 1** — pre-released **today**. Opens 28 Oct,
+  closes 25 Nov 2026. The successor to Release 6 and the reason the
+  first-Wednesday diary item exists. Its topic list has the same problem as
+  Release 6's: unreadable from here.
+- **ViVE 2027 Startup Pitch Competition** — the spring sister of the HLTH USA
+  pitch already on the board. Nashville, 14–17 March 2027. Gates verified and
+  easily cleared: under five years old, under $8M raised. Filed rolling because
+  the application form is live but **no closing date is published**.
+
+### Dead or ineligible on inspection, 7 Oct 2026
+
+- **Hollomon Health Innovation Challenge (UW Foster)** — opens 1 Dec 2026,
+  closes 25 Jan 2027 at noon, finals 25 Feb. Ineligible twice over: teams must
+  be **student-led**, with at least one enrolled student from a college in the
+  Cascadia Corridor or Alaska, and **only student team members can receive
+  prize money**. Non-students may join as advisers and may not present.
+- **Wearable Insights into Health (University of Kansas Medical Center)** — two
+  awards up to $20,000 each, explicitly wearable. An internal KUMC pilot-award
+  programme for its own researchers. Not open to outside companies.
+- **NIH "Advance Whole-Person Data Integration… Chronic Disease Disparity"
+  Grand Challenge** — **$1,000,000**, open until 22 Jan 2027, and it names AI,
+  synthetic data and digital twins, which makes it read like a fit. It is not:
+  the deliverable is AI-ready datasets, computational methods and research
+  infrastructure that **must be accessible to other researchers**. That is a
+  research-infrastructure competition, not a product one, and Vybe is not a
+  dataset company. Eligibility for for-profits is also not stated on the page.
+- **NIH "It's About Time: Temporal Reasoning in Biomedical Knowledge Graphs"** —
+  $1,000,000, 5 Oct 2026 to 15 Jan 2027. Knowledge-graph embeddings. Not
+  Vybe's problem in any direction.
+- **TOPx HHS Tech Sprint for AI and Invisible Illness** — Phase 2 open to 15 Oct
+  2026. Phase 2 of a tech sprint generally means Phase 1 participants only; the
+  page does not say otherwise, and there are eight days left either way. Worth
+  catching at the Phase 1 announcement next time.
+- **Army FUZE — the five funding opportunities announced 16 Apr 2026** (Ka-band
+  radar, ITV blockchain, modular UAS payloads, and xTech|Phantum) — all closed
+  13 May 2026, and none were in a lane Vybe could enter. Recorded so the
+  headline does not pull anyone back to it.
+
+### Enrichment, not new rows
+
+- **Verizon Small Business Digital Ready** (already on the board, rolling) — the
+  mechanism is worth knowing: applications are reviewed **monthly through
+  December 2026**, awarding **10 businesses $10,000 each month**, and an
+  application that is not picked stays in consideration for the rest of the
+  year. One application, ten chances. It costs nothing to be in it now.
+
+### DoD lane — the calendar, finally pinned down
+
+- **Release 6 closes 21 Oct 2026 at 12:00 noon ET.** Fourteen days.
+- **FY2027 Release 1: pre-release 7 Oct (today), open 28 Oct, close 25 Nov.**
+- **FY2027 Release 7: pre-release 7 Apr 2027, open 28 Apr, close 26 May 2027.**
+- The pattern is now confirmed from DSIP itself: **pre-release on the first
+  Wednesday of a month, open three weeks later, close four weeks after that.**
+  Next pre-release: **Wed 4 Nov 2026.**
+- **Pre-release is the only window in which a topic author can be asked
+  questions directly.** Once a release opens, that channel shuts. So the value
+  of reading a topic list is highest in the three weeks that start today — and
+  it is still the one thing this sandbox cannot do.

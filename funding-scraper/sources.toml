@@ -1681,11 +1681,12 @@ sam = "none"
 url = "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge"
 agency = "NIH Office of Autoimmune Disease Research (OADR-ORWH)"
 amount = "Up to 10 × $20,000 in Phase 1; up to $650,000 across three phases (5 × $30K, then 3 × $100K)"
-close_date = "2026-12-11"
+open_date = "2026-10-01"
+close_date = "2027-01-08"
 pillar = 2
 kind = "grant"
 eligibility = "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community"
-note = "Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet — that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 — the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul–Dec 2027 for invited Phase 1 entrants only."
+note = "DATE CORRECTED 7 OCT 2026: this row carried close_date 2026-12-11, which is 28 days early. NIH's own challenge page and its challenges index both state Phase 1 runs 1 Oct 2026 to 8 Jan 2027. Twenty-eight days of runway on a $650,000 challenge is worth more than most rows on this board. Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet — that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 — the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul–Dec 2027 for invited Phase 1 entrants only."
 documents = [
   "Registration form (nourishchallenge.org)",
   "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
@@ -3530,6 +3531,44 @@ documents = [
   "Sample request with project info",
 ]
 verified = "2026-10-02"
+
+[[sources.curated.entry]]
+name = "DoW SBIR / STTR FY2027 Release 1"
+url = "https://www.dodsbirsttr.mil/submissions/solicitation-documents/active-solicitations"
+agency = "Department of War (DoW) SBIR/STTR, via DSIP"
+open_date = "2026-10-28"
+close_date = "2026-11-25"
+amount = "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken"
+pillar = 3
+kind = "dod_sbir"
+sam = "required"
+eligibility = "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment — more than 50% — must be with the small business. All R&D performed in the United States."
+note = "PRE-RELEASED TODAY, 7 OCT 2026. Opens 28 Oct, closes 25 Nov. This is the first release of the FY27 cycle and the successor to Release 6, which closes 21 Oct at noon ET. The topic list is the whole value of this row and it is NOT READABLE from this sandbox: titles live behind the DSIP topics app, which needs JavaScript. SOMEBODY HAS TO OPEN dodsbirsttr.mil/topics-app AND SEARCH THE RELEASE 1 TOPICS for wearable, sleep, physiological, fatigue, readiness and human performance. Pre-release is the window where you can still ask a topic author questions directly; once it opens on 28 Oct that channel closes. The monthly rhythm is confirmed: new topics pre-release on the FIRST WEDNESDAY of every month, so the next one is 4 Nov. For reference, FY27 Release 7 is already scheduled — pre-release 7 Apr 2027, open 28 Apr, close 26 May 2027."
+documents = [
+  "SAM.gov registration with a UEI and a CAGE code",
+  "A topic number from the Release 1 list that actually fits",
+  "Phase I technical volume and cost volume through DSIP",
+  "Principal investigator employed more than 50% by the company",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "ViVE 2027 Startup Pitch Competition"
+url = "https://hlth.com/events/vive/agenda/programs/startup-pitch-competition/"
+agency = "ViVE (HLTH)"
+amount = "A grand prize to the winner; the amount is not stated on the event page"
+pillar = 2
+kind = "visibility"
+sam = "none"
+eligibility = "Startups less than FIVE YEARS OLD that have raised under $8 MILLION. Three-minute pitch to a judging panel, then three minutes of questions. Vybe clears both gates comfortably."
+note = "THE SISTER EVENT TO THE HLTH USA PITCH ALREADY ON THIS BOARD, and the one that lands in spring rather than autumn: ViVE 2027 is in Nashville, 14-17 March. The application form is live on the event page now. THE CLOSING DATE IS NOT PUBLISHED, which is why this is filed rolling rather than dated — apply early rather than waiting for a deadline that may never be announced, and check back monthly. The prize amount is not stated either; the HLTH USA sister competition pays $25,000, which is a reasonable expectation and not a fact. Travel to Nashville is the applicant's own cost."
+documents = [
+  "Startup pitch application form on the ViVE event page",
+  "Evidence the company is under five years old",
+  "Total funding raised, under $8M",
+  "A three-minute pitch, and answers ready for three minutes of questions",
+]
+verified = "2026-10-07"
 
 [[sources.curated.entry]]
 name = "RWJF Pioneering Ideas: Exploring the Future to Build a Culture of Health"
