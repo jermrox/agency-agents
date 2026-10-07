@@ -16,6 +16,17 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-07 — daily run
+
+- +3 items, all PubMed: MIL 2 (burnout interventions for military physicians; cardiac emergency
+  planning for the military), FIRE 1 (low back pain in Brazilian firefighters). Board 66, archive 56.
+  EMS and LE: nothing qualifying again. Exa still 402 (fourth day); "no new policy" is unverified.
+- PR #56 merged on 6 Oct and its branch was deleted upstream, so this run started cleanly from
+  `main`. Reset the local branch with `git checkout -B <branch> origin/main` only after confirming
+  `git rev-list --count origin/main..HEAD` is 0.
+- Still open: update `verify-research-site.yml` to the v2 layout (it checks the old page); confirm
+  COPS LEMHWA (due 22 Oct) and the Fairmont WV AFG award once fetch works.
+
 ## 2026-10-06 — daily run
 
 - +1 item (MIL: night-owl chronotype and PTSD/depression/insomnia in veterans). Board 62.
