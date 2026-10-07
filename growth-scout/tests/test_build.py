@@ -153,4 +153,4 @@ def test_outreach_queue_only_holds_sendable_sponsor_and_partner_emails():
     assert [x["id"] for x in q] == ["s", "p"]
     assert q[0]["subject"] == "Vybe Health x Run Club: small sponsorship idea"
     assert "overnight data integration" in q[1]["subject"]
-    assert q[0]["body"].startswith("Hi there, short note.") and "[Your name]" in q[0]["body"]
+    assert q[0]["body"].startswith("Hi there, short note.") and "jeremy@vybe.health" in q[0]["body"]

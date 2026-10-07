@@ -266,7 +266,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
 
 
 QUEUE_HUNTS = ("sponsorship", "partnership")
-SIGNOFF = "\n\n[Your name]\nFounder, Vybe Health\nvybe.health"
+SIGNOFF = "\n\nJeremy Lahn\nVybe Health\njeremy@vybe.health · vybe.health"
 
 
 def email_subject(row: dict) -> str:
