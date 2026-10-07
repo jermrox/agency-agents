@@ -133,6 +133,9 @@ footer p { margin: 4px 0; }
 .toggle { background: none; border: 1px solid var(--ring); color: var(--ink-2); border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 12.5px; cursor: pointer; }
 @media print { .toggle, .tip { display: none; } }
 @media (forced-colors: active) { .bar-us { forced-color-adjust: none; } }
+.reports { display: flex; gap: 8px; flex-wrap: wrap; }
+.reports a { border: 1px solid var(--ring); border-radius: 999px; padding: 5px 12px; font-size: 13px; color: var(--ink-2); text-decoration: none; }
+.reports a[aria-current="page"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
 </style>
 </head>
 <body>
@@ -142,7 +145,12 @@ footer p { margin: 4px 0; }
       <h1><span>Vybe Health</span> marketing scoreboard</h1>
       <div class="meta" id="pulled">Pulled from the connected sources</div>
     </div>
-    <button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+    <nav class="reports" aria-label="Reports">
+      <a href="briefing.html">Daily briefing</a>
+      <a href="./">Agent hub</a>
+      <a href="scoreboard.html" aria-current="page">Weekly scoreboard</a>
+      <button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+    </nav>
   </header>
 
   <section class="card alert" id="alert" aria-live="polite">
