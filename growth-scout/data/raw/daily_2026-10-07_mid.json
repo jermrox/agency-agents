@@ -1,0 +1,788 @@
+[
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": null,
+  "geo": null,
+  "ice": {
+   "i": 9,
+   "c": 6,
+   "e": 6
+  },
+  "name": "Baseline 4PS (Lighthouse Health & Wellness)",
+  "org": "Lighthouse Health & Wellness",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Free wellness app built only for public safety (law enforcement, fire, EMS, corrections, dispatch) that passively syncs sleep, HRV and resting heart rate from a connected wearable and builds personal baselines; App Store listing names Apple Watch, Oura, Whoop 'and more'. Lighthouse is a public benefit corporation owned by public safety agencies, is FirstNet Verified, and is listed as an FOP wellness provider.",
+  "why_now": "Baseline 4PS is a new App Store listing (id6761061898); no launch date published.",
+  "evidence": [
+   "https://apps.apple.com/app/id6761061898",
+   "https://fop.net/provider/lighthouse-health-and-wellness",
+   "https://allthingsfirstnet.com/lighthouse-health-wellness-earns-firstnet-verified-designation/",
+   "https://icisf.org/cism_news/new-partner-lighthouse-health-wellness/",
+   "https://www.fbinaa.org/alliances/alliance-partners/lighthouse-for-public-safety"
+  ],
+  "channel": "contact via FOP provider listing",
+  "contact_url": "https://fop.net/provider/lighthouse-health-and-wellness",
+  "fit": 9,
+  "existing_wearables": [
+   "Apple Watch",
+   "Oura",
+   "Whoop"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Become an additional wearable source in Baseline 4PS (it already ingests sleep/HRV/RHR from several brands); a screenless, no-subscription overnight band fits its agency-owned, record-stays-with-you model.",
+  "unknowns": "No public developer/integration docs found; unclear whether wearables connect directly or via HealthKit/an aggregator; 'and more' list not itemised; no named partnerships contact.",
+  "ask": "15-minute call with the Baseline 4PS product lead on how new wearables get added as data sources.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. Baseline 4PS pulling sleep, HRV and resting HR into a record the responder owns is close to what we're building toward: a screenless band worn overnight with an open SDK and no subscription. How do you decide which wearables to support next? I'd value 15 minutes to learn what your agencies ask for.",
+  "confidence": "verified",
+  "tags": [
+   "app-partner",
+   "first-responders",
+   "hrv",
+   "sleep",
+   "police",
+   "fire",
+   "ems",
+   "corrections"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": null,
+  "geo": null,
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "FOP Division of Wellness Services (provider network + State Wellness Liaison Cadre)",
+  "org": "National Fraternal Order of Police",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "National FOP created a full-time Division of Wellness Services in 2019; it connects members to vetted wellness practitioners and runs a State Wellness Liaison Cadre with a point of contact in each State Lodge (incl. Ohio). The FOP site hosts provider listings (e.g., Lighthouse Health & Wellness), which is a defined route to officers.",
+  "why_now": null,
+  "evidence": [
+   "https://fop.net/officer-wellness",
+   "https://fop.net/provider/lighthouse-health-and-wellness"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://fop.net/officer-wellness",
+  "fit": 7,
+  "opportunity": "Ask how a product gets onto the FOP wellness provider list and be introduced to the Ohio State Lodge wellness liaison for a small officer feedback group.",
+  "unknowns": "Criteria/cost for provider listing not published; Ohio liaison not named in results; whether consumer hardware vendors are accepted.",
+  "ask": "Ask the Division of Wellness Services what the provider-listing criteria are and who the Ohio State Lodge wellness liaison is.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless overnight band (sleep and HRV, general wellness, no subscription) and want officer feedback before launch. Could you tell me how wellness providers are considered for the FOP listing, and whether the Ohio State Lodge wellness liaison takes this kind of request?",
+  "confidence": "verified",
+  "tags": [
+   "first-responders",
+   "police",
+   "union",
+   "channel",
+   "ohio"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Tri-state (Ohio/WV border)",
+  "geo": "Huntington, WV",
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 5
+  },
+  "name": "Compass Program WHOOP rollout for police and firefighters",
+  "org": "City of Huntington, WV - Compass first responder wellness program",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Huntington's Compass program (police and fire wellness center with gym, sauna, coaching, started 2018 with a Bloomberg Mayors Challenge award) equipped officers and firefighters with WHOOP bands to track recovery, sleep, strain and stress, funded by a $20,000 Pallottine Foundation grant. A department already paying for a screenless HRV/sleep band, 10 minutes from the Ohio border.",
+  "why_now": "WHOOP rollout reported by the Herald-Dispatch (article date not shown in results).",
+  "evidence": [
+   "https://www.herald-dispatch.com/features_entertainment/wearable-tech-aims-to-boost-health-and-resilience-of-huntington-s-first-responders/article_58ee7342-0923-465f-857d-5db5c7e98a82.html",
+   "https://www.firerescue1.com/health/articles/compass-project-helps-first-responders-focus-on-wellness-0zVufskaOmigR1TZ/",
+   "https://www.route-fifty.com/management/2024/05/city-tackles-first-responders-opioid-compassion-fatigue/396699/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 8,
+  "ask": "20-minute call with the Compass coordinator on what worked and didn't with the WHOOP pilot (adherence, data access, cost after year one).",
+  "opener": "Hi, I'm Jeremy at Vybe Health, a small team in Akron building a screenless overnight band with an open SDK and no subscription. I read about Compass giving officers and firefighters WHOOP bands. Would you share 20 minutes on what you learned (wear time, who sees the data, renewal cost)? We're trying to build what departments like yours actually need.",
+  "confidence": "single-source",
+  "tags": [
+   "first-responders",
+   "police",
+   "fire",
+   "whoop",
+   "hrv",
+   "sleep",
+   "midwest-adjacent"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": null,
+  "geo": "Brooklyn, NY",
+  "ice": {
+   "i": 8,
+   "c": 5,
+   "e": 6
+  },
+  "name": "FireBeats / MyBeats (NYU Tandon fire research)",
+  "org": "NYU Tandon School of Engineering - FireBeats",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "FireBeats is an AI remote-monitoring app for firefighters that reads personal wearable health trackers to flag cardiovascular risk factors (sudden cardiac events are 50-60% of on-duty deaths per the project). Its App Store sibling MyBeats says it monitors data from 'Fitbit, Garmin, Apple, etc.' - a multi-brand firefighter app that depends on consumer wearables.",
+  "why_now": null,
+  "evidence": [
+   "https://firebeats.engineering.nyu.edu",
+   "https://fire.engineering.nyu.edu/home/firebeats.html",
+   "https://apps.apple.com/us/app/-/id6743087186",
+   "https://apps.apple.com/bb/app/firebeats/id1607236271",
+   "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2023.1250041/full"
+  ],
+  "channel": "contact via project site",
+  "contact_url": "https://firebeats.engineering.nyu.edu",
+  "fit": 8,
+  "existing_wearables": [
+   "Fitbit",
+   "Garmin",
+   "Apple"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Offer a DevKit so FireBeats can test an ECG/HRV band worn overnight as a data source; Fitbit Web API sunset pressure makes a new open-SDK source relevant to a Fitbit-dependent research app.",
+  "unknowns": "Whether FireBeats and MyBeats are the same team/product; how data is pulled (vendor APIs vs HealthKit); no named contact in results; impact of Fitbit API changes on them not confirmed.",
+  "ask": "Offer one DevKit v0.1 and ask what data format/API their pipeline expects.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. FireBeats reading firefighters' own trackers for cardiac risk factors is a use case we'd like to support. We make a screenless band worn overnight that records ECG and HRV, with a licensed SDK. Would your team want a DevKit to see if it fits your pipeline? Happy to match whatever data format you use.",
+  "confidence": "verified",
+  "tags": [
+   "app-partner",
+   "fire",
+   "hrv",
+   "research",
+   "fitbit-sunset"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2026-10-01",
+  "warm_path": "Ohio",
+  "geo": "Columbus, OH",
+  "ice": {
+   "i": 8,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Ohio Office of First Responder Wellness",
+  "org": "Ohio Department of Public Safety, Office of Criminal Justice Services",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "State office dedicated to the wellbeing of Ohio law enforcement, fire, EMS, dispatch, corrections and Ohio-based military; provides training and support to agencies. Its parent ODPS runs the First Responder Recruitment, Retention and Resilience Program, which has funded agency wellness programs (mental, physical, emotional) across Ohio, so agencies have wellness budgets the office influences. ODPS also hosted a First Responder Family Wellness Day on 2026-10-01 in Columbus.",
+  "why_now": "ODPS 2026 First Responder Family Wellness Day held 2026-10-01; recurring wellness award rounds (7th round reported).",
+  "evidence": [
+   "https://www.news5cleveland.com/news/local-news/new-state-office-is-designed-to-help-first-responders",
+   "https://www.police1.com/wellness-week/articles/qa-how-ohio-is-prioritizing-first-responder-wellness-GBZqRkYQgdbSymDO",
+   "https://extrastep.regfox.com/2026-first-responder-family-wellness",
+   "https://www.highlandcountypress.com/index.php/governor-dewine-announces-7th-round-wellness-support-first-responder-agencies",
+   "https://cwcolumbus.com/news/local/ohio-awards-17-million-to-local-agencies-for-first-responder-wellness-recruitment-retention-resilience-program-gov-mike-dewine"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 8,
+  "opportunity": "Get Vybe onto the office's radar as an Ohio-made option agencies can pilot under their wellness programs; ask to table at the next ODPS wellness day.",
+  "unknowns": "Current director (Steven M. Click was named at the 2021 launch; may have changed); whether the office lists or recommends vendors; no vendor route published.",
+  "ask": "Ask for 15 minutes with the office and whether vendors/resource tables are allowed at the next ODPS wellness event.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron. We're building a screenless overnight band for sleep and HRV (general wellness, no subscription) and want Ohio first responders shaping it before launch. Could we have 15 minutes to learn what agencies in your programs ask for, and whether resource tables are welcome at future ODPS wellness events?",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "first-responders",
+   "state",
+   "channel",
+   "police",
+   "fire",
+   "ems",
+   "corrections"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Northeast Ohio",
+  "geo": "Independence, OH",
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 6
+  },
+  "name": "Independence (OH) Police Department wellness program",
+  "org": "Independence Police Department (Ohio)",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Won NLEOMF's 2025 Destination Zero Comprehensive Wellness award: on-duty workout time, on-site gym, group workouts and challenges, free wellness exams, incentives through the Sydney Health app, peer/chaplain programs and annual clinician screening; sick time reportedly halved 2023 to 2024. A small Cuyahoga County department already rewarding tracked wellness goals.",
+  "why_now": "2025 Destination Zero Comprehensive Wellness winner (NLEOMF, 2025 awards).",
+  "evidence": [
+   "https://nleomf.org/dz-award/independence-oh-police-department-2025-comprehensive-wellness-winner/",
+   "https://www.police1.com/officer-safety/nleomf-announces-2025-national-officer-safety-and-wellness-award-winners",
+   "https://nleomf.org/2025-destination-zero-award-winners/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 8,
+  "ask": "Offer 5 bands for a 60-day overnight sleep/HRV feedback pilot with volunteer officers.",
+  "opener": "Hi, I'm Jeremy at Vybe Health, about 30 minutes south in Akron. Congratulations on the Destination Zero wellness award. We're building a screenless band worn overnight (sleep and HRV, no subscription) and want feedback from departments that already take wellness seriously. Would a few volunteer officers try five bands for 60 days and tell us what's useless?",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "police",
+   "wellness",
+   "pilot"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Central Ohio",
+  "geo": "Dublin, OH",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Washington Township Fire Department fitness & wellness program (RFP)",
+  "org": "Washington Township Fire Department (Dublin, OH)",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Issued a 2025 RFP for fitness/strength-and-conditioning professionals to run a firefighter program across four stations with workout rooms, explicitly aiming to cut injuries and medical claims and asking proposals to include 'measurement of results' - a defined slot for objective recovery data.",
+  "why_now": "2025 RFP published on the township site; submission deadline not shown in results (likely past).",
+  "evidence": [
+   "https://wtwp.com/cdn/2025-Washington-Township-FD-Fitness-and-Wellness-Program-RFP.pdf"
+  ],
+  "channel": "contact via township site",
+  "contact_url": "https://wtwp.com/cdn/2025-Washington-Township-FD-Fitness-and-Wellness-Program-RFP.pdf",
+  "fit": 7,
+  "ask": "Ask the fire department who won the fitness contract and offer that coach a DevKit for measuring recovery.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. I saw the township's fitness and wellness RFP asked for measurable results. We're building a screenless overnight band (sleep and HRV, general wellness) and want to learn from fire programs. Could you point me to whoever runs the program now? I'd like to offer a test kit for feedback.",
+  "confidence": "single-source",
+  "tags": [
+   "ohio",
+   "fire",
+   "strength-conditioning",
+   "rfp"
+  ]
+ },
+ {
+  "role": "Program developer",
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Ohio State",
+  "geo": "Columbus, OH",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Tactical Athlete Rehabilitation and Performance Program (Chris Kolba, PT, PhD)",
+  "org": "The Ohio State University Wexner Medical Center - Sports Medicine",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "One of a handful of US rehab/performance programs built for police, fire, EMS and military; developed by physical therapist and strength coach Chris Kolba and staffed by OSU sports medicine, nutrition and sports psychology. Clinicians who manage return-to-duty would value overnight recovery data.",
+  "why_now": null,
+  "evidence": [
+   "https://wexnermedical.osu.edu/sports-medicine/treatments/sports-physical-therapy-for-the-tactical-athlete",
+   "https://health.osu.edu/health/bone-and-joint/first-responders-benefit-from-physical-therapy",
+   "https://wexnermedical.osu.edu/sports-medicine/team/physical-therapists/chris-kolba",
+   "https://hmpgloballearningnetwork.com/site/emsworld/feature-story/specialized-physiotherapy-program-helps-first-responders"
+  ],
+  "channel": "contact via clinician profile",
+  "contact_url": "https://wexnermedical.osu.edu/sports-medicine/team/physical-therapists/chris-kolba",
+  "fit": 8,
+  "ask": "20-minute feedback call on whether overnight HRV/sleep trends would help tactical return-to-duty decisions.",
+  "opener": "Hi Dr. Kolba, I'm Jeremy at Vybe Health in Akron. Your tactical athlete program is one of the few built for police and fire. We're building a screenless band worn overnight that records HRV and sleep (general wellness, not diagnostic). Would you give us 20 minutes on whether that data would be useful or noise for the responders you work with?",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "tactical",
+   "fire",
+   "police",
+   "rehab",
+   "osu"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Ohio State",
+  "geo": "Columbus, OH",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Ohio State athletic training for ROTC cadets and Franklin County Sheriff's Office",
+  "org": "The Ohio State University Athletic Training",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "OSU extended its athletic training staff beyond varsity athletes to ROTC cadets/midshipmen and the Franklin County Sheriff's Office, citing chronic overuse injuries in cadets; athletic trainer Sam Wagner works with ROTC. A tactical population with embedded performance staff in Ohio.",
+  "why_now": "Expansion reported April 2025 (Hoodline 2025/04 article, OSU News).",
+  "evidence": [
+   "https://news.osu.edu/ohio-states-athletic-training-expands-to-rotc-and-sheriffs-office/",
+   "https://hoodline.com/2025/04/ohio-state-university-extends-athletic-training-expertise-to-rotc-cadets-and-franklin-county-sheriff-s-office/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Offer a small DevKit cohort to ROTC athletic training for a semester of overnight recovery tracking feedback.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. I read that OSU athletic training now supports ROTC cadets and the Franklin County Sheriff's Office. We're building a screenless overnight band (sleep and HRV, general wellness). Would your team be open to trying a few units with cadets and telling us what's useful for monitoring training load?",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "rotc",
+   "tactical",
+   "sheriff",
+   "athletic-training"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Midwest",
+  "geo": "Indianapolis, IN",
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 5
+  },
+  "name": "ProTeam Tactical Performance",
+  "org": "ProTeam Tactical Performance",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Indiana firm bringing pro-sport rehab, recovery and DARI motion-capture assessments to firefighters and police; runs a rehab center in Indianapolis Fire Department HQ (claims ~$1.4M saved in medical costs), works with Whitestown FD, and has expanded to Westfield (Grand Park), Merrillville and Louisville. A Midwest tactical performance provider that buys tech for departments.",
+  "why_now": "Expansion to Merrillville and Louisville reported by Inside Indiana Business.",
+  "evidence": [
+   "https://www.insideindianabusiness.com/articles/proteam-tactical-opens-second-facility-in-grand-park",
+   "https://insideindianabusiness.com/?p=111416",
+   "https://www.insideindianabusiness.com/?p=148061",
+   "https://whitestown.in.gov/news/former-super-bowl-champion-helping-whitestown-firefighters-stay-ahead-of-injury",
+   "https://jobs.nata.org/profile/proteam-tactical-performance/1422989/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 8,
+  "ask": "Pitch a recovery-data add-on pilot: 10 bands across one client fire department for 60 days.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. ProTeam bringing pro-sport recovery to Indiana firefighters is the closest model to what we want to support. We build a screenless band worn overnight for sleep and HRV, with an SDK your staff could pull into reports. Could we talk for 15 minutes about whether overnight data would help your coaches?",
+  "confidence": "verified",
+  "tags": [
+   "midwest",
+   "fire",
+   "police",
+   "tactical",
+   "recovery",
+   "strength-conditioning"
+  ]
+ },
+ {
+  "role": "Associate Dean, College of Health; Professor",
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2026-05-23",
+  "warm_path": "Northeast Ohio",
+  "geo": "University Heights, OH",
+  "ice": {
+   "i": 9,
+   "c": 7,
+   "e": 7
+  },
+  "name": "Tactical athlete health research (Jackie Zera, PhD, FACSM)",
+  "org": "John Carroll University, Dept. of Exercise Science",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "May 2026 IJERPH study (first author Jacquelyn N. Zera) of 66 career firefighters on how home vs. station sleep and bunk vs. dorm-style quarters affect sleep quality; her JCU profile lists firefighter sleep environments and CVD risk in first responders as current projects. Northeast Ohio lab with a ready objective-sleep question.",
+  "why_now": "IJERPH paper published 2026-05-23.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42354223/",
+   "https://doi.org/10.3390/ijerph23060692",
+   "https://www.jcu.edu/people/jackie-zera"
+  ],
+  "channel": "contact via faculty profile",
+  "contact_url": "https://www.jcu.edu/people/jackie-zera",
+  "fit": 9,
+  "ask": "Offer DevKits to add objective overnight sleep/HRV to the next phase of her firefighter sleep-environment work.",
+  "opener": "Hi Dr. Zera, I'm Jeremy at Vybe Health in Akron. Your IJERPH paper on station vs. home sleep in firefighters used self-report, and we're building a screenless band worn overnight that records sleep and HRV with an open SDK. Would a few DevKits be useful for a follow-up? Happy to drive up to University Heights to show it.",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "research",
+   "fire",
+   "sleep",
+   "hrv"
+  ]
+ },
+ {
+  "role": "Director",
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2026-01-16",
+  "warm_path": null,
+  "geo": "Lexington, KY",
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 6
+  },
+  "name": "First Responder Research Laboratory (Mark G. Abel, PhD)",
+  "org": "University of Kentucky, Dept. of Kinesiology and Health Promotion",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Lab studies firefighter and police health and readiness; Jan 2026 JOM paper compared sleep across 24/48, 48/96 and four-platoon shift systems using sleep diaries and PSQI. Abel is an NSCA TSAC practitioner of the year, a former firefighter, and owns Tactical Fitness Institute (physical ability standards for agencies).",
+  "why_now": "J Occup Environ Med paper published 2026-01-16.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41540566/",
+   "https://doi.org/10.1097/JOM.0000000000003668",
+   "https://education.uky.edu/khp/laboratories/first-responder-lab",
+   "https://www.nsca.com/author/bio/96382/1/"
+  ],
+  "channel": "contact via lab page",
+  "contact_url": "https://education.uky.edu/khp/laboratories/first-responder-lab",
+  "fit": 8,
+  "ask": "Offer DevKits to replace/augment diary sleep measures in a shift-schedule follow-up.",
+  "opener": "Hi Dr. Abel, I'm Jeremy at Vybe Health in Akron. Your shift-schedule sleep paper relied on diaries and PSQI; we're building a screenless band worn overnight that records sleep and HRV with an open SDK. Would DevKits be useful for a follow-up comparing platoons? I'd value your view on what a department would need from the data.",
+  "confidence": "verified",
+  "tags": [
+   "research",
+   "fire",
+   "police",
+   "sleep",
+   "tactical",
+   "midwest-adjacent"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2026-03-12",
+  "warm_path": null,
+  "geo": "River Forest, IL",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 6
+  },
+  "name": "Tactical athlete HRV breathwork research (Mark E. Jones; Bridget Melton, EdD)",
+  "org": "Concordia University Chicago / Georgia Southern University Tactical Athlete Initiative",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "March 2026 MSSE randomized trial in 62 cadets measured HF-HRV and heart-rate recovery after box breathing vs. cyclic sighing; first author at Concordia University Chicago. Co-author Bridget Melton directs tactical athlete work with Army ROTC at Georgia Southern.",
+  "why_now": "Med Sci Sports Exerc paper published 2026-03-12.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41839180/",
+   "https://doi.org/10.1249/MSS.0000000000003972",
+   "https://scholars.georgiasouthern.edu/en/publications/effectiveness-of-structured-breathwork-interventions-on-heart-rat/",
+   "https://wordpress.georgiasouthern.edu/?p=66568"
+  ],
+  "channel": "contact via faculty page",
+  "contact_url": "https://scholars.georgiasouthern.edu/en/publications/effectiveness-of-structured-breathwork-interventions-on-heart-rat/",
+  "fit": 7,
+  "ask": "Offer DevKits to extend their cadet HRV work from acute lab recovery to overnight recovery.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. Your cadet breathwork trial measured HRV recovery in the lab; we're building a screenless band worn overnight that records ECG-based HRV with an open SDK. Would a few DevKits help test whether those effects show up overnight? Happy to share raw data formats first.",
+  "confidence": "verified",
+  "tags": [
+   "research",
+   "rotc",
+   "tactical",
+   "hrv",
+   "midwest"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2027-03-08",
+  "warm_path": "Midwest",
+  "geo": "Wisconsin Dells, WI",
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 6
+  },
+  "name": "Peer Support & Wellness Conference 2027 (Wisconsin DOJ)",
+  "org": "Wisconsin Department of Justice",
+  "type": "event",
+  "hunt": "growth",
+  "why": "Statewide conference for law enforcement, corrections, dispatch, fire and EMS peer supporters; organisers say it brings 'local and statewide vendors' together with speakers. 2027 theme: 'Beyond the Badge - Practical Tools for Responder Wellness and Peer Support'.",
+  "why_now": "2027-03-08 to 2027-03-10, Kalahari Resorts & Conventions, Wisconsin Dells (Cvent page). Vendor price not published.",
+  "evidence": [
+   "https://wisdoj.cventevents.com/event/2027peersupport/summary",
+   "https://wilenet.widoj.gov/node/17242"
+  ],
+  "channel": "apply",
+  "contact_url": "https://wisdoj.cventevents.com/event/2027peersupport/summary",
+  "fit": 8,
+  "ask": "Request the 2027 vendor packet and a resource table.",
+  "opener": "Hello, I'm Jeremy at Vybe Health, a small Akron, Ohio team building a screenless overnight band for sleep and HRV (general wellness, no subscription). We'd like to listen to peer-support leaders at the 2027 conference. Could you share vendor table details and the deadline to apply?",
+  "confidence": "verified",
+  "tags": [
+   "event",
+   "midwest",
+   "peer-support",
+   "police",
+   "fire",
+   "corrections"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2027-04-22",
+  "warm_path": "National Guard / Midwest",
+  "geo": "Little Falls, MN",
+  "ice": {
+   "i": 6,
+   "c": 7,
+   "e": 8
+  },
+  "name": "2027 Military Mental Health Conference (Camp Ripley)",
+  "org": "2027 Military Mental Health Conference",
+  "type": "event",
+  "hunt": "growth",
+  "why": "Military/veteran/first-responder wellness conference at the Minnesota National Guard's Camp Ripley with a published vendor application that includes a 'product vendor' and 'wellness/resilience services' category; vendor cost $200 for one day or $300 for both.",
+  "why_now": "2027-04-22 to 2027-04-23, Camp Ripley, Little Falls, MN; approval not guaranteed.",
+  "evidence": [
+   "https://irp.cdn-website.com/d1d8ef5f/files/uploaded/Vendor+application.pdf"
+  ],
+  "channel": "apply",
+  "contact_url": "https://irp.cdn-website.com/d1d8ef5f/files/uploaded/Vendor+application.pdf",
+  "fit": 7,
+  "ask": "Apply for a $200 one-day product-vendor table.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless band worn overnight for sleep and HRV (general wellness, no medical claims). We'd like a one-day product vendor table at the 2027 Military Mental Health Conference to hear from Guard members and providers. Is there an application deadline?",
+  "confidence": "single-source",
+  "tags": [
+   "event",
+   "national-guard",
+   "military",
+   "midwest",
+   "published-price"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2027-05-14",
+  "warm_path": null,
+  "geo": "Louisville, KY",
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "CRR Leadership & Fire-Rescue Med (FRM) Conference 2027",
+  "org": "International Association of Fire Chiefs (IAFC)",
+  "type": "event",
+  "hunt": "growth",
+  "why": "IAFC's combined fire/EMS operations and community risk reduction conference; FRM is the IAFC EMS section's event where department EMS and health leaders meet. Within driving distance of Akron.",
+  "why_now": "2027-05-14 to 2027-05-16, Louisville Marriott Downtown (IAFC event page). Exhibitor pricing not found.",
+  "evidence": [
+   "https://www.iafc.org/events/event/2027/05/14/default-calendar/crr-leadership-frm-conference---2027",
+   "https://www.iafc.org/frm"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.iafc.org/frm",
+  "fit": 7,
+  "ask": "Ask IAFC whether the 2027 CRR/FRM event has an exhibit hall or startup table option.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron. We're building a screenless overnight band (sleep and HRV, general wellness) and want to hear from fire and EMS leaders before launch. Does the 2027 CRR Leadership & FRM Conference in Louisville have exhibitor or small-sponsor options, and who handles them?",
+  "confidence": "verified",
+  "tags": [
+   "event",
+   "fire",
+   "ems",
+   "midwest-adjacent"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2026-04-07",
+  "warm_path": "Midwest",
+  "geo": "Traverse City, MI",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 6
+  },
+  "name": "Michigan Mental Wellness for First Responders Conference (MiREMS)",
+  "org": "Michigan Rural EMS Network (MiREMS)",
+  "type": "event",
+  "hunt": "growth",
+  "why": "Annual two-day first responder wellness conference in Traverse City (2025 'SHIFT' edition, $150 registration; 2026 edition April 7-8 at the Hagerty Center), run by Michigan's rural EMS network - a Midwest EMS audience.",
+  "why_now": "2027 dates not yet published; the 2026 edition ran 2026-04-07/08, so a spring 2027 edition is likely but unconfirmed.",
+  "evidence": [
+   "https://www.ruralhealthinfo.org/events/24961",
+   "https://quilltherapysolutions.com/conferences/2025/michigan/CMLQ/shift-mental-wellness-for-first-responders-conference/",
+   "https://www.ruralhealthinfo.org/states/michigan/events"
+  ],
+  "channel": "email listed on site",
+  "contact_url": "https://www.ruralhealthinfo.org/events/24961",
+  "fit": 7,
+  "ask": "Ask MiREMS for 2027 dates and whether vendor/resource tables are offered.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless overnight band for sleep and HRV (general wellness) and want to learn from rural EMS crews. Will there be a 2027 Mental Wellness for First Responders Conference, and are vendor or resource tables available?",
+  "confidence": "verified",
+  "tags": [
+   "event",
+   "ems",
+   "midwest",
+   "rural"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": "2025-09-25",
+  "warm_path": "Midwest",
+  "geo": "Lansing, MI",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 4
+  },
+  "name": "R.E.A.C.H. correctional employee wellness study",
+  "org": "Michigan Department of Corrections",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "In Sept 2025 MDOC partnered with an international research team on a multi-year correctional employee wellness study, Roadmap to Elevate and Advance Correctional Health (R.E.A.C.H.). Corrections staff work shifts and are underserved by wellness tech; a Midwest study already measuring staff health.",
+  "why_now": "MDOC press release dated 2025-09-25.",
+  "evidence": [
+   "https://www.michigan.gov/corrections/about/newsroom/press-releases/2025/09/25/mdoc-partners-with-international-team-of-researchers"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask the R.E.A.C.H. investigators whether objective sleep/HRV is in scope and offer DevKits.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron. I read about MDOC's R.E.A.C.H. study on correctional staff wellness. We're building a screenless overnight band for sleep and HRV with an open SDK. If objective sleep data is in scope for later phases, we'd offer DevKits and work to your protocol. Who would be right to ask?",
+  "confidence": "single-source",
+  "tags": [
+   "corrections",
+   "research",
+   "midwest",
+   "sleep"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": null,
+  "geo": "New Castle, DE",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 4
+  },
+  "name": "Holistic Officer Wellness (HOW) program - Garmin smartwatch rollout",
+  "org": "New Castle County Police Department (Delaware)",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "NCCPD started its HOW program in 2021 with a COPS Office wellness grant (yoga, group workouts, peer support, financial literacy) and in 2023 partnered with Garmin and bought 100+ smartwatches for officers - a department that already buys wearables at scale and wrote up its process (Police1).",
+  "why_now": null,
+  "evidence": [
+   "https://www.police1.com/health-wellness/articles/how-a-del-police-department-is-revolutionizing-health-and-wellness-with-smartwatches-51SEYolXFVQ2rVj2/",
+   "https://nccpdnews.com/2022/06/16/police-implement-holistic-officer-wellness-program/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask the HOW coordinator what made officers keep wearing (or stop wearing) the Garmins.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron. Your HOW program's Garmin rollout is one of the few documented department wearable programs. We're building a screenless overnight band (sleep and HRV, no subscription). Would you share 15 minutes on what drove wear time and how officers felt about data privacy? It would shape what we build.",
+  "confidence": "verified",
+  "tags": [
+   "police",
+   "garmin",
+   "wellness",
+   "wearables"
+  ]
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "warm_path": "Ohio",
+  "geo": "Columbus, OH",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 4
+  },
+  "name": "Ohio State Highway Patrol Health and Physical Fitness Program",
+  "org": "Ohio State Highway Patrol",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "OSHP runs a mandatory Health and Physical Fitness Program (medical evaluations, clinical fitness appraisals, standards, incentives) that OSHP describes as unlike any other US law enforcement program; Ohio's First Responder Wellness office director came from OSHP's Member Assistance Team.",
+  "why_now": "Program described in Police Chief magazine (older article; current status not re-verified).",
+  "evidence": [
+   "https://www.policechiefmagazine.org/ohios-model-of-a-comprehensive-health/",
+   "https://www.news5cleveland.com/news/local-news/new-state-office-is-designed-to-help-first-responders"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask the OSHP fitness program lead for a feedback session on whether overnight recovery data fits their incentive model.",
+  "opener": "Hello, I'm Jeremy at Vybe Health in Akron. OSHP's Health and Physical Fitness Program is often cited as a model. We're building a screenless overnight band for sleep and HRV (general wellness, no subscription) and want Ohio troopers' input before launch. Could someone on the program share 15 minutes on what data, if any, would be useful?",
+  "confidence": "verified",
+  "tags": [
+   "ohio",
+   "police",
+   "state",
+   "fitness-standards"
+  ]
+ }
+]
