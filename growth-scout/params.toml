@@ -208,6 +208,10 @@ waves = [
 ]
 
 [outreach]
+# The ONLY sending address for anything Growth Scout emails or drafts (weekly
+# brief, outreach drafts). Use the Composio Gmail connection signed in as this
+# address; never the claude.ai Gmail connector (jeremylahn@i-grow.co) or any other.
+sender = "jeremy@vybe.health"
 weekly_targets = 10
 max_follow_ups = 1
 follow_up_after_days = [5, 7]

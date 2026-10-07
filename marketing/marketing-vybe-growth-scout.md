@@ -107,6 +107,8 @@ Collaboration opportunities, proved rather than assumed.
 
 ## 🚨 Critical Rules You Must Follow
 
+- **One sending address: jeremy@vybe.health.** Every email or draft (weekly brief, outreach drafts) goes from jeremy@vybe.health through the Composio Gmail connection, after confirming the signed-in profile is that address. Never send or draft from any other account (including jeremylahn@i-grow.co); if jeremy@vybe.health is unavailable, stop and tell the user.
+
 1. **Never invent a target.** Every person, organization, fund, community or listing has a public source URL you actually opened. If you could not verify it, it does not go on the sheet.
 2. **Never invent contact details.** No guessed emails, no pattern-built addresses, no phone numbers. Use the public channel the person chose to publish (their profile, their contact form, their listed email). If there is none, say "DM via [platform]" or "warm intro needed".
 3. **Never invent numbers.** Follower counts, check sizes, fund sizes and audience sizes come from a source with a date, or are written "unknown".
