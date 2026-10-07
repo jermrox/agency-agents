@@ -3998,3 +3998,137 @@ documents = [
   "Submission by 22 Jan 2027",
 ]
 verified = "2026-10-06"
+
+[[sources.curated.entry]]
+name = "PCBWay 9th Project Design Contest (Edge AI & IoT category)"
+url = "https://www.pcbway.com/activity/9th-project-design-contest.html"
+agency = "PCBWay"
+amount = "Cash prizes: First Prize $2,000 (1 winner) + $200 coupon + Jetson Orin Nano Super; Second $1,500 (2) + $100 coupon + Raspberry Pi 5; Third $800 (3); Popular Design $100 (10)"
+close_date = "2027-01-24"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Original project created or updated and submitted during the submission period (1 Sep 2026 to 24 Jan 2027). Team entries allowed (prize paid to team leader). No company-stage, location or fee gate stated."
+note = "PUBLIC DISCLOSURE: rules ask entrants to upload Gerber, BOM, schematic, source code and CAD files so judges can evaluate, and projects are shown publicly in the PCBWay community. Do NOT enter the Vybe Band or its proprietary engine. Enter a non-core reference design instead, such as a DevKit breakout/charging dock or an open demo board for the SDK. The 'Edge AI & IoT' theme explicitly names 'smart sensors, wireless modules, wearables'. Small cash amount, but no SAM, no fee and no equity, and it doubles as developer-community visibility for the DevKit."
+documents = [
+  "PCBWay community account",
+  "Project write-up",
+  "Gerber/BOM/schematic/source/CAD files as applicable",
+  "Photos/video of the built project",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "SOLIDWORKS for Startups Program"
+url = "https://discover.solidworks.com/solidworks-startups-program"
+agency = "Dassault Systemes (SOLIDWORKS)"
+amount = "Free access to SOLIDWORKS 3D CAD and other product-development tools, plus free training and co-marketing. Dollar value not stated on the page. Third-party summaries mention later-year discounts, but the official page does not state them."
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Hardware startup designing and building a physical product to sell; under $1M revenue; not more than 5 years old. Not open to current SOLIDWORKS customers, service providers, engineering/design firms, consultants or contract manufacturers."
+note = "NOT OPEN IF VYBE (OR ITS CONTRACT DESIGNER UNDER VYBE'S NAME) ALREADY HOLDS A SOLIDWORKS LICENSE. Strong fit: it gives free professional mechanical CAD for the band and ring enclosures and DevKit housings. Approval is handled through a local reseller, who contacts you to issue the licence."
+documents = [
+  "Online application (company info, product description)",
+  "Company website/email",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "Solid Edge for Startups (Siemens)"
+url = "https://solidedge.siemens.com/en/free-software/startup"
+agency = "Siemens Digital Industries Software"
+amount = "One year of Solid Edge (CAD, CAM, CAE, electrical design, simulation, data management) free, plus training resources, an expert community and co-marketing. Dollar value not stated."
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Design firms and product manufacturers; legal entity in business 3 years or less; under $1M USD funding; under $1M USD annual revenue. No application fee."
+note = "FUNDING CAP: under $1M raised. Vybe qualifies today, but not once it raises a $1M+ round. It includes electrical design as well as mechanical. Pick ONE CAD platform: SOLIDWORKS, Solid Edge or Onshape."
+documents = [
+  "Online application",
+  "Proof of legal entity / incorporation date",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "Onshape Startup Program"
+url = "https://www.onshape.com/en/startups"
+agency = "PTC (Onshape)"
+amount = "5 seats of Onshape Professional (or Onshape Government) at no cost; re-apply each year with no time limit; 3 months of SimScale simulation; 20% off 3Dconnexion"
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "'Qualifying startups'; open only to new Onshape customers. The page does not state detailed criteria (revenue, age): 'Special conditions and restrictions may apply.'"
+note = "NEW CUSTOMERS ONLY. This is cloud CAD with built-in PDM. It suits a distributed team and design partners who need to see the DevKit mechanicals without installing software. The Onshape Government option could help with tactical customers later."
+documents = [
+  "Online application",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "Together AI Startup Accelerator"
+url = "https://www.together.ai/startup-accelerator"
+agency = "Together AI"
+amount = "Up to $15K in platform credits plus 3 hours of forward-deployed engineering for startups with up to $5M raised (higher tiers for larger raises)"
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Tiered by amount raised; the lowest tier is 'Up to $5M raised'. The page does not state a minimum raise or VC-backing requirement. Credits do not apply to Reserved GPU Clusters."
+note = "AI-NATIVE FOCUS: the page targets AI-native startups, so pitch the Vybe Health Intelligence reasoning layer, not the band. Credits cover inference, fine-tuning and dedicated endpoints (open models). Check its data handling against Vybe's zero-retention/BAA promise before sending any PHI, because a BAA is not stated on the page."
+documents = [
+  "Online application form",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "DigitalOcean Startups (formerly Hatch)"
+url = "https://www.digitalocean.com/hatch"
+agency = "DigitalOcean"
+amount = "12 months of DigitalOcean credits ('amount varies'), 15 months of free Standard-tier support, plus partner perks; GPU credit packages by invitation only"
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Raised $10M or less; company website and matching company email; a DigitalOcean team account with company email and a valid credit card; no prior DigitalOcean credits; service businesses excluded. AI-native startups prioritised. Non-backed startups apply by choosing 'Other' as the partner."
+note = "CREDIT CARD REQUIRED ON THE ACCOUNT, AND GPU DROPLETS ARE NOT COVERED. The award amount is not published. It is useful for hosting the SDK/API backend and developer portal. Lower priority than the CAD seats."
+documents = [
+  "DigitalOcean team account (company email + credit card)",
+  "Online application",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "Wurth Elektronik Start-Up Management (free components + engineering support)"
+url = "https://www.we-online.com/en/support/collaboration/start-up-management"
+agency = "Wurth Elektronik eiSos"
+amount = "Free sample components from the full portfolio, design kits, evaluation boards, webinars and engineer support. EMC/environmental labs and 'Find your Engineer' are for Germany-based companies only. Dollar value not stated."
+pillar = 1
+kind = "partnership"
+sam = "none"
+eligibility = "Hardware/electronics start-ups; contact a start-up manager. No formal criteria are stated. The EMC pre-compliance lab and Find your Engineer are 'available for companies based in Germany.'"
+note = "LAB ACCESS IS GERMANY-ONLY, so for a US company the value is free passives, inductors, connectors, wireless-charging coils and design kits, plus applications-engineer help. That is still useful for band/ring charging and power design. There is no deadline and no form, only contact persons on the page."
+documents = [
+  "Email/contact to a Wurth start-up manager describing the product and stage",
+]
+verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "DARPA Documentation and Decision Support (D2) Sprint"
+url = "https://www.darpa.mil/research/challenges/d2"
+agency = "DARPA Biological Technologies Office (federal prize under 15 U.S.C. 3719)"
+amount = "$1,000,000 total. Each of two lanes pays $300K for 1st, $150K for 2nd and $50K for 3rd (Documentation lane, Decision Support lane)."
+close_date = "2026-11-04"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Applicant and team representative must be a U.S. citizen or permanent resident representing a U.S. entity (companies are explicitly allowed). Foreign nationals may be team members only. No fee. To be paid, the winner gives an SSN or TIN; the rules, terms and FAQ say nothing about SAM.gov. Two-part qualification: Part 1 narrative is due 4 Nov 2026, and Part 2 is a qualification task due 1 Dec 2026. DARPA picks up to 20 teams on 10 Dec 2026."
+note = "THIS IS AN ALGORITHM CONTEST, NOT A HARDWARE ONE. TEAMS MAY NOT COLLECT OR USE ANY HUMAN-SUBJECT DATA OF THEIR OWN, so Vybe band data from real people cannot be used. Teams train only on the DARPA dataset under DARPA's IRB protocol, plus simulated or non-human data. Lane 1 builds algorithms that fill in a digital DD Form 1380 (TCCC casualty card) from passively collected data (audio, video, accelerometry). Lane 2 builds real-time decision support based on TCCC guidelines. It fits Vybe's sensor-fusion and signal-processing engine and its tactical/dual-use story, and placing would give strong DoD credibility. It pays cash with no SAM.gov registration. Submit Part 1 early: reviews are rolling (an answer comes within 10 business days), and IRB processing can take up to a month. The final algorithm package is due 1 Mar 2027, and the awards ceremony is 26 Mar 2027."
+documents = [
+  "Online registration and Part 1 Narrative Description via the D2 Qualification Portal: team name and organization, POC, and a roster listing any foreign nationals",
+  "Technical approach, max 500 words per subsection: experience; workflow for large video and incomplete data; algorithm architecture and existing software; training methods and any non-HSR data; transition/commercialization plan",
+  "Optional supplemental PDF of capabilities",
+  "Signed data handling agreement (limited use; no facial recognition; no re-identification)",
+  "Inclusion in the IV&V team's IRB protocol",
+  "Part 2 Qualification Task (by invitation after Part 1)",
+  "SSN or TIN to receive a prize",
+]
+verified = "2026-10-07"
