@@ -1,8 +1,263 @@
 {
   "version": 2,
-  "generated_at": "2026-10-06T19:27:54.927933+00:00",
-  "count": 693,
+  "generated_at": "2026-10-07T07:31:25.854741+00:00",
+  "count": 696,
   "jobs": [
+    {
+      "id": "0be37b0c0635a8aad8ad",
+      "fingerprint": "f258d748d0d125acf306",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887867500",
+      "title": "WARR TECHNICIAN, NF-02/03/RFT, CAMP COURTNEY",
+      "employer": "U.S. Marine Corps",
+      "location": "Camp Courtney Okinawa, Japan",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$16.00 - $18.00 /hr",
+      "posted_at": null,
+      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "TSAC-F"
+        ],
+        "clearance": null,
+        "salary_min": 16.0,
+        "salary_max": 18.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": 2,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "location_regions": {
+          "oconus": [
+            "Japan"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 33280.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T07:31:25.854741+00:00"
+    },
+    {
+      "id": "f923e49aa85d3431c870",
+      "fingerprint": "9f68256f45456258b179",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887827500",
+      "title": "Physical Therapist, SLD 30",
+      "employer": "Space Systems Command",
+      "location": "Vandenberg AFB, California",
+      "remote": false,
+      "telework": true,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$146,632 - $197,200 /yr",
+      "posted_at": null,
+      "description": "The 0633 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements, you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS",
+          "DPT"
+        ],
+        "clearance": null,
+        "salary_min": 146632.0,
+        "salary_max": 197200.0,
+        "salary_period": "year",
+        "education": "Doctorate",
+        "years_experience_min": 3,
+        "employment_type": null,
+        "installation": "Vandenberg SFB",
+        "service_branch": "Space Force",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "space-force"
+        ],
+        "branch_labels": [
+          "Space Force"
+        ],
+        "location_classes": [
+          "conus",
+          "telework"
+        ],
+        "location_regions": {
+          "conus": [
+            "California"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 146632.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T07:31:25.854741+00:00"
+    },
+    {
+      "id": "6117ca913cc0aa634466",
+      "fingerprint": "a74abe87272114d159fd",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887714800",
+      "title": "HEALTH AID AND TECHNICIAN",
+      "employer": "Space Training and Readiness Command",
+      "location": "Lackland AFB, Texas",
+      "remote": false,
+      "telework": true,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$41,334 - $73,711 /yr",
+      "posted_at": null,
+      "description": "Conditions of Employment Continued: Must maintain credentials as required by local Military Treatment Facility (MTF) guidance. Employee must be able to receive/maintain privileges/medical staff appointment as a physical therapist assistant by the MTF credentials office, to include participation in ongoing peer review. Must possess and maintain current certification in Basic life Support (BLS) In\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 41334.0,
+        "salary_max": 73711.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 1,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": "Joint",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus",
+          "telework"
+        ],
+        "location_regions": {
+          "conus": [
+            "Texas"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 41334.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T07:31:25.854741+00:00"
+    },
+    {
+      "id": "4cb4708b9879aa54cc0c",
+      "fingerprint": "614d8ebdce1321977229",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887606200",
+      "title": "Physical Therapy Assistant",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Newport News, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$51,210 - $66,574 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 51210.0,
+        "salary_max": 66574.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 51210.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-07T07:31:25.854741+00:00"
+    },
     {
       "id": "93bed5558327d8d3854b",
       "fingerprint": "aeec3e43b6aafe078c06",
@@ -20979,7 +21234,7 @@
       "id": "ee68bf5d8b4760181ecd",
       "fingerprint": "04183d16e65f141026a4",
       "source": "jsonld:magellan",
-      "url": "https://careers.magellanhealth.com/us/en/job/R00000070791/Physical-Therapist-Kirkland-AFB-NM",
+      "url": "https://careers.magellanhealth.com/us/en/job/R00000070791/Physical-Therapist-Kirtland-AFB-NM",
       "title": "Physical Therapist - Kirkland AFB, NM",
       "employer": "Magellan Health",
       "location": "Kirtland, New Mexico, United States of America",
@@ -40677,70 +40932,6 @@
       },
       "confidence": "listed",
       "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
-      "id": "811c9a7a65cac37fb129",
-      "fingerprint": "f258d748d0d125acf306",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/885657700",
-      "title": "WARR TECHNICIAN, NF-02/03/RFT,CAMP COURTNEY",
-      "employer": "U.S. Marine Corps",
-      "location": "Camp Courtney Okinawa, Japan",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$16.00 - $18.00 /hr",
-      "posted_at": null,
-      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "TSAC-F"
-        ],
-        "clearance": null,
-        "salary_min": 16.0,
-        "salary_max": 18.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": 2,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Japan"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 33280.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
       "notes": "",
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
