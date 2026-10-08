@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-07.*
+*Briefing generated 2026-10-08.*
 
 ## Headline
 
-- **785 open jobs** from **43 employers**.
-- Posted between **2025-12-03** and **2026-10-07**.
-- **$82,724 median** annualized pay across the 247 postings that publish one -- $62,000 to $109,426 covers the middle half.
+- **790 open jobs** from **43 employers**.
+- Posted between **2025-12-03** and **2026-10-08**.
+- **$83,480 median** annualized pay across the 251 postings that publish one -- $62,000 to $110,080 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 575 of 1,360 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 742, Special Operations 374, Fire / EMS / Law Enforcement 55, Training Pipeline 44.
+- 596 of 1,386 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 747, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 45.
 
 ## Month over month
 
-Postings are **down -452** in 2026-10 (517 to 65), 87% against 2026-09.
+Postings are **down -417** in 2026-10 (502 to 85), 83% against 2026-09.
 
 ```
 2025-12     1  #
@@ -25,8 +25,8 @@ Postings are **down -452** in 2026-10 (517 to 65), 87% against 2026-09.
 2026-06     9  #
 2026-07    19  #
 2026-08    97  #####
-2026-09   517  ############################
-2026-10    65  ####
+2026-09   502  ############################
+2026-10    85  #####
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -39,8 +39,8 @@ Postings are **down -452** in 2026-10 (517 to 65), 87% against 2026-09.
 
 **Credentials appearing more often:**
 
-- CSCS: 3 to 268
-- ATC: 4 to 185
+- CSCS: 3 to 269
+- ATC: 4 to 186
 - RD: 3 to 59
 - PhD: 0 to 48
 - DPT: 4 to 9
@@ -54,23 +54,23 @@ Postings are **down -452** in 2026-10 (517 to 65), 87% against 2026-09.
 | LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
 | Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Serco USA | 37 | - | Strength & Conditioning, Cognitive Performance |
-| Planned Systems International | 34 | $66,345 | Sports Medicine, Strength & Conditioning |
+| Planned Systems International | 35 | $66,345 | Sports Medicine, Strength & Conditioning |
 | Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
 | General Dynamics Information Technology | 30 | $98,738 | Cognitive Performance, Sports Medicine |
-| Military Treatment Facilities under DHA | 28 | $96,386 | Sports Medicine, Research & Analytics |
+| Military Treatment Facilities under DHA | 30 | $96,386 | Sports Medicine, Research & Analytics |
 | Customs and Border Protection | 25 | $139,436 | - |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 414 | 67% |
-| Sports Medicine | 355 | 58% |
+| Strength & Conditioning | 416 | 67% |
+| Sports Medicine | 358 | 58% |
 | Cognitive Performance | 175 | 28% |
-| Research & Analytics | 122 | 20% |
+| Research & Analytics | 124 | 20% |
 | Performance Nutrition | 101 | 16% |
 | Program Leadership | 35 | 6% |
-| Sport Science | 10 | 2% |
+| Sport Science | 11 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -79,8 +79,8 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 296 | 60% |
-| ATC | 207 | 42% |
+| CSCS | 297 | 60% |
+| ATC | 208 | 42% |
 | RD | 64 | 13% |
 | PhD | 49 | 10% |
 | DPT | 16 | 3% |
@@ -89,21 +89,21 @@ more than one, so these do not sum to 100%.
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (58), TS/SCI (25), Top Secret (22), Public Trust (3)
+**Clearances requested:** Secret (59), TS/SCI (25), Top Secret (22), Public Trust (3)
 
 ## What it pays
 
-- Median **$82,724**, middle half $62,000 to $109,426.
+- Median **$83,480**, middle half $62,000 to $110,080.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Sport Science | 6 | $88,988 | $100,644 | $104,338 |
+| Sport Science | 7 | $92,238 | $102,550 | $109,317 |
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 42 | $63,588 | $84,869 | $111,441 |
-| Research & Analytics | 35 | $63,282 | $75,920 | $97,839 |
-| Sports Medicine | 126 | $59,812 | $74,456 | $102,935 |
-| Strength & Conditioning | 64 | $57,950 | $69,589 | $86,090 |
+| Research & Analytics | 37 | $63,124 | $75,920 | $98,027 |
+| Sports Medicine | 128 | $59,536 | $74,456 | $102,935 |
+| Strength & Conditioning | 66 | $58,122 | $70,941 | $89,646 |
 | Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
 
 Every figure is annualized before comparison -- hourly federal rates and
@@ -111,7 +111,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (75), NC (66), CA (61), GA (44), TX (42), NM (36), VA (34), CO (23), KY (23), HI (21)
+**States:** FL (75), NC (67), CA (62), GA (44), TX (43), NM (36), VA (36), CO (23), KY (23), HI (21)
 
 | Installation | Jobs |
 |---|---|
@@ -126,13 +126,13 @@ annual contractor bands are not otherwise comparable.
 | Fort Benning | 8 |
 | Fort Campbell | 8 |
 
-**Branches and services:** Joint (270), Army (188), Air Force (103), Navy (38), Marine Corps (25), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (189), Air Force (104), Navy (39), Marine Corps (27), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 58 |
+| Physical Therapist | 59 |
 | Cognitive Performance Specialist | 39 |
 | Athletic Trainer | 36 |
 | Certified Athletic Trainer | 36 |

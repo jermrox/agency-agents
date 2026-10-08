@@ -1,8 +1,447 @@
 {
   "version": 2,
-  "generated_at": "2026-10-07T19:33:34.302390+00:00",
-  "count": 697,
+  "generated_at": "2026-10-08T07:31:36.081811+00:00",
+  "count": 699,
   "jobs": [
+    {
+      "id": "6988daee4df0e06376de",
+      "fingerprint": "5e704f978c40dae09fb2",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888039500",
+      "title": "TRAINING COORDINATOR",
+      "employer": "Air Education and Training Command",
+      "location": "Lackland AFB, Texas",
+      "remote": false,
+      "telework": true,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$127,624 - $165,917 /yr",
+      "posted_at": null,
+      "description": "In order to qualify, you must meet the basic requirement and specialized experience requirements described in the Office of Personnel Management (OPM) Qualification Standards for General Schedule Positions, Professional and Scientific Positions, to include the Individual Occupational Requirements (IOR) for the GS-1701, General Education and Training series. BASIC REQUIREMENT OR INDIVIDUAL\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 127624.0,
+        "salary_max": 165917.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 1,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": "Air Force",
+        "program": "POTFF"
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": true,
+        "branches": [
+          "air-force"
+        ],
+        "branch_labels": [
+          "Air Force"
+        ],
+        "location_classes": [
+          "conus",
+          "telework"
+        ],
+        "location_regions": {
+          "conus": [
+            "Texas"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 127624.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "POTFF",
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "c7ad2eb72536f19a9fb7",
+      "fingerprint": "4f540b2094ab792e1d44",
+      "source": "icims:psi",
+      "url": "https://careers-plansys.icims.com/jobs/12127/prn-%28backfill%29-athletic-trainer/job",
+      "title": "PRN (Backfill) Athletic Trainer",
+      "employer": "Planned Systems International",
+      "location": "Camp LeJeune, NC",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Overview Cognito Systems, a Planned Systems International (PSI) joint venture, is seeking PRN (Backfill) Athletic Trainer to work at Camp LeJeune to support the Marine's Sports Medicine Injury Prevention program (SMIP). Located on the coast of North Carolina in Jacksonville. This would be for scheduled leave coverage, M-F 40/hours per week) - no weekends, nights, holidays, or travel. The lives of\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC"
+        ],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 5,
+        "employment_type": "Per-diem",
+        "installation": "Camp Lejeune",
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "athletic-training",
+        "discipline_label": "Athletic Training",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "North Carolina"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": null,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "4ab168fdb09afd3e130a",
+      "fingerprint": "71e42f7f73061cd0215b",
+      "source": "workday:bah",
+      "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Quantico-VA/Human-Performance-Training-and-Development-Specialist_R0251235",
+      "title": "Human Performance Training and Development Specialist",
+      "employer": "Booz Allen Hamilton",
+      "location": "Quantico, VA",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "from $86,800",
+      "posted_at": null,
+      "description": "Human Performance Training and Development Specialist The Opportunity: As a defense mission professional, you ask questions others don\u2019t. You understand the nuances of complex situations. You use your skills to think bigger and push further, solving complex problems. We\u2019re looking for an expert like you to create solutions for missions that keep our nation safe. Join us in advancing, sustaining,\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "CSCS"
+        ],
+        "clearance": "Secret",
+        "salary_min": 86800.0,
+        "salary_max": 198000.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 3,
+        "employment_type": "Full-time",
+        "installation": "Quantico",
+        "service_branch": "Marine Corps",
+        "program": null
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": false,
+        "branches": [
+          "marine-corps"
+        ],
+        "branch_labels": [
+          "Marine Corps"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 86800.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "a0764668cf89f4bd12b0",
+      "fingerprint": "fe58b8dbf8080ce0bdf2",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887965300",
+      "title": "Fitness Coordinator",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Corpus Christi, Texas",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$25.00 - $26.00 /hr",
+      "posted_at": null,
+      "description": "In order to qualify for this position, your resume must provide sufficient experience and/or education, knowledge, skills, and abilities, to perform the duties of the specific position for which you are being considered. Your resume is the key means we have for evaluating your skills, knowledge, and abilities, as they relate to this position. Therefore, we encourage you to be clear and specific\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 25.0,
+        "salary_max": 26.0,
+        "salary_period": "hour",
+        "education": "High School",
+        "years_experience_min": 2,
+        "employment_type": "Part-time",
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": true,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Texas"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 52000.0,
+        "mwr": true
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "b40aaeacd9a06706cca0",
+      "fingerprint": "15a5b0277b47c674eda3",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888041500",
+      "title": "Physical Therapy Assistant",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Naval Weapons Station, Yorktown, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$51,210 - $66,574 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the ?education and/or experience? requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 51210.0,
+        "salary_max": 66574.0,
+        "salary_period": "year",
+        "education": "Master",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 51210.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "ee2195ab757140597e5b",
+      "fingerprint": "c871e1c7cfde00905609",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887748300",
+      "title": "Physical Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Fort Irwin, California",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$104,349 - $135,657 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 104349.0,
+        "salary_max": 135657.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Irwin",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "California"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 104349.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
+    {
+      "id": "a2e664d81a22a13f080d",
+      "fingerprint": "98459b98a8821218c9bb",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888067000",
+      "title": "MWR Fitness Instructor",
+      "employer": "Commander, Navy Installations Command",
+      "location": "El Centro, California",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$22.14 /hr",
+      "posted_at": null,
+      "description": "Ability to competently and independently carry out fitness programs through the proper application of principles, concepts and techniques of recreation to satisfy specific needs of the community to be served. Skill in planning and carrying out an enhanced program in the recreation specialty area which meets the needs of the participating community. Skill and ability to provide fitness training\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 22.14,
+        "salary_max": 22.14,
+        "salary_period": "hour",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "California"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 46051.200000000004,
+        "mwr": true
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-08T07:31:36.081811+00:00"
+    },
     {
       "id": "37e95d3b024e632cfe87",
       "fingerprint": "fc25782df62ddcf88fa6",
@@ -1078,68 +1517,6 @@
       "listed_at": "2026-10-05T19:32:20.423828+00:00"
     },
     {
-      "id": "1467c35fb76708c12def",
-      "fingerprint": "df2732e5f9329ca97f7b",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887173900",
-      "title": "Physical Therapist",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Fort Bragg, North Carolina",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$95,786 - $124,534 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: Only applicants who meet one of the employment authority categories below are eligible to apply for this job. You will be asked to identify which category or categories you meet, and to provide documents which prove you meet the category or categories you selected. Current Civilian Employees of the Defense Health Agency (DHA) Interagency Career Transition Assistance Plan Land\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 95786.0,
-        "salary_max": 124534.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": "Fort Bragg",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "North Carolina"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 95786.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-05T07:55:33.631081+00:00"
-    },
-    {
       "id": "c816640e9ccd2c945197",
       "fingerprint": "e21a28dd349922a66579",
       "source": "jsonld:serco",
@@ -2020,131 +2397,6 @@
         "excluded_by": []
       },
       "confidence": "aggregator",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-01T19:31:08.629938+00:00"
-    },
-    {
-      "id": "42c8fd6dc3303c0a8575",
-      "fingerprint": "29d908af367bef526e74",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887176600",
-      "title": "INTERDISCIPLINARY",
-      "employer": "Pacific Air Forces",
-      "location": "Elmendorf AFB, Alaska",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$101,206 - $131,571 /yr",
-      "posted_at": null,
-      "description": "CONDITIONS OF EMPLOYMENT CONTINUED: his position has been identified as having \"regular contact with children\". IAW Public Law 101-647 Section 231, and Public Law 102-190, Section 1094. A FBI fingerprint and State Criminal History Repository (SCHR) Check will be completed on any person selected for this position. Must have the following minimum qualifications IAW DOD directives: In order to meet\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": "Secret",
-        "salary_min": 101206.0,
-        "salary_max": 131571.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Alaska"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 101206.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-01T19:31:08.629938+00:00"
-    },
-    {
-      "id": "755f892bd44ad9ccacb4",
-      "fingerprint": "e3f7202f298e951320a5",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887212900",
-      "title": "INTERDISCIPLINARY",
-      "employer": "Pacific Air Forces",
-      "location": "Eielson AFB, Alaska",
-      "remote": false,
-      "telework": true,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$101,206 - $131,571 /yr",
-      "posted_at": null,
-      "description": "CONDITIONS OF EMPLOYMENT CONTINUED: Must have the following minimum qualifications IAW DOD directives: In order to meet Military Treatment Facility (MTF) credentialing and privileging competency requirements, must have two years of experience working in the field of child abuse and domestic abuse as an independent Licensed Clinical Social Worker or a Licensed Marriage and Family Therapist. Must\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 101206.0,
-        "salary_max": 131571.0,
-        "salary_period": "year",
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "behavioral-health",
-        "discipline_label": "Behavioral Health",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "oconus",
-          "telework"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Alaska"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 101206.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
       "program": null,
       "notes": "",
       "listed_at": "2026-10-01T19:31:08.629938+00:00"
@@ -14474,7 +14726,7 @@
       "location": "Coronado, California",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -14515,7 +14767,7 @@
             "California"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16149,7 +16401,7 @@
       "location": "Honolulu, Hawaii",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16190,7 +16442,7 @@
             "Hawaii"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16344,7 +16596,7 @@
       "location": "Mary Esther, Florida",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16385,7 +16637,7 @@
             "Florida"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16409,7 +16661,7 @@
       "location": "Virginia Beach, Virginia",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16450,7 +16702,7 @@
             "Virginia"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16474,7 +16726,7 @@
       "location": "Tacoma, Washington",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16515,7 +16767,7 @@
             "Washington"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16539,7 +16791,7 @@
       "location": "Biloxi, Mississippi",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16580,7 +16832,7 @@
             "Mississippi"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16604,7 +16856,7 @@
       "location": "Seoul, International",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16641,7 +16893,7 @@
           "unspecified"
         ],
         "location_regions": {},
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16665,7 +16917,7 @@
       "location": "Jacksonville, North Carolina",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16706,7 +16958,7 @@
             "North Carolina"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16730,7 +16982,7 @@
       "location": "Southern Pines, North Carolina",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16771,7 +17023,7 @@
             "North Carolina"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16795,7 +17047,7 @@
       "location": "Oceanside, California",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16836,7 +17088,7 @@
             "California"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -16860,7 +17112,7 @@
       "location": "Clovis, New Mexico",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -16901,7 +17153,7 @@
             "New Mexico"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -17633,7 +17885,7 @@
       "location": "Mary Esther, Florida",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -17674,7 +17926,7 @@
             "Florida"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -17698,7 +17950,7 @@
       "location": "Honolulu, Hawaii",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -17739,7 +17991,7 @@
             "Hawaii"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -17763,7 +18015,7 @@
       "location": "Honolulu, Hawaii",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -17804,7 +18056,7 @@
             "Hawaii"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -39966,68 +40218,6 @@
       "listed_at": "2026-09-24T19:08:06.936610+00:00"
     },
     {
-      "id": "0a7dca5a17406a6b6ca9",
-      "fingerprint": "3462aeba0d9e71da1d7c",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/886072500",
-      "title": "SPORTS SPECIALIST (FITNESS)",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Guam, Guam",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$40,696 - $52,175 /yr",
-      "posted_at": null,
-      "description": "In order to qualify for this position, resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs. If you are relying on your education to meet qualification requirements: Education must be accredited by an accrediting\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 40696.0,
-        "salary_max": 52175.0,
-        "salary_period": "year",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Guam"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 40696.0,
-        "mwr": true
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-24T07:06:54.116289+00:00"
-    },
-    {
       "id": "acdb842941372519ccdc",
       "fingerprint": "b2f5f74cae1f8670e83a",
       "source": "workday:kbr",
@@ -41693,68 +41883,6 @@
       "listed_at": "2026-09-11T07:04:24.616728+00:00"
     },
     {
-      "id": "92ea98c767f4332bb0d2",
-      "fingerprint": "36edb8332ec6228901e8",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/884034100",
-      "title": "MWR Fitness Instructor",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Lemoore, California",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$52,175 /yr",
-      "posted_at": null,
-      "description": "Ability to competently and independently carry out fitness programs through the proper application of principles, concepts, and techniques of recreation to satisfy specific needs of the community to be served. Skill in planning and carrying out an enhanced program in the recreation specialty area which meets the needs of the participating community. Skill and ability to provide fitness training\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 52175.0,
-        "salary_max": 52175.0,
-        "salary_period": "year",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "California"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 52175.0,
-        "mwr": true
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-10T07:06:20.246383+00:00"
-    },
-    {
       "id": "a4e7e8152b294d99898d",
       "fingerprint": "99a802329e0fc285b8a2",
       "source": "jsonld:nsca",
@@ -41816,7 +41944,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-07T19:33:14+00:00"
+        "checked_at": "2026-10-08T07:31:18+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
