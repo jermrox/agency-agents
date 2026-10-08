@@ -112,12 +112,14 @@ fi
 
 # ----------------------------------------------------------------- marksom ---
 # agentmarksom is the Vybe Health Marketing Director's own site: the agent hub
-# (audiences, targets, targeting playbook, eval scores) at "/", and the weekly
-# scoreboard at /scoreboard.html. Both read JSON feeds published alongside them
+# (audiences, targets, targeting playbook, eval scores) at "/", the weekly
+# scoreboard at /scoreboard.html, and the daily briefing at /briefing.html
+# (its live numbers sit in the <script id="live-data"> block, refreshed each morning). Both read JSON feeds published alongside them
 # and fall back to the copies embedded in each page. Nothing from
 # vybe-marketing/ is published to any other site.
 MARKSOM_HUB="vybe-marketing/hub/index.html"
 MARKSOM_SCOREBOARD="vybe-marketing/hub/scoreboard.html"
+MARKSOM_BRIEFING="vybe-marketing/hub/briefing.html"
 MARKETING_FEED="vybe-marketing/scoreboard.json"
 MARKSOM_FEED="vybe-marketing/marksom.json"
 if want_marksom; then
@@ -128,6 +130,7 @@ if want_marksom; then
   cp -f "$MARKSOM_HUB" "$OUT/index.html"
   [ -f "$MARKSOM_FEED" ] && cp -f "$MARKSOM_FEED" "$OUT/marksom.json"
   [ -f "$MARKSOM_SCOREBOARD" ] && cp -f "$MARKSOM_SCOREBOARD" "$OUT/scoreboard.html"
+  [ -f "$MARKSOM_BRIEFING" ] && cp -f "$MARKSOM_BRIEFING" "$OUT/briefing.html"
   [ -f "$MARKETING_FEED" ] && cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
 fi
 

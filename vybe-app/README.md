@@ -39,9 +39,12 @@ npx expo start
 - **ConnectScreen** *(5 Oct)* — one week of outside load: thirty-eight
   hours of elevated readings, what each of them is being blamed on, and the
   seven that nothing explains. Tap the Connect card on Home.
-- **FollowUpScreen** *(new, 6 Oct)* — what happens when you tell Vybe it is
+- **FollowUpScreen** *(6 Oct)* — what happens when you tell Vybe it is
   wrong: a correction, the parts of the reasoning it moves, and the parts still
   standing. Reached from "That's not right" on AskScreen.
+- **ImportScreen** *(new, 7 Oct)* — connecting a source that already has years
+  in it: what Vybe will compute with, what it will only draw, and what it will
+  not take. Reached from the sources step of OnboardingScreen.
 
 ## The three decisions worth keeping
 
@@ -413,6 +416,45 @@ states survive being read aloud.
 **The blind-spot list stays on the page.**
 A correction can close one, and the closed item is struck through in place
 rather than disappearing. A list that quietly shrinks is a list nobody can audit.
+
+## The import screen, and why it looks like that
+
+`OnboardingScreen` asks which sources you will connect. This is the screen
+immediately after it, and the one nobody builds: the phone health store opens
+and three years of somebody else's readings come out.
+
+**The convenient thing is wrong in a way the person cannot see.**
+Import all of it, draw one seamless chart back to 2023, compute a baseline from
+the lot. But another product's sleep stages and HRV come from a different
+sensor, sampled at different moments, through an algorithm nobody has published.
+Build a baseline on those and every later sentence that says *"below your
+baseline"* is quietly measuring Vybe against a competitor's guess.
+
+**So history lands in three groups, and the rule sits above each one.**
+*Compute with* — a clock reading or a direct measurement, comparable between
+devices: sleep timing, resting heart rate, steps. *Show and never compute with*
+— three years of sleep stages and 892 days of HRV, drawn for you and unusable.
+*Not imported at all* — readiness scores from a formula nobody published,
+eighteen hand-typed weights, one stray blood-pressure reading.
+
+**The groups are consequential, not cosmetic.**
+Six capabilities are listed with their state derived from the buckets and the
+day counts: `statusFor()` returns `blocked` when an input sits outside the
+compute-with group and names the record that blocked it, `waiting` with the
+shortfall when an input is too short, `ready` otherwise. A capability can never
+announce itself ready while its input is in the group Vybe refuses to compute
+with. Verified in node: 1,120 usable days, 3 ready, 2 blocked by `shown`
+records, 1 waiting on meal logs it has 0 days of.
+
+**No health value appears anywhere on it.**
+The sample module holds record counts and date spans — no heart rate, no sleep
+duration, no score. A screen about what to do with a pile of history never needs
+to show a reading, which removes the risk entirely rather than labelling it.
+
+**The state is a word in its own column.**
+Ready, Not from this, Waiting — never a colour alone, and the day counts use
+tabular figures in a fixed right column so three years and eighteen days are
+comparable at a glance.
 
 ## Non-negotiables held
 

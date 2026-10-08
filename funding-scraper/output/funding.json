@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-07T00:15:33+00:00",
+  "generated": "2026-10-07T16:08:09+00:00",
   "as_of": "2026-10-07",
-  "count": 210,
+  "count": 219,
   "source_errors": [],
   "stale_sources": [],
   "opportunities": [
@@ -615,6 +615,33 @@
       "sam": "none"
     },
     {
+      "id": "curated-darpa-documentation-and-decision-support-d2-sprint",
+      "source": "curated",
+      "name": "DARPA Documentation and Decision Support (D2) Sprint",
+      "url": "https://www.darpa.mil/research/challenges/d2",
+      "agency": "DARPA Biological Technologies Office (federal prize under 15 U.S.C. 3719)",
+      "amount": "$1,000,000 total. Each of two lanes pays $300K for 1st, $150K for 2nd and $50K for 3rd (Documentation lane, Decision Support lane).",
+      "summary": "THIS IS AN ALGORITHM CONTEST, NOT A HARDWARE ONE. TEAMS MAY NOT COLLECT OR USE ANY HUMAN-SUBJECT DATA OF THEIR OWN, so Vybe band data from real people cannot be used. Teams train only on the DARPA dataset under DARPA's IRB protocol, plus simulated or non-human data. Lane 1 builds algorithms that fill in a digital DD Form 1380 (TCCC casualty card) from passively collected data (audio, video, accelerometry). Lane 2 builds real-time decision support based on TCCC guidelines. It fits Vybe's sensor-fusion and signal-processing engine and its tactical/dual-use story, and placing would give strong DoD credibility. It pays cash with no SAM.gov registration. Submit Part 1 early: reviews are rolling (an answer comes within 10 business days), and IRB processing can take up to a month. The final algorithm package is due 1 Mar 2027, and the awards ceremony is 26 Mar 2027.",
+      "open_date": null,
+      "close_date": "2026-11-04",
+      "status": "soon",
+      "days_left": 28,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Applicant and team representative must be a U.S. citizen or permanent resident representing a U.S. entity (companies are explicitly allowed). Foreign nationals may be team members only. No fee. To be paid, the winner gives an SSN or TIN; the rules, terms and FAQ say nothing about SAM.gov. Two-part qualification: Part 1 narrative is due 4 Nov 2026, and Part 2 is a qualification task due 1 Dec 2026. DARPA picks up to 20 teams on 10 Dec 2026.",
+      "documents": [
+        "Online registration and Part 1 Narrative Description via the D2 Qualification Portal: team name and organization, POC, and a roster listing any foreign nationals",
+        "Technical approach, max 500 words per subsection: experience; workflow for large video and incomplete data; algorithm architecture and existing software; training methods and any non-HSR data; transition/commercialization plan",
+        "Optional supplemental PDF of capabilities",
+        "Signed data handling agreement (limited use; no facial recognition; no re-identification)",
+        "Inclusion in the IV&V team's IRB protocol",
+        "Part 2 Qualification Task (by invitation after Part 1)",
+        "SSN or TIN to receive a prize"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-xcelerate-startup-competition",
       "source": "curated",
       "name": "Xcelerate Startup Competition",
@@ -830,7 +857,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -904,30 +931,6 @@
         "Your biggest small-business challenge",
         "How Shophand could best support you",
         "Follows on 4 social platforms"
-      ],
-      "sam": "none"
-    },
-    {
-      "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
-      "source": "curated",
-      "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
-      "url": "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge",
-      "agency": "NIH Office of Autoimmune Disease Research (OADR-ORWH)",
-      "amount": "Up to 10 \u00d7 $20,000 in Phase 1; up to $650,000 across three phases (5 \u00d7 $30K, then 3 \u00d7 $100K)",
-      "summary": "Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet \u2014 that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 \u2014 the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul\u2013Dec 2027 for invited Phase 1 entrants only.",
-      "open_date": null,
-      "close_date": "2026-12-11",
-      "status": "open",
-      "days_left": 65,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community",
-      "documents": [
-        "Registration form (nourishchallenge.org)",
-        "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
-        "Video demonstration of a working Phase 1 prototype",
-        "No HHS or NIH logos, and no claim of government endorsement"
       ],
       "sam": "none"
     },
@@ -1016,9 +1019,33 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
+      "source": "curated",
+      "name": "NIH NOURISH Autoimmunity Digital Health Challenge \u2014 Phase 1",
+      "url": "https://www.nih.gov/challenges/nourish-autoimmunity-digital-health-challenge",
+      "agency": "NIH Office of Autoimmune Disease Research (OADR-ORWH)",
+      "amount": "Up to 10 \u00d7 $20,000 in Phase 1; up to $650,000 across three phases (5 \u00d7 $30K, then 3 \u00d7 $100K)",
+      "summary": "DATE CORRECTED 7 OCT 2026: this row carried close_date 2026-12-11, which is 28 days early. NIH's own challenge page and its challenges index both state Phase 1 runs 1 Oct 2026 to 8 Jan 2027. Twenty-eight days of runway on a $650,000 challenge is worth more than most rows on this board. Best wearable fit on the board right now: NIH's own list of in-scope tools names smartwatches, fitness trackers, biosensors tracking heart rate, sleep and activity, and AI insights on diet \u2014 that is Vybe's Nourish dimension plus the band. The framing is people living with or AT RISK OF autoimmune disease, so the submission must be written for that audience; it needs no diagnostic or treatment claim. DATE CONFLICT on NIH's own page: the header says Phase 1 closes 8 Jan 2027, the rules say the package is due via nourishchallenge.org by 11 Dec 2026 \u2014 the board uses the earlier date. Prizes, not grants: no budget, no SAM.gov, no eRA Commons. Phase 2 runs Jul\u2013Dec 2027 for invited Phase 1 entrants only.",
+      "open_date": "2026-10-01",
+      "close_date": "2027-01-08",
+      "status": "open",
+      "days_left": 93,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Federal prize competition open to eligible individuals, teams and entities; software developers and engineers named as part of the solver community",
+      "documents": [
+        "Registration form (nourishchallenge.org)",
+        "Narrative, 6 pages max, 11-pt Calibri, one-inch margins, covering all five review areas",
+        "Video demonstration of a working Phase 1 prototype",
+        "No HHS or NIH logos, and no claim of government endorsement"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-nih-odss-it-s-about-time-temporal-reasoning-in-biomedical-knowledge-grap",
@@ -1039,6 +1066,30 @@
       "documents": [
         "Free registration on the CrowdPlat competition site (work.crowdplat.com/challenge/nih-temporal-knowledge-graph-challenge)",
         "Phase 1 PDF of up to 10 pages (11-point font minimum) covering: the temporal reasoning framework or design; the temporal modeling approach (events, sequences, durations, validity periods, evolving evidence); the use case and potential impact; and feasibility and integration with existing KG standards and ontologies"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-pcbway-9th-project-design-contest-edge-ai-iot-category",
+      "source": "curated",
+      "name": "PCBWay 9th Project Design Contest (Edge AI & IoT category)",
+      "url": "https://www.pcbway.com/activity/9th-project-design-contest.html",
+      "agency": "PCBWay",
+      "amount": "Cash prizes: First Prize $2,000 (1 winner) + $200 coupon + Jetson Orin Nano Super; Second $1,500 (2) + $100 coupon + Raspberry Pi 5; Third $800 (3); Popular Design $100 (10)",
+      "summary": "PUBLIC DISCLOSURE: rules ask entrants to upload Gerber, BOM, schematic, source code and CAD files so judges can evaluate, and projects are shown publicly in the PCBWay community. Do NOT enter the Vybe Band or its proprietary engine. Enter a non-core reference design instead, such as a DevKit breakout/charging dock or an open demo board for the SDK. The 'Edge AI & IoT' theme explicitly names 'smart sensors, wireless modules, wearables'. Small cash amount, but no SAM, no fee and no equity, and it doubles as developer-community visibility for the DevKit.",
+      "open_date": null,
+      "close_date": "2027-01-24",
+      "status": "open",
+      "days_left": 109,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Original project created or updated and submitted during the submission period (1 Sep 2026 to 24 Jan 2027). Team entries allowed (prize paid to team leader). No company-stage, location or fee gate stated.",
+      "documents": [
+        "PCBWay community account",
+        "Project write-up",
+        "Gerber/BOM/schematic/source/CAD files as applicable",
+        "Photos/video of the built project"
       ],
       "sam": "none"
     },
@@ -1236,7 +1287,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1279,7 +1330,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1320,7 +1371,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1423,7 +1474,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1442,7 +1493,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1611,7 +1662,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits having a 501(c)(3) status wit",
+      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Private institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other tha",
       "documents": [],
       "sam": "required"
     },
@@ -1630,7 +1681,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
       "documents": [],
       "sam": "required"
     },
@@ -2478,6 +2529,28 @@
       "sam": "required"
     },
     {
+      "id": "curated-digitalocean-startups-formerly-hatch",
+      "source": "curated",
+      "name": "DigitalOcean Startups (formerly Hatch)",
+      "url": "https://www.digitalocean.com/hatch",
+      "agency": "DigitalOcean",
+      "amount": "12 months of DigitalOcean credits ('amount varies'), 15 months of free Standard-tier support, plus partner perks; GPU credit packages by invitation only",
+      "summary": "CREDIT CARD REQUIRED ON THE ACCOUNT, AND GPU DROPLETS ARE NOT COVERED. The award amount is not published. It is useful for hosting the SDK/API backend and developer portal. Lower priority than the CAD seats.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Raised $10M or less; company website and matching company email; a DigitalOcean team account with company email and a valid credit card; no prior DigitalOcean credits; service businesses excluded. AI-native startups prioritised. Non-backed startups apply by choosing 'Other' as the partner.",
+      "documents": [
+        "DigitalOcean team account (company email + credit card)",
+        "Online application"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-dow-dod-mentor-prot-g-program-prot-g-application",
       "source": "curated",
       "name": "DoW (DoD) Mentor-Prot\u00e9g\u00e9 Program \u2014 prot\u00e9g\u00e9 application",
@@ -3121,25 +3194,6 @@
       "sam": "none"
     },
     {
-      "id": "grants.gov-maternal-and-child-health-mch-nutrition-training-program-hrsa-27-036",
-      "source": "grants.gov",
-      "name": "Maternal and Child Health (MCH) Nutrition Training Program (HRSA-27-036)",
-      "url": "https://www.grants.gov/search-results-detail/363411",
-      "agency": "Health Resources and Services Administration",
-      "amount": "see solicitation",
-      "summary": "",
-      "open_date": "2026-07-31",
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "",
-      "documents": [],
-      "sam": "required"
-    },
-    {
       "id": "curated-mayo-clinic-platform-accelerate",
       "source": "curated",
       "name": "Mayo Clinic Platform_Accelerate",
@@ -3550,6 +3604,27 @@
       "sam": "none"
     },
     {
+      "id": "curated-onshape-startup-program",
+      "source": "curated",
+      "name": "Onshape Startup Program",
+      "url": "https://www.onshape.com/en/startups",
+      "agency": "PTC (Onshape)",
+      "amount": "5 seats of Onshape Professional (or Onshape Government) at no cost; re-apply each year with no time limit; 3 months of SimScale simulation; 20% off 3Dconnexion",
+      "summary": "NEW CUSTOMERS ONLY. This is cloud CAD with built-in PDM. It suits a distributed team and design partners who need to see the DevKit mechanicals without installing software. The Onshape Government option could help with tactical customers later.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "'Qualifying startups'; open only to new Onshape customers. The page does not state detailed criteria (revenue, age): 'Special conditions and restrictions may apply.'",
+      "documents": [
+        "Online application"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-penfed-foundation-veteran-entrepreneur-program-accelerator-incubator",
       "source": "curated",
       "name": "PenFed Foundation Veteran Entrepreneur Program (Accelerator / Incubator)",
@@ -3732,6 +3807,28 @@
       "sam": "required"
     },
     {
+      "id": "curated-solidworks-for-startups-program",
+      "source": "curated",
+      "name": "SOLIDWORKS for Startups Program",
+      "url": "https://discover.solidworks.com/solidworks-startups-program",
+      "agency": "Dassault Systemes (SOLIDWORKS)",
+      "amount": "Free access to SOLIDWORKS 3D CAD and other product-development tools, plus free training and co-marketing. Dollar value not stated on the page. Third-party summaries mention later-year discounts, but the official page does not state them.",
+      "summary": "NOT OPEN IF VYBE (OR ITS CONTRACT DESIGNER UNDER VYBE'S NAME) ALREADY HOLDS A SOLIDWORKS LICENSE. Strong fit: it gives free professional mechanical CAD for the band and ring enclosures and DevKit housings. Approval is handled through a local reseller, who contacts you to issue the licence.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Hardware startup designing and building a physical product to sell; under $1M revenue; not more than 5 years old. Not open to current SOLIDWORKS customers, service providers, engineering/design firms, consultants or contract manufacturers.",
+      "documents": [
+        "Online application (company info, product description)",
+        "Company website/email"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-stmicroelectronics-free-sample-request",
       "source": "curated",
       "name": "STMicroelectronics Free Sample Request",
@@ -3875,6 +3972,28 @@
       "eligibility": "",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-solid-edge-for-startups-siemens",
+      "source": "curated",
+      "name": "Solid Edge for Startups (Siemens)",
+      "url": "https://solidedge.siemens.com/en/free-software/startup",
+      "agency": "Siemens Digital Industries Software",
+      "amount": "One year of Solid Edge (CAD, CAM, CAE, electrical design, simulation, data management) free, plus training resources, an expert community and co-marketing. Dollar value not stated.",
+      "summary": "FUNDING CAP: under $1M raised. Vybe qualifies today, but not once it raises a $1M+ round. It includes electrical design as well as mechanical. Pick ONE CAD platform: SOLIDWORKS, Solid Edge or Onshape.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Design firms and product manufacturers; legal entity in business 3 years or less; under $1M USD funding; under $1M USD annual revenue. No application fee.",
+      "documents": [
+        "Online application",
+        "Proof of legal entity / incorporation date"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-south-park-commons",
@@ -4053,6 +4172,27 @@
       "documents": [
         "Proof of military affiliation (veteran, transitioning service member or military spouse)",
         "Chapter application"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-together-ai-startup-accelerator",
+      "source": "curated",
+      "name": "Together AI Startup Accelerator",
+      "url": "https://www.together.ai/startup-accelerator",
+      "agency": "Together AI",
+      "amount": "Up to $15K in platform credits plus 3 hours of forward-deployed engineering for startups with up to $5M raised (higher tiers for larger raises)",
+      "summary": "AI-NATIVE FOCUS: the page targets AI-native startups, so pitch the Vybe Health Intelligence reasoning layer, not the band. Credits cover inference, fine-tuning and dedicated endpoints (open models). Check its data handling against Vybe's zero-retention/BAA promise before sending any PHI, because a BAA is not stated on the page.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "credit",
+      "eligibility": "Tiered by amount raised; the lowest tier is 'Up to $5M raised'. The page does not state a minimum raise or VC-backing requirement. Credits do not apply to Reserved GPU Clusters.",
+      "documents": [
+        "Online application form"
       ],
       "sam": "none"
     },
@@ -4300,6 +4440,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-vive-2027-startup-pitch-competition",
+      "source": "curated",
+      "name": "ViVE 2027 Startup Pitch Competition",
+      "url": "https://hlth.com/events/vive/agenda/programs/startup-pitch-competition/",
+      "agency": "ViVE (HLTH)",
+      "amount": "A grand prize to the winner; the amount is not stated on the event page",
+      "summary": "THE SISTER EVENT TO THE HLTH USA PITCH ALREADY ON THIS BOARD, and the one that lands in spring rather than autumn: ViVE 2027 is in Nashville, 14-17 March. The application form is live on the event page now. THE CLOSING DATE IS NOT PUBLISHED, which is why this is filed rolling rather than dated \u2014 apply early rather than waiting for a deadline that may never be announced, and check back monthly. The prize amount is not stated either; the HLTH USA sister competition pays $25,000, which is a reasonable expectation and not a fact. Travel to Nashville is the applicant's own cost.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Startups less than FIVE YEARS OLD that have raised under $8 MILLION. Three-minute pitch to a judging panel, then three minutes of questions. Vybe clears both gates comfortably.",
+      "documents": [
+        "Startup pitch application form on the ViVE event page",
+        "Evidence the company is under five years old",
+        "Total funding raised, under $8M",
+        "A three-minute pitch, and answers ready for three minutes of questions"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
       "source": "curated",
       "name": "W.M. Keck Foundation Science & Engineering Research Program",
@@ -4414,6 +4578,27 @@
       "sam": "none"
     },
     {
+      "id": "curated-wurth-elektronik-start-up-management-free-components-engineering-support",
+      "source": "curated",
+      "name": "Wurth Elektronik Start-Up Management (free components + engineering support)",
+      "url": "https://www.we-online.com/en/support/collaboration/start-up-management",
+      "agency": "Wurth Elektronik eiSos",
+      "amount": "Free sample components from the full portfolio, design kits, evaluation boards, webinars and engineer support. EMC/environmental labs and 'Find your Engineer' are for Germany-based companies only. Dollar value not stated.",
+      "summary": "LAB ACCESS IS GERMANY-ONLY, so for a US company the value is free passives, inductors, connectors, wireless-charging coils and design kits, plus applications-engineer help. That is still useful for band/ring charging and power design. There is no deadline and no form, only contact persons on the page.",
+      "open_date": null,
+      "close_date": null,
+      "status": "rolling",
+      "days_left": null,
+      "days_until_open": null,
+      "pillar": 1,
+      "kind": "partnership",
+      "eligibility": "Hardware/electronics start-ups; contact a start-up manager. No formal criteria are stated. The EMC pre-compliance lab and Find your Engineer are 'available for companies based in Germany.'",
+      "documents": [
+        "Email/contact to a Wurth start-up manager describing the product and stage"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-yale-ventures-healthtech-works",
       "source": "curated",
       "name": "Yale Ventures HealthTech Works",
@@ -4478,6 +4663,30 @@
         "NY State business registration / proof of NYS residency",
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
+      ],
+      "sam": "required"
+    },
+    {
+      "id": "curated-dow-sbir-sttr-fy2027-release-1",
+      "source": "curated",
+      "name": "DoW SBIR / STTR FY2027 Release 1",
+      "url": "https://www.dodsbirsttr.mil/submissions/solicitation-documents/active-solicitations",
+      "agency": "Department of War (DoW) SBIR/STTR, via DSIP",
+      "amount": "Phase I feasibility study, then Phase II prototype; non-dilutive contract money, no equity taken",
+      "summary": "PRE-RELEASED TODAY, 7 OCT 2026. Opens 28 Oct, closes 25 Nov. This is the first release of the FY27 cycle and the successor to Release 6, which closes 21 Oct at noon ET. The topic list is the whole value of this row and it is NOT READABLE from this sandbox: titles live behind the DSIP topics app, which needs JavaScript. SOMEBODY HAS TO OPEN dodsbirsttr.mil/topics-app AND SEARCH THE RELEASE 1 TOPICS for wearable, sleep, physiological, fatigue, readiness and human performance. Pre-release is the window where you can still ask a topic author questions directly; once it opens on 28 Oct that channel closes. The monthly rhythm is confirmed: new topics pre-release on the FIRST WEDNESDAY of every month, so the next one is 4 Nov. For reference, FY27 Release 7 is already scheduled \u2014 pre-release 7 Apr 2027, open 28 Apr, close 26 May 2027.",
+      "open_date": "2026-10-28",
+      "close_date": "2026-11-25",
+      "status": "forecast",
+      "days_left": 49,
+      "days_until_open": 21,
+      "pillar": 3,
+      "kind": "dod_sbir",
+      "eligibility": "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment \u2014 more than 50% \u2014 must be with the small business. All R&D performed in the United States.",
+      "documents": [
+        "SAM.gov registration with a UEI and a CAGE code",
+        "A topic number from the Release 1 list that actually fits",
+        "Phase I technical volume and cost volume through DSIP",
+        "Principal investigator employed more than 50% by the company"
       ],
       "sam": "required"
     },

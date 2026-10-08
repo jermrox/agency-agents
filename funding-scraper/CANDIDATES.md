@@ -408,6 +408,94 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 7 Oct 2026 (round 8, scheduled)
+
+Four lanes: a watch-list re-check, founder-identity cash, hardware/IoT/developer-platform
+support, and AgeTech, veteran-health and tactical prizes. All new rows need no SAM.gov.
+
+Added:
+- **DARPA Documentation and Decision Support (D2) Sprint:** $1M; $300K/$150K/$50K per lane.
+  - Part 1 is due 4 Nov and Part 2 on 1 Dec. No SAM.gov.
+  - It is an algorithm contest on DARPA's own dataset under DARPA's IRB, so band data from real people cannot be used.
+- **PCBWay 9th Project Design Contest (Edge AI & IoT):** $2,000 top prize; closes 24 Jan 2027. Enter a non-core reference board, not the Band.
+- **Free CAD (rolling):** SOLIDWORKS for Startups, Solid Edge for Startups and the Onshape Startup Program. Vybe needs only one.
+- **Credits and parts (rolling):**
+  - Together AI Startup Accelerator: up to $15K.
+  - DigitalOcean Startups: a credit card is required.
+  - Würth Elektronik Start-Up Management: free components.
+
+**Watch list:**
+- NIDILRR SBIR Phase I: est. 16 Oct – 16 Dec; SAM required.
+- NIDILRR Field Initiated Development: est. 12 Oct – 14 Dec; SAM required.
+- MedTech Innovator 2027: open until 1 Dec, but REJECTED for its $15K program fee if accepted (cash or a $50K SAFE). Revisit only if a scholarship covers it.
+- EPRI Incubatenergy 2027: the page needs a login; the ~20 Oct close is unconfirmed.
+- Hiring Our Heroes / FedEx small-business grant: up to $25K for veteran- or spouse-owned businesses. It usually closes late Feb and needs 3–20 employees.
+- What's Next Longevity: submissions open January 2027 (the real site is boomerventuresummit.com).
+- Key4Women/SCORE Cleveland pitch: $10K; Summit County qualifies if it returns.
+- Cartier Women's Initiative: next call likely spring 2027.
+- Ohio Third Frontier TVSF Round 47, TechCrunch Battlefield 2027, a2/NIA AITC renewal and OFRN Round 8: no dates yet.
+- Challenge.gov shut down on 30 Mar 2026. Federal prizes are now at usa.gov/find-active-challenge and on agency pages such as nih.gov/challenges.
+
+## Rejected on inspection — 7 Oct 2026 (round 8)
+
+- **MedTech Innovator 2027 Accelerator** — OPEN NOW, closes 2026-12-01 ('2027 Applications Now Open ... Applications close December 1, 2026'), and applying is free. But a participation FEE/EQUITY applies if accepted: the FAQ says 'The program fee is $15,000 ... or through a $50K SAFE note' (AHA/ASPS tracks require a $50K SAFE). The only fee-free track is Vantage (BARDA covers it), and that is for diagnostics and medical devices, which Vybe is not. The program also targets companies 'with clinical validation underway or in sight'. Prize pool: $700K+ ($350K early-stage Grand Finals). Reject on the fee/equity rule. Re-admit only if the founder accepts the $15K fee (scholarships can offset it).
+- **NIDILRR SBIR Phase I FY2027 (HHS-2027-ACL-NIDILRR-BISA-0308)** — not open yet; still a FORECAST on grants.gov. Expected posting 2026-10-16 and close 2026-12-16 (est.). Award $95K-$100K, small businesses. Needs SAM.gov (required): federal grant, needs SAM + UEI + Grants.gov registration before submitting.
+- **NIDILRR Field Initiated Projects (Development) FY2027 (HHS-2027-ACL-NIDILRR-IFDV-0304)** — not open yet; still a FORECAST. Expected posting 2026-10-12 and close 2026-12-14 (est.). Award $245K-$250K. Needs SAM.gov (required). The research must also be disability-focused.
+- **Hiring Our Heroes Small Business Grant (2027 cycle)** — not open yet; no date posted. The application page still says 'The application period for the 2026 Small Business Grant Program has closed', and the rules show the last deadline was 2025-12-15. Prizes are 4 x $10K plus a $25K grand prize for veteran/military-spouse-owned businesses. Re-check in Nov 2026 (the last cycle closed mid-Dec).
+- **NSC Work to Zero Lockout/Tagout Pilot Grant 2026-27** — Open (proposals Sept 18 - Oct 30, 2026; up to $20,000), but Vybe does not fit. The grants go to EMPLOYERS to pilot one of the nine lockout/tagout (hazardous energy control) vendors featured at NSC Congress 2026. Vybe is neither. No next Safety Innovation Challenge (vendor side) has been announced on nsc.org.
+- **EPRI Incubatenergy Labs Challenge 2027** — unverifiable. The 2027 challenge page exists but needs a login, and no public deadline could be confirmed (the ~20 Oct close is not verified). The public page is still the 2026 cycle, which closed 2025-11-14. The fit is also weak: these are utility-grid paid demos, and only the 'Advanced Utility Operations' category touches workforce safety.
+- **Ohio Third Frontier TVSF Round 47 (Phase 1/2)** — not open yet; no date posted. The page shows Round 46 ('Proposals: Due by 4 p.m. Aug. 6, 2026', awards ~Oct 2026), which is closed. Round 47 has no RFP yet; by the quarterly pattern it should appear around Oct-Nov 2026. The Phase 2 Start-Up Fund is already in existing.txt.
+- **SEA Change Signature Cohort** — No dated application window on the site. It offers only free monthly info sessions ('third Wednesday of each month') that explain 'timelines & application process'. It is a social-enterprise accelerator; no cash amount is stated.
+- **What's Next Longevity Venture Summit $10K Business Plan Competition 2027** — not open yet; expected January 2027. The page says 'We will begin accepting submissions in January 2027'. The summit is June 8-10, 2027. The '5 Jan' date was not found on the page. whatsnextlongevity.com is a parked GoDaddy domain; the real site is boomerventuresummit.com. The December 2026 Washington summit Pitch Room shows no prize.
+- **TechCrunch Startup Battlefield 2027** — not open yet; no date posted. The page says 'Applications have closed for 2026, but please consider applying next year!'
+- **a2 Collective / NIA AITC Pilot Awards (next cycle)** — not open yet; no date posted. The page says 'The a2 Collective anticipates sharing updates regarding the next a2 Pilot Awards competition in mid- to late 2026, contingent upon renewal of the National Institute on Aging (NIA) AITC program.' The ~1 Dec date is not confirmed.
+- **Ohio Federal Research Network (OFRN) Round 8** — not open yet; no date posted. The site lists Rounds 1-7, all closed, and no Round 8 solicitation. Past rounds also required teams with Ohio universities.
+- **Black Ambition Prize** — closed / not running in 2026. The page says 'The application for the Black Ambition Prize Competition is now closed' and 'we won't be accepting new applications for the Prize Competition in 2026'. No 2027 date.
+- **IU Health Incubator at IU LAB Pre-Accelerator (gBETA) Winter 2027** — OPEN, but NO CASH and a likely location gate. The gener8tor program data behind the page lists 'Application Due: 2027-01-10' and kickoff 2027-02-04, and says it is 'free ... requires no fees and no equity' and 'for early-stage companies with local roots'. It is hosted in Indianapolis (in-person plus virtual) and aimed at biosciences/human health. The only benefit is perks; there is no cash. Vybe is in Akron, so it fails the 'clearly valuable no-cash' bar. Optional fallback only.
+- **Citizens Minority-Owned Small Business Grant Program** — Dead program. The official page describes a one-time 2020 round ('On August 3 2020, Citizens launched... chosen 100 minority-owned small businesses to receive $15,000 grants') and lists the 2020 recipients only. No current window.
+- **Hiring Our Heroes Small Business Grant (FedEx Founder's Fund), next cycle** — Not open. Re-checked 7 Oct 2026: the page still says 'Award program applications must be submitted by December 15, 2025' and shows the 2026 winners. No 2027 window posted. Also needs 3-20 employees and an 'economically vulnerable community' or financial need. Watch it: IVMF says applications usually close at the end of February.
+- **Boundless Futures Foundation EmpowHer Grant (fall cycle)** — Wrong fit. Aggregators say the fall cycle opens 1 Nov 2026, but the business must address poverty, hunger or humanitarian aid, or sustainability and the environment. A wellness wearable does not fit those causes. It also needs a female founder aged 22 or older and an earning-revenue business.
+- **Cartier Women's Initiative, 2027 edition** — Closed. The 2027 call closed 16 June 2026. The official site would not render through the fetcher, and the date comes from the launch notice and its syndications.
+- **Greatness Grant (Nehemiah Davis)** — Closed. The official page says 'Deadline To Apply Is August 15th At 11:59 PM EST'. No next round is posted. It is $1,000 and not identity-based.
+- **VEA x Mission43 Veteran Entrepreneur Pitch Competition (Boise Entrepreneur Week Military Track)** — Idaho-only community event with a $10,000 pool. The page says 'Interest Form Only... Formal registration is not yet available' and 'Nothing currently scheduled'.
+- **SBA Patriot Pitch Competition (Freedom 250)** — Closed 10 June 2026 (summary marked 'Inactive'). It was also limited to businesses that had used SBA-backed capital.
+- **USAA x Bunker Labs 'From Service to Start-Up' pitch contest** — A one-time 2022 program for USAA's 100th anniversary. There is no current cycle.
+- **Bunker Labs Ambassador pitch at the Military Influencer Conference (Fiserv, $30K)** — Only Bunker Labs Ambassadors can enter; it has no open application. The event is 26-29 Oct.
+- **$100,000 Veteran Pitch Competition (The Veteran Fund x Founder Institute)** — The prize is a $100K equity investment, not a grant, and the latest edition shown is 2023.
+- **Key4Women x SCORE Cleveland Women-Owned Business Pitch Contest** — The latest edition found is 2022, with no 2026 or 2027 cycle posted. If it returns, Summit County is eligible ($10K grand prize).
+- **AMSE Alliance (Association of Military Spouse Entrepreneurs) microgrants** — Could not verify. The official site returned no readable content. Only aggregators claim 'quarterly' microgrants, with no amount or date.
+- **Meta AI Glasses Impact Grants** — Closed 9 March 2026, with recipients already named. It also needed projects built on Meta AI glasses.
+- **McKinsey Next 1B (Black-owned consumer brands)** — No cash; it is a coaching program. The official page was unreadable, so no current window could be confirmed.
+- **Idaho Veterans Chamber Veteran/Spouse Pitch Competition** — Idaho program; the page could not be read (bot checkpoint). Prizes are about $6K.
+- **Kirabo Grant / Coramino Fund / Siete Juntos / Santander Cultivate / Money Moves Pitch / High Five Grant for Moms / Olga Loizon / BackBlack Impact** — Closed, or limited to a city, industry or state. Per NerdWallet's 7 Oct listing: Kirabo, Siete and Olga Loizon are closed; Coramino covers 5 metro areas; Siete and Santander are for food businesses only; Money Moves closed 30 Aug and requires a paid ticket; High Five closed 30 Sep; BackBlack is for nonprofits and closed 31 Aug. None was worth an official-page fetch.
+- **Hackster.io open contests (Autodesk AU 2027, Infineon Boss Battle, Nordic Sustain the System)** — All three open contests are already on existing/rejected lists; the Arduino UNO Q contest is in judging (closed).
+- **Oracle for Startups** — The program page now offers only the generic Oracle Cloud Free Tier; it has no startup credit program or application. oracle.com/startup returned an error.
+- **Modal for Startups** — Credits require VC funding (from a Modal partner VC, or >$1M from any fund).
+- **Nebius for Startups** — Credits only through a Nebius VC partner, and the startup must have raised $5M+.
+- **Autodesk Fusion for Startups** — Not free: reported as $150/user for a 3-year term (discount, not a grant). Not verified on its own page today.
+- **Ansys Startup Program** — Discounted software ('Discounted Software for Eligible Startups'), not free.
+- **MathWorks Startup Program** — Low startup pricing (paid). Free licences only come via a partner accelerator.
+- **Altium Startup Program** — Paid discount (about GBP 2k first year per third-party reports), not free.
+- **PCBWay 2026 KiCad PCB Design Contest** — Closed: submissions 15 Apr to 15 Jun 2026.
+- **Elecrow 2nd Electronics Design Contest** — Closed: results announced July 2025.
+- **STM32 Edge AI Contest (Elektor)** — Closed: final submission 1 Sep 2025.
+- **electronica Fast Forward 2026 (Elektor startup award)** — Applications closed 1 Jul 2026.
+- **Protolabs Cool Idea Award** — Now a campus program for US student groups and university researchers only; the Submittable portal shows no open calls.
+- **Blues 'Most Valuable Hackster' program** — The only official page is a 2023 announcement; current availability could not be confirmed.
+- **NextPCB Accelerator Program** — The accelerator URL redirects to the generic homepage, and no current chip-of-the-month call could be verified.
+- **mHUB Accelerator (Chicago)** — Takes equity (6.5% for $142.5K cash + services).
+- **Microchip / Crowd Supply 'Get Launched'** — Program page returns 404.
+- **Intel Liftoff for Startups** — The official page could not be read (it returned no content), so it is unverified.
+- **MTEC / TATRC AutoDoc Demonstration and Prize Competition (passive casualty-care data collection)** — Closed: the MTEC page lists it under Closed (due 20 Nov 2023). MTEC's live National Guard/DHA FY26 Multi-Topic RPP (due 30 Oct 2026) needs paid MTEC membership and SAM.gov.
+- **DEVCOM Soldier Center WISE Challenge (Warfighter Innovation in Science & Engineering)** — Student-only: open only to cadet and midshipman teams from the five U.S. Service Academies.
+- **Army xTech|Disrupt Endurance** — Off-topic: it covers power generation and storage, not human performance. The xTech competitions page lists only it and xTech|Search 10 (already on the existing list) as open.
+- **DARPA Triage Challenge / DARPA Surgical Competition** — Not a fit: Triage is not taking new entrants, and Surgical is for autonomous trauma-surgery robotics. Of DARPA's medical challenges, only D2 is open to new teams.
+- **DHS S&T prize competitions page (Oct 2026)** — The only open DHS prize is Ready, Set...ID the Biothreat (metagenomic AI), which is already rejected and off-topic. No first-responder wellness prize is open.
+- **DIU Challenges / Commercial Acceleration Opportunities (Oct 2026)** — Nothing relevant is open. Only LC-ISR (closes 14 Oct) and the CLASS ACT counter-UxS maritime calls are live, and CLASS ACT runs through SAM.gov.
+- **AgeTech Collaborative from AARP pitch events (Dec 2026 / Jan 2027)** — The events page lists only AgeTech After Dark @ CES 2027 (closes 12 Oct 2026), which is already on the existing list. No other open-mic or themed pitch is open now.
+- **Freedom 250 Patriot Pitch Competition (PNW / NorCal VBOC)** — The program page returns 404, so no live application page could be verified.
+- **DHS S&T EMERGE wearables accelerator for first responders** — Search found only old news coverage, and no current cohort or application page on a DHS page.
+
 ## Promoted to the board — 6 Oct 2026 (round 7, scheduled)
 
 Four lanes: a watch-list re-check, Ohio and Midwest Q4 programs, newly announced
@@ -1909,3 +1997,84 @@ under Network access, or when Exa is topped up.
   carry them. Fifteen days left.
 - **AFWERX's first-Wednesday pre-release cadence held:** the next monthly
   pre-release was due 7 Oct, which is tomorrow.
+
+## Wednesday sweep — 7 Oct 2026
+
+Verification route unchanged: direct page fetches refused by the sandbox's
+egress proxy, Exa still out of credits, so everything below is each programme's
+own page as indexed, read through domain-restricted search.
+
+**Two rows added and one live row corrected — and the correction is worth more
+than a third row would have been.**
+
+### Corrected on the board
+
+- **NIH NOURISH Autoimmunity Digital Health Challenge** — the row carried
+  `close_date = 2026-12-11`. NIH's own challenge page and its challenges index
+  **both** state Phase 1 runs **1 Oct 2026 to 8 Jan 2027**. Corrected to
+  2027-01-08 with `open_date = 2026-10-01`. That is **28 days of runway
+  recovered on a $650,000 challenge** — the row would have dropped off the
+  board four weeks before the real deadline. Worth noting for the future: two
+  independent nih.gov pages agreed, which is what made this safe to overwrite
+  where the Hey Helen fee question was not.
+
+### Added to the board
+
+- **DoW SBIR/STTR FY2027 Release 1** — pre-released **today**. Opens 28 Oct,
+  closes 25 Nov 2026. The successor to Release 6 and the reason the
+  first-Wednesday diary item exists. Its topic list has the same problem as
+  Release 6's: unreadable from here.
+- **ViVE 2027 Startup Pitch Competition** — the spring sister of the HLTH USA
+  pitch already on the board. Nashville, 14–17 March 2027. Gates verified and
+  easily cleared: under five years old, under $8M raised. Filed rolling because
+  the application form is live but **no closing date is published**.
+
+### Dead or ineligible on inspection, 7 Oct 2026
+
+- **Hollomon Health Innovation Challenge (UW Foster)** — opens 1 Dec 2026,
+  closes 25 Jan 2027 at noon, finals 25 Feb. Ineligible twice over: teams must
+  be **student-led**, with at least one enrolled student from a college in the
+  Cascadia Corridor or Alaska, and **only student team members can receive
+  prize money**. Non-students may join as advisers and may not present.
+- **Wearable Insights into Health (University of Kansas Medical Center)** — two
+  awards up to $20,000 each, explicitly wearable. An internal KUMC pilot-award
+  programme for its own researchers. Not open to outside companies.
+- **NIH "Advance Whole-Person Data Integration… Chronic Disease Disparity"
+  Grand Challenge** — **$1,000,000**, open until 22 Jan 2027, and it names AI,
+  synthetic data and digital twins, which makes it read like a fit. It is not:
+  the deliverable is AI-ready datasets, computational methods and research
+  infrastructure that **must be accessible to other researchers**. That is a
+  research-infrastructure competition, not a product one, and Vybe is not a
+  dataset company. Eligibility for for-profits is also not stated on the page.
+- **NIH "It's About Time: Temporal Reasoning in Biomedical Knowledge Graphs"** —
+  $1,000,000, 5 Oct 2026 to 15 Jan 2027. Knowledge-graph embeddings. Not
+  Vybe's problem in any direction.
+- **TOPx HHS Tech Sprint for AI and Invisible Illness** — Phase 2 open to 15 Oct
+  2026. Phase 2 of a tech sprint generally means Phase 1 participants only; the
+  page does not say otherwise, and there are eight days left either way. Worth
+  catching at the Phase 1 announcement next time.
+- **Army FUZE — the five funding opportunities announced 16 Apr 2026** (Ka-band
+  radar, ITV blockchain, modular UAS payloads, and xTech|Phantum) — all closed
+  13 May 2026, and none were in a lane Vybe could enter. Recorded so the
+  headline does not pull anyone back to it.
+
+### Enrichment, not new rows
+
+- **Verizon Small Business Digital Ready** (already on the board, rolling) — the
+  mechanism is worth knowing: applications are reviewed **monthly through
+  December 2026**, awarding **10 businesses $10,000 each month**, and an
+  application that is not picked stays in consideration for the rest of the
+  year. One application, ten chances. It costs nothing to be in it now.
+
+### DoD lane — the calendar, finally pinned down
+
+- **Release 6 closes 21 Oct 2026 at 12:00 noon ET.** Fourteen days.
+- **FY2027 Release 1: pre-release 7 Oct (today), open 28 Oct, close 25 Nov.**
+- **FY2027 Release 7: pre-release 7 Apr 2027, open 28 Apr, close 26 May 2027.**
+- The pattern is now confirmed from DSIP itself: **pre-release on the first
+  Wednesday of a month, open three weeks later, close four weeks after that.**
+  Next pre-release: **Wed 4 Nov 2026.**
+- **Pre-release is the only window in which a topic author can be asked
+  questions directly.** Once a release opens, that channel shuts. So the value
+  of reading a topic list is highest in the three weeks that start today — and
+  it is still the one thing this sandbox cannot do.
