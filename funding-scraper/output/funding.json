@@ -1,7 +1,7 @@
 {
-  "generated": "2026-10-08T13:51:34+00:00",
+  "generated": "2026-10-08T16:04:27+00:00",
   "as_of": "2026-10-08",
-  "count": 218,
+  "count": 224,
   "source_errors": [],
   "stale_sources": [],
   "opportunities": [
@@ -239,6 +239,29 @@
       "sam": "none"
     },
     {
+      "id": "curated-nsf-i-corps-hub-great-lakes-region-regional-virtual-i-corps-cohorts-fall",
+      "source": "curated",
+      "name": "NSF I-Corps Hub: Great Lakes Region, regional virtual I-Corps cohorts (Fall 2026: University of Michigan, Iowa State, University of Iowa)",
+      "url": "https://greatlakesicorps.org/event/umich-i-corps-fall26/",
+      "agency": "NSF I-Corps Hub: Great Lakes Region (University of Michigan lead; University of Akron is a member)",
+      "amount": "No cash. Free training. Graduates can become eligible for NSF National I-Corps Teams ($50,000, which needs SAM) and for the Hub's Conference Connect travel grant (amount not stated).",
+      "summary": "NO CASH, AND THE MICHIGAN DEADLINE IS 8 DAYS AWAY (OCT 16). This is free customer-discovery training aimed at research commercialization, which matches the DevKit's first milestone of 5-10 university and research design partners. Use the interviews to test pricing and needs with university labs. Finishing a Hub program is required before a team can take Conference Connect, an online course that leads to a Hub travel grant; it also needs 10 documented customer-discovery interviews. It is also the route to NSF National I-Corps Teams ($50K), but that program needs SAM and is already on the rejected list. These cohorts are separate from the UARF/Akron I-Corps already listed. The Ohio State (Nov 13), Minnesota and UW-Milwaukee cohorts are in person or for affiliates only; see rejected.",
+      "open_date": null,
+      "close_date": "2026-10-16",
+      "status": "soon",
+      "days_left": 8,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "accelerator",
+      "eligibility": "The University of Michigan cohort is free and virtual and is 'open to all Midwest innovators and researchers'. Its course page says it is 'open to non-university participants as well'. Registration deadline: October 16. It runs on Fridays, October 23 to December 4, 2026, from 9 to 11am ET. Applications close early if the cohort fills. Two other virtual cohorts carry the same 'open to all Midwest innovators' wording: Iowa State (October 21 to November 18) and the University of Iowa (November 2 to 30). The Iowa cohort names early-stage startups and entrepreneurs; neither page gives a registration deadline.",
+      "documents": [
+        "Online application form (Great Lakes I-Corps Zoho form, ProgramName=F26 UM I-Corps)",
+        "Team member names and roles",
+        "Short description of the innovation (the DevKit / sensing platform)"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "curated-pave-her-way-disruptor-award-2026-inaugural",
       "source": "curated",
       "name": "Pave HER Way \u2014 Disruptor Award 2026 (inaugural)",
@@ -259,6 +282,30 @@
         "Project description and public-benefit case",
         "Proof of citizenship or residency if a semifinalist (passport, birth certificate, naturalization certificate or green card)",
         "Availability for a virtual interview 16\u201320 Nov"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-amd-developer-hackathon-act-iii-lablab-ai-health-and-wellbeing-track",
+      "source": "curated",
+      "name": "AMD Developer Hackathon: ACT III (lablab.ai), Health and Wellbeing track",
+      "url": "https://lablab.ai/event/amd-developer-hackathon-act-iii",
+      "agency": "AMD with lablab.ai (partners: Google, Evolus, Vibe Generation)",
+      "amount": "$12,000+ pool: $5,000 in AMD prizes, $5,000 in Google prizes, about EUR 1,011 in Evolus prizes (mostly credits). The Health and Wellbeing track's own prize is AirPods for the team, not cash",
+      "summary": "SMALL, FAST, AND THE HEALTH TRACK PRIZE IS NOT CASH. The cash comes from the AMD and Google main prizes, which every track competes for. The online build runs 12-18 Oct 2026, so this only makes sense if the team already has a demo-ready AI health agent. Track brief: 'Make a part of the patient journey safer, clearer, or easier', including 'Wellbeing and prevention support'. Submissions must be 'original and MIT-compliant'. Prize payout can take up to 90 days. New members get $100 in free AMD GPU credits.",
+      "open_date": null,
+      "close_date": "2026-10-18",
+      "status": "soon",
+      "days_left": 10,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Free. Needs an AMD AI Developer Program account plus lablab.ai and Discord registration. You can build online from anywhere; the optional on-site phase is in Italy and travel is not covered. Detailed eligibility is not stated on the event page (it defers to the lablab.ai guidelines).",
+      "documents": [
+        "AMD AI Developer Program sign-up; lablab.ai + Discord registration",
+        "Project title, short and long descriptions, selected challenge, tech tags",
+        "Working prototype",
+        "Cover image, demo video, pitch presentation"
       ],
       "sam": "none"
     },
@@ -456,6 +503,31 @@
         "Chosen credential from the eligible list, or a full case for a new one, with the training provider's own documentation",
         "Per-credential training and certification costs, and the reimbursement amount requested (max $1,000 each)",
         "Headcounts of incumbent and prospective employees per credential, with average wages before and after"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-qloo-agentic-hackathon-devpost",
+      "source": "curated",
+      "name": "Qloo Agentic Hackathon (Devpost)",
+      "url": "https://qloo.devpost.com/",
+      "agency": "Qloo (sponsor and administrator, New York)",
+      "amount": "$25,000 cash: $15,000 / $6,000 / $4,000. The page also says Jason Calacanis will personally invest an extra $25,000 in his favourite entry (this is an investment, not a prize; see note)",
+      "summary": "THE BONUS $25K FROM CALACANIS IS AN INVESTMENT. Treat it as equity or convertible money and decline it if you want to stay non-dilutive. The $25K in prizes is cash and no-strings. Fit: Qloo's own example ideas include health use cases, such as 'meals ... for seniors' with 'medication-aware ingredients'. A Vybe 'Nourish' or 'Connect' agent fits well: taste-aware meal or social-activity recommendations driven by recovery and HRV state. The repo must be public, so ship a demo layer, not core IP. Winners are announced about 23 Nov 2026.",
+      "open_date": null,
+      "close_date": "2026-10-30",
+      "status": "soon",
+      "days_left": 22,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Individuals of legal age, teams, and incorporated organizations. Global, except for sanctioned countries, Brazil and Quebec. No fee. The project must integrate the Qloo taste-graph API inside an agent.",
+      "documents": [
+        "Devpost registration",
+        "Link to a functional, externally hosted demo app",
+        "Public code repository",
+        "Text description of what makes it 'Qloo-powered'",
+        "Demo video"
       ],
       "sam": "none"
     },
@@ -666,6 +738,30 @@
         "Pitch deck (PDF/PPT up to 35MB, or link). A founder video is strongly recommended, and required if there is no deck",
         "Stage, users/customers, revenue in the last 12 months, capital raised to date, intent to raise VC in 12 months, near-term milestone",
         "Cap-table stakeholders with more than 20% equity: name, email, LinkedIn, role, full-time status, ethnicity, gender, equity %"
+      ],
+      "sam": "none"
+    },
+    {
+      "id": "curated-paypal-ai-hackathon-devpost",
+      "source": "curated",
+      "name": "PayPal AI Hackathon (Devpost)",
+      "url": "https://paypalaihackathon.devpost.com/",
+      "agency": "PayPal Inc. (sponsor); Devpost (administrator)",
+      "amount": "$67,500 cash total. Grand prizes $12,000 / $8,000 / $5,000. Five $5,000 honorable mentions (Most Creative, Most Impactful, Best Demo, Best Use of PayPal + AI, Best Use of Agentic Commerce). Sponsor prizes from $1,000 to $5,000",
+      "summary": "PAYPAL MUST BE CENTRAL TO THE PROJECT, AND THE REPO MUST BE PUBLIC AND OPEN SOURCE. This is the biggest open cash pool here that a company can enter and be paid in its own name. The health fit is indirect. One angle: an agentic-commerce demo in which a Vybe 'Health Intelligence' agent sells or reorders DevKit units, or charges SDK/API usage fees through PayPal. That tests Vybe's planned platform-fee and marketplace revenue. Build it as a standalone demo, not on proprietary Vybe code. Judging closes 21 Dec 2026.",
+      "open_date": null,
+      "close_date": "2026-11-12",
+      "status": "open",
+      "days_left": 35,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Individuals of legal age, teams, and organizations (corporations, LLCs) that exist at the time of entry. Global, except for sanctioned countries, Brazil and Quebec. No fee. The project must use both PayPal and AI.",
+      "documents": [
+        "Devpost registration (organization representative if entering as Vybe)",
+        "Working project using PayPal + AI (hosted demo URL or runnable setup instructions)",
+        "Public open-source code repo (GitHub/GitLab/Bitbucket)",
+        "Text description and demo video"
       ],
       "sam": "none"
     },
@@ -963,6 +1059,30 @@
       "sam": "none"
     },
     {
+      "id": "curated-nfl-big-data-bowl-2027-kaggle-combine-sensor-tracking-to-nfl-performance",
+      "source": "curated",
+      "name": "NFL Big Data Bowl 2027 (Kaggle) \u2014 Combine sensor tracking to NFL performance",
+      "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
+      "agency": "National Football League (sponsor) / Kaggle (host)",
+      "amount": "$100,000 total. Open Track: 3 finalists x $10,000 + 3 runners-up x $5,000. Separate University Track of the same size. Finalists are invited to present at the 2027 NFL Scouting Combine for an extra $10,000 Grand Prize",
+      "summary": "PRIZE IS PAID TO INDIVIDUALS, NOT THE COMPANY. WINNERS MUST RELEASE THE CODE OPEN SOURCE, AND THE DATA IS NON-COMMERCIAL (CC BY-NC 4.0). This is the best human-performance fit in the lane: 10 Hz wearable-sensor tracking of athletes in Combine drills (acceleration, deceleration, change of direction), linked to on-field outcomes. Vybe's signal-processing and sensor-fusion team can enter the Open Track as individuals with a 2,000-word Kaggle Writeup and a public notebook. Finalists present to NFL team analytics staff at the 2027 Combine, which gives Vybe's tactical and performance story real credibility. Keep Vybe's own firmware and algorithms out of the open-source deliverable.",
+      "open_date": null,
+      "close_date": "2027-01-06",
+      "status": "open",
+      "days_left": 90,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Free Kaggle account. Individuals or teams of up to 5. Must be 18+ to receive a prize. Employees of the NFL, Kaggle and their affiliates cannot win. Prizes go to individual Kaggle participants, not to a company.",
+      "documents": [
+        "Kaggle account and team (up to 5)",
+        "Kaggle Writeup: 2,000 words max, fewer than 10 tables or figures",
+        "Public Kaggle Notebook attached",
+        "Winners: model code and documentation delivered to the sponsor"
+      ],
+      "sam": "none"
+    },
+    {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
       "source": "grants.gov",
       "name": "Personal Health Informatics for Delivering Actionable Insights to Individuals (R01 Clinical Trial Optional) (PAR-25-235)",
@@ -1066,7 +1186,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1245,7 +1365,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1329,9 +1449,31 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
+    },
+    {
+      "id": "curated-16th-medica-start-up-competition-medica-2027-dusseldorf",
+      "source": "curated",
+      "name": "16th MEDICA START-UP COMPETITION (MEDICA 2027, Dusseldorf)",
+      "url": "https://www.medica-tradefair.com/en/Program/Forums_Stages/MEDICA_START-UP_STAGE/MEDICA_START-UP_COMPETITION",
+      "agency": "Messe Dusseldorf / MEDICA, organised by Navispace GmbH (Techpreneurs GmbH contact)",
+      "amount": "Prize money totalling EUR 3,500 across the winners, plus free international marketing and visibility across MEDICA channels",
+      "summary": "SMALL CASH, AND THE PITCH IS IN PERSON IN GERMANY. This is a low-priority visibility play. It is open now and free, and it fits Vybe's Health Intelligence/AI layer and wearable data platform under 'digital health'. Total prize money is only EUR 3,500, and travel is at Vybe's own cost (the page mentions no travel support). Rank it below any US cash prize. It is useful only if Vybe already plans to be at MEDICA 2027 for EU distribution or partner meetings. The page says 'free participation' up to the deadline, so check whether later registration costs anything.",
+      "open_date": null,
+      "close_date": "2027-09-09",
+      "status": "open",
+      "days_left": 336,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "Startups with solutions in AI in medicine, robotics, laboratory diagnostics, resilience (including cybersecurity) or other digital-health approaches. Free participation if registered by 9 Sep 2027. The page states no country restriction, stage cap or age gate ('not stated'). Finalists pitch in person in Dusseldorf, Germany, in November 2027.",
+      "documents": [
+        "Online registration (page links a registration form; contents not stated)",
+        "Pitch for the finals if selected (format not stated)"
+      ],
+      "sam": "none"
     },
     {
       "id": "curated-19th-healthcare-innovation-world-cup",
@@ -1601,7 +1743,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required"
     },
@@ -1620,7 +1762,7 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher educa",
+      "eligibility": "Private institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Public and State controlled institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher educa",
       "documents": [],
       "sam": "required"
     },
