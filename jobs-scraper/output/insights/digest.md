@@ -4,16 +4,16 @@
 
 ## Headline
 
-- **790 open jobs** from **43 employers**.
+- **791 open jobs** from **43 employers**.
 - Posted between **2025-12-03** and **2026-10-08**.
 - **$83,480 median** annualized pay across the 251 postings that publish one -- $62,000 to $110,080 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 596 of 1,386 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 747, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 45.
+- 612 of 1,403 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 748, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 46.
 
 ## Month over month
 
-Postings are **down -417** in 2026-10 (502 to 85), 83% against 2026-09.
+Postings are **down -401** in 2026-10 (495 to 94), 81% against 2026-09.
 
 ```
 2025-12     1  #
@@ -24,22 +24,22 @@ Postings are **down -417** in 2026-10 (502 to 85), 83% against 2026-09.
 2026-05     5  #
 2026-06     9  #
 2026-07    19  #
-2026-08    97  #####
-2026-09   502  ############################
-2026-10    85  #####
+2026-08    96  #####
+2026-09   495  ############################
+2026-10    94  #####
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
 - Loyal Source: 0 to 316
-- Serco USA: 0 to 37
+- Serco USA: 0 to 38
 - LMR Technical Group: 10 to 44
 - Commander, Navy Installations Command: 0 to 33
 - KBR: 5 to 34
 
 **Credentials appearing more often:**
 
-- CSCS: 3 to 269
+- CSCS: 3 to 270
 - ATC: 4 to 186
 - RD: 3 to 59
 - PhD: 0 to 48
@@ -52,8 +52,8 @@ Postings are **down -417** in 2026-10 (502 to 85), 83% against 2026-09.
 | Loyal Source | 316 | $68,016 | Strength & Conditioning, Sports Medicine |
 | KBR | 61 | $91,950 | Strength & Conditioning, Sports Medicine |
 | LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
+| Serco USA | 38 | - | Strength & Conditioning, Cognitive Performance |
 | Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
-| Serco USA | 37 | - | Strength & Conditioning, Cognitive Performance |
 | Planned Systems International | 35 | $66,345 | Sports Medicine, Strength & Conditioning |
 | Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
 | General Dynamics Information Technology | 30 | $98,738 | Cognitive Performance, Sports Medicine |
@@ -64,8 +64,8 @@ Postings are **down -417** in 2026-10 (502 to 85), 83% against 2026-09.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 416 | 67% |
-| Sports Medicine | 358 | 58% |
+| Strength & Conditioning | 417 | 67% |
+| Sports Medicine | 358 | 57% |
 | Cognitive Performance | 175 | 28% |
 | Research & Analytics | 124 | 20% |
 | Performance Nutrition | 101 | 16% |
@@ -79,7 +79,7 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 297 | 60% |
+| CSCS | 298 | 60% |
 | ATC | 208 | 42% |
 | RD | 64 | 13% |
 | PhD | 49 | 10% |
@@ -111,11 +111,11 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (75), NC (67), CA (62), GA (44), TX (43), NM (36), VA (36), CO (23), KY (23), HI (21)
+**States:** FL (75), NC (68), CA (62), GA (44), TX (43), NM (36), VA (36), CO (23), KY (23), HI (21)
 
 | Installation | Jobs |
 |---|---|
-| Fort Bragg | 50 |
+| Fort Bragg | 51 |
 | Coronado | 13 |
 | Hurlburt Field | 11 |
 | Fort Leonard Wood | 10 |
@@ -126,7 +126,7 @@ annual contractor bands are not otherwise comparable.
 | Fort Benning | 8 |
 | Fort Campbell | 8 |
 
-**Branches and services:** Joint (270), Army (189), Air Force (104), Navy (39), Marine Corps (27), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (190), Air Force (104), Navy (39), Marine Corps (27), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 

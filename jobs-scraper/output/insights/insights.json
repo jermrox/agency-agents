@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-08T07:31:36.691725+00:00",
+  "generated_at": "2026-10-08T19:39:15.094999+00:00",
   "totals": {
-    "postings": 1386,
+    "postings": 1403,
     "employers": 43,
-    "unique_jobs": 790,
+    "unique_jobs": 791,
     "with_salary": 251,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-08T00:00:00+00:00"
+      "latest": "2026-10-08T04:00:00+00:00"
     }
   },
   "by_employer": [
@@ -51,6 +51,18 @@
       "median_salary": 60750.0
     },
     {
+      "name": "Serco USA",
+      "count": 38,
+      "disciplines": [
+        "strength-conditioning",
+        "cognitive",
+        "research",
+        "sports-medicine",
+        "leadership"
+      ],
+      "median_salary": null
+    },
+    {
       "name": "Reef Systems",
       "count": 37,
       "disciplines": [
@@ -62,18 +74,6 @@
         "leadership"
       ],
       "median_salary": 535360.0
-    },
-    {
-      "name": "Serco USA",
-      "count": 37,
-      "disciplines": [
-        "strength-conditioning",
-        "cognitive",
-        "research",
-        "sports-medicine",
-        "leadership"
-      ],
-      "median_salary": null
     },
     {
       "name": "Planned Systems International",
@@ -190,38 +190,38 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 416,
-      "share": 0.6688,
+      "count": 417,
+      "share": 0.6693,
       "median_salary": 70940.75
     },
     {
       "name": "sports-medicine",
       "count": 358,
-      "share": 0.5756,
+      "share": 0.5746,
       "median_salary": 74455.5
     },
     {
       "name": "cognitive",
       "count": 175,
-      "share": 0.2814,
+      "share": 0.2809,
       "median_salary": 84869.0
     },
     {
       "name": "research",
       "count": 124,
-      "share": 0.1994,
+      "share": 0.199,
       "median_salary": 75920.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1624,
+      "share": 0.1621,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 35,
-      "share": 0.0563,
+      "share": 0.0562,
       "median_salary": 63282.0
     },
     {
@@ -234,23 +234,23 @@
   "by_domain": [
     {
       "name": "military",
-      "count": 747,
+      "count": 748,
       "share": 0.9577
     },
     {
       "name": "sof",
       "count": 375,
-      "share": 0.4808
+      "share": 0.4802
     },
     {
       "name": "first-responder",
       "count": 55,
-      "share": 0.0705
+      "share": 0.0704
     },
     {
       "name": "training-pipeline",
-      "count": 45,
-      "share": 0.0577
+      "count": 46,
+      "share": 0.0589
     }
   ],
   "by_branch": [
@@ -260,7 +260,7 @@
     },
     {
       "name": "Army",
-      "count": 189
+      "count": 190
     },
     {
       "name": "Air Force",
@@ -286,7 +286,7 @@
   "by_installation": [
     {
       "name": "Fort Bragg",
-      "count": 50
+      "count": 51
     },
     {
       "name": "Coronado",
@@ -352,7 +352,7 @@
     },
     {
       "code": "NC",
-      "count": 67
+      "count": 68
     },
     {
       "code": "CA",
@@ -410,28 +410,28 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 297,
-      "share": 0.6012
+      "count": 298,
+      "share": 0.602
     },
     {
       "name": "ATC",
       "count": 208,
-      "share": 0.4211
+      "share": 0.4202
     },
     {
       "name": "RD",
       "count": 64,
-      "share": 0.1296
+      "share": 0.1293
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.0992
+      "share": 0.099
     },
     {
       "name": "DPT",
       "count": 16,
-      "share": 0.0324
+      "share": 0.0323
     },
     {
       "name": "LAT",
@@ -441,7 +441,7 @@
     {
       "name": "TSAC-F",
       "count": 7,
-      "share": 0.0142
+      "share": 0.0141
     }
   ],
   "clearances": [
@@ -567,20 +567,20 @@
     },
     {
       "month": "2026-08",
-      "count": 97
+      "count": 96
     },
     {
       "month": "2026-09",
-      "count": 502
+      "count": 495
     },
     {
       "month": "2026-10",
-      "count": 85
+      "count": 94
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-10T00:00:00+00:00",
+    "pivot": "2026-07-10T04:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -590,9 +590,9 @@
       },
       {
         "name": "Serco USA",
-        "recent": 37,
+        "recent": 38,
         "previous": 0,
-        "change": 37
+        "change": 38
       },
       {
         "name": "LMR Technical Group",
@@ -676,9 +676,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 269,
+        "recent": 270,
         "previous": 3,
-        "change": 266
+        "change": 267
       },
       {
         "name": "ATC",
