@@ -1,0 +1,786 @@
+[
+  {
+    "role": "Crew Endurance Lead; Senior Scientist",
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Monterey, CA",
+    "name": "Crew Endurance Team (Nita Lewis Shattuck, PhD; Panagiotis Matsangas, PhD)",
+    "org": "Naval Postgraduate School, Human Systems Integration / Operations Research",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 9,
+      "c": 6,
+      "e": 5
+    },
+    "why": "Team runs long-duration wearable sleep studies on ships: May 2026 Aerosp Med Hum Perform paper tracked 99 US Navy surface warfare officers with wearables for a median 340 days; 2026 Sleep RCT used wrist actigraphs on watch schedules; Navy/DVIDS report a planned ring-based study on Coast Guard icebreaker Healy (sleep, HR, HRV, SpO2, skin temp), and their findings underpin the Navy's Comprehensive Crew Endurance Management Policy.",
+    "why_now": "Two 2026 papers (Sleep, Apr 2026; Aerosp Med Hum Perform, May 2026) on wearable-measured sleep at sea.",
+    "evidence": [
+      "https://pubmed.ncbi.nlm.nih.gov/42044900/",
+      "https://doi.org/10.3357/AMHP.6732.2026",
+      "https://pubmed.ncbi.nlm.nih.gov/41189419/",
+      "https://nps.edu/web/crewendurance/team",
+      "https://www.navy.mil/Press-Office/News-Stories/display-news/Article/3510666/nps-research-on-coast-guard-icebreaker-to-enhance-arctic-readiness/",
+      "https://my.nps.edu/-/crew-endurance-team-explores-innovative-sleep-solutions-onboard-uss-paul-hamilton"
+    ],
+    "channel": "contact via team page",
+    "contact_url": "https://nps.edu/web/crewendurance/team",
+    "fit": 9,
+    "ask": "Offer 5-10 DevKits for a comparison against their current ring/watch devices on a shore-based or underway cohort.",
+    "opener": "Hi Dr. Shattuck, I'm Jeremy at Vybe Health in Akron. Your 340-day wearable sleep work with surface warfare officers is the longest field dataset I've seen. We're building a screenless band worn overnight (sleep and HRV, open SDK, raw data access). Would a few DevKits be useful as a comparison device in a future cohort? I'd value 15 minutes on what your team needs from a device.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "navy",
+      "coast-guard",
+      "sleep",
+      "hrv",
+      "tactical",
+      "shift-work"
+    ]
+  },
+  {
+    "role": "Principal investigator",
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2026-07-10",
+    "warm_path": null,
+    "geo": "Portland, OR",
+    "name": "SWIFT: Shiftwork in Firefighters study (Nicole P. Bowles, PhD)",
+    "org": "Oregon Health & Science University, Oregon Institute of Occupational Health Sciences",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 8,
+      "c": 6,
+      "e": 6
+    },
+    "why": "SWIFT compares 24/48 vs 1/3/2/3 firefighter schedules with actigraphy, chest-strap heart rate and vigilance tests over 14 days, built with unions and fire leadership in Oregon and Utah (186 firefighters to date per OHSU). July 2026 Nat Sci Sleep paper used actigraphy from 120 SWIFT firefighters (2,617 observations).",
+    "why_now": "Nature and Science of Sleep paper published 2026-07-10.",
+    "evidence": [
+      "https://www.ohsu.edu/oregon-institute-occupational-health-sciences/swift-shiftwork-firefighters",
+      "https://pubmed.ncbi.nlm.nih.gov/42453549/",
+      "https://doi.org/10.2147/NSS.S605149",
+      "https://pubmed.ncbi.nlm.nih.gov/40842719/",
+      "https://www.hcplive.com/view/staggered-schedule-may-not-harm-firefighter-sleep-nicole-bowles-phd-says"
+    ],
+    "channel": "contact via study page",
+    "contact_url": "https://www.ohsu.edu/oregon-institute-occupational-health-sciences/swift-shiftwork-firefighters",
+    "fit": 8,
+    "ask": "Offer DevKits so a SWIFT follow-up can capture overnight HRV alongside actigraphy without a chest strap.",
+    "opener": "Hi Dr. Bowles, I'm Jeremy at Vybe Health in Akron. SWIFT pairing actigraphy with a chest strap across shift schedules is exactly the data problem we're building for: a screenless band worn overnight that records sleep and HRV with an open SDK. Would DevKits be useful in a follow-up wave? I'd value 15 minutes on what firefighters will and won't wear.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "fire",
+      "sleep",
+      "hrv",
+      "shift-work",
+      "union"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2025-10-17",
+    "warm_path": null,
+    "geo": "Research Triangle Park, NC",
+    "name": "Wearable biometric research for correctional officers and responders (Ryan M. Labrecque; Meghan Hegarty-Craver)",
+    "org": "RTI International",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 8,
+      "c": 5,
+      "e": 5
+    },
+    "why": "RTI ran a smartwatch pilot with 15 prison staff over six weeks (Justice Quarterly) showing wearables were acceptable to correctional staff and sensitive to change in stress and sleep; separately RTI and US EPA published an Oct 2025 JMIR Form Res study on Garmin Fenix 6 wear with PPE including firefighter recruits, and RTI earlier published a police biometrics protocol.",
+    "why_now": "JMIR Formative Research paper published 2025-10-17.",
+    "evidence": [
+      "https://www.rti.org/publication/advancing-measurement-correctional-officer-health-wellness-pilot-study-wearable-biometric-sensor-dev",
+      "https://pubmed.ncbi.nlm.nih.gov/41105882/",
+      "https://doi.org/10.2196/72324",
+      "https://www.rti.org/publication/biometrics-and-policing-protocol-multichannel-sensor-data-collection-and-exploratory"
+    ],
+    "channel": "contact via RTI publication page",
+    "contact_url": "https://www.rti.org/publication/advancing-measurement-correctional-officer-health-wellness-pilot-study-wearable-biometric-sensor-dev",
+    "fit": 8,
+    "ask": "15-minute call on whether a screenless overnight band would fit a scaled-up corrections or responder study; offer DevKits.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. Your correctional-staff smartwatch pilot is one of very few studies in corrections. We're building a screenless band worn overnight (sleep and HRV, open SDK, raw data export), which avoids the on-shift device issues in facilities. Would DevKits be useful for a follow-up? I'd value 15 minutes on what blocked scale last time.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "corrections",
+      "police",
+      "fire",
+      "wearables",
+      "sleep"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": "Pennsylvania / Midwest-adjacent (Pittsburgh, ~2 hours from Akron)",
+    "geo": "Pittsburgh, PA",
+    "name": "EMS Sleep Health Study (P. Daniel Patterson, PhD)",
+    "org": "University of Pittsburgh, Dept. of Emergency Medicine",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 7,
+      "c": 5,
+      "e": 5
+    },
+    "why": "Patterson led the multi-agency EMS Sleep Health Study (NHTSA final report DOT HS 813 391, Jan 2023) in which some EMS clinicians wore wrist actigraphs; agencies of 50-300 staff, including fire-EMS combined, were recruited via NASEMSO, NEMSMA and state EMS offices. He also led the HEMS fatigue SleepTrackTXT trials.",
+    "why_now": null,
+    "evidence": [
+      "https://nasemso.org/nasemso-document/ems-agency-sleep-health-study-flyer",
+      "https://www.ems1.com/health-and-wellness/articles/study-on-ems-sleep-health-fatigue-seeks-participants-EoJB1wsWQFJtMNNQ/",
+      "https://cdn.clinicaltrials.gov/large-docs/79/NCT04218279/ICF_002.pdf",
+      "https://rosap.ntl.bts.gov/view/dot/65893/dot_65893_DS1.pdf",
+      "https://cdn.clinicaltrials.gov/large-docs/27/NCT02783027/Prot_SAP_000.pdf"
+    ],
+    "channel": "contact via NASEMSO study listing",
+    "contact_url": "https://nasemso.org/nasemso-document/ems-agency-sleep-health-study-flyer",
+    "fit": 7,
+    "ask": "Ask whether a wearable arm is planned for the next EMS fatigue study and offer DevKits.",
+    "opener": "Hi Dr. Patterson, I'm Jeremy at Vybe Health in Akron. Your EMS Sleep Health Study used wrist actigraphs across agencies; we're building a screenless band worn overnight that records sleep and HRV with an open SDK. If a next EMS fatigue study is in the works, would DevKits be useful? I'd value 15 minutes on what agencies will tolerate.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "ems",
+      "sleep",
+      "shift-work",
+      "pennsylvania"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Boston, MA",
+    "name": "Firefighter shift-schedule smartwatch sleep study (Laura K. Barger, PhD; Matthew D. Weaver, PhD)",
+    "org": "Brigham and Women's Hospital, Division of Sleep and Circadian Disorders",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 8,
+      "c": 4,
+      "e": 5
+    },
+    "why": "IAFF (Aug 2025) reports Barger and Weaver seeking funding to follow Palm Beach County IAFF Local 2928 members with smartwatches for 6-12 months before and after a 24/48 to 24/72 switch starting Jan 2027; Brigham also sponsors a registered firefighter sleep-disorders program trial (NCT04519177, estimated start 2027-01-01).",
+    "why_now": "Shift change and study window begin January 2027 per IAFF; device choice may still be open.",
+    "evidence": [
+      "https://www.iaff.org/news/feeling-sleep-deprived-help-is-on-the-horizon/",
+      "https://clinicaltrials.gov/study/NCT04519177"
+    ],
+    "channel": "warm intro needed (IAFF Local 2928 or Brigham sleep division)",
+    "contact_url": null,
+    "fit": 8,
+    "ask": "Ask whether the device for the Palm Beach study is chosen; offer DevKits as a no-subscription option.",
+    "opener": "Hi Dr. Barger, I'm Jeremy at Vybe Health in Akron. I read that your team may follow Palm Beach County firefighters with smartwatches across their 2027 shift change. We're building a screenless band worn overnight (sleep and HRV, open SDK, no subscription). If the device isn't locked yet, would DevKits be worth a look? Happy to share specs.",
+    "confidence": "single-source",
+    "tags": [
+      "research",
+      "fire",
+      "sleep",
+      "shift-work",
+      "union"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "College Station, TX",
+    "name": "Wildfire smoke and firefighter heart study (So-Min Cheong, PhD)",
+    "org": "Texas A&M University (with Texas A&M Forest Service and Stanford Medicine)",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 5,
+      "e": 5
+    },
+    "why": "Wildland firefighters wore an Apple Watch plus an air-quality sensor so heart rate could be compared in heavy smoke vs rest; Apple's 2023 announcement said up to 200 firefighters in Texas and California, with sleep among planned measures; 2024 coverage reports 56 firefighters enrolled and no results yet.",
+    "why_now": null,
+    "evidence": [
+      "https://www.firerescue1.com/technology/researchers-uses-wearable-tech-to-study-effects-of-wildfire-smoke-on-firefighters",
+      "https://firehouse.com/tech-comm/news/53099799/wearable-tech-measures-the-effect-of-smoke-on-firefighters",
+      "https://www.apple.com/newsroom/2023/02/with-apple-watch-researchers-explore-new-frontiers-in-heart-health"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask whether an overnight-only recovery device would add value between shifts on fire assignments.",
+    "opener": "Hi Dr. Cheong, I'm Jeremy at Vybe Health in Akron. Your wildland smoke study pairs on-shift heart rate with air quality; we're building a screenless band worn overnight for sleep and HRV, with an open SDK. I'm curious whether recovery between shifts matters for your questions. Would 15 minutes to compare notes be possible?",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "wildland-fire",
+      "hrv",
+      "sleep"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Berkeley, CA",
+    "name": "Wildland firefighter wearable workload research",
+    "org": "UC Berkeley Center for Occupational and Environmental Health (COEH) / School of Public Health",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 4,
+      "e": 4
+    },
+    "why": "COEH project compares two wearable devices (Slate Safety, ActiPal) for workload in about 150 wildland firefighters (Chile); DOI says UC Berkeley's School of Public Health and NIOSH are partners on a federal wildland firefighter study assessing daily stress and fatigue.",
+    "why_now": null,
+    "evidence": [
+      "https://www.coeh.berkeley.edu/node/1254",
+      "https://www.doi.gov/wildlandfirenews/strengthening-support-federal-wildland-firefighter-health-and-wellbeing"
+    ],
+    "channel": "contact via COEH project page",
+    "contact_url": "https://www.coeh.berkeley.edu/node/1254",
+    "fit": 7,
+    "ask": "Ask who leads the NIOSH/Berkeley fatigue study and whether an overnight device is in scope.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. Your wildland work comparing wearables for workload caught my eye. We're building a screenless band worn overnight that records sleep and HRV with an open SDK, aimed at recovery between shifts. Would your team be open to 15 minutes on whether overnight data would help the fatigue questions you're studying?",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "wildland-fire",
+      "wearables",
+      "fatigue"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": null,
+    "name": "Federal Wildland Firefighter Health and Wellbeing Program",
+    "org": "U.S. Department of the Interior and USDA Forest Service",
+    "type": "channel-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 7,
+      "c": 3,
+      "e": 3
+    },
+    "why": "Joint DOI/USFS program with a physical health and readiness track that includes studying fatigue management, plus a NIOSH and UC Berkeley study of daily stress and fatigue in federal wildland firefighters.",
+    "why_now": null,
+    "evidence": [
+      "https://www.doi.gov/wildlandfirenews/strengthening-support-federal-wildland-firefighter-health-and-wellbeing",
+      "https://doi.gov/node/41771"
+    ],
+    "channel": "contact via DOI wildland fire page",
+    "contact_url": "https://www.doi.gov/wildlandfirenews/strengthening-support-federal-wildland-firefighter-health-and-wellbeing",
+    "fit": 7,
+    "opportunity": "Offer DevKits for a small fatigue-management pilot within the physical health and readiness track, or as a device option for the NIOSH/Berkeley fatigue study.",
+    "unknowns": "No vendor or pilot intake route published; named program lead not found; federal procurement and data-privacy review requirements unknown; pages undated.",
+    "ask": "Ask the program which office handles fatigue-management pilots and whether outside devices are considered.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. The program's fatigue-management work for wildland firefighters lines up with what we're building: a screenless band worn overnight that records sleep and HRV, with no subscription and raw data access. Who would be the right person to ask about a small, no-cost DevKit pilot with a crew?",
+    "confidence": "verified",
+    "tags": [
+      "wildland-fire",
+      "usfs",
+      "federal",
+      "fatigue",
+      "sleep"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2026-09-21",
+    "warm_path": "Midwest",
+    "geo": "Lansing, MI",
+    "name": "Trooper recruit mental performance program (Sgt. Ashley Kierpaul)",
+    "org": "Michigan State Police Training Academy",
+    "type": "builder",
+    "hunt": "growth",
+    "ice": {
+      "i": 7,
+      "c": 4,
+      "e": 4
+    },
+    "why": "MSP built a mental training program for trooper recruits modeled partly on the Detroit Lions, with sleep training as a major component for officers on midnight and swing shifts; Lt. Brian Kinaschuk of the academy backs it; reported 49 recruits through, 41 graduated.",
+    "why_now": "Syndicated coverage 2026-09-21 (first reported 2026-06-02) says departments nationally are taking notice.",
+    "evidence": [
+      "https://www.wndu.com/2026/06/02/michigan-state-police-adopt-mental-training-techniques-detroit-lions/",
+      "https://www.wilx.com/2026/06/02/michigan-state-police-adopt-mental-training-techniques-detroit-lions/",
+      "https://www.hawaiinewsnow.com/2026/09/21/how-trooper-recruits-michigan-are-training-like-nfl-players/"
+    ],
+    "channel": "warm intro needed (MSP public information office)",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask whether recruits' sleep training could use objective overnight data in a small DevKit feedback cohort.",
+    "opener": "Hi Sgt. Kierpaul, I'm Jeremy at Vybe Health in Akron, Ohio. I read about the recruit program's sleep training. We're building a screenless band worn overnight that records sleep and HRV, with no subscription. Would recruits or instructors be open to giving feedback on DevKits? I'd value 15 minutes on what would actually help them.",
+    "confidence": "verified",
+    "tags": [
+      "police",
+      "michigan",
+      "midwest",
+      "sleep",
+      "recruits",
+      "tactical"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": null,
+    "name": "APCO Health & Wellness initiative and Wellness & Workforce Summit",
+    "org": "APCO International (Association of Public-Safety Communications Officials)",
+    "type": "channel-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 7,
+      "c": 5,
+      "e": 5
+    },
+    "why": "APCO launched a telecommunicator wellness initiative, added health and wellness assessments to its consulting services, ran a research partnership with George Mason University, and its Feb 2026 Wellness & Workforce Summit had 185 attendees and 12 sponsors (both records); APCO 2026 had a wellness track and an exhibit-hall Wellness Zone.",
+    "why_now": "APCO 2026 general sessions reported record summit sponsorship; next summit date not found.",
+    "evidence": [
+      "https://www.apcointl.org/services/health-wellness/",
+      "https://www.apcointl.org/psc/apco-2026-opening-general-session/",
+      "https://www.apcointl.org/psc/apco-2026-second-general-business-session/"
+    ],
+    "channel": "contact via APCO health & wellness page",
+    "contact_url": "https://www.apcointl.org/services/health-wellness/",
+    "fit": 7,
+    "opportunity": "Exhibit or sponsor in the Wellness Zone / Wellness & Workforce Summit, or offer DevKits to a 911 center through APCO's wellness assessments; dispatchers are a shift-work group almost no wearable targets.",
+    "unknowns": "Sponsorship packages and prices not found; 2027 summit date and location not found; whether APCO partners with device vendors.",
+    "ask": "Ask for the 2027 Wellness & Workforce Summit sponsor/exhibitor information.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. Telecommunicators work long overnight shifts and are rarely included in wearable programs. We're building a screenless band worn overnight that records sleep and HRV, with no subscription. Could you share how vendors take part in the Wellness & Workforce Summit or Wellness Zone, and who leads APCO's wellness initiative?",
+    "confidence": "verified",
+    "tags": [
+      "911-dispatch",
+      "telecommunicators",
+      "first-responders",
+      "shift-work",
+      "event"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2026-03-02",
+    "warm_path": "Midwest",
+    "geo": "Illinois",
+    "name": "Frontline Resource Network and Frontline Convention",
+    "org": "100 Club of Illinois",
+    "type": "channel-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 6,
+      "c": 5,
+      "e": 6
+    },
+    "why": "Statewide first-responder wellness network connecting all sworn Illinois first responders to vetted services via an app; organizations can apply for inclusion; its Frontline Convention (Mar 2-3, 2026, Oak Brook) is a statewide wellness conference with resource-partner networking.",
+    "why_now": "2026 Frontline Convention held March 2-3; 2027 date not found.",
+    "evidence": [
+      "https://www.100clubil.org/?p=52563",
+      "https://www.100clubil.org/2026-frontline-convention/",
+      "https://www.100clubil.org/100-club-app"
+    ],
+    "channel": "apply",
+    "contact_url": "https://www.100clubil.org/?p=52563",
+    "fit": 7,
+    "opportunity": "Apply to the Frontline Resource Network or exhibit at the 2027 Frontline Convention to reach Illinois police, fire and EMS wellness leads.",
+    "unknowns": "Network appears focused on peer support/clinical services, so a device vendor may not qualify; no published partner list or exhibitor pricing.",
+    "ask": "Ask whether wellness technology vendors can apply to the Resource Network or exhibit at the 2027 convention.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records sleep and HRV for shift workers, with no subscription, and want feedback from Midwest first responders before launch. Does the Frontline Resource Network or the Frontline Convention include wellness technology partners, and how would we apply?",
+    "confidence": "verified",
+    "tags": [
+      "illinois",
+      "midwest",
+      "first-responders",
+      "police",
+      "fire",
+      "ems",
+      "event"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": "Midwest",
+    "geo": "Chicago, IL",
+    "name": "Chicago First Responders Wellness (CSFA 515-CFRW)",
+    "org": "City of Chicago Office of Public Safety Administration",
+    "type": "channel-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 6,
+      "c": 3,
+      "e": 3
+    },
+    "why": "State-listed program (via Illinois DHS) requiring Chicago's Office of Public Safety Administration to coordinate first-responder wellness efforts across all Chicago public safety departments.",
+    "why_now": null,
+    "evidence": [
+      "https://omb.illinois.gov/public/gata/csfa/Program.aspx?csfa=3180"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "opportunity": "Pitch a small no-cost DevKit sleep/recovery feedback cohort across Chicago police/fire wellness units coordinated by OPSA.",
+    "unknowns": "No named contact or vendor/pilot route found; current funding status and program scope details unknown; single source.",
+    "ask": "Find the OPSA wellness coordinator and ask whether pilots of wellness technology are considered.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless band worn overnight that records sleep and HRV for shift workers, no subscription. I understand OPSA coordinates wellness across Chicago's public safety departments. Who would be the right person to ask about a small, no-cost feedback cohort before our launch?",
+    "confidence": "single-source",
+    "tags": [
+      "illinois",
+      "chicago",
+      "midwest",
+      "police",
+      "fire",
+      "ems"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Washington State",
+    "name": "Correctional officer self-regulation pilot (WHOOP straps, with IACP technical assistance)",
+    "org": "Washington State Department of Corrections",
+    "type": "builder",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 3,
+      "e": 3
+    },
+    "why": "A Jan 2025 IACP technical-assistance update on the BJA TTA site says WA DOC was moving to WHOOP straps for a corrections-officer self-regulation pilot, cut from 300 to 100 participants, awaiting IRB; DOJ also lists a FY2023 WA DOC breathwork pilot award for correctional officers. Shows a DOC actively buying wearables for officers.",
+    "why_now": null,
+    "evidence": [
+      "https://bjatta.bja.ojp.gov/taxonomy/term/970?page=2",
+      "https://bja.ojp.gov/funding/awards/15pbja-23-gg-02251-ntcp"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask what made WHOOP the choice and whether a later phase would consider a no-subscription device.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. I saw that WA DOC planned a wearable pilot for correctional officers. We're building a screenless band worn overnight that records sleep and HRV with no subscription. I'd value 15 minutes on what drove your device choice and what officers needed, even if your current pilot is set.",
+    "confidence": "single-source",
+    "tags": [
+      "corrections",
+      "wearables",
+      "whoop",
+      "sleep"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": null,
+    "name": "SOFLETE app (SFLT 3E)",
+    "org": "SOFLETE",
+    "type": "app-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 8,
+      "c": 6,
+      "e": 6
+    },
+    "why": "Military/tactical training app whose App Store listing says it reads HRV, resting HR, sleep stages and activity from Apple Health, Garmin and other wearables for a daily readiness score; its privacy policy says Garmin, Whoop or Fitbit data arrives through the Terra aggregator.",
+    "why_now": null,
+    "evidence": [
+      "https://apps.apple.com/app/id6759741274",
+      "https://soflete.com/pages/soflete-app-privacy-policy",
+      "https://apkpure.net/soflete-sflt-3e/com.soflete.sflt3e"
+    ],
+    "channel": "contact via App Store developer listing",
+    "contact_url": "https://apps.apple.com/app/id6759741274",
+    "fit": 8,
+    "existing_wearables": [
+      "Apple Health",
+      "Garmin",
+      "WHOOP",
+      "Fitbit",
+      "Health Connect"
+    ],
+    "exclusive": false,
+    "partner_status": "open",
+    "opportunity": "Become a readiness data source via their Terra integration (or Apple Health/Health Connect) and co-market overnight recovery to their tactical audience.",
+    "unknowns": "WHOOP/Health Connect named only on a third-party Android mirror; no public partner contact; whether they add Terra-supported devices on request; subscription pricing not public.",
+    "ask": "Ask whether SOFLETE turns on additional Terra-supported devices and who handles hardware partnerships.",
+    "opener": "Hi, I'm Jeremy at Vybe Health in Akron. SOFLETE's readiness score already pulls HRV and sleep through Terra. We're building a screenless band worn overnight with an open SDK and no subscription, aimed at tactical users. Could we talk for 15 minutes about how you decide which devices to support and whether a DevKit would be useful to test?",
+    "confidence": "verified",
+    "tags": [
+      "app-partner",
+      "tactical",
+      "military",
+      "hrv",
+      "sleep",
+      "terra"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": null,
+    "name": "Preservation of the Force and Family (POTFF) human performance support contract",
+    "org": "KBR (KBRwyle) for USSOCOM",
+    "type": "channel-partner",
+    "hunt": "partnership",
+    "ice": {
+      "i": 7,
+      "c": 3,
+      "e": 3
+    },
+    "why": "KBRwyle holds the USSOCOM POTFF IDIQ (awarded 2018, $500M; HigherGov lists ceiling raised to $955M) providing human performance, strength and conditioning, cognitive and behavioral health staff at 26-32 SOF locations; KBR recruits tactical S&C staff at NSCA events.",
+    "why_now": "HigherGov references a draft RFP for a 'POTFF III' follow-on (status unverified).",
+    "evidence": [
+      "https://www.kbr.com/en/insights-news/press-release/kbrwyle-improve-us-special-ops-resilience-and-health-through-500m",
+      "https://www.highergov.com/idv/H9240019D0001/",
+      "https://govconwire.com/2018/10/kbrwyle-lands-500m-ussocom-personal-welfare-support-services-idiq",
+      "https://www.kbr.com/en/insights-news/event/national-strength-and-conditioning-association-nsca-tactical-training"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "opportunity": "Get DevKits in front of POTFF human performance staff (S&C coaches, dietitians, cognitive specialists) via KBR or a POTFF III bidder as a sleep/recovery monitoring option.",
+    "unknowns": "Whether the current contract or POTFF III allows outside devices; who manages tech evaluation; POTFF III timing; DoD data/security rules for consumer wearables.",
+    "ask": "Find a POTFF program or human performance lead at KBR for a 15-minute feedback call on device requirements.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. We're building a screenless band worn overnight that records sleep and HRV, with raw data access and no subscription. Your POTFF human performance teams are the users whose needs we want to understand. Would someone be open to 15 minutes on what a device must do to be usable on SOF units?",
+    "confidence": "verified",
+    "tags": [
+      "sof",
+      "tactical",
+      "military",
+      "human-performance",
+      "prime-contractor"
+    ]
+  },
+  {
+    "role": "Founder",
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2026-06-22",
+    "warm_path": null,
+    "geo": "Texas",
+    "name": "In Extremis Performance (Jake Labhart)",
+    "org": "In Extremis Performance",
+    "type": "builder",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 5,
+      "e": 6
+    },
+    "why": "Founder is a former Army infantryman with a doctorate who works with federal, state and local law enforcement special operations units, building research-backed fitness and shooting assessments; sits on the Texas Tactical Police Officers Association training advisory board and is initiating a statewide human performance initiative.",
+    "why_now": "TTPOA listed an IEP course for June 22-23, 2026.",
+    "evidence": [
+      "https://ttpoa.org/staff/25",
+      "https://soldiersystems.net/2023/06/19/sons-of-liberty-gun-works-supports-in-extremis-performance-empowering-human-potential/",
+      "https://comms.magpul.com/optimizing-the-operator",
+      "https://ttpoa.org/advanced-training/firearms/courses/439"
+    ],
+    "channel": "contact via TTPOA staff page",
+    "contact_url": "https://ttpoa.org/staff/25",
+    "fit": 7,
+    "ask": "Offer 5 DevKits for SWAT operators in an IEP course to test overnight recovery tracking.",
+    "opener": "Hi Dr. Labhart, I'm Jeremy at Vybe Health in Akron. Your work measuring SWAT operators objectively is close to what we're building: a screenless band worn overnight that records sleep and HRV, with an open SDK and no subscription. Would a few DevKits be useful in a future course? I'd value 15 minutes on what operators will actually wear.",
+    "confidence": "verified",
+    "tags": [
+      "tactical",
+      "police",
+      "swat",
+      "sof-adjacent",
+      "human-performance"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": "2025-09-29",
+    "warm_path": null,
+    "geo": "Everett, WA",
+    "name": "Engineered Sports (tactical movement assessments for Everett Police)",
+    "org": "Engineered Sports",
+    "type": "builder",
+    "hunt": "growth",
+    "ice": {
+      "i": 5,
+      "c": 4,
+      "e": 5
+    },
+    "why": "Everett, WA approved a $24,000 professional services agreement (2025-09-29 to 2026-06-30) for Engineered Sports to deliver tactical functional movement assessments to police personnel; the firm says it works with sports teams, fire departments and law enforcement in Snohomish County.",
+    "why_now": "City contract term ran through 2026-06-30; renewal status unknown.",
+    "evidence": [
+      "https://lfportal.everettwa.gov/WebLink/0/doc/1982480/Page14.aspx",
+      "https://lfportal.everettwa.gov/WebLink/0/doc/1982480/Page1.aspx"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask whether overnight recovery data would add to their police movement assessments; offer DevKits.",
+    "opener": "Hello, I'm Jeremy at Vybe Health in Akron. I saw your movement-assessment work with Everett Police. We're building a screenless band worn overnight that records sleep and HRV, with no subscription, and want input from coaches who work with officers. Would 15 minutes to hear what you'd need from recovery data be possible?",
+    "confidence": "single-source",
+    "tags": [
+      "tactical",
+      "police",
+      "fire",
+      "strength-conditioning"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Philadelphia, PA",
+    "name": "Sleep and suicide-risk passive sensing research (Lily A. Brown, PhD)",
+    "org": "University of Pennsylvania, Dept. of Psychiatry",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 5,
+      "e": 5
+    },
+    "why": "March 2026 J Affect Disord paper: 86 service members and veterans wore a Fitbit for 28 days with EMA; combining wearable and EMA sleep data gave the best model of next-day risk. FSU Military Suicide Research Consortium lists Brown as PI of a 28-day sleep assessment study in active-duty military.",
+    "why_now": "Journal of Affective Disorders paper (Mar 2026).",
+    "evidence": [
+      "https://pubmed.ncbi.nlm.nih.gov/41895610/",
+      "https://doi.org/10.1016/j.jad.2026.121692",
+      "https://msrc.fsu.edu/funded-research/suicide-risk-and-sleep-treatment"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask whether an overnight band with raw HRV/sleep data would help a follow-up passive-sensing study.",
+    "opener": "Hi Dr. Brown, I'm Jeremy at Vybe Health in Akron. Your 2026 paper combining Fitbit sleep data with EMA in service members was useful reading. We're building a screenless band worn overnight with an open SDK and raw data export. Would DevKits be useful for a future study? I'd value 15 minutes on what data access you needed and didn't get.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "military",
+      "veterans",
+      "sleep",
+      "pennsylvania"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Baton Rouge, LA",
+    "name": "Simulated military operations HRV research (Jennifer C. Rood, PhD; Adam C. Lowe)",
+    "org": "Pennington Biomedical Research Center, Louisiana State University",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 6,
+      "c": 5,
+      "e": 4
+    },
+    "why": "2025 Med Sci Sports Exerc RCT ran 32 participants through 20 days of simulated military operations and used exercise HRV as a stress marker, co-authored with US Army Research Institute of Environmental Medicine nutrition scientists.",
+    "why_now": "Medicine & Science in Sports & Exercise, April 2025.",
+    "evidence": [
+      "https://pubmed.ncbi.nlm.nih.gov/40279652/",
+      "https://doi.org/10.1249/MSS.0000000000003743"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Offer DevKits to add overnight HRV and sleep to the next multistressor study.",
+    "opener": "Hi Dr. Rood, I'm Jeremy at Vybe Health in Akron. Your simulated military operations study used HRV to track multistressor load. We're building a screenless band worn overnight that records sleep and HRV with an open SDK. Would overnight data be useful in a future protocol? Happy to send DevKits and talk through what you'd need.",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "military",
+      "hrv",
+      "tactical"
+    ]
+  },
+  {
+    "role": null,
+    "check_size": null,
+    "stage": null,
+    "deadline": null,
+    "last_signal_date": null,
+    "warm_path": null,
+    "geo": "Albuquerque, NM",
+    "name": "Shift-worker HRV research, MESA (Barbara N. Harding, PhD)",
+    "org": "University of New Mexico, College of Population Health",
+    "type": "research-lab",
+    "hunt": "growth",
+    "ice": {
+      "i": 5,
+      "c": 5,
+      "e": 4
+    },
+    "why": "June 2026 Chronobiology International paper on heart rate variability and heart rate fragmentation among shift workers in the Multi-Ethnic Study of Atherosclerosis.",
+    "why_now": "Chronobiology International paper, June 2026.",
+    "evidence": [
+      "https://pubmed.ncbi.nlm.nih.gov/42341764/",
+      "https://doi.org/10.1080/07420528.2026.2679138"
+    ],
+    "channel": "warm intro needed",
+    "contact_url": null,
+    "fit": 7,
+    "ask": "Ask whether a consumer-grade overnight HRV device could support a prospective shift-worker study.",
+    "opener": "Hi Dr. Harding, I'm Jeremy at Vybe Health in Akron. Your paper on HRV and heart rate fragmentation in shift workers is close to the population we're designing for. We're building a screenless band worn overnight with an open SDK and raw beat-to-beat export. Would 15 minutes on what a prospective shift-work study would need from a device be possible?",
+    "confidence": "verified",
+    "tags": [
+      "research",
+      "shift-work",
+      "hrv"
+    ]
+  }
+]
