@@ -16,6 +16,17 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-08 — daily run
+
+- +3 items, all PubMed: MIL 2 (Marine pull-up requirement and upper-extremity injury trend; Tabata
+  with or without cinnamon in cadets, blurb says cinnamon did not separate on performance), FIRE 1
+  (machine-learning core temperature in encapsulated PPE). Board 68, archive 57. EMS and LE: nothing
+  qualifying. Exa still 402 (fifth day); "no new policy" is unverified.
+- PR #67 was still unmerged, so the run stacked on its branch and merged `main` in (the stop hook's
+  "15 unpushed commits" were main's commits arriving through that merge).
+- PubMed `date_from` wants `YYYY/MM/DD`, not dashes.
+- Still open: `verify-research-site.yml` v2 update; COPS LEMHWA (due 22 Oct) and Fairmont WV AFG leads.
+
 ## 2026-10-07 — daily run
 
 - +3 items, all PubMed: MIL 2 (burnout interventions for military physicians; cardiac emergency
