@@ -40,7 +40,7 @@ const NOURISH = dimensions.nourish;
  * hairline list with bars, the rule as a plain block under a rule, and the
  * closing restraint as the only dark panel.
  */
-export default function PatternHistoryScreen({ onBack }) {
+export default function PatternHistoryScreen({ onBack, onOpenSeasons }) {
   const { weeks, rule, metric, driver, exceptions } = pattern;
 
   const middle = middleOf(weeks);
@@ -184,6 +184,23 @@ export default function PatternHistoryScreen({ onBack }) {
       <View style={styles.strongerBlock}>
         <Text style={styles.ruleLabel}>What would make this stronger</Text>
         <Text style={styles.ruleText}>{pattern.stronger}</Text>
+        {/* This block has promised season-versus-habit since the day it was
+            written. The screen that tries to deliver it is also the screen
+            that has to admit how far off it still is, so the link belongs
+            exactly here rather than on Home. */}
+        {onOpenSeasons ? (
+          <Pressable
+            onPress={onOpenSeasons}
+            accessibilityRole="button"
+            accessibilityLabel="See the same months a year apart"
+            accessibilityHint="Opens the year-on-year view, including the months Vybe has only seen once"
+            style={({ pressed }) => [styles.seasonLink, pressed && styles.pressed]}
+          >
+            <Text style={styles.seasonLinkText}>
+              Is it a trend, or is it just November again?
+            </Text>
+          </Pressable>
+        ) : null}
       </View>
 
       {/* THE RESTRAINT — the only dark block, and the last word. */}
@@ -258,6 +275,8 @@ const styles = StyleSheet.create({
   ruleAside: { ...type.small, color: colors.muted, paddingTop: space(0.5) },
 
   strongerBlock: { gap: space(0.5) },
+  seasonLink: { alignSelf: 'flex-start', paddingVertical: space(1.5) },
+  seasonLinkText: { ...type.body, color: colors.brand, fontWeight: '600' },
 
   restraintPanel: {
     backgroundColor: colors.ink,
