@@ -8,6 +8,7 @@ import ConnectScreen from './src/screens/ConnectScreen';
 import AskScreen from './src/screens/AskScreen';
 import FollowUpScreen from './src/screens/FollowUpScreen';
 import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
+import SeasonScreen from './src/screens/SeasonScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import ImportScreen from './src/screens/ImportScreen';
@@ -17,12 +18,13 @@ import { colors } from './src/theme';
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are eleven screens
+ * One piece of state instead of a navigation library. There are twelve screens
  * now, and they are still a flat set: Nourish links across to the pattern
- * history, Restore and Connect link across to the outcome record, Ask links
- * across to the follow-up, and onboarding links across to the history import —
- * the one place a screen returns to where it came from rather than to Home,
- * which one remembered string still covers. Pulling in
+ * history, the pattern history links on to the year-on-year view, Restore and
+ * Connect link across to the outcome record, Ask links across to the follow-up,
+ * and onboarding links across to the history import — the one place a screen
+ * returns to where it came from rather than to Home, which one remembered
+ * string still covers. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -70,7 +72,12 @@ export default function App() {
       ) : screen === 'outcomes' ? (
         <OutcomeScreen onBack={() => setScreen('home')} />
       ) : screen === 'pattern' ? (
-        <PatternHistoryScreen onBack={() => setScreen('home')} />
+        <PatternHistoryScreen
+          onBack={() => setScreen('home')}
+          onOpenSeasons={() => setScreen('seasons')}
+        />
+      ) : screen === 'seasons' ? (
+        <SeasonScreen onBack={() => setScreen('home')} />
       ) : screen === 'ask' ? (
         <AskScreen
           onBack={() => setScreen('home')}

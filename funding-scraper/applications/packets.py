@@ -1238,6 +1238,140 @@ PACKETS = [
         ],
     },
     {
+        "id": "vetcon",
+        "name": "VETCON 2026 Business Plan Competition",
+        "funder": "Tully Rinckey PLLC / Tully Rinckey Foundation (VETCON)",
+        "amount": "$3,000 first / $2,000 second / $1,000 third",
+        "deadline": "2026-11-20",
+        "fee": None,
+        "url": "https://www.vetconny.com/business-plan-competition/",
+        "submit": "Email the packet to bizplan@vetconny.com by 20 November. Three finalists present to a judging panel at VETCON 2026, and prizes are awarded at the closing luncheon. The conference is 1-2 December 2026 at the Crowne Plaza Desmond Hotel, Albany, New York.",
+        "gates": ["under3", "travelself"],
+        "confirmed": [
+            "Veteran-owned 51%+ (confirmed 20 Sep) — the rule asks for ONE veteran on the presenting team",
+            "Under three years in operation, which this competition requires rather than forbids",
+            "No application fee, and the competition states sponsorship money goes entirely to the three cash prizes",
+            "The rules place no limit on where the business is based, despite the New York conference",
+        ],
+        "why": "Every rule is met and the entry is an email. The prize is small, but the required deliverable is a four-page executive summary that Vybe needs anyway — it is the same document a bank, a landlord and half the other packets on this page will ask for, and nothing here has forced it to be written yet. Writing it for a $3,000 competition with a hard deadline is a cheaper way to get it done than writing it under pressure for something larger.",
+        "docs": [
+            "Email to bizplan@vetconny.com",
+            "Business name (or the anticipated name, if pre-startup)",
+            "Owners' names and branches of service",
+            "DD Form 214 for the veteran owner",
+            "Executive summary, maximum four pages, 12-point, 1.5 line spacing",
+            "A presenter available in Albany on 1-2 December",
+        ],
+        "note": (
+            "THE FORMAT IS A HARD CONSTRAINT: four pages, 12-point, 1.5 line "
+            "spacing. The page as published says \u201c15 pt.\u201d spacing, "
+            "which is almost certainly a typo for 1.5 \u2014 email "
+            "bizplan@vetconny.com and ask rather than guessing, because this is "
+            "the kind of rule a panel uses to cut the pile.\n\n"
+            "FOUR PAGES MEANS THE FINANCIAL PLAN IS THE CONSTRAINT, NOT THE "
+            "PRODUCT. The competition names five sections and two of them are "
+            "numbers: a three-year forecast and the use of the prize. Most of "
+            "what follows is drafted, but those two are yours and they are what "
+            "the panel is actually scoring. Give the product one page at most.\n\n"
+            "TRAVEL. A presenter has to be in Albany on 1 or 2 December and the "
+            "competition does not say it pays. Three thousand dollars first "
+            "prize against flights and a hotel in December is close enough to "
+            "break even that it is worth deciding BEFORE applying, not after "
+            "being selected. The honest reason to enter anyway is the executive "
+            "summary and the room, not the cheque."
+        ),
+        "fields": [
+            {"q": "Covering email", "a":
+                "Business name: {{LEGAL_NAME}}.\n\n"
+                "Owner and branch of service: {{VETERAN_OWNER}}.\n\n"
+                "DD Form 214 attached. Executive summary attached, four pages.\n\n"
+                "A presenting team member will be available at VETCON 2026 in "
+                "Albany on 1-2 December.\n\n"
+                "Contact: {{CEO}}, {{EMAIL}}, {{WEBSITE}}."},
+            {"q": "Executive summary 1 — elevator pitch: the product, the problem, the solution, and why customers will pay", "a":
+                "Vybe turns the signals a body already produces into answers a "
+                "person can act on. The screenless Vybe Band tracks ECG, "
+                "heart-rate variability, sleep and activity. Vybe Intelligence "
+                "reads those signals alongside the context around them, like "
+                "stress, work, travel and weather, and answers questions such as "
+                "\u201cWhy am I tired today?\u201d There is no required "
+                "subscription.\n\n"
+                "The problem is not measurement. Every wearable already reports "
+                "that heart-rate variability fell 18%, and then stops. The person "
+                "is left to guess whether it was the late dinner, the bad night, "
+                "the flight or the week they have had \u2014 and most of them "
+                "stop opening the app.\n\n"
+                "Why customers pay: they are paying once, for the answer rather "
+                "than the number. The two largest companies in this category "
+                "charge a monthly fee for interpretation; the companies that "
+                "dropped the fee dropped the interpretation with it. Nobody "
+                "currently sells both."},
+            {"q": "Executive summary 2 — the team", "a":
+                "{{CEO}} leads the company. Ownership: {{OWNERSHIP}}. Team of "
+                "{{EMPLOYEES}}. {{LEGAL_NAME}} is majority veteran-, woman- and "
+                "minority-owned, and {{VETERAN_OWNER}} holds independent "
+                "authority over day-to-day decisions, which is the control test "
+                "this competition applies.\n\n"
+                "[Two or three sentences per person, and they have to be yours. "
+                "What the panel wants is whether this specific group can get a "
+                "consumer hardware product built and sold \u2014 so lead with "
+                "what each person has actually shipped, managed or sold, not "
+                "with titles. Name the gap you know you have; a panel of "
+                "business owners reads that as judgement.]"},
+            {"q": "Executive summary 3 — industry, market and competition", "a": WHY_NOW + "\n\n"
+                "Vybe's position is the gap that leaves: deep interpretation, "
+                "bought once. The defensible part is not the sensor, which is "
+                "commodity, but the context layer \u2014 reading work, travel, "
+                "stress and weather alongside the body \u2014 and a buy-once "
+                "model that an incumbent with subscription revenue cannot copy "
+                "without cutting its own revenue."},
+            {"q": "Executive summary 4 — the growth plan", "a":
+                "Where the business is today: {{STAGE}}. Traction: {{TRACTION}}.\n\n"
+                "Three routes, in the order we intend to open them. Direct, to "
+                "people who already own a wearable, have stopped opening it, and "
+                "resent paying monthly for their own numbers. The veteran and "
+                "military-family community, where recovery and readiness are "
+                "already the everyday language. Then licensing the "
+                "interpretation layer to partners who have sensors and nothing "
+                "to say with the readings.\n\n"
+                "[Add the next two or three concrete steps with dates \u2014 the "
+                "certification step, the manufacturing step, the beta \u2014 and "
+                "say which one the company is blocked on now. A growth plan "
+                "without a named blocker reads as a wish.]"},
+            {"q": "Executive summary 5 — the financial plan, with a three-year forecast", "a":
+                "[THIS IS YOURS AND IT IS WHAT THE PANEL SCORES. The competition "
+                "asks for historical financials if any, a three-year annual "
+                "forecast, and the use of the prize money. Nobody should draft "
+                "numbers about your business but you.\n\n"
+                "What to include: revenue to date (say zero if it is zero \u2014 "
+                "{{REVENUE}}); what a Band costs to build and what it sells for; "
+                "monthly operating cost and current runway; and a three-year "
+                "forecast with the two or three assumptions it rests on named "
+                "out loud. A panel of business owners forgives a small number. "
+                "It does not forgive a number you cannot explain.]"},
+            {"q": "Use of the prize money", "a":
+                "[Name one thing, make it finishable at $3,000, and make sure the "
+                "sentence still works at $1,000, because third place is the "
+                "likeliest outcome. Candidates: the radio pre-scan ahead of the "
+                "Band's FCC work, a run of at-cost Bands for outside testers, or "
+                "the VYBE trademark filing.\n\n"
+                "Then say what it unlocks. The panel is not scoring the purchase, "
+                "it is scoring whether you know which single step the company is "
+                "blocked on.]"},
+            {"q": "Presentation notes for the panel", "a":
+                "[Three finalists present and prizes are given at the closing "
+                "luncheon; the page does not publish a time limit, so ask when "
+                "you submit.\n\n"
+                "Bring a Band if there is one to bring. A room of veteran "
+                "business owners in Albany has sat through a lot of slides, and "
+                "a screenless band on a wrist explains the product faster than "
+                "any of them.\n\n"
+                "Close in your own words on why a veteran is the right person to "
+                "build a product about recovery and readiness. That is the part "
+                "this particular room remembers.]"},
+        ],
+    },
+    {
         "id": "nia",
         "name": "2027 NIA Start-Up Challenge and Accelerator",
         "funder": "National Institute on Aging (NIH / HHS), Office of Strategic Extramural Programs",

@@ -2078,3 +2078,83 @@ than a third row would have been.**
   questions directly.** Once a release opens, that channel shuts. So the value
   of reading a topic list is highest in the three weeks that start today — and
   it is still the one thing this sandbox cannot do.
+
+## Thursday sweep — 8 Oct 2026
+
+**No rows added today, and that is the finding rather than a failure to
+report.** Seven searches across the wearable, federal-prize, platform and
+state lanes produced nothing that was simultaneously open, dated and eligible.
+The board stands at 182 curated entries and the lanes reachable with a
+degraded verification route are saturated. What follows is worth more than a
+padded row: three dated diary items, one structural conclusion about the
+one-year gate, and one unresolved fee conflict.
+
+### The one-year gate, finally priced
+
+Two JobsOhio programmes were checked today and both fail on the same two
+numbers, which is the clearest statement yet of what Vybe's age costs it:
+
+- **JobsOhio Inclusion Grant** — rolling, no published cap, reimbursement-based,
+  and explicitly for businesses **majority-owned by a minority, woman, veteran
+  or person with a disability**. Vybe is three of those four at 51%+. Covers
+  machinery, equipment, real estate and training.
+- **JobsOhio Small Business Grant** — up to **$50,000**, rolling intake form,
+  same cost categories, capped at $8M a year across the programme.
+
+**Both require at least one year of operating history AND at least $100,000 in
+annual revenue.** Vybe has neither today. Both also require operating in one of
+JobsOhio's ten target industries with revenue primarily from B2B sales, which
+is a second question for a consumer product and worth asking before counting on
+either. **These are the two rows that unlock the day Vybe turns one and clears
+$100k — not "someday", a specific pair of numbers.** That is the answer to the
+standing question of whether the one-year gate is worth working around: it is
+worth about $50,000 in Ohio alone, from programmes that take a rolling
+application rather than a competition.
+
+### Diary — dated, and worth catching
+
+- **Health Security Innovation Challenge (TechConnect)** — **$200,000
+  non-dilutive, "winners are not bound by any obligations"**, and its published
+  focus areas name **wearables** and **diagnostics and sensing systems**
+  directly. The most wearable-specific prize found in two weeks. Its cycle runs
+  **launch mid-February, applications due mid-April, pitch in July** (the 2025
+  round: launch 17 Feb, due 16 Apr, pitch 23 Jul in Baltimore), so the 2026
+  round is long closed and no 2027 dates are posted. **Diary: mid-February
+  2027.** One gate to read first: the sponsors are CWMD and MCDC, and the
+  wearable track sits under *threat detection* — wearable biosensors for
+  detecting exposure. That leans toward a diagnostic posture, which is on the
+  blocklist, so read the 2027 scope before writing anything.
+- **NIH "Supplements, Facts First" Challenge** — $869,000 in total prizes and a
+  consumer digital-health brief, but Phase 1 closed **7 May 2026** and Phase 2
+  (June 2026 – May 2027) is prototype development by the eight semi-finalists
+  only. Closed to new entrants. Worth catching at the next Phase 1
+  announcement; the structure to note is that it required **two of five
+  modalities, one age group and one special population**.
+- **HeroX, swept as a platform** — the host for several NIH and federal prize
+  competitions. Nothing open in the wearable, sleep or physiological-monitoring
+  lane today. Open items are a DHS biothreat-detection challenge (due 14 Oct,
+  environmental data, not wearables) and NASA/NIH challenges in other fields.
+  Worth re-sweeping monthly; it is where federal prizes landed.
+
+### Unresolved, and it affects a row already on the board
+
+- **Freed Fellowship Grant** — the board row records "no ownership, revenue,
+  sector or age-of-business gate published on the application page" and says
+  nothing about a fee. A NerdWallet roundup states Freed charges **$19 per
+  application**. That is the same shape as the Hey Helen conflict from 6 Oct:
+  a roundup against a reading of the funder's own page, and the roundup is the
+  weaker source, so **the row is not being changed on it.** But Freed has a
+  drafted packet on the Apply page, so a founder could reach a payment step
+  without warning. **Someone should open the Freed application and look for a
+  payment step** — the same five-minute check Hey Helen needs, and the two can
+  be done together.
+
+### Also noted
+
+- **Texas Woman's University Veteran Woman Grant** — up to $5,000, deadline
+  26 Feb 2027, but **Texas-based businesses only**. Ineligible.
+- **JobsOhio Small Business Academy** — free 12-month programme, but requires a
+  minimum of **eight employees and $750,000 annual revenue**. Far out of range.
+- **Galaxy Grants** (already on the board as rolling) — a roundup gives a
+  31 Oct 2026 deadline for the current cycle. The row's rolling status may be
+  right; if someone is checking Freed anyway, this is a third quick look.
