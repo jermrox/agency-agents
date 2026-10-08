@@ -4145,3 +4145,115 @@ documents = [
   "SSN or TIN to receive a prize",
 ]
 verified = "2026-10-07"
+
+[[sources.curated.entry]]
+name = "NSF I-Corps Hub: Great Lakes Region, regional virtual I-Corps cohorts (Fall 2026: University of Michigan, Iowa State, University of Iowa)"
+url = "https://greatlakesicorps.org/event/umich-i-corps-fall26/"
+agency = "NSF I-Corps Hub: Great Lakes Region (University of Michigan lead; University of Akron is a member)"
+amount = "No cash. Free training. Graduates can become eligible for NSF National I-Corps Teams ($50,000, which needs SAM) and for the Hub's Conference Connect travel grant (amount not stated)."
+close_date = "2026-10-16"
+pillar = 2
+kind = "accelerator"
+sam = "none"
+eligibility = "The University of Michigan cohort is free and virtual and is 'open to all Midwest innovators and researchers'. Its course page says it is 'open to non-university participants as well'. Registration deadline: October 16. It runs on Fridays, October 23 to December 4, 2026, from 9 to 11am ET. Applications close early if the cohort fills. Two other virtual cohorts carry the same 'open to all Midwest innovators' wording: Iowa State (October 21 to November 18) and the University of Iowa (November 2 to 30). The Iowa cohort names early-stage startups and entrepreneurs; neither page gives a registration deadline."
+note = "NO CASH, AND THE MICHIGAN DEADLINE IS 8 DAYS AWAY (OCT 16). This is free customer-discovery training aimed at research commercialization, which matches the DevKit's first milestone of 5-10 university and research design partners. Use the interviews to test pricing and needs with university labs. Finishing a Hub program is required before a team can take Conference Connect, an online course that leads to a Hub travel grant; it also needs 10 documented customer-discovery interviews. It is also the route to NSF National I-Corps Teams ($50K), but that program needs SAM and is already on the rejected list. These cohorts are separate from the UARF/Akron I-Corps already listed. The Ohio State (Nov 13), Minnesota and UW-Milwaukee cohorts are in person or for affiliates only; see rejected."
+documents = [
+  "Online application form (Great Lakes I-Corps Zoho form, ProgramName=F26 UM I-Corps)",
+  "Team member names and roles",
+  "Short description of the innovation (the DevKit / sensing platform)",
+]
+verified = "2026-10-08"
+
+[[sources.curated.entry]]
+name = "16th MEDICA START-UP COMPETITION (MEDICA 2027, Dusseldorf)"
+url = "https://www.medica-tradefair.com/en/Program/Forums_Stages/MEDICA_START-UP_STAGE/MEDICA_START-UP_COMPETITION"
+agency = "Messe Dusseldorf / MEDICA, organised by Navispace GmbH (Techpreneurs GmbH contact)"
+amount = "Prize money totalling EUR 3,500 across the winners, plus free international marketing and visibility across MEDICA channels"
+close_date = "2027-09-09"
+pillar = 2
+kind = "visibility"
+sam = "none"
+eligibility = "Startups with solutions in AI in medicine, robotics, laboratory diagnostics, resilience (including cybersecurity) or other digital-health approaches. Free participation if registered by 9 Sep 2027. The page states no country restriction, stage cap or age gate ('not stated'). Finalists pitch in person in Dusseldorf, Germany, in November 2027."
+note = "SMALL CASH, AND THE PITCH IS IN PERSON IN GERMANY. This is a low-priority visibility play. It is open now and free, and it fits Vybe's Health Intelligence/AI layer and wearable data platform under 'digital health'. Total prize money is only EUR 3,500, and travel is at Vybe's own cost (the page mentions no travel support). Rank it below any US cash prize. It is useful only if Vybe already plans to be at MEDICA 2027 for EU distribution or partner meetings. The page says 'free participation' up to the deadline, so check whether later registration costs anything."
+documents = [
+  "Online registration (page links a registration form; contents not stated)",
+  "Pitch for the finals if selected (format not stated)",
+]
+verified = "2026-10-08"
+
+[[sources.curated.entry]]
+name = "NFL Big Data Bowl 2027 (Kaggle) — Combine sensor tracking to NFL performance"
+url = "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027"
+agency = "National Football League (sponsor) / Kaggle (host)"
+amount = "$100,000 total. Open Track: 3 finalists x $10,000 + 3 runners-up x $5,000. Separate University Track of the same size. Finalists are invited to present at the 2027 NFL Scouting Combine for an extra $10,000 Grand Prize"
+close_date = "2027-01-06"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Free Kaggle account. Individuals or teams of up to 5. Must be 18+ to receive a prize. Employees of the NFL, Kaggle and their affiliates cannot win. Prizes go to individual Kaggle participants, not to a company."
+note = "PRIZE IS PAID TO INDIVIDUALS, NOT THE COMPANY. WINNERS MUST RELEASE THE CODE OPEN SOURCE, AND THE DATA IS NON-COMMERCIAL (CC BY-NC 4.0). This is the best human-performance fit in the lane: 10 Hz wearable-sensor tracking of athletes in Combine drills (acceleration, deceleration, change of direction), linked to on-field outcomes. Vybe's signal-processing and sensor-fusion team can enter the Open Track as individuals with a 2,000-word Kaggle Writeup and a public notebook. Finalists present to NFL team analytics staff at the 2027 Combine, which gives Vybe's tactical and performance story real credibility. Keep Vybe's own firmware and algorithms out of the open-source deliverable."
+documents = [
+  "Kaggle account and team (up to 5)",
+  "Kaggle Writeup: 2,000 words max, fewer than 10 tables or figures",
+  "Public Kaggle Notebook attached",
+  "Winners: model code and documentation delivered to the sponsor",
+]
+verified = "2026-10-08"
+
+[[sources.curated.entry]]
+name = "PayPal AI Hackathon (Devpost)"
+url = "https://paypalaihackathon.devpost.com/"
+agency = "PayPal Inc. (sponsor); Devpost (administrator)"
+amount = "$67,500 cash total. Grand prizes $12,000 / $8,000 / $5,000. Five $5,000 honorable mentions (Most Creative, Most Impactful, Best Demo, Best Use of PayPal + AI, Best Use of Agentic Commerce). Sponsor prizes from $1,000 to $5,000"
+close_date = "2026-11-12"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Individuals of legal age, teams, and organizations (corporations, LLCs) that exist at the time of entry. Global, except for sanctioned countries, Brazil and Quebec. No fee. The project must use both PayPal and AI."
+note = "PAYPAL MUST BE CENTRAL TO THE PROJECT, AND THE REPO MUST BE PUBLIC AND OPEN SOURCE. This is the biggest open cash pool here that a company can enter and be paid in its own name. The health fit is indirect. One angle: an agentic-commerce demo in which a Vybe 'Health Intelligence' agent sells or reorders DevKit units, or charges SDK/API usage fees through PayPal. That tests Vybe's planned platform-fee and marketplace revenue. Build it as a standalone demo, not on proprietary Vybe code. Judging closes 21 Dec 2026."
+documents = [
+  "Devpost registration (organization representative if entering as Vybe)",
+  "Working project using PayPal + AI (hosted demo URL or runnable setup instructions)",
+  "Public open-source code repo (GitHub/GitLab/Bitbucket)",
+  "Text description and demo video",
+]
+verified = "2026-10-08"
+
+[[sources.curated.entry]]
+name = "Qloo Agentic Hackathon (Devpost)"
+url = "https://qloo.devpost.com/"
+agency = "Qloo (sponsor and administrator, New York)"
+amount = "$25,000 cash: $15,000 / $6,000 / $4,000. The page also says Jason Calacanis will personally invest an extra $25,000 in his favourite entry (this is an investment, not a prize; see note)"
+close_date = "2026-10-30"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Individuals of legal age, teams, and incorporated organizations. Global, except for sanctioned countries, Brazil and Quebec. No fee. The project must integrate the Qloo taste-graph API inside an agent."
+note = "THE BONUS $25K FROM CALACANIS IS AN INVESTMENT. Treat it as equity or convertible money and decline it if you want to stay non-dilutive. The $25K in prizes is cash and no-strings. Fit: Qloo's own example ideas include health use cases, such as 'meals ... for seniors' with 'medication-aware ingredients'. A Vybe 'Nourish' or 'Connect' agent fits well: taste-aware meal or social-activity recommendations driven by recovery and HRV state. The repo must be public, so ship a demo layer, not core IP. Winners are announced about 23 Nov 2026."
+documents = [
+  "Devpost registration",
+  "Link to a functional, externally hosted demo app",
+  "Public code repository",
+  "Text description of what makes it 'Qloo-powered'",
+  "Demo video",
+]
+verified = "2026-10-08"
+
+[[sources.curated.entry]]
+name = "AMD Developer Hackathon: ACT III (lablab.ai), Health and Wellbeing track"
+url = "https://lablab.ai/event/amd-developer-hackathon-act-iii"
+agency = "AMD with lablab.ai (partners: Google, Evolus, Vibe Generation)"
+amount = "$12,000+ pool: $5,000 in AMD prizes, $5,000 in Google prizes, about EUR 1,011 in Evolus prizes (mostly credits). The Health and Wellbeing track's own prize is AirPods for the team, not cash"
+close_date = "2026-10-18"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Free. Needs an AMD AI Developer Program account plus lablab.ai and Discord registration. You can build online from anywhere; the optional on-site phase is in Italy and travel is not covered. Detailed eligibility is not stated on the event page (it defers to the lablab.ai guidelines)."
+note = "SMALL, FAST, AND THE HEALTH TRACK PRIZE IS NOT CASH. The cash comes from the AMD and Google main prizes, which every track competes for. The online build runs 12-18 Oct 2026, so this only makes sense if the team already has a demo-ready AI health agent. Track brief: 'Make a part of the patient journey safer, clearer, or easier', including 'Wellbeing and prevention support'. Submissions must be 'original and MIT-compliant'. Prize payout can take up to 90 days. New members get $100 in free AMD GPU credits."
+documents = [
+  "AMD AI Developer Program sign-up; lablab.ai + Discord registration",
+  "Project title, short and long descriptions, selected challenge, tech tags",
+  "Working prototype",
+  "Cover image, demo video, pitch presentation",
+]
+verified = "2026-10-08"

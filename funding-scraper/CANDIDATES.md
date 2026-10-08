@@ -408,6 +408,94 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 8 Oct 2026 (round 9, scheduled)
+
+Four lanes: a watch-list re-check, research infrastructure and university partnerships,
+consumer health-tech pitch prizes, and hackathons and pitch nights. Every new row needs no SAM.gov.
+
+Added:
+- **NSF I-Corps Hub: Great Lakes virtual cohort:** free; apply by **16 Oct**; runs 23 Oct – 4 Dec.
+  - Open to non-university founders.
+  - It is the route to NSF National I-Corps ($50K), which does need SAM.
+- **AMD Developer Hackathon ACT III (lablab.ai):** online build 12–18 Oct. The cash is $5K AMD / $5K Google; the health track prize is AirPods. Worth entering only with a demo.
+- **Qloo Agentic Hackathon:** $25K cash; closes **30 Oct**. A Nourish or Connect recommendation agent fits.
+- **PayPal AI Hackathon:** $67.5K cash; closes 12 Nov. Indirect fit (DevKit/SDK commerce agent); the repo must be open source.
+- **NFL Big Data Bowl 2027 (Kaggle):** $100K pool; closes 6 Jan 2027. Analyse 10 Hz athlete wearable tracking.
+  - Prizes go to individuals.
+  - Code must be open source.
+  - The data is for non-commercial use only.
+- **16th MEDICA Start-up Competition (Düsseldorf):** €3,500; closes 9 Sep 2027; in person in Germany; low priority.
+
+**Watch list:**
+- NIDILRR SBIR Phase I (opp 363966): posts ~16 Oct, due ~16 Dec, up to $100K; SAM required.
+- NIDILRR FID (opp 363971): posts ~12 Oct, due ~14 Dec, up to $250K; SAM required.
+- PEAKCONF 2027 Startup World Cup, Athlete Tech qualifier (28 Jan 2027): $10K+ and Vybe fits, but the apply link is a dead Typeform. Re-check.
+- BII/Science Women's Health Prize: $25K, due 1 Nov, but open to individual PhD/MD researchers only. It needs a researcher partner.
+- What's Next Longevity (January 2027), TechCrunch Battlefield (2027 cycle), Hiring Our Heroes/FedEx (no 2027 dates yet).
+- Spring/summer 2027: HLTH and the AgeTech Collaborative pitch (spring), WHIS (mid-year), the NSF SleepTech Award (summer) and ThinkSport (early 2027).
+- Idea, not a listing: run a Vybe DevKit research grant, or join a faculty partner's next CTSA pilot as the device supplier.
+
+## Rejected on inspection — 8 Oct 2026 (round 9)
+
+- **NIDILRR SBIR Phase I FY2027 (HHS-2027-ACL-NIDILRR-BISA-0308)** — not open yet — expected synopsis post 2026-10-16 per grants.gov forecast (est. application due 2026-12-16; ceiling $100,000; 11 awards). Status still 'forecasted', no close date. SAM required when posted.
+- **NIDILRR Field Initiated Projects Program (Development) FY2027 (HHS-2027-ACL-NIDILRR-IFDV-0304)** — not open yet — expected synopsis post 2026-10-12 per grants.gov forecast (est. application due 2026-12-14; ceiling $250,000). Status still 'forecasted', no close date. SAM required when posted.
+- **EPRI Incubatenergy Labs Challenge 2027** — not open with a confirmed deadline. The public 2027 campaign page loads without a login and shows a 'Submit Application' form, but its content still shows the 2026 categories and the old timeline ('Application Open & Startup Evaluation Fall/Winter 2025'). Its campaign metadata has end_date null. No 2027 deadline is stated, the ~20 Oct date could not be confirmed, and no EPRI press release for the 2027 call was found. It is also a weak fit: utility/grid-tech paid demos.
+- **Hiring Our Heroes Small Business Grant (FedEx Founder's Fund), 2027 cycle** — not open yet — the official page still shows the past cycle: 'Award program applications must be submitted by December 15, 2025.' No 2027-cycle dates are posted. The expected date is not stated (the last cycle closed in mid-December).
+- **What's Next Longevity Venture Summit $10K Business Plan Competition 2027** — not open yet — expected January 2027 per page: 'We will begin accepting submissions in January 2027.' The summit runs June 8-10, 2027 at UC Berkeley. (The 2026 deadline was April 30.)
+- **Key4Women x SCORE Cleveland Women-Owned Business Pitch Contest** — no current edition found. score.org returns 403 to our fetcher, and the readable mirror of the SCORE Cleveland page shows no Key4Women contest. The latest edition found is 2022 (deadline July 31, 2022; event Oct 2022). No 2026/2027 announcement was found.
+- **Ohio Third Frontier TVSF Round 47** — could not verify. development.ohio.gov returns 404 to the remote fetcher, and the local proxy rejects it. No Round 46 or 47 RFP PDF exists at the standard dam.assets.ohio.gov paths (all return 404). The latest confirmed round is Round 45 (proposals due May 7, 2026, closed). The program (TVSF Phase 2) is already in existing.txt anyway.
+- **TechCrunch Startup Battlefield 2027** — not open yet — page says 'Applications have closed for 2026, but please consider applying next year!' The 2027 open date is not stated (the 2026 window closed in late May/June 2026).
+- **AMSE Alliance (Association of Military Spouse Entrepreneurs) microgrants** — page now readable. It says 'AMSE Alliance 501(c)3 nonprofit provides grants to military spouse small business owners... We review applications every quarter. Apply for a grant today.' But the 'Apply' button has no working link (no form URL in the page), and no amount or eligibility rules are stated. It is also gated to MILITARY-SPOUSE owners; Vybe is veteran-owned, which is not the same. No live application page.
+- **Cartier Women's Initiative 2027 edition** — closed — the official page says 'Applications are now closed for the 2027 edition' (the window was 16 Apr to 16 Jun 2026). It also fails on fit: Regional Awards need $50K-$5M revenue in the last fiscal year and 5-250 team members.
+- **The Ohio State University I-Corps – November 2026 (Great Lakes Hub)** — Open only to OSU faculty, staff and students ('for OSU faculty, staff, and students'), with in-person attendance required in Columbus. Usable only if an OSU researcher leads the team.
+- **University of Minnesota I-Corps – Fall 2026 / UW-Milwaukee I-Corps – Fall 2026** — In-person attendance is required in Minneapolis (from Oct 9) or Milwaukee (from Oct 19). Not practical from Akron, and the Minnesota cohort has already started.
+- **Great Lakes I-Corps Hub Conference Connect travel grant** — Open only to people who are enrolled in, or recently completed, a Great Lakes Hub program and have 10 or more documented interviews. Vybe can unlock it after the regional cohort above; it is not a standalone entry.
+- **a2 Collective / NIA AITC Pilot Awards (JH AITC, PennAITech, MassAITC), re-checked** — Still not open. The page says the fifth competition 'is now closed', and the next one is 'contingent on National Institute on Aging renewal'. The JH AITC page still shows the Jan 15, 2025 deadline.
+- **CAPCaT (UMass Chan) POCTRN heart/lung/blood/sleep solicitation, re-checked** — The 2026 round closed May 1, 2026. The official page blocked fetching (bot challenge), and no new round was found. It is also NIH flow-through and frames projects around HLBS disorders.
+- **Labfront x Garmin Health Research Grant / Labfront Sleep and Aging Science grants (2026)** — These are in-kind awards ($5,000-$5,500 in value) for researchers who collect data on the Labfront/Garmin platform; deadlines are Nov 2 and Nov 27, 2026. They do not fund a wearable maker, and the platform is a competitor. Useful only as a model for a Vybe-run DevKit research grant.
+- **I-Corps @ Ohio (Cleveland State University site)** — Teams must be led by a faculty member (academic lead) with a student entrepreneurial lead; the $15,000 is awarded to faculty-led teams. Academic-PI-only, and no current cohort date is shown.
+- **Cincinnati Children's Innovation Ventures: Outside-in Innovation** — Rolling intake for external startups, but no cash; it offers pilot and co-development talks only. The focus is pediatric, a poor fit for an adult wellness band before launch.
+- **Lawrence Technological University Wearable Technology Innovation Center (Michigan)** — Still in a two-year planning phase, with no application, funding call or deadline on the page.
+- **Paratus Digital Health (MATTER / BARDA), re-checked** — Only an 'alternate solution' preliminary form remains. The scope is CBRN, pandemic and emerging-infectious-disease countermeasures, a poor fit for a non-diagnostic wellness band, and the BARDA flow-through likely needs SAM.
+- **Ohio university internal seed grants (OSU Proto-IRG / Sustainability, UC community-engaged, Kent State ESDRI)** — For faculty only (academic-PI-only). Search listings showed deadlines already past (Sep 25, 2026 / Jan 21, 2026 / Mar 6, 2026); the official pages were not fetched. No open Ohio call names a company partner.
+- **PEAKCONF 2027 Startup World Cup (Athlete Tech qualifier, Jan 28 2027; $10,000+ grand prize)** — The page is live: finals Mar 31-Apr 2 2027 in Las Vegas; eligibility under 5 yrs old, under $5M raised, under 25 staff, under $1M revenue. But its only 'Apply to Pitch' link (peakconf.typeform.com/sportstechx) redirects to Typeform's 'incorrectURL' page, so there is no working application. No deadline or fee is stated. It fits Vybe on paper, so recheck later. A related GSIC 'Groundbreakers Challenge PEAK Las Vegas' row was already rejected earlier.
+- **BioChallenge 2026 (New Orleans BioInnovation Center)** — Closed. The application deadline was August 1; the event is Oct 29 2026. It is also neuroscience-themed.
+- **HITLAB World Cup / Women's Health Tech Challenge** — The World Cup page shows the June 2026 edition: 'This Event has Passed', 'Applications are closed'. The WHT Challenge page shows only the 2024 edition. No open call.
+- **eMerge Americas 2027 Global Startup Accelerator + Showcase** — Pay-to-play: 'the participation fee is $650 per startup'. The main-stage prize is 'investment funding' plus in-kind services.
+- **health.tech global summit Startup Competition (Basel, 2-4 Mar 2027)** — Pay-to-pitch: 'Each startup package costs CHF 3,500'. Only exhibiting startups can enter the cash competition.
+- **HRX Pitch Competition (Heart Rhythm Society)** — Closed: 'Submissions ... closed June 15, 2026'. It is also cardiac-care focused. The 2027 cycle is not posted.
+- **AASM Sleep Medicine Disruptors Innovation Award** — Entry fee of $250 (free only for AASM sponsors). The page shows the past cycle (deadline Sept 8, Austin pitch Nov 14-15). No cash prize: winners get a plaque and recognition.
+- **2027 BII & Science Translational Medicine Prize for Innovations in Women's Health** — Open until Nov 1 2026 for $25K/$10K, but entry is limited to a single individual researcher who has completed a PhD, MD or MD/PhD, writing an essay on their own research. It is not a company prize. Revisit only if a Vybe founder holds one of those degrees.
+- **Aurora Tech Award (inDrive)** — The page says it backs 'female tech founders in emerging markets', so a US company is out of scope. No 2027 call is posted ('Aurora Tech Award '26 Has Landed').
+- **Stanford Center on Longevity Design Challenge 2026-27** — Student-only ('invites student designers'), and the 2026-27 theme is robotics. Deadline Dec 1 2026.
+- **Pitt AgeTech Innovation Challenge** — Limited to University of Pittsburgh technologies ('support pre-commercialization efforts of Pitt technologies').
+- **South Summit Brazil 2027 Startup Competition** — Free and open until Dec 14, but no cash prize is stated (categories are titles only). The pitch is in Porto Alegre, Brazil, in April 2027. Visibility only, and of low value to a pre-launch US wearable company.
+- **USF x TGH Innovation Healthcare Pitch Competition** — Student-only ('Open only to enrolled college and university students of Florida'). The 2026 deadline (Apr 3) has passed.
+- **Georgetown Entrepreneurship in Health Pitch Challenge** — Open only to Georgetown students. The 2026 deadline (Mar 26) has passed.
+- **MATTER x HERIF Future HealthTech Leaders Innovation Challenge** — Only the 2024 edition is posted (applications closed June 2024). It is aimed at students and early-career professionals.
+- **Telosity x Meadows Mental Health Innovation Challenge** — Only the 2023 call is posted ('Apply by April 5, 2023'). No current cycle.
+- **PulsePoint Path Impact Awards (Health Board Advisors)** — The 2026 cycle closed Jan 2 2026, and no 2027 cycle is posted. No cash: visibility and coaching only, run by a fee-based consultancy aimed at founders with $500K+ revenue.
+- **California Life Sciences Women's Health Symposium Startup Pitch** — The official page returns 404 ('Sorry, this page isn't available'). No live call.
+- **SFDP Health Innovation Challenge 2026** — Closed, Nigeria-only, and limited to students and young professionals.
+- **Caltech Longevity Hackathon 2026** — Ended May 2026, and open to enrolled university students only.
+- **DSH Hacks V2 ($100k+ in prizes)** — Student-only ('Students only; Companies/professional organizations excluded'); prizes are non-cash.
+- **UnivaBio ($40,000 in prizes)** — Student-only; companies excluded; closes 13 Oct; prizes are non-cash.
+- **HEALTHHACK 48** — Students only; companies excluded; certificate prizes, no cash.
+- **Neighborhood Hacks 2026** — High-school students aged 13-21 only.
+- **EurekaDev 2026** — High-school students only.
+- **Galuxium Nexus V2** — Devpost eligibility says 'Students only; companies excluded' (the host text contradicts this); closes 31 Oct; no health fit; legitimacy unclear.
+- **Build Beyond Hackathon (Mar 2027)** — Students only; companies excluded.
+- **2026 AI for Good Hackathon (Jacksonville)** — College students only; prizes are non-cash.
+- **AWS Communication Developer Services (CDS) Agentic AI Partner Hackathon** — Open only to AWS Partners ('Calling all AWS Partners'; professionals only). Vybe is not an AWS Partner organization.
+- **HackStorm 3.0: Sense, Think and Act (SF, Nov 6-8, 2026)** — Luma registration page shows 'Registration Closed'; curated in-person event; small prizes ($1,200 top).
+- **DeveloperWeek 2027 Hackathon** — Cash is only $1,000 sponsor challenges (Red Hat, MESCIUS, Descope...), none health-related; the overall prize is goods and passes. Too small and off-fit.
+- **Meta VR Start Developer Competition 2026** — Categories are Entertainment, Gaming and Productivity for seated, hands-only VR apps, and entrants must be Start program members. No health or wearable fit for Vybe.
+- **OpenCV AI Competition 2026 / Gemma 4 Developer Agent / ARC Prize 2026 (Kaggle)** — Computer-vision, coding-agent and reasoning benchmarks with no health or wearable angle (OpenCV was already rejected in an earlier round).
+- **Yale Healthcare Hackathon 2026** — Free and open to professionals, but the official pages state no 2026 date, application window or prize amounts ('Award categories and prizes will be shared ... via confirmation email'). Cannot verify.
+- **Hackster.io open contests (Autodesk AU 2027, Infineon Boss Battle, Nordic Sustain the System)** — All three live contests are already on rejected.txt; no new Hackster contest is open.
+- **Detroit Demo Day / UnDemo Day (Detroit)** — UnDemo Day: Michigan-only, held 1 Oct 2026, investor matching with no cash. No current Detroit Demo Day cash cycle found.
+- **Monthly Ohio/Midwest cash pitch nights (Cleveland, Columbus, Pittsburgh, Detroit, Chicago)** — No recurring cash-prize pitch night with an open window was found beyond those already on existing/rejected (PitchMI, Startup World Cup Ohio, EXPlore Pittsburgh, Bounce/MORTAR, Key4Women, Pitch Cypher, etc.). Cleveland Accelerate is annual (February).
+
 ## Promoted to the board — 7 Oct 2026 (round 8, scheduled)
 
 Four lanes: a watch-list re-check, founder-identity cash, hardware/IoT/developer-platform
