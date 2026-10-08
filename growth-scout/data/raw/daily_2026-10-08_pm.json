@@ -1,0 +1,653 @@
+[
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-09-14",
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 6
+  },
+  "name": "CycleLytic",
+  "org": "CycleLytic",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Small independent terrain-adjusted cycling analytics tool (speed, power and HR by flat/rolling/hilly/mountain). the5krunner reports its Garmin Connect Developer Program application, filed 2 Mar 2026, was still awaiting a decision on 11 Sep after Garmin paused new API approvals for a program 'redesign'.",
+  "why_now": "Garmin application pending since 2 Mar 2026; still no decision as of 11 Sep 2026 (reported 14 Sep 2026)",
+  "evidence": [
+   "https://the5krunner.com/2026/09/14/garmin-developer-api-access-paused/",
+   "https://the5krunner.com/2026/07/02/cyclelytic-terrain-cycling-analytics/"
+  ],
+  "channel": "Reach via the5krunner coverage / product site (no direct contact found)",
+  "contact_url": "https://the5krunner.com/2026/07/02/cyclelytic-terrain-cycling-analytics/",
+  "fit": 8,
+  "ask": "15-min call on whether a direct Vybe HR/HRV feed would unblock part of their roadmap while Garmin is paused",
+  "opener": "Read about your Garmin application sitting since March. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and we're choosing 5-10 DevKit design partners. If an overnight HRV and resting-HR source you can access directly would help CycleLytic while Garmin is paused, could we talk for 15 minutes?",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "garmin-api-pause",
+   "cycling",
+   "hrv"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 7
+  },
+  "name": "MyCoach Pro",
+  "org": "MyCoach Pro",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Team-sport athlete-monitoring app (players file RPE/wellness questionnaires; staff adjust workloads). A MyCoach Pro post on the WHOOP Community requested production API access and reported more than a week with no status update, i.e. stuck at the 10-member cap.",
+  "why_now": "2026 WHOOP production-access request with no response",
+  "evidence": [
+   "https://www.community.whoop.com/t/production-api-access-request/15648",
+   "https://apps.apple.com/us/app/-/id1081856716"
+  ],
+  "channel": "WHOOP Community thread reply / App Store developer page",
+  "contact_url": "https://www.community.whoop.com/t/production-api-access-request/15648",
+  "fit": 8,
+  "ask": "15-min call on adding Vybe DevKit as an objective overnight recovery source next to their RPE questionnaires",
+  "opener": "Saw your WHOOP production-access request on the community forum. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and we're picking 5-10 DevKit design partners. For team staff who already collect RPE and wellness answers, an overnight HRV source the club controls might fit. Open to 15 minutes?",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "whoop-api-cap",
+   "team-sports",
+   "hrv"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-04-30",
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 7
+  },
+  "name": "athletedata.health",
+  "org": "athletedata",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Proactive AI endurance coach (Telegram/WhatsApp) that reads WHOOP/Oura recovery and Garmin Body Battery each morning and swaps sessions on low recovery; the developer posts on the Slowtwitch and Intervals.icu forums. Recovery-first product built on other brands' gated APIs.",
+  "why_now": "Covered by the5krunner 30 Apr 2026; active developer forum threads",
+  "evidence": [
+   "https://the5krunner.com/2026/04/30/athletedata-ai-coach/",
+   "https://www.athletedata.health/",
+   "https://forum.intervals.icu/t/your-ai-coach-messages-you-first-intervals-icu-garmin-whoop-oura/126280",
+   "https://forum.slowtwitch.com/t/built-an-ai-coach-for-triathletes-that-reaches-out-to-you-not-the-other-way-around/1297686"
+  ],
+  "channel": "Developer forum thread (Intervals.icu / Slowtwitch) or site",
+  "contact_url": "https://forum.intervals.icu/t/your-ai-coach-messages-you-first-intervals-icu-garmin-whoop-oura/126280",
+  "existing_wearables": [
+   "Garmin",
+   "Strava",
+   "WHOOP",
+   "Oura",
+   "Hevy",
+   "Wahoo",
+   "Withings",
+   "Intervals.icu",
+   "Apple Health (beta)"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Add Vybe as a direct morning-recovery source (overnight HRV/RHR) beside WHOOP/Oura/Body Battery; DevKit loan for their coach logic",
+  "unknowns": "No public partner contact; user numbers are self-reported (8000+); pricing not confirmed",
+  "fit": 8,
+  "ask": "DevKit loan and a 15-min call on adding Vybe as a recovery source",
+  "opener": "Your coach reads WHOOP, Oura and Body Battery every morning, which is exactly the data we produce. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and picking 5-10 DevKit design partners. Would you want to test a direct overnight HRV feed in athletedata? Happy to send a unit.",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "hrv",
+   "endurance",
+   "ai-coach"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "Funraisin",
+  "org": "Funraisin",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Peer-to-peer fundraising platform with fitness-challenge tracker integrations. Its support page says it cannot reliably support Fitbit after Google's API change, that existing Fitbit connections stop working, and points fundraisers to Garmin, Strava or MapMyFitness instead.",
+  "why_now": "Fitbit integration dropped for the Fitbit Web API sunset (Google support ended 30 Sep 2026; shutoff 30 Oct 2026)",
+  "evidence": [
+   "https://support.funraisin.co/blog/fitness-connecting-fitbit",
+   "https://support.funraisin.co/developers/integrations/fitness-apps"
+  ],
+  "channel": "Support / developers site",
+  "contact_url": "https://support.funraisin.co/developers/integrations/fitness-apps",
+  "fit": 7,
+  "ask": "Intro call: would a no-subscription band with an open API be a useful tracker option for charity challenges after Fitbit",
+  "opener": "Saw Funraisin's note that the Fitbit integration can't continue after Google's API change. We're building Vybe, a screenless wearable with a licensed SDK/API and no subscription, launching to consumers May 2027. Would a new tracker option with a direct API be useful for your fitness-challenge clients? Glad to share the DevKit docs.",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "dev-platform",
+   "fitbit-sunset",
+   "fundraising"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Aduro",
+  "org": "Aduro",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Employee wellbeing platform. Its support article says new Fitbit connections are turned off and existing ones stop syncing after 28 Sep 2026, routing users through Google Health to Apple Health/Health Connect instead of a direct device feed.",
+  "why_now": "Fitbit direct connection ended 28 Sep 2026",
+  "evidence": [
+   "https://support.aduro.com/hc/en-us/articles/53237392081812"
+  ],
+  "channel": "Company site / support center",
+  "contact_url": "https://support.aduro.com/hc/en-us/articles/53237392081812",
+  "fit": 7,
+  "ask": "Intro call on adding Vybe as a direct device for employer programs in 2027",
+  "opener": "Saw Aduro's notice about turning off direct Fitbit connections. We're building Vybe, a screenless band with a licensed SDK and API and no subscription, consumer launch May 2027. If a device with a direct feed would help your employer programs, could we compare notes for 15 minutes?",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "fitbit-sunset",
+   "corporate-wellness",
+   "dev-platform"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 7
+  },
+  "name": "HRV Flow",
+  "org": "HRV Flow",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Apple Watch recovery-score app (wake-up HRV, RHR and sleep to a 0-100 score). The founder's Product Hunt comment says they built it because a daily recovery score required paying WHOOP or Oura subscriptions; asks for feedback from users who tried them.",
+  "why_now": null,
+  "evidence": [
+   "https://hunted.space/product/hrv-flow"
+  ],
+  "channel": "Product Hunt comment thread",
+  "contact_url": "https://hunted.space/product/hrv-flow",
+  "fit": 7,
+  "ask": "Feedback swap: test Vybe DevKit as a no-subscription overnight source for their score",
+  "opener": "Your HRV Flow launch note about not wanting to pay WHOOP or Oura monthly just for a recovery score is why we're building Vybe: a screenless ECG/HRV band, no subscription, with a licensed SDK/API. We're picking 5-10 DevKit design partners. Want to try feeding your score from it?",
+  "confidence": "single-source",
+  "tags": [
+   "wearables",
+   "hrv",
+   "recovery",
+   "dev-platform",
+   "indie"
+  ]
+ },
+ {
+  "role": "Developers",
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "AlphaHRV",
+  "org": "AlphaHRV (Luisma Gallego, Inigo Tolosa)",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Garmin Connect IQ data field that computes DFA alpha1 from chest-strap RR intervals; Intervals.icu plots alpha1 only from this field. Users report accuracy depends heavily on the strap (Polar H10 recommended), i.e. the product is bottlenecked on beat-to-beat hardware.",
+  "why_now": null,
+  "evidence": [
+   "https://forum.intervals.icu/t/new-alphahrv-version/20966?page=24",
+   "https://forum.intervals.icu/t/hrv-guided-training/3436?page=17"
+  ],
+  "channel": "Intervals.icu forum thread",
+  "contact_url": "https://forum.intervals.icu/t/new-alphahrv-version/20966?page=24",
+  "fit": 7,
+  "ask": "Feedback: would raw ECG-derived RR from the Vybe DevKit be useful for alpha1 validation",
+  "opener": "Following the AlphaHRV threads on Intervals.icu, the strap quality issue keeps coming up. We're building Vybe, a screenless ECG band with a licensed SDK that exposes RR data, and picking 5-10 DevKit design partners. Would ECG-derived RR be useful for your alpha1 work? Happy to send a unit.",
+  "confidence": "single-source",
+  "tags": [
+   "hrv",
+   "dev-platform",
+   "endurance",
+   "connect-iq",
+   "indie"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 8
+  },
+  "name": "IntervalsWellnessSync",
+  "org": "IntervalsWellnessSync",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Indie iOS app that pulls sleep, HRV, resting HR, SpO2 and weight from HealthKit into Intervals.icu wellness; HRV/RHR come only from sleep sessions. A small builder piping overnight recovery data, a natural early tester for a new HRV source.",
+  "why_now": null,
+  "evidence": [
+   "https://forum.intervals.icu/t/intervalswellnesssync-simple-apple-watch-health-data-sync-to-intervals-icu/125843"
+  ],
+  "channel": "Intervals.icu forum thread",
+  "contact_url": "https://forum.intervals.icu/t/intervalswellnesssync-simple-apple-watch-health-data-sync-to-intervals-icu/125843",
+  "fit": 7,
+  "ask": "Feedback on the Vybe DevKit API vs HealthKit for overnight HRV sync",
+  "opener": "Saw IntervalsWellnessSync on the Intervals.icu forum. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and want feedback from people already moving overnight HRV into training tools. Would you try a DevKit and tell us where our API is worse than HealthKit?",
+  "confidence": "single-source",
+  "tags": [
+   "hrv",
+   "dev-platform",
+   "indie",
+   "intervals-icu"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 5,
+   "c": 5,
+   "e": 7
+  },
+  "name": "Watchletic",
+  "org": "Watchletic",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Watch app that sends HRV, sleep duration and resting HR to Intervals.icu; newly released on Wear OS. Indie builder working on overnight recovery data across watch platforms.",
+  "why_now": "Wear OS version newly released (2026 forum thread)",
+  "evidence": [
+   "https://forum.intervals.icu/t/intervals-icu-on-wear-os-with-watchletic/130881"
+  ],
+  "channel": "Intervals.icu forum thread",
+  "contact_url": "https://forum.intervals.icu/t/intervals-icu-on-wear-os-with-watchletic/130881",
+  "fit": 7,
+  "ask": "Feedback on Vybe DevKit API as an extra HRV/RHR source",
+  "opener": "Saw Watchletic's Wear OS release on the Intervals.icu forum. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and picking 5-10 DevKit design partners. If an overnight HRV/RHR feed beside the watch is interesting, could we talk for 15 minutes?",
+  "confidence": "single-source",
+  "tags": [
+   "hrv",
+   "dev-platform",
+   "indie",
+   "wear-os"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 7,
+   "c": 7,
+   "e": 7
+  },
+  "name": "Intervals.icu Open API and app ecosystem",
+  "org": "Intervals.icu",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Training-analytics platform with an open API (OAuth, webhooks, wellness push/pull of HRV, resting HR, sleep) and 200+ third-party apps; forum users route HRV from non-native devices via CSV, Shortcuts and companion apps.",
+  "why_now": null,
+  "evidence": [
+   "https://www.intervals.icu/features/open-api/",
+   "https://app.intervals.icu",
+   "https://www.intervals.icu/features/app-integrations/"
+  ],
+  "channel": "Forum / developer docs",
+  "contact_url": "https://forum.intervals.icu/t/extending-intervals-icu/46565",
+  "existing_wearables": [
+   "Garmin",
+   "Amazfit",
+   "Polar",
+   "Suunto",
+   "Coros",
+   "Wahoo",
+   "Zwift",
+   "Hammerhead",
+   "Strava",
+   "Dropbox",
+   "Oura",
+   "WHOOP"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Push Vybe overnight HRV/RHR into Intervals.icu wellness via the open API and get listed among app integrations; post the DevKit call on the forum",
+  "unknowns": "No formal partner program or contact found; whether a native device listing (vs API app) is possible",
+  "fit": 8,
+  "ask": "Listing as an app integration once the Vybe wellness push works; permission to post the DevKit call on the forum",
+  "opener": "We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and want our overnight HRV and resting HR to land in Intervals.icu wellness through your open API from day one. Is there a preferred way to get listed as an app integration, and would a DevKit post on the forum be welcome?",
+  "confidence": "verified",
+  "tags": [
+   "hrv",
+   "dev-platform",
+   "endurance",
+   "open-api"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-05-13",
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 6
+  },
+  "name": "Gadgetbridge",
+  "org": "Freeyourgadget (Gadgetbridge)",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Open-source, cloud-free Android companion app for wearables. Publishes a 'New gadget tutorial' for adding devices, says contributions are welcome, and its release notes say adding a device is hard without the hardware, so owners who test are valued. Releases in 2026 (0.90-0.92) keep adding devices and Health Connect support.",
+  "why_now": "0.91.0 release post 13 May 2026; 0.92.0 adds more devices",
+  "evidence": [
+   "https://gadgetbridge.org/internals/development/new-gadget/",
+   "https://gadgetbridge.org/blog/category/releases/",
+   "https://gadgetbridge.org/blog/"
+  ],
+  "channel": "Codeberg issues / Matrix #gadgetbridge:matrix.org",
+  "contact_url": "https://gadgetbridge.org/internals/development/new-gadget/",
+  "fit": 7,
+  "ask": "Open an issue offering DevKit units and BLE protocol docs to a maintainer willing to add Vybe support",
+  "opener": "Hi Gadgetbridge team. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and we'd rather document our BLE protocol than make anyone reverse engineer it. Would a maintainer be interested in DevKit hardware plus protocol docs to add Vybe support? Happy to follow your contributor policy.",
+  "confidence": "verified",
+  "tags": [
+   "wearables",
+   "open-source",
+   "dev-platform",
+   "community"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": "Stanford, CA",
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 6
+  },
+  "name": "Stanford Spezi (SpeziBluetooth / SpeziDevices)",
+  "org": "Stanford Spezi",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Open-source Swift framework for digital-health apps; SpeziBluetooth models BLE devices declaratively and SpeziDevices ships reusable device implementations (Omron BP cuff and scale) with pairing and measurement processing. The team says anyone can contribute modules; good-first-issues are listed.",
+  "why_now": null,
+  "evidence": [
+   "https://spezi.stanford.edu/services",
+   "https://swiftpackageindex.com/stanfordspezi/spezibluetooth",
+   "https://swiftpackageregistry.com/StanfordSpezi/SpeziDevices",
+   "https://goodfirstissue.org/StanfordSpezi"
+  ],
+  "channel": "GitHub / Spezi discussion forum",
+  "contact_url": "https://spezi.stanford.edu/services",
+  "fit": 8,
+  "ask": "Contribute a SpeziDevices module for the Vybe DevKit and ask the Spezi team for review/listing",
+  "opener": "Hi Spezi team. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and we'd like research apps built on Spezi to use it without custom glue. Would you welcome a SpeziDevices module for the Vybe DevKit, alongside the Omron implementations? We can provide hardware for testing.",
+  "confidence": "verified",
+  "tags": [
+   "research",
+   "open-source",
+   "dev-platform",
+   "digital-health"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": "London, UK",
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 5
+  },
+  "name": "RADAR-base passive app plugins",
+  "org": "RADAR-base",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Open-source mHealth research platform (King's College London / Maudsley BRC) whose Android passive app uses per-device plugins on a shared commons API; integrations wiki lists device plugins and a REST connector for web-API wearables.",
+  "why_now": null,
+  "evidence": [
+   "https://github.com/RADAR-base",
+   "https://radar-base.atlassian.net/wiki/x/E4D7kw",
+   "https://www.maudsleybrc.nihr.ac.uk/impact-stories/radar-base-collecting-data-from-wearables-and-mobile-apps/"
+  ],
+  "channel": "GitHub / RADAR-base wiki",
+  "contact_url": "https://github.com/RADAR-base",
+  "existing_wearables": [
+   "Empatica E4",
+   "Faros",
+   "Biovotion Everion",
+   "Garmin",
+   "Fitbit (REST connector)",
+   "Android phone sensors"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Build a radar-commons-android plugin for the Vybe band so RADAR-base studies can collect overnight ECG/HRV",
+  "unknowns": "Current maintainer contact; whether the integrations wiki is up to date",
+  "fit": 8,
+  "ask": "Feedback on plugin requirements and a reviewer for a Vybe passive plugin",
+  "opener": "Hello RADAR-base team. We're building Vybe, a screenless ECG/HRV band with a licensed SDK, and want it usable in research pipelines. We'd like to write a passive-app plugin on radar-commons-android. Who could tell us what a plugin needs to be accepted? We can supply DevKit hardware.",
+  "confidence": "verified",
+  "tags": [
+   "research",
+   "open-source",
+   "dev-platform",
+   "hrv"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "python-garminconnect / Home Assistant Garmin Connect",
+  "org": "cyberjunky (open source)",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Popular Python Garmin Connect wrapper (about 2.2k stars reported) and the HACS Home Assistant custom integration built on it, which exists because Garmin removed API access for hobby projects. 2026 issues show logins breaking after Garmin SSO/MFA changes; its users want self-hosted health data.",
+  "why_now": "2026 login breakages (issue #420 after HA 2026.3.2)",
+  "evidence": [
+   "https://github.com/cyberjunky/home-assistant-garmin_connect/issues/420",
+   "https://github.com/cyberjunky/python-garminconnect/issues/332",
+   "https://home-assistant-guide.com/guide/the-garmin-connect-integration-with-home-assistant-is-now-a-custom-component/"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://www.github.com/cyberjunky",
+  "fit": 7,
+  "ask": "Ask the maintainer for feedback on a Vybe local API and whether he'd review a Home Assistant integration",
+  "opener": "Your Garmin Connect wrapper and HA integration keep a lot of people's health data local, despite Garmin's SSO changes. We're building Vybe, a screenless ECG/HRV band with a licensed, documented SDK and API. Would you give feedback on our API, or look at a Home Assistant integration we'd build for it?",
+  "confidence": "verified",
+  "tags": [
+   "open-source",
+   "home-assistant",
+   "dev-platform",
+   "garmin"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 8
+  },
+  "name": "Omi Discord (open-source AI wearable builders)",
+  "org": "Omi (formerly Based Hardware)",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Discord for Omi, an open-source AI wearable with an app store; listings show ~10.5k members and describe an active community of developers building on open wearable hardware. Builders here already ship apps for a wearable, a fit for a DevKit call.",
+  "why_now": null,
+  "evidence": [
+   "https://discord.com/servers/omi-1192313062041067520",
+   "https://discordbotlist.com/servers/based-hardware-1192313062041067520",
+   "https://techcrunch.com/2025/01/08/omi-a-competitor-to-friend-wants-to-boost-your-productivity-using-ai-and-a-brain-interface"
+  ],
+  "channel": "Discord",
+  "contact_url": "https://discord.com/servers/omi-1192313062041067520",
+  "fit": 7,
+  "ask": "Post the DevKit design-partner call in the community/showcase channel (check rules first)",
+  "opener": "Hi all. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API, and we're looking for 5-10 DevKit design partners who already build on wearable hardware. If you've wanted overnight HRV and ECG data for an Omi app or your own project, reply here or DM.",
+  "confidence": "verified",
+  "tags": [
+   "community",
+   "wearables",
+   "open-source",
+   "dev-platform"
+  ]
+ },
+ {
+  "role": null,
+  "warm_path": null,
+  "check_size": null,
+  "stage": null,
+  "geo": "Netherlands",
+  "deadline": null,
+  "last_signal_date": null,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "Health Sync (appyhapps)",
+  "org": "appyhapps",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Android data-sync app (Netherlands) that moves health data between Coros, Fitbit, Garmin, Google Fit, Google Health, Health Connect, Withings, Oura, Polar, Samsung Health, Strava, Suunto, Huawei Health and more; widely used as the bridge when brands close APIs.",
+  "why_now": "Google Health added as a sync destination in 2026 listing",
+  "evidence": [
+   "https://www.apkmirror.com/apk/appyhapps-nl/health-sync/health-sync-7-9-0-1-release/",
+   "https://forum.intervals.icu/t/health-sync-now-supports-intervals-icu/92287"
+  ],
+  "channel": "Email listed on site / in-app help",
+  "contact_url": "https://www.apkmirror.com/apk/appyhapps-nl/health-sync/health-sync-7-9-0-1-release/",
+  "existing_wearables": [
+   "Coros",
+   "Fitbit",
+   "Garmin",
+   "Google Fit",
+   "Google Health",
+   "Health Connect",
+   "MedM Health",
+   "Withings",
+   "Oura",
+   "Polar",
+   "Samsung Health",
+   "Strava",
+   "Suunto",
+   "Huawei Health"
+  ],
+  "exclusive": false,
+  "partner_status": "open",
+  "opportunity": "Become a Health Sync source so Vybe data reaches Health Connect, Google Health and Intervals.icu users on Android",
+  "unknowns": "No partner page found; whether they accept new device sources via API",
+  "fit": 7,
+  "ask": "Ask whether they'd add Vybe as a source once the DevKit API is live",
+  "opener": "Health Sync is how many Android users keep data moving as brands close APIs. We're building Vybe, a screenless ECG/HRV band with a licensed SDK and API. Would you consider adding Vybe as a source? We can send a DevKit and API docs.",
+  "confidence": "single-source",
+  "tags": [
+   "dev-platform",
+   "android",
+   "health-connect",
+   "sync"
+  ]
+ }
+]
