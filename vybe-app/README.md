@@ -42,9 +42,12 @@ npx expo start
 - **FollowUpScreen** *(6 Oct)* — what happens when you tell Vybe it is
   wrong: a correction, the parts of the reasoning it moves, and the parts still
   standing. Reached from "That's not right" on AskScreen.
-- **ImportScreen** *(new, 7 Oct)* — connecting a source that already has years
+- **ImportScreen** *(7 Oct)* — connecting a source that already has years
   in it: what Vybe will compute with, what it will only draw, and what it will
   not take. Reached from the sources step of OnboardingScreen.
+- **SeasonScreen** *(new, 8 Oct)* — the same months a year apart, and the five
+  it has only seen once. Reached from "what would make this stronger" on
+  PatternHistoryScreen.
 
 ## The three decisions worth keeping
 
@@ -455,6 +458,48 @@ to show a reading, which removes the risk entirely rather than labelling it.
 Ready, Not from this, Waiting — never a colour alone, and the day counts use
 tabular figures in a fixed right column so three years and eighteen days are
 comparable at a glance.
+
+## The year-on-year screen, and why it looks like that
+
+The app had two history screens already. `MoveTrendScreen` draws one metric
+across twenty-six weeks; `PatternHistoryScreen` tests one claim across twelve.
+Both answer *what did this do*. Neither can answer the question that decides
+whether any of it means anything: **is this a trend, or is it just November
+again?**
+
+**The tempting fix is the one that hides everything.**
+Every wearable shows a decline through the winter and lets the person conclude
+they are getting worse. Usually they are not; it is winter. A seasonal
+adjustment would quietly lift the winter numbers and draw a flat line — and
+destroy the only fact worth having. So this screen does the opposite: it reports
+how many months it can actually compare, and refuses to draw a seasonal curve
+through a single year.
+
+**The headline is a limit, not an achievement.**
+`7 of 12` — seven calendar months have a counterpart a year earlier, six of
+those came out the same both times, one did not, and five months exist on
+exactly one year. The months seen once are rows too, with a dash where the
+second year should be. Dropping them would be the whole bug: a list of only the
+comparable months reads as a complete year and is not one, and the months that
+would go missing are exactly the winter ones people worry about.
+
+**The screen checks its worst claim instead of asserting it.**
+`worstAreThinnest` compares the five lowest readings against the five months
+seen only once. They are the same five — January, December, February, November,
+October — so the screen can say, as arithmetic, that the thinnest evidence and
+the worst numbers are the same months. If a future dataset broke that, the
+sentence changes rather than lying.
+
+**A verdict that turns on one minute is noise wearing a conclusion's clothes.**
+Two years count as the same month when they land within five minutes of each
+other, and the rule is printed on screen. Six of the seven compared months
+differ by a minute or less; without the margin, each of them would be a coin
+flip. Verified in node: 19 readings, 12 calendar rows, 7 compared, 6 repeated,
+1 changed — July, down 11 minutes, the month after a house move.
+
+**It says when it becomes useful.**
+February 2027 for a second pass through every month, February 2028 for a third:
+*"a month that matches once is a pair, not a pattern."*
 
 ## Non-negotiables held
 
