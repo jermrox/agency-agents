@@ -146,6 +146,10 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   <p class="hint">The 10 highest-ranked targets with an open channel and a drafted opener. You send every message yourself; nothing here sends anything.</p>
   <div class="cards" id="cards"></div>
 
+  <h2 id="followups">Follow-ups due</h2>
+  <p class="hint" id="fu-note">Outreach already sent from jeremy@vybe.health, soonest first. Each contact gets one follow-up, 5 to 7 days after the first email.</p>
+  <div class="tablewrap"><table id="fu-tbl"><thead><tr><th>Due</th><th>Who</th><th>State</th><th>Do this</th></tr></thead><tbody id="fu"></tbody></table></div>
+
   <h2 id="outreach">Outreach queue: sponsors and partners</h2>
   <p class="hint">Every sponsorship and partner target with a public contact route and a drafted email, best first. Copy the email, open their contact page, send it yourself, then mark the status. Nothing here sends anything. Emails that mention founder identity stay out until that wording is approved.</p>
   <div class="filters" role="search">
@@ -367,6 +371,17 @@ const DATA = /*__DATA__*/null;
   });
   renderTable();
 
+  // Follow-ups on outreach already sent (from data/followups.json)
+  const FU = (DATA.followups && DATA.followups.threads) || [];
+  if (DATA.followups && DATA.followups.checked) $("#fu-note").textContent += ` Inbox last checked ${DATA.followups.checked}.`;
+  $("#fu").innerHTML = FU.length ? FU.map((f) => {
+    const d = daysTo(f.due);
+    const when = d === null ? "" : d < 0 ? `${-d}d overdue` : d === 0 ? "today" : `in ${d}d`;
+    return `<tr><td><strong>${esc(f.due || "")}</strong><br><span class="hint" style="margin:0">${esc(when)}</span></td>
+      <td>${esc(f.org)}<br><span class="hint" style="margin:0">${esc(f.to)}</span></td>
+      <td><span class="pill${f.state === "replied" ? " due" : ""}">${esc(f.state)}</span></td><td>${esc(f.next)}</td></tr>`;
+  }).join("") : '<tr><td colspan="4" class="empty">No outreach sent yet.</td></tr>';
+
   // Outreach queue (sponsors and partners)
   const Q = DATA.outreach || [];
   let oqShown = 25;
@@ -387,8 +402,10 @@ const DATA = /*__DATA__*/null;
         <span class="subj">${esc(q.name)}</span><span class="pill">${esc(q.channel || "")}</span></summary>
         <p class="why" style="margin:10px 0 0"><strong>Subject:</strong> ${esc(q.subject)}</p>
         <pre>${esc(q.body)}</pre>
+        <p class="why" style="margin:6px 0 0"><strong>Follow-up (day 5-7, once):</strong> ${esc(q.followup_subject || "")}</p>
         <div class="row">
           <button class="btn primary" type="button" data-copy-email="${esc(q.id)}">Copy email</button>
+          <button class="btn" type="button" data-copy-fu="${esc(q.id)}" title="Send 5-7 days after the first email if there's no reply">Copy follow-up</button>
           <a class="btn" href="${esc(safeUrl(q.contact_url))}" target="_blank" rel="noopener">Open ${esc(q.channel || "contact")}</a>
           <a class="btn" href="${esc(mail)}">Open in my email</a>
           ${q.evidence ? `<a class="btn" href="${esc(safeUrl(q.evidence))}" target="_blank" rel="noopener">Source</a>` : ""}
@@ -402,17 +419,18 @@ const DATA = /*__DATA__*/null;
   $("#oq-more").addEventListener("click", () => { oqShown += 25; renderQueue(); });
   $("#oq-csv").addEventListener("click", () => {
     const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-    const lines = [["name","org","hunt","type","priority","deadline","channel","contact_url","subject","body","status"].join(",")]
-      .concat(oqView().map((q) => [q.name, q.org, q.hunt, q.type, q.priority, q.deadline, q.channel, q.contact_url, q.subject, q.body, status[q.id] || "New"].map(cell).join(",")));
+    const lines = [["name","org","hunt","type","priority","deadline","channel","contact_url","subject","body","followup_subject","followup_body","status"].join(",")]
+      .concat(oqView().map((q) => [q.name, q.org, q.hunt, q.type, q.priority, q.deadline, q.channel, q.contact_url, q.subject, q.body, q.followup_subject, q.followup_body, status[q.id] || "New"].map(cell).join(",")));
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([lines.join("\n")], {type: "text/csv"}));
     a.download = "vybe-outreach-queue.csv"; a.click();
   });
   document.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-copy-email]"); if (!b) return;
-    const q = Q.find((x) => x.id === b.dataset.copyEmail); if (!q) return;
+    const b = e.target.closest("[data-copy-email],[data-copy-fu]"); if (!b) return;
+    const q = Q.find((x) => x.id === (b.dataset.copyEmail || b.dataset.copyFu)); if (!q) return;
+    const text = b.dataset.copyFu ? `Subject: ${q.followup_subject}\n\n${q.followup_body}` : emailText(q);
     const done = () => { const o = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = o; }, 1400); };
-    if (navigator.clipboard) navigator.clipboard.writeText(emailText(q)).then(done, () => {});
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => {});
   });
   document.addEventListener("change", (e) => { if (e.target.closest("select.status")) setTimeout(renderQueue, 0); });
   renderQueue();

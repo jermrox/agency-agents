@@ -31,6 +31,7 @@ LINK_CHECK = ROOT / "data" / "link_check.json"
 COMBOS = ROOT / "data" / "combos.json"
 SCREENED = ROOT / "data" / "screened_apps.json"
 IDENTIFIED = ROOT / "data" / "identified_apps.json"
+FOLLOWUPS = ROOT / "data" / "followups.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
@@ -280,6 +281,25 @@ def email_subject(row: dict) -> str:
     return f"Vybe Health x {row['name']}: partnership idea"
 
 
+def followup_body(row: dict) -> str:
+    """The one follow-up allowed per contact, sent 5-7 days after the first email.
+
+    Sent as a reply on the first email's thread, so it points back to that note
+    and adds no new claims. The row's ask is an internal note, never quoted.
+    """
+    return (f"Hello {row['name']} team,\n\nFollowing up on my note below. "
+            "Could you point me to the right person, or let me know if it's a fit? "
+            "I can send a one-page overview if that's easier." + SIGNOFF)
+
+
+def load_followups() -> dict:
+    if not FOLLOWUPS.exists():
+        return {"note": "", "checked": None, "threads": []}
+    data = json.loads(FOLLOWUPS.read_text())
+    data["threads"].sort(key=lambda r: (r.get("due") or "9999", r["org"]))
+    return data
+
+
 def outreach_queue(targets: list[dict]) -> list[dict]:
     """Ready-to-send emails for sponsorship and partner targets, best first.
 
@@ -297,6 +317,7 @@ def outreach_queue(targets: list[dict]) -> list[dict]:
             "channel": t.get("channel"), "contact_url": t.get("contact_url"),
             "evidence": (t.get("evidence") or [None])[0], "ask": t.get("ask"),
             "subject": email_subject(t), "body": t["opener"].strip() + SIGNOFF,
+            "followup_subject": "Re: " + email_subject(t), "followup_body": followup_body(t),
         })
     return queue
 
@@ -367,6 +388,7 @@ def main() -> int:
         "screened_apps": screened_apps,
         "rejected_count": len(rejected),
         "outreach": outreach_queue(targets),
+        "followups": load_followups(),
     }
     (ROOT / "data" / "targets.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     SITE.mkdir(exist_ok=True)

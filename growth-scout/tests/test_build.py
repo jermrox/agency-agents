@@ -154,3 +154,20 @@ def test_outreach_queue_only_holds_sendable_sponsor_and_partner_emails():
     assert q[0]["subject"] == "Vybe Health x Run Club: small sponsorship idea"
     assert "overnight data integration" in q[1]["subject"]
     assert q[0]["body"].startswith("Hi there, short note.") and "jeremy@vybe.health" in q[0]["body"]
+
+
+def test_queue_carries_one_follow_up_built_from_the_row():
+    row = {"id": "x", "name": "Akron Rugby", "org": "Akron Rugby", "type": "club", "hunt": "sponsorship",
+           "priority": "high", "rank": 1, "sendable": True, "opener": "Hi there.", "ask": "A jersey patch for spring."}
+    q = build.outreach_queue([row])[0]
+    assert q["followup_subject"] == "Re: " + q["subject"]
+    assert "jersey patch" not in q["followup_body"] and q["followup_body"].startswith("Hello Akron Rugby team,")
+    assert q["followup_body"].endswith(build.SIGNOFF)
+
+
+def test_followups_file_is_valid_and_sorted_by_due_date():
+    data = build.load_followups()
+    dues = [t.get("due") or "9999" for t in data["threads"]]
+    assert dues == sorted(dues)
+    for t in data["threads"]:
+        assert "@" in t["to"] and t["first_sent"] and t["next"]
