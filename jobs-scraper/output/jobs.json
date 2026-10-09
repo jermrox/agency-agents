@@ -1,8 +1,194 @@
 {
   "version": 2,
-  "generated_at": "2026-10-08T19:39:14.690150+00:00",
-  "count": 700,
+  "generated_at": "2026-10-09T07:34:33.652334+00:00",
+  "count": 697,
   "jobs": [
+    {
+      "id": "53cb751f63fb6593449d",
+      "fingerprint": "30ab8cf288fba46a8648",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/884652400",
+      "title": "HOLISTIC HEALTH AND FITNESS PROGRAM DIRECTOR",
+      "employer": "U.S. Army, Pacific",
+      "location": "PYEONGTAEK, South Korea",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$90,925 - $118,204 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the experience and education requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 90925.0,
+        "salary_max": 118204.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "other",
+        "discipline_label": "Other",
+        "lead": true,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "oconus"
+        ],
+        "location_regions": {
+          "oconus": [
+            "South Korea"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 90925.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-09T07:34:33.652334+00:00"
+    },
+    {
+      "id": "ef9908d2e2c8a23679ed",
+      "fingerprint": "cdef2cfc7e6d670d7c8c",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888258700",
+      "title": "Physical Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Fort Lee, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$101,956 - $124,899 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 101956.0,
+        "salary_max": 124899.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Lee",
+        "service_branch": "Army",
+        "program": null
+      },
+      "facets": {
+        "discipline": "physical-therapy",
+        "discipline_label": "Physical Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 101956.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-09T07:34:33.652334+00:00"
+    },
+    {
+      "id": "42072e4d03ddbbf9937e",
+      "fingerprint": "82fa74dbcb4f34f6398c",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/887988800",
+      "title": "Occupational Therapist",
+      "employer": "Military Treatment Facilities under DHA",
+      "location": "Bethesda, Maryland",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$102,415 - $133,142 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 102415.0,
+        "salary_max": 133142.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [
+          "joint"
+        ],
+        "branch_labels": [
+          "Joint / DoD-wide"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Maryland"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 102415.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-09T07:34:33.652334+00:00"
+    },
     {
       "id": "95ad514dbc1b8e826e50",
       "fingerprint": "131fbf7474f945b088ae",
@@ -1075,68 +1261,6 @@
       "listed_at": "2026-10-06T07:31:39.928474+00:00"
     },
     {
-      "id": "9de4cab9c9e046366605",
-      "fingerprint": "1bd863671ca67b4b3ce5",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887375600",
-      "title": "Physical Therapy Assistant",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Fort Bragg, North Carolina",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$52,693 - $68,502 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive credit for all\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 52693.0,
-        "salary_max": 68502.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": "Fort Bragg",
-        "service_branch": "Army",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "North Carolina"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 52693.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-06T07:31:39.928474+00:00"
-    },
-    {
       "id": "67f2cae16fc8187c9007",
       "fingerprint": "b5928871c887f768eb38",
       "source": "usajobs:federal",
@@ -1186,69 +1310,6 @@
         },
         "contingency": "unknown",
         "salary_floor_annual": 50460.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-06T07:31:39.928474+00:00"
-    },
-    {
-      "id": "fa0c0e7306d617629702",
-      "fingerprint": "65215391f47c074ec3a5",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887478000",
-      "title": "Director (Football Operations)",
-      "employer": "U.S. Air Force Academy",
-      "location": "Air Force Academy, Colorado",
-      "remote": false,
-      "telework": true,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$94,019 - $98,516 /yr",
-      "posted_at": null,
-      "description": "QUALIFICATIONS REQUIRED QUALIFICATIONS: Bachelor's degree from an accredited college or university required. Candidates must possess experience within the collegiate level. ACADEMIC DISCIPLINES: N/A DESIRED QUALIFICATIONS: Master's degree from an accredited college - NCAA Candidates will have a strong commitment to undergraduate teaching. Leadership experience in curriculum development and\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 94019.0,
-        "salary_max": 98516.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Air Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": true,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus",
-          "telework"
-        ],
-        "location_regions": {
-          "conus": [
-            "Colorado"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 94019.0,
         "mwr": false
       },
       "matched": {
@@ -40158,68 +40219,6 @@
       "listed_at": "2026-09-26T07:03:20.437509+00:00"
     },
     {
-      "id": "09eb42c41cb3d3721f79",
-      "fingerprint": "2fbca7bfd4478bc3e371",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/886128800",
-      "title": "SUPERVISORY FITNESS/SPORTS SPECIALIST (FITNESS DIRECTOR)",
-      "employer": "United States Space Force",
-      "location": "Schriever AFB, Colorado",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$35.00 - $38.00 /hr",
-      "posted_at": null,
-      "description": "Who May Apply: Open to everyone. Applicants will be categorized by preference(s) and/or priority consideration eligibilities. An applicant's eligibility will be determined based on eligibility claimed in the questionnaire and proof of eligibility MUST be provided with application by the closing date, 10/08/2026 Business Based Action, Military Spouse Preference, Outside Applicant Veteran,\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 35.0,
-        "salary_max": 38.0,
-        "salary_period": "hour",
-        "education": null,
-        "years_experience_min": null,
-        "employment_type": "Full-time",
-        "installation": "Schriever SFB",
-        "service_branch": "Space Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": true,
-        "branches": [
-          "space-force"
-        ],
-        "branch_labels": [
-          "Space Force"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Colorado"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 72800.0,
-        "mwr": true
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-24T19:08:06.936610+00:00"
-    },
-    {
       "id": "a71d04b72ca7c5a7b9f8",
       "fingerprint": "1acc8a314a5bdf324a8a",
       "source": "usajobs:federal",
@@ -40481,68 +40480,6 @@
       "program": null,
       "notes": "",
       "listed_at": "2026-09-22T19:07:58.694309+00:00"
-    },
-    {
-      "id": "814654a7692c25243eec",
-      "fingerprint": "98ec388fb34d37aabf82",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS35305EXTERNALENUS/H2F-Cognitive-Performance-Specialist-Fort-Leonard-Wood-MO",
-      "title": "H2F: Cognitive Performance Specialist - Fort Leonard Wood, MO",
-      "employer": "Serco USA",
-      "location": "Fort Leonard Wood, Missouri, USA; Missouri, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Leonard Wood",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Missouri"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
       "id": "789c652a0cdbe4247ece",
@@ -42008,7 +41945,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-08T19:38:59+00:00"
+        "checked_at": "2026-10-09T07:34:11+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
@@ -42195,70 +42132,6 @@
       "program": "POTFF",
       "notes": "",
       "listed_at": "2026-09-03T21:34:27.569718+00:00"
-    },
-    {
-      "id": "1f18a2d7e1173ab33fa6",
-      "fingerprint": "1afb1eb29cc96c651753",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/883158500",
-      "title": "Occupational Therapist",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Travis AFB, California",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$93,358 - $121,371 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "PhD"
-        ],
-        "clearance": null,
-        "salary_min": 93358.0,
-        "salary_max": 121371.0,
-        "salary_period": "year",
-        "education": "Doctorate",
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "California"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 93358.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-03T11:51:14.421281+00:00"
     },
     {
       "id": "d7c5751cc29873aadc49",
@@ -42822,68 +42695,6 @@
         "location_regions": {
           "conus": [
             "Oklahoma"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-08-29T14:09:45.600028+00:00"
-    },
-    {
-      "id": "7b076826a07212762258",
-      "fingerprint": "98ec388fb34d37aabf82",
-      "source": "jsonld:serco",
-      "url": "https://careers.serco-na.com/us/en/job/SUPSUAUS32358EXTERNALENUS/H2F-Cognitive-Performance-Specialist-Fort-Leonard-Wood-MO",
-      "title": "H2F: Cognitive Performance Specialist - Fort Leonard Wood, MO",
-      "employer": "Serco USA",
-      "location": "Fort Leonard Wood, Missouri, USA; Missouri, USA",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Position Description & Qualifications If you love high profile and challenging projects supporting the US Army, Serco has a great opportunity for you! This Cognitive Performance Specialist (CPS) will be on a dynamic team, supporting Holistic Health and Fitness (H2F) initiative, the Army\u2019s investment in Soldier Readiness. The Cognitive Performance Specialist (CPS) plays a pivotal role within the\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Master",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Fort Leonard Wood",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "cognitive-performance",
-        "discipline_label": "Cognitive Performance",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Missouri"
           ]
         },
         "contingency": "unknown",

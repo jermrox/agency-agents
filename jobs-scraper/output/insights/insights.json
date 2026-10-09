@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-08T19:39:15.094999+00:00",
+  "generated_at": "2026-10-09T07:34:34.265585+00:00",
   "totals": {
-    "postings": 1403,
-    "employers": 43,
-    "unique_jobs": 791,
-    "with_salary": 251,
+    "postings": 1410,
+    "employers": 44,
+    "unique_jobs": 793,
+    "with_salary": 253,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-08T04:00:00+00:00"
+      "latest": "2026-10-09T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -99,6 +99,16 @@
       "median_salary": 47840.0
     },
     {
+      "name": "Military Treatment Facilities under DHA",
+      "count": 31,
+      "disciplines": [
+        "sports-medicine",
+        "research",
+        "leadership"
+      ],
+      "median_salary": 102935.0
+    },
+    {
       "name": "General Dynamics Information Technology",
       "count": 30,
       "disciplines": [
@@ -111,16 +121,6 @@
         "sport-science"
       ],
       "median_salary": 98738.0
-    },
-    {
-      "name": "Military Treatment Facilities under DHA",
-      "count": 30,
-      "disciplines": [
-        "sports-medicine",
-        "research",
-        "leadership"
-      ],
-      "median_salary": 96386.25
     },
     {
       "name": "Customs and Border Protection",
@@ -190,67 +190,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 417,
-      "share": 0.6693,
-      "median_salary": 70940.75
+      "count": 418,
+      "share": 0.6688,
+      "median_salary": 71500.0
     },
     {
       "name": "sports-medicine",
-      "count": 358,
-      "share": 0.5746,
-      "median_salary": 74455.5
+      "count": 360,
+      "share": 0.576,
+      "median_salary": 74485.0
     },
     {
       "name": "cognitive",
-      "count": 175,
-      "share": 0.2809,
-      "median_salary": 84869.0
+      "count": 176,
+      "share": 0.2816,
+      "median_salary": 85738.0
     },
     {
       "name": "research",
-      "count": 124,
-      "share": 0.199,
-      "median_salary": 75920.0
+      "count": 125,
+      "share": 0.2,
+      "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1621,
+      "share": 0.1616,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 35,
-      "share": 0.0562,
+      "share": 0.056,
       "median_salary": 63282.0
     },
     {
       "name": "sport-science",
       "count": 11,
-      "share": 0.0177,
+      "share": 0.0176,
       "median_salary": 102550.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 748,
-      "share": 0.9577
+      "count": 750,
+      "share": 0.9579
     },
     {
       "name": "sof",
       "count": 375,
-      "share": 0.4802
+      "share": 0.4789
     },
     {
       "name": "first-responder",
       "count": 55,
-      "share": 0.0704
+      "share": 0.0702
     },
     {
       "name": "training-pipeline",
       "count": 46,
-      "share": 0.0589
+      "share": 0.0587
     }
   ],
   "by_branch": [
@@ -260,7 +260,7 @@
     },
     {
       "name": "Army",
-      "count": 190
+      "count": 192
     },
     {
       "name": "Air Force",
@@ -367,11 +367,11 @@
       "count": 43
     },
     {
-      "code": "NM",
-      "count": 36
+      "code": "VA",
+      "count": 37
     },
     {
-      "code": "VA",
+      "code": "NM",
       "count": 36
     },
     {
@@ -463,27 +463,27 @@
     }
   ],
   "salary": {
-    "count": 251,
+    "count": 253,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 83480.0,
-    "p25": 62000.25,
-    "p75": 110080.0,
+    "median": 83592.5,
+    "p25": 62000.5,
+    "p75": 110160.0,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 66,
+        "count": 67,
         "min": 34320.0,
         "max": 1000000.0,
-        "median": 70940.75,
-        "p25": 58122.4,
-        "p75": 89646.25
+        "median": 71500.0,
+        "p25": 58244.8,
+        "p75": 91215.0
       },
       "sports-medicine": {
-        "count": 128,
+        "count": 130,
         "min": 10000.0,
         "max": 1000000.0,
-        "median": 74455.5,
-        "p25": 59535.5,
+        "median": 74485.0,
+        "p25": 59812.5,
         "p75": 102935.0
       },
       "nutrition": {
@@ -495,12 +495,12 @@
         "p75": 102935.0
       },
       "cognitive": {
-        "count": 42,
+        "count": 43,
         "min": 34320.0,
         "max": 173285.0,
-        "median": 84869.0,
-        "p25": 63587.5,
-        "p75": 111440.93
+        "median": 85738.0,
+        "p25": 63725.0,
+        "p75": 109271.86
       },
       "sport-science": {
         "count": 7,
@@ -511,12 +511,12 @@
         "p75": 109316.86
       },
       "research": {
-        "count": 37,
+        "count": 38,
         "min": 45655.0,
         "max": 170556.5,
-        "median": 75920.0,
-        "p25": 63124.0,
-        "p75": 98027.0
+        "median": 77015.0,
+        "p25": 63203.0,
+        "p75": 98560.25
       },
       "leadership": {
         "count": 22,
@@ -567,7 +567,7 @@
     },
     {
       "month": "2026-08",
-      "count": 96
+      "count": 95
     },
     {
       "month": "2026-09",
@@ -575,12 +575,12 @@
     },
     {
       "month": "2026-10",
-      "count": 94
+      "count": 97
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-10T04:00:00+00:00",
+    "pivot": "2026-07-11T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -619,16 +619,16 @@
         "change": 29
       },
       {
+        "name": "Military Treatment Facilities under DHA",
+        "recent": 30,
+        "previous": 1,
+        "change": 29
+      },
+      {
         "name": "General Dynamics Information Technology",
         "recent": 29,
         "previous": 0,
         "change": 29
-      },
-      {
-        "name": "Military Treatment Facilities under DHA",
-        "recent": 29,
-        "previous": 1,
-        "change": 28
       },
       {
         "name": "Customs and Border Protection",
@@ -715,7 +715,7 @@
   "top_titles": [
     {
       "title": "Physical Therapist",
-      "count": 59
+      "count": 60
     },
     {
       "title": "Cognitive Performance Specialist",
