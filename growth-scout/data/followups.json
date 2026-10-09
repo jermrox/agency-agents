@@ -172,11 +172,11 @@
     },
     {
       "org": "ANZER USA",
-      "to": "sales@anzer-usa.com",
+      "to": "JayM@anzer-usa.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
+      "state": "replied",
       "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "next": "Jay Mendpara wants to discuss DevKit requirements. Working Calendly link sent 9 Oct. If no booking by Wed 14 Oct, email him the DevKit requirements directly."
     },
     {
       "org": "Kyros Engineering",
@@ -326,17 +326,17 @@
       "org": "LiPol Battery North America",
       "to": "info@lipolbatteries.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "bounced",
+      "due": null,
+      "next": "Address bounced (550, not found). Use the contact form on lipolbatteries.com instead."
     },
     {
       "org": "Ohio State Triathlon Club",
       "to": "tosutriathlon@gmail.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
+      "state": "replied",
       "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "next": "Ohio State Triathlon wants to collaborate and asked for a call. Working Calendly link sent 9 Oct."
     },
     {
       "org": "Chagrin Falls Booster Club 5K Turkey Trot 2026",
@@ -356,11 +356,11 @@
     },
     {
       "org": "Nocturnal Product Development",
-      "to": "info@nocturnalpd.com",
+      "to": "eyal@nocturnalpd.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
+      "state": "replied",
       "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "next": "Eyal Dayan says Vybe looks like a perfect fit and wants a call. Working Calendly link sent 9 Oct. Book it if he hasn't by Wed 14 Oct."
     },
     {
       "org": "Stress Platform - Health & HRV",
@@ -385,6 +385,38 @@
       "state": "no reply",
       "due": "2026-10-14",
       "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+    },
+    {
+      "org": "Open Wearables (Momentum)",
+      "to": "piotr.ratkowski@themomentum.ai",
+      "first_sent": "2026-10-09",
+      "state": "replied",
+      "due": "2026-10-14",
+      "next": "Piotr Ratkowski says new integrations are welcome and wants a call. Working Calendly link sent 9 Oct."
+    },
+    {
+      "org": "Tredict",
+      "to": "info@tredict.com",
+      "first_sent": "2026-10-09",
+      "state": "replied",
+      "due": "2026-10-14",
+      "next": "Felix Gertz offered OAuth2 access to the Tredict API. Send him the app details his API documentation asks for; that needs you or the dev lead."
+    },
+    {
+      "org": "Junction (formerly Vital)",
+      "to": "support@junction.com",
+      "first_sent": "2026-10-09",
+      "state": "replied",
+      "due": "2026-10-14",
+      "next": "Mike Guacci passed it to their product team, who add data providers. Nudge once on Wed 14 Oct if silent."
+    },
+    {
+      "org": "Athlytic",
+      "to": "athlytic@gmail.com",
+      "first_sent": "2026-10-09",
+      "state": "auto-reply only",
+      "due": "2026-10-14",
+      "next": "Auto-reply from a two-person team. If no human reply by Wed 14 Oct, send the one follow-up."
     }
   ]
 }

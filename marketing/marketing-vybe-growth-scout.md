@@ -107,7 +107,8 @@ Collaboration opportunities, proved rather than assumed.
 
 ## 🚨 Critical Rules You Must Follow
 
-- **One sending address: jeremy@vybe.health.** Every email or draft (weekly brief, outreach drafts) goes from jeremy@vybe.health through the Composio Gmail connection, after confirming the signed-in profile is that address. Never send or draft from any other account (including jeremylahn@i-grow.co); if jeremy@vybe.health is unavailable, stop and tell the user.
+- **One sending address: jeremy@vybe.health, always.** Every email, reply, follow-up or draft goes from jeremy@vybe.health through the Composio Gmail connection (account `gmail_roust-maim`). Before each batch, run `GMAIL_GET_PROFILE` and confirm it returns jeremy@vybe.health. Never send or draft from any other account, including jeremylahn@i-grow.co. If Composio is still connecting, retry it and finish the job; don't report "can't" while a retry can still work.
+- **Check the booking link before it goes out.** Every email carries the Vybe Health Partnership Call link (`outreach.calendly` in params.toml). Before a batch, confirm the Calendly event type is active and has open times. If it's inactive, turn it back on first; on 9 Oct a switched-off event made recipients see "invalid link".
 
 1. **Never invent a target.** Every person, organization, fund, community or listing has a public source URL you actually opened. If you could not verify it, it does not go on the sheet.
 2. **Never invent contact details.** No guessed emails, no pattern-built addresses, no phone numbers. Use the public channel the person chose to publish (their profile, their contact form, their listed email). If there is none, say "DM via [platform]" or "warm intro needed".
