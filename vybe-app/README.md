@@ -45,9 +45,12 @@ npx expo start
 - **ImportScreen** *(7 Oct)* — connecting a source that already has years
   in it: what Vybe will compute with, what it will only draw, and what it will
   not take. Reached from the sources step of OnboardingScreen.
-- **SeasonScreen** *(new, 8 Oct)* — the same months a year apart, and the five
+- **SeasonScreen** *(8 Oct)* — the same months a year apart, and the five
   it has only seen once. Reached from "what would make this stronger" on
   PatternHistoryScreen.
+- **ExportScreen** *(new, 9 Oct)* — what actually leaves with you, what another
+  product can use, and what Vybe keeps after a delete. Reached from "Export
+  everything" on DataSettingsScreen.
 
 ## The three decisions worth keeping
 
@@ -500,6 +503,50 @@ flip. Verified in node: 19 readings, 12 calendar rows, 7 compared, 6 repeated,
 **It says when it becomes useful.**
 February 2027 for a second pass through every month, February 2028 for a third:
 *"a month that matches once is a pair, not a pattern."*
+
+## The export screen, and why it looks like that
+
+`DataSettingsScreen` offers "Export everything" and promises CSV for the
+readings, JSON for the rest, and a delete that finishes within seven days. This
+is the screen behind that tap, and its job is to keep that promise in detail
+rather than quietly improve on it. Until today that button's handler was a
+`TODO`.
+
+**It is the import screen, backwards, and that is the point.**
+On Wednesday Vybe refused to compute with another product's sleep stages and
+HRV — somebody else's estimate, different sensor, unpublished algorithm. That
+position only holds if it points both ways. So Vybe's own answers, pattern
+verdicts and outcome records are listed here under a heading that says what
+they are, and the manifest tells the next product to treat them exactly as Vybe
+treated the last one's: *"read, not computed with."*
+
+**The misses are in the file.**
+The outcome records export with the predictions that failed, and the patterns
+export with the weeks they broke. An export carrying only the successes would
+be *"marketing with a filename."*
+
+**The derived records are a rounding error by count and most of the value.**
+458 conclusions against 1.19 million readings — the screen says that as
+arithmetic rather than as a boast.
+
+**A rounding bug the verification caught.**
+Computing the portable share on its own rounds to `100%`, directly above a
+caption reading "the remaining 0.04%" — a screen contradicting itself. The
+portable share is now the complement of the derived share at the same
+precision, so the two always sum to exactly 100: `99.96%` and `0.04%`. 99.96%
+is also the more honest headline: virtually all, without claiming all.
+
+**The format choice has consequences, and they are computed.**
+CSV carries three of the six groups, JSON all six, PDF three — derived from
+each group's own format list, so a format cannot claim to carry something the
+group does not offer. Each one says what it is bad at: a PDF is *"a record, not
+data"*; JSON is *"not readable by a person without tooling, and nobody should
+pretend otherwise."*
+
+**What Vybe keeps after a delete is on the screen, not in a policy page.**
+Seven years of order records because tax law requires it, 30 days for backups
+that roll on a cycle, 90 days of crash reports with no identifier in them —
+each with the reason beside it.
 
 ## Non-negotiables held
 

@@ -1238,6 +1238,101 @@ PACKETS = [
         ],
     },
     {
+        "id": "proteus",
+        "name": "DigiKey & Würth Elektronik Proteus-IV Design Contest",
+        "funder": "DigiKey and Würth Elektronik, hosted on All About Circuits",
+        "amount": "Idea stage: one of 50 free Proteus-IV evaluation boards (Nordic nRF54L15, BLE 6.0). Project stage: one grand prize, value not stated on the page",
+        "deadline": "2026-10-30",
+        "fee": None,
+        "url": "https://www.allaboutcircuits.com/giveaways/digikey-wuerth-elektronik-proteus-iv-design-contest/",
+        "submit": "Create an All About Circuits account and post a written design idea to the contest page before 30 October. Fifty idea entries receive an evaluation board. Finalists submit a built project by 31 December 2026; the winner is announced 15 January 2027.",
+        "gates": [],
+        "confirmed": [
+            "No application fee",
+            "No fixed theme, and the contest names wearables explicitly",
+            "No ownership, revenue or age-of-business gate is published",
+        ],
+        "why": "The cheapest hardware de-risking available this month. The Proteus-IV is a pre-certified Bluetooth LE 6.0 module on Nordic's nRF54L15 — a credible radio candidate for a future Band revision or the DevKit — and the idea stage costs an hour of writing. Vybe has FCC work ahead of it either way, and starting from a module that already carries certification is the difference between a radio project and a radio programme. The build, if it happens, is also the most natural DevKit content the company could produce.",
+        "docs": [
+            "All About Circuits account",
+            "A written design idea naming the Proteus-IV and the Würth parts used",
+            "If selected: a built project write-up by 31 December 2026",
+        ],
+        "note": (
+            "THIS IS NOT A GRANT APPLICATION AND SHOULD NOT BE WRITTEN LIKE "
+            "ONE. It is a public design-idea post on a community site, judged "
+            "by engineers. No business case, no traction, no ownership "
+            "paperwork — a clear description of a thing worth building.\n\n"
+            "THE ONE REAL RISK, AND IT IS WHY THE DRAFT BELOW IS DELIBERATELY "
+            "GENERIC: idea submissions are posted publicly as comments on the "
+            "contest page. Nothing about Vybe's sensor fusion, its context "
+            "model or anything it would rather patent goes in. Describe a "
+            "wireless architecture any competent engineer could have proposed, "
+            "because that is all this needs to win a dev board.\n\n"
+            "THE FORM ITSELF IS NOT READABLE from here and the official rules "
+            "document was not reachable, so country rules and entrant type are "
+            "unconfirmed. Open the page first and check whether a US company "
+            "may enter before writing anything. Bonus credit is given for "
+            "using more Würth parts, so name them.\n\n"
+            "Expected value is honest: fifty boards against an unknown number "
+            "of entries, and a grand prize whose value is not published. Enter "
+            "for the board and the radio evaluation, not for the prize."
+        ),
+        "fields": [
+            {"q": "The design idea, in one paragraph", "a":
+                "A screenless wrist-worn sensor band that streams heart-rate, "
+                "motion and sleep-staging data to a phone over Bluetooth LE 6.0, "
+                "built around the Proteus-IV module.\n\n"
+                "The design question the module answers is battery life against "
+                "connection reliability. A band with no screen has no way to "
+                "tell its wearer it has lost connection, so it has to either "
+                "hold the link or buffer cleanly and reconcile later. The "
+                "nRF54L15's power envelope is what makes the second option "
+                "affordable: buffer locally for hours, wake, reconcile, sleep "
+                "again."},
+            {"q": "Why Proteus-IV specifically", "a":
+                "Three reasons, in the order they matter to a small team.\n\n"
+                "It arrives pre-certified. For a company that has radio "
+                "certification ahead of it, starting from a module that already "
+                "carries approvals removes an entire work package rather than "
+                "shortening one.\n\n"
+                "Bluetooth LE 6.0 channel sounding is interesting for a worn "
+                "device, because knowing roughly how far the band is from the "
+                "phone is the difference between buffering sensibly and "
+                "buffering constantly.\n\n"
+                "The nRF54L15 has the headroom to do signal conditioning on the "
+                "module rather than shipping raw samples, which is where most of "
+                "a wearable's radio budget actually goes."},
+            {"q": "Würth parts in the design", "a":
+                "[Name the specific Würth components you would actually use and "
+                "why — the contest gives bonus credit for using more of them, "
+                "and a list with reasons reads as an engineer's answer while a "
+                "list without reasons reads as box-ticking.\n\n"
+                "Candidates worth looking up on the Würth catalogue: power "
+                "inductors for the buck stage, common-mode chokes on the USB "
+                "charging path, ESD protection on the exposed contacts, and the "
+                "antenna if you are not using the module's own.]"},
+            {"q": "What you would build if you win a board", "a":
+                "A bench rig that runs the module against a realistic duty "
+                "cycle: sample, buffer, reconnect, reconcile, sleep — measured "
+                "for current draw at each stage rather than at idle.\n\n"
+                "The number worth publishing from it is days of battery life at "
+                "a stated sampling rate, with the method shown. Nobody in this "
+                "category publishes that honestly, and a bench measurement with "
+                "its method attached is worth more to a hardware audience than "
+                "any claim about the finished product."},
+            {"q": "What NOT to put in this post", "a":
+                "[A checklist, because this is public and permanent.\n\n"
+                "Nothing about how Vybe combines signals to reach a conclusion. "
+                "Nothing about the Connect context model. No sensor part numbers "
+                "you consider a differentiator. No unreleased timing, pricing or "
+                "manufacturing detail. No claim about health outcomes of any "
+                "kind — this is an electronics community, and a wellness "
+                "product making health claims in a hardware forum reads badly "
+                "and is the one thing here that could cause real trouble.]"},
+        ],
+    },
+    {
         "id": "vetcon",
         "name": "VETCON 2026 Business Plan Competition",
         "funder": "Tully Rinckey PLLC / Tully Rinckey Foundation (VETCON)",
