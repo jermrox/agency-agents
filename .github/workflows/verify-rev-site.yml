@@ -43,6 +43,8 @@ permissions:
   contents: read
   # To start the funding sweep when the live feed is stale (step below).
   actions: write
+  # To open an issue when the site is password-locked (step below).
+  issues: write
 
 jobs:
   verify:
@@ -224,3 +226,37 @@ jobs:
             gh workflow run funding-sweep.yml --repo "$REPO" --ref main
             echo "::warning::The live funding feed was stale; started funding-sweep.yml to refresh it."
           fi
+
+      # A password lock is a Netlify setting, not something a sweep or a push can
+      # fix, and a red check alone went unnoticed for two days (8-9 Oct). Open an
+      # issue -- GitHub emails the repo owner -- so a person sees it the same day.
+      # One open issue at a time: later runs comment on it instead of piling up.
+      - name: Raise an issue if the site is password-locked
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE: ${{ inputs.site || 'https://agentrevup.netlify.app' }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          if [ "$SITE" != "https://agentrevup.netlify.app" ]; then
+            exit 0
+          fi
+          code=$(curl -sS -o /tmp/root -w '%{http_code}' -L --max-time 30 "$SITE/" || echo 000)
+          if [ "$code" != "401" ] && ! grep -q "Password Protection" /tmp/root; then
+            echo "Not a password lock (HTTP $code); the failure above says what it is."
+            exit 0
+          fi
+          title="Funding tracker is password-locked on Netlify"
+          body="The live funding tracker ($SITE) answered HTTP $code with Netlify's Password Protection page on $(date -u '+%Y-%m-%d %H:%M UTC'), so nobody can see it. The data is still being updated daily; only the site is locked.
+
+          Fix (1 minute): app.netlify.com > agentrevup > Project configuration > Access & security > Visitor access > Password protection > Disable > Save.
+
+          This issue was opened by the Verify rev site workflow and will be commented on each time the check sees the lock again."
+          existing=$(gh issue list --repo "$REPO" --state open --search "\"$title\" in:title" --json number --jq '.[0].number' || true)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$REPO" --body "Still password-locked as of $(date -u '+%Y-%m-%d %H:%M UTC') (HTTP $code)."
+          else
+            gh issue create --repo "$REPO" --title "$title" --body "$body"
+          fi
+          echo "::error::$SITE is password-locked (HTTP $code). Turn off Netlify password protection for agentrevup."

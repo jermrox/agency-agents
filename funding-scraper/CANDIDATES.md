@@ -408,6 +408,11 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Removed from the board — 9 Oct 2026
+
+- **Amber Grant for Women (monthly):** charges a $15 non-refundable application fee, which breaks the no-fee rule.
+- **Stephen L. Tadlock Veteran Business Grant:** requires at least one year in business and 2+ employees. Vybe is under one year old. Re-check after Vybe's first anniversary.
+
 ## Promoted to the board — 9 Oct 2026 (round 10, scheduled)
 
 Four lanes: a watch-list re-check; Ohio, Akron and Summit County state and local money; health-data

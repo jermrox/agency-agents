@@ -1077,19 +1077,6 @@ verified = "2026-09-30"
 # is on this board.
 
 [[sources.curated.entry]]
-name = "Amber Grant for Women — monthly"
-url = "https://ambergrantsforwomen.com/"
-agency = "WomensNet"
-amount = "3 x $10,000 every month, plus annual $25,000 awards"
-close_date = "2026-10-31"
-pillar = 2
-kind = "grant"
-eligibility = "Women-owned businesses. $15 non-refundable application fee."
-note = "The most frequently recurring grant on this board: three $10,000 awards every single month, deadline the LAST DAY OF EACH MONTH. One application enters you for the month and for the annual award. Low effort, genuinely repeatable — apply once and re-enter. DATE ROLLED 1 OCT: this row carried close_date 2026-09-30, so the status derivation published it as `closed` on 1 October — correct arithmetic, wrong answer, because the programme had simply moved to its next monthly round. A monthly recurring deadline has to be advanced each month until the model carries a recurrence rule; the next roll is due 1 November, to 2026-11-30."
-documents = ["Short online application describing the business and use of funds", "$15 application fee"]
-verified = "2026-10-01"
-
-[[sources.curated.entry]]
 name = "Hello Alice — rolling grant cycles"
 url = "https://helloalice.com/"
 agency = "Hello Alice (with Progressive, Verizon, US Chamber and others)"
@@ -1963,25 +1950,6 @@ documents = [
   "Business description",
 ]
 verified = "2026-09-12"
-
-[[sources.curated.entry]]
-name = "Stephen L. Tadlock Veteran Business Grant"
-sam = "none"
-url = "https://foundersfirstcdc.org/stephen-tadlock"
-agency = "Founders First CDC"
-amount = "$1,000 micro-grant + a free place on Passport Community ($1,499) or Zebra Leadership ($1,699). $20,000 fund, 20 finalists."
-open_date = "2026-09-15"
-close_date = "2026-10-15"
-pillar = 2
-kind = "grant"
-eligibility = "US military veteran who is CEO, President or owner of an active US business; annual revenue under $5M; 2 to 100 employees; at least one year in business."
-note = "OPEN NOW, closes 15 Oct. Was a stub on this board pointing at grantwatch.com with 'varies' for an amount — the programme's own page carries the real dates and terms, so this row is now first-hand. Small cheque, but the free programme place is worth more than the cash and the 2-employee floor is the gate to check first. Semifinalists 22 Oct, finalists 10 Nov."
-documents = [
-  "Proof of veteran status (DD-214 or equivalent)",
-  "Evidence of 2-100 employees and under $5M revenue",
-  "Proof the business has traded at least one year",
-]
-verified = "2026-09-24"
 
 [[sources.curated.entry]]
 name = "Texas Woman's University Veteran Grant"
