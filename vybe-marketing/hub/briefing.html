@@ -613,49 +613,45 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
 <div class="toast" id="toast" hidden></div>
 
 <script id="live-data" type="application/json">{
- "asof": "2026-10-08",
- "asofText": "8 Oct",
- "range": "1 to 7 Oct, read against 24 to 30 Sep",
- "headline": "All 16 partner emails are sent. Now we wait for replies.",
- "lede": "On 8 Oct, Jeremy sent the MSBL one-page overview, the WNBF reply, three follow-ups and 11 new partner emails. Two partners have already said yes (MSBL and WNBF). Fourteen others now have an email from us with a booking link. No calls are booked yet.",
- "confidence": "Pulled from GA4, Google Ads, Meta, Gmail and Calendly at 6:24 am ET, 8 Oct",
+ "asof": "2026-10-09",
+ "asofText": "9 Oct",
+ "range": "2 to 8 Oct, read against 25 Sep to 1 Oct",
+ "headline": "Head of the Schuylkill said yes: a table in the large tent on 24 to 25 Oct.",
+ "lede": "Three partners have now said yes: MSBL, WNBF and Head of the Schuylkill. HOSR needs its vendor form, a certificate of insurance naming the regatta, and a photo of your set-up, and the reply is drafted. RRCA will send 2027 expo details next week. Three new partner emails are drafted: the National Senior Games, Running 4 Heroes and the kickball association WAKA.",
+ "confidence": "Pulled from GA4, Google Ads, Meta, Gmail and Calendly at 6:23 am ET, 9 Oct",
  "kpis": [
   {
-   "label": "Partner emails sent",
-   "big": "21",
-   "was": "5 on 6 Oct, 16 on 8 Oct",
-   "chip": "2 said yes",
+   "label": "Partners who said yes",
+   "big": "3",
+   "was": "MSBL, WNBF, HOSR",
+   "chip": "21 emailed",
    "cls": "good"
   },
   {
    "label": "US visits",
-   "big": "97",
-   "was": "week before 93",
-   "chip": "+4%",
-   "cls": "plain"
+   "big": "52",
+   "was": "week before 137",
+   "chip": "−62%",
+   "cls": "warn"
   },
   {
    "label": "Waitlist signups",
    "big": "4",
-   "was": "week before 3",
+   "was": "week before 1",
    "chip": "2 US",
-   "cls": "warn"
+   "cls": "good"
   },
   {
-   "label": "Ad spend, 7 days",
-   "big": "$209",
-   "was": "Google $172, Instagram boosts $37",
-   "chip": "see problems",
+   "label": "Drafts waiting",
+   "big": "4",
+   "was": "HOSR reply, 3 new partners",
+   "chip": "press Send",
    "cls": "warn"
   }
  ],
  "daily": [
   [
-   "24 Sep",
-   1832
-  ],
-  [
-   "25",
+   "25 Sep",
    699
   ],
   [
@@ -704,44 +700,48 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
   ],
   [
    "7",
-   20
-  ]
- ],
- "dailyNote": "Since 2 Oct the site gets about 20 visits a day, now that the overseas display campaign is gone.",
- "sources": [
-  [
-   "Direct",
-   77
+   21
   ],
   [
-   "Display (removed campaign, 1 to 3 Oct)",
-   69
+   "8",
+   10
+  ]
+ ],
+ "dailyNote": "Visits jumped on 30 Sep and 1 Oct with the Reel and the boosted posts, then settled at about 20 a day.",
+ "sources": [
+  [
+   "Display (removed campaign, 2 to 3 Oct)",
+   54
+  ],
+  [
+   "Instagram and Facebook",
+   32
   ],
   [
    "Paid search (Search-1)",
    26
   ],
   [
-   "Instagram and Facebook",
+   "Direct",
    19
   ],
   [
    "Other",
-   33
+   9
   ]
  ],
  "countries": [
   [
-   "United States",
-   97
+   "India",
+   59
   ],
   [
-   "India",
-   80
+   "United States",
+   52
   ],
   [
    "Bangladesh",
-   13
+   12
   ],
   [
    "Pakistan",
@@ -749,7 +749,7 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
   ],
   [
    "Everywhere else",
-   21
+   12
   ]
  ],
  "outreach": [
@@ -770,9 +770,9 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
   {
    "org": "Head of the Schuylkill Regatta",
    "sent": "6 Oct",
-   "status": "waiting",
-   "reply": "",
-   "next": "Follow-up sent 8 Oct."
+   "status": "replied",
+   "reply": "Yes: a table in the large tent on 24 to 25 Oct. They need the vendor form, a COI naming the regatta as additionally insured, and a set-up photo or confirmation of tablecloth and signage.",
+   "next": "Reply drafted. You: fill in the vendor form, get the COI, and send a set-up photo."
   },
   {
    "org": "Senior Softball-USA",
@@ -784,9 +784,9 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
   {
    "org": "Road Runners Club of America",
    "sent": "6 Oct",
-   "status": "waiting",
-   "reply": "",
-   "next": "Follow-up sent 8 Oct."
+   "status": "replied",
+   "reply": "Their CEO will send 2027 convention expo information early next week.",
+   "next": "Watch for the expo details next week."
   },
   {
    "org": "Roy Hobbs Baseball",
@@ -848,8 +848,8 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
    "org": "Concept2 (Logbook)",
    "sent": "8 Oct",
    "status": "waiting",
-   "reply": "",
-   "next": "Sent 8 Oct. Follow up on 15 Oct if no reply."
+   "reply": "Support ticket opened; they aim to answer within one business day.",
+   "next": "Wait for Concept2's answer."
   },
   {
    "org": "New York Road Runners",
@@ -864,68 +864,96 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
    "status": "waiting",
    "reply": "",
    "next": "Sent 8 Oct. Follow up on 15 Oct if no reply."
+  },
+  {
+   "org": "National Senior Games Association",
+   "sent": "Drafted",
+   "status": "drafted",
+   "reply": "",
+   "next": "New today. Adults 50+; partners include Humana and SilverSneakers, no wearable."
+  },
+  {
+   "org": "Running 4 Heroes",
+   "sent": "Drafted",
+   "status": "drafted",
+   "reply": "",
+   "next": "New today. Nonprofit supporting first responders."
+  },
+  {
+   "org": "World Kickball Association (WAKA)",
+   "sent": "Drafted",
+   "status": "drafted",
+   "reply": "",
+   "next": "New today. Adult social kickball leagues nationwide."
+  },
+  {
+   "org": "US Senior Pickleball",
+   "sent": "Not sent",
+   "status": "waiting",
+   "reply": "",
+   "next": "Sponsor enquiries go through a web form only. Nationals for ages 50 to 85+ run 30 Nov to 5 Dec in Casa Grande, AZ. You fill in the form."
   }
  ],
- "drafts": "All drafts were sent on 8 Oct. Nothing is waiting in Gmail.",
+ "drafts": "4 drafts are in Gmail: the HOSR reply and 3 new partner emails.",
  "bookings": "No calls booked on Calendly yet.",
  "problems": [
   {
+   "sev": "bad",
+   "title": "HOSR is in 15 days and needs three things from you",
+   "body": "Fill in their vendor form, get a certificate of insurance naming Head of the Schuylkill Regatta as additionally insured, and send a set-up photo or confirm a tablecloth and signage. Send the drafted reply first.",
+   "who": "You",
+   "conf": "High"
+  },
+  {
    "sev": "warn",
-   "title": "Watch for replies and answer within a day",
-   "body": "16 emails went out on 8 Oct. The morning job drafts an answer to each reply; MSBL's next step is choosing the member offer and a World Series week.",
-   "who": "You and the morning job",
+   "title": "MSBL and WNBF have your replies; next steps are yours",
+   "body": "MSBL: choose the member offer and a World Series week. WNBF: decide on the $250 booth for 31 Oct once they send details.",
+   "who": "You",
    "conf": "High"
   },
   {
    "sev": "bad",
    "title": "Partners' mail filters flag vybe.health as a new domain",
-   "body": "MSBL's copy of our first email carried a \"Be careful with this message\" banner. Set up SPF, DKIM and DMARC for vybe.health before the 16 drafts go out.",
+   "body": "Set up SPF, DKIM and DMARC for vybe.health so the next emails land cleanly.",
    "who": "Whoever runs the domain",
    "conf": "High"
   },
   {
    "sev": "warn",
    "title": "Instagram boosts bill a second Meta ad account, and its last payment was declined",
-   "body": "Six boosted posts cost $37 from 4 to 6 Oct on a separate ad account this dashboard can't read. Meta emailed on 7 Oct that a payment was declined, so boosts may have stopped. Decide whether to keep boosting, and give the connection read access if you want it tracked here.",
+   "body": "Six boosted posts cost $37 from 4 to 6 Oct on an account this dashboard can't read. Decide whether to keep boosting.",
    "who": "You, Meta billing",
    "conf": "High"
   },
   {
-   "sev": "warn",
-   "title": "Search-1 reports 35 conversions; GA4 shows 1 US signup from Google",
-   "body": "Its conversions count page views. Keep it US-only and set imported page views to Secondary.",
-   "who": "You, Google Ads",
-   "conf": "High"
-  },
-  {
    "sev": "ok",
-   "title": "The overseas display campaign is gone",
-   "body": "\"Vybe Health - 9/15\" last spent on 3 Oct. Daily visits are now about 20 real ones.",
-   "who": "Done",
-   "conf": "High"
+   "title": "Instagram is now the second-biggest traffic source",
+   "body": "32 visits from Instagram and Facebook this week. The 8 Oct Reel reached 44 accounts on its first day.",
+   "who": "Keep posting Reels",
+   "conf": "Medium"
   }
  ],
  "ads": {
-  "range": "1 to 7 Oct",
+  "range": "2 to 8 Oct",
   "headline": "Search-1 is the only Google ad running. Instagram boosts ran on a separate account.",
   "rows": [
    {
     "name": "Vybe Health - 9/15 (Display)",
     "status": "Removed",
     "cls": "plain",
-    "spend": "$116.72",
-    "clicks": "166",
-    "where": "Spent 1 to 3 Oct only.",
-    "conv": "78, page views"
+    "spend": "$101.34",
+    "clicks": "145",
+    "where": "Spent 2 to 3 Oct only.",
+    "conv": "0"
    },
    {
     "name": "Website traffic-Search-1",
     "status": "Running, $8 a day",
     "cls": "warn",
-    "spend": "$55.63",
-    "clicks": "87",
+    "spend": "$60.46",
+    "clicks": "93",
     "where": "US and Canada search. One US waitlist signup from Google (4 Oct).",
-    "conv": "35, page views"
+    "conv": "31, page views"
    },
    {
     "name": "Instagram boosted posts (second ad account)",
@@ -938,25 +966,34 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
    }
   ],
   "meta": "Main ad account: $0 spent. The Instagram boosts bill a second account that hasn't given the connection read access.",
-  "instagram": "1,094 followers (1,089 yesterday). 7 posts. The 1 Oct Reel has reached 418 accounts; the 7 Oct image 7 so far. Reels still reach about 10 times as many people as images."
+  "instagram": "1,092 followers. 8 posts. The new 8 Oct Reel reached 44 accounts on day one; the 1 Oct Reel is at 420. Reels still reach far more people than images."
  },
  "instagram": {
-  "followers": 1094,
+  "followers": 1092,
   "posts": [
+   [
+    "8 Oct",
+    "Reel",
+    44,
+    48,
+    0,
+    "https://www.instagram.com/reel/DeP9Lp3KTTD/",
+    "New Reel"
+   ],
    [
     "7 Oct",
     "Image",
-    7,
     10,
+    15,
     0,
     "https://www.instagram.com/p/DeLC0IFt__F/",
-    "Latest post"
+    "Image"
    ],
    [
     "4 Oct",
     "Image",
-    16,
-    24,
+    17,
+    25,
     2,
     "https://www.instagram.com/p/DeFsLDFqxu_/",
     "No subscription hits different"
@@ -964,20 +1001,11 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
    [
     "1 Oct",
     "Reel",
-    418,
-    457,
+    420,
+    463,
     2,
     "https://www.instagram.com/reel/Dd7kiqZNptc/",
     "Your health has five dimensions"
-   ],
-   [
-    "29 Sep",
-    "Image",
-    39,
-    307,
-    3,
-    "https://www.instagram.com/p/Dd4pO7zKyTl/",
-    "Why rent access to your own health data?"
    ]
   ]
  },
@@ -985,23 +1013,23 @@ input[type=search]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid
  "say": [
   [
    "s1",
-   "Here's today's briefing. All sixteen partner emails went out from your inbox on the eighth, including the one page overview for M S B L and the reply to W N B F."
+   "Here's today's briefing. Head of the Schuylkill said yes to a table in the large tent on the twenty fourth and twenty fifth. That makes three partners who have said yes."
   ],
   [
    "s2",
-   "US visits held steady at ninety seven. Total visits are down because the overseas display campaign is gone, which is the fix working."
+   "H O S R needs three things from you: their vendor form, a certificate of insurance naming the regatta, and a photo of your set up. The reply is drafted."
   ],
   [
    "s3",
-   "The site now gets about twenty real visits a day."
+   "The site gets about twenty visits a day, and Instagram is now the second biggest source."
   ],
   [
    "s4",
-   "Next: watch for replies and answer within a day. Set up email authentication for vybe dot health, and decide whether to keep the Instagram boosts, whose last payment was declined."
+   "R R C A will send expo details next week. Concept two opened a support ticket and should answer within a day."
   ],
   [
    "s5",
-   "Three new partners were found today: the US Police and Fire Championships, Hockey North America, and International Pride Softball. No calls are booked yet."
+   "Three new partner emails are drafted: the National Senior Games, Running 4 Heroes, and the World Kickball Association. No calls are booked yet."
   ]
  ]
 }</script>
