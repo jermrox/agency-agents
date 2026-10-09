@@ -1,0 +1,560 @@
+[
+ {
+  "name": "Delx Wellness",
+  "org": "Delx (David Batista, GitHub: davidmosiah)",
+  "role": "Founder",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Founder maintains a public MIT registry of local-first wellness MCP connectors (WHOOP, Oura, Garmin, Polar, Withings, Google Health/Fitbit migration and more, 16 in the catalog) plus his own google-health-mcp (66 stars), whoop-mcp and garmin-mcp. The registry already accepts outside 'peer' connectors via PR (it added a Xiaomi Mi Fitness peer in Aug 2026), so a Vybe connector has a documented path in front of AI-agent builders.",
+  "why_now": "Registry 'What's new' dated 2026-08-12; google-health-mcp 'Beta testers wanted' issue open since 2026-05-07 as Fitbit Web API shuts down",
+  "evidence": [
+   "https://github.com/davidmosiah",
+   "https://github.com/davidmosiah/delx-wellness",
+   "https://github.com/davidmosiah/delx-wellness/issues/17",
+   "https://github.com/davidmosiah/google-health-mcp",
+   "https://github.com/davidmosiah/google-health-mcp/issues?q=is%3Aissue"
+  ],
+  "channel": "GitHub issue (listing request) / delx.ai",
+  "contact_url": "https://github.com/davidmosiah/delx-wellness/issues",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 8,
+   "e": 8
+  },
+  "ask": "Feedback on what a Vybe MCP connector would need to meet the Delx connector-quality standard, then a peer listing once DevKit v0.1 ships",
+  "opener": "Hi David, I've been reading the delx-wellness registry and the way you handled the Mi Fitness peer listing. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API, and want a local-first MCP connector from day one. Would you be open to a short call on what your quality standard expects, and whether you'd want to test a DevKit?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Fortaleza, Brazil",
+  "deadline": null,
+  "last_signal_date": "2026-08-17",
+  "confidence": "verified",
+  "tags": [
+   "dev-platform",
+   "mcp",
+   "ai-agents",
+   "open-source",
+   "hrv",
+   "wearables"
+  ]
+ },
+ {
+  "name": "AxlCoach",
+  "org": "AxlCoach (axl.coach)",
+  "role": "CTO: Slava Rosin",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "AI coaching app (each coach gets a digital version of their methods) whose CTO is actively contributing to Open Wearables from the 'axlbrains' fork, which he says has run their deployment since mid-August; this week he opened PRs adding a Hevy provider and fixing Polar late sleep nights and Health Connect workouts. A team building recovery/training guidance on an open aggregator is a direct fit for a new owned HRV source.",
+  "why_now": "PR #1780 opened 2026-10-04 and PRs #1816-#1818 opened 2026-10-08",
+  "evidence": [
+   "https://github.com/slavarosin",
+   "https://github.com/the-momentum/open-wearables/pull/1780",
+   "https://github.com/the-momentum/open-wearables/pulls?q=is%3Apr+provider+add",
+   "https://apps.apple.com/app/6755105107"
+  ],
+  "channel": "GitHub / company site",
+  "contact_url": "https://github.com/slavarosin",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 7,
+   "e": 7
+  },
+  "ask": "15-min call on adding Vybe overnight HRV/resting HR as an Open Wearables-style source for AxlCoach athlete profiles",
+  "opener": "Hi Slava, saw your Hevy and Polar PRs on Open Wearables and that AxlCoach runs on the axlbrains fork. We're building Vybe, a screenless overnight band with ECG-based HRV and resting HR, sold without a required subscription and opened through a licensed SDK/API. We're choosing 5-10 DevKit design partners. Would a 15-minute call make sense to see if it fits your coach profiles?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Germany",
+  "deadline": null,
+  "last_signal_date": "2026-10-08",
+  "confidence": "verified",
+  "tags": [
+   "dev-platform",
+   "open-wearables",
+   "ai-coach",
+   "hrv",
+   "recovery"
+  ]
+ },
+ {
+  "name": "abbjetmus (GitHub)",
+  "org": "Unnamed stress and recovery service built on Polar 360",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Runs a stress and recovery service on the screenless Polar 360 (continuous PPI plus 24/7 activity), reading offline recordings over BLE and uploading to its own backend. Filed a feature request saying iOS background limits mean data often reaches their server only when the user next opens the app, and asked Polar for future sensors that upload directly to a partner's server.",
+  "why_now": "Polar BLE SDK issue #891 opened 2026-10-08, no reply yet; same author also reported missing sleep nights (#882, 2026-09-22)",
+  "evidence": [
+   "https://github.com/polarofficial/polar-ble-sdk/issues/891",
+   "https://github.com/polarofficial/polar-ble-sdk/issues?q=is%3Aissue+sort%3Aupdated-desc"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/abbjetmus",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "15-min call to learn their sync requirements and test whether Vybe DevKit v0.1's data path fits a partner backend",
+  "opener": "Saw your Polar SDK request for sensors that upload straight to a partner server; the iOS background limits you describe are a real problem. We're building Vybe, a screenless overnight band (ECG-based HRV, resting HR) with a licensed SDK/API, and we're designing sync with 5-10 DevKit partners now. Would you share your requirements on a 15-minute call? Happy to say plainly what we can and can't do yet.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-10-08",
+  "confidence": "single-source",
+  "tags": [
+   "dev-platform",
+   "screenless",
+   "hrv",
+   "polar-sdk",
+   "recovery"
+  ]
+ },
+ {
+  "name": "Lorenzo Susino (GitHub: LorenzoSusino99)",
+  "org": "Research study app on Polar 360 / Polar Loop",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Building an Android app for a research study that needs raw sensor data during working hours while keeping 24/7 passive sleep and overnight recovery tracking on screenless Polar 360/Loop bands. Asked Polar whether toggling SDK mode daily breaks sleep and Nightly Recharge; the contributor reply said Polar does not document the effect and to validate in a pilot.",
+  "why_now": "Polar BLE SDK issues #885/#886/#887 opened 2026-09-30 to 2026-10-06",
+  "evidence": [
+   "https://github.com/polarofficial/polar-ble-sdk/issues/885",
+   "https://github.com/LorenzoSusino99",
+   "https://github.com/polarofficial/polar-ble-sdk/issues?q=is%3Aissue+sort%3Aupdated-desc"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/LorenzoSusino99",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Feedback call: which raw signals and overnight outputs a study protocol needs from a DevKit",
+  "opener": "Hi Lorenzo, read your Polar SDK question about toggling SDK mode daily without breaking overnight tracking. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API, and are picking 5-10 DevKit design partners, including research teams. Would you spend 15 minutes telling us what your study protocol needs from raw and overnight data?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-10-06",
+  "confidence": "single-source",
+  "tags": [
+   "research",
+   "screenless",
+   "hrv",
+   "polar-sdk",
+   "sleep"
+  ]
+ },
+ {
+  "name": "Vidya Sagar (GitHub: ViSaReVe)",
+  "org": "USC Information Sciences Institute (per GitHub profile)",
+  "role": "Engineer / researcher",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Evaluating Open Wearables as a data layer for biosignal research and prototyped R-peak detection on Polar wrist ECG to keep beat-to-beat RR intervals and signal quality, because today only the vendor's HRV scalar is stored and an independent HRV check requires calling the vendor API directly. That is exactly the raw-ECG/HRV access Vybe's SDK is built around.",
+  "why_now": "Open Wearables issue #1776 opened 2026-10-02, awaiting maintainer go-ahead",
+  "evidence": [
+   "https://github.com/the-momentum/open-wearables/issues/1776",
+   "https://github.com/ViSaReVe"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/ViSaReVe",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Feedback on Vybe's planned RR/ECG export format; optionally a DevKit for independent HRV recomputation",
+  "opener": "Hi Vidya, your Open Wearables issue on keeping beat-to-beat intervals instead of only the vendor HRV number is the problem we're designing around. Vybe is a screenless overnight band with ECG-based HRV and a licensed SDK/API; we want researchers to be able to recompute everything. Would you look at our draft RR/ECG export and tell us what's missing? 15 minutes would help a lot.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Los Angeles, CA",
+  "deadline": null,
+  "last_signal_date": "2026-10-02",
+  "confidence": "single-source",
+  "tags": [
+   "research",
+   "ecg",
+   "hrv",
+   "open-wearables",
+   "raw-data"
+  ]
+ },
+ {
+  "name": "octafield (GitHub)",
+  "org": "octafield (Open Wearables self-hoster)",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Self-hosting an Open Wearables fork and asked the community how to connect Garmin after their Garmin developer account was suspended; the only workaround offered was bridging through Health Connect/Apple Health with some data missing.",
+  "why_now": "Discussion #1387 opened 2026-08-04 while Garmin's Connect Developer Program is paused",
+  "evidence": [
+   "https://github.com/the-momentum/open-wearables/discussions/1387",
+   "https://github.com/octafield"
+  ],
+  "channel": "GitHub discussion reply",
+  "contact_url": "https://github.com/the-momentum/open-wearables/discussions/1387",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 7
+  },
+  "ask": "Ask what they're building and whether an owned overnight HRV source would replace the lost Garmin data",
+  "opener": "Saw your Open Wearables question about Garmin after the developer account suspension. We're building Vybe, a screenless overnight band (ECG-based HRV, resting HR) with a licensed SDK/API and no required subscription, and we're picking 5-10 DevKit design partners. If losing Garmin access left a gap in what you're building, would you be up for a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-08-04",
+  "confidence": "single-source",
+  "tags": [
+   "garmin-pause",
+   "open-wearables",
+   "dev-platform",
+   "hrv"
+  ]
+ },
+ {
+  "name": "XONE",
+  "org": "XONE (precision medicine program, Calgary)",
+  "role": "Dr. Rohan Bissoondath",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Precision medicine program aggregating patient wearable data (sleep, activity, vitals, CGM) to support clinical workflows; posted on Open Wearables that it starts with 10-20 patients and plans 100+ within 12-18 months, has contributed an Oura integration PR, and that no commercial option gave it the aggregation flexibility it needs.",
+  "why_now": "Open Wearables discussion #602 posted 2026-03-12, follow-up 2026-03-16 asking maintainers for a call",
+  "evidence": [
+   "https://github.com/the-momentum/open-wearables/discussions/602"
+  ],
+  "channel": "email listed on GitHub discussion",
+  "contact_url": "https://github.com/the-momentum/open-wearables/discussions/602",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "15-min call to see whether an owned, no-subscription overnight HRV band fits their patient program as a DevKit partner (general wellness data only)",
+  "opener": "Hi Dr. Bissoondath, read your Open Wearables post on XONE's patient program and the 10-20 to 100+ plan. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API and no required subscription, positioned as general wellness. We're picking 5-10 DevKit design partners. Would a 15-minute call be useful to see if it fits your aggregation setup?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Calgary, Alberta, Canada",
+  "deadline": null,
+  "last_signal_date": "2026-03-16",
+  "confidence": "single-source",
+  "tags": [
+   "clinical-programs",
+   "open-wearables",
+   "hrv",
+   "longevity"
+  ]
+ },
+ {
+  "name": "ClawWatch",
+  "org": "ThinkOff (Petrus Pennanen, GitHub: ThinkOffApp)",
+  "role": "Builder",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source AI agent that runs natively on Galaxy Watch and reads the watch's sensors directly (66 stars). Pitched it to Open Wearables as a complement to their unification layer, offered to contribute a provider stub, and reported a Wear OS runtime with an Apple Watch port being prototyped: a builder actively looking for sensor sources for on-device agents.",
+  "why_now": "Open Wearables show-and-tell discussion #572, 2026-03-08 to 2026-03-11",
+  "evidence": [
+   "https://github.com/the-momentum/open-wearables/discussions/572",
+   "https://github.com/ThinkOffApp"
+  ],
+  "channel": "GitHub / thinkoff.io",
+  "contact_url": "https://github.com/ThinkOffApp",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Feedback on whether ClawWatch-style agents would use Vybe overnight HRV via our SDK as a sensor source",
+  "opener": "Hi Petrus, ClawWatch running an agent directly on the watch is a neat idea. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API. Since your agents read sensors directly, I'd value your take on whether an overnight HRV feed is useful to them, and what the SDK would need. Open to a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Berlin / Helsinki",
+  "deadline": null,
+  "last_signal_date": "2026-03-11",
+  "confidence": "single-source",
+  "tags": [
+   "ai-agents",
+   "open-source",
+   "dev-platform",
+   "wearables"
+  ]
+ },
+ {
+  "name": "ClawHub (OpenClaw skill registry)",
+  "org": "OpenClaw",
+  "role": null,
+  "type": "listing",
+  "hunt": "growth",
+  "why": "Public skill and plugin registry for the OpenClaw agent (9.5k stars on GitHub), where builders already publish several WHOOP skills (whoop-central, whoop-connect, whoop-tracker) and Delx publishes wellness connectors; publishing is self-serve via 'clawhub skill publish'. A Vybe skill would sit in front of agent builders who already pull recovery and HRV data.",
+  "why_now": null,
+  "evidence": [
+   "https://github.com/openclaw/clawhub",
+   "https://docs.openclaw.ai/clawhub",
+   "https://clawhub.ai/davidmosiah/delx-wellness"
+  ],
+  "channel": "self-serve publish / Discord linked from the official repo",
+  "contact_url": "https://github.com/openclaw/clawhub",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 7,
+   "e": 8
+  },
+  "ask": "Publish a Vybe skill (with synthetic demo data) once DevKit v0.1 data access is live",
+  "opener": "Hi, we're building Vybe, a screenless overnight band with ECG-based HRV and a licensed SDK/API, and plan to publish an OpenClaw skill so agent builders can read their own overnight data. Before we do, is there guidance for health-data skills beyond the standard moderation review that we should follow?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "ai-agents",
+   "listing",
+   "dev-platform",
+   "mcp"
+  ]
+ },
+ {
+  "name": "Mi Fitness Data Bridge",
+  "org": "shkyyy18 (open source)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Unofficial local-first export of Xiaomi Mi Fitness data to SQLite/CSV/JSON with an MCP server (36 stars). The maintainer co-designed a shared 'agent-safe-series/v1' time-series contract with garmin-mcp and got a peer listing in the Delx registry: a builder actively standardising wearable data for AI agents across brands.",
+  "why_now": "Shared contract shipped v0.3.0 on 2026-08-13; Delx peer listing confirmed 2026-08-17",
+  "evidence": [
+   "https://github.com/shkyyy18/mi-fitness-data-bridge",
+   "https://github.com/davidmosiah/garmin-mcp/issues/19",
+   "https://github.com/davidmosiah/delx-wellness/issues/17"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/shkyyy18/mi-fitness-data-bridge/issues",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Review whether Vybe's overnight HRV export could follow agent-safe-series/v1",
+  "opener": "Hi, I followed your agent-safe-series/v1 thread with the garmin-mcp maintainer. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API, and would rather follow an existing contract than invent one. Would you be open to looking at our draft export and telling us whether it fits?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-08-17",
+  "confidence": "single-source",
+  "tags": [
+   "mcp",
+   "open-source",
+   "dev-platform",
+   "ai-agents"
+  ]
+ },
+ {
+  "name": "Vitals (self-hosted recovery dashboard)",
+  "org": "DocStream-Oficial (open source)",
+  "role": null,
+  "type": "builder",
+  "hunt": "growth",
+  "why": "MIT self-hosted 'alternative to WHOOP, Google Health and Fitbit' that computes household recovery, sleep, strain and body-age scores from users' own Google Health, Oura, WHOOP and Apple HealthKit credentials, with an MCP server for AI agents. Each source requires users to bring their own vendor OAuth app, so an owned, no-subscription source is a natural add.",
+  "why_now": "Active commits on main through 2026-09-28",
+  "evidence": [
+   "https://github.com/DocStream-Oficial/vitals",
+   "https://github.com/DocStream-Oficial/vitals/commits/main"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/DocStream-Oficial/vitals/issues",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Ask if they'd add Vybe as a source when DevKit v0.1 ships; offer a DevKit",
+  "opener": "Hi, Vitals' bring-your-own-data approach to recovery and sleep scoring is close to what we want to support. We're building Vybe, a screenless overnight band (ECG-based HRV and resting HR) with a licensed SDK/API and no required subscription. Would you be open to adding it as a source if we send a DevKit? Happy to share docs first.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-09-28",
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "self-hosted",
+   "hrv",
+   "recovery",
+   "mcp"
+  ]
+ },
+ {
+  "name": "OpenHRV",
+  "org": "Jan C. Brammer (GitHub: JanCBrammer)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Open-source desktop app for HRV biofeedback with ECG chest straps (182 stars, 35 forks), currently supporting Polar H7/H9/H10 and Decathlon Dual HR; users have asked about ECG waveform recording. A second ECG-based HRV source fits its device list.",
+  "why_now": "New features and CI shipped 2026-06-19 to 2026-06-27",
+  "evidence": [
+   "https://github.com/JanCBrammer/OpenHRV",
+   "https://github.com/JanCBrammer/OpenHRV/commits/main",
+   "https://github.com/JanCBrammer/OpenHRV/issues?q=is%3Aissue"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/JanCBrammer/OpenHRV/issues",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "Ask whether he'd accept a Vybe device adapter PR once BLE/SDK docs are public",
+  "opener": "Hi Jan, OpenHRV is one of the cleaner open HRV tools around. We're building Vybe, a screenless overnight band with ECG-based HRV and a licensed SDK/API. Would you be open to a Vybe adapter if we contributed it, or would you rather keep the device list to chest straps? Happy to send a DevKit either way.",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2026-06-27",
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "hrv",
+   "ecg",
+   "biofeedback"
+  ]
+ },
+ {
+  "name": "bleakheart",
+  "org": "Fabrizio Smeraldi (GitHub: fsmeraldi)",
+  "role": "Maintainer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Python asyncio BLE heart-monitor library (MPL-2.0, 77 stars) that streams ECG, RR and accelerometer data from Polar H10 and PPG from Verity; it is the base layer for the Heart Sync multi-sensor ECG research tool. Author invites contributions and lists a contact email in the README, and asks academic users to cite and notify him.",
+  "why_now": "Last release work 2025-10-19 added Verity PPG support",
+  "evidence": [
+   "https://github.com/fsmeraldi/bleakheart",
+   "https://github.com/fsmeraldi/bleakheart/commits/main",
+   "https://collectiveecg.readthedocs.io/en/latest/introduction.html"
+  ],
+  "channel": "email listed on GitHub README",
+  "contact_url": "https://github.com/fsmeraldi/bleakheart",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "Ask if he'd review or accept Vybe support in bleakheart once our BLE profile is documented",
+  "opener": "Hi Fabrizio, bleakheart is the library people point to for raw Polar ECG in Python. We're building Vybe, a screenless overnight band with ECG-based HRV and a licensed SDK/API, and we'd like Python researchers to reach it the same way. Would you be open to looking at our BLE profile and saying whether a bleakheart backend makes sense?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": "2025-10-19",
+  "confidence": "single-source",
+  "tags": [
+   "open-source",
+   "python",
+   "ecg",
+   "hrv",
+   "research"
+  ]
+ },
+ {
+  "name": "Leonid Liadveikin (GitHub: Flatout73)",
+  "org": "Third-party app on Polar 360 (name not public)",
+  "role": "iOS developer",
+  "type": "builder",
+  "hunt": "growth",
+  "why": "Ships a third-party app syncing files from the screenless Polar 360 and has filed a run of Polar SDK issues (disconnects after ~2 weeks needing hard reset, offline recording trigger failures, cold-start reconnect, PSFTP desync), the operational pain of building on someone else's band.",
+  "why_now": "Polar BLE SDK issues #884, #890, #892 opened 2026-09-28 to 2026-10-08",
+  "evidence": [
+   "https://github.com/polarofficial/polar-ble-sdk/issues/864",
+   "https://github.com/polarofficial/polar-ble-sdk/issues?q=is%3Aissue+sort%3Aupdated-desc",
+   "https://github.com/Flatout73"
+  ],
+  "channel": "GitHub",
+  "contact_url": "https://github.com/Flatout73",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "15-min call on what a screenless-band SDK must get right for background sync and reconnects",
+  "opener": "Hi Leonid, I've been reading your Polar 360 SDK issues on reconnects and offline recording; useful detail. We're building Vybe, a screenless overnight band (ECG-based HRV, resting HR) with a licensed SDK/API, and want to avoid exactly these failure modes. Would you give us 15 minutes of feedback on our SDK design, and would a DevKit be useful to you?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Austria",
+  "deadline": null,
+  "last_signal_date": "2026-10-08",
+  "confidence": "single-source",
+  "tags": [
+   "screenless",
+   "polar-sdk",
+   "ios",
+   "dev-platform"
+  ]
+ },
+ {
+  "name": "Hackster.io sponsored contests",
+  "org": "Hackster.io",
+  "role": null,
+  "type": "community",
+  "hunt": "growth",
+  "why": "Hardware developer community that runs sponsored contests where entrants apply for free hardware and publish projects (past examples with SparkFun/NVIDIA and STMicro dev kits); Hackster's business page pitches contests as a way to get engineer feedback on a product and generate builder content.",
+  "why_now": null,
+  "evidence": [
+   "https://www.hackster.io/business",
+   "https://hackster.io/contests/IoTforGood/hardware_applications"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.hackster.io/business",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 4
+  },
+  "ask": "Ask for contest/pricing info for a small DevKit build challenge after DevKit v0.1",
+  "opener": "Hi, we're building Vybe, a screenless overnight band with ECG-based HRV and a licensed SDK/API, and plan a small DevKit program in 2027. We'd like to see what a modest Hackster contest looks like (hardware for entrants, judged projects) and what it costs. Could you share options for a first-time hardware sponsor?",
+  "check_size": null,
+  "stage": null,
+  "geo": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "hardware-community",
+   "dev-platform",
+   "devkit",
+   "contests"
+  ]
+ }
+]
