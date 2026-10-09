@@ -13,16 +13,18 @@ import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
+import ExportScreen from './src/screens/ExportScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are twelve screens
- * now, and they are still a flat set: Nourish links across to the pattern
- * history, the pattern history links on to the year-on-year view, Restore and
- * Connect link across to the outcome record, Ask links across to the follow-up,
- * and onboarding links across to the history import — the one place a screen
+ * One piece of state instead of a navigation library. There are thirteen
+ * screens now, and they are still a flat set: Nourish links across to the
+ * pattern history, the pattern history links on to the year-on-year view,
+ * Restore and Connect link across to the outcome record, Ask links across to
+ * the follow-up, onboarding links across to the history import, and the data
+ * screen links on to the export. The last two are the only places a screen
  * returns to where it came from rather than to Home, which one remembered
  * string still covers. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
@@ -86,7 +88,12 @@ export default function App() {
       ) : screen === 'followup' ? (
         <FollowUpScreen onBack={() => setScreen('home')} />
       ) : screen === 'data' ? (
-        <DataSettingsScreen onBack={() => setScreen('home')} />
+        <DataSettingsScreen
+          onBack={() => setScreen('home')}
+          onExport={() => setScreen('export')}
+        />
+      ) : screen === 'export' ? (
+        <ExportScreen onBack={() => setScreen('data')} />
       ) : (
         <HomeScreen
           isSample

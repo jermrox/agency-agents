@@ -2246,3 +2246,78 @@ application rather than a competition.
 - **Galaxy Grants** (already on the board as rolling) — a roundup gives a
   31 Oct 2026 deadline for the current cycle. The row's rolling status may be
   right; if someone is checking Freed anyway, this is a third quick look.
+
+## Friday sweep — 9 Oct 2026
+
+Three rows added, and the two that matter are not money. Verification route
+unchanged: domain-restricted search, no live page fetches, Exa still out.
+
+### Added to the board
+
+- **Breva Thrive Grant, Q4** — $5,000, open now, closes **31 Oct**, quarterly
+  thereafter. Priority for women- and minority-owned businesses serving
+  underrepresented communities, which Vybe clears three ways. **The revenue
+  line needs reading before anyone spends an hour on it:** the official rules
+  say an applicant must "demonstrate revenue", then separately describe $35,000
+  as a *preference* and say lower-revenue applicants can still be considered.
+  Those two statements do not obviously agree and Vybe is pre-revenue.
+- **Ohio FAST Program (Ohio Aerospace Institute)** and **Air Force APEX
+  (Parallax Advanced Research)** — see below. These are the two that change
+  something.
+
+### The gap these two close, which had been open the whole time
+
+This board carries Army xTech (up to $1M), the DoW releases, AFRL CHEERS,
+USSOCOM and ARPA-H — the largest non-dilutive money on it, all of it federal —
+and until today **not one row that helps write any of those proposals.** The
+board has been listing the prize and ignoring the skill needed to win it.
+
+- **Ohio FAST** is the SBA-funded programme whose entire purpose is raising
+  SBIR/STTR proposal rates in undercapitalised regions, with explicit emphasis
+  on socially and economically disadvantaged firms. It offers fit assessment,
+  grant-writing assistance, proposal review and capture strategy. Two things
+  its public pages do not state and the intake call must settle: whether the
+  services cost anything, and whether the FAST award is current — the last one
+  found was $200,000 awarded 30 Sep 2024, and FAST runs in cycles.
+- **APEX** is stated as **free**, is specific to the Department of the Air
+  Force, and offers **team matchmaking**. That last word is the one that
+  matters: an **STTR requires a research-institution partner**, Vybe does not
+  have one, and matchmaking is exactly what that gate needs. DAF topics sit
+  inside every DoW release, including FY27 Release 1 (opens 28 Oct).
+  OAI is a subcontractor on APEX, so both are the same phone call.
+
+### A negative finding worth recording
+
+- **Ohio has no SBIR/STTR state match.** The board carries matching-fund rows
+  for Alabama, Arkansas, Illinois, Indiana, Iowa, Kentucky, New Mexico,
+  Wisconsin and New York — nine states — and somebody will eventually go
+  looking for Ohio's. An Ohio Life Sciences overview states plainly that Ohio
+  lacks any such programme while **28 states offer one**, and describes a
+  *proposal* to create a life-sciences match for CDC, NIH and NSF Phase I and
+  II grantees. **Do not look again until that proposal is funded.** It is also
+  a concrete thing to raise with the Ohio programmes already on the board: a
+  state match is the single highest-leverage policy gap for an Ohio company
+  chasing federal R&D money.
+
+### Akron and Summit County, checked and mostly closed
+
+The founder's standing complaint is that the board was not finding money a
+young company can actually get, so the local lane was swept properly:
+
+- **Buckeye State CU Small Business Grant** — already on the board and closed
+  30 Sep. $475,000 across its awards with local priority for Summit County and
+  an emphasis on Akron, but it wants **two years of operation**. Watch for the
+  next cycle; it is the largest local item that exists.
+- **Downtown Akron Development Corporation** — says it is preparing an
+  additional grant programme for downtown businesses in 2026, with no window
+  published. **Diary: check quarterly.**
+- **Akron Micro Enterprise and Building Improvement Grants** — opened to
+  applicants in 2025; no 2026 round announced.
+- **Great Streets Akron** — the $400,000 federal round found is a 2025 cycle.
+- **Akron Community Foundation capital grants** — nonprofits only, and the
+  2026 window closed 1 June.
+
+Conclusion for the local lane: **there is no open Akron or Summit County grant
+a pre-revenue startup can enter today.** The two routes worth a phone call are
+the Greater Akron Chamber and the Akron Small Business Administrator's office,
+since past local rounds ran through the Chamber rather than being advertised.
