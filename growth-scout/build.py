@@ -136,6 +136,15 @@ def uses_founder_identity(row: dict) -> bool:
     return bool(IDENTITY_RE.search(row.get("opener") or ""))
 
 
+OHIO_RE = re.compile(
+    r"\b(OH|Ohio|Akron|Cleveland|Columbus|Cincinnati|Dayton|Toledo|Canton|Kent|Youngstown|"
+    r"Hudson|Fairborn|Middlefield|Sidney|Newark|Chagrin|Bowling Green|Mansfield|Lorain|Medina|Stow)\b")
+
+
+def is_ohio(row: dict) -> bool:
+    return bool(OHIO_RE.search(" ".join(str(row.get(k) or "") for k in ("geo", "name", "org", "warm_path"))))
+
+
 def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     p = params["priority"]
     s = int(row["fit"]) * 10
@@ -149,6 +158,8 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
         s += p["verified_bonus"]
     if row.get("contact_url"):
         s += p["open_channel_bonus"]
+    if is_ohio(row):
+        s += p.get("ohio_bonus", 0)
     ice = row.get("ice") or {}
     if row.get("hunt") == "growth" and all(isinstance(ice.get(k), (int, float)) for k in "ice"):
         # Easy, high-confidence wins move up; hard ones move down.

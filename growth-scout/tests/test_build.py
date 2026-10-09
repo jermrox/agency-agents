@@ -171,3 +171,12 @@ def test_followups_file_is_valid_and_sorted_by_due_date():
     assert dues == sorted(dues)
     for t in data["threads"]:
         assert "@" in t["to"] and t["first_sent"] and t["next"]
+
+
+def test_ohio_targets_outrank_equal_national_ones():
+    params = build.load_params()
+    today = dt.date(2026, 10, 9)
+    base = {"fit": 7, "hunt": "sponsorship", "name": "Club", "org": "Club"}
+    ohio, _ = build.score({**base, "geo": "Akron, OH"}, params, today)
+    other, _ = build.score({**base, "geo": "Denver, CO"}, params, today)
+    assert ohio > other
