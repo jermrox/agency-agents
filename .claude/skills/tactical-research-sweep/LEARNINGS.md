@@ -16,6 +16,18 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-09 — daily run
+
+- +8 items, all PubMed: MIL 5 (UK ADVANCE combat-injury mental health; Bankart repair return to duty;
+  ketamine for PTSD review; VA Caring Letters cost; women veterans' ED use; shaving-waiver ethics),
+  CROSS 2 (911 dispatcher support; occupational PTSD review). Board 75, archive 58. FIRE, EMS, LE:
+  nothing standalone. Exa still 402 (sixth day); "no new policy" is unverified.
+- The cited-items check caught the Wearables note citing a SAM.gov RFI that aged out. Rewrote it
+  with the new core-temperature item. The nightmare-wearable item (9 Sep) ages out tomorrow.
+- A "Oct 2026" PubMed date gives no day; the item is dated the 1st. Prefer items with a full date.
+- Lead: ClinicalTrials.gov NCT07502131 (EMS Back-Up manual-handling RCT) needs a working fetch.
+- PR #67 still unmerged; stacked again.
+
 ## 2026-10-08 — daily run
 
 - +3 items, all PubMed: MIL 2 (Marine pull-up requirement and upper-extremity injury trend; Tabata
