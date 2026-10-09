@@ -408,6 +408,80 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 9 Oct 2026 (round 10, scheduled)
+
+Four lanes: a watch-list re-check; Ohio, Akron and Summit County state and local money; health-data
+interoperability, privacy and health-AI; and small rolling grants available now. Every new row is no SAM.
+
+Added:
+- **Sky's the Limit Friends & Family Fund:** up to $2,500 every month, rolling, free.
+  - Fits Vybe three ways: women, minority and combat-veteran founders.
+  - The two pitches with the most community votes plus one staff wildcard pitch live, and the audience picks the winner.
+- **AHRQ SI Tech Sprint:** $2.1M in prizes for agentic/MCP apps built on AHRQ data.
+  - Submissions open 1 Mar 2027 and close 9 Sep 2027; the launch webinar is 1 Dec 2026.
+  - The UEI is encouraged but not required.
+- **AHRQ Clinical Evidence Synthesis Transformation Challenge:** Phase 1 pays 5 x $100K; the Phase 2 grand prize is $5.35M.
+  - Phase 1 runs 11 Jan – 12 Mar 2027.
+  - Stretch fit: it automates evidence reviews.
+- **ElevenLabs Grants:** about $5.5K of voice-AI credits; rolling; under 25 employees; low priority.
+
+**Watch list and founder follow-ups:**
+- NIDILRR FID (opp 363971, posts ~12 Oct, due ~14 Dec, up to $250K) and NIDILRR SBIR Phase I (opp 363966, posts ~16 Oct, due ~16 Dec, up to $100K). Both need SAM.
+- Hiring Our Heroes/FedEx: re-check Nov–Dec 2026. What's Next Longevity: opens January 2027.
+- **Summit County OhioMeansJobs On-the-Job Training:** reimburses up to ~50% of a new hire's wages; no SAM. It must be approved BEFORE the hire, so call Summit Workforce Solutions before Vybe's first hire. Not verified online.
+- Grantwatch #229366 (business development grant, due 15 Dec 2026): the funder is hidden behind Grantwatch's paywall, so it needs a login to identify.
+- MedTech Innovator: confirmed there is no no-fee path for Vybe. PEAKCONF: applying requires a $799 pass. BII/Science prize: individual researchers only.
+
+## Rejected on inspection — 9 Oct 2026 (round 10)
+
+- **NIDILRR Field Initiated Projects Program (Development) FY2027 (HHS-2027-ACL-NIDILRR-IFDV-0304, grants.gov opp 363971)** — Not open yet: still a FORECAST on grants.gov (checked 9 Oct 2026 via the grants.gov API). Estimated posting Oct 12, 2026; estimated application due Dec 14, 2026; award ceiling $250,000; for-profits eligible. SAM 'required' (federal grant). Re-check after Oct 12.
+- **NIDILRR SBIR Phase I FY2027 (HHS-2027-ACL-NIDILRR-BISA-0308, grants.gov opp 363966)** — Not open yet: still a FORECAST on grants.gov (checked 9 Oct 2026). Estimated posting Oct 16, 2026; estimated application due Dec 16, 2026; award ceiling $100,000; must be an SBA small business concern. SAM 'required'. Re-check after Oct 16.
+- **PEAKCONF 2027 Startup World Cup (Athlete Tech qualifier)** — No working free application link. The PEAKCONF 2027 homepage (event Mar 31 - Apr 2, 2027, Las Vegas) says 'Startup World Cup, Groundbreakers Challenge, & More Announced Soon'. The only path to 'Apply to Startup World Cup & Groundbreakers Challenge' is listed as a perk of the paid Startup pass ($799, normally $1,999), so it is effectively a fee. The only 'apply now' link (grip.events) is the Sports Organization hosted-pass form, not a startup application. The Jan 28, 2027 qualifier date does not appear on the page.
+- **2027 BII & Science Translational Medicine Prize for Innovations in Women's Health ($25K, due Nov 1, 2026)** — Open individual researchers only, so a company cannot apply. Official Rules III: 'Applications are welcome from researchers at any career stage who have completed their Ph.D., M.D. or M.D./Ph.D. training ... an eligible entrant must be a single individual'. The applicant must also have peer-reviewed publications from the past 3 years. No entry fee; entry period ends Nov 1, 2026, 11:59 pm ET.
+- **MedTech Innovator 2027 Accelerator (fee/scholarship re-check)** — Fee still applies, with no full no-fee path for Vybe. Applications close Dec 1, 2026 and are free to submit, but the participation fee is $15,000 in cash or a $50K SAFE (equity). 'MTI scholarships are available for qualifying companies and are applied at acceptance, offsetting a significant portion of the cost'. That is partial, the criteria are not stated, and there is no stated waiver for underrepresented or early-stage founders. The only 100% scholarship is the BARDA-funded Vantage track, which covers biothreat/pathogen diagnostics (point-of-care tests, NGS triage) and does not fit a non-diagnostic wellness wearable. The page also discourages concept or pre-prototype companies.
+- **Hiring Our Heroes Small Business Grant (FedEx Founder's Fund), 2027 cycle** — Closed, and no 2027 cycle has been announced. The application page says 'The application period for the 2026 Small Business Grant Program has closed.' The main page still shows the old deadline (Dec 15, 2025), with five awards of $10K or $25K. Gates: 51% owned by a veteran or military spouse, 3-20 employees, under $5M revenue, located in an economically vulnerable community or able to show financial need. Re-check in Nov-Dec 2026.
+- **What's Next Longevity Venture Summit 2027 Business Plan Competition** — Not open yet: expected January 2027. The page says 'We will begin accepting submissions in January 2027'. The summit runs June 8-10, 2027.
+- **TechCrunch Startup Battlefield 2027** — Not open yet; no 2027 date posted. The page says 'Applications have closed for 2026, but please consider applying next year!'
+- **Accelerate 2027: Citizens Make Change (Cleveland Leadership Center)** — Open (closes 2026-10-31), but the official form says ideas 'cannot be affiliated with an established organization or business (LLC/501c)'. Vybe is incorporated, so it is ineligible. It is also a civic-idea contest, not a business grant.
+- **Rubber City Match (Downtown Akron Partnership / City of Akron)** — No live program page. The DAP 'Do Business' page lists only business services and the Business Navigator, with no Rubber City Match application. The only coverage is a 2020 Crain's article. It was also a downtown storefront program.
+- **JumpStart Blueprint Program** — Free and rolling, but no cash. It is a generic 5-module online course 'ideal for small businesses generating between $1-$25,000 in annual revenue', so it is not clearly valuable to a pre-launch wearable company.
+- **JumpStart CapitalReady Program** — Its page says 'Applications are currently closed', and the program targets businesses with over $500,000 in annual recurring revenue.
+- **Burton D. Morgan Foundation Scalerator NEO** — No cash, and it is for companies with about $3M to $15M in revenue and 10 to 200 employees.
+- **Burton D. Morgan Foundation Rooted & Rising series** — Free networking and learning events (for example 20 Oct 2026 at Kent State). No cash and no application. Not a funding opportunity.
+- **Bounce Innovation Hub Entrepreneur Help Desk** — No cash. The page says 'No events are scheduled at this time', so there is no live intake.
+- **Ohio Capital Access Program** — A bank loan-loss-reserve loan program, not forgivable. The official page URL returns 404 today, so it could not be verified.
+- **Summit County OhioMeansJobs On-the-Job Training wage reimbursement** — Could not verify. The Summit Workforce Solutions site returned an empty page, and only statewide or other-county OJT documents were reachable. Re-check by phone. It also only pays back part of wages for new hires made after approval.
+- **mspire Pitch Challenge (MAGNET, Northeast Ohio)** — Deadline was 30 Sep (closed), and the program page returns 404.
+- **Pitch & Pour (University of Toledo LaunchPad)** — The official apply page says 'Pitch & Pour Applications are CLOSED', and no 2026 date has been posted.
+- **Anthropic AI for Science Program (API credits)** — Academic or nonprofit only: 'researchers in academia and nonprofit organizations' who are 'attached to a research institution'.
+- **Zama Bounty Program / Zama Developer Program (FHE privacy bounties)** — The bounty program page is archived ('This page has been archived'). Its successor, the Developer Program, is crypto-protocol bounties paid in cUSDT, so it does not fit.
+- **NLnet Restack / CodeSupply open calls (deadline 3 Nov 2026)** — Effectively non-US: it needs a 'strong European dimension', with at least 60% of funds going to people from Horizon Europe-eligible countries. Restack also excludes AI projects, and everything must be fully open source.
+- **AHRQ Healthcare Choice and Competition Challenge** — Off-lane: it funds scholarly health-policy research on competition and regulation, not products. Phase 1 closes 26 Oct 2026.
+- **AHRQ Challenge Competition on the Impact of AHRQ's Patient Safety Tools** — Only for organizations that have used AHRQ patient-safety tools and can show outcomes. It does not apply to Vybe.
+- **One CDC Data Platform (1CDP) Innovation Challenge** — Limited to CDC and state, tribal, local and territorial (STLT) partners. Its prize is non-cash only (a discovery session).
+- **AMIA 2026 / HL7 FHIR App Competition** — Closed: submissions opened July 2026 and selections were made in September 2026, ahead of the 7-11 Nov symposium. The page is bot-blocked and could not be fully verified.
+- **NCI Office of Data Sharing Impact Prize** — Single-disease (NCI-funded cancer research outputs). It closes 19 Oct 2026.
+- **NIH COMMIT (COMpetency in Menopause & Integrated Therapy) Challenge** — Rewards menopause curricula in US health-professional education programs and is listed as 'Coming Soon'. Not for product companies.
+- **Agents Assemble: The Healthcare AI Endgame (Prompt Opinion, Devpost, FHIR/MCP)** — Closed: the submission window ended in May 2026, and no newer round was found.
+- **VA AI Tech Sprint** — No 2026 round found. The last sprint closed in January 2024.
+- **Z Fellows ($10,000)** — Not a grant. The $10K is reported as an investment that converts to stock at a $1B valuation cap, so it takes equity. It is also an in-person week in San Francisco.
+- **Magnificent Grants (Hummingbird Ventures)** — Founder age gate: under 25 only, so Vybe likely fails it. It was found only on an aggregator, and no official page was confirmed.
+- **Giving Joy Grants (fall cycle)** — Closed. The fall 2026 window ran 1-30 Sep 2026. It is $500, and the next cycle is spring.
+- **The Hustle Grant (Cecilia's House, $1,000 monthly, women-owned)** — No official program page could be found. The sponsor's grant URLs return 404, and only NerdWallet lists it. It cannot be verified.
+- **Gusto Impact Awards** — No 2026 application window on the official page. The latest coverage found is the 2025 edition.
+- **Mastercard Strive USA / Innovation Fund** — Grants go to intermediary organizations (CDFIs and business-support nonprofits), not to individual small businesses. No 2026 call was found.
+- **Black Entrepreneurs Day grants (Daymond John / Chase)** — No 2026 application window was found. The related NAACP Powershift grant is already on the rejected list.
+- **7-Eleven Brands with Heart 2027** — Only for snacks, beverages and fresh meals, so a wearable does not qualify. It also closes 13 Oct 2026.
+- **Dollar General Call for Small Businesses 2026** — Closed. Applications were due 17 Aug 2026, and the prize is a buyer meeting, not cash.
+- **Faire small business / retailer grant** — These are wholesale credits for brick-and-mortar retailers, not cash for brands. The last round closed 30 Jun 2026.
+- **TikTok small-business ad credit program** — Ad credits, not cash, and no 2026 cycle was confirmed.
+- **Venmo Small Business Grant** — The official page returns 404. The program skipped 2025, and no 2026 cycle was confirmed.
+- **Nebius Physical AI Awards** — The award is $150K in compute credits, not cash, and the categories are physical-AI models and infrastructure. It closes 25 Oct 2026. This lane is cash-only.
+- **Ohio Micro-business Development Program** — Technical help delivered through local nonprofits to low-income owners (50% of area median income or less), not a cash grant to the business.
+- **Hiring Our Heroes Small Business Grant (re-checked 9 Oct 2026)** — Re-checked on 9 Oct 2026: still not open. The official page still shows the last cycle (applications due 15 Dec 2025). It also requires 3-20 employees and a distressed ZIP code or financial hardship. It is already on the rejected list.
+- **Grantwatch #229366 'Grants to USA Businesses and Nonprofits for Business Development Activities' (deadline 12/15/26)** — The funder's name is behind Grantwatch's paywall and the program's own page could not be identified, so it cannot be verified. Worth a look if someone has a Grantwatch login.
+- **Grantwatch #224515 grants for US entrepreneurs over age 40 (deadline 11/30/26)** — Founder age gate: the founder must be over 40, which Vybe may fail. The funder is behind the paywall and was not verified.
+
 ## Promoted to the board — 8 Oct 2026 (round 9, scheduled)
 
 Four lanes: a watch-list re-check, research infrastructure and university partnerships,
