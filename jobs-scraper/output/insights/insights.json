@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-09T07:34:34.265585+00:00",
+  "generated_at": "2026-10-09T19:36:53.230804+00:00",
   "totals": {
-    "postings": 1410,
+    "postings": 1418,
     "employers": 44,
-    "unique_jobs": 793,
+    "unique_jobs": 797,
     "with_salary": 253,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
@@ -52,12 +52,12 @@
     },
     {
       "name": "Serco USA",
-      "count": 38,
+      "count": 42,
       "disciplines": [
         "strength-conditioning",
+        "sports-medicine",
         "cognitive",
         "research",
-        "sports-medicine",
         "leadership"
       ],
       "median_salary": null
@@ -190,67 +190,67 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 418,
-      "share": 0.6688,
+      "count": 422,
+      "share": 0.6709,
       "median_salary": 71500.0
     },
     {
       "name": "sports-medicine",
-      "count": 360,
-      "share": 0.576,
+      "count": 363,
+      "share": 0.5771,
       "median_salary": 74485.0
     },
     {
       "name": "cognitive",
       "count": 176,
-      "share": 0.2816,
+      "share": 0.2798,
       "median_salary": 85738.0
     },
     {
       "name": "research",
       "count": 125,
-      "share": 0.2,
+      "share": 0.1987,
       "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1616,
+      "share": 0.1606,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 35,
-      "share": 0.056,
+      "share": 0.0556,
       "median_salary": 63282.0
     },
     {
       "name": "sport-science",
       "count": 11,
-      "share": 0.0176,
+      "share": 0.0175,
       "median_salary": 102550.0
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 750,
-      "share": 0.9579
+      "count": 754,
+      "share": 0.9581
     },
     {
       "name": "sof",
       "count": 375,
-      "share": 0.4789
+      "share": 0.4765
     },
     {
       "name": "first-responder",
       "count": 55,
-      "share": 0.0702
+      "share": 0.0699
     },
     {
       "name": "training-pipeline",
-      "count": 46,
-      "share": 0.0587
+      "count": 47,
+      "share": 0.0597
     }
   ],
   "by_branch": [
@@ -260,7 +260,7 @@
     },
     {
       "name": "Army",
-      "count": 192
+      "count": 196
     },
     {
       "name": "Air Force",
@@ -293,15 +293,15 @@
       "count": 13
     },
     {
+      "name": "Fort Stewart",
+      "count": 13
+    },
+    {
       "name": "Hurlburt Field",
       "count": 11
     },
     {
       "name": "Fort Leonard Wood",
-      "count": 10
-    },
-    {
-      "name": "Fort Stewart",
       "count": 10
     },
     {
@@ -360,7 +360,7 @@
     },
     {
       "code": "GA",
-      "count": 44
+      "count": 47
     },
     {
       "code": "TX",
@@ -410,38 +410,38 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 298,
-      "share": 0.602
+      "count": 302,
+      "share": 0.6052
     },
     {
       "name": "ATC",
       "count": 208,
-      "share": 0.4202
+      "share": 0.4168
     },
     {
       "name": "RD",
       "count": 64,
-      "share": 0.1293
+      "share": 0.1283
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.099
+      "share": 0.0982
     },
     {
       "name": "DPT",
       "count": 16,
-      "share": 0.0323
+      "share": 0.0321
     },
     {
       "name": "LAT",
       "count": 8,
-      "share": 0.0162
+      "share": 0.016
     },
     {
       "name": "TSAC-F",
       "count": 7,
-      "share": 0.0141
+      "share": 0.014
     }
   ],
   "clearances": [
@@ -567,7 +567,7 @@
     },
     {
       "month": "2026-08",
-      "count": 95
+      "count": 94
     },
     {
       "month": "2026-09",
@@ -575,7 +575,7 @@
     },
     {
       "month": "2026-10",
-      "count": 97
+      "count": 102
     }
   ],
   "trends": {
@@ -590,9 +590,9 @@
       },
       {
         "name": "Serco USA",
-        "recent": 38,
+        "recent": 42,
         "previous": 0,
-        "change": 38
+        "change": 42
       },
       {
         "name": "LMR Technical Group",
@@ -676,9 +676,9 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 270,
+        "recent": 274,
         "previous": 3,
-        "change": 267
+        "change": 271
       },
       {
         "name": "ATC",
