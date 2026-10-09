@@ -267,6 +267,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
 
 
 QUEUE_HUNTS = ("sponsorship", "partnership")
+CALENDLY = "https://calendly.com/jeremylahn-i-grow/vybe-health-partnership-call"
 SIGNOFF = "\n\nJeremy Lahn\nVybe Health\njeremy@vybe.health · vybe.health"
 
 
@@ -288,8 +289,8 @@ def followup_body(row: dict) -> str:
     and adds no new claims. The row's ask is an internal note, never quoted.
     """
     return (f"Hello {row['name']} team,\n\nFollowing up on my note below. "
-            "Could you point me to the right person, or let me know if it's a fit? "
-            "I can send a one-page overview if that's easier." + SIGNOFF)
+            "Could you point me to the right person, or let me know if it's a fit?\n\n"
+            f"If a short call is easier, you can pick a time that suits you here: {CALENDLY}" + SIGNOFF)
 
 
 def load_followups() -> dict:

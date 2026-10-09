@@ -2,21 +2,149 @@
   "note": "Real outreach sent from jeremy@vybe.health, checked against the Gmail Sent folder and inbox. One follow-up per contact (params.toml max_follow_ups = 1), due 5 to 7 days after the first email. Update this file when mail is sent or a reply lands.",
   "checked": "2026-10-09",
   "threads": [
-    {"org": "Head of the Schuylkill Regatta", "to": "jenwesson@hosr.org", "first_sent": "2026-10-06", "followed_up": "2026-10-08", "state": "replied", "due": "2026-10-09", "next": "Jen Wesson said yes to a table in the large tent (24-25 Oct). Send the reply draft already in Drafts, fill in the vendor form, send the insurance certificate and a photo of the setup."},
-    {"org": "MSBL", "to": "info@msblnational.com", "first_sent": "2026-10-06", "followed_up": "2026-10-08", "state": "replied", "due": "2026-10-13", "next": "Steve said yes; the one-page overview went out 8 Oct. If he hasn't answered by Tue 13 Oct, reply on the same thread and ask for the next step on the member offer and World Series table."},
-    {"org": "WNBF Naturalmania Pro Am Nationals", "to": "wnbf@worldnaturalbb.com", "first_sent": "2026-10-06", "followed_up": "2026-10-08", "state": "replied", "due": "2026-10-13", "next": "They replied; pictures and social links went out 8 Oct. The event is 31 Oct, so if there's no answer by Tue 13 Oct, ask them to confirm the table."},
-    {"org": "RRCA 2027 Convention", "to": "execdir@rrca.org", "first_sent": "2026-10-06", "followed_up": "2026-10-08", "state": "replied", "due": "2026-10-15", "next": "Jean Knaack will send the 2027 expo information early next week. If it hasn't arrived by Thu 15 Oct, reply on the same thread."},
-    {"org": "Senior Softball-USA Winter Nationals", "to": "info@seniorsoftball.com", "first_sent": "2026-10-06", "followed_up": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "The one follow-up is already used. The event is 3-8 Nov: if there's still no reply by Tue 13 Oct, phone them instead of emailing again."},
-    {"org": "Hockey North America", "to": "hockeynorthamerica@gmail.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Concept2 Logbook", "to": "ranking@concept2.com", "first_sent": "2026-10-08", "state": "auto-reply only", "due": "2026-10-13", "next": "Ticket #883379 opened. Follow-up draft is in Gmail Drafts. Send it Tue 13 Oct if support hasn't answered."},
-    {"org": "NABA (adult baseball)", "to": "nabanational@aol.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Black Men Run", "to": "info@blackmenrun.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Volo", "to": "info@voloforbusiness.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "US Police & Fire Championships", "to": "4info@cpaf.org", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "International Pride Softball", "to": "hello@ipridesoftball.org", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "NYRR Strategic Partnerships", "to": "sponsorship@nyrr.org", "first_sent": "2026-10-08", "state": "auto-reply only", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Roy Hobbs World Series", "to": "teammatesupport@royhobbs.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Travis Manion Foundation", "to": "partnerships@travismanion.org", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."},
-    {"org": "Black Girls RUN!", "to": "info@blackgirlsrun.com", "first_sent": "2026-10-08", "state": "no reply", "due": "2026-10-13", "next": "Follow-up draft is in Gmail Drafts on this thread. Send it Tue 13 Oct."}
+    {
+      "org": "Head of the Schuylkill Regatta",
+      "to": "jenwesson@hosr.org",
+      "first_sent": "2026-10-06",
+      "followed_up": "2026-10-08",
+      "state": "replied",
+      "due": "2026-10-12",
+      "next": "Reply to Jen sent 9 Oct. Still to do: submit the vendor form and send a COI that names Head of the Schuylkill Regatta as additionally insured. Event 24-25 Oct."
+    },
+    {
+      "org": "MSBL",
+      "to": "info@msblnational.com",
+      "first_sent": "2026-10-06",
+      "followed_up": "2026-10-08",
+      "state": "replied",
+      "due": "2026-10-13",
+      "next": "Steve said yes; the one-page overview went out 8 Oct. If he hasn't answered by Tue 13 Oct, reply on the same thread and ask for the next step on the member offer and World Series table."
+    },
+    {
+      "org": "WNBF Naturalmania Pro Am Nationals",
+      "to": "wnbf@worldnaturalbb.com",
+      "first_sent": "2026-10-06",
+      "followed_up": "2026-10-08",
+      "state": "replied",
+      "due": "2026-10-13",
+      "next": "They replied; pictures and social links went out 8 Oct. The event is 31 Oct, so if there's no answer by Tue 13 Oct, ask them to confirm the table."
+    },
+    {
+      "org": "RRCA 2027 Convention",
+      "to": "execdir@rrca.org",
+      "first_sent": "2026-10-06",
+      "followed_up": "2026-10-08",
+      "state": "replied",
+      "due": "2026-10-15",
+      "next": "Jean Knaack will send the 2027 expo information early next week. If it hasn't arrived by Thu 15 Oct, reply on the same thread."
+    },
+    {
+      "org": "Senior Softball-USA Winter Nationals",
+      "to": "info@seniorsoftball.com",
+      "first_sent": "2026-10-06",
+      "followed_up": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-13",
+      "next": "The one follow-up is already used. The event is 3-8 Nov: if there's still no reply by Tue 13 Oct, phone them instead of emailing again."
+    },
+    {
+      "org": "Hockey North America",
+      "to": "hockeynorthamerica@gmail.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Concept2 Logbook",
+      "to": "ranking@concept2.com",
+      "first_sent": "2026-10-08",
+      "state": "auto-reply only",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "NABA (adult baseball)",
+      "to": "nabanational@aol.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Black Men Run",
+      "to": "info@blackmenrun.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Volo",
+      "to": "info@voloforbusiness.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "US Police & Fire Championships",
+      "to": "4info@cpaf.org",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "International Pride Softball",
+      "to": "hello@ipridesoftball.org",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "NYRR Strategic Partnerships",
+      "to": "sponsorship@nyrr.org",
+      "first_sent": "2026-10-08",
+      "state": "auto-reply only",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Roy Hobbs World Series",
+      "to": "teammatesupport@royhobbs.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Travis Manion Foundation",
+      "to": "partnerships@travismanion.org",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    },
+    {
+      "org": "Black Girls RUN!",
+      "to": "info@blackgirlsrun.com",
+      "first_sent": "2026-10-08",
+      "state": "no reply",
+      "due": "2026-10-16",
+      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "followed_up": "2026-10-09"
+    }
   ]
 }

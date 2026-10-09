@@ -162,7 +162,7 @@ def test_queue_carries_one_follow_up_built_from_the_row():
     q = build.outreach_queue([row])[0]
     assert q["followup_subject"] == "Re: " + q["subject"]
     assert "jersey patch" not in q["followup_body"] and q["followup_body"].startswith("Hello Akron Rugby team,")
-    assert q["followup_body"].endswith(build.SIGNOFF)
+    assert q["followup_body"].endswith(build.SIGNOFF) and build.CALENDLY in q["followup_body"]
 
 
 def test_followups_file_is_valid_and_sorted_by_due_date():
