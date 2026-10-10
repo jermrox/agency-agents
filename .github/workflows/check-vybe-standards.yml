@@ -1,0 +1,27 @@
+name: Vybe agent standards
+
+# Enforces VYBE-AGENT-STANDARDS.md: Composio only, Vybe Health accounts only,
+# and no account belonging to another venture anywhere in a Vybe path.
+#
+# This runs on every pull request regardless of paths touched, on purpose. The
+# mistake it exists to catch was a constant in growth-scout/ that leaked into
+# vybe-marketing/ and the agent specs, so a paths filter is exactly the kind of
+# gap that let it survive. The check is a few greps and costs seconds.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  standards:
+    name: no non-Vybe account in Vybe work
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: scripts/check-vybe-standards.sh
+        run: bash scripts/check-vybe-standards.sh
