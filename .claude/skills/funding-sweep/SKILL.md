@@ -30,6 +30,23 @@ needed it. Two invariants prevent that, and neither is optional:
 2. **Every hand-entered row carries `verified`,** the date a human last confirmed it. The
    run warns when one ages past `stale_days`. The curated layer must rot *visibly*.
 
+## Know the company first
+
+Read `funding-scraper/VYBE_PROFILE.md` before searching. Vybe is a developer platform
+for wearable health, with a DevKit for research, tactical and health partners, and a
+consumer band launching May 2027. It has no SAM.gov registration yet. Search every
+lane listed there, and tag each row with `sam = required | later | none`.
+
+## Reading program pages when Exa is down
+
+Exa ran out of credits on 5 Oct 2026 and returned error 402, and the sandbox proxy blocks most grant sites. If `web_fetch_exa` fails, read pages through the Composio remote sandbox instead:
+
+1. Load `mcp__Composio__COMPOSIO_REMOTE_BASH_TOOL` with ToolSearch.
+2. Fetch the page with `curl -sL` and a browser user-agent.
+3. Strip `<script>`, `<style>` and tags with Python, and read the text. The sandbox keeps a helper at `/home/user/fetch.sh <URL> <chars>`.
+
+WebSearch is for discovery only; a fact must come from the program's own page.
+
 ## Running it
 
 ```bash

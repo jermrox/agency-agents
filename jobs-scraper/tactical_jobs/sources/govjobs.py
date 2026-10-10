@@ -35,19 +35,123 @@ sloppiness: it is the whole reason one adapter can cover many tenants.
 
 from __future__ import annotations
 
+import html
 import logging
 import re
 import xml.etree.ElementTree as ET
 from typing import Any, Iterable
 from urllib.parse import urljoin
 
-from ..http import fetch, fetch_json
+from ..http import FetchError, fetch, fetch_json
 from ..models import JobPosting
 from .base import Source, html_to_text, looks_remote, parse_timestamp
+# The NEOGOV detail page states the posting in JSON-LD; the reader lives with
+# the JSON-LD adapter and is reused rather than rewritten.
+from .jsonld import _LDScriptCollector, _decode_block, _iter_ld_nodes, is_job_posting
 
 log = logging.getLogger(__name__)
 
 GOVERNMENTJOBS_HOST = "https://www.governmentjobs.com"
+
+# NEOGOV stopped answering ``?format=json`` on agency pages in 2026 (every
+# tenant probed on 2026-09-09 returned the HTML shell). The page's own script
+# fetches the same URL with these headers and gets a server-rendered HTML
+# fragment: one ``<li class="list-item" data-job-id="...">`` per posting with
+# the title link, a ``list-meta`` list (location, schedule and pay,
+# category, department) and a "Posted ..." line, ten per page, ``?page=N``.
+_BROWSER_UA = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+)
+_XHR_HEADERS = {
+    "X-Requested-With": "XMLHttpRequest",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "User-Agent": _BROWSER_UA,
+}
+_PAGE_HEADERS = {"User-Agent": _BROWSER_UA}
+_LIST_ITEM_SPLIT = re.compile(r'<li\b[^>]*class="[^"]*\blist-item\b[^"]*"[^>]*>', re.I)
+_ITEM_ID_RE = re.compile(r'data-job-id="(\d+)"')
+_ITEM_LINK_RE = re.compile(r"<a\b([^>]*item-details-link[^>]*)>(.*?)</a>", re.I | re.S)
+_HREF_ATTR_RE = re.compile(r'href="([^"]+)"')
+_META_RE = re.compile(r'<ul\b[^>]*class="[^"]*list-meta[^"]*"[^>]*>(.*?)</ul>', re.I | re.S)
+_LI_RE = re.compile(r"<li\b[^>]*>(.*?)</li>", re.I | re.S)
+_PUBLISHED_RE = re.compile(r'class="list-published"[^>]*>(.*?)</div>', re.I | re.S)
+
+
+def _text(markup: str) -> str:
+    return " ".join(html_to_text(markup).split())
+
+
+def parse_listing_html(markup: str, base: str = GOVERNMENTJOBS_HOST) -> list[dict[str, Any]]:
+    """Rows from a NEOGOV listing fragment, as the records the JSON path yields."""
+    rows: list[dict[str, Any]] = []
+    # Each chunk keeps its own ``<li ...>`` tag: the job id is an attribute on it.
+    starts = [match.start() for match in _LIST_ITEM_SPLIT.finditer(markup)]
+    chunks = [markup[a:b] for a, b in zip(starts, starts[1:] + [len(markup)])]
+    for chunk in chunks:
+        link = _ITEM_LINK_RE.search(chunk)
+        if not link:
+            continue
+        href = _HREF_ATTR_RE.search(link.group(1))
+        title = _text(link.group(2))
+        if not href or not title:
+            continue
+        job_id = _ITEM_ID_RE.search(chunk)
+        meta_block = _META_RE.search(chunk)
+        meta = [_text(item) for item in _LI_RE.findall(meta_block.group(1))] if meta_block else []
+        meta = [item for item in meta if item]
+        location = meta[0] if meta else ""
+        job_type = salary = department = category = ""
+        for item in meta[1:]:
+            if item.lower().startswith("department:"):
+                department = item.split(":", 1)[1].strip()
+            elif item.lower().startswith("category:"):
+                category = item.split(":", 1)[1].strip()
+            elif "$" in item:
+                cut = item.find("$")
+                job_type = item[:cut].strip(" -")
+                salary = item[cut:].strip()
+            elif not job_type:
+                job_type = item
+        published = _PUBLISHED_RE.search(chunk)
+        summary = ". ".join(
+            part
+            for part in (
+                f"Category: {category}" if category else "",
+                _text(published.group(1)) if published else "",
+            )
+            if part
+        )
+        rows.append(
+            {
+                "id": job_id.group(1) if job_id else "",
+                "title": title,
+                "url": _absolute(html.unescape(href.group(1)), base),
+                "location": location,
+                "jobType": job_type,
+                "salary": salary,
+                "department": department,
+                "summary": summary,
+            }
+        )
+    return rows
+
+
+def _title_fragments(value: Any) -> tuple[str, ...]:
+    """Lower-cased ``detail_include`` fragments; empty means every row qualifies."""
+    if value is None:
+        return ()
+    if isinstance(value, str):
+        value = [value]
+    if not isinstance(value, (list, tuple, set, frozenset)):
+        log.warning("governmentjobs: detail_include=%r is not a list; fetching details for every row", value)
+        return ()
+    return tuple(item.strip().lower() for item in value if isinstance(item, str) and item.strip())
+
+
+def _wants_detail(title: str, fragments: tuple[str, ...]) -> bool:
+    lowered = title.lower()
+    return not fragments or any(fragment in lowered for fragment in fragments)
 
 
 # ---------------------------------------------------------------------------
@@ -409,6 +513,10 @@ class GovernmentJobsSource(Source):
         A list description shorter than this triggers a detail fetch.
         Default 400 -- NEOGOV list payloads carry a one-line teaser, and the
         analysis layer needs the full posting.
+    detail_include
+        Title fragments (case-insensitive); when set, only matching rows
+        spend the detail budget. A city lists hundreds of jobs and the
+        board wants its wellness coordinator and its athletic trainer.
     """
 
     kind = "governmentjobs"
@@ -425,11 +533,27 @@ class GovernmentJobsSource(Source):
         # them against governmentjobs.com would point the detail fetch -- and
         # the fallback public url -- at the wrong site.
         link_base = list_url
+        detail_include = _title_fragments(self.options.get("detail_include"))
 
         seen: set[str] = set()
+        html_mode = False
+        self._html_only = False
+        payload: Any = None
         for page in range(1, max_pages + 1):
             try:
-                payload = fetch_json(list_url, params=self._params(list_url, page))
+                if html_mode:
+                    records = self._html_rows(list_url, page)
+                else:
+                    try:
+                        payload = fetch_json(list_url, params=self._params(list_url, page))
+                        records = envelope_records(payload)
+                    except FetchError:
+                        # No JSON here; read the listing the way the page's
+                        # own script does. A tenant that answers neither
+                        # raises out of this call and is reported as failed.
+                        records = self._html_rows(list_url, page)
+                        html_mode = True
+                        self._html_only = True
             except Exception as exc:
                 # A first page that will not load is a broken config, not a
                 # flaky page: surface it rather than reporting zero jobs as
@@ -439,7 +563,6 @@ class GovernmentJobsSource(Source):
                 log.warning("%s: governmentjobs page %d failed: %s", self.name, page, exc)
                 break
 
-            records = envelope_records(payload)
             if not records:
                 break
 
@@ -449,8 +572,11 @@ class GovernmentJobsSource(Source):
                     log.debug("%s: skipping non-object record %r", self.name, record)
                     continue
                 try:
+                    wants = detail_budget > 0 and _wants_detail(
+                        str(pick_field(record, *_TITLE_KEYS) or ""), detail_include
+                    )
                     posting, spent = self._to_posting(
-                        record, employer, detail_budget > 0, min_chars, link_base
+                        record, employer, wants, min_chars, link_base
                     )
                 except Exception as exc:  # pragma: no cover - defensive
                     # One unusable record must never cost us the rest of the board.
@@ -492,17 +618,68 @@ class GovernmentJobsSource(Source):
         params["page"] = page
         return params
 
+    def _html_rows(self, list_url: str, page: int) -> list[dict[str, Any]]:
+        # Unsorted, the listing's order changes from one request to the next
+        # and a page walk repeats some rows and misses others (27 of 37 on one
+        # tenant). The page's own script sends these two parameters; with them
+        # two walks return the same 37 rows in the same order.
+        params = {"sort": "PositionTitle", "isDescendingSort": "false", "page": page}
+        body = fetch(list_url, params=params, headers=_XHR_HEADERS)
+        markup = body.decode("utf-8", "replace") if isinstance(body, (bytes, bytearray)) else str(body)
+        return parse_listing_html(markup, list_url)
+
     def _detail(self, url: str) -> dict[str, Any]:
-        """Fetch one posting's detail JSON, or ``{}`` if it is unavailable."""
+        """Fetch one posting's detail, as JSON or from the page's JSON-LD.
+
+        ``{}`` if it is unavailable either way.
+        """
         if not url:
             return {}
+        if getattr(self, "_html_only", False):
+            # The listing had no JSON; its job pages will not either.
+            return self._detail_from_page(url)
         params = None if "format=" in url else {"format": "json"}
         try:
             payload = fetch_json(url, params=params)
         except Exception as exc:
-            log.debug("%s: detail fetch failed for %s: %s", self.name, url, exc)
-            return {}
+            log.debug("%s: detail JSON unavailable for %s (%s); reading the page", self.name, url, exc)
+            return self._detail_from_page(url)
         return _detail_record(payload)
+
+    def _detail_from_page(self, url: str) -> dict[str, Any]:
+        """The JobPosting JSON-LD every NEOGOV job page carries, as a detail record."""
+        try:
+            body = fetch(url, headers=_PAGE_HEADERS)
+        except Exception as exc:
+            log.debug("%s: detail page failed for %s: %s", self.name, url, exc)
+            return {}
+        markup = body.decode("utf-8", "replace") if isinstance(body, (bytes, bytearray)) else str(body)
+        collector = _LDScriptCollector()
+        try:
+            collector.feed(markup)
+            collector.close()
+        except Exception:  # pragma: no cover - defensive
+            return {}
+        for block in collector.blocks:
+            try:
+                payload = _decode_block(block)
+            except (ValueError, TypeError):
+                continue
+            for node in _iter_ld_nodes(payload):
+                if not is_job_posting(node):
+                    continue
+                detail: dict[str, Any] = {}
+                if isinstance(node.get("description"), str):
+                    detail["description"] = html_to_text(node["description"])
+                if node.get("datePosted"):
+                    detail["datePosted"] = node["datePosted"]
+                if node.get("validThrough"):
+                    detail["closingDate"] = str(node["validThrough"])[:10]
+                # The listing row already states the location; the page's
+                # address block repeats it with the region and country appended
+                # ("Austin, TX, TX, US"), so it is not carried over.
+                return detail
+        return {}
 
     # -- mapping ----------------------------------------------------------
 

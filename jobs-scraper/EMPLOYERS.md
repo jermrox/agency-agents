@@ -102,22 +102,54 @@ Human performance is their whole business, so nearly every posting is relevant.
 | **Sword Performance** | Tactical performance |
 | **Magellan Federal** | Long-running military HP and resilience staffing |
 
-**None of these is scrapable yet, checked 2026-08-28.** Every one of these
+**Checked 2026-08-28: none of these was scrapable.** Every one of these
 careers pages was fetched and inspected. O2X, Magellan Federal, and Resolution
-Think all return a normal marketing page with no JobPosting markup — the only
-schema.org nodes present are `BreadcrumbList` and `LocalBusiness` — and none
-links out to a recognizable ATS host. HigherEchelon, Hyperion Biotechnology,
+Think all returned a normal marketing page with no JobPosting markup — the only
+schema.org nodes present were `BreadcrumbList` and `LocalBusiness` — and none
+linked out to a recognizable ATS host. HigherEchelon, Hyperion Biotechnology,
 GAP Solutions, and EXOS all 404 at their published careers paths.
 
-That is a finding, not a gap to paper over: **being a well-known name in this
-niche does not make an employer reachable.** The specialist firms are small
-enough to run careers pages by hand, which is precisely what defeats a scraper.
-Reaching them needs per-employer work — finding a real ATS, or an `agencyboard`
-adapter aimed at each page's own markup — and until that work is done and
-verified live, none of them belongs in a `[[source]]` block. The one exception
-already proved the rule: KBR's dedicated POTFF page at `careers.kbr.com/us/en/potff2`
-resolves but carries only `WebPage` markup, so KBR is reached through its
-Workday tenant instead.
+**Re-checked 2026-09-08: five of them now run nightly** from
+`sources.keyless.toml`, each on the route it actually answers on:
+
+| Employer | Route |
+|---|---|
+| **PSI** | iCIMS portal `careers-plansys.icims.com`; the job pages carry JSON-LD |
+| **Magellan Health** | The parent's Phenom sitemap; job pages carry JSON-LD |
+| **Resolution Think** | JazzHR board `resolutionthinked.applytojob.com/apply/`, read as an index page; each open job page carries JSON-LD |
+| **O2X** | `o2x.com/careers` read as an index page; the job pages have no JSON-LD and are read as plain HTML |
+| **Loyal Source** | WordPress job board: two sitemap shards of job pages with JSON-LD (SOF human performance billets that name POTFF) |
+
+Still no route: HigherEchelon (a Salesforce Lightning careers site), EXOS,
+GAP Solutions, Hyperion, Sword, TAP and Aptive (no listing found); Goldbelt
+(its branded iCIMS search 404s); GDG (a bot wall); T3i and DysTech
+(script-only pages); Maximus (Avature); Venesco (Paylocity, every posting
+closed); QuarterLine (the same iCIMS portal as PSI, so a second source would
+only duplicate it). The registry records each of those with what was checked.
+
+The lesson stands: **being a well-known name in this niche does not make an
+employer reachable.** The specialist firms are small enough to run careers
+pages by hand, which is precisely what defeats a scraper. Each of the five
+above took per-employer work — finding the real ATS behind the page, or
+reading the page's own markup — and was verified live before it went into a
+`[[source]]` block. KBR proved the rule first: its dedicated POTFF page at
+`careers.kbr.com/us/en/potff2` carries only `WebPage` markup, so KBR is
+reached through its Workday tenant instead.
+
+## Fire, police and sheriff (NEOGOV)
+
+First-responder agencies post to governmentjobs.com. NEOGOV's JSON route is
+dead for every tenant checked on 2026-09-08, and so are its RSS and API
+routes; what still answers is the listing the page's own script requests (an
+XHR fragment, ten rows a page, with the page's own sort so a walk is stable),
+and every job page carries JobPosting JSON-LD. Eight agencies run nightly:
+Prince William County (VA), Saint Paul, Seattle, Chula Vista, Broward
+Sheriff's Office, Huntington Beach, Burnsville (MN) and the City of Los
+Angeles (where LAFD and LAPD hire). A city lists hundreds of jobs, so detail
+pages are fetched only for titles that could be performance work and the
+classifier does the rest; on 2026-09-08 none of the eight had a human
+performance posting open. Denver and High Point return no rows on that route
+and Phoenix redirects off NEOGOV.
 
 ## Federal, direct
 

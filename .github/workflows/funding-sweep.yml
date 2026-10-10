@@ -1,4 +1,4 @@
-name: Funding sweep — biweekly
+name: Funding sweep — daily
 
 # Collects open non-dilutive funding opportunities and publishes funding.json
 # for the Vybe funding dashboard to read.
@@ -10,9 +10,11 @@ name: Funding sweep — biweekly
 # one place the sweep can actually see the whole federal picture.
 #
 # CADENCE
-# Every two weeks, matching the Pillar 2 operating rhythm: surface the current
-# top opportunities, act on them, repeat. A daily run would just burn minutes
-# re-reading solicitations whose close dates move on a monthly cycle.
+# Daily, at 13:40 UTC. The live site (agentrevup) is expected to update every
+# day: the daily Vybe routine adds verified rows to sources.toml at 12:00 UTC,
+# and this run is what turns them into funding.json. Biweekly left the live
+# board up to two weeks behind its own source file (it sat five days stale on
+# 29 Sep). A run takes about a minute, so daily costs almost nothing.
 
 on:
   workflow_dispatch:
@@ -30,9 +32,10 @@ on:
         type: boolean
         default: false
   schedule:
-    # 08:20 UTC on the 1st and 15th. Off the hour on purpose -- :00 is when
-    # every scheduled workflow on the platform fires at once.
-    - cron: "20 8 1,15 * *"
+    # 13:40 UTC daily: after the 12:00 daily routine, before the 14:20 live-site
+    # check. Off the hour on purpose -- :00 is when every scheduled workflow on
+    # the platform fires at once.
+    - cron: "40 13 * * *"
 
 concurrency:
   group: funding-sweep
@@ -66,6 +69,9 @@ jobs:
           ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run }}
           VERBOSE: ${{ inputs.verbose }}
+          # SAM.gov contract opportunities (sources.sam_contracts). A repository
+          # secret, never config: the source skips itself when it is unset.
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
         run: |
           # Every conditional here is a full `if`, never `[ ... ] && ...`.
           # The step runs under `bash -e`, where a bare test that evaluates
@@ -113,6 +119,8 @@ jobs:
 
       - name: Commit the refreshed board
         if: ${{ inputs.dry_run != true && inputs.only == '' }}
+        env:
+          REF_NAME: ${{ github.ref_name }}
         run: |
           cd "$GITHUB_WORKSPACE"
           if git diff --quiet -- funding-scraper/output/funding.json dashboards/vybe-funding-tracker.html; then
@@ -122,5 +130,27 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add funding-scraper/output/funding.json dashboards/vybe-funding-tracker.html
-          git commit -m "chore(funding): biweekly sweep [skip ci]"
-          git push
+          # No [skip ci] here. Netlify honours that marker and skips the deploy,
+          # so a sweep commit carrying it refreshed main and never reached the
+          # live site. It was also redundant: a push made with GITHUB_TOKEN does
+          # not trigger other workflows in the first place.
+          git commit -m "chore(funding): daily sweep"
+          # The ref can move while the sweep runs: on 29 Sep a PR merged 30
+          # seconds into a run and the bare `git push` was rejected, losing the
+          # whole refresh. Daily runs make that race more likely, so rebase onto
+          # whatever landed and retry. The sweep only writes these two files, so
+          # a conflict means someone else changed them mid-run: fail loudly
+          # rather than guess which version wins.
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$REF_NAME"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt): $REF_NAME moved during the sweep; rebasing onto it."
+            if ! git pull --rebase origin "$REF_NAME"; then
+              git rebase --abort || true
+              echo "::error::Rebase onto $REF_NAME conflicted: funding.json or the dashboard changed during the sweep."
+              exit 1
+            fi
+          done
+          echo "::error::Push to $REF_NAME was rejected three times."
+          exit 1

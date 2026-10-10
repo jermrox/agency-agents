@@ -1,68 +1,76 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-09-14.*
+*Briefing generated 2026-10-10.*
 
 ## Headline
 
-- **172 open jobs** from **26 employers**.
-- Posted between **2026-07-02** and **2026-09-14**.
-- **$85,738 median** annualized pay across the 121 postings that publish one -- $61,994 to $116,952 covers the middle half.
-- **2% remote-friendly** (3 jobs).
-- 207 of 379 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 162, Special Operations 42, Training Pipeline 28, Fire / EMS / Law Enforcement 23.
+- **801 open jobs** from **44 employers**.
+- Posted between **2025-12-03** and **2026-10-10**.
+- **$83,592 median** annualized pay across the 253 postings that publish one -- $62,000 to $110,160 covers the middle half.
+- **0% remote-friendly** (3 jobs).
+- 625 of 1,426 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 758, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **up +9** in 2026-09 (77 to 86), 12% against 2026-08.
+Postings are **down -389** in 2026-10 (495 to 106), 79% against 2026-09.
 
 ```
-2026-07     9  ###
-2026-08    77  #########################
-2026-09    86  ############################
+2025-12     1  #
+2026-01     0  
+2026-02     2  #
+2026-03     2  #
+2026-04     7  #
+2026-05     5  #
+2026-06     9  #
+2026-07    19  #
+2026-08    94  #####
+2026-09   495  ############################
+2026-10   106  ######
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
-- Serco USA: 0 to 28
-- KBR: 0 to 26
-- Commander, Navy Installations Command: 0 to 22
-- General Dynamics Information Technology: 0 to 20
-- Customs and Border Protection: 0 to 14
+- Loyal Source: 0 to 316
+- Serco USA: 0 to 46
+- LMR Technical Group: 10 to 44
+- Commander, Navy Installations Command: 0 to 33
+- KBR: 5 to 34
 
 **Credentials appearing more often:**
 
-- CSCS: 0 to 50
-- ATC: 0 to 16
-- RD: 0 to 11
-- PhD: 0 to 6
-- TSAC-F: 0 to 3
+- CSCS: 3 to 277
+- ATC: 4 to 186
+- RD: 3 to 59
+- PhD: 0 to 48
+- DPT: 4 to 9
 
 ## Who is hiring
 
 | Employer | Jobs | Median pay | Focus |
 |---|---|---|---|
-| Serco USA | 28 | - | Strength & Conditioning, Cognitive Performance |
-| KBR | 26 | $87,975 | Strength & Conditioning, Sports Medicine |
-| Commander, Navy Installations Command | 22 | $46,020 | Sports Medicine, Program Leadership |
-| General Dynamics Information Technology | 20 | $106,174 | Cognitive Performance, Sports Medicine |
-| Customs and Border Protection | 14 | $145,559 | - |
-| Military Treatment Facilities under DHA | 13 | $102,935 | Sports Medicine, Research & Analytics |
-| The Geneva Foundation | 7 | $75,000 | Sports Medicine, Strength & Conditioning |
-| U.S. Marine Corps | 7 | $35,360 | Sports Medicine, Strength & Conditioning |
-| Veterans Health Administration | 7 | $75,202 | Program Leadership, Sports Medicine |
-| Bureau of Prisons/Federal Prison System | 5 | $79,630 | Sports Medicine, Performance Nutrition |
+| Loyal Source | 316 | $68,016 | Strength & Conditioning, Sports Medicine |
+| KBR | 61 | $91,950 | Strength & Conditioning, Sports Medicine |
+| LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
+| Serco USA | 46 | - | Strength & Conditioning, Sports Medicine |
+| Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
+| Planned Systems International | 35 | $66,345 | Sports Medicine, Strength & Conditioning |
+| Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
+| Military Treatment Facilities under DHA | 31 | $102,935 | Sports Medicine, Research & Analytics |
+| General Dynamics Information Technology | 30 | $98,738 | Cognitive Performance, Sports Medicine |
+| Customs and Border Protection | 25 | $139,436 | - |
 
 ## Discipline mix
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Sports Medicine | 67 | 52% |
-| Strength & Conditioning | 65 | 51% |
-| Cognitive Performance | 25 | 20% |
-| Research & Analytics | 20 | 16% |
-| Program Leadership | 16 | 12% |
-| Performance Nutrition | 15 | 12% |
-| Sport Science | 1 | 1% |
+| Strength & Conditioning | 425 | 67% |
+| Sports Medicine | 364 | 57% |
+| Cognitive Performance | 177 | 28% |
+| Research & Analytics | 126 | 20% |
+| Performance Nutrition | 101 | 16% |
+| Program Leadership | 35 | 6% |
+| Sport Science | 11 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -71,64 +79,66 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 50 | 75% |
-| ATC | 16 | 24% |
-| RD | 11 | 16% |
-| PhD | 6 | 9% |
-| TSAC-F | 3 | 4% |
+| CSCS | 305 | 61% |
+| ATC | 208 | 41% |
+| RD | 64 | 13% |
+| PhD | 49 | 10% |
+| DPT | 16 | 3% |
+| LAT | 8 | 2% |
+| TSAC-F | 7 | 1% |
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (16), TS/SCI (15), Top Secret (15)
+**Clearances requested:** Secret (59), TS/SCI (25), Top Secret (22), Public Trust (3)
 
 ## What it pays
 
-- Median **$85,738**, middle half $61,994 to $116,952.
-- Full range $27,500 to $219,654.
+- Median **$83,592**, middle half $62,000 to $110,160.
+- Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Cognitive Performance | 12 | $98,738 | $122,190 | $130,770 |
-| Research & Analytics | 11 | $74,287 | $98,027 | $100,836 |
-| Performance Nutrition | 8 | $90,397 | $92,475 | $102,935 |
-| Sport Science | 1 | $85,738 | $85,738 | $85,738 |
-| Sports Medicine | 50 | $59,106 | $81,177 | $104,082 |
-| Strength & Conditioning | 26 | $46,800 | $66,582 | $90,749 |
-| Program Leadership | 13 | $42,640 | $62,783 | $75,202 |
+| Sport Science | 7 | $92,238 | $102,550 | $109,317 |
+| Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
+| Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
+| Research & Analytics | 38 | $63,203 | $77,015 | $98,560 |
+| Sports Medicine | 130 | $59,812 | $74,485 | $102,935 |
+| Strength & Conditioning | 67 | $58,245 | $71,500 | $91,215 |
+| Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** TX (15), VA (14), CA (11), NC (11), FL (10), GA (10), NM (8), MO (6), WA (6), CO (5)
+**States:** FL (75), NC (68), CA (62), GA (47), TX (43), VA (37), NM (36), CO (23), KY (23), HI (22)
 
 | Installation | Jobs |
 |---|---|
-| Fort Bragg | 21 |
-| Cannon AFB | 5 |
-| Fort Leonard Wood | 5 |
-| Hurlburt Field | 5 |
-| Joint Base Langley-Eustis | 5 |
-| Fort Benning | 3 |
-| Fort Campbell | 3 |
-| Fort Sill | 3 |
-| Fort Stewart | 3 |
-| JBLM | 3 |
+| Fort Bragg | 51 |
+| Coronado | 13 |
+| Fort Stewart | 13 |
+| Hurlburt Field | 11 |
+| Fort Leonard Wood | 10 |
+| Fort Bliss | 9 |
+| Fort Drum | 9 |
+| Fort Sill | 9 |
+| Schofield Barracks | 9 |
+| Cannon AFB | 8 |
 
-**Branches and services:** Army (57), Joint (36), Navy (24), Air Force (14), Marine Corps (7), Coast Guard (1)
+**Branches and services:** Joint (270), Army (200), Air Force (104), Navy (39), Marine Corps (27), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 9 |
-| Fitness Specialist | 6 |
-| Human Performance Operations Manager | 4 |
-| Occupational Therapist | 4 |
-| H2FIT: Strength and Conditioning Coaches | 3 |
-| OCCUPATIONAL THERAPIST (HOLISTIC HEALTH AND FITNESS) | 3 |
-| Performance Dietitian | 3 |
-| Physical Therapy Assistant | 3 |
-| Supervisory CBP Officer (Port Director) | 3 |
-| Cognitive Performance Specialist | 2 |
+| Physical Therapist | 60 |
+| Cognitive Performance Specialist | 39 |
+| Athletic Trainer | 36 |
+| Certified Athletic Trainer | 36 |
+| Human Performance Advisor | 36 |
+| Strength and Conditioning Specialist | 36 |
+| Licensed Clinical Social Worker | 35 |
+| Operational Psychologist | 35 |
+| Performance Dietician | 35 |
+| Senior Strength and Conditioning Specialist | 35 |

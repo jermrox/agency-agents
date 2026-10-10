@@ -42,10 +42,10 @@ PALETTE = """
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; background: var(--ground); color: var(--ink);
+  margin: 0; padding: 0 var(--gutter); background: var(--ground); color: var(--ink);
   font: 16px/1.55 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-.wrap { max-width: 900px; margin: 0 auto; padding: 40px var(--gutter) 80px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 0 80px; }
 header h1 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -.01em; }
 header p.sub { margin: 0 0 28px; color: var(--muted); font-size: .95rem; }
 h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; margin: 36px 0 14px; }
@@ -55,7 +55,17 @@ h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; margi
 .hot h2 { margin-top: 0; }
 .hot p { margin: 0 0 14px; }
 .hot p:last-child { margin-bottom: 0; }
-.hot .links a { margin-right: 10px; font-size: .88rem; }
+.hot .topic { padding: 0 0 16px; margin: 0 0 16px; border-bottom: 1px solid var(--rule); }
+.hot .topic:last-of-type { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.hot .topic p { margin: 0 0 8px; }
+.hot ul { margin: 0 0 8px; padding-left: 18px; font-size: .9rem; }
+.hot li { margin: 2px 0; }
+.hot li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule);
+            text-underline-offset: 3px; }
+.hot li a:hover { text-decoration-color: var(--accent); }
+.hot .seeall { font: inherit; font-size: .82rem; padding: 3px 12px; border-radius: 999px; cursor: pointer;
+               border: 1px solid var(--accent); background: var(--ground); color: var(--accent); }
+.hot .also { color: var(--muted); font-size: .85rem; margin: 14px 0 0; }
 .hot .empty { color: var(--muted); }
 
 .controls { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92);
@@ -95,11 +105,32 @@ a { color: var(--accent); }
         border: 1px solid var(--accent); background: var(--ground); color: var(--accent); cursor: pointer; }
 .hidden { display: none !important; }
 .count { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+.topnav { display: flex; gap: 16px; font-size: .9rem; margin: -16px 0 24px; }
+.standards { margin-top: 44px; }
+.standards p.note { color: var(--muted); font-size: .85rem; margin: 0 0 10px; }
+.standards .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); }
+.standards table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.standards th, .standards td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.standards th { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--raise); }
+.standards tr:last-child td { border-bottom: 0; }
+.standards .flag { display: block; margin-top: 4px; color: #8a5a00; font-size: .8rem; }
 footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--rule);
          color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 600px) {
   .wrap { padding-top: 24px; }
+  .standards .scroll { border: 0; }
+  /* One swipeable line per facet, so the sticky bar never covers half the screen. */
+  .controls fieldset { min-width: 0; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+                       scrollbar-width: none; padding-bottom: 2px; }
+  .controls fieldset::-webkit-scrollbar { display: none; }
+  .controls button, .controls .label { flex: 0 0 auto; white-space: nowrap; }
+  .standards thead { display: none; }
+  .standards tr { display: block; border: 1px solid var(--rule); border-radius: var(--radius); margin-bottom: 10px; padding: 8px 0; }
+  .standards td { display: block; border: 0; padding: 3px 12px; }
+  .standards td[data-label]::before { content: attr(data-label) ": "; color: var(--muted); font-size: .72rem;
+               text-transform: uppercase; letter-spacing: .06em; }
+  .standards td:first-child { font-weight: 600; }
   header h1 { font-size: 1.35rem; }
 }
 @media print {
@@ -160,6 +191,17 @@ FILTER_SCRIPT = """
     });
   });
 
+  document.querySelectorAll('[data-show-tag]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var tag = button.getAttribute('data-show-tag');
+      document.querySelectorAll('.controls [data-facet="tag"]').forEach(function (target) {
+        if (target.getAttribute('data-value') === tag) target.click();
+      });
+      var feed = document.getElementById('feed');
+      if (feed) feed.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   if (more) {
     more.querySelector('button').addEventListener('click', function () {
       expanded = true;
@@ -209,22 +251,48 @@ def render_card(item: BoardItem) -> str:
     )
 
 
-def render_hot(topics: list[HotTopic]) -> str:
-    """The block at the top: one plain-English line per topic, linking its items."""
+HOT_TOPICS_SHOWN = 6
+HOT_ITEMS_SHOWN = 4
+
+
+def render_hot(topics: list[HotTopic], notes: dict[str, str] | None = None) -> str:
+    """The block at the top: one plain-English paragraph per topic, linking its items.
+
+    ``notes`` maps a tag to the paragraph the sweep wrote naming the trend. A
+    topic with no note falls back to a counted sentence rather than vanishing.
+    It is the front door, so it stays short: the strongest topics, each with its
+    highest-scoring items, and a button that filters the feed to the rest.
+    """
+    notes = notes or {}
     if not topics:
         return (
             '<section class="hot"><h2>Hot this month</h2>'
             "<p class=\"empty\">No topic drew three or more independent items this window. "
             "The feed below is the whole month.</p></section>"
         )
-    lines = []
-    for topic in topics:
+    blocks = []
+    for topic in topics[:HOT_TOPICS_SHOWN]:
+        best = sorted(topic.items, key=lambda i: i.score, reverse=True)[:HOT_ITEMS_SHOWN]
         links = "".join(
-            f'<a href="{escape(item.primary_url)}" rel="noopener noreferrer">{escape(_short(item.headline))}</a>'
-            for item in topic.items
+            f'<li><a href="{escape(item.primary_url)}" rel="noopener noreferrer">{escape(item.headline)}</a></li>'
+            for item in best
         )
-        lines.append(f"<p>{escape(_hot_sentence(topic))}<br><span class=\"links\">{links}</span></p>")
-    return '<section class="hot"><h2>Hot this month</h2>' + "".join(lines) + "</section>"
+        lead = (
+            f"<strong>{escape(topic.tag)}.</strong> {escape(notes[topic.tag])}"
+            if topic.tag in notes
+            else escape(_hot_sentence(topic))
+        )
+        blocks.append(
+            f'<div class="topic"><p>{lead}</p><ul>{links}</ul>'
+            f'<button type="button" class="seeall" data-show-tag="{escape(topic.tag)}">'
+            f"See all {topic.count} in the feed</button></div>"
+        )
+    rest = topics[HOT_TOPICS_SHOWN:]
+    also = ""
+    if rest:
+        named = ", ".join(f"{t.tag} ({t.count})" for t in rest)
+        also = f'<p class="also">Also drawing three or more items: {escape(named)}.</p>'
+    return '<section class="hot"><h2>Hot this month</h2>' + "".join(blocks) + also + "</section>"
 
 
 def _hot_sentence(topic: HotTopic) -> str:
@@ -234,6 +302,47 @@ def _hot_sentence(topic: HotTopic) -> str:
     kinds = [t.lower() for t in topic.types]
     what = kinds[0] if len(kinds) == 1 else ", ".join(kinds[:-1]) + " and " + kinds[-1]
     return f"{topic.tag}: {topic.count} independent items this month across {where} — {what}."
+
+
+def render_standards(rows: list[dict], flags: list[dict] | None = None) -> str:
+    """Section 6: the hand-edited table, with the watcher's flags beside each row.
+
+    The flag is an alarm for the editor, not an edit. The row's own values are
+    only ever what a person typed into standards.json.
+    """
+    if not rows:
+        return ""
+    by_row: dict[str, list[str]] = {}
+    for flag in flags or []:
+        by_row.setdefault(flag.get("row", ""), []).append(flag.get("line", ""))
+    body = []
+    for row in rows:
+        url = row.get("url", "")
+        link = (
+            f'<a href="{escape(url)}" rel="noopener noreferrer">{escape(_host(url))}</a>' if url else "—"
+        )
+        notes = "".join(
+            f'<span class="flag">Page changed, editor to check: {escape(line)}</span>'
+            for line in by_row.get(row.get("name", ""), [])
+        )
+        body.append(
+            "<tr>"
+            f"<td>{escape(row.get('name', ''))}{notes}</td>"
+            f"<td data-label=\"Sector\">{escape(row.get('sector', ''))}</td>"
+            f"<td data-label=\"Effective\">{escape(_long_date(row['effective']) if row.get('effective') else '—')}</td>"
+            f"<td data-label=\"Official page\">{link}</td>"
+            f"<td data-label=\"Last verified\">{escape(_long_date(row['last_verified']) if row.get('last_verified') else '—')}</td>"
+            "</tr>"
+        )
+    return (
+        '<section class="standards" id="standards"><h2>Current standards</h2>'
+        '<p class="note">The fitness test, body composition rule and medical standard in force for each '
+        "service and sector. Kept by an editor; a weekly check flags any row whose official page changes.</p>"
+        '<div class="scroll"><table><thead><tr><th>Standard</th><th>Sector</th><th>Effective</th>'
+        "<th>Official page</th><th>Last verified</th></tr></thead><tbody>"
+        + "".join(body)
+        + "</tbody></table></div></section>"
+    )
 
 
 def _facet_row(label: str, facet: str, values) -> str:
@@ -250,24 +359,33 @@ def _facet_row(label: str, facet: str, values) -> str:
     )
 
 
-def _page(title: str, subtitle: str, body: str, cap: int, generated: str) -> str:
+def _page(title: str, subtitle: str, body: str, cap: int, generated: str, nav: str = "") -> str:
+    # ``</style>`` sits on a line of its own: scripts/build-netlify-site.sh splits
+    # the page there to wrap the board in the site shell.
     return (
         "<!DOCTYPE html>\n"
         '<html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        f"<title>{escape(title)}</title><style>{PALETTE}</style></head>"
+        f"<title>{escape(title)}</title>\n<style>{PALETTE}\n</style>\n</head>"
         f'<body data-cap="{cap}"><div class="wrap">'
         f"<header><h1>{escape(title)}</h1><p class=\"sub\">{escape(subtitle)}</p></header>"
-        f"{body}"
-        f'<footer>Swept weekly. Generated {escape(generated)}. '
+        f"{nav}{body}"
+        f'<footer>Swept daily, 30-day lookback. Last sweep {escape(generated)}. '
         "Every blurb is written from the primary source, which is the link on each headline."
         "</footer>"
         f"</div><script>{FILTER_SCRIPT}</script></body></html>\n"
     )
 
 
-def render_board(items: list[BoardItem], today: date | None = None, generated: str = "") -> str:
-    """The 30-day main board: hot block, then one chronological feed."""
+def render_board(
+    items: list[BoardItem],
+    today: date | None = None,
+    generated: str = "",
+    standards: list[dict] | None = None,
+    flags: list[dict] | None = None,
+    hot_notes: dict[str, str] | None = None,
+) -> str:
+    """The 30-day main board: hot block, then one chronological feed, then standards."""
     board, _ = split_window(items, today)
     present = _present(board)
     controls = (
@@ -284,19 +402,22 @@ def render_board(items: list[BoardItem], today: date | None = None, generated: s
         else ""
     )
     body = (
-        render_hot(hot_topics(board))
-        + "<h2>This month</h2>"
+        render_hot(hot_topics(board), hot_notes)
+        + '<h2 id="feed">This month</h2>'
         + controls
         + f'<p class="count" data-count>{len(board)} items</p>'
         + feed
         + more
+        + render_standards(standards or [], flags)
     )
+    nav = '<nav class="topnav"><a href="#standards">Current standards</a><a href="archive.html">Archive</a></nav>'
     return _page(
         "Tactical Human Performance Board",
         "Research, policy, and news from the last 30 days — military, fire and rescue, EMS, and law enforcement.",
         body,
         VISIBLE_CAP,
         generated or _stamp(),
+        nav,
     )
 
 
@@ -322,6 +443,7 @@ def render_archive(items: list[BoardItem], today: date | None = None, generated:
         body,
         0,                       # no cap: the archive is what you came here for
         generated or _stamp(),
+        '<nav class="topnav"><a href="./">&larr; Back to this month</a></nav>',
     )
 
 

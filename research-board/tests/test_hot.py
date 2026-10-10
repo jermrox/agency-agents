@@ -70,3 +70,14 @@ class TestReporting:
 
     def test_empty_input(self):
         assert hot_topics([]) == []
+
+
+def test_a_paragraph_citing_an_item_that_left_the_window_is_stale():
+    from tactical_research.hot import stale_notes
+    from tactical_research.models import BoardItem
+    on = BoardItem(headline="On", blurb="b", primary_url="https://a.mil/on", date_published="2026-10-01",
+                   type="Research", sector="MIL", tags=["Nutrition"])
+    notes = {"Nutrition": "Caffeine and ketones."}
+    assert stale_notes(notes, {"Nutrition": ["https://a.mil/on"]}, [on]) == []
+    assert stale_notes(notes, {"Nutrition": ["https://a.mil/on", "https://a.mil/gone"]}, [on])
+    assert stale_notes(notes, {}, [on]) == ["Nutrition: paragraph lists no cited items"]

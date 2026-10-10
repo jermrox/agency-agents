@@ -234,6 +234,9 @@ Growing your audience, one authentic interaction at a time.
 | 🛰️ [X/Twitter Intelligence Analyst](marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, trend detection, account monitoring | Brand risk, competitor, and audience intelligence on X/Twitter |
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
 | 📸 [Instagram Curator](marketing/marketing-instagram-curator.md) | Visual storytelling, community building | Instagram strategy, aesthetic development, visual content |
+| 🎞️ [Vybe Reels Strategist](marketing/marketing-vybe-reels-strategist.md) | Hooks, retention scripts, Reel diagnosis for Vybe | Instagram Reels for a wearable-health developer platform |
+| 🧭 [Vybe Health Marketing Director](marketing/marketing-vybe-health-marketing-director.md) | Every marketing category for Vybe Health, routed to the agency playbooks | Positioning, content, SEO/AEO, social, email, paid, PR, developer marketing, growth, measurement, health-claim compliance for Vybe |
+| 🎯 [Vybe Growth Scout](marketing/marketing-vybe-growth-scout.md) | Verified growth wins, small investors and social contacts for Vybe, each with a drafted opener | Finding and prioritizing named targets for Vybe Health without touching the other Vybe agents |
 | 🤝 [Reddit Community Builder](marketing/marketing-reddit-community-builder.md) | Authentic engagement, value-driven content | Reddit strategy, community trust, authentic marketing |
 | 📱 [App Store Optimizer](marketing/marketing-app-store-optimizer.md) | ASO, conversion optimization, discoverability | App marketing, store optimization, app growth |
 | 🌐 [Social Media Strategist](marketing/marketing-social-media-strategist.md) | Cross-platform strategy, campaigns | Overall social strategy, multi-platform campaigns |
@@ -414,6 +417,7 @@ The unique specialists who don't fit in a box.
 | 🏺 [Codebase Archaeologist](specialized/specialized-codebase-archaeologist.md) | Multi-tool codebase drift audits | Detecting silent drift across Claude/Cursor/Copilot/Windsurf edits |
 | 🧾 [Resume Tailor](specialized/resume-tailor.md) | Candidate-side resume optimization | JD mapping, ATS keyword alignment, experience-to-requirement matching |
 | 🧡 [Aging Parent Care Companion](specialized/healthcare-aging-parent-care-companion.md) | Family caregiver decision-support | Appointment/medication coordination, care-team comms, caregiver wellbeing (HIPAA-aligned) |
+| 🍼 [Baby Gear Deals & Safety Scout](specialized/baby-gear-deals-safety-scout.md) | Baby product prices, deals, recalls & first-year budgeting | Price/stock tracking, honest deal scoring, CPSC/NHTSA safety checks, seasonal buy plans for parents |
 
 ### 💵 Finance Division
 

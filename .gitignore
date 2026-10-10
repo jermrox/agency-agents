@@ -92,6 +92,8 @@ graphify-out/
 
 # Netlify build output (assembled by scripts/build-netlify-site.sh)
 site/
+# ...except the Baby Gear dashboard, which the baby-scout daily workflow commits.
+!baby-scout/site/
 
 # Tailwind toolchain for the Netlify site build
 scripts/netlify/node_modules/
@@ -100,7 +102,10 @@ scripts/netlify/node_modules/
 
 # Sweep output: a CI artifact, not source
 research-board/candidates.json
-research-board/findings.json
 
 # Funding sweep scratch output (funding.json itself IS tracked — it's the feed)
 funding-scraper/sweep.log
+
+# deep-research working files
+/research_notes/
+/reports/

@@ -1,0 +1,106 @@
+# Read a funding page from a runner, because the agent sandbox cannot.
+#
+# WHY THIS EXISTS
+# verify-board-links.yml answers "is this URL alive". That is not enough to
+# put a row on the funding board. Before a row is added we have to know the
+# award amount, the eligibility gate and the real deadline -- and those live
+# in the page body, which the sandbox's egress allowlist blocks outright
+# (curl returns 000 for most grant-program hosts).
+#
+# So: paste candidate URLs in, get back the status, the title, and every line
+# that looks like a deadline, a dollar amount or an eligibility rule. Then a
+# human or the agent decides. This job NEVER writes to the board -- adding a
+# row stays a deliberate, separately reviewed step, which is the whole reason
+# the board has no expired entries on it.
+name: Probe funding candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Candidate URLs, comma- or newline-separated"
+        type: string
+        required: true
+      context_lines:
+        description: "Lines of matched context to print per page"
+        type: string
+        default: "40"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch and summarise each candidate
+        env:
+          # Never interpolate an input into the shell -- it is attacker-shaped
+          # text. The same class of bug already broke two site checkers here.
+          URLS: ${{ inputs.urls }}
+          CONTEXT: ${{ inputs.context_lines }}
+        run: |
+          set -uo pipefail
+          python3 -m pip install --quiet --disable-pip-version-check beautifulsoup4 >/dev/null 2>&1 || true
+
+          printf '%s' "$URLS" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
+            | grep -E '^https?://' | sort -u > /tmp/candidates.txt
+          n=$(wc -l </tmp/candidates.txt | tr -d ' ')
+          echo "Probing $n candidate URL(s)"
+          echo
+
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36'
+          lines="${CONTEXT:-40}"
+          case "$lines" in (*[!0-9]*|'') lines=40 ;; esac
+
+          while IFS= read -r url; do
+            [ -n "$url" ] || continue
+            echo "================================================================"
+            echo "URL   $url"
+            code=$(curl -sS -A "$UA" -o /tmp/page.html -w '%{http_code}' \
+                     -L --max-time 30 --connect-timeout 12 "$url" 2>/dev/null) || code=000
+            final=$(curl -sS -A "$UA" -o /dev/null -w '%{url_effective}' \
+                     -L --max-time 30 --connect-timeout 12 -r 0-0 "$url" 2>/dev/null) || final="$url"
+            echo "HTTP  $code"
+            [ "$final" = "$url" ] || echo "FINAL $final"
+            if [ "$code" != "200" ]; then echo "(no body to read)"; echo; continue; fi
+
+            python3 - "$lines" <<'PY'
+          import re, sys, html
+          lines = int(sys.argv[1])
+          raw = open('/tmp/page.html', 'rb').read().decode('utf-8', 'replace')
+          m = re.search(r'<title[^>]*>(.*?)</title>', raw, re.I | re.S)
+          if m:
+              print("TITLE", html.unescape(re.sub(r'\s+', ' ', m.group(1))).strip()[:200])
+          # Strip the parts that are never prose.
+          body = re.sub(r'(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>', ' ', raw)
+          body = re.sub(r'(?s)<[^>]+>', '\n', body)
+          body = html.unescape(body)
+          text = [re.sub(r'\s+', ' ', t).strip() for t in body.split('\n')]
+          text = [t for t in text if len(t) > 2]
+
+          PAT = re.compile(
+              r'\$[\d,]{3,}'                       # money
+              r'|deadline|closes?\b|due (?:by|date)|apply by|applications? (?:open|close)'
+              r'|\b(?:20\d\d)\b.{0,20}(?:deadline|cycle|cohort|round)'
+              r'|eligib|must be|requirement|51%|women[- ]owned|veteran|minority|revenue'
+              r'|no fee|application fee|non-?dilutive|grant of|award(?:s|ed)? (?:up to|of)',
+              re.I)
+          hits, seen = [], set()
+          for t in text:
+              if PAT.search(t) and t.lower() not in seen and len(t) < 400:
+                  seen.add(t.lower()); hits.append(t)
+          if hits:
+              print("--- matched lines ---")
+              for h in hits[:lines]:
+                  print("  •", h)
+              if len(hits) > lines:
+                  print(f"  ... {len(hits)-lines} more")
+          else:
+              print("--- no deadline/eligibility/amount language found; first lines ---")
+              for t in text[:12]:
+                  print("  ", t[:200])
+          PY
+            echo
+          done < /tmp/candidates.txt
+          echo "Done. This job reports only — it does not touch the board."
