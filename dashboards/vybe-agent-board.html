@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Agent Board</title>
+<style>
+:root {
+  --bg:#f6f8f7; --surface:#fff; --surface-2:#eef3f1; --line:#dbe3e0;
+  --ink:#12201c; --ink-2:#44554f; --ink-3:#6b7a75;
+  --brand:#1f8e78; --brand-ink:#0f5e4f;
+  --good:#1d7a3a; --good-bg:#e3f3e7; --crit:#a3262a; --crit-bg:#fbe3e3;
+  --warn:#8a5a00; --warn-bg:#fbefd5;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+} }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:15px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }
+a { color:var(--brand-ink) }
+.wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px }
+h1 { font-size:26px; margin:0 0 4px; letter-spacing:-.01em }
+h1 span { color:var(--brand) }
+.head { font-size:19px; line-height:1.35; margin:14px 0 2px; font-weight:600 }
+.head.ok { color:var(--good) } .head.bad { color:var(--crit) }
+.sub { color:var(--ink-2); margin:4px 0 0; max-width:74ch }
+.meta { color:var(--ink-3); font-size:13px; margin-top:10px }
+table { border-collapse:collapse; width:100%; font-size:14px; margin-top:18px;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden }
+th,td { text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); vertical-align:top }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-3);
+  background:var(--surface-2); white-space:nowrap }
+tr:last-child td { border-bottom:0 }
+td.ag { font-weight:600; white-space:nowrap }
+.u { font-size:12px; margin-top:3px }
+.u a { overflow-wrap:anywhere }
+td.cad, td.age { color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums }
+.chip { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
+  padding:3px 9px; border-radius:999px; white-space:nowrap }
+.chip.ok { background:var(--good-bg); color:var(--good) }
+.chip.bad { background:var(--warn-bg); color:var(--warn) }
+.chip.dead { background:var(--crit-bg); color:var(--crit) }
+tr.bad { background:var(--warn-bg) } tr.dead { background:var(--crit-bg) }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) tr.bad,
+  :root:not([data-theme="light"]) tr.dead { background:transparent } }
+ul.probs { margin:7px 0 0; padding-left:18px; font-size:13px; color:var(--ink-2) }
+.note { margin-top:28px; padding-top:16px; border-top:1px solid var(--line);
+  color:var(--ink-3); font-size:13px; max-width:78ch }
+.note strong { color:var(--ink-2) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Vybe</span> Agent Board</h1>
+  <p class="sub">Every Vybe Health agent, judged by the page it actually serves — not by what is in the repository.</p>
+  <p class="head ok">All 6 Vybe surfaces are current and carry only Vybe accounts</p>
+  <p class="meta">Checked 2026-10-10 19:19 UTC · 4 agents · 6 surfaces</p>
+
+  <table>
+    <thead><tr><th>Agent</th><th>Surface</th><th>Cadence</th><th>Last written</th><th>State</th></tr></thead>
+    <tbody>
+<tr class="ok">
+  <td class="ag">Revsom</td>
+  <td>funding board and application packets<div class="u"><a href="https://agentrevup.netlify.app/funding.json">agentrevup.netlify.app/funding.json</a></div></td>
+  <td class="cad">daily 13:40Z</td>
+  <td class="age">5.5h ago</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+<tr class="ok">
+  <td class="ag">Revsom</td>
+  <td>the Apply page<div class="u"><a href="https://agentrevup.netlify.app/apply.html">agentrevup.netlify.app/apply</a></div></td>
+  <td class="cad">with each packet</td>
+  <td class="age">no timestamp</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+<tr class="ok">
+  <td class="ag">Marketsom</td>
+  <td>daily marketing briefing<div class="u"><a href="https://agentmarksom.netlify.app/briefing.html">agentmarksom.netlify.app/briefing.html</a></div></td>
+  <td class="cad">daily 10:23Z</td>
+  <td class="age">19.3h ago</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+<tr class="ok">
+  <td class="ag">Growsom</td>
+  <td>outreach and investor board<div class="u"><a href="https://agentgrowthscout.netlify.app">agentgrowthscout.netlify.app</a></div></td>
+  <td class="cad">3x daily</td>
+  <td class="age">2.8h ago</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+<tr class="ok">
+  <td class="ag">Growsom</td>
+  <td>board data feed<div class="u"><a href="https://agentgrowthscout.netlify.app/data.json">agentgrowthscout.netlify.app/data.json</a></div></td>
+  <td class="cad">3x daily</td>
+  <td class="age">2.8h ago</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+<tr class="ok">
+  <td class="ag">Instasom</td>
+  <td>social dashboard<div class="u"><a href="https://instasum.netlify.app/all.json">instasum.netlify.app/all.json</a></div></td>
+  <td class="cad">daily 10:38Z</td>
+  <td class="age">4.3h ago</td>
+  <td><span class="chip ok">OK</span></td>
+</tr>
+    </tbody>
+  </table>
+
+  <p class="note">
+    <strong>How this is judged.</strong> Each surface is fetched like a visitor would, and read for
+    two things: its own last-written timestamp, and whether it carries an account belonging to
+    another of the founder's ventures. A surface is red when it is older than its cadence allows,
+    when such an account appears on it, or when it does not return 200. "Last written" is the page's
+    own stamp, not the deploy time, so republishing a stale page does not make it look fresh.
+    <br><br>
+    <strong>Why it is not judged on the repository.</strong> Three of these surfaces do not deploy
+    from git. Fixing the code updates none of them, which is how a wrong booking link stayed live
+    for hours on 10 Oct 2026 while the repository was already correct.
+    <br><br>
+    <strong>Scope.</strong> Vybe Health only. Leadsom (i-Grow), Researchsom and Crawlsom (MOPs and
+    MOEs) and Babysom belong to other ventures and are not tracked here.
+    Rules: <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">VYBE-AGENT-STANDARDS.md</a>.
+  </p>
+</div>
+</body>
+</html>
