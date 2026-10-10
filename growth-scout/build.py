@@ -161,6 +161,33 @@ def is_ohio(row: dict) -> bool:
     return bool(OHIO_RE.search(_where(row)))
 
 
+STATE_RE = re.compile(
+    r"\b(AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|"
+    r"NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b")
+EAST_STATES = {"NC", "VA", "SC", "GA", "FL", "MD", "DC", "DE", "PA", "NJ", "NY", "CT", "RI", "MA", "VT", "NH", "ME"}
+
+
+def state_of(row: dict) -> str:
+    geo = str(row.get("geo") or "")
+    found = STATE_RE.findall(geo)
+    if found:
+        return found[-1]
+    if "North Carolina" in geo:
+        return "NC"
+    if "Ohio" in geo:
+        return "OH"
+    return "National"
+
+
+def by_state(targets: list[dict]) -> list[dict]:
+    counts: dict[str, int] = {}
+    for t in targets:
+        st = state_of(t)
+        counts[st] = counts.get(st, 0) + 1
+    return [{"state": k, "count": v, "east": k in EAST_STATES}
+            for k, v in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]
+
+
 def region(row: dict) -> str:
     """nc, east, ohio or other. Geo decides first; names only break ties."""
     geo = str(row.get("geo") or "")
@@ -423,6 +450,7 @@ def main() -> int:
         "lanes": [{"id": l["id"], "title": l["title"], "hunt": l["hunt"], **lanes.get(l["id"], {"raw": 0, "kept": 0})}
                   for l in params["lanes"]],
         "summary": summary(targets, today),
+        "by_state": by_state(targets),
         "targets": targets,
         "combos": combos["combos"],
         "combos_note": combos.get("note", ""),

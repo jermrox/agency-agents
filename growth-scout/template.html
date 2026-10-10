@@ -140,6 +140,9 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   </header>
 
   <section class="tiles" id="tiles" aria-label="Headline numbers"></section>
+  <h2 id="states">Targets by state</h2>
+  <p class="hint">North Carolina first, then the East Coast (marked). "National" means no single state.</p>
+  <div class="row" id="by-state" style="flex-wrap:wrap;gap:6px"></div>
   <div class="sprint" id="sprint" aria-label="Sprint waves"></div>
 
   <h2>Send today</h2>
@@ -254,6 +257,8 @@ const DATA = /*__DATA__*/null;
     [s.total - s.signals, "verified targets"], [s.investor, "investor targets"], [s.growth, "growth wins"],
     [s.social, "social contacts"], [s.sponsorship, "sponsorship targets"], [s.app_partners, "app partners"], [s.sports, "sports without wearables"], [s.high, "high priority"], [s.ready_to_send, "ready to send"], [s.outreach_queue, "sponsor and partner emails queued"], [s.deadlines_30d, "deadlines in 30 days"],
   ];
+  $("#by-state").innerHTML = (DATA.by_state || []).map((r) =>
+    `<span class="pill${r.east ? " due" : ""}" title="${r.east ? "East Coast" : ""}">${esc(r.state)} ${esc(r.count)}</span>`).join("");
   $("#tiles").innerHTML = tiles.map(([n, l]) => `<div class="tile"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join("");
 
   // Sprint waves
