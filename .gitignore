@@ -89,8 +89,13 @@ graphify-out/
 
 # Netlify build output (assembled by scripts/build-netlify-site.sh)
 site/
-# ...except the Baby Gear dashboard, which the baby-scout daily workflow commits.
+# ...except the two dashboards whose sites are COMMITTED rather than built on
+# Netlify. Their Netlify projects run no build step -- baby-scout/netlify.toml
+# and growth-scout/netlify.toml only assert that site/index.html exists and
+# publish the folder -- so a site/ that git ignores is a site that never
+# deploys.
 !baby-scout/site/
+!growth-scout/site/
 
 # Tailwind toolchain for the Netlify site build
 scripts/netlify/node_modules/

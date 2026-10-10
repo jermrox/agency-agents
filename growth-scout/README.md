@@ -80,6 +80,14 @@ Add new site → Import from Git → this repository, then set **Base directory*
 to `growth-scout`. Leave the build command and publish directory empty, because
 `growth-scout/netlify.toml` sets them. The page is served `noindex`.
 
+Netlify runs no build here: its command only asserts `site/index.html` exists
+and then publishes the folder. So `site/` is **committed output, not build
+output** — after changing anything under `data/`, run `python3 build.py` and
+commit `site/` in the same change, or the deploy publishes yesterday's page (or
+fails, if `site/` was never committed at all). The root `.gitignore` ignores
+`site/` for the sites that *are* built on Netlify and names this one as an
+exception; keep it there.
+
 This repository is public, so the dashboard and its data are public too, even
 though search engines are told not to index them. Every row is public
 professional information, but if the drafted openers should stay private, move
