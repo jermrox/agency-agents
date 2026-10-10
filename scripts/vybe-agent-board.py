@@ -128,8 +128,12 @@ STAMP_FORMATS = [
 def parse_stamp(raw):
     """Return an aware UTC datetime, or None if the format is not one we know."""
     s = raw.strip()
+    # Some surfaces write "2026-10-10 16:33 UTC". Drop a trailing zone word: the
+    # formats below are all read as UTC anyway, and the first real run of this
+    # script marked a healthy feed red purely because of those four characters.
+    cleaned = re.sub(r"\s+(UTC|GMT|Z)$", "", s)
     # Python's %z rejects a bare "Z" before 3.11 and accepts "+00:00"; normalise.
-    cleaned = re.sub(r"Z$", "+0000", s)
+    cleaned = re.sub(r"Z$", "+0000", cleaned)
     cleaned = re.sub(r"([+-]\d{2}):(\d{2})$", r"\1\2", cleaned)
     # Drop fractional seconds, which no format above expects.
     cleaned = re.sub(r"\.\d+", "", cleaned)
