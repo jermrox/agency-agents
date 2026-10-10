@@ -3,7 +3,7 @@
 
 Each report is a section you switch on from the list. Markdown files are
 rendered at build time, and the partner outreach log comes from
-vybe-marketing/reports/outreach-log.json (no email addresses).
+vybe-marketing/research/outreach-log.json (no email addresses).
 
 Usage: python3 vybe-marketing/hub/build_reports.py   (needs: pip install markdown)
 """
@@ -18,11 +18,11 @@ HUB = ROOT / "hub"
 GROUPS = [
     ("Outreach", [
         ("outreach", "Every partner email", None),
-        ("forms", "Forms and DMs to send (5 Oct)", "reports/forms-and-dms-2026-10-05.md"),
+        ("forms", "Forms and DMs to send (5 Oct)", "research/forms-and-dms-2026-10-05.md"),
     ]),
     ("Partner research", [
-        ("candidates", "Partner candidates (4 Oct)", "reports/partner-candidates-2026-10-04.md"),
-        ("life", "Life stages and situations (4 Oct)", "reports/life-stages-2026-10-04.md"),
+        ("candidates", "Partner candidates (4 Oct)", "research/partner-candidates-2026-10-04.md"),
+        ("life", "Life stages and situations (4 Oct)", "research/life-stages-2026-10-04.md"),
         ("portfolio", "Community portfolio", "community-portfolio.md"),
     ]),
     ("Strategy", [
@@ -43,7 +43,7 @@ GROUPS = [
     ("Scoreboards and checks", [
         ("sb-1005", "Scoreboard, week of 28 Sep", "scoreboard-2026-10-05.md"),
         ("sb-0930", "Scoreboard, baseline 30 Sep", "scoreboard-2026-09-30.md"),
-        ("cc-1005", "Concept check (5 Oct)", "reports/concept-check-2026-10-05.md"),
+        ("cc-1005", "Concept check (5 Oct)", "research/concept-check-2026-10-05.md"),
     ]),
 ]
 
@@ -60,7 +60,7 @@ def md(path):
 
 
 def outreach():
-    rows = json.loads((ROOT / "reports/outreach-log.json").read_text())
+    rows = json.loads((ROOT / "research/outreach-log.json").read_text())
     sent = [r for r in rows if not r["kind"].startswith("Draft")]
     orgs = sorted({r["org"] for r in sent})
     out = [f'<h1>{len(sent)} partner emails sent to {len(orgs)} organisations</h1>',
