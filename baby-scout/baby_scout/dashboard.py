@@ -14,10 +14,19 @@ from pathlib import Path
 from typing import Any
 
 from .models import utcnow
+from . import guide
 from .report import ReportArchive
 
 
-def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive) -> dict[str, Any]:
+def load_picks(path: str | Path | None) -> dict[str, Any] | None:
+    """The curated, sourced car seat and stroller safety picks, if the file exists."""
+    if not path or not Path(path).exists():
+        return None
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive,
+            picks: dict[str, Any] | None = None) -> dict[str, Any]:
     dates = archive.dates()
     return {
         "generated_at": utcnow(),
@@ -25,14 +34,16 @@ def payload(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive:
         "reports": {d: archive.load(d) for d in dates[-120:]},
         "details": {r["key"]: r for r in results},
         "plan": plan,
+        "picks": picks,
     }
 
 
 def write(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: ReportArchive,
-          site_dir: str | Path) -> Path:
+          site_dir: str | Path, picks_path: str | Path | None = None,
+          top10_dir: str | Path | None = None) -> Path:
     site = Path(site_dir)
     site.mkdir(parents=True, exist_ok=True)
-    data = payload(results, plan, archive)
+    data = payload(results, plan, archive, load_picks(picks_path))
     (site / "data.json").write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8")
     reports_out = site / "reports"
     reports_out.mkdir(exist_ok=True)
@@ -41,6 +52,7 @@ def write(results: list[dict[str, Any]], plan: dict[str, Any] | None, archive: R
     embedded = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     index = site / "index.html"
     index.write_text(TEMPLATE.replace("__DATA__", embedded), encoding="utf-8")
+    guide.write(site, data["picks"], guide.load_top10(top10_dir), data["generated_at"])
     return index
 
 
@@ -139,7 +151,17 @@ tr.sel td{background:var(--page);font-weight:600}
 .recall{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
 .recall .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted)}
 .recall a{font-weight:600}
+.picks{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.pick-card .rank{font-size:12px;font-weight:700;color:var(--accent)}
+.flags{display:flex;flex-wrap:wrap;gap:4px}
+.flag{font-size:12px;border-radius:6px;padding:1px 6px;background:var(--page);border:1px solid var(--border);color:var(--ink-2)}
+.flag.hot{border-color:var(--critical);color:var(--critical)}
+.srcs{font-size:12px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.dates{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:4px;font-size:13px}
+.search{width:100%;max-width:420px;margin:0 0 10px;font:inherit;color:var(--ink);background:var(--raised);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
+.dates .past{color:var(--muted);text-decoration:line-through}
 a{color:var(--series-1)}
+.guide-link{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:650;border-radius:10px;padding:8px 14px}
 </style>
 </head>
 <body>
@@ -152,6 +174,7 @@ a{color:var(--series-1)}
     <div class="controls">
       <label for="day" class="muted">Report</label>
       <select id="day"></select>
+      <a class="guide-link" href="guide.html" style="padding:6px 12px">🛡️ Safety Guide</a>
       <button id="theme" type="button" aria-label="Toggle light or dark theme">◐</button>
     </div>
   </div>
@@ -160,6 +183,7 @@ a{color:var(--series-1)}
 
   <section aria-labelledby="h-changes"><h2 id="h-changes">What changed</h2><ul class="events" id="events"></ul></section>
   <section aria-labelledby="h-recalls"><h2 id="h-recalls">Baby &amp; kid recalls</h2><p class="muted" id="recalls-note" style="margin-bottom:8px"></p><div class="chips" id="recall-filters" role="group" aria-label="Filter recalls by type"></div><div id="recalls"></div></section>
+  <section aria-labelledby="h-picks"><h2 id="h-picks">Car seat &amp; stroller safety picks</h2><p style="margin:0 0 10px"><a class="guide-link" href="guide.html">Open the full Safety Guide: top 10 per category with photos, prices, filters and side-by-side compare →</a></p><p class="muted" id="picks-note" style="margin-bottom:8px"></p><ul class="dates" id="picks-dates"></ul><div class="chips" id="picks-tabs" role="group" aria-label="Choose a category"></div><div id="picks"></div></section>
   <section aria-labelledby="h-watch"><h2 id="h-watch">Watchlist</h2><div class="grid" id="items"></div></section>
   <section aria-labelledby="h-plan"><h2 id="h-plan">Buy plan</h2><div id="plan"></div></section>
   <section aria-labelledby="h-spend"><h2 id="h-spend">Spending</h2><div id="spend"></div></section>
@@ -350,6 +374,99 @@ function renderRecalls(r){
   box.appendChild(ul);
 }
 
+var pickCat = 0, recallType = "All", recallQuery = "";
+function renderPicks(r){
+  var P = D.picks, box = $("picks"), tabs = $("picks-tabs"), note = $("picks-note"), dl = $("picks-dates");
+  box.textContent = ""; tabs.textContent = ""; dl.textContent = "";
+  if (!P){ note.textContent = "No safety picks file yet (data/gear_picks.json)."; return; }
+  note.textContent = P.summary + " Last reviewed " + fmtDate(P.reviewed) + ". " + (P.verified ? P.verified + " " : "") + P.caveats.join(" ");
+  (P.dates || []).forEach(function(x){
+    dl.appendChild(el("li", {cls: x.date < r.date ? "past" : ""}, [el("strong", {text: fmtDate(x.date) + ": "}),
+      el("a", {href:x.url, target:"_blank", rel:"noopener noreferrer", text:x.label})]));
+  });
+  var link = function(t, u){ return el("a", {href:u, target:"_blank", rel:"noopener noreferrer", text:t}); };
+  var db = (P.recall_db && P.recall_db.items) || [];
+  var watchText = ((r.recall_watch && r.recall_watch.items) || []).map(function(x){ return ((x.title || "") + " " + (x.products || []).join(" ")).toLowerCase(); });
+  var views = P.categories.map(function(c){ return {name:c.name, kind:"picks", cat:c}; });
+  if (P.brands) views.push({name:"Brands A–Z", kind:"brands"});
+  if (P.tech) views.push({name:"Safety tech: what's proven", kind:"tech"});
+  if (db.length) views.push({name:"All recalls 2016–2026 (" + db.length + ")", kind:"recalls"});
+  views.push({name:"Avoid / recalled", kind:"avoid"});
+  if (P.trust) views.push({name:"How much to trust the sources", kind:"trust"});
+  if (pickCat >= views.length) pickCat = 0;
+  views.forEach(function(v, i){
+    var b = el("button", {type:"button", "aria-pressed": String(i === pickCat), text:v.name});
+    b.addEventListener("click", function(){ pickCat = i; renderPicks(r); });
+    tabs.appendChild(b);
+  });
+  var v = views[pickCat];
+  var list = function(items, tagOf){
+    var ul = el("ul", {cls:"recalls"});
+    items.forEach(function(x){
+      var head = el("div", {}, [link(x.name, x.url)]);
+      var tag = tagOf && tagOf(x);
+      if (tag){ head.appendChild(document.createTextNode(" ")); head.appendChild(el("span", {cls:"flag" + (/caution|none|weak/i.test(tag) ? " hot" : ""), text:tag})); }
+      ul.appendChild(el("li", {cls:"recall"}, [head, el("div", {cls:"ink2", text:x.detail})]));
+    });
+    box.appendChild(ul);
+  };
+  if (v.kind === "trust") return list(P.trust, function(x){ return x.weight; });
+  if (v.kind === "avoid") return list(P.avoid);
+  if (v.kind === "brands") return list(P.brands, function(x){ return x.verdict; });
+  if (v.kind === "tech") return list(P.tech, function(x){ return "Evidence: " + x.grade; });
+  if (v.kind === "recalls"){
+    box.appendChild(el("p", {cls:"muted", style:"margin-bottom:8px", text:P.recall_db.note}));
+    var types = ["All"], counts = {};
+    db.forEach(function(x){ counts[x.type] = (counts[x.type] || 0) + 1; if (types.indexOf(x.type) < 0) types.push(x.type); });
+    var bar = el("div", {cls:"chips"});
+    types.forEach(function(t){
+      var b = el("button", {type:"button", "aria-pressed": String(t === recallType), text: t + " (" + (t === "All" ? db.length : counts[t]) + ")"});
+      b.addEventListener("click", function(){ recallType = t; renderPicks(r); });
+      bar.appendChild(b);
+    });
+    box.appendChild(bar);
+    var q = el("input", {type:"search", placeholder:"Search brand or model (e.g. Graco, Doona, YOYO)", "aria-label":"Search recalls", value:recallQuery, cls:"search"});
+    box.appendChild(q);
+    var holder = el("div");
+    box.appendChild(holder);
+    var draw = function(){
+      holder.textContent = "";
+      var needle = recallQuery.toLowerCase();
+      var rows = db.filter(function(x){ return (recallType === "All" || x.type === recallType) &&
+        (!needle || (x.brand + " " + x.products + " " + x.id).toLowerCase().indexOf(needle) >= 0); });
+      var tb = el("tbody");
+      rows.forEach(function(x){
+        tb.appendChild(el("tr", {}, [el("td", {cls:"nw", text:fmtDate(x.date)}), el("td", {text:x.brand}),
+          el("td", {}, [el("div", {text:x.products}), el("div", {cls:"muted", text:x.hazard})]),
+          el("td", {}, [el("span", {cls:"flag" + (x.severity === "HIGH" ? " hot" : ""), text:x.severity})]),
+          el("td", {cls:"nw"}, [link(x.source + " " + x.id, x.url)])]));
+      });
+      var head = el("thead", {}, [el("tr", {}, [el("th",{text:"Date"}), el("th",{text:"Brand"}), el("th",{text:"Product and hazard"}), el("th",{text:"Severity"}), el("th",{text:"Record"})])]);
+      holder.appendChild(el("p", {cls:"muted", text: rows.length + " recalls shown"}));
+      holder.appendChild(el("div", {cls:"scroll"}, [el("table", {}, [head, tb])]));
+    };
+    q.addEventListener("input", function(){ recallQuery = q.value; draw(); });
+    draw();
+    return;
+  }
+  var grid = el("div", {cls:"picks"});
+  v.cat.picks.forEach(function(p){
+    var re = null; try { re = new RegExp(p.match, "i"); } catch(e) {}
+    var inWatch = re && watchText.some(function(t){ return re.test(t); });
+    var inDb = re && p.recall === "None found" && db.some(function(x){ return re.test(x.products + " " + x.brand); });
+    var flags = el("div", {cls:"flags"});
+    if (inWatch) flags.appendChild(el("span", {cls:"flag hot", text:"In this report's CPSC recall watch: check it"}));
+    if (inDb) flags.appendChild(el("span", {cls:"flag hot", text:"Name matches a recall in the 2016–26 list: check it"}));
+    flags.appendChild(el("span", {cls:"flag" + (p.recall === "None found" ? "" : " hot"), text:"Recalls: " + p.recall}));
+    p.flags.forEach(function(f){ flags.appendChild(el("span", {cls:"flag", text:f})); });
+    grid.appendChild(el("div", {cls:"card pick-card"}, [
+      el("header", {}, [el("h3", {}, [el("span", {cls:"rank", text:"#" + p.rank + " "}), document.createTextNode(p.name)]), el("span", {cls:"price", text:p.price})]),
+      el("p", {cls:"ink2", text:p.why}), flags,
+      el("div", {cls:"srcs"}, [el("span", {cls:"muted", text:"Sources:"})].concat(p.sources.map(function(s){ return link(s[0], s[1]); })))]));
+  });
+  box.appendChild(grid);
+}
+
 function renderEvents(r){
   var ul = $("events"); ul.textContent = "";
   if (!r.events.length){
@@ -474,7 +591,7 @@ function select(d){
   $("day").value = d;
   var latest = d === D.latest;
   $("updated").textContent = (latest ? "Latest report · " : "Past report · ") + fmtDate(d) + " · generated " + r.generated_at.replace("T", " ").replace("Z", " UTC");
-  renderKpis(r); renderEvents(r); renderRecalls(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
+  renderKpis(r); renderEvents(r); renderRecalls(r); renderPicks(r); renderItems(r, latest); renderPlan(r); renderSpend(r); renderArchive(d);
   try { history.replaceState(null, "", latest ? location.pathname : "#" + d); } catch(e) {}
 }
 

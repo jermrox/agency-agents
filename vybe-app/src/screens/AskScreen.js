@@ -166,7 +166,7 @@ function Exchange({ entry }) {
   );
 }
 
-export default function AskScreen({ onBack }) {
+export default function AskScreen({ onBack, onFollowUp }) {
   const [entries, setEntries] = useState([]);
   const [draft, setDraft] = useState('');
   const scroller = useRef(null);
@@ -222,6 +222,21 @@ export default function AskScreen({ onBack }) {
         {entries.map((entry, i) => (
           <Exchange key={`${entry.id}-${i}`} entry={entry} />
         ))}
+
+        {/* The follow-up is the other half of asking, and it only has a job
+            once an answer is on screen: the person who disagrees with one is
+            the person who has just read it. */}
+        {entries.length && onFollowUp ? (
+          <Pressable
+            onPress={onFollowUp}
+            accessibilityRole="button"
+            accessibilityLabel="Tell Vybe it got something wrong"
+            accessibilityHint="Opens the follow-up, where a correction shows which parts of the answer it moves"
+            style={({ pressed }) => [styles.followUp, pressed && styles.pressed]}
+          >
+            <Text style={styles.followUpText}>That&rsquo;s not right &mdash; tell Vybe what it missed</Text>
+          </Pressable>
+        ) : null}
 
         {remaining.length ? (
           <View style={styles.suggestions}>
@@ -315,6 +330,9 @@ const styles = StyleSheet.create({
   answerText: { fontSize: 22, lineHeight: 31, color: colors.ink, fontWeight: '500' },
   confidence: { ...type.label, color: colors.muted, marginTop: space(0.5) },
   confidenceWhy: { ...type.small, color: colors.muted },
+
+  followUp: { alignSelf: 'flex-start', paddingVertical: space(1.5) },
+  followUpText: { ...type.body, color: colors.brand, fontWeight: '600' },
 
   boundaryPanel: {
     borderWidth: 1,

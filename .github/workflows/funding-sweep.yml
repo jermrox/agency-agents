@@ -69,6 +69,9 @@ jobs:
           ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run }}
           VERBOSE: ${{ inputs.verbose }}
+          # SAM.gov contract opportunities (sources.sam_contracts). A repository
+          # secret, never config: the source skips itself when it is unset.
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
         run: |
           # Every conditional here is a full `if`, never `[ ... ] && ...`.
           # The step runs under `bash -e`, where a bare test that evaluates
