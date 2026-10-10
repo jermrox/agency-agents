@@ -16,6 +16,12 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-10 — owner rule hardened
+
+- The owner asked "show me the latest" and got a file path and a text list. Wrong. Rule added to
+  SKILL.md ("Showing the board"): always send rendered screenshots (scripts/screenshot-board.js),
+  then a few lines of text. The daily report ends with the screenshots too.
+
 ## 2026-10-10 — daily run
 
 - +3 items, all PubMed: FIRE 1 (only 10% of California firefighters have had a lung-cancer CT screen),
