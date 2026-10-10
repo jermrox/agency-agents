@@ -45,7 +45,7 @@ types = ["angel", "angel-group", "syndicate"]
 target_rows = [20, 30]
 queries = [
   "angel investor wearables portfolio",
-  "Ohio angel network health tech",
+  "North Carolina angel network health tech",
   "veteran founder angel network",
   "women founders angel fund health hardware",
   "AngelList syndicate digital health hardware",
@@ -61,7 +61,7 @@ queries = [
   "health hardware accelerator applications open",
   "corporate venture wearable sensor investment {year}",
   "digital health pitch competition startup track {next_year}",
-  "Ohio startup pitch night health",
+  "Raleigh Charlotte startup pitch night health",
 ]
 
 [[lanes]]
@@ -88,7 +88,7 @@ queries = [
   "wearable reviewer HRV sleep tracker",
   "wearables journalist {year}",
   "quantified self community",
-  "HYROX gym Ohio",
+  "HYROX gym North Carolina",
   "launch directory pre-launch hardware",
 ]
 
@@ -128,8 +128,8 @@ types = ["athlete", "team", "event"]
 target_rows = [30, 45]
 queries = [
   "HYROX athlete recovery HRV",
-  "Ohio NIL athletes wearable",
-  "Akron Marathon sponsorship packages",
+  "North Carolina NIL athletes wearable",
+  "Charlotte Raleigh marathon sponsorship packages",
   "HYROX Chicago expo vendor",
   "firefighter combat challenge sponsors",
   "tactical athlete ambassador",
@@ -159,7 +159,7 @@ target_rows = [25, 45]
 queries = [
   "{sport} wearable ban competition rule",
   "{sport} athletes wearable use survey",
-  "{sport} club Ohio recovery",
+  "{sport} club North Carolina recovery",
 ]
 
 # ---------------------------------------------------------------------------
@@ -208,7 +208,7 @@ hours = 3
 waves = [
   { at_minutes = 0,   focus = "all six lanes, first pass" },
   { at_minutes = 60,  focus = "deepen investor lanes: partners behind each wearable round, warm paths" },
-  { at_minutes = 120, focus = "deepen growth and social: builders hurt by API sunsets, Ohio communities, creators" },
+  { at_minutes = 120, focus = "deepen growth and social: builders hurt by API sunsets, NC and East Coast communities, creators" },
   { at_minutes = 180, focus = "verify every link, de-duplicate, rank, publish the final board" },
 ]
 
