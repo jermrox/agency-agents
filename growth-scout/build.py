@@ -281,6 +281,38 @@ def dedupe_key(row: dict) -> str:
     return norm(row.get("name")) + "|" + norm(row.get("org"))
 
 
+HOME_FIXES = [
+    (r"a few (?:miles|minutes) away in Akron", "in Raleigh, North Carolina"),
+    (r"here in Akron", "in Raleigh"),
+    (r"Akron, Ohio", "Raleigh, North Carolina"),
+    (r"Akron, OH", "Raleigh, NC"),
+    (r"\bAkron-based\b", "Raleigh-based"),
+    (r"\ban Akron company\b", "a Raleigh company"),
+    (r"\bAkron company\b", "Raleigh company"),
+    (r"\ban Ohio startup\b", "a North Carolina startup"),
+    (r"\bOhio startup\b", "North Carolina startup"),
+    (r"\bin Akron\b", "in Raleigh"),
+    (r"\b(?:from|out of) Akron\b", lambda m: m.group(0).replace("Akron", "Raleigh")),
+    (r"\bAkron-made\b", "Raleigh-made"),
+    (r"\bAkron-built\b", "Raleigh-built"),
+    (r"\(Akron\)", "(Raleigh, NC)"),
+    (r"fellow Akron builders here", "we're a Raleigh team"),
+    (r"a few miles from your Akron store", "in Raleigh"),
+    (r"you ran right past our Akron office on the towpath\. ", ""),
+    (r"\ban Akron (?=(?:[\w/-]+ )?(?:team|startup|company|founder))", "a Raleigh "),
+    (r"\bAkron (?=(?:[\w/-]+ )?(?:team|startup|company|founder))", "Raleigh "),
+]
+
+
+def home_fix(text: str | None) -> str | None:
+    """Home base is Raleigh, NC (founder, 10 Oct). Older openers said Akron, Ohio."""
+    if not text:
+        return text
+    for pat, rep in HOME_FIXES:
+        text = re.sub(pat, rep, text)
+    return text
+
+
 def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     kept: dict[str, dict] = {}
     rejected: list[dict] = []
@@ -304,6 +336,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
                 rejected.append({"lane": lane, "name": row.get("name"), "reasons": reasons})
                 continue
             row = dict(row)
+            row["opener"] = home_fix(row.get("opener"))
             row["lane"] = lane
             row["evidence"] = [u for u in row["evidence"] if isinstance(u, str) and u.startswith("http")]
             dead = apply_link_check(row, checks)

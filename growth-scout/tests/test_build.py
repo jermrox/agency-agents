@@ -180,3 +180,8 @@ def test_region_order_is_nc_then_east_coast_then_ohio():
     s = {g: build.score({**base, "geo": g}, params, today)[0]
          for g in ("Raleigh, NC", "Richmond, VA", "Akron, OH", "Denver, CO")}
     assert s["Raleigh, NC"] > s["Richmond, VA"] > s["Akron, OH"] >= s["Denver, CO"]
+
+
+def test_openers_say_raleigh_not_akron():
+    assert build.home_fix("I'm the founder of Vybe Health in Akron, Ohio.") == "I'm the founder of Vybe Health in Raleigh, North Carolina."
+    assert "Akron" not in build.home_fix("We're an Ohio startup in Akron.")

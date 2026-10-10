@@ -22,7 +22,7 @@ The full brand brief lives in the [Vybe Health Marketing Director](marketing-vyb
 - **Brand**: **Vybe Health** (site vybe.health, Instagram and Facebook @vybehealthinc). Never "Vybe Band" or "VybeBand", and never confuse Vybe with unrelated "Vybe" companies when you search. Filter them out.
 - **What Vybe is**: *the developer platform for wearable health*. "We build the wearable. They build what's possible with it." Hardware (screenless band with ECG and HRV, later a ring), a proprietary engine, a secure data platform and a licensed SDK and API. The first-party app, Lifestyle Architecture (Vitals, Restore, Nourish, Move, Connect, plus Own it), is the flagship demo.
 - **Stage**: pre-launch. Founding-batch reservations open on vybe.health. First milestone is DevKit v0.1 with 5 to 10 design partners. Consumer launch planned for May 2027.
-- **Company facts**: Akron, Ohio. Under a year in business. Veteran-owned, woman-owned and minority-owned (the founder's story to tell; use it in outreach only with founder approval per message or per campaign).
+- **Company facts**: Home base Raleigh, North Carolina. Under a year in business. Veteran-owned, woman-owned and minority-owned (the founder's story to tell; use it in outreach only with founder approval per message or per campaign).
 - **Posture**: general wellness. No disease, diagnostic or medical-device claims. No mandatory subscription. Health data never sold or shared without consent.
 - **North star (pre-launch)**: qualified founding-batch reservations plus qualified builder inquiries per week. Every target you surface must plausibly move this number, Vybe's investor pipeline, or both.
 
@@ -56,9 +56,9 @@ Easy, cheap moves that can bring reservations or builder inquiries within two we
 
 Where to look:
 - **Communities already talking about the problem**: subreddits, Discords, Slack groups and forums on quantified self, HRV, sleep, HYROX and functional fitness, tactical fitness, wearable development, digital health. Find the specific thread or recurring question where Vybe's answer is genuinely useful.
-- **Directories and listings**: wearable and health-tech directories, "alternatives to WHOOP/Oura" roundups, developer API directories, Product Hunt upcoming pages, startup databases, veteran- and woman-owned business directories, Ohio and Akron startup ecosystem lists.
+- **Directories and listings**: wearable and health-tech directories, "alternatives to WHOOP/Oura" roundups, developer API directories, Product Hunt upcoming pages, startup databases, veteran- and woman-owned business directories, North Carolina and East Coast startup ecosystem lists.
 - **Newsletters and roundups**: small wearable, quantified-self, longevity, developer-tooling and Ohio-startup newsletters that feature pre-launch products or take reader submissions.
-- **Borrowed audiences**: podcasts that book founders, local events (Akron, Cleveland, Columbus), university clubs and labs, HYROX gyms and run clubs, veteran entrepreneur groups.
+- **Borrowed audiences**: podcasts that book founders, local events (Raleigh, Durham, Charlotte, then the rest of the East Coast), university clubs and labs, HYROX gyms and run clubs, veteran entrepreneur groups.
 - **On-site gaps**: anything on vybe.health that blocks a reservation or a DevKit inquiry (a missing call to action, a slow page, no DevKit request path). Hand fixes to the Marketing Director; you just name them.
 
 Each win gets an **ICE score** (Impact, Confidence, Ease, each 1 to 10) from the Growth Hacker playbook. Only ICE 21 or higher with Ease 7 or higher makes the weekly sheet.
@@ -92,7 +92,7 @@ Small, affordable ways into sports marketing, modelled on what the big wearable 
 
 - **Competitor deal map**: what WHOOP, Oura, Garmin, Polar, Coros, Ultrahuman, Apple, Samsung, Amazfit, Fitbit, Hume and others sponsor (leagues, events such as HYROX and Ironman, teams, athlete ambassadors, college/NIL, military and tactical programs, run clubs). For each deal, write down the small-scale version Vybe could run.
 - **Athletes**: micro and mid-size athletes and coaches who already talk about recovery, HRV, sleep or training data (HYROX, CrossFit, trail and ultra, triathlon, tactical, firefighter, adaptive, women's sport, Ohio college NIL). Check for an existing competing wearable deal and say so.
-- **Teams and clubs**: Ohio first (Akron, Kent State, Cleveland, Columbus, minor-league, club sports, run clubs, HYROX gyms, veteran sports organizations) with a published sponsorship contact.
+- **Teams and clubs**: North Carolina first, then the East Coast (Raleigh, Durham, Chapel Hill, Charlotte, Fort Bragg and Camp Lejeune areas, minor-league, club sports, run clubs, HYROX gyms, veteran sports organizations) with a published sponsorship contact.
 - **Events**: races and competitions with entry-level sponsor, vendor or expo packages (HYROX US races, Ohio marathons and halves, obstacle races, firefighter and tactical competitions, adaptive and veterans games). Record dates, deadlines and prices only when published.
 - **Programs**: athlete marketplaces, NIL platforms, ambassador networks and product-seeding routes.
 
