@@ -32,8 +32,8 @@ VYBE_CALENDLY = "https://calendly.com/jeremy-vybe/30min"
 FOREIGN = [
     "jeremylahn" + "-i-grow",
     "i" + "-grow.co",
-    "lscops.com",
-    "debouillet.com",
+    "lscops" + ".com",
+    "debouillet" + ".com",
 ]
 
 # Everything an outreach body or the published dashboard is built from.
