@@ -27,13 +27,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 SITE = ROOT / "site"
+LINK_CHECK = ROOT / "data" / "link_check.json"
+COMBOS = ROOT / "data" / "combos.json"
+SCREENED = ROOT / "data" / "screened_apps.json"
+IDENTIFIED = ROOT / "data" / "identified_apps.json"
+FOLLOWUPS = ROOT / "data" / "followups.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
     "builder", "research-lab", "amplifier", "community", "event", "listing", "signal",
-    "competitor-deal", "athlete", "team", "program",
+    "competitor-deal", "athlete", "team", "program", "app-partner", "sport",
+    "oem-partner", "channel-partner",
 }
-HUNTS = {"investor", "growth", "social", "sponsorship"}
+HUNTS = {"investor", "growth", "social", "sponsorship", "partnership"}
+PARTNER_STATUSES = {"open", "competitor", "exclusive", "no-wearable-yet", "unknown"}
 
 
 def load_params() -> dict:
@@ -64,6 +71,20 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
         problems.append(f"unknown type {row.get('type')!r}")
     if row.get("hunt") not in HUNTS:
         problems.append(f"unknown hunt {row.get('hunt')!r}")
+    # Partnerships must show what the app already works with, not assume it.
+    if row.get("type") == "app-partner":
+        if "existing_wearables" not in row:
+            problems.append("app-partner without existing_wearables (null if unknown)")
+        if row.get("partner_status") not in PARTNER_STATUSES:
+            problems.append(f"app-partner partner_status {row.get('partner_status')!r}")
+        elif row["partner_status"] in {"competitor", "exclusive"} and (row.get("fit") or 0) > 6:
+            problems.append(f"{row['partner_status']} app scored above 6")
+        if not row.get("opportunity"):
+            problems.append("app-partner without a stated opportunity")
+    if row.get("type") in {"oem-partner", "channel-partner"} and not (row.get("opportunity") and row.get("unknowns")):
+        problems.append(f"{row['type']} without opportunity and unknowns")
+    if row.get("type") == "sport" and not (row.get("wearable_adoption") and row.get("opportunity")):
+        problems.append("sport without wearable_adoption evidence or opportunity")
     evidence = [u for u in row.get("evidence") or [] if isinstance(u, str) and u.startswith("http")]
     if len(evidence) < gates["min_evidence_urls"]:
         problems.append("no evidence URL")
@@ -93,6 +114,93 @@ def validate(row: dict, params: dict, today: dt.date) -> list[str]:
     return problems
 
 
+IDENTITY_RE = re.compile(
+    r"\bveteran[- ](?:owned|founder|led)|\bveteran-,|\b(?:woman|women)[- ](?:owned|led|founder)|\bwoman-,|\bminority[- ]owned",
+    re.I,
+)
+
+
+def is_sendable(row: dict) -> bool:
+    """A drafted opener the founder can send today through a public channel."""
+    return bool(
+        row["type"] not in {"signal", "competitor-deal"}
+        and row.get("contact_url")
+        and row.get("opener")
+        and "warm intro" not in (row.get("channel") or "").lower()
+        and not row.get("identity_needs_ok")
+    )
+
+
+def uses_founder_identity(row: dict) -> bool:
+    """True when the drafted opener tells the founder-identity story."""
+    return bool(IDENTITY_RE.search(row.get("opener") or ""))
+
+
+OHIO_RE = re.compile(
+    r"\b(OH|Ohio|Akron|Cleveland|Columbus|Cincinnati|Dayton|Toledo|Canton|Kent|Youngstown|"
+    r"Hudson|Fairborn|Middlefield|Sidney|Newark|Chagrin|Bowling Green|Mansfield|Lorain|Medina|Stow)\b")
+
+
+NC_RE = re.compile(
+    r"\b(NC|N\.C\.|North Carolina|Charlotte|Raleigh|Durham|Chapel Hill|Greensboro|Winston-Salem|"
+    r"Fayetteville|Fort Bragg|Fort Liberty|Camp Lejeune|Jacksonville, NC|Wilmington|Asheville|Cary|"
+    r"High Point|Research Triangle|RTP|Boone|Greenville, NC)\b")
+EAST_RE = re.compile(
+    r"\b(ME|NH|VT|MA|RI|CT|NY|NJ|PA|DE|MD|DC|VA|SC|GA|FL|Maine|New Hampshire|Vermont|Massachusetts|"
+    r"Rhode Island|Connecticut|New York|New Jersey|Pennsylvania|Delaware|Maryland|Washington, DC|"
+    r"Virginia|South Carolina|Georgia|Florida|Boston|NYC|Brooklyn|Philadelphia|Pittsburgh|Baltimore|"
+    r"Richmond|Norfolk|Virginia Beach|Arlington|Charleston|Columbia, SC|Atlanta|Savannah|Miami|"
+    r"Orlando|Tampa|Jacksonville|Hartford|Providence|Newark, NJ)\b")
+
+
+def _where(row: dict) -> str:
+    return " ".join(str(row.get(k) or "") for k in ("geo", "name", "org", "warm_path"))
+
+
+def is_ohio(row: dict) -> bool:
+    return bool(OHIO_RE.search(_where(row)))
+
+
+STATE_RE = re.compile(
+    r"\b(AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|"
+    r"NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b")
+EAST_STATES = {"NC", "VA", "SC", "GA", "FL", "MD", "DC", "DE", "PA", "NJ", "NY", "CT", "RI", "MA", "VT", "NH", "ME"}
+
+
+def state_of(row: dict) -> str:
+    geo = str(row.get("geo") or "")
+    found = STATE_RE.findall(geo)
+    if found:
+        return found[-1]
+    if "North Carolina" in geo:
+        return "NC"
+    if "Ohio" in geo:
+        return "OH"
+    return "National"
+
+
+def by_state(targets: list[dict]) -> list[dict]:
+    counts: dict[str, int] = {}
+    for t in targets:
+        st = state_of(t)
+        counts[st] = counts.get(st, 0) + 1
+    return [{"state": k, "count": v, "east": k in EAST_STATES}
+            for k, v in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]
+
+
+def region(row: dict) -> str:
+    """nc, east, ohio or other. Geo decides first; names only break ties."""
+    geo = str(row.get("geo") or "")
+    for text in (geo, _where(row)):
+        if NC_RE.search(text):
+            return "nc"
+        if EAST_RE.search(text):
+            return "east"
+        if OHIO_RE.search(text):
+            return "ohio"
+    return "other"
+
+
 def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     p = params["priority"]
     s = int(row["fit"]) * 10
@@ -106,6 +214,8 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
         s += p["verified_bonus"]
     if row.get("contact_url"):
         s += p["open_channel_bonus"]
+    s += {"nc": p.get("nc_bonus", 0), "east": p.get("east_coast_bonus", 0),
+          "ohio": p.get("ohio_bonus", 0)}.get(region(row), 0)
     ice = row.get("ice") or {}
     if row.get("hunt") == "growth" and all(isinstance(ice.get(k), (int, float)) for k in "ice"):
         # Easy, high-confidence wins move up; hard ones move down.
@@ -113,6 +223,56 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
     s = max(0, min(100, s))
     label = "High" if s >= p["high"] else "Medium" if s >= p["medium"] else "Low"
     return s, label
+
+
+def load_link_check() -> dict:
+    """{url: {"status": "ok" | "dead" | "unverified", "note": str}} from the last link check."""
+    if not LINK_CHECK.exists():
+        return {}
+    data = json.loads(LINK_CHECK.read_text())
+    return data.get("urls", {})
+
+
+def apply_link_check(row: dict, checks: dict) -> str | None:
+    """Drop dead links from a row. Returns a rejection reason when nothing citable is left."""
+    status = lambda u: (checks.get(u) or {}).get("status")  # noqa: E731
+    dead = [u for u in row["evidence"] if status(u) == "dead"]
+    row["evidence"] = [u for u in row["evidence"] if status(u) != "dead"]
+    if not row["evidence"]:
+        return f"every evidence link is dead ({len(dead)} checked)"
+    contact = row.get("contact_url")
+    if contact and status(contact) == "dead":
+        row["contact_url"] = None
+        row["contact_note"] = f"contact link dead: {(checks[contact].get('note') or '').strip()}"
+    checked = [u for u in row["evidence"] + ([row["contact_url"]] if row.get("contact_url") else []) if u in checks]
+    if row.get("contact_note"):
+        row["link_status"] = "contact dead"
+    elif checked and all(status(u) == "ok" for u in checked):
+        row["link_status"] = "verified"
+    elif checked:
+        row["link_status"] = "partly verified"
+    else:
+        row["link_status"] = "not checked"
+    return None
+
+
+def load_partner_extras() -> tuple[dict, list[dict]]:
+    """Combos, and the apps that were checked and not kept (the 9 re-checked apps use their newer verdicts)."""
+    combos = json.loads(COMBOS.read_text()) if COMBOS.exists() else {"note": "", "combos": []}
+    screened = {}
+    if SCREENED.exists():
+        for r in json.loads(SCREENED.read_text()).get("screened_out", []):
+            screened[r["app"]] = {"app": r["app"], "reason": r.get("reason", ""), "recheck": False}
+    if IDENTIFIED.exists():
+        for r in json.loads(IDENTIFIED.read_text()):
+            who = r.get("company") if r.get("identified") else None
+            reason = r.get("reason", "")
+            screened[r["app"]] = {
+                "app": r["app"],
+                "reason": (f"Re-checked: identified as {who}. " if who else "Re-checked: could not be tied to a real app. ") + reason,
+                "recheck": True,
+            }
+    return combos, sorted(screened.values(), key=lambda r: r["app"].lower())
 
 
 def dedupe_key(row: dict) -> str:
@@ -125,6 +285,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     kept: dict[str, dict] = {}
     rejected: list[dict] = []
     lanes = {}
+    checks = load_link_check()
     for path in sorted(RAW.glob("*.json")):
         lane = path.stem
         try:
@@ -145,7 +306,14 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
             row = dict(row)
             row["lane"] = lane
             row["evidence"] = [u for u in row["evidence"] if isinstance(u, str) and u.startswith("http")]
+            dead = apply_link_check(row, checks)
+            if dead:
+                rejected.append({"lane": lane, "name": row.get("name"), "reasons": [dead]})
+                continue
             row["score"], row["priority"] = score(row, params, today)
+            row["identity_needs_ok"] = (
+                uses_founder_identity(row) and not params["outreach"].get("founder_identity_approved", False)
+            )
             key = dedupe_key(row)
             prior = kept.get(key)
             if prior:
@@ -160,8 +328,66 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
     targets = sorted(kept.values(), key=lambda r: (-r["score"], r.get("deadline") or "9999", r["name"]))
     for i, row in enumerate(targets, 1):
         row["rank"] = i
+        row["sendable"] = is_sendable(row)
         row["id"] = re.sub(r"\s+", "-", norm(f"{row['name']} {row.get('org') or ''}"))[:80]
     return targets, rejected, lanes
+
+
+QUEUE_HUNTS = ("sponsorship", "partnership")
+CALENDLY = "https://calendly.com/jeremylahn-i-grow/vybe-health-partnership-call"
+SIGNOFF = "\n\nJeremy Lahn\nVybe Health\njeremy@vybe.health · vybe.health"
+
+
+def email_subject(row: dict) -> str:
+    """A plain subject line built only from fields already on the row."""
+    if row["hunt"] == "sponsorship":
+        return f"Vybe Health x {row['name']}: small sponsorship idea"
+    if row["type"] == "app-partner":
+        return f"Vybe Health x {row['name']}: overnight data integration"
+    if row["type"] == "oem-partner":
+        return f"Vybe Health: DevKit build inquiry for {row['org'] or row['name']}"
+    return f"Vybe Health x {row['name']}: partnership idea"
+
+
+def followup_body(row: dict) -> str:
+    """The one follow-up allowed per contact, sent 5-7 days after the first email.
+
+    Sent as a reply on the first email's thread, so it points back to that note
+    and adds no new claims. The row's ask is an internal note, never quoted.
+    """
+    return (f"Hello {row['name']} team,\n\nFollowing up on my note below. "
+            "Could you point me to the right person, or let me know if it's a fit?\n\n"
+            f"If a short call is easier, you can pick a time that suits you here: {CALENDLY}" + SIGNOFF)
+
+
+def load_followups() -> dict:
+    if not FOLLOWUPS.exists():
+        return {"note": "", "checked": None, "threads": []}
+    data = json.loads(FOLLOWUPS.read_text())
+    data["threads"].sort(key=lambda r: (r.get("due") or "9999", r["org"]))
+    return data
+
+
+def outreach_queue(targets: list[dict]) -> list[dict]:
+    """Ready-to-send emails for sponsorship and partner targets, best first.
+
+    Drafts only: nothing here is sent. Rows held for the founder-identity
+    decision, dead contact links and warm-intro-only rows are already excluded
+    by is_sendable().
+    """
+    queue = []
+    for t in targets:
+        if t["hunt"] not in QUEUE_HUNTS or not t.get("sendable"):
+            continue
+        queue.append({
+            "id": t["id"], "name": t["name"], "org": t["org"], "type": t["type"], "hunt": t["hunt"],
+            "priority": t["priority"], "rank": t["rank"], "deadline": t.get("deadline"),
+            "channel": t.get("channel"), "contact_url": t.get("contact_url"),
+            "evidence": (t.get("evidence") or [None])[0], "ask": t.get("ask"),
+            "subject": email_subject(t), "body": t["opener"].strip() + SIGNOFF,
+            "followup_subject": "Re: " + email_subject(t), "followup_body": followup_body(t),
+        })
+    return queue
 
 
 def summary(targets: list[dict], today: dt.date) -> dict:
@@ -175,11 +401,15 @@ def summary(targets: list[dict], today: dt.date) -> dict:
         "growth": count(lambda t: t["hunt"] == "growth" and t["type"] != "signal"),
         "social": count(lambda t: t["hunt"] == "social"),
         "sponsorship": count(lambda t: t["hunt"] == "sponsorship" and t["type"] != "competitor-deal"),
+        "app_partners": count(lambda t: t["type"] == "app-partner"),
+        "sports": count(lambda t: t["type"] == "sport"),
         "competitor_deals": count(lambda t: t["type"] == "competitor-deal"),
         "signals": count(lambda t: t["type"] == "signal"),
         "high": count(lambda t: t["priority"] == "High" and t["type"] != "signal"),
         "deadlines_30d": len(soon),
-        "ready_to_send": count(lambda t: t["type"] not in {"signal", "competitor-deal"} and t.get("contact_url") and t.get("opener")),
+        "ready_to_send": count(lambda t: t.get("sendable")),
+        "identity_needs_ok": count(lambda t: t.get("identity_needs_ok")),
+        "outreach_queue": count(lambda t: t["hunt"] in QUEUE_HUNTS and t.get("sendable")),
     }
 
 
@@ -201,6 +431,7 @@ def main() -> int:
     params = load_params()
     today = dt.date.fromisoformat(args.today) if args.today else dt.datetime.now(dt.timezone.utc).date()
     targets, rejected, lanes = build(params, today)
+    combos, screened_apps = load_partner_extras()
 
     print(f"{len(targets)} targets kept, {len(rejected)} rejected")
     for lane, c in lanes.items():
@@ -219,8 +450,14 @@ def main() -> int:
         "lanes": [{"id": l["id"], "title": l["title"], "hunt": l["hunt"], **lanes.get(l["id"], {"raw": 0, "kept": 0})}
                   for l in params["lanes"]],
         "summary": summary(targets, today),
+        "by_state": by_state(targets),
         "targets": targets,
+        "combos": combos["combos"],
+        "combos_note": combos.get("note", ""),
+        "screened_apps": screened_apps,
         "rejected_count": len(rejected),
+        "outreach": outreach_queue(targets),
+        "followups": load_followups(),
     }
     (ROOT / "data" / "targets.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     SITE.mkdir(exist_ok=True)

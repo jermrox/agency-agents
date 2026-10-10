@@ -1,0 +1,104 @@
+[
+  {
+    "app": "Selah",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "The ChatGPT-directory listing 'Selah - Bible stories' is by developer 'Gin' (chatappradar). No company site or Claude connector for that developer found. Several unrelated Selah apps exist (Loomalabs 'Selah: Micro Devotion' with a Bible Sleep feature, Futures Church Selah, Selah Bible AI), and I could not tie the listing to any of them. Whichever it is, it is a subscription faith-audio app with no wearable integration found, so low fit.",
+    "evidence": [
+      "https://chatappradar.com/app/selah-bible-stories/",
+      "https://apps.apple.com/us/app/selah-micro-devotion/id6752804172"
+    ]
+  },
+  {
+    "app": "Achieve Harmony",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "Listed in ChatGPT/MCP directories as a guided-breathing widget (Health and Fitness) with developer shown only as 'Widget' / 'Unknown'; no website, privacy policy or support listed. No company behind it could be identified. A single-widget breathing demo, no wearable integration evidence.",
+    "evidence": [
+      "https://chatappradar.com/app/achieve-harmony/",
+      "https://mcpapp.net/app/achieve-harmony"
+    ]
+  },
+  {
+    "app": "Pregnancy Progress",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "Listed on ChatApp Radar as a pregnancy week-by-week tracker by developer 'Widget' (same generic publisher as Achieve Harmony). No company or standalone app matching the listing found. Pregnancy tracker, not a wearables use case.",
+    "evidence": [
+      "https://chatappradar.com/app/pregnancy-progress/"
+    ]
+  },
+  {
+    "app": "Kynra Fitness",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "No ChatGPT/Claude listing or app page found for 'Kynra Fitness'. Searches returned only unrelated Kynra entities (Kynra.ai Philadelphia events calendar, KYNRA Collective fitness events, a Kynra AI exercise-form startup case study at DayMonic) and similarly named apps (Kynexa Fitness, Kyn, Kynetic). Could not pin down which one, if any.",
+    "evidence": [
+      "https://daymonic.com/home/kynra",
+      "https://www.kynra.ai/",
+      "https://apps.apple.com/us/app/kynexa-fitness/id6762044383"
+    ]
+  },
+  {
+    "app": "GymLog",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "Ambiguous. Candidates: GymLog AI Workout Tracker (LGHDeveloper), GymLog AI Fitness Coach (Portionscore UG), GymLogic (PierreTsia, MCP server for Anthropic directory, strength tracker), Gymlog Flutter app (Khamidjon Egamov). The 'GLHF-style' logo only matched unrelated glhf.chat/GLHF research tools. No single listing could be tied to the screenshot. None showed wearable integrations.",
+    "evidence": [
+      "https://play.google.com/store/apps/details?hl=en&id=com.lghdeveloper.gymlog",
+      "https://mwm.ai/apps/gymlog-ai-fitness-coach/6762492039",
+      "https://github.com/PierreTsia/workout-app/issues/296"
+    ]
+  },
+  {
+    "app": "StrengthCode",
+    "identified": false,
+    "company": null,
+    "verdict": "skip",
+    "reason": "No app, connector or MCP listing named StrengthCode found. Only unrelated hits: The Strength Code (slow-motion strength studio franchise, founder Sheila Melody, podcast mentions WHOOP/Oura) and an Italian metal band. Cannot confirm either is the connector's publisher.",
+    "evidence": [
+      "https://open.spotify.com/show/3KAz5UaaIiog4DX0O2J9iG"
+    ]
+  },
+  {
+    "app": "Myo",
+    "identified": false,
+    "company": "Bonsai (developer name only, as listed on ChatApp Radar)",
+    "verdict": "skip",
+    "reason": "ChatGPT-directory listing 'Myo' by developer 'Bonsai', category Lifestyle and Local: book a local Myo service appointment. Looks like a local services/booking app (possible match: Myo Austin massage studio, unconfirmed). Not health-tech or wearable related; could not confirm the business. MyoAmigo (strength tracker with MCP) is a different product and does not match the booking tagline.",
+    "evidence": [
+      "https://chatappradar.com/app/myo/",
+      "https://myoaustin.com/book-a-massage/"
+    ]
+  },
+  {
+    "app": "Mental Health Tools",
+    "identified": true,
+    "company": "dotwell (seller Benedikt Rueschen; app legal notice references 'Z38 app')",
+    "verdict": "monitor",
+    "reason": "Identified: ChatGPT listing by 'dotwell' matches dotwell.app, free interactive mental-health skills app (3 min a day, randomized study n=176 cited on site), also building WeedMonk. No wearable or integration page, no partner page found on the homepage or App Store page, so existing_wearables unknown. Fit under 7: a mental-wellness skills app with no stated device or sleep data use; no row. Could revisit if they add HRV-based exercises.",
+    "evidence": [
+      "https://chatappradar.com/app/mental-health-tools/",
+      "https://www.dotwell.app",
+      "https://apps.apple.com/us/app/dotwell-mental-health/id6743126097"
+    ]
+  },
+  {
+    "app": "FitAI Pro",
+    "identified": true,
+    "company": "AI Innovation Labs (developer Suyash Saxena, Sarnia, Ontario)",
+    "verdict": "skip",
+    "reason": "Identified: ChatGPT listing 'FitAI Pro' by AI Innovation Labs matches the FitAI Pro iOS/Android app (AI workout plans, meal scan, body scan, music). Privacy policy lists Firebase, Gemini, YouTube API and Spotify; no wearable integrations found, so it is a no-wearable-yet app, but it is a small solo-developer consumer app with a subscription and no partner page (only a generic contact form and support email on its site). Fit under 7; no row.",
+    "evidence": [
+      "https://chatappradar.com/app/fitai-pro/",
+      "https://ai-innovationlabs.xyz/",
+      "https://play.google.com/store/apps/details?hl=en&id=com.fitaipro.app",
+      "https://studio-main--fitness-app-49200.us-east4.hosted.app/privacy-policy"
+    ]
+  }
+]

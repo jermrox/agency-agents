@@ -1,0 +1,281 @@
+{
+  "checked": "2026-10-03",
+  "source": "Claude connector directory screenshots supplied by the founder",
+  "screened_out": [
+    {
+      "app": "COROS",
+      "reason": "Makes its own watches (competitor). Its Partner API and MCP only push COROS data out to other apps. Nothing shows it taking in third-party overnight data, so there is no real co-op angle; it is a data source, not a partner (support.coros.com Submit an API Application).",
+      "batch": "endurance"
+    },
+    {
+      "app": "Fitness AI Connector (FMP)",
+      "reason": "Built only on the Garmin Health API ('Your Garmin Data, Your AI'). The product is single-brand by design, so it has no slot for another device.",
+      "batch": "endurance"
+    },
+    {
+      "app": "Kenso (Kenso Forge)",
+      "reason": "A strength-lifting app whose readiness comes only from HealthKit. Vybe would reach it passively through Apple Health, and there is no partner or integration page.",
+      "batch": "endurance"
+    },
+    {
+      "app": "rit.run",
+      "reason": "A GPS run tracker with social features. Its listing says only 'supported device and health data when available' and names no wearables. No partner page was found, so the opportunity is unproven.",
+      "batch": "endurance"
+    },
+    {
+      "app": "PaceKeeper AI",
+      "reason": "A free tool from a solo developer that sits on top of Intervals.icu plus Apple/Google Health sync. The partner to target is Intervals.icu, not PaceKeeper.",
+      "batch": "endurance"
+    },
+    {
+      "app": "Function Health",
+      "reason": "A lab-testing membership. Its Connected Apps are pre-built in-product syncs (Oura, Fitbit, Apple Health) with no third-party developer API. Its clinical positioning also clashes with Vybe's general-wellness scope.",
+      "batch": "endurance"
+    },
+    {
+      "app": "SmartSpectra (Presage Technologies)",
+      "reason": "A camera-based vitals SDK with FDA 510(k) clearance. It competes on HRV sensing rather than consuming wearable data, and its medical clearance sits outside Vybe's general-wellness scope.",
+      "batch": "endurance"
+    },
+    {
+      "app": "LiftTrack (Weightlifting for Garmin)",
+      "reason": "Indie app (lifttrackapp.com) built around Garmin Connect workout sync, plus phone tracking and a ChatGPT/Claude connection. Its whole proposition is the Garmin ecosystem, Garmin watches already record overnight HRV, and no other device integration or partner interest was found. Fit <7. Revisit if it adds Apple Health/other devices.",
+      "batch": "strength"
+    },
+    {
+      "app": "FitAI Pro",
+      "reason": "Small AI coach app (App Store id6757655267, hosted on a Firebase app domain) with workouts, food scanning and outfit ideas; no wearable or Apple Health integration found in listings, and no company, partner page or contact beyond the privacy policy. Too thin to prove an opportunity.",
+      "batch": "strength"
+    },
+    {
+      "app": "Lightweight",
+      "reason": "New offline-first iPhone lifting log (App Store id6762335584). The listing describes no Apple Health or wearable integration, and no developer site or contact was found. Unverifiable and tiny.",
+      "batch": "strength"
+    },
+    {
+      "app": "GymLog",
+      "reason": "Several unrelated apps share the name (e.g. 'GymLog: AI Workout Tracker' by lghdeveloper, 'GymLog AI: Fitness Coach', a Gymlog calorie app by Khamidjon Egamov). None showed wearable integrations, and I could not tell which one is the Claude directory listing. Identity unverified.",
+      "batch": "strength"
+    },
+    {
+      "app": "StrengthCode",
+      "reason": "Searches only found The Strength Code (a 1:1 slow-HIT personal-training studio in Burbank, CA, with a booking app) and unrelated MCP repos. No app-level wearable integration, and the directory app's identity is unverified.",
+      "batch": "strength"
+    },
+    {
+      "app": "Kynra Fitness",
+      "reason": "Could not identify the app. 'Kynra' results were a Philadelphia tech-events calendar (kynra.ai), a Virginia fitness meetup (KYNRA Collective) and an old B2B AI-training design case study. No product, wearable integration or contact verified.",
+      "batch": "strength"
+    },
+    {
+      "app": "BODi",
+      "reason": "Beachbody's BODi integrates only with Apple Watch/Apple Health (HR overlay on video). No partner/developer program or recovery/readiness feature found, so there is no concrete entry route. Large company, long route without a proven opening.",
+      "batch": "strength"
+    },
+    {
+      "app": "Zumba",
+      "reason": "The Zumba app supports Wear OS and syncing to third-party tracking apps, and it has a 2024 content partnership with Samsung Health, but that is content distribution, not device data. No readiness/recovery feature and no partner or developer program found; dance classes are a weak fit for an overnight HRV band. Long route, no proven opening.",
+      "batch": "strength"
+    },
+    {
+      "app": "Sweat & Tonic",
+      "reason": "Booking app for a Toronto boutique gym (Marianatek white-label; there is also an Australian studio app). It is a class scheduler with no data or wearable layer. Could be a local gym-sponsorship lead, not an app partner.",
+      "batch": "strength"
+    },
+    {
+      "app": "Myo",
+      "reason": "Could not confirm which 'Myo' is the directory app. The candidates are meetmyo.com (AI coach that syncs Apple Health workouts/nutrition/sleep) and MyoAmigo (lifting log with MCP). Both rely on Apple Health only, so Vybe reaches them by writing to HealthKit without a deal. Identity unverified; revisit if the listing is confirmed.",
+      "batch": "strength"
+    },
+    {
+      "app": "instingo (Schritte Challenge für Teams)",
+      "reason": "German corporate step-challenge platform (instingo.de, 200+ companies) that syncs steps from Apple Health, Garmin, Fitbit and Samsung Health. Its product is daytime step counts, and nothing shows that an overnight ECG/HRV band contributes steps. Fit <7 unless Vybe adds step counting or instingo adds sleep challenges.",
+      "batch": "strength"
+    },
+    {
+      "app": "Habitify",
+      "reason": "Habit tracker that auto-completes habits from Apple Health (it removed Health Connect on Android in 2024). Vybe would appear automatically by writing sleep to HealthKit, so a partnership adds little. No device-specific integrations or partner program found.",
+      "batch": "strength"
+    },
+    {
+      "app": "Calio",
+      "reason": "AI photo calorie counter (Veywell / calioai.com); store listings show no wearable or partner program; small clone app, low realistic partner value.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Calorie Tracker Guide",
+      "reason": "Generic name, no distinct company or integrations page identified; not researched further.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Calorie Tracker",
+      "reason": "Generic name, no distinct company identified; not researched further.",
+      "batch": "wellness"
+    },
+    {
+      "app": "CalorieCam",
+      "reason": "Generic AI photo calorie app; no company, partner page or wearable integration identified in screening.",
+      "batch": "wellness"
+    },
+    {
+      "app": "WeightWise",
+      "reason": "No distinct company or integrations found in screening; generic weight-loss tracker.",
+      "batch": "wellness"
+    },
+    {
+      "app": "ChefPlan",
+      "reason": "Meal-planning/recipe tool; no wearable integration or partner channel found; weak fit for overnight band.",
+      "batch": "wellness"
+    },
+    {
+      "app": "BurnFat",
+      "reason": "Generic weight-loss app; no company or integration evidence found.",
+      "batch": "wellness"
+    },
+    {
+      "app": "SnapCal",
+      "reason": "Multiple same-named indie AI calorie apps; one lists Apple Health sync but support is a proton.me address; no partner program; low value.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Sphere Calorie Tracker",
+      "reason": "Appears to be a TestFlight-beta indie calorie app (departures.to); could not confirm company or integrations. (Separate Sphere Fitness coaching app integrates Garmin/Fitbit but is not this app.)",
+      "batch": "wellness"
+    },
+    {
+      "app": "BurnWeek",
+      "reason": "No distinct company or integrations found in screening.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Cal Plus",
+      "reason": "No distinct company or integrations found in screening.",
+      "batch": "wellness"
+    },
+    {
+      "app": "InnoSupps",
+      "reason": "Supplement brand storefront; ingestible products adjacent to health claims; no app/data integration angle.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Dr Nutrition",
+      "reason": "Supplement/nutrition retailer; no wearable or data collaboration angle.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Purely Snacks",
+      "reason": "Snack food brand storefront; no data or wearable collaboration angle.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Trash Panda",
+      "reason": "Consumer food/snack storefront; no wellness-data collaboration angle.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Miracle Of Mind",
+      "reason": "Free volunteer-run Sadhguru/Isha Foundation meditation app; no wearable integration found; spiritual nonprofit unlikely to co-brand a commercial device.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Achieve Harmony",
+      "reason": "Could not identify company or integrations in screening.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Selah",
+      "reason": "Could not identify the healthcare-directory Selah app (search returned an unrelated screenshot tool and other Christian sleep apps); unknown.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Mental Health Tools",
+      "reason": "Generic mental-health tool connector; no company or wearable angle identified; mental-health framing risky for no-claims posture.",
+      "batch": "wellness"
+    },
+    {
+      "app": "DREAMHALL",
+      "reason": "Self-reflection/life-planning journaling framework, not sleep or dreams; no physiological data use.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Face Yoga",
+      "reason": "Facial exercise app; no sleep/HRV or wearable angle.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Pregnancy Progress",
+      "reason": "Could not identify company; search surfaced only generic due-date calculator MCP tools; pregnancy data is sensitive and Vybe makes no pregnancy claims, so screened out.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Aiva",
+      "reason": "Aiva Health is an enterprise voice agent for hospital nurses (Epic, Oracle Health); clinical, not consumer wellness.",
+      "batch": "wellness"
+    },
+    {
+      "app": "NyquistAI",
+      "reason": "Regulatory/medtech intelligence tool; clinical/regulatory, out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Rhizome AI",
+      "reason": "Clinical/regulatory/research tool; out of scope for general-wellness partner.",
+      "batch": "wellness"
+    },
+    {
+      "app": "OathMCP",
+      "reason": "Clinical/regulatory tool; out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "DrugBank",
+      "reason": "Drug database; clinical, out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "SaveHealth",
+      "reason": "Prescription pricing/discount tool; out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Vital Care Finder",
+      "reason": "Care/provider finder; clinical navigation, out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Sina Connect",
+      "reason": "Clinical connector; out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Your VA Benefits",
+      "reason": "Veteran benefits navigation, not an app partner. Note only: possible veteran-community distribution channel later; no collaboration researched.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Anida Clinical Trials",
+      "reason": "Clinical trial matching; out of scope under no-medical-claims posture.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Turquoise",
+      "reason": "Healthcare price transparency tool; out of scope.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Pearl Pet Care",
+      "reason": "Veterinary/pet care; not human wellness.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Bella Noor Skin Concierge",
+      "reason": "Skincare concierge; no sleep/HRV collaboration angle found.",
+      "batch": "wellness"
+    },
+    {
+      "app": "Turkey Dental Treatment Prices",
+      "reason": "Dental tourism pricing; out of scope.",
+      "batch": "wellness"
+    }
+  ]
+}

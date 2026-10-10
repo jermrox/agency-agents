@@ -40,3 +40,25 @@ SPONSORSHIP LANES (added): hunt = "sponsorship". Extra types:
 - "event": races/competitions with entry-level sponsor or vendor packages (HYROX events, marathons/half marathons in Ohio, Spartan, tactical/fire-fighter competitions, collegiate, veterans games) — include deadline/date and package price only if published.
 - "program": sponsorship marketplaces/NIL platforms/ambassador networks (e.g. Opendorse, SponsorUnited insights, athlete ambassador platforms) and in-kind/product-seeding routes.
 ask = the small entry move (seed 5 bands, $X vendor booth if published, recovery-data content collab, ambassador). opener as usual (no health claims, no outcome promises).
+
+PARTNERSHIP LANES (added 2026-10-03): hunt = "partnership". Rule: prove the opportunity, never assume it.
+
+type "app-partner" (a health/fitness app Vybe could integrate with or co-market with). Extra fields, all required:
+- "existing_wearables": ["Garmin", "Apple Health", ...] exactly as the app's own integrations page / docs / changelog lists them; [] only if you confirmed it has none; null if you could not find out.
+- "exclusive": true if a source shows an exclusive or owned hardware relationship (e.g. the app is a wearable brand's own app, or a stated exclusive deal); false if it integrates with several brands or via an aggregator (Terra, Junction, Rook, Thryve, HealthKit/Health Connect); null if unknown.
+- "partner_status": "open" (multi-device or asks for integrations / has a partner page), "competitor" (makes its own wearable — fit <= 6 unless co-op angle is real), "exclusive" (fit <= 6), "no-wearable-yet" (no device integration at all; opportunity = be its first), or "unknown".
+- "opportunity": the concrete collaboration (e.g. "add Vybe as a data source via their Terra integration", "co-market recovery feature to their runners", "be the first wearable in their app"), grounded in what you found.
+- "unknowns": what you could not verify (e.g. "no public partner contact", "pricing of API unknown").
+Do NOT write that an app "has no partnership" unless you checked its integrations/partners page or docs; say "unknown" instead.
+
+type "sport" (a sport or competition level where wearables are rare, banned in competition, or unserved). Extra fields:
+- "wearable_adoption": what a source says about current wearable use (survey, governing-body rule, article), with the claim's date.
+- "competition_rule": the governing body's rule on wearables during competition if one exists, else null. Vybe's band is worn overnight, so an in-competition ban does not block an overnight recovery use; say so only when the rule is about competition.
+- "opportunity": the concrete first move (club pilot, federation partnership, coach community), plus named clubs/federations/athletes when found.
+- "unknowns".
+Athletes found in these sports use type "athlete" (hunt "sponsorship") and must say whether a source shows them using any wearable (and which) or "no wearable found in public posts".
+
+MORE PARTNER TYPES (added 2026-10-04), hunt "partnership" unless stated:
+- "oem-partner": contract manufacturers/ODMs/EMS firms, sensor and chip vendors, reference-design and firmware partners that could help Vybe build or scale hardware. Required: "opportunity" (what they could do for Vybe), "unknowns". Evidence = the company's own page (capabilities, startup/partner program, minimums if published).
+- "channel-partner": ways to reach buyers at scale: retailers and marketplaces, corporate-wellness and benefits platforms, employers, insurers, health-system innovation programs, gym chains, military/first-responder procurement channels. Required: "opportunity", "unknowns", and the entry route (vendor onboarding page, partner form, named program).
+Both types: fit >= 7, never invent minimums/prices, Ohio and Midwest first when equal. Openers: founder voice, <80 words, no health claims, do NOT say Vybe is veteran-, woman- or minority-owned, never guess an email.

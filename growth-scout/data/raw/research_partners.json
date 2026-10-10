@@ -1,0 +1,864 @@
+[
+ {
+  "name": "Neuromuscular Research Laboratory / Warrior Human Performance Research Center (Bradley C. Nindl, PhD)",
+  "org": "University of Pittsburgh, Dept. of Sports Medicine and Nutrition",
+  "role": "Director",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Nov 2025 AJP-Regulatory paper from NMRL (senior author Bradley C. Nindl) links an allostatic load index to wearable physiological responses during military training ('digital phenotype'); lab site names Nindl as director. Applied tactical lab that already runs wearables in military training.",
+  "why_now": "AJP-Regu paper published 2025-11-12; Nindl presented at the 2026 H2F Symposium (DVIDS video).",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41223069/",
+   "https://doi.org/10.1152/ajpregu.00216.2025",
+   "https://www.nmrl.pitt.edu/",
+   "https://www.nmrl.pitt.edu/people/bradley-c-nindl-phd",
+   "https://www.dvidshub.net/video/1007207/human-performance-optimization-science-and-strategies-build-and-sustain-warfighter-readiness-and-lethality-21st-century"
+  ],
+  "channel": "contact via lab people page",
+  "contact_url": "https://www.nmrl.pitt.edu/people/bradley-c-nindl-phd",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 6,
+   "e": 6
+  },
+  "ask": "Offer a DevKit v0.1 for a bench/field agreement check against their criterion ECG during a training block.",
+  "opener": "Hi Dr. Nindl, I'm Jeremy at Vybe Health in Akron. Your allostatic-load paper using wearable responses during military training is close to what we built for: a screenless overnight ECG/HRV band with raw-data SDK access. We're placing a few DevKit v0.1 units with labs that can test agreement against criterion ECG. Would a 15-minute call to see if it fits a current protocol be worthwhile?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Pittsburgh, PA",
+  "deadline": null,
+  "last_signal_date": "2025-11-12",
+  "confidence": "verified",
+  "tags": [
+   "tactical",
+   "hrv",
+   "military",
+   "validation",
+   "midwest"
+  ]
+ },
+ {
+  "name": "Biodynamics and Human Performance Center HRV research (Andrew A. Flatt, PhD)",
+  "org": "Georgia Southern University - Armstrong Campus, Dept. of Health Sciences and Kinesiology",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "June 2026 Autonomic Neuroscience paper tested Polar H10 chest-strap HRV and autonomic reflex tests against criterion ECG; senior author Andrew A. Flatt. A lab that runs exactly the chest-ECG-vs-criterion HRV validation Vybe needs.",
+  "why_now": "Published 2026-06-09.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42275859/",
+   "https://doi.org/10.1016/j.autneu.2026.103447"
+  ],
+  "channel": "email listed on site",
+  "contact_url": "https://doi.org/10.1016/j.autneu.2026.103447",
+  "warm_path": null,
+  "fit": 9,
+  "ice": {
+   "i": 9,
+   "c": 6,
+   "e": 7
+  },
+  "ask": "DevKit v0.1 for an HRV agreement study vs criterion ECG (same design as their Polar H10 paper).",
+  "opener": "Hi Dr. Flatt, I read your Polar H10 validity paper in Autonomic Neuroscience. We're Vybe Health, building a screenless ECG/HRV band worn overnight, with raw RR export through our SDK. We'd like independent agreement data before launch and are placing a few DevKit v0.1 units with labs. Would you be open to a short call about whether it fits your next study?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Savannah, GA",
+  "deadline": null,
+  "last_signal_date": "2026-06-09",
+  "confidence": "single-source",
+  "tags": [
+   "hrv",
+   "ecg",
+   "validation",
+   "sport-science"
+  ]
+ },
+ {
+  "name": "Sleep Disorders and Research Center wearable sleep-staging work (Philip Cheng, PhD; Christopher Drake, PhD)",
+  "org": "Henry Ford Health + Michigan State University",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "May 2026 SLEEP Advances paper on what drives wearable sleep-staging performance (personalization, evaluation choices, easy-to-classify wake); Henry Ford/MSU authors include Christopher Drake and senior author Philip Cheng. Needs new device data and benchmark-quality evaluation.",
+  "why_now": "Published 2026-05-26.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42333378/",
+   "https://doi.org/10.1093/sleepadvances/zpag051"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1093/sleepadvances/zpag051",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 plus raw-signal export for a PSG-comparison sleep-staging dataset.",
+  "opener": "Hi Dr. Cheng, your SLEEP Advances paper on what really drives wearable sleep-staging performance was useful to us. Vybe Health (Akron) is building a screenless overnight ECG/HRV band with raw-signal SDK access. If a new device with open raw data would help a PSG comparison, we can provide DevKit v0.1 units. Could we have a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Detroit, MI",
+  "deadline": null,
+  "last_signal_date": "2026-05-26",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "validation",
+   "midwest",
+   "wearables"
+  ]
+ },
+ {
+  "name": "Rest-activity rhythm wearable comparison (Stephen F. Smagula, PhD)",
+  "org": "University of Pittsburgh, Dept. of Psychiatry",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "SLEEP (May 2026) paper compared rest-activity rhythm metrics from Apple Watch vs ActiGraph; senior author Stephen F. Smagula (Pitt Psychiatry). Directly tests whether consumer wearables match research devices.",
+  "why_now": "Published 2026-05-12.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41217178/",
+   "https://doi.org/10.1093/sleep/zsaf359"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1093/sleep/zsaf359",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 to add a third device to a consumer-vs-research-grade comparison.",
+  "opener": "Hi Dr. Smagula, your SLEEP paper comparing Apple Watch and ActiGraph rest-activity rhythms is the kind of head-to-head we'd want for our device. Vybe Health makes a screenless overnight band with ECG/HRV and open raw-data access. We're placing DevKit v0.1 units with a few labs. Would a short call about adding it to a comparison make sense?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Pittsburgh, PA",
+  "deadline": null,
+  "last_signal_date": "2026-05-12",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "validation",
+   "midwest",
+   "actigraphy"
+  ]
+ },
+ {
+  "name": "Sleep technology research (Ambrose A. Chiang, MD)",
+  "org": "Case Western Reserve University, Dept. of Medicine (Louis Stokes Cleveland VA)",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Ambrose A. Chiang (CWRU; VA email on paper) co-edited the 2026 Frontiers in Neuroscience Research Topic editorial 'The promise of sleep technology' and first-authored a 2026 review of respiratory-signal technology for sleep-disordered breathing. Northeast Ohio sleep-tech voice.",
+  "why_now": "Editorial published 2026-05-27.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42283008/",
+   "https://doi.org/10.3389/fnins.2026.1849903",
+   "https://pubmed.ncbi.nlm.nih.gov/42192042/",
+   "https://doi.org/10.1007/s44470-026-00088-6"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.3389/fnins.2026.1849903",
+  "warm_path": "Northeast Ohio (Akron-Cleveland)",
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 5,
+   "e": 7
+  },
+  "ask": "15-minute feedback call on DevKit v0.1 sleep-signal quality; explore a small comparison study.",
+  "opener": "Hi Dr. Chiang, I'm Jeremy at Vybe Health, about 40 minutes south in Akron. I read your Frontiers editorial on the promise of sleep technology. We're building a screenless overnight ECG/HRV band (general wellness, not diagnostic) and want early critique from sleep clinicians-researchers. Would you have 15 minutes to look at our DevKit signal and tell us what we're missing?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cleveland, OH",
+  "deadline": null,
+  "last_signal_date": "2026-05-27",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "ohio",
+   "validation",
+   "ecg"
+  ]
+ },
+ {
+  "name": "Sleep consumer wearables and nearables evaluation (Rebecca M. C. Spencer, PhD)",
+  "org": "University of Massachusetts Amherst, Institute for Applied Life Sciences",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Jan 2026 SLEEP Advances paper evaluated consumer sleep-tracking wearables and nearables in healthy young and older adults; senior author Rebecca M. C. Spencer. Lab already runs multi-device consumer-sleep comparisons.",
+  "why_now": "Published 2026-01-12.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41768372/",
+   "https://doi.org/10.1093/sleepadvances/zpag006"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1093/sleepadvances/zpag006",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 as an added device in their next consumer sleep-tracker evaluation.",
+  "opener": "Hi Dr. Spencer, your SLEEP Advances evaluation of consumer sleep wearables and nearables is the clearest multi-device comparison we've seen. Vybe Health is building a screenless overnight band with ECG/HRV and raw-data export. If you run another round, we'd gladly supply DevKit v0.1 units and data access. Could we talk for 15 minutes?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Amherst, MA",
+  "deadline": null,
+  "last_signal_date": "2026-01-12",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "validation",
+   "wearables"
+  ]
+ },
+ {
+  "name": "Intern Health Study / wearable sleep monitoring in health workers (Srijan Sen, MD, PhD)",
+  "org": "University of Michigan, Michigan Neuroscience Institute",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "2026 JMIR and preprint papers on app plus wearable passive sensing and longitudinal wearable sleep monitoring in health care workers list Srijan Sen (Michigan Neuroscience Institute) as an author. A large-cohort wearable sleep program in the Midwest.",
+  "why_now": "JMIR paper 2026-06-12; preprint 2026-08-06.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42284595/",
+   "https://doi.org/10.2196/77761",
+   "https://pubmed.ncbi.nlm.nih.gov/42620385/",
+   "https://doi.org/10.21203/rs.3.rs-10460332/v1"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.2196/77761",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 8,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "Intro call on whether a DevKit v0.1 sub-study (overnight ECG/HRV) fits their cohort work.",
+  "opener": "Hi Dr. Sen, I'm Jeremy at Vybe Health in Akron. Your team's 2026 work on wearable sleep monitoring in health workers is close to our use case: a screenless overnight ECG/HRV band with open raw data. We're placing a few DevKit v0.1 units with research groups. Would a 15-minute call to see whether a small sub-study makes sense be useful?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Ann Arbor, MI",
+  "deadline": null,
+  "last_signal_date": "2026-08-06",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "midwest",
+   "cohort",
+   "wearables"
+  ]
+ },
+ {
+  "name": "Circadian/sleep wearable modelling (Daniel B. Forger, PhD)",
+  "org": "University of Michigan, Dept. of Mathematics",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Senior author on the Aug 2026 preprint on feasibility of longitudinal wearable sleep monitoring among Kenyan health workers (with Michigan Neuroscience Institute co-authors). Mathematical-modelling group that consumes wearable sleep/HR data.",
+  "why_now": "Preprint posted 2026-08-06.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42620385/",
+   "https://doi.org/10.21203/rs.3.rs-10460332/v1"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.21203/rs.3.rs-10460332/v1",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 6
+  },
+  "ask": "Raw overnight HR/RR export from a DevKit for their circadian models.",
+  "opener": "Hi Dr. Forger, I saw your 2026 preprint on longitudinal wearable sleep monitoring. Vybe Health is building a screenless overnight band with ECG-derived HR/HRV and raw-data export through an SDK. If your circadian models could use beat-level overnight data, we can provide DevKit v0.1 units. Open to a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Ann Arbor, MI",
+  "deadline": null,
+  "last_signal_date": "2026-08-06",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "circadian",
+   "midwest",
+   "dev-platform"
+  ]
+ },
+ {
+  "name": "MAICE Lab, STRATUS Center for Medical Simulation (Roger D. Dias, MD, PhD)",
+  "org": "Mass General Brigham / Harvard Medical School",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "June 2026 Sensors paper captured HRV and body motion with a chest-strap wearable across 26 simulated US Air Force en route critical care missions (72 clinicians); first author Roger D. Dias. Tactical-medicine HRV workload research with field wear-time data.",
+  "why_now": "Published 2026-06-05.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42281109/",
+   "https://doi.org/10.3390/s26113596"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.3390/s26113596",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 to compare against their chest-strap HRV in a simulation block.",
+  "opener": "Hi Dr. Dias, your Sensors paper on HRV and motion as workload markers in CCAT simulations is close to a use case we care about. Vybe Health builds a screenless ECG/HRV band with raw RR access via SDK. We're placing a few DevKit v0.1 units with labs. Would a short call about a side-by-side in a simulation block be worth it?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Boston, MA",
+  "deadline": null,
+  "last_signal_date": "2026-06-05",
+  "confidence": "single-source",
+  "tags": [
+   "tactical",
+   "hrv",
+   "military",
+   "ecg"
+  ]
+ },
+ {
+  "name": "Metabolic & Applied Physiology Laboratory (Matthew J. McAllister, PhD)",
+  "org": "Texas State University, Dept. of Health & Human Performance (with ALERRT Center)",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "June 2026 RCT (Comprehensive Psychoneuroendocrinology) on box breathing vs prolonged exhalation measured HR and HRV (RMSSD, SDNN) under a virtual Trier stress test, framed for law enforcement, fire and military; first author Matthew J. McAllister, co-author from the ALERRT Center.",
+  "why_now": "Published 2026-06-25.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42388906/",
+   "https://doi.org/10.1016/j.cpnec.2026.100360"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1016/j.cpnec.2026.100360",
+  "warm_path": null,
+  "fit": 8,
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 for overnight HRV in a tactical-population follow-up study.",
+  "opener": "Hi Dr. McAllister, your breathing-under-stress RCT with HRV outcomes caught our eye given its tactical framing. Vybe Health builds a screenless overnight ECG/HRV band with open raw data. We're placing a few DevKit v0.1 units with labs studying first responders. Would a 15-minute call to see if it fits a follow-up be useful?",
+  "check_size": null,
+  "stage": null,
+  "geo": "San Marcos, TX",
+  "deadline": null,
+  "last_signal_date": "2026-06-25",
+  "confidence": "single-source",
+  "tags": [
+   "tactical",
+   "hrv",
+   "first-responders"
+  ]
+ },
+ {
+  "name": "Firefighter multimodal wearable sensing (Jerome P. Lynch, PhD)",
+  "org": "Duke University, Dept. of Civil and Environmental Engineering",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Sept 2026 Sensors paper fused wearable physiological and environmental sensors during live-fire training with 28 firefighters; senior author Jerome P. Lynch. Engineering group building firefighter wellbeing monitoring systems.",
+  "why_now": "Published 2026-09-19.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42817489/",
+   "https://doi.org/10.3390/s26185924"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.3390/s26185924",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 6
+  },
+  "ask": "Technical call on adding Vybe's SDK stream as an overnight recovery input to their system.",
+  "opener": "Hi Dr. Lynch, your Sensors paper on fusing wearable and environmental data for firefighter wellbeing is strong work. Vybe Health builds a screenless band for overnight ECG/HRV with an SDK for raw data. Recovery between shifts may complement your on-duty sensing. Could we have 15 minutes to see if a DevKit v0.1 fits your pipeline?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Durham, NC",
+  "deadline": null,
+  "last_signal_date": "2026-09-19",
+  "confidence": "single-source",
+  "tags": [
+   "first-responders",
+   "firefighters",
+   "dev-platform"
+  ]
+ },
+ {
+  "name": "Measuring ANSWERS study, Matthew Gfeller Center (Jason P. Mihalik, PhD)",
+  "org": "University of North Carolina at Chapel Hill, Dept. of Exercise and Sport Science",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "JMIR Research Protocols (Aug 2026) describes the ANSWERS study of HR/HRV in military service members and collegiate athletes after concussion; 122 of 250 enrolled as of July 2026, recruiting through Aug 2027; senior author Jason P. Mihalik.",
+  "why_now": "Protocol published 2026-08-14; recruitment continues through Aug 2027.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42600155/",
+   "https://doi.org/10.2196/103400"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.2196/103400",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "Ask whether an overnight HRV DevKit add-on is feasible for a sub-sample (likely after current protocol).",
+  "opener": "Hi Dr. Mihalik, I read the ANSWERS protocol on autonomic measures in service members and athletes. Vybe Health is building a screenless overnight ECG/HRV band with raw RR export. I know your protocol is set, but if overnight HRV would add value to a sub-study, we can provide DevKit v0.1 units. Worth a brief call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Chapel Hill, NC",
+  "deadline": null,
+  "last_signal_date": "2026-08-14",
+  "confidence": "single-source",
+  "tags": [
+   "tactical",
+   "hrv",
+   "military",
+   "athletes"
+  ]
+ },
+ {
+  "name": "Military suicide prevention research with wearable sleep (Justin C. Baker, PhD; Lauren Khazem, PhD)",
+  "org": "The Ohio State University College of Medicine, Dept. of Psychiatry & Behavioral Health",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Mar 2026 Journal of Affective Disorders study used EMA plus Fitbit-measured sleep in 86 service members and veterans; OSU co-authors Justin C. Baker and Lauren Khazem (with Penn's Lily A. Brown). Ohio team using consumer wearable sleep data with military populations.",
+  "why_now": "Published 2026-03-25.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41895610/",
+   "https://doi.org/10.1016/j.jad.2026.121692"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1016/j.jad.2026.121692",
+  "warm_path": "Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "15-minute call on whether an alternative wearable with raw data access would help future protocols.",
+  "opener": "Hi Dr. Baker, I'm Jeremy at Vybe Health in Akron. Your JAD paper combining EMA and wearable sleep data in service members and veterans showed how much device choice shapes the data. We build a screenless overnight band with raw ECG/HRV access via SDK. Would 15 minutes to hear what your next protocols need from a wearable be possible?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Columbus, OH",
+  "deadline": null,
+  "last_signal_date": "2026-03-25",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "ohio",
+   "military",
+   "veteran"
+  ]
+ },
+ {
+  "name": "Wearable-derived sleep and musculoskeletal pain cohort (Brian Grawe, MD)",
+  "org": "University of Cincinnati, Dept. of Orthopaedics and Sports Medicine",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "May 2026 national cohort study tested whether wearable-derived sleep architecture predicts incident musculoskeletal pain; UC authors with senior author Brian Grawe. Ohio orthopaedics group already analyzing wearable sleep data.",
+  "why_now": "Published 2026-05-16.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42142335/",
+   "https://doi.org/10.1080/17581869.2026.2674771"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1080/17581869.2026.2674771",
+  "warm_path": "Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 6
+  },
+  "ask": "Feedback call; explore a small prospective sleep study using DevKits.",
+  "opener": "Hi Dr. Grawe, I'm Jeremy at Vybe Health in Akron. Your team's paper on wearable-derived sleep architecture and musculoskeletal pain is an interesting use of consumer sleep data. We're building a screenless overnight ECG/HRV band with raw-data access. If a prospective study is on your list, we'd provide DevKit v0.1 units. Open to a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cincinnati, OH",
+  "deadline": null,
+  "last_signal_date": "2026-05-16",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "ohio",
+   "sports-medicine"
+  ]
+ },
+ {
+  "name": "Wearable recovery/readiness score research (Cory T. Beaumont, PhD)",
+  "org": "Baldwin Wallace University, Dept. of Allied Health, Sport, and Wellness",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Co-author of a Jan 2026 Applied Psychophysiology and Biofeedback study on how regular exercisers use consumer wearables' recovery/readiness scores (HRV-derived). Northeast Ohio small-university lab, likely receptive to a nearby device partner.",
+  "why_now": "Published 2026-01-05.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41491141/",
+   "https://doi.org/10.1007/s10484-025-09762-6"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1007/s10484-025-09762-6",
+  "warm_path": "Northeast Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 8
+  },
+  "ask": "DevKit v0.1 for a student-led readiness-score or overnight HRV project.",
+  "opener": "Hi Dr. Beaumont, I'm Jeremy at Vybe Health, down the road in Akron. Your paper on how exercisers use wearable readiness scores matches questions we have. We build a screenless overnight ECG/HRV band and are placing DevKit v0.1 units with nearby labs. Would a student project using them be interesting? Happy to come to Berea for a demo.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Berea, OH",
+  "deadline": null,
+  "last_signal_date": "2026-01-05",
+  "confidence": "single-source",
+  "tags": [
+   "hrv",
+   "ohio",
+   "readiness",
+   "sport-science"
+  ]
+ },
+ {
+  "name": "Smartwatch sleep validation study (Mohit Chauhan)",
+  "org": "Mayo Clinic, Center for Individualized Medicine",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "April 2026 Frontiers in Psychiatry paper validated measured vs self-reported sleep across three generations of smartwatches; Mayo Clinic Center for Individualized Medicine authors with senior author Mohit Chauhan. Midwest group doing device-generation comparisons.",
+  "why_now": "Published 2026-04-20.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42088007/",
+   "https://doi.org/10.3389/fpsyt.2026.1767216"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.3389/fpsyt.2026.1767216",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "Add DevKit v0.1 to their next smartwatch sleep comparison.",
+  "opener": "Hello, I'm Jeremy at Vybe Health. Your Frontiers in Psychiatry paper comparing three generations of smartwatches against self-reported sleep is relevant to us. We build a screenless overnight band with ECG/HRV and raw-data export. If your group plans another comparison, we can supply DevKit v0.1 units. Would a 15-minute call make sense?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Rochester, MN",
+  "deadline": null,
+  "last_signal_date": "2026-04-20",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "validation",
+   "midwest"
+  ]
+ },
+ {
+  "name": "Wearables and biological timekeeping (Sofia O. Sanchez, PhD)",
+  "org": "Indiana University School of Public Health, Dept. of Kinesiology",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Senior author of 'Biological timekeeping in the age of wearables' (Journal of Physiology, May 2026) with Indiana and Iowa co-authors. Midwest physiology group thinking about what wearables can measure for circadian work.",
+  "why_now": "Published 2026-05-27.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42200681/",
+   "https://doi.org/10.1113/JP291567"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1113/JP291567",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 6
+  },
+  "ask": "Feedback on overnight HR/HRV timing data from a DevKit v0.1.",
+  "opener": "Hi Dr. Sanchez, your Journal of Physiology piece on biological timekeeping in the age of wearables raised points we're working through. Vybe Health builds a screenless overnight ECG/HRV band with raw beat-level export. Would you give us 15 minutes of critique, and if useful, try a DevKit v0.1 in your lab?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Bloomington, IN",
+  "deadline": null,
+  "last_signal_date": "2026-05-27",
+  "confidence": "single-source",
+  "tags": [
+   "circadian",
+   "sleep",
+   "midwest"
+  ]
+ },
+ {
+  "name": "Smartwatch measurement research (Rafael Miranda Tassitano, PhD)",
+  "org": "University of Illinois Urbana-Champaign, Dept. of Health and Kinesiology",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Senior/corresponding author (email on paper) of a Mar 2026 International Journal of Medical Informatics scoping review on using smartwatches to measure physical activity, sedentary behavior and sleep. Midwest methods group.",
+  "why_now": "Published 2026-03-17.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/41864152/",
+   "https://doi.org/10.1016/j.ijmedinf.2026.106370"
+  ],
+  "channel": "email listed on site",
+  "contact_url": "https://doi.org/10.1016/j.ijmedinf.2026.106370",
+  "warm_path": null,
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "Methods feedback call; DevKit v0.1 for a sleep measurement study.",
+  "opener": "Hi Dr. Tassitano, your scoping review on smartwatch measurement of activity and sleep is a useful map of the gaps. Vybe Health is building a screenless overnight band with ECG/HRV and raw-data access. We'd value 15 minutes of methods critique and can provide DevKit v0.1 units if a study fits.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Urbana-Champaign, IL",
+  "deadline": null,
+  "last_signal_date": "2026-03-17",
+  "confidence": "single-source",
+  "tags": [
+   "sleep",
+   "validation",
+   "midwest"
+  ]
+ },
+ {
+  "name": "Running wearable validation (Richard W. Willy, PhD)",
+  "org": "The Ohio State University, School of Health and Rehabilitation Sciences / Sports Medicine Research Institute",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "First author of an Aug 2026 European Journal of Sport Science validation of an accelerometer-equipped running watch for peak vertical ground reaction force and cumulative weighted damage; also on a 2026 running-injury ML paper. Ohio lab that runs wearable validation.",
+  "why_now": "Published 2026-08.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42394222/",
+   "https://doi.org/10.1002/ejsc.70215",
+   "https://pubmed.ncbi.nlm.nih.gov/42586535/"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1002/ejsc.70215",
+  "warm_path": "Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "ask": "Ask whether overnight HRV/recovery from a DevKit v0.1 is useful alongside their running-load work.",
+  "opener": "Hi Dr. Willy, I'm Jeremy at Vybe Health in Akron. Your running-watch validation for ground reaction force and cumulative damage is careful work. We build a screenless band for overnight ECG/HRV with raw data via SDK, aimed at recovery between training loads. Would 15 minutes to see if it complements your load studies be worthwhile?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Columbus, OH",
+  "deadline": null,
+  "last_signal_date": "2026-08-01",
+  "confidence": "single-source",
+  "tags": [
+   "running",
+   "ohio",
+   "validation",
+   "sport-science"
+  ]
+ },
+ {
+  "name": "Ketogenic and sleep-restriction tactical performance research (Jeff S. Volek, PhD)",
+  "org": "The Ohio State University, Dept. of Human Sciences",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Sept 2026 Military Medicine randomized crossover trial on ketone precursors and virtual-reality shooting performance during sleep restriction; OSU Human Sciences authors with senior author Jeff S. Volek. Ohio lab running sleep-restriction protocols in tactical-style tasks.",
+  "why_now": "Published 2026-09-17.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42753265/",
+   "https://doi.org/10.1093/milmed/usag429"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1093/milmed/usag429",
+  "warm_path": "Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 6
+  },
+  "ask": "DevKit v0.1 to log overnight HR/HRV during their sleep-restriction protocols.",
+  "opener": "Hi Dr. Volek, I'm Jeremy at Vybe Health in Akron. Your Military Medicine trial on shooting performance under sleep restriction is the kind of protocol where overnight data matters. We build a screenless ECG/HRV band with raw data access. Would DevKit v0.1 units for logging nights in a future protocol be useful? Happy to do a 15-minute call.",
+  "check_size": null,
+  "stage": null,
+  "geo": "Columbus, OH",
+  "deadline": null,
+  "last_signal_date": "2026-09-17",
+  "confidence": "single-source",
+  "tags": [
+   "tactical",
+   "sleep",
+   "ohio",
+   "military"
+  ]
+ },
+ {
+  "name": "Consumer wearables in congenital heart disease (Animesh Tandon, MD)",
+  "org": "Cleveland Clinic / Case Western Reserve University (Pediatrics; Biomedical Engineering)",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Oct 2025 CJC Pediatric and Congenital Heart Disease survey on use of and experience with wearable biosensors in congenital heart disease; first author Animesh Tandon (Cleveland Clinic Lerner College of Medicine of CWRU; CWRU BME). Northeast Ohio cardiology-engineering group studying consumer wearables.",
+  "why_now": "Published 2025-10-23.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42079809/",
+   "https://doi.org/10.1016/j.cjcpc.2025.10.002"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.1016/j.cjcpc.2025.10.002",
+  "warm_path": "Northeast Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "Feedback call on ECG signal quality from the DevKit (research use only, no clinical claims).",
+  "opener": "Hi Dr. Tandon, I'm Jeremy at Vybe Health in Akron. Your survey on wearable biosensor use in congenital heart disease was a useful look at what people actually wear. We're building a screenless ECG/HRV band (general wellness, research-use DevKit). Would 15 minutes of engineering feedback on our signal be possible?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Cleveland, OH",
+  "deadline": null,
+  "last_signal_date": "2025-10-23",
+  "confidence": "single-source",
+  "tags": [
+   "ecg",
+   "ohio",
+   "wearables"
+  ]
+ },
+ {
+  "name": "Consumer wearable validation in cancer survivors (Roberto M. Benzo, PhD)",
+  "org": "The Ohio State University Comprehensive Cancer Center, Division of Cancer Prevention and Control",
+  "role": null,
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "Aug 2026 JMIR lab validation of a consumer wearable's step count and intensity classification in adults with lung cancer, plus a May 2026 survey on fitness-tracker ownership in cancer survivors; Roberto M. Benzo (OSU) leads both lines.",
+  "why_now": "Published 2026-08-12.",
+  "evidence": [
+   "https://pubmed.ncbi.nlm.nih.gov/42585577/",
+   "https://doi.org/10.2196/100764",
+   "https://pubmed.ncbi.nlm.nih.gov/42190232/",
+   "https://doi.org/10.2196/92876"
+  ],
+  "channel": "corresponding author via publisher page (address on paper)",
+  "contact_url": "https://doi.org/10.2196/100764",
+  "warm_path": "Ohio",
+  "fit": 7,
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "ask": "Ask whether an overnight HRV/sleep device would fit a future exercise-oncology validation.",
+  "opener": "Hi Dr. Benzo, I'm Jeremy at Vybe Health in Akron. Your validation of consumer wearables in lung cancer shows why each population needs its own check. We build a screenless overnight ECG/HRV band (general wellness) with raw-data access. If you plan sleep or HRV measures, we can provide DevKit v0.1 units. Open to a 15-minute call?",
+  "check_size": null,
+  "stage": null,
+  "geo": "Columbus, OH",
+  "deadline": null,
+  "last_signal_date": "2026-08-12",
+  "confidence": "single-source",
+  "tags": [
+   "validation",
+   "ohio",
+   "wearables"
+  ]
+ },
+ {
+  "name": "Delve Health (Clinical StudyPal) wearable device library",
+  "org": "Delve Health",
+  "role": null,
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Delve Health's own comparison page says it supports 25+ devices with BYOD, provisioned, cellular and non-app options and runs validated digital-endpoint algorithms; its Clinical StudyPal platform runs virtual/hybrid/decentralized trials. Being a supported device puts Vybe in front of trial sponsors.",
+  "why_now": "Page titled 'Best Wearable Platforms for Clinical Trials (2026 Comparison)'.",
+  "evidence": [
+   "https://www.delvehealth.com/best-wearable-platforms-clinical-trials.html",
+   "https://www.diligentpharma.com/resources/12-dct-companies-clinical-trials-2026"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.delvehealth.com/best-wearable-platforms-clinical-trials.html",
+  "warm_path": null,
+  "fit": 7,
+  "ice": null,
+  "ask": "Ask what a new device needs (data access, validation evidence) to be added to their supported-device list.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron, Ohio. We're building a screenless overnight ECG/HRV band with an SDK/API for raw data and DevKits shipping to design partners now. Your platform supports a wide device set for decentralized studies. What does a new device need to show before it can be listed? Happy to share specs and our validation plan.",
+  "check_size": null,
+  "stage": null,
+  "geo": "US",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "verified",
+  "tags": [
+   "dct",
+   "clinical-trials",
+   "dev-platform",
+   "wearables"
+  ],
+  "entry_route": "No public device-partner form found in search results; reach via Delve Health's site contact.",
+  "opportunity": "Become a supported device on a multi-device DCT platform so sponsors can choose Vybe for overnight ECG/HRV endpoints.",
+  "unknowns": "Device onboarding criteria, required validation evidence, fees and timelines not found; whether a pre-launch general-wellness device is accepted is unknown; page content seen only as a search snippet."
+ },
+ {
+  "name": "Medable connected-sensor partner network",
+  "org": "Medable",
+  "role": null,
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "A 2026 DCT market roundup (Diligent Pharma) describes Medable as an end-to-end DCT platform with connected device management whose partner network includes connected sensor companies. A partner listing would expose Vybe to pharma sponsors running remote studies.",
+  "why_now": "Roundup dated 2026.",
+  "evidence": [
+   "https://www.diligentpharma.com/resources/12-dct-companies-clinical-trials-2026"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "warm_path": null,
+  "fit": 7,
+  "ice": null,
+  "ask": "Find Medable's partner/integration contact and ask how sensor companies join the network.",
+  "opener": "Hi, I'm Jeremy at Vybe Health in Akron, Ohio. We build a screenless overnight ECG/HRV band with an SDK for raw data, and DevKits are with early design partners. I understand Medable works with connected sensor companies. How does a new sensor company get evaluated for your partner network? Glad to send specs.",
+  "check_size": null,
+  "stage": null,
+  "geo": "US",
+  "deadline": null,
+  "last_signal_date": null,
+  "confidence": "single-source",
+  "tags": [
+   "dct",
+   "clinical-trials",
+   "channel"
+  ],
+  "entry_route": "Unverified: no Medable partner page was retrieved; only a third-party roundup.",
+  "opportunity": "Listing as a connected sensor partner so sponsors using Medable can provision Vybe bands for overnight HRV/sleep endpoints.",
+  "unknowns": "Partner program existence and criteria not confirmed from Medable's own site; no contact URL; fees unknown."
+ }
+]
