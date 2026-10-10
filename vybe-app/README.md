@@ -33,9 +33,24 @@ npx expo start
   yet. The app opens here.
 - **PatternHistoryScreen** *(1 Oct)* — twelve weeks of one claim, and the
   weeks it broke. Reached from the pattern section of NourishScreen.
-- **OutcomeScreen** *(new, 2 Oct)* — Vybe grading itself: every suggestion it
+- **OutcomeScreen** *(2 Oct)* — Vybe grading itself: every suggestion it
   made, what it predicted, what happened, and the ones it got wrong. Reached
   from the "did it work last time" block on RestoreScreen.
+- **ConnectScreen** *(5 Oct)* — one week of outside load: thirty-eight
+  hours of elevated readings, what each of them is being blamed on, and the
+  seven that nothing explains. Tap the Connect card on Home.
+- **FollowUpScreen** *(6 Oct)* — what happens when you tell Vybe it is
+  wrong: a correction, the parts of the reasoning it moves, and the parts still
+  standing. Reached from "That's not right" on AskScreen.
+- **ImportScreen** *(7 Oct)* — connecting a source that already has years
+  in it: what Vybe will compute with, what it will only draw, and what it will
+  not take. Reached from the sources step of OnboardingScreen.
+- **SeasonScreen** *(8 Oct)* — the same months a year apart, and the five
+  it has only seen once. Reached from "what would make this stronger" on
+  PatternHistoryScreen.
+- **ExportScreen** *(new, 9 Oct)* — what actually leaves with you, what another
+  product can use, and what Vybe keeps after a delete. Reached from "Export
+  everything" on DataSettingsScreen.
 
 ## The three decisions worth keeping
 
@@ -319,6 +334,219 @@ rows would be the only bug that matters.
 The app has three plots already. A predicted *range*, one actual, and whether one
 fell inside the other is three numbers and a word — it reads faster set as type,
 and drawing it would be a picture of a sentence.
+
+## The connect screen, and why it looks like that
+
+Four of the five dimensions read the body. Connect reads what happened *to* it —
+the calendar, the time zones, the weather — then asks what the body did about it.
+That makes it the only dimension whose inputs are not measurements, and the only
+one that is structurally incomplete: a hard week has causes that never reach a
+wrist sensor or a calendar invite.
+
+**So the claim is an attribution, and attribution needs a form that shows
+composition.**
+`38h` of elevated readings, broken into four named parts. Restore's hairline list
+cannot show that one quantity is *made of* other quantities; a single bar read
+left to right can. The app's two existing bar treatments answer a different
+question — `TrendColumns` is one value per week across twenty-six weeks,
+`PatternWeeks` is one value per week against a line — so neither was reusable.
+
+**The hours nothing explains are drawn, ranked and given a block of their own.**
+Seven of the thirty-eight have no cause beside them: clear calendar, ordinary
+weather, home all week. Every product in this category hands those to the busy
+week and shows a tidy pie. This one says it *"would rather leave them blank than
+hand them to the nearest cause on the list"*, and the remainder gets a segment
+with an outline and no fill, at the end of the bar and the bottom of the list.
+A screen that can only produce complete explanations is a screen that invents
+them.
+
+**A source with too few comparable days says so instead of reporting an
+effect.**
+Two time-zone changes are the single largest thing that happened this week, and
+Vybe still refuses to say what travel does to you, because two days is a story.
+The floor is four comparable days, printed on screen, and the screen adds up what
+it is holding open rather than explaining: 7 unexplained hours plus 11 under thin
+sources is **47% of the week**.
+
+**The bar is the second reading, never the only one.**
+Its segments are steps of the one Connect hue, applied as opacity rather than new
+tokens — and steps of a single hue are exactly what somebody with low contrast
+sensitivity cannot separate. So every segment's name, hours and share are printed
+in the list beneath it, the bar is hidden from screen readers, and removing it
+loses nothing.
+
+**Every figure is arithmetic over the sources.**
+The named total, each share, the remainder, the 14-hour difference from a usual
+week and the count of sources Vybe will not read are computed at render. The
+shares sum to exactly 100, so the bar fills without overflowing. `unexplainedOf`
+clamps at zero and the screen swaps in an overlap note, so a future data source
+that double-counts produces a caveat rather than a backwards bar.
+
+## The follow-up screen, and why it looks like that
+
+`AskScreen` is the front door: a question in, an answer out with its basis and
+its blind spots. This is the half that comes after, and almost nothing in this
+category ships it — the person usually knows something the sensor does not, and
+the moment they say so decides whether a health assistant is useful or finished.
+
+**Vybe does not fold.**
+Three corrections are on offer and only one changes the answer. A product that
+accepts every correction will confirm whatever the person already believed and
+still sound certain doing it, which is worse than ignoring them, because it is
+wrong in the direction nobody checks. The third correction — *"I feel completely
+fine"* — is recorded, believed, and changes nothing: *"a reading above your
+baseline while you feel well is a reading above your baseline while you feel
+well."*
+
+**The part that gets overturned was labelled a guess first.**
+Every line of the basis carries `source`: measured, or inferred by Vybe. The
+inferred line — alcohol on two evenings, matched from a heart-rate pattern with
+nothing logged — is the one the night-shift correction overturns. The screen can
+then say, as arithmetic rather than as a claim, that 2 of 4 parts moved and 1 of
+them was something Vybe had already marked as a guess.
+
+**Three outcomes, and which one is derived.**
+`kindOf()` compares what moved against whether the answer text actually changed:
+a correction that moves a basis item *and* changes the answer is `changes`; one
+that closes a blind spot or shifts confidence is `narrows`; one that does
+neither is `recorded`. A label typed into the data could read "this changed the
+answer" above an answer identical to the one it replaced. Verified in node: one
+correction of each kind, every effect naming a real basis id, every basis item
+covered.
+
+**No left-border accent, and no colour alone.**
+The verdict is a word in its own fixed gutter — Held, Counts for less,
+Overturned — and an overturned line is struck through as well. The same three
+states survive being read aloud.
+
+**The blind-spot list stays on the page.**
+A correction can close one, and the closed item is struck through in place
+rather than disappearing. A list that quietly shrinks is a list nobody can audit.
+
+## The import screen, and why it looks like that
+
+`OnboardingScreen` asks which sources you will connect. This is the screen
+immediately after it, and the one nobody builds: the phone health store opens
+and three years of somebody else's readings come out.
+
+**The convenient thing is wrong in a way the person cannot see.**
+Import all of it, draw one seamless chart back to 2023, compute a baseline from
+the lot. But another product's sleep stages and HRV come from a different
+sensor, sampled at different moments, through an algorithm nobody has published.
+Build a baseline on those and every later sentence that says *"below your
+baseline"* is quietly measuring Vybe against a competitor's guess.
+
+**So history lands in three groups, and the rule sits above each one.**
+*Compute with* — a clock reading or a direct measurement, comparable between
+devices: sleep timing, resting heart rate, steps. *Show and never compute with*
+— three years of sleep stages and 892 days of HRV, drawn for you and unusable.
+*Not imported at all* — readiness scores from a formula nobody published,
+eighteen hand-typed weights, one stray blood-pressure reading.
+
+**The groups are consequential, not cosmetic.**
+Six capabilities are listed with their state derived from the buckets and the
+day counts: `statusFor()` returns `blocked` when an input sits outside the
+compute-with group and names the record that blocked it, `waiting` with the
+shortfall when an input is too short, `ready` otherwise. A capability can never
+announce itself ready while its input is in the group Vybe refuses to compute
+with. Verified in node: 1,120 usable days, 3 ready, 2 blocked by `shown`
+records, 1 waiting on meal logs it has 0 days of.
+
+**No health value appears anywhere on it.**
+The sample module holds record counts and date spans — no heart rate, no sleep
+duration, no score. A screen about what to do with a pile of history never needs
+to show a reading, which removes the risk entirely rather than labelling it.
+
+**The state is a word in its own column.**
+Ready, Not from this, Waiting — never a colour alone, and the day counts use
+tabular figures in a fixed right column so three years and eighteen days are
+comparable at a glance.
+
+## The year-on-year screen, and why it looks like that
+
+The app had two history screens already. `MoveTrendScreen` draws one metric
+across twenty-six weeks; `PatternHistoryScreen` tests one claim across twelve.
+Both answer *what did this do*. Neither can answer the question that decides
+whether any of it means anything: **is this a trend, or is it just November
+again?**
+
+**The tempting fix is the one that hides everything.**
+Every wearable shows a decline through the winter and lets the person conclude
+they are getting worse. Usually they are not; it is winter. A seasonal
+adjustment would quietly lift the winter numbers and draw a flat line — and
+destroy the only fact worth having. So this screen does the opposite: it reports
+how many months it can actually compare, and refuses to draw a seasonal curve
+through a single year.
+
+**The headline is a limit, not an achievement.**
+`7 of 12` — seven calendar months have a counterpart a year earlier, six of
+those came out the same both times, one did not, and five months exist on
+exactly one year. The months seen once are rows too, with a dash where the
+second year should be. Dropping them would be the whole bug: a list of only the
+comparable months reads as a complete year and is not one, and the months that
+would go missing are exactly the winter ones people worry about.
+
+**The screen checks its worst claim instead of asserting it.**
+`worstAreThinnest` compares the five lowest readings against the five months
+seen only once. They are the same five — January, December, February, November,
+October — so the screen can say, as arithmetic, that the thinnest evidence and
+the worst numbers are the same months. If a future dataset broke that, the
+sentence changes rather than lying.
+
+**A verdict that turns on one minute is noise wearing a conclusion's clothes.**
+Two years count as the same month when they land within five minutes of each
+other, and the rule is printed on screen. Six of the seven compared months
+differ by a minute or less; without the margin, each of them would be a coin
+flip. Verified in node: 19 readings, 12 calendar rows, 7 compared, 6 repeated,
+1 changed — July, down 11 minutes, the month after a house move.
+
+**It says when it becomes useful.**
+February 2027 for a second pass through every month, February 2028 for a third:
+*"a month that matches once is a pair, not a pattern."*
+
+## The export screen, and why it looks like that
+
+`DataSettingsScreen` offers "Export everything" and promises CSV for the
+readings, JSON for the rest, and a delete that finishes within seven days. This
+is the screen behind that tap, and its job is to keep that promise in detail
+rather than quietly improve on it. Until today that button's handler was a
+`TODO`.
+
+**It is the import screen, backwards, and that is the point.**
+On Wednesday Vybe refused to compute with another product's sleep stages and
+HRV — somebody else's estimate, different sensor, unpublished algorithm. That
+position only holds if it points both ways. So Vybe's own answers, pattern
+verdicts and outcome records are listed here under a heading that says what
+they are, and the manifest tells the next product to treat them exactly as Vybe
+treated the last one's: *"read, not computed with."*
+
+**The misses are in the file.**
+The outcome records export with the predictions that failed, and the patterns
+export with the weeks they broke. An export carrying only the successes would
+be *"marketing with a filename."*
+
+**The derived records are a rounding error by count and most of the value.**
+458 conclusions against 1.19 million readings — the screen says that as
+arithmetic rather than as a boast.
+
+**A rounding bug the verification caught.**
+Computing the portable share on its own rounds to `100%`, directly above a
+caption reading "the remaining 0.04%" — a screen contradicting itself. The
+portable share is now the complement of the derived share at the same
+precision, so the two always sum to exactly 100: `99.96%` and `0.04%`. 99.96%
+is also the more honest headline: virtually all, without claiming all.
+
+**The format choice has consequences, and they are computed.**
+CSV carries three of the six groups, JSON all six, PDF three — derived from
+each group's own format list, so a format cannot claim to carry something the
+group does not offer. Each one says what it is bad at: a PDF is *"a record, not
+data"*; JSON is *"not readable by a person without tooling, and nobody should
+pretend otherwise."*
+
+**What Vybe keeps after a delete is on the screen, not in a policy page.**
+Seven years of order records because tax law requires it, 30 days for backups
+that roll on a cycle, 90 days of crash reports with no identifier in them —
+each with the reason beside it.
 
 ## Non-negotiables held
 

@@ -25,7 +25,7 @@ const DANGER = dimensions.vitals.hue;
  * bare paper, a hairline list with switches, one proportional bar, the single
  * dark block, and two buttons that look like what they do.
  */
-export default function DataSettingsScreen({ onBack }) {
+export default function DataSettingsScreen({ onBack, onExport }) {
   const [sources, setSources] = useState(dataSettings.sources);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
 
@@ -181,9 +181,8 @@ export default function DataSettingsScreen({ onBack }) {
         <Text style={styles.sectionTitle}>Your controls</Text>
 
         <Pressable
-          onPress={() => {
-            // TODO: hand off to the export job once the data layer exists.
-          }}
+          onPress={onExport}
+          disabled={!onExport}
           accessibilityRole="button"
           accessibilityLabel={dataSettings.controls.exportLabel}
           accessibilityHint={dataSettings.controls.exportDetail}

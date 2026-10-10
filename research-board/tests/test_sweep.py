@@ -39,6 +39,9 @@ def workspace(tmp_path, monkeypatch):
     """Point the sweep's paths at a scratch directory."""
     monkeypatch.setattr(sweep_module, "FINDINGS", tmp_path / "findings.json")
     monkeypatch.setattr(sweep_module, "OUT", tmp_path / "site")
+    # Keep the repo's own hot notes and flags out of the scratch render.
+    monkeypatch.setattr(sweep_module, "HOT_NOTES", tmp_path / "hot-notes.json")
+    monkeypatch.setattr(sweep_module, "FLAGS", tmp_path / "standards-flags.json")
     return tmp_path
 
 
