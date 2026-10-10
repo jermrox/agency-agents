@@ -16,6 +16,20 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-10 — daily run
+
+- +3 items, all PubMed: FIRE 1 (only 10% of California firefighters have had a lung-cancer CT screen),
+  MIL 2 (pregnant/postpartum veterans' use of integrative care; military GME ethics curriculum and
+  moral injury). Board 75, archive 61. EMS, LE: nothing again. Exa still 402 (seventh day); "no new
+  policy" is unverified. Thin day: PubMed alone cannot cover policy, LE or EMS.
+- Three hot notes went stale at once as mid-September items aged out (Behavioral health, Programs and
+  funding, Wearables). The check refused to render; fixed by dropping the expired sentence and citing
+  an in-window replacement. Third day running a note went stale, so check `cites` dates at the start
+  of each run, before merging.
+- PubMed `date_from` filters on indexing date, and "EMT" matches epithelial-mesenchymal transition;
+  use "emergency medical technician" or "paramedic".
+- Leads needing day-level dates: PFAS and epigenetic age in airport firefighters (DOI 10.1002/em.70085).
+
 ## 2026-10-09 — daily run
 
 - +8 items, all PubMed: MIL 5 (UK ADVANCE combat-injury mental health; Bankart repair return to duty;
