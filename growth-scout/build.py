@@ -369,7 +369,8 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
 
 
 QUEUE_HUNTS = ("sponsorship", "partnership")
-CALENDLY = "https://calendly.com/jeremylahn-i-grow/vybe-health-partnership-call"
+# The Vybe Health Calendly (jeremy@vybe.health). Never the i-grow account.
+CALENDLY = "https://calendly.com/jeremy-vybe/30min"
 SIGNOFF = "\n\nJeremy Lahn\nVybe Health\njeremy@vybe.health · vybe.health"
 
 
