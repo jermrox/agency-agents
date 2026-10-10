@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10 19:25 UTC",
+  "generated": "2026-10-10 22:23 UTC",
   "today": "2026-10-10",
   "scope": {
     "company": "Vybe Health",
@@ -78615,6 +78615,14 @@
         "next": "The one follow-up is already used. The event is 3-8 Nov: if there's still no reply by Tue 13 Oct, phone them instead of emailing again."
       },
       {
+        "org": "Stress Platform - Health & HRV",
+        "to": "help@stress-platform.com",
+        "first_sent": "2026-10-09",
+        "state": "replied",
+        "due": "2026-10-13",
+        "next": "10 Oct: founder Maksim Strok is interested but wants technical details by email first: does a prototype reliably write HRV and resting HR to Apple Health? Reply with the technical answer. Forwarded to John."
+      },
+      {
         "org": "WNBF Naturalmania Pro Am Nationals",
         "to": "wnbf@worldnaturalbb.com",
         "first_sent": "2026-10-06",
@@ -78840,14 +78848,6 @@
         "next": "First email sent 9 Oct. If there's no reply by Wed 14 Oct, send the one follow-up."
       },
       {
-        "org": "Stress Platform - Health & HRV",
-        "to": "help@stress-platform.com",
-        "first_sent": "2026-10-09",
-        "state": "no reply",
-        "due": "2026-10-14",
-        "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
-      },
-      {
         "org": "SugaMed (ECG Patch PCBA)",
         "to": "info@sugaintl.com",
         "first_sent": "2026-10-09",
@@ -78943,15 +78943,6 @@
         "followed_up": "2026-10-09"
       },
       {
-        "org": "Roy Hobbs World Series",
-        "to": "teammatesupport@royhobbs.com",
-        "first_sent": "2026-10-08",
-        "state": "no reply",
-        "due": "2026-10-16",
-        "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
-        "followed_up": "2026-10-09"
-      },
-      {
         "org": "Travis Manion Foundation",
         "to": "partnerships@travismanion.org",
         "first_sent": "2026-10-08",
@@ -78985,6 +78976,15 @@
         "state": "bounced",
         "due": null,
         "next": "Address bounced (550, not found). Use the contact form on lipolbatteries.com instead."
+      },
+      {
+        "org": "Roy Hobbs World Series",
+        "to": "teammatesupport@royhobbs.com",
+        "first_sent": "2026-10-08",
+        "state": "declined",
+        "due": null,
+        "next": "10 Oct: Ellen Giffen declined for now ('Perhaps in the future'). Closed; revisit for the 2027 season.",
+        "followed_up": "2026-10-09"
       }
     ],
     "forwarded": [
@@ -79000,7 +79000,9 @@
       "1a121ef6e627c389",
       "1a1221528f3c50d0",
       "1a12269231776cb8",
-      "1a12621a40697ce8"
+      "1a12621a40697ce8",
+      "1a127dff527ae80c",
+      "1a127159fd6f49dc"
     ],
     "forward_to": "john@vybe.health"
   }
