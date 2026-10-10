@@ -141,8 +141,37 @@ OHIO_RE = re.compile(
     r"Hudson|Fairborn|Middlefield|Sidney|Newark|Chagrin|Bowling Green|Mansfield|Lorain|Medina|Stow)\b")
 
 
+NC_RE = re.compile(
+    r"\b(NC|N\.C\.|North Carolina|Charlotte|Raleigh|Durham|Chapel Hill|Greensboro|Winston-Salem|"
+    r"Fayetteville|Fort Bragg|Fort Liberty|Camp Lejeune|Jacksonville, NC|Wilmington|Asheville|Cary|"
+    r"High Point|Research Triangle|RTP|Boone|Greenville, NC)\b")
+EAST_RE = re.compile(
+    r"\b(ME|NH|VT|MA|RI|CT|NY|NJ|PA|DE|MD|DC|VA|SC|GA|FL|Maine|New Hampshire|Vermont|Massachusetts|"
+    r"Rhode Island|Connecticut|New York|New Jersey|Pennsylvania|Delaware|Maryland|Washington, DC|"
+    r"Virginia|South Carolina|Georgia|Florida|Boston|NYC|Brooklyn|Philadelphia|Pittsburgh|Baltimore|"
+    r"Richmond|Norfolk|Virginia Beach|Arlington|Charleston|Columbia, SC|Atlanta|Savannah|Miami|"
+    r"Orlando|Tampa|Jacksonville|Hartford|Providence|Newark, NJ)\b")
+
+
+def _where(row: dict) -> str:
+    return " ".join(str(row.get(k) or "") for k in ("geo", "name", "org", "warm_path"))
+
+
 def is_ohio(row: dict) -> bool:
-    return bool(OHIO_RE.search(" ".join(str(row.get(k) or "") for k in ("geo", "name", "org", "warm_path"))))
+    return bool(OHIO_RE.search(_where(row)))
+
+
+def region(row: dict) -> str:
+    """nc, east, ohio or other. Geo decides first; names only break ties."""
+    geo = str(row.get("geo") or "")
+    for text in (geo, _where(row)):
+        if NC_RE.search(text):
+            return "nc"
+        if EAST_RE.search(text):
+            return "east"
+        if OHIO_RE.search(text):
+            return "ohio"
+    return "other"
 
 
 def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
@@ -158,8 +187,8 @@ def score(row: dict, params: dict, today: dt.date) -> tuple[int, str]:
         s += p["verified_bonus"]
     if row.get("contact_url"):
         s += p["open_channel_bonus"]
-    if is_ohio(row):
-        s += p.get("ohio_bonus", 0)
+    s += {"nc": p.get("nc_bonus", 0), "east": p.get("east_coast_bonus", 0),
+          "ohio": p.get("ohio_bonus", 0)}.get(region(row), 0)
     ice = row.get("ice") or {}
     if row.get("hunt") == "growth" and all(isinstance(ice.get(k), (int, float)) for k in "ice"):
         # Easy, high-confidence wins move up; hard ones move down.

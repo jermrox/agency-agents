@@ -13,7 +13,7 @@ one_liner = "The developer platform for wearable health: we build the wearable, 
 # fit score decides who reaches the board.
 category = "wearable technology and health wearables"
 home_region = "Akron, Ohio"
-priority_regions = ["Ohio", "Midwest", "US"]
+priority_regions = ["North Carolina", "East Coast", "Ohio", "US"]
 founder_identity = ["veteran-owned", "woman-owned", "minority-owned"]  # use in outreach only with founder approval
 
 # ---------------------------------------------------------------------------
@@ -188,8 +188,11 @@ recent_signal_days = 120
 recent_signal_bonus = 5
 verified_bonus = 5
 open_channel_bonus = 5
-# Ohio comes first: the founder wants local wins before anything national.
-ohio_bonus = 15
+# Regions (founder, 10 Oct): North Carolina first, then every East Coast state.
+# Ohio is home base but must not dominate the board.
+nc_bonus = 20
+east_coast_bonus = 12
+ohio_bonus = 3
 high = 100
 medium = 90
 

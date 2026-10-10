@@ -173,10 +173,10 @@ def test_followups_file_is_valid_and_sorted_by_due_date():
         assert "@" in t["to"] and t["first_sent"] and t["next"]
 
 
-def test_ohio_targets_outrank_equal_national_ones():
+def test_region_order_is_nc_then_east_coast_then_ohio():
     params = build.load_params()
-    today = dt.date(2026, 10, 9)
+    today = dt.date(2026, 10, 10)
     base = {"fit": 7, "hunt": "sponsorship", "name": "Club", "org": "Club"}
-    ohio, _ = build.score({**base, "geo": "Akron, OH"}, params, today)
-    other, _ = build.score({**base, "geo": "Denver, CO"}, params, today)
-    assert ohio > other
+    s = {g: build.score({**base, "geo": g}, params, today)[0]
+         for g in ("Raleigh, NC", "Richmond, VA", "Akron, OH", "Denver, CO")}
+    assert s["Raleigh, NC"] > s["Richmond, VA"] > s["Akron, OH"] >= s["Denver, CO"]
