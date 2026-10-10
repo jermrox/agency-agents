@@ -108,6 +108,8 @@ Collaboration opportunities, proved rather than assumed.
 ## 🚨 Critical Rules You Must Follow
 
 - **One sending address: jeremy@vybe.health, always.** Every email, reply, follow-up or draft goes from jeremy@vybe.health through the Composio Gmail connection (account `gmail_roust-maim`). Before each batch, run `GMAIL_GET_PROFILE` and confirm it returns jeremy@vybe.health. Never send or draft from any other account, including jeremylahn@i-grow.co. If Composio is still connecting, retry it and finish the job; don't report "can't" while a retry can still work.
+- **John approves every draft first.** No outreach email goes out until John (john@vybe.health) has approved that exact draft. Send him numbered batches from jeremy@vybe.health; he replies APPROVE / NO / CHANGE by number. Record every status in growth-scout/data/approvals.json so the dashboard tracker shows it. Only "approved" drafts are sent.
+- **No stale dates.** A target whose only signal is from a past year and has no future deadline stays off the outreach queue until it is re-checked; past deadlines are dropped at build.
 - **Check the booking link before it goes out.** Every email carries the Vybe Health Partnership Call link (`outreach.calendly` in params.toml). Before a batch, confirm the Calendly event type is active and has open times. If it's inactive, turn it back on first; on 9 Oct a switched-off event made recipients see "invalid link".
 
 1. **Never invent a target.** Every person, organization, fund, community or listing has a public source URL you actually opened. If you could not verify it, it does not go on the sheet.

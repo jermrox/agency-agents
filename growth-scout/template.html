@@ -149,6 +149,10 @@ td.num { font-variant-numeric: tabular-nums; text-align: right; }
   <p class="hint">The 10 highest-ranked targets with an open channel and a drafted opener. You send every message yourself; nothing here sends anything.</p>
   <div class="cards" id="cards"></div>
 
+  <h2 id="approvals">Drafts awaiting John's approval</h2>
+  <p class="hint">Rule: no outreach draft goes out until John (john@vybe.health) approves it. He replies APPROVE / NO / CHANGE by number; the 3x-daily run updates this list.</p>
+  <div class="tablewrap"><table id="ap-tbl"><thead><tr><th>#</th><th>Draft</th><th>Status</th><th>Requested</th></tr></thead><tbody id="ap"></tbody></table></div>
+
   <h2 id="followups">Follow-ups due</h2>
   <p class="hint" id="fu-note">Outreach already sent from jeremy@vybe.health, soonest first. Each contact gets one follow-up, 5 to 7 days after the first email.</p>
   <div class="tablewrap"><table id="fu-tbl"><thead><tr><th>Due</th><th>Who</th><th>State</th><th>Do this</th></tr></thead><tbody id="fu"></tbody></table></div>
@@ -376,6 +380,12 @@ const DATA = /*__DATA__*/null;
   });
   renderTable();
 
+  // Approvals (data/approvals.json)
+  const AP = Object.values((DATA.approvals && DATA.approvals.items) || {}).sort((a, b) => (a.batch - b.batch) || (a.n - b.n));
+  $("#ap").innerHTML = AP.length ? AP.map((a) => `<tr><td>${esc(a.n)}</td><td>${esc(a.name)}</td>
+    <td><span class="pill${a.status === "approved" ? " due" : ""}">${esc(a.status)}</span></td><td>${esc(a.requested || "")}</td></tr>`).join("")
+    : '<tr><td colspan="4" class="empty">Nothing sent to John for approval yet.</td></tr>';
+
   // Follow-ups on outreach already sent (from data/followups.json)
   const FU = (DATA.followups && DATA.followups.threads) || [];
   if (DATA.followups && DATA.followups.checked) $("#fu-note").textContent += ` Inbox last checked ${DATA.followups.checked}.`;
@@ -404,7 +414,7 @@ const DATA = /*__DATA__*/null;
       return `<details class="oq-item"${i < 3 ? " open" : ""}><summary>
         <span class="pill ${esc(q.priority)}">${esc(q.priority)}</span><span class="pill hunt">${esc(q.hunt)}</span><span class="pill">${esc(TYPE_LABEL[q.type] || q.type)}</span>
         ${d !== null && d >= 0 ? `<span class="pill due">Due in ${d}d</span>` : ""}
-        <span class="subj">${esc(q.name)}</span><span class="pill">${esc(q.channel || "")}</span></summary>
+        <span class="subj">${esc(q.name)}</span><span class="pill">${esc(q.channel || "")}</span><span class="pill${q.approval === "approved" ? " due" : ""}">John: ${esc(q.approval || "not requested")}</span></summary>
         <p class="why" style="margin:10px 0 0"><strong>Subject:</strong> ${esc(q.subject)}</p>
         <pre>${esc(q.body)}</pre>
         <p class="why" style="margin:6px 0 0"><strong>Follow-up (day 5-7, once):</strong> ${esc(q.followup_subject || "")}</p>

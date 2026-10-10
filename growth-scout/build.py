@@ -32,6 +32,7 @@ COMBOS = ROOT / "data" / "combos.json"
 SCREENED = ROOT / "data" / "screened_apps.json"
 IDENTIFIED = ROOT / "data" / "identified_apps.json"
 FOLLOWUPS = ROOT / "data" / "followups.json"
+APPROVALS = ROOT / "data" / "approvals.json"
 
 TYPES = {
     "vc", "angel", "angel-group", "syndicate", "accelerator", "corporate-vc",
@@ -344,6 +345,7 @@ def build(params: dict, today: dt.date) -> tuple[list[dict], list[dict], dict]:
                 rejected.append({"lane": lane, "name": row.get("name"), "reasons": [dead]})
                 continue
             row["score"], row["priority"] = score(row, params, today)
+            row["stale_signal"] = stale_signal(row, today)
             row["identity_needs_ok"] = (
                 uses_founder_identity(row) and not params["outreach"].get("founder_identity_approved", False)
             )
@@ -401,6 +403,24 @@ def load_followups() -> dict:
     return data
 
 
+def stale_signal(row: dict, today: dt.date) -> bool:
+    """why_now only cites years before this one and there is no future deadline."""
+    if parse_date(row.get("deadline")):
+        return False
+    years = [int(y) for y in re.findall(r"\b(20\d\d)\b", row.get("why_now") or "")]
+    return bool(years) and max(years) < today.year
+
+
+APPROVALS_CACHE: dict = {}
+
+
+def load_approvals() -> dict:
+    """John approves every draft before it is sent (founder, 10 Oct)."""
+    if not APPROVALS.exists():
+        return {"approver": "john@vybe.health", "items": {}}
+    return json.loads(APPROVALS.read_text())
+
+
 def outreach_queue(targets: list[dict]) -> list[dict]:
     """Ready-to-send emails for sponsorship and partner targets, best first.
 
@@ -410,7 +430,7 @@ def outreach_queue(targets: list[dict]) -> list[dict]:
     """
     queue = []
     for t in targets:
-        if t["hunt"] not in QUEUE_HUNTS or not t.get("sendable"):
+        if t["hunt"] not in QUEUE_HUNTS or not t.get("sendable") or t.get("stale_signal"):
             continue
         queue.append({
             "id": t["id"], "name": t["name"], "org": t["org"], "type": t["type"], "hunt": t["hunt"],
@@ -419,6 +439,7 @@ def outreach_queue(targets: list[dict]) -> list[dict]:
             "evidence": (t.get("evidence") or [None])[0], "ask": t.get("ask"),
             "subject": email_subject(t), "body": t["opener"].strip() + SIGNOFF,
             "followup_subject": "Re: " + email_subject(t), "followup_body": followup_body(t),
+            "approval": (APPROVALS_CACHE.get(t["id"]) or {}).get("status", "not requested"),
         })
     return queue
 
@@ -475,6 +496,9 @@ def main() -> int:
         bad = [r for r in rejected if any("invalid JSON" in x or "never a guessed" in x for x in r["reasons"])]
         return 1 if bad else 0
 
+    approvals = load_approvals()
+    APPROVALS_CACHE.clear()
+    APPROVALS_CACHE.update(approvals.get("items", {}))
     data = {
         "generated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "today": today.isoformat(),
@@ -489,6 +513,7 @@ def main() -> int:
         "combos_note": combos.get("note", ""),
         "screened_apps": screened_apps,
         "rejected_count": len(rejected),
+        "approvals": approvals,
         "outreach": outreach_queue(targets),
         "followups": load_followups(),
     }
