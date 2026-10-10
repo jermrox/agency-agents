@@ -89,8 +89,15 @@ def render(text: bool, save: bool) -> str:
     )
     L.append("- Application drafts in growth-scout/applications still have [FOUNDER] fields to fill.")
     L.append("")
+    threads = (d.get("followups") or {}).get("threads", [])
+    if threads:
+        replied = [t for t in threads if t.get("state") == "replied"]
+        L.append(f"OUTREACH: {len(threads)} contacted from jeremy@vybe.health, {len(replied)} replied")
+        for t in replied:
+            L.append(f"- {t['org']}: {t.get('next', '')}")
+        L.append("")
     L.append(f"Dashboard: {DASH}")
-    L.append("Drafts only: nothing on the board has been contacted. Targets are people we found, not people we have spoken to.")
+    L.append("Everything else on the board is a target we found, not someone we have spoken to.")
     plain = "\n".join(L)
     if text:
         return plain
