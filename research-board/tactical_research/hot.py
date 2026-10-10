@@ -64,3 +64,23 @@ def hot_topics(items: list[BoardItem], min_items: int = MIN_ITEMS) -> list[HotTo
     topics = [HotTopic(tag=tag, items=group) for tag, group in by_tag.items() if len(group) >= min_items]
     topics.sort(key=lambda t: (t.count, len(t.types)), reverse=True)
     return topics
+
+
+def stale_notes(notes: dict[str, str], cites: dict[str, list[str]], board: list[BoardItem]) -> list[str]:
+    """Every reason a written hot-topic paragraph no longer matches the window.
+
+    A paragraph names specific items. Items age out of the 30-day window every
+    day, and a paragraph still quoting one reads as current when it is not. So
+    each paragraph lists the primary_urls it relies on, and any that has left
+    the board — or a paragraph that lists none — is a problem to fix in the data.
+    """
+    on_board = {item.primary_url for item in board}
+    problems = []
+    for tag in notes:
+        listed = cites.get(tag, [])
+        if not listed:
+            problems.append(f"{tag}: paragraph lists no cited items")
+        for url in listed:
+            if url not in on_board:
+                problems.append(f"{tag}: cites an item no longer in the window: {url}")
+    return problems

@@ -63,7 +63,12 @@ Rules:
   below with "(not re-pulled: DataForSEO unfunded, [date])", stand in for the
   results page with a labelled Firecrawl or Exa search, mark the brief "not
   ready to publish until the Google results page is pulled", and flag the
-  funding to the founder. Never guess a figure.
+  funding to the founder. Never guess a figure. If an earlier dated
+  DataForSEO results pull exists for the query (in a brief or `seo-plan.md`),
+  quote its top five results and its AI Overview, also marked "not
+  re-pulled"; the Firecrawl or Exa proxy goes beside it, not in its place.
+- **Carry queries forward.** A refreshed brief keeps every supporting query
+  from the earlier brief, or gives a one-line reason for dropping each one.
 - Date every number, and say which pull backs each trend figure: the
   12-month Google Ads series (last 3 months against the first 3), or Google
   Trends (the same weeks a year apart). Never quote a growth percentage you

@@ -68,21 +68,22 @@ never offered as an explanation.
 
 Checked on 3 Oct 2026 against 16 category players (WHOOP, Oura, Ultrahuman,
 Polar, Garmin Health, Amazfit, Circular, Movano/Evie, Terra, Junction,
-Thryve, ROOK, Spike, Movesense, OpenBCI, Polar SDK). Refresh monthly.
+Thryve, ROOK, Spike, Movesense, OpenBCI, Polar SDK). Refreshed on 5 Oct
+2026 from each brand's own site, adding Garmin CIRQA. Refresh monthly.
 
 **Hygiene: true, worth saying, never the hook.** Someone else already leads
 with each of these.
 
 | Vybe phrase | Already led with by |
 |---|---|
-| No subscription / no monthly fees | Polar Loop ("No screens. No interruptions. No monthly fees."), Amazfit Helio, Circular |
-| Screenless / "No screen, no noise" | Amazfit ("No screen. No noise. Just your body's data."), Polar, WHOOP |
+| No subscription / no monthly fees | Polar Loop ("No screens. No interruptions. No monthly fees."), Amazfit Helio ("No required subscription.", Vybe's own wording, 5 Oct 2026), Circular, Garmin CIRQA ("no subscription required", garmin.com newsroom, 21 Jul 2026) |
+| Screenless / "No screen, no noise" | Amazfit ("No screen. No noise. Just your body's data."), Polar, WHOOP, Garmin CIRQA ("its first screen-free smart band", 21 Jul 2026) |
 | Against your own baseline | Circular, WHOOP, Terra |
 | Answers in plain sentences | Circular's Kira ("in sentences instead of charts"), Ultrahuman's Jade ("No more dashboards to decode") |
 | Data never sold | Oura and others |
-| "Developer platform" / "health data API" | WHOOP Developer Platform; Terra, ROOK, Spike, Thryve, Junction |
+| "Developer platform" / "health data API" | WHOOP Developer Platform; Terra, ROOK, Spike, Thryve, Junction; Ultrahuman UltraSignal ("World's first wearable-based developer platform", ultrahuman.com/us/ultrasignal, read 5 Oct 2026) |
 | "A platform for apps and plugins built on top" | Ultrahuman PowerPlugs. Say "invites builders in". |
-| "See how the score is calculated" / "which factors drive it" | Apple Readiness and Sleep Score (Sep 2026) |
+| "See how the score is calculated" / "which factors drive it" | Apple Readiness and Sleep Score (Sep 2026); WHOOP ("recommendations tie back to metrics you can see in the app", 5 Oct 2026) |
 | "Which habits are working" / "recalibrates as you implement" | WHOOP Behavior Trends, Ultrahuman Dynamic Recovery, Samsung habit rate. These grade **the user**, not the advice. |
 | "We would rather you checked than trusted a banner" | Circular |
 
@@ -102,24 +103,31 @@ with each of these.
    time-stamped log of graded suggestions would be proof no wearable publishes.
 3. **Score-skeptic as a stance.** Apple now shows how its scores are
    calculated, so the stance is no longer "scores are opaque". It is "a score
-   can't tell you how sure it is or what it missed". Vybe takes this position in its own name
-   ("a proprietary readiness score and no way to inspect, reproduce or justify
-   how it was derived", from /research). Today it is buried on /research and in
-   a WHOOP explainer.
+   can't tell you how sure it is or what it missed". Vybe took this position
+   in its own name on /research, but on 5 Oct 2026 that line was gone; the page
+   now reads "rather than rely only on a proprietary score". Until the founder
+   puts the stance back on the site, quote no site wording for it.
 4. **A wearable built to be built on.** The market splits three ways:
    - closed consumer brands, whose data access depends on a membership;
    - aggregators that own no sensor;
    - medical or research kits.
 
-   No one offers a consumer band whose owner invites builders in. The public
-   FAQ dates API v1 to June 2028 and the SDK to December 2028, so say "built
-   open from day one" and "talk to us". Never say "available now".
+   Ultrahuman now invites developers onto its ring's raw sensor streams and
+   loans dev kits (UltraSignal: "World's first wearable-based developer
+   platform", read 5 Oct 2026), so this is no longer Vybe's alone. What is
+   left is narrower: a band, access the owner grants by consent, and starting
+   at the interpretation rather than at signal cleaning. Never say "first" or
+   "only". The public FAQ dates API v1 to June 2028 and the SDK to December
+   2028, and /research says "no SDK is available today", so say "designed to
+   be built on" and "talk to us". Never say "available now"; hold "built
+   open" until the founder confirms what is open today.
 
 **Not Vybe's alone, but useful with the calibration clause: "the answers
-come with the band".** Google, Garmin and Polar now charge for the AI coach
-on top of the device, so the paywall has moved from the data to the
-explanation. But Circular also includes its coach, so the line fails the swap
-test on its own. Use it only joined to calibration ("Answers that say how
+come with the band".** Google and Garmin now charge for the AI coach on top
+of the device, so the paywall has moved from the data to the explanation.
+Polar is not one of them: its Loop page says "No locked insights" (5 Oct
+2026). Circular, Polar and Amazfit include their guidance, so the line fails
+the swap test on its own. Use it only joined to calibration ("Answers that say how
 sure they are come with the band"), and only in the same piece as "no required
 subscription". A draft may carry it; nothing that carries it is scheduled until
 the founder confirms row 21 (Claim Register row 21 says the same).
@@ -136,7 +144,7 @@ repository). US monthly searches are from DataForSEO.
 
 | Pillar | Demand | Competition | Its job in the marketing |
 |---|---|---|---|
-| **Vitals** (HRV, heart rate) | ~400k a month; "what is a good hrv" 14.8k at KD 17 | Turning medical (Apple, Oura and WHOOP blood pressure, ECG) | **Search lead.** Answer the HRV questions people ask. Say "HRV and heart rate", never "heart rhythm" or "ECG". |
+| **Vitals** (HRV, heart rate) | ~400k a month; "what is a good hrv" 14.8k at KD 17 | Turning medical: Apple, Oura and WHOOP add blood-pressure and ECG features (avoid that wording) | **Search lead.** Answer the HRV questions people ask. Say "HRV and heart rate", never "heart rhythm" or "ECG". |
 | **Restore** (sleep) | ~239k a month; "sleep tracker" down 42% | Most crowded: 8 of 11 brands lead with it | Proof, not hook. Show a sleep answer that names its confidence. |
 | **Nourish** (food timing) | ~30k a month and rising; "meal timing" KD 7 | Nobody leads with it | **Social lead.** "Late dinner, lower HRV?" shows five signals as one system. |
 | **Connect** | Daylight cluster ~22k and rising ("sunlight exposure" +97%) | Nobody measures it | Launch as **daylight and daily rhythm**, only if the band has a light sensor. People time and alone time are logged by the user, and are never scored against each other. **Until the sensor is confirmed**, Connect content teaches daylight itself (evidence library) and uses what the person logs; it never states what the band does or does not sense. |
@@ -183,7 +191,7 @@ it", an email body that is not written).
 
 1. **Audience and channel.** Which one audience, on which channel, and which half leads (see the table above)? Every piece carries **both columns of its row**: the lead, and the "then" line underneath. The weekly Two-Product Test does not excuse dropping the second column from a single piece. A one-line format (a tagline, a pricing line, an email's first line) names the companion line that carries the second column, and the two are graded together. Builder short lines lead with what the builder gets (start at the interpretation, consented access), not with the band, and say "pre-launch" or "design partner". Placement is part of the test:
    - **The lead is in the first sentence** (the first ten words in a short format): the row's idea, with any quoted wording exact.
-   - **The "then" column comes after the shown answer and points back to it** ("the band is designed to produce that answer"). Any sentence that ties the answer to "no (required) subscription" ("that answer, with no required subscription", "no subscription stands between you and it") is row 21 and carries its hold. Without a hold, "no required subscription" gets its own sentence about the band, apart from the answer, and not straight after the sentence that says the band produces the answer (the two together say row 21). Put another sentence between them, or carry row 21's hold. Vary the "then" line across a feed: one stamped closing sentence reads as boilerplate. In the weekly Two-Product Test, read the week's pieces side by side: no two share a hook template, a pointer-and-subscription pair or a closing line. Carry every part of the "then" cell (on Instagram and Facebook: "no required subscription" and a data line in row 4 or row 23 wording), directly after the sentence that points back to the answer, with no teaching or evidence paragraph in between.. A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
+   - **The "then" column comes after the shown answer and points back to it**, in your own words: say that the band is designed to produce that answer, and word it differently in each piece. Any sentence that ties the answer to "no (required) subscription" ("that answer, with no required subscription", "no subscription stands between you and it") is row 21 and carries its hold. Without a hold, "no required subscription" gets its own sentence about the band, apart from the answer, and not straight after the sentence that says the band produces the answer (the two together say row 21). Put another sentence between them, or carry row 21's hold. Vary the "then" line across a feed: one stamped closing sentence reads as boilerplate. In the weekly Two-Product Test, read the week's pieces side by side: no two share a hook template, a pointer-and-subscription pair or a closing line. Carry every part of the "then" cell (on Instagram and Facebook: "no required subscription" and a data line in row 4 or row 23 wording), directly after the sentence that points back to the answer, with no teaching or evidence paragraph in between. A hygiene list tacked on at the end does not count, and neither does calling hygiene "the proof".
    - **Quoted wording goes in exactly; directions get carried out, never printed.** Wording in quotation marks in the table, or marked as /enterprise or Claim Register wording, goes into the copy exactly. Rewording it ("with consent" turned into an "only" sharing promise) makes a new claim, and a new claim needs the Register first. Every other cell is a direction: "One calibrated answer, shown, not described" means show one answer; it is never the post's opening line. Test: if a sentence only makes sense to someone who has read this table, rewrite it. A copy sentence never reuses a direction cell's wording beyond its quoted phrases.
 2. **The swap test.** Is the hook something only Vybe can say? If a competitor's name fits, rewrite it.
 3. **Show it.** Does the piece show one real-shaped answer (a sentence, its confidence, one blind spot) instead of describing "insights"?
@@ -227,6 +235,46 @@ Newest first. Every miss, correction from the founder, or result that
 changes how the concept is told gets one entry: date, what happened, what
 changes.
 
+- **2026-10-05. Monthly concept check, evals and first weekly scoreboard.**
+  - The founder rewrote most of vybe.health in "pre-launch / planned / not
+    available today" wording. This fixed most site conflicts and opened new
+    ones (Firecrawl, 22 pages, read 5 Oct):
+    - /faq says "HRV and heart-rate sensing specifications remain
+      unconfirmed", and /hardware says "vital-sign sensing unconfirmed".
+    - The homepage, /faq and /hardware promise "The first 1,000 on the
+      waitlist are guaranteed a position to buy a band", but /terms §3 says
+      waitlist signups "do not guarantee availability".
+    - The /enterprise wording that Register row 22 quoted is gone; it now
+      says "individual detail only by consent".
+  - Competitors moved too. Ultrahuman's UltraSignal now claims part of
+    "built to be built on", Garmin CIRQA joins "screenless" and "no
+    subscription", and Amazfit uses "No required subscription" word for
+    word. Polar does not charge for its coach.
+  - Evals, fresh writer and separate grader: C4 16, C3 17, S3 18 (all pass);
+    targeting case 7 24 of 30, a pass by one point (`evals/results-2026-10-05.md`).
+    The writer of case 7 caught that the first draft of this week's
+    scoreboard broke plan action 3 (no conversion imports until counsel) and
+    the concept's consent-gate hold on paid traffic. The scoreboard's change
+    is now "pause all paid".
+  - **Changes:**
+    - Treat HRV and heart-rate sensing as unconfirmed specs. Any example
+      answer that reads HRV is labelled "prototype, sample data" and phrased
+      with "designed to".
+    - Before scheduling copy that quotes site wording, re-read that page.
+      Read /terms in every offer check. Founding-batch offer copy stays on
+      hold (row 11).
+    - Run a targeted competitor search before calling anything unclaimed.
+    - Before writing a scoreboard's "change", check it against this file's
+      rules table and the plan's open week-1 actions.
+      Never take paid-labelled sessions as outside traffic without a
+      new-user and `gclid` check, and draw no conclusion from fewer than 5
+      signups.
+    - Q1's pointer is now a direction, not a quoted sentence, after
+      writers copied it word for word.
+    - The search skill's unfunded fallback now quotes the last dated
+      results pull, and refreshed briefs carry earlier queries forward.
+  - **Still open:** `check_marketing.py` does not count words on an
+    unlabelled first line.
 - **2026-10-03. Final regression, all rules in force.** All eight copy cases
   pass (C1 18, C2 17, C3 17, C4 17, C5 17, C6 17, C7 16, C8 18). Four pieces
   ended on the same stamped line tying the answer to "no required

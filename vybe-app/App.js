@@ -4,21 +4,29 @@ import HomeScreen from './src/screens/HomeScreen';
 import RestoreScreen from './src/screens/RestoreScreen';
 import MoveTrendScreen from './src/screens/MoveTrendScreen';
 import NourishScreen from './src/screens/NourishScreen';
+import ConnectScreen from './src/screens/ConnectScreen';
 import AskScreen from './src/screens/AskScreen';
+import FollowUpScreen from './src/screens/FollowUpScreen';
 import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
+import SeasonScreen from './src/screens/SeasonScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
+import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
+import ExportScreen from './src/screens/ExportScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are eight screens
- * now, and they are still a flat set: Nourish links across to the pattern
- * history and Restore links across to the outcome record, but both of those
- * return to Home like every other screen, so nothing stacks and there is still
- * no back stack for a router to manage. Pulling in
+ * One piece of state instead of a navigation library. There are thirteen
+ * screens now, and they are still a flat set: Nourish links across to the
+ * pattern history, the pattern history links on to the year-on-year view,
+ * Restore and Connect link across to the outcome record, Ask links across to
+ * the follow-up, onboarding links across to the history import, and the data
+ * screen links on to the export. The last two are the only places a screen
+ * returns to where it came from rather than to Home, which one remembered
+ * string still covers. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -39,6 +47,12 @@ export default function App() {
         <OnboardingScreen
           onFinish={() => setScreen('home')}
           onSkip={() => setScreen('home')}
+          onImport={() => setScreen('import')}
+        />
+      ) : screen === 'import' ? (
+        <ImportScreen
+          onBack={() => setScreen('onboarding')}
+          onContinue={() => setScreen('onboarding')}
         />
       ) : screen === 'restore' ? (
         <RestoreScreen
@@ -52,25 +66,46 @@ export default function App() {
           onBack={() => setScreen('home')}
           onOpenHistory={() => setScreen('pattern')}
         />
+      ) : screen === 'connect' ? (
+        <ConnectScreen
+          onBack={() => setScreen('home')}
+          onOpenOutcomes={() => setScreen('outcomes')}
+        />
       ) : screen === 'outcomes' ? (
         <OutcomeScreen onBack={() => setScreen('home')} />
       ) : screen === 'pattern' ? (
-        <PatternHistoryScreen onBack={() => setScreen('home')} />
+        <PatternHistoryScreen
+          onBack={() => setScreen('home')}
+          onOpenSeasons={() => setScreen('seasons')}
+        />
+      ) : screen === 'seasons' ? (
+        <SeasonScreen onBack={() => setScreen('home')} />
       ) : screen === 'ask' ? (
-        <AskScreen onBack={() => setScreen('home')} />
+        <AskScreen
+          onBack={() => setScreen('home')}
+          onFollowUp={() => setScreen('followup')}
+        />
+      ) : screen === 'followup' ? (
+        <FollowUpScreen onBack={() => setScreen('home')} />
       ) : screen === 'data' ? (
-        <DataSettingsScreen onBack={() => setScreen('home')} />
+        <DataSettingsScreen
+          onBack={() => setScreen('home')}
+          onExport={() => setScreen('export')}
+        />
+      ) : screen === 'export' ? (
+        <ExportScreen onBack={() => setScreen('data')} />
       ) : (
         <HomeScreen
           isSample
           onOpenData={() => setScreen('data')}
           onAsk={() => setScreen('ask')}
           onOpenDimension={(key) => {
-            // Restore, Move and Nourish have detail screens; Connect and Vitals
-            // fall through rather than opening an empty shell.
+            // Four of the five dimensions have detail screens now; Vitals
+            // falls through rather than opening an empty shell.
             if (key === 'restore') setScreen('restore');
             if (key === 'move') setScreen('move');
             if (key === 'nourish') setScreen('nourish');
+            if (key === 'connect') setScreen('connect');
           }}
         />
       )}

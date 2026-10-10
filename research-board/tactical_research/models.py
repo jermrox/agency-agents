@@ -130,7 +130,10 @@ def split_window(items: list[BoardItem], today: date | None = None) -> tuple[lis
     Nothing is deleted — the brief is explicit — but the main board is never
     more than a month deep. Anything past the archive horizon falls out of both.
     """
-    board = [i for i in items if i.on_board(today)]
+    # Supersede, don't stack (section 5): once a newer item replaces a document,
+    # the older one leaves the board. It stays in the archive, linked from the new one.
+    replaced = {i.supersedes for i in items if i.supersedes}
+    board = [i for i in items if i.on_board(today) and i.primary_url not in replaced]
     archive = [i for i in items if i.in_archive(today)]
     key = lambda i: i.date_published  # noqa: E731
     return sorted(board, key=key, reverse=True), sorted(archive, key=key, reverse=True)

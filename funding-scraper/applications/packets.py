@@ -61,6 +61,11 @@ GATES = [
     # covered and the flight is not, and CES week in Las Vegas is the most
     # expensive week of the year there — so it is a real gate, not a detail.
     ("travelself", "Able to travel to pitch in person at your own cost"),
+    # NIA's Start-Up Challenge bars anyone who is the principal investigator on
+    # an NIH SBIR/STTR award that is still active when submissions close. It is
+    # not the duplicate-proposal rule above: you can have applied, you just
+    # cannot be running one.
+    ("nonihsbir", "Not the PI on an NIH SBIR/STTR award active at the close date"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -985,6 +990,641 @@ PACKETS = [
         ],
     },
     {
+        "id": "blake",
+        "name": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+        "funder": "Brook T. Smith Launchpad, Clemson University",
+        "amount": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500",
+        "deadline": "2026-10-16",
+        "fee": None,
+        "url": "https://blogs.clemson.edu/studentopportunities/the-blake-family-military-veterans-pitch-competition/",
+        "submit": "Online application, open now and closing 16 October. Up to 10 finalist teams are invited to Clemson, South Carolina for the live final on Friday 6 November, noon to 2pm at the Brook T. Smith Launchpad. Questions go to launchpadcompetition@clemson.edu.",
+        "gates": ["incorp", "travelself"],
+        "confirmed": [
+            "Veteran-owned 51%+ (confirmed 20 Sep) — the rule only asks for ONE military-connected founder",
+            "National: the competition states no geography limit",
+            "No application fee",
+        ],
+        "why": "Ten days out, free to enter, and Vybe clears every published rule: a C Corp, S Corp or LLC with at least one founder who is a veteran. The competition is national despite being hosted in South Carolina, and the prize table pays four places rather than one, so a strong pitch that is not the single best still takes money home. The judges are venture capitalists and angel investors, which makes this the one item on the board that is worth entering for the room as much as the cheque.",
+        "docs": [
+            "Online application via the Launchpad page",
+            "Proof of military connection for the qualifying founder",
+            "Entity type: C Corp, S Corp or LLC",
+            "A live pitch at Clemson on 6 November for finalists, with travel likely at your own cost",
+        ],
+        "note": (
+            "THE APPLICATION FORM ITSELF IS NOT READABLE FROM HERE, so the sections "
+            "below are drafted against what the competition publishes: who may enter, "
+            "that it is a pitch rather than a written grant, and that the judging panel "
+            "is venture capitalists and angel investors. Open the form first and map "
+            "these across.\n\n"
+            "JUDGED BY INVESTORS, NOT BY A GRANT COMMITTEE, AND THAT CHANGES THE PITCH. "
+            "A grant reviewer wants impact and eligibility. An angel wants to know why "
+            "this wins, who pays, and what the money unlocks in the next six months. "
+            "The answers below are written for the second audience. Do not reuse the "
+            "Buckeye or Tadlock community-benefit framing here; it reads as a charity "
+            "case to a room of investors and it will lose.\n\n"
+            "TRAVEL IS AN UNPRICED GATE. The competition says up to ten finalists are "
+            "invited to Clemson for the 6 November final and does not say who pays. "
+            "Ask launchpadcompetition@clemson.edu before applying, because a finalist "
+            "place you cannot take is worse than no place.\n\n"
+            "FOUR PLACES PAY. Pitch to win, but note that fourth place is $2,500 and "
+            "the room is full of early-stage funders either way."
+        ),
+        "fields": [
+            {"q": "Company and military connection", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, operating "
+                "from {{CITY}}. Website {{WEBSITE}}. Contact {{CEO}}, {{EMAIL}}.\n\n"
+                "Qualifying founder: {{VETERAN_OWNER}}.\n\n"
+                "The rule asks for at least one founder who is active duty, active ROTC, "
+                "Reserve, National Guard, a veteran or a military spouse. Vybe is "
+                "majority veteran-owned, which clears it with room to spare — say so "
+                "plainly and move on, because this is the only part of the application "
+                "that is a box rather than an argument."},
+            {"q": "What the company does", "a": SHORT},
+            {"q": "The problem, and why now", "a": WHY_NOW + "\n\n"
+                "The gap underneath those numbers is interpretation. A wearable reports "
+                "that heart-rate variability fell 18% and stops. The person is left to "
+                "guess whether it was the late dinner, the bad night, the flight or the "
+                "week they have had, and most of them stop opening the app. Measurement "
+                "is solved. Meaning is not."},
+            {"q": "The product, and what makes it hard to copy", "a":
+                "The Vybe Band is screenless and tracks ECG, heart-rate variability, "
+                "sleep and activity. Vybe Intelligence reads those signals across five "
+                "parts of a person's life, and the fifth is the one competitors leave "
+                "out: Connect, which reads work, travel, stress and weather — the "
+                "reasons a reading moves that no sensor can see.\n\n"
+                "Two things are hard to copy. A model of somebody's week is harder to "
+                "build than a score. And the buy-once position is one an incumbent with "
+                "subscription revenue cannot match without cutting its own revenue, "
+                "which is a strategic lock rather than a technical one."},
+            {"q": "Who buys it, and how you reach them", "a":
+                "The person who already owns a wearable and has stopped opening it. They "
+                "have years of their own data, no answers from it, and a monthly fee for "
+                "the privilege. That grievance is specific and easy to find.\n\n"
+                "Two routes beyond direct consumers, both reachable without consumer-"
+                "scale marketing: the veteran and military-family community, where "
+                "recovery and readiness are already the everyday language; and licensing "
+                "the interpretation layer to partners who have sensors and nothing to "
+                "say with the readings.\n\n"
+                "[Investors will push on acquisition cost. Give them what you actually "
+                "know: how many people you have spoken to, through which channel, and "
+                "what you have spent to learn it. If you do not know the number yet, say "
+                "that and say what you will test first. A made-up CAC is the fastest way "
+                "to lose a room of angels.]"},
+            {"q": "Where the business is today", "a":
+                "Stage: {{STAGE}}. Traction: {{TRACTION}}. Team of {{EMPLOYEES}}. "
+                "Revenue over the last 12 months: {{REVENUE}}.\n\n"
+                "[If revenue is zero, say zero. This panel has seen pre-revenue companies "
+                "before and has not seen a founder who could not say where they were.]"},
+            {"q": "What the prize money does", "a":
+                "[Name one thing and make it finishable at $10,000, then make sure the "
+                "same sentence still works at $2,500, because four places pay and fourth "
+                "is the likeliest. Candidates, pick one: the radio pre-scan ahead of the "
+                "Band's FCC work, a run of at-cost Bands for outside testers, or the "
+                "tooling for the first production batch.\n\n"
+                "Then say what it unlocks. An investor is not scoring the purchase, they "
+                "are scoring whether you know which single step the company is blocked "
+                "on.]"},
+            {"q": "Pitch spine for the live final", "a":
+                "Every wearable hands you a number. None of them tell you why it "
+                "moved.\n\n"
+                "[Hold up the Band.] No screen, on purpose. It reads your heart, your "
+                "sleep and how you move, and the app reads those signals next to the week "
+                "you actually had — the hard week, the long flight, the heat.\n\n"
+                "You ask a plain question, like why am I tired today, and you get an "
+                "answer out of your own data, the evidence behind it, and one thing to "
+                "do. It also tells you what it could not see, which is the part nobody "
+                "else ships.\n\n"
+                "Bought once. No subscription. The interpretation comes with the Band, "
+                "and that is a position the two biggest players cannot copy without "
+                "cutting their own recurring revenue.\n\n"
+                "[Close in your own words: why a veteran is the right person to build a "
+                "product about recovery and readiness, and what the next six months look "
+                "like. Keep the close yours — it is the part a room of investors "
+                "remembers.]"},
+            {"q": "Logistics to confirm before you submit", "a":
+                "Applications close 16 October. The live final is Friday 6 November, noon "
+                "to 2pm, at the Brook T. Smith Launchpad, Clemson University, South "
+                "Carolina. Up to ten teams are invited.\n\n"
+                "[Email launchpadcompetition@clemson.edu and ask two things: whether "
+                "finalist travel and lodging are covered, and what format the live pitch "
+                "takes — length, slides allowed, and whether a physical prototype can be "
+                "shown. A Band on a wrist in the room is worth more than any slide, and "
+                "it is worth knowing in advance whether you can bring one.]"},
+        ],
+    },
+    {
+        "id": "charmhealth",
+        "name": "CharmHealth Innovation Challenge and Pitch Competition (2026)",
+        "funder": "CharmHealth (MedicalMine Inc.)",
+        "amount": "$10,000 first / $5,000 second / $2,500 third, up to $17,500 total, plus access to CharmVentures and a listing on the CharmHealthHub marketplace",
+        "deadline": "2026-11-01",
+        "fee": None,
+        "url": "https://www.charmhealth.com/innovation-challenge/",
+        "submit": "Online submission on the Innovation Challenge page. CharmHealth's own page says applications are accepted on a rolling basis until November 2026. Shortlisted finalists present a poster in person at Pitch Day during the Charmalot user conference; an audience vote then picks six for live pitches.",
+        "gates": ["travelself"],
+        "confirmed": [
+            "Open to digital health startups, individuals and organisations — no ownership, age-of-business or revenue gate is published",
+            "CharmHealth's February 2026 press release states submission is free of charge",
+        ],
+        "why": "The largest free-entry cash prize currently open in the digital-health lane: $10,000 for first with no fee, no equity and no clinical requirement, and the brief is digital health broadly rather than clinical workflow. Past winners have included consumer-facing products, so a screenless band that answers plain questions about a person's own data is in scope rather than a stretch. It is also the only open prize on this board where the funder runs its own venture arm and marketplace, so a shortlist place is worth something even without the cash.",
+        "docs": [
+            "Online submission form on the Innovation Challenge page",
+            "Product description and the problem it solves",
+            "A poster, if shortlisted for Pitch Day",
+            "A short live pitch, if the audience vote selects you",
+            "Your own travel to Pitch Day — the date and location are not published",
+        ],
+        "note": (
+            "APPLY THIS WEEK, AND EMAIL THEM FIRST. The window is genuinely unclear: "
+            "CharmHealth's own page now reads \u201cDeadline: November 2026\u201d and "
+            "\u201capplications are now being accepted on a rolling basis, until November "
+            "2026\u201d, while their 23 February 2026 press release gave 31 July 2026. "
+            "This packet is dated to 1 November because that is the later of the two and "
+            "the page is the more recent source \u2014 but treat it as unconfirmed. Send "
+            "one line to innovate@charmhealth.com asking for the closing date and the "
+            "Pitch Day date and location, then submit without waiting for the reply.\n\n"
+            "THE PITCH DAY LOGISTICS ARE AN UNPRICED GATE. Finalists present a poster in "
+            "person at the Charmalot user conference, and neither the date nor the city is "
+            "stated anywhere on the page. That is why `travelself` is on this packet. "
+            "Do not commit to the shortlist before knowing where it is.\n\n"
+            "POSITION IT AS DIGITAL HEALTH, NOT AS A MEDICAL DEVICE. CharmHealth is an EHR "
+            "company and its audience is clinicians, so the temptation is to dress Vybe up "
+            "in clinical language. Resist it. The honest and stronger framing for this "
+            "audience is the handoff: Vybe is what the patient brings to the appointment. "
+            "It refuses clinical questions, states its blind spots, and shows the reading "
+            "so a clinician can see what the person saw. An EHR audience has watched "
+            "consumer wearables generate noise for a decade; a product that declines to "
+            "diagnose is the interesting one in that room.\n\n"
+            "The audience vote decides the final six. That rewards a poster somebody can "
+            "understand from four feet away \u2014 one question, one answer, the evidence "
+            "under it \u2014 over a dense one."
+        ),
+        "fields": [
+            {"q": "Company and contact", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, operating from "
+                "{{CITY}}. Website {{WEBSITE}}. Contact {{CEO}}, {{EMAIL}}."},
+            {"q": "Describe your innovation", "a": SHORT},
+            {"q": "What problem does it solve?", "a":
+                "Wearables have solved measurement and left interpretation undone. A person "
+                "wakes up with a heart-rate variability number that is down, a sleep score "
+                "that is amber, and no idea which of the four things they did yesterday "
+                "caused it or what to do today. The data is accurate and useless.\n\n"
+                "That gap has a cost on both sides of an appointment. The person stops "
+                "looking at their own data, or worse, reads a dip as a diagnosis and "
+                "arrives frightened. The clinician gets handed a screenshot with no context "
+                "and no indication of what the device could not see.\n\n"
+                "Vybe answers the question the number does not: why did my body do that, "
+                "given the week I actually had. And it says what it could not see, every "
+                "time, so the answer can be checked rather than believed."},
+            {"q": "How is it different from what exists?", "a": WHY_NOW + "\n\n"
+                "Two differences matter to a clinical audience specifically.\n\n"
+                "Vybe reads context, not just signals. Five parts of a person\u2019s life "
+                "\u2014 Restore, Move, Nourish, Connect and Vitals \u2014 and Connect is "
+                "the one other products miss: work, travel, stress and weather. A reading "
+                "moves for reasons no sensor can see, and a product that ignores those "
+                "reasons will keep attributing a hot week to a training error.\n\n"
+                "Vybe refuses to diagnose, and shows its own limits. Asked a clinical "
+                "question it declines, says to see a clinician, and still shows the reading "
+                "so it can be taken to the appointment. Every answer carries its basis and "
+                "its blind spots. That is shipped behaviour, not a disclaimer at the bottom "
+                "of a screen."},
+            {"q": "Stage, traction and what you would do with the prize", "a":
+                "Where the product is today: {{STAGE}}. Traction: {{TRACTION}}. Team of "
+                "{{EMPLOYEES}}. Revenue over the last 12 months: {{REVENUE}}.\n\n"
+                "[Name one use for the money and make it finishable at $10,000 \u2014 and "
+                "write the answer so it still makes sense at $2,500, because third place is "
+                "the likeliest outcome of any pitch competition. A $10,000 answer that "
+                "reads like a Series A plan is the fastest way to look like you have not "
+                "thought about it. Candidates, pick one: the radio pre-scan ahead of the "
+                "Band\u2019s FCC work, a run of at-cost Bands for outside testers, or the "
+                "clinician-facing export that this audience would actually use.]"},
+            {"q": "Who benefits, and how would you measure it?", "a":
+                "The person wearing it, first: they get an answer they can act on out of "
+                "data they already generate, without a subscription gating their own "
+                "history.\n\n"
+                "The clinician, second, and this is the part worth saying to a CharmHealth "
+                "audience. What arrives at the appointment is not a score and not a "
+                "diagnosis. It is a reading, the context around it, and an explicit list of "
+                "what the device could not see.\n\n"
+                "[How you would measure it is a real question and it should get a real "
+                "answer, not an impact adjective. Vybe already records whether its own "
+                "suggestions worked \u2014 the prediction is written down before the "
+                "attempt, and the app shows the record including the misses. Describe that "
+                "as the measurement, and give the current numbers only if they exist. Do "
+                "not invent a figure here; an honest \u2018this is how we will know\u2019 "
+                "beats a number nobody can source.]"},
+            {"q": "The regulatory position, stated plainly", "a":
+                "Vybe is not a medical device and makes no diagnostic claims. It is a "
+                "consumer wellness product. It does not screen for, diagnose or treat any "
+                "condition, and when asked to, it declines and says to see a clinician.\n\n"
+                "That is a product decision rather than a regulatory hedge, and it is worth "
+                "one sentence in front of this audience: the moment a consumer wearable "
+                "starts making clinical claims it becomes a device, and the people in that "
+                "room are the ones who deal with the consequences."},
+            {"q": "Poster spine, if shortlisted", "a":
+                "[A poster that an audience votes on gets about four feet and ten seconds. "
+                "Four blocks, in this order.]\n\n"
+                "ONE QUESTION, at the top, large: \u201cWhy am I tired today?\u201d\n\n"
+                "THE ANSWER Vybe gives, in a sentence a stranger can read without "
+                "context.\n\n"
+                "THE EVIDENCE under it \u2014 the readings the answer rests on, and the "
+                "week around them.\n\n"
+                "WHAT IT COULD NOT SEE, stated as plainly as the answer. On a wall of "
+                "posters claiming certainty, this is the block people stop at.\n\n"
+                "[If a Band can be on a wrist at the table, put it there. The screenless "
+                "band is the thing nobody else in the room has, and it explains the product "
+                "faster than the poster does.]"},
+        ],
+    },
+    {
+        "id": "proteus",
+        "name": "DigiKey & Würth Elektronik Proteus-IV Design Contest",
+        "funder": "DigiKey and Würth Elektronik, hosted on All About Circuits",
+        "amount": "Idea stage: one of 50 free Proteus-IV evaluation boards (Nordic nRF54L15, BLE 6.0). Project stage: one grand prize, value not stated on the page",
+        "deadline": "2026-10-30",
+        "fee": None,
+        "url": "https://www.allaboutcircuits.com/giveaways/digikey-wuerth-elektronik-proteus-iv-design-contest/",
+        "submit": "Create an All About Circuits account and post a written design idea to the contest page before 30 October. Fifty idea entries receive an evaluation board. Finalists submit a built project by 31 December 2026; the winner is announced 15 January 2027.",
+        "gates": [],
+        "confirmed": [
+            "No application fee",
+            "No fixed theme, and the contest names wearables explicitly",
+            "No ownership, revenue or age-of-business gate is published",
+        ],
+        "why": "The cheapest hardware de-risking available this month. The Proteus-IV is a pre-certified Bluetooth LE 6.0 module on Nordic's nRF54L15 — a credible radio candidate for a future Band revision or the DevKit — and the idea stage costs an hour of writing. Vybe has FCC work ahead of it either way, and starting from a module that already carries certification is the difference between a radio project and a radio programme. The build, if it happens, is also the most natural DevKit content the company could produce.",
+        "docs": [
+            "All About Circuits account",
+            "A written design idea naming the Proteus-IV and the Würth parts used",
+            "If selected: a built project write-up by 31 December 2026",
+        ],
+        "note": (
+            "THIS IS NOT A GRANT APPLICATION AND SHOULD NOT BE WRITTEN LIKE "
+            "ONE. It is a public design-idea post on a community site, judged "
+            "by engineers. No business case, no traction, no ownership "
+            "paperwork — a clear description of a thing worth building.\n\n"
+            "THE ONE REAL RISK, AND IT IS WHY THE DRAFT BELOW IS DELIBERATELY "
+            "GENERIC: idea submissions are posted publicly as comments on the "
+            "contest page. Nothing about Vybe's sensor fusion, its context "
+            "model or anything it would rather patent goes in. Describe a "
+            "wireless architecture any competent engineer could have proposed, "
+            "because that is all this needs to win a dev board.\n\n"
+            "THE FORM ITSELF IS NOT READABLE from here and the official rules "
+            "document was not reachable, so country rules and entrant type are "
+            "unconfirmed. Open the page first and check whether a US company "
+            "may enter before writing anything. Bonus credit is given for "
+            "using more Würth parts, so name them.\n\n"
+            "Expected value is honest: fifty boards against an unknown number "
+            "of entries, and a grand prize whose value is not published. Enter "
+            "for the board and the radio evaluation, not for the prize."
+        ),
+        "fields": [
+            {"q": "The design idea, in one paragraph", "a":
+                "A screenless wrist-worn sensor band that streams heart-rate, "
+                "motion and sleep-staging data to a phone over Bluetooth LE 6.0, "
+                "built around the Proteus-IV module.\n\n"
+                "The design question the module answers is battery life against "
+                "connection reliability. A band with no screen has no way to "
+                "tell its wearer it has lost connection, so it has to either "
+                "hold the link or buffer cleanly and reconcile later. The "
+                "nRF54L15's power envelope is what makes the second option "
+                "affordable: buffer locally for hours, wake, reconcile, sleep "
+                "again."},
+            {"q": "Why Proteus-IV specifically", "a":
+                "Three reasons, in the order they matter to a small team.\n\n"
+                "It arrives pre-certified. For a company that has radio "
+                "certification ahead of it, starting from a module that already "
+                "carries approvals removes an entire work package rather than "
+                "shortening one.\n\n"
+                "Bluetooth LE 6.0 channel sounding is interesting for a worn "
+                "device, because knowing roughly how far the band is from the "
+                "phone is the difference between buffering sensibly and "
+                "buffering constantly.\n\n"
+                "The nRF54L15 has the headroom to do signal conditioning on the "
+                "module rather than shipping raw samples, which is where most of "
+                "a wearable's radio budget actually goes."},
+            {"q": "Würth parts in the design", "a":
+                "[Name the specific Würth components you would actually use and "
+                "why — the contest gives bonus credit for using more of them, "
+                "and a list with reasons reads as an engineer's answer while a "
+                "list without reasons reads as box-ticking.\n\n"
+                "Candidates worth looking up on the Würth catalogue: power "
+                "inductors for the buck stage, common-mode chokes on the USB "
+                "charging path, ESD protection on the exposed contacts, and the "
+                "antenna if you are not using the module's own.]"},
+            {"q": "What you would build if you win a board", "a":
+                "A bench rig that runs the module against a realistic duty "
+                "cycle: sample, buffer, reconnect, reconcile, sleep — measured "
+                "for current draw at each stage rather than at idle.\n\n"
+                "The number worth publishing from it is days of battery life at "
+                "a stated sampling rate, with the method shown. Nobody in this "
+                "category publishes that honestly, and a bench measurement with "
+                "its method attached is worth more to a hardware audience than "
+                "any claim about the finished product."},
+            {"q": "What NOT to put in this post", "a":
+                "[A checklist, because this is public and permanent.\n\n"
+                "Nothing about how Vybe combines signals to reach a conclusion. "
+                "Nothing about the Connect context model. No sensor part numbers "
+                "you consider a differentiator. No unreleased timing, pricing or "
+                "manufacturing detail. No claim about health outcomes of any "
+                "kind — this is an electronics community, and a wellness "
+                "product making health claims in a hardware forum reads badly "
+                "and is the one thing here that could cause real trouble.]"},
+        ],
+    },
+    {
+        "id": "vetcon",
+        "name": "VETCON 2026 Business Plan Competition",
+        "funder": "Tully Rinckey PLLC / Tully Rinckey Foundation (VETCON)",
+        "amount": "$3,000 first / $2,000 second / $1,000 third",
+        "deadline": "2026-11-20",
+        "fee": None,
+        "url": "https://www.vetconny.com/business-plan-competition/",
+        "submit": "Email the packet to bizplan@vetconny.com by 20 November. Three finalists present to a judging panel at VETCON 2026, and prizes are awarded at the closing luncheon. The conference is 1-2 December 2026 at the Crowne Plaza Desmond Hotel, Albany, New York.",
+        "gates": ["under3", "travelself"],
+        "confirmed": [
+            "Veteran-owned 51%+ (confirmed 20 Sep) — the rule asks for ONE veteran on the presenting team",
+            "Under three years in operation, which this competition requires rather than forbids",
+            "No application fee, and the competition states sponsorship money goes entirely to the three cash prizes",
+            "The rules place no limit on where the business is based, despite the New York conference",
+        ],
+        "why": "Every rule is met and the entry is an email. The prize is small, but the required deliverable is a four-page executive summary that Vybe needs anyway — it is the same document a bank, a landlord and half the other packets on this page will ask for, and nothing here has forced it to be written yet. Writing it for a $3,000 competition with a hard deadline is a cheaper way to get it done than writing it under pressure for something larger.",
+        "docs": [
+            "Email to bizplan@vetconny.com",
+            "Business name (or the anticipated name, if pre-startup)",
+            "Owners' names and branches of service",
+            "DD Form 214 for the veteran owner",
+            "Executive summary, maximum four pages, 12-point, 1.5 line spacing",
+            "A presenter available in Albany on 1-2 December",
+        ],
+        "note": (
+            "THE FORMAT IS A HARD CONSTRAINT: four pages, 12-point, 1.5 line "
+            "spacing. The page as published says \u201c15 pt.\u201d spacing, "
+            "which is almost certainly a typo for 1.5 \u2014 email "
+            "bizplan@vetconny.com and ask rather than guessing, because this is "
+            "the kind of rule a panel uses to cut the pile.\n\n"
+            "FOUR PAGES MEANS THE FINANCIAL PLAN IS THE CONSTRAINT, NOT THE "
+            "PRODUCT. The competition names five sections and two of them are "
+            "numbers: a three-year forecast and the use of the prize. Most of "
+            "what follows is drafted, but those two are yours and they are what "
+            "the panel is actually scoring. Give the product one page at most.\n\n"
+            "TRAVEL. A presenter has to be in Albany on 1 or 2 December and the "
+            "competition does not say it pays. Three thousand dollars first "
+            "prize against flights and a hotel in December is close enough to "
+            "break even that it is worth deciding BEFORE applying, not after "
+            "being selected. The honest reason to enter anyway is the executive "
+            "summary and the room, not the cheque."
+        ),
+        "fields": [
+            {"q": "Covering email", "a":
+                "Business name: {{LEGAL_NAME}}.\n\n"
+                "Owner and branch of service: {{VETERAN_OWNER}}.\n\n"
+                "DD Form 214 attached. Executive summary attached, four pages.\n\n"
+                "A presenting team member will be available at VETCON 2026 in "
+                "Albany on 1-2 December.\n\n"
+                "Contact: {{CEO}}, {{EMAIL}}, {{WEBSITE}}."},
+            {"q": "Executive summary 1 — elevator pitch: the product, the problem, the solution, and why customers will pay", "a":
+                "Vybe turns the signals a body already produces into answers a "
+                "person can act on. The screenless Vybe Band tracks ECG, "
+                "heart-rate variability, sleep and activity. Vybe Intelligence "
+                "reads those signals alongside the context around them, like "
+                "stress, work, travel and weather, and answers questions such as "
+                "\u201cWhy am I tired today?\u201d There is no required "
+                "subscription.\n\n"
+                "The problem is not measurement. Every wearable already reports "
+                "that heart-rate variability fell 18%, and then stops. The person "
+                "is left to guess whether it was the late dinner, the bad night, "
+                "the flight or the week they have had \u2014 and most of them "
+                "stop opening the app.\n\n"
+                "Why customers pay: they are paying once, for the answer rather "
+                "than the number. The two largest companies in this category "
+                "charge a monthly fee for interpretation; the companies that "
+                "dropped the fee dropped the interpretation with it. Nobody "
+                "currently sells both."},
+            {"q": "Executive summary 2 — the team", "a":
+                "{{CEO}} leads the company. Ownership: {{OWNERSHIP}}. Team of "
+                "{{EMPLOYEES}}. {{LEGAL_NAME}} is majority veteran-, woman- and "
+                "minority-owned, and {{VETERAN_OWNER}} holds independent "
+                "authority over day-to-day decisions, which is the control test "
+                "this competition applies.\n\n"
+                "[Two or three sentences per person, and they have to be yours. "
+                "What the panel wants is whether this specific group can get a "
+                "consumer hardware product built and sold \u2014 so lead with "
+                "what each person has actually shipped, managed or sold, not "
+                "with titles. Name the gap you know you have; a panel of "
+                "business owners reads that as judgement.]"},
+            {"q": "Executive summary 3 — industry, market and competition", "a": WHY_NOW + "\n\n"
+                "Vybe's position is the gap that leaves: deep interpretation, "
+                "bought once. The defensible part is not the sensor, which is "
+                "commodity, but the context layer \u2014 reading work, travel, "
+                "stress and weather alongside the body \u2014 and a buy-once "
+                "model that an incumbent with subscription revenue cannot copy "
+                "without cutting its own revenue."},
+            {"q": "Executive summary 4 — the growth plan", "a":
+                "Where the business is today: {{STAGE}}. Traction: {{TRACTION}}.\n\n"
+                "Three routes, in the order we intend to open them. Direct, to "
+                "people who already own a wearable, have stopped opening it, and "
+                "resent paying monthly for their own numbers. The veteran and "
+                "military-family community, where recovery and readiness are "
+                "already the everyday language. Then licensing the "
+                "interpretation layer to partners who have sensors and nothing "
+                "to say with the readings.\n\n"
+                "[Add the next two or three concrete steps with dates \u2014 the "
+                "certification step, the manufacturing step, the beta \u2014 and "
+                "say which one the company is blocked on now. A growth plan "
+                "without a named blocker reads as a wish.]"},
+            {"q": "Executive summary 5 — the financial plan, with a three-year forecast", "a":
+                "[THIS IS YOURS AND IT IS WHAT THE PANEL SCORES. The competition "
+                "asks for historical financials if any, a three-year annual "
+                "forecast, and the use of the prize money. Nobody should draft "
+                "numbers about your business but you.\n\n"
+                "What to include: revenue to date (say zero if it is zero \u2014 "
+                "{{REVENUE}}); what a Band costs to build and what it sells for; "
+                "monthly operating cost and current runway; and a three-year "
+                "forecast with the two or three assumptions it rests on named "
+                "out loud. A panel of business owners forgives a small number. "
+                "It does not forgive a number you cannot explain.]"},
+            {"q": "Use of the prize money", "a":
+                "[Name one thing, make it finishable at $3,000, and make sure the "
+                "sentence still works at $1,000, because third place is the "
+                "likeliest outcome. Candidates: the radio pre-scan ahead of the "
+                "Band's FCC work, a run of at-cost Bands for outside testers, or "
+                "the VYBE trademark filing.\n\n"
+                "Then say what it unlocks. The panel is not scoring the purchase, "
+                "it is scoring whether you know which single step the company is "
+                "blocked on.]"},
+            {"q": "Presentation notes for the panel", "a":
+                "[Three finalists present and prizes are given at the closing "
+                "luncheon; the page does not publish a time limit, so ask when "
+                "you submit.\n\n"
+                "Bring a Band if there is one to bring. A room of veteran "
+                "business owners in Albany has sat through a lot of slides, and "
+                "a screenless band on a wrist explains the product faster than "
+                "any of them.\n\n"
+                "Close in your own words on why a veteran is the right person to "
+                "build a product about recovery and readiness. That is the part "
+                "this particular room remembers.]"},
+        ],
+    },
+    {
+        "id": "nia",
+        "name": "2027 NIA Start-Up Challenge and Accelerator",
+        "funder": "National Institute on Aging (NIH / HHS), Office of Strategic Extramural Programs",
+        "amount": "Up to $994,000 total. Up to 21 Stage 1 finalists get $24,000 each plus a free five-month accelerator; up to 7 Stage 2 winners get a further $70,000, so up to $94,000 per team",
+        "deadline": "2027-01-15",
+        "fee": None,
+        "url": "https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator",
+        "submit": "Online submission on the NIH challenge page. SUBMISSIONS DO NOT OPEN UNTIL 1 DECEMBER 2026 and close 15 January 2027 at 11:59 pm ET. Register for the 3 December 2026 webinar at 1pm ET. There is no SAM.gov gate to enter; a UEI only speeds up payment.",
+        "gates": ["incorp", "uscitizen", "nonihsbir", "travelself"],
+        "confirmed": [
+            "Veteran-, woman- and minority-owned 51%+ (confirmed 20 Sep) — relevant to the scored 'challenge impact on the submitter' criterion",
+            "No application fee",
+            "Prize money is non-dilutive; NIA takes no equity",
+        ],
+        "why": "The largest non-dilutive award on this board that Vybe can enter without a clinical trial, a device classification or an institutional partner, and the only one where a quarter of the score is explicitly about the founder's lack of access to resources and networks. $24,000 lands at the finalist stage, which is a real outcome rather than a lottery ticket, and the five-month accelerator is free. Ten weeks of runway from today to the close.",
+        "docs": [
+            "Registration as an individual, team or entity",
+            "Submission narrative against the six scored criteria below",
+            "A statement of how the solution differs from existing commercial products and from NIA-funded SBIR/STTR work — check NIH RePORTER before writing it",
+            "Certification that a SBIR-eligible US small business is formed, or will be by 1 November 2027",
+            "If selected: winner verification and payment documents within three business days",
+            "Stage 2 adds a one-page impact document, a seven-minute pitch video and a meeting with an NIH program officer",
+        ],
+        "note": (
+            "TEN WEEKS, AND THE WINDOW HAS NOT OPENED YET. Submissions open 1 Dec "
+            "2026. Everything below can be written now; nothing can be filed "
+            "before then.\n\n"
+            "THE FRAMING DECISION, AND IT IS THE WHOLE APPLICATION. NIA funds "
+            "healthy ageing. Vybe is not an ageing product and should not be "
+            "rewritten as one — that reads as a retrofit to a panel that sees "
+            "dozens of them. The honest case is the one the AgeTech packet "
+            "already makes and this board has now made three times: the "
+            "interpretation problem gets HARDER with age, because more things "
+            "interact, recovery slows, medications arrive, and a single score "
+            "explains less and less. Vybe serves people over 60 well because of "
+            "what it is, not because it was aimed at them.\n\n"
+            "WHAT MAKES THIS DIFFERENT FROM EVERY OTHER PACKET HERE: 25 of the "
+            "100 Stage 1 points are 'challenge impact on the submitter' — a lack "
+            "of access to resources and networks. Vybe's veteran founder and "
+            "lived experience count here, and race and sex may not be scored. "
+            "That section is not a diversity paragraph; it is a quarter of the "
+            "mark. Write it properly or lose a quarter of the score.\n\n"
+            "TWO GATES TO CHECK BEFORE SPENDING THE TIME. Nobody at Vybe may be "
+            "the principal investigator on an NIH SBIR/STTR award that is still "
+            "active when submissions close, and nobody may have been a finalist "
+            "in an earlier NIA Start-Up Challenge. Both are simple yes/no "
+            "questions and both disqualify outright.\n\n"
+            "THE COMMITMENT IF YOU WIN. Finalists give 6 to 8 hours a week from "
+            "June to November 2027 and attend two in-person events. Registration "
+            "is covered; travel is not. Decide now whether that is affordable in "
+            "the middle of a hardware year."
+        ),
+        "fields": [
+            {"q": "The solution, in plain terms", "a": LONG},
+            {"q": "Significance — the problem, and why it matters more with age", "a":
+                "Most people over sixty already have years of their own health data "
+                "and no idea what any of it means. The interpretation problem does "
+                "not hold steady with age, it gets harder: sleep breaks up, recovery "
+                "slows, medications arrive, and a bad week has a longer tail. More "
+                "things interact, so the single number on the screen explains less "
+                "and less of what is actually going on.\n\n"
+                "The cost of that gap is not abstract. People stop opening the app, "
+                "or they read an ordinary dip as something frightening and arrive at "
+                "an appointment with a screenshot and no context. The measurement "
+                "problem is solved. The meaning problem is not, and it is the one "
+                "that decides whether any of this changes what somebody does on a "
+                "Tuesday.\n\n"
+                "Vybe answers the question the number raises — why did my body do "
+                "that, given the week I actually had — and says what it could not "
+                "see, every time."},
+            {"q": "Innovation — how this differs from what is already sold", "a": WHY_NOW + "\n\n"
+                "Two differences matter to this panel specifically.\n\n"
+                "The interpretation is not a subscription. The Band is bought once "
+                "and the answers come with it. On a fixed income, a monthly fee that "
+                "gates your own history is a bad deal, and it is the single most "
+                "common reason a wearable ends up in a drawer.\n\n"
+                "Vybe reads context, not just signals. Five parts of a life, and "
+                "Connect is the one competitors leave out: work, travel, stress and "
+                "weather — the reasons a reading moves that no sensor can see. A "
+                "score is easy to copy. A model of somebody's week is not.\n\n"
+                "[Before submitting, search NIH RePORTER for NIA-funded SBIR/STTR "
+                "work in consumer wearables and ageing, and name the closest one and "
+                "how Vybe differs. The challenge asks for this explicitly, and an "
+                "answer that shows you looked beats an answer that asserts novelty.]"},
+            {"q": "Commercialisation — who pays, and how it reaches people", "a":
+                "Hardware sold once, at a margin, with the intelligence included. No "
+                "required subscription, which is the position rather than a "
+                "discount.\n\n"
+                "Then licensing: the interpretation layer sold to partners who have "
+                "sensors and nothing to say with the readings.\n\n"
+                "Where it is today: {{STAGE}}. Traction: {{TRACTION}}. Revenue over "
+                "the last 12 months: {{REVENUE}}.\n\n"
+                "[The panel scores commercial plausibility, not ambition. Give them "
+                "the unit economics you actually know — what a Band costs to build "
+                "and what it sells for — and the two or three steps between today "
+                "and a first production run. A projection whose assumptions you "
+                "cannot name is worse than a smaller number you can defend.]"},
+            {"q": "Team — who is building it and why them", "a":
+                "Team of {{EMPLOYEES}}. Led by {{CEO}}. Ownership: {{OWNERSHIP}}.\n\n"
+                "[This is yours to write and nobody should draft it for you. What "
+                "the panel is looking for is whether this specific group can get a "
+                "consumer hardware product built and sold. Two short paragraphs: "
+                "what each person has actually done that bears on that, and the gap "
+                "you know you still have. Naming the gap reads as judgement, not "
+                "weakness — and the accelerator exists to fill exactly that kind of "
+                "gap.]"},
+            {"q": "Challenge impact on the submitter — 25 of the 100 points", "a":
+                "[THIS IS A QUARTER OF THE SCORE AND IT MUST BE IN YOUR OWN WORDS. "
+                "The criterion is about a lack of access to resources and networks — "
+                "what this prize and this accelerator would change that you cannot "
+                "currently buy or borrow.\n\n"
+                "The confirmed facts are available to you: {{LEGAL_NAME}} is "
+                "majority veteran-, woman- and minority-owned. {{VETERAN_OWNER}}. "
+                "Race and sex may not be scored, so the weight here is on access, "
+                "not identity.\n\n"
+                "Write about the concrete things: which doors have not opened, what "
+                "capital was not available and on what terms, what a first-time "
+                "founder outside a coastal network cannot get a meeting for. Be "
+                "specific and do not perform hardship — a panel reading twenty of "
+                "these can tell the difference between a real account and a pitch.]"},
+            {"q": "Impact on NIA's SBIR/STTR pipeline", "a":
+                "Vybe intends to enter the NIH SBIR pipeline rather than treat this "
+                "prize as an end in itself. The certification this challenge asks "
+                "for — that a SBIR-eligible US small business is formed, or will be "
+                "by 1 November 2027 — is already true: {{LEGAL_NAME}} is "
+                "incorporated in {{STATE}} and is majority owned and controlled by "
+                "US citizens.\n\n"
+                "What the accelerator would most change is the shape of a future "
+                "Phase I: a consumer wellness product has to work out which parts of "
+                "its claim are testable and which are marketing, and that is exactly "
+                "the question five months of structured work would settle before any "
+                "federal money is spent on it.\n\n"
+                "[If there is a specific NIA interest area you intend to align with "
+                "— healthy ageing, ageing in place, AI-enabled personalised "
+                "intervention are the named ones — say which, and say it once.]"},
+            {"q": "The regulatory position, stated once", "a":
+                "Vybe is a consumer wellness product. It is not a medical device, it "
+                "makes no diagnostic claim, and asked a clinical question it "
+                "declines, says to see a clinician, and still shows the reading so it "
+                "can be taken to the appointment.\n\n"
+                "That is worth one sentence to a panel at NIH: it is why Vybe can "
+                "reach people now rather than after a clearance process, and it is a "
+                "product rule rather than a regulatory hedge."},
+            {"q": "Practicalities", "a":
+                "Company: {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}, "
+                "operating from {{CITY}}. EIN {{EIN}}. Website {{WEBSITE}}. Contact "
+                "{{CEO}}, {{EMAIL}}.\n\n"
+                "Dates to hold: submissions open 1 Dec 2026 and close 15 Jan 2027 at "
+                "11:59 pm ET. Webinar 3 Dec 2026, 1pm ET. Finalists commit 6 to 8 "
+                "hours a week from June to November 2027 and attend two in-person "
+                "events, with registration covered and travel not.\n\n"
+                "[Before writing a word, confirm two things that disqualify "
+                "outright: that nobody here is the PI on an NIH SBIR/STTR award "
+                "still active on 15 January, and that nobody here was a finalist in "
+                "an earlier NIA Start-Up Challenge.]"},
+        ],
+    },
+    {
         "id": "credits",
         "name": "Cloud and AI credits — five programs, one description",
         "funder": "NVIDIA, Microsoft, AWS, Google, Anthropic",
@@ -1015,18 +1655,31 @@ PACKETS = [
     },
     {
         "id": "veterans",
-        "name": "Veteran pitch circuit — Second Service Foundation and Warrior Rising",
-        "funder": "Second Service Foundation · Warrior Rising",
-        "amount": "Second Service: $1,000–$15,000 per regional event · Warrior Rising: up to $20,000 through business showers",
+        "name": "Veteran pitch circuit — Warrior Rising and the regional events",
+        "funder": "Warrior Rising, plus the regional veteran pitch events on the board",
+        "amount": "Warrior Rising: up to $20,000 through business showers · the regional events on the board run $1,000–$30,000 each",
         "deadline": "rolling",
         "fee": None,
-        "url": "https://secondservicefoundation.org/",
-        "submit": "Second Service runs regional Military Entrepreneur Challenge pitch events; register for the next one near you. Warrior Rising is training-first: complete its program to become eligible for business-shower awards (warriorrising.org). Both require 51%+ veteran (or eligible military-family) ownership.",
+        "url": "https://warriorrising.org/",
+        "submit": "Warrior Rising is training-first: complete its program to become eligible for business-shower awards. The dated regional events each have their own application — see the board rows for Veterans Business Battle, VETCON, Veteran Shark Tank, eMerge NatSec and the Blake Family competition. All of them require 51%+ veteran or eligible military-family ownership.",
         "gates": [],
         "confirmed": ["Veteran-owned 51%+ (confirmed 20 Sep)"],
-        "why": "Repeatable. Each Second Service event is a new chance at cash with the same pitch, and a win is a line in every later application.",
+        "why": "Repeatable. The same sixty seconds works at every event on the circuit, and a win is a line in every later application.",
         "docs": [],
-        "note": "",
+        "note": (
+            "CORRECTED 5 OCT 2026: THE SECOND SERVICE FOUNDATION IS GONE. This packet used "
+            "to lead with its Military Entrepreneur Challenge. Their own site now states "
+            "the foundation \u201chas been voluntarily shut down following ten years\u201d "
+            "and is \u201cstepping away from the pitch competition space\u201d. There is "
+            "no 2026 or 2027 cycle and there will not be one \u2014 do not look for a "
+            "regional event near you. Its board row has been deleted.\n\n"
+            "That removed one of the two national circuits, so the veteran lane now runs "
+            "through the dated events rather than a standing calendar. Warrior Rising is "
+            "the one that stays open all year, and it is training-first: the grant is the "
+            "back end of a programme, not a form, so start it well before you need the "
+            "money.\n\n"
+            "The pitch below is the reusable part. Everything else is per-event."
+        ),
         "fields": [
             {"q": "60-second pitch", "a":
                 "I'm {{VETERAN_OWNER}}, and I'm building Vybe.\n\n"

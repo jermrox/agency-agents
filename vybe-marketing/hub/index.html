@@ -100,8 +100,10 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
       <div class="meta" id="meta"></div>
     </div>
     <nav aria-label="Pages">
-      <a href="./" aria-current="page">Hub</a>
-      <a href="scoreboard.html">Scoreboard</a>
+      <a href="briefing.html">Daily briefing</a>
+      <a href="reports.html">All reports</a>
+      <a href="./" aria-current="page">Agent hub</a>
+      <a href="scoreboard.html">Weekly scoreboard</a>
       <button class="toggle" id="theme" type="button">Theme</button>
     </nav>
   </header>
@@ -152,7 +154,7 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
 </div>
 <script type="application/json" id="fallback">{
   "schema": 1,
-  "updated_at": "2026-10-03T18:00:00Z",
+  "updated_at": "2026-10-05T15:00:00Z",
   "stage": "Pre-launch · US founding batch",
   "wedge_note": "Scored 0 to 3 on pain (felt today), fit (Vybe clearly better) and moat (incumbents would have to break their own model to copy). Hover a score for the reason. Tactical teams are the strongest wedge but buy slowly, so builders and baseline nerds carry the near-term signal this quarter. Self-scored from the 2 Oct 2026 research; treat as hypotheses until the tests run.",
   "guardrail": {
@@ -1133,6 +1135,18 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
             "gaps": "Landing page fires tags before consent (now a launch gate); image card had one explanation"
           }
         ]
+      },
+      {
+        "date": "2026-10-05 monthly",
+        "cases": [
+          {
+            "id": "c7",
+            "name": "Read the scoreboard",
+            "total": 24,
+            "pass": true,
+            "gaps": "Treated every paid-labelled session as an ad click; a rule drew a conclusion from two signups; no named community for the working channel"
+          }
+        ]
       }
     ]
   },
@@ -1178,7 +1192,7 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
     ]
   },
   "concept_test": {
-    "note": "Copy written cold by a fresh session, graded by a separate fresh session against evals/concept-test.md (pass 14 of 18) and evals/search-brief-rubric.md. First try and latest are out of 18. Final regression on 3 Oct, all rules in force: 8 of 8 copy cases pass (16 to 18).",
+    "note": "Copy written cold by a fresh session, graded by a separate fresh session against evals/concept-test.md (pass 14 of 18) and evals/search-brief-rubric.md. First try and latest are out of 18. Final regression on 3 Oct, all rules in force: 8 of 8 copy cases pass (16 to 18). Monthly rerun on 5 Oct, fresh writer and separate grader: C4 16, C3 17, S3 18.",
     "knowledge": "knowledge 12/12",
     "cases": [
       {
@@ -1200,18 +1214,18 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
       {
         "name": "C3 Reel showing an answer",
         "first": 12,
-        "latest": 18,
+        "latest": 17,
         "max": 18,
         "pass": true,
-        "lesson": "Tying the answer to \"no required subscription\" is row 21; give it its own sentence or a hold"
+        "lesson": "Write the pointer in your own words; never print production notes in a caption"
       },
       {
         "name": "C4 Lab email first line",
         "first": 13,
-        "latest": 17,
+        "latest": 16,
         "max": 18,
         "pass": true,
-        "lesson": "Short formats are counted: under 25 words, checked by the guardrail"
+        "lesson": "A first line names both confidence and a blind spot, or its companion line does"
       },
       {
         "name": "C5 Nourish Reel",
@@ -1256,10 +1270,10 @@ footer { color: var(--muted); font-size: 12.5px; margin-top: 22px; } footer p { 
       {
         "name": "S3 Screenless category brief",
         "first": null,
-        "latest": 16,
+        "latest": 18,
         "max": 18,
         "pass": true,
-        "lesson": "Device tables: no price column; Vybe's row says pre-launch"
+        "lesson": "When DataForSEO is unfunded, quote the last dated results pull beside any proxy"
       },
       {
         "name": "S2 WHOOP vs Oura comparison",
