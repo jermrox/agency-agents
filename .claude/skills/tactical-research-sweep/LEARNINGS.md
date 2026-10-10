@@ -16,6 +16,54 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-10 — daily run
+
+- +3 items, all PubMed: FIRE 1 (only 10% of California firefighters have had a lung-cancer CT screen),
+  MIL 2 (pregnant/postpartum veterans' use of integrative care; military GME ethics curriculum and
+  moral injury). Board 75, archive 61. EMS, LE: nothing again. Exa still 402 (seventh day); "no new
+  policy" is unverified. Thin day: PubMed alone cannot cover policy, LE or EMS.
+- Three hot notes went stale at once as mid-September items aged out (Behavioral health, Programs and
+  funding, Wearables). The check refused to render; fixed by dropping the expired sentence and citing
+  an in-window replacement. Third day running a note went stale, so check `cites` dates at the start
+  of each run, before merging.
+- PubMed `date_from` filters on indexing date, and "EMT" matches epithelial-mesenchymal transition;
+  use "emergency medical technician" or "paramedic".
+- Leads needing day-level dates: PFAS and epigenetic age in airport firefighters (DOI 10.1002/em.70085).
+
+## 2026-10-09 — daily run
+
+- +8 items, all PubMed: MIL 5 (UK ADVANCE combat-injury mental health; Bankart repair return to duty;
+  ketamine for PTSD review; VA Caring Letters cost; women veterans' ED use; shaving-waiver ethics),
+  CROSS 2 (911 dispatcher support; occupational PTSD review). Board 75, archive 58. FIRE, EMS, LE:
+  nothing standalone. Exa still 402 (sixth day); "no new policy" is unverified.
+- The cited-items check caught the Wearables note citing a SAM.gov RFI that aged out. Rewrote it
+  with the new core-temperature item. The nightmare-wearable item (9 Sep) ages out tomorrow.
+- A "Oct 2026" PubMed date gives no day; the item is dated the 1st. Prefer items with a full date.
+- Lead: ClinicalTrials.gov NCT07502131 (EMS Back-Up manual-handling RCT) needs a working fetch.
+- PR #67 still unmerged; stacked again.
+
+## 2026-10-08 — daily run
+
+- +3 items, all PubMed: MIL 2 (Marine pull-up requirement and upper-extremity injury trend; Tabata
+  with or without cinnamon in cadets, blurb says cinnamon did not separate on performance), FIRE 1
+  (machine-learning core temperature in encapsulated PPE). Board 68, archive 57. EMS and LE: nothing
+  qualifying. Exa still 402 (fifth day); "no new policy" is unverified.
+- PR #67 was still unmerged, so the run stacked on its branch and merged `main` in (the stop hook's
+  "15 unpushed commits" were main's commits arriving through that merge).
+- PubMed `date_from` wants `YYYY/MM/DD`, not dashes.
+- Still open: `verify-research-site.yml` v2 update; COPS LEMHWA (due 22 Oct) and Fairmont WV AFG leads.
+
+## 2026-10-07 — daily run
+
+- +3 items, all PubMed: MIL 2 (burnout interventions for military physicians; cardiac emergency
+  planning for the military), FIRE 1 (low back pain in Brazilian firefighters). Board 66, archive 56.
+  EMS and LE: nothing qualifying again. Exa still 402 (fourth day); "no new policy" is unverified.
+- PR #56 merged on 6 Oct and its branch was deleted upstream, so this run started cleanly from
+  `main`. Reset the local branch with `git checkout -B <branch> origin/main` only after confirming
+  `git rev-list --count origin/main..HEAD` is 0.
+- Still open: update `verify-research-site.yml` to the v2 layout (it checks the old page); confirm
+  COPS LEMHWA (due 22 Oct) and the Fairmont WV AFG award once fetch works.
+
 ## 2026-10-06 — daily run
 
 - +1 item (MIL: night-owl chronotype and PTSD/depression/insomnia in veterans). Board 62.
