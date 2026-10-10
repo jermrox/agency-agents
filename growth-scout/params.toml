@@ -215,9 +215,17 @@ waves = [
 [outreach]
 # The ONLY sending address for anything Growth Scout emails or drafts (weekly
 # brief, outreach drafts). Use the Composio Gmail connection signed in as this
-# address; never the claude.ai Gmail connector (jeremylahn@i-grow.co) or any other.
+# address; never a connector attached to the session, which signs in as the
+# founder's other company, and never any other sender.
 sender = "jeremy@vybe.health"
-calendly = "https://calendly.com/jeremylahn-i-grow/vybe-health-partnership-call"  # check the event is active before each batch
+calendly = "https://calendly.com/jeremy-vybe/30min"  # the Vybe Health account (jeremy@vybe.health), via Composio.
+# This must be a Vybe Health URL and nothing else. The founder's other
+# company has its own Calendly, and its link was in every drafted opener and
+# follow-up until 10 Oct 2026 -- it reached about 50 partner organisations.
+# Read this account through Composio only; a session's own Calendly connector
+# is the other company's. The Vybe account has one active event type,
+# "30 Minute Meeting" (slug 30min), so there is no partnership-named event to
+# point at. tests/test_no_foreign_accounts.py enforces this.
 weekly_targets = 10
 max_follow_ups = 1
 follow_up_after_days = [5, 7]
