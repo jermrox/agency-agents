@@ -1,0 +1,87 @@
+name: Vybe agent board
+
+# Checks every Vybe agent's LIVE surface and publishes the board.
+#
+# This runs in Actions, not in an agent session, on purpose. Sessions go idle
+# and their containers are reclaimed, so a session-based checker is asleep
+# exactly when an agent has stopped publishing. Actions is not.
+#
+# It commits the rendered board to dashboards/, which scripts/build-netlify-site.sh
+# already copies to the rev site, so the board gets a live URL
+# (agentrevup.netlify.app/vybe-agent-board.html) with no new Netlify project to
+# go stale in turn.
+#
+# The job fails when a surface is red. That failure is the alarm: the founder
+# should not be the one who notices a wrong link on a dashboard, which is
+# exactly what happened on 10 Oct 2026.
+
+on:
+  schedule:
+    # Every four hours, off the hour. Growsom publishes three times a day and is
+    # the tightest cadence being watched, so four hours catches a stopped agent
+    # within one of its own cycles.
+    - cron: "37 */4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/vybe-agent-board.py"
+      - ".github/workflows/vybe-agent-board.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vybe-agent-board
+  cancel-in-progress: false
+
+jobs:
+  board:
+    name: check live surfaces and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # --no-fail so the board is always written and committed. A board that
+      # vanishes when something breaks is useless at the moment it matters, and
+      # the real failure is raised in a later step from the saved JSON.
+      - name: Check every Vybe surface
+        id: check
+        run: python3 scripts/vybe-agent-board.py --out-dir dashboards --no-fail
+
+      - name: Commit the board if it changed
+        run: |
+          if git diff --quiet -- dashboards/vybe-agent-board.html dashboards/vybe-agents.json; then
+            echo "Board unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboards/vybe-agent-board.html dashboards/vybe-agents.json
+          git commit -m "chore(vybe): agent board $(date -u +%Y-%m-%dT%H:%MZ)"
+          # Another routine commits to main on its own schedule, so rebase
+          # rather than fail the run on a race we do not care about.
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            echo "push attempt $i failed; retrying"
+            sleep $((i * 5))
+          done
+          echo "::warning::Could not push the board after 3 attempts; the check result below still stands."
+
+      - name: Fail if any surface is red
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          d = json.load(open("dashboards/vybe-agents.json"))
+          red = [s for s in d["surfaces"] if s["state"] != "ok"]
+          for s in red:
+              print(f"::error title={s['agent']} — {s['surface']}::{'; '.join(s['problems'])}")
+          print(f"{len(d['surfaces']) - len(red)}/{len(d['surfaces'])} surfaces OK")
+          sys.exit(1 if red else 0)
+          PY

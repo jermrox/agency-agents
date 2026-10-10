@@ -1,0 +1,89 @@
+{
+  "checked": "2026-10-10T19:19:13+00:00",
+  "surfaces": [
+    {
+      "agent": "Revsom",
+      "role": "funding board and application packets",
+      "surface": "agentrevup.netlify.app/funding.json",
+      "url": "https://agentrevup.netlify.app/funding.json",
+      "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
+      "max_age_h": 30,
+      "cadence": "daily 13:40Z",
+      "problems": [],
+      "stamp": "2026-10-10T13:47:11+00:00",
+      "age_h": 5.5,
+      "foreign": [],
+      "state": "ok"
+    },
+    {
+      "agent": "Revsom",
+      "role": "the Apply page",
+      "surface": "agentrevup.netlify.app/apply",
+      "url": "https://agentrevup.netlify.app/apply.html",
+      "stamp_re": null,
+      "max_age_h": null,
+      "cadence": "with each packet",
+      "problems": [],
+      "stamp": null,
+      "age_h": null,
+      "foreign": [],
+      "state": "ok"
+    },
+    {
+      "agent": "Marketsom",
+      "role": "daily marketing briefing",
+      "surface": "agentmarksom.netlify.app/briefing.html",
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "stamp_re": "\"asof\"\\s*:\\s*\"([^\"]+)\"",
+      "max_age_h": 30,
+      "cadence": "daily 10:23Z",
+      "problems": [],
+      "stamp": "2026-10-10",
+      "age_h": 19.3,
+      "foreign": [],
+      "state": "ok"
+    },
+    {
+      "agent": "Growsom",
+      "role": "outreach and investor board",
+      "surface": "agentgrowthscout.netlify.app",
+      "url": "https://agentgrowthscout.netlify.app",
+      "stamp_re": "Updated (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}) UTC",
+      "max_age_h": 14,
+      "cadence": "3x daily",
+      "problems": [],
+      "stamp": "2026-10-10 16:33",
+      "age_h": 2.8,
+      "foreign": [],
+      "state": "ok"
+    },
+    {
+      "agent": "Growsom",
+      "role": "board data feed",
+      "surface": "agentgrowthscout.netlify.app/data.json",
+      "url": "https://agentgrowthscout.netlify.app/data.json",
+      "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
+      "max_age_h": 14,
+      "cadence": "3x daily",
+      "problems": [],
+      "stamp": "2026-10-10 16:33 UTC",
+      "age_h": 2.8,
+      "foreign": [],
+      "state": "ok"
+    },
+    {
+      "agent": "Instasom",
+      "role": "social dashboard",
+      "surface": "instasum.netlify.app/all.json",
+      "url": "https://instasum.netlify.app/all.json",
+      "stamp_re": "\"generatedAt\"\\s*:\\s*\"([^\"]+)\"",
+      "max_age_h": 30,
+      "cadence": "daily 10:38Z",
+      "problems": [],
+      "stamp": "2026-10-10T15:00:12Z",
+      "age_h": 4.3,
+      "foreign": [],
+      "state": "ok"
+    }
+  ]
+}
