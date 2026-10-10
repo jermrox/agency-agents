@@ -121,6 +121,10 @@ a { color: var(--brand); }
 .s-open .dot, .s-missing .dot { background: var(--crit); } .s-open, .s-missing { color: var(--crit); }
 .s-partial .dot { background: var(--warn); } .s-partial { color: var(--warn); }
 .s-done .dot, .s-connected .dot { background: var(--good); } .s-done, .s-connected { color: var(--good); }
+.updates li { display: grid; grid-template-columns: 110px 1fr; gap: 4px 14px; padding: 10px 0; border-bottom: 1px solid var(--hair); }
+.updates li:last-child { border-bottom: 0; }
+.updates .area { font-weight: 600; }
+@media (max-width: 560px) { .updates li { grid-template-columns: 1fr; } }
 .actions li { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 10px 0; border-bottom: 1px solid var(--hair); }
 .actions li:last-child { border-bottom: 0; }
 .actions .why { grid-column: 2; color: var(--ink-2); font-size: 13px; }
@@ -162,6 +166,12 @@ footer p { margin: 4px 0; }
     </div>
   </section>
 
+  <section class="card">
+    <h2>This week: the overall update</h2>
+    <p class="sub" id="updates-sub">Everything that moved in the last 7 days. Refreshed every morning.</p>
+    <ul class="plain updates" id="updates"></ul>
+  </section>
+
   <section class="kpis" id="kpis" aria-label="Headline numbers"></section>
 
   <section class="card">
@@ -194,7 +204,7 @@ footer p { margin: 4px 0; }
   </div>
 
   <section class="card">
-    <h2>Week 1 actions</h2>
+    <h2>Open actions</h2>
     <p class="sub">Ordered. Nothing below these is worth doing until they are done.</p>
     <ul class="plain actions" id="actions"></ul>
   </section>
@@ -207,7 +217,7 @@ footer p { margin: 4px 0; }
     </section>
     <section class="card">
       <h2>Pages Google has shown</h2>
-      <p class="sub">Search Console. Every page has zero clicks so far.</p>
+      <p class="sub">Search Console, pages Google showed in the window at the foot of the page.</p>
       <div class="scroll" id="search"></div>
     </section>
   </div>
@@ -221,427 +231,7 @@ footer p { margin: 4px 0; }
   <footer id="foot"></footer>
 </div>
 
-<script type="application/json" id="fallback">{
- "schema": 1,
- "pulled_at": "2026-10-05T13:40:00Z",
- "scoreboard_file": "vybe-marketing/scoreboard-2026-10-05.md",
- "windows": {
-  "ga4": "7 days, 28 Sep to 4 Oct 2026 (week before: 21 to 27 Sep)",
-  "search_console": "26 Sep to 2 Oct 2026, final (week before: 19 to 25 Sep)",
-  "google_ads": "28 Sep to 4 Oct 2026",
-  "instagram_account": "read 5 Oct 2026 through the Meta connection",
-  "instagram_posts": "lifetime per post, read 5 Oct 2026 through the Meta connection"
- },
- "kpis": {
-  "waitlist_signups": 2,
-  "form_submits": 3,
-  "sessions": 385,
-  "users": 322,
-  "us_sessions": 117,
-  "waitlist_page_users": 24,
-  "organic_search_clicks": 1,
-  "search_impressions": 85,
-  "ig_followers": 1088,
-  "ig_following": 181,
-  "ig_posts": 6,
-  "ig_account_reach_28d": null,
-  "cost_per_signup": 78.21,
-  "ad_spend": 156.42
- },
- "last_week": {
-  "waitlist_signups": 2,
-  "form_submits": 9,
-  "sessions": 3239,
-  "users": 2635,
-  "us_sessions": 53,
-  "waitlist_page_users": 30,
-  "organic_search_clicks": 0,
-  "search_impressions": 0,
-  "ad_spend": 25.04,
-  "cost_per_signup": 12.52
- },
- "daily_sessions": [
-  [
-   "2026-09-28",
-   94
-  ],
-  [
-   "2026-09-29",
-   55
-  ],
-  [
-   "2026-09-30",
-   87
-  ],
-  [
-   "2026-10-01",
-   87
-  ],
-  [
-   "2026-10-02",
-   17
-  ],
-  [
-   "2026-10-03",
-   22
-  ],
-  [
-   "2026-10-04",
-   20
-  ]
- ],
- "channels": [
-  {
-   "name": "Display",
-   "sessions": 212,
-   "engaged": 162
-  },
-  {
-   "name": "Direct",
-   "sessions": 82,
-   "engaged": 82
-  },
-  {
-   "name": "Paid Search",
-   "sessions": 55,
-   "engaged": 33
-  },
-  {
-   "name": "Organic Social",
-   "sessions": 16,
-   "engaged": 16
-  },
-  {
-   "name": "Paid Video",
-   "sessions": 6,
-   "engaged": 6
-  },
-  {
-   "name": "Unassigned",
-   "sessions": 6,
-   "engaged": 0
-  },
-  {
-   "name": "Cross-network",
-   "sessions": 4,
-   "engaged": 3
-  },
-  {
-   "name": "Referral",
-   "sessions": 3,
-   "engaged": 3
-  },
-  {
-   "name": "Paid Social",
-   "sessions": 1,
-   "engaged": 1
-  }
- ],
- "countries": [
-  {
-   "name": "India",
-   "sessions": 168,
-   "engaged": 116
-  },
-  {
-   "name": "United States",
-   "sessions": 117,
-   "engaged": 115,
-   "target": true
-  },
-  {
-   "name": "Pakistan",
-   "sessions": 26,
-   "engaged": 16
-  },
-  {
-   "name": "Bangladesh",
-   "sessions": 25,
-   "engaged": 20
-  },
-  {
-   "name": "Canada",
-   "sessions": 4,
-   "engaged": 4
-  },
-  {
-   "name": "Others (25)",
-   "sessions": 45,
-   "engaged": null
-  }
- ],
- "signups_by_channel": [
-  {
-   "name": "Organic Social",
-   "waitlist_signup": 1,
-   "form_submit": 2
-  },
-  {
-   "name": "Unassigned",
-   "waitlist_signup": 1,
-   "form_submit": 1
-  }
- ],
- "key_events": {
-  "keep": [
-   "waitlist_signup",
-   "form_submit",
-   "purchase"
-  ],
-  "unmark": [
-   "page_view",
-   "session_start",
-   "first_visit",
-   "scroll",
-   "user_engagement",
-   "cta_click",
-   "nav_click",
-   "not_found_view",
-   "form_start",
-   "content_engagement",
-   "faq_open"
-  ]
- },
- "search_pages": [
-  {
-   "page": "/learn/heart-rate-variability-explained/",
-   "impressions": 63,
-   "position": 85.5
-  },
-  {
-   "page": "/",
-   "impressions": 12,
-   "position": 8.1
-  },
-  {
-   "page": "/learn/whoop-recovery-score-meaning/",
-   "impressions": 8,
-   "position": 20.8
-  },
-  {
-   "page": "/ecosystem",
-   "impressions": 5,
-   "position": 3.6
-  },
-  {
-   "page": "/band",
-   "impressions": 4,
-   "position": 5.5
-  },
-  {
-   "page": "/compare/oura-ring-alternative/",
-   "impressions": 3,
-   "position": 11.7
-  },
-  {
-   "page": "/learn/screenless-health-wearable/",
-   "impressions": 3,
-   "position": 12.7
-  },
-  {
-   "page": "/compare/whoop-alternative",
-   "impressions": 2,
-   "position": 12
-  }
- ],
- "ig_posts": [
-  {
-   "date": "2026-09-23",
-   "title": "No Subscription. Now that's a Vybe",
-   "reach": 38,
-   "likes": 4,
-   "comments": 1,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DdodZiyRFY0/"
-  },
-  {
-   "date": "2026-09-25",
-   "title": "30 days of battery",
-   "reach": 35,
-   "likes": 2,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DduMCHHqDz_/"
-  },
-  {
-   "date": "2026-09-26",
-   "title": "A health band you forget you're wearing",
-   "reach": 41,
-   "likes": 4,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DdxPAVSNEVR/"
-  },
-  {
-   "date": "2026-09-29",
-   "title": "Why rent access to your own health data?",
-   "reach": 30,
-   "likes": 3,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/Dd4pO7zKyTl/"
-  },
-  {
-   "date": "2026-10-01",
-   "title": "Reel: Your health has five dimensions",
-   "reach": 402,
-   "likes": 1,
-   "comments": 2,
-   "saves": 1,
-   "shares": 0,
-   "url": "https://www.instagram.com/reel/Dd7kiqZNptc/"
-  },
-  {
-   "date": "2026-10-04",
-   "title": "No subscription hits different",
-   "reach": 2,
-   "likes": 0,
-   "comments": 0,
-   "saves": 0,
-   "shares": 0,
-   "url": "https://www.instagram.com/p/DeFsLDFqxu_/"
-  }
- ],
- "ads": [
-  {
-   "campaign": "Vybe Health - 9/15 (Display)",
-   "status": "Removed",
-   "spend": 122.26,
-   "clicks": 182,
-   "impressions": 11216,
-   "note": "US $96.64 for 129 clicks, Canada $22.60 for 34; GA4 saw 20 US Display sessions all week"
-  },
-  {
-   "campaign": "Website traffic-Search-1",
-   "status": "Enabled",
-   "spend": 34.16,
-   "clicks": 28,
-   "impressions": 1333,
-   "note": "US $26.57, Canada $6.09, India $1.50; 19 'conversions' counted from page views"
-  }
- ],
- "actions": [
-  {
-   "id": "pause-paid",
-   "title": "Pause all paid spend (Search-1) and keep it at $0",
-   "why": "$156.42 this week, 0 paid signups; US Ads clicks 150 vs about 33 paid GA4 sessions; consent gate on /waitlist not live.",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "consent-gate",
-   "title": "Consent gate on /waitlist with the health privacy link",
-   "why": "The Google Ads tag and GA4 load on /waitlist with no consent step or GPC check, whether or not ads run (plan action 7).",
-   "owner": "Founder + counsel",
-   "status": "open"
-  },
-  {
-   "id": "key-events",
-   "title": "Unmark 11 GA4 key events; keep waitlist_signup, form_submit, purchase",
-   "why": "Still 14 key events on 5 Oct, so 306 of 385 sessions read as engaged.",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "ads-conversions",
-   "title": "Import no conversions into Google Ads until counsel rules on /privacy §3",
-   "why": "Search-1 counts page views as conversions (19 from 28 clicks); plan action 3 holds all imports until counsel rules.",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "geo",
-   "title": "When paid restarts: US only, people in or regularly in it",
-   "why": "Search-1 spent $7.59 in Canada and India this week; Display is removed.",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "signup-audit",
-   "title": "Find why form submits and signup events differ",
-   "why": "3 form submits and 2 signup events this week; 9 and 2 the week before.",
-   "owner": "Agent + founder",
-   "status": "open"
-  },
-  {
-   "id": "facebook",
-   "title": "Grow the Facebook Page",
-   "why": "The Vybe Health Page is readable through Meta: 1 follower (5 Oct).",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "dataforseo",
-   "title": "Fund DataForSEO",
-   "why": "Search-volume calls return 40200 Payment Required, so search briefs use Search Console only.",
-   "owner": "Founder",
-   "status": "open"
-  },
-  {
-   "id": "google-ads",
-   "title": "Connect Google Ads to Composio",
-   "why": "Connected: spend and clicks read on 5 Oct.",
-   "owner": "Founder",
-   "status": "done"
-  }
- ],
- "sources": [
-  {
-   "name": "Google Analytics 4",
-   "state": "connected"
-  },
-  {
-   "name": "Google Search Console",
-   "state": "connected"
-  },
-  {
-   "name": "Google Ads (read-only)",
-   "state": "connected"
-  },
-  {
-   "name": "Meta Ads",
-   "state": "connected"
-  },
-  {
-   "name": "Instagram @vybehealthinc (via Meta)",
-   "state": "connected"
-  },
-  {
-   "name": "Firecrawl (vybe.health)",
-   "state": "connected"
-  },
-  {
-   "name": "Airtable",
-   "state": "connected"
-  },
-  {
-   "name": "Netlify",
-   "state": "connected"
-  },
-  {
-   "name": "Facebook Page",
-   "state": "partial"
-  },
-  {
-   "name": "LinkedIn",
-   "state": "partial"
-  },
-  {
-   "name": "DataForSEO",
-   "state": "partial"
-  },
-  {
-   "name": "Reddit",
-   "state": "missing"
-  }
- ],
- "next_pull": "2026-10-12"
-}
-</script>
+<script type="application/json" id="fallback">{"schema": 1, "pulled_at": "2026-10-10T15:10:00Z", "scoreboard_file": "vybe-marketing/scoreboard.json", "windows": {"ga4": "7 days, 3 to 9 Oct 2026 (week before: 26 Sep to 2 Oct)", "search_console": "1 to 7 Oct 2026 (week before: 24 to 30 Sep)", "google_ads": "3 to 9 Oct 2026", "instagram_account": "read 10 Oct 2026 through the Meta connection", "instagram_posts": "lifetime per post, read 10 Oct 2026 through the Meta connection"}, "kpis": {"waitlist_signups": 4, "form_submits": 14, "sessions": 133, "users": 94, "us_sessions": 57, "waitlist_page_users": 26, "organic_search_clicks": 6, "search_impressions": 122, "ig_followers": 1088, "ig_following": 241, "ig_posts": 8, "ig_account_reach_28d": null, "cost_per_signup": 40.27, "ad_spend": 161.07}, "last_week": {"waitlist_signups": 1, "form_submits": 1, "sessions": 601, "users": 474, "us_sessions": 118, "waitlist_page_users": 24, "organic_search_clicks": 0, "search_impressions": 36, "ad_spend": 41.08, "cost_per_signup": 41.08}, "daily_sessions": [["2026-10-03", 22], ["2026-10-04", 25], ["2026-10-05", 25], ["2026-10-06", 19], ["2026-10-07", 21], ["2026-10-08", 11], ["2026-10-09", 10]], "channels": [{"name": "Display", "sessions": 43, "engaged": 30}, {"name": "Organic Social", "sessions": 31, "engaged": 31}, {"name": "Paid Search", "sessions": 25, "engaged": 12}, {"name": "Direct", "sessions": 21, "engaged": 21}, {"name": "Organic Search", "sessions": 5, "engaged": 5}, {"name": "Paid Social", "sessions": 4, "engaged": 4}, {"name": "Referral", "sessions": 3, "engaged": 3}, {"name": "Unassigned", "sessions": 2, "engaged": 0}, {"name": "Cross-network", "sessions": 1, "engaged": 1}], "countries": [{"name": "United States", "sessions": 57, "engaged": 57, "target": true}, {"name": "India", "sessions": 49, "engaged": 31}, {"name": "Bangladesh", "sessions": 12, "engaged": 6}, {"name": "Canada", "sessions": 3, "engaged": 3}, {"name": "Pakistan", "sessions": 3, "engaged": 3}, {"name": "Other", "sessions": 9, "engaged": null}], "signups_by_channel": [{"name": "Paid Search", "waitlist_signup": 2, "form_submit": 3}, {"name": "Direct", "waitlist_signup": 1, "form_submit": 9}, {"name": "Organic Search", "waitlist_signup": 1, "form_submit": 1}, {"name": "Organic Social", "waitlist_signup": 0, "form_submit": 1}], "key_events": {"keep": ["waitlist_signup", "form_submit", "purchase"], "unmark": ["page_view", "session_start", "first_visit", "scroll", "user_engagement", "cta_click", "nav_click", "not_found_view", "form_start", "content_engagement", "faq_open"]}, "search_pages": [{"page": "/learn/heart-rate-variability-explained/", "impressions": 37, "position": 83.8}, {"page": "/", "impressions": 27, "position": 3.4}, {"page": "/learn/whoop-recovery-score-meaning/", "impressions": 27, "position": 17.9}, {"page": "/learn/garmin-fenix-7-solar-charging", "impressions": 15, "position": 9.8}, {"page": "/terms", "impressions": 15, "position": 7.7}, {"page": "/band", "impressions": 13, "position": 4.6}, {"page": "/compare/whoop-alternative", "impressions": 10, "position": 6.6}, {"page": "/faq/", "impressions": 8, "position": 6.4}, {"page": "/research", "impressions": 8, "position": 2.8}, {"page": "/ecosystem", "impressions": 7, "position": 2.0}], "ig_posts": [{"date": "2026-10-08", "title": "Catch the Vybe (Reel)", "reach": 58, "likes": 0, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/reel/DeP9Lp3KTTD/"}, {"date": "2026-10-07", "title": "Works the night shift", "reach": 12, "likes": 0, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/DeLC0IFt__F/"}, {"date": "2026-10-04", "title": "No subscription hits different", "reach": 21, "likes": 2, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/DeFsLDFqxu_/"}, {"date": "2026-10-01", "title": "Your health has five dimensions (Reel)", "reach": 426, "likes": 3, "comments": 3, "saves": 1, "shares": 0, "url": "https://www.instagram.com/reel/Dd7kiqZNptc/"}, {"date": "2026-09-29", "title": "Why rent access to your own health data?", "reach": 45, "likes": 4, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/Dd4pO7zKyTl/"}, {"date": "2026-09-26", "title": "A band you forget you're wearing", "reach": 54, "likes": 5, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/DdxPAVSNEVR/"}, {"date": "2026-09-25", "title": "30 days of battery", "reach": 47, "likes": 2, "comments": 0, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/DduMCHHqDz_/"}, {"date": "2026-09-23", "title": "No Subscription. Now that's a Vybe", "reach": 48, "likes": 4, "comments": 1, "saves": 0, "shares": 0, "url": "https://www.instagram.com/p/DdodZiyRFY0/"}], "ads": [{"campaign": "Vybe Health - 9/15 (Display)", "status": "Removed", "spend": 93.73, "clicks": 113, "impressions": 7546, "note": "Spent on 3 Oct only, then stopped. 0 conversions."}, {"campaign": "Website traffic-Search-1", "status": "Enabled", "spend": 67.34, "clicks": 99, "impressions": 3433, "note": "US and Canada search. Its 34 'conversions' are page views, not signups."}], "actions": [{"id": "growth-scout", "title": "Stop or rein in the Growth Scout agent's sending", "why": "It sent about 40 emails from the Vybe inbox on 9 Oct, with claims we avoid and a non-Vybe calendar link, and asked John to approve 20 more on 10 Oct.", "owner": "Founder", "status": "open"}, {"id": "dns-auth", "title": "Set up SPF, DKIM and DMARC for vybe.health", "why": "Partners' mail filters flag vybe.health as a new domain.", "owner": "Whoever runs the domain", "status": "open"}, {"id": "pause-paid", "title": "Pause all paid spend (Search-1) and keep it at $0", "why": "$161.07 spent 3 to 9 Oct for 4 recorded signups across all channels; Search-1 still counts page views as conversions. The consent gate on /waitlist isn't live.", "owner": "Founder", "status": "open"}, {"id": "consent-gate", "title": "Consent gate on /waitlist with the health privacy link", "why": "The Google Ads tag and GA4 load on /waitlist with no consent step or GPC check, whether or not ads run (plan action 7).", "owner": "Founder + counsel", "status": "open"}, {"id": "key-events", "title": "Unmark 11 GA4 key events; keep waitlist_signup, form_submit, purchase", "why": "Search-1 still reports 34 'conversions' from page views (3 to 9 Oct), so engagement and conversion numbers read high.", "owner": "Founder", "status": "open"}, {"id": "ads-conversions", "title": "Import no conversions into Google Ads until counsel rules on /privacy §3", "why": "Search-1 counts page views as conversions (19 from 28 clicks); plan action 3 holds all imports until counsel rules.", "owner": "Founder", "status": "open"}, {"id": "geo", "title": "When paid restarts: US only, people in or regularly in it", "why": "Search-1 spent $7.59 in Canada and India this week; Display is removed.", "owner": "Founder", "status": "open"}, {"id": "signup-audit", "title": "Find why form submits and signup events differ", "why": "14 form submits and 4 signup events this week (1 and 1 the week before).", "owner": "Agent + founder", "status": "open"}, {"id": "facebook", "title": "Grow the Facebook Page", "why": "The Vybe Health Page is readable through Meta: 1 follower (5 Oct).", "owner": "Founder", "status": "open"}, {"id": "dataforseo", "title": "Fund DataForSEO", "why": "Search-volume calls return 40200 Payment Required, so search briefs use Search Console only.", "owner": "Founder", "status": "open"}, {"id": "google-ads", "title": "Connect Google Ads to Composio", "why": "Connected: spend and clicks read on 5 Oct.", "owner": "Founder", "status": "done"}], "sources": [{"name": "Google Analytics 4", "state": "connected"}, {"name": "Google Search Console", "state": "connected"}, {"name": "Google Ads (read-only)", "state": "connected"}, {"name": "Meta Ads", "state": "connected"}, {"name": "Instagram @vybehealthinc (via Meta)", "state": "connected"}, {"name": "Firecrawl (vybe.health)", "state": "connected"}, {"name": "Airtable", "state": "connected"}, {"name": "Netlify", "state": "connected"}, {"name": "Facebook Page", "state": "partial"}, {"name": "LinkedIn", "state": "partial"}, {"name": "DataForSEO", "state": "partial"}, {"name": "Reddit", "state": "missing"}], "next_pull": "2026-10-11", "updates": [{"area": "Partners", "cls": "good", "text": "3 partners said yes (MSBL, WNBF, Head of the Schuylkill). About 34 partner emails sent; 13 organisations replied. Tredict offered API access, and Concept2 sent Logbook API key steps."}, {"area": "Calls", "cls": "warn", "text": "1 call to keep: Nocturnal, Mon 12 Oct, 2 pm EDT. The prep brief is on the daily briefing. Momentum, Ohio State Triathlon Club and ANZER USA asked for calls; corrections with the Vybe calendar link are drafted."}, {"area": "Outreach", "cls": "warn", "text": "The early emails linked a non-Vybe calendar. 22 in-thread corrections are drafted with John on CC, and the Growth Scout agent is still sending from the same inbox."}, {"area": "Competitors", "cls": "bad", "text": "Polar now sells the Loop as a screen-free, subscription-free band (armband added 7 Oct). Oura became the Dodgers' official health wearable (9 Sep). All 45 deals were re-checked on 10 Oct."}, {"area": "Website", "cls": "warn", "text": "133 sessions (601 the week before), 57 from the US. 4 waitlist signups, up from 1. Visits drifted to about 10 a day once the boosted posts stopped."}, {"area": "Search", "cls": "good", "text": "First Google clicks: 6 clicks from 122 impressions (0 from 36 the week before). The homepage, /band and the WHOOP alternative page earned them."}, {"area": "Instagram", "cls": "plain", "text": "1,088 followers and 8 posts. Reels reach far more people than images: 426 for the 1 Oct Reel, against 12 to 54 for images."}, {"area": "Ads", "cls": "warn", "text": "$161.07 spent ($41.08 the week before). The Display campaign spent $93.73 on 3 Oct before removal. Search-1 is still running at $8 a day."}]}</script>
 <script>
 (function () {
   "use strict";
@@ -767,6 +357,8 @@ footer p { margin: 4px 0; }
     hbars($("channels"), ch.map(function (c) { return { label: c.name, v: c.sessions, text: NF.format(c.sessions) + " · " + pct(c.engaged, c.sessions), tip: NF.format(c.sessions) + " sessions, " + pct(c.engaged, c.sessions) + " engaged" }; }), { aria: "Sessions by channel", labelW: 130 });
     $("channels-table").innerHTML = table([{ label: "Channel", get: function (r) { return r.name; } }, { label: "Sessions", num: 1, get: function (r) { return NF.format(r.sessions); } }, { label: "Engaged", num: 1, get: function (r) { return NF.format(r.engaged) + " (" + pct(r.engaged, r.sessions) + ")"; } }], d.channels);
 
+    $("updates").innerHTML = (d.updates || []).map(function (u) { return '<li><span class="area">' + esc(u.area) + '</span><span>' + esc(u.text) + "</span></li>"; }).join("");
+
     var statusLabel = { open: "Open", done: "Done", partial: "In progress" };
     $("actions").innerHTML = d.actions.map(function (a, i) {
       return '<li><span class="chip s-' + esc(a.status) + '"><span class="dot" aria-hidden="true"></span>' + esc(statusLabel[a.status] || a.status) + '</span><span><strong>' + (i + 1) + ". " + esc(a.title) + '</strong></span><span class="why">' + esc(a.why) + '</span><span class="owner">' + esc(a.owner) + "</span></li>";
@@ -795,7 +387,7 @@ footer p { margin: 4px 0; }
     $("foot").innerHTML = "<p>Windows: GA4 " + esc(d.windows.ga4) + "; Search Console " + esc(d.windows.search_console) + "; Instagram account reach " + esc(d.windows.instagram_account) + ".</p>" +
       "<p>The daily series comes from a separate GA4 query and totals " + fmt(dailySum) + " sessions, " + fmt(Math.abs(dailySum - k.sessions)) + " off the channel total.</p>" +
       "<p>Ad spend and cost per signup: " + (k.ad_spend == null ? "unknown until Google Ads is connected." : "$" + k.ad_spend.toFixed(2) + " spent, " + esc(d.windows.google_ads || "") + (k.cost_per_signup == null ? "." : "; $" + k.cost_per_signup.toFixed(2) + " per recorded signup across all channels.")) + "</p>" +
-      "<p>Source file: " + esc(d.scoreboard_file) + " in the agency-agents repository. Refreshed weekly by the Vybe Health Marketing Director agent.</p>";
+      "<p>Source file: " + esc(d.scoreboard_file) + " in the agency-agents repository. Refreshed every morning (rolling 7 days) by the Vybe Health Marketing Director agent.</p>";
   }
 
   var fallback = JSON.parse($("fallback").textContent), current = fallback, rt;
