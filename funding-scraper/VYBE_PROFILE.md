@@ -62,7 +62,7 @@ what's possible with it." The stack:
 
 ## What this opens up for funding
 
-Search all of these lanes, not just "consumer wearable":
+Search all of these lanes, not just "consumer wearable". Do the research yourself and report findings, not status:
 
 1. **Research infrastructure.** The DevKit is a research tool. This lane covers
    university pilot and seed funds that take industry partners, CTSA pilot programs,
@@ -80,6 +80,15 @@ Search all of these lanes, not just "consumer wearable":
    accelerators, and digital-biomarker prizes.
 6. **Founder-identity programs.** Women, minority and veteran founders.
 7. **Consumer health-tech pitch prizes.** Sleep, recovery, women's health, longevity.
+8. **Investors and equity (added 11 Oct 2026, at the founder's request).** The board itself stays
+   non-dilutive, but every few rounds re-check:
+   - Ohio pre-seed capital: JumpStart Focus Fund II and Evergreen Fund, Ohio TechAngel Funds.
+   - Free-to-pitch pre-seed funds: Hustle Fund, Rock Health Capital.
+   - Reg CF portals, Wefunder first.
+   Never pay-to-pitch. See `research/investor_platforms.md`.
+9. **Revenue platforms (added 11 Oct 2026).** Kickstarter with Late Pledges, paid DevKit
+   sales and pilots, Shopify pre-orders, Amazon, and the Best Buy Marketplace. Re-check
+   fees, health-claim rules and comparable campaigns. See `research/revenue_platforms.md`.
 
 ## Fit rules (unchanged)
 

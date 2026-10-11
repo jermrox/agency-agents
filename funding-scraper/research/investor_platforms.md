@@ -189,3 +189,10 @@ Details for each are below.
 1. **Apply to JumpStart Ventures, naming the Focus Fund** (jumpstart.vc/funds/#apply), **and to the next Trailblazer HealthTech cohort** (jumpstartinc.org/startups/healthtech). Lead with the DevKit design-partner pilots as "beta customers". This is also the ESP step that makes OTAF ($150K–$280K) available as a co-investor.
 2. **Get CPA-reviewed US GAAP financials (since inception) now**, and start a **free Wefunder investor list** plus Reg CF "testing the waters" (227.206) to the waitlist and veteran community. Reviewed statements allow a first Reg CF raise up to $1.235M. Choose Wefunder (no fixed minimum fee) over Republic unless soft commitments clear about $250K, since Republic's $5K + $12K–$15K minimum dominates a small raise.
 3. **Pitch Hustle Fund** ($150K pre-seed, free Typeform) **and Rock Health** this month. In parallel, build a pre-seed health-hardware investor list in **OpenVC** (free). Set up an AngelList RUV only once individual angels commit.
+
+
+## Application links checked by hand, 11 Oct 2026
+
+- **Hustle Fund:** apply through the "Pitch us" form at https://hustlefund.typeform.com/to/UGTnIt. The homepage says they decide "in 1–2 meetings" and wire "within the week".
+- **Rock Health Capital:** apply through the "Join Our Portfolio" form at https://airtable.com/appN1kwNYGCpZx42Q/pagpRHhArhNbxKRC0/form. The fund backs Pre-Seed, Seed and Series A digital health companies (rockhealthcapital.com).
+- **JumpStart Ventures:** see https://jumpstartinc.org/startups/#ventures ("early-stage capital from seed through series A"). The HealthTech accelerator is at https://jumpstartinc.org/startups/healthtech, where Cohort 6 was just announced. The fund pages load their content with scripts, so I could not read the Focus Fund II terms. Third-party reports put the cheques at $250K–$500K and the fund at $5M (SSBCI), but confirm the current terms with a JumpStart advisor (the "Talk To An Advisor" link) before relying on them.
