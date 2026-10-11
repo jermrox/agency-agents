@@ -716,6 +716,7 @@ h3 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(
 {chr(10).join(section(sec).replace('<section class="agent', f'<section id="{sec["name"].lower().replace(" ", "-")}" class="agent', 1) for sec in sections)}
 
   <p class="foot">
+    This is the four-hourly snapshot. The live console, with every agent's dashboard inside it, is <a href="https://vybe-ops.netlify.app/">vybe-ops.netlify.app</a>.<br>
     Every card is the same shape: what it is · why it matters · what you do. Nothing here is typed by hand — it is read from each agent's own live page.<br>
     <a href="vybe-agent-board.html">Is every dashboard current?</a> ·
     <a href="vybe-fleet-map.html">How the system fits together</a> ·

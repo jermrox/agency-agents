@@ -126,13 +126,14 @@ function fromMarketsom(html){
     needs.push({when:[u.day,u.time].filter(Boolean).join(" ")||"soon", what:String(u.what||""), who_is:lines[0]?cut(lines[0],160):"", why:lines.length>1?cut(lines.slice(1,3).join(" "),220):"",
       do:call?[u.prep?"Read the prep brief first":"No prep brief yet — ask for one before joining","Join the call at the time shown","Decide on the call: no-cost route, or a short polite no"]:(lines.slice(0,3).map(l=>cut(l,110))),
       url:u.prep||"https://agentmarksom.netlify.app/briefing.html", url_label:u.prep?"prep brief":"briefing", url2:u.prep?"https://agentmarksom.netlify.app/briefing.html":null, url2_label:"briefing", kind:call?"☎":"!", agent:"Marketsom", sort:call?0:3}); }
-  if(Number.isInteger(d.drafts)&&d.drafts>0) needs.push({when:"waiting", what:`${d.drafts} partner drafts waiting for you to send`, who_is:"Community partners Marketsom researched this week — leagues, clubs, member bodies",
+  const nDrafts=Number.isInteger(d.drafts)?d.drafts:(parseInt(String(d.drafts||"").trim(),10)||null);
+  if(nDrafts>0) needs.push({when:"waiting", what:`${nDrafts} partner drafts waiting for you to send`, who_is:"Community partners Marketsom researched this week — leagues, clubs, member bodies",
     why:"Nothing reaches a partner until you send it.", do:["Open Gmail drafts from jeremy@vybe.health","Read each one; send the ones you approve, delete the rest","Nothing goes out until you press send"],
     url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", kind:"✉", agent:"Marketsom", sort:2});
   const top=(Array.isArray(d.problems)?d.problems:[]).slice(0,4).map(pr=>typeof pr==="string"?{what:cut(pr,90),who_is:"",why:"",do:["Read it on the briefing"]}:
     {what:cut(pr.title||pr.what||"",90), who_is:"", why:sentences(pr.why||pr.detail||"",200), do:[cut(pr.fix||pr.do||pr.action||"Read it on the briefing",110)]})
     .map(c=>({...c,url:"https://agentmarksom.netlify.app/briefing.html",url_label:"briefing",kind:"!",agent:"Marketsom"}));
-  return {stamp:parseStamp(d.asof), headline:d.headline||null, drafts:na(d.drafts), needs, top, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
+  return {stamp:parseStamp(d.asof), headline:d.headline||null, drafts:na(nDrafts), needs, top, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
 }
 function fromInstasom(j){
   const col=j.collections||{}; const ppl=col.people; const items=(Array.isArray(ppl)?ppl:Object.values(ppl||{})).filter(x=>x&&typeof x==="object");

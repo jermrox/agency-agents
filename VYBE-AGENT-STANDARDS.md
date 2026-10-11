@@ -181,8 +181,11 @@ Five agents built five dashboards that look and read like five different
 companies. The founder, 11 October: "look at all the agents' dashboards — you
 should literally be designing the same. There is no organisation here."
 
-The hub (`agentrevup.netlify.app/vybe-hub.html`) is the reference. Every Vybe
-dashboard follows it:
+The operations console (`vybe-ops.netlify.app`) is the reference. It is the
+hub's own site: it reads every agent's dashboard live, toggles between the
+roll-up and each agent, and embeds each agent's real page. The four-hourly
+snapshot at `agentrevup.netlify.app/vybe-hub.html` is its fallback. Every Vybe
+dashboard follows the console:
 
 1. **The first screen answers "what needs a human" before anything else.**
    Each item is a card in a fixed order: *when — what* · **What it is** (who
@@ -201,8 +204,8 @@ dashboard follows it:
 5. **Define on first use.** A programme, a company, a part, an acronym gets
    its clause the first time it appears. Rule 8 applies to pages as much as to
    emails.
-6. **Every dashboard links to the hub, and the hub links to every dashboard.**
-   One front door, no orphans.
+6. **Every dashboard links to the console, and the console links to every
+   dashboard.** One front door, no orphans.
 
 An agent regenerating its dashboard brings it to this shape on its next run.
 A new page that does not follow it is a defect, not a style choice. The hub's
