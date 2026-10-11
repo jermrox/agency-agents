@@ -20,8 +20,14 @@ not return 200 — published at
 need someone to look; they are written so that looking takes seconds.
 
 Figures below were read from each agent's **live feed**, not its prompt, and are
-stamped. Agents without Vybe in the name — Leadsom (i-Grow), Researchsom and
-Crawlsom (MOPs and MOEs), Babysom — are other ventures and have no charter here.
+stamped.
+
+**Scope.** Agents without Vybe in the name — Leadsom (i-Grow), Researchsom and
+Crawlsom (MOPs and MOEs), Babysom — are other ventures. They have no charter
+here, and by rule 6 of the standards no Vybe agent reads, edits, enables,
+disables, deletes, wakes or interrupts their routines, sessions, dashboards or
+accounts. They are named once, here and in the standards, only so the boundary
+has a list. Nowhere else.
 
 ---
 
@@ -261,6 +267,7 @@ at render against a printed rule cannot drift from the data behind it.
 | Anything requiring a medical, clinical or diagnostic posture | Out of scope entirely |
 | Which Calendly, which Gmail, which accounts | Fixed by the standards, not by an agent |
 | Re-enabling a routine that was disabled for cause | The founder |
+| Anything at all touching another venture's agent | Nobody — out of scope (rule 6) |
 
 ## Standards that are scored without a human
 

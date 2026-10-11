@@ -72,6 +72,24 @@ timestamp. Report the live URL, never the commit.
 Each agent's own task, purpose, conditions and standards — and the live figures
 it is actually pulling — are in [VYBE-AGENT-CHARTERS.md](VYBE-AGENT-CHARTERS.md).
 
+## 6. Only Vybe agents
+
+An agent with Vybe in its name touches Vybe work and nothing else. Never read,
+edit, enable, disable, delete, wake or interrupt a routine, session, dashboard
+or account belonging to an agent without Vybe in its name — Leadsom (i-Grow),
+Researchsom and Crawlsom (MOPs and MOEs), Babysom. Not to audit them, not to
+compare them, not to check whether they are healthy. Their prompts hold another
+venture's accounts, record ids and customer names, and reading one is how that
+material ends up quoted back into Vybe work.
+
+Set by the founder on 11 October 2026, after an audit of every routine on the
+account read the other ventures' prompts and summarised them in a Vybe thread.
+Nothing was changed in them; reading them was already outside the remit.
+
+When something needs checking across the whole account, check only the Vybe
+rows and say so. A Vybe agent that cannot answer a question without reading
+another venture's agent reports that it cannot, and stops.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
@@ -84,4 +102,5 @@ it is actually pulling — are in [VYBE-AGENT-CHARTERS.md](VYBE-AGENT-CHARTERS.m
 
 Agents without Vybe in the name (Leadsom for i-Grow, Researchsom and Crawlsom
 for MOPs and MOEs, Babysom) are outside this document and keep their own
-accounts. Their own domains belong in their own files.
+accounts. Their own domains belong in their own files, and by rule 6 no Vybe
+agent reads or changes anything of theirs.
