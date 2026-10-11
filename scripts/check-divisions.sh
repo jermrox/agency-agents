@@ -29,7 +29,8 @@ JSON="divisions.json"
 # into the repo), not a source-agent category. strategy/ holds playbooks and
 # runbooks (no agent frontmatter), not agents. jobs-scraper/ is a standalone
 # Python tool (the tactical human performance job aggregator), not agents.
-# research-board/ is the research board's code, not agents. dashboards/ holds
+# research-board/ is the research board's code, not agents. vybe-hub/ is the
+# Vybe operations console (vybe-ops.netlify.app), also code. dashboards/ holds
 # standalone HTML dashboards published via Netlify (see
 # scripts/build-netlify-site.sh), not agents. funding-scraper/ is a standalone
 # Python tool (the daily non-dilutive funding sweep), not agents.
@@ -42,7 +43,7 @@ JSON="divisions.json"
 # reports/ and research_notes/ hold deep-research output, not agents.
 # None of these is a division — they must never be scanned as
 # source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout vybe-marketing growth-scout reports research_notes)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout vybe-marketing growth-scout reports research_notes vybe-hub)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }
