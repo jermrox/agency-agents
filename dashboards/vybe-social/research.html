@@ -1,0 +1,432 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Instagram Targeting Research</title><style>:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#e3e3e3;--acc:#0b6e4f;--th:#f4f6f5}
+@media (prefers-color-scheme:dark){:root{--bg:#121413;--fg:#e8eae9;--mut:#9aa;--line:#2c302e;--acc:#5fd3a5;--th:#1c201e}}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,system-ui,Segoe UI,Roboto,sans-serif;max-width:980px;margin:0 auto;padding:24px 16px}
+h1{font-size:1.7em;margin-top:0}h2{border-top:1px solid var(--line);padding-top:18px;margin-top:32px}a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:.9em;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}th{background:var(--th)}
+code{font-size:.9em}.nav{font-size:.9em;color:var(--mut);margin-bottom:16px}</style></head><body><div class="nav"><a href="/">Dashboard</a> · <a href="research.html">Targeting report</a> · <a href="research-segments.html">A. Segments</a> · <a href="research-followback.html">B. Follow-back</a> · <a href="research-competitors.html">C. Competitors</a></div><h1>Vybe Health: Instagram Targeting Research</h1>
+<p>Prepared 11 October 2026 for @vybehealthinc. Evidence window: 2010–2026; all web sources accessed 2026-10-11. First-party data pulled live from Instagram and Meta via Composio the same day.</p>
+<h2>Executive summary</h2>
+<p><strong>The current method is wrong.</strong> Since Oct 3, we have picked people by searching the web for coaches in each sport and keeping any 3K–50K account with no wearable sponsor. That checks that a person is real. It says nothing about whether they will follow back or whether their audience will buy. The founder was right to call it guessing.</p>
+<p><strong>Five findings change the plan:</strong></p>
+<ol>
+<li><strong>Following people cannot reach 1,000 real followers by Oct 23.</strong> No study gives an Instagram follow-back rate for a brand following strangers; that number is unknown. Twitter-network studies put mutual follows at 17–42% (Kwak 2010: 22.1%). At 15–30 follows a day, that gives roughly 40–145 follow-backs by Oct 23, against about 955 needed. [calc] Following is a supporting tactic, not the engine.</li>
+<li><strong>We target the wrong kind of account.</strong> A field experiment (Que, Rajagopalan &amp; Zaman, MIT, 2018) found follow-back is most likely from accounts that <strong>follow many others, have few followers, and already share mutuals with you</strong>. Larger accounts reciprocate less (arXiv 1302.0677). Our lists skew to 10K–50K coaches, who are the least likely to follow back.</li>
+<li><strong>Reach comes from content and collaborations, not follower count.</strong> Mosseri (Jan 2025) names watch time, likes per reach and sends per reach as the top signals. Sends matter most for reaching non-followers. For 1K–5K accounts, Reels reach 9.78% of followers, against 7% for images (Socialinsider 2026, 140K Reels). In a collaborative post, the smaller account gains reach (Schöttl, n=100 collab posts).</li>
+<li><strong>HYROX is closed to Vybe as a sponsorship lane.</strong> Amazfit signed a 3-year global exclusive on 2026-04-15 covering watches, rings and smart straps, plus the HYROX 365 coach network. It sells a $99 screenless Helio Strap and gave one free to every 2025 World Championships racer. HYROX stays the founder's anchor audience, but every HYROX coach we follow sits inside Amazfit's ecosystem. Our edge there is the everyday 35+ racer, not coaches or the event.</li>
+<li><strong>The open lanes are masters swimming, pickleball 40+, indoor rowing, masters 40+ strength and strongman.</strong> We found no wearable sponsor for USMS, the PPA Tour, rowing federations or World's Strongest Man. Tennis (Oura–USTA, 5 years from May 2026), padel (WHOOP–Premier Padel, Mar 2026), trail/ultra (COROS and Suunto at UTMB) and HYROX (Amazfit) are owned.</li>
+</ol>
+<p><strong>One blocker for the founder:</strong> masters swimming ranks #1 on evidence. It only works if the band can be worn in the pool. Vybe's water rating is not in the brand brief, the concept doc or the dashboard. <strong>It is unknown, and the founder needs to supply it.</strong></p>
+<hr />
+<h2>1. First-party data (pulled today)</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram followers (raw)</td>
+<td>1,097</td>
+<td>Instagram Graph API, 2026-10-11</td>
+</tr>
+<tr>
+<td>Real followers (trusted)</td>
+<td>about 45; the remainder is the Oct 2 bulk wave</td>
+<td>Daily follower log (45 → 1,218 on Oct 2, leaking since)</td>
+</tr>
+<tr>
+<td>Following (Meta API)</td>
+<td>258, up from 199 on Oct 7</td>
+<td>Instagram Graph API</td>
+</tr>
+<tr>
+<td>Comments on all 8 posts</td>
+<td>4: three "send me one" requests and one Vybe reply</td>
+<td>INSTAGRAM_GET_IG_MEDIA_COMMENTS, 2026-10-11</td>
+</tr>
+<tr>
+<td>Best post</td>
+<td>Oct 1 Reel: 433 reach, 479 views, 4 likes, 3 comments, 1 save, 0 shares</td>
+<td>Media insights, 2026-10-11</td>
+</tr>
+<tr>
+<td>Latest Reel (Oct 8)</td>
+<td>62 reach, 0 likes</td>
+<td>Media insights</td>
+</tr>
+<tr>
+<td>Static posts</td>
+<td>18–61 reach each</td>
+<td>Media insights</td>
+</tr>
+<tr>
+<td>Profile visits</td>
+<td>102 on Oct 10 (the highest so far), 15 on Oct 9</td>
+<td>User insights</td>
+</tr>
+<tr>
+<td>Follow-back data</td>
+<td><strong>None.</strong> No one on the list has been ticked, so follow-back cannot be measured</td>
+<td>Dashboard store</td>
+</tr>
+<tr>
+<td>Hashtag search</td>
+<td><strong>Blocked.</strong> Meta requires "Instagram Public Content Access" app review (error #10)</td>
+<td>Graph API, 2026-10-11</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What this says.</strong> Static product posts die at birth. The one Reel with people-centred content reached 7–20x more accounts than any static post. <strong>Zero shares on every post:</strong> nothing yet gives a viewer a reason to send it, and sends are the signal that reaches new people.</p>
+<hr />
+<h2>2. Segment evidence and wedge scores</h2>
+<p>Pain = evidence that recovery or sleep limits them. Fit = match to a screenless, own-baseline band, plus buying likelihood. Moat = how open the segment is to Vybe (3 = no wearable owns it). All figures are sourced in Appendix A.</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Segment</th>
+<th>Size (source, date)</th>
+<th>Recovery pain</th>
+<th>Owner</th>
+<th>P</th>
+<th>F</th>
+<th>M</th>
+<th>Weakest test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Masters swimmers / open water</strong></td>
+<td>USMS about 60K members, average age 46 (USMS media kits 2020/21); Meta interest "U.S. Masters Swimming" 50–59K, "Open water swimming" 3.3–3.8M (Meta Ads API, 2026-10-11)</td>
+<td>62.4% shoulder pain over 3 yrs (n=282); &lt;7h sleep linked to 1.7x injury risk (cited by USMS)</td>
+<td>None found (sponsors are TYR, Swim.com, GMX7)</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td><strong>Fit depends on the swim rating.</strong> Unknown; founder to confirm</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Pickleball 40+</strong></td>
+<td>24.3M US players, 7.48M core (SFIA 2025); Meta interest 1.03–1.21M</td>
+<td>86% of pickleball ER injuries are in people 60+ (2021 study); shift toward fractures in 60+</td>
+<td>None (PPA/MLP tech partner is IT services)</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td><strong>Pain may be falls, not recovery.</strong> Wearable use is lower in 50+ (17% vs 25%, Pew 2019)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Shift-work nurses</strong></td>
+<td>3.4M US RN jobs (BLS 2024)</td>
+<td>40–90% poor sleep on night shifts (Frontiers 2024)</td>
+<td>Discounts only (WHOOP 10% hero, Oura GOVX)</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td><strong>Adherence:</strong> 10 of 20 kept wearing WHOOP in an ED pilot (JMIR 2024)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Masters 40+ strength / indoor rowing</strong></td>
+<td>Concept2: 141,735 new logbook users in 2025; Meta "Indoor rower" 0.86–1.0M</td>
+<td>Slower recovery after damaging exercise in masters (2016 review, mixed evidence); 32.6% low-back injury in masters rowers (n=743)</td>
+<td>None found</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td><strong>No single Instagram hub</strong>, so follows scatter</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>HYROX 35+ age groups</strong></td>
+<td>1.5M+ athletes 2025/26, 2M+ targeted 2026/27; most common age 30–35, 41% women (Abu Dhabi 2025, n=3,506)</td>
+<td>49.8% injured in 12 months (preprint 2026, n=418)</td>
+<td><strong>Amazfit 3-yr exclusive</strong> incl. straps</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td><strong>Moat:</strong> no event or coach-network presence possible</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Strongman</td>
+<td>400+ athletes at OSG Nov 2026; Meta interest 8.1–9.5M</td>
+<td>82% injured (n=213)</td>
+<td>None</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Base too small for buyers</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Tactical / first responders</td>
+<td>1.16M firefighters (NFPA), 549K police (BLS 2023)</td>
+<td>37–40% screen positive for a sleep disorder</td>
+<td>Oura (DoD), WHOOP</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>Firefighters opposed wearables on calls (JOEM 2025), which overlaps the excluded privacy audience</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Tennis / padel / trail / triathlon</td>
+<td>—</td>
+<td>—</td>
+<td>Oura / WHOOP / COROS-Suunto / Garmin-Wahoo</td>
+<td>—</td>
+<td>—</td>
+<td>0–1</td>
+<td>Owned; only follow if clean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The plan departs from the founder's earlier ranking in one place.</strong> HYROX remains the brand anchor for content (it is the most active Instagram community), but it drops to #5 as a follow-back target because of Amazfit's exclusive and its coach-heavy feed. Masters swimming and pickleball move to the top on evidence. That matches the founder's own priority call.</p>
+<hr />
+<h2>3. Who exactly to target (new rules)</h2>
+<h3>3a. Follow targets (for follow-back)</h3>
+<p>Keep every founder rule: real Meta-verified individuals; full bio plus 12-caption sponsor check; no quitters, tech reviewers or privacy people; wearable-sponsored accounts are follow-only. Change <strong>who</strong> inside those rules:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Old</th>
+<th>New</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size</td>
+<td>3K–50K, skewed to 10K+ coaches</td>
+<td><strong>3K–10K first</strong>; 10K–50K only as collab candidates</td>
+<td>Larger accounts reciprocate less (arXiv 1302.0677; Que 2018)</td>
+</tr>
+<tr>
+<td>Following/follower ratio</td>
+<td>Not checked</td>
+<td><strong>Prefer accounts following ≥ 30% as many people as follow them.</strong> Meta business_discovery returns <code>follows_count</code>, so this can be checked</td>
+<td>Follow-back is highest for accounts that follow many (Que 2018)</td>
+</tr>
+<tr>
+<td>Account type</td>
+<td>Coaches selling programmes</td>
+<td><strong>Everyday athletes and creators documenting their own training or shifts</strong> (masters swimmers, 40+ pickleballers, night-shift nurses, 35+ hybrid racers); coaches second</td>
+<td>Coaches' audiences are their clients; everyday athletes are the buyer</td>
+</tr>
+<tr>
+<td>Mutual overlap</td>
+<td>Not used</td>
+<td><strong>Prefer accounts that follow or are followed by people who already follow Vybe</strong></td>
+<td>Overlap is the strongest predictor (Que 2018)</td>
+</tr>
+<tr>
+<td>Segment mix per day</td>
+<td>One to two per sport across 23 sports</td>
+<td><strong>60% top 4 open lanes</strong> (swim, pickleball 40+, nurses, masters/rowing); 20% HYROX 35+ everyday racers; 20% tests</td>
+<td>Wedge scores above</td>
+</tr>
+<tr>
+<td>Owned lanes</td>
+<td>Followed anyway</td>
+<td>Tennis, padel, trail and HYROX coaches only if clean, as tests</td>
+<td>Competitor map</td>
+</tr>
+</tbody>
+</table>
+<h3>3b. Collab targets (for reach)</h3>
+<p>Separate list. These are 10K–50K clean creators in the open lanes, approached for <strong>Instagram collab posts</strong> (co-authored Reels shown to both audiences). Pre-launch there is no product to seed, so the offer is content: a "What changed?" Reel built from their week, credited and co-posted. Never imply sponsorship or HYROX affiliation. Start with 3 per lane. The founder sends the DMs; Claude drafts them only.</p>
+<h3>3c. Where to find them without hashtag search</h3>
+<p>Meta blocks hashtag search until app review, so the alternatives are:
+1. <strong>Followers of community hubs.</strong> Candidates come from the follow lists and comment sections of @usms-adjacent clubs, PPA/USA Pickleball, nurse hubs (@nursesofinstagram) and Concept2. The founder sees these in the app; Claude verifies each handle with Meta.
+2. <strong>Our own engagers.</strong> Anyone who likes or comments on a Vybe Reel.
+3. <strong>The Meta App Review for Instagram Public Content Access.</strong> Apply now. It unlocks hashtag search for daily candidate discovery. Typical review time is unknown; the documentation is at developers.facebook.com/docs/apps/review.</p>
+<hr />
+<h2>4. What actually moves the number (ranked)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Lever</th>
+<th>Why (source)</th>
+<th>Daily or weekly input</th>
+<th>Founder call needed?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Reels 4–5 a week with a person on screen and a "send this to…" reason</strong></td>
+<td>Sends per reach drive non-follower reach (Mosseri, Jan 2025). Our only people-centred Reel got 7–20x the reach of our static posts</td>
+<td>1 founder-on-camera Reel daily</td>
+<td>No</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Collab Reels with 3 micro creators per open lane</strong></td>
+<td>The smaller account gains reach in collabs (Schöttl, n=100)</td>
+<td>3 DMs a day</td>
+<td>Yes, the founder sends them</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Trial Reels</strong> (shown to non-followers first)</td>
+<td>Requires ≥ 1,000 followers (Instagram Creators 2025). <strong>Keep the Oct 2 block until real followers replace it</strong>, or Vybe loses eligibility</td>
+<td>2 a week</td>
+<td>No</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Targeted follows + genuine comments</strong> using the new rules in 3a</td>
+<td>40–145 follow-backs by Oct 23 at most [calc]</td>
+<td>25 follows and 10 comments a day</td>
+<td>No</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>A small paid boost on the best Reel</strong></td>
+<td>The only lever that can close a ~800 gap in 12 days</td>
+<td>Suggested $10–20/day, US, ages 30–60, broad targeting</td>
+<td><strong>Yes, needs go-ahead.</strong> Never a health-interest audience</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Honest forecast.</strong> Levers 1–4 together will very likely land between 150 and 400 real followers by Oct 23. That is a hypothesis; the test below settles it. <strong>1,000 real followers by Oct 23 is not reachable organically on current evidence.</strong> It needs either a breakout Reel, collabs that land in week 1, or paid reach. The founder should decide now whether to move the date or approve the boost.</p>
+<hr />
+<h2>5. Competitor white space (summary)</h2>
+<table>
+<thead>
+<tr>
+<th>Community</th>
+<th>Wearable saturation</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HYROX / hybrid</td>
+<td><strong>High</strong></td>
+<td>Amazfit 3-yr global exclusive (2026-04-15), elite roster, free Helio Strap to 2025 Worlds racers; Ultrahuman title partner of HYROX India</td>
+</tr>
+<tr>
+<td>Tennis</td>
+<td><strong>High</strong></td>
+<td>Oura–USTA 5-year deal including leagues (May 2026); Gauff and Fritz</td>
+</tr>
+<tr>
+<td>Padel</td>
+<td><strong>High</strong></td>
+<td>WHOOP–Premier Padel 3-year deal (Mar 2026); Eight Sleep</td>
+</tr>
+<tr>
+<td>Trail / ultra</td>
+<td><strong>High</strong></td>
+<td>Suunto UTMB official watch; COROS 1,000+ ambassadors; Amazfit trail roster</td>
+</tr>
+<tr>
+<td>Triathlon</td>
+<td><strong>Medium–high</strong></td>
+<td>Garmin long roster; Wahoo Ironman technical partner</td>
+</tr>
+<tr>
+<td>Tactical / first responders</td>
+<td><strong>Medium</strong></td>
+<td>Oura DoD; WHOOP/Oura discounts only, no creator rosters</td>
+</tr>
+<tr>
+<td>Shift-work nurses</td>
+<td><strong>Medium</strong></td>
+<td>Discounts only (WHOOP hero 10%, Oura GOVX 25%, WHOOP clinician subsidy 50%)</td>
+</tr>
+<tr>
+<td>Masters swimming / open water</td>
+<td><strong>Low</strong></td>
+<td>No wearable partner for USMS found</td>
+</tr>
+<tr>
+<td>Pickleball 40+</td>
+<td><strong>Low</strong></td>
+<td>No wearable partner for PPA/MLP found</td>
+</tr>
+<tr>
+<td>Indoor rowing, climbing, masters 40+ strength, strongman</td>
+<td><strong>Low</strong></td>
+<td>None found</td>
+</tr>
+</tbody>
+</table>
+<p>Screenless no-subscription rivals now exist: Amazfit Helio Strap ($99), Polar Loop ($199, Sep 2025), Garmin CIRQA ($199.99, Jul 2026), Fitbit Air ($99, May 2026), Luna Band ($149). <strong>"No subscription" is not a differentiator on its own.</strong> The message must lead with the founder's line, "We build the wearable. They build what's possible with it," plus readings against your own baseline.</p>
+<hr />
+<h2>6. Test design</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric 1</td>
+<td>Follow-back rate by segment and size band = ticked follows that follow back within 7 days ÷ ticked follows</td>
+</tr>
+<tr>
+<td>Metric 2</td>
+<td>Real-follower growth per day = followers minus the frozen Oct 2 block (1,052)</td>
+</tr>
+<tr>
+<td>Metric 3</td>
+<td>Sends per 1,000 reach per Reel</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Dashboard ticks (people.followedAt / followedBack); Instagram API; Instagram export upload for verification</td>
+</tr>
+<tr>
+<td>Minimum sample</td>
+<td>20 ticked follows per segment before comparing; 5 Reels per format</td>
+</tr>
+<tr>
+<td>Decision rule</td>
+<td>After 7 days, drop any segment under 10% follow-back and move its share to the best segment; keep any Reel format above the account median for sends per reach</td>
+</tr>
+<tr>
+<td>Review dates</td>
+<td>Oct 18 (mid-check), Oct 23 (goal date)</td>
+</tr>
+<tr>
+<td>What would change the plan</td>
+<td>Masters swimming is unrated for water → drop it to a test lane. Everyday athletes follow back below coaches → revert the 3a type rule. A collab Reel delivers 100+ follows → shift effort from follows to collabs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The test cannot run unless follows are ticked.</strong> The founder ticks each person on the site after following; that is the only follow-back data available. The Instagram "Followers and following" export, uploaded on the site, does it in one step.</p>
+<hr />
+<h2>7. What we are deliberately not doing</h2>
+<ul>
+<li>No follow/unfollow cycling and no automation apps (enforcement since Nov 2018; action-block risk).</li>
+<li>No buying followers. Removal of the Oct 2 block is postponed until real followers pass 1,000 (Trial Reels eligibility).</li>
+<li>No health-condition ad targeting (removed by Meta Jan 2022); any boost uses broad targeting with self-selecting creative.</li>
+<li>No HYROX branding, logos or footage, and no implied partnership.</li>
+<li>No quitters, tech reviewers or privacy audiences.</li>
+<li>No medical or accuracy claims.</li>
+</ul>
+<hr />
+<h2>8. Data limits</h2>
+<ul>
+<li>The research agents could not open full pages (proxy and DNS block). Figures come from search summaries of the cited URLs; check the primary page before quoting externally.</li>
+<li>Third-party hashtag counts conflict by up to 7x and are not used for decisions.</li>
+<li>Unknown: an Instagram cold follow-back rate, follow-back by size tier, HYROX athlete income, wearable ownership by segment, current USMS membership, and Vybe's water rating.</li>
+</ul>
+<h2>Appendix</h2>
+<p>Full evidence packs with all sources (about 200 URLs in total, accessed 2026-10-11):
+- A. Segment evidence: <a href="research-segments.html">research-segments</a>
+- B. Follow-back and growth mechanics: <a href="research-followback.html">research-followback</a>
+- C. Competitor sponsorship map: <a href="research-competitors.html">research-competitors</a></p></body></html>

@@ -1,0 +1,550 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Follow-back Evidence</title><style>:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#e3e3e3;--acc:#0b6e4f;--th:#f4f6f5}
+@media (prefers-color-scheme:dark){:root{--bg:#121413;--fg:#e8eae9;--mut:#9aa;--line:#2c302e;--acc:#5fd3a5;--th:#1c201e}}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,system-ui,Segoe UI,Roboto,sans-serif;max-width:980px;margin:0 auto;padding:24px 16px}
+h1{font-size:1.7em;margin-top:0}h2{border-top:1px solid var(--line);padding-top:18px;margin-top:32px}a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:.9em;margin:12px 0}th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}th{background:var(--th)}
+code{font-size:.9em}.nav{font-size:.9em;color:var(--mut);margin-bottom:16px}</style></head><body><div class="nav"><a href="/">Dashboard</a> · <a href="research.html">Targeting report</a> · <a href="research-segments.html">A. Segments</a> · <a href="research-followback.html">B. Follow-back</a> · <a href="research-competitors.html">C. Competitors</a></div><h1>Vybe Health (@vybehealthinc): Instagram follow-back and small-account growth evidence review</h1>
+<p>Prepared 2026-10-11 for the Oct 23, 2026 target of 1,000 real followers. Current state: about 45 real followers, plus about 1,050 low-quality followers from a one-day spike on Oct 2, 2026.</p>
+<h2>Method and limits (read first)</h2>
+<ul>
+<li><strong>How the research was done.</strong> Web search ran on 2026-10-11. Page fetching was blocked in this environment: direct fetches failed DNS or got a proxy 403, and the Exa fetch quota was exhausted. Every figure below therefore comes from search-engine summaries of the named page, not from reading the full text. Treat each figure as "reported by" that source, and check the primary page before quoting it externally.</li>
+<li><strong>Dates.</strong> "Date" is the source's publication or event date where the search result showed it. When it did not, the entry says <em>date not confirmed</em>.</li>
+<li><strong>Evidence grades.</strong></li>
+<li><strong>A</strong>: official Instagram/Meta source, or peer-reviewed or arXiv paper.</li>
+<li><strong>B</strong>: established trade press reporting an official statement, or a large-panel vendor benchmark with a stated sample.</li>
+<li><strong>C</strong>: vendor blog, single anecdote, or unsourced figure.</li>
+<li><strong>Unknowns stay unknown.</strong> Where no credible number exists, the entry says <strong>unknown</strong>. No figure here is estimated or invented. Arithmetic done for Vybe is labelled <strong>[calc]</strong>.</li>
+</ul>
+<hr />
+<h2>1. Follow-back behaviour</h2>
+<h3>1a. What the evidence says</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Number</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram-specific follow-back rate for a brand or new account following strangers</td>
+<td><strong>Unknown.</strong> No independent study found. The only Instagram figure (85% to 95%) comes from a follow-for-follow <em>group</em> experiment on one blog account, where follow-back is the explicit norm. It does not carry over to cold outreach.</td>
+<td>C</td>
+<td>Search summary of follow-for-follow blog experiment (date not confirmed)</td>
+</tr>
+<tr>
+<td>Share of reciprocal follow pairs on Twitter (whole network, 41.7M users)</td>
+<td>22.1% of user pairs follow each other. Comparison networks: Flickr 68%, Cyworld 77%.</td>
+<td>A</td>
+<td>Kwak, Lee, Park, Moon, "What is Twitter, a social network or a news media?", WWW 2010 (slides: ece.ucdavis.edu mirror; PCWorld coverage, 2010)</td>
+</tr>
+<tr>
+<td>Reciprocity ratios from other Twitter studies</td>
+<td>16.8% in a 2026 dataset. The same paper cites 21.1% (Kwak) and 42% (Myers et al.).</td>
+<td>A</td>
+<td>arXiv 2601.15623, "Mapping Social Media User Behaviors in Reciprocity Space" (Jan 2026)</td>
+</tr>
+<tr>
+<td>Follow-back rate in an active follow-request experiment</td>
+<td>39.9% from 2,969 follow requests. This appeared in one search summary attributed to a 2024 follow-back study, and a targeted re-search could not confirm it. <strong>Unverified.</strong></td>
+<td>C (until verified)</td>
+<td>Attributed to arXiv 2403.15856, "#TeamFollowBack" (Mar 2024)</td>
+</tr>
+<tr>
+<td>Reciprocity among "follow-back" accounts vs others</td>
+<td>Mean follower/following overlap of 0.83 vs 0.48</td>
+<td>A</td>
+<td>arXiv 2403.15856 (2024)</td>
+</tr>
+<tr>
+<td>What predicts a follow-back (Twitter field experiment with 6 accounts and 6,000+ interactions)</td>
+<td>Follow probability is higher when the target has <strong>many friends (follows many accounts), few followers, and a large "overlap"</strong> (many of the target's friends already follow you). Optimised targeting raised expected follows "by an order of magnitude" over simple policies in simulation.</td>
+<td>A</td>
+<td>Que, Rajagopalan, Zaman, "Penetrating a Social Network: The Follow-back Problem", arXiv 1804.02608 (Apr 2018); MIT Technology Review coverage (Apr 26, 2018)</td>
+</tr>
+<tr>
+<td>Large accounts follow back less</td>
+<td>Hypothesis supported in followership-network analysis: users with large followings reciprocate less. A 2013 study found a cluster of near-zero-reciprocity high-profile accounts.</td>
+<td>A</td>
+<td>arXiv 1302.0677 (2013); arXiv 1307.4264 (2013)</td>
+</tr>
+<tr>
+<td>Status asymmetry</td>
+<td>In academic Twitter, reciprocal follows were common among equal-status users. Users often followed higher-status accounts without being followed back.</td>
+<td>A</td>
+<td>Bibsonomy-indexed 2017 study of computer scientists (date per index)</td>
+</tr>
+<tr>
+<td>Who follows back at all (academic framing)</td>
+<td>Some users follow back only people they know offline.</td>
+<td>A</td>
+<td>Lou, Tang et al., "Reciprocity and Triadic Closure", TKDD 2012</td>
+</tr>
+<tr>
+<td>Does liking or commenting before following raise follow-back?</td>
+<td><strong>Unknown for Instagram.</strong> Que et al. varied interaction type, but the search summaries did not report the effect size. No Instagram study found.</td>
+<td>n/a</td>
+<td>arXiv 1804.02608 (2018)</td>
+</tr>
+<tr>
+<td>Follow-back by size tier (nano / micro / mid / macro)</td>
+<td><strong>Unknown.</strong> There are no Instagram tier-level numbers. The direction (bigger accounts reciprocate less) is supported by the Twitter studies above.</td>
+<td>A (direction only)</td>
+<td>arXiv 1302.0677; arXiv 1804.02608</td>
+</tr>
+<tr>
+<td>Creators/coaches vs everyday users</td>
+<td><strong>Unknown.</strong> No source found.</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Practitioner view of follow/unfollow</td>
+<td>Described as a short-term tactic: you "only gain a percentage" back, and following everyone "can be considered spammy" for brands. No numbers given.</td>
+<td>C</td>
+<td>creatorimpact.com (date not confirmed); business.com (date not confirmed)</td>
+</tr>
+<tr>
+<td>Influencers using follow/unfollow, by size</td>
+<td>Statista has a chart (Dec 2018), but its values were paywalled or masked. <strong>Unknown.</strong></td>
+<td>B</td>
+<td>statista.com/statistics/994828 (Dec 2018)</td>
+</tr>
+</tbody>
+</table>
+<h3>1b. What this means for Vybe [calc]</h3>
+<p><strong>The gap to close.</strong>
+- The goal needs about 955 additional real followers in 12 days (Oct 11 to Oct 23), which is about <strong>80 per day</strong>.</p>
+<p><strong>What daily follows can deliver.</strong> The founder makes 15 to 30 follows a day. Applying each reciprocity figure gives the following (none of these figures are Instagram cold-outreach rates):</p>
+<table>
+<thead>
+<tr>
+<th>Reciprocity figure applied</th>
+<th>Follow-backs per day</th>
+<th>Total by Oct 23</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22% (Twitter network average)</td>
+<td>about 3 to 7</td>
+<td>about 40 to 80</td>
+</tr>
+<tr>
+<td>39.9% (unverified experiment)</td>
+<td>about 6 to 12</td>
+<td>about 70 to 145</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Outbound following alone <strong>cannot reach 1,000 by Oct 23</strong>, even under optimistic assumptions.</li>
+</ul>
+<p><strong>How to target follows that do happen.</strong>
+- The research favours accounts that follow many others, have few followers (nano/low-micro), and share overlap with Vybe's existing real followers.
+- Mid and macro creators are poor follow-back targets.
+- Their value is collaboration and reach, not reciprocity.</p>
+<hr />
+<h2>2. Instagram rules and risks (2025-2026)</h2>
+<h3>2a. Action limits</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What is known</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Official per-hour or per-day follow/unfollow/comment thresholds</td>
+<td><strong>Not published by Instagram.</strong> All circulating numbers are third-party estimates and conflict widely.</td>
+<td>n/a</td>
+<td>Multiple. Third-party guides explicitly note Instagram does not disclose limits.</td>
+</tr>
+<tr>
+<td>Third-party estimates (unofficial)</td>
+<td>New accounts: 5 to 30 follows per hour, about 100 to 720 per day. Others cite about 10 per hour and 100 to 150 per day, or 20 per hour and 300 to 500 per day. Combined actions under about 500 per day for new accounts. Blocks last from a few hours to 24-48h, sometimes up to about 5 days.</td>
+<td>C</td>
+<td>tagembed.com (2026 update), socialchamp.com, unfollr.com (2026), online-tech-tips.com, guidingtech.com (dates not confirmed)</td>
+</tr>
+<tr>
+<td>Lifetime following cap</td>
+<td>7,500 accounts. This is widely repeated as coming from Instagram's Help Center, but the Help Center page was not retrieved.</td>
+<td>B/C</td>
+<td>tagembed.com; business.com citing the limit</td>
+</tr>
+<tr>
+<td>The block message</td>
+<td>"We limit how often you can do certain things on Instagram" can restrict following/unfollowing, liking, commenting and DMs.</td>
+<td>C</td>
+<td>online-tech-tips.com; guidingtech.com</td>
+</tr>
+<tr>
+<td>Third-party automation</td>
+<td>Since Nov 19, 2018, Instagram uses ML to detect and remove inauthentic likes, follows and comments from third-party growth apps. Users get an in-app warning and are told to change their password, and continued use "may" affect the account.</td>
+<td>A</td>
+<td>about.instagram.com, "Reducing Inauthentic Activity on Instagram" (Nov 19, 2018); Tubefilter (Nov 19, 2018)</td>
+</tr>
+<tr>
+<td>Recommendation eligibility</td>
+<td>Professional accounts can see in Account Status whether content is eligible to be recommended to non-followers. Recommendations use "a higher standard" than general rules. The account can still reach followers. Inauthentic behaviour was <strong>not</strong> confirmed as a listed reason in the sources retrieved.</td>
+<td>A</td>
+<td>creators.instagram.com, "What Creators Need To Know About Instagram Recommendations" (2022+); help.instagram.com/653964212890722; PetaPixel (Dec 7, 2022)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assessment.</strong>
+- 15 to 30 manual follows a day is far below even the most conservative third-party estimate (about 100 per day).
+- The action-block risk from the current manual routine looks low <strong>(inference)</strong>.
+- The bigger risks are:
+  1. any automation or third-party "growth" app (official enforcement since 2018), and
+  2. the Oct 2 bulk-follower spike itself (see section 4).</p>
+<h3>2b. Does follow/unfollow hurt reach?</h3>
+<ul>
+<li><strong>No official Instagram statement was found</strong> that follow/unfollow cycling directly reduces reach.</li>
+<li>Mosseri's documented positions point the other way: reach is driven by content signals, not follower counts.</li>
+<li>So follow/unfollow does not "build" reach either.</li>
+<li><strong>Verdict: unknown as a direct penalty.</strong> It carries action-block risk and no evidence of a reach benefit.</li>
+</ul>
+<h3>2c. Official ranking guidance (Mosseri / Instagram)</h3>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"The top three signals that matter most for ranking are watch time, likes and sends." Creators should watch average watch time, <strong>likes per reach</strong> and <strong>sends per reach</strong>. "Likes are slightly more important for connected content, and sends are slightly more important for unconnected content." Comments were not named as a primary signal.</td>
+<td>B (direct quotes)</td>
+<td>Social Media Today, "Instagram shares algorithm insights 2025" (Jan 2025); Social Samosa (Jan 2025)</td>
+</tr>
+<tr>
+<td>Sends per reach was called one of the most influential signals, and the rate matters more than the raw count.</td>
+<td>B</td>
+<td>Influencer Marketing Hub, "sends per reach playbook" (2024-2025); Social Media Today (2025)</td>
+</tr>
+<tr>
+<td>Reach to followers is limited because many followers don't open the app that day or don't scroll far enough. Creators should judge relevance by likes per post and views per reel, <strong>not follower count</strong>.</td>
+<td>B</td>
+<td>Search Engine Land, "Instagram explains why your content isn't reaching your followers" (Apr 2024); marketing4ecommerce (Apr 2024)</td>
+</tr>
+<tr>
+<td>Ranking change to favour <strong>smaller, original creators</strong>. Content is shown to a small audience first and widened if it performs, so all creators get "an equal chance". Aggregators are removed from recommendations, reposts are labelled, and originals replace reposts.</td>
+<td>A/B</td>
+<td>TechCrunch, "Instagram is updating its ranking systems to surface more content from smaller original creators" (Apr 30, 2024)</td>
+</tr>
+<tr>
+<td>Exploration-based ranking sets aside impressions for unproven content. Very small accounts can get large reach if a post strongly outperforms.</td>
+<td>B</td>
+<td>Storyboard18 podcast coverage (date not confirmed; reported as Dec 2025 in one result)</td>
+</tr>
+<tr>
+<td>Accounts that mainly post unoriginal photos/carousels (not only reels) "will no longer be shown in places where we recommend content". Watermarks, crops and caption credit do not count as transformation.</td>
+<td>B</td>
+<td>PetaPixel, "New Instagram Policies Target Reposted Content" (Apr 30, 2026)</td>
+</tr>
+<tr>
+<td>Dec 31, 2025 outlook: the next frontier is credibility, not polish. "If you're remixing, you need to add significant value."</td>
+<td>B</td>
+<td>Net Influencer coverage of Mosseri's year-end post (Dec 31, 2025 / Jan 2026)</td>
+</tr>
+<tr>
+<td><strong>Trial Reels</strong> launched Dec 2024. They are shown to non-followers first, with metrics after 24h. They were expanded to all <strong>public accounts with at least 1,000 followers</strong>. Optional auto-share to followers happens if performance in the first <strong>72 hours</strong> is good. Followers don't see the trial in Feed or the profile grid.</td>
+<td>A/B</td>
+<td>creators.instagram.com, "Trial reels" (2025); Engadget (Dec 2024); Social Media Today, "Instagram expands access to trial reels" (2025)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. What grows small accounts in 2025-2026</h2>
+<table>
+<thead>
+<tr>
+<th>Lever</th>
+<th>Evidence</th>
+<th>Number</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reels (small accounts)</strong></td>
+<td>Reels give small accounts the best reach rate</td>
+<td>1K to 5K follower business accounts: Reel reach rate <strong>9.78%</strong> vs carousels 8.80% vs images 7%. The order flips above 50K followers (carousel 5.85% vs Reels 5.60%). Sample: 140K Reels, Jan to Jun 2026.</td>
+<td>B</td>
+<td>Socialinsider 2026 Reels analysis, via Net Influencer (2026)</td>
+</tr>
+<tr>
+<td>Reels vs other formats (2025)</td>
+<td>Reels bring more impressions for accounts under 50K. Carousels are the most engaging overall (about 0.55% ER vs Reels about 0.50% to 0.52%).</td>
+<td>ER 0.45% to 0.50% overall, down 24% to 28% YoY</td>
+<td>B</td>
+<td>Socialinsider Instagram Benchmarks 2025 and 2026 Organic Benchmarks (2025-2026)</td>
+</tr>
+<tr>
+<td>Typical small-account Reel views</td>
+<td>Small accounts average about 300 views per Reel vs about 15K for accounts over 100K. The smallest accounts grew fastest (+38% YoY).</td>
+<td>about 300 views</td>
+<td>B</td>
+<td>Socialinsider 2025 benchmarks</td>
+</tr>
+<tr>
+<td>Organic reach trend</td>
+<td>Instagram post reach fell 31% YoY. Metricool's release also cited a 35% fall in Reels reach. A separate Jan-Feb 2025 vs 2026 Metricool comparison showed Reels reach <strong>+11.69%</strong>. The windows differ. Early-2026 views were up 27% as publishing increased.</td>
+<td>-31% posts; mixed for Reels</td>
+<td>B</td>
+<td>Metricool 2026 Social Media Study press release (2026); Net Influencer (2026)</td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>65% of Reel views and 61% of interactions arrive in the first 3 days</td>
+<td>65%</td>
+<td>B</td>
+<td>Metricool via Net Influencer (2026)</td>
+</tr>
+<tr>
+<td><strong>Collab posts</strong></td>
+<td>Collab reach behaves like a <em>weighted average</em> of the partners' reach. <strong>The smaller account gains</strong> and the larger may lose.</td>
+<td>n = 100 collab posts</td>
+<td>A (abstract only)</td>
+<td>Schöttl, "The impact of collaborative posts on digital reach", HSTalks journal (date not confirmed)</td>
+</tr>
+<tr>
+<td>Collab posts (vendor)</td>
+<td>Collabs outperform standard brand posts. Accepted collabs show the biggest lift.</td>
+<td>Size of lift not retrieved</td>
+<td>B</td>
+<td>Emplifi (H1 2026 analysis)</td>
+</tr>
+<tr>
+<td>Collab posts (vendor, weak)</td>
+<td>Posts with 4 to 5 collaborators had <strong>3.8x</strong> reach</td>
+<td>3.8x (correlational, method not shown)</td>
+<td>C</td>
+<td>SocialPilot Instagram Trends 2025</td>
+</tr>
+<tr>
+<td><strong>Trial Reels</strong></td>
+<td>Tests hooks on non-followers without hitting followers' feeds. Requires a public account with <strong>at least 1,000 followers</strong>.</td>
+<td>Eligibility threshold 1,000</td>
+<td>A</td>
+<td>creators.instagram.com (2025)</td>
+</tr>
+<tr>
+<td><strong>Hashtags</strong></td>
+<td>Hashtag <em>following</em> was removed (effective about Dec 13, 2024; reported Nov 26, 2024). Hashtags remain for posting and search, and interest-based recommendations replace them.</td>
+<td>n/a</td>
+<td>B</td>
+<td>Social Media Today (Nov 2024); Lindsey Gamble (Nov 2024)</td>
+</tr>
+<tr>
+<td>Hashtag cap</td>
+<td>Instagram is "gradually" limiting captions to <strong>5 hashtags</strong> per post or reel (announced about Dec 18-19, 2025, down from 30) to cut spam. The Help Center reportedly states "up to 5 tags" (Aug 2026). The +25% engagement claim for 3 to 5 tags is <strong>unverified</strong>.</td>
+<td>5</td>
+<td>B</td>
+<td>Betanews, "Instagram puts a limit on hashtag usage" (Dec 19, 2025); Social Samosa (Dec 2025)</td>
+</tr>
+<tr>
+<td>Hashtags as growth lever</td>
+<td>Coverage of Mosseri: hashtags "no longer significantly impact reach" and are more for organisation than discovery</td>
+<td>n/a</td>
+<td>C (secondary paraphrase)</td>
+<td>houseofmarketers.com / onlinemarketing.de roundups (2025)</td>
+</tr>
+<tr>
+<td><strong>Broadcast channels</strong></td>
+<td>Retention and community tool, not acquisition. Instagram shows followers a one-time invite at creation. Typical audiences are a small subset of followers (example: 100K followers yields 2K members).</td>
+<td>n/a</td>
+<td>C</td>
+<td>firmbee / socialchamp / eMarketer (2023-2025)</td>
+</tr>
+<tr>
+<td><strong>Comments on bigger accounts</strong></td>
+<td><strong>Unknown.</strong> No credible study links commenting on large accounts to follower growth. Comments are personalised and ranked by an AI system (Mar 2025), and visibility depends on the commenter's own comment and follower counts, so a small brand's comments may be shown to few people.</td>
+<td>n/a</td>
+<td>A (comment ranking paper)</td>
+<td>arXiv 2603.21953 (2026); Meta announcement covered Mar 2025</td>
+</tr>
+<tr>
+<td><strong>Micro/nano creator partnerships</strong></td>
+<td>Nano creators make up 75.9% of Instagram's influencer base (2024). Nano accounts (up to 5K) show about 7% ER (German HypeAuditor study). ER falls as follower count rises.</td>
+<td>75.9%; about 7%</td>
+<td>B</td>
+<td>Influencer Marketing Hub Benchmark Report 2025; onlinemarketing.de summary of HypeAuditor (about 2024); HypeAuditor micro vs mega (date not confirmed)</td>
+</tr>
+<tr>
+<td>Gifting/seeding post rates</td>
+<td>40% to 70% for nano, 20% to 35% for micro (vendor rule of thumb, unsourced). A peer-reviewed study finds gifting's effect on perceived communal intent is <strong>stronger for smaller influencers</strong>.</td>
+<td>40% to 70% (C)</td>
+<td>A (direction) / C (rates)</td>
+<td>Int. J. of Advertising, "#Gifted" (2025); elev8or.io (date not confirmed)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Effect of the Oct 2 block of low-quality followers</h2>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram runs periodic purges. Mosseri: Instagram "regularly remove[s] accounts that are either very very long inactive or bots."</td>
+<td>B</td>
+<td>whatson.ae coverage of Mosseri (date not confirmed)</td>
+</tr>
+<tr>
+<td>"Great Purge of 2026", starting about May 6, 2026: a platform-wide removal of bots, spam and inactive accounts. Meta called it standard process. Small creators reportedly lost 2% to 5% of followers, and some users reported temporary restrictions and reach drops in the same period.</td>
+<td>B/C</td>
+<td>Ubergizmo (May 2026); Punjab Kesari; androidguias (May 2026)</td>
+</tr>
+<tr>
+<td>Follower count is a weak reach signal per Mosseri. Ranking is per piece of content (watch time, likes per reach, sends per reach). <strong>There is no official statement that inactive or fake followers reduce reach.</strong></td>
+<td>B</td>
+<td>Search Engine Land (Apr 2024); Social Media Today (Jan 2025)</td>
+</tr>
+<tr>
+<td>Practitioner view on reach: removing fakes "rarely moves reach much" because Instagram already stops showing posts to non-interacting accounts. One self-reported case (12K removed) claimed ER rose from 1.1% to 1.9% and non-follower reach rose about 40%. <strong>Unverified.</strong></td>
+<td>C</td>
+<td>lilachbullock.com; jmpeltier.com (dates not confirmed)</td>
+</tr>
+<tr>
+<td>Bought followers produce less engagement: organic growth produced about <strong>2x</strong> the likes and comments of bought followers, and drove sales while bought followers did not</td>
+<td>B (secondhand)</td>
+<td>AdEspresso experiment, via Search Engine Journal summary (date not confirmed)</td>
+</tr>
+<tr>
+<td>Removal method: the only "legal" way is manual removal. Third-party cleanup apps that need a login risk lockout.</td>
+<td>B/C</td>
+<td>HypeAuditor Help; airdroid (2025)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Arithmetic for Vybe [calc]</strong>
+- Fake share is about 1,050 of about 1,095, which is about <strong>96%</strong> of the follower count.
+- Any engagement rate computed on followers is understated by a factor of about <strong>24x</strong> (1,095 ÷ 45) compared with the real audience.
+- This matters for creator and partner due diligence. Tools such as HypeAuditor flag audience quality, and creators often vet a brand before collabing <strong>(inference)</strong>.</p>
+<p><strong>The removal trade-off</strong>
+- <strong>Trial Reels require at least 1,000 followers.</strong> Removing the fakes takes Vybe from about 1,095 to about 45 and very likely <strong>loses Trial Reels eligibility</strong>.
+- Keeping them carries a purge risk and a credibility risk, but there is no documented reach penalty.</p>
+<p><strong>The decision is a judgement call.</strong> Options:
+1. Use Trial Reels now while eligible, then remove fakes in batches as real followers replace them.
+2. Remove now for a clean audience and partner credibility, and accept the loss of Trial Reels.</p>
+<p>There is no source that settles which is better. The timing of the purge risk is <strong>unknown</strong>.</p>
+<hr />
+<h2>5. Health and wearable brands: how early followings were built</h2>
+<table>
+<thead>
+<tr>
+<th>Brand</th>
+<th>What is documented</th>
+<th>Grade</th>
+<th>Source (date)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Oura</strong></td>
+<td>The Kickstarter in Aug 2015 hit its $100K goal in <strong>15 hours</strong> and raised <strong>$651,803 from 2,383 backers</strong>, and the first ring served as proof of concept. Growth was "largely through word-of-mouth" and DTC-led for about a decade. Celebrity use was mostly <strong>organic, unpaid</strong>, and the paid or gifted roster is a "very short" list (CMO). Aided awareness rose from 5% (2022) to nearly 40%, and <strong>40% of new members heard of Oura from a friend, family or coworker</strong>. In 2026 it added football ambassadors (Kane, Rice), starting with team doctors.</td>
+<td>A/B</td>
+<td>Samsung v. Oura PTAB exhibit 1242 (filed 2025); Fast Company SA (Nov 28, 2021); The Drum (Aug 30, 2024; Jul 2026); Modern Retail (Apr 26, 2023); Glossy</td>
+</tr>
+<tr>
+<td><strong>WHOOP</strong></td>
+<td>Deliberately targeted elite athletes first and "struggled to gain traction with mere mortals for years". Pro athletes have been "a crucial marketing tool". Investor-athletes run under a "Global Ambassador Program" (Mahomes, Woods, Durant). A 2019 referral offer (free month for the advocate, $30 off for the friend) drove <strong>more than 10% of new subscription sign-ups</strong>.</td>
+<td>B</td>
+<td>Boston Globe (Sep 8, 2021); OMR (date not confirmed); Talkable case study (2019); NoGood (date not confirmed)</td>
+</tr>
+<tr>
+<td><strong>Ultrahuman</strong></td>
+<td>Affiliate program terms vary by directory: Awin tiered 7%, 10% and 15% with a 45-day cookie, and FlexOffers 6% with a 30-day cookie. Brand terms require a "science-backed" tone with no exaggerated health claims. Over 500K users, adding 70K to 120K a month. Women are 60% to 65% of ring users. Its early influencer and community tactics are <strong>unknown</strong> (not found).</td>
+<td>B/C</td>
+<td>ui.awin.com merchant 69428; flexoffers; D2C Insider (2025-2026)</td>
+</tr>
+<tr>
+<td><strong>Polar Loop</strong></td>
+<td>Screenless, subscription-free band launched Sep 2025 at US$200, positioned explicitly against WHOOP's membership model. Its creator or Instagram strategy is <strong>unknown</strong> (not found).</td>
+<td>B</td>
+<td>Escape Collective (Sep 2025); PYMNTS (2025)</td>
+</tr>
+<tr>
+<td><strong>Hume (Hume Health band)</strong></td>
+<td><strong>Unknown.</strong> Searches returned unrelated "Hume" companies.</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Patterns that are supported</strong>
+1. A tight early persona: WHOOP chose elite athletes, Oura chose early adopters.
+2. Organic use by credible wearers rather than paid posts (Oura).
+3. Referral mechanics that are measurable (WHOOP: over 10% of sign-ups).
+4. Affiliate programs with health-claim guardrails (Ultrahuman).</p>
+<p>None of these brands has documented Instagram follower-count milestones from the pre-launch phase. That is <strong>unknown</strong>.</p>
+<hr />
+<h2>Five most decision-relevant findings</h2>
+<ol>
+<li><strong>Outbound following cannot hit the target.</strong> No credible Instagram follow-back rate exists. Network reciprocity on Twitter is 17% to 42% (Kwak 2010: 22.1%). At 15 to 30 follows a day, that gives roughly 40 to 145 follow-backs by Oct 23 against roughly 955 needed <strong>[calc]</strong>. Target creators who follow many accounts, have few followers, and share mutuals with Vybe (Que et al. 2018).</li>
+<li><strong>Mosseri: reach comes from content signals.</strong> Watch time, likes per reach and sends per reach drive reach, not follower count. Sends matter most for non-follower reach (Jan 2025). Instagram also expands reach from small test audiences regardless of account size (Apr 2024).</li>
+<li><strong>Reels and collabs fit small accounts best.</strong> Reels have the best reach rate for 1K to 5K accounts (9.78%, Socialinsider 2026). In collabs the smaller account gains reach (n = 100 study). Collab posts with micro creators therefore borrow their audiences directly.</li>
+<li><strong>The fake block is a trade-off.</strong> It is about 96% of followers and understates engagement rate by about 24x <strong>[calc]</strong>, and it is exposed to purges like May 2026. But it currently keeps Vybe above the <strong>1,000-follower Trial Reels threshold</strong>. No official source says fakes cut reach.</li>
+<li><strong>Health wearables grew on credibility, not mass following.</strong> Oura's growth was word of mouth (40% of new members via friends) plus unpaid credible wearers. WHOOP used an athlete-first persona plus referrals (over 10% of sign-ups). Hashtags are now capped at 5 and can't be followed, so they are not a growth lever.</li>
+</ol>
+<hr />
+<h2>Sources</h2>
+<p>Dates are as reported in search results. All accessed 2026-10-11 via search summaries; full pages were not fetched (see Method).</p>
+<ol>
+<li>Kwak, Lee, Park, Moon, "What is Twitter, a social network or a news media?", WWW 2010. Slides: https://www.ece.ucdavis.edu/~chuah/rubinet/people/chuah/classes/eec273/eec273-s14/refs/%5BKL+10%5Dwww-twitter.pdf ; record: https://koasas.kaist.ac.kr/handle/10203/166477 ; PCWorld coverage: https://www.pcworld.com/article/512501/article-4164.html</li>
+<li>"Mapping Social Media User Behaviors in Reciprocity Space", arXiv 2601.15623 (Jan 2026): https://arxiv.org/pdf/2601.15623</li>
+<li>"#TeamFollowBack: Detection &amp; Analysis of Follow Back Accounts on Social Media", arXiv 2403.15856 (Mar 2024): https://arxiv.org/pdf/2403.15856</li>
+<li>Que, Rajagopalan, Zaman, "Penetrating a Social Network: The Follow-back Problem", arXiv 1804.02608 (Apr 2018): https://arxiv.org/abs/1804.02608</li>
+<li>MIT Technology Review, "Win more social-media followers with this trick" (Apr 26, 2018): https://www.technologyreview.com/2018/04/26/66932/win-more-social-media-followers-with-this-trick/</li>
+<li>"Two types of well followed users in the followership networks of Twitter", arXiv 1302.0677 (2013): https://arxiv.org/pdf/1302.0677</li>
+<li>"A Data-driven Study of Influences in Twitter Communities", arXiv 1307.4264 (2013): https://arxiv.org/pdf/1307.4264</li>
+<li>Lou, Tang et al., "Reciprocity and Triadic Closure", TKDD 2012: https://keg.cs.tsinghua.edu.cn/jietang/publications/TKDD12-Lou-Tang-et-al-Reciprocity-and-Triadic-Closure.pdf</li>
+<li>Statista, influencers using follow/unfollow by profile size (Dec 2018): https://www.statista.com/statistics/994828/instagram-influencers-use-follow-unfollow-method-profile-size-worldwide</li>
+<li>Instagram, "Reducing Inauthentic Activity on Instagram" (Nov 19, 2018): https://about.instagram.com/blog/announcements/reducing-inauthentic-activity-on-instagram/ ; Tubefilter (Nov 19, 2018): https://tubefilter.com/2018/11/19/instagram-to-remove-fake-likes-follows-comments/</li>
+<li>Instagram Creators, "What Creators Need To Know About Instagram Recommendations": https://creators.instagram.com/blog/instagram-recommendations-eligibility-tips-creators ; Help Center Account Status: https://help.instagram.com/653964212890722 ; PetaPixel (Dec 7, 2022): https://petapixel.com/2022/12/07/instagram-now-better-explains-why-posts-get-recommended-or-not/</li>
+<li>Instagram Creators, "Trial reels" (2025): https://creators.instagram.com/blog/instagram-trial-reels ; Engadget (Dec 2024): https://www.engadget.com/social-media/instagram-will-let-video-creators-make-trial-reels-for-non-followers-160016725.html ; Social Media Today, expanded access (2025): https://www.socialmediatoday.com/news/instagram-expands-access-trial-reels/752895/</li>
+<li>Social Media Today, Mosseri on 2025 ranking signals (Jan 2025): https://www.socialmediatoday.com/news/instagram-shares-algorithm-insights-2025/738034/ ; Social Samosa (Jan 2025): https://www.socialsamosa.com/news-2/instagram-reveals-key-factors-for-boosting-reach-8646916</li>
+<li>Influencer Marketing Hub, sends-per-reach playbook: https://influencermarketinghub.com/instagram-sends-per-reach-playbook/</li>
+<li>Search Engine Land, "Instagram explains why your content isn't reaching your followers" (Apr 2024): https://searchengineland.com/instagram-why-content-isnt-reaching-followers-439028 ; marketing4ecommerce: https://marketing4ecommerce.net/en/engagement-vs-number-of-followers-adam-mosseri-throws-a-debate-on-threads/</li>
+<li>TechCrunch, ranking update for smaller original creators (Apr 30, 2024): https://techcrunch.com/2024/04/30/instagram-is-updating-its-ranking-systems-to-surface-more-content-from-smaller-original-creators</li>
+<li>Storyboard18, Mosseri on ranking vs TikTok (date not confirmed): https://www.storyboard18.com/digital/adam-mosseri-explains-how-instagram-ranks-posts-compared-to-tiktok-86352.htm</li>
+<li>PetaPixel, "New Instagram Policies Target Reposted Content" (Apr 30, 2026): https://petapixel.com/2026/04/30/new-instagram-policies-target-reposted-content/</li>
+<li>Net Influencer, Mosseri year-end outlook (Dec 31, 2025 / Jan 2026): https://www.netinfluencer.com/instagram-head-adam-mosseri-sees-creator-value-rising-as-ai-floods-social-feeds/</li>
+<li>Betanews, hashtag limit (Dec 19, 2025): https://betanews.com/2025/12/19/instagram-puts-a-limit-on-hashtag-usage/ ; Social Samosa (Dec 2025): https://www.socialsamosa.com/news-2/instagram-hashtags-five-per-post-10923075</li>
+<li>Social Media Today, removal of hashtag following (Nov 2024): https://www.socialmediatoday.com/news/instagrams-removing-option-follow-hashtags/733155/ ; Lindsey Gamble: https://www.lindseygamble.com/blog/instagram-is-getting-rid-of-the-ability-to-follow-hashtags</li>
+<li>Socialinsider Instagram Benchmarks 2025: https://www.socialinsider.io/data-geeks/instagram_benchmarks_2025.pdf ; 2026 Organic Benchmarks: https://www.socialinsider.io/instagram-engagement-report-2025/</li>
+<li>Net Influencer, Socialinsider/Metricool 2026 Reels data: https://www.netinfluencer.com/instagram-views-up-27-percent-in-early-2026-as-publishing-increases-report-finds/</li>
+<li>Metricool 2026 Social Media Study press release: https://metricool.com/press-release-2026-social-media-study/</li>
+<li>Schöttl, "The impact of collaborative posts on digital reach" (HSTalks): https://hstalks.com/article/11245/download/</li>
+<li>Emplifi, Instagram collaborations analysis (H1 2026): https://emplifi.io/resources/instagram-collaborations-boost-organic-engagement/</li>
+<li>SocialPilot Instagram Trends 2025: https://www.socialpilot.co/reports/instagram-trends-report</li>
+<li>arXiv 2603.21953, personalised comment ranking on Instagram (2026): https://arxiv.org/pdf/2603.21953</li>
+<li>Influencer Marketing Hub Benchmark Report 2025: https://influencermarketinghub.com/influencer-marketing-benchmark-report/</li>
+<li>HypeAuditor, micro vs mega engagement: https://hypeauditor.com/blog/how-do-micro-influencers-and-mega-influencers-compare-in-instagram-engagement-rates ; onlinemarketing.de HypeAuditor summary: https://onlinemarketing.de/cases/state-of-influencer-marketing-top-themen-trends</li>
+<li>"#Gifted: the impact of influencer gifting strategy", Int. J. of Advertising (2025): https://pure.uos.ac.kr/en/publications/gifted-the-impact-of-influencer-gifting-strategy-in-influencer-ma/ ; elev8or gifting guide: https://www.elev8or.io/blog/influencer-gifting-and-product-seeding-guide</li>
+<li>Broadcast channels: eMarketer: https://www.emarketer.com/content/instagram-latest-broadcast-channels-update-emphasizes-importance-of-building-community ; firmbee: https://firmbee.com/a-broadcast-channel-on-instagram</li>
+<li>Instagram 2026 purge: Ubergizmo (May 2026): https://www.ubergizmo.com/2026/05/lost-instagram-followers/ ; Punjab Kesari: https://english.punjabkesari.com/business/great-purge-of-2026-instagram-crackdown-on-fake-accounts/ ; Mosseri on removals: https://whatson.ae/?p=388415</li>
+<li>AdEspresso, buying followers experiment: https://adespresso.com/blog/buy-instagram-followers-experiment/</li>
+<li>Fake-follower removal practitioner sources: https://www.lilachbullock.com/identify-remove-fake-instagram-followers/ ; https://help.hypeauditor.com/general-questions/how-to-remove-fake-followers-on-instagram</li>
+<li>Action-limit estimates (unofficial): https://tagembed.com/blog/instagram-restrictions-follow-like-comment/ ; https://www.socialchamp.com/blog/instagram-limits/ ; https://www.unfollr.com/blog/instagram-follow-unfollow-limits ; https://www.online-tech-tips.com/how-to-fix-we-limit-how-often-you-can-do-certain-things-on-instagram-error/</li>
+<li>Follow-back practitioner views: https://creatorimpact.com/follow-follow-back-social-media/ ; https://www.business.com/articles/advice-for-following-back-on-social-media/</li>
+<li>Oura: PTAB exhibit 1242: https://www.docketalarm.com/cases/PTAB/IPR2024-01077/Samsung_Electronics_Co._Ltd._v._Oura_Health_Oy/09-02-2025-Petitioner/Exhibit-1242-Ex_1242/ ; Fast Company SA (Nov 28, 2021): https://fastcompany.co.za/co-design/2021-11-28-oura-ring-the-ultimate-health-wearable/ ; The Drum (Aug 30, 2024): https://www.thedrum.com/news/2024/08/30/5-ways-the-celeb-approved-oura-ring-making-people-obsessed-with-tracking-health ; Modern Retail (Apr 2023): https://www.modernretail.co/operations/oura-enters-physical-retail-with-best-buy-partnership ; Glossy: https://www.glossy.co/fashion/how-the-oura-ring-became-the-celebrity-health-tracker-of-choice</li>
+<li>WHOOP: Boston Globe (Sep 8, 2021): https://www.bostonglobe.com/2021/09/08/business/inside-rise-whoop-bostons-fitness-wearable-tech-giant ; Talkable case study: https://talkable.com/case-studies/whoop ; OMR: https://omr.com/de/daily/whoop-marketing-strategie-fitnessarmband-milliarden-bewertung</li>
+<li>Ultrahuman: Awin: https://ui.awin.com/merchant-profile/69428 ; D2C Insider: https://pulse.d2cinsider.com/ultrahuman-targets-e2-82-b91100-crore-revenue-in-fy26-eyes-global-scale/</li>
+<li>Polar Loop: Escape Collective (Sep 2025): https://escapecollective.com/polar-launches-screenless-subscription-free-loop-wearable ; PYMNTS (2025): https://www.pymnts.com/fitness/2025/polar-debuts-wearable-subscription-free-fitness-band/</li>
+</ol></body></html>
