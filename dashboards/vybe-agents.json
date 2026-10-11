@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11T18:32:16+00:00",
+  "checked": "2026-10-11T18:54:41+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,7 +11,7 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "stamp": "2026-10-11T15:58:47+00:00",
-      "age_h": 2.6,
+      "age_h": 2.9,
       "foreign": [],
       "state": "ok"
     },
@@ -39,7 +39,7 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "stamp": "2026-10-11",
-      "age_h": 18.5,
+      "age_h": 18.9,
       "foreign": [],
       "state": "ok"
     },
@@ -52,8 +52,8 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [],
-      "stamp": "2026-10-11 18:22",
-      "age_h": 0.2,
+      "stamp": "2026-10-11 18:39",
+      "age_h": 0.3,
       "foreign": [],
       "state": "ok"
     },
@@ -66,8 +66,8 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [],
-      "stamp": "2026-10-11 18:22 UTC",
-      "age_h": 0.2,
+      "stamp": "2026-10-11 18:39 UTC",
+      "age_h": 0.3,
       "foreign": [],
       "state": "ok"
     },
@@ -80,10 +80,84 @@
       "max_age_h": 30,
       "cadence": "daily 10:38Z",
       "problems": [],
-      "stamp": "2026-10-11T15:53:00Z",
-      "age_h": 2.7,
+      "stamp": "2026-10-11T18:49:37Z",
+      "age_h": 0.1,
       "foreign": [],
       "state": "ok"
+    }
+  ],
+  "needs_you": [
+    {
+      "who": "Marketsom",
+      "kind": "call",
+      "when": "Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)",
+      "what": "Nocturnal Product Development (Durham, NC). Paid vendor, not a partner",
+      "detail": "With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).",
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "sort": 0
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
+      "detail": "$10,000 grand prize; every finalist gets a complimentary\u2026",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "2 days",
+      "what": "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)",
+      "detail": "$5,000 one-time grant per participant (40 participants)\u2026",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 2
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "2 days",
+      "what": "Veteran Shark Tank 2026 (13th annual)",
+      "detail": "$50,000 to the winner; five veteran entrepreneurs pitch live \u00b7 veteran-owned fits",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 2
+    },
+    {
+      "who": "Marketsom",
+      "kind": "deadline",
+      "when": "Fri 16 Oct follow-ups",
+      "what": "Partners quiet since the 9 Oct follow-ups",
+      "detail": "No drafting until research is done. Their status is on the outreach list.",
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "sort": 3
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "4 days",
+      "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
+      "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 4
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "5 days",
+      "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+      "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 5
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "5 days",
+      "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
+      "detail": "No cash amount stated. Selected companies run a six-month\u2026",
+      "url": "https://agentrevup.netlify.app/apply",
+      "sort": 5
     }
   ]
 }

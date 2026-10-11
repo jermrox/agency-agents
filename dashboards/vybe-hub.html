@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Hub</title>
+<style>
+:root {
+  --bg:#f6f8f7; --surface:#fff; --surface-2:#eef3f1; --line:#dbe3e0;
+  --ink:#12201c; --ink-2:#44554f; --ink-3:#6b7a75;
+  --brand:#1f8e78; --brand-ink:#0f5e4f;
+  --good:#1d7a3a; --good-bg:#e3f3e7; --crit:#a3262a; --crit-bg:#fbe3e3;
+  --warn:#8a5a00; --warn-bg:#fbefd5;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }
+a { color:inherit; text-decoration:none }
+.wrap { max-width:620px; margin:0 auto; padding:20px 16px 56px }
+h1 { font-size:22px; margin:0; letter-spacing:-.01em }
+h1 span { color:var(--brand) }
+.status { display:flex; align-items:center; gap:8px; margin:6px 0 0; font-weight:600;
+  color:var(--good) }
+.status .meta { font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto }
+h2 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3);
+  margin:26px 0 8px; font-weight:600 }
+.need, .agent { display:flex; gap:12px; align-items:flex-start; background:var(--surface);
+  border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-top:8px }
+.need:active, .agent:active { background:var(--surface-2) }
+.need .k { flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2);
+  color:var(--brand-ink); font-weight:700; text-align:center; line-height:26px; font-size:14px }
+.need .body, .agent .body { display:block; min-width:0; flex:1 }
+.need b { color:var(--crit) }
+.need .detail, .agent .line, .agent .when { display:block; font-size:13.5px; color:var(--ink-2); margin-top:2px }
+.agent .when { color:var(--ink-3); font-size:12.5px }
+.agent small { color:var(--ink-3); font-weight:400; font-size:13px; margin-left:4px }
+.dot { flex:0 0 10px; height:10px; border-radius:50%; margin-top:7px; background:var(--ink-3) }
+.agent.ok .dot { background:var(--good) } .agent.bad .dot { background:var(--crit) }
+.agent.bad { border-color:var(--crit) }
+.nolink { opacity:.85 }
+.empty { color:var(--ink-3); margin:8px 0 0 }
+.links { margin-top:26px; font-size:13.5px; color:var(--ink-3); line-height:1.9 }
+.links a { color:var(--brand-ink); border-bottom:1px solid var(--line) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Vybe</span> hub</h1>
+  <p class="status"><span>All agents running</span><span class="meta">checked 18:54 UTC · refreshes every 4h</span></p>
+
+  <h2>Needs you</h2>
+<a class="need" href="https://agentmarksom.netlify.app/briefing.html">
+  <span class="k">☎</span>
+  <span class="body"><b>Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)</b> — Nocturnal Product Development (Durham, NC). Paid vendor, not a partner
+    <span class="detail">With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors). · Marketsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>tomorrow</b> — AgeTech After Dark @ CES 2027 — AARP pitch
+    <span class="detail">$10,000 grand prize; every finalist gets a complimentary… · Revsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>2 days</b> — Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)
+    <span class="detail">$5,000 one-time grant per participant (40 participants)… · Revsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>2 days</b> — Veteran Shark Tank 2026 (13th annual)
+    <span class="detail">$50,000 to the winner; five veteran entrepreneurs pitch live · veteran-owned fits · Revsom</span></span>
+</a>
+<a class="need" href="https://agentmarksom.netlify.app/briefing.html">
+  <span class="k">!</span>
+  <span class="body"><b>Fri 16 Oct follow-ups</b> — Partners quiet since the 9 Oct follow-ups
+    <span class="detail">No drafting until research is done. Their status is on the outreach list. · Marketsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>4 days</b> — Intuit IDEAS — Virtual Military Veteran &amp; Military-Spouse Cohort (2026-27)
+    <span class="detail">$5,000 cash grant paid at completion of the 12-month… · veteran-owned fits · Revsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>5 days</b> — Blake Family Military &amp; Veterans Pitch Competition (Clemson, 2nd annual)
+    <span class="detail">$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 · veteran-owned fits · Revsom</span></span>
+</a>
+<a class="need" href="https://agentrevup.netlify.app/apply">
+  <span class="k">$</span>
+  <span class="body"><b>5 days</b> — NBA Launchpad: 2027 cohort (sixth cohort)
+    <span class="detail">No cash amount stated. Selected companies run a six-month… · Revsom</span></span>
+</a>
+
+  <h2>The agents</h2>
+<a class="agent ok" href="https://agentrevup.netlify.app/">
+  <span class="dot"></span>
+  <span class="body"><b>Revsom</b> <small>money</small>
+    <span class="line">232 opportunities · 165 need no registration · 14 close inside 14 days</span>
+    <span class="when">3h ago</span></span>
+</a>
+<a class="agent ok" href="https://agentmarksom.netlify.app/briefing.html">
+  <span class="dot"></span>
+  <span class="body"><b>Marketsom</b> <small>marketing &amp; community partners</small>
+    <span class="line">Online only: no travel and nothing in person. Researching investors who take pitches online and remote collaborations…</span>
+    <span class="when">19h ago</span></span>
+</a>
+<a class="agent ok" href="https://agentgrowthscout.netlify.app/">
+  <span class="dot"></span>
+  <span class="body"><b>Growsom</b> <small>investors &amp; integrations</small>
+    <span class="line">234 targets · 180 ready to send · 2 with a deadline inside 30 days</span>
+    <span class="when">18 min ago</span></span>
+</a>
+<a class="agent ok" href="https://instasum.netlify.app/">
+  <span class="dot"></span>
+  <span class="body"><b>Instasom</b> <small>social</small>
+    <span class="line">280 verified people to follow · 15 days of numbers</span>
+    <span class="when">6 min ago</span></span>
+</a>
+<div class="agent unk nolink">
+  <span class="dot"></span>
+  <span class="body"><b>Daily worker</b> <small>the product</small>
+    <span class="line">One new app screen every weekday. 14 screens, 17 funding packets so far.</span>
+    <span class="when">no live page yet — its work is code, not a dashboard</span></span>
+</div>
+
+  <p class="links">
+    <a href="vybe-agent-board.html">Is every dashboard current?</a> ·
+    <a href="vybe-fleet-map.html">How it all fits together</a> ·
+    <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a>
+  </p>
+</div>
+</body>
+</html>
