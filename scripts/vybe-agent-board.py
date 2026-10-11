@@ -537,12 +537,13 @@ def extract_facts(rows, now):
             "url": "https://agentmarksom.netlify.app/briefing.html",
         } for pr in probs[:4]]
 
-    # Revsom — top items are the soonest closes (already in needs_you); keep 4 here too
+    # Revsom — the first six closes are already "needs you"; the top list is the
+    # next ones behind them, so the two blocks never repeat each other.
     f["revsom"]["top"] = [{
-        "what": o["name"], "who_is": o["who"], "why": o["why"],
+        "what": f"{o['days']} days — {o['name']}", "who_is": o["who"], "why": o["why"],
         "do": [_cut(x, 110) for x in o["docs"][:3]] or ["Open the application page"],
         "url": o["url"] or "https://agentrevup.netlify.app/apply",
-    } for o in (f["revsom"].get("closing") or [])[:4]]
+    } for o in (f["revsom"].get("closing") or [])[6:10]]
 
     f["needs_you"].sort(key=lambda x: x["sort"])
     return f
