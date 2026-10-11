@@ -51,7 +51,7 @@ We looked at 19 consumer sleep, stress and wellness wearables that raised pre-se
 |---|---|---|---|---|
 | 1 | **Supermoon Capital** | Fund dedicated to sleep: "Accelerating innovation in sleep and circadian health". Portfolio includes Sahha (health scores from phone and wearable data, close to Vybe's insight layer), Lume Health (wearable hormone monitoring), Arcascope and Endel | Online form with a Fundraising option and deck upload (supermooncapital.com/collaborate) | Strong |
 | 2 | **Seaside Ventures** | Somnee sleep headband, at seed (2024) and in its seed extension (2025). Thesis: "science-driven consumer health technologies" | Contact page (seasideventures.com) | Strong |
-| 3 | **J2 Ventures** | Lumia (ear-worn blood-flow wellness wearable), both rounds. Lists Oura on its site. Focus: the US military workforce and dual-use | Contact page (j2vp.com). **Read the private founder note before contacting** | Strong thesis; conditions apply |
+| 3 | **J2 Ventures** | Lumia (ear-worn blood-flow wellness wearable), both rounds. Lists Oura on its site. Focus: the US military workforce and dual-use | Contact page (j2vp.com) | Strong |
 | 4 | **NextView Ventures** | WHOOP, "Invested: 2013", at seed | Contact form (nextview.vc) | Strong |
 | 5 | **Courtside Ventures** | Thesis: "Personalized Wellness – Better data capture…". Portfolio includes Future (Apple Watch coaching) | Pitch inbox ("we do read every single message") | Strong |
 | 6 | **Founder Collective** | WHOOP seed (2016) | Contact page (foundercollective.com) | Possible to strong |
@@ -67,7 +67,6 @@ We looked at 19 consumer sleep, stress and wellness wearables that raised pre-se
 - NC Tweener Fund: wants $1M+ revenue.
 - Moonshots Capital: wants recurring revenue and money already raised.
 - Healthy Ventures: says it doesn't invest in consumer wellness.
-- Veteran-only funds: check whether the founder is eligible first.
 
 ## 4. Strategic angels and advisors (intro-only unless a route is listed)
 
@@ -127,4 +126,3 @@ We looked at 19 consumer sleep, stress and wellness wearables that raised pre-se
 - A corporate venture arm leading a pre-launch round.
 - Inventory or revenue-based financing before revenue.
 - Building custom hardware before 500 white-label units have sold.
-- Any government sale. Founder-specific ethics limits apply; see the private note.
