@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11T18:54:53+00:00",
+  "checked": "2026-10-11T19:40:53+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,7 +11,7 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "stamp": "2026-10-11T15:58:47+00:00",
-      "age_h": 2.9,
+      "age_h": 3.7,
       "foreign": [],
       "state": "ok"
     },
@@ -39,7 +39,7 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "stamp": "2026-10-11",
-      "age_h": 18.9,
+      "age_h": 19.7,
       "foreign": [],
       "state": "ok"
     },
@@ -53,7 +53,7 @@
       "cadence": "3x daily",
       "problems": [],
       "stamp": "2026-10-11 18:39",
-      "age_h": 0.3,
+      "age_h": 1.0,
       "foreign": [],
       "state": "ok"
     },
@@ -67,7 +67,7 @@
       "cadence": "3x daily",
       "problems": [],
       "stamp": "2026-10-11 18:39 UTC",
-      "age_h": 0.3,
+      "age_h": 1.0,
       "foreign": [],
       "state": "ok"
     },
@@ -81,7 +81,7 @@
       "cadence": "daily 10:38Z",
       "problems": [],
       "stamp": "2026-10-11T18:49:37Z",
-      "age_h": 0.1,
+      "age_h": 0.9,
       "foreign": [],
       "state": "ok"
     }
@@ -92,8 +92,18 @@
       "kind": "call",
       "when": "Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)",
       "what": "Nocturnal Product Development (Durham, NC). Paid vendor, not a partner",
-      "detail": "With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).",
-      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "detail": "",
+      "who_is": "With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).",
+      "why": "What they are: an engineering firm Vybe would pay per milestone. This is spending, not a partnership. Main question: is there any no-cost route (a co-marketing case study, deferred fees), or should this call be a short\u2026",
+      "do": [
+        "Read the prep brief first",
+        "Join the call at the time shown",
+        "Decide on the call: no-cost route, or a short polite no"
+      ],
+      "url": "https://docs.google.com/document/d/127GaULpdU37XMV4nXVTdyhXCAzBxEotbrrF0C6ykxZY/edit",
+      "url_label": "prep brief",
+      "url2": "https://agentmarksom.netlify.app/briefing.html",
+      "url2_label": "briefing",
       "sort": 0
     },
     {
@@ -102,7 +112,16 @@
       "when": "tomorrow",
       "what": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
       "detail": "$10,000 grand prize; every finalist gets a complimentary\u2026",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "AgeTech startups, and explicitly healthspan and wellness products that help people 'stay in the game' as they age. Prototypes\u2026",
+      "why": "Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027.",
+      "do": [
+        "Online application: how the product makes ageing easier, and its stage",
+        "A 3-minute pitch, ready by early January"
+      ],
+      "url": "https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 1
     },
     {
@@ -111,7 +130,17 @@
       "when": "2 days",
       "what": "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)",
       "detail": "$5,000 one-time grant per participant (40 participants)\u2026",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests\u2026",
+      "why": "THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program 'is designed to invest in individuals\u2014not businesses', and benefits are 'reserved for the individual selected'.",
+      "do": [
+        "Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant's\u2026",
+        "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
+        "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)"
+      ],
+      "url": "https://www.mpoweredbymarshalls.com/accelerator-program.html",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 2
     },
     {
@@ -120,7 +149,18 @@
       "when": "2 days",
       "what": "Veteran Shark Tank 2026 (13th annual)",
       "detail": "$50,000 to the winner; five veteran entrepreneurs pitch live \u00b7 veteran-owned fits",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 \u2014 an age\u2026",
+      "why": "CLOSES 13 OCT \u2014 the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else's. Buckeye wants two years and Tadlock wants one; this one wants under three.",
+      "do": [
+        "Proof of veteran status (DD-214 or equivalent)",
+        "A 2-minute narrated pitch video \u2014 a pitch, not a promo",
+        "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
+        "Evidence the business is under three years old as of 7 Dec 2026"
+      ],
+      "url": "https://veteransharktank.com/apply/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 2
     },
     {
@@ -128,8 +168,16 @@
       "kind": "deadline",
       "when": "Fri 16 Oct follow-ups",
       "what": "Partners quiet since the 9 Oct follow-ups",
-      "detail": "No drafting until research is done. Their status is on the outreach list.",
+      "detail": "",
+      "who_is": "No drafting until research is done. Their status is on the outreach list.",
+      "why": "",
+      "do": [
+        "No drafting until research is done. Their status is on the outreach list."
+      ],
       "url": "https://agentmarksom.netlify.app/briefing.html",
+      "url_label": "briefing",
+      "url2": null,
+      "url2_label": "briefing",
       "sort": 3
     },
     {
@@ -138,7 +186,18 @@
       "when": "4 days",
       "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
       "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego\u2026",
+      "why": "C CORPORATIONS ARE NOT ELIGIBLE (Intuit's TurboTax community guide), so check Vybe's entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.",
+      "do": [
+        "Online IDEAS application, selecting the virtual military cohort",
+        "Veteran/military-spouse status (not stated how it is verified)",
+        "Business registration details",
+        "QuickBooks onboarding if selected (per Intuit's guide)"
+      ],
+      "url": "https://www.intuit.com/ideas/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 4
     },
     {
@@ -147,7 +206,17 @@
       "when": "5 days",
       "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
       "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve\u2026",
+      "why": "IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered).",
+      "do": [
+        "Idea/business description",
+        "Pitch deck",
+        "Short video"
+      ],
+      "url": "https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 5
     },
     {
@@ -156,7 +225,18 @@
       "when": "5 days",
       "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
       "detail": "No cash amount stated. Selected companies run a six-month\u2026",
-      "url": "https://agentrevup.netlify.app/apply",
+      "who_is": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies\u2026",
+      "why": "CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to 'a sports-science lab that runs your device pilot'.",
+      "do": [
+        "Online application form (launchpad.nba.com)",
+        "Company/product overview and pitch deck",
+        "Description of proposed R&D pilot within the NBA ecosystem",
+        "Team info"
+      ],
+      "url": "https://www.launchpad.nba.com/apply",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
       "sort": 5
     }
   ]

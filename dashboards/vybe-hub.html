@@ -44,11 +44,18 @@ h2 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   margin:26px 0 8px; font-weight:600 }
 .need, .agent { display:flex; gap:12px; align-items:flex-start; background:var(--surface);
   border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-top:8px }
-.need:active, .agent:active { background:var(--surface-2) }
+.agent:active { background:var(--surface-2) }
 .need .k { flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2);
   color:var(--brand-ink); font-weight:700; text-align:center; line-height:26px; font-size:14px }
 .need .body, .agent .body { display:block; min-width:0; flex:1 }
 .need b { color:var(--crit) }
+.need .row { margin:7px 0 0; font-size:14px; line-height:1.45; color:var(--ink) }
+.need .lbl { display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:1px }
+.need .do { margin:2px 0 4px; padding-left:20px; font-size:14px; color:var(--ink) }
+.need .do li { margin:2px 0 }
+.need .links2 { display:block; font-size:13px; color:var(--ink-3); margin-top:4px }
+.need .links2 a { color:var(--brand-ink); border-bottom:1px solid var(--line) }
+.need .who { color:var(--ink-3) }
 .need .detail, .agent .line, .agent .when { display:block; font-size:13.5px; color:var(--ink-2); margin-top:2px }
 .agent .when { color:var(--ink-3); font-size:12.5px }
 .agent small { color:var(--ink-3); font-weight:400; font-size:13px; margin-left:4px }
@@ -64,74 +71,114 @@ h2 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
 <body>
 <div class="wrap">
   <h1><span>Vybe</span> hub</h1>
-  <p class="status"><span>All agents running</span><span class="meta">checked 18:54 UTC · refreshes every 4h</span></p>
+  <p class="status"><span>All agents running</span><span class="meta">checked 19:40 UTC · refreshes every 4h</span></p>
 
-  <h2>Needs you</h2>
-<a class="need" href="https://agentmarksom.netlify.app/briefing.html">
+  <h2>Needs you — and what to do</h2>
+<div class="need">
   <span class="k">☎</span>
-  <span class="body"><b>Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)</b> — Nocturnal Product Development (Durham, NC). Paid vendor, not a partner
-    <span class="detail">With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors). · Marketsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)</b> — Nocturnal Product Development (Durham, NC). Paid vendor, not a partner
+    
+    <p class="row"><span class="lbl">What it is</span>With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).</p>
+    <p class="row"><span class="lbl">Why it matters</span>What they are: an engineering firm Vybe would pay per milestone. This is spending, not a partnership. Main question: is there any no-cost route (a co-marketing case study, deferred fees), or should this call be a short…</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Read the prep brief first</li><li>Join the call at the time shown</li><li>Decide on the call: no-cost route, or a short polite no</li></ol>
+    <span class="links2"><a href="https://docs.google.com/document/d/127GaULpdU37XMV4nXVTdyhXCAzBxEotbrrF0C6ykxZY/edit">prep brief</a> · <a href="https://agentmarksom.netlify.app/briefing.html">briefing</a> · <span class="who">from Marketsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>tomorrow</b> — AgeTech After Dark @ CES 2027 — AARP pitch
-    <span class="detail">$10,000 grand prize; every finalist gets a complimentary… · Revsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>tomorrow</b> — AgeTech After Dark @ CES 2027 — AARP pitch
+    <span class="detail">$10,000 grand prize; every finalist gets a complimentary…</span>
+    <p class="row"><span class="lbl">What it is</span>AgeTech startups, and explicitly healthspan and wellness products that help people &#x27;stay in the game&#x27; as they age. Prototypes…</p>
+    <p class="row"><span class="lbl">Why it matters</span>Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027.</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Online application: how the product makes ageing easier, and its stage</li><li>A 3-minute pitch, ready by early January</li></ol>
+    <span class="links2"><a href="https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>2 days</b> — Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)
-    <span class="detail">$5,000 one-time grant per participant (40 participants)… · Revsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>2 days</b> — Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)
+    <span class="detail">$5,000 one-time grant per participant (40 participants)…</span>
+    <p class="row"><span class="lbl">What it is</span>Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests…</p>
+    <p class="row"><span class="lbl">Why it matters</span>THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program &#x27;is designed to invest in individuals—not businesses&#x27;, and benefits are &#x27;reserved for the individual selected&#x27;.</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant&#x27;s…</li><li>Confirmation that the applicant can commit to 12 months of virtual programming in 2027</li><li>An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)</li></ol>
+    <span class="links2"><a href="https://www.mpoweredbymarshalls.com/accelerator-program.html">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>2 days</b> — Veteran Shark Tank 2026 (13th annual)
-    <span class="detail">$50,000 to the winner; five veteran entrepreneurs pitch live · veteran-owned fits · Revsom</span></span>
-</a>
-<a class="need" href="https://agentmarksom.netlify.app/briefing.html">
+  <div class="body"><b>2 days</b> — Veteran Shark Tank 2026 (13th annual)
+    <span class="detail">$50,000 to the winner; five veteran entrepreneurs pitch live · veteran-owned fits</span>
+    <p class="row"><span class="lbl">What it is</span>US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 — an age…</p>
+    <p class="row"><span class="lbl">Why it matters</span>CLOSES 13 OCT — the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else&#x27;s. Buckeye wants two years and Tadlock wants one; this one wants under three.</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Proof of veteran status (DD-214 or equivalent)</li><li>A 2-minute narrated pitch video — a pitch, not a promo</li><li>A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks</li><li>Evidence the business is under three years old as of 7 Dec 2026</li></ol>
+    <span class="links2"><a href="https://veteransharktank.com/apply/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">!</span>
-  <span class="body"><b>Fri 16 Oct follow-ups</b> — Partners quiet since the 9 Oct follow-ups
-    <span class="detail">No drafting until research is done. Their status is on the outreach list. · Marketsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>Fri 16 Oct follow-ups</b> — Partners quiet since the 9 Oct follow-ups
+    
+    <p class="row"><span class="lbl">What it is</span>No drafting until research is done. Their status is on the outreach list.</p>
+    
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>No drafting until research is done. Their status is on the outreach list.</li></ol>
+    <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">briefing</a> · <span class="who">from Marketsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>4 days</b> — Intuit IDEAS — Virtual Military Veteran &amp; Military-Spouse Cohort (2026-27)
-    <span class="detail">$5,000 cash grant paid at completion of the 12-month… · veteran-owned fits · Revsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>4 days</b> — Intuit IDEAS — Virtual Military Veteran &amp; Military-Spouse Cohort (2026-27)
+    <span class="detail">$5,000 cash grant paid at completion of the 12-month… · veteran-owned fits</span>
+    <p class="row"><span class="lbl">What it is</span>Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego…</p>
+    <p class="row"><span class="lbl">Why it matters</span>C CORPORATIONS ARE NOT ELIGIBLE (Intuit&#x27;s TurboTax community guide), so check Vybe&#x27;s entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Online IDEAS application, selecting the virtual military cohort</li><li>Veteran/military-spouse status (not stated how it is verified)</li><li>Business registration details</li><li>QuickBooks onboarding if selected (per Intuit&#x27;s guide)</li></ol>
+    <span class="links2"><a href="https://www.intuit.com/ideas/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>5 days</b> — Blake Family Military &amp; Veterans Pitch Competition (Clemson, 2nd annual)
-    <span class="detail">$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 · veteran-owned fits · Revsom</span></span>
-</a>
-<a class="need" href="https://agentrevup.netlify.app/apply">
+  <div class="body"><b>5 days</b> — Blake Family Military &amp; Veterans Pitch Competition (Clemson, 2nd annual)
+    <span class="detail">$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 · veteran-owned fits</span>
+    <p class="row"><span class="lbl">What it is</span>Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve…</p>
+    <p class="row"><span class="lbl">Why it matters</span>IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered).</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Idea/business description</li><li>Pitch deck</li><li>Short video</li></ol>
+    <span class="links2"><a href="https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
+<div class="need">
   <span class="k">$</span>
-  <span class="body"><b>5 days</b> — NBA Launchpad: 2027 cohort (sixth cohort)
-    <span class="detail">No cash amount stated. Selected companies run a six-month… · Revsom</span></span>
-</a>
+  <div class="body"><b>5 days</b> — NBA Launchpad: 2027 cohort (sixth cohort)
+    <span class="detail">No cash amount stated. Selected companies run a six-month…</span>
+    <p class="row"><span class="lbl">What it is</span>Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies…</p>
+    <p class="row"><span class="lbl">Why it matters</span>CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to &#x27;a sports-science lab that runs your device pilot&#x27;.</p>
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do"><li>Online application form (launchpad.nba.com)</li><li>Company/product overview and pitch deck</li><li>Description of proposed R&amp;D pilot within the NBA ecosystem</li><li>Team info</li></ol>
+    <span class="links2"><a href="https://www.launchpad.nba.com/apply">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a> · <span class="who">from Revsom</span></span></div>
+</div>
 
   <h2>The agents</h2>
 <a class="agent ok" href="https://agentrevup.netlify.app/">
   <span class="dot"></span>
   <span class="body"><b>Revsom</b> <small>money</small>
     <span class="line">232 opportunities · 165 need no registration · 14 close inside 14 days</span>
-    <span class="when">3h ago</span></span>
+    <span class="when">4h ago</span></span>
 </a>
 <a class="agent ok" href="https://agentmarksom.netlify.app/briefing.html">
   <span class="dot"></span>
   <span class="body"><b>Marketsom</b> <small>marketing &amp; community partners</small>
     <span class="line">Online only: no travel and nothing in person. Researching investors who take pitches online and remote collaborations…</span>
-    <span class="when">19h ago</span></span>
+    <span class="when">20h ago</span></span>
 </a>
 <a class="agent ok" href="https://agentgrowthscout.netlify.app/">
   <span class="dot"></span>
   <span class="body"><b>Growsom</b> <small>investors &amp; integrations</small>
     <span class="line">234 targets · 180 ready to send · 2 with a deadline inside 30 days</span>
-    <span class="when">18 min ago</span></span>
+    <span class="when">1h ago</span></span>
 </a>
 <a class="agent ok" href="https://instasum.netlify.app/">
   <span class="dot"></span>
   <span class="body"><b>Instasom</b> <small>social</small>
     <span class="line">280 verified people to follow · 15 days of numbers</span>
-    <span class="when">6 min ago</span></span>
+    <span class="when">54 min ago</span></span>
 </a>
 <div class="agent unk nolink">
   <span class="dot"></span>
