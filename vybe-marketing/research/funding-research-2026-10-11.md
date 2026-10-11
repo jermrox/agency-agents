@@ -21,32 +21,37 @@ Garmin CIRQA ($199.99, screen-free, no subscription, launched 21 Jul 2026) and P
 - a manufacturer shortlist
 - an FCC and battery certification plan
 
-**The realistic order:** prototype and 30 users, then deposits, then free accelerator applications, then grants, then investors.
+**The realistic order:** prototype and 30 users, then deposits, then online grant applications, then investors who take decks online.
 
-## Deadlines in the next 8 weeks (all free to apply)
+## Founder's rule: online only (11 Oct 2026)
 
-| Deadline | Opportunity | Money | Needs | Catch | Source |
+No travel and nothing in person: no residencies, pitch events, demo days or conferences. Everything below can be done online. In-person programmes are listed at the bottom as excluded.
+
+## Remote, free to apply
+
+| When | Opportunity | Money | How it works | Catch | Source |
 |---|---|---|---|---|---|
-| **13 Oct 2026** | Veteran Shark Tank | $50,000 to the winner (unverified; the apply page doesn't state the amount) | Form, a video of 2 minutes or less, a deck of 10 slides or fewer | Veteran applicant only. Business no more than 3 years old on 7 Dec. In person in Philadelphia, 7 Dec | https://www.veteransharktank.com/apply/ (deadline confirmed) |
-| **16 Oct 2026, 11:59 pm** | Blake Family Military & Veterans Pitch (Clemson) | $10K / $7.5K / $5K / $2.5K | Application on Clemson's StartUpTree; 6-minute pitch | One founder must be a veteran or military. Prize paid only to a C Corp, S Corp or LLC. In person at Clemson, SC on 6 Nov. Travel not covered; one hotel night provided | https://www.clemson.edu/centers-institutes/launchpad/events-resources/military-veterans-competition.html (confirmed) |
-| **12 Oct – 1 Nov 2026** (priority window) | a16z speedrun SR008 | "We invest up to $1M" plus $10M+ in credits | Online application | Equity. 12 weeks in person in San Francisco, early 2027. Applications are also accepted year-round | https://speedrun.a16z.com/apply (confirmed) |
-| **2 Nov 2026, 8 pm PT** | Y Combinator Winter 2027 | $500K (https://www.ycombinator.com/deal) | Online application | Equity. Batch runs Jan–Mar in San Francisco. Decision by 11 Dec | https://www.ycombinator.com/apply (confirmed) |
-| **18 Nov 2026** | Techstars Northwestern Medicine Healthcare / AI Health Baltimore | $220K | Online application | Equity. Aimed at health systems, not consumer wellness | techstars.com (deadline from search, unverified) |
-| **20 Nov 2026** | VETCON Business Plan Competition | $3K / $2K / $1K | Up to 4-page executive summary (drafted in the private Drive), DD-214 | Veteran-owned and controlled. In person in Albany, NY, 1–2 Dec | https://www.vetconny.com/business-plan-competition/ (confirmed) |
-| **1 Dec 2026 – 15 Jan 2027** | NIA Start-Up Challenge | $24K to each of up to 21 finalists; $70K to each of 7 winners | Healthy-aging pitch (drafted in the private Drive) | Must form an SBIR-eligible US small business. NIA may publish entries | https://www.nia.nih.gov/research/sbir/start-challenge (confirmed) |
-| Rolling | HAX (SOSV) | "Up to $550,000" pre-seed, plus engineering and manufacturing help | Deck | Equity. 6-month residency in Newark, NJ. Strongest with a prototype. **The only program that helps build the hardware** | https://hax.co/program (confirmed) |
-| Rolling (Project Pitch) | NSF SBIR Phase I, Digital Health | Up to $305K | Short pitch, then an invited proposal (next full deadline 4 Mar 2027) | Topic covers "AI in healthcare or general wellness" (confirmed). Needs real R&D risk. Money arrives about 6 months after submitting | https://seedfund.nsf.gov/topics/digital-health/ |
+| 1 Dec 2026 – 15 Jan 2027 | NIA Start-Up Challenge | $24K to each of up to 21 finalists; $70K to each of 7 winners | Online submission (healthy-aging pitch; drafted in the private Drive) | Must form an SBIR-eligible US small business. The accelerator mentions "virtual and in-person networking"; confirm in-person parts are optional before relying on it | https://www.nia.nih.gov/research/sbir/start-challenge |
+| Rolling (Project Pitch) | NSF SBIR Phase I, Digital Health | Up to $305K | Online pitch, then an invited proposal (next full deadline 4 Mar 2027) | Topic covers "AI in healthcare or general wellness". Needs real R&D risk. Money arrives about 6 months after submitting | https://seedfund.nsf.gov/topics/digital-health/ |
+| Late Jan 2027 (expected) | NC IDEA MICRO ($10K), NC only | $10K grant, no equity | Online application | MICRO only: SEED finalists pitch in person, so SEED is excluded | https://ncidea.org/nc-idea-micro/ |
+| Open to 30 Jun 2027 | One NC Small Business Program, NC only | Pays back up to $12K of SBIR proposal costs | Online (CyberGrants) | Only after an NSF proposal is submitted | https://www.commerce.nc.gov/grants-incentives/technology-funds/one-north-carolina-small-business-program |
+| Ongoing | IVMF Military Founders Lab (veteran) | Training and network, no cash | Virtual, 10 weeks | Needs revenue under $250K or "confirmed capital", plus 6 months of activity | https://ivmf.syracuse.edu |
+| Rolling | Investors who take decks online | Equity | Online forms and investor databases (OpenVC, Visible Connect) | Remote investor list being researched now | see "Free platforms" |
 
-## Later, or depends on state or veteran status
+## Excluded: requires travel or in-person attendance
 
-- **NC IDEA MICRO ($10K) / SEED ($50K)**, NC only. Non-dilutive. The Spring 2027 cycle is expected to open in late January, but dates aren't posted; last year ran 26 Jan to 23 Feb. MICRO suits a company that is validating a prototype. https://ncidea.org/nc-idea-micro/
-- **One NC Small Business Program**, NC only. Pays back up to $12K of the cost of preparing an SBIR proposal. Open until 30 Jun 2027 or until the pool runs out. https://www.commerce.nc.gov/grants-incentives/technology-funds/one-north-carolina-small-business-program
-- **RIoT (Raleigh)**: hardware prototyping lab and an equity-free program. No cash, and 2027 dates aren't posted.
-- **JumpStart (NE Ohio)**: "no fees or ownership stakes". The HealthTech track for Fall 2026 is closed and the next date isn't set. https://www.jumpstartinc.org/startups
-- **DAV Patriot Boot Camp** (veteran): free, with a pitch prize. Next event reported as 17–19 Feb 2027 in Cincinnati (unverified). https://patriotbootcamp.org
-- **IVMF Military Founders Lab** (veteran): free and virtual. Needs revenue under $250K or "confirmed capital", plus 6 months of activity.
-- **Rice Veterans Business Battle** (veteran): applications open 11 Nov 2026. In person in Houston, Mar–Apr 2027. Prize unverified.
-- **Hivers & Strivers** (veteran-led only): invests from seed stage, after a prototype and traction exist. https://hiversandstrivers.com
+- Veteran Shark Tank (Philadelphia)
+- Clemson military and veterans pitch (Clemson, SC)
+- VETCON (Albany, NY)
+- a16z speedrun and Y Combinator (San Francisco)
+- HAX (Newark residency)
+- Antler and PearX
+- Techstars programmes
+- Patriot Boot Camp
+- Rice Veterans Business Battle
+- Warrior Rising business showers
+- NC IDEA SEED finals
+- Kickstarter is remote and stays an option for later
 
 ## Free platforms (checked on each platform's own page)
 
