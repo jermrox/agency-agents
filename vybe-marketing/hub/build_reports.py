@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = ROOT / "hub"
 
 GROUPS = [
+    ("Traction", [
+        ("traction", "Traction plan: real numbers, real demand (11 Oct)", "research/traction-plan-2026-10-11.md"),
+    ]),
     ("Funding research", [
         ("invmap", "Investor map: who funds companies like Vybe (11 Oct)", "research/investor-map-2026-10-11.md"),
         ("remote", "Investors and collaborations, online only (11 Oct)", "research/remote-investors-and-collaboration-2026-10-11.md"),
