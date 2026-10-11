@@ -69,6 +69,9 @@ and a private Claude artifact. Fixing the repository updates none of them.
 After any change, fetch each live URL and confirm the new content and a current
 timestamp. Report the live URL, never the commit.
 
+Each agent's own task, purpose, conditions and standards — and the live figures
+it is actually pulling — are in [VYBE-AGENT-CHARTERS.md](VYBE-AGENT-CHARTERS.md).
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
