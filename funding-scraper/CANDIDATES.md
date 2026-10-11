@@ -408,6 +408,88 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 11 Oct 2026 (round 11)
+
+Four lanes: a watch-list re-check; tactical, military and first-responder; global prizes open to US startups;
+and accessibility, caregiving, women's health and sleep foundations.
+
+Added:
+- **SusHi Tech Challenge 2027 (Tokyo Metropolitan Government):** JPY 10M grand prize (~$65K); free; no SAM.
+  - Closes **18 Dec 2026**. The final is 20-21 May 2027 in Tokyo.
+  - The rules require an existing product or service, so lead with the DevKit/prototype.
+  - Travel is at Vybe's expense.
+- **DHA/USAMRDC FY23-FY27 Extramural Medical Research BAA (HT9425-23-S-BAA1):** rolling pre-proposals until 30 Sep 2027; SAM later.
+  - LOW-PROBABILITY FIT: research only, so it needs a research partner.
+
+Updated:
+- **DAV Patriot Boot Camp:** Winter '27 cohort open, 17-19 Feb 2027, Cincinnati. Free; first come, first served.
+
+Skipped as a duplicate: AFRL 711th HPW CHEERS. Both open periods are already on the board.
+
+**Watch list:**
+- NIDILRR FID (opp 363971): est. post 12 Oct, due ~14 Dec, up to $250K; SAM required.
+- NIDILRR SBIR Phase I (opp 363966): est. post 16 Oct, due ~16 Dec, up to $100K; SAM required.
+- Innovate Forward menopause challenge (Nestlé Health Science and Tufts): past rounds opened 18 Oct (World Menopause Day). Re-check after 18 Oct.
+- What's Next Longevity: expected ~1 Feb 2027 (not confirmed).
+- DHS S&T Long Range BAA: the site was down 11 Oct; re-check.
+- Plug and Play Health: third-party sources say no equity and no fee, but no window is visible on its own page; re-check.
+
+## Rejected on inspection — 11 Oct 2026 (round 11)
+
+- **NIDILRR Field Initiated Projects Program (Development), HHS-2027-ACL-NIDILRR-IFDV-0304 (grants.gov opp 363971)** — Not open yet. Checked through the grants.gov fetchOpportunity API on 2026-10-11: it is still a FORECAST, with no synopsis posted. Forecast says: estimated synopsis posting 2026-10-12, estimated application due date 2026-12-14, award $245,000-$250,000, estimated total funding $2,000,000. These are estimates, not confirmed dates. SAM required. Re-check after 12 Oct.
+- **NIDILRR SBIR Phase I, HHS-2027-ACL-NIDILRR-BISA-0308 (grants.gov opp 363966)** — Not open yet. Checked through the grants.gov fetchOpportunity API on 2026-10-11: it is still a FORECAST, with no synopsis posted. Forecast says: estimated synopsis posting 2026-10-16, estimated application due date 2026-12-16, award $95,000-$100,000, estimated total funding $1,100,000. These are estimates, not confirmed dates. SAM required. Re-check after 16 Oct.
+- **PEAKCONF 2027 Startup World Cup (Athlete Tech qualifier)** — Pay-to-pitch, confirmed on the official page on 2026-10-11. Applying to the Startup World Cup comes only with the paid Startup pass: 'Startup ... $799 ... Apply to Startup World Cup & Groundbreakers Challenge'. The old /startup-world-cup/ page now returns 404, and the competition details are 'Announced Soon'. The event runs 31 Mar-2 Apr 2027 in Las Vegas. Rejected for the fee.
+- **Hiring Our Heroes Small Business Grant (FedEx Founder's Fund), 2027 cycle** — Not open yet. The application page says 'The application period for the 2026 Small Business Grant Program has closed.' The landing page still shows the 'APPLY NOW' button and the 2026 winners, but no 2027 dates are posted. Expected date: not stated on the page (earlier notes say it usually closes in late February). Amount on the page: a one-time $10,000 or $25,000 for five businesses owned by veterans or military spouses.
+- **What's Next Longevity Venture Summit $10K Business Plan Competition 2027** — Not open yet. The page is still the 2026 edition (deadline 30 Apr 2026), and the menu says 'Coming back in 2027'. Last year's timeline was 'February 1-April 30: Applications open'. The 2027 summit is 8-10 Jun 2027 at UC Berkeley. Expected opening around 1 Feb 2027, but this is not confirmed. Rules seen: under $2M raised or in revenue, and the solution must address healthy aging at home. $10,000 check with no restrictions.
+- **Key4Women x SCORE Cleveland Women-Owned Business Pitch Contest** — No current edition. The SCORE Cleveland page (read through r.jina.ai) shows no Key4Women or pitch contest, and /cleveland/pitch-contest returns 404. The key.com/key4women page returned no contest text. The latest edition on record is 2022. No expected date.
+- **EPRI Incubatenergy Labs Challenge 2027** — Not open yet, and the fit is weak. The IEL home page promotes only the 'New AI for Power Challenge' (epri.brightidea.com/AIforPower2026). That challenge's timeline was 'Application Open & Evaluation May / June 2026' and 'Pitch Day August 5, 2026', so it is closed. There is still no 2027 Labs Challenge call or deadline, and the ~20 Oct date remains unconfirmed. Both offer paid utility grid demos, not a match for a wellness wearable.
+- **TechCrunch Startup Battlefield 2027** — Not open yet. The page says 'Applications have closed for 2026, but please consider applying next year!' No 2027 dates are posted.
+- **BII/Science Women's Health Prize** — Still ineligible, per the round-9 note: open only to individual PhD/MD researchers. It needs a researcher partner. Not re-verified this round.
+- **MedTech Innovator 2027** — Still rejected (round 8/10): a $15K program fee if accepted, and no fee-free path for Vybe.
+- **Cartier Women's Initiative; a2/NIA AITC; Ohio Third Frontier TVSF R47; OFRN Round 8; HLTH/AgeTech/WHIS/NSF SleepTech/ThinkSport** — Not re-verified this round: the Cartier and AITC pages returned no readable text through the fetcher. All were last logged as spring/summer 2027 or with no dates. Carry them forward on the watch list.
+- **NC Vet Biz Pitch Competition 2026 (Raleigh, 26 Oct 2026)** — Pay-to-pitch: 'There is no additional fee to apply, but participants must purchase a ticket to attend the Procurement Summit.' Also requires in-person attendance at a 12 Oct workshop (tomorrow) plus 19 Oct practice; prizes only $1,000/$750/$500.
+- **SOFWERX / USSOCOM SBIR 26.BZ Release 6 (submit NLT 21 Oct 2026)** — SBIR contract — SAM required; DSIP topic search (open/pre-release) for wearable, human performance, physiological, biometric, fatigue, sleep returned no matching open topic other than xTech|Search 10 (already on board).
+- **SOFWERX Private Capital Investor Cohort (PCIC26)** — For investors, not startups; 'Submisions CLOSED 03 March 2026'.
+- **SOFWERX current assessment events (A2E, Distributed Micro Sensors, USV Poseidon's Fury, FANTOM, OSBP networking)** — No human-performance or wearable event among current listings; topics are air-launched effects, micro sensors (already rejected), USVs.
+- **Army xTech open competitions (Oct 2026 check)** — Only xTech|Search 10 (already on board, closes 19 Oct) and xTech|Disrupt Endurance (already rejected; power generation) are open; no new human-performance competition.
+- **Catalyst Accelerator (Colorado Springs, Space Force / AFRL)** — No open cohort: current program is the Fall 2026 Investment Readiness Boot Camp for space-tech businesses, already underway (showcase 22 Oct); no 2027 cohort topic posted.
+- **Central Florida Tech Grove prize challenges** — Active Prize Challenges page lists no open challenge (11 Oct 2026); past Wildfire challenge already rejected.
+- **AFWERX Challenge (open challenges, Oct 2026)** — No open challenge or submission window shown on the official page.
+- **Ohio State Human Performance Collaborative — TACH2F Wearables** — A $50 self-paced course, not funding or an application-based partnership programme (possible outreach contact only).
+- **DHS S&T Long Range BAA (LRBAA 24-01)** — Could not verify on the official page: 'The DHS web content platform is currently unavailable' on 11 Oct 2026. Would be SAM-required anyway. Recheck next round.
+- **Wounded Warrior Project / Bob Woodruff Foundation (veteran-health funders)** — No open, company-eligible application found on official sites; these fund veteran-serving programmes, not for-profit product companies.
+- **Wellcome Leap: Focused Antibiotics (the new $50M program with Bayer)** — Closed: abstracts were due 15 May 2026 and full proposals 29 Jun 2026. It is also single-disease antibiotic-resistance research. No other Wellcome Leap program shows an open call.
+- **Longitude Prize (Challenge Works / Nesta): successor prize** — No open Longitude Prize. Dementia was awarded Mar 2026 and ALS closed Dec 2025 (single-disease). The next prize is still at the workshop stage. The active Challenge Works prizes are water and snakebite, which do not fit.
+- **XPRIZE: other current prizes (Future Vision, Quantum Applications, Water Scarcity, Wildfire)** — Future Vision (a sci-fi film contest) closed 15 Aug 2026. Quantum, Water and Wildfire are off-mission for a wellness wearable. Healthspan and Build with Gemini were already rejected.
+- **Web Summit Lisbon 2026 ALPHA startup programme** — Pay-to-attend. ALPHA is a paid startup package, and Startup Portugal's official R2WS page offers only a 50% discount on it. The event (Nov 9-12, 2026) is too close anyway.
+- **Global Startup Awards, Edition 12 (MeOut Group / EU-Startups)** — No cash: winners get recognition, speaking slots and partner perks. Startups are placed in regional rounds, and no North America region is confirmed. Free and no equity, but it fails the cash/acceleration bar.
+- **HealthTech Investor Summit 2026, Pan-European Pitching Selections** — Pay-to-pitch (pitch packages cost EUR 999-2,999) and limited to European companies.
+- **ICI 2026 Innovation Award (Tel Aviv)** — For medical-intervention (cardiology) medtech on a 'pathway to clinical approval'. No cash prize is stated. Not a fit for a non-medical wellness wearable.
+- **LEAP East 2027 Rocket Fuel East (Hong Kong)** — Page says 'ROCKET FUEL APPLICATIONS HAVE CLOSED'. No 2027 window is posted (the event is Dec 8-10, 2027).
+- **Novartis Biome** — The Biome URL now serves the generic Novartis corporate site. There is no live startup program or open call.
+- **Gates Foundation Global Grand Challenges (current calls)** — The recent calls are LMIC disease- or diagnostics-specific (cholera, pathogen sequencing, Ebola diagnostics, micronutrients). None fits a consumer wellness wearable.
+- **Philips / Sony / Polar / WHOOP startup or developer cash programs** — No open cash challenge or startup program was found for any of them. Polar and WHOOP offer only API access (and are direct competitors). Sony's acceleration offer is a paid service and Sony Innovation Fund takes equity.
+- **Plug and Play Health (Silicon Valley)** — Could not verify on the official page: it is JS-only and shows no application window, dates or terms. The no-equity claims come only from third parties. Re-check by hand if wanted.
+- **Hopelab Ventures (youth mental health)** — Equity investor ('As investors, we accelerate innovation...', 28 active portfolio companies); focus is youth mental health of underserved young people, not a grant or prize.
+- **Hopelab Young Innovators in Behavioral Health** — Program page returned empty/blocked; no open call, deadline or startup eligibility found on Hopelab's site. Not verifiable.
+- **Born This Way Foundation** — Site blocks fetch (Cloudflare); foundation funds youth mental-health nonprofits and programming, no startup grant/prize call found.
+- **Women's Health Access Matters (WHAM) Edge Awards / Investigators Fund** — Research funding for investigators (academic-PI-style); WHAM Ventures is investment. No open startup grant window found.
+- **Ferring Innovation Grants** — Page gated to healthcare professionals / business partners; Ferring grants are reproductive-medicine research grants for academic investigators. No open startup call.
+- **Femtech Collective** — Site refuses connection; no verifiable grant, prize or open call.
+- **Ruderman Family Foundation** — Site blocks fetch; foundation does advocacy and invited grants, no open application for startups found.
+- **Disability:IN** — Corporate inclusion network and DOBE certification, no cash grant/prize; program page 404.
+- **2Gether-International (2GI) Tech Cohort / Maryland Pitch Competition / All Star Pitch** — REQUIRES at least one founder with a disability (not a confirmed Vybe fact). Tech Cohort page is the 2023 Spring cohort; Maryland pitch is Maryland-only and closed Aug 27; no open 2026-27 window on the site.
+- **Girls in Tech Mental Health for All Hackathon (Devpost)** — Stale: ran Nov 1-26, 2021 ('This hackathon has ended'). No 2026 edition.
+- **Women's Health Innovation Summit (WHIS) 2026 Innovation Showcase (Kisaco Research)** — Event is Oct 13-15, 2026 in Boston; showcase page now 404s, window effectively closed. Kisaco showcases are typically tied to paid participation.
+- **HBA Annual Conference Pitch Competition (Houston, Nov 16-18, 2026)** — Pitch page now returns 'You are not authorized to access this page'; no open application or terms verifiable.
+- **Supermoon Capital Snoozapalooza (sleep startup pitch)** — EQUITY: prize is a SAFE investment; no current round on Supermoon's site (last dated cycle 2022).
+- **Innovate Forward: Women's Health Innovation Challenge (re-check for new window)** — Already rejected; re-checked: page still shows the closed 2026 round (due Feb 6, 2026). No 2027 window posted yet, though past rounds opened on World Menopause Day (Oct 18) - re-check after Oct 18, 2026.
+- **Toyota Mobility Foundation Mobility Unlimited Hub (Cohort 3)** — Closed Aug 28, 2026; Canada (MaRS) program for active-mobility devices.
+- **Gates Foundation women's health Grand Challenges calls (vaginal formulations; women's health measurement)** — Closed (Dec 16, 2025 and Mar 25, 2025); topics are product-formulation / research, not wearables. No open Gates women's health call found.
+- **ARPA-H Sprint for Women's Health (new round)** — No 2026 round found; original call closed 2024. Would also require SAM.
+- **AgeInnovate 2026 Startup Competition / AgeTec 2026 (UMD) / AGE-WELL National Impact Challenge** — All closed (Jul 15, Aug 31, Aug 10, 2026); AGE-WELL is Canada-only.
+- **Wellcome Prize for Mental Health Science / Morgan Stanley Children's Mental Health Innovation Awards** — Wellcome closed Sep 18, 2026 and is research-team focused; Morgan Stanley awards are for US nonprofits, next call Spring 2027.
+
 ## Removed from the board — 9 Oct 2026
 
 - **Amber Grant for Women (monthly):** charges a $15 non-refundable application fee, which breaks the no-fee rule.
