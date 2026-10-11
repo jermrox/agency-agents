@@ -90,6 +90,45 @@ When something needs checking across the whole account, check only the Vybe
 rows and say so. A Vybe agent that cannot answer a question without reading
 another venture's agent reports that it cannot, and stops.
 
+## 7. What outreach is for
+
+Vybe outreach has three purposes and no others: **collaboration, investment,
+and revenue**. Set by the founder on 11 October 2026 — "there are ways to make
+money and that's the goal for all of these in reality."
+
+**Never an event presence.** No table, booth, tent, expo stand, vendor slot,
+exhibitor space, sampling stand or race activation, paid or free. Vybe does not
+have the bandwidth to staff one. The only allowed use of those words is
+declining one that was already offered. By 11 October, 19 of Marketsom's 49
+logged emails had pitched exactly this, four of them already dead.
+
+**Never a supplier.** Battery manufacturers, PCBA and sensor vendors, contract
+engineering and product-development firms sell *to* Vybe. Approaching one is
+procurement, it belongs to the founders, and it is not an outreach lane. Growsom
+had emailed a battery maker, an ECG-patch PCBA supplier and three engineering
+firms as "partners", and one of them has a call booked.
+
+**Never an individual.** Outreach goes to organisations and role inboxes.
+
+**One organisation, one owning agent, one ask.** Ownership follows what the
+organisation is, not which agent emailed first, because the first email was
+often the wrong ask:
+
+| Lane | Owner |
+|---|---|
+| Investors; apps, data platforms, aggregators, SDK and integration partners, developer communities, research labs as design partners | **Growsom** |
+| Communities of adults: leagues, clubs, associations, race organisers, member bodies, employer and first-responder programmes | **Marketsom** |
+| Suppliers, manufacturers, contract engineering | **Nobody** — the founders |
+
+[OUTREACH-OWNERS.json](OUTREACH-OWNERS.json) holds the assignment for every
+contested organisation. An agent that finds an organisation owned by the other
+one does not email it, does not reply in its threads, and says so instead.
+
+`scripts/check-vybe-outreach.py` enforces this in CI. Emails logged before
+11 October are reported as the record and never fail the build; a post-rule
+email that pitches a stand or a supplier, or a second agent touching an
+organisation with no owner, does.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
