@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Operations</title>
+<style>
+:root{--bg:#f6f8f7;--surface:#fff;--surface-2:#eef3f1;--line:#dbe3e0;--ink:#12201c;--ink-2:#44554f;--ink-3:#6b7a75;
+--brand:#1f8e78;--brand-ink:#0f5e4f;--good:#1d7a3a;--good-bg:#e3f3e7;--crit:#a3262a;--crit-bg:#fbe3e3;--warn:#8a5a00;--warn-bg:#fbefd5;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--brand-ink);text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+header.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+h1{font-size:21px;margin:0;letter-spacing:-.01em}h1 span{color:var(--brand)}
+.goal{margin:0;color:var(--ink-2);font-size:14.5px;flex:1 1 100%}
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;font-size:13.5px}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 11px;display:inline-flex;align-items:center;gap:7px}
+.pill .d{width:9px;height:9px;border-radius:50%;background:var(--ink-3)}.pill.ok .d{background:var(--good)}.pill.bad .d{background:var(--crit)}
+.pill.meta{color:var(--ink-3);margin-left:auto}
+.pill button{all:unset;color:var(--brand-ink);cursor:pointer;border-bottom:1px solid var(--line)}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin:16px 0 0;border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.tabs button{all:unset;cursor:pointer;padding:10px 14px;font-weight:600;font-size:14.5px;color:var(--ink-2);border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--brand-ink);border-bottom-color:var(--brand)}
+nav.tabs button .n{font-weight:400;color:var(--ink-3);margin-left:5px;font-size:12.5px}
+.panel{display:none;margin-top:16px}.panel.on{display:block}
+.viewbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.viewbar .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.viewbar .seg button{all:unset;cursor:pointer;padding:7px 13px;font-size:13.5px;color:var(--ink-2)}
+.viewbar .seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+.viewbar .open{margin-left:auto;font-size:13.5px;border-bottom:1px solid var(--line)}
+.purpose{margin:0 0 10px;color:var(--ink-2);font-size:15px}
+.pulling{margin:0 0 14px;font-size:14.5px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.lbl{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:2px}
+h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin:18px 0 6px;font-weight:600}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.01em}.kpi .v.na{font-size:15px;color:var(--ink-3);font-weight:500}
+.kpi .l{font-size:13px;color:var(--ink-2);margin-top:2px}.kpi .a{font-size:12px;color:var(--ink-3);margin-top:4px}
+.card{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card .k{flex:0 0 26px;height:26px;border-radius:8px;background:var(--surface-2);color:var(--brand-ink);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.card .body{min-width:0;flex:1}.card .head{margin:0;font-size:15.5px}.card .head b{color:var(--crit)}
+.card .row{margin:7px 0 0;font-size:14px;line-height:1.45}.card ol{margin:2px 0 4px;padding-left:20px;font-size:14px}.card li{margin:2px 0}
+.card .links{display:block;font-size:13px;color:var(--ink-3);margin-top:5px}.card .links a{border-bottom:1px solid var(--line)}.card .links .src{margin-left:6px}
+.empty{color:var(--ink-3);font-size:14px;margin:6px 0}
+.frame{width:100%;height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.rows .r{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
+.rows .r:first-child{border-top:0}.rows .d{flex:0 0 10px;height:10px;border-radius:50%;margin-top:6px;background:var(--ink-3)}
+.rows .ok .d{background:var(--good)}.rows .bad .d{background:var(--crit)}.rows b{display:block}.rows .s{color:var(--ink-2);font-size:13.5px}.rows .t{color:var(--ink-3);font-size:12.5px;margin-left:auto;white-space:nowrap}
+.foot{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3);line-height:1.8}.foot a{border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1><span>Vybe</span> Operations</h1>
+    <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
+  </header>
+  <div class="strip" id="strip"><span class="pill"><span class="d"></span>loading…</span></div>
+
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+  <div id="panels"></div>
+
+  <p class="foot">Live: this page reads each agent's own dashboard when you open it and every 5 minutes after. The agents keep publishing where they always have; nothing here is a copy.
+  Every card is the same shape — what it is · why it matters · what you do.<br>
+  <a href="https://agentrevup.netlify.app/vybe-agent-board.html">Four-hourly health check</a> · <a href="https://agentrevup.netlify.app/vybe-fleet-map.html">How the system fits together</a> · <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a></p>
+</div>
+
+<script>
+// ------------------------------------------------------------------ config ---
+const AGENTS = [
+  {id:"revsom",   name:"Revsom",    purpose:"Money that costs no equity: grants, prizes, credits.",
+   site:"https://agentrevup.netlify.app/", feed:"/feeds/revsom/funding.json", maxAgeH:30},
+  {id:"growsom",  name:"Growsom",   purpose:"Investors, and free integrations that put Vybe's SDK in other people's products.",
+   site:"https://agentgrowthscout.netlify.app/", feed:"/feeds/growsom/data.json", maxAgeH:14},
+  {id:"marketsom",name:"Marketsom", purpose:"No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.",
+   site:"https://agentmarksom.netlify.app/briefing.html", feed:"/feeds/marketsom/briefing.html", maxAgeH:30},
+  {id:"instasom", name:"Instasom",  purpose:"An audience that follows before launch, built one real person at a time.",
+   site:"https://instasum.netlify.app/", feed:"/feeds/instasom/all.json", maxAgeH:30},
+  {id:"worker",   name:"Daily worker", purpose:"The product itself: one new app screen every weekday, funding rows, packets, Monday decks.",
+   site:null, feed:null, maxAgeH:null},
+];
+const REFRESH_MS = 5*60*1000;
+const esc = s => String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const cut = (s,n)=>{s=String(s??"").replace(/\s+/g," ").trim(); if(s.length<=n) return s; const h=s.slice(0,n).replace(/\s+\S*$/,""); return h.replace(/[\s,;:·-]+$/,"")+"…";};
+const sentences=(s,n)=>{s=String(s??"").replace(/\s+/g," ").trim(); if(s.length<=n) return s; let out=""; for(const t of s.split(/(?<=[.!?])\s+/)){ if((out+" "+t).trim().length>n) break; out=(out+" "+t).trim(); } return out||cut(s,n);};
+const na = v => (v===null||v===undefined||v==="") ? null : v;
+const fmt = v => v===null ? '<span class="na">unavailable</span>' : (typeof v==="number" ? v.toLocaleString() : esc(v));
+function parseStamp(raw){ if(!raw) return null; let s=String(raw).trim().replace(/\s+(UTC|GMT)$/,"").replace(/\.\d+/,"");
+  if(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(:\d{2})?$/.test(s)) s=s.replace(" ","T")+"Z";
+  if(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/.test(s)) s+="Z";
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s)) s+="T00:00:00Z";
+  const d=new Date(s); return isNaN(d)?null:d; }
+const ageH = d => d ? (Date.now()-d.getTime())/36e5 : null;
+const ago = h => h===null ? "no timestamp" : h<1 ? `${Math.round(h*60)} min ago` : h<48 ? `${Math.round(h)}h ago` : `${Math.round(h/24)} days ago`;
+
+// ------------------------------------------------------------- extraction ---
+// Same card shape for everything: {when?, what, who_is, why, do[], url, url_label, url2?, url2_label?, kind, agent}
+function fromRevsom(j){
+  const opps=(j.opportunities||[]).filter(o=>o&&typeof o==="object");
+  const soon=opps.filter(o=>Number.isInteger(o.days_left)&&o.days_left>=0&&o.days_left<=14).sort((a,b)=>a.days_left-b.days_left);
+  const card=o=>({when:o.days_left===0?"today":o.days_left===1?"tomorrow":`${o.days_left} days`, what:o.name||"",
+    detail:cut(o.amount,60)+(/veteran/i.test((o.eligibility||"")+(o.name||""))?" · veteran-owned fits":""),
+    who_is:cut(o.eligibility||o.agency||"",130), why:sentences(o.summary,260),
+    do:(o.documents||[]).map(d=>cut(d,110)).slice(0,4), url:o.url||"https://agentrevup.netlify.app/apply", url_label:"application page",
+    url2:"https://agentrevup.netlify.app/apply", url2_label:"drafted answers", kind:"$", agent:"Revsom", sort:o.days_left});
+  return {stamp:parseStamp(j.generated), total:opps.length||null, noSam:opps.filter(o=>String(o.sam||"").toLowerCase()==="none").length||null,
+    closing14:soon.length, needs:soon.slice(0,6).map(card), top:soon.slice(6,10).map(card),
+    pulling:p=>`${fmt(p.total)} opportunities · ${fmt(p.noSam)} need no registration · ${fmt(p.closing14)} close inside 14 days`};
+}
+function fromGrowsom(j){
+  const sm=j.summary||{}; const tg=(j.targets||[]).filter(x=>x&&typeof x==="object");
+  const hi=tg.filter(x=>String(x.priority||"").toLowerCase()==="high").sort((a,b)=>(b.score||0)-(a.score||0));
+  return {stamp:parseStamp(j.generated), total:na(sm.total), high:na(sm.high), ready:na(sm.ready_to_send), deadlines:na(sm.deadlines_30d), needs:[],
+    top:hi.slice(0,4).map(x=>({what:x.name||x.org||"", who_is:cut(`${x.type||x.lane||""}${x.geo?" · "+x.geo:""}`,90), why:sentences(x.why_now||x.why,200),
+      do:[cut(x.move||x.ask||"Approve the drafted opener so Growsom can send it",110)], url:x.contact_url||"https://agentgrowthscout.netlify.app/", url_label:"open", kind:"→", agent:"Growsom"})),
+    pulling:p=>`${fmt(p.total)} targets · ${fmt(p.high)} high priority · ${fmt(p.ready)} ready to send on John's approval`};
+}
+function fromMarketsom(html){
+  const m=html.match(/<script id="live-data" type="application\/json">([\s\S]*?)<\/script>/); let d=null; try{ d=m?JSON.parse(m[1]):null; }catch(e){}
+  if(!d) return {stamp:null, headline:null, needs:[], top:[], pulling:()=>'<span class="na">briefing unavailable</span>'};
+  const needs=[]; for(const u of (d.upcoming||[]).slice(0,6)){ if(!u||typeof u!=="object") continue; const call=u.kind==="call"; const lines=(u.lines||[]).map(String);
+    needs.push({when:[u.day,u.time].filter(Boolean).join(" ")||"soon", what:String(u.what||""), who_is:lines[0]?cut(lines[0],160):"", why:lines.length>1?cut(lines.slice(1,3).join(" "),220):"",
+      do:call?[u.prep?"Read the prep brief first":"No prep brief yet — ask for one before joining","Join the call at the time shown","Decide on the call: no-cost route, or a short polite no"]:(lines.slice(0,3).map(l=>cut(l,110))),
+      url:u.prep||"https://agentmarksom.netlify.app/briefing.html", url_label:u.prep?"prep brief":"briefing", url2:u.prep?"https://agentmarksom.netlify.app/briefing.html":null, url2_label:"briefing", kind:call?"☎":"!", agent:"Marketsom", sort:call?0:3}); }
+  if(Number.isInteger(d.drafts)&&d.drafts>0) needs.push({when:"waiting", what:`${d.drafts} partner drafts waiting for you to send`, who_is:"Community partners Marketsom researched this week — leagues, clubs, member bodies",
+    why:"Nothing reaches a partner until you send it.", do:["Open Gmail drafts from jeremy@vybe.health","Read each one; send the ones you approve, delete the rest","Nothing goes out until you press send"],
+    url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", kind:"✉", agent:"Marketsom", sort:2});
+  const top=(Array.isArray(d.problems)?d.problems:[]).slice(0,4).map(pr=>typeof pr==="string"?{what:cut(pr,90),who_is:"",why:"",do:["Read it on the briefing"]}:
+    {what:cut(pr.title||pr.what||"",90), who_is:"", why:sentences(pr.why||pr.detail||"",200), do:[cut(pr.fix||pr.do||pr.action||"Read it on the briefing",110)]})
+    .map(c=>({...c,url:"https://agentmarksom.netlify.app/briefing.html",url_label:"briefing",kind:"!",agent:"Marketsom"}));
+  return {stamp:parseStamp(d.asof), headline:d.headline||null, drafts:na(d.drafts), needs, top, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
+}
+function fromInstasom(j){
+  const col=j.collections||{}; const ppl=col.people; const items=(Array.isArray(ppl)?ppl:Object.values(ppl||{})).filter(x=>x&&typeof x==="object");
+  const fol=col.followers||{}; const keys=Object.keys(fol).sort(); const latest=keys.length?fol[keys[keys.length-1]]:{};
+  const num=v=>{const t=String(v??"").toLowerCase().replace(/,/g,""); const m=t.match(/([\d.]+)\s*k/); return m?parseFloat(m[1])*1e3:(parseFloat(t)||0);};
+  const pick=items.filter(x=>x.status==="Not started"&&!x.followOnly).sort((a,b)=>num(b.followers)-num(a.followers));
+  return {stamp:parseStamp(j.generatedAt), ig:na(latest.ig), fb:na(latest.fb), toFollow:items.filter(x=>x.status==="Not started").length||null, people:items.length||null, needs:[],
+    top:pick.slice(0,4).map(x=>({what:`@${String(x.handle||"").replace(/^@/,"")}${x.name?" — "+x.name:""}`, who_is:cut(`${x.category||""} · ${x.followers||"?"} followers`,90), why:sentences(x.why,200),
+      do:[cut(x.action||"Follow, then tick the box on the social dashboard",110)], url:x.url||`https://www.instagram.com/${String(x.handle||"").replace(/^@/,"")}/`, url_label:"open", kind:"@", agent:"Instasom"})),
+    pulling:p=>`Instagram ${fmt(p.ig)} raw followers · ${fmt(p.toFollow)} verified people still to follow · Facebook ${fmt(p.fb)}`};
+}
+
+// ----------------------------------------------------------------- render ---
+const state={data:{}, view:{}, tab:"all", updated:null};
+function cardHTML(c){
+  const who=c.who_is?`<p class="row"><span class="lbl">What it is</span>${esc(c.who_is)}</p>`:"";
+  const why=c.why?`<p class="row"><span class="lbl">Why it matters</span>${esc(c.why)}</p>`:"";
+  const steps=(c.do||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+  const head=(c.when?`<b>${esc(c.when)}</b> — `:"")+esc(cut(c.what,90))+(c.detail?`<br><span style="color:var(--ink-2);font-size:13.5px">${esc(c.detail)}</span>`:"");
+  let links=`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url_label||"open")}</a>`; if(c.url2) links+=` · <a href="${esc(c.url2)}" target="_blank" rel="noopener">${esc(c.url2_label||"more")}</a>`;
+  return `<div class="card"><span class="k">${esc(c.kind||"•")}</span><div class="body"><p class="head">${head}</p>${who}${why}<p class="row"><span class="lbl">What you do</span></p><ol>${steps}</ol><span class="links">${links}<span class="src">· from ${esc(c.agent)}</span></span></div></div>`;
+}
+function health(a){ const d=state.data[a.id]; if(!a.feed) return {cls:"unk",txt:"no live page"}; if(!d||d.error) return {cls:"bad",txt:d&&d.error?d.error:"not loaded"};
+  const h=ageH(d.stamp); if(h===null) return {cls:"bad",txt:"no timestamp on its page"}; if(a.maxAgeH&&h>a.maxAgeH) return {cls:"bad",txt:`stale: ${ago(h)} — cadence allows ${a.maxAgeH}h`}; return {cls:"ok",txt:ago(h)}; }
+function allNeeds(){ return AGENTS.flatMap(a=>(state.data[a.id]&&state.data[a.id].needs)||[]).sort((x,y)=>(x.sort??1)-(y.sort??1)); }
+function renderStrip(){
+  const bad=AGENTS.filter(a=>a.feed&&health(a).cls==="bad"); const needs=allNeeds().length;
+  const pills=AGENTS.filter(a=>a.feed).map(a=>{const h=health(a); return `<span class="pill ${h.cls}" title="${esc(h.txt)}"><span class="d"></span>${esc(a.name)}</span>`;}).join("");
+  const stat=`<span class="pill ${bad.length?"bad":"ok"}"><span class="d"></span><b>${bad.length?`${bad.length} agent${bad.length>1?"s":""} need attention`:"All agents running"}</b> · ${needs} thing${needs===1?"":"s"} need you</span>`;
+  const meta=`<span class="pill meta">updated ${state.updated?ago(ageH(state.updated)).replace("0 min ago","just now"):"…"} · <button onclick="load()">refresh now</button></span>`;
+  document.getElementById("strip").innerHTML=stat+pills+meta;
+}
+function renderTabs(){
+  const needs=allNeeds().length; const t=[{id:"all",name:"All",n:needs?`${needs} need you`:""}].concat(AGENTS.map(a=>({id:a.id,name:a.name,n:(state.data[a.id]&&state.data[a.id].needs&&state.data[a.id].needs.length)?`${state.data[a.id].needs.length}`:""})));
+  document.getElementById("tabs").innerHTML=t.map(x=>`<button role="tab" aria-selected="${state.tab===x.id}" onclick="setTab('${x.id}')">${esc(x.name)}${x.n?`<span class="n">${esc(x.n)}</span>`:""}</button>`).join("");
+}
+function kpi(v,l,a){ return `<div class="kpi"><div class="v ${v===null?"na":""}">${fmt(v)}</div><div class="l">${esc(l)}</div>${a?`<div class="a">${esc(a)}</div>`:""}</div>`; }
+function renderAll(){
+  const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
+  const kpis=`<div class="grid">${kpi(na(r.closing14),"funding deadlines inside 14 days","Revsom")}${kpi(na(r.total),"open funding opportunities",`${fmt(na(r.noSam))} need no registration`)}${kpi(na(g.ready),"outreach drafts ready on John's approval",`${fmt(na(g.total))} targets · ${fmt(na(g.high))} high priority`)}${kpi(na(m.drafts),"partner drafts waiting for you to send","Marketsom")}${kpi(na(i.ig),"Instagram followers (raw)",`${fmt(na(i.toFollow))} verified people still to follow`)}</div>`;
+  const needs=allNeeds(); const cards=needs.length?`<div class="grid">${needs.map(cardHTML).join("")}</div>`:`<p class="empty">Nothing is waiting on you right now.</p>`;
+  const rows=`<div class="rows">${AGENTS.map(a=>{const h=health(a); const p=state.data[a.id]; const line=a.feed?(p&&!p.error&&p.pulling?p.pulling(p):"unavailable"):"14 screens · 17 funding packets · 111 drafted answers — its work is code, no live page yet";
+    return `<div class="r ${h.cls}"><span class="d"></span><div><b>${esc(a.name)}</b><span class="s">${esc(a.purpose)}</span><span class="s">${line}</span></div><span class="t">${esc(h.txt)}</span></div>`;}).join("")}</div>`;
+  return `<h3>Across the suite</h3>${kpis}<h3>Needs you — everything, every agent</h3>${cards}<h3>The agents</h3>${rows}`;
+}
+function renderAgent(a){
+  const p=state.data[a.id]; const h=health(a); const view=state.view[a.id]||"summary";
+  const bar=`<div class="viewbar">${a.site?`<span class="seg"><button aria-pressed="${view==="summary"}" onclick="setView('${a.id}','summary')">Summary</button><button aria-pressed="${view==="live"}" onclick="setView('${a.id}','live')">Their dashboard</button></span>`:""}<span style="color:var(--ink-3);font-size:13px">${esc(h.txt)}</span>${a.site?`<a class="open" href="${esc(a.site)}" target="_blank" rel="noopener">open in its own tab →</a>`:""}</div>`;
+  if(view==="live"&&a.site) return bar+`<iframe class="frame" src="${esc(a.site)}" title="${esc(a.name)} dashboard" loading="lazy"></iframe>`;
+  const pulling=a.feed?(p&&!p.error&&p.pulling?p.pulling(p):`<span class="na">unavailable${p&&p.error?" — "+esc(p.error):""}</span>`):"14 screens · 17 funding packets · 111 drafted answers. No live page yet — its work is code.";
+  const needs=(p&&p.needs)||[], top=(p&&p.top)||[];
+  return bar+`<p class="purpose">${esc(a.purpose)}</p><p class="pulling"><span class="lbl">What it is pulling</span>${pulling}</p>`+
+    (needs.length?`<h3>Needs you</h3><div class="grid">${needs.map(cardHTML).join("")}</div>`:"")+
+    (top.length?`<h3>Top of its list</h3><div class="grid">${top.map(cardHTML).join("")}</div>`:(a.feed?`<p class="empty">No items to show.</p>`:""));
+}
+function renderPanels(){
+  const el=document.getElementById("panels");
+  el.innerHTML=`<section class="panel ${state.tab==="all"?"on":""}" id="p-all">${renderAll()}</section>`+AGENTS.map(a=>`<section class="panel ${state.tab===a.id?"on":""}" id="p-${a.id}">${renderAgent(a)}</section>`).join("");
+}
+function render(){ renderStrip(); renderTabs(); renderPanels(); }
+function setTab(id){ state.tab=id; try{localStorage.setItem("vybe-ops-tab",id);}catch(e){} render(); }
+function setView(id,v){ state.view[id]=v; render(); }
+
+// ------------------------------------------------------------------- load ---
+async function getText(url){ const r=await fetch(url+(url.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.text(); }
+async function load(){
+  const jobs=[["revsom",fromRevsom,true],["growsom",fromGrowsom,true],["marketsom",fromMarketsom,false],["instasom",fromInstasom,true]];
+  await Promise.all(jobs.map(async([id,fn,isJson])=>{ const a=AGENTS.find(x=>x.id===id);
+    try{ const t=await getText(a.feed); state.data[id]=fn(isJson?JSON.parse(t):t); }
+    catch(e){ state.data[id]={error:String(e.message||e), needs:[], top:[]}; } }));
+  state.updated=new Date(); render();
+}
+try{ state.tab=localStorage.getItem("vybe-ops-tab")||"all"; }catch(e){}
+load(); setInterval(load, REFRESH_MS);
+</script>
+</body>
+</html>

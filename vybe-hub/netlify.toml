@@ -1,0 +1,41 @@
+# vybe-ops.netlify.app — the Vybe operations console.
+#
+# The agents keep publishing to their own sites. This site reads them LIVE in
+# the browser. Three of the four feeds do not send CORS headers, so each one is
+# proxied through this domain with a 200 rewrite: the browser sees same-origin
+# paths, Netlify fetches the agent's page server-side on every request.
+# Nothing changes on the agents' side, and nothing here is a copy.
+
+[[redirects]]
+  from = "/feeds/revsom/*"
+  to = "https://agentrevup.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/growsom/*"
+  to = "https://agentgrowthscout.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/marketsom/*"
+  to = "https://agentmarksom.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/instasom/*"
+  to = "https://instasum.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/feeds/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
