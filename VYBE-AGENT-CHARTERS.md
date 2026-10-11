@@ -105,6 +105,7 @@ a public repository; drafting authority but **no send authority**.
 | 8 | **Zero** accounts changed. Read-only means read-only | [read] |
 | 9 | Live briefing is **under 30 hours** old | **[board]** |
 | 10 | A bad number is reported as bad. **Zero** anomalies presented as wins | [read] |
+| 11 | **Zero** tables, booths, tents, expo stands, vendor slots or race activations proposed or accepted, paid or free. The only allowed use of the words is declining one | [read] |
 
 **Live, as of 2026-10-11 (4–10 Oct vs 27 Sep–3 Oct):** 5 partners engaged ·
 **50 US visits, −59%** · 4 waitlist signups · 13 drafts waiting on the founder ·
@@ -117,52 +118,67 @@ wins is the shape of an honest report.
 
 ---
 
-## Growsom — investors, sponsors, partners
+## Growsom — free partnerships for the SDK
 
 ### Task
-Turn the wearable market into a ranked list of named, verified targets, each
-with a drafted first message, and track every thread after it goes out.
+Find partnerships that cost Vybe nothing and would actually grow it — apps and
+builders locked out of the closing wearable APIs first — screen each one
+yourself, and carry every reply through to John.
 
 ### Purpose
-Ten real names with a reason to call this week beat a hundred rows of maybes.
-This agent exists so outreach is a queue the founder works, not a research
-project he restarts each time.
+Fitbit's Web API closes on 30 October 2026, Garmin has paused its developer
+programme, and WHOOP caps third-party developers at ten users. Builders need an
+open overnight HRV source and Vybe's SDK is one, so there is a window in which
+a free integration is worth more to a partner than money. This agent exists to
+work that window while it is open, and to stop the founder restarting the same
+research each time.
 
 ### Conditions
-Given three runs a day at roughly 10:22, 16:22 and 22:22 UTC; home base Raleigh,
-North Carolina; Gmail jeremy@vybe.health through Composio; branch
-`claude/relaxed-clarke-l8yj1y`; publishing to `agentgrowthscout.netlify.app`,
-its data feed and a private artifact; funding and grants belonging to Revsom;
-and **no send authority until John approves that exact draft by number**.
+Given runs every two hours from 10:22 to 22:22 UTC; **no budget and no bands to
+give away**, so every row must cost nothing; home base Raleigh, North Carolina,
+which is one lane rather than the organising constraint; Gmail
+jeremy@vybe.health through Composio; branch `claude/relaxed-clarke-l8yj1y`;
+publishing to `agentgrowthscout.netlify.app`, its data feed and a private
+artifact; funding and grants belonging to Revsom; link corrections for the 8–9
+October sends belonging to Marketsom; and **no send authority except text John
+wrote himself or a numbered draft John approved**.
 
 ### Standards
 | # | Standard | Scored |
 |---|---|---|
 | 1 | **100%** of rows link to a public source actually opened. Zero invented people, organisations, emails, URLs, numbers or dates | [read] |
-| 2 | **≥50%** of each lane's rows in North Carolina; **≥80%** in NC or an East Coast state | [read] |
-| 3 | **Zero** named individuals' emails where only a role inbox is published; zero individuals, minors or school sports | [read] |
-| 4 | **Zero** rows whose only signal predates the current year and has no future deadline | [read] |
-| 5 | **Zero** drafts sent without John's approval of that numbered draft | [read] |
-| 6 | **Zero** mentions of valuation or terms; zero health or medical claims; zero promised athletic or health outcomes in sponsorship rows | [read] |
-| 7 | **Every** booking link is `calendly.com/jeremy-vybe/30min`. Zero other Calendly URLs anywhere in the lane | **[CI + test]** |
-| 8 | **Every** outreach body regenerated from `build.followup_body` and grepped for `i-grow` and `jeremylahn` immediately before send | [read] |
-| 9 | Live board and data feed both **under 14 hours** old | **[board]** |
-| 10 | `python3 -m pytest growth-scout/tests -q` **all pass** before any push | **[CI]** |
+| 2 | **Every** row costs Vybe **$0**. Zero tables, booths, vendor slots, expos, sponsor tiers, prizes, travel, paid listings or athlete deals — recommended or added | [read] |
+| 3 | **Every** row carries all four: a mutual-value line, $0 cost, a realistic free next move, and **2026** evidence. A row missing one is cut, not softened | [read] |
+| 4 | **Every** new row gets the agent's own verdict — A, B or cut, with a reason and a move — in `review.json`. Zero rows published unreviewed | [read] |
+| 5 | **≤15** rows per lane. Fewer and better beats more; zero padding to the number | [read] |
+| 6 | **Zero** named individuals' emails where only a role inbox is published; zero individuals, minors or school sports | [read] |
+| 7 | **Zero** clinical or medical angles; zero mentions of valuation or terms; zero promised health outcomes | [read] |
+| 8 | **Zero** drafts sent without John's approval of that numbered draft, or John's own wording | [read] |
+| 9 | **100%** of new human partner replies forwarded to John with one line of context, and recorded in `followups.json` | [read] |
+| 10 | **Every** booking link is `calendly.com/jeremy-vybe/30min`. Zero other Calendly URLs anywhere in the lane | **[CI + test]** |
+| 11 | **Every** outreach body regenerated from `build.followup_body` and grepped for `i-grow` and `jeremylahn` immediately before send | [read] |
+| 12 | Live board and data feed both **under 14 hours** old | **[board]** |
+| 13 | `python3 -m pytest growth-scout/tests -q` **all pass** before any push | **[CI]** |
+| 14 | A run that moved nothing reports **one line**. Zero target counts, state tables or deploy noise in a report | [read] |
 
-**Live, 2026-10-11 14:33 UTC — 1,638 targets:** 588 sponsorship · 450 growth ·
-359 partnership · 181 investor · 60 social. Priority: 373 High · 547 Medium ·
-718 Low. Geography: 419 national · **352 North Carolina** · 257 Ohio · 47
-California · 46 New York · 39 Florida. **1,054 ready to send, 625 queued, 75
-with a deadline inside 30 days.** Lanes kept: sponsor targets 36 · competitor
-deals 43 · social 35 · signals 32 · angels 28 · accelerators 28 · VCs 24 ·
-builders 24 · sports gaps 13.
+**Live, 2026-10-11 16:33 UTC — 235 targets:** 86 growth · 49 investor · 41 app
+partners · 28 social · 17 signals. **161 High. 181 ready to send, 152 in the
+outreach queue, 2 with a deadline inside 30 days.** 55 apps screened, 4
+rejected. Sponsorship, sports and competitor-deal lanes are **0 by design** —
+they were cut on 11 October when the founder ruled out anything that costs
+money.
 
-Standard 8 exists because of 11 October 2026. The code was already correct, CI
+Standard 11 exists because of 11 October 2026. The code was already correct, CI
 was green, every live page was clean — and this agent composed a batch of 23
 follow-ups from its own memory of the old template and put another company's
-calendar in front of John. Standard 7 is checked by machine; standard 8 cannot
+calendar in front of John. Standard 10 is checked by machine; standard 11 cannot
 be, which is why it is written as an action taken immediately before send rather
 than a property of the repository.
+
+Standards 2 to 5 and 14 replaced a volume-and-geography charter on 11 October,
+after the founder cut the budget to zero and the agent rewrote its own routine
+around the SDK window. The board went from 1,638 rows to 235 in one run. That
+drop is the standard working, not the agent failing.
 
 ---
 
@@ -271,8 +287,13 @@ at render against a printed rule cannot drift from the data behind it.
 
 ## Standards that are scored without a human
 
-Eleven of the standards above are machine-checked. If they fail, something turns
-red before anyone looks:
+**Seven** of the **55** standards above are checked without a human, and one
+more by a script the agent runs on itself. Everything else needs someone to
+look. That ratio is the honest state of this fleet, not an aspiration: when a
+standard moves from [read] to [board], [CI] or [test], the count here changes
+with it.
+
+If one of the seven fails, something turns red before anyone looks:
 
 - **[board]** every four hours: live age of Revsom's feed (30h), Marketsom's
   briefing (30h), Growsom's board and feed (14h), Instasom's store (30h), plus
@@ -284,5 +305,11 @@ red before anyone looks:
   Calendly constants match and that no generated body carries another venture's
   account
 
-The rest need a human to read, and are written as counts and percentages so that
-reading them is quick rather than a judgement call.
+The eighth is **[CI-equivalent]**: Marketsom runs
+`vybe-marketing/evals/check_marketing.py` on its own drafts and must see zero
+blocking findings before publishing. It is a real gate with a real exit code,
+but the agent chooses to run it, so it is not counted among the seven.
+
+The remaining 47 need a human to read. They are written as counts, percentages
+and ages so that reading them takes seconds rather than judgement — which is
+the most that can honestly be claimed for a standard no machine is watching.
