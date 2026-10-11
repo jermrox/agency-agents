@@ -354,6 +354,19 @@ def _cut(text, n):
     return head.rstrip(" ,;:·-") + "…"
 
 
+def _sentences(text, n_chars):
+    """First whole sentences up to n_chars. The 'so what' must not end mid-thought."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= n_chars:
+        return text
+    out = ""
+    for sent in re.split(r"(?<=[.!?])\s+", text):
+        if len(out) + len(sent) + 1 > n_chars:
+            break
+        out = (out + " " + sent).strip()
+    return out or _cut(text, n_chars)
+
+
 def _json_in(body):
     try:
         return json.loads(body)
@@ -393,6 +406,8 @@ def extract_facts(rows, now):
         f["revsom"]["closing"] = [
             {"name": o.get("name", ""), "days": o["days_left"], "amount": str(o.get("amount", "")),
              "url": o.get("url", ""), "docs": [str(x) for x in (o.get("documents") or []) if x],
+             "who": _cut(str(o.get("eligibility") or o.get("agency") or ""), 130),
+             "why": _sentences(o.get("summary"), 260),
              "veteran": "veteran" in (str(o.get("eligibility", "")) + o.get("name", "")).lower()}
             for o in soon
         ]
@@ -401,6 +416,7 @@ def extract_facts(rows, now):
                 "who": "Revsom", "kind": "money",
                 "when": "today" if o["days"] == 0 else ("tomorrow" if o["days"] == 1 else f"{o['days']} days"),
                 "what": o["name"], "detail": _cut(o["amount"], 60) + (" · veteran-owned fits" if o["veteran"] else ""),
+                "who_is": o["who"], "why": o["why"],
                 # The human steps, straight from the opportunity row. This is the
                 # line the founder asked for: not "needs you" but what a person does.
                 "do": [_cut(d, 110) for d in o["docs"]] or ["Open the application page and the drafted packet"],
@@ -437,6 +453,8 @@ def extract_facts(rows, now):
                 f["needs_you"].append({
                     "who": "Marketsom", "kind": kind, "when": when or "soon",
                     "what": str(u.get("what", "")), "detail": "",
+                    "who_is": _cut(lines[0], 160) if lines else "",
+                    "why": _cut(" ".join(lines[1:3]), 220) if len(lines) > 1 else "",
                     "do": do,
                     "url": prep or "https://agentmarksom.netlify.app/briefing.html",
                     "url_label": "prep brief" if prep else "briefing",
@@ -448,6 +466,8 @@ def extract_facts(rows, now):
                 "who": "Marketsom", "kind": "drafts", "when": "waiting",
                 "what": f"{d['drafts']} partner drafts waiting for you to send",
                 "detail": "John is on CC of every one",
+                "who_is": "Community partners Marketsom researched this week — leagues, clubs, member bodies",
+                "why": "Nothing reaches a partner until you send it. These are the asks for no-cost member offers and shared content.",
                 "do": ["Open Gmail drafts from jeremy@vybe.health", "Read each one; send the ones you approve, delete the rest",
                        "Nothing goes out until you press send"],
                 "url": "https://agentmarksom.netlify.app/partner-board.html", "url_label": "partner board",
@@ -543,12 +563,17 @@ def render_hub(rows, facts, now):
         if item.get("url2"):
             links += f' · <a href="{html.escape(item["url2"])}">{html.escape(item.get("url2_label") or "more")}</a>'
         detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item.get("detail") else ""
+        who_is = f'<p class="row"><span class="lbl">What it is</span>{html.escape(item["who_is"])}</p>' if item.get("who_is") else ""
+        why = f'<p class="row"><span class="lbl">Why it matters</span>{html.escape(item["why"])}</p>' if item.get("why") else ""
         return f"""<div class="need">
   <span class="k">{k}</span>
   <div class="body"><b>{html.escape(item['when'])}</b> — {html.escape(_cut(item['what'], 90))}
     {detail}
+    {who_is}
+    {why}
+    <p class="row"><span class="lbl">What you do</span></p>
     <ol class="do">{steps}</ol>
-    <span class="links2">{links} · <span class="who">{html.escape(item['who'])}</span></span></div>
+    <span class="links2">{links} · <span class="who">from {html.escape(item['who'])}</span></span></div>
 </div>"""
 
     needs = facts["needs_you"][:8]
@@ -605,7 +630,9 @@ h2 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(
   color:var(--brand-ink); font-weight:700; text-align:center; line-height:26px; font-size:14px }}
 .need .body, .agent .body {{ display:block; min-width:0; flex:1 }}
 .need b {{ color:var(--crit) }}
-.need .do {{ margin:6px 0 4px; padding-left:20px; font-size:14px; color:var(--ink) }}
+.need .row {{ margin:7px 0 0; font-size:14px; line-height:1.45; color:var(--ink) }}
+.need .lbl {{ display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:1px }}
+.need .do {{ margin:2px 0 4px; padding-left:20px; font-size:14px; color:var(--ink) }}
 .need .do li {{ margin:2px 0 }}
 .need .links2 {{ display:block; font-size:13px; color:var(--ink-3); margin-top:4px }}
 .need .links2 a {{ color:var(--brand-ink); border-bottom:1px solid var(--line) }}
