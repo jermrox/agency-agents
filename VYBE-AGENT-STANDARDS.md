@@ -263,6 +263,18 @@ A change made without steps 1 and 2 is not an improvement, whoever asked for
 it. The founder asking is the start of the design check, not a substitute for
 it.
 
+**The hub teaches, every day.** The founder, 11 October: "make sure you help
+teach and make them learn every day — that's your additional duty." So once a
+day, after every agent has run, the hub reads each Vybe agent's latest report
+and live page against rules 1–9 and its charter, and sends each agent one
+lesson: the single most useful correction from that day's work, with the rule
+it comes from and what to do differently tomorrow. One lesson, not a list;
+specific to that day's output, never generic. The agent carries the lesson
+into its next run and says in one line what it changed. Lessons are logged in
+`VYBE-LESSONS.md` so a repeated mistake is visible as a pattern and a fixed one
+is visible as progress. The hub does not grade agents against each other; it
+raises each one against its own standard.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |

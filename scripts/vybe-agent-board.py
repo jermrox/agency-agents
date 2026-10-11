@@ -127,6 +127,10 @@ SURFACES = [
     },
 ]
 
+# Rule 9.6 (link to the console) became enforceable on 11 Oct 2026. Agents get
+# until this moment to bring their pages into line before it turns red.
+CONSOLE_LINK_GRACE_UNTIL = dt.datetime(2026, 10, 14, 20, 0, tzinfo=dt.timezone.utc)
+
 STAMP_FORMATS = [
     "%Y-%m-%dT%H:%M:%S%z",
     "%Y-%m-%dT%H:%M:%SZ",
@@ -166,6 +170,7 @@ def check(entry, now):
     """One surface, judged on what is actually served."""
     out = dict(entry)
     out["problems"] = []
+    out["warnings"] = []
     out["stamp"] = None
     out["age_h"] = None
     out["foreign"] = []
@@ -198,8 +203,15 @@ def check(entry, now):
     # Rule 9.6 / rule 10: every Vybe dashboard links to the console. A page
     # that does not is an orphan the founder cannot navigate to from the hub.
     # JSON feeds are exempt; the check is for pages people open.
+    # Until the grace period ends the agents have not had a run in which to
+    # comply, so this is a warning (amber), not a failure. After it, red. The
+    # founder reads a red workflow as "broken", so red is reserved for stale,
+    # dead or foreign — things that are actually wrong on the page.
     if entry.get("is_page") and "vybe-ops.netlify.app" not in body:
-        out["problems"].append("does not link to the console (rule 9.6)")
+        if now < CONSOLE_LINK_GRACE_UNTIL:
+            out["warnings"].append("does not yet link to the console (rule 9.6) — grace until 14 Oct")
+        else:
+            out["problems"].append("does not link to the console (rule 9.6)")
 
     if entry["stamp_re"]:
         m = re.search(entry["stamp_re"], body)
@@ -220,15 +232,17 @@ def check(entry, now):
                         f"stale: {age:.1f}h old, cadence allows {entry['max_age_h']}h"
                     )
 
-    out["state"] = "ok" if not out["problems"] else (
-        "dead" if any(p.startswith("dead") for p in out["problems"]) else "bad"
-    )
+    if out["problems"]:
+        out["state"] = "dead" if any(p.startswith("dead") for p in out["problems"]) else "bad"
+    else:
+        out["state"] = "warn" if out["warnings"] else "ok"
     return out
 
 
 def render(rows, now):
     """The board. Same palette as the other agent boards so it reads as one system."""
-    red = [r for r in rows if r["state"] != "ok"]
+    red = [r for r in rows if r["state"] in ("bad", "dead")]
+    amber = [r for r in rows if r["state"] == "warn"]
     agents = sorted({r["agent"] for r in rows})
     bad_agents = sorted({r["agent"] for r in red})
 
@@ -237,18 +251,21 @@ def render(rows, now):
             f"{len(red)} of {len(rows)} surfaces need attention"
             f" — {', '.join(bad_agents)}"
         )
+    elif amber:
+        headline = (f"All {len(rows)} Vybe surfaces are current and carry only Vybe accounts"
+                    f" — {len(amber)} not yet linking to the console (grace until 14 Oct)")
     else:
         headline = f"All {len(rows)} Vybe surfaces are current and carry only Vybe accounts"
 
     def cell(r):
-        chip = {"ok": ("ok", "OK"), "bad": ("bad", "NEEDS FIXING"), "dead": ("dead", "UNREACHABLE")}[r["state"]]
+        chip = {"ok": ("ok", "OK"), "warn": ("warn", "NOT YET CONFORMING"), "bad": ("bad", "NEEDS FIXING"), "dead": ("dead", "UNREACHABLE")}[r["state"]]
         age = "—"
         if r["age_h"] is not None:
             age = f"{r['age_h']:.1f}h ago"
         elif r["stamp_re"] is None:
             age = "no timestamp"
         probs = "".join(
-            f'<li>{html.escape(p)}</li>' for p in r["problems"]
+            f'<li>{html.escape(p)}</li>' for p in r["problems"] + r.get("warnings", [])
         )
         return f"""<tr class="{chip[0]}">
   <td class="ag">{html.escape(r['agent'])}</td>
@@ -307,6 +324,7 @@ td.cad, td.age {{ color:var(--ink-2); white-space:nowrap; font-variant-numeric:t
   padding:3px 9px; border-radius:999px; white-space:nowrap }}
 .chip.ok {{ background:var(--good-bg); color:var(--good) }}
 .chip.bad {{ background:var(--warn-bg); color:var(--warn) }}
+.chip.warn {{ background:var(--surface-2); color:var(--ink-2) }}
 .chip.dead {{ background:var(--crit-bg); color:var(--crit) }}
 tr.bad {{ background:var(--warn-bg) }} tr.dead {{ background:var(--crit-bg) }}
 @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) tr.bad,
@@ -571,7 +589,7 @@ def render_hub(rows, facts, now):
         rs = by_agent.get(agent, [])
         if not rs:
             return ("unk", None, "no live page")
-        bad = [r for r in rs if r["state"] != "ok"]
+        bad = [r for r in rs if r["state"] in ("bad", "dead")]
         ages = [r["age_h"] for r in rs if r.get("age_h") is not None]
         age = min(ages) if ages else None
         return ("bad" if bad else "ok", age, "; ".join(p for r in bad for p in r["problems"])[:90])
@@ -757,11 +775,11 @@ def main():
         {"checked": now.isoformat(), "surfaces": slim,
          "needs_you": facts["needs_you"]}, indent=2) + "\n")
 
-    red = [r for r in rows if r["state"] != "ok"]
+    red = [r for r in rows if r["state"] in ("bad", "dead")]
     for r in rows:
-        mark = "ok  " if r["state"] == "ok" else "RED "
+        mark = {"ok": "ok  ", "warn": "warn", "bad": "RED ", "dead": "RED "}[r["state"]]
         age = f"{r['age_h']}h" if r["age_h"] is not None else "-"
-        print(f"{mark} {r['agent']:<10} {r['surface']:<46} {age:>7}  {'; '.join(r['problems'])}")
+        print(f"{mark} {r['agent']:<10} {r['surface']:<46} {age:>7}  {'; '.join(r['problems'] + r.get('warnings', []))}")
     print(f"\n{len(rows) - len(red)}/{len(rows)} surfaces OK")
 
     if red and not args.no_fail:

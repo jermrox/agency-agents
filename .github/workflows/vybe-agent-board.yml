@@ -12,7 +12,10 @@ name: Vybe agent board
 # with no new Netlify project to go stale in turn. The hub is the front door;
 # the board is the detail behind "is every dashboard current?".
 #
-# The job fails when a surface is red. That failure is the alarm: the founder
+# The job fails when a surface is red — stale, dead, or carrying a foreign
+# account. A conformance item inside its grace period is amber and does not
+# fail the job, so a red run always means something is actually wrong. That
+# failure is the alarm: the founder
 # should not be the one who notices a wrong link on a dashboard, which is
 # exactly what happened on 10 Oct 2026.
 
@@ -80,7 +83,7 @@ jobs:
           python3 - <<'PY'
           import json, sys
           d = json.load(open("dashboards/vybe-agents.json"))
-          red = [s for s in d["surfaces"] if s["state"] != "ok"]
+          red = [s for s in d["surfaces"] if s["state"] in ("bad", "dead")]
           for s in red:
               print(f"::error title={s['agent']} — {s['surface']}::{'; '.join(s['problems'])}")
           print(f"{len(d['surfaces']) - len(red)}/{len(d['surfaces'])} surfaces OK")
