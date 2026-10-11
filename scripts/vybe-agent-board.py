@@ -20,9 +20,10 @@ red in GitHub rather than waiting to be noticed. The board is written either
 way: a board that disappears when something breaks is useless at the moment it
 matters most.
 
-Scope is Vybe Health only. The founder's other ventures run their own agents
-(Leadsom for i-Grow, Researchsom and Crawlsom for MOPs and MOEs, Babysom) and
-they are deliberately not tracked here.
+Scope is Vybe Health only, by rule 6 of VYBE-AGENT-STANDARDS.md. The founder's
+other ventures run their own agents; this board does not track them and does
+not name them. Naming them here would put another venture's roster on a Vybe
+page, which is the scope leak the rule exists to stop.
 
 Usage:
   python3 scripts/vybe-agent-board.py                     # check, render, exit 1 if red
@@ -323,8 +324,8 @@ ul.probs {{ margin:7px 0 0; padding-left:18px; font-size:13px; color:var(--ink-2
     from git. Fixing the code updates none of them, which is how a wrong booking link stayed live
     for hours on 10 Oct 2026 while the repository was already correct.
     <br><br>
-    <strong>Scope.</strong> Vybe Health only. Leadsom (i-Grow), Researchsom and Crawlsom (MOPs and
-    MOEs) and Babysom belong to other ventures and are not tracked here.
+    <strong>Scope.</strong> Vybe Health only. Agents belonging to other ventures are out of scope
+    and are neither tracked nor named here.
     Rules: <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">VYBE-AGENT-STANDARDS.md</a>.
   </p>
 </div>

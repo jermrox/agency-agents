@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Fleet Map</title>
+<style>
+:root {
+  --bg:#f6f8f7; --surface:#fff; --surface-2:#eef3f1; --line:#dbe3e0;
+  --ink:#12201c; --ink-2:#44554f; --ink-3:#6b7a75;
+  --brand:#1f8e78; --brand-ink:#0f5e4f;
+  --good:#1d7a3a; --good-bg:#e3f3e7; --crit:#a3262a; --crit-bg:#fbe3e3;
+  --warn:#8a5a00; --warn-bg:#fbefd5;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }
+a { color:var(--brand-ink); text-decoration:none; border-bottom:1px solid transparent }
+a:hover { border-bottom-color:currentColor }
+.wrap { max-width:1060px; margin:0 auto; padding:24px 16px 72px }
+h1 { font-size:26px; margin:0 0 6px; letter-spacing:-.01em }
+h1 span { color:var(--brand) }
+.lede { color:var(--ink-2); max-width:70ch; margin:0 0 6px }
+.meta { color:var(--ink-3); font-size:13px; margin:10px 0 0 }
+h2 { font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3);
+  margin:38px 0 12px; font-weight:600 }
+h2:first-of-type { margin-top:30px }
+
+/* the shared spine */
+.spine { background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:4px 16px 14px; margin-top:12px }
+.spine dl { display:grid; grid-template-columns:148px 1fr; gap:0; margin:0 }
+.spine dt { font-weight:600; padding:10px 0; border-top:1px solid var(--line); font-size:14px }
+.spine dd { margin:0; padding:10px 0; border-top:1px solid var(--line); color:var(--ink-2); font-size:14px }
+.spine dl > dt:first-of-type, .spine dl > dt:first-of-type + dd { border-top:0 }
+@media (max-width:640px) {
+  .spine dl { grid-template-columns:1fr }
+  .spine dd { padding-top:0; border-top:0 }
+  .spine dt { padding-bottom:2px }
+}
+
+/* agent cards */
+.agents { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
+.agent { background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:16px 16px 14px; border-top:3px solid var(--brand) }
+.agent.nodash { border-top-color:var(--ink-3) }
+.agent h3 { margin:0 0 2px; font-size:17px }
+.agent .role { color:var(--ink-3); font-size:13px; margin:0 0 10px }
+.agent .task { margin:0 0 12px; color:var(--ink-2); font-size:14px }
+.pages { list-style:none; margin:0; padding:0; font-size:13.5px }
+.pages li { padding:7px 0; border-top:1px solid var(--line) }
+.pages li b { font-weight:600; display:block }
+.pages li span { color:var(--ink-2) }
+.pages li .url { font-size:12px; color:var(--ink-3); overflow-wrap:anywhere; display:block; margin-top:1px }
+.tag { display:inline-block; font-size:11px; letter-spacing:.03em; text-transform:uppercase;
+  padding:2px 7px; border-radius:20px; font-weight:600; vertical-align:2px }
+.tag.feed { background:var(--surface-2); color:var(--ink-3) }
+.tag.none { background:var(--warn-bg); color:var(--warn) }
+.agent .sends { font-size:13px; margin:11px 0 0; padding:8px 10px; border-radius:8px;
+  background:var(--surface-2); color:var(--ink-2) }
+
+table { border-collapse:collapse; width:100%; font-size:14px; margin-top:12px;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden }
+th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-3);
+  background:var(--surface-2) }
+tr:last-child td { border-bottom:0 }
+td.who { font-weight:600; white-space:nowrap }
+.note { font-size:14px; color:var(--ink-2); max-width:76ch; margin:10px 0 0 }
+.gap { background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--warn);
+  border-radius:0 10px 10px 0; padding:12px 14px; margin-top:10px; font-size:14px }
+.gap b { display:block; margin-bottom:2px }
+.foot { margin-top:40px; padding-top:16px; border-top:1px solid var(--line);
+  color:var(--ink-3); font-size:13px; max-width:76ch }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Vybe <span>fleet map</span></h1>
+  <p class="lede">Every Vybe agent, every dashboard it publishes, and what actually
+  connects them. This page exists because there are four separate sites and
+  fifteen live addresses between them, and no single front door.</p>
+  <p class="meta">Every link below returned 200 when this page was written.
+  For whether each one is <em>current</em>, the
+  <a href="vybe-agent-board.html">agent board</a> checks all six watched
+  surfaces every four hours and goes red on a stale one.</p>
+
+  <h2>The shared spine &mdash; what makes this one system</h2>
+  <div class="spine">
+    <dl>
+      <dt>One mailbox</dt>
+      <dd>jeremy@vybe.health, through Composio. Marketsom drafts into it, Growsom
+          sends from it. john@vybe.health is CC on everything, in-thread replies
+          included. This is where the collisions came from.</dd>
+      <dt>One booking link</dt>
+      <dd>calendly.com/jeremy-vybe/30min. One active event type, "30 Minute
+          Meeting". No other booking URL appears in Vybe work, and CI fails the
+          build if one does.</dd>
+      <dt>One repository</dt>
+      <dd>jermrox/agency-agents. Revsom, Marketsom and the daily worker publish
+          from <code>main</code>. Growsom works on its own branch.</dd>
+      <dt>One ownership file</dt>
+      <dd><code>OUTREACH-OWNERS.json</code> assigns every contested organisation
+          to exactly one agent, so two desks never approach the same partner.</dd>
+      <dt>One rulebook</dt>
+      <dd><code>VYBE-AGENT-STANDARDS.md</code>, eight rules, binding on every
+          agent with Vybe in its name. Each agent also has a charter in
+          task / conditions / standards form.</dd>
+      <dt>Four gates</dt>
+      <dd>On every change: no non-Vybe account anywhere in Vybe work; outreach
+          purpose and single ownership; divisions and runbooks consistent; the
+          growth-scout tests. Plus the agent board, every four hours, against
+          the live pages rather than the code.</dd>
+    </dl>
+  </div>
+
+  <h2>The five agents and their dashboards</h2>
+  <div class="agents">
+
+    <div class="agent">
+      <h3>Revsom</h3>
+      <p class="role">Non-dilutive funding</p>
+      <p class="task">Keeps a board of money Vybe can win without giving up
+      equity, and drafts an application packet for each priority opportunity.</p>
+      <ul class="pages">
+        <li><b>Funding board</b><span>Every live opportunity, its close date and
+          whether it needs SAM registration.</span>
+          <a class="url" href="https://agentrevup.netlify.app/">agentrevup.netlify.app</a></li>
+        <li><b>Apply</b><span>The drafted application packets, with the
+          founder-held facts left as placeholders.</span>
+          <a class="url" href="https://agentrevup.netlify.app/apply">agentrevup.netlify.app/apply</a></li>
+        <li><b>funding.json</b> <span class="tag feed">feed</span><span>The board
+          as data. This is the file the agent board ages.</span>
+          <a class="url" href="https://agentrevup.netlify.app/funding.json">agentrevup.netlify.app/funding.json</a></li>
+        <li><b>Funding tracker</b><span>The older standalone tracker view.</span>
+          <a class="url" href="https://agentrevup.netlify.app/vybe-funding-tracker.html">agentrevup.netlify.app/vybe-funding-tracker.html</a></li>
+      </ul>
+      <p class="sends"><b>Email:</b> none. Drafts only, submits nothing.</p>
+    </div>
+
+    <div class="agent">
+      <h3>Marketsom</h3>
+      <p class="role">Marketing, and partner outreach to communities</p>
+      <p class="task">Reads Vybe's own marketing numbers every morning, drafts
+      the community outreach, and keeps the marketing site honest about what is
+      and is not working.</p>
+      <ul class="pages">
+        <li><b>Agent hub</b><span>Audiences, targets, the targeting playbook and
+          eval scores.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/">agentmarksom.netlify.app</a></li>
+        <li><b>Daily briefing</b><span>Start here each morning: meetings and
+          deadlines first, then the numbers and the open problems.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/briefing.html">agentmarksom.netlify.app/briefing.html</a></li>
+        <li><b>Weekly scoreboard</b><span>The rolling seven-day picture. The
+          overall update lives here, not in the briefing.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/scoreboard.html">agentmarksom.netlify.app/scoreboard.html</a></li>
+        <li><b>Partner board</b><span>Who has been contacted, who replied, what
+          each one needs next.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/partner-board.html">agentmarksom.netlify.app/partner-board.html</a></li>
+        <li><b>All reports</b><span>Every written report and research file.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/reports.html">agentmarksom.netlify.app/reports.html</a></li>
+        <li><b>vybe-marketing.json</b> <span class="tag feed">feed</span><span>The
+          scoreboard as data.</span>
+          <a class="url" href="https://agentmarksom.netlify.app/vybe-marketing.json">agentmarksom.netlify.app/vybe-marketing.json</a></li>
+      </ul>
+      <p class="sends"><b>Email:</b> drafts only, never sends. Read-only on every
+      analytics and ad account.</p>
+    </div>
+
+    <div class="agent">
+      <h3>Growsom</h3>
+      <p class="role">Investors, and technical collaboration</p>
+      <p class="task">Finds partnerships that cost Vybe nothing and would
+      actually grow it &mdash; apps and builders locked out of the closing
+      wearable APIs first &mdash; screens each one, and carries replies to John.</p>
+      <ul class="pages">
+        <li><b>Target board</b><span>Every ranked target with its lane, its
+          evidence and its drafted first message.</span>
+          <a class="url" href="https://agentgrowthscout.netlify.app/">agentgrowthscout.netlify.app</a></li>
+        <li><b>data.json</b> <span class="tag feed">feed</span><span>The board as
+          data, including the per-state counts.</span>
+          <a class="url" href="https://agentgrowthscout.netlify.app/data.json">agentgrowthscout.netlify.app/data.json</a></li>
+      </ul>
+      <p class="sends"><b>Email:</b> the only agent that sends &mdash; and only
+      a numbered draft John has approved, or John's own wording.</p>
+    </div>
+
+    <div class="agent">
+      <h3>Instasom</h3>
+      <p class="role">Instagram and Facebook</p>
+      <p class="task">Pulls the real social numbers every morning, says honestly
+      whether they are moving, and hands over the day's captions, a Reel script
+      and a verified list of people to follow.</p>
+      <ul class="pages">
+        <li><b>Social dashboard</b><span>The numbers, the follow list with tick
+          boxes, and the day's content.</span>
+          <a class="url" href="https://instasum.netlify.app/">instasum.netlify.app</a></li>
+        <li><b>all.json</b> <span class="tag feed">feed</span><span>The whole
+          store as one file, which is what the dashboard reads.</span>
+          <a class="url" href="https://instasum.netlify.app/all.json">instasum.netlify.app/all.json</a></li>
+      </ul>
+      <p class="sends"><b>Email:</b> the founder's own daily brief. No outreach,
+      and never a direct message.</p>
+    </div>
+
+    <div class="agent nodash">
+      <h3>The daily worker</h3>
+      <p class="role">Product, funding rows, packets, decks</p>
+      <p class="task">Ships one new app screen a day on a fixed rotation, adds
+      verified funding rows, drafts an application packet, and on Mondays
+      produces a pitch deck and the weekly report.</p>
+      <ul class="pages">
+        <li><b>No dashboard</b> <span class="tag none">gap</span><span>Its output
+          is code merged to <code>main</code> and rows that show up on Revsom's
+          board. There is nowhere to look at what it has built.</span></li>
+      </ul>
+      <p class="sends"><b>Email:</b> none. Touches no Vybe account at all.</p>
+    </div>
+
+  </div>
+
+  <h2>How work hands off between them</h2>
+  <p class="note">These are the rules that stop two agents doing the same job.
+  Ownership follows what a thing <em>is</em>, not which agent found it first.</p>
+  <table>
+    <tr><th>This kind of work</th><th>Belongs to</th><th>Everyone else</th></tr>
+    <tr><td>Grants, prizes, credits, any non-dilutive money</td><td class="who">Revsom</td><td>Growsom defers, even when it finds one</td></tr>
+    <tr><td>Investors</td><td class="who">Growsom</td><td>Marketsom does not approach investors</td></tr>
+    <tr><td>Apps, data platforms, aggregators, SDK and integration partners, developer communities, research labs</td><td class="who">Growsom</td><td>Marketsom hands the thread over</td></tr>
+    <tr><td>Leagues, clubs, associations, race organisers, member bodies, first-responder programmes</td><td class="who">Marketsom</td><td>Growsom hands the thread over</td></tr>
+    <tr><td>Suppliers, manufacturers, contract engineering</td><td class="who">The founders</td><td>No agent approaches one. It is procurement</td></tr>
+    <tr><td>Marketing numbers, the public site, claim checking</td><td class="who">Marketsom</td><td>&mdash;</td></tr>
+    <tr><td>Instagram and the Facebook Page</td><td class="who">Instasom</td><td>Marketsom reads them, never posts</td></tr>
+    <tr><td>App screens, decks, the repository itself</td><td class="who">Daily worker</td><td>&mdash;</td></tr>
+  </table>
+
+  <h2>What this map shows that no single dashboard does</h2>
+
+  <div class="gap">
+    <b>The daily worker is invisible.</b>
+    Four of the five agents publish somewhere you can look. The one shipping the
+    actual product does not, so its fourteen screens and seventeen application
+    packets exist only as commits.
+  </div>
+  <div class="gap">
+    <b>Growsom's data lives on a branch, not on main.</b>
+    Its target and follow-up files are not on the main line, so a check that
+    joins both outreach logs can only run where both are present. That is why
+    the single-ownership gate reports what it can see and names what it cannot.
+  </div>
+  <div class="gap">
+    <b>Two agents, one mailbox, no shared memory.</b>
+    Marketsom and Growsom both write into jeremy@vybe.health and neither can
+    read the other's working notes. The ownership file is the fix, and it is a
+    file rather than a feeling precisely because memory did not hold.
+  </div>
+  <div class="gap">
+    <b>Four sites is a choice, not a design.</b>
+    Each agent got its own Netlify project as it was built. Two deploy from git,
+    two are pushed by API. That is why a repository fix updates nothing until
+    the live page says so, which is rule 5 of the standard.
+  </div>
+
+  <p class="foot">
+    Rules: <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">VYBE-AGENT-STANDARDS.md</a>
+    &middot; per-agent charters: <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-CHARTERS.md">VYBE-AGENT-CHARTERS.md</a>
+    &middot; live health: <a href="vybe-agent-board.html">agent board</a>.
+    Agents belonging to other ventures are out of scope and are neither tracked
+    nor named here.
+  </p>
+
+</div>
+</body>
+</html>
