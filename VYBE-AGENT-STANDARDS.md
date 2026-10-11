@@ -90,6 +90,18 @@ When something needs checking across the whole account, check only the Vybe
 rows and say so. A Vybe agent that cannot answer a question without reading
 another venture's agent reports that it cannot, and stops.
 
+**The mechanism, because the rule alone did not hold.** The violation came from
+listing every routine on the account and reading the results. So: never list
+all routines or all sessions to audit them. Look up the Vybe ones by their own
+ids, one at a time. The Vybe routines and sessions are named in the charters;
+anything not on that list is not ours to open. If a listing is unavoidable,
+read only the rows whose session is a Vybe session and do not quote, summarise
+or act on any other row — not even to say it looks healthy.
+
+The founder restated this on 11 October after the rule was already written:
+"only vybe agents, do not touch the others whatsoever." There is no audit, no
+comparison and no health check that justifies opening one.
+
 ## 7. What outreach is for
 
 Vybe outreach has three purposes and no others: **collaboration, investment,
