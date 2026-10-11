@@ -37,7 +37,7 @@ a { color:var(--brand-ink); text-decoration:none }
 .wrap { max-width:640px; margin:0 auto; padding:20px 16px 60px }
 h1 { font-size:22px; margin:0; letter-spacing:-.01em } h1 span { color:var(--brand) }
 .goal { margin:6px 0 0; color:var(--ink-2); font-size:15px }
-.status { display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:var(--crit) }
+.status { display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:var(--good) }
 .status .meta { font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto; text-align:right }
 .jump { margin:14px 0 0; font-size:13.5px; color:var(--ink-3); line-height:1.9 }
 .jump a { border-bottom:1px solid var(--line); margin-right:8px }
@@ -70,11 +70,11 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
 <div class="wrap">
   <h1><span>Vybe</span> hub</h1>
   <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
-  <p class="status"><span>3 agents need attention · 8 things need you</span><span class="meta">checked 20:15 UTC<br>refreshes every 4h</span></p>
+  <p class="status"><span>All agents running · 8 things need you</span><span class="meta">checked 20:45 UTC<br>refreshes every 4h</span></p>
   <p class="jump"><a href="#revsom">Revsom</a> <a href="#growsom">Growsom</a> <a href="#marketsom">Marketsom</a> <a href="#instasom">Instasom</a> <a href="#daily-worker">Daily worker</a></p>
 
-<section id="revsom" class="agent bad">
-  <header><span class="dot"></span><h2>Revsom</h2><span class="when">4h ago · does not link to the console (rule 9.6)</span></header>
+<section id="revsom" class="agent ok">
+  <header><span class="dot"></span><h2>Revsom</h2><span class="when">5h ago</span></header>
   <p class="purpose">Money that costs no equity: grants, prizes, credits.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>232 opportunities · 165 need no registration · 14 close inside 14 days</p>
   <h3>Needs you</h3><div class="card"><span class="k">$</span><div class="body">
@@ -105,8 +105,8 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <span class="links2"><a href="https://xtech.army.mil/competition/xtechsearch10/">open</a></span></div></div>
   <a class="more" href="https://agentrevup.netlify.app/">funding board →</a>
 </section>
-<section id="growsom" class="agent bad">
-  <header><span class="dot"></span><h2>Growsom</h2><span class="when">2h ago · does not link to the console (rule 9.6)</span></header>
+<section id="growsom" class="agent ok">
+  <header><span class="dot"></span><h2>Growsom</h2><span class="when">24 min ago</span></header>
   <p class="purpose">Investors, and free integrations that put Vybe&#x27;s SDK in other people&#x27;s products.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>234 targets · 160 high priority · 180 ready to send on John&#x27;s approval</p>
   
@@ -125,10 +125,10 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <span class="links2"><a href="https://restortrain.com">open</a></span></div></div>
   <a class="more" href="https://agentgrowthscout.netlify.app/">target board →</a>
 </section>
-<section id="marketsom" class="agent bad">
-  <header><span class="dot"></span><h2>Marketsom</h2><span class="when">20h ago · does not link to the console (rule 9.6)</span></header>
+<section id="marketsom" class="agent ok">
+  <header><span class="dot"></span><h2>Marketsom</h2><span class="when">21h ago</span></header>
   <p class="purpose">No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.</p>
-  <p class="pulling"><span class="lbl">What it is pulling</span>Online only: no travel and nothing in person. Researching investors who take pitches online and remote collaborations; drafting stays…</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>The real waitlist is 6 people. 92% of 60 days&#x27; visits were paid clicks, mostly outside the US. The plan now aims at one number: real US…</p>
   <h3>Needs you</h3><div class="card"><span class="k">☎</span><div class="body">
   <p class="head"><b>Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)</b> — Nocturnal Product Development (Durham, NC). Paid vendor, not a partner</p><p class="row"><span class="lbl">What it is</span>With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).</p><p class="row"><span class="lbl">Why it matters</span>What they are: an engineering firm Vybe would pay per milestone. This is spending, not a partnership. Main question: is there any no-cost route (a co-marketing case study, deferred fees), or should this call be a short…</p>
   <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Read the prep brief first</li><li>Join the call at the time shown</li><li>Decide on the call: no-cost route, or a short polite no</li></ol>
@@ -137,22 +137,22 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>No drafting until research is done. Their status is on the outreach list.</li></ol>
   <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">briefing</a></span></div></div>
   <h3>Top of its list</h3><div class="card"><span class="k">!</span><div class="body">
-  <p class="head">No tables or booths, paid or free. Partnerships should be no-cost exchanges</p>
-  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Read it on the briefing</li></ol>
+  <p class="head">The real waitlist is 6 people, and 92% of visits were paid clicks</p><p class="row"><span class="lbl">Why it matters</span>Investors and partners all ask for proof of demand, and Vybe has almost none yet. Paid clicks bought traffic, not buyers.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Follow the Traction plan: answer people asking on Reddit as the founder, then ask for a refundable…</li></ol>
   <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
-  <p class="head">Sent emails carried a non-Vybe calendar link</p>
-  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Read it on the briefing</li></ol>
+  <p class="head">No tables or booths, paid or free. Partnerships should be no-cost exchanges</p><p class="row"><span class="lbl">Why it matters</span>Declined in drafts on 11 Oct: the HOSR table ($300), the WNBF booth ($250), the MSBL World Series table and the RRCA expo table ($1,200).</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Pause Search-1 in Google Ads and stop the Instagram boosts; take Nocturnal only if a no-cost route exists.</li></ol>
   <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
-  <p class="head">The Growth Scout&#x27;s 20 waiting drafts ask for expo booths</p>
-  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Read it on the briefing</li></ol>
+  <p class="head">Sent emails carried a non-Vybe calendar link</p><p class="row"><span class="lbl">Why it matters</span>The partner emails sent 6 to 9 Oct linked a non-Vybe calendar. Sent emails cannot be changed. You chose not to send corrections, so those drafts are deleted.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Nothing to send. Every new email uses only the Vybe calendar link.</li></ol>
   <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
-  <p class="head">Tomorrow, 2 pm: Nocturnal call. Read the prep brief first</p>
-  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Read it on the briefing</li></ol>
+  <p class="head">The Growth Scout&#x27;s 20 waiting drafts ask for expo booths</p><p class="row"><span class="lbl">Why it matters</span>Under the no-tables rule they should all be denied; John asked before denying them. 22 more of its drafts from 7 Oct sit in Gmail with no recipient, and some pitch a table or an exhibitor slot.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Deny the 20 booth and expo drafts.</li></ol>
   <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div>
   <a class="more" href="https://agentmarksom.netlify.app/briefing.html">daily briefing →</a>
 </section>
 <section id="instasom" class="agent ok">
-  <header><span class="dot"></span><h2>Instasom</h2><span class="when">1h ago</span></header>
+  <header><span class="dot"></span><h2>Instasom</h2><span class="when">30 min ago</span></header>
   <p class="purpose">An audience that follows before launch, built one real person at a time.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>Instagram 1,098 raw followers · 164 verified people still to follow · Facebook 4</p>
   

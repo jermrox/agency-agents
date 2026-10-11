@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11T20:15:27+00:00",
+  "checked": "2026-10-11T20:45:04+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,7 +11,7 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "stamp": "2026-10-11T15:58:47+00:00",
-      "age_h": 4.3,
+      "age_h": 4.8,
       "foreign": [],
       "state": "ok"
     },
@@ -24,13 +24,11 @@
       "stamp_re": null,
       "max_age_h": null,
       "cadence": "with each packet",
-      "problems": [
-        "does not link to the console (rule 9.6)"
-      ],
+      "problems": [],
       "stamp": null,
       "age_h": null,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Marketsom",
@@ -41,13 +39,11 @@
       "stamp_re": "\"asof\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 10:23Z",
-      "problems": [
-        "does not link to the console (rule 9.6)"
-      ],
+      "problems": [],
       "stamp": "2026-10-11",
-      "age_h": 20.3,
+      "age_h": 20.8,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Growsom",
@@ -58,13 +54,11 @@
       "stamp_re": "Updated (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}) UTC",
       "max_age_h": 14,
       "cadence": "3x daily",
-      "problems": [
-        "does not link to the console (rule 9.6)"
-      ],
-      "stamp": "2026-10-11 18:39",
-      "age_h": 1.6,
+      "problems": [],
+      "stamp": "2026-10-11 20:21",
+      "age_h": 0.4,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Growsom",
@@ -75,8 +69,8 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [],
-      "stamp": "2026-10-11 18:39 UTC",
-      "age_h": 1.6,
+      "stamp": "2026-10-11 20:21 UTC",
+      "age_h": 0.4,
       "foreign": [],
       "state": "ok"
     },
@@ -89,8 +83,8 @@
       "max_age_h": 30,
       "cadence": "daily 10:38Z",
       "problems": [],
-      "stamp": "2026-10-11T18:49:37Z",
-      "age_h": 1.4,
+      "stamp": "2026-10-11T20:16:42Z",
+      "age_h": 0.5,
       "foreign": [],
       "state": "ok"
     }
