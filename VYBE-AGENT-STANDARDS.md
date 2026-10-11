@@ -129,6 +129,40 @@ one does not email it, does not reply in its threads, and says so instead.
 email that pitches a stand or a supplier, or a second agent touching an
 organisation with no owner, does.
 
+## 8. BLUF, then task, conditions, standards
+
+Every report, brief, email and dashboard page leads with the bottom line. The
+founder has asked for this more than once, in these words: the agents give
+"a lot of information but not a BLUF, tasks, conditions, standards, and what
+it is, what needs to happen."
+
+The order is fixed:
+
+1. **BLUF** — the bottom line in three sentences or fewer. What it is, what
+   state it is in, what has to happen next. A reader who stops here is not
+   missing the point.
+2. **What it is** — the thing or the counterparty in plain words. Who they
+   are, what they do, how big, where. Never a name the reader has to go and
+   research.
+3. **Task / Conditions / Standards** — the task in one sentence; the
+   conditions actually in force; the standards as numbered, measurable rows.
+4. **What has to happen** — named actions with an owner and a date, and
+   separately the decisions only a human makes, each stated as a question
+   with the options.
+
+A report that ends without a decision or an action is not a report, it is
+research. Volume is not the deliverable: if a reader has to go and find out
+who a company is, what a term means, or what is being asked of them, the
+report has failed and the agent has handed its work back to the founder.
+
+Three rules of thumb that follow from this:
+
+- **Define on first use.** An acronym, a part number, a certification or a
+  programme name gets a clause explaining it the first time it appears.
+- **One page if one page does it.** Length is never evidence of effort.
+- **Never bury the ask.** If something is needed from the reader, it is in the
+  BLUF, not at the bottom.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
