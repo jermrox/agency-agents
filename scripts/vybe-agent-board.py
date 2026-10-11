@@ -354,6 +354,19 @@ def _cut(text, n):
     return head.rstrip(" ,;:·-") + "…"
 
 
+def _sentences(text, n_chars):
+    """First whole sentences up to n_chars. The 'so what' must not end mid-thought."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= n_chars:
+        return text
+    out = ""
+    for sent in re.split(r"(?<=[.!?])\s+", text):
+        if len(out) + len(sent) + 1 > n_chars:
+            break
+        out = (out + " " + sent).strip()
+    return out or _cut(text, n_chars)
+
+
 def _json_in(body):
     try:
         return json.loads(body)
@@ -392,7 +405,10 @@ def extract_facts(rows, now):
         f["revsom"]["closing_14d"] = len(soon)
         f["revsom"]["closing"] = [
             {"name": o.get("name", ""), "days": o["days_left"], "amount": str(o.get("amount", "")),
-             "url": o.get("url", ""), "veteran": "veteran" in (str(o.get("eligibility", "")) + o.get("name", "")).lower()}
+             "url": o.get("url", ""), "docs": [str(x) for x in (o.get("documents") or []) if x],
+             "who": _cut(str(o.get("eligibility") or o.get("agency") or ""), 130),
+             "why": _sentences(o.get("summary"), 260),
+             "veteran": "veteran" in (str(o.get("eligibility", "")) + o.get("name", "")).lower()}
             for o in soon
         ]
         for o in f["revsom"]["closing"][:6]:
@@ -400,7 +416,14 @@ def extract_facts(rows, now):
                 "who": "Revsom", "kind": "money",
                 "when": "today" if o["days"] == 0 else ("tomorrow" if o["days"] == 1 else f"{o['days']} days"),
                 "what": o["name"], "detail": _cut(o["amount"], 60) + (" · veteran-owned fits" if o["veteran"] else ""),
-                "url": "https://agentrevup.netlify.app/apply", "sort": o["days"],
+                "who_is": o["who"], "why": o["why"],
+                # The human steps, straight from the opportunity row. This is the
+                # line the founder asked for: not "needs you" but what a person does.
+                "do": [_cut(d, 110) for d in o["docs"]] or ["Open the application page and the drafted packet"],
+                "url": o["url"] or "https://agentrevup.netlify.app/apply",
+                "url_label": "application page",
+                "url2": "https://agentrevup.netlify.app/apply", "url2_label": "drafted answers",
+                "sort": o["days"],
             })
 
     # Marketsom — calls, deadlines, drafts waiting, named problems
@@ -419,16 +442,38 @@ def extract_facts(rows, now):
                     continue
                 kind = "call" if u.get("kind") == "call" else "deadline"
                 when = " ".join(str(u.get(k, "")) for k in ("day", "time") if u.get(k)).strip()
+                lines = [str(x) for x in (u.get("lines") or []) if x]
+                prep = u.get("prep")
+                if kind == "call":
+                    # who is on it and whether they charge are shown above the list;
+                    # the list is only the actions.
+                    do = ["Read the prep brief first" if prep else "No prep brief yet — ask for one before joining",
+                          "Join the call at the time shown",
+                          "Decide on the call: no-cost route, or a short polite no"]
+                else:
+                    do = [_cut(l, 110) for l in lines[:3]] or ["Open the briefing for what is due"]
                 f["needs_you"].append({
                     "who": "Marketsom", "kind": kind, "when": when or "soon",
-                    "what": str(u.get("what", "")), "detail": _cut(" · ".join(str(x) for x in (u.get("lines") or [])[:1]), 100),
-                    "url": "https://agentmarksom.netlify.app/briefing.html", "sort": 0 if kind == "call" else 3,
+                    "what": str(u.get("what", "")), "detail": "",
+                    "who_is": _cut(lines[0], 160) if lines else "",
+                    "why": _cut(" ".join(lines[1:3]), 220) if len(lines) > 1 else "",
+                    "do": do,
+                    "url": prep or "https://agentmarksom.netlify.app/briefing.html",
+                    "url_label": "prep brief" if prep else "briefing",
+                    "url2": "https://agentmarksom.netlify.app/briefing.html" if prep else None, "url2_label": "briefing",
+                    "sort": 0 if kind == "call" else 3,
                 })
         if isinstance(d.get("drafts"), int) and d["drafts"] > 0:
             f["needs_you"].append({
                 "who": "Marketsom", "kind": "drafts", "when": "waiting",
                 "what": f"{d['drafts']} partner drafts waiting for you to send",
-                "detail": "John is on CC of every one", "url": "https://agentmarksom.netlify.app/partner-board.html", "sort": 2,
+                "detail": "John is on CC of every one",
+                "who_is": "Community partners Marketsom researched this week — leagues, clubs, member bodies",
+                "why": "Nothing reaches a partner until you send it. These are the asks for no-cost member offers and shared content.",
+                "do": ["Open Gmail drafts from jeremy@vybe.health", "Read each one; send the ones you approve, delete the rest",
+                       "Nothing goes out until you press send"],
+                "url": "https://agentmarksom.netlify.app/partner-board.html", "url_label": "partner board",
+                "url2": None, "url2_label": None, "sort": 2,
             })
 
     # Growsom — targets ready, deadlines inside 30 days
@@ -515,11 +560,23 @@ def render_hub(rows, facts, now):
 
     def need(item):
         k = {"money": "$", "call": "☎", "deadline": "!", "drafts": "✉"}.get(item["kind"], "•")
-        return f"""<a class="need" href="{html.escape(item['url'])}">
+        steps = "".join(f"<li>{html.escape(d)}</li>" for d in item.get("do", []))
+        links = f'<a href="{html.escape(item["url"])}">{html.escape(item.get("url_label") or "open")}</a>'
+        if item.get("url2"):
+            links += f' · <a href="{html.escape(item["url2"])}">{html.escape(item.get("url2_label") or "more")}</a>'
+        detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item.get("detail") else ""
+        who_is = f'<p class="row"><span class="lbl">What it is</span>{html.escape(item["who_is"])}</p>' if item.get("who_is") else ""
+        why = f'<p class="row"><span class="lbl">Why it matters</span>{html.escape(item["why"])}</p>' if item.get("why") else ""
+        return f"""<div class="need">
   <span class="k">{k}</span>
-  <span class="body"><b>{html.escape(item['when'])}</b> — {html.escape(_cut(item['what'], 90))}
-    <span class="detail">{html.escape(item['detail'])} · {html.escape(item['who'])}</span></span>
-</a>"""
+  <div class="body"><b>{html.escape(item['when'])}</b> — {html.escape(_cut(item['what'], 90))}
+    {detail}
+    {who_is}
+    {why}
+    <p class="row"><span class="lbl">What you do</span></p>
+    <ol class="do">{steps}</ol>
+    <span class="links2">{links} · <span class="who">from {html.escape(item['who'])}</span></span></div>
+</div>"""
 
     needs = facts["needs_you"][:8]
     needs_html = "\n".join(need(i) for i in needs) if needs else '<p class="empty">Nothing is waiting on you right now.</p>'
@@ -570,11 +627,18 @@ h2 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(
   margin:26px 0 8px; font-weight:600 }}
 .need, .agent {{ display:flex; gap:12px; align-items:flex-start; background:var(--surface);
   border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-top:8px }}
-.need:active, .agent:active {{ background:var(--surface-2) }}
+.agent:active {{ background:var(--surface-2) }}
 .need .k {{ flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2);
   color:var(--brand-ink); font-weight:700; text-align:center; line-height:26px; font-size:14px }}
 .need .body, .agent .body {{ display:block; min-width:0; flex:1 }}
 .need b {{ color:var(--crit) }}
+.need .row {{ margin:7px 0 0; font-size:14px; line-height:1.45; color:var(--ink) }}
+.need .lbl {{ display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:1px }}
+.need .do {{ margin:2px 0 4px; padding-left:20px; font-size:14px; color:var(--ink) }}
+.need .do li {{ margin:2px 0 }}
+.need .links2 {{ display:block; font-size:13px; color:var(--ink-3); margin-top:4px }}
+.need .links2 a {{ color:var(--brand-ink); border-bottom:1px solid var(--line) }}
+.need .who {{ color:var(--ink-3) }}
 .need .detail, .agent .line, .agent .when {{ display:block; font-size:13.5px; color:var(--ink-2); margin-top:2px }}
 .agent .when {{ color:var(--ink-3); font-size:12.5px }}
 .agent small {{ color:var(--ink-3); font-weight:400; font-size:13px; margin-left:4px }}
@@ -592,7 +656,7 @@ h2 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(
   <h1><span>Vybe</span> hub</h1>
   <p class="status"><span>{html.escape(status)}</span><span class="meta">checked {now.strftime('%H:%M')} UTC · refreshes every 4h</span></p>
 
-  <h2>Needs you</h2>
+  <h2>Needs you — and what to do</h2>
 {needs_html}
 
   <h2>The agents</h2>
