@@ -16,6 +16,18 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-11 — daily run
+
+- +4 items, all PubMed: MIL 3 (Air Force Wingman Guardian Connect scaling to 72 installations; brief CBT
+  for suicidal thinking; blast exposure and brain metabolism), LE 1 (Swedish police work-life balance
+  scale). Board 74, archive 66. FIRE, EMS: nothing new. Exa still 402 (eighth day); policy unverified.
+- Hot notes went stale again (Programs and funding, Load and PPE): fourth run in a row. Do the `cites`
+  date check before merging. At risk in 3 days: the 14 Sep items (NREMT LIFE Study, firefighter
+  depression/PTSD), which Behavioral health and Women's health cite.
+- Lead held back: PFAS and epigenetic age in airport firefighters (DOI 10.1002/em.70085) has only
+  "Oct 2026"; add it once a day-level date exists.
+- Owner rule applied: the report ends with rendered screenshots (scripts/screenshot-board.js).
+
 ## 2026-10-10 — owner rule hardened
 
 - The owner asked "show me the latest" and got a file path and a text list. Wrong. Rule added to
