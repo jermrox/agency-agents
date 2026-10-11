@@ -175,6 +175,40 @@ Three rules of thumb that follow from this:
 - **Never bury the ask.** If something is needed from the reader, it is in the
   BLUF, not at the bottom.
 
+## 9. One shape for every dashboard
+
+Five agents built five dashboards that look and read like five different
+companies. The founder, 11 October: "look at all the agents' dashboards — you
+should literally be designing the same. There is no organisation here."
+
+The hub (`agentrevup.netlify.app/vybe-hub.html`) is the reference. Every Vybe
+dashboard follows it:
+
+1. **The first screen answers "what needs a human" before anything else.**
+   Each item is a card in a fixed order: *when — what* · **What it is** (who
+   the counterparty is, in one plain sentence) · **Why it matters** (the
+   honest so-what, including "this would cost us money" or "this is not for
+   the company") · **What you do** (numbered steps a person can follow) · the
+   two links (the thing itself, and our drafted material).
+2. **Numbers after decisions, never instead of them.** Counts and tables come
+   below the cards.
+3. **One palette, one type scale.** The tokens in `scripts/vybe-agent-board.py`
+   (`--brand #1f8e78`, `--good`, `--crit`, `--warn`, the surface greys, dark
+   mode) are the only ones. A dashboard that needs a colour the tokens do not
+   have does not need it.
+4. **Phone first.** A card is readable at 390px without zooming or sideways
+   scrolling. If it is not, it is not finished.
+5. **Define on first use.** A programme, a company, a part, an acronym gets
+   its clause the first time it appears. Rule 8 applies to pages as much as to
+   emails.
+6. **Every dashboard links to the hub, and the hub links to every dashboard.**
+   One front door, no orphans.
+
+An agent regenerating its dashboard brings it to this shape on its next run.
+A new page that does not follow it is a defect, not a style choice. The hub's
+`needs_you` feed in `vybe-agents.json` is the canonical card format; an agent
+may publish its own items in that shape and the hub will carry them.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
