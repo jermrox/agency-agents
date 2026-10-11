@@ -345,6 +345,15 @@ ul.probs {{ margin:7px 0 0; padding-left:18px; font-size:13px; color:var(--ink-2
 
 # ------------------------------------------------------------------ the hub ---
 
+def _cut(text, n):
+    """Truncate at a word boundary. A line that ends mid-word reads as broken."""
+    text = str(text or "")
+    if len(text) <= n:
+        return text
+    head = text[:n].rsplit(" ", 1)[0]
+    return head.rstrip(" ,;:·-") + "…"
+
+
 def _json_in(body):
     try:
         return json.loads(body)
@@ -390,7 +399,7 @@ def extract_facts(rows, now):
             f["needs_you"].append({
                 "who": "Revsom", "kind": "money",
                 "when": "today" if o["days"] == 0 else ("tomorrow" if o["days"] == 1 else f"{o['days']} days"),
-                "what": o["name"], "detail": o["amount"][:60] + (" · veteran-owned fits" if o["veteran"] else ""),
+                "what": o["name"], "detail": _cut(o["amount"], 60) + (" · veteran-owned fits" if o["veteran"] else ""),
                 "url": "https://agentrevup.netlify.app/apply", "sort": o["days"],
             })
 
@@ -412,7 +421,7 @@ def extract_facts(rows, now):
                 when = " ".join(str(u.get(k, "")) for k in ("day", "time") if u.get(k)).strip()
                 f["needs_you"].append({
                     "who": "Marketsom", "kind": kind, "when": when or "soon",
-                    "what": str(u.get("what", "")), "detail": " · ".join(str(x) for x in (u.get("lines") or [])[:1]),
+                    "what": str(u.get("what", "")), "detail": _cut(" · ".join(str(x) for x in (u.get("lines") or [])[:1]), 100),
                     "url": "https://agentmarksom.netlify.app/briefing.html", "sort": 0 if kind == "call" else 3,
                 })
         if isinstance(d.get("drafts"), int) and d["drafts"] > 0:
@@ -476,7 +485,7 @@ def render_hub(rows, facts, now):
         ("Revsom", "money", "https://agentrevup.netlify.app/",
          f"{na(rv.get('total'))} opportunities · {na(rv.get('no_sam'))} need no registration · {na(rv.get('closing_14d'))} close inside 14 days"),
         ("Marketsom", "marketing & community partners", "https://agentmarksom.netlify.app/briefing.html",
-         (mk.get("headline") or "briefing unavailable")[:120]),
+         _cut(mk.get("headline") or "briefing unavailable", 120)),
         ("Growsom", "investors & integrations", "https://agentgrowthscout.netlify.app/",
          f"{na(gs.get('total'))} targets · {na(gs.get('ready_to_send'))} ready to send · {na(gs.get('deadlines_30d'))} with a deadline inside 30 days"),
         ("Instasom", "social", "https://instasum.netlify.app/",
@@ -508,8 +517,8 @@ def render_hub(rows, facts, now):
         k = {"money": "$", "call": "☎", "deadline": "!", "drafts": "✉"}.get(item["kind"], "•")
         return f"""<a class="need" href="{html.escape(item['url'])}">
   <span class="k">{k}</span>
-  <span class="body"><b>{html.escape(item['when'])}</b> — {html.escape(item['what'][:90])}
-    <span class="detail">{html.escape(item['detail'][:100])} · {html.escape(item['who'])}</span></span>
+  <span class="body"><b>{html.escape(item['when'])}</b> — {html.escape(_cut(item['what'], 90))}
+    <span class="detail">{html.escape(item['detail'])} · {html.escape(item['who'])}</span></span>
 </a>"""
 
     needs = facts["needs_you"][:8]
