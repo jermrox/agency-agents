@@ -29,3 +29,9 @@ jobs:
       - run: python -m pytest tests -q
       - name: Validate lane files
         run: python build.py --check
+      # The dashboard is published straight from git. A root .gitignore rule once hid
+      # site/ so Netlify would have had nothing to deploy; fail loudly if that recurs.
+      - name: Dashboard is committed
+        run: |
+          git ls-files --error-unmatch site/index.html site/data.json
+          test -s site/index.html

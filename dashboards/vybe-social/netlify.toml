@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  command = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    X-Content-Type-Options = "nosniff"
+[[headers]]
+  for = "/data.json"
+  [headers.values]
+    Cache-Control = "no-cache"

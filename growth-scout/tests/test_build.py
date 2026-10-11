@@ -76,3 +76,107 @@ def test_sponsorship_rows_are_valid_and_competitor_deals_dedupe_by_headline():
     assert build.validate(a, PARAMS, TODAY) == []
     assert build.dedupe_key(a) == build.dedupe_key(dict(a, org="Whoop Inc"))
     assert build.validate(row(type="athlete", hunt="sponsorship"), PARAMS, TODAY) == []
+
+
+def test_founder_identity_openers_are_flagged():
+    assert build.uses_founder_identity(row(opener="Hi - Vybe is a woman-, veteran- and minority-owned startup"))
+    assert build.uses_founder_identity(row(opener="I'm a veteran founder in Akron"))
+    assert not build.uses_founder_identity(row(opener="Our cohort gets monthly calls with veteran mentors"))
+    assert not build.uses_founder_identity(row(opener="We're building Vybe Health in Akron, Ohio"))
+
+
+def test_link_check_drops_dead_links(tmp_path, monkeypatch):
+    checks = {
+        "https://example.com/a": {"status": "dead", "note": "404"},
+        "https://example.com/b": {"status": "ok", "note": "live"},
+        "https://example.com/pitch": {"status": "dead", "note": "form removed"},
+    }
+    r = row(evidence=["https://example.com/a", "https://example.com/b"])
+    assert build.apply_link_check(r, checks) is None
+    assert r["evidence"] == ["https://example.com/b"]
+    assert r["contact_url"] is None and r["link_status"] == "contact dead"
+
+    gone = row(evidence=["https://example.com/a"])
+    assert "dead" in build.apply_link_check(gone, checks)
+
+    fresh = row(evidence=["https://example.com/b"], contact_url=None)
+    build.apply_link_check(fresh, checks)
+    assert fresh["link_status"] == "verified"
+    unchecked = row(evidence=["https://example.com/zzz"], contact_url=None)
+    build.apply_link_check(unchecked, checks)
+    assert unchecked["link_status"] == "not checked"
+
+
+def test_warm_intro_rows_are_not_sendable():
+    assert build.is_sendable(row())
+    assert not build.is_sendable(row(channel="warm intro needed"))
+    assert not build.is_sendable(row(contact_url=None))
+    assert not build.is_sendable(row(type="signal"))
+
+
+def test_app_partner_rows_must_show_existing_integrations():
+    ok = row(type="app-partner", hunt="partnership", existing_wearables=["Garmin"], exclusive=False,
+             partner_status="open", opportunity="Add Vybe via their Terra integration")
+    assert build.validate(ok, PARAMS, TODAY) == []
+    no_list = dict(ok); del no_list["existing_wearables"]
+    assert any("existing_wearables" in r for r in build.validate(no_list, PARAMS, TODAY))
+    assert any("scored above 6" in r for r in build.validate(dict(ok, partner_status="exclusive"), PARAMS, TODAY))
+    assert any("opportunity" in r for r in build.validate(dict(ok, opportunity=""), PARAMS, TODAY))
+
+
+def test_sport_rows_need_adoption_evidence():
+    s = row(type="sport", hunt="partnership", wearable_adoption="Survey: 12% of clubs", opportunity="Club pilot")
+    assert build.validate(s, PARAMS, TODAY) == []
+    assert build.validate(dict(s, wearable_adoption=None), PARAMS, TODAY)
+
+
+def test_partner_extras_load_and_recheck_overrides_first_pass():
+    combos, screened = build.load_partner_extras()
+    assert len(combos["combos"]) >= 6
+    assert all(c["partners"] and c["offer"] and c["unknown"] for c in combos["combos"])
+    names = {r["app"]: r for r in screened}
+    assert len(names) == len(screened) >= 55
+    assert names["Selah"]["recheck"] is True
+
+
+def test_outreach_queue_only_holds_sendable_sponsor_and_partner_emails():
+    base = dict(id="x", org="Org", priority="High", rank=1, contact_url="https://example.org/contact",
+                channel="contact form", evidence=["https://example.org"], ask="15-min call",
+                opener="Hi there, short note.", sendable=True)
+    rows = [
+        dict(base, id="s", name="Run Club", hunt="sponsorship", type="team"),
+        dict(base, id="p", name="Fit App", hunt="partnership", type="app-partner"),
+        dict(base, id="i", name="Fund", hunt="investor", type="vc"),
+        dict(base, id="h", name="Held", hunt="sponsorship", type="team", sendable=False),
+    ]
+    q = build.outreach_queue(rows)
+    assert [x["id"] for x in q] == ["s", "p"]
+    assert q[0]["subject"] == "Vybe Health x Run Club: small sponsorship idea"
+    assert "overnight data integration" in q[1]["subject"]
+    assert q[0]["body"].startswith("Hi there, short note.") and "jeremy@vybe.health" in q[0]["body"]
+
+
+def test_queue_carries_one_follow_up_built_from_the_row():
+    row = {"id": "x", "name": "Akron Rugby", "org": "Akron Rugby", "type": "club", "hunt": "sponsorship",
+           "priority": "high", "rank": 1, "sendable": True, "opener": "Hi there.", "ask": "A jersey patch for spring."}
+    q = build.outreach_queue([row])[0]
+    assert q["followup_subject"] == "Re: " + q["subject"]
+    assert "jersey patch" not in q["followup_body"] and q["followup_body"].startswith("Hello Akron Rugby team,")
+    assert q["followup_body"].endswith(build.SIGNOFF) and build.CALENDLY in q["followup_body"]
+
+
+def test_followups_file_is_valid_and_sorted_by_due_date():
+    data = build.load_followups()
+    dues = [t.get("due") or "9999" for t in data["threads"]]
+    assert dues == sorted(dues)
+    for t in data["threads"]:
+        assert "@" in t["to"] and t["first_sent"] and t["next"]
+
+
+def test_region_order_is_nc_then_east_coast_then_ohio():
+    params = build.load_params()
+    today = dt.date(2026, 10, 10)
+    base = {"fit": 7, "hunt": "sponsorship", "name": "Club", "org": "Club"}
+    s = {g: build.score({**base, "geo": g}, params, today)[0]
+         for g in ("Raleigh, NC", "Richmond, VA", "Akron, OH", "Denver, CO")}
+    assert s["Raleigh, NC"] > s["Richmond, VA"] > s["Akron, OH"] >= s["Denver, CO"]

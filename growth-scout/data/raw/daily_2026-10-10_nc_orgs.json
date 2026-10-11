@@ -1,0 +1,1222 @@
+[
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": "Veteran network / Fort Bragg Research Institute (Geneva) relationship already on the board",
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 8,
+   "c": 4,
+   "e": 4
+  },
+  "name": "Falcon Holistic Health and Fitness Center (2nd BCT, 82nd Airborne Division)",
+  "org": "2nd Brigade Combat Team, 82nd Airborne Division, US Army",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Task & Purpose reports 2nd BCT, 82nd Airborne uses embedded H2F coaches at the Falcon H2F Center at Fort Bragg; H2F lists sleep readiness as one of its five domains, so an overnight HRV/resting-HR band maps to a defined use case.",
+  "evidence": [
+   "https://taskandpurpose.com/news/army-holistic-health-fitness-82nd-airborne/",
+   "https://www.dvidshub.net/news/printable/470180"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Offer the brigade H2F team (strength coaches, AT, dietitian) a few DevKit units to evaluate overnight HRV and resting HR as a sleep-readiness input, as staff evaluation not procurement",
+  "unknowns": "Article is older and not dated in 2026; current team lead and contact not public; any device use needs command, OPSEC and privacy approval",
+  "ask": "Ask a brigade H2F coach for a 15-minute call on how they use sleep data today",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK so data stays with the team that collects it. I read about the Falcon H2F Center's embedded coaches. Would one of your coaches spare 15 minutes to tell me how sleep readiness is tracked today? I'm asking for feedback, not a sale.",
+  "geo": "Fort Bragg, NC",
+  "tags": [
+   "military",
+   "h2f",
+   "army",
+   "sleep",
+   "hrv",
+   "nc",
+   "tactical"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": "Veteran / SOF network",
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 8,
+   "c": 3,
+   "e": 3
+  },
+  "name": "THOR3 Human Performance Program (3rd Special Forces Group (A))",
+  "org": "US Army Special Operations Command (USASOC)",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "THOR3 (Tactical Human Optimization, Rapid Rehabilitation and Reconditioning) is USASOC's holistic strength, rehab and nutrition program; a Keiser facility showcase sources a Human Performance Coordinator from 3rd SFG(A) at Fort Bragg, and a JSOM evaluation found performance and injury-prevention advantages.",
+  "evidence": [
+   "https://www.keiser.com/facility-showcase/thor3",
+   "https://www.army.mil/article/153209/Health_and_nutrition_program_enhancing",
+   "https://jsomonline.org/product/evaluation-of-the-us-army-special-forces-tactical-human-optimization-rapid-rehabilitation-and-reconditioning-program/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Share DevKit with a THOR3 performance staffer to test whether overnight HRV/resting HR fits their reconditioning workflow",
+  "unknowns": "No public contact; no source shows THOR3 sleep or wearable monitoring; Keiser page is vendor marketing; SOF procurement and data rules unknown",
+  "ask": "Ask for one 15-minute feedback call with a THOR3 performance staffer via a veteran intro",
+  "opener": "Hi, I'm the founder of Vybe Health. We build a screenless overnight band that records ECG-based HRV and resting heart rate, plus an SDK so a unit can own its data. THOR3 is often cited as the model for SOF human performance. Would you give me 15 minutes of feedback on whether overnight data like this would be useful or just noise for your staff?",
+  "geo": "Fort Bragg, NC",
+  "tags": [
+   "military",
+   "sof",
+   "thor3",
+   "tactical",
+   "hrv",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "MCCS Cherry Point Semper Fit Health Promotion",
+  "org": "Marine Corps Community Services Cherry Point",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Cherry Point's Semper Fit runs Health Promotion & Education, Fitness and Wellness, personal training, health fairs and races for Marines, sailors and civilians, and has won the Navy Surgeon General's Blue H award multiple times.",
+  "evidence": [
+   "https://www.cherrypoint.marines.mil/News/Article/525399/cherry-points-semper-fit-receives-7th-excellence-award/",
+   "https://www.cherrypoint.marines.mil/Resources/Multimedia/Video/videoid/787618"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.mccscherrypoint.com/semper-fit",
+  "fit": 7,
+  "opportunity": "Ask for a table at a Semper Fit health fair or race, the same entry used with MCCS Lejeune-New River",
+  "unknowns": "Sources are 2012 and 2021; current health promotion lead not confirmed; sponsorship rules and prices not found",
+  "ask": "Ask Semper Fit how a small wellness vendor gets a table at the next health fair",
+  "opener": "Hi Semper Fit team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, launching May 2027. I saw Semper Fit runs health fairs and races at Cherry Point. How would a small vendor request a table at a future health fair? Happy to follow any sponsorship rules you have.",
+  "geo": "Havelock, NC",
+  "tags": [
+   "military",
+   "usmc",
+   "health-promotion",
+   "nc",
+   "event"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 4
+  },
+  "name": "4th Force Support Squadron Fitness and Sports Center (Seymour Johnson AFB)",
+  "org": "4th Fighter Wing, US Air Force",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Seymour Johnson's 4th FSS runs the base Fitness and Sports Center and unit PT facilities, was hiring fitness staff in January 2026, and base coverage shows units running fitness assessments (Oct 2025).",
+  "evidence": [
+   "https://www.seymourjohnson.af.mil/News/Photos/igtag/excercise/",
+   "https://www.usajobs.gov/job/850452600"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Learn whether the base Health Promotion or fitness staff would trial overnight recovery data with a volunteer unit",
+  "unknowns": "No wearable or sleep program found at the base; contact route and sponsorship rules unknown; USAJOBS date shown only as January 2026",
+  "ask": "Ask the 4th FSS fitness staff for a 15-minute feedback call",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an SDK for teams that want their own dashboards. I'd value 15 minutes with your fitness staff on what recovery data, if any, Airmen at Seymour Johnson find useful. Feedback only, no pitch.",
+  "geo": "Goldsboro, NC",
+  "tags": [
+   "military",
+   "air-force",
+   "fitness",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 6,
+   "e": 7
+  },
+  "name": "Warrior Wellness Solutions",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Durham nonprofit offering adaptive exercise, functional-medicine health coaching, nutrition, mindfulness and post-traumatic growth training for wounded, ill and injured service members, veterans and caregivers; GuideStar Platinum rated.",
+  "evidence": [
+   "https://fox.benevity.org/community/cause/840-271320064"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://fox.benevity.org/community/cause/840-271320064",
+  "fit": 7,
+  "ask": "Ask the coaching team for feedback on whether overnight HRV/resting-HR data would help or burden participants",
+  "opener": "Hi Warrior Wellness team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with no subscription. Your coaching mixes exercise, nutrition and mindfulness. Would a coach give me 15 minutes on whether overnight data like this would be useful to your participants, or just one more thing to manage?",
+  "geo": "Durham, NC",
+  "tags": [
+   "veteran",
+   "nonprofit",
+   "coaching",
+   "nc",
+   "community"
+  ],
+  "org": "Warrior Wellness Solutions",
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-10-06",
+  "why_now": "Weekly PT session is running in October 2026",
+  "confidence": "verified",
+  "ice": {
+   "i": 6,
+   "c": 7,
+   "e": 8
+  },
+  "name": "Veterans Bridge Home Wednesday Workout and Veterans Mat Collective",
+  "org": "Veterans Bridge Home",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Charlotte veteran nonprofit runs a weekly 6:00 AM Wednesday PT session at the Veterans Park fitness court (calendar shows it in the week of 2026-10-06) and a free Veterans Mat Collective with Charlotte Jiu-Jitsu Academy and Mecklenburg County Parks & Recreation.",
+  "evidence": [
+   "https://veteransbridgehome.org/events/week/2026-10-06/",
+   "https://veteransbridgehome.org/events/list/page/6/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://veteransbridgehome.org/events/week/2026-10-06/",
+  "fit": 7,
+  "ask": "Join a Wednesday PT session and ask organizers if 5-10 regulars would give feedback on DevKit bands",
+  "opener": "Hi Veterans Bridge Home team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, no subscription. I saw your Wednesday 6 AM PT at Veterans Park. Could I join one session and ask a few regulars for honest feedback on early units? No sales at the session.",
+  "geo": "Charlotte, NC",
+  "tags": [
+   "veteran",
+   "nonprofit",
+   "fitness",
+   "community",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": null,
+  "name": "Between Service & Science (veterans' health podcast)",
+  "org": "UNC Chapel Hill (Carolina Population Center)",
+  "type": "amplifier",
+  "hunt": "social",
+  "why": "Veterans' health research podcast tied to UNC Chapel Hill; February 2026 episodes cover Gulf War illness research, so the audience is veterans and researchers interested in measurement.",
+  "evidence": [
+   "https://gc-cpeh.org/veterans-health-podcast/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://gc-cpeh.org/veterans-health-podcast/",
+  "fit": 7,
+  "ask": "Pitch a guest segment on what consumer overnight data can and cannot tell veterans",
+  "opener": "Hi, I'm the founder of Vybe Health. We build a screenless overnight band that records ECG-based HRV and resting heart rate, with an open SDK for researchers. I enjoyed your Gulf War illness episodes. If useful, I'd join a segment on the limits of consumer wearable data, with no product pitch. Would that fit the show?",
+  "geo": "Chapel Hill, NC",
+  "tags": [
+   "podcast",
+   "veteran",
+   "research",
+   "nc",
+   "amplifier"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": "Host",
+  "check_size": null,
+  "stage": null,
+  "warm_path": "NC Firefighter Cancer & Wellness Alliance",
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": null,
+  "name": "All Clear - A Firefighter Wellness Podcast (Travis McGaha)",
+  "org": "All Clear Podcast",
+  "type": "amplifier",
+  "hunt": "social",
+  "why": "Firefighter wellness podcast built on five pillars including physical fitness and balanced life; host Travis McGaha is a firefighter and fire marshal on the executive board of the North Carolina Firefighter Cancer & Wellness Alliance.",
+  "evidence": [
+   "https://www.allclearpodcast.com/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.allclearpodcast.com/",
+  "fit": 8,
+  "ask": "Offer a guest conversation on firefighter sleep and shift recovery data, no product pitch",
+  "opener": "Hi Travis, I'm the founder of Vybe Health. We build a screenless band worn overnight that records ECG-based HRV and resting heart rate, made for people who can't wear a watch on shift. Your five-pillar approach to firefighter wellness is close to what we hear from crews. Would you be open to a conversation, on or off mic, about what crews actually want from sleep data?",
+  "geo": "Statewide, NC",
+  "tags": [
+   "podcast",
+   "firefighter",
+   "first-responder",
+   "nc",
+   "amplifier",
+   "sleep"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": "Travis McGaha (All Clear podcast)",
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "North Carolina Firefighter Cancer & Wellness Alliance",
+  "type": "community",
+  "hunt": "growth",
+  "why": "NC alliance focused on firefighter cancer and wellness; its executive board includes the host of the All Clear firefighter wellness podcast, making it a statewide route to department wellness leads.",
+  "evidence": [
+   "https://www.allclearpodcast.com/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask for an intro to the alliance's wellness committee for feedback on shift-worker sleep tracking",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, built for shift workers who can't wear a watch at work. I'd value 15 minutes with your wellness committee on how NC departments track recovery today and what would be worth adding. Feedback only.",
+  "geo": "Statewide, NC",
+  "tags": [
+   "firefighter",
+   "wellness",
+   "nc",
+   "community",
+   "first-responder"
+  ],
+  "org": "North Carolina Firefighter Cancer & Wellness Alliance",
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Charlotte Fire Department Behavioral Health and Wellness",
+  "org": "Charlotte Fire Department",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Charlotte Fire runs mental-wellness education, peer-led outreach and clinical care under Division Chief Jason Perdue with a Behavioral Health Specialist (city news, May 2025); a March 2026 article covers a new initiative supporting Charlotte firefighters' mental health.",
+  "evidence": [
+   "https://www.charlottenc.gov/City-News/Charlotte-Fire-Leads-with-Compassion-in-Commitment-to-Mental-Wellness",
+   "https://www.bestversionmedia.com/article/2026-03-protecting-the-protectors-the-initiative-proactively-supporting-charlotte-firefighters-mental-health/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.charlottenc.gov/City-News/Charlotte-Fire-Leads-with-Compassion-in-Commitment-to-Mental-Wellness",
+  "fit": 7,
+  "opportunity": "Offer the wellness team DevKit units for a small, voluntary staff evaluation of overnight recovery data alongside their peer-support program",
+  "unknowns": "March 2026 article details not confirmed; procurement, union and privacy approval routes unknown; no wearable program found",
+  "ask": "Ask the wellness division for a 15-minute feedback call",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with no subscription and data the wearer controls. I read about Charlotte Fire's peer-led wellness work. Would someone on the wellness team give me 15 minutes on whether overnight data would help or intrude? Feedback, not a sale.",
+  "geo": "Charlotte, NC",
+  "tags": [
+   "firefighter",
+   "wellness",
+   "nc",
+   "first-responder",
+   "municipal"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "NC Office of State Fire Marshal (Fire Marshal Journal)",
+  "org": "North Carolina Office of State Fire Marshal",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "The OSFM's Q2 2026 Fire Marshal Journal describes efforts to support the long-term health and safety of firefighters statewide; the quarterly journal reaches NC departments.",
+  "evidence": [
+   "https://www.ncosfm.gov/administrative/nc-fire-marshal-journal-q2-2026/open",
+   "https://www.ncosfm.gov/administrative/nc-fire-marshal-journal-q1-2026/open"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.ncosfm.gov/administrative/nc-fire-marshal-journal-q2-2026/open",
+  "fit": 7,
+  "opportunity": "Learn which OSFM firefighter-health efforts could include a voluntary shift-recovery evaluation, and how to be listed as a resource",
+  "unknowns": "Exact health program named in the journal not confirmed; state agencies may not endorse vendors; contact person unknown",
+  "ask": "Ask OSFM's firefighter-health contact for 15 minutes of feedback",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, built for shift workers. I read the Q2 2026 Fire Marshal Journal on firefighter health and safety. Who at OSFM would give 15 minutes of feedback on whether overnight recovery data has a place in that work?",
+  "geo": "Raleigh, NC",
+  "tags": [
+   "firefighter",
+   "state-agency",
+   "nc",
+   "first-responder"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-05-06",
+  "why_now": "2027 Expo dates not yet published; exhibitor slots are usually booked months ahead",
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 6,
+   "e": 6
+  },
+  "name": "NC EMS Expo (NC Office of EMS)",
+  "org": "North Carolina Office of Emergency Medical Services",
+  "type": "event",
+  "hunt": "sponsorship",
+  "why": "The state's EMS Expo moved to the Benton Convention Center in Winston-Salem in 2026 (May 3-6, with the 34th Annual Paramedic Competition); it gathers NC EMS crews, a 24-hour-shift workforce.",
+  "evidence": [
+   "https://oems.nc.gov/conferences/",
+   "https://web.cvent.com/event/7d2d0aaf-fdf8-4468-8eda-8998d6b46d09/summary",
+   "https://hpp.nc.gov/events/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://oems.nc.gov/conferences/",
+  "fit": 7,
+  "ask": "Ask OEMS how to get on the 2027 exhibitor list and its price",
+  "opener": "Hi NC EMS Expo team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, launching May 2027 and built for shift workers. I'd like a small exhibitor table at the 2027 Expo. Could you tell me when exhibitor registration opens and what a basic booth costs?",
+  "geo": "Winston-Salem, NC",
+  "tags": [
+   "ems",
+   "event",
+   "first-responder",
+   "nc",
+   "expo"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-08-07",
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 6
+  },
+  "name": "NCAEMSA Summer Conference (NC Association of EMS Administrators)",
+  "org": "North Carolina Association of EMS Administrators",
+  "type": "event",
+  "hunt": "sponsorship",
+  "why": "NCAEMSA's 2026 Summer Conference ran Aug 3-7 in Asheville with a vendor line-up; the audience is the EMS administrators who set crew wellness policy across NC counties.",
+  "evidence": [
+   "https://ncaemsasummer2026.notion.site/NCAEMSA-2026-Summer-Conference-3501a3ee9bff80f98f89ee5dd8061bf8"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://ncaemsasummer2026.notion.site/NCAEMSA-2026-Summer-Conference-3501a3ee9bff80f98f89ee5dd8061bf8",
+  "fit": 7,
+  "ask": "Ask to be added to the 2027 summer conference vendor list",
+  "opener": "Hi NCAEMSA team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, built for 24-hour-shift crews, launching May 2027. I saw the 2026 summer conference had a vendor line-up. How would a small vendor get a spot at the 2027 conference?",
+  "geo": "Asheville, NC",
+  "tags": [
+   "ems",
+   "event",
+   "first-responder",
+   "nc",
+   "administrators"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 4
+  },
+  "name": "CMPD Officer Wellness Unit",
+  "org": "Charlotte-Mecklenburg Police Department",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "CMPD's wellness unit works with Mecklenburg County (onsite clinical psychologist), runs peer support and an EAP, and was profiled by the National Law Enforcement Officers Memorial Fund as an officer-wellness model.",
+  "evidence": [
+   "https://nleomf.org/dz-resource/charlotte-mecklenberg-nc-p-d-executive-summary/",
+   "https://nleomf.org/wp-content/uploads/2022/09/CMPD-Wellness.pdf"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Offer a voluntary staff evaluation of overnight recovery data for night-shift officers within the wellness unit",
+  "unknowns": "Profiles are 2021-2022; current wellness lead and contact unknown; police data-privacy and procurement rules unknown",
+  "ask": "Ask for a 15-minute feedback call with the wellness unit",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with data the wearer controls. CMPD's wellness unit is often cited as a model. Would someone there give me 15 minutes on whether night-shift officers would find overnight recovery data useful? Feedback, not a sale.",
+  "geo": "Charlotte, NC",
+  "tags": [
+   "police",
+   "wellness",
+   "first-responder",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 5,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Chapel Hill Police Department Wellness Coordinator",
+  "org": "Chapel Hill Police Department",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Chapel Hill PD used a two-year DOJ grant to hire a police wellness coordinator charged with strategies for officers' mental, physical and financial health.",
+  "evidence": [
+   "https://www.cbs17.com/news/local-news/orange-county-news/chapel-hill-police-department-taking-steps-to-ensure-mental-health-wellness-of-officers-and-community/amp/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Ask the wellness coordinator to review whether overnight recovery data belongs in the department's physical-health strategy",
+  "unknowns": "Article date and whether the role is still funded unknown; coordinator name not confirmed",
+  "ask": "Ask the wellness coordinator for 15 minutes of feedback",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, no subscription. I read Chapel Hill PD created a wellness coordinator role covering physical health. Would you give me 15 minutes on what officers would actually use, and what they would not want tracked?",
+  "geo": "Chapel Hill, NC",
+  "tags": [
+   "police",
+   "wellness",
+   "first-responder",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 5,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Asheville Police Department Wellness Program",
+  "org": "Asheville Police Department",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "WLOS reports Asheville PD received a grant for an officer wellness program coordinated with the city's responder support services, described as 'incredibly holistic'.",
+  "evidence": [
+   "https://wlos.com/news/local/asheville-police-department-wellness-program-coordinate-grant-money-funds-department-justice-mental-health"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "opportunity": "Feedback call with the program coordinator on overnight recovery data for shift officers",
+  "unknowns": "Article date and program lead unknown; mental-health focus may not extend to physical data",
+  "ask": "Ask the coordinator for 15 minutes of feedback",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with data the wearer controls. I read about APD's holistic wellness program. Would the coordinator give me 15 minutes on whether shift officers want this kind of data, and what would make it unwelcome?",
+  "geo": "Asheville, NC",
+  "tags": [
+   "police",
+   "wellness",
+   "first-responder",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 4
+  },
+  "name": "NC Officer Health, Fitness and Wellness study (Appalachian State and NC Justice Academy)",
+  "org": "Appalachian State University / North Carolina Justice Academy",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "App State researchers worked with the NC Justice Academy, at the request of the state's Criminal Justice and Sheriffs' training standards commissions, to study ongoing fitness standards for NC officers.",
+  "evidence": [
+   "https://ncdoj.gov/download/141/cj-publications/360657/nc-officer-health-fitness-and-wellness-final-1-2.pdf"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask the report authors for 15 minutes on whether overnight recovery measures fit follow-on work",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK for researchers. I read the NC officer health, fitness and wellness report. Would you give me 15 minutes on whether overnight measures would be useful in any follow-on study of officer fitness?",
+  "geo": "Boone, NC",
+  "tags": [
+   "police",
+   "research",
+   "fitness",
+   "nc",
+   "university"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Blue Cross NC member wellness programs and Blue365 discounts",
+  "org": "Blue Cross and Blue Shield of North Carolina",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "Blue Cross NC's discount program, open to all members through Blue Connect, lists fitness watches and equipment, and its member portal lists wellness programs; an IncentFit case study says Blue Cross NC's own employee program now includes fitness trackers and wearables.",
+  "evidence": [
+   "https://www.bluecrossnc.com/members/health-plans/discount-program",
+   "https://www.bcbsnc.com/members/member-portal/access-wellness-programs",
+   "https://incentfit.com/wellness-word/company-spotlight-blue-cross-and-blue-shield-of-north-carolina/"
+  ],
+  "channel": "apply",
+  "contact_url": "https://www.bluecrossnc.com/members/health-plans/discount-program",
+  "fit": 7,
+  "opportunity": "List Vybe as a fitness-device discount for Blue Cross NC members (via Blue365, already on the board as a national row) and learn how the employee wellness team picks devices",
+  "unknowns": "Blue365 vendor terms not public; IncentFit case study undated; overlaps the national Blue365 row",
+  "ask": "Ask how a new fitness-device brand is added to the Blue Cross NC discount list",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with no subscription, launching May 2027. I saw Blue Cross NC's member discounts include fitness watches. What's the route for a new device brand to be considered for that list once we ship?",
+  "geo": "Durham, NC",
+  "tags": [
+   "insurer",
+   "wellness",
+   "employer",
+   "nc",
+   "channel"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 4
+  },
+  "name": "Duke Institute for Health Innovation (DIHI)",
+  "org": "Duke Health",
+  "type": "channel-partner",
+  "hunt": "partnership",
+  "why": "DIHI has built and implemented 65+ solutions at Duke Health since 2013 and runs an annual innovation call (2026 cycle prioritized AI for care and operations), with staff support for funded Duke teams; its Vol 26 report was published July 2026.",
+  "evidence": [
+   "https://dihi.org/wp-content/uploads/2026/07/DIHI_REPORT_VOL26_FINAL_hyperlinked.pdf",
+   "https://www.beckershospitalreview.com/healthcare-information-technology/innovation/duke-to-launch-institute-for-health-innovation/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://dihi.org/wp-content/uploads/2026/07/DIHI_REPORT_VOL26_FINAL_hyperlinked.pdf",
+  "fit": 7,
+  "opportunity": "Find a Duke clinician or staff champion whose DIHI project could use an open overnight HRV/resting-HR device as a data source",
+  "unknowns": "Only Duke teams can submit; 2027 call timing unknown; external vendors' role in projects unclear",
+  "ask": "Ask DIHI staff whether any current projects need an overnight wellness data source",
+  "opener": "Hi DIHI team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK for research teams. I read your Vol 26 report. Are there Duke projects where an open overnight data source would be useful? I'd value 15 minutes, or a pointer to the right person.",
+  "geo": "Durham, NC",
+  "tags": [
+   "health-system",
+   "innovation",
+   "duke",
+   "nc",
+   "channel"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "Well (health engagement platform)",
+  "org": "Well",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Chapel Hill AI health-engagement platform listed in the Triangle Startups healthtech directory; it runs the UNC wellness program, where participants earn rewards points for wellness actions.",
+  "evidence": [
+   "https://triangle-startups.com/sectors/healthtech",
+   "https://www.well.co/unc-wellness-notice"
+  ],
+  "existing_wearables": null,
+  "exclusive": null,
+  "partner_status": "unknown",
+  "opportunity": "Ask whether Well's rewards actions can include overnight sleep/recovery data from a device, starting with Vybe DevKit",
+  "unknowns": "Device integrations not found; partner contact not public; whether rewards accept device data unknown",
+  "channel": "contact form",
+  "contact_url": "https://www.well.co/unc-wellness-notice",
+  "fit": 7,
+  "ask": "Ask Well's product team whether they integrate wearable data today",
+  "opener": "Hi Well team, I'm the founder of Vybe Health. We make a screenless overnight band that records ECG-based HRV and resting heart rate, with an SDK and API for partners. I saw Well runs the UNC wellness program with reward actions. Do you integrate device data today? If not, I'd like 15 minutes to see if an overnight data source would fit.",
+  "geo": "Chapel Hill, NC",
+  "tags": [
+   "app-partner",
+   "wellness",
+   "employer",
+   "nc",
+   "digital-health"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2024-10-14",
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "name": "YMCA of Southeastern NC and Novant Health community wellness partnership",
+  "org": "YMCA of Southeastern North Carolina",
+  "type": "community",
+  "hunt": "growth",
+  "why": "The YMCA of Southeastern NC partnered with Novant Health (Oct 2024) to offer health screenings and wellness programs across the region.",
+  "evidence": [
+   "https://portcitydaily.com/sponsored-content/2024/10/14/sponsored-ymca-novant-health-partner-to-drive-systemic-meaningful-change-throughout-region/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask the Y's wellness director for feedback on a member sleep-habits program pilot",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, no subscription. I read about the Y's wellness work with Novant in southeastern NC. Would your wellness director give me 15 minutes on whether members would value a simple sleep-habits program?",
+  "geo": "Wilmington, NC",
+  "tags": [
+   "community",
+   "ymca",
+   "wellness",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": "Assistant Professor",
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-02-19",
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Lindsey Rosman, PhD (UNC cardiology wearable trials)",
+  "org": "University of North Carolina at Chapel Hill, School of Medicine (Cardiology)",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "UNC Research (Feb 19, 2026) profiles Rosman co-leading clinical trials on how heart-rate-monitoring wearables affect patient psychology and outcomes; her 2024 study found one in five AFib patients contacted their doctor after an abnormal-rhythm notification.",
+  "evidence": [
+   "https://research.unc.edu/story/data-driven-heartbeats/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://research.unc.edu/story/data-driven-heartbeats/",
+  "fit": 8,
+  "ask": "Ask for 15 minutes on how a screenless, notification-free band might change user behavior",
+  "opener": "Hi Dr. Rosman, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with no on-wrist alerts and an open SDK. Your work on how wearable notifications affect people was a big reason we went screenless. Would you give me 15 minutes of feedback on our approach?",
+  "geo": "Chapel Hill, NC",
+  "tags": [
+   "research",
+   "university",
+   "wearables",
+   "ecg",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Appalachian State Human Performance Laboratory (David Nieman, DrPH)",
+  "org": "Appalachian State University, North Carolina Research Campus",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "App State's Human Performance Laboratory at the NC Research Campus in Kannapolis lists David Nieman as principal investigator and Camila Sakaguchi Olson as research manager; the lab studies human nutrition and performance.",
+  "evidence": [
+   "https://ncrc.appstate.edu/people",
+   "https://www.dailytarheel.com/article/2009/02/appalachian-lab-at-research-campus-to-study-performance-and-healthbr"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://ncrc.appstate.edu/people",
+  "fit": 7,
+  "ask": "Ask the research manager whether overnight HRV/resting HR would add value to exercise-recovery studies",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK and raw data access for researchers. Your lab's exercise and recovery work at the NC Research Campus looks like a fit. Could we have 15 minutes to see if DevKit units would be useful in a future study?",
+  "geo": "Kannapolis, NC",
+  "tags": [
+   "research",
+   "university",
+   "exercise",
+   "hrv",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 5
+  },
+  "name": "Nano-EXtended Textiles (NEXT) research group (Jesse Jur)",
+  "org": "NC State University, Wilson College of Textiles",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "NEXT, led by Textile Technology Program Director Jesse Jur, develops smart textiles including a shirt with a low-power sensor that records ECG, in collaboration with the ASSIST center (2021 report).",
+  "evidence": [
+   "https://assistcenter.org/2021/03/05/nano-extended-textiles-research-group-developing-next-big-thing-in-wearable-tech/",
+   "https://news.ncsu.edu/tag/wearable-electronics/"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://assistcenter.org/2021/03/05/nano-extended-textiles-research-group-developing-next-big-thing-in-wearable-tech/",
+  "fit": 7,
+  "ask": "Ask for a feedback call on band textile and electrode comfort for overnight wear",
+  "opener": "Hi Dr. Jur, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate. Comfort and electrode contact on soft materials are our hardest problems, and NEXT's ECG textile work is close to them. Would you give me 15 minutes of feedback, or point me to a student project that might want DevKit units?",
+  "geo": "Raleigh, NC",
+  "tags": [
+   "research",
+   "university",
+   "textiles",
+   "ecg",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "UNCW at-home fabric-based sleep monitoring team",
+  "org": "University of North Carolina Wilmington, School of Health and Applied Human Sciences",
+  "type": "research-lab",
+  "hunt": "growth",
+  "why": "UNCW's School of Health and Applied Human Sciences reports a team developing an at-home, fabric-based neural sleep monitoring platform, directly adjacent to overnight wearable sensing.",
+  "evidence": [
+   "https://horizon.uncw.edu/academics/colleges/chhs/schools/health-applied-human-sciences/news-events"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://horizon.uncw.edu/academics/colleges/chhs/schools/health-applied-human-sciences/news-events",
+  "fit": 7,
+  "ask": "Ask the team whether overnight HRV/resting HR from a band would be a useful comparison signal",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with raw data access for researchers. I saw UNCW's team is building fabric-based at-home sleep monitoring. Would a second overnight signal be useful to compare against? I'd value 15 minutes.",
+  "geo": "Wilmington, NC",
+  "tags": [
+   "research",
+   "university",
+   "sleep",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 7,
+   "c": 4,
+   "e": 5
+  },
+  "name": "Jeani",
+  "org": "Jeani",
+  "type": "app-partner",
+  "hunt": "partnership",
+  "why": "Durham movement-intelligence platform that uses wearable data to flag athletes' injury risk and adjust training, listed among Triangle healthtech startups.",
+  "evidence": [
+   "https://triangle-startups.com/sectors/healthtech",
+   "https://builtin.com/companies/location/na/usa/nc/durham/type/healthtech-startups"
+  ],
+  "existing_wearables": null,
+  "exclusive": null,
+  "partner_status": "unknown",
+  "opportunity": "Offer overnight HRV/resting HR as an added input to Jeani's training-load and injury-risk models via the Vybe SDK",
+  "unknowns": "Which wearables Jeani supports today not found; contact route not found; whether it ingests third-party data unknown",
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Ask a founder for 15 minutes on what overnight data their models use",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an SDK and API so partners can use the raw data. Jeani uses wearable data for training decisions. Would overnight recovery data be a useful input? Happy to share a DevKit if so.",
+  "geo": "Durham, NC",
+  "tags": [
+   "app-partner",
+   "sports-science",
+   "wearables",
+   "nc",
+   "builder"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-03-10",
+  "why_now": "Next cohort application window likely opens ahead of spring 2027; date not published",
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "Launch/KPMG Accelerator (Launch Chapel Hill)",
+  "org": "Launch Chapel Hill",
+  "type": "accelerator",
+  "hunt": "growth",
+  "why": "Launch Chapel Hill's accelerator with KPMG kicked off its third cohort of 13 startups in March 2026 with an April 14 Demo Day; it is a Triangle program, not a fund.",
+  "evidence": [
+   "https://grepbeat.com/2026/03/10/launch-kpmg-accelerator-kicks-off-third-cohort-in-chapel-hill/"
+  ],
+  "channel": "apply",
+  "contact_url": "https://grepbeat.com/2026/03/10/launch-kpmg-accelerator-kicks-off-third-cohort-in-chapel-hill/",
+  "fit": 7,
+  "ask": "Ask Launch whether non-local founders can join the 2027 cohort or its events",
+  "opener": "Hi Launch team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK, launching May 2027 and building ties in the Triangle. Is the 2027 accelerator open to founders based outside Chapel Hill, and when do applications open?",
+  "geo": "Chapel Hill, NC",
+  "tags": [
+   "accelerator",
+   "nc",
+   "triangle",
+   "ecosystem"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": "2026-06-25",
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 6
+  },
+  "name": "CED GRO Incubator",
+  "org": "Council for Entrepreneurial Development (CED)",
+  "type": "accelerator",
+  "hunt": "growth",
+  "why": "CED's GRO Incubator ran its 11th cohort in 2026 (Demo Day June 25) and included healthtech startups such as SonoVoice, per the Triangle Startups healthtech tracker.",
+  "evidence": [
+   "https://triangle-startups.com/sectors/healthtech"
+  ],
+  "channel": "apply",
+  "contact_url": "https://triangle-startups.com/sectors/healthtech",
+  "fit": 7,
+  "ask": "Ask CED when the next GRO cohort opens and whether out-of-state founders qualify",
+  "opener": "Hi CED team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an SDK for developers, launching May 2027. We're building a North Carolina presence. When does the next GRO Incubator cohort open, and does it accept founders not yet based in the Triangle?",
+  "geo": "Durham, NC",
+  "tags": [
+   "accelerator",
+   "nc",
+   "triangle",
+   "ecosystem"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 5,
+   "c": 6,
+   "e": 8
+  },
+  "name": "Triangle Startups directory (healthtech sector)",
+  "org": "Triangle Startups",
+  "type": "listing",
+  "hunt": "growth",
+  "why": "Independent directory of Raleigh-Durham-Chapel Hill-RTP startups with a source-checked healthtech sector page (33 confirmed companies); a free way to be visible to Triangle partners.",
+  "evidence": [
+   "https://triangle-startups.com/sectors/healthtech",
+   "https://triangle-startups.com/directory"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://triangle-startups.com/",
+  "fit": 7,
+  "ask": "Ask how a startup with a Triangle presence gets listed",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an SDK for developers, launching May 2027. We're building partnerships in the Triangle. What does a company need to show to be listed in your healthtech directory?",
+  "geo": "Raleigh, NC",
+  "tags": [
+   "listing",
+   "nc",
+   "triangle",
+   "ecosystem"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "verified",
+  "ice": {
+   "i": 6,
+   "c": 5,
+   "e": 6
+  },
+  "name": "NC Biotechnology Center medical device and digital health programs",
+  "org": "North Carolina Biotechnology Center",
+  "type": "community",
+  "hunt": "growth",
+  "why": "NCBiotech tracks and promotes NC medtech (e.g., its 2026 note on Triangle companies in the MedTech Innovator cohort) and has run a strategic plan to grow Charlotte's medical-device cluster; it hosts community events at its RTP campus.",
+  "evidence": [
+   "https://www.ncbiotech.org/news/triangle-medtechs-earn-spots-prestigious-mti-accelerator-cohort",
+   "https://www.biospace.com/charlotte-seeks-spotlight-in-medical-device-arena-north-carolina-biotechnology-center-implementing-strategic-plan"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://www.ncbiotech.org/news/triangle-medtechs-earn-spots-prestigious-mti-accelerator-cohort",
+  "fit": 7,
+  "ask": "Ask NCBiotech's medtech/device staff which events or introductions suit a wellness-hardware startup (no funding ask)",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, a general-wellness device with an open SDK, launching May 2027. We're building a North Carolina presence. Which NCBiotech events or medtech community groups would be the right place for us to start?",
+  "geo": "Research Triangle Park, NC",
+  "tags": [
+   "community",
+   "medtech",
+   "nc",
+   "ecosystem"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 5
+  },
+  "name": "Celebrate Research! (Wake Forest University School of Medicine CTSI)",
+  "org": "Wake Forest University School of Medicine (Advocate Health)",
+  "type": "event",
+  "hunt": "growth",
+  "why": "Month-long April research showcase (2026 edition) across Winston-Salem, Charlotte and virtual, spanning cardiovascular health, neuroscience and precision medicine; a route to investigators who might use overnight wearable data.",
+  "evidence": [
+   "https://ctsi.wakehealth.edu/announcements/2026/01/celebrate-research-2026-returns-this-april"
+  ],
+  "channel": "contact form",
+  "contact_url": "https://ctsi.wakehealth.edu/announcements/2026/01/celebrate-research-2026-returns-this-april",
+  "fit": 7,
+  "ask": "Ask CTSI whether 2027 sessions are open to industry attendees and how to meet cardiovascular investigators",
+  "opener": "Hi CTSI team, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with raw data access for researchers. Are any Celebrate Research! 2027 sessions open to industry attendees? I'd like to meet investigators who use overnight data.",
+  "geo": "Winston-Salem, NC",
+  "tags": [
+   "event",
+   "research",
+   "university",
+   "nc"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ },
+ {
+  "role": null,
+  "check_size": null,
+  "stage": null,
+  "warm_path": null,
+  "deadline": null,
+  "last_signal_date": null,
+  "why_now": null,
+  "confidence": "single-source",
+  "ice": {
+   "i": 6,
+   "c": 4,
+   "e": 4
+  },
+  "name": "The Pearl innovation district (Atrium Health / Wake Forest University School of Medicine)",
+  "org": "Atrium Health (Advocate Health)",
+  "type": "community",
+  "hunt": "growth",
+  "why": "Atrium Health's $1.5B innovation district in Charlotte, anchored by a new Wake Forest University School of Medicine campus, was set to open in 2025; it is the hub for Charlotte health innovation (Health Innovation Day is already a separate board row).",
+  "evidence": [
+   "https://www.beckershospitalreview.com/healthcare-information-technology/innovation/atrium-health-to-open-1-5b-innovation-district-in-25/"
+  ],
+  "channel": "warm intro needed",
+  "contact_url": null,
+  "fit": 7,
+  "ask": "Use Health Innovation Day contacts to ask which Pearl tenants or programs host startups",
+  "opener": "Hi, I'm the founder of Vybe Health. We make a screenless band worn overnight that records ECG-based HRV and resting heart rate, with an open SDK, launching May 2027. We're building a Charlotte presence. Which programs at The Pearl work with early hardware startups, and who would be the right person to ask?",
+  "geo": "Charlotte, NC",
+  "tags": [
+   "community",
+   "health-system",
+   "innovation",
+   "nc",
+   "charlotte"
+  ],
+  "verification_note": "Evidence URLs were surfaced and summarized by web search on 2026-10-10; direct page fetch was blocked in this session, so re-open before sending."
+ }
+]

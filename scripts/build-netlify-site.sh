@@ -131,6 +131,8 @@ if want_marksom; then
   [ -f "$MARKSOM_FEED" ] && cp -f "$MARKSOM_FEED" "$OUT/marksom.json"
   [ -f "$MARKSOM_SCOREBOARD" ] && cp -f "$MARKSOM_SCOREBOARD" "$OUT/scoreboard.html"
   [ -f "$MARKSOM_BRIEFING" ] && cp -f "$MARKSOM_BRIEFING" "$OUT/briefing.html"
+  [ -f vybe-marketing/hub/reports.html ] && cp -f vybe-marketing/hub/reports.html "$OUT/reports.html"
+  [ -f vybe-marketing/hub/partner-board.html ] && cp -f vybe-marketing/hub/partner-board.html "$OUT/partner-board.html"
   [ -f "$MARKETING_FEED" ] && cp -f "$MARKETING_FEED" "$OUT/vybe-marketing.json"
 fi
 
