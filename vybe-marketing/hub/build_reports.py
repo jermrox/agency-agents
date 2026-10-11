@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = ROOT / "hub"
 
 GROUPS = [
+    ("Funding research", [
+        ("funding", "Money in, at no cost (11 Oct)", "research/funding-research-2026-10-11.md"),
+    ]),
     ("Outreach", [
         ("outreach", "Every partner email", None),
         ("forms", "Forms and DMs to send (5 Oct)", "research/forms-and-dms-2026-10-05.md"),
