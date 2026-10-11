@@ -17,6 +17,7 @@ HUB = ROOT / "hub"
 
 GROUPS = [
     ("Funding research", [
+        ("remote", "Investors and collaborations, online only (11 Oct)", "research/remote-investors-and-collaboration-2026-10-11.md"),
         ("funding", "Money in, at no cost (11 Oct)", "research/funding-research-2026-10-11.md"),
     ]),
     ("Outreach", [
