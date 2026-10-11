@@ -476,30 +476,84 @@ def extract_facts(rows, now):
                 "url2": None, "url2_label": None, "sort": 2,
             })
 
-    # Growsom — targets ready, deadlines inside 30 days
+    # Growsom — targets ready, deadlines inside 30 days, and the top items
     r = by_url.get("https://agentgrowthscout.netlify.app/data.json")
     d = _json_in(r.get("_body", "")) if r else None
     sm = d.get("summary") if isinstance(d, dict) else None
     if isinstance(sm, dict):
         for k in ("total", "ready_to_send", "outreach_queue", "deadlines_30d", "high"):
             f["growsom"][k] = sm.get(k)
+    tg = d.get("targets") if isinstance(d, dict) else None
+    if isinstance(tg, list):
+        rows_ = [x for x in tg if isinstance(x, dict) and str(x.get("priority", "")).lower() == "high"]
+        rows_.sort(key=lambda x: -(x.get("score") or 0))
+        f["growsom"]["top"] = [{
+            "what": str(x.get("name") or x.get("org") or ""),
+            "who_is": _cut(f"{x.get('type') or x.get('lane') or ''}" + (f" · {x.get('geo')}" if x.get("geo") else ""), 90),
+            "why": _sentences(x.get("why_now") or x.get("why"), 200),
+            "do": [_cut(x.get("move") or x.get("ask") or "Approve the drafted opener so Growsom can send it", 110)],
+            "url": x.get("contact_url") or "https://agentgrowthscout.netlify.app/",
+        } for x in rows_[:4]]
 
-    # Instasom — verified people to follow, days of numbers
+    # Instasom — people to follow, the latest numbers, the top picks
     r = by_url.get("https://instasum.netlify.app/all.json")
     d = _json_in(r.get("_body", "")) if r else None
     col = d.get("collections") if isinstance(d, dict) else None
     if isinstance(col, dict):
         ppl = col.get("people")
-        f["instasom"]["people"] = len(ppl) if hasattr(ppl, "__len__") else None
+        items = list(ppl.values()) if isinstance(ppl, dict) else (ppl if isinstance(ppl, list) else [])
+        items = [x for x in items if isinstance(x, dict)]
+        f["instasom"]["people"] = len(items) or None
+        f["instasom"]["to_follow"] = sum(1 for x in items if x.get("status") == "Not started") or None
         fol = col.get("followers")
         f["instasom"]["days"] = len(fol) if hasattr(fol, "__len__") else None
+        if isinstance(fol, dict) and fol:
+            latest = fol[sorted(fol.keys())[-1]]
+            if isinstance(latest, dict):
+                f["instasom"]["ig"] = latest.get("ig")
+                f["instasom"]["fb"] = latest.get("fb")
+        pick = [x for x in items if x.get("status") == "Not started" and not x.get("followOnly")]
+        def _n(v):
+            try: return float(str(v).lower().replace("k", "e3").replace(",", ""))
+            except Exception: return 0.0
+        pick.sort(key=lambda x: -_n(x.get("followers")))
+        f["instasom"]["top"] = [{
+            "what": f"@{str(x.get('handle','')).lstrip('@')}" + (f" — {x.get('name')}" if x.get("name") else ""),
+            "who_is": _cut(f"{x.get('category') or ''} · {x.get('followers') or '?'} followers", 90),
+            "why": _sentences(x.get("why"), 200),
+            "do": [_cut(x.get("action") or "Follow, then tick the box on the social dashboard", 110)],
+            "url": x.get("url") or f"https://www.instagram.com/{str(x.get('handle','')).lstrip('@')}/",
+        } for x in pick[:4]]
+
+    # Marketsom — the replies and problems as items
+    r = by_url.get("https://agentmarksom.netlify.app/briefing.html")
+    d = _live_data(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        probs = d.get("problems") if isinstance(d.get("problems"), list) else []
+        f["marketsom"]["top"] = [{
+            "what": _cut(str(pr.get("title") or pr.get("what") or pr) if not isinstance(pr, str) else pr, 90),
+            "who_is": "", "why": _sentences((pr.get("why") or pr.get("detail") or "") if isinstance(pr, dict) else "", 200),
+            "do": [_cut((pr.get("fix") or pr.get("do") or pr.get("action") or "Read it on the briefing") if isinstance(pr, dict) else "Read it on the briefing", 110)],
+            "url": "https://agentmarksom.netlify.app/briefing.html",
+        } for pr in probs[:4]]
+
+    # Revsom — the first six closes are already "needs you"; the top list is the
+    # next ones behind them, so the two blocks never repeat each other.
+    f["revsom"]["top"] = [{
+        "what": f"{o['days']} days — {o['name']}", "who_is": o["who"], "why": o["why"],
+        "do": [_cut(x, 110) for x in o["docs"][:3]] or ["Open the application page"],
+        "url": o["url"] or "https://agentrevup.netlify.app/apply",
+    } for o in (f["revsom"].get("closing") or [])[6:10]]
 
     f["needs_you"].sort(key=lambda x: x["sort"])
     return f
 
 
 def render_hub(rows, facts, now):
-    """One short page. Phone first. Every agent, alive or not, and what needs a human."""
+    """One page, one shape, every agent. The founder's words, 11 Oct: 'one
+    organized system… you are the central hub… what it is, why it matters,
+    what I physically do.' Each agent gets the same block: purpose in money
+    terms, alive, what it is pulling, its top items, what needs a human."""
     by_agent = {}
     for r in rows:
         by_agent.setdefault(r["agent"], []).append(r)
@@ -507,79 +561,82 @@ def render_hub(rows, facts, now):
     def alive(agent):
         rs = by_agent.get(agent, [])
         if not rs:
-            return ("unknown", "no surface watched", None)
+            return ("unk", None, "no live page")
         bad = [r for r in rs if r["state"] != "ok"]
-        stamped = [r for r in rs if r.get("age_h") is not None]
-        age = min((r["age_h"] for r in stamped), default=None)
-        if bad:
-            return ("bad", "; ".join(p for r in bad for p in r["problems"])[:90], age)
-        return ("ok", "running", age)
+        ages = [r["age_h"] for r in rs if r.get("age_h") is not None]
+        age = min(ages) if ages else None
+        return ("bad" if bad else "ok", age, "; ".join(p for r in bad for p in r["problems"])[:90])
 
-    def na(v, fmt="{}"):
-        return "unavailable" if v is None else fmt.format(v)
+    def na(v):
+        return "unavailable" if v in (None, "") else f"{v:,}" if isinstance(v, int) else str(v)
 
     def ago(age):
         if age is None:
             return "no timestamp"
-        if age < 1:
-            return f"{int(age * 60)} min ago"
-        return f"{age:.0f}h ago" if age < 48 else f"{age / 24:.0f} days ago"
+        return f"{int(age * 60)} min ago" if age < 1 else (f"{age:.0f}h ago" if age < 48 else f"{age / 24:.0f} days ago")
+
+    def card(it, kind="•", when=None):
+        who = f'<p class="row"><span class="lbl">What it is</span>{html.escape(it["who_is"])}</p>' if it.get("who_is") else ""
+        why = f'<p class="row"><span class="lbl">Why it matters</span>{html.escape(it["why"])}</p>' if it.get("why") else ""
+        steps = "".join(f"<li>{html.escape(x)}</li>" for x in it.get("do", []))
+        head = (f'<b>{html.escape(when)}</b> — ' if when else "") + html.escape(_cut(it["what"], 90))
+        links = f'<a href="{html.escape(it["url"])}">{html.escape(it.get("url_label") or "open")}</a>'
+        if it.get("url2"):
+            links += f' · <a href="{html.escape(it["url2"])}">{html.escape(it.get("url2_label") or "more")}</a>'
+        return f"""<div class="card"><span class="k">{kind}</span><div class="body">
+  <p class="head">{head}</p>{who}{why}
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do">{steps}</ol>
+  <span class="links2">{links}</span></div></div>"""
 
     rv, mk, gs, ig = facts["revsom"], facts["marketsom"], facts["growsom"], facts["instasom"]
-    agents = [
-        ("Revsom", "money", "https://agentrevup.netlify.app/",
-         f"{na(rv.get('total'))} opportunities · {na(rv.get('no_sam'))} need no registration · {na(rv.get('closing_14d'))} close inside 14 days"),
-        ("Marketsom", "marketing & community partners", "https://agentmarksom.netlify.app/briefing.html",
-         _cut(mk.get("headline") or "briefing unavailable", 120)),
-        ("Growsom", "investors & integrations", "https://agentgrowthscout.netlify.app/",
-         f"{na(gs.get('total'))} targets · {na(gs.get('ready_to_send'))} ready to send · {na(gs.get('deadlines_30d'))} with a deadline inside 30 days"),
-        ("Instasom", "social", "https://instasum.netlify.app/",
-         f"{na(ig.get('people'))} verified people to follow · {na(ig.get('days'))} days of numbers"),
+    needs = facts["needs_you"]
+
+    sections = [
+        dict(name="Revsom", purpose="Money that costs no equity: grants, prizes, credits.",
+             url="https://agentrevup.netlify.app/", label="funding board",
+             pulling=f"{na(rv.get('total'))} opportunities · {na(rv.get('no_sam'))} need no registration · {na(rv.get('closing_14d'))} close inside 14 days",
+             top=rv.get("top") or [], kind="$",
+             needs=[n for n in needs if n["who"] == "Revsom"]),
+        dict(name="Growsom", purpose="Investors, and free integrations that put Vybe's SDK in other people's products.",
+             url="https://agentgrowthscout.netlify.app/", label="target board",
+             pulling=f"{na(gs.get('total'))} targets · {na(gs.get('high'))} high priority · {na(gs.get('ready_to_send'))} ready to send on John's approval",
+             top=gs.get("top") or [], kind="→",
+             needs=[n for n in needs if n["who"] == "Growsom"]),
+        dict(name="Marketsom", purpose="No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.",
+             url="https://agentmarksom.netlify.app/briefing.html", label="daily briefing",
+             pulling=_cut(mk.get("headline") or "briefing unavailable", 140),
+             top=mk.get("top") or [], kind="!",
+             needs=[n for n in needs if n["who"] == "Marketsom"]),
+        dict(name="Instasom", purpose="An audience that follows before launch, built one real person at a time.",
+             url="https://instasum.netlify.app/", label="social dashboard",
+             pulling=f"Instagram {na(ig.get('ig'))} raw followers · {na(ig.get('to_follow'))} verified people still to follow · Facebook {na(ig.get('fb'))}",
+             top=ig.get("top") or [], kind="@",
+             needs=[n for n in needs if n["who"] == "Instasom"]),
+        dict(name="Daily worker", purpose="The product itself: one new app screen every weekday, funding rows, packets, Monday decks.",
+             url=None, label=None,
+             pulling="14 screens · 17 funding packets · 111 drafted answers. No live page yet — its work is code.",
+             top=[], kind="▣", needs=[]),
     ]
 
-    def agent_row(name, role, url, line):
-        state, why, age = alive(name)
-        dot = {"ok": "ok", "bad": "bad", "unknown": "unk"}[state]
-        when = ago(age)
-        return f"""<a class="agent {dot}" href="{html.escape(url)}">
-  <span class="dot"></span>
-  <span class="body"><b>{html.escape(name)}</b> <small>{html.escape(role)}</small>
-    <span class="line">{html.escape(line)}</span>
-    <span class="when">{html.escape(when)}{'' if state == 'ok' else ' · ' + html.escape(why)}</span></span>
-</a>"""
+    def section(sec):
+        state, age, why = alive(sec["name"]) if sec["name"] != "Daily worker" else ("unk", None, "")
+        dot = {"ok": "ok", "bad": "bad", "unk": "unk"}[state]
+        when = ago(age) if sec["url"] else "no live page"
+        link = f'<a class="more" href="{html.escape(sec["url"])}">{html.escape(sec["label"])} →</a>' if sec["url"] else ""
+        needs_html = "".join(card(n, {"money": "$", "call": "☎", "deadline": "!", "drafts": "✉"}.get(n["kind"], "•"), n["when"]) for n in sec["needs"][:4])
+        top_html = "".join(card(t, sec["kind"]) for t in sec["top"][:4])
+        return f"""<section class="agent {dot}">
+  <header><span class="dot"></span><h2>{html.escape(sec["name"])}</h2><span class="when">{html.escape(when)}{'' if state != 'bad' else ' · ' + html.escape(why)}</span></header>
+  <p class="purpose">{html.escape(sec["purpose"])}</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>{html.escape(sec["pulling"])}</p>
+  {'<h3>Needs you</h3>' + needs_html if needs_html else ''}
+  {'<h3>Top of its list</h3>' + top_html if top_html else ''}
+  {link}
+</section>"""
 
-    worker = """<div class="agent unk nolink">
-  <span class="dot"></span>
-  <span class="body"><b>Daily worker</b> <small>the product</small>
-    <span class="line">One new app screen every weekday. 14 screens, 17 funding packets so far.</span>
-    <span class="when">no live page yet — its work is code, not a dashboard</span></span>
-</div>"""
-
-    n_red = sum(1 for a, *_ in agents if alive(a)[0] != "ok")
-    status = "All agents running" if n_red == 0 else f"{n_red} agent{'s' if n_red > 1 else ''} need attention"
-
-    def need(item):
-        k = {"money": "$", "call": "☎", "deadline": "!", "drafts": "✉"}.get(item["kind"], "•")
-        steps = "".join(f"<li>{html.escape(d)}</li>" for d in item.get("do", []))
-        links = f'<a href="{html.escape(item["url"])}">{html.escape(item.get("url_label") or "open")}</a>'
-        if item.get("url2"):
-            links += f' · <a href="{html.escape(item["url2"])}">{html.escape(item.get("url2_label") or "more")}</a>'
-        detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item.get("detail") else ""
-        who_is = f'<p class="row"><span class="lbl">What it is</span>{html.escape(item["who_is"])}</p>' if item.get("who_is") else ""
-        why = f'<p class="row"><span class="lbl">Why it matters</span>{html.escape(item["why"])}</p>' if item.get("why") else ""
-        return f"""<div class="need">
-  <span class="k">{k}</span>
-  <div class="body"><b>{html.escape(item['when'])}</b> — {html.escape(_cut(item['what'], 90))}
-    {detail}
-    {who_is}
-    {why}
-    <p class="row"><span class="lbl">What you do</span></p>
-    <ol class="do">{steps}</ol>
-    <span class="links2">{links} · <span class="who">from {html.escape(item['who'])}</span></span></div>
-</div>"""
-
-    needs = facts["needs_you"][:8]
-    needs_html = "\n".join(need(i) for i in needs) if needs else '<p class="empty">Nothing is waiting on you right now.</p>'
+    n_bad = sum(1 for sname in ("Revsom", "Growsom", "Marketsom", "Instasom") if alive(sname)[0] == "bad")
+    status = "All agents running" if n_bad == 0 else f"{n_bad} agent{'s' if n_bad > 1 else ''} need attention"
+    n_needs = len(needs)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -616,56 +673,52 @@ def render_hub(rows, facts, now):
 * {{ box-sizing:border-box }}
 body {{ margin:0; background:var(--bg); color:var(--ink);
   font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }}
-a {{ color:inherit; text-decoration:none }}
-.wrap {{ max-width:620px; margin:0 auto; padding:20px 16px 56px }}
-h1 {{ font-size:22px; margin:0; letter-spacing:-.01em }}
-h1 span {{ color:var(--brand) }}
-.status {{ display:flex; align-items:center; gap:8px; margin:6px 0 0; font-weight:600;
-  color:{'var(--good)' if n_red == 0 else 'var(--crit)'} }}
-.status .meta {{ font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto }}
-h2 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3);
-  margin:26px 0 8px; font-weight:600 }}
-.need, .agent {{ display:flex; gap:12px; align-items:flex-start; background:var(--surface);
-  border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-top:8px }}
-.agent:active {{ background:var(--surface-2) }}
-.need .k {{ flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2);
-  color:var(--brand-ink); font-weight:700; text-align:center; line-height:26px; font-size:14px }}
-.need .body, .agent .body {{ display:block; min-width:0; flex:1 }}
-.need b {{ color:var(--crit) }}
-.need .row {{ margin:7px 0 0; font-size:14px; line-height:1.45; color:var(--ink) }}
-.need .lbl {{ display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:1px }}
-.need .do {{ margin:2px 0 4px; padding-left:20px; font-size:14px; color:var(--ink) }}
-.need .do li {{ margin:2px 0 }}
-.need .links2 {{ display:block; font-size:13px; color:var(--ink-3); margin-top:4px }}
-.need .links2 a {{ color:var(--brand-ink); border-bottom:1px solid var(--line) }}
-.need .who {{ color:var(--ink-3) }}
-.need .detail, .agent .line, .agent .when {{ display:block; font-size:13.5px; color:var(--ink-2); margin-top:2px }}
-.agent .when {{ color:var(--ink-3); font-size:12.5px }}
-.agent small {{ color:var(--ink-3); font-weight:400; font-size:13px; margin-left:4px }}
-.dot {{ flex:0 0 10px; height:10px; border-radius:50%; margin-top:7px; background:var(--ink-3) }}
-.agent.ok .dot {{ background:var(--good) }} .agent.bad .dot {{ background:var(--crit) }}
-.agent.bad {{ border-color:var(--crit) }}
-.nolink {{ opacity:.85 }}
-.empty {{ color:var(--ink-3); margin:8px 0 0 }}
-.links {{ margin-top:26px; font-size:13.5px; color:var(--ink-3); line-height:1.9 }}
-.links a {{ color:var(--brand-ink); border-bottom:1px solid var(--line) }}
+a {{ color:var(--brand-ink); text-decoration:none }}
+.wrap {{ max-width:640px; margin:0 auto; padding:20px 16px 60px }}
+h1 {{ font-size:22px; margin:0; letter-spacing:-.01em }} h1 span {{ color:var(--brand) }}
+.goal {{ margin:6px 0 0; color:var(--ink-2); font-size:15px }}
+.status {{ display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:{'var(--good)' if n_bad == 0 else 'var(--crit)'} }}
+.status .meta {{ font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto; text-align:right }}
+.jump {{ margin:14px 0 0; font-size:13.5px; color:var(--ink-3); line-height:1.9 }}
+.jump a {{ border-bottom:1px solid var(--line); margin-right:8px }}
+section.agent {{ margin-top:26px; padding-top:18px; border-top:2px solid var(--line) }}
+section.agent header {{ display:flex; align-items:center; gap:10px }}
+section.agent h2 {{ margin:0; font-size:19px }}
+section.agent .when {{ margin-left:auto; font-size:12.5px; color:var(--ink-3); text-align:right }}
+.dot {{ flex:0 0 10px; height:10px; border-radius:50%; background:var(--ink-3) }}
+section.ok .dot {{ background:var(--good) }} section.bad .dot {{ background:var(--crit) }}
+.purpose {{ margin:6px 0 0; color:var(--ink-2); font-size:15px }}
+.pulling {{ margin:10px 0 0; font-size:14.5px; background:var(--surface-2); border-radius:10px; padding:10px 12px }}
+.lbl {{ display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:2px }}
+h3 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3); margin:16px 0 6px; font-weight:600 }}
+.card {{ display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:12px 14px; margin-top:8px }}
+.card .k {{ flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2); color:var(--brand-ink);
+  font-weight:700; text-align:center; line-height:26px; font-size:14px }}
+.card .body {{ min-width:0; flex:1 }}
+.card .head {{ margin:0; font-size:15.5px }} .card .head b {{ color:var(--crit) }}
+.card .row {{ margin:7px 0 0; font-size:14px; line-height:1.45 }}
+.card .do {{ margin:2px 0 4px; padding-left:20px; font-size:14px }} .card .do li {{ margin:2px 0 }}
+.card .links2 {{ display:block; font-size:13px; color:var(--ink-3); margin-top:4px }}
+.card .links2 a {{ border-bottom:1px solid var(--line) }}
+.more {{ display:inline-block; margin-top:12px; font-size:14px; border-bottom:1px solid var(--line) }}
+.foot {{ margin-top:30px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3); line-height:1.8 }}
+.foot a {{ border-bottom:1px solid var(--line) }}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1><span>Vybe</span> hub</h1>
-  <p class="status"><span>{html.escape(status)}</span><span class="meta">checked {now.strftime('%H:%M')} UTC · refreshes every 4h</span></p>
+  <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
+  <p class="status"><span>{html.escape(status)} · {n_needs} thing{'s' if n_needs != 1 else ''} need you</span><span class="meta">checked {now.strftime('%H:%M')} UTC<br>refreshes every 4h</span></p>
+  <p class="jump">{' '.join(f'<a href="#{sec["name"].lower().replace(" ", "-")}">{html.escape(sec["name"])}</a>' for sec in sections)}</p>
 
-  <h2>Needs you — and what to do</h2>
-{needs_html}
+{chr(10).join(section(sec).replace('<section class="agent', f'<section id="{sec["name"].lower().replace(" ", "-")}" class="agent', 1) for sec in sections)}
 
-  <h2>The agents</h2>
-{chr(10).join(agent_row(*a) for a in agents)}
-{worker}
-
-  <p class="links">
+  <p class="foot">
+    Every card is the same shape: what it is · why it matters · what you do. Nothing here is typed by hand — it is read from each agent's own live page.<br>
     <a href="vybe-agent-board.html">Is every dashboard current?</a> ·
-    <a href="vybe-fleet-map.html">How it all fits together</a> ·
+    <a href="vybe-fleet-map.html">How the system fits together</a> ·
     <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a>
   </p>
 </div>
