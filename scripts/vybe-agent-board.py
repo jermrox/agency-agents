@@ -445,9 +445,11 @@ def extract_facts(rows, now):
                 lines = [str(x) for x in (u.get("lines") or []) if x]
                 prep = u.get("prep")
                 if kind == "call":
-                    do = ["Join the call at the time shown"]
-                    do.append("Read the prep brief first" if prep else "No prep brief yet — ask for one before joining")
-                    do += [_cut(l, 110) for l in lines[:2]]
+                    # who is on it and whether they charge are shown above the list;
+                    # the list is only the actions.
+                    do = ["Read the prep brief first" if prep else "No prep brief yet — ask for one before joining",
+                          "Join the call at the time shown",
+                          "Decide on the call: no-cost route, or a short polite no"]
                 else:
                     do = [_cut(l, 110) for l in lines[:3]] or ["Open the briefing for what is due"]
                 f["needs_you"].append({
