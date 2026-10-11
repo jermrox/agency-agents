@@ -82,6 +82,7 @@ SURFACES = [
         "role": "the Apply page",
         "surface": "agentrevup.netlify.app/apply",
         "url": "https://agentrevup.netlify.app/apply.html",
+        "is_page": True,
         "stamp_re": None,         # no machine timestamp; checked for reachability and accounts
         "max_age_h": None,
         "cadence": "with each packet",
@@ -91,6 +92,7 @@ SURFACES = [
         "role": "daily marketing briefing",
         "surface": "agentmarksom.netlify.app/briefing.html",
         "url": "https://agentmarksom.netlify.app/briefing.html",
+        "is_page": True,
         "stamp_re": r'"asof"\s*:\s*"([^"]+)"',
         "max_age_h": 30,          # daily 10:23Z
         "cadence": "daily 10:23Z",
@@ -100,6 +102,7 @@ SURFACES = [
         "role": "outreach and investor board",
         "surface": "agentgrowthscout.netlify.app",
         "url": "https://agentgrowthscout.netlify.app",
+        "is_page": True,
         "stamp_re": r"Updated (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC",
         "max_age_h": 14,          # three runs a day, so half a day is already late
         "cadence": "3x daily",
@@ -191,6 +194,12 @@ def check(entry, now):
             out["foreign"].append(needle)
     if out["foreign"]:
         out["problems"].append("foreign account on the page: " + ", ".join(out["foreign"]))
+
+    # Rule 9.6 / rule 10: every Vybe dashboard links to the console. A page
+    # that does not is an orphan the founder cannot navigate to from the hub.
+    # JSON feeds are exempt; the check is for pages people open.
+    if entry.get("is_page") and "vybe-ops.netlify.app" not in body:
+        out["problems"].append("does not link to the console (rule 9.6)")
 
     if entry["stamp_re"]:
         m = re.search(entry["stamp_re"], body)

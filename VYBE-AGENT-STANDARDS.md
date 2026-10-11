@@ -212,6 +212,57 @@ A new page that does not follow it is a defect, not a style choice. The hub's
 `needs_you` feed in `vybe-agents.json` is the canonical card format; an agent
 may publish its own items in that shape and the hub will carry them.
 
+## 10. The hub orchestrates. Agents implement.
+
+The founder, 11 October: "I ask them to add something and they add it, but it
+is not holistic or even thought about in their current design." Five agents
+were taking requests as bolt-ons because nobody had said there is a system, a
+shape, and someone responsible for the whole.
+
+There is. The hub — the operations console at `vybe-ops.netlify.app` and the
+session that runs it — is the orchestrator of every agent with Vybe in its
+name. Agents own their lane and their craft. The hub owns how the lanes fit.
+
+**When the founder asks an agent for a change, the agent does this, in order:**
+
+1. **Check the system first.** Read rules 1–9 and the agent's own charter.
+   Ask: where does this appear in the console, which card does it become,
+   which other agent's lane does it touch, and what breaks if it is bolted
+   on? If the answer is "it does not fit", that is the finding — not a reason
+   to bolt it on anyway.
+2. **Say how it fits before building it.** One paragraph, BLUF form: what the
+   change is, where it lives in the shared shape, what it touches, and what
+   the founder will see on the console afterwards. If it needs another
+   agent's lane or a change to the shared shape, hand it to the hub instead
+   of building it.
+3. **Build it so the console shows it.** Every new thing an agent produces
+   is a card — what it is, why it matters, what you do, a link — or it is a
+   number in the agent's feed with a timestamp. A page element the console
+   cannot read does not count as done.
+4. **Report to the hub, not just the founder.** The run report names the
+   change, the card or field it became, and the live URL where it is.
+
+**What the hub does:**
+
+- Holds the shared shape (rule 9) and the card format, and changes them for
+  everyone or for no one.
+- Reads every live surface and the feeds behind them, and turns red when a
+  dashboard stops linking to the console, drops the fields the console reads,
+  or carries anything the standards forbid.
+- Receives anything that crosses lanes or needs the shape to change, and
+  decides it — or puts the decision to the founder as a question with
+  options.
+- Issues standing orders into each agent's session when the system needs
+  them, and expects a reply.
+
+**What this is not.** The hub does not do the agents' jobs, does not rewrite
+their research, and does not run their routines. It also does not touch any
+agent without Vybe in its name — rule 6 binds the hub hardest of all.
+
+A change made without steps 1 and 2 is not an improvement, whoever asked for
+it. The founder asking is the start of the design check, not a substitute for
+it.
+
 ## Who this binds
 
 | Agent | Session | Surfaces |
