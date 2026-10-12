@@ -16,6 +16,18 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-12 — daily run (Monday)
+
+- +3 items, all PubMed: MIL 2 (brief cold exposure hurts hard shoot/no-shoot calls; cadet sport history
+  and ACFT scores), FIRE 1 (TRiM peer-support training in the fire service). Board 77, archive 66.
+  LE, EMS: nothing. Exa still 402 (ninth day), so the Monday link re-check could not run and policy
+  is unverified. WebSearch found no new October service fitness policy (only coverage of DoWI 1308.03).
+- Checked `cites` dates before merging, as noted last run: nothing stale today. Expiring soon: the
+  14 Sep LIFE Study and firefighter depression/PTSD items (Behavioral health, Women's health).
+- PFAS and epigenetic age in airport firefighters still has only "Oct 2026"; still held back.
+- PR #77 was still unmerged, so the run stacked on it again; the live site is behind by every day
+  the owner leaves a sweep PR open.
+
 ## 2026-10-11 — daily run
 
 - +4 items, all PubMed: MIL 3 (Air Force Wingman Guardian Connect scaling to 72 installations; brief CBT
