@@ -62,6 +62,7 @@ h3 .sub{text-transform:none;letter-spacing:0;font-weight:400;font-size:13px}
 .score.go{background:var(--good-bg);color:var(--good)}.score.hold{background:var(--warn-bg);color:var(--warn)}.score.no{background:var(--crit-bg);color:var(--crit)}
 .verdict{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
 .verdict.go{background:var(--good-bg);color:var(--good)}.verdict.hold{background:var(--warn-bg);color:var(--warn)}.verdict.no{background:var(--crit-bg);color:var(--crit)}
+.draft{margin:8px 0 0;font-size:14px}.draft summary{cursor:pointer;font-weight:600;color:var(--ink)}.draft pre{white-space:pre-wrap;font:inherit;font-size:13.5px;line-height:1.5;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0 0}
 .why{margin:6px 0 0;font-size:13px;color:var(--ink-2)}.why li{margin:1px 0}
 .empty{color:var(--ink-3);font-size:14px;margin:6px 0}
 .frame{width:100%;height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
@@ -157,6 +158,19 @@ const PILLARS = [
 const REFRESH_MS = 5*60*1000;
 // Founder, 11 Oct: suppliers, manufacturers, engineering shops and anyone who wants paying are not partners (rule 7).
 // Anything matching this is kept out of every card and score on this page, and counted once under "out of scope".
+// Rule 12 (12 Oct): the name on the door is worth more than the headcount. Agents publish big_name 1–10; until they do, the hub guesses from the name.
+const BIG_NAMES=/\b(garmin|whoop|withings|strava|oura|concept2|apple|google|microsoft|amazon|aws|samsung|fitbit|polar|peloton|nike|under armour|adidas|lululemon|ironman|spartan|tough mudder|boston marathon|new york road runners|nyrr|ncaa|usa (triathlon|swimming|cycling|track|pickleball|hockey|rugby|baseball|softball|football|volleyball|climbing|weightlifting|fencing|rowing|wrestling)|u\.?s\.? (army|navy|air force|marines|coast guard|masters swimming|soccer|ski)|nih|nsf|darpa|mit|stanford|harvard|yale|princeton|techstars|y combinator|costco|target|walmart|rei|dick'?s|best buy|cvs|walgreens|mayo clinic|cleveland clinic|johns hopkins|red bull|gatorade|crossfit|orangetheory|equinox|planet fitness|nba|nfl|mlb|nhl|mls|wnba|pga|usga|us open|olympic|paralympic|team usa)\b/i;
+const FLAGSHIP=/\b(university|college|institute of technology|ohio state|penn state|michigan state|texas a&m|ucla|usc|notre dame|national (association|federation|governing|league|guard|council|senior)|federation|association of the u\.?s|american (college|academy|heart|medical|council)|state (university|police|patrol|department)|department of|fire department|police department|federal)\b/i;
+const LOCAL=/\b(turkey trot|5k|10k|fun run|trot|jingle|parade|rotary|kiwanis|lions club|pto|pta|booster|church|parish|township|village|community (center|centre|run)|charity (run|walk)|memorial (run|5k)|high school|middle school)\b/i;
+function bigName(org, pub, why){
+  const o=String(org||""); const n=Number(pub);
+  if(n>=1&&n<=10) return {n:Math.round(n), why:why?cut(why,160):"scored by the agent", src:"agent"};
+  if(LOCAL.test(o)) return {n:2, why:"a local event or club: a yes here is a contact, not a win (rule 12)", src:"hub"};
+  if(BIG_NAMES.test(o)) return {n:9, why:"a name people already know: a small first batch here is a win (rule 12)", src:"hub"};
+  if(FLAGSHIP.test(o)) return {n:7, why:"a university, national body or public institution: a yes is a win even at 10 to 25 bands (rule 12)", src:"hub"};
+  return {n:5, why:"name not scored by the agent yet (big_name asked for, 12 Oct); hub guess: regional", src:"hub"};
+}
+function draftOf(...srcs){ for(const x of srcs){ if(x&&(x.draft_body||x.draft_subject)) return {to:String(x.draft_to||""), subject:String(x.draft_subject||""), body:String(x.draft_body||""), today:x.send_today===true||String(x.send_today).toLowerCase()==="true"}; } return null; }
 const OUT_OF_SCOPE = /\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|contract build|paid per milestone|booth|expo|exhibit\w*|trade show|annual meeting|sponsorship|sponsor (package|tier|deck)|vendor (form|slot))\b/i;
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
 const DAY = 864e5;
@@ -248,14 +262,18 @@ function fromGrowsom(j){
   const leads=[]; for(const x of tg){ const p=pillarOf(x); if(!p) continue; const t=thr(x.org||x.name); if(outOfScope(x.name,x.org,x.type,x.ask,x.why,t&&t.next)) continue; const st=t?(t.state==="replied"?"replied":t.state==="no reply"?"no reply":"waiting"):(x.sendable?"drafted":"researching");
     const dl=parseDay(x.deadline); const when=dl||(t?parseDay(t.due):null); const chk=money(x.check_size); const fit=Number(x.fit)||null; const ice=x.ice||{};
     const windowOpen=!!dl&&daysTo(dl)>=1; const gate=st==="replied"||windowOpen;
+    const bn=bigName(x.org||x.name, x.big_name??(t&&t.big_name), x.big_name_why||(t&&t.big_name_why));
     const sc=score([
-      {w:.2,v:1,why:`${x.type||x.hunt}: ${p==="investors"?"investment":"collaboration"} ask, inside rule 7`},
-      {w:.15,v:1,why:"no money asked of Vybe (paid routes are parked by Growsom)"},
+      {w:.15,v:1,why:`${x.type||x.hunt}: ${p==="investors"?"investment":"collaboration"} ask, inside rule 7`},
+      {w:.1,v:1,why:"no money asked of Vybe (paid routes are parked by Growsom)"},
       {w:.3,v:windowOpen&&st!=="replied"?.8:warmth(st),why:st==="replied"?"they replied":windowOpen?`application window open until ${dayText(dl)}`:st==="no reply"?"emailed, no reply yet":st==="waiting"?"email sent, waiting":st==="drafted"?"opener drafted, waits on John's approval":"still being researched"},
-      {w:.2,v:fit?fit/10:.5,why:fit?`Growsom fit ${fit}/10${ice.i?` · impact ${ice.i}, confidence ${ice.c}, ease ${ice.e}`:""}`:"fit not scored by Growsom"},
+      {w:.15,v:bn.n/10,why:`name ${bn.n}/10: ${bn.why}`},
+      {w:.15,v:fit?fit/10:.5,why:fit?`Growsom fit ${fit}/10${ice.i?` · impact ${ice.i}, confidence ${ice.c}, ease ${ice.e}`:""}`:"fit not scored by Growsom"},
       {w:.1,v:x.warm_path?1:x.channel==="email"?.8:.6,why:x.warm_path?`warm path: ${cut(x.warm_path,60)}`:`cold via ${x.channel||"unknown channel"}`},
-      {w:.05,v:when?(daysTo(when)>=7?1:daysTo(when)>=1?.5:.1):0.8,why:when?`deadline ${dayText(when)} (${inDays(daysTo(when))})`:"no deadline"}], gate?true:"a Go needs a reply from them, or an open application window");
-    leads.push({pillar:p, agent:"Growsom", org:(x.org&&norm(x.org)!==norm(x.name)?`${x.org}${x.name?" ("+x.name+")":""}`:(x.name||x.org||"")), what_is:cut(`${x.type||""}${x.geo?" · "+x.geo:""}${x.role?" · "+x.role:""}`,110), offer:cut(x.opportunity||x.check_size||(p==="investors"?"a cheque, size not stated":"a place for Vybe data in their product"),140),
+      {w:.05,v:when?(daysTo(when)>=7?1:daysTo(when)>=1?.5:.1):0.8,why:when?`deadline ${dayText(when)} (${inDays(daysTo(when))})`:"no deadline"}], bn.n<=4?"a local event or club: a contact, not a win (rule 12)":gate?true:"a Go needs a reply from them, or an open application window");
+    const jsrc=(x.john_verdict?x:(t&&t.john_verdict?t:null)); const jv=jsrc?String(jsrc.john_verdict||"").toLowerCase():""; const john=jv&&jv!=="none"?{verdict:jv, said:cut(jsrc.john_said||"",200), at:jsrc.john_at||""}:null;
+    const draft=draftOf(x,t); const todo=draft?draft.today:!!(john&&/approve|change/.test(john.verdict)); // a researched "sendable" target is not a draft waiting; Growsom publishes the draft when there is one
+    leads.push({pillar:p, agent:"Growsom", org:(x.org&&norm(x.org)!==norm(x.name)?`${x.org}${x.name?" ("+x.name+")":""}`:(x.name||x.org||"")), john, big:bn, draft, todo, what_is:cut(`${x.type||""}${x.geo?" · "+x.geo:""}${x.role?" · "+x.role:""}`,110), offer:cut(x.opportunity||x.check_size||(p==="investors"?"a cheque, size not stated":"a place for Vybe data in their product"),140),
       we_need:cut(x.ask||"",160), they_need:cut(x.why_now||x.why||"",200), size:chk, cost:"$0", status:st, when, when_text:when?`${t?"follow-up due":"deadline"} ${dayText(when)}`:(x.when||""), why_text:sentences(x.why,200),
       url:x.contact_url||"https://agentgrowthscout.netlify.app/", url_label:"open", score:sc, _fit:fit, _priority:x.priority, _state:x.geo}); }
   const count=(f,rows)=>{const c={}; for(const x of rows){const k=String(x[f]||"unknown"); c[k]=(c[k]||0)+1;} return Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v}));};
@@ -282,14 +300,18 @@ function fromMarketsom(html, growsomLeads){
     if(st==="replied"&&/\b(passed|forward)/i.test(x.reply||"")) st="passed"; if(st==="replied"&&/\b(yes|offered|wants|asked for a call|would like|asked whether)\b/i.test(x.reply||"")) st="replied-yes";
     const askedMoney=/\$\d|\bfee\b|\bpaid\b|\bvendor booth\b/i.test(x.reply||""); const prof=profile(x.org); const when=nextDate(x.next)||parseDay(x.sent);
     const techQ=/\b(technical|prototype|requirements|documentation|api details|app details)\b/i.test(blob);
+    const bn=bigName(x.org,x.big_name,x.big_name_why);
     const sc=score([
-      {w:.2,v:1,why:`${p==="integrations"?"data integration":"community partner"}: collaboration ask, inside rule 7`},
-      {w:.2,v:askedMoney?0.4:1,why:askedMoney?"their first answer involved money; our draft keeps only the free part":"no money on either side"},
+      {w:.15,v:1,why:`${p==="integrations"?"data integration":"community partner"}: collaboration ask, inside rule 7`},
+      {w:.15,v:askedMoney?0.4:1,why:askedMoney?"their first answer involved money; our draft keeps only the free part":"no money on either side"},
       {w:.3,v:st==="passed"?.5:warmth(st),why:st==="replied-yes"?"they said yes or asked for a call":st==="replied"?"they replied":st==="passed"?"passed to another team inside their organisation, no answer yet":st==="waiting"?"emailed, no reply yet":st==="drafted"?"draft written, not sent":st==="declined"?"they declined":"status unknown"},
-      {w:.15,v:prof&&prof._fit?prof._fit/10:0.5,why:prof&&prof._fit?`Growsom rates the fit ${prof._fit}/10`:"audience size not published by Marketsom (asked for it)"},
+      {w:.15,v:bn.n/10,why:`name ${bn.n}/10: ${bn.why}`},
+      {w:.1,v:prof&&prof._fit?prof._fit/10:0.5,why:prof&&prof._fit?`Growsom rates the fit ${prof._fit}/10`:"audience size not published by Marketsom (asked for it)"},
       {w:.1,v:techQ?0.6:1,why:techQ?"they need a technical answer from Jeremy before anything moves":"one email closes the next step"},
-      {w:.05,v:when?(daysTo(when)>=0?1:0.5):0.8,why:when?`next step ${dayText(when)}`:"no date on the next step"}], /replied/.test(st)?true:st==="passed"?"passed on inside their organisation; a Go needs their answer":"a Go needs a reply from them");
-    leads.push({pillar:p, agent:"Marketsom", org:String(x.org||""), what_is:prof?prof.what_is+(prof.why_text?" — "+cut(prof.why_text,120):""):(p==="integrations"?"app or data company (profile not yet published by Marketsom)":"community organisation (profile not yet published by Marketsom)"),
+      {w:.05,v:when?(daysTo(when)>=0?1:0.5):0.8,why:when?`next step ${dayText(when)}`:"no date on the next step"}], bn.n<=4?"a local event or club: a contact, not a win (rule 12)":/replied/.test(st)?true:st==="passed"?"passed on inside their organisation; a Go needs their answer":"a Go needs a reply from them");
+    const jv=String(x.john_verdict||"").toLowerCase(); const john=jv&&jv!=="none"?{verdict:jv, said:cut(x.john_said||"",200), at:x.john_at||""}:null;
+    const draft=draftOf(x); const todo=draft?draft.today:(st==="drafted"||!!(john&&/approve|change/.test(john.verdict)));
+    leads.push({pillar:p, agent:"Marketsom", org:String(x.org||""), john, big:bn, draft, todo, what_is:prof?prof.what_is+(prof.why_text?" — "+cut(prof.why_text,120):""):(p==="integrations"?"app or data company (profile not yet published by Marketsom)":"community organisation (profile not yet published by Marketsom)"),
       offer:cut(x.reply||(st==="drafted"?"nothing yet — our draft is waiting to be sent":"no reply yet"),200), we_need:p==="integrations"?"Vybe's overnight HRV, sleep and resting heart rate inside their product; their users become Vybe's":"A no-cost member offer to their members and a mention in their channels",
       they_need:cut(x.next||"",200), size:null, cost:askedMoney?"they asked for money; declined":"$0", status:st, when, when_text:when?`next ${dayText(when)}`:"", url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", url2:"https://agentmarksom.netlify.app/briefing.html", url2_label:"briefing", score:sc}); }
   // Needs-you cards: due dates (calls with vendors are out of scope and never shown) and the drafts waiting.
@@ -415,6 +437,9 @@ function leadCard(l){ const s=l.score; const org=esc(l.org); const when=l.when?`
   <p class="row"><span class="lbl">Why we need them</span>${esc(l.we_need||"—")}</p>
   <p class="row"><span class="lbl">${l.pillar==="money"?"What it takes":"What they need from us / next step"}</span>${esc(l.they_need||"—")}</p>
   ${l.why_text&&l.pillar==="money"?`<p class="row"><span class="lbl">Revsom's read</span>${esc(l.why_text)}</p>`:""}
+  ${l.john?`<p class="row"><span class="lbl">John said</span><span class="verdict ${l.john.verdict==="approve"?"go":l.john.verdict==="no"?"no":"hold"}">${esc(l.john.verdict)}</span> ${esc(l.john.said||"")}${l.john.at?` <span style="color:var(--ink-3)">· ${esc(dayText(parseStamp(l.john.at)||new Date(l.john.at))||l.john.at)}</span>`:""}</p>`:""}
+  ${(()=>{const bn=l.big||bigName(l.org); return `<p class="row"><span class="lbl">Name (rule 12)</span><span class="verdict ${bn.n>=7?"go":bn.n>=5?"hold":"no"}">${bn.n}/10</span> ${esc(bn.why)}${bn.src==="hub"?" <span style=\"color:var(--ink-3)\">· hub guess until the agent scores it</span>":""}</p>`;})()}
+  ${l.draft?`<details class="draft" ${l.draft.today?"open":""}><summary>${l.draft.today?"Send today · ":"Draft · "}${esc(l.draft.subject||"(no subject)")}${l.draft.to?` · to ${esc(l.draft.to)}`:""}</summary>${l.draft.body&&!/director of growth/i.test(l.draft.body)?`<p class="row" style="color:var(--crit)">Not signed as John, Director of Growth (rule 11); not ready to send.</p>`:""}<pre>${esc(l.draft.body||"(body not published)")}</pre></details>`:(l.todo?`<p class="row"><span class="lbl">Draft</span>waiting to be sent; the text is not on ${esc(l.agent)}'s feed yet (ordered 12 Oct, next run)</p>`:"")}
   <p class="row"><span class="lbl">Why ${s.n}/10</span></p><ul class="why">${s.why.map(w=>`<li>${esc(w)}</li>`).join("")}</ul>
   <span class="links"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.url_label||"open")}</a>${l.url2?` · <a href="${esc(l.url2)}" target="_blank" rel="noopener">${esc(l.url2_label||"more")}</a>`:""}<span class="src">· ${esc(l.status||"")} · from ${esc(l.agent)}</span></span></div></div>`; }
 function cardHTML(c){
@@ -473,7 +498,10 @@ function section(title,sub,body){ return `<div class="section"><h3>${esc(title)}
 function renderDecide(){
   const leads=allLeads(); const go=leads.filter(l=>l.score.verdict==="go").slice(0,9); const dec=((state.data.instasom||{}).decisions||[]);
   const r=state.data.revsom||{}, g=state.data.growsom||{}, m=state.data.marketsom||{}, i=state.data.instasom||{};
-  const bluf=`${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
+  const todo=leads.filter(l=>l.todo).sort((a,b)=>((b.draft&&b.draft.today)?1:0)-((a.draft&&a.draft.today)?1:0)||((b.big||{}).n||0)-((a.big||{}).n||0)||b.score.n-a.score.n);
+  const noText=todo.filter(l=>!l.draft); const yes=leads.filter(l=>/replied-yes|booked/.test(l.status)); const wins=yes.filter(l=>l.big&&l.big.n>=7);
+  const sendToday=todo.length?`<div class="grid">${todo.slice(0,12).map(leadCard).join("")}</div>${todo.length>12?`<p class="empty">${todo.length-12} more are listed on their pillar pages.</p>`:""}${noText.length?`<p class="empty">${noText.length} of these ${noText.length===1?"has":"have"} no draft text on the feed yet. Marketsom and Growsom were ordered on 12 Oct to publish the recipient, subject and full body of every unsent draft; the text appears here on their next run.</p>`:""}`:`<p class="empty">Nothing is waiting to be sent.</p>`;
+  const bluf=`${wins.length} big-name win${wins.length===1?"":"s"} and ${yes.length-wins.length} contact${yes.length-wins.length===1?"":"s"} said yes so far (rule 12: a known name counts, a local race does not). ${todo.length} draft${todo.length===1?" is":"s are"} waiting to be sent. ${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
   // Charts first, one grid, three across.
   const charts=`<div class="charts">
     ${lineChart({title:"Instagram followers",sub:"raw API count, daily",series:[{name:"raw followers",pts:(i.igSeries||[]).map(p=>({...p,note:p.y>1000?"includes an unverified bulk add on 30 Sep":undefined}))}]})}
@@ -495,14 +523,15 @@ function renderDecide(){
       <td><span class="verdict go">${s.go.length} Go</span> <span class="verdict hold">${s.hold.length} Hold</span> <span class="verdict no">${s.no.length} No</span>${s.dec.length?` <span class="verdict">${s.dec.length} decision${s.dec.length===1?"":"s"}</span>`:""}</td></tr>`; }).join("");
   const ex=excludedAll();
   return `<p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
+  ${section("Send today",`${todo.length} draft${todo.length===1?"":"s"} ready for you and John to read before they go · John's verdict on each card`,sendToday)}
   ${section("Numbers","every pillar, one grid · hover any chart",charts)}
   ${section("Timelines","what is dated, and what is in progress",timelines)}
   ${section("Pillar scoreboard","one row per way Vybe makes money · click a pillar",`<div class="sbwrap"><table class="sb"><thead><tr><th>Pillar</th><th>Headline number</th><th>Trend</th><th>Next milestone</th><th>Leads scored</th></tr></thead><tbody>${rows}</tbody></table></div>`)}
   ${section("Decide now","top Go leads across every pillar, best first",go.length?`<div class="grid">${go.map(leadCard).join("")}</div>`:`<p class="empty">Nothing scores 8 or more right now. The Hold list on each pillar says what fact is missing.</p>`)}
   ${dec.length?section("Decisions the agents asked of you","",`<div class="grid">${dec.map(cardHTML).join("")}</div>`):""}
   <p class="excl">${ex.length} thread${ex.length===1?"":"s"} kept out of every score above because they are vendors, suppliers or paid slots (rule 7)${ex.length?`: ${esc(ex.map(e=>e.org).join(", "))}`:""}.</p>
-  <details><summary>How the 1–10 score works</summary><div class="in">Every lead is scored here, on this page, from the agents' own published fields — never by an agent's opinion alone. Six parts, each 0–1, weighted and averaged, then ×10:<br>
-  <b>Purpose</b> (does it bring collaboration, investment or revenue — rule 7) · <b>Cost</b> (is any money asked of Vybe) · <b>Warmth</b> (booked or said yes → replied → waiting → drafted → declined) · <b>Reach or size</b> (money stated, Growsom's fit score, or audience size) · <b>Effort</b> (one email, or an application with documents, travel, registration) · <b>Timing</b> (a feasible deadline, or none).<br>
+  <details><summary>How the 1–10 score works</summary><div class="in">Every lead is scored here, on this page, from the agents' own published fields — never by an agent's opinion alone. Seven parts, each 0–1, weighted and averaged, then ×10:<br>
+  <b>Purpose</b> (does it bring collaboration, investment or revenue — rule 7) · <b>Cost</b> (is any money asked of Vybe) · <b>Warmth</b> (booked or said yes → replied → waiting → drafted → declined) · <b>Name</b> (rule 12: a name people know, a flagship university or a national body scores high; a local race scores low; agents publish big_name, the hub guesses until they do) · <b>Reach or size</b> (money stated, Growsom's fit score, or audience size) · <b>Effort</b> (one email, or an application with documents, travel, registration) · <b>Timing</b> (a feasible deadline, or none).<br>
   <b>8–10 Go</b>: worth your time this week. <b>5–7 Hold</b>: one fact is missing — the "why" list says which. <b>1–4 No</b>: skip. Vendors, suppliers and anything that costs money never get a score; they are listed once above and nowhere else.</div></details>`;
 }
 function renderPillar(p){
@@ -533,7 +562,8 @@ function renderPillar(p){
     const rep=s.L.filter(l=>/replied|passed/.test(l.status)), wait=s.L.filter(l=>l.status==="waiting"), dr=s.L.filter(l=>l.status==="drafted");
     const nextFU=wait.map(l=>l.when).filter(d=>d&&daysTo(d)>=0).sort((a,b)=>a-b)[0];
     bluf=`${fmt(na(m.contacted))} organisations contacted. ${rep.length} answered, ${wait.length} are waiting on a reply, ${dr.length} drafts are written but not sent. ${nextFU?`Follow-ups fall due ${dayText(nextFU)}.`:""} ${excludedAll().length} threads were about tables, booths or vendors and are out (rule 7).`;
-    kpis=kpi(na(m.contacted),"organisations contacted","Marketsom, since 6 Oct")+kpi(rep.length,"answered","")+kpi(wait.length,"waiting on a reply",nextFU?`follow-ups due ${dayText(nextFU)}`:"")+kpi(na(m.drafts),"drafts waiting for you to send","John on CC of every one");
+    const onJohn=s.L.filter(l=>l.john&&l.john.verdict==="waiting").length, johnNo=s.L.filter(l=>l.john&&l.john.verdict==="no").length, johnYes=s.L.filter(l=>l.john&&l.john.verdict==="approve").length;
+    kpis=kpi(na(m.contacted),"organisations contacted","Marketsom, since 6 Oct")+kpi(rep.length,"answered",`${s.L.filter(l=>l.status==="replied-yes"&&l.big&&l.big.n>=7).length} big-name win${s.L.filter(l=>l.status==="replied-yes"&&l.big&&l.big.n>=7).length===1?"":"s"} · the rest are contacts (rule 12)`)+kpi(s.L.some(l=>l.john)?johnYes:null,"John said yes",s.L.some(l=>l.john)?`${johnNo} no · ${onJohn} waiting on a technical answer`:"agents publish his verdicts from their next run")+kpi(wait.length,"waiting on a reply",nextFU?`follow-ups due ${dayText(nextFU)}`:"")+kpi(na(m.drafts),"drafts waiting for you to send","John on CC of every one");
     charts=[bars(m.funnel,{title:"Outreach funnel",sub:"every organisation contacted",cls:"funnel"}), scoreHist(s.L,"Partners by score"), pastDaily(m.sentDates||[],{title:"Emails sent per day",sub:"first emails, last 14 days"}),
       weekly(s.L.map(l=>l.when),{title:"Follow-ups and next steps by week",sub:"next 8 weeks"}),
       bars([{label:"said yes / asked for a call",v:s.L.filter(l=>l.status==="replied-yes").length},{label:"replied",v:s.L.filter(l=>l.status==="replied").length},{label:"passed on internally",v:s.L.filter(l=>l.status==="passed").length},{label:"declined",v:s.L.filter(l=>l.status==="declined").length}],{title:"What the answers were",sub:"organisations that wrote back",fmtV:n=>String(n)}),
