@@ -173,7 +173,7 @@ function bigName(org, pub, why){
   return {n:5, why:"name not scored by the agent yet (big_name asked for, 12 Oct); hub guess: regional", src:"hub"};
 }
 function draftOf(...srcs){ for(const x of srcs){ if(x&&(x.draft_body||x.draft_subject)) return {to:String(x.draft_to||""), subject:String(x.draft_subject||""), body:String(x.draft_body||""), today:x.send_today===true||String(x.send_today).toLowerCase()==="true"}; } return null; }
-const OUT_OF_SCOPE = /\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|contract build|paid per milestone|booth|expo|exhibit\w*|trade show|annual meeting|sponsorship|sponsor (package|tier|deck)|vendor (form|slot))\b/i;
+const OUT_OF_SCOPE = /\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|contract build|paid per milestone|oem|pcba?|design[- ]for[- ]manufactur\w*|dfm|iso 13485|certification lab|firmware shop|booth|expo|exhibit\w*|trade show|annual meeting|sponsorship|sponsor (package|tier|deck)|vendor (form|slot))\b/i; // the hardware is built and supplied (founder, 12 Oct); suppliers are never leads
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
 const DAY = 864e5;
 

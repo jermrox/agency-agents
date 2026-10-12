@@ -120,6 +120,17 @@ procurement, it belongs to the founders, and it is not an outreach lane. Growsom
 had emailed a battery maker, an ECG-patch PCBA supplier and three engineering
 firms as "partners", and one of them has a call booked.
 
+**The hardware is done.** Founder, 12 October 2026: "The device is built and
+the supplier for the device is completed." Asked whether suppliers are a thing
+at all: "No, that's not a thing." Vybe needs no design firm, OEM, contract
+manufacturer, PCBA or battery supplier, design-for-manufacture review,
+certification lab or firmware shop. No agent researches, scores, lists or
+contacts one, and no outreach lane, target list or prompt assumes the DevKit
+needs building. Growsom's "oem_partners" and "builders" lanes are retired; the
+threads they opened (Nocturnal, ANZER, Kyros, MAGNET, SugaMed, Zufek, LiPol)
+are closed with one courtesy note where someone had replied. A reply from a
+vendor, however warm, is a sales reply and never reopens the thread.
+
 **Never an individual.** Outreach goes to organisations and role inboxes.
 
 **One organisation, one owning agent, one ask.** Ownership follows what the
