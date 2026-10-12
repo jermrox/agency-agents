@@ -143,7 +143,9 @@ def _heuristic_fit(row: dict[str, Any], cost: int, travel: bool) -> tuple[int, s
         reasons.append("A university or nonprofit must be the applicant")
     if row.get("kind") == "credit":
         score -= 0.5
-    fit = int(max(1, min(10, round(score))))
+    # Lesson 12 Oct: a rule cannot defend a fit above 6 (it scored a parts
+    # shop's contest 8). Anything higher needs a hand review in sources.toml.
+    fit = int(max(1, min(6, round(score))))
 
     door = re.split(r"(?<=[.;])\s", elig.strip(), maxsplit=1)[0][:140] if elig else "eligibility not stated"
     risk = "; ".join(reasons) if reasons else (
