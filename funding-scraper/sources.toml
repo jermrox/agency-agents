@@ -4475,3 +4475,58 @@ documents = [
 ]
 verified = "2026-10-12"
 
+
+
+[[sources.curated.entry]]
+name = "Vultr: Agent Rush Hackathon (lablab.ai)"
+url = "https://lablab.ai/ai-hackathons/vultr-hackathon"
+agency = "Vultr x lablab.ai"
+amount = "$9,000 cash + $5,000 Vultr credits total (1st $5,000 + $3,000 credits; 2nd $3,000 + $1,000; 3rd $1,000 + $1,000). Every participant gets $200 Vultr credits"
+open_date = "2026-11-03"
+close_date = "2026-11-08"
+pillar = 2
+kind = "visibility"
+sam = "none"
+eligibility = "Open online hackathon on lablab.ai; register on lablab.ai and its Discord; teams allowed; online build 3-8 Nov 2026, optional on-site finale in Salt Lake City 8 Nov (travel not covered). Detailed entrant rules are not stated on the event page beyond lablab.ai terms."
+note = "NOT HEALTH-THEMED; SUBMISSIONS MUST BE 'ORIGINAL AND MIT-COMPLIANT' (so submit a stand-alone demo, never DevKit firmware or SDK code); SMALL PRIZE. Low-priority filler. Where it fits: 'Pattern A: sandboxed code execution' (for example a CSV analyst that runs code on an uploaded file) maps directly to a 'biometric data analyst agent': upload a Vybe or HealthKit HRV/sleep export, the agent writes and runs the analysis in a sandbox and returns charts. That would be a public demo of the 'AI agents on wearable data' story for the developer platform. Requires a public web app plus a GitHub repo."
+documents = ["lablab.ai account + Discord registration", "public GitHub repository with setup instructions", "deployed web app running on Vultr", "demo video/pitch per lablab submission form"]
+verified = "2026-10-12"
+
+[[sources.curated.entry]]
+name = "NextPCB Accelerator: Tuya T5 AI Open-Source Hardware Innovation campaign (Sept 2026)"
+url = "https://www.nextpcb.com/blog/TuyaT5"
+agency = "NextPCB (with Tuya Smart)"
+amount = "Free Tuya T5-E1 module + 2 free turnkey PCBA units (PCB, components, assembly, global shipping) up to $500 value; optional $100/$50 cash rewards for GitHub stars / social views"
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Open to businesses and hobbyists; the application form offers 'Enterprise project' as a type and NextPCB says it prioritizes business projects. The design must be built on the campaign's featured chip/module (here the Tuya T5-E1, Wi-Fi 6 + BLE 5.4). Track 3 'AIoT Innovative Applications' explicitly lists 'AI Health Monitors' and 'Wearables'. One sponsorship per month; orders must be placed within 6 months of approval."
+note = "MUST DESIGN AROUND THE FEATURED MODULE (Tuya T5), NOT VYBE'S OWN RADIO/MCU, AND NO DEADLINE IS STATED. Best use is a quick DevKit accessory or bench/charging-hub prototype rather than the band itself. Last round this program was rejected because the accelerator URL redirected; it is live again now with a working Google Form, and the form says enterprise project content stays confidential. Free, no equity, no fee."
+documents = ["Google Form application (name, email, project type, project description)", "Design files (Gerber/BOM) when ordering the free PCBA after approval"]
+verified = "2026-10-12"
+
+[[sources.curated.entry]]
+name = "Seeed Studio Fusion Crowdfunding Sponsorship (PCB/PCBA coupon)"
+url = "https://www.seeedstudio.com/fusion-pcb-pcba-sponsorship.html"
+agency = "Seeed Studio Fusion"
+amount = "PCB/PCBA coupon of $100-$500"
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Creators with a PCB/PCBA-related Kickstarter or Indiegogo project. Projects still in the planning stage are invited to get in touch. Apply by email to fusion@seeed.io with the project link and a short introduction."
+note = "REQUIRES A LAUNCHED (OR PLANNED) KICKSTARTER/INDIEGOGO CAMPAIGN. This fits only if Vybe runs a crowdfunding pre-sale before the May 2027 consumer launch. Rolling, free, no equity. The same page also offers 30% off PCBA for XIAO- or LoRa-based designs, which is a discount, not a grant."
+documents = ["Email to fusion@seeed.io: crowdfunding page link (or campaign plan) and a short project introduction"]
+verified = "2026-10-12"
+
+[[sources.curated.entry]]
+name = "PTC for Startups: Creo+, Codebeamer+ and Arena PLM"
+url = "https://www.ptc.com/en/try-and-buy/startups"
+agency = "PTC"
+amount = "Free 1-year access to Creo+ (CAD) and Codebeamer+ (ALM / requirements), renewable each year until revenue or funding. Arena PLM gets a startup package after acceptance; its value is not stated."
+pillar = 1
+kind = "credit"
+sam = "none"
+eligibility = "Startups worldwide that develop their own product lines (service providers and consultancies are excluded). Eligibility depends on funding, lifetime revenue and incubator/investor ties. Applicants need a working website and cannot already be a customer of the product they apply for."
+note = "NEEDS A FUNCTIONING WEBSITE; FUNDING/REVENUE CAPS NOT PUBLISHED. Onshape, from the same PTC program, is already on the existing list. The new value here is Arena PLM, for BOM, supplier and change control ahead of DVT/PVT and retail, and Codebeamer+, for requirements traceability on firmware and the SDK. Rolling, free, no equity."
+documents = ["Online application per product (company info, website, funding/revenue, incubator/investor association)"]
+verified = "2026-10-12"
