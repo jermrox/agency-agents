@@ -1,5 +1,12 @@
 # vybe-ops.netlify.app — the Vybe operations console.
 #
+# Netlify site id: fbea1130-1669-4a5e-a21e-17f904272e14 (and only that one).
+# A zip deploy replaces a whole site, so a deploy to the wrong id takes another
+# agent's dashboard down. On 12 Oct 2026 the hub pushed this page to Growsom's
+# site id by mistake and agentgrowthscout.netlify.app served the console for
+# seven minutes with its data.json gone. Before any deploy: read the `name` in
+# the deploy tool's response, and refuse unless it says vybe-ops.
+#
 # The agents keep publishing to their own sites. This site reads them LIVE in
 # the browser. Three of the four feeds do not send CORS headers, so each one is
 # proxied through this domain with a 200 rewrite: the browser sees same-origin
