@@ -356,6 +356,16 @@ published with `draft_to` (recipient name and role), `draft_subject`,
 inside rule 7 that has waited five days for him). The founders read the draft
 on the console before it goes; a row with no body cannot be a send-today.
 
+Who signs. Founder, 12 October 2026: "have the emails written as John is
+sending them, as the Director of Growth." Every outreach email, opener, reply
+and follow-up is written in John's voice and in his name: first person is
+John, the signature is "John, Director of Growth, Vybe Health" with the Vybe
+calendar link under it, and nothing in the body reads as Jeremy or as an
+agent. It still goes out through the Vybe account the agent holds, with John
+on CC (rule 3), so the thread sits in his inbox and his reply stays the
+verdict. A draft without that signature is not a send-today; the console
+flags it.
+
 ## 12. Big name, small batch
 
 Founder, 12 October 2026: "We are looking for big-name, small-batch wins. A
