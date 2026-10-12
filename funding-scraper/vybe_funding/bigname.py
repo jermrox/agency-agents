@@ -10,7 +10,7 @@ first, then name, then money.
 | 9-10 | a household or national name (NIH, Google, NBA, Garmin, Costco) |
 | 7-8  | a flagship university, state or national body, federal agency, major fund or accelerator |
 | 5-6  | a regional body, a known sector organisation, a seed fund or a developer-tools brand |
-| 1-4  | a local event, a small nonprofit, an unknown funder |
+| 1-4  | a local event, a small nonprofit, an unknown funder, a vendor's own contest or perk |
 
 TWO SOURCES, ALWAYS LABELLED (same contract as rule 9.7's fit): a curated row
 may carry a hand-set ``big_name`` / ``big_name_why`` in sources.toml, which
@@ -73,8 +73,8 @@ _NAMES: list[tuple[str, int, str]] = [
     # 6 -- regional bodies, known sector organisations, developer-tools brands
     (r"jumpstart|\bglide\b|bounce innovation|lightship|nextcorps|fuzehub|luminate|ohio aerospace institute|university of akron|northeast ohio medical", 6, "a regional innovation body"),
     (r"hello alice|ifundwomen|penfed|\bdav\b|disabled american veterans|d'aniello|ivmf|medtech conference|global entrepreneurship network|insurtech|spie|national braille press|mercatus|american academy of", 6, "a recognised national sector organisation"),
-    (r"posthog|mixpanel|amplitude|sentry|retool|algolia|notion|zendesk|intercom|carta|together ai|aptible|digikey|w[uü]rth|pcbway|\bjlc|seeed|nextpcb|brinc|vultr|lablab|devpost|kaggle|tuya", 6, "a known developer or hardware brand"),
-    (r"emerge americas|hello tomorrow|sushi tech|swisstech|startup prize|global health accelerator|innovation world cup|halcyon|activate", 6, "a recognised startup programme"),
+    (r"posthog|mixpanel|amplitude|sentry|retool|algolia|notion|zendesk|intercom|carta|together ai|aptible|digikey|w[uü]rth|pcbway|\bjlc|seeed|nextpcb|vultr|lablab|devpost|kaggle|tuya", 4, "a vendor running its own contest or perk (a parts shop, tools or hosting brand)"),
+    (r"emerge americas|hello tomorrow|sushi tech|swisstech|startup prize|global health accelerator|innovation world cup|halcyon|activate|brinc", 6, "a recognised startup programme"),
     (r"university|college|institute", 6, "a university or institute"),
     # 4 -- small or local
     (r"veteran shark tank|founders live|sky's the limit|warrior rising|women veterans giving|rosie network|pave her way|freed fellowship|secretsos|shophand|darcy|nika lawrie|sengo|hidden starters|breva|caelestinus|terra|corti|charmhealth|inventacare|qloo|credit union|tully rinckey|vetcon|wbdc|patent pro bono|cleveland ip", 4, "a small or local funder"),
