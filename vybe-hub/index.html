@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Vybe Operations</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>if(window.tailwind) tailwind.config={corePlugins:{preflight:false},darkMode:"media",theme:{extend:{colors:{brand:"var(--brand)",ink:"var(--ink)"}}}};</script>
 <style>
 :root{--bg:#f6f8f7;--surface:#fff;--surface-2:#eef3f1;--line:#dbe3e0;--ink:#12201c;--ink-2:#44554f;--ink-3:#6b7a75;
 --brand:#1f8e78;--brand-ink:#0f5e4f;--good:#1d7a3a;--good-bg:#e3f3e7;--crit:#a3262a;--crit-bg:#fbe3e3;--warn:#8a5a00;--warn-bg:#fbefd5;
@@ -66,7 +68,16 @@ h3 .sub{text-transform:none;letter-spacing:0;font-weight:400;font-size:13px}
 .rows .r{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
 .rows .r:first-child{border-top:0}.rows .d{flex:0 0 10px;height:10px;border-radius:50%;margin-top:6px;background:var(--ink-3)}
 .rows .ok .d{background:var(--good)}.rows .bad .d{background:var(--crit)}.rows .warn .d{background:var(--warn)}.rows b{display:block}.rows .s{color:var(--ink-2);font-size:13.5px}.rows .t{color:var(--ink-3);font-size:12.5px;margin-left:auto;white-space:nowrap}
-.viz{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.viz{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;min-height:100%}
+.viz svg{margin-top:auto}
+.charts{display:grid;gap:12px;grid-template-columns:repeat(1,minmax(0,1fr));grid-auto-rows:1fr}
+@media (min-width:640px){.charts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.charts{grid-template-columns:repeat(3,minmax(0,1fr))}.charts.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.charts .viz.wide{grid-column:1/-1}
+.section{margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.section:first-of-type{margin-top:12px;padding-top:0;border-top:0}
+.viz .bars-body{flex:1}
+.viz .range{fill:var(--s1);opacity:.85}.viz .range.alt{fill:var(--s3)}.viz .range.past{opacity:.35}
 .viz .t{font-size:14px;font-weight:600;margin:0 0 2px}.viz .st{font-size:12.5px;color:var(--ink-3);margin:0 0 8px}
 .viz svg{width:100%;height:auto;display:block;overflow:visible}
 .viz .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2);margin-top:6px}.viz .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
@@ -97,8 +108,8 @@ details .in{margin:8px 0 0;color:var(--ink-2);line-height:1.6}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
+<div class="wrap mx-auto">
+  <header class="top flex flex-wrap items-baseline gap-x-4 gap-y-1">
     <h1><span>Vybe</span> Operations</h1>
     <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company. This page scores every live lead 1–10 and shows its reasoning, so you can decide.</p>
   </header>
@@ -300,7 +311,7 @@ function fromMarketsom(html, growsomLeads){
     waitlist:num(kpi("real waitlist")), waitlistNote:kpi("real waitlist")?.was||null, usVisits:num(kpi("US visits")), usVisitsWas:was(kpi("US visits"))?+was(kpi("US visits")).replace(/,/g,""):null,
     signups:num(kpi("^waitlist signups")), daily:(d.daily||[]).map(([l,v])=>({label:l,v:+v})), sources:(d.sources||[]).map(([l,v])=>({label:l,v:+v})), countries:(d.countries||[]).map(([l,v])=>({label:l,v:+v})),
     ads:((d.ads||{}).rows||[]).map(r=>({name:r.name,spend:r.spend,clicks:r.clicks,conv:r.conv})), igFollowers:na((d.instagram||{}).followers), problems:probs.length,
-    contacted:rows.length, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
+    contacted:rows.length, sentDates:rows.map(x=>parseDay(x.sent)).filter(Boolean), pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
 }
 function fromInstasom(j){
   const col=j.collections||{}; const ppl=col.people; const items=(Array.isArray(ppl)?ppl:Object.values(ppl||{})).filter(x=>x&&typeof x==="object");
@@ -323,7 +334,8 @@ function fromInstasom(j){
   const catCount={}; for(const x of items){ if(x.auditVerdict==="drop") continue; catCount[x.category||"other"]=(catCount[x.category||"other"]||0)+1; }
   return {stamp:parseStamp(j.generatedAt), ig:na(latest.ig), igTrusted:trusted, flag, fb:na(latest.fb), igSeries, fbSeries, reach, views, profile, posts,
     people:items.length||null, keep, toFollow:byStatus("Not started")||null, followed:byStatus("Followed"), passed:byStatus("Pass"),
-    byCategory:Object.entries(catCount).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v})), cats, segs, target, planEnd:parseDay(plan.end), planLabel:plan.label||"", bluf:ny.bluf||[], decisions, needs:[],
+    byCategory:Object.entries(catCount).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v})), cats, segs, target, planEnd:parseDay(plan.end), planStart:parseDay(plan.start), planLabel:plan.label||"",
+    planWeeks:(plan.weeks||[]).filter(w=>w&&typeof w==="object").map(w=>({what:w.focusShort||w.focus||"",start:parseDay(w.start),end:parseDay(w.end),note:w.checkpoint||w.focus||""})).filter(w=>w.start&&w.end), bluf:ny.bluf||[], decisions, needs:[],
     top:pick.slice(0,4).map(x=>({what:`@${String(x.handle||"").replace(/^@/,"")}${x.name?" — "+x.name:""}`, who_is:cut(`${x.category||""} · ${x.followers||"?"} followers`,90), why:sentences(x.why,200),
       do:[cut(x.action||"Follow, then tick the box on the social dashboard",110)], url:x.url||`https://www.instagram.com/${String(x.handle||"").replace(/^@/,"")}/`, url_label:"open", kind:"@", agent:"Instasom"})),
     pulling:p=>`Instagram ${fmt(p.ig)} raw (trusted ${p.igTrusted!==null?"~"+fmt(p.igTrusted):"not stated"}) · Facebook ${fmt(p.fb)} · ${fmt(p.toFollow)} verified people still to follow`};
@@ -336,7 +348,7 @@ function lineChart({title, sub, series, fmtY, note}){
   if(!all.length) return `<div class="viz"><p class="t">${esc(title)}</p><p class="st">${esc(sub||"")}</p><p class="empty">unavailable — the agent has not published this series</p></div>`;
   const xs=all.map(p=>p.x.getTime()), ys=all.map(p=>p.y); const x0=Math.min(...xs), x1=Math.max(...xs)||x0+DAY; const yMax=Math.max(...ys,1), yMin=0;
   const X=x=>L+(x1===x0?0.5:(x-x0)/(x1-x0))*(W-L-R), Y=y=>T+(1-(y-yMin)/(yMax-yMin||1))*(H-T-B);
-  const ticks=4; let g=""; for(let i=0;i<=ticks;i++){ const v=yMin+(yMax-yMin)*i/ticks; g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text x="${L-6}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end">${(fmtY||(n=>Math.round(n).toLocaleString()))(v)}</text>`; }
+  const ticks=yMax<4?Math.max(1,Math.round(yMax)):4; let g=""; for(let i=0;i<=ticks;i++){ const v=yMin+(yMax-yMin)*i/ticks; g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text x="${L-6}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end">${(fmtY||(n=>Math.round(n).toLocaleString()))(v)}</text>`; }
   const days=(x1-x0)/DAY; const step=days>40?14:days>14?7:days>6?2:1; let xl=""; for(let t=x0;t<=x1+1;t+=step*DAY){ const d=new Date(t); xl+=`<text x="${X(t).toFixed(1)}" y="${H-8}" text-anchor="middle">${dayText(d)}</text>`; }
   const colors=["var(--s1)","var(--s2)","var(--s3)"]; let paths="";
   series.forEach((s,i)=>{ let d="",pen=false; for(const p of s.pts){ if(p.y===null){pen=false;continue;} d+=(pen?"L":"M")+X(p.x.getTime()).toFixed(1)+" "+Y(p.y).toFixed(1); pen=true; } paths+=`<path class="ln" d="${d}" stroke="${colors[i%3]}"/>`;
@@ -353,7 +365,7 @@ function chartHover(ev,id){ const c=CH[id]; if(!c) return; const svg=ev.currentT
 function showTip(x,y,html){ const t=document.getElementById("tip"); t.innerHTML=html; t.style.display="block"; const w=t.offsetWidth; t.style.left=Math.max(8,Math.min(window.innerWidth-w-8,x-w/2))+"px"; t.style.top=(y-t.offsetHeight-14)+"px"; }
 function hideTip(){ const t=document.getElementById("tip"); t.style.display="none"; document.querySelectorAll("svg[data-chart] g[id$='-hl']").forEach(g=>g.innerHTML=""); }
 function bars(rows,{title,sub,cls,max,fmtV}={}){ rows=(rows||[]).filter(r=>r&&typeof r.v==="number"); if(!rows.length) return `<div class="viz"><p class="t">${esc(title||"")}</p><p class="empty">unavailable</p></div>`;
-  const mx=max||Math.max(...rows.map(r=>r.v),1); return `<div class="viz bars ${cls||""}">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}${rows.map(r=>`<div class="b"><span class="lab" title="${esc(r.label)}">${esc(r.label)}</span><span class="bar"><i style="width:${Math.max(1,100*r.v/mx).toFixed(1)}%"></i></span><span class="v">${(fmtV||(n=>n.toLocaleString()))(r.v)}${r.note?` <span class="s" style="color:var(--ink-3);font-size:12px">${esc(r.note)}</span>`:""}</span></div>`).join("")}</div>`; }
+  rows=rows.slice(0,8); const mx=max||Math.max(...rows.map(r=>r.v),1); return `<div class="viz bars ${cls||""}">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}<div class="bars-body">${rows.map(r=>`<div class="b"><span class="lab" title="${esc(r.label)}">${esc(r.label)}</span><span class="bar"><i style="width:${Math.max(1,100*r.v/mx).toFixed(1)}%"></i></span><span class="v">${(fmtV||(n=>n.toLocaleString()))(r.v)}${r.note?` <span class="s" style="color:var(--ink-3);font-size:12px">${esc(r.note)}</span>`:""}</span></div>`).join("")}</div></div>`; }
 // Swimlane timeline: one row per pillar (or per agent), dots at dated items for the next N days. Hover for the name and score.
 const TL={};
 function timeline(lanes,{days=90,title,sub}={}){ const id="t"+(++chartSeq); const W=640,L=110,R=10,rowH=30,T=22; const H=T+lanes.length*rowH+8;
@@ -366,6 +378,24 @@ function timeline(lanes,{days=90,title,sub}={}){ const id="t"+(++chartSeq); cons
   return `<div class="viz">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}<svg viewBox="0 0 ${W} ${H}"><g class="axis">${grid}</g>${body}</svg>${legend}</div>`; }
 function tlHover(ev,id,k){ const p=(TL[id]||[])[k]; if(!p) return; const it=p.it; const cx=ev.touches?ev.touches[0].clientX:ev.clientX, cy=ev.touches?ev.touches[0].clientY:ev.clientY;
   showTip(cx,cy,`<b>${esc(dayText(it.when))} · ${esc(it.what||it.org||"")}</b><br>${esc(it.when_text||"")}${it.score?`<br>score ${it.score.n}/10 · ${VERDICT[it.score.verdict]}`:""}${it.agent?`<br><span style="opacity:.75">from ${esc(it.agent)}</span>`:""}`); }
+// Phase timeline: one lane per plan, a bar per phase (start→end), today marked. Used for Instasom's 30-day plan and the hub's own deadlines.
+function phases(lanes,{from,days=60,title,sub}={}){ const id="p"+(++chartSeq); const W=640,L=110,R=10,rowH=30,T=22; const H=T+lanes.length*rowH+8; const t0=from||new Date(TODAY.getTime()-14*DAY);
+  const X=d=>L+Math.max(0,Math.min(days,(d.getTime()-t0.getTime())/DAY))/days*(W-L-R);
+  let grid=""; for(let w=0;w<=days;w+=7){ const x=L+w/days*(W-L-R); grid+=`<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${T-6}" y2="${H-6}"/>`; if(w%14===0) grid+=`<text x="${x.toFixed(1)}" y="11" text-anchor="middle">${dayText(new Date(t0.getTime()+w*DAY))}</text>`; }
+  const tx=X(TODAY); grid+=`<line x1="${tx.toFixed(1)}" x2="${tx.toFixed(1)}" y1="${T-6}" y2="${H-6}" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="4 3"/><text x="${tx.toFixed(1)}" y="${H-0}" text-anchor="middle" style="fill:var(--crit)">today</text>`;
+  let body=""; const pts=[]; lanes.forEach((ln,i)=>{ const y=T+i*rowH+rowH/2; body+=`<text x="${L-8}" y="${y+4}" text-anchor="end" style="fill:var(--ink-2);font-weight:600">${esc(cut(ln.name,16))}</text>`;
+    (ln.items||[]).filter(it=>it.start&&it.end).forEach((it,j)=>{ const x1=X(it.start), x2=Math.max(X(it.end),x1+3); const past=it.end<TODAY; const k=pts.length; pts.push({it,lane:ln.name});
+      body+=`<rect class="range ${j%2?"alt":""} ${past?"past":""}" x="${x1.toFixed(1)}" y="${y-9}" width="${(x2-x1).toFixed(1)}" height="18" rx="4" onmousemove="phHover(event,'${id}',${k})" onmouseleave="hideTip()" ontouchstart="phHover(event,'${id}',${k})"/>`;
+      if(x2-x1>70) body+=`<text x="${(x1+6).toFixed(1)}" y="${y+4}" style="fill:#fff;font-weight:600;pointer-events:none">${esc(cut(it.what,Math.floor((x2-x1)/6)))}</text>`; }); });
+  PH[id]=pts; return `<div class="viz wide">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}<svg viewBox="0 0 ${W} ${H+6}"><g class="axis">${grid}</g>${body}</svg></div>`; }
+const PH={};
+function phHover(ev,id,k){ const p=(PH[id]||[])[k]; if(!p) return; const it=p.it; const cx=ev.touches?ev.touches[0].clientX:ev.clientX, cy=ev.touches?ev.touches[0].clientY:ev.clientY;
+  showTip(cx,cy,`<b>${esc(it.what)}</b><br>${esc(dayText(it.start))} → ${esc(dayText(it.end))}${it.note?`<br>${esc(cut(it.note,160))}`:""}`); }
+// Score histogram and weekly buckets, both single-series ordinal bars.
+function scoreHist(leads,title){ const c=Array.from({length:10},(_,i)=>({label:`${i+1}`,v:0})); for(const l of leads) c[Math.max(1,Math.min(10,l.score.n))-1].v++; const rows=c.filter(r=>r.v||true);
+  return bars(rows.slice(2),{title:title||"Score distribution",sub:`${leads.length} leads · 8–10 Go · 5–7 Hold · 1–4 No`,fmtV:n=>String(n)}); }
+function weekly(dates,{title,sub,weeks=8}={}){ const rows=[]; for(let w=0;w<weeks;w++){ const a=new Date(TODAY.getTime()+w*7*DAY), b=new Date(a.getTime()+7*DAY); rows.push({label:w===0?"this week":`wk of ${dayText(a)}`,v:dates.filter(d=>d&&d>=a&&d<b).length}); } return bars(rows,{title,sub,fmtV:n=>String(n)}); }
+function pastDaily(dates,{title,sub,days=14}={}){ const rows=[]; for(let i=days-1;i>=0;i--){ const a=new Date(TODAY.getTime()-i*DAY), b=new Date(a.getTime()+DAY); rows.push({x:a,y:dates.filter(d=>d&&d>=a&&d<b).length}); } return lineChart({title,sub,series:[{name:"emails sent",pts:rows}],fmtY:n=>String(Math.round(n))}); }
 function sparkline(pts){ pts=(pts||[]).filter(p=>typeof p.y==="number"); if(pts.length<2) return `<span class="s">trend starts ${pts.length?dayText(pts[0].x):"when the next snapshot lands"}</span>`;
   const W=90,H=24; const xs=pts.map(p=>p.x.getTime()), ys=pts.map(p=>p.y); const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
   const d=pts.map((p,i)=>(i?"L":"M")+(((p.x.getTime()-x0)/(x1-x0||1))*(W-4)+2).toFixed(1)+" "+((1-(p.y-y0)/(y1-y0||1))*(H-6)+3).toFixed(1)).join("");
@@ -427,83 +457,116 @@ function pillarHeadline(p){ const d=state.data; const r=d.revsom||{}, g=d.growso
     case "awareness": return {v:na(m.waitlist), l:"real waitlist sign-ups", a:`Instagram ${fmt(na(i.ig))} raw, trusted ~${fmt(na(i.igTrusted))} · US visits ${fmt(na(m.usVisits))} (was ${fmt(na(m.usVisitsWas))})`, trend:histSeries("marketsom.waitlist")};
   } return {v:null,l:"",a:"",trend:[]}; }
 
+// Marketsom's daily labels run "27 Sep", "28", "29", … "1 Oct", "2": a bare day keeps the last month seen.
+const visitsSeries=m=>{ let mon=""; return (m.daily||[]).map(d=>{ const l=String(d.label); const mm=l.match(/[A-Za-z]+/); if(mm) mon=mm[0]; const x=parseDay(/[A-Za-z]/.test(l)?l:`${l} ${mon}`); return {x,y:d.v}; }).filter(p=>p.x); };
+const dot=v=>v==="go"?"var(--good)":v==="hold"?"var(--warn)":"var(--crit)";
+function leadLane(name,L){ return {name, items:L.filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).map(l=>({when:l.when,what:l.org,when_text:l.when_text,score:l.score,verdict:l.score.verdict,agent:l.agent}))}; }
+function decisionLane(name,D){ return {name, items:D.filter(d=>d.when&&daysTo(d.when)>=0).map(d=>({when:d.when,what:d.what,when_text:"decision asked of you",agent:d.agent}))}; }
+function planLanes(){ const i=state.data.instasom||{}; const lanes=[]; if((i.planWeeks||[]).length) lanes.push({name:"Instasom plan",items:i.planWeeks});
+  lanes.push({name:"Hub",items:[{what:"Console-link grace",start:new Date(2026,9,11),end:new Date(2026,9,14),note:"Agent pages must link to this console by 14 Oct 20:00 UTC; red after that."},{what:"Rule 9.7 fields",start:new Date(2026,9,12),end:new Date(2026,9,13),note:"Every agent publishes the nine decision fields; compliance check 16:05 UTC daily."}]});
+  const m=state.data.marketsom||{}; const fu=leadsFor("partners").map(l=>l.when).filter(d=>d&&daysTo(d)>=0).sort((a,b)=>a-b); if(fu.length) lanes.push({name:"Partner follow-ups",items:[{what:`${fu.length} follow-ups`,start:fu[0],end:new Date(fu[fu.length-1].getTime()+DAY),note:"Marketsom's one follow-up per thread, 5–7 days after the first email."}]});
+  return lanes; }
+function milestoneList(L,n=14){ const ms=L.filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).sort((a,b)=>a.when-b.when).slice(0,n);
+  return ms.length?`<div class="rows">${ms.map(l=>`<div class="r"><span class="d" style="background:${dot(l.score.verdict)}"></span><div><b>${esc(dayText(l.when))} · ${esc(l.org)}</b><span class="s">${esc(l.when_text)} · ${esc(cut(l.offer,90))}</span></div><span class="t">${l.score.n}/10 ${VERDICT[l.score.verdict]}</span></div>`).join("")}</div>`:`<p class="empty">Nothing carries a date inside 90 days.</p>`; }
+function section(title,sub,body){ return `<div class="section"><h3>${esc(title)}${sub?` <span class="sub">${esc(sub)}</span>`:""}</h3>${body}</div>`; }
+
 function renderDecide(){
-  const leads=allLeads(); const go=leads.filter(l=>l.score.verdict==="go").slice(0,8); const dec=((state.data.instasom||{}).decisions||[]);
+  const leads=allLeads(); const go=leads.filter(l=>l.score.verdict==="go").slice(0,9); const dec=((state.data.instasom||{}).decisions||[]);
+  const r=state.data.revsom||{}, g=state.data.growsom||{}, m=state.data.marketsom||{}, i=state.data.instasom||{};
+  const bluf=`${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
+  // Charts first, one grid, three across.
+  const charts=`<div class="charts">
+    ${lineChart({title:"Instagram followers",sub:"raw API count, daily",series:[{name:"raw followers",pts:(i.igSeries||[]).map(p=>({...p,note:p.y>1000?"includes an unverified bulk add on 30 Sep":undefined}))}]})}
+    ${lineChart({title:"Instagram reach per day",sub:"accounts reached",series:[{name:"reach",pts:i.reach||[]}]})}
+    ${lineChart({title:"Website visits per day",sub:"GA4, all countries",series:[{name:"visits",pts:visitsSeries(m)}]})}
+    ${weekly(leadsFor("money").map(l=>l.when),{title:"Funding deadlines by week",sub:"dated opportunities closing, next 8 weeks"})}
+    ${bars(m.funnel,{title:"Outreach funnel",sub:"every organisation Marketsom contacted",cls:"funnel"})}
+    ${bars(PILLARS.map(p=>({label:p.name,v:leadsFor(p.id).filter(l=>l.score.verdict==="go").length,note:`of ${leadsFor(p.id).length}`})),{title:"Go leads by pillar",sub:"scored 8–10 with a reply or an open window",fmtV:n=>String(n)})}
+    ${scoreHist(leads,"All leads by score")}
+    ${bars(r.byKind,{title:"What kind of money",sub:"live Revsom rows by type"})}
+    ${bars((g.byType||[]).slice(0,8),{title:"Growsom targets by type",sub:`${fmt(na(g.total))} targets`})}
+  </div>`;
+  const lanes=PILLARS.map(p=>({name:p.name, items:leadLane(p.name,leadsFor(p.id)).items.concat(decisionLane(p.name,decisionsFor(p.id)).items)}));
+  const timelines=`<div class="charts two">${timeline(lanes,{title:"Next 90 days: dated leads and decisions",sub:"one lane per pillar · hover a dot"})}${phases(planLanes(),{title:"Plans and windows",sub:"phases as bars · the red line is today"})}</div>`;
   const rows=PILLARS.map(p=>{ const s=pillarStats(p); const h=pillarHeadline(p); const nx=s.next?`${dayText(s.next.when)} · ${cut(s.next.org,34)} <span class="s">${esc(s.next.when_text)} · ${s.next.score.n}/10</span>`:(s.nextDec?`${dayText(s.nextDec.when)} · ${esc(cut(s.nextDec.what,34))} <span class="s">decision</span>`:'<span class="s">nothing dated inside 90 days</span>');
     const hc=p.agents.map(aid=>health(AGENTS.find(a=>a.id===aid))); const cls=hc.some(x=>x.cls==="bad")?"bad":"ok";
     return `<tr><td><a class="pl" href="#" onclick="setTab('${p.id}');return false">${esc(p.name)}</a><span class="s">${esc(p.agents.map(a=>AGENTS.find(x=>x.id===a).name).join(" + "))} · <span class="verdict ${cls==="ok"?"go":"no"}">${cls==="ok"?"live":"stale"}</span></span></td>
       <td class="num">${fmt(h.v)}<span class="s">${esc(h.l)}</span><span class="s">${esc(h.a)}</span></td><td>${sparkline(h.trend)}</td><td>${nx}</td>
       <td><span class="verdict go">${s.go.length} Go</span> <span class="verdict hold">${s.hold.length} Hold</span> <span class="verdict no">${s.no.length} No</span>${s.dec.length?` <span class="verdict">${s.dec.length} decision${s.dec.length===1?"":"s"}</span>`:""}</td></tr>`; }).join("");
-  const lanes=PILLARS.map(p=>({name:p.name, items:leadsFor(p.id).filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).map(l=>({when:l.when,what:l.org,when_text:l.when_text,score:l.score,verdict:l.score.verdict,agent:l.agent}))
-    .concat(decisionsFor(p.id).filter(d=>d.when&&daysTo(d.when)>=0).map(d=>({when:d.when,what:d.what,when_text:"decision asked of you",agent:d.agent})))}));
-  const ex=excludedAll(); const i=state.data.instasom||{}, m=state.data.marketsom||{};
-  const bluf=`${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
+  const ex=excludedAll();
   return `<p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
-  <h3>Pillar scoreboard <span class="sub">one row per way Vybe makes money · click a pillar for the full breakdown</span></h3>
-  <div class="sbwrap"><table class="sb"><thead><tr><th>Pillar</th><th>Headline number</th><th>Trend</th><th>Next milestone</th><th>Leads scored</th></tr></thead><tbody>${rows}</tbody></table></div>
-  <h3>Next 90 days <span class="sub">every dated lead and decision, by pillar · hover a dot</span></h3>${timeline(lanes)}
-  <h3>Decide now <span class="sub">top Go leads across every pillar, best first</span></h3>${go.length?`<div class="grid">${go.map(leadCard).join("")}</div>`:`<p class="empty">Nothing scores 8 or more right now. The Hold list on each pillar says what fact is missing.</p>`}
-  ${dec.length?`<h3>Decisions the agents asked of you</h3><div class="grid">${dec.map(cardHTML).join("")}</div>`:""}
-  <h3>Trends <span class="sub">what is actually moving</span></h3><div class="grid two">
-  ${lineChart({title:"Instagram followers",sub:"raw count from the API, daily",series:[{name:"raw followers",pts:(i.igSeries||[]).map(p=>({...p,note:p.y>1000?"includes an unverified bulk add on 30 Sep":undefined}))}],note:i.flag?cut(i.flag,220):""})}
-  ${lineChart({title:"Website visits per day",sub:"GA4, all countries, last two weeks",series:[{name:"visits",pts:(m.daily||[]).map(d=>({x:parseDay(/[A-Za-z]/.test(d.label)?d.label:d.label+" "+((m.daily.find(q=>/[A-Za-z]/.test(q.label))||{}).label||"").replace(/^\d+\s*/,"")),y:d.v})).filter(p=>p.x)}]})}
-  </div>
+  ${section("Numbers","every pillar, one grid · hover any chart",charts)}
+  ${section("Timelines","what is dated, and what is in progress",timelines)}
+  ${section("Pillar scoreboard","one row per way Vybe makes money · click a pillar",`<div class="sbwrap"><table class="sb"><thead><tr><th>Pillar</th><th>Headline number</th><th>Trend</th><th>Next milestone</th><th>Leads scored</th></tr></thead><tbody>${rows}</tbody></table></div>`)}
+  ${section("Decide now","top Go leads across every pillar, best first",go.length?`<div class="grid">${go.map(leadCard).join("")}</div>`:`<p class="empty">Nothing scores 8 or more right now. The Hold list on each pillar says what fact is missing.</p>`)}
+  ${dec.length?section("Decisions the agents asked of you","",`<div class="grid">${dec.map(cardHTML).join("")}</div>`):""}
   <p class="excl">${ex.length} thread${ex.length===1?"":"s"} kept out of every score above because they are vendors, suppliers or paid slots (rule 7)${ex.length?`: ${esc(ex.map(e=>e.org).join(", "))}`:""}.</p>
   <details><summary>How the 1–10 score works</summary><div class="in">Every lead is scored here, on this page, from the agents' own published fields — never by an agent's opinion alone. Six parts, each 0–1, weighted and averaged, then ×10:<br>
   <b>Purpose</b> (does it bring collaboration, investment or revenue — rule 7) · <b>Cost</b> (is any money asked of Vybe) · <b>Warmth</b> (booked or said yes → replied → waiting → drafted → declined) · <b>Reach or size</b> (money stated, Growsom's fit score, or audience size) · <b>Effort</b> (one email, or an application with documents, travel, registration) · <b>Timing</b> (a feasible deadline, or none).<br>
   <b>8–10 Go</b>: worth your time this week. <b>5–7 Hold</b>: one fact is missing — the "why" list says which. <b>1–4 No</b>: skip. Vendors, suppliers and anything that costs money never get a score; they are listed once above and nowhere else.</div></details>`;
 }
 function renderPillar(p){
-  const s=pillarStats(p); const h=pillarHeadline(p); const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
-  const lanes=p.agents.map(aid=>{const an=AGENTS.find(a=>a.id===aid).name; return {name:an,items:s.L.filter(l=>l.agent===an&&l.when&&daysTo(l.when)>=0).map(l=>({when:l.when,what:l.org,when_text:l.when_text,score:l.score,verdict:l.score.verdict,agent:l.agent}))};});
-  if(s.dec.length) lanes.push({name:"Decisions",items:s.dec.filter(x=>x.when).map(x=>({when:x.when,what:x.what,when_text:"decision asked of you",agent:x.agent}))});
-  const milestones=s.L.filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).sort((a,b)=>a.when-b.when).slice(0,14);
-  let kpis="", charts="", population="", bluf="";
+  const s=pillarStats(p); const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
+  const lanes=p.agents.map(aid=>leadLane(AGENTS.find(a=>a.id===aid).name,s.L.filter(l=>l.agent===AGENTS.find(a=>a.id===aid).name))); if(s.dec.length) lanes.push(decisionLane("Decisions",s.dec));
+  let kpis="", charts=[], extra="", bluf="";
   if(p.id==="money"){
     bluf=`${fmt(na(r.closing30))} opportunities close inside 30 days and ${s.go.length} of them score a Go. ${s.best?`Best right now: ${esc(s.best.org)} — ${esc(s.best.offer)}, ${esc(s.best.when_text)}.`:""} ${fmt(na(r.noSam))} of the ${fmt(na(r.live))} live rows need no registration, so a person can apply the same day.`;
     kpis=kpi(na(r.closing14),"close inside 14 days","Revsom · the ones that cannot wait")+kpi(na(r.closing30),"close inside 30 days","")+kpi(na(r.closing90),"dated inside 90 days",`${fmt(na(r.live))} live rows in total`)+kpi(na(r.noSam),"need no SAM registration","apply today; the rest need weeks of registration first");
-    charts=`<div class="grid two">${bars(r.byKind,{title:"What kind of money",sub:"live rows by type"})}${bars(r.bySam,{title:"Registration needed",sub:"'none' means a person can apply today"})}</div>`;
+    charts=[weekly(s.L.map(l=>l.when),{title:"Deadlines by week",sub:"dated opportunities closing, next 8 weeks"}), scoreHist(s.L,"Opportunities by score"), bars(r.byKind,{title:"What kind of money",sub:"live rows by type"}),
+      bars(r.bySam,{title:"Registration needed",sub:"'none' means a person can apply today"}), bars(r.byStatus,{title:"Status",sub:"live rows"}),
+      bars([{label:"$100K+",v:s.L.filter(l=>l.size>=1e5).length},{label:"$25K–100K",v:s.L.filter(l=>l.size>=25e3&&l.size<1e5).length},{label:"$10K–25K",v:s.L.filter(l=>l.size>=1e4&&l.size<25e3).length},{label:"under $10K",v:s.L.filter(l=>l.size!==null&&l.size<1e4).length},{label:"no amount stated",v:s.L.filter(l=>l.size===null).length}],{title:"Money on the table",sub:"largest stated figure per dated row",fmtV:n=>String(n)})];
   } else if(p.id==="investors"){
     bluf=`${fmt(na(g.investors))} investor targets: ${esc((g.byType||[]).filter(t=>/vc|angel|accel/.test(t.label)).map(t=>`${t.v} ${t.label}`).join(", "))}. ${fmt(na(g.ready))} openers are drafted and wait on John's approval; none is sent without it. ${s.next?`Next hard deadline: ${esc(s.next.org)} on ${dayText(s.next.when)}.`:""} ${fmt(na(g.replied))} of ${fmt(na(g.threads))} real threads have a reply.`;
     kpis=kpi(na(g.investors),"investor targets",`of ${fmt(na(g.total))} Growsom targets`)+kpi(na(g.ready),"openers ready",`wait on John's approval · ${fmt(na(g.approvalsOnHold))} on hold for team discussion`)+kpi(na(g.deadlines),"deadlines inside 30 days","")+kpi(na(g.replied),"replies on real threads",`${fmt(na(g.threads))} sent · ${fmt(na(g.noReply))} no reply`);
-    charts=`<div class="grid two">${bars(g.byStage,{title:"Stage they invest at",sub:"investor targets with a stated stage"})}${bars(g.byState,{title:"Where targets are",sub:"all Growsom targets by state · National means no single state"})}</div>`;
+    charts=[scoreHist(s.L,"Investor targets by score"), bars(g.byStage,{title:"Stage they invest at",sub:"targets with a stated stage"}), bars(g.byState,{title:"Where targets are",sub:"by state · National means no single state"}),
+      bars((g.byType||[]).filter(t=>/vc|angel|accel/.test(t.label)),{title:"Investor types",sub:"funds, angel groups, accelerators"}), weekly(s.L.map(l=>l.when),{title:"Application deadlines by week",sub:"next 8 weeks"}),
+      bars([{label:"replied",v:s.L.filter(l=>l.status==="replied").length},{label:"waiting",v:s.L.filter(l=>/waiting|no reply/.test(l.status)).length},{label:"drafted, awaiting John",v:s.L.filter(l=>l.status==="drafted").length},{label:"researching",v:s.L.filter(l=>l.status==="researching").length}],{title:"Where threads stand",sub:"investor targets",cls:"funnel",fmtV:n=>String(n)})];
   } else if(p.id==="integrations"){
     const rep=s.L.filter(l=>/replied|passed|booked/.test(l.status));
     bluf=`${rep.length} app or builder team${rep.length===1?" has":"s have"} answered${rep.length?`: ${esc(rep.map(l=>l.org).join(", "))}`:""}. ${fmt(na(g.integrations))} builder, app and research-lab targets are in Growsom's list. ${s.L.filter(l=>/technical answer/.test(l.score.why.join(" "))).length} of the live threads are blocked on a technical answer only Jeremy can give.`;
     kpis=kpi(rep.length||null,"teams answered","from Marketsom's outreach and Growsom's threads")+kpi(na(g.integrations),"integration targets","builders, app partners, research labs, channel partners")+kpi(na(g.approvalsPending),"openers awaiting John","Growsom sends nothing without an APPROVE")+kpi(s.go.length,"score a Go now","");
-    charts=`<div class="grid two">${bars((g.byType||[]).filter(t=>/builder|app|research|channel|community/.test(t.label)),{title:"Target types",sub:"Growsom integration targets"})}${bars(m.funnel,{title:"Where Marketsom's threads stand",sub:"all contacted organisations, both pillars",cls:"funnel"})}</div>`;
+    charts=[scoreHist(s.L,"Integration leads by score"), bars((g.byType||[]).filter(t=>/builder|app|research|channel|community/.test(t.label)),{title:"Target types",sub:"Growsom integration targets"}),
+      bars([{label:"replied",v:s.L.filter(l=>/replied/.test(l.status)).length},{label:"passed on internally",v:s.L.filter(l=>l.status==="passed").length},{label:"waiting",v:s.L.filter(l=>/waiting|no reply/.test(l.status)).length},{label:"drafted",v:s.L.filter(l=>l.status==="drafted").length},{label:"researching",v:s.L.filter(l=>l.status==="researching").length}],{title:"Where threads stand",sub:"both agents",cls:"funnel",fmtV:n=>String(n)}),
+      bars([{label:"Growsom",v:s.L.filter(l=>l.agent==="Growsom").length},{label:"Marketsom",v:s.L.filter(l=>l.agent==="Marketsom").length}],{title:"Who holds the thread",sub:"rule 7: apps and builders belong to Growsom",fmtV:n=>String(n)}),
+      weekly(s.L.map(l=>l.when),{title:"Next steps by week",sub:"follow-ups and deadlines"}), bars(g.byState,{title:"Where targets are",sub:"all Growsom targets"})];
   } else if(p.id==="partners"){
     const rep=s.L.filter(l=>/replied|passed/.test(l.status)), wait=s.L.filter(l=>l.status==="waiting"), dr=s.L.filter(l=>l.status==="drafted");
-    const nextFU=wait.map(l=>l.when).filter(Boolean).sort((a,b)=>a-b)[0];
-    bluf=`${fmt(na(m.contacted))} organisations contacted. ${rep.length} answered, ${wait.length} are waiting on a reply, ${dr.length} drafts are written but not sent. ${nextFU?`Follow-ups fall due ${dayText(nextFU)}.`:""} ${excludedAll().length} threads were about tables or booths and are out (rule 7).`;
+    const nextFU=wait.map(l=>l.when).filter(d=>d&&daysTo(d)>=0).sort((a,b)=>a-b)[0];
+    bluf=`${fmt(na(m.contacted))} organisations contacted. ${rep.length} answered, ${wait.length} are waiting on a reply, ${dr.length} drafts are written but not sent. ${nextFU?`Follow-ups fall due ${dayText(nextFU)}.`:""} ${excludedAll().length} threads were about tables, booths or vendors and are out (rule 7).`;
     kpis=kpi(na(m.contacted),"organisations contacted","Marketsom, since 6 Oct")+kpi(rep.length,"answered","")+kpi(wait.length,"waiting on a reply",nextFU?`follow-ups due ${dayText(nextFU)}`:"")+kpi(na(m.drafts),"drafts waiting for you to send","John on CC of every one");
-    charts=`<div class="grid two">${bars(m.funnel,{title:"Outreach funnel",sub:"every organisation Marketsom has contacted",cls:"funnel"})}</div>`;
+    charts=[bars(m.funnel,{title:"Outreach funnel",sub:"every organisation contacted",cls:"funnel"}), scoreHist(s.L,"Partners by score"), pastDaily(m.sentDates||[],{title:"Emails sent per day",sub:"first emails, last 14 days"}),
+      weekly(s.L.map(l=>l.when),{title:"Follow-ups and next steps by week",sub:"next 8 weeks"}),
+      bars([{label:"said yes / asked for a call",v:s.L.filter(l=>l.status==="replied-yes").length},{label:"replied",v:s.L.filter(l=>l.status==="replied").length},{label:"passed on internally",v:s.L.filter(l=>l.status==="passed").length},{label:"declined",v:s.L.filter(l=>l.status==="declined").length}],{title:"What the answers were",sub:"organisations that wrote back",fmtV:n=>String(n)}),
+      bars([{label:"no money either side",v:s.L.filter(l=>l.cost==="$0").length},{label:"asked for money, declined",v:s.L.filter(l=>l.cost!=="$0").length},{label:"out of scope (rule 7)",v:excludedAll().length}],{title:"Cost",sub:"partnerships are no-cost exchanges",fmtV:n=>String(n)})];
   } else if(p.id==="awareness"){
     bluf=`Real waitlist: ${fmt(na(m.waitlist))} people${m.waitlistNote?` (${esc(m.waitlistNote)})`:""}. US visits ${fmt(na(m.usVisits))} this week against ${fmt(na(m.usVisitsWas))} the week before. Instagram ${fmt(na(i.ig))} raw, but the trusted count is ~${fmt(na(i.igTrusted))}; Facebook ${fmt(na(i.fb))}. ${i.target&&i.target.ig?`Target was ${i.target.ig.toLocaleString()} Instagram and ${(i.target.fb||0).toLocaleString()} Facebook by ${dayText(i.planEnd)}.`:""}`;
-    const lastReach=(i.reach||[]).filter(p=>p.y!==null).slice(-7); const reach7=lastReach.length?Math.round(lastReach.reduce((s,p)=>s+p.y,0)/lastReach.length):null;
+    const lastReach=(i.reach||[]).filter(q=>q.y!==null).slice(-7); const reach7=lastReach.length?Math.round(lastReach.reduce((a,q)=>a+q.y,0)/lastReach.length):null;
     kpis=kpi(na(m.waitlist),"real waitlist sign-ups",m.waitlistNote||"")+kpi(na(m.usVisits),"US visits this week","",delta(m.usVisits,m.usVisitsWas))+kpi(na(i.igTrusted),"trusted Instagram followers",`${fmt(na(i.ig))} raw · target ${fmt(na(i.target&&i.target.ig))} by ${dayText(i.planEnd)}`)+kpi(na(i.fb),"Facebook followers",`target ${fmt(na(i.target&&i.target.fb))}`)+kpi(reach7,"Instagram reach, 7-day average","accounts reached per day");
-    charts=`<div class="grid two">${lineChart({title:"Instagram followers",sub:"raw API count · the 30 Sep jump is unverified and excluded from the trusted count",series:[{name:"raw followers",pts:i.igSeries||[]}],note:i.flag?cut(i.flag,260):""})}
-      ${lineChart({title:"Instagram reach per day",sub:"accounts reached · gaps are days Meta has not published",series:[{name:"reach",pts:i.reach||[]}]})}
-      ${lineChart({title:"Website visits per day",sub:"GA4, all countries",series:[{name:"visits",pts:(m.daily||[]).map(d=>({x:parseDay(/[A-Za-z]/.test(d.label)?d.label:d.label+" "+((m.daily.find(q=>/[A-Za-z]/.test(q.label))||{}).label||"").replace(/^\d+\s*/,"")),y:d.v})).filter(p=>p.x)}]})}
-      ${bars(m.countries,{title:"Where visitors are",sub:"this week · paid clicks brought most of the non-US traffic"})}
-      ${bars(m.sources,{title:"Where visits came from",sub:"this week"})}
-      ${bars((i.posts||[]).map(p=>({label:`${dayText(new Date(p.timestamp))} ${p.product==="REELS"?"Reel":"Image"} · ${cut(p.caption,28)}`,v:+p.reach||0,note:`${p.likes||0} likes · ${p.saved||0} saved`})),{title:"Reach per post",sub:"Reels reach roughly ten times more non-followers than images"})}</div>`;
-    population=`<h3>Population targets <span class="sub">who Instasom is building the audience from, with its own share targets</span></h3>
-      <div class="grid two">${bars((i.cats||[]).map(c=>({label:c.name,v:+c.shareOfFollows||0,note:`${c.followTarget||"?"} follows/day`})),{title:"Share of follows by lane",sub:"Instasom's plan · % of daily follows",fmtV:n=>n+"%"})}
-      ${bars(i.byCategory,{title:"Verified people on the list",sub:`${fmt(na(i.people))} researched · ${fmt(na(i.keep))} kept after audit · ${fmt(na(i.followed))} followed so far`})}</div>
-      ${(i.segs||[]).length?`<div class="sbwrap" style="margin-top:10px"><table class="sb"><thead><tr><th>Segment</th><th>Who</th><th>Why they'd want Vybe</th></tr></thead><tbody>${i.segs.map(sg=>`<tr><td><b>${esc(sg.name)}</b><span class="s">${esc(sg.kind||"")}${sg.share?` · ${esc(sg.share)}`:""}</span></td><td>${esc(cut(sg.who||"",160))}</td><td>${esc(cut(sg.why||(sg.pains||[]).join("; "),200))}</td></tr>`).join("")}</tbody></table></div>`:""}
-      ${(m.ads||[]).length?`<h3>Paid spend <span class="sub">what is still costing money</span></h3><div class="sbwrap"><table class="sb"><thead><tr><th>Campaign</th><th>Spend</th><th>Clicks</th><th>Result</th></tr></thead><tbody>${m.ads.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.spend)}</td><td>${esc(a.clicks)}</td><td>${esc(a.conv)}</td></tr>`).join("")}</tbody></table></div>`:""}`;
+    charts=[lineChart({title:"Instagram followers",sub:"raw API count · the 30 Sep jump is unverified",series:[{name:"raw followers",pts:i.igSeries||[]}],note:i.flag?cut(i.flag,200):""}),
+      lineChart({title:"Instagram reach per day",sub:"accounts reached · gaps are days Meta has not published",series:[{name:"reach",pts:i.reach||[]}]}),
+      lineChart({title:"Profile views per day",sub:"Instagram insights",series:[{name:"profile views",pts:i.profile||[]}]}),
+      lineChart({title:"Website visits per day",sub:"GA4, all countries",series:[{name:"visits",pts:visitsSeries(m)}]}),
+      lineChart({title:"Facebook followers",sub:"daily",series:[{name:"followers",pts:i.fbSeries||[]}]}),
+      bars((i.posts||[]).map(q=>({label:`${dayText(new Date(q.timestamp))} ${q.product==="REELS"?"Reel":"Image"} · ${cut(q.caption,24)}`,v:+q.reach||0,note:`${q.likes||0} likes`})),{title:"Reach per post",sub:"Reels reach ~10× more non-followers"}),
+      bars(m.countries,{title:"Where visitors are",sub:"this week"}), bars(m.sources,{title:"Where visits came from",sub:"this week"}),
+      bars((i.cats||[]).map(c=>({label:c.name,v:+c.shareOfFollows||0,note:`${c.followTarget||"?"} follows/day`})),{title:"Share of follows by lane",sub:"Instasom's plan · % of daily follows",fmtV:n=>n+"%"}),
+      bars(i.byCategory,{title:"Verified people on the list",sub:`${fmt(na(i.people))} researched · ${fmt(na(i.keep))} kept · ${fmt(na(i.followed))} followed`}),
+      bars([{label:"Instagram raw",v:i.ig||0,note:`target ${fmt(na(i.target&&i.target.ig))}`},{label:"Instagram trusted",v:i.igTrusted||0},{label:"Facebook",v:i.fb||0,note:`target ${fmt(na(i.target&&i.target.fb))}`}],{title:"Audience against target",sub:`by ${dayText(i.planEnd)}`,max:Math.max((i.target&&i.target.ig)||1000,i.ig||0)}),
+      scoreHist(s.L,"Amplifiers by score")];
+    extra=`${(i.segs||[]).length?section("Population targets","who Instasom is building the audience from",`<div class="sbwrap"><table class="sb"><thead><tr><th>Segment</th><th>Who</th><th>Why they'd want Vybe</th></tr></thead><tbody>${i.segs.map(sg=>`<tr><td><b>${esc(sg.name)}</b><span class="s">${esc(sg.kind||"")}${sg.share?` · ${esc(sg.share)}`:""}</span></td><td>${esc(cut(sg.who||"",160))}</td><td>${esc(cut(sg.why||(sg.pains||[]).join("; "),200))}</td></tr>`).join("")}</tbody></table></div>`):""}
+      ${(m.ads||[]).length?section("Paid spend","what is still costing money",`<div class="sbwrap"><table class="sb"><thead><tr><th>Campaign</th><th>Spend</th><th>Clicks</th><th>Result</th></tr></thead><tbody>${m.ads.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.spend)}</td><td>${esc(a.clicks)}</td><td>${esc(a.conv)}</td></tr>`).join("")}</tbody></table></div>`):""}`;
   }
   const answered=s.L.filter(l=>/replied|passed|booked/.test(l.status)); const rest=s.L.filter(l=>!/replied|passed|booked/.test(l.status));
+  const tl=`<div class="charts two">${timeline(lanes,{title:"Next 90 days",sub:"dated leads by verdict · hover a dot"})}${p.id==="awareness"?phases(planLanes().filter(l=>l.name!=="Partner follow-ups"),{title:"Plan phases",sub:"the red line is today"}):`<div class="viz"><p class="t">Milestones</p><p class="st">soonest first</p>${milestoneList(s.L,8)}</div>`}</div>`;
   return `<h2>${esc(p.name)}</h2><p class="purpose">${esc(p.purpose)}</p><p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
-  <div class="grid">${kpis}</div>
-  <h3>Milestones — next 90 days <span class="sub">dated leads by verdict · hover a dot</span></h3>${timeline(lanes)}
-  ${milestones.length?`<div class="rows">${milestones.map(l=>`<div class="r"><span class="d" style="background:${l.score.verdict==="go"?"var(--good)":l.score.verdict==="hold"?"var(--warn)":"var(--crit)"}"></span><div><b>${esc(dayText(l.when))} · ${esc(l.org)}</b><span class="s">${esc(l.when_text)} · ${esc(cut(l.offer,90))}</span></div><span class="t">${l.score.n}/10 ${VERDICT[l.score.verdict]}</span></div>`).join("")}</div>`:`<p class="empty">Nothing in this pillar carries a date inside 90 days.</p>`}
-  ${s.dec.length?`<h3>Decisions asked of you</h3><div class="grid">${s.dec.map(cardHTML).join("")}</div>`:""}
-  ${answered.length?`<h3>Who answered <span class="sub">what they are, what they offered, what we need, scored</span></h3><div class="grid">${answered.map(leadCard).join("")}</div>`:""}
-  ${rest.length?`<h3>${p.id==="money"?"Everything dated, scored":"In the pipe, scored"} <span class="sub">${rest.length} lead${rest.length===1?"":"s"} · best first</span></h3><div class="grid">${rest.slice(0,12).map(leadCard).join("")}</div>${rest.length>12?`<p class="excl">${rest.length-12} more on the agent's own dashboard.</p>`:""}`:""}
+  ${section("Numbers","one grid, hover any chart",`<div class="charts">${charts.join("")}</div>`)}
+  ${section("Timelines","",tl)}
+  ${section("Key numbers","",`<div class="grid">${kpis}</div>`)}
+  ${s.dec.length?section("Decisions asked of you","",`<div class="grid">${s.dec.map(cardHTML).join("")}</div>`):""}
+  ${answered.length?section("Who answered","what they are, what they offered, what we need, scored",`<div class="grid">${answered.map(leadCard).join("")}</div>`):""}
+  ${rest.length?section(p.id==="money"?"Everything dated, scored":"In the pipe, scored",`${rest.length} lead${rest.length===1?"":"s"} · best first`,`<div class="grid">${rest.slice(0,12).map(leadCard).join("")}</div>${rest.length>12?`<p class="excl">${rest.length-12} more on the agent's own dashboard.</p>`:""}`):""}
   ${s.L.length||s.dec.length?"":`<p class="empty">No scored leads in this pillar yet.</p>`}
-  <h3>Numbers <span class="sub">trends and distributions</span></h3>${charts}${population}`;
+  ${extra}`;
 }
 function renderAgent(a){
   const p=state.data[a.id]; const h=health(a); const view=state.view[a.id]||"summary";
