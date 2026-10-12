@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11T21:22:56+00:00",
+  "checked": "2026-10-12T00:24:11+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -12,7 +12,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-11T15:58:47+00:00",
-      "age_h": 5.4,
+      "age_h": 8.4,
       "foreign": [],
       "state": "ok"
     },
@@ -44,7 +44,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-11",
-      "age_h": 21.4,
+      "age_h": 24.4,
       "foreign": [],
       "state": "ok"
     },
@@ -57,12 +57,16 @@
       "stamp_re": "Updated (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}) UTC",
       "max_age_h": 14,
       "cadence": "3x daily",
-      "problems": [],
-      "warnings": [],
-      "stamp": "2026-10-11 20:21",
-      "age_h": 1.0,
+      "problems": [
+        "no timestamp found \u2014 page shape changed?"
+      ],
+      "warnings": [
+        "does not yet link to the console (rule 9.6) \u2014 grace until 14 Oct"
+      ],
+      "stamp": null,
+      "age_h": null,
       "foreign": [],
-      "state": "ok"
+      "state": "bad"
     },
     {
       "agent": "Growsom",
@@ -72,12 +76,14 @@
       "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 14,
       "cadence": "3x daily",
-      "problems": [],
+      "problems": [
+        "dead: HTTP 404"
+      ],
       "warnings": [],
-      "stamp": "2026-10-11 20:21 UTC",
-      "age_h": 1.0,
+      "stamp": null,
+      "age_h": null,
       "foreign": [],
-      "state": "ok"
+      "state": "dead"
     },
     {
       "agent": "Instasom",
@@ -90,7 +96,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-11T21:22:13Z",
-      "age_h": 0.0,
+      "age_h": 3.0,
       "foreign": [],
       "state": "ok"
     }
