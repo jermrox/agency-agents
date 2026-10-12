@@ -1,47 +1,43 @@
 {
  "schema": 1,
- "pulled_at": "2026-10-10T15:10:00Z",
+ "pulled_at": "2026-10-11T10:25:00Z",
  "scoreboard_file": "vybe-marketing/scoreboard.json",
  "windows": {
-  "ga4": "7 days, 3 to 9 Oct 2026 (week before: 26 Sep to 2 Oct)",
-  "search_console": "1 to 7 Oct 2026 (week before: 24 to 30 Sep)",
-  "google_ads": "3 to 9 Oct 2026",
-  "instagram_account": "read 10 Oct 2026 through the Meta connection",
-  "instagram_posts": "lifetime per post, read 10 Oct 2026 through the Meta connection"
+  "ga4": "7 days, 4 to 10 Oct 2026 (week before: 27 Sep to 3 Oct)",
+  "search_console": "2 to 8 Oct 2026 (week before: 25 Sep to 1 Oct)",
+  "google_ads": "4 to 10 Oct 2026",
+  "instagram_account": "read 11 Oct 2026 through the Meta connection",
+  "instagram_posts": "lifetime per post, read 11 Oct 2026 through the Meta connection"
  },
  "kpis": {
   "waitlist_signups": 4,
-  "form_submits": 14,
-  "sessions": 133,
-  "users": 94,
-  "us_sessions": 57,
-  "waitlist_page_users": 26,
-  "organic_search_clicks": 6,
-  "search_impressions": 122,
-  "ig_followers": 1088,
-  "ig_following": 241,
+  "form_submits": 13,
+  "sessions": 120,
+  "users": 87,
+  "us_sessions": 50,
+  "waitlist_page_users": 19,
+  "organic_search_clicks": 7,
+  "search_impressions": 106,
+  "ig_followers": 1096,
+  "ig_following": 258,
   "ig_posts": 8,
   "ig_account_reach_28d": null,
-  "cost_per_signup": 40.27,
-  "ad_spend": 161.07
+  "cost_per_signup": 17.24,
+  "ad_spend": 68.97
  },
  "last_week": {
   "waitlist_signups": 1,
-  "form_submits": 1,
-  "sessions": 601,
-  "users": 474,
-  "us_sessions": 118,
-  "waitlist_page_users": 24,
-  "organic_search_clicks": 0,
-  "search_impressions": 36,
-  "ad_spend": 41.08,
-  "cost_per_signup": 41.08
+  "form_submits": 2,
+  "sessions": 474,
+  "users": 395,
+  "us_sessions": 123,
+  "waitlist_page_users": 34,
+  "organic_search_clicks": 1,
+  "search_impressions": 73,
+  "ad_spend": 140.26,
+  "cost_per_signup": 140.26
  },
  "daily_sessions": [
-  [
-   "2026-10-03",
-   22
-  ],
   [
    "2026-10-04",
    25
@@ -65,28 +61,32 @@
   [
    "2026-10-09",
    10
+  ],
+  [
+   "2026-10-10",
+   9
   ]
  ],
  "channels": [
   {
    "name": "Display",
-   "sessions": 43,
-   "engaged": 30
+   "sessions": 41,
+   "engaged": 27
   },
   {
    "name": "Organic Social",
-   "sessions": 31,
-   "engaged": 31
+   "sessions": 28,
+   "engaged": 28
   },
   {
    "name": "Paid Search",
-   "sessions": 25,
+   "sessions": 24,
    "engaged": 12
   },
   {
    "name": "Direct",
-   "sessions": 21,
-   "engaged": 21
+   "sessions": 15,
+   "engaged": 15
   },
   {
    "name": "Organic Search",
@@ -102,34 +102,24 @@
    "name": "Referral",
    "sessions": 3,
    "engaged": 3
-  },
-  {
-   "name": "Unassigned",
-   "sessions": 2,
-   "engaged": 0
-  },
-  {
-   "name": "Cross-network",
-   "sessions": 1,
-   "engaged": 1
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "sessions": 57,
-   "engaged": 57,
+   "sessions": 50,
+   "engaged": 50,
    "target": true
   },
   {
    "name": "India",
-   "sessions": 49,
-   "engaged": 31
+   "sessions": 45,
+   "engaged": 27
   },
   {
    "name": "Bangladesh",
-   "sessions": 12,
-   "engaged": 6
+   "sessions": 10,
+   "engaged": 4
   },
   {
    "name": "Canada",
@@ -162,11 +152,6 @@
    "name": "Organic Search",
    "waitlist_signup": 1,
    "form_submit": 1
-  },
-  {
-   "name": "Organic Social",
-   "waitlist_signup": 0,
-   "form_submit": 1
   }
  ],
  "key_events": {
@@ -191,14 +176,9 @@
  },
  "search_pages": [
   {
-   "page": "/learn/heart-rate-variability-explained/",
-   "impressions": 37,
-   "position": 83.8
-  },
-  {
    "page": "/",
-   "impressions": 27,
-   "position": 3.4
+   "impressions": 36,
+   "position": 3.7
   },
   {
    "page": "/learn/whoop-recovery-score-meaning/",
@@ -206,46 +186,51 @@
    "position": 17.9
   },
   {
+   "page": "/terms",
+   "impressions": 16,
+   "position": 6.9
+  },
+  {
    "page": "/learn/garmin-fenix-7-solar-charging",
    "impressions": 15,
    "position": 9.8
   },
   {
-   "page": "/terms",
-   "impressions": 15,
-   "position": 7.7
-  },
-  {
    "page": "/band",
-   "impressions": 13,
+   "impressions": 14,
    "position": 4.6
   },
   {
    "page": "/compare/whoop-alternative",
-   "impressions": 10,
+   "impressions": 13,
    "position": 6.6
+  },
+  {
+   "page": "/privacy",
+   "impressions": 10,
+   "position": 7.9
+  },
+  {
+   "page": "/contact",
+   "impressions": 9,
+   "position": 6.4
   },
   {
    "page": "/faq/",
    "impressions": 8,
-   "position": 6.4
+   "position": 6.6
   },
   {
    "page": "/research",
    "impressions": 8,
-   "position": 2.8
-  },
-  {
-   "page": "/ecosystem",
-   "impressions": 7,
-   "position": 2.0
+   "position": 3.5
   }
  ],
  "ig_posts": [
   {
    "date": "2026-10-08",
    "title": "Catch the Vybe (Reel)",
-   "reach": 58,
+   "reach": 62,
    "likes": 0,
    "comments": 0,
    "saves": 0,
@@ -255,7 +240,7 @@
   {
    "date": "2026-10-07",
    "title": "Works the night shift",
-   "reach": 12,
+   "reach": 18,
    "likes": 0,
    "comments": 0,
    "saves": 0,
@@ -265,8 +250,8 @@
   {
    "date": "2026-10-04",
    "title": "No subscription hits different",
-   "reach": 21,
-   "likes": 2,
+   "reach": 26,
+   "likes": 3,
    "comments": 0,
    "saves": 0,
    "shares": 0,
@@ -275,8 +260,8 @@
   {
    "date": "2026-10-01",
    "title": "Your health has five dimensions (Reel)",
-   "reach": 426,
-   "likes": 3,
+   "reach": 433,
+   "likes": 4,
    "comments": 3,
    "saves": 1,
    "shares": 0,
@@ -285,8 +270,8 @@
   {
    "date": "2026-09-29",
    "title": "Why rent access to your own health data?",
-   "reach": 45,
-   "likes": 4,
+   "reach": 52,
+   "likes": 5,
    "comments": 0,
    "saves": 0,
    "shares": 0,
@@ -295,7 +280,7 @@
   {
    "date": "2026-09-26",
    "title": "A band you forget you're wearing",
-   "reach": 54,
+   "reach": 61,
    "likes": 5,
    "comments": 0,
    "saves": 0,
@@ -305,7 +290,7 @@
   {
    "date": "2026-09-25",
    "title": "30 days of battery",
-   "reach": 47,
+   "reach": 51,
    "likes": 2,
    "comments": 0,
    "saves": 0,
@@ -315,8 +300,8 @@
   {
    "date": "2026-09-23",
    "title": "No Subscription. Now that's a Vybe",
-   "reach": 48,
-   "likes": 4,
+   "reach": 53,
+   "likes": 5,
    "comments": 1,
    "saves": 0,
    "shares": 0,
@@ -325,28 +310,42 @@
  ],
  "ads": [
   {
-   "campaign": "Vybe Health - 9/15 (Display)",
-   "status": "Removed",
-   "spend": 93.73,
-   "clicks": 113,
-   "impressions": 7546,
-   "note": "Spent on 3 Oct only, then stopped. 0 conversions."
-  },
-  {
    "campaign": "Website traffic-Search-1",
    "status": "Enabled",
-   "spend": 67.34,
-   "clicks": 99,
-   "impressions": 3433,
-   "note": "US and Canada search. Its 34 'conversions' are page views, not signups."
+   "spend": 68.97,
+   "clicks": 101,
+   "impressions": 3418,
+   "note": "US and Canada search. Its 37 'conversions' are page views, not signups."
+  },
+  {
+   "campaign": "Vybe Health - 9/15 (Display)",
+   "status": "Removed",
+   "spend": 0.0,
+   "clicks": 0,
+   "impressions": 0,
+   "note": "No spend this week; $120.75 the week before."
   }
  ],
  "actions": [
   {
+   "id": "no-tables",
+   "title": "Deny the Growth Scout's 20 booth and expo drafts",
+   "why": "Founder's rule, 11 Oct: no tables, booths or expo stands, paid or free. John asked before denying them.",
+   "owner": "Founder and John",
+   "status": "open"
+  },
+  {
    "id": "growth-scout",
    "title": "Stop or rein in the Growth Scout agent's sending",
-   "why": "It sent about 40 emails from the Vybe inbox on 9 Oct, with claims we avoid and a non-Vybe calendar link, and asked John to approve 20 more on 10 Oct.",
+   "why": "It sent about 40 emails from the Vybe inbox on 9 Oct with claims we avoid and the old calendar link, and asked John on 10 Oct to approve 20 more.",
    "owner": "Founder",
+   "status": "open"
+  },
+  {
+   "id": "lead-baseline",
+   "title": "Lead every message with the five signals read against your own baseline",
+   "why": "Garmin CIRQA and Polar Loop are both screen-free with no subscription, so those two lines no longer set Vybe apart.",
+   "owner": "Marksom and the founder",
    "status": "open"
   },
   {
@@ -359,7 +358,7 @@
   {
    "id": "pause-paid",
    "title": "Pause all paid spend (Search-1) and keep it at $0",
-   "why": "$161.07 spent 3 to 9 Oct for 4 recorded signups across all channels; Search-1 still counts page views as conversions. The consent gate on /waitlist isn't live.",
+   "why": "$68.97 on Search-1 and $81.25 of Instagram boosts billed this week, for 4 recorded signups across all channels. Search-1 still counts page views as conversions.",
    "owner": "Founder",
    "status": "open"
   },
@@ -373,7 +372,7 @@
   {
    "id": "key-events",
    "title": "Unmark 11 GA4 key events; keep waitlist_signup, form_submit, purchase",
-   "why": "Search-1 still reports 34 'conversions' from page views (3 to 9 Oct), so engagement and conversion numbers read high.",
+   "why": "Search-1 reports 37 'conversions' from page views (4 to 10 Oct), so engagement and conversion numbers read high.",
    "owner": "Founder",
    "status": "open"
   },
@@ -394,7 +393,7 @@
   {
    "id": "signup-audit",
    "title": "Find why form submits and signup events differ",
-   "why": "14 form submits and 4 signup events this week (1 and 1 the week before).",
+   "why": "13 form submits and 4 signup events this week (2 and 1 the week before); a test signup arrived on 10 Oct.",
    "owner": "Agent + founder",
    "status": "open"
   },
@@ -470,52 +469,52 @@
    "state": "missing"
   }
  ],
- "next_pull": "2026-10-11",
+ "next_pull": "2026-10-12",
  "updates": [
   {
    "area": "Partners",
    "cls": "good",
-   "text": "3 partners said yes (MSBL, WNBF, Head of the Schuylkill). About 34 partner emails sent; 13 organisations replied. Tredict offered API access, and Concept2 sent Logbook API key steps."
+   "text": "5 partners want to work with us: MSBL (member offer), Tredict, Momentum, Ohio State Triathlon and Stress Platform. Roy Hobbs declined. John cancelled the HOSR, WNBF and MSBL World Series tables."
   },
   {
    "area": "No-cost rule",
-   "cls": "bad",
-   "text": "Paid items still open: HOSR table $300, WNBF booth $250, RRCA expo table $1,200, the Search-1 ad, and Nocturnal (vendor). From now on Marksom pitches only no-cost exchanges."
+   "cls": "warn",
+   "text": "No tables or booths, paid or free. Declined in drafts: HOSR ($300), WNBF ($250), the MSBL World Series table and the RRCA expo table ($1,200). Still costing money: Search-1 ($68.97 this week), Instagram boosts ($81.25 billed) and the Nocturnal vendor call."
   },
   {
    "area": "Calls",
    "cls": "warn",
-   "text": "1 call booked: Nocturnal, Mon 12 Oct, 2 pm EDT. It's a paid engineering vendor, not a partner, so keep it short. Momentum, Ohio State Triathlon Club and ANZER USA asked for calls; how to answer is your call."
+   "text": "1 call: Nocturnal, Mon 12 Oct, 2 pm EDT (paid vendor; prep brief on the daily briefing). No bookings on the Vybe Health calendar. A battery supplier wants to reschedule a call the other sender set up."
   },
   {
    "area": "Outreach",
-   "cls": "warn",
-   "text": "The emails sent 6 to 9 Oct linked a non-Vybe calendar; they can't be changed, and no corrections will go out. Every new email uses only the Vybe Health calendar. The Growth Scout agent is still sending from the same inbox."
+   "cls": "plain",
+   "text": "14 drafts are waiting with John on CC, and none offers a table: 10 new today and 4 from 10 Oct (their table ideas swapped for shared content). Next follow-ups are due 16 Oct."
   },
   {
    "area": "Competitors",
    "cls": "bad",
-   "text": "Polar now sells the Loop as a screen-free, subscription-free band (armband added 7 Oct). Oura became the Dodgers' official health wearable (9 Sep). All 45 deals were re-checked on 10 Oct."
+   "text": "Garmin's CIRQA band is screen-free with no subscription and shows HRV, like Polar's Loop. All 45 competitor deals were re-checked on 11 Oct; none changed."
   },
   {
    "area": "Website",
    "cls": "warn",
-   "text": "133 sessions (601 the week before), 57 from the US. 4 waitlist signups, up from 1. Visits drifted to about 10 a day once the boosted posts stopped."
+   "text": "120 sessions (474 the week before), 50 from the US. 4 waitlist signups, up from 1 (one may be a test). Visits are down to about 10 a day."
   },
   {
    "area": "Search",
    "cls": "good",
-   "text": "First Google clicks: 6 clicks from 122 impressions (0 from 36 the week before). The homepage, /band and the WHOOP alternative page earned them."
+   "text": "7 Google clicks from 106 impressions (1 from 73 the week before). The homepage earned 5; /band and the WHOOP alternative page 1 each."
   },
   {
    "area": "Instagram",
    "cls": "plain",
-   "text": "1,088 followers and 8 posts. Reels reach far more people than images: 426 for the 1 Oct Reel, against 12 to 54 for images."
+   "text": "1,096 followers (up 8) and 8 posts. Reels reach far more people than images: 433 for the 1 Oct Reel, against 18 to 61 for images."
   },
   {
    "area": "Ads",
    "cls": "warn",
-   "text": "$161.07 spent ($41.08 the week before). Search-1 still runs at about $8 a day. The goal is partnerships, not spend, so pausing it is recommended."
+   "text": "$68.97 on Google this week ($140.26 the week before), all Search-1. Instagram boosts restarted on 10 Oct on a second Meta account the dashboard can't read."
   }
  ]
 }

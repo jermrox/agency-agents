@@ -20,9 +20,16 @@ red in GitHub rather than waiting to be noticed. The board is written either
 way: a board that disappears when something breaks is useless at the moment it
 matters most.
 
-Scope is Vybe Health only. The founder's other ventures run their own agents
-(Leadsom for i-Grow, Researchsom and Crawlsom for MOPs and MOEs, Babysom) and
-they are deliberately not tracked here.
+Scope is Vybe Health only, by rule 6 of VYBE-AGENT-STANDARDS.md. The founder's
+other ventures run their own agents; this board does not track them and does
+not name them. Naming them here would put another venture's roster on a Vybe
+page, which is the scope leak the rule exists to stop.
+
+It also writes vybe-hub.html: the one short page the founder asked for on
+11 Oct 2026 ("why isn't this synced across all the dashboards"). The hub reads
+the facts that matter out of the same fetched feeds — money closing soon,
+calls booked, drafts waiting, targets ready — so it is synced by construction
+rather than by someone retyping numbers into a chat.
 
 Usage:
   python3 scripts/vybe-agent-board.py                     # check, render, exit 1 if red
@@ -75,6 +82,7 @@ SURFACES = [
         "role": "the Apply page",
         "surface": "agentrevup.netlify.app/apply",
         "url": "https://agentrevup.netlify.app/apply.html",
+        "is_page": True,
         "stamp_re": None,         # no machine timestamp; checked for reachability and accounts
         "max_age_h": None,
         "cadence": "with each packet",
@@ -84,6 +92,7 @@ SURFACES = [
         "role": "daily marketing briefing",
         "surface": "agentmarksom.netlify.app/briefing.html",
         "url": "https://agentmarksom.netlify.app/briefing.html",
+        "is_page": True,
         "stamp_re": r'"asof"\s*:\s*"([^"]+)"',
         "max_age_h": 30,          # daily 10:23Z
         "cadence": "daily 10:23Z",
@@ -93,6 +102,7 @@ SURFACES = [
         "role": "outreach and investor board",
         "surface": "agentgrowthscout.netlify.app",
         "url": "https://agentgrowthscout.netlify.app",
+        "is_page": True,
         "stamp_re": r"Updated (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC",
         "max_age_h": 14,          # three runs a day, so half a day is already late
         "cadence": "3x daily",
@@ -116,6 +126,10 @@ SURFACES = [
         "cadence": "daily 10:38Z",
     },
 ]
+
+# Rule 9.6 (link to the console) became enforceable on 11 Oct 2026. Agents get
+# until this moment to bring their pages into line before it turns red.
+CONSOLE_LINK_GRACE_UNTIL = dt.datetime(2026, 10, 14, 20, 0, tzinfo=dt.timezone.utc)
 
 STAMP_FORMATS = [
     "%Y-%m-%dT%H:%M:%S%z",
@@ -156,6 +170,7 @@ def check(entry, now):
     """One surface, judged on what is actually served."""
     out = dict(entry)
     out["problems"] = []
+    out["warnings"] = []
     out["stamp"] = None
     out["age_h"] = None
     out["foreign"] = []
@@ -173,6 +188,9 @@ def check(entry, now):
 
     if status != 200:
         out["problems"].append(f"dead: HTTP {status}")
+    # The hub reads facts out of the same fetch. Stripped before the JSON is
+    # written, so the committed file stays small and holds no page copies.
+    out["_body"] = body
 
     # An account from another venture is a failure whatever else is true: this
     # is the exact defect that reached fifty partner organisations.
@@ -181,6 +199,19 @@ def check(entry, now):
             out["foreign"].append(needle)
     if out["foreign"]:
         out["problems"].append("foreign account on the page: " + ", ".join(out["foreign"]))
+
+    # Rule 9.6 / rule 10: every Vybe dashboard links to the console. A page
+    # that does not is an orphan the founder cannot navigate to from the hub.
+    # JSON feeds are exempt; the check is for pages people open.
+    # Until the grace period ends the agents have not had a run in which to
+    # comply, so this is a warning (amber), not a failure. After it, red. The
+    # founder reads a red workflow as "broken", so red is reserved for stale,
+    # dead or foreign — things that are actually wrong on the page.
+    if entry.get("is_page") and "vybe-ops.netlify.app" not in body:
+        if now < CONSOLE_LINK_GRACE_UNTIL:
+            out["warnings"].append("does not yet link to the console (rule 9.6) — grace until 14 Oct")
+        else:
+            out["problems"].append("does not link to the console (rule 9.6)")
 
     if entry["stamp_re"]:
         m = re.search(entry["stamp_re"], body)
@@ -201,15 +232,17 @@ def check(entry, now):
                         f"stale: {age:.1f}h old, cadence allows {entry['max_age_h']}h"
                     )
 
-    out["state"] = "ok" if not out["problems"] else (
-        "dead" if any(p.startswith("dead") for p in out["problems"]) else "bad"
-    )
+    if out["problems"]:
+        out["state"] = "dead" if any(p.startswith("dead") for p in out["problems"]) else "bad"
+    else:
+        out["state"] = "warn" if out["warnings"] else "ok"
     return out
 
 
 def render(rows, now):
     """The board. Same palette as the other agent boards so it reads as one system."""
-    red = [r for r in rows if r["state"] != "ok"]
+    red = [r for r in rows if r["state"] in ("bad", "dead")]
+    amber = [r for r in rows if r["state"] == "warn"]
     agents = sorted({r["agent"] for r in rows})
     bad_agents = sorted({r["agent"] for r in red})
 
@@ -218,18 +251,21 @@ def render(rows, now):
             f"{len(red)} of {len(rows)} surfaces need attention"
             f" — {', '.join(bad_agents)}"
         )
+    elif amber:
+        headline = (f"All {len(rows)} Vybe surfaces are current and carry only Vybe accounts"
+                    f" — {len(amber)} not yet linking to the console (grace until 14 Oct)")
     else:
         headline = f"All {len(rows)} Vybe surfaces are current and carry only Vybe accounts"
 
     def cell(r):
-        chip = {"ok": ("ok", "OK"), "bad": ("bad", "NEEDS FIXING"), "dead": ("dead", "UNREACHABLE")}[r["state"]]
+        chip = {"ok": ("ok", "OK"), "warn": ("warn", "NOT YET CONFORMING"), "bad": ("bad", "NEEDS FIXING"), "dead": ("dead", "UNREACHABLE")}[r["state"]]
         age = "—"
         if r["age_h"] is not None:
             age = f"{r['age_h']:.1f}h ago"
         elif r["stamp_re"] is None:
             age = "no timestamp"
         probs = "".join(
-            f'<li>{html.escape(p)}</li>' for p in r["problems"]
+            f'<li>{html.escape(p)}</li>' for p in r["problems"] + r.get("warnings", [])
         )
         return f"""<tr class="{chip[0]}">
   <td class="ag">{html.escape(r['agent'])}</td>
@@ -288,6 +324,7 @@ td.cad, td.age {{ color:var(--ink-2); white-space:nowrap; font-variant-numeric:t
   padding:3px 9px; border-radius:999px; white-space:nowrap }}
 .chip.ok {{ background:var(--good-bg); color:var(--good) }}
 .chip.bad {{ background:var(--warn-bg); color:var(--warn) }}
+.chip.warn {{ background:var(--surface-2); color:var(--ink-2) }}
 .chip.dead {{ background:var(--crit-bg); color:var(--crit) }}
 tr.bad {{ background:var(--warn-bg) }} tr.dead {{ background:var(--crit-bg) }}
 @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) tr.bad,
@@ -323,14 +360,482 @@ ul.probs {{ margin:7px 0 0; padding-left:18px; font-size:13px; color:var(--ink-2
     from git. Fixing the code updates none of them, which is how a wrong booking link stayed live
     for hours on 10 Oct 2026 while the repository was already correct.
     <br><br>
-    <strong>Scope.</strong> Vybe Health only. Leadsom (i-Grow), Researchsom and Crawlsom (MOPs and
-    MOEs) and Babysom belong to other ventures and are not tracked here.
+    <strong>Scope.</strong> Vybe Health only. Agents belonging to other ventures are out of scope
+    and are neither tracked nor named here.
     Rules: <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">VYBE-AGENT-STANDARDS.md</a>.
   </p>
 </div>
 </body>
 </html>
 """
+
+
+# ------------------------------------------------------------------ the hub ---
+
+def _cut(text, n):
+    """Truncate at a word boundary. A line that ends mid-word reads as broken."""
+    text = str(text or "")
+    if len(text) <= n:
+        return text
+    head = text[:n].rsplit(" ", 1)[0]
+    return head.rstrip(" ,;:·-") + "…"
+
+
+def _sentences(text, n_chars):
+    """First whole sentences up to n_chars. The 'so what' must not end mid-thought."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= n_chars:
+        return text
+    out = ""
+    for sent in re.split(r"(?<=[.!?])\s+", text):
+        if len(out) + len(sent) + 1 > n_chars:
+            break
+        out = (out + " " + sent).strip()
+    return out or _cut(text, n_chars)
+
+
+def _json_in(body):
+    try:
+        return json.loads(body)
+    except Exception:
+        return None
+
+
+def _live_data(body):
+    """Marketsom's briefing keeps its numbers in <script id="live-data">."""
+    m = re.search(r'<script id="live-data" type="application/json">(.*?)</script>', body, re.S)
+    return _json_in(m.group(1)) if m else None
+
+
+def extract_facts(rows, now):
+    """Pull the few facts the founder actually asks about out of each live feed.
+
+    Every value is None when the feed is unreadable, and the hub prints
+    'unavailable' for None. A missing metric is never shown as 0 — that is
+    Instasom standard 9 and it applies here too.
+    """
+    by_url = {r["url"]: r for r in rows}
+    f = {"revsom": {}, "marketsom": {}, "growsom": {}, "instasom": {}, "needs_you": []}
+
+    # Revsom — money with a clock on it
+    r = by_url.get("https://agentrevup.netlify.app/funding.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    opps = d.get("opportunities") if isinstance(d, dict) else None
+    if isinstance(opps, list):
+        opps = [o for o in opps if isinstance(o, dict)]
+        f["revsom"]["total"] = len(opps)
+        f["revsom"]["no_sam"] = sum(1 for o in opps if str(o.get("sam", "")).lower() == "none")
+        soon = sorted(
+            (o for o in opps if isinstance(o.get("days_left"), int) and 0 <= o["days_left"] <= 14),
+            key=lambda o: o["days_left"],
+        )
+        f["revsom"]["closing_14d"] = len(soon)
+        f["revsom"]["closing"] = [
+            {"name": o.get("name", ""), "days": o["days_left"], "amount": str(o.get("amount", "")),
+             "url": o.get("url", ""), "docs": [str(x) for x in (o.get("documents") or []) if x],
+             "who": _cut(str(o.get("eligibility") or o.get("agency") or ""), 130),
+             "why": _sentences(o.get("summary"), 260),
+             "veteran": "veteran" in (str(o.get("eligibility", "")) + o.get("name", "")).lower()}
+            for o in soon
+        ]
+        for o in f["revsom"]["closing"][:6]:
+            f["needs_you"].append({
+                "who": "Revsom", "kind": "money",
+                "when": "today" if o["days"] == 0 else ("tomorrow" if o["days"] == 1 else f"{o['days']} days"),
+                "what": o["name"], "detail": _cut(o["amount"], 60) + (" · veteran-owned fits" if o["veteran"] else ""),
+                "who_is": o["who"], "why": o["why"],
+                # The human steps, straight from the opportunity row. This is the
+                # line the founder asked for: not "needs you" but what a person does.
+                "do": [_cut(d, 110) for d in o["docs"]] or ["Open the application page and the drafted packet"],
+                "url": o["url"] or "https://agentrevup.netlify.app/apply",
+                "url_label": "application page",
+                "url2": "https://agentrevup.netlify.app/apply", "url2_label": "drafted answers",
+                "sort": o["days"],
+            })
+
+    # Marketsom — calls, deadlines, drafts waiting, named problems
+    r = by_url.get("https://agentmarksom.netlify.app/briefing.html")
+    d = _live_data(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        f["marketsom"]["headline"] = d.get("headline")
+        f["marketsom"]["drafts"] = d.get("drafts")
+        f["marketsom"]["bookings"] = d.get("bookings")
+        probs = d.get("problems")
+        f["marketsom"]["problems"] = len(probs) if isinstance(probs, list) else None
+        up = d.get("upcoming")
+        if isinstance(up, list):
+            for u in up[:6]:
+                if not isinstance(u, dict):
+                    continue
+                kind = "call" if u.get("kind") == "call" else "deadline"
+                when = " ".join(str(u.get(k, "")) for k in ("day", "time") if u.get(k)).strip()
+                lines = [str(x) for x in (u.get("lines") or []) if x]
+                prep = u.get("prep")
+                if kind == "call":
+                    # who is on it and whether they charge are shown above the list;
+                    # the list is only the actions.
+                    do = ["Read the prep brief first" if prep else "No prep brief yet — ask for one before joining",
+                          "Join the call at the time shown",
+                          "Decide on the call: no-cost route, or a short polite no"]
+                else:
+                    do = [_cut(l, 110) for l in lines[:3]] or ["Open the briefing for what is due"]
+                f["needs_you"].append({
+                    "who": "Marketsom", "kind": kind, "when": when or "soon",
+                    "what": str(u.get("what", "")), "detail": "",
+                    "who_is": _cut(lines[0], 160) if lines else "",
+                    "why": _cut(" ".join(lines[1:3]), 220) if len(lines) > 1 else "",
+                    "do": do,
+                    "url": prep or "https://agentmarksom.netlify.app/briefing.html",
+                    "url_label": "prep brief" if prep else "briefing",
+                    "url2": "https://agentmarksom.netlify.app/briefing.html" if prep else None, "url2_label": "briefing",
+                    "sort": 0 if kind == "call" else 3,
+                })
+        if isinstance(d.get("drafts"), int) and d["drafts"] > 0:
+            f["needs_you"].append({
+                "who": "Marketsom", "kind": "drafts", "when": "waiting",
+                "what": f"{d['drafts']} partner drafts waiting for you to send",
+                "detail": "John is on CC of every one",
+                "who_is": "Community partners Marketsom researched this week — leagues, clubs, member bodies",
+                "why": "Nothing reaches a partner until you send it. These are the asks for no-cost member offers and shared content.",
+                "do": ["Open Gmail drafts from jeremy@vybe.health", "Read each one; send the ones you approve, delete the rest",
+                       "Nothing goes out until you press send"],
+                "url": "https://agentmarksom.netlify.app/partner-board.html", "url_label": "partner board",
+                "url2": None, "url2_label": None, "sort": 2,
+            })
+
+    # Growsom — targets ready, deadlines inside 30 days, and the top items
+    r = by_url.get("https://agentgrowthscout.netlify.app/data.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    sm = d.get("summary") if isinstance(d, dict) else None
+    if isinstance(sm, dict):
+        for k in ("total", "ready_to_send", "outreach_queue", "deadlines_30d", "high"):
+            f["growsom"][k] = sm.get(k)
+    tg = d.get("targets") if isinstance(d, dict) else None
+    if isinstance(tg, list):
+        rows_ = [x for x in tg if isinstance(x, dict) and str(x.get("priority", "")).lower() == "high"]
+        rows_.sort(key=lambda x: -(x.get("score") or 0))
+        f["growsom"]["top"] = [{
+            "what": str(x.get("name") or x.get("org") or ""),
+            "who_is": _cut(f"{x.get('type') or x.get('lane') or ''}" + (f" · {x.get('geo')}" if x.get("geo") else ""), 90),
+            "why": _sentences(x.get("why_now") or x.get("why"), 200),
+            "do": [_cut(x.get("move") or x.get("ask") or "Approve the drafted opener so Growsom can send it", 110)],
+            "url": x.get("contact_url") or "https://agentgrowthscout.netlify.app/",
+        } for x in rows_[:4]]
+
+    # Instasom — people to follow, the latest numbers, the top picks
+    r = by_url.get("https://instasum.netlify.app/all.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    col = d.get("collections") if isinstance(d, dict) else None
+    if isinstance(col, dict):
+        ppl = col.get("people")
+        items = list(ppl.values()) if isinstance(ppl, dict) else (ppl if isinstance(ppl, list) else [])
+        items = [x for x in items if isinstance(x, dict)]
+        f["instasom"]["people"] = len(items) or None
+        f["instasom"]["to_follow"] = sum(1 for x in items if x.get("status") == "Not started") or None
+        fol = col.get("followers")
+        f["instasom"]["days"] = len(fol) if hasattr(fol, "__len__") else None
+        if isinstance(fol, dict) and fol:
+            latest = fol[sorted(fol.keys())[-1]]
+            if isinstance(latest, dict):
+                f["instasom"]["ig"] = latest.get("ig")
+                f["instasom"]["fb"] = latest.get("fb")
+        pick = [x for x in items if x.get("status") == "Not started" and not x.get("followOnly")]
+        def _n(v):
+            try: return float(str(v).lower().replace("k", "e3").replace(",", ""))
+            except Exception: return 0.0
+        pick.sort(key=lambda x: -_n(x.get("followers")))
+        f["instasom"]["top"] = [{
+            "what": f"@{str(x.get('handle','')).lstrip('@')}" + (f" — {x.get('name')}" if x.get("name") else ""),
+            "who_is": _cut(f"{x.get('category') or ''} · {x.get('followers') or '?'} followers", 90),
+            "why": _sentences(x.get("why"), 200),
+            "do": [_cut(x.get("action") or "Follow, then tick the box on the social dashboard", 110)],
+            "url": x.get("url") or f"https://www.instagram.com/{str(x.get('handle','')).lstrip('@')}/",
+        } for x in pick[:4]]
+
+    # Marketsom — the replies and problems as items
+    r = by_url.get("https://agentmarksom.netlify.app/briefing.html")
+    d = _live_data(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        probs = d.get("problems") if isinstance(d.get("problems"), list) else []
+        f["marketsom"]["top"] = [{
+            "what": _cut(str(pr.get("title") or pr.get("what") or pr) if not isinstance(pr, str) else pr, 90),
+            "who_is": "", "why": _sentences((pr.get("why") or pr.get("detail") or "") if isinstance(pr, dict) else "", 200),
+            "do": [_cut((pr.get("fix") or pr.get("do") or pr.get("action") or "Read it on the briefing") if isinstance(pr, dict) else "Read it on the briefing", 110)],
+            "url": "https://agentmarksom.netlify.app/briefing.html",
+        } for pr in probs[:4]]
+
+    # Revsom — the first six closes are already "needs you"; the top list is the
+    # next ones behind them, so the two blocks never repeat each other.
+    f["revsom"]["top"] = [{
+        "what": f"{o['days']} days — {o['name']}", "who_is": o["who"], "why": o["why"],
+        "do": [_cut(x, 110) for x in o["docs"][:3]] or ["Open the application page"],
+        "url": o["url"] or "https://agentrevup.netlify.app/apply",
+    } for o in (f["revsom"].get("closing") or [])[6:10]]
+
+    f["needs_you"].sort(key=lambda x: x["sort"])
+    return f
+
+
+def render_hub(rows, facts, now):
+    """One page, one shape, every agent. The founder's words, 11 Oct: 'one
+    organized system… you are the central hub… what it is, why it matters,
+    what I physically do.' Each agent gets the same block: purpose in money
+    terms, alive, what it is pulling, its top items, what needs a human."""
+    by_agent = {}
+    for r in rows:
+        by_agent.setdefault(r["agent"], []).append(r)
+
+    def alive(agent):
+        rs = by_agent.get(agent, [])
+        if not rs:
+            return ("unk", None, "no live page")
+        bad = [r for r in rs if r["state"] in ("bad", "dead")]
+        ages = [r["age_h"] for r in rs if r.get("age_h") is not None]
+        age = min(ages) if ages else None
+        return ("bad" if bad else "ok", age, "; ".join(p for r in bad for p in r["problems"])[:90])
+
+    def na(v):
+        return "unavailable" if v in (None, "") else f"{v:,}" if isinstance(v, int) else str(v)
+
+    def ago(age):
+        if age is None:
+            return "no timestamp"
+        return f"{int(age * 60)} min ago" if age < 1 else (f"{age:.0f}h ago" if age < 48 else f"{age / 24:.0f} days ago")
+
+    def card(it, kind="•", when=None):
+        who = f'<p class="row"><span class="lbl">What it is</span>{html.escape(it["who_is"])}</p>' if it.get("who_is") else ""
+        why = f'<p class="row"><span class="lbl">Why it matters</span>{html.escape(it["why"])}</p>' if it.get("why") else ""
+        steps = "".join(f"<li>{html.escape(x)}</li>" for x in it.get("do", []))
+        head = (f'<b>{html.escape(when)}</b> — ' if when else "") + html.escape(_cut(it["what"], 90))
+        links = f'<a href="{html.escape(it["url"])}">{html.escape(it.get("url_label") or "open")}</a>'
+        if it.get("url2"):
+            links += f' · <a href="{html.escape(it["url2"])}">{html.escape(it.get("url2_label") or "more")}</a>'
+        return f"""<div class="card"><span class="k">{kind}</span><div class="body">
+  <p class="head">{head}</p>{who}{why}
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do">{steps}</ol>
+  <span class="links2">{links}</span></div></div>"""
+
+    rv, mk, gs, ig = facts["revsom"], facts["marketsom"], facts["growsom"], facts["instasom"]
+    needs = facts["needs_you"]
+
+    sections = [
+        dict(name="Revsom", purpose="Money that costs no equity: grants, prizes, credits.",
+             url="https://agentrevup.netlify.app/", label="funding board",
+             pulling=f"{na(rv.get('total'))} opportunities · {na(rv.get('no_sam'))} need no registration · {na(rv.get('closing_14d'))} close inside 14 days",
+             top=rv.get("top") or [], kind="$",
+             needs=[n for n in needs if n["who"] == "Revsom"]),
+        dict(name="Growsom", purpose="Investors, and free integrations that put Vybe's SDK in other people's products.",
+             url="https://agentgrowthscout.netlify.app/", label="target board",
+             pulling=f"{na(gs.get('total'))} targets · {na(gs.get('high'))} high priority · {na(gs.get('ready_to_send'))} ready to send on John's approval",
+             top=gs.get("top") or [], kind="→",
+             needs=[n for n in needs if n["who"] == "Growsom"]),
+        dict(name="Marketsom", purpose="No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.",
+             url="https://agentmarksom.netlify.app/briefing.html", label="daily briefing",
+             pulling=_cut(mk.get("headline") or "briefing unavailable", 140),
+             top=mk.get("top") or [], kind="!",
+             needs=[n for n in needs if n["who"] == "Marketsom"]),
+        dict(name="Instasom", purpose="An audience that follows before launch, built one real person at a time.",
+             url="https://instasum.netlify.app/", label="social dashboard",
+             pulling=f"Instagram {na(ig.get('ig'))} raw followers · {na(ig.get('to_follow'))} verified people still to follow · Facebook {na(ig.get('fb'))}",
+             top=ig.get("top") or [], kind="@",
+             needs=[n for n in needs if n["who"] == "Instasom"]),
+        dict(name="Daily worker", purpose="The product itself: one new app screen every weekday, funding rows, packets, Monday decks.",
+             url=None, label=None,
+             pulling="14 screens · 17 funding packets · 111 drafted answers. No live page yet — its work is code.",
+             top=[], kind="▣", needs=[]),
+    ]
+
+    def section(sec):
+        state, age, why = alive(sec["name"]) if sec["name"] != "Daily worker" else ("unk", None, "")
+        dot = {"ok": "ok", "bad": "bad", "unk": "unk"}[state]
+        when = ago(age) if sec["url"] else "no live page"
+        link = f'<a class="more" href="{html.escape(sec["url"])}">{html.escape(sec["label"])} →</a>' if sec["url"] else ""
+        needs_html = "".join(card(n, {"money": "$", "call": "☎", "deadline": "!", "drafts": "✉"}.get(n["kind"], "•"), n["when"]) for n in sec["needs"][:4])
+        top_html = "".join(card(t, sec["kind"]) for t in sec["top"][:4])
+        return f"""<section class="agent {dot}">
+  <header><span class="dot"></span><h2>{html.escape(sec["name"])}</h2><span class="when">{html.escape(when)}{'' if state != 'bad' else ' · ' + html.escape(why)}</span></header>
+  <p class="purpose">{html.escape(sec["purpose"])}</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>{html.escape(sec["pulling"])}</p>
+  {'<h3>Needs you</h3>' + needs_html if needs_html else ''}
+  {'<h3>Top of its list</h3>' + top_html if top_html else ''}
+  {link}
+</section>"""
+
+    n_bad = sum(1 for sname in ("Revsom", "Growsom", "Marketsom", "Instasom") if alive(sname)[0] == "bad")
+    status = "All agents running" if n_bad == 0 else f"{n_bad} agent{'s' if n_bad > 1 else ''} need attention"
+    n_needs = len(needs)
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Hub</title>
+<style>
+:root {{
+  --bg:#f6f8f7; --surface:#fff; --surface-2:#eef3f1; --line:#dbe3e0;
+  --ink:#12201c; --ink-2:#44554f; --ink-3:#6b7a75;
+  --brand:#1f8e78; --brand-ink:#0f5e4f;
+  --good:#1d7a3a; --good-bg:#e3f3e7; --crit:#a3262a; --crit-bg:#fbe3e3;
+  --warn:#8a5a00; --warn-bg:#fbefd5;
+  color-scheme: light;
+}}
+@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+}} }}
+:root[data-theme="dark"] {{
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+}}
+* {{ box-sizing:border-box }}
+body {{ margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }}
+a {{ color:var(--brand-ink); text-decoration:none }}
+.wrap {{ max-width:640px; margin:0 auto; padding:20px 16px 60px }}
+h1 {{ font-size:22px; margin:0; letter-spacing:-.01em }} h1 span {{ color:var(--brand) }}
+.goal {{ margin:6px 0 0; color:var(--ink-2); font-size:15px }}
+.status {{ display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:{'var(--good)' if n_bad == 0 else 'var(--crit)'} }}
+.status .meta {{ font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto; text-align:right }}
+.jump {{ margin:14px 0 0; font-size:13.5px; color:var(--ink-3); line-height:1.9 }}
+.jump a {{ border-bottom:1px solid var(--line); margin-right:8px }}
+section.agent {{ margin-top:26px; padding-top:18px; border-top:2px solid var(--line) }}
+section.agent header {{ display:flex; align-items:center; gap:10px }}
+section.agent h2 {{ margin:0; font-size:19px }}
+section.agent .when {{ margin-left:auto; font-size:12.5px; color:var(--ink-3); text-align:right }}
+.dot {{ flex:0 0 10px; height:10px; border-radius:50%; background:var(--ink-3) }}
+section.ok .dot {{ background:var(--good) }} section.bad .dot {{ background:var(--crit) }}
+.purpose {{ margin:6px 0 0; color:var(--ink-2); font-size:15px }}
+.pulling {{ margin:10px 0 0; font-size:14.5px; background:var(--surface-2); border-radius:10px; padding:10px 12px }}
+.lbl {{ display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:2px }}
+h3 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3); margin:16px 0 6px; font-weight:600 }}
+.card {{ display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:12px 14px; margin-top:8px }}
+.card .k {{ flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2); color:var(--brand-ink);
+  font-weight:700; text-align:center; line-height:26px; font-size:14px }}
+.card .body {{ min-width:0; flex:1 }}
+.card .head {{ margin:0; font-size:15.5px }} .card .head b {{ color:var(--crit) }}
+.card .row {{ margin:7px 0 0; font-size:14px; line-height:1.45 }}
+.card .do {{ margin:2px 0 4px; padding-left:20px; font-size:14px }} .card .do li {{ margin:2px 0 }}
+.card .links2 {{ display:block; font-size:13px; color:var(--ink-3); margin-top:4px }}
+.card .links2 a {{ border-bottom:1px solid var(--line) }}
+.more {{ display:inline-block; margin-top:12px; font-size:14px; border-bottom:1px solid var(--line) }}
+.foot {{ margin-top:30px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3); line-height:1.8 }}
+.foot a {{ border-bottom:1px solid var(--line) }}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Vybe</span> hub</h1>
+  <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
+  <p class="status"><span>{html.escape(status)} · {n_needs} thing{'s' if n_needs != 1 else ''} need you</span><span class="meta">checked {now.strftime('%H:%M')} UTC<br>refreshes every 4h</span></p>
+  <p class="jump">{' '.join(f'<a href="#{sec["name"].lower().replace(" ", "-")}">{html.escape(sec["name"])}</a>' for sec in sections)}</p>
+
+{chr(10).join(section(sec).replace('<section class="agent', f'<section id="{sec["name"].lower().replace(" ", "-")}" class="agent', 1) for sec in sections)}
+
+  <p class="foot">
+    This is the four-hourly snapshot. The live console, with every agent's dashboard inside it, is <a href="https://vybe-ops.netlify.app/">vybe-ops.netlify.app</a>.<br>
+    Every card is the same shape: what it is · why it matters · what you do. Nothing here is typed by hand — it is read from each agent's own live page.<br>
+    <a href="vybe-agent-board.html">Is every dashboard current?</a> ·
+    <a href="vybe-fleet-map.html">How the system fits together</a> ·
+    <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a>
+  </p>
+</div>
+</body>
+</html>
+"""
+
+
+def history_point(rows, now):
+    """One compact row of the numbers the console charts as trends.
+
+    The console (vybe-ops.netlify.app) reads dashboards/vybe-history.json and
+    draws a sparkline per pillar once two or more points exist. Every value is
+    None when its feed is unreadable; the console skips None, never plots 0.
+    """
+    by_url = {r["url"]: r for r in rows}
+    pt = {"at": now.isoformat(), "revsom": {}, "growsom": {}, "marketsom": {}, "instasom": {}, "integrations": {}}
+
+    r = by_url.get("https://agentrevup.netlify.app/funding.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    opps = [o for o in (d.get("opportunities") or []) if isinstance(o, dict)] if isinstance(d, dict) else None
+    if opps is not None:
+        live = [o for o in opps if str(o.get("status", "")).lower() in ("open", "soon", "rolling", "forecast")]
+        dated = [o for o in live if isinstance(o.get("days_left"), int) and o["days_left"] >= 0]
+        pt["revsom"] = {"live": len(live), "closing14": sum(1 for o in dated if o["days_left"] <= 14),
+                        "closing30": sum(1 for o in dated if o["days_left"] <= 30),
+                        "no_sam": sum(1 for o in live if str(o.get("sam", "")).lower() == "none")}
+
+    r = by_url.get("https://agentgrowthscout.netlify.app/data.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        tg = [t for t in (d.get("targets") or []) if isinstance(t, dict)]
+        inv = [t for t in tg if str(t.get("hunt", "")).lower() == "investor" or re.search(r"vc|angel|accelerator", str(t.get("type", "")).lower())]
+        integ = [t for t in tg if t not in inv and str(t.get("type", "")).lower() not in ("signal", "amplifier") and str(t.get("hunt", "")).lower() != "social"]
+        threads = [t for t in ((d.get("followups") or {}).get("threads") or []) if isinstance(t, dict)]
+        sm = d.get("summary") or {}
+        pt["growsom"] = {"total": len(tg), "investors": len(inv), "integrations": len(integ),
+                         "ready": sm.get("ready_to_send") if isinstance(sm.get("ready_to_send"), int) else None,
+                         "threads": len(threads), "replied": sum(1 for t in threads if t.get("state") == "replied"),
+                         "parked": d.get("parked_count") if isinstance(d.get("parked_count"), int) else None}
+
+    r = by_url.get("https://agentmarksom.netlify.app/briefing.html")
+    d = _live_data(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        out = [x for x in (d.get("outreach") or []) if isinstance(x, dict)]
+        def kpi(label):
+            for k in d.get("kpis") or []:
+                if isinstance(k, dict) and re.search(label, str(k.get("label", "")), re.I):
+                    m = re.search(r"\d[\d,]*", str(k.get("big", "")))
+                    return int(m.group(0).replace(",", "")) if m else None
+            return None
+        pt["marketsom"] = {"contacted": len(out), "replied": sum(1 for x in out if str(x.get("reply", "")).strip()),
+                           "drafts": d.get("drafts_count") if isinstance(d.get("drafts_count"), int) else None,
+                           "waitlist": kpi(r"real waitlist"), "us_visits": kpi(r"US visits"),
+                           "ig_followers": (d.get("instagram") or {}).get("followers") if isinstance(d.get("instagram"), dict) else None}
+        # Same two tests the console applies: an app or data company, and not a vendor or supplier (rule 7).
+        scope = re.compile(r"\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|booth|expo)\b", re.I)
+        apps = [x for x in out
+                if re.search(r"\b(api|oauth|integration|apple health|hrv|app\b|platform|sdk|data)\b", f"{x.get('org','')} {x.get('reply','')} {x.get('next','')}", re.I)
+                and not scope.search(f"{x.get('org','')} {x.get('reply','')} {x.get('next','')}")]
+        pt["integrations"] = {"replied": sum(1 for x in apps if str(x.get("reply", "")).strip())}
+
+    r = by_url.get("https://instasum.netlify.app/all.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    col = d.get("collections") if isinstance(d, dict) else None
+    if isinstance(col, dict):
+        fol = col.get("followers") or {}
+        latest = fol[sorted(fol)[-1]] if isinstance(fol, dict) and fol else {}
+        trusted = re.search(r"[\d.]+", str(latest.get("igTrusted", "")).replace(",", ""))
+        ppl = col.get("people") or {}
+        ppl = list(ppl.values()) if isinstance(ppl, dict) else ppl
+        pt["instasom"] = {"ig": latest.get("ig") if isinstance(latest.get("ig"), int) else None,
+                          "ig_trusted": float(trusted.group(0)) if trusted else None,
+                          "fb": latest.get("fb") if isinstance(latest.get("fb"), int) else None,
+                          "followed": sum(1 for x in ppl if isinstance(x, dict) and x.get("status") == "Followed"),
+                          "to_follow": sum(1 for x in ppl if isinstance(x, dict) and x.get("status") == "Not started")}
+    return pt
+
+
+def append_history(path, point, keep=720):
+    """Append one point (120 days at four-hourly) and keep the file small."""
+    try:
+        hist = json.loads(path.read_text()) if path.exists() else []
+        if not isinstance(hist, list):
+            hist = []
+    except Exception:
+        hist = []
+    hist.append(point)
+    path.write_text(json.dumps(hist[-keep:], separators=(",", ":")) + "\n")
 
 
 def main():
@@ -345,15 +850,20 @@ def main():
 
     out = pathlib.Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
+    facts = extract_facts(rows, now)
+    (out / "vybe-hub.html").write_text(render_hub(rows, facts, now))
     (out / "vybe-agent-board.html").write_text(render(rows, now))
+    slim = [{k: v for k, v in r.items() if k != "_body"} for r in rows]
     (out / "vybe-agents.json").write_text(json.dumps(
-        {"checked": now.isoformat(), "surfaces": rows}, indent=2) + "\n")
+        {"checked": now.isoformat(), "surfaces": slim,
+         "needs_you": facts["needs_you"]}, indent=2) + "\n")
+    append_history(out / "vybe-history.json", history_point(rows, now))
 
-    red = [r for r in rows if r["state"] != "ok"]
+    red = [r for r in rows if r["state"] in ("bad", "dead")]
     for r in rows:
-        mark = "ok  " if r["state"] == "ok" else "RED "
+        mark = {"ok": "ok  ", "warn": "warn", "bad": "RED ", "dead": "RED "}[r["state"]]
         age = f"{r['age_h']}h" if r["age_h"] is not None else "-"
-        print(f"{mark} {r['agent']:<10} {r['surface']:<46} {age:>7}  {'; '.join(r['problems'])}")
+        print(f"{mark} {r['agent']:<10} {r['surface']:<46} {age:>7}  {'; '.join(r['problems'] + r.get('warnings', []))}")
     print(f"\n{len(rows) - len(red)}/{len(rows)} surfaces OK")
 
     if red and not args.no_fail:

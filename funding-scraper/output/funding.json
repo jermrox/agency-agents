@@ -1,58 +1,11 @@
 {
-  "generated": "2026-10-10T13:47:11+00:00",
-  "as_of": "2026-10-10",
-  "count": 230,
+  "generated": "2026-10-12T01:06:01+00:00",
+  "as_of": "2026-10-12",
+  "count": 231,
   "source_errors": [],
   "stale_sources": [],
+  "rule_9_7": true,
   "opportunities": [
-    {
-      "id": "curated-latinos-x-ai-hackathon-nyc-healthcare-track",
-      "source": "curated",
-      "name": "Latinos x AI Hackathon - NYC (Healthcare track)",
-      "url": "https://latinos-x-ai-hackathon-nyc.devpost.com/",
-      "agency": "LaFamilia Foundation / Colectivo NYC / Fordham University AI Hub",
-      "amount": "$1,500 in cash total per Devpost (one cash prize per track; the per-track amount is 'to be announced')",
-      "summary": "IN-PERSON ONE DAY IN NYC; APPLICATION REVIEWED, LATINO BUILDERS PRIORITIZED. Small cash only. The Healthcare track (language, coverage, access for underserved patients) suits a minority-owned team that builds a Connect/Vitals community-health demo. IP: 'You keep everything you build. Organizers and sponsors make no IP claims over your work.' The application deadline is not stated; apply immediately.",
-      "open_date": null,
-      "close_date": "2026-10-10",
-      "status": "soon",
-      "days_left": 0,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "Age of majority, US only, team required (1-4), one-day in-person event in Manhattan on Oct 10. Free to attend; applications are reviewed; Latino/Hispanic builders prioritized, allies considered as space allows. All code must be written during the event.",
-      "documents": [
-        "Devpost registration + event application",
-        "Project title/description",
-        "Public code repository",
-        "Demo video up to 2 minutes",
-        "Track selection",
-        "Team member list"
-      ],
-      "sam": "none"
-    },
-    {
-      "id": "curated-emerge-americas-natsec-veteran-pitch-competition-nov-2026-cycle",
-      "source": "curated",
-      "name": "eMerge Americas NatSec Veteran Pitch Competition (Nov 2026 cycle)",
-      "url": "https://emergeamericas.com/veteran-led-national-security-startups/",
-      "agency": "eMerge Americas (private)",
-      "amount": "Not cash-denominated on the page: the top three get Demo Day participation at PortMiami (2 Mar 2027), Accelerator and Showcase fast-tracks, exhibition space in the NatSec Pavilion and investor/government-buyer introductions. A prior cycle listed micro-grants among prizes, but no cash figure is stated for this cycle.",
-      "summary": "MUST BE A 'CRITICAL TECHNOLOGY' / DUAL-USE NATIONAL-SECURITY PITCH, WITH A WORKING MVP AND 2+ FULL-TIME STAFF. Vybe fits only if it frames the Vybe Band (ECG/HRV, recovery, readiness) as a warfighter human-performance and readiness tool. The veteran owner has to pitch. Virtual event on 4 Nov 2026, with no registration fee. The deadline is 9 days away.",
-      "open_date": null,
-      "close_date": "2026-10-10",
-      "status": "soon",
-      "days_left": 0,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "visibility",
-      "eligibility": "U.S.-based critical-technology startup founded within the last 3 years; working MVP; 2+ full-time team members; no more than $1M raised; a veteran, active or reserve service member must be a founder or C-level exec and must deliver the pitch; technology must be presentable unclassified.",
-      "documents": [
-        "Online application (details on the application page; contents not stated on the announcement page)",
-        "Pitch deck for a 4-minute virtual pitch if selected"
-      ],
-      "sam": "none"
-    },
     {
       "id": "curated-agetech-after-dark-ces-2027-aarp-pitch",
       "source": "curated",
@@ -64,7 +17,7 @@
       "open_date": null,
       "close_date": "2026-10-12",
       "status": "soon",
-      "days_left": 2,
+      "days_left": 0,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -73,7 +26,14 @@
         "Online application: how the product makes ageing easier, and its stage",
         "A 3-minute pitch, ready by early January"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Door: a healthspan/wellness product that makes ageing easier, which Vybe's band is. Risk: finalists pitch live at CES on 7 Jan 2027, so it needs a 3-minute pitch and travel to Las Vegas.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": true,
+      "next_date": "2026-10-12"
     },
     {
       "id": "curated-marshalls-good-stuff-accelerator-program-year-3-2027-cohort",
@@ -86,7 +46,7 @@
       "open_date": null,
       "close_date": "2026-10-13",
       "status": "soon",
-      "days_left": 3,
+      "days_left": 1,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -96,7 +56,14 @@
         "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
         "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Door: any adult US resident, as an individual. The $5K goes to the founder, not the company, after a 12-month virtual programme. Risk: the time commitment and the low amount.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": "2026-10-13"
     },
     {
       "id": "curated-veteran-shark-tank-2026-13th-annual",
@@ -109,7 +76,7 @@
       "open_date": null,
       "close_date": "2026-10-13",
       "status": "soon",
-      "days_left": 3,
+      "days_left": 1,
       "days_until_open": null,
       "pillar": 3,
       "kind": "visibility",
@@ -120,7 +87,14 @@
         "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
         "Evidence the business is under three years old as of 7 Dec 2026"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 9,
+      "fit_why": "Door: veteran-owned company under 3 years old, which is exactly Vybe, for a $50K prize. Disqualifier: no DD-214 or equivalent veteran proof, or a promo video instead of a 2-minute pitch.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": "2026-10-13"
     },
     {
       "id": "curated-intuit-ideas-virtual-military-veteran-military-spouse-cohort-2026-27",
@@ -133,7 +107,7 @@
       "open_date": null,
       "close_date": "2026-10-15",
       "status": "soon",
-      "days_left": 5,
+      "days_left": 3,
       "days_until_open": null,
       "pillar": 2,
       "kind": "accelerator",
@@ -144,7 +118,14 @@
         "Business registration details",
         "QuickBooks onboarding if selected (per Intuit's guide)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Door: the virtual cohort for veteran- and military-spouse-owned registered businesses. Risk: $5K is paid only at the end of the 12-month programme, and QuickBooks onboarding is expected.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": "2026-10-15"
     },
     {
       "id": "curated-blake-family-military-veterans-pitch-competition-clemson-2nd-annual",
@@ -157,7 +138,7 @@
       "open_date": null,
       "close_date": "2026-10-16",
       "status": "soon",
-      "days_left": 6,
+      "days_left": 4,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -167,7 +148,14 @@
         "Pitch deck",
         "Short video"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Door: a C-corp, S-corp or LLC with a veteran founder; prizes up to $10K. Risk: finalists pitch in person in Clemson, SC, at Vybe's cost.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": "2026-10-16"
     },
     {
       "id": "curated-nba-launchpad-2027-cohort-sixth-cohort",
@@ -180,7 +168,7 @@
       "open_date": null,
       "close_date": "2026-10-16",
       "status": "soon",
-      "days_left": 6,
+      "days_left": 4,
       "days_until_open": null,
       "pillar": 3,
       "kind": "partnership",
@@ -191,7 +179,14 @@
         "Description of proposed R&D pilot within the NBA ecosystem",
         "Team info"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Door: sports-performance and wellness tech, which fits the band's recovery and HRV story. Risk: very competitive, and it is a cohort with league access rather than cash.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-10-16"
     },
     {
       "id": "curated-nsf-i-corps-hub-great-lakes-region-regional-virtual-i-corps-cohorts-fall",
@@ -204,7 +199,7 @@
       "open_date": null,
       "close_date": "2026-10-16",
       "status": "soon",
-      "days_left": 6,
+      "days_left": 4,
       "days_until_open": null,
       "pillar": 2,
       "kind": "accelerator",
@@ -214,7 +209,14 @@
         "Team member names and roles",
         "Short description of the innovation (the DevKit / sensing platform)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Door: free virtual customer-discovery cohort open to non-university founders. Value: the route to NSF National I-Corps ($50K, needs SAM.gov) and sharper DevKit customer evidence. No cash itself.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": "2026-10-16"
     },
     {
       "id": "curated-pave-her-way-disruptor-award-2026-inaugural",
@@ -227,7 +229,7 @@
       "open_date": null,
       "close_date": "2026-10-16",
       "status": "soon",
-      "days_left": 6,
+      "days_left": 4,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -238,7 +240,14 @@
         "Proof of citizenship or residency if a semifinalist (passport, birth certificate, naturalization certificate or green card)",
         "Availability for a virtual interview 16\u201320 Nov"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Door: only as a woman founder's individual, charitable public-benefit project for women and girls, not a company grant. Risk: a company pitch would be rejected.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": "2026-10-16"
     },
     {
       "id": "curated-amd-developer-hackathon-act-iii-lablab-ai-health-and-wellbeing-track",
@@ -251,7 +260,7 @@
       "open_date": null,
       "close_date": "2026-10-18",
       "status": "soon",
-      "days_left": 8,
+      "days_left": 6,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -262,7 +271,14 @@
         "Working prototype",
         "Cover image, demo video, pitch presentation"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 3,
+      "fit_why": "Door: an online build week, 12\u201318 Oct. Risk: the health track's prize is AirPods and the cash is $5K per sponsor track, so it is worth it only if a demo already exists.",
+      "fit_source": "reviewed",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": "2026-10-18"
     },
     {
       "id": "curated-army-xtech-search-10",
@@ -275,7 +291,7 @@
       "open_date": "2026-09-10",
       "close_date": "2026-10-19",
       "status": "soon",
-      "days_left": 9,
+      "days_left": 7,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -286,7 +302,14 @@
         "Disclosure of any similar proposal funded or pending at another federal agency",
         "SAM.gov UEI and a CAGE code for the follow-on SBIR/STTR stage"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For-profit US small business, more than 50% owned AND controlled by US citizens or permanent residents, 500 or fewer employees including aff. Watch: Best live item on the board.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": "2026-10-19"
     },
     {
       "id": "curated-dow-sbir-sttr-specific-topics-release-6-26-bx-26-bz-26-tx-26-tz",
@@ -299,7 +322,7 @@
       "open_date": "2026-09-23",
       "close_date": "2026-10-21",
       "status": "soon",
-      "days_left": 11,
+      "days_left": 9,
       "days_until_open": null,
       "pillar": 2,
       "kind": "dod_sbir",
@@ -311,7 +334,14 @@
         "Cost volume",
         "Disclosure of any essentially equivalent work funded or pending elsewhere"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent re. Watch: Live window, closes 21 oct.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": "2026-10-21"
     },
     {
       "id": "curated-build-ship-shape-amazon-developer-hackathon-bee-wearable-ai-track-fire-t",
@@ -324,7 +354,7 @@
       "open_date": null,
       "close_date": "2026-10-23",
       "status": "soon",
-      "days_left": 13,
+      "days_left": 11,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -337,7 +367,14 @@
         "Text description",
         "Product feedback answers (optional friction log adds up to 10% bonus)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals of age of majority, teams, or incorporated organizations. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.5,
+      "travel": false,
+      "next_date": "2026-10-23"
     },
     {
       "id": "curated-eeg-emg-foundation-challenge-2026-neurips-track-3-sleep-onset-on-wearabl",
@@ -350,7 +387,7 @@
       "open_date": null,
       "close_date": "2026-10-24",
       "status": "soon",
-      "days_left": 14,
+      "days_left": 12,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -361,7 +398,14 @@
         "Method description with external-data and compute disclosures",
         "Training and inference code for the reproducibility audit (top 3)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Anyone: industry, academia, students and independents. Watch: Registration closes 24 oct 2026.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-10-24"
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -374,7 +418,7 @@
       "open_date": "2026-09-01",
       "close_date": "2026-10-30",
       "status": "soon",
-      "days_left": 20,
+      "days_left": 18,
       "days_until_open": null,
       "pillar": 3,
       "kind": "partnership",
@@ -385,7 +429,14 @@
         "Joint research plan with commercial milestones",
         "Statement of quantifiable NY State economic impact"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Cornell faculty PI applies. Watch: Residency gate (NY State); Vybe is in Ohio; A university or nonprofit must be the applicant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 11.0,
+      "travel": false,
+      "next_date": "2026-10-30"
     },
     {
       "id": "curated-digikey-w-rth-elektronik-proteus-iv-eval-board-design-contest",
@@ -398,7 +449,7 @@
       "open_date": null,
       "close_date": "2026-10-30",
       "status": "soon",
-      "days_left": 20,
+      "days_left": 18,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -408,7 +459,14 @@
         "Written idea submission describing the design and the W\u00fcrth parts used",
         "If selected: finalist project write-up by 31 Dec 2026"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Idea must use the Proteus-IV module. Watch: Grand prize value not stated, and ideas are posted publicly.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-10-30"
     },
     {
       "id": "curated-nebius-x-nvidia-global-ai-hackathon-personal-ai-physical-ai-tracks",
@@ -421,7 +479,7 @@
       "open_date": null,
       "close_date": "2026-10-30",
       "status": "soon",
-      "days_left": 20,
+      "days_left": 18,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -434,7 +492,14 @@
         "Demo video under 3 minutes on YouTube",
         "Track selection + feedback on Nebius/NVIDIA tools"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals of age of majority, teams, or incorporated organizations. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.5,
+      "travel": true,
+      "next_date": "2026-10-30"
     },
     {
       "id": "curated-ohio-techcred",
@@ -447,7 +512,7 @@
       "open_date": "2026-10-01",
       "close_date": "2026-10-30",
       "status": "soon",
-      "days_left": 20,
+      "days_left": 18,
       "days_until_open": null,
       "pillar": 1,
       "kind": "grant",
@@ -459,7 +524,14 @@
         "Per-credential training and certification costs, and the reimbursement amount requested (max $1,000 each)",
         "Headcounts of incumbent and prospective employees per credential, with average wages before and after"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: FOUR GATES, NOT ONE. Watch: Corrected 30 sep.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": false,
+      "next_date": "2026-10-30"
     },
     {
       "id": "curated-qloo-agentic-hackathon-devpost",
@@ -472,7 +544,7 @@
       "open_date": null,
       "close_date": "2026-10-30",
       "status": "soon",
-      "days_left": 20,
+      "days_left": 18,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -484,7 +556,14 @@
         "Text description of what makes it 'Qloo-powered'",
         "Demo video"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals of legal age, teams, and incorporated organizations. Watch: The bonus $25k from calacanis is an investment.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.5,
+      "travel": false,
+      "next_date": "2026-10-30"
     },
     {
       "id": "curated-breva-thrive-grant-q4-2026",
@@ -497,7 +576,7 @@
       "open_date": "2026-10-01",
       "close_date": "2026-10-31",
       "status": "soon",
-      "days_left": 21,
+      "days_left": 19,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -507,7 +586,14 @@
         "A measurable community-impact claim: jobs, new products or access improved",
         "US registration and evidence of operating primarily in the US"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Legally registered under US law and operating primarily in the US. Watch: Read the revenue line before spending an hour on it.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-10-31"
     },
     {
       "id": "curated-secretsos-small-business-grant",
@@ -520,7 +606,7 @@
       "open_date": null,
       "close_date": "2026-10-31",
       "status": "soon",
-      "days_left": 21,
+      "days_left": 19,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -529,7 +615,14 @@
         "Short online application",
         "Proof of qualifying ownership status"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Underserved businesses: woman-, veteran-, or minority-owned. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-10-31"
     },
     {
       "id": "curated-break-the-barrier-national-ai-healthcare-competition-inventacare-x-redes",
@@ -542,7 +635,7 @@
       "open_date": null,
       "close_date": "2026-11-01",
       "status": "soon",
-      "days_left": 22,
+      "days_left": 20,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -551,7 +644,14 @@
         "Written problem description (at least one paragraph: who is affected, how severely, what solving it unlocks)",
         "3\u20135 minute video demo or pitch deck"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Must live in the US or Canada (excluding Quebec) during the competition. Watch: Prompt is ai on healthcare operational, administrative and clinical-workflow friction, not consumer wellness.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.5,
+      "travel": false,
+      "next_date": "2026-11-01"
     },
     {
       "id": "curated-charmhealth-innovation-challenge-and-pitch-competition-2026",
@@ -564,7 +664,7 @@
       "open_date": null,
       "close_date": "2026-11-01",
       "status": "soon",
-      "days_left": 22,
+      "days_left": 20,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -573,7 +673,14 @@
         "Online submission form on the challenge site (custom form; fields not listed on the page)",
         "Poster presentation and 10-minute live pitch if selected"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Digital health startups, individuals and organisations. Watch: Deadline conflict.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": true,
+      "next_date": "2026-11-01"
     },
     {
       "id": "curated-mit-solve-2027-global-health-challenge",
@@ -586,7 +693,7 @@
       "open_date": null,
       "close_date": "2026-11-02",
       "status": "soon",
-      "days_left": 23,
+      "days_left": 21,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -598,7 +705,14 @@
         "Evidence that novel tech works (prototype data) for finalist stage",
         "Virtual live pitch if a finalist"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open globally to for-profit and nonprofit teams. Watch: The judging rewards equity and underserved communities.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": "2026-11-02"
     },
     {
       "id": "curated-darpa-documentation-and-decision-support-d2-sprint",
@@ -611,7 +725,7 @@
       "open_date": null,
       "close_date": "2026-11-04",
       "status": "soon",
-      "days_left": 25,
+      "days_left": 23,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -625,7 +739,14 @@
         "Part 2 Qualification Task (by invitation after Part 1)",
         "SSN or TIN to receive a prize"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Applicant and team representative must be a U.S. Watch: This is an algorithm contest, not a hardware one.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 18.5,
+      "travel": false,
+      "next_date": "2026-11-04"
     },
     {
       "id": "curated-xcelerate-startup-competition",
@@ -638,7 +759,7 @@
       "open_date": null,
       "close_date": "2026-11-04",
       "status": "soon",
-      "days_left": 25,
+      "days_left": 23,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -648,7 +769,14 @@
         "Pitch deck",
         "Quote for a WHX Tech Startup Pod, and a travel budget for Dubai"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Legally registered health or health-adjacent startup with a WORKING PRODUCT. Watch: Paid-pod gate.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": true,
+      "next_date": "2026-11-04"
     },
     {
       "id": "curated-founders-live-pitch-video-challenge-2026-prime-time",
@@ -661,7 +789,7 @@
       "open_date": null,
       "close_date": "2026-11-09",
       "status": "soon",
-      "days_left": 30,
+      "days_left": 28,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -670,7 +798,14 @@
         "Founder/company info form",
         "99-second pitch video uploaded to YouTube (URL submitted)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Free entry, open to founders anywhere. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.5,
+      "travel": false,
+      "next_date": "2026-11-09"
     },
     {
       "id": "curated-jumpstart-trailblazer-software-accelerator-winter-2027-cohort-jan-12-apr",
@@ -682,8 +817,8 @@
       "summary": "MUST INTEND TO RAISE VC WITHIN 12 MONTHS; IN-KIND SERVICES, NOT CASH. This is now OPEN: rejected.txt has it as not open, but the program page now shows 'Apply Now' with a live embedded application form (tfaforms #5058360). DATE CONFLICT: the program page says 'Next Application Close November 10, 2026', but the jumpstartinc.org/startups overview says 'Winter 2027 Software Accelerator Applications Close: Nov. 17, 2026'. Treat Nov 10 as the deadline. The $50K covers firmware, SDK and API dev shops and legal/marketing providers, which fits the DevKit v0.1 milestone. Vybe is in Akron, so it meets the Ohio rule. The form asks about minority and woman co-founders. The program is software-focused; describe Vybe as the developer platform (SDK/API, data platform). JumpStart's HealthTech track is a separate cohort that closed Aug 2.",
       "open_date": null,
       "close_date": "2026-11-10",
-      "status": "open",
-      "days_left": 31,
+      "status": "soon",
+      "days_left": 29,
       "days_until_open": null,
       "pillar": 2,
       "kind": "accelerator",
@@ -695,7 +830,14 @@
         "Stage, users/customers, revenue in the last 12 months, capital raised to date, intent to raise VC in 12 months, near-term milestone",
         "Cap-table stakeholders with more than 20% equity: name, email, LinkedIn, role, full-time status, ethnicity, gender, equity %"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Ohio-based (or planning to relocate) pre-seed or seed tech startup with a venture-backable model that plans to raise venture capital within . Watch: Must intend to raise vc within 12 months; in-kind services, not cash.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 18.5,
+      "travel": true,
+      "next_date": "2026-11-10"
     },
     {
       "id": "curated-paypal-ai-hackathon-devpost",
@@ -708,7 +850,7 @@
       "open_date": null,
       "close_date": "2026-11-12",
       "status": "open",
-      "days_left": 33,
+      "days_left": 31,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -719,7 +861,14 @@
         "Public open-source code repo (GitHub/GitLab/Bitbucket)",
         "Text description and demo video"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals of legal age, teams, and organizations (corporations, LLCs) that exist at the time of entry. Watch: Paypal must be central to the project, and the repo must be public and open source.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.5,
+      "travel": false,
+      "next_date": "2026-11-12"
     },
     {
       "id": "curated-washington-l-i-safety-health-investment-projects-ship-grant-safety-healt",
@@ -732,7 +881,7 @@
       "open_date": null,
       "close_date": "2026-11-13",
       "status": "open",
-      "days_left": 34,
+      "days_left": 32,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -744,7 +893,14 @@
         "Letter or commitment from the partnering WA state-fund employer or employer/labor association",
         "Accessibility (WCAG 2.1 A/AA) plan for any electronic products"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any agency, firm, organization or individual MAY apply, BUT a company like Vybe falls in the 'third party / other' category and must partner. Watch: Washington-only benefit, a required wa employer partner and public-domain outputs.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": "2026-11-13"
     },
     {
       "id": "grants.gov-dow-joint-warfighter-medical-military-medical-research-and-developmen",
@@ -757,13 +913,20 @@
       "open_date": "2026-06-17",
       "close_date": "2026-11-16",
       "status": "open",
-      "days_left": 37,
+      "days_left": 35,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2026-11-16"
     },
     {
       "id": "curated-global-deep-tech-battle-ces-2027-healthtech-consumer-electronics-battles",
@@ -776,7 +939,7 @@
       "open_date": null,
       "close_date": "2026-11-16",
       "status": "open",
-      "days_left": 37,
+      "days_left": 35,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -785,7 +948,14 @@
         "Application form on the swiss.tech page",
         "Pitch built on the organiser's template (per prior-edition rules, to be confirmed)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Global pitch contest for deep-tech startups in Robotics, HealthTech, CleanTech or Consumer Electronics. Watch: You probably need to be at ces already.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": "2026-11-16"
     },
     {
       "id": "curated-global-health-accelerator-2026-27-cohort",
@@ -798,7 +968,7 @@
       "open_date": "2026-10-06",
       "close_date": "2026-11-16",
       "status": "open",
-      "days_left": 37,
+      "days_left": 35,
       "days_until_open": null,
       "pillar": 2,
       "kind": "accelerator",
@@ -808,7 +978,14 @@
         "Evidence of proof-of-concept stage and market validation",
         "Confirmation that the C-suite can attend four in-person bootcamps between Dec 2026 and May 2027"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Early to mid-stage, preferably incorporated as a legal entity by the start of the programme, at bootstrapping or seed stage, and at minimum . Watch: Applications opened 6 oct 2026 and close 16 nov.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": "2026-11-16"
     },
     {
       "id": "curated-tory-burch-foundation-fellows-2027-program",
@@ -821,7 +998,7 @@
       "open_date": "2026-09-22",
       "close_date": "2026-11-17",
       "status": "open",
-      "days_left": 38,
+      "days_left": 36,
       "days_until_open": null,
       "pillar": 3,
       "kind": "accelerator",
@@ -831,7 +1008,14 @@
         "Evidence of at least $75,000 annual revenue",
         "Business and financial narrative through the Fellows portal"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A woman entrepreneur who owns the largest or equally-largest stake in a business that is 51%+ owned and controlled by women, with a signific. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": "2026-11-17"
     },
     {
       "id": "grants.gov-dow-combat-readiness-medical-research-program-translational-research-",
@@ -844,13 +1028,20 @@
       "open_date": "2026-06-24",
       "close_date": "2026-11-18",
       "status": "open",
-      "days_left": 39,
+      "days_left": 37,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2026-11-18"
     },
     {
       "id": "grants.gov-nih-strokenet-clinical-trials-and-biomarker-studies-for-stroke-treatm",
@@ -863,13 +1054,20 @@
       "open_date": "2024-11-20",
       "close_date": "2026-11-19",
       "status": "open",
-      "days_left": 40,
+      "days_left": 38,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2026-11-19"
     },
     {
       "id": "curated-vetcon-2026-business-plan-competition",
@@ -882,7 +1080,7 @@
       "open_date": null,
       "close_date": "2026-11-20",
       "status": "open",
-      "days_left": 41,
+      "days_left": 39,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -894,7 +1092,14 @@
         "DD Form 214 (discharge papers)",
         "Executive summary, max 4 pages (12-pt, 1.5 spacing): elevator pitch, team, industry/market/competition, growth plan, financial plan with 3-year forecast and use of prize"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: At least one presenting team member must be a veteran. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": "2026-11-20"
     },
     {
       "id": "curated-nimhd-schare-advance-whole-person-data-integration-and-reimagine-data-sc",
@@ -907,7 +1112,7 @@
       "open_date": null,
       "close_date": "2026-11-23",
       "status": "open",
-      "days_left": 44,
+      "days_left": 42,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -917,7 +1122,14 @@
         "SAM.gov entity registration for prize payment (see note)",
         "Submission by 22 Jan 2027"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Eligible entities per NIH prize rules. Watch: Register by 23 nov 2026.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-11-23"
     },
     {
       "id": "curated-shophand-5k-small-business-boost-grant-current-cycle",
@@ -930,7 +1142,7 @@
       "open_date": null,
       "close_date": "2026-11-30",
       "status": "open",
-      "days_left": 51,
+      "days_left": 49,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -942,7 +1154,14 @@
         "How Shophand could best support you",
         "Follows on 4 social platforms"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US-based, for-profit, fewer than 50 employees, under $5M annual revenue, 'actively operating (not just an idea)'. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": false,
+      "next_date": "2026-11-30"
     },
     {
       "id": "curated-nimhd-schare-smart-devices-and-sensing-technologies-to-mitigate-chronic-",
@@ -955,7 +1174,7 @@
       "open_date": null,
       "close_date": "2026-12-18",
       "status": "open",
-      "days_left": 69,
+      "days_left": 67,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -965,7 +1184,44 @@
         "SAM.gov entity registration for prize payment (see note)",
         "Phase 1 proposal: 12-page project description plus summaries, due 15 Feb 2027"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Eligible entities per NIH prize rules. Watch: Best-fit federal prize on the board.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": "2026-12-18"
+    },
+    {
+      "id": "curated-sushi-tech-challenge-2027-tokyo-metropolitan-government-pitch-contest-su",
+      "source": "curated",
+      "name": "SusHi Tech Challenge 2027 (Tokyo Metropolitan Government pitch contest, SusHi Tech Tokyo 2027)",
+      "url": "https://sushitech-startup.metro.tokyo.lg.jp/en/recruiting-pitch",
+      "agency": "SusHi Tech Tokyo Executive Committee (Tokyo Metropolitan Government)",
+      "amount": "Grand Prize JPY 10,000,000 (about $65K) cash; corporate-partner special awards (planned) for the 20 semifinalists; the JPY 300,000 booth fee is waived for semifinalists",
+      "summary": "'EXISTING PRODUCT OR SERVICE' GATE: Vybe's consumer launch is May 2027, so lead with the DevKit/SDK or a working prototype. TRAVEL TO TOKYO IS AT VYBE'S OWN EXPENSE. NON-SEMIFINALISTS MUST STILL EXHIBIT (the JPY 300,000 booth fee is waived only for the 20 semifinalists; check the guidelines on whether entrants who are not selected owe anything). Fit: the 2027 tech domains explicitly include 'Longevity & Drug Discovery' and Physical AI, and the theme is 'How do humans thrive in the age of AI transformation?' A screenless HRV wearable with a developer platform fits the human-thriving and longevity angle. Free to apply: a form plus an English pitch deck. More than 800 startups applied last year.",
+      "open_date": null,
+      "close_date": "2026-12-18",
+      "status": "open",
+      "days_left": 67,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Global startups. Must have a new technology or business model with growth potential, AN EXISTING PRODUCT OR SERVICE, and a business aligned with 'realizing sustainable cities through high technology'. Must pitch in person at Tokyo Big Sight on May 20-21, 2027 and exhibit a booth all 3 event days. Everything is in English. No application fee and no equity terms are stated.",
+      "documents": [
+        "Online application form",
+        "Pitch deck in English (PDF)",
+        "Pitch video (requested in the second screening round, March 2027)"
+      ],
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Global startups. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.5,
+      "travel": true,
+      "next_date": "2026-12-18"
     },
     {
       "id": "curated-business-freedom-grant-darcy-s-business-nov-15-dec-31-2026-review-rounds",
@@ -978,7 +1234,7 @@
       "open_date": null,
       "close_date": "2026-12-31",
       "status": "open",
-      "days_left": 82,
+      "days_left": 80,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -987,7 +1243,14 @@
         "Brief online application (business idea/plan, intended use of $1,000)",
         "Optional: join GrantHouse (free) for +2 points"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Anyone with a business idea or an existing small business, any industry, location, experience level or background. Watch: Small ($1,000).",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-12-31"
     },
     {
       "id": "curated-jlc-hardware-accelerator-jlcpcb-jlc3dp-jlcmc-jlccnc",
@@ -1000,7 +1263,7 @@
       "open_date": null,
       "close_date": "2026-12-31",
       "status": "open",
-      "days_left": 82,
+      "days_left": 80,
       "days_until_open": null,
       "pillar": 1,
       "kind": "credit",
@@ -1012,7 +1275,14 @@
         "Crowdfunding or launch timeline",
         "Stage 2: prototype photos or video, a preliminary production plan, and engagement with JLC official channels"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Hardware founder or small team of 1\u20135 people with a functional prototype who needs PCB, 3D printing, MC or CNC services and intends to move . Watch: Program window ends 31 dec 2026, and it is framed around kickstarter/indiegogo teams.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-12-31"
     },
     {
       "id": "curated-nfl-big-data-bowl-2027-kaggle-combine-sensor-tracking-to-nfl-performance",
@@ -1025,7 +1295,7 @@
       "open_date": null,
       "close_date": "2027-01-06",
       "status": "open",
-      "days_left": 88,
+      "days_left": 86,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1036,7 +1306,14 @@
         "Public Kaggle Notebook attached",
         "Winners: model code and documentation delivered to the sponsor"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Free Kaggle account. Watch: Prize is paid to individuals, not the company.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": "2027-01-06"
     },
     {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
@@ -1049,13 +1326,20 @@
       "open_date": "2024-11-21",
       "close_date": "2027-01-07",
       "status": "open",
-      "days_left": 89,
+      "days_left": 87,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-01-07"
     },
     {
       "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
@@ -1068,7 +1352,7 @@
       "open_date": "2026-10-01",
       "close_date": "2027-01-08",
       "status": "open",
-      "days_left": 90,
+      "days_left": 88,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1079,7 +1363,14 @@
         "Video demonstration of a working Phase 1 prototype",
         "No HHS or NIH logos, and no claim of government endorsement"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Federal prize competition open to eligible individuals, teams and entities. Watch: Date corrected 7 oct 2026.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.5,
+      "travel": false,
+      "next_date": "2027-01-08"
     },
     {
       "id": "curated-nih-odss-it-s-about-time-temporal-reasoning-in-biomedical-knowledge-grap",
@@ -1092,7 +1383,7 @@
       "open_date": null,
       "close_date": "2027-01-15",
       "status": "open",
-      "days_left": 97,
+      "days_left": 95,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1101,7 +1392,14 @@
         "Free registration on the CrowdPlat competition site (work.crowdplat.com/challenge/nih-temporal-knowledge-graph-challenge)",
         "Phase 1 PDF of up to 10 pages (11-point font minimum) covering: the temporal reasoning framework or design; the temporal modeling approach (events, sequences, durations, validity periods, evolving evidence); the use case and potential impact; and feasibility and integration with existing KG standards and ontologies"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A private entity must be incorporated in, and keep its primary place of business in, the US. Watch: Concept-paper prize about methods, not a wearable call.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2027-01-15"
     },
     {
       "id": "curated-pcbway-9th-project-design-contest-edge-ai-iot-category",
@@ -1114,7 +1412,7 @@
       "open_date": null,
       "close_date": "2027-01-24",
       "status": "open",
-      "days_left": 106,
+      "days_left": 104,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1125,7 +1423,14 @@
         "Gerber/BOM/schematic/source/CAD files as applicable",
         "Photos/video of the built project"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Original project created or updated and submitted during the submission period (1 Sep 2026 to 24 Jan 2027). Watch: Public disclosure.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.5,
+      "travel": false,
+      "next_date": "2027-01-24"
     },
     {
       "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-oud-for-wh",
@@ -1138,13 +1443,20 @@
       "open_date": "2026-10-06",
       "close_date": "2027-01-26",
       "status": "open",
-      "days_left": 108,
+      "days_left": 106,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-01-26"
     },
     {
       "id": "curated-national-braille-press-touch-of-genius-prize-for-innovation-2027",
@@ -1157,7 +1469,7 @@
       "open_date": null,
       "close_date": "2027-02-05",
       "status": "open",
-      "days_left": 118,
+      "days_left": 116,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1170,7 +1482,14 @@
         "A working prototype with testing instructions (and return instructions)",
         "Everything in accessible electronic formats, in English"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to individuals, groups, or someone applying on their behalf, from anywhere. Watch: Stretch fit, and a working prototype is required.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.0,
+      "travel": false,
+      "next_date": "2027-02-05"
     },
     {
       "id": "grants.gov-a-science-of-science-approach-to-analyzing-and-innovating-the-biomedi",
@@ -1183,13 +1502,20 @@
       "open_date": "2023-03-21",
       "close_date": "2027-02-09",
       "status": "open",
-      "days_left": 122,
+      "days_left": 120,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-02-09"
     },
     {
       "id": "curated-18th-innovation-world-cup-iot-wt-top-12-wearable-techpreneurs-pitch-at-w",
@@ -1202,7 +1528,7 @@
       "open_date": null,
       "close_date": "2027-02-11",
       "status": "open",
-      "days_left": 124,
+      "days_left": 122,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -1213,7 +1539,14 @@
         "Pitch deck, images and/or video",
         "Answers to all form questions incl. Special Prizes section"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Start-ups, scale-ups and SMEs worldwide. Watch: No cash amount stated; needs a working prototype.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.5,
+      "travel": false,
+      "next_date": "2027-02-11"
     },
     {
       "id": "curated-nsf-pathways-to-enable-secure-open-source-ecosystems-pesose-nsf-26-506",
@@ -1226,7 +1559,7 @@
       "open_date": null,
       "close_date": "2027-03-02",
       "status": "open",
-      "days_left": 143,
+      "days_left": 141,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1240,7 +1573,14 @@
         "Data Management Plan",
         "Ownership/control attestation (for-profit eligibility)"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: U.S.-based for-profits, including small businesses, may submit directly. Watch: Requires an open-source product, and sam.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-03-02"
     },
     {
       "id": "grants.gov-deployed-warfighter-protection-fy27-afpmb-baa-27-01",
@@ -1253,13 +1593,20 @@
       "open_date": "2026-09-24",
       "close_date": "2027-03-17",
       "status": "open",
-      "days_left": 158,
+      "days_left": 156,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": true,
+      "next_date": "2027-03-17"
     },
     {
       "id": "curated-ncats-real-world-evidence-rwe-innovation-challenge-phase-1",
@@ -1272,7 +1619,7 @@
       "open_date": null,
       "close_date": "2027-03-26",
       "status": "open",
-      "days_left": 167,
+      "days_left": 165,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1281,7 +1628,14 @@
         "Challenge Registration Form, emailed by 2 Feb 2027 (participant type, POC, scientific lead, member affiliations, citizenship or permanent-residency confirmation, federal-funds statement, rules certification)",
         "Phase 1 PDF package, emailed by 26 Mar 2027: a cover page with the required terms statement, priority area or use case, and analytic type; a fully specified analytic approach and methodology; and model parameters or a training recipe for Phase 2 execution"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals, teams or entities. Watch: Stretch fit: this is an ehr-analytics methods prize.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2027-03-26"
     },
     {
       "id": "curated-nih-sbir-sttr-april-2027-cycle",
@@ -1294,7 +1648,7 @@
       "open_date": null,
       "close_date": "2027-04-05",
       "status": "open",
-      "days_left": 177,
+      "days_left": 175,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1304,7 +1658,14 @@
         "Specific Aims + Research Strategy",
         "Budget + biosketches"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US small business with a health or clinical claim. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-04-05"
     },
     {
       "id": "grants.gov-computational-approaches-to-curation-at-scale-for-biomedical-research",
@@ -1317,13 +1678,20 @@
       "open_date": "2024-10-29",
       "close_date": "2027-04-15",
       "status": "open",
-      "days_left": 187,
+      "days_left": 185,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-04-15"
     },
     {
       "id": "curated-entrepreneurship-world-cup-ewc-2026-cycle-early-stage-track",
@@ -1336,7 +1704,7 @@
       "open_date": null,
       "close_date": "2027-05-31",
       "status": "open",
-      "days_left": 233,
+      "days_left": 231,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1347,7 +1715,14 @@
         "On request: founder ID, incorporation papers, financial statements",
         "Bank/SWIFT details within 10 days if a winner"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to legally registered entities (or individuals) in any country not under UN/OFAC sanctions. Watch: Travel to riyadh, saudi arabia, in november 2027.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.0,
+      "travel": true,
+      "next_date": "2027-05-31"
     },
     {
       "id": "grants.gov-brain-initiative-brain-behavior-quantification-and-synchronization-ne",
@@ -1360,13 +1735,20 @@
       "open_date": "2024-10-23",
       "close_date": "2027-06-15",
       "status": "open",
-      "days_left": 248,
+      "days_left": 246,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-06-15"
     },
     {
       "id": "curated-future-of-health-grant",
@@ -1379,7 +1761,7 @@
       "open_date": null,
       "close_date": "2027-07-31",
       "status": "open",
-      "days_left": 294,
+      "days_left": 292,
       "days_until_open": null,
       "pillar": 2,
       "kind": "accelerator",
@@ -1388,7 +1770,14 @@
         "Application",
         "Product and validation plan"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Digital health startups from concept through market validation. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2027-07-31"
     },
     {
       "id": "grants.gov-interventions-to-reduce-sleep-health-disparities-r01-clinical-trials-",
@@ -1401,13 +1790,20 @@
       "open_date": "2024-12-06",
       "close_date": "2027-09-07",
       "status": "open",
-      "days_left": 332,
+      "days_left": 330,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-09-07"
     },
     {
       "id": "curated-16th-medica-start-up-competition-medica-2027-dusseldorf",
@@ -1420,7 +1816,7 @@
       "open_date": null,
       "close_date": "2027-09-09",
       "status": "open",
-      "days_left": 334,
+      "days_left": 332,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -1429,7 +1825,14 @@
         "Online registration (page links a registration form; contents not stated)",
         "Pitch for the finals if selected (format not stated)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Startups with solutions in AI in medicine, robotics, laboratory diagnostics, resilience (including cybersecurity) or other digital-health ap. Watch: Small cash, and the pitch is in person in germany.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": true,
+      "next_date": "2027-09-09"
     },
     {
       "id": "curated-19th-healthcare-innovation-world-cup",
@@ -1442,7 +1845,7 @@
       "open_date": null,
       "close_date": "2027-09-09",
       "status": "open",
-      "days_left": 334,
+      "days_left": 332,
       "days_until_open": null,
       "pillar": 3,
       "kind": "visibility",
@@ -1452,7 +1855,14 @@
         "Solution description in English: the technology, its stage, and its market",
         "Evidence for the jury's criteria: degree of innovation, technical feasibility, commercial potential, go-to-market, time to market, sustainability"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: HealthTech and MedTech innovators worldwide \u2014 no region, revenue, ownership or age-of-business gate published. Watch: The most wearable-specific thing on this board.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": true,
+      "next_date": "2027-09-09"
     },
     {
       "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-2-fa2384-24-s-2",
@@ -1465,7 +1875,7 @@
       "open_date": null,
       "close_date": "2027-09-30",
       "status": "open",
-      "days_left": 355,
+      "days_left": 353,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1475,7 +1885,14 @@
         "If invited: technical proposal and cost proposal per RFP",
         "Representations & certifications at RFP stage (SAM/UEI implied for award)"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to offerors generally. Watch: Sam is not mentioned in the open period 2 text.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": "2027-09-30"
     },
     {
       "id": "grants.gov-cheers-open-period-1-all-technical-areas-fa238424s2334",
@@ -1488,13 +1905,20 @@
       "open_date": "2025-08-07",
       "close_date": "2027-09-30",
       "status": "open",
-      "days_left": 355,
+      "days_left": 353,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-09-30"
     },
     {
       "id": "grants.gov-cheers-open-period-2-all-technical-areas-fa238424s2335",
@@ -1507,13 +1931,50 @@
       "open_date": "2025-08-07",
       "close_date": "2027-09-30",
       "status": "open",
-      "days_left": 355,
+      "days_left": 353,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-09-30"
+    },
+    {
+      "id": "curated-dha-usamrdc-fy23-fy27-broad-agency-announcement-for-extramural-medical-r",
+      "source": "curated",
+      "name": "DHA / USAMRDC FY23-FY27 Broad Agency Announcement for Extramural Medical Research (HT9425-23-S-BAA1) \u2014 incl. MOMRP-area and musculoskeletal 'optimize human performance for injury prevention'",
+      "url": "https://www.grants.gov/search-results-detail/343725",
+      "agency": "Defense Health Agency / U.S. Army Medical Research and Development Command (CDMRP/eBRAP administered)",
+      "amount": "Not stated (no ceiling or floor listed).",
+      "summary": "RESEARCH-ONLY, NOT PRODUCT DEVELOPMENT: the BAA says funded projects 'must be for basic and applied research... rather than focusing on development of a specific system or hardware solution', and most Research Areas of Interest are injury/disease-focused (combat casualty care, TBI, sensory, musculoskeletal). Low-probability fit; only worth a pre-proposal if Vybe teams with an academic/clinical research partner on a human-performance study (e.g., MSK injury-prevention via HRV/load monitoring, or the midlife women's-health item on 'sleep, mental health, and performance in operational settings'). Pre-proposal is free and can precede SAM; award needs SAM.",
+      "open_date": null,
+      "close_date": "2027-09-30",
+      "status": "open",
+      "days_left": 353,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Unrestricted (any entity type). Pre-proposal required via eBRAP, accepted any time; full proposal only by invitation through Grants.gov (needs SAM/UEI).",
+      "documents": [
+        "eBRAP pre-proposal/pre-application",
+        "If invited: full proposal via Grants.gov per 'General Submission Instructions'",
+        "SAM/UEI and Grants.gov registration before full proposal"
+      ],
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (any entity type). Watch: Research-only, not product development.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": "2027-09-30"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-design-testing-a",
@@ -1526,13 +1987,20 @@
       "open_date": "2024-11-22",
       "close_date": "2027-12-23",
       "status": "open",
-      "days_left": 439,
+      "days_left": 437,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-12-23"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-optimization-r33",
@@ -1545,13 +2013,20 @@
       "open_date": "2024-11-22",
       "close_date": "2027-12-23",
       "status": "open",
-      "days_left": 439,
+      "days_left": 437,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2027-12-23"
     },
     {
       "id": "grants.gov-broad-agency-announcement-baa-for-extramural-biomedical-and-human-per",
@@ -1564,13 +2039,20 @@
       "open_date": "2023-07-27",
       "close_date": "2028-07-31",
       "status": "open",
-      "days_left": 660,
+      "days_left": 658,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2028-07-31"
     },
     {
       "id": "curated-ussocom-baa-for-extramural-biomedical-and-human-performance-r-d-ht9425-2",
@@ -1583,7 +2065,7 @@
       "open_date": null,
       "close_date": "2028-07-31",
       "status": "open",
-      "days_left": 660,
+      "days_left": 658,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1595,7 +2077,14 @@
         "Active SAM.gov registration and UEI before the Grants.gov full submission",
         "Human-subjects protocol for OHRO/HRPO review if selected"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Organizations only, including national, international, for-profit, non-profit, public and private (FFRDCs cannot be prime). Watch: The wearables topic asks for a device that can 'provide real-time feedback on a display screen' and 'display time'.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": "2028-07-31"
     },
     {
       "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-3-commercial-so",
@@ -1608,7 +2097,7 @@
       "open_date": null,
       "close_date": "2028-09-30",
       "status": "open",
-      "days_left": 721,
+      "days_left": 719,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1620,7 +2109,14 @@
         "SAM.gov registration (UEI, CAGE) before award",
         "S&T Protection appendix items referenced in the MAA"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any company offering an innovative commercial solution in the CHEERS technical areas (human performance, bioengineering, warfighter medical . Watch: Sam.gov registration needed before any award; sam.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": "2028-09-30"
     },
     {
       "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
@@ -1633,13 +2129,20 @@
       "open_date": "2026-06-04",
       "close_date": "2029-02-09",
       "status": "open",
-      "days_left": 853,
+      "days_left": 851,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2029-02-09"
     },
     {
       "id": "curated-arpa-h-proactive-health-office-pho-mission-office-iso-arpa-h-sol-24-106",
@@ -1652,7 +2155,7 @@
       "open_date": null,
       "close_date": "2029-03-05",
       "status": "open",
-      "days_left": 877,
+      "days_left": 875,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -1663,7 +2166,14 @@
         "If encouraged, a full proposal: technical & management volume, task description, cost proposal narrative and workbook, admin & national policy document",
         "SAM.gov registration and UEI before the proposal (not before the summary)"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: All responsible sources, including for-profit companies. Watch: Long shot: arpa-h.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 14.0,
+      "travel": false,
+      "next_date": "2029-03-05"
     },
     {
       "id": "grants.gov-sbir-sttr-commercialization-readiness-pilot-crp-program-parent-sb1-cl",
@@ -1676,13 +2186,20 @@
       "open_date": "2026-05-28",
       "close_date": "2029-04-05",
       "status": "open",
-      "days_left": 908,
+      "days_left": 906,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2029-04-05"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-expansi",
@@ -1695,13 +2212,20 @@
       "open_date": "2026-06-18",
       "close_date": "2029-05-25",
       "status": "open",
-      "days_left": 958,
+      "days_left": 956,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2029-05-25"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-develop",
@@ -1714,13 +2238,20 @@
       "open_date": "2026-08-19",
       "close_date": "2029-05-26",
       "status": "open",
-      "days_left": 959,
+      "days_left": 957,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Public",
+      "eligibility": "Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Private institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Public and State controlled institutions of higher education. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2029-05-26"
     },
     {
       "id": "grants.gov-readiness-and-recreation-initiative-rari-recurring-5-year-notice-p26a",
@@ -1733,13 +2264,20 @@
       "open_date": "2026-06-08",
       "close_date": "2030-11-30",
       "status": "open",
-      "days_left": 1512,
+      "days_left": 1510,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: State governments. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2030-11-30"
     },
     {
       "id": "grants.gov-continuing-human-enabling-enhancing-restoring-and-sustaining-fa238424",
@@ -1752,13 +2290,20 @@
       "open_date": "2025-08-07",
       "close_date": "2044-08-22",
       "status": "open",
-      "days_left": 6526,
+      "days_left": 6524,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligibility\"",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Unrestricted (i.e., open to any type of entity above), subject to any clarification in text field entitled \"Additional Information on Eligib. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2044-08-22"
     },
     {
       "id": "curated-500-global",
@@ -1780,7 +2325,14 @@
         "Application",
         "Pitch deck"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Early-stage across sectors. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-aarp-agetech-collaborative-startup-accelerator",
@@ -1802,7 +2354,14 @@
         "A clear statement of how the product serves people aged 50 and over",
         "Product stage and current traction"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Startups building technology that improves life as people age. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ai-for-good-innovation-factory-itu-un-monthly-online-pitching-sessions-2",
@@ -1827,7 +2386,14 @@
         "Company URL / social links",
         "Answers on the AI's role and the global challenge addressed"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: The application form's selection criteria: AI is a core component of the product. Watch: 6-month operating gate.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-arpa-h-open-broad-agency-announcement-mission-office-isos",
@@ -1850,7 +2416,14 @@
         "SAM.gov registration with a UEI before any award",
         "Full proposal only if invited"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to for-profit small businesses among others. Watch: Four doors, and this board only had one.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-aws-activate",
@@ -1872,7 +2445,14 @@
         "AWS account ID",
         "Company details; accelerator/VC affiliation code for the higher tiers"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Founders tier: self-funded and bootstrapped, no affiliation needed. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-activate-fellowship",
@@ -1895,7 +2475,14 @@
         "Technical proposal and two-year research plan",
         "References"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Scientists/engineers with 4+ years post-baccalaureate research or engineering experience. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-african-medical-devices-regulatory-harmonization-program-for-fd-23-01",
@@ -1914,7 +2501,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-air-force-apex-free-sbir-sttr-navigation-and-consulting-parallax-advance",
@@ -1937,7 +2531,14 @@
         "The DAF topic or release you are targeting",
         "For STTR: whether they can match you with a research institution partner"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses, startups and academics working on Department of the Air Force SBIR/STTR proposals. Watch: Stated as free, which is the difference from the fast row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 10.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-alabama-sbir-sttr-match",
@@ -1959,7 +2560,14 @@
         "Federal SBIR/STTR award notice",
         "Alabama business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Alabama-based small business holding a federal SBIR/STTR award. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology",
@@ -1981,7 +2589,14 @@
         "Letter of inquiry",
         "Project narrative"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Usually academic or nonprofit applicants. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 12.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-algolia-startup-program",
@@ -2002,7 +2617,14 @@
       "documents": [
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Less than 7 years old. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-america-s-seed-fund-nsf-project-pitch",
@@ -2025,7 +2647,14 @@
         "SAM.gov UEI registration (start early \u2014 weeks of lead time)",
         "SBIR.gov company registration (SBC control number)"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US small business. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-amplitude-startup-scholarship",
@@ -2047,7 +2676,14 @@
         "Online application",
         "Funding and headcount details"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Less than $10M raised. Watch: Fewer than 20 employees.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-analog-devices-free-sample-program",
@@ -2069,7 +2705,14 @@
         "myAnalog account on company domain",
         "Sample request with project info"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Registered myAnalog account with a company or university email domain (no Gmail/Yahoo). Watch: Company email domain required.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-anthropic-claude-startup-program",
@@ -2090,7 +2733,14 @@
       "documents": [
         "Company details and a description of what you are building with the API"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Anyone can JOIN the program, with or without VC backing. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-antler",
@@ -2112,7 +2762,14 @@
         "Application",
         "Founder background"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Pre-seed and day-zero founders. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-aptible-startup-program-hipaa-capable-hosting",
@@ -2134,7 +2791,14 @@
         "Startup Program application (linked from the pricing page)",
         "Company and product description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: 'Startup or YC'. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-arkansas-sbir-matching-grant",
@@ -2156,7 +2820,14 @@
         "Federal Phase I award notice",
         "Arkansas business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Arkansas-based small business with a federal Phase I award. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-arm-flexible-access-for-startups",
@@ -2180,7 +2851,14 @@
         "Funding raised to date and annual revenue (both under the thresholds)",
         "Short description of the intended SoC or prototype"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Privately owned company with no more than $50M total funding raised and no more than $5M annual revenue (both thresholds were recently raise. Watch: The silicon lane, not a cash lane.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-army-open-solicitation-aos-w9128z-25-s-a002-active-capability-gap-submis",
@@ -2205,7 +2883,14 @@
         "SAM.gov registration and CAGE before award",
         "Non-traditional defense contractor self-identification (for OT eligibility)"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any company with a commercial or R&D solution to a posted Army Active Capability Gap. Watch: This is a contract/ot door, not a grant, and you need sam.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-berkeley-skydeck",
@@ -2228,7 +2913,14 @@
         "Cap table",
         "Application through the cohort cycle"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-brinc",
@@ -2251,7 +2943,14 @@
         "Prototype status",
         "Application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Hardware and IoT startups. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-building-communities-of-recovery-ti-27-004",
@@ -2270,7 +2969,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-cdmrp-combat-readiness-medical-research-program-crrp",
@@ -2294,7 +3000,14 @@
         "SAM.gov UEI + Grants.gov registration",
         "Full research plan mapped to a named FY26 focus area"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Pre-application through eBRAP is mandatory before the full application. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-cdmrp-peer-reviewed-medical-research-program-prmrp",
@@ -2317,7 +3030,14 @@
         "SAM.gov UEI + Grants.gov registration",
         "Research plan matched to a congressionally-set topic area for the year"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Pre-application through eBRAP required. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ces-2027-eureka-park",
@@ -2339,7 +3059,14 @@
         "Eureka Park application",
         "A demo-ready unit and a booth budget"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Company 5 years old or less, Series B or earlier, with a demo-ready consumer product. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-cms-blue-button-2-0-api-production-access",
@@ -2362,7 +3089,14 @@
         "Working app on synthetic data",
         "Production-access requirements per the CMS production access user guide (privacy policy, terms, app review)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any developer can create a sandbox account. Watch: No money. this is a data-access partnership on the health intelligence roadmap.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-cms-health-tech-ecosystem-pledge-patient-facing-app-friend-of-the-ecosys",
@@ -2385,7 +3119,14 @@
         "Choice of pledge category",
         "A short description of the planned FHIR/SMART on FHIR integration and the target CMS Aligned Network"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Voluntary. Watch: A pledge is a public commitment to ship real fhir integrations, not a grant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-caelestinus-digital-health-interoperability-and-fhir-incubator-2027-batc",
@@ -2408,7 +3149,14 @@
         "Team details and idea or product description",
         "Pre-offer interview if shortlisted"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to 'individuals with foggy ideas as well as teams with validated products'. Watch: Deadline for the 2027 batch not stated.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-carta-launch-free-cap-table",
@@ -2431,7 +3179,14 @@
         "Certificate of incorporation",
         "Existing equity documents to upload"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Startups with under 25 stakeholders and less than $1M raised. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-case-western-reserve-university-law-school-ip-clinic-uspto-law-school-cl",
@@ -2454,7 +3209,14 @@
         "Invention/brand description",
         "Clinic intake forms"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Clients from Northern Ohio only (Akron qualifies geographically). Watch: Acceptance at clinic's discretion.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-cloudflare-for-startups",
@@ -2478,7 +3240,14 @@
         "Company website and matching-domain email",
         "LinkedIn page (for the $25K tier)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Building a software product or service with an active website. Watch: Requires a credit card on file, and the base tier is only $5k.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-controlled-clinical-trials-on-long-term-effects-of-nutritional-interv",
@@ -2497,7 +3266,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-corti-for-startups-healthcare-ai-api-credits",
@@ -2518,7 +3294,14 @@
       "documents": [
         "Online application: company description, use case, planned use of the Corti platform"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Early-stage companies, pre-seed through Series B, building in healthcare, clinical workflows or adjacent life sciences. Watch: Small and clinical-leaning.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-costco-supplier-inclusion-program-supplier-intake-form",
@@ -2540,7 +3323,14 @@
         "Online intake form (company ownership/operation, product details)",
         "Product and company information; samples if a buyer requests them (not stated on the page)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: The intake form first asks whether the company is owned and operated in the US. Watch: Rolling intake only; no guarantee of business.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-creative-destruction-lab-cdl-manufacturing",
@@ -2562,16 +3352,23 @@
         "Application during the annual cycle",
         "Technical and commercial objectives"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Science and technology ventures. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-dav-patriot-boot-camp",
       "source": "curated",
       "name": "DAV Patriot Boot Camp",
-      "url": "https://patriotbootcamp.org/patriot-boot-camp/",
+      "url": "https://patriotbootcamp.org/",
       "agency": "DAV (Disabled American Veterans)",
       "amount": "No cash for attending \u2014 a free three-day programme, mentorship and a year-round community. Each cohort ends in the DAV Patriots Pitch contest; the spring 2026 cohort competed for $10,000 in cash prizes, described as non-dilutive.",
-      "summary": "FREE, AND THE ELIGIBILITY BAR IS THE LOWEST OF ANY VETERAN PROGRAMME ON THIS BOARD \u2014 the revenue and capital tests are explicitly preferences rather than requirements, which is unusual. Registration is first come, first served among applicants who meet the criteria. NO WINDOW IS CURRENTLY POSTED, which is why this row carries no close date: the 2026 spring cohort ran 10-12 June in Salt Lake City with applications closing 18 May or when seats filled, and the site now says to join the mailing list to hear when the next one opens. Cohorts run several times a year, so the action today is joining that list rather than waiting for a deadline. The curriculum is practical \u2014 AI for founders, funding and financial management, storytelling and pitch, one-to-one mentor sessions \u2014 and the pitch contest at the end is the cash. Three days in person, so travel is on you unless they say otherwise.",
+      "summary": "WINTER '27 COHORT IS OPEN: Feb 17-19, 2027 in Cincinnati, OH (about 4 hours from Akron). The homepage banner reads 'Applications open for DAV Patriot Boot Camp, Feb. 17-19, 2027 | Cincinnati, Ohio' and the Winter '27 registration form is live. No close date is posted; registration is first come, first served, so register now. FREE, and the eligibility bar is the lowest of any veteran programme on this board: revenue and capital raised are preferences, not gates. Curriculum: AI for founders, funding, storytelling and pitch, and 1:1 mentors. The cohort ends in the DAV Patriots Pitch contest for non-dilutive cash (the spring 2026 cohort competed for $10,000; the Winter '27 pool is not stated). DAV covers programming, meals and local transport; travel and lodging are on you.",
       "open_date": null,
       "close_date": null,
       "status": "rolling",
@@ -2586,7 +3383,14 @@
         "EIN and website (preferred, not required)",
         "Availability for three consecutive days in person"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A member of the veteran or military-connected community, spouses included, who owns or founded a for-profit business \u2014 franchisees and non-p. Watch: Winter '27 cohort is open.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "grants.gov-digital-health-technology-and-reciprocal-innovation-to-improve-clinic",
@@ -2605,7 +3409,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-digitalocean-startups-formerly-hatch",
@@ -2627,7 +3438,14 @@
         "DigitalOcean team account (company email + credit card)",
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Raised $10M or less. Watch: Credit card required on the account, and gpu droplets are not covered.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-dow-dod-mentor-prot-g-program-prot-g-application",
@@ -2652,7 +3470,14 @@
         "For reimbursed agreements: endorsement letter from a DoD program manager plus the component OSBP's endorsement and funding request",
         "SAM.gov registration (in practice, for federal contract eligibility)"
       ],
-      "sam": "later"
+      "sam": "later",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Prot\u00e9g\u00e9 must be an SBA-certified small disadvantaged business, a woman-owned small business (self-certified per DFARS), a service-disabled v. Watch: You must find your own mentor.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-elevenlabs-grants-startup-voice-ai-credits",
@@ -2674,7 +3499,14 @@
         "Online application from a business email",
         "Description of the product and its monetization or business strategy"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Startups or companies with fewer than 25 employees at the time of application. Watch: Under-25-employee gate.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-emergent-ventures-mercatus-center-george-mason-university",
@@ -2696,7 +3528,14 @@
         "Online application form (short written proposal)",
         "Description of the idea and how the money would be used"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Anyone 13 or older, anywhere. Watch: No stated amount and highly selective.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 12.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-extreme-tech-challenge-xtc",
@@ -2719,7 +3558,14 @@
         "A statement of which UN Sustainable Development Goal the product addresses",
         "Evidence against the published criteria: quality, fit to the SDG, long-term viability"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to any company legally incorporated or registered in an eligible country, across 120+ countries and all funding stages, submitting a pr. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "grants.gov-fiscal-year-2027-regional-nutrition-hubs-hrsa-27-019",
@@ -2738,7 +3584,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-freed-fellowship-grant",
@@ -2760,7 +3613,14 @@
         "Business description against the five-part framework: market, core narrative, community, differentiator, how you make money",
         "Evidence the business already exists and is trading or building"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A US business owner with an existing business. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 12.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-fuzehub-jeff-lawrence-manufacturing-grants",
@@ -2783,7 +3643,14 @@
         "Project plan pairing the nonprofit with Vybe as the manufacturer partner",
         "Budget and NY economic-impact statement"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A NY nonprofit or university applies, partnered with a NY manufacturer. Watch: Residency gate (NY nonprofit); Vybe is in Ohio; A university or nonprofit must be the applicant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-galaxy-grants",
@@ -2805,7 +3672,14 @@
         "Short application",
         "Business description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Women and minority business owners. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-google-for-startups-cloud-program",
@@ -2828,7 +3702,14 @@
         "Funding stage evidence (pre-Series A)",
         "Google Cloud billing account"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Start tier: early-stage, no funding required. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-heal-initiative-optimization-of-therapeutic-medical-devices-through-t",
@@ -2847,7 +3728,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-hlth-usa-startup-pitch-competition",
@@ -2870,7 +3758,14 @@
         "Proof of <$8M raised and <5 years old",
         "Application during the event cycle"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Under 5 years old and less than $8M raised. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-halcyon-fellowships-year-round-eligibility-form-us-health-accelerator-tr",
@@ -2893,7 +3788,14 @@
         "If invited: second-round application within 2 weeks",
         "Finalist pitch to selection committee"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: At least MVP stage. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-hello-alice-rolling-grant-cycles",
@@ -2915,7 +3817,14 @@
         "Hello Alice business profile",
         "Cycle-specific application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-hello-tomorrow-global-challenge",
@@ -2938,7 +3847,14 @@
         "Technical description of the deep-tech core",
         "Team information"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Deep tech founders, 120+ countries. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ifw-by-honeycomb-universal-funding-grant-application",
@@ -2960,7 +3876,14 @@
         "Business profile: stage, industry, revenue, ownership",
         "The reusable answers IFW's own grant planner asks for"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to small business owners and entrepreneurs. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ivmf-military-founders-lab",
@@ -2984,7 +3907,14 @@
         "Revenue for the last 12 months, or evidence of confirmed capital if pre-revenue",
         "Choice of cohort track"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Veterans, active duty, reservists, guard, and military/veteran spouses, partners, adult dependents or caregivers, with documentation of hono. Watch: Training, not money.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-illinois-sbir-sttr-matching-program",
@@ -3006,7 +3936,14 @@
         "Federal Phase I award notice",
         "Illinois business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 1,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Illinois-based small business. Watch: Residency gate (Illinois); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-indiana-sbir-sttr-match",
@@ -3028,7 +3965,14 @@
         "Federal Phase I award notice",
         "Indiana business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 1,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Indiana-based small business. Watch: Residency gate (Indiana); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-innovation-fund-northeast-ohio",
@@ -3052,7 +3996,14 @@
         "A pitch presentation to their outline",
         "Evidence of the dollar-for-dollar match, uncommitted and available"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A technology company located in Ohio, and staying in Ohio, with its headquarters in the state. Watch: Confirm the structure before spending an evening on this; A university or nonprofit must be the applicant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-integrating-machine-learning-with-computational-fluid-dynamics-models",
@@ -3071,7 +4022,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-intercom-early-stage-startup-program",
@@ -3092,7 +4050,14 @@
       "documents": [
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Up to $10M in funding. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-interdisciplinary-research-networks-to-advance-biomedical-research-on",
@@ -3111,7 +4076,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-iowa-sbir-sttr-support",
@@ -3133,7 +4105,14 @@
         "Federal Phase I award notice",
         "Iowa business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Iowa-based small business. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-kentucky-sbir-sttr-matching-funds",
@@ -3155,7 +4134,14 @@
         "Federal Phase I award notice",
         "Kentucky business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 1,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Kentucky-based small business. Watch: Residency gate (Kentucky); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-kickstarter-x-google-next-wave-fund-kickstarter-forward-funds",
@@ -3178,7 +4164,14 @@
         "Kickstarter project plan (the campaign must launch within 6 months of selection)",
         "US bank account for the project"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Fewer than 20 full-time employees. Watch: Fewer than 20 full-time employees, and the $10k is paid only if the kickstarter campaign hits its goal (all-or-nothing).",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-kinetic-health-care-innovation-in-motion",
@@ -3200,30 +4193,14 @@
         "Company description and stage",
         "What you want from the programme, stated as services rather than money"
       ],
-      "sam": "none"
-    },
-    {
-      "id": "curated-launch-ny-seed-fund",
-      "source": "curated",
-      "name": "Launch NY Seed Fund",
-      "url": "https://launchny.org/",
-      "agency": "Launch NY (Buffalo, NY)",
-      "amount": "$25K-$100K",
-      "summary": "Rolling. The most active seed fund in NY State by deal count \u2014 small checks, but explicitly hardware-friendly.",
-      "open_date": null,
-      "close_date": null,
-      "status": "rolling",
-      "days_left": null,
-      "days_until_open": null,
-      "pillar": 2,
-      "kind": "grant",
-      "eligibility": "High-growth startup in Upstate NY; hardware/robotics/IoT and healthtech are named focus sectors",
-      "documents": [
-        "Pitch deck",
-        "Financial projections",
-        "Evidence of Upstate NY operations"
-      ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Healthcare and life-science startups in Ohio and the wider Midwest. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-lightship-bootcamp-akron-nov-16-18-2026-backed-by-jobsohio",
@@ -3246,7 +4223,14 @@
         "Company basics and stage (the form content is not shown publicly)",
         "Availability for all 3 in-person days in Akron"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Early-stage founders in Ohio (first-time founders, small business owners or people exploring a new venture). Watch: No cash, and the cohort closes when full.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-luminate-ny-accelerator",
@@ -3269,7 +4253,14 @@
         "Willingness to relocate to Rochester for the six-month program",
         "Cap table and funding history"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Optics, photonics, imaging and lasers (OPI+L) startups. Watch: Residency gate (Rochester); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-masschallenge-bae-systems-deep-tech-accelerator",
@@ -3292,7 +4283,14 @@
         "Technical description of the sensing/processing core",
         "Dual-use case"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Dual-use defense hardware. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-maternal-and-child-health-mch-nutrition-training-program-hrsa-27-036",
@@ -3311,7 +4309,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-mayo-clinic-platform-accelerate",
@@ -3335,7 +4340,14 @@
         "Project proposal (data use / validation plan)",
         "Contracting documents"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Health-technology companies. Watch: Fee, equity and contract terms are not published on the official page; ask before signing, because the program involves contracting.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 14.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-microsoft-for-startups-founders-hub",
@@ -3357,7 +4369,14 @@
         "Company details and a short product description",
         "No funding proof required \u2014 the most accessible of the three"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: No VC backing, no accelerator membership, no formal incorporation documents -- a business idea and a professional email address. Watch: Start here. $25k.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-mixpanel-for-startups",
@@ -3379,7 +4398,14 @@
         "Mixpanel account",
         "Online form (select 'I do not have a referral partner')"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Incorporated less than 5 years ago. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-mongodb-for-startups",
@@ -3403,7 +4429,14 @@
         "LinkedIn page",
         "Description of the product"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Less than 7 years old and Series A or earlier. Watch: The credit amount is not published.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-murata-free-sample-request-my-murata",
@@ -3425,7 +4458,14 @@
         "my Murata account (company email)",
         "Per-part sample requests"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: my Murata membership with a company email address. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-nist-mep-manufacturing-voucher",
@@ -3447,7 +4487,14 @@
         "Intake call with your state MEP center",
         "Scope of the engineering/DFM work requested"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Routed through your state MEP center, not paid directly to the company. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-nvidia-inception",
@@ -3471,7 +4518,14 @@
         "Pitch deck: mission, product, team, traction",
         "At least one employed developer on staff"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Incorporated, <10 years old, a website and at least one developer. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ny-ventures-pre-seed-seed-matching-fund",
@@ -3495,7 +4549,14 @@
         "Cap table showing <$2M dilutive raised to date",
         "NY State registration + evidence of a C-suite seat in-state"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: NY-registered, <$2M dilutive raised to date, >=1 C-suite employee in-state. Watch: Residency gate (NY-registered); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 8.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-nys-ssbci-technical-assistance",
@@ -3518,7 +4579,14 @@
         "Proof of VSB (<10 employees) or SEDI-owned status",
         "Description of the legal/accounting/financial help you need"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: NY very small business (<10 employees) or SEDI-owned (<100 employees). Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-national-biomedical-research-centers-p50-clinical-trial-optional-par-",
@@ -3537,7 +4605,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-new-mexico-sbir-match",
@@ -3559,7 +4634,14 @@
         "Federal Phase I award notice",
         "New Mexico business registration"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: New Mexico-based small business. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-notion-for-startups-direct-track",
@@ -3582,7 +4664,14 @@
         "Live company website",
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Non-paying Notion customer. Watch: Under 10 employees gets only 1 month.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-centers-of-excellence-jumpstart-backed-by-ohio-third-frontier",
@@ -3604,7 +4693,14 @@
         "Short intake form describing the company and what you need",
         "A clear statement of which sector centre fits \u2014 HealthTech, for Vybe"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Ohio tech founders. Watch: The front door to the ohio system, and the answer to the tvsf problem on this board.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-fast-program-sbir-sttr-assistance-ohio-aerospace-institute",
@@ -3627,7 +4723,14 @@
         "A short description of the technology and the agencies of interest",
         "The topic or solicitation you are considering, if you have one"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Ohio small businesses pursuing SBIR or STTR. Watch: The missing half of this board's biggest lane.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 10.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-mbda-business-center",
@@ -3650,7 +4753,14 @@
         "Evidence of minority ownership or control",
         "A specific ask \u2014 the intake form has a services checkbox including Grants and Financing"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A Minority Business Enterprise as 15 C.F.R. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-minority-business-assistance-centers-mbac",
@@ -3673,7 +4783,14 @@
         "Ownership documents showing 51%+ and how long it has been held",
         "Ohio residency evidence for the qualifying owner, if pursuing certification"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: GATE IS TIGHTER THAN THE FEDERAL ONE. Watch: Free and explicitly open to startups.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-patent-pro-bono-program-uspto-patent-pro-bono-network",
@@ -3697,7 +4814,14 @@
         "Household income info",
         "Invention description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Ohio resident. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-ohio-third-frontier-tvsf-phase-2-start-up-fund",
@@ -3722,7 +4846,14 @@
         "One-page letter of support",
         "Ohio Secretary of State registration and a 12-month-or-longer lease on an Ohio facility"
       ],
-      "sam": "check"
+      "sam": "check",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: BLOCKED FOR VYBE AS IT STANDS. Watch: The biggest ohio award on the board and the one vybe cannot apply for today.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 15.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-ohiohealth-new-ventures-and-business-incubation-nvbi-external-new-ventur",
@@ -3744,7 +4875,14 @@
         "Online form on the NVBI page (company and solution summary)",
         "Follow-up deck on request"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to external companies that (1) align with OhioHealth's mission, vision, values and strategic focus areas. Watch: No cash, and the focus is 'healthcare it or services'.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-onshape-startup-program",
@@ -3765,7 +4903,14 @@
       "documents": [
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: 'Qualifying startups'. Watch: New customers only.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-penfed-foundation-veteran-entrepreneur-program-accelerator-incubator",
@@ -3789,7 +4934,14 @@
         "Founder bio covering military and professional background",
         "Evidence of market validation for the Accelerator track"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: A veteran or military spouse who is the MAJORITY OWNER of the business. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-pitchmi",
@@ -3812,7 +4964,14 @@
         "Pitch deck",
         "Application during the cycle"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: MICHIGAN ONLY \u2014 Michigan-based startups. Watch: Residency gate (MICHIGAN); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-posthog-for-startups",
@@ -3835,7 +4994,14 @@
         "Upgrade to paid plan (usage-billed)",
         "Short startup application form"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Company under 2 years old. Watch: Must sign up to a paid (usage-based) plan first, then apply.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-rwjf-pioneering-ideas-exploring-the-future-to-build-a-culture-of-health",
@@ -3858,7 +5024,14 @@
         "A statement of the idea's relevance to a future culture of health, not a product description",
         "Budget with direct and indirect costs for the whole grant period"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open year-round, rolling, with a brief proposal first. Watch: Read the odds before spending a week on it.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 13.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-renesas-free-sample-request",
@@ -3880,7 +5053,14 @@
         "MyRenesas account on company domain",
         "Sample request form"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: MyRenesas account with an official company email address (no gmail/hotmail/yahoo). Watch: Company email domain required.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-retool-for-startups",
@@ -3902,7 +5082,14 @@
         "Retool org on monthly Team/Business plan (card on file)",
         "Startup application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Bootstrapped, angel, debt-funded, pre-seed, seed or Series A. Watch: Card required.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-rev-ithaca-prototyping-hardware-accelerator",
@@ -3924,7 +5111,14 @@
         "Prototype or detailed build plan",
         "Team commitment for the 10-week cohort"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-sbir-sttr-reauthorized-through-2031-program-status",
@@ -3947,7 +5141,14 @@
         "SBIR.gov company registration for your SBC control number",
         "Confirm the specific agency solicitation has reopened post-lapse before writing"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: Context row, not an application.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-solidworks-for-startups-program",
@@ -3969,7 +5170,14 @@
         "Online application (company info, product description)",
         "Company website/email"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Hardware startup designing and building a physical product to sell. Watch: Not open if vybe (or its contract designer under vybe's name) already holds a solidworks license.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-stmicroelectronics-free-sample-request",
@@ -3991,7 +5199,14 @@
         "my.st.com account on a company email domain",
         "Part numbers with the Free badge, up to the per-part quantity"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: my.st.com account registered on a valid business or university email domain. Watch: Business email domain required.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-schmidt-sciences",
@@ -4012,7 +5227,14 @@
       "documents": [
         "Invitation only \u2014 no open application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Academic researchers, nonprofits, think tanks. Watch: A university or nonprofit must be the applicant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 12.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-sengo-monthly-pitch-competition",
@@ -4035,7 +5257,14 @@
         "Short in-platform application",
         "Pitch deck (required)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Runs monthly on a rolling basis. Watch: Only one free spot per cycle; paid members ($30/mo) get priority.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-sentry-for-startups",
@@ -4057,7 +5286,14 @@
         "Free Sentry account (org slug)",
         "Website, founder names, contact email, founding date"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Founded in the last 2 years. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-single-source-for-the-continuation-of-the-physiology-of-the-weight-re",
@@ -4076,7 +5312,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-sky-s-the-limit-friends-family-fund-monthly-2-500-startup-grant",
@@ -4102,7 +5345,14 @@
         "Pitch cover photo",
         "Availability to pitch live if you become a finalist"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Based in the US (also Canada/UK). Watch: The winner is picked partly by popularity.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-small-business-translator-medtech-and-digital-health-technologies-for",
@@ -4121,7 +5371,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 3,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-small-instruments-and-modern-equipment-for-shared-use-biomedical-rese",
@@ -4140,7 +5397,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-solid-edge-for-startups-siemens",
@@ -4162,7 +5426,14 @@
         "Online application",
         "Proof of legal entity / incorporation date"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Design firms and product manufacturers. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-south-park-commons",
@@ -4184,7 +5455,14 @@
         "Application",
         "Technical background"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Pre-idea and early-stage technical founders. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-startup-prize-health",
@@ -4207,7 +5485,14 @@
         "Pitch deck",
         "Track selection (FDA vs non-FDA)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Health startups. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-trish-catalyst-grants-program-nasa-funded-translational-research-institu",
@@ -4231,7 +5516,14 @@
         "Step-1 proposal (LOI-style) selecting Tier 1 or 2",
         "If invited: Project Description, Biosketches, Facilities/Resources, Current & Pending, Management Approach, Data Management Plan, Statistical Approach, Budget + justification, Letters of collaboration, human-subjects plan/IRB"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: All categories of U.S. Watch: Priority topics are narrow, sam.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-target-accelerators-supplier-intake-form-route-into-target-takeoff",
@@ -4253,7 +5545,14 @@
         "Supplier Intake Form (brand name, contact email, business details)",
         "Resubmissions as milestones are reached"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US-based companies only ('not currently supporting companies that are located internationally'). Watch: No application and no guarantee.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-telehealth-nutrition-services-network-grant-program-hrsa-27-044",
@@ -4272,7 +5571,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-terra-startup-accelerator-wearable-health-data-api-credits",
@@ -4296,7 +5602,14 @@
         "Why health data is essential (what breaks without it)",
         "Product stage"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Early-stage teams whose product depends on health data. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-the-medtech-conference-start-up-pitch-pitch-pour",
@@ -4320,7 +5633,14 @@
         "Deck of at most 15 slides: vision, the ask and use of funds, problem with military relevance, solution, current status with preliminary data, commercial and government path",
         "Budget for attendance \u2014 the pitch slot is discounted, not free"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Raised under $10M since inception. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-the-rosie-network-service2ceo",
@@ -4342,7 +5662,14 @@
         "Proof of military affiliation (veteran, transitioning service member or military spouse)",
         "Chapter application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Veterans, transitioning service members and military spouses. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-together-ai-startup-accelerator",
@@ -4363,7 +5690,14 @@
       "documents": [
         "Online application form"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Tiered by amount raised. Watch: Ai-native focus.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-translational-centers-using-microphysiologic-systems-for-infectious-d",
@@ -4382,7 +5716,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-uc-berkeley-citris-foundry",
@@ -4404,7 +5745,14 @@
         "UC Berkeley affiliation or sponsoring relationship",
         "Technical project description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-usopc-performance-innovation-industry-partner-intake-team-usa",
@@ -4427,7 +5775,14 @@
         "One-page DevKit/SDK overview (recommended)",
         "Validation data or a pilot plan (recommended)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to 'individuals and small businesses to Fortune 500 companies' with products, services or inventions of interest to Team USA athletes, . Watch: No cash; intake is an expression of interest, not a competition.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 2.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-university-hospitals-ventures-uh-partner-pilot-and-collaboration-submiss",
@@ -4448,7 +5803,14 @@
       "documents": [
         "Online 'UH Partner' form (solution description)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any company with 'a solution that University Hospitals could pilot' or a technology that could benefit from collaboration with UH. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-university-of-akron-research-foundation-uarf-i-corps-community-teams-nex",
@@ -4471,7 +5833,14 @@
         "Commitment to 6 virtual meetings and 21+ customer interviews",
         "Optional: Starting Line Step 1 form (status of product/service idea)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Community teams need at least one entrepreneur as Entrepreneurial Lead, and \"should be based in Northeast Ohio, but need not be affiliated w. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-university-of-akron-school-of-law-trademark-clinic-uspto-law-school-clin",
@@ -4493,7 +5862,14 @@
         "Email inquiry to trademarkclinic@uakron.edu",
         "Marks, logos and goods/services description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Clients from anywhere in the US. Watch: Trademarks only.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "grants.gov-utilizing-real-world-data-and-algorithmic-analyses-to-assess-post-mar",
@@ -4512,7 +5888,14 @@
       "kind": "grant",
       "eligibility": "",
       "documents": [],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: eligibility not stated. Watch: SAM.gov registration first.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-va-lighthouse-api-program-patient-health-api-fhir-sandbox-and-production",
@@ -4536,7 +5919,14 @@
         "A 30\u201360 minute demo to the Lighthouse team",
         "Any changes VA requires after review"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Any developer can get sandbox access at once. Watch: No money, but it is on the product roadmap.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-va-pathfinder-vha-innovation-ecosystem-external-innovator-submission",
@@ -4560,7 +5950,14 @@
         "Evidence or materials showing need or value (data, demo, prototype photos)",
         "A clear collaboration ask and the stage of the solution"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: External innovators, companies and individuals with a novel solution relevant to Veterans' health. Watch: No money, and a submission that 'requires va funding' is listed as a roadblock.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-verizon-small-business-digital-ready",
@@ -4582,7 +5979,14 @@
         "Completed Verizon Digital Ready coursework",
         "Hello Alice profile"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses that complete Verizon's free digital-skills coursework. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-veterans-business-battle-rice-university",
@@ -4606,7 +6010,14 @@
         "Business plan and financials for the investor selection committee",
         "Willingness to travel to Houston for the two-day final"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US military veteran-led startups. Watch: Corrected 1 oct, and the correction is against this board's own row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-vive-2027-startup-pitch-competition",
@@ -4630,7 +6041,14 @@
         "Total funding raised, under $8M",
         "A three-minute pitch, and answers ready for three minutes of questions"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Startups less than FIVE YEARS OLD that have raised under $8 MILLION. Watch: The sister event to the hlth usa pitch already on this board.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": null
     },
     {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
@@ -4653,7 +6071,14 @@
         "Concept paper",
         "High-risk, high-impact technical rationale"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Usually routed through a university. Watch: A university or nonprofit must be the applicant.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-warrior-rising-vetrepreneur-grants",
@@ -4676,7 +6101,14 @@
         "Completion of Warrior Rising training track",
         "Business plan"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: US military veterans and their immediate family. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-wisconsin-sbir-advance",
@@ -4699,7 +6131,14 @@
         "Wisconsin business registration",
         "Commercialization plan"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 1,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Wisconsin-based small business. Watch: Residency gate (Wisconsin); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-women-veterans-giving-small-business-award",
@@ -4721,7 +6160,14 @@
         "Proof of veteran status",
         "Business description"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Women veteran founders. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-women-s-business-development-council-grants",
@@ -4744,7 +6190,14 @@
         "Proof of women-owned status",
         "Business plan / financials by tier"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: CONNECTICUT ONLY \u2014 women-owned small businesses. Watch: Residency gate (CONNECTICUT); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-wurth-elektronik-start-up-management-free-components-engineering-support",
@@ -4765,7 +6218,14 @@
       "documents": [
         "Email/contact to a Wurth start-up manager describing the product and stage"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Hardware/electronics start-ups. Watch: Lab access is germany-only.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 1.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-yale-ventures-healthtech-works",
@@ -4787,7 +6247,14 @@
         "Application during the open window",
         "Technical and commercialization plan"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Healthtech ventures \u2014 digital health, medtech, diagnostics, devices, AI/ML-enabled tools. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-zendesk-for-startups",
@@ -4809,7 +6276,14 @@
         "Work email",
         "Online application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Brand-new Zendesk subscriber. Watch: Form text says offer is for companies 'who have received outside funding (angel, pre-seed.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 0.5,
+      "travel": false,
+      "next_date": null
     },
     {
       "id": "curated-nystar-innovation-matching-grants",
@@ -4822,8 +6296,8 @@
       "open_date": "2026-10-14",
       "close_date": "2026-10-20",
       "status": "forecast",
-      "days_left": 10,
-      "days_until_open": 4,
+      "days_left": 8,
+      "days_until_open": 2,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award",
@@ -4833,7 +6307,14 @@
         "Commercialization plan for the non-federal activities being matched",
         "Company financials and employee count (<=100)"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: NY State small business, <=100 employees, applying for or holding a federal SBIR/STTR award. Watch: One week window.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2026-10-20"
     },
     {
       "id": "curated-dow-sbir-sttr-fy2027-release-1",
@@ -4846,8 +6327,8 @@
       "open_date": "2026-10-28",
       "close_date": "2026-11-25",
       "status": "forecast",
-      "days_left": 46,
-      "days_until_open": 18,
+      "days_left": 44,
+      "days_until_open": 16,
       "pillar": 3,
       "kind": "dod_sbir",
       "eligibility": "For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent residents, building a DUAL-USE technology. The principal investigator's primary employment \u2014 more than 50% \u2014 must be with the small business. All R&D performed in the United States.",
@@ -4857,7 +6338,14 @@
         "Phase I technical volume and cost volume through DSIP",
         "Principal investigator employed more than 50% by the company"
       ],
-      "sam": "required"
+      "sam": "required",
+      "fit": 2,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For-profit US small business, 500 or fewer employees including affiliates, more than 50% owned AND controlled by US citizens or permanent re. Watch: Pre-released today, 7 oct 2026.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 40.0,
+      "travel": false,
+      "next_date": "2026-11-25"
     },
     {
       "id": "curated-next-era-founders-fellowship-nika-lawrie-2026-cycle",
@@ -4870,8 +6358,8 @@
       "open_date": "2026-11-09",
       "close_date": "2026-12-04",
       "status": "forecast",
-      "days_left": 55,
-      "days_until_open": 30,
+      "days_left": 53,
+      "days_until_open": 28,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Women entrepreneurs with a business idea or early-stage business. The page states no fee, residency rule, age gate or revenue rule ('not stated'). Applications open 9 Nov 2026 and close 4 Dec 2026, 11:59 PM MT.",
@@ -4879,7 +6367,14 @@
         "Online application (opens Nov 9; contents not stated)",
         "Finalist interview Dec 16-17"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Women entrepreneurs with a business idea or early-stage business. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-12-04"
     },
     {
       "id": "curated-2027-nia-start-up-challenge-and-accelerator",
@@ -4892,8 +6387,8 @@
       "open_date": "2026-12-01",
       "close_date": "2027-01-15",
       "status": "forecast",
-      "days_left": 97,
-      "days_until_open": 52,
+      "days_left": 95,
+      "days_until_open": 50,
       "pillar": 2,
       "kind": "accelerator",
       "eligibility": "Individuals, teams or entities aged 18+. A private entity must be incorporated in the US and have its primary place of business there. Individuals must be US citizens or permanent residents. Not open to a PI on an NIH SBIR/STTR award that is active at the close of submissions, or to a finalist from an earlier NIA Start-Up Challenge. Each entrant certifies it has formed, or will form by 2027-11-01, a US-owned small business eligible for NIH SBIR/STTR. No application fee.",
@@ -4904,7 +6399,14 @@
         "Certification that a SBIR-eligible small business is or will be formed",
         "If selected: winner verification and payment documents within 3 business days. Stage 2 adds a one-page impact document, a 7-minute pitch video and a meeting with an NIH program officer by 2027-11-01"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals, teams or entities aged 18+. Watch: Submissions do not open until 2026-12-01.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 16.5,
+      "travel": true,
+      "next_date": "2027-01-15"
     },
     {
       "id": "curated-dmea-nova-award-2027-digital-health-startup-pitch-munich",
@@ -4917,8 +6419,8 @@
       "open_date": "2027-01-04",
       "close_date": "2027-01-31",
       "status": "forecast",
-      "days_left": 113,
-      "days_until_open": 86,
+      "days_left": 111,
+      "days_until_open": 84,
       "pillar": 2,
       "kind": "visibility",
       "eligibility": "Digital health startups building for less than five years. Free to apply and take part. Pitch deck in German or English; live pitches in English. No country restriction is stated on the page. Apply only through the bvitg Service GmbH portal (email not accepted).",
@@ -4926,7 +6428,14 @@
         "Pitch deck (German or English), submitted through the bvitg Service GmbH portal",
         "Live English pitch at DMEA if nominated"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Digital health startups building for less than five years. Watch: Not open yet, but dates are now confirmed.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": true,
+      "next_date": "2027-01-31"
     },
     {
       "id": "curated-ahrq-clinical-evidence-synthesis-transformation-challenge-super-intellig",
@@ -4939,8 +6448,8 @@
       "open_date": "2027-01-11",
       "close_date": "2027-03-12",
       "status": "forecast",
-      "days_left": 153,
-      "days_until_open": 93,
+      "days_left": 151,
+      "days_until_open": 91,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Same HHS rules as the SI Tech Sprint: a private entity must be US-incorporated with its primary place of business in the US; individuals must be US citizens or permanent residents, 18+; no federal or HHS employees. A single individual may win. No academic affiliation is required, and 'nontraditional entrants' are encouraged. No application fee is stated.",
@@ -4953,7 +6462,14 @@
         "Security, privacy, accessibility, data-rights and IP plan",
         "Path to secure operation by AHRQ"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Same HHS rules as the SI Tech Sprint: a private entity must be US-incorporated with its primary place of business in the US. Watch: Off-core and heavy lift.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.0,
+      "travel": false,
+      "next_date": "2027-03-12"
     },
     {
       "id": "curated-ahrq-si-tech-sprint-for-healthcare-research-and-implementation-quality-a",
@@ -4966,8 +6482,8 @@
       "open_date": "2027-03-01",
       "close_date": "2027-09-09",
       "status": "forecast",
-      "days_left": 334,
-      "days_until_open": 142,
+      "days_left": 332,
+      "days_until_open": 140,
       "pillar": 2,
       "kind": "grant",
       "eligibility": "Individuals, teams or entities. A private entity must be incorporated in the US and keep its primary place of business there. Individuals and team members must be US citizens or permanent residents, aged 18+. No federal entities or employees, and no HHS employees. Federal grant or contract funds may not be used to build the entry. Each entry must make material, auditable use of at least one AHRQ data resource (MEPS, HCUP excluding controlled microdata, CAHPS, SOPS, NPSD or other AHRQ datasets) through the competition's AHRQ APIs or MCP services. No application fee is stated.",
@@ -4978,7 +6494,14 @@
         "Materials for the mandatory gates: eligibility, data use, re-identification, disclosure, security, accessibility, reproducibility and prohibited claims",
         "Disclosure of third-party models and components"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Individuals, teams or entities. Watch: Not open yet.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": false,
+      "next_date": "2027-09-09"
     },
     {
       "id": "curated-fund-her-future-h-r-block-block-advisors",
@@ -4991,7 +6514,7 @@
       "open_date": "2026-09-01",
       "close_date": "2026-09-22",
       "status": "closed",
-      "days_left": -18,
+      "days_left": -20,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5001,7 +6524,14 @@
         "Proof of 51%+ woman ownership",
         "Evidence of $20,000+ 2025 revenue"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: 51%+ woman-owned, US-based, 18+, and the business must have generated at least $20,000 revenue in 2025. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-09-22"
     },
     {
       "id": "curated-buckeye-state-credit-union-small-business-recovery-grant",
@@ -5014,7 +6544,7 @@
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "closed",
-      "days_left": -10,
+      "days_left": -12,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5025,7 +6555,14 @@
         "Evidence of at least two years of operation",
         "A written plan showing how the funds benefit eligible communities"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Minority-owned or minority-controlled as defined by federal guideline. Watch: Closed 30 sep 2026.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 6.0,
+      "travel": false,
+      "next_date": "2026-09-30"
     },
     {
       "id": "curated-nextcorps-manufacturing-accelerator-fall-2026",
@@ -5038,7 +6575,7 @@
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "closed",
-      "days_left": -10,
+      "days_left": -12,
       "days_until_open": null,
       "pillar": 3,
       "kind": "accelerator",
@@ -5048,7 +6585,14 @@
         "Short online application describing the product and production goal",
         "Founder time commitment for the 9-week virtual program"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 7,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Hardware startups with a works-like prototype. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-09-30"
     },
     {
       "id": "curated-texas-woman-s-university-veteran-grant",
@@ -5061,7 +6605,7 @@
       "open_date": null,
       "close_date": "2026-09-30",
       "status": "closed",
-      "days_left": -10,
+      "days_left": -12,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5070,7 +6614,14 @@
         "Proof of veteran status",
         "Application"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 4,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: TEXAS-adjacent \u2014 veteran-owned businesses. Watch: Residency gate (TEXAS); Vybe is in Ohio.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": false,
+      "next_date": "2026-09-30"
     },
     {
       "id": "curated-pm-r-pitch-tank-2026-aapm-r-x-matter",
@@ -5083,7 +6634,7 @@
       "open_date": null,
       "close_date": "2026-10-02",
       "status": "closed",
-      "days_left": -8,
+      "days_left": -10,
       "days_until_open": null,
       "pillar": 2,
       "kind": "visibility",
@@ -5092,7 +6643,14 @@
         "Submittable profile, then the online application",
         "Evidence of stage of development (prototype, pilot data or traction)"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to startups, early-stage companies, researchers, clinicians and entrepreneurs 'regardless of professional background or geographic loca. Watch: Closes tomorrow (oct 2) and is rehab-specific.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 3.0,
+      "travel": true,
+      "next_date": "2026-10-02"
     },
     {
       "id": "curated-spie-startup-challenge-2027-healthcare-track-at-photonics-west",
@@ -5105,7 +6663,7 @@
       "open_date": null,
       "close_date": "2026-10-06",
       "status": "closed",
-      "days_left": -4,
+      "days_left": -6,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5116,7 +6674,14 @@
         "Video pitch",
         "Live 5-minute pitch + 5-minute Q&A if selected as finalist"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 5,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: 'Accepts applications from the worldwide community of entrepreneurs.' The applicant must have an optics or photonics technology or applicati. Watch: Deadline is tomorrow.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.5,
+      "travel": true,
+      "next_date": "2026-10-06"
     },
     {
       "id": "curated-insurtech-america-innovation-challenge-2026-the-hartford-travelers-prize",
@@ -5129,7 +6694,7 @@
       "open_date": null,
       "close_date": "2026-10-07",
       "status": "closed",
-      "days_left": -3,
+      "days_left": -5,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5139,7 +6704,14 @@
         "Possibly a pitch deck (not stated)",
         "Finalists: a live pitch at the Showcase & Awards on 27 Oct 2026"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Open to 'startups, scale-ups, and innovators from across the insurance ecosystem'. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 7.0,
+      "travel": true,
+      "next_date": "2026-10-07"
     },
     {
       "id": "curated-rutgers-health-hack-2026",
@@ -5152,7 +6724,7 @@
       "open_date": null,
       "close_date": "2026-10-09",
       "status": "closed",
-      "days_left": -1,
+      "days_left": -3,
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
@@ -5161,7 +6733,76 @@
         "Devpost registration",
         "Project requirements 'revealed in person at hackathon'"
       ],
-      "sam": "none"
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Age 18+, US only, must attend in person all three days (Oct 9-11, 2026) in New Brunswick, NJ. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 4.0,
+      "travel": true,
+      "next_date": "2026-10-09"
+    },
+    {
+      "id": "curated-latinos-x-ai-hackathon-nyc-healthcare-track",
+      "source": "curated",
+      "name": "Latinos x AI Hackathon - NYC (Healthcare track)",
+      "url": "https://latinos-x-ai-hackathon-nyc.devpost.com/",
+      "agency": "LaFamilia Foundation / Colectivo NYC / Fordham University AI Hub",
+      "amount": "$1,500 in cash total per Devpost (one cash prize per track; the per-track amount is 'to be announced')",
+      "summary": "IN-PERSON ONE DAY IN NYC; APPLICATION REVIEWED, LATINO BUILDERS PRIORITIZED. Small cash only. The Healthcare track (language, coverage, access for underserved patients) suits a minority-owned team that builds a Connect/Vitals community-health demo. IP: 'You keep everything you build. Organizers and sponsors make no IP claims over your work.' The application deadline is not stated; apply immediately.",
+      "open_date": null,
+      "close_date": "2026-10-10",
+      "status": "closed",
+      "days_left": -2,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "grant",
+      "eligibility": "Age of majority, US only, team required (1-4), one-day in-person event in Manhattan on Oct 10. Free to attend; applications are reviewed; Latino/Hispanic builders prioritized, allies considered as space allows. All code must be written during the event.",
+      "documents": [
+        "Devpost registration + event application",
+        "Project title/description",
+        "Public code repository",
+        "Demo video up to 2 minutes",
+        "Track selection",
+        "Team member list"
+      ],
+      "sam": "none",
+      "fit": 6,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Age of majority, US only, team required (1-4), one-day in-person event in Manhattan on Oct 10. Watch: In-person one day in nyc; application reviewed, latino builders prioritized.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 9.5,
+      "travel": true,
+      "next_date": "2026-10-10"
+    },
+    {
+      "id": "curated-emerge-americas-natsec-veteran-pitch-competition-nov-2026-cycle",
+      "source": "curated",
+      "name": "eMerge Americas NatSec Veteran Pitch Competition (Nov 2026 cycle)",
+      "url": "https://emergeamericas.com/veteran-led-national-security-startups/",
+      "agency": "eMerge Americas (private)",
+      "amount": "Not cash-denominated on the page: the top three get Demo Day participation at PortMiami (2 Mar 2027), Accelerator and Showcase fast-tracks, exhibition space in the NatSec Pavilion and investor/government-buyer introductions. A prior cycle listed micro-grants among prizes, but no cash figure is stated for this cycle.",
+      "summary": "MUST BE A 'CRITICAL TECHNOLOGY' / DUAL-USE NATIONAL-SECURITY PITCH, WITH A WORKING MVP AND 2+ FULL-TIME STAFF. Vybe fits only if it frames the Vybe Band (ECG/HRV, recovery, readiness) as a warfighter human-performance and readiness tool. The veteran owner has to pitch. Virtual event on 4 Nov 2026, with no registration fee. The deadline is 9 days away.",
+      "open_date": null,
+      "close_date": "2026-10-10",
+      "status": "closed",
+      "days_left": -2,
+      "days_until_open": null,
+      "pillar": 2,
+      "kind": "visibility",
+      "eligibility": "U.S.-based critical-technology startup founded within the last 3 years; working MVP; 2+ full-time team members; no more than $1M raised; a veteran, active or reserve service member must be a founder or C-level exec and must deliver the pitch; technology must be presentable unclassified.",
+      "documents": [
+        "Online application (details on the application page; contents not stated on the announcement page)",
+        "Pitch deck for a 4-minute virtual pitch if selected"
+      ],
+      "sam": "none",
+      "fit": 8,
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: U.S.-based critical-technology startup founded within the last 3 years. Watch: no disqualifier flagged on the row.",
+      "fit_source": "heuristic",
+      "cost": 0,
+      "effort_hours": 5.0,
+      "travel": false,
+      "next_date": "2026-10-10"
     }
   ]
 }

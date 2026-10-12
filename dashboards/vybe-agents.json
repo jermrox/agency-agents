@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11T08:49:39+00:00",
+  "checked": "2026-10-12T09:05:00+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -10,8 +10,9 @@
       "max_age_h": 30,
       "cadence": "daily 13:40Z",
       "problems": [],
-      "stamp": "2026-10-10T13:47:11+00:00",
-      "age_h": 19.0,
+      "warnings": [],
+      "stamp": "2026-10-12T01:06:01+00:00",
+      "age_h": 8.0,
       "foreign": [],
       "state": "ok"
     },
@@ -20,10 +21,12 @@
       "role": "the Apply page",
       "surface": "agentrevup.netlify.app/apply",
       "url": "https://agentrevup.netlify.app/apply.html",
+      "is_page": true,
       "stamp_re": null,
       "max_age_h": null,
       "cadence": "with each packet",
       "problems": [],
+      "warnings": [],
       "stamp": null,
       "age_h": null,
       "foreign": [],
@@ -34,28 +37,30 @@
       "role": "daily marketing briefing",
       "surface": "agentmarksom.netlify.app/briefing.html",
       "url": "https://agentmarksom.netlify.app/briefing.html",
+      "is_page": true,
       "stamp_re": "\"asof\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 10:23Z",
-      "problems": [
-        "stale: 32.8h old, cadence allows 30h"
-      ],
-      "stamp": "2026-10-10",
-      "age_h": 32.8,
+      "problems": [],
+      "warnings": [],
+      "stamp": "2026-10-12",
+      "age_h": 9.1,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Growsom",
       "role": "outreach and investor board",
       "surface": "agentgrowthscout.netlify.app",
       "url": "https://agentgrowthscout.netlify.app",
+      "is_page": true,
       "stamp_re": "Updated (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}) UTC",
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [],
-      "stamp": "2026-10-10 22:33",
-      "age_h": 10.3,
+      "warnings": [],
+      "stamp": "2026-10-12 00:48",
+      "age_h": 8.3,
       "foreign": [],
       "state": "ok"
     },
@@ -68,8 +73,9 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [],
-      "stamp": "2026-10-10 22:33 UTC",
-      "age_h": 10.3,
+      "warnings": [],
+      "stamp": "2026-10-12 00:48 UTC",
+      "age_h": 8.3,
       "foreign": [],
       "state": "ok"
     },
@@ -82,10 +88,146 @@
       "max_age_h": 30,
       "cadence": "daily 10:38Z",
       "problems": [],
-      "stamp": "2026-10-11T00:28:15Z",
-      "age_h": 8.4,
+      "warnings": [],
+      "stamp": "2026-10-12T00:49:43Z",
+      "age_h": 8.3,
       "foreign": [],
       "state": "ok"
+    }
+  ],
+  "needs_you": [
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "today",
+      "what": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
+      "detail": "$10,000 grand prize; every finalist gets a complimentary\u2026",
+      "who_is": "AgeTech startups, and explicitly healthspan and wellness products that help people 'stay in the game' as they age. Prototypes\u2026",
+      "why": "Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027.",
+      "do": [
+        "Online application: how the product makes ageing easier, and its stage",
+        "A 3-minute pitch, ready by early January"
+      ],
+      "url": "https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 0
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)",
+      "detail": "$5,000 one-time grant per participant (40 participants)\u2026",
+      "who_is": "Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests\u2026",
+      "why": "THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program 'is designed to invest in individuals\u2014not businesses', and benefits are 'reserved for the individual selected'.",
+      "do": [
+        "Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant's\u2026",
+        "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
+        "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)"
+      ],
+      "url": "https://www.mpoweredbymarshalls.com/accelerator-program.html",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "Veteran Shark Tank 2026 (13th annual)",
+      "detail": "$50,000 to the winner; five veteran entrepreneurs pitch live \u00b7 veteran-owned fits",
+      "who_is": "US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 \u2014 an age\u2026",
+      "why": "CLOSES 13 OCT \u2014 the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else's. Buckeye wants two years and Tadlock wants one; this one wants under three.",
+      "do": [
+        "Proof of veteran status (DD-214 or equivalent)",
+        "A 2-minute narrated pitch video \u2014 a pitch, not a promo",
+        "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
+        "Evidence the business is under three years old as of 7 Dec 2026"
+      ],
+      "url": "https://veteransharktank.com/apply/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "3 days",
+      "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
+      "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
+      "who_is": "Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego\u2026",
+      "why": "C CORPORATIONS ARE NOT ELIGIBLE (Intuit's TurboTax community guide), so check Vybe's entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.",
+      "do": [
+        "Online IDEAS application, selecting the virtual military cohort",
+        "Veteran/military-spouse status (not stated how it is verified)",
+        "Business registration details",
+        "QuickBooks onboarding if selected (per Intuit's guide)"
+      ],
+      "url": "https://www.intuit.com/ideas/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 3
+    },
+    {
+      "who": "Marketsom",
+      "kind": "deadline",
+      "when": "Fri 16 Oct follow-ups",
+      "what": "Partners quiet since the 9 Oct follow-ups",
+      "detail": "",
+      "who_is": "No drafting until research is done. Their status is on the outreach list.",
+      "why": "",
+      "do": [
+        "No drafting until research is done. Their status is on the outreach list."
+      ],
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "url_label": "briefing",
+      "url2": null,
+      "url2_label": "briefing",
+      "sort": 3
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "4 days",
+      "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+      "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
+      "who_is": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve\u2026",
+      "why": "IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered).",
+      "do": [
+        "Idea/business description",
+        "Pitch deck",
+        "Short video"
+      ],
+      "url": "https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 4
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "4 days",
+      "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
+      "detail": "No cash amount stated. Selected companies run a six-month\u2026",
+      "who_is": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies\u2026",
+      "why": "CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to 'a sports-science lab that runs your device pilot'.",
+      "do": [
+        "Online application form (launchpad.nba.com)",
+        "Company/product overview and pitch deck",
+        "Description of proposed R&D pilot within the NBA ecosystem",
+        "Team info"
+      ],
+      "url": "https://www.launchpad.nba.com/apply",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 4
     }
   ]
 }

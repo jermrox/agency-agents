@@ -16,6 +16,14 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = ROOT / "hub"
 
 GROUPS = [
+    ("Traction", [
+        ("traction", "Traction plan: real numbers, real demand (11 Oct)", "research/traction-plan-2026-10-11.md"),
+    ]),
+    ("Funding research", [
+        ("invmap", "Investor map: who funds companies like Vybe (11 Oct)", "research/investor-map-2026-10-11.md"),
+        ("remote", "Investors and collaborations, online only (11 Oct)", "research/remote-investors-and-collaboration-2026-10-11.md"),
+        ("funding", "Money in, at no cost (11 Oct)", "research/funding-research-2026-10-11.md"),
+    ]),
     ("Outreach", [
         ("outreach", "Every partner email", None),
         ("forms", "Forms and DMs to send (5 Oct)", "research/forms-and-dms-2026-10-05.md"),
@@ -152,7 +160,7 @@ TEMPLATE = """<!doctype html>
 <body>
 <header class="top">
   <div class="wrap">
-    <nav class="reports" aria-label="Reports"><a href="briefing.html">Daily briefing</a><a href="reports.html" aria-current="page">All reports</a><a href="./">Agent hub</a><a href="scoreboard.html">Weekly scoreboard</a><button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Theme</button></nav>
+    <nav class="reports" aria-label="Reports"><a href="briefing.html">Daily briefing</a><a href="reports.html" aria-current="page">All reports</a><a href="./">Agent hub</a><a href="scoreboard.html">Weekly scoreboard</a><a href="https://vybe-ops.netlify.app" rel="noopener">Vybe Operations</a><button class="toggle" id="theme" type="button" aria-label="Switch colour theme">Theme</button></nav>
     <div class="bar"><div class="brand"><div><b>All reports</b><div class="sub">Marksom · every report, email and research file in one place</div></div></div></div>
   </div>
 </header>

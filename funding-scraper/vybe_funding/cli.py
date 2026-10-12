@@ -197,6 +197,12 @@ def publish(
                 # written before the `sam` field existed must not render as
                 # "unconfirmed" when it is federal assistance by definition.
                 row.setdefault("sam", "required")
+                # A carried row written before rule 9.7 lacks the decision
+                # fields; fill them the same way a fresh row gets them.
+                if "fit" not in row:
+                    from .decision import decision_fields
+                    row.update(decision_fields(row, {}))
+                row["next_date"] = row.get("close_date")
                 rows.append(row)
                 carried.append(row.get("source", "?"))
             if carried:
@@ -225,6 +231,9 @@ def publish(
         "count": len(rows),
         "source_errors": errors,
         "stale_sources": sorted(failed_sources or ()),
+        # VYBE-AGENT-STANDARDS rule 9.7: every row carries fit, fit_why, cost,
+        # effort_hours, travel and next_date. The hub's compliance check reads this.
+        "rule_9_7": True,
         "opportunities": rows,
     }
     target.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

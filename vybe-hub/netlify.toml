@@ -1,0 +1,61 @@
+# vybe-ops.netlify.app — the Vybe operations console.
+#
+# Netlify site id: fbea1130-1669-4a5e-a21e-17f904272e14 (and only that one).
+# A zip deploy replaces a whole site, so a deploy to the wrong id takes another
+# agent's dashboard down. On 12 Oct 2026 the hub pushed this page to Growsom's
+# site id by mistake and agentgrowthscout.netlify.app served the console for
+# seven minutes with its data.json gone. Before any deploy: read the `name` in
+# the deploy tool's response, and refuse unless it says vybe-ops.
+#
+# The agents keep publishing to their own sites. This site reads them LIVE in
+# the browser. Three of the four feeds do not send CORS headers, so each one is
+# proxied through this domain with a 200 rewrite: the browser sees same-origin
+# paths, Netlify fetches the agent's page server-side on every request.
+# Nothing changes on the agents' side, and nothing here is a copy.
+
+[[redirects]]
+  from = "/feeds/revsom/*"
+  to = "https://agentrevup.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/growsom/*"
+  to = "https://agentgrowthscout.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/marketsom/*"
+  to = "https://agentmarksom.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/feeds/instasom/*"
+  to = "https://instasum.netlify.app/:splat"
+  status = 200
+  force = true
+
+# Trend history: one row per four-hourly board run, written by
+# .github/workflows/vybe-agent-board.yml. Raw GitHub caches for ~5 minutes.
+[[redirects]]
+  from = "/history/*"
+  to = "https://raw.githubusercontent.com/jermrox/agency-agents/main/dashboards/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/history/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/feeds/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

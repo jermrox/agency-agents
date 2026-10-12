@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vybe Hub</title>
+<style>
+:root {
+  --bg:#f6f8f7; --surface:#fff; --surface-2:#eef3f1; --line:#dbe3e0;
+  --ink:#12201c; --ink-2:#44554f; --ink-3:#6b7a75;
+  --brand:#1f8e78; --brand-ink:#0f5e4f;
+  --good:#1d7a3a; --good-bg:#e3f3e7; --crit:#a3262a; --crit-bg:#fbe3e3;
+  --warn:#8a5a00; --warn-bg:#fbefd5;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg:#0e1513; --surface:#151f1c; --surface-2:#1b2824; --line:#2a3a35;
+  --ink:#e7efec; --ink-2:#b4c4be; --ink-3:#8a9c96;
+  --brand:#4cc3a8; --brand-ink:#8fe0cd;
+  --good:#7ad596; --good-bg:#173322; --crit:#f19a9a; --crit-bg:#3a1a1b;
+  --warn:#f0c46b; --warn-bg:#352a12;
+  color-scheme: dark;
+}
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif }
+a { color:var(--brand-ink); text-decoration:none }
+.wrap { max-width:640px; margin:0 auto; padding:20px 16px 60px }
+h1 { font-size:22px; margin:0; letter-spacing:-.01em } h1 span { color:var(--brand) }
+.goal { margin:6px 0 0; color:var(--ink-2); font-size:15px }
+.status { display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:var(--good) }
+.status .meta { font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto; text-align:right }
+.jump { margin:14px 0 0; font-size:13.5px; color:var(--ink-3); line-height:1.9 }
+.jump a { border-bottom:1px solid var(--line); margin-right:8px }
+section.agent { margin-top:26px; padding-top:18px; border-top:2px solid var(--line) }
+section.agent header { display:flex; align-items:center; gap:10px }
+section.agent h2 { margin:0; font-size:19px }
+section.agent .when { margin-left:auto; font-size:12.5px; color:var(--ink-3); text-align:right }
+.dot { flex:0 0 10px; height:10px; border-radius:50%; background:var(--ink-3) }
+section.ok .dot { background:var(--good) } section.bad .dot { background:var(--crit) }
+.purpose { margin:6px 0 0; color:var(--ink-2); font-size:15px }
+.pulling { margin:10px 0 0; font-size:14.5px; background:var(--surface-2); border-radius:10px; padding:10px 12px }
+.lbl { display:block; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:2px }
+h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3); margin:16px 0 6px; font-weight:600 }
+.card { display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:12px 14px; margin-top:8px }
+.card .k { flex:0 0 26px; height:26px; border-radius:8px; background:var(--surface-2); color:var(--brand-ink);
+  font-weight:700; text-align:center; line-height:26px; font-size:14px }
+.card .body { min-width:0; flex:1 }
+.card .head { margin:0; font-size:15.5px } .card .head b { color:var(--crit) }
+.card .row { margin:7px 0 0; font-size:14px; line-height:1.45 }
+.card .do { margin:2px 0 4px; padding-left:20px; font-size:14px } .card .do li { margin:2px 0 }
+.card .links2 { display:block; font-size:13px; color:var(--ink-3); margin-top:4px }
+.card .links2 a { border-bottom:1px solid var(--line) }
+.more { display:inline-block; margin-top:12px; font-size:14px; border-bottom:1px solid var(--line) }
+.foot { margin-top:30px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3); line-height:1.8 }
+.foot a { border-bottom:1px solid var(--line) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Vybe</span> hub</h1>
+  <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
+  <p class="status"><span>All agents running · 7 things need you</span><span class="meta">checked 09:05 UTC<br>refreshes every 4h</span></p>
+  <p class="jump"><a href="#revsom">Revsom</a> <a href="#growsom">Growsom</a> <a href="#marketsom">Marketsom</a> <a href="#instasom">Instasom</a> <a href="#daily-worker">Daily worker</a></p>
+
+<section id="revsom" class="agent ok">
+  <header><span class="dot"></span><h2>Revsom</h2><span class="when">8h ago</span></header>
+  <p class="purpose">Money that costs no equity: grants, prizes, credits.</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>231 opportunities · 164 need no registration · 14 close inside 14 days</p>
+  <h3>Needs you</h3><div class="card"><span class="k">$</span><div class="body">
+  <p class="head"><b>today</b> — AgeTech After Dark @ CES 2027 — AARP pitch</p><p class="row"><span class="lbl">What it is</span>AgeTech startups, and explicitly healthspan and wellness products that help people &#x27;stay in the game&#x27; as they age. Prototypes…</p><p class="row"><span class="lbl">Why it matters</span>Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Online application: how the product makes ageing easier, and its stage</li><li>A 3-minute pitch, ready by early January</li></ol>
+  <span class="links2"><a href="https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head"><b>tomorrow</b> — Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)</p><p class="row"><span class="lbl">What it is</span>Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests…</p><p class="row"><span class="lbl">Why it matters</span>THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program &#x27;is designed to invest in individuals—not businesses&#x27;, and benefits are &#x27;reserved for the individual selected&#x27;.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant&#x27;s…</li><li>Confirmation that the applicant can commit to 12 months of virtual programming in 2027</li><li>An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)</li></ol>
+  <span class="links2"><a href="https://www.mpoweredbymarshalls.com/accelerator-program.html">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head"><b>tomorrow</b> — Veteran Shark Tank 2026 (13th annual)</p><p class="row"><span class="lbl">What it is</span>US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 — an age…</p><p class="row"><span class="lbl">Why it matters</span>CLOSES 13 OCT — the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else&#x27;s. Buckeye wants two years and Tadlock wants one; this one wants under three.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Proof of veteran status (DD-214 or equivalent)</li><li>A 2-minute narrated pitch video — a pitch, not a promo</li><li>A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks</li><li>Evidence the business is under three years old as of 7 Dec 2026</li></ol>
+  <span class="links2"><a href="https://veteransharktank.com/apply/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head"><b>3 days</b> — Intuit IDEAS — Virtual Military Veteran &amp; Military-Spouse Cohort (2026-27)</p><p class="row"><span class="lbl">What it is</span>Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego…</p><p class="row"><span class="lbl">Why it matters</span>C CORPORATIONS ARE NOT ELIGIBLE (Intuit&#x27;s TurboTax community guide), so check Vybe&#x27;s entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Online IDEAS application, selecting the virtual military cohort</li><li>Veteran/military-spouse status (not stated how it is verified)</li><li>Business registration details</li><li>QuickBooks onboarding if selected (per Intuit&#x27;s guide)</li></ol>
+  <span class="links2"><a href="https://www.intuit.com/ideas/">application page</a> · <a href="https://agentrevup.netlify.app/apply">drafted answers</a></span></div></div>
+  <h3>Top of its list</h3><div class="card"><span class="k">$</span><div class="body">
+  <p class="head">4 days — NSF I-Corps Hub: Great Lakes Region, regional virtual I-Corps cohorts (Fall…</p><p class="row"><span class="lbl">What it is</span>The University of Michigan cohort is free and virtual and is &#x27;open to all Midwest innovators and researchers&#x27;. Its course page…</p><p class="row"><span class="lbl">Why it matters</span>NO CASH, AND THE MICHIGAN DEADLINE IS 8 DAYS AWAY (OCT 16). This is free customer-discovery training aimed at research commercialization, which matches the DevKit&#x27;s first milestone of 5-10 university and research design partners.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Online application form (Great Lakes I-Corps Zoho form, ProgramName=F26 UM I-Corps)</li><li>Team member names and roles</li><li>Short description of the innovation (the DevKit / sensing platform)</li></ol>
+  <span class="links2"><a href="https://greatlakesicorps.org/event/umich-i-corps-fall26/">open</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head">4 days — Pave HER Way — Disruptor Award 2026 (inaugural)</p><p class="row"><span class="lbl">What it is</span>The applicant is an individual who identifies as a woman, is 18 or older, and is a US citizen or permanent resident. The project…</p><p class="row"><span class="lbl">Why it matters</span>THIS IS AN INDIVIDUAL / CHARITABLE-PURPOSE AWARD, NOT A GRANT TO THE COMPANY, AND IT IS ABOVE THE $25K BAND. It fits only if a woman founder frames a public-benefit project for women and girls.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Submittable application (Disruptor Award form)</li><li>Project description and public-benefit case</li><li>Proof of citizenship or residency if a semifinalist (passport, birth certificate, naturalization certificate…</li></ol>
+  <span class="links2"><a href="https://paveherway.org/apply">open</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head">6 days — AMD Developer Hackathon: ACT III (lablab.ai), Health and Wellbeing track</p><p class="row"><span class="lbl">What it is</span>Free. Needs an AMD AI Developer Program account plus lablab.ai and Discord registration. You can build online from anywhere; the…</p><p class="row"><span class="lbl">Why it matters</span>SMALL, FAST, AND THE HEALTH TRACK PRIZE IS NOT CASH. The cash comes from the AMD and Google main prizes, which every track competes for. The online build runs 12-18 Oct 2026, so this only makes sense if the team already has a demo-ready AI health agent.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>AMD AI Developer Program sign-up; lablab.ai + Discord registration</li><li>Project title, short and long descriptions, selected challenge, tech tags</li><li>Working prototype</li></ol>
+  <span class="links2"><a href="https://lablab.ai/event/amd-developer-hackathon-act-iii">open</a></span></div></div><div class="card"><span class="k">$</span><div class="body">
+  <p class="head">7 days — Army xTech|Search 10</p><p class="row"><span class="lbl">What it is</span>For-profit US small business, more than 50% owned AND controlled by US citizens or permanent residents, 500 or fewer employees…</p><p class="row"><span class="lbl">Why it matters</span>BEST LIVE ITEM ON THE BOARD, and the deadline is 19 Oct at 5pm ET.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Concept white paper via the xTech portal (Section IV of the RFI PDF states the format; the PDF was not…</li><li>Eligibility attestation: for-profit, &gt;50% US-citizen owned and controlled, &lt;=500 employees</li><li>Disclosure of any similar proposal funded or pending at another federal agency</li></ol>
+  <span class="links2"><a href="https://xtech.army.mil/competition/xtechsearch10/">open</a></span></div></div>
+  <a class="more" href="https://agentrevup.netlify.app/">funding board →</a>
+</section>
+<section id="growsom" class="agent ok">
+  <header><span class="dot"></span><h2>Growsom</h2><span class="when">8h ago</span></header>
+  <p class="purpose">Investors, and free integrations that put Vybe&#x27;s SDK in other people&#x27;s products.</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>234 targets · 160 high priority · 180 ready to send on John&#x27;s approval</p>
+  
+  <h3>Top of its list</h3><div class="card"><span class="k">→</span><div class="body">
+  <p class="head">Athletic Lab</p><p class="row"><span class="lbl">What it is</span>builder · Cary, NC</p><p class="row"><span class="lbl">Why it matters</span>Cary sports performance facility at 110 Competition Center Drive led by coach and sport scientist Dr.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Email Dr. Mike Young this week asking for a 20-minute design-partner call about pulling overnight HRV into…</li></ol>
+  <span class="links2"><a href="https://www.athleticlab.com/cary-invasion-chooses-athletic-lab-as-official-training-center/">open</a></span></div></div><div class="card"><span class="k">→</span><div class="body">
+  <p class="head">HRV4Training</p><p class="row"><span class="lbl">What it is</span>app-partner</p><p class="row"><span class="lbl">Why it matters</span>Founder&#x27;s LinkedIn profile updated 2026-09-23.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Email Marco Altini: 15-min call on Vybe as an HRV4Training source, offer sample overnight RR data for…</li></ol>
+  <span class="links2"><a href="https://www.linkedin.com/in/marcoaltini">open</a></span></div></div><div class="card"><span class="k">→</span><div class="body">
+  <p class="head">Kygo Health</p><p class="row"><span class="lbl">What it is</span>builder</p><p class="row"><span class="lbl">Why it matters</span>2026-08-23 WHOOP Community post: approval Typeform submitted 2026-03-27, resubmitted 2026-05-19, no response.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Email Kygo founders offering a 15-minute call on Vybe SDK access as an alternative source for waitlisted…</li></ol>
+  <span class="links2"><a href="https://kygo.app">open</a></span></div></div><div class="card"><span class="k">→</span><div class="body">
+  <p class="head">RestOrTrain</p><p class="row"><span class="lbl">What it is</span>builder</p><p class="row"><span class="lbl">Why it matters</span>2026-08-13 and 2026-08-20 WHOOP Community posts: approval form submitted early July, no acknowledgement.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Reply on the WHOOP thread or DM the co-founder: 15-min call and DevKit v0.1 design-partner slot.</li></ol>
+  <span class="links2"><a href="https://restortrain.com">open</a></span></div></div>
+  <a class="more" href="https://agentgrowthscout.netlify.app/">target board →</a>
+</section>
+<section id="marketsom" class="agent ok">
+  <header><span class="dot"></span><h2>Marketsom</h2><span class="when">9h ago</span></header>
+  <p class="purpose">No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>The real waitlist is 6 people. 92% of 60 days&#x27; visits were paid clicks, mostly outside the US. The plan now aims at one number: real US…</p>
+  <h3>Needs you</h3><div class="card"><span class="k">!</span><div class="body">
+  <p class="head"><b>Fri 16 Oct follow-ups</b> — Partners quiet since the 9 Oct follow-ups</p><p class="row"><span class="lbl">What it is</span>No drafting until research is done. Their status is on the outreach list.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>No drafting until research is done. Their status is on the outreach list.</li></ol>
+  <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">briefing</a></span></div></div>
+  <h3>Top of its list</h3><div class="card"><span class="k">!</span><div class="body">
+  <p class="head">The real waitlist is 6 people, and 92% of visits were paid clicks</p><p class="row"><span class="lbl">Why it matters</span>Investors and partners all ask for proof of demand, and Vybe has almost none yet. Paid clicks bought traffic, not buyers.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Follow the Traction plan: answer people asking on Reddit as the founder, then ask for a refundable…</li></ol>
+  <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
+  <p class="head">No tables or booths, paid or free. Partnerships should be no-cost exchanges</p><p class="row"><span class="lbl">Why it matters</span>Declined in drafts on 11 Oct: the HOSR table ($300), the WNBF booth ($250), the MSBL World Series table and the RRCA expo table ($1,200).</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Pause Search-1 in Google Ads and stop the Instagram boosts.</li></ol>
+  <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
+  <p class="head">Sent emails carried a non-Vybe calendar link</p><p class="row"><span class="lbl">Why it matters</span>The partner emails sent 6 to 9 Oct linked a non-Vybe calendar. Sent emails cannot be changed. You chose not to send corrections, so those drafts are deleted.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Nothing to send. Every new email uses only the Vybe calendar link.</li></ol>
+  <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div><div class="card"><span class="k">!</span><div class="body">
+  <p class="head">The Growth Scout&#x27;s 20 waiting drafts ask for expo booths</p><p class="row"><span class="lbl">Why it matters</span>Under the no-tables rule they should all be denied; John asked before denying them. 22 more of its drafts from 7 Oct sit in Gmail with no recipient, and some pitch a table or an exhibitor slot.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Deny the 20 booth and expo drafts.</li></ol>
+  <span class="links2"><a href="https://agentmarksom.netlify.app/briefing.html">open</a></span></div></div>
+  <a class="more" href="https://agentmarksom.netlify.app/briefing.html">daily briefing →</a>
+</section>
+<section id="instasom" class="agent ok">
+  <header><span class="dot"></span><h2>Instasom</h2><span class="when">8h ago</span></header>
+  <p class="purpose">An audience that follows before launch, built one real person at a time.</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>Instagram 1,098 raw followers · 164 verified people still to follow · Facebook 4</p>
+  
+  <h3>Top of its list</h3><div class="card"><span class="k">@</span><div class="body">
+  <p class="head">@drandygalpin — Dr. Andy Galpin</p><p class="row"><span class="lbl">What it is</span>tactical · 377.2K followers</p><p class="row"><span class="lbl">Why it matters</span>A performance scientist with more than 100 peer-reviewed papers, trusted by the coaches who choose devices for teams and units.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Comment on his readiness and recovery posts. A future pitch fits the enterprise and research side.</li></ol>
+  <span class="links2"><a href="https://www.instagram.com/drandygalpin/">open</a></span></div></div><div class="card"><span class="k">@</span><div class="body">
+  <p class="head">@imkesalander — Imke Salander</p><p class="row"><span class="lbl">What it is</span>hyrox · 329.2K followers</p><p class="row"><span class="lbl">Why it matters</span>First HYROX world champion; posts daily. Large but highly active HYROX audience.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Follow, then comment on a recent training post with a genuine question about race prep.</li></ol>
+  <span class="links2"><a href="https://www.instagram.com/imkesalander/">open</a></span></div></div><div class="card"><span class="k">@</span><div class="body">
+  <p class="head">@chadwright278 — Chadd Wright</p><p class="row"><span class="lbl">What it is</span>tactical · 325.3K followers</p><p class="row"><span class="lbl">Why it matters</span>Former Navy SEAL and ultrarunner; big but active endurance audience.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Follow, then ask a genuine question about recovery between long efforts.</li></ol>
+  <span class="links2"><a href="https://www.instagram.com/chadwright278/">open</a></span></div></div><div class="card"><span class="k">@</span><div class="body">
+  <p class="head">@peterdiamandis — Peter Diamandis</p><p class="row"><span class="lbl">What it is</span>builders · 305.5K followers</p><p class="row"><span class="lbl">Why it matters</span>Physician-entrepreneur, XPRIZE founder and Fountain Life co-founder posting about healthspan tech, sensors and building health companies.</p>
+  <p class="row"><span class="lbl">What you do</span></p><ol class="do"><li>Follow, then comment on a recent post. Example: &quot;Which consumer health signal do you think is most under-used…</li></ol>
+  <span class="links2"><a href="https://www.instagram.com/peterdiamandis/">open</a></span></div></div>
+  <a class="more" href="https://instasum.netlify.app/">social dashboard →</a>
+</section>
+<section id="daily-worker" class="agent unk">
+  <header><span class="dot"></span><h2>Daily worker</h2><span class="when">no live page</span></header>
+  <p class="purpose">The product itself: one new app screen every weekday, funding rows, packets, Monday decks.</p>
+  <p class="pulling"><span class="lbl">What it is pulling</span>14 screens · 17 funding packets · 111 drafted answers. No live page yet — its work is code.</p>
+  
+  
+  
+</section>
+
+  <p class="foot">
+    This is the four-hourly snapshot. The live console, with every agent's dashboard inside it, is <a href="https://vybe-ops.netlify.app/">vybe-ops.netlify.app</a>.<br>
+    Every card is the same shape: what it is · why it matters · what you do. Nothing here is typed by hand — it is read from each agent's own live page.<br>
+    <a href="vybe-agent-board.html">Is every dashboard current?</a> ·
+    <a href="vybe-fleet-map.html">How the system fits together</a> ·
+    <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a>
+  </p>
+</div>
+</body>
+</html>

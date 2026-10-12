@@ -1310,22 +1310,6 @@ documents = [
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
-name = "Launch NY Seed Fund"
-url = "https://launchny.org/"
-agency = "Launch NY (Buffalo, NY)"
-amount = "$25K-$100K"
-pillar = 2
-kind = "grant"
-eligibility = "High-growth startup in Upstate NY; hardware/robotics/IoT and healthtech are named focus sectors"
-note = "Rolling. The most active seed fund in NY State by deal count — small checks, but explicitly hardware-friendly."
-documents = [
-  "Pitch deck",
-  "Financial projections",
-  "Evidence of Upstate NY operations",
-]
-verified = "2026-09-12"
-
-[[sources.curated.entry]]
 name = "CDMRP Combat Readiness-Medical Research Program (CRRP)"
 sam = "required"
 url = "https://cdmrp.health.mil/funding/crrp"
@@ -1709,6 +1693,11 @@ documents = [
   "Online application: how the product makes ageing easier, and its stage",
   "A 3-minute pitch, ready by early January",
 ]
+fit = 8
+fit_why = "Door: a healthspan/wellness product that makes ageing easier, which Vybe's band is. Risk: finalists pitch live at CES on 7 Jan 2027, so it needs a 3-minute pitch and travel to Las Vegas."
+cost = 0
+effort_hours = 2
+travel = true
 verified = "2026-10-01"
 
 [[sources.curated.entry]]
@@ -2052,6 +2041,11 @@ documents = [
   "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
   "Evidence the business is under three years old as of 7 Dec 2026",
 ]
+fit = 9
+fit_why = "Door: veteran-owned company under 3 years old, which is exactly Vybe, for a $50K prize. Disqualifier: no DD-214 or equivalent veteran proof, or a promo video instead of a 2-minute pitch."
+cost = 0
+effort_hours = 6
+travel = false
 verified = "2026-09-25"
 
 [[sources.curated.entry]]
@@ -2250,20 +2244,20 @@ verified = "2026-09-30"
 
 [[sources.curated.entry]]
 name = "DAV Patriot Boot Camp"
-url = "https://patriotbootcamp.org/patriot-boot-camp/"
+url = "https://patriotbootcamp.org/"
 agency = "DAV (Disabled American Veterans)"
 amount = "No cash for attending — a free three-day programme, mentorship and a year-round community. Each cohort ends in the DAV Patriots Pitch contest; the spring 2026 cohort competed for $10,000 in cash prizes, described as non-dilutive."
 pillar = 3
 kind = "accelerator"
 eligibility = "A member of the veteran or military-connected community, spouses included, who owns or founded a for-profit business — franchisees and non-profits are not eligible. The company should be scalable and growing. An EIN and a website are preferred but not required, and so is having generated revenue or raised capital in the last year: both are preferences, not gates."
-note = "FREE, AND THE ELIGIBILITY BAR IS THE LOWEST OF ANY VETERAN PROGRAMME ON THIS BOARD — the revenue and capital tests are explicitly preferences rather than requirements, which is unusual. Registration is first come, first served among applicants who meet the criteria. NO WINDOW IS CURRENTLY POSTED, which is why this row carries no close date: the 2026 spring cohort ran 10-12 June in Salt Lake City with applications closing 18 May or when seats filled, and the site now says to join the mailing list to hear when the next one opens. Cohorts run several times a year, so the action today is joining that list rather than waiting for a deadline. The curriculum is practical — AI for founders, funding and financial management, storytelling and pitch, one-to-one mentor sessions — and the pitch contest at the end is the cash. Three days in person, so travel is on you unless they say otherwise."
+note = "WINTER '27 COHORT IS OPEN: Feb 17-19, 2027 in Cincinnati, OH (about 4 hours from Akron). The homepage banner reads 'Applications open for DAV Patriot Boot Camp, Feb. 17-19, 2027 | Cincinnati, Ohio' and the Winter '27 registration form is live. No close date is posted; registration is first come, first served, so register now. FREE, and the eligibility bar is the lowest of any veteran programme on this board: revenue and capital raised are preferences, not gates. Curriculum: AI for founders, funding, storytelling and pitch, and 1:1 mentors. The cohort ends in the DAV Patriots Pitch contest for non-dilutive cash (the spring 2026 cohort competed for $10,000; the Winter '27 pool is not stated). DAV covers programming, meals and local transport; travel and lodging are on you."
 documents = [
   "Registration on the Patriot Boot Camp site plus the mailing list for the next cohort",
   "Proof of veteran, service-member or military-spouse status",
   "EIN and website (preferred, not required)",
   "Availability for three consecutive days in person",
 ]
-verified = "2026-09-30"
+verified = "2026-10-11"
 
 # --- Added 1 Oct 2026 ------------------------------------------------------
 # Two live windows and two standing front doors, all read from their own pages.
@@ -2519,6 +2513,11 @@ documents = [
   "Pitch deck",
   "Short video",
 ]
+fit = 7
+fit_why = "Door: a C-corp, S-corp or LLC with a veteran founder; prizes up to $10K. Risk: finalists pitch in person in Clemson, SC, at Vybe's cost."
+cost = 0
+effort_hours = 5
+travel = true
 verified = "2026-10-01"
 
 [[sources.curated.entry]]
@@ -2632,6 +2631,11 @@ documents = [
   "Description of proposed R&D pilot within the NBA ecosystem",
   "Team info",
 ]
+fit = 6
+fit_why = "Door: sports-performance and wellness tech, which fits the band's recovery and HRV story. Risk: very competitive, and it is a cohort with league access rather than cash."
+cost = 0
+effort_hours = 4
+travel = false
 verified = "2026-10-01"
 
 [[sources.curated.entry]]
@@ -3115,6 +3119,11 @@ documents = [
   "Business registration details",
   "QuickBooks onboarding if selected (per Intuit's guide)",
 ]
+fit = 7
+fit_why = "Door: the virtual cohort for veteran- and military-spouse-owned registered businesses. Risk: $5K is paid only at the end of the 12-month programme, and QuickBooks onboarding is expected."
+cost = 0
+effort_hours = 2
+travel = false
 verified = "2026-10-02"
 
 [[sources.curated.entry]]
@@ -3134,6 +3143,11 @@ documents = [
   "Proof of citizenship or residency if a semifinalist (passport, birth certificate, naturalization certificate or green card)",
   "Availability for a virtual interview 16–20 Nov",
 ]
+fit = 4
+fit_why = "Door: only as a woman founder's individual, charitable public-benefit project for women and girls, not a company grant. Risk: a company pitch would be rejected."
+cost = 0
+effort_hours = 6
+travel = false
 verified = "2026-10-02"
 
 [[sources.curated.entry]]
@@ -3978,6 +3992,11 @@ documents = [
   "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
   "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)",
 ]
+fit = 6
+fit_why = "Door: any adult US resident, as an individual. The $5K goes to the founder, not the company, after a 12-month virtual programme. Risk: the time commitment and the low amount."
+cost = 0
+effort_hours = 1.5
+travel = false
 verified = "2026-10-06"
 
 [[sources.curated.entry]]
@@ -4183,6 +4202,11 @@ documents = [
   "Team member names and roles",
   "Short description of the innovation (the DevKit / sensing platform)",
 ]
+fit = 6
+fit_why = "Door: free virtual customer-discovery cohort open to non-university founders. Value: the route to NSF National I-Corps ($50K, needs SAM.gov) and sharper DevKit customer evidence. No cash itself."
+cost = 0
+effort_hours = 3
+travel = false
 verified = "2026-10-08"
 
 [[sources.curated.entry]]
@@ -4277,6 +4301,11 @@ documents = [
   "Working prototype",
   "Cover image, demo video, pitch presentation",
 ]
+fit = 3
+fit_why = "Door: an online build week, 12–18 Oct. Risk: the health track's prize is AirPods and the cash is $5K per sponsor track, so it is worth it only if a demo already exists."
+cost = 0
+effort_hours = 15
+travel = false
 verified = "2026-10-08"
 
 [[sources.curated.entry]]
@@ -4358,3 +4387,39 @@ documents = [
   "Availability to pitch live if you become a finalist",
 ]
 verified = "2026-10-09"
+
+[[sources.curated.entry]]
+name = "DHA / USAMRDC FY23-FY27 Broad Agency Announcement for Extramural Medical Research (HT9425-23-S-BAA1) — incl. MOMRP-area and musculoskeletal 'optimize human performance for injury prevention'"
+url = "https://www.grants.gov/search-results-detail/343725"
+agency = "Defense Health Agency / U.S. Army Medical Research and Development Command (CDMRP/eBRAP administered)"
+amount = "Not stated (no ceiling or floor listed)."
+close_date = "2027-09-30"
+pillar = 2
+kind = "grant"
+sam = "later"
+eligibility = "Unrestricted (any entity type). Pre-proposal required via eBRAP, accepted any time; full proposal only by invitation through Grants.gov (needs SAM/UEI)."
+note = "RESEARCH-ONLY, NOT PRODUCT DEVELOPMENT: the BAA says funded projects 'must be for basic and applied research... rather than focusing on development of a specific system or hardware solution', and most Research Areas of Interest are injury/disease-focused (combat casualty care, TBI, sensory, musculoskeletal). Low-probability fit; only worth a pre-proposal if Vybe teams with an academic/clinical research partner on a human-performance study (e.g., MSK injury-prevention via HRV/load monitoring, or the midlife women's-health item on 'sleep, mental health, and performance in operational settings'). Pre-proposal is free and can precede SAM; award needs SAM."
+documents = [
+  "eBRAP pre-proposal/pre-application",
+  "If invited: full proposal via Grants.gov per 'General Submission Instructions'",
+  "SAM/UEI and Grants.gov registration before full proposal",
+]
+verified = "2026-10-11"
+
+[[sources.curated.entry]]
+name = "SusHi Tech Challenge 2027 (Tokyo Metropolitan Government pitch contest, SusHi Tech Tokyo 2027)"
+url = "https://sushitech-startup.metro.tokyo.lg.jp/en/recruiting-pitch"
+agency = "SusHi Tech Tokyo Executive Committee (Tokyo Metropolitan Government)"
+amount = "Grand Prize JPY 10,000,000 (about $65K) cash; corporate-partner special awards (planned) for the 20 semifinalists; the JPY 300,000 booth fee is waived for semifinalists"
+close_date = "2026-12-18"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Global startups. Must have a new technology or business model with growth potential, AN EXISTING PRODUCT OR SERVICE, and a business aligned with 'realizing sustainable cities through high technology'. Must pitch in person at Tokyo Big Sight on May 20-21, 2027 and exhibit a booth all 3 event days. Everything is in English. No application fee and no equity terms are stated."
+note = "'EXISTING PRODUCT OR SERVICE' GATE: Vybe's consumer launch is May 2027, so lead with the DevKit/SDK or a working prototype. TRAVEL TO TOKYO IS AT VYBE'S OWN EXPENSE. NON-SEMIFINALISTS MUST STILL EXHIBIT (the JPY 300,000 booth fee is waived only for the 20 semifinalists; check the guidelines on whether entrants who are not selected owe anything). Fit: the 2027 tech domains explicitly include 'Longevity & Drug Discovery' and Physical AI, and the theme is 'How do humans thrive in the age of AI transformation?' A screenless HRV wearable with a developer platform fits the human-thriving and longevity angle. Free to apply: a form plus an English pitch deck. More than 800 startups applied last year."
+documents = [
+  "Online application form",
+  "Pitch deck in English (PDF)",
+  "Pitch video (requested in the second screening round, March 2027)",
+]
+verified = "2026-10-11"

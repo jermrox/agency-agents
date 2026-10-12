@@ -12,6 +12,7 @@
 #   1. No account belonging to another venture appears in a Vybe-scoped path.
 #   2. The one Calendly URL allowed in Vybe outreach is the Vybe Health one.
 #   3. Each Vybe agent spec points at the standards document.
+#   4. No Vybe-scoped file names another venture's agent (rule 6, scope).
 #
 # Deliberately NOT checked: marketing/marketing-{consultant,university,
 # business}-outreach-strategist.md. Those are the other company's own agents
@@ -83,8 +84,25 @@ for spec in marketing/marketing-vybe-*.md; do
   fi
 done
 
+# --- 4. no other venture's agent named in a Vybe path -----------------------
+# Rule 6: a Vybe agent touches Vybe work and nothing else. A Vybe file that
+# names Leadsom, Crawlsom, Researchsom or Babysom is a Vybe agent being told to
+# look at another venture's work, which is where the scope leak starts. The
+# standards and charter documents are exempt: they have to name them to draw
+# the boundary.
+OTHER_AGENTS=( leadsom crawlsom researchsom babysom )
+for slug in "${OTHER_AGENTS[@]}"; do
+  hits=$(grep -rIli --fixed-strings "$slug" "${VYBE_PATHS[@]}" 2>/dev/null || true)
+  if [ -n "$hits" ]; then
+    echo "FAIL: a Vybe-scoped file names another venture's agent:"
+    while IFS= read -r f; do note "$f  names  $slug"; done <<<"$hits"
+    note "Rule 6 of $STANDARDS: Vybe agents touch Vybe work and nothing else."
+    fail=1
+  fi
+done
+
 if [ "$fail" -eq 0 ]; then
   n=$(ls marketing/marketing-vybe-*.md 2>/dev/null | wc -l | tr -d ' ')
-  echo "PASSED: no non-Vybe account in any Vybe path; every booking link is the Vybe Calendly; $n Vybe agent specs reference the standard."
+  echo "PASSED: no non-Vybe account or agent in any Vybe path; every booking link is the Vybe Calendly; $n Vybe agent specs reference the standard."
 fi
 exit "$fail"

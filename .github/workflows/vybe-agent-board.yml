@@ -6,12 +6,16 @@ name: Vybe agent board
 # and their containers are reclaimed, so a session-based checker is asleep
 # exactly when an agent has stopped publishing. Actions is not.
 #
-# It commits the rendered board to dashboards/, which scripts/build-netlify-site.sh
-# already copies to the rev site, so the board gets a live URL
-# (agentrevup.netlify.app/vybe-agent-board.html) with no new Netlify project to
-# go stale in turn.
+# It commits the rendered hub and board to dashboards/, which
+# scripts/build-netlify-site.sh already copies to the rev site, so both get a
+# live URL (agentrevup.netlify.app/vybe-hub.html and /vybe-agent-board.html)
+# with no new Netlify project to go stale in turn. The hub is the front door;
+# the board is the detail behind "is every dashboard current?".
 #
-# The job fails when a surface is red. That failure is the alarm: the founder
+# The job fails when a surface is red — stale, dead, or carrying a foreign
+# account. A conformance item inside its grace period is amber and does not
+# fail the job, so a red run always means something is actually wrong. That
+# failure is the alarm: the founder
 # should not be the one who notices a wrong link on a dashboard, which is
 # exactly what happened on 10 Oct 2026.
 
@@ -57,13 +61,13 @@ jobs:
 
       - name: Commit the board if it changed
         run: |
-          if git diff --quiet -- dashboards/vybe-agent-board.html dashboards/vybe-agents.json; then
+          if git diff --quiet -- dashboards/vybe-hub.html dashboards/vybe-agent-board.html dashboards/vybe-agents.json dashboards/vybe-history.json && [ -z "$(git status --porcelain dashboards/vybe-history.json)" ]; then
             echo "Board unchanged; nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dashboards/vybe-agent-board.html dashboards/vybe-agents.json
+          git add dashboards/vybe-hub.html dashboards/vybe-agent-board.html dashboards/vybe-agents.json dashboards/vybe-history.json
           git commit -m "chore(vybe): agent board $(date -u +%Y-%m-%dT%H:%MZ)"
           # Another routine commits to main on its own schedule, so rebase
           # rather than fail the run on a race we do not care about.
@@ -79,7 +83,7 @@ jobs:
           python3 - <<'PY'
           import json, sys
           d = json.load(open("dashboards/vybe-agents.json"))
-          red = [s for s in d["surfaces"] if s["state"] != "ok"]
+          red = [s for s in d["surfaces"] if s["state"] in ("bad", "dead")]
           for s in red:
               print(f"::error title={s['agent']} — {s['surface']}::{'; '.join(s['problems'])}")
           print(f"{len(d['surfaces']) - len(red)}/{len(d['surfaces'])} surfaces OK")
