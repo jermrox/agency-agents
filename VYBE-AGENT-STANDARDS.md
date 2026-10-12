@@ -212,6 +212,37 @@ A new page that does not follow it is a defect, not a style choice. The hub's
 `needs_you` feed in `vybe-agents.json` is the canonical card format; an agent
 may publish its own items in that shape and the hub will carry them.
 
+7. **Every lead carries the decision fields.** The founder, 12 October: "I
+   need metrics and data points… who answered, what are they, what are they
+   offering, why we need them or why they need us, scale 1–10, good choice and
+   why… you need to help me make a decision." The console scores every lead
+   1–10 from the agents' own fields and prints the reasoning. It can only do
+   that when the fields exist. So every outreach row, target or opportunity
+   an agent publishes carries, as separate machine-readable fields, never
+   folded into a sentence:
+
+   | Field | What goes in it |
+   |---|---|
+   | `org` | the organisation (never a person; rule 7) |
+   | `what_is` | one plain sentence: what they are, who they serve, how big (members, users, followers, cheque size), with the source |
+   | `status` | one of `drafted`, `waiting`, `replied`, `booked`, `declined`, `closed` — what *they* have done, not what we have drafted |
+   | `offer` | what they offered or asked for, in their words, or empty |
+   | `we_need` | why Vybe needs them: the collaboration, cheque or revenue in one sentence |
+   | `they_need` | why they need Vybe, or what they asked us for, in one sentence |
+   | `cost` | a number in dollars; 0 is a value, missing is a defect |
+   | `next_date` | ISO date of the next step or deadline, or empty |
+   | `size` | the audience, member count or cheque as a number, with `size_source` |
+
+   The console treats a missing field as "unavailable" and scores it down. An
+   agent is not done with a lead until a stranger could read these nine
+   fields and decide. Marketsom's `outreach[]`, Growsom's `targets[]` and
+   `followups.threads[]`, and Revsom's `opportunities[]` all conform by their
+   next run; Instasom's `people` already carries the equivalent.
+8. **Vendors, suppliers and paid slots are never leads.** They do not get a
+   score, a card or a milestone on any Vybe dashboard. The console lists them
+   once, by name, under "out of scope", and nowhere else. An agent that keeps
+   one in its outreach table marks it `status: closed` with `why: rule 7`.
+
 ## 10. The hub orchestrates. Agents implement.
 
 The founder, 11 October: "I ask them to add something and they add it, but it

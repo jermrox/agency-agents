@@ -755,6 +755,89 @@ h3 {{ font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(
 """
 
 
+def history_point(rows, now):
+    """One compact row of the numbers the console charts as trends.
+
+    The console (vybe-ops.netlify.app) reads dashboards/vybe-history.json and
+    draws a sparkline per pillar once two or more points exist. Every value is
+    None when its feed is unreadable; the console skips None, never plots 0.
+    """
+    by_url = {r["url"]: r for r in rows}
+    pt = {"at": now.isoformat(), "revsom": {}, "growsom": {}, "marketsom": {}, "instasom": {}, "integrations": {}}
+
+    r = by_url.get("https://agentrevup.netlify.app/funding.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    opps = [o for o in (d.get("opportunities") or []) if isinstance(o, dict)] if isinstance(d, dict) else None
+    if opps is not None:
+        live = [o for o in opps if str(o.get("status", "")).lower() in ("open", "soon", "rolling", "forecast")]
+        dated = [o for o in live if isinstance(o.get("days_left"), int) and o["days_left"] >= 0]
+        pt["revsom"] = {"live": len(live), "closing14": sum(1 for o in dated if o["days_left"] <= 14),
+                        "closing30": sum(1 for o in dated if o["days_left"] <= 30),
+                        "no_sam": sum(1 for o in live if str(o.get("sam", "")).lower() == "none")}
+
+    r = by_url.get("https://agentgrowthscout.netlify.app/data.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        tg = [t for t in (d.get("targets") or []) if isinstance(t, dict)]
+        inv = [t for t in tg if str(t.get("hunt", "")).lower() == "investor" or re.search(r"vc|angel|accelerator", str(t.get("type", "")).lower())]
+        integ = [t for t in tg if t not in inv and str(t.get("type", "")).lower() not in ("signal", "amplifier") and str(t.get("hunt", "")).lower() != "social"]
+        threads = [t for t in ((d.get("followups") or {}).get("threads") or []) if isinstance(t, dict)]
+        sm = d.get("summary") or {}
+        pt["growsom"] = {"total": len(tg), "investors": len(inv), "integrations": len(integ),
+                         "ready": sm.get("ready_to_send") if isinstance(sm.get("ready_to_send"), int) else None,
+                         "threads": len(threads), "replied": sum(1 for t in threads if t.get("state") == "replied"),
+                         "parked": d.get("parked_count") if isinstance(d.get("parked_count"), int) else None}
+
+    r = by_url.get("https://agentmarksom.netlify.app/briefing.html")
+    d = _live_data(r.get("_body", "")) if r else None
+    if isinstance(d, dict):
+        out = [x for x in (d.get("outreach") or []) if isinstance(x, dict)]
+        def kpi(label):
+            for k in d.get("kpis") or []:
+                if isinstance(k, dict) and re.search(label, str(k.get("label", "")), re.I):
+                    m = re.search(r"\d[\d,]*", str(k.get("big", "")))
+                    return int(m.group(0).replace(",", "")) if m else None
+            return None
+        pt["marketsom"] = {"contacted": len(out), "replied": sum(1 for x in out if str(x.get("reply", "")).strip()),
+                           "drafts": d.get("drafts_count") if isinstance(d.get("drafts_count"), int) else None,
+                           "waitlist": kpi(r"real waitlist"), "us_visits": kpi(r"US visits"),
+                           "ig_followers": (d.get("instagram") or {}).get("followers") if isinstance(d.get("instagram"), dict) else None}
+        # Same two tests the console applies: an app or data company, and not a vendor or supplier (rule 7).
+        scope = re.compile(r"\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|booth|expo)\b", re.I)
+        apps = [x for x in out
+                if re.search(r"\b(api|oauth|integration|apple health|hrv|app\b|platform|sdk|data)\b", f"{x.get('org','')} {x.get('reply','')} {x.get('next','')}", re.I)
+                and not scope.search(f"{x.get('org','')} {x.get('reply','')} {x.get('next','')}")]
+        pt["integrations"] = {"replied": sum(1 for x in apps if str(x.get("reply", "")).strip())}
+
+    r = by_url.get("https://instasum.netlify.app/all.json")
+    d = _json_in(r.get("_body", "")) if r else None
+    col = d.get("collections") if isinstance(d, dict) else None
+    if isinstance(col, dict):
+        fol = col.get("followers") or {}
+        latest = fol[sorted(fol)[-1]] if isinstance(fol, dict) and fol else {}
+        trusted = re.search(r"[\d.]+", str(latest.get("igTrusted", "")).replace(",", ""))
+        ppl = col.get("people") or {}
+        ppl = list(ppl.values()) if isinstance(ppl, dict) else ppl
+        pt["instasom"] = {"ig": latest.get("ig") if isinstance(latest.get("ig"), int) else None,
+                          "ig_trusted": float(trusted.group(0)) if trusted else None,
+                          "fb": latest.get("fb") if isinstance(latest.get("fb"), int) else None,
+                          "followed": sum(1 for x in ppl if isinstance(x, dict) and x.get("status") == "Followed"),
+                          "to_follow": sum(1 for x in ppl if isinstance(x, dict) and x.get("status") == "Not started")}
+    return pt
+
+
+def append_history(path, point, keep=720):
+    """Append one point (120 days at four-hourly) and keep the file small."""
+    try:
+        hist = json.loads(path.read_text()) if path.exists() else []
+        if not isinstance(hist, list):
+            hist = []
+    except Exception:
+        hist = []
+    hist.append(point)
+    path.write_text(json.dumps(hist[-keep:], separators=(",", ":")) + "\n")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", default="dashboards")
@@ -774,6 +857,7 @@ def main():
     (out / "vybe-agents.json").write_text(json.dumps(
         {"checked": now.isoformat(), "surfaces": slim,
          "needs_you": facts["needs_you"]}, indent=2) + "\n")
+    append_history(out / "vybe-history.json", history_point(rows, now))
 
     red = [r for r in rows if r["state"] in ("bad", "dead")]
     for r in rows:
