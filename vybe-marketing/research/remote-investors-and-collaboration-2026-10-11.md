@@ -2,6 +2,8 @@
 
 **Status:** research only. Nothing has been contacted, submitted or drafted. Everything here is online: no travel and no events.
 
+**Re-checked 12 Oct 2026:** every investor and partner page listed here loaded, except VA PathFinder (connection failed today; recheck tomorrow). Tredict confirmed on 12 Oct that its bodyvaluesWrite scope covers HRV and sleep uploads and that no call is needed.
+
 **How it was checked:** sources are each investor's or partner's own page. "Unverified" means the detail came from OpenVC or a search summary instead.
 
 **Before any pitch:**
