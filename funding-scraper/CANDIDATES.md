@@ -408,6 +408,69 @@ window.
   404). The platform row already on this board stands; re-check whether a live
   partner grant exists before treating it as actionable.
 
+## Promoted to the board — 12 Oct 2026 (scheduled daily run)
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **Garmin Connect Developer Program** (Health, Activity, Women's Health APIs) | free business API access; some metrics may carry a licence fee | rolling; Garmin answers within two business days |
+| **Withings Public API** ("Start for Free" plan; 40+ biomarkers incl. sleep stages, HR, ECG, SpO2) | free plan, no contract; Withings+ now required for new users on free-plan apps (from 12 Oct 2026) | rolling |
+| **WHOOP Developer Platform** (sleep, recovery, strain via OAuth 2.0 + webhooks) | no fee stated; v2 API | rolling |
+
+Three integration lanes rather than cash: every cash programme read today was
+closed, student-only, fee-charging, revenue-gated or dead (list below). All three
+are $0, platform-not-supplier under rule 7, and feed the SDK and app-partner
+thesis: Vybe Intelligence reading another wearable's data, or a builder on the
+Vybe SDK reaching that wearable's users.
+
+Corrected: **MIT Solve 2027 Global Health Challenge** now also names the Citizens
+Workforce Innovation Prize ($100,000 to at least one US-based Solver team) and
+the noon deadline. Drafted as the `mitsolve` packet the same day.
+
+**DSIP read, 12 Oct:** the public topic search (open and pre-release) for
+"wearable" returns only xTech|Search 10 (ARM26BX05-NP011 / ARM26TX05-NP002,
+already on the board); "sleep" and "physiological" return nothing. The
+**xTech|Disrupt Endurance** competition that opened today is power generation
+and storage, registered on-site at the AUSA meeting (12–14 Oct, Washington DC),
+so it fails on topic and on rule 7 (an event presence).
+
+**Still a forecast on grants.gov, 12 Oct (fetchOpportunity API):** NIDILRR SBIR
+Phase I (HHS-2027-ACL-NIDILRR-BISA-0308) est. posting 16 Oct, due 16 Dec, ceiling
+$100,000; NIDILRR Field Initiated Projects (Development) (HHS-2027-ACL-NIDILRR-
+IFDV-0304) est. posting 12 Oct, due 14 Dec, ceiling $250,000. Neither synopsis is
+posted yet. Re-check after 16 Oct; both need SAM.
+
+**NIH open-challenge list read, 12 Oct:** every open or upcoming NIH challenge is
+either already on the board (NOURISH, NIA Start-Up, temporal knowledge graphs,
+SCHARE, AHRQ, NCATS RWE) or off-mission (menopause curricula, NIDDK community
+partnerships, Down syndrome content, quantum sensing for toxicology, generic drug
+repurposing, kidney imaging, RNA therapeutics, NCI data sharing, the $100,000 SUD
+startup challenge, AYA cancer data). TOPx Phase 2 closes 15 Oct and follows a
+Phase 1 Vybe did not enter.
+
+## Rejected on inspection — 12 Oct 2026 (scheduled daily run)
+
+- **Second Service Foundation Military Entrepreneur Challenge** — Dead: the foundation's own home page says it "has been voluntarily shut down in order to transition into a new, faith-based mission" and names no dates. It still appears on 2025–26 veteran-grant listicles ($1,000–$15,000 pitch prizes). Do not re-check until a new parent organisation announces a programme.
+- **Google for Startups Founders Funds (Black, Latino, Veterans)** — Ended: the programme page is written in the past tense ("provided more than $58 million… supported 600+ founders") and lists no open fund. Still cited by grant blogs as a $100K–$150K equity-free award.
+- **UnivaBio ($40,000 in prizes, Devpost, closes 20 Oct)** — Students only ("brings students worldwide together"). Health-focused but not open to companies.
+- **2026 International CodeTheCure Hackathon (Devpost)** — Student hackathon; no company track.
+- **Entreprenista Evolve Grant ($5,000 quarterly, due 30 Nov)** — Ineligible: requires at least one year of operation and $100,000+ annual revenue.
+- **HerRise MicroGrant** — Charges a $15 application fee; not added. Women-of-colour majority-owned US businesses; rolling, next deadline 31 Oct.
+- **IFundWomen Universal Grant Application (due 13 Oct)** — Could not be read: ifundwomen.com returns 403 to a server fetch, and the deadline is tomorrow. Re-check the next cycle.
+- **NAACP Powershift Entrepreneur Grant** — Unverifiable: naacp.org/grants and the grant page both return 404; aggregators disagree on whether it is rolling or opens in October. Re-check in November.
+- **NC IDEA SEED / MICRO (Fall 2026)** — Closed 24 Aug 2026. Next cycle should open around late January 2027 (spring cycle); the SEED is $50,000 and MICRO $10,000, free, no equity, NC-based companies. Worth the January check.
+- **Stanford eWEAR Health Prize ($25,000)** — Closed 25 Sep 2026, and founders must be 18–35.
+- **National Sleep Foundation SleepTech Award** — Closed 25 Sep 2026; non-members pay $500–600 to enter. Members of the SleepTech Network enter free: worth checking the membership cost before the 2027 cycle (announced in June in prior years).
+- **AHA Health Tech Competition, HLTH USA pitch, MedTech Conference pitch, Healthcare and WT Innovation World Cups 2026** — All closed for 2026; the IWC 2027 editions are already on the board.
+- **AFWERX Open Topic** — No 2026 Phase I window published; the Specific Topic Release 3 window closed 22 Jul 2026. The DSIP search above is the live check.
+- **DIU open solicitations** — Nothing in human performance or wearables: the three open items are low-cost ISR and counter-unmanned maritime systems.
+- **Gates Foundation Grand Challenges** — No open call fits a consumer health wearable (current calls: cholera modelling, pathogen sequencing, family-planning AI, micronutrient assays, diagnostics).
+- **Wellcome Leap Dynamic Resilience ($60M, resilience biomarkers in ageing)** — Interesting fit on paper (dynamic physiological resilience, "measure, support and" intervene), and the page says the abstract portal is open, but the eligibility, deadline and whether companies can lead are not readable on the page. Unverified; read the programme's RFP before adding.
+- **xTech|Disrupt Endurance** — See above: power generation, on-site at AUSA, rule 7.
+- **Hackaday Prize** — The prize page still carries the ten-year edition copy with no 2026 dates, and hackaday.io/prize/2026 returns 404; unverified, treat as closed.
+- **Bunker Labs Veterans in Residence** — Ended: IVMF's page lists Bunker Labs under "A Legacy of Impact" and routes veterans to O2O training instead.
+- **AWS Health Equity Initiative (credits)** — Dead page (404).
+- **Bob Evans Heroes to CEOs ($30,000 veteran grant)** — Programme page returns 404 on 12 Oct 2026; its past cycles opened in spring. Re-check in April 2027.
+
 ## Promoted to the board — 11 Oct 2026 (round 11)
 
 Four lanes: a watch-list re-check; tactical, military and first-responder; global prizes open to US startups;
