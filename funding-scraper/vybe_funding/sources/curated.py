@@ -74,10 +74,10 @@ class CuratedSource(Source):
                 sam=sam,
                 raw={
                     "verified": verified.isoformat(),
-                    # Hand-reviewed rule-9.7 values, when the curator set them.
+                    # Hand-reviewed rule-9.7 and rule-12 values, when the curator set them.
                     "decision": {
                         k: entry[k]
-                        for k in ("fit", "fit_why", "cost", "effort_hours", "travel")
+                        for k in ("fit", "fit_why", "cost", "effort_hours", "travel", "big_name", "big_name_why")
                         if k in entry
                     },
                 },
