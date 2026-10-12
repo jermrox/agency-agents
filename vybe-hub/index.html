@@ -65,6 +65,8 @@ h3 .sub{text-transform:none;letter-spacing:0;font-weight:400;font-size:13px}
 .draft{margin:8px 0 0;font-size:14px}.draft summary{cursor:pointer;font-weight:600;color:var(--ink)}.draft pre{white-space:pre-wrap;font:inherit;font-size:13.5px;line-height:1.5;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0 0}
 .why{margin:6px 0 0;font-size:13px;color:var(--ink-2)}.why li{margin:1px 0}
 .empty{color:var(--ink-3);font-size:14px;margin:6px 0}
+.todo{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.todo li{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.todo .k{padding-top:2px}.todo .w{margin:0;font-size:15px}.todo .t{margin:3px 0 0;font-size:14px;color:var(--ink-2);line-height:1.45}.todo .s{color:var(--ink-3);font-size:13px}.todo .s a{color:var(--brand-ink)}.todo .draft{margin-top:6px}.todo .why{margin-top:4px}
+@media (max-width:640px){.todo li{grid-template-columns:1fr}}
 .frame{width:100%;height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .rows .r{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
 .rows .r:first-child{border-top:0}.rows .d{flex:0 0 10px;height:10px;border-radius:50%;margin-top:6px;background:var(--ink-3)}
@@ -298,7 +300,7 @@ function fromMarketsom(html, growsomLeads){
     const app=/\b(api|oauth|integration|apple health|hrv|app\b|platform|sdk|data)\b/i.test(blob); const p=app?"integrations":"partners";
     let st=String(x.status||"").toLowerCase(); if(String(x.reply||"").trim().length>12&&["drafted","waiting"].includes(st)) st="replied";
     if(st==="replied"&&/\b(passed|forward)/i.test(x.reply||"")) st="passed"; if(st==="replied"&&/\b(yes|offered|wants|asked for a call|would like|asked whether)\b/i.test(x.reply||"")) st="replied-yes";
-    const askedMoney=/\$\d|\bfee\b|\bpaid\b|\bvendor booth\b/i.test(x.reply||""); const prof=profile(x.org); const when=nextDate(x.next)||parseDay(x.sent);
+    const askedMoney=/\$\d|\bfee\b|\bpaid\b|\bvendor booth\b/i.test(x.reply||""); const prof=profile(x.org); const nd=nextDate(x.next); const when=nd||parseDay(x.sent);
     const techQ=/\b(technical|prototype|requirements|documentation|api details|app details)\b/i.test(blob);
     const bn=bigName(x.org,x.big_name,x.big_name_why);
     const sc=score([
@@ -313,7 +315,7 @@ function fromMarketsom(html, growsomLeads){
     const draft=draftOf(x); const todo=draft?draft.today:(st==="drafted"||!!(john&&/approve|change/.test(john.verdict)));
     leads.push({pillar:p, agent:"Marketsom", org:String(x.org||""), john, big:bn, draft, todo, what_is:prof?prof.what_is+(prof.why_text?" — "+cut(prof.why_text,120):""):(p==="integrations"?"app or data company (profile not yet published by Marketsom)":"community organisation (profile not yet published by Marketsom)"),
       offer:cut(x.reply||(st==="drafted"?"nothing yet — our draft is waiting to be sent":"no reply yet"),200), we_need:p==="integrations"?"Vybe's overnight HRV, sleep and resting heart rate inside their product; their users become Vybe's":"A no-cost member offer to their members and a mention in their channels",
-      they_need:cut(x.next||"",200), size:null, cost:askedMoney?"they asked for money; declined":"$0", status:st, when, when_text:when?`next ${dayText(when)}`:"", url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", url2:"https://agentmarksom.netlify.app/briefing.html", url2_label:"briefing", score:sc}); }
+      they_need:cut(x.next||"",200), size:null, cost:askedMoney?"they asked for money; declined":"$0", status:st, when, when_src:nd?"next":"sent", when_text:when?`next ${dayText(when)}`:"", url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", url2:"https://agentmarksom.netlify.app/briefing.html", url2_label:"briefing", score:sc}); }
   // Needs-you cards: due dates (calls with vendors are out of scope and never shown) and the drafts waiting.
   const needs=[]; for(const u of (d.upcoming||[]).slice(0,6)){ if(!u||typeof u!=="object") continue; const lines=(u.lines||[]).map(String); if(outOfScope(u.what,lines.join(" "))) continue; const call=u.kind==="call";
     needs.push({when:[u.day,u.time].filter(Boolean).join(" ")||"soon", what:String(u.what||""), who_is:lines[0]?cut(lines[0],160):"", why:lines.length>1?cut(lines.slice(1,3).join(" "),220):"",
@@ -465,7 +467,7 @@ function renderStrip(){
   document.getElementById("strip").innerHTML=stat+pills+meta;
 }
 function renderTabs(){
-  const t=[{id:"decide",name:"Decide",n:""}].concat(PILLARS.map(p=>{const go=leadsFor(p.id).filter(l=>l.score.verdict==="go").length+decisionsFor(p.id).length; return {id:p.id,name:p.name,n:go?`${go}`:""};}));
+  const t=[{id:"decide",name:"Decide",n:(()=>{const n=todayList().length; return n?`${n}`:"";})()}].concat(PILLARS.map(p=>{const go=leadsFor(p.id).filter(l=>l.score.verdict==="go").length+decisionsFor(p.id).length; return {id:p.id,name:p.name,n:go?`${go}`:""};}));
   document.getElementById("tabs").innerHTML=t.map(x=>`<button role="tab" aria-selected="${state.tab===x.id}" onclick="setTab('${x.id}')">${esc(x.name)}${x.n?`<span class="n">${esc(x.n)}</span>`:""}</button>`).join("");
   const t2=AGENTS.map(a=>({id:a.id,name:a.name,n:(state.data[a.id]&&state.data[a.id].needs&&state.data[a.id].needs.length)?`${state.data[a.id].needs.length}`:""}));
   document.getElementById("tabs2").innerHTML=t2.map(x=>`<button role="tab" aria-selected="${state.tab===x.id}" onclick="setTab('${x.id}')">${esc(x.name)}${x.n?`<span class="n">${esc(x.n)}</span>`:""}</button>`).join("");
@@ -495,13 +497,35 @@ function milestoneList(L,n=14){ const ms=L.filter(l=>l.when&&daysTo(l.when)>=0&&
   return ms.length?`<div class="rows">${ms.map(l=>`<div class="r"><span class="d" style="background:${dot(l.score.verdict)}"></span><div><b>${esc(dayText(l.when))} · ${esc(l.org)}</b><span class="s">${esc(l.when_text)} · ${esc(cut(l.offer,90))}</span></div><span class="t">${l.score.n}/10 ${VERDICT[l.score.verdict]}</span></div>`).join("")}</div>`:`<p class="empty">Nothing carries a date inside 90 days.</p>`; }
 function section(title,sub,body){ return `<div class="section"><h3>${esc(title)}${sub?` <span class="sub">${esc(sub)}</span>`:""}</h3>${body}</div>`; }
 
+// Today: every action due today, from every agent, in one list on the front page (founder, 12 Oct: "all daily actions on the front page; we should not have to sift through").
+function todayList(){
+  const leads=allLeads(); const items=[]; const closed=/declined|closed|^no$|rejected|won|lost/;
+  for(const l of leads) if(l.todo) items.push({kind:"Send", pri:1, when:TODAY, who:l.org, agent:l.agent, pillar:l.pillar, lead:l,
+    what:l.draft?`${l.draft.subject||"(no subject)"}${l.draft.to?` · to ${l.draft.to}`:""}${l.john?` · John said ${l.john.verdict}`:""}`:`the ${l.status==="drafted"?"first email":"reply"} is waiting; its text is not on ${l.agent}'s feed yet`});
+  for(const l of leads) if(l.john&&l.john.verdict==="waiting") items.push({kind:"Answer", pri:2, when:TODAY, who:l.org, agent:l.agent, pillar:l.pillar, lead:l, what:`John needs an answer from you: ${l.john.said||"see the thread"}`});
+  for(const l of leads){ if(l.todo||!l.when||closed.test(l.status||"")) continue; const d=daysTo(l.when);
+    if(l.pillar==="money"){ if(d>=0&&d<=1) items.push({kind:"Apply", pri:3, when:l.when, who:l.org, agent:l.agent, pillar:l.pillar, lead:l, what:`closes ${inDays(d)} · ${l.offer||""}${l.they_need?` · ${l.they_need}`:""}`}); }
+    else if(l.when_src!=="sent"&&d<=0&&d>=-7) items.push({kind:"Follow up", pri:3, when:l.when, who:l.org, agent:l.agent, pillar:l.pillar, lead:l, what:`${l.when_text||"due"} (${inDays(d)}) · ${l.they_need||l.offer||l.status}`}); }
+  for(const d of ((state.data.instasom||{}).decisions||[])) if(!d.when||daysTo(d.when)<=1) items.push({kind:"Decide", pri:4, when:d.when||TODAY, who:d.what, agent:d.agent||"Instasom", pillar:d.pillar, card:d, what:[d.why,(d.do||[])[0]].filter(Boolean).join(" · ")});
+  for(const n of allNeeds()){ if(/drafts waiting/i.test(n.what||"")) continue; items.push({kind:/call/i.test(n.what||"")?"Join":"Decide", pri:4, when:TODAY, who:n.what, agent:"Marketsom", pillar:"partners", card:n, what:[n.when,n.who_is].filter(Boolean).join(" · ")}); }
+  return items.sort((a,b)=>a.pri-b.pri||((b.lead&&b.lead.big)?b.lead.big.n:0)-((a.lead&&a.lead.big)?a.lead.big.n:0)||(a.when-b.when));
+}
+function todayHTML(items){
+  if(!items.length) return `<p class="empty">Nothing is due today. The pillar pages hold what is dated later.</p>`;
+  const cls={Send:"go",Answer:"no",Apply:"hold","Follow up":"hold",Decide:"",Join:""};
+  return `<ol class="todo">${items.map((it,i)=>{ const l=it.lead; const draft=l&&l.draft; const bn=l&&l.big;
+    return `<li><span class="k"><span class="verdict ${cls[it.kind]||""}">${esc(it.kind)}</span></span><div class="b"><p class="w"><b>${esc(it.who)}</b>${bn?` <span class="verdict ${bn.n>=7?"go":bn.n>=5?"hold":"no"}" title="name, rule 12">${bn.n}/10</span>`:""} <span class="s">· ${esc(it.agent)}${it.pillar?` · <a href="#" onclick="setTab('${esc(it.pillar)}');return false">${esc((PILLARS.find(p=>p.id===it.pillar)||{}).name||it.pillar)}</a>`:""}</span></p><p class="t">${esc(it.what)}</p>
+    ${draft?`<details class="draft" ${draft.today?"open":""}><summary>Read the draft${draft.to?` · to ${esc(draft.to)}`:""}</summary>${draft.body&&!/director of growth/i.test(draft.body)?`<p class="row" style="color:var(--crit)">Not signed as John, Director of Growth (rule 11); not ready to send.</p>`:""}<pre>${esc(draft.body||"(body not published)")}</pre></details>`:""}
+    ${it.card&&(it.card.do||[]).length?`<ul class="why">${it.card.do.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div></li>`; }).join("")}</ol>`;
+}
 function renderDecide(){
   const leads=allLeads(); const go=leads.filter(l=>l.score.verdict==="go").slice(0,9); const dec=((state.data.instasom||{}).decisions||[]);
   const r=state.data.revsom||{}, g=state.data.growsom||{}, m=state.data.marketsom||{}, i=state.data.instasom||{};
   const todo=leads.filter(l=>l.todo).sort((a,b)=>((b.draft&&b.draft.today)?1:0)-((a.draft&&a.draft.today)?1:0)||((b.big||{}).n||0)-((a.big||{}).n||0)||b.score.n-a.score.n);
   const noText=todo.filter(l=>!l.draft); const yes=leads.filter(l=>/replied-yes|booked/.test(l.status)); const wins=yes.filter(l=>l.big&&l.big.n>=7);
-  const sendToday=todo.length?`<div class="grid">${todo.slice(0,12).map(leadCard).join("")}</div>${todo.length>12?`<p class="empty">${todo.length-12} more are listed on their pillar pages.</p>`:""}${noText.length?`<p class="empty">${noText.length} of these ${noText.length===1?"has":"have"} no draft text on the feed yet. Marketsom and Growsom were ordered on 12 Oct to publish the recipient, subject and full body of every unsent draft; the text appears here on their next run.</p>`:""}`:`<p class="empty">Nothing is waiting to be sent.</p>`;
-  const bluf=`${wins.length} big-name win${wins.length===1?"":"s"} and ${yes.length-wins.length} contact${yes.length-wins.length===1?"":"s"} said yes so far (rule 12: a known name counts, a local race does not). ${todo.length} draft${todo.length===1?" is":"s are"} waiting to be sent. ${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
+  const td=todayList(); const byKind=k=>td.filter(x=>x.kind===k).length;
+  const todayBlock=todayHTML(td)+(noText.length?`<p class="empty">${noText.length} draft${noText.length===1?" has":"s have"} no text on the feed yet. Marketsom and Growsom were ordered on 12 Oct to publish the recipient, subject and full body of every unsent draft; the text appears here on their next run.</p>`:"");
+  const bluf=`<b>${td.length} thing${td.length===1?"":"s"} to do today</b>: ${byKind("Send")} to send, ${byKind("Answer")} to answer for John, ${byKind("Apply")} closing, ${byKind("Follow up")} follow-up${byKind("Follow up")===1?"":"s"} due, ${byKind("Decide")+byKind("Join")} to decide. ${wins.length} big-name win${wins.length===1?"":"s"} and ${yes.length-wins.length} contact${yes.length-wins.length===1?"":"s"} said yes so far (rule 12: a known name counts, a local race does not). ${todo.length} draft${todo.length===1?" is":"s are"} waiting to be sent. ${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
   // Charts first, one grid, three across.
   const charts=`<div class="charts">
     ${lineChart({title:"Instagram followers",sub:"raw API count, daily",series:[{name:"raw followers",pts:(i.igSeries||[]).map(p=>({...p,note:p.y>1000?"includes an unverified bulk add on 30 Sep":undefined}))}]})}
@@ -523,7 +547,7 @@ function renderDecide(){
       <td><span class="verdict go">${s.go.length} Go</span> <span class="verdict hold">${s.hold.length} Hold</span> <span class="verdict no">${s.no.length} No</span>${s.dec.length?` <span class="verdict">${s.dec.length} decision${s.dec.length===1?"":"s"}</span>`:""}</td></tr>`; }).join("");
   const ex=excludedAll();
   return `<p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
-  ${section("Send today",`${todo.length} draft${todo.length===1?"":"s"} ready for you and John to read before they go · John's verdict on each card`,sendToday)}
+  ${section("Today",`every action due today, from all four agents · drafts open where John said yes · nothing else to sift through`,todayBlock)}
   ${section("Numbers","every pillar, one grid · hover any chart",charts)}
   ${section("Timelines","what is dated, and what is in progress",timelines)}
   ${section("Pillar scoreboard","one row per way Vybe makes money · click a pillar",`<div class="sbwrap"><table class="sb"><thead><tr><th>Pillar</th><th>Headline number</th><th>Trend</th><th>Next milestone</th><th>Leads scored</th></tr></thead><tbody>${rows}</tbody></table></div>`)}
