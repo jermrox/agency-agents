@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-12T00:32:03+00:00",
+  "checked": "2026-10-12T01:27:06+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,8 +11,8 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-11T15:58:47+00:00",
-      "age_h": 8.6,
+      "stamp": "2026-10-12T01:06:01+00:00",
+      "age_h": 0.4,
       "foreign": [],
       "state": "ok"
     },
@@ -43,8 +43,8 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-11",
-      "age_h": 24.5,
+      "stamp": "2026-10-12",
+      "age_h": 1.5,
       "foreign": [],
       "state": "ok"
     },
@@ -59,8 +59,8 @@
       "cadence": "3x daily",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-11 20:24",
-      "age_h": 4.1,
+      "stamp": "2026-10-12 00:48",
+      "age_h": 0.7,
       "foreign": [],
       "state": "ok"
     },
@@ -74,8 +74,8 @@
       "cadence": "3x daily",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-11 20:24 UTC",
-      "age_h": 4.1,
+      "stamp": "2026-10-12 00:48 UTC",
+      "age_h": 0.7,
       "foreign": [],
       "state": "ok"
     },
@@ -89,36 +89,17 @@
       "cadence": "daily 10:38Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-11T21:22:13Z",
-      "age_h": 3.2,
+      "stamp": "2026-10-12T00:49:43Z",
+      "age_h": 0.6,
       "foreign": [],
       "state": "ok"
     }
   ],
   "needs_you": [
     {
-      "who": "Marketsom",
-      "kind": "call",
-      "when": "Mon 12 Oct 2:00 to 2:30 pm EDT (tomorrow)",
-      "what": "Nocturnal Product Development (Durham, NC). Paid vendor, not a partner",
-      "detail": "",
-      "who_is": "With: Eyal Dayan, Chief Business Officer, and KC Armstrong, Founder and CEO (hardware and sensors).",
-      "why": "What they are: an engineering firm Vybe would pay per milestone. This is spending, not a partnership. Main question: is there any no-cost route (a co-marketing case study, deferred fees), or should this call be a short\u2026",
-      "do": [
-        "Read the prep brief first",
-        "Join the call at the time shown",
-        "Decide on the call: no-cost route, or a short polite no"
-      ],
-      "url": "https://docs.google.com/document/d/127GaULpdU37XMV4nXVTdyhXCAzBxEotbrrF0C6ykxZY/edit",
-      "url_label": "prep brief",
-      "url2": "https://agentmarksom.netlify.app/briefing.html",
-      "url2_label": "briefing",
-      "sort": 0
-    },
-    {
       "who": "Revsom",
       "kind": "money",
-      "when": "tomorrow",
+      "when": "today",
       "what": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
       "detail": "$10,000 grand prize; every finalist gets a complimentary\u2026",
       "who_is": "AgeTech startups, and explicitly healthspan and wellness products that help people 'stay in the game' as they age. Prototypes\u2026",
@@ -131,12 +112,12 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 1
+      "sort": 0
     },
     {
       "who": "Revsom",
       "kind": "money",
-      "when": "2 days",
+      "when": "tomorrow",
       "what": "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)",
       "detail": "$5,000 one-time grant per participant (40 participants)\u2026",
       "who_is": "Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests\u2026",
@@ -150,12 +131,12 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 2
+      "sort": 1
     },
     {
       "who": "Revsom",
       "kind": "money",
-      "when": "2 days",
+      "when": "tomorrow",
       "what": "Veteran Shark Tank 2026 (13th annual)",
       "detail": "$50,000 to the winner; five veteran entrepreneurs pitch live \u00b7 veteran-owned fits",
       "who_is": "US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 \u2014 an age\u2026",
@@ -170,7 +151,27 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 2
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "3 days",
+      "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
+      "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
+      "who_is": "Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego\u2026",
+      "why": "C CORPORATIONS ARE NOT ELIGIBLE (Intuit's TurboTax community guide), so check Vybe's entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.",
+      "do": [
+        "Online IDEAS application, selecting the virtual military cohort",
+        "Veteran/military-spouse status (not stated how it is verified)",
+        "Business registration details",
+        "QuickBooks onboarding if selected (per Intuit's guide)"
+      ],
+      "url": "https://www.intuit.com/ideas/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 3
     },
     {
       "who": "Marketsom",
@@ -193,26 +194,6 @@
       "who": "Revsom",
       "kind": "money",
       "when": "4 days",
-      "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
-      "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
-      "who_is": "Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego\u2026",
-      "why": "C CORPORATIONS ARE NOT ELIGIBLE (Intuit's TurboTax community guide), so check Vybe's entity type first. If Vybe is an LLC or S corp, apply to the nationwide virtual military cohort as a veteran-owned business.",
-      "do": [
-        "Online IDEAS application, selecting the virtual military cohort",
-        "Veteran/military-spouse status (not stated how it is verified)",
-        "Business registration details",
-        "QuickBooks onboarding if selected (per Intuit's guide)"
-      ],
-      "url": "https://www.intuit.com/ideas/",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 4
-    },
-    {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "5 days",
       "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
       "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
       "who_is": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve\u2026",
@@ -226,12 +207,12 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 5
+      "sort": 4
     },
     {
       "who": "Revsom",
       "kind": "money",
-      "when": "5 days",
+      "when": "4 days",
       "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
       "detail": "No cash amount stated. Selected companies run a six-month\u2026",
       "who_is": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies\u2026",
@@ -246,7 +227,7 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 5
+      "sort": 4
     }
   ]
 }
