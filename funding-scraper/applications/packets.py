@@ -1625,6 +1625,255 @@ PACKETS = [
         ],
     },
     {
+        "id": "mitsolve",
+        "name": "MIT Solve 2027 Global Health Challenge",
+        "funder": "MIT Solve (Massachusetts Institute of Technology)",
+        "amount": "Every selected Solver team receives a $10,000 grant; Solve says Solver teams receive an average of about $40,000 each after selection, from a prize pool above $1 million. Named prizes Vybe could be eligible for on top: the AI for Humanity Prize (up to $150,000, for solutions using data science, AI or machine learning) and the Citizens Workforce Innovation Prize ($100,000, to at least one US-based Solver team)",
+        "deadline": "2026-11-02",
+        "fee": None,
+        "url": "https://solve.mit.edu/challenges/2027-global-health-challenge",
+        "submit": "Online application on solve.mit.edu, in English. Applications opened 22 September 2026 and close Monday 2 November 2026 at 12:00pm NOON Eastern — not end of day; Solve says late applications are not accepted for any reason, including technical problems. Judging runs November 2026 to March 2027; finalists are told in February and pitch live by video; Solver orientation at MIT is in April 2027.",
+        "gates": [],
+        "confirmed": [
+            "Open to for-profit and nonprofit teams anywhere in the world outside US-embargoed countries",
+            "Prototype stage qualifies: 'an initial working version … if for-profit, a solution that has raised little or no investment capital'",
+            "No application fee and no equity",
+        ],
+        "why": "The largest non-dilutive pool on the board that a prototype-stage, pre-revenue company can enter without a fee, a licence or a trial, and the only one whose judging explicitly accepts 'often 0 users'. The $10,000 is certain on selection; the named AI and US-workforce prizes are the upside. The cost is the application itself: Solve says most applicants spend several hours, and the stage question has to be answered honestly as Prototype.",
+        "docs": [
+            "Solve online application (four pages; the full question list is a PDF on the challenge page)",
+            "A 2-minute pitch video on YouTube or Vimeo",
+            "A proof point that the solution is real: website, app or social handle, or an upload",
+            "Numbers for full-time, part-time and contract team members",
+            "If a finalist in February 2027: a live virtual pitch and Q&A",
+        ],
+        "note": (
+            "DEADLINE IS NOON, NOT MIDNIGHT. 2 November 2026 at 12:00pm Eastern. Solve "
+            "repeats this three times in its instructions because people miss it every year.\n\n"
+            "THE STAGE ANSWER DECIDES THE READ. Solve defines Prototype as 'an initial "
+            "working version … often 0 users', and Pilot as 'launched in at least one "
+            "community'. Vybe has a working Band prototype and an app in private beta. "
+            "That is Prototype. Claiming Pilot would be cross-checked and would cost more "
+            "than it gains; Solve explicitly accepts Prototype-stage teams.\n\n"
+            "WRITE IT YOURSELF. Solve's own instructions say applications that read as "
+            "generated 'sound impersonal or generic to reviewers, and this can strongly "
+            "disadvantage your application'. The answers below are a spine in Vybe's "
+            "voice with the facts left as placeholders; the problem and the 'why you' "
+            "answers are the two reviewers weigh most and the two that most need a "
+            "founder's own sentences in them.\n\n"
+            "THE HONEST FIT. Solve is a social-impact programme: its Global Health "
+            "judging rewards reach into underserved populations, and the Solution Profile "
+            "becomes public if Vybe is a semifinalist. The true case is not that Vybe is a "
+            "charity but that interpretation of one's own health data is today a "
+            "subscription product for people who can pay monthly, and Vybe's no-subscription "
+            "model moves it to anyone who can buy the Band once. Make that case; do not "
+            "reposition the product as a clinical or public-health tool.\n\n"
+            "Word limits are limits, not targets. Solve says so. The answers below sit "
+            "under each limit on purpose."
+        ),
+        "fields": [
+            {"q": "Name of your solution (30 characters) and one-line tagline", "a":
+                "Vybe\n\nTagline: Answers from your own body's data, no subscription required."},
+            {"q": "What specific problem are you solving? (200 words)", "a":
+                "Most people who wear a health tracker get a number and no reason. A "
+                "heart-rate-variability score drops, a sleep score turns amber, and the "
+                "interpreting is left to the person, who has no training to do it and no "
+                "context the device can see.\n\n"
+                "The interpretation that does exist sits behind a monthly fee. The market "
+                "has split: the products that explain anything charge a subscription to "
+                "see your own history, and the products without a subscription dropped the "
+                "intelligence with it. Either way the person pays, in money or in "
+                "understanding.\n\n"
+                "That gap is widest for the people who could use interpretation most: "
+                "shift workers whose sleep is set by a roster, people managing a real "
+                "condition alongside a clinician, anyone on a fixed income for whom a "
+                "second monthly fee is the one that gets cancelled.\n\n"
+                "[Add one paragraph with the scale, in your own words and with a source you "
+                "trust: how many people wear a tracker, how many pay a subscription for "
+                "interpretation, and what share of them stop. Do not use a figure you "
+                "cannot cite.]"},
+            {"q": "What is your solution? (200 words)", "a":
+                "Vybe is a personal health intelligence platform: a screenless band, a "
+                "person's connected health data, and AI that answers plain questions about "
+                "their own body.\n\n"
+                "The Vybe Band is worn overnight and tracks heart rate, heart-rate "
+                "variability, sleep timing and activity against the wearer's own baseline, "
+                "never a population average. Vybe Intelligence reads those signals next to "
+                "the context a sensor cannot see — a long flight, a hard week, a heat wave, "
+                "a late dinner — pulled from the person's calendar, weather and their own "
+                "notes.\n\n"
+                "A person asks a plain question, such as 'Why am I tired today?', and gets "
+                "an answer grounded in their own data, with the evidence shown, one next "
+                "step, and a statement of what the Band could not see. Later, Vybe reports "
+                "whether the step worked.\n\n"
+                "There is no required subscription. The interpretation is part of the "
+                "product, not a monthly fee. Vybe is not a medical device and makes no "
+                "diagnostic claim; asked a clinical question it declines and says to see a "
+                "clinician.\n\n"
+                "Builders get the same data through an open SDK, so Vybe's overnight signals "
+                "can sit inside other products."},
+            {"q": "Who does your solution serve, and in what ways will it impact their lives? (200 words)", "a":
+                "Adults who already wear, or would wear, a tracker and get nothing they can "
+                "act on from it. Three groups first.\n\n"
+                "People who work shifts — nurses, first responders, service members — whose "
+                "sleep is set by a schedule rather than a choice. A score tells them what "
+                "they already know; an answer tells them which of the things they can change "
+                "actually moved their recovery.\n\n"
+                "People managing a condition with a clinician, who need their own trend "
+                "history in a form they can take to an appointment, not a diagnosis from a "
+                "wristband. Vybe exports the record and refuses the clinical question.\n\n"
+                "People on a fixed income, for whom a monthly fee to see their own data is "
+                "the subscription that gets cancelled first. Vybe is bought once.\n\n"
+                "The change in their lives is small and daily: one question answered from "
+                "their own body, one thing to try, and an honest account of whether it "
+                "worked. [If you have a story from the private beta — a real person, their "
+                "question, what changed — put two sentences of it here, with their "
+                "permission. One true example outweighs a paragraph of claims.]"},
+            {"q": "Stage of development, and why you selected it", "a":
+                "Prototype.\n\n"
+                "Where the product is today: {{STAGE}}. Traction: {{TRACTION}}. Revenue over "
+                "the last 12 months: {{REVENUE}}.\n\n"
+                "[Solve's definition of Prototype is 'an initial working version … often 0 "
+                "users'. State plainly what works today on a real wrist, what the private "
+                "beta has tested, and what is between here and consistent availability. Do "
+                "not claim Pilot.]"},
+            {"q": "What have you built and tested so far?", "a":
+                "[Only the founders can answer this truthfully. Cover, in order: the Band "
+                "hardware and what it records overnight; the app screens that exist — the "
+                "five dimension screens, the Ask conversation, the outcome record, the data "
+                "and export screens; what the private beta has tested and with how many "
+                "people; and the SDK. Give dates. A reviewer who has read a thousand of "
+                "these can tell a built thing from a planned one in one sentence.]"},
+            {"q": "How many beneficiaries or customers does your solution currently serve?", "a":
+                "{{TRACTION}}\n\n[Give the number Solve asks for, which is people using it "
+                "today, not the waitlist. If that number is small, say so; Prototype stage "
+                "expects it.]"},
+            {"q": "Which dimension of the Challenge does your solution most closely address?", "a":
+                "[Choose from the dropdown on the form. The honest fit is the dimension "
+                "about enabling people to manage their own health and well-being with "
+                "tools and information, if one is offered; if the options are strictly "
+                "clinical access, pick the closest and say in the next answer why a "
+                "consumer tool belongs there.]"},
+            {"q": "How are you and your team well-positioned to deliver this solution? (word limit on the form)", "a":
+                "[This is the answer Solve weighs alongside the problem, and it has to be "
+                "yours. Say who you are, why this problem is personal, and what you have "
+                "already built with how few people. The facts the page can fill: a team of "
+                "{{EMPLOYEES}}, led by {{CEO}}; the company is veteran-, woman- and "
+                "minority-owned, 51% or more on each, which is true and is also what Solve's "
+                "proximity-to-community criterion asks about. Say how the people you serve "
+                "shaped the product — the beta, the questions they actually asked — not how "
+                "you imagine they would.]"},
+            {"q": "How many people work on your solution team? / How long have you been working on it?", "a":
+                "Full-time: [number]. Part-time: [number]. Contractors or other workers: "
+                "[number]. Team of {{EMPLOYEES}} in total.\n\n"
+                "Working on the solution since {{FORMED}}. [Add the earlier date if the "
+                "idea or the hardware work predates the company.]"},
+            {"q": "Why are you applying to Solve? (200 words)", "a":
+                "Three barriers Solve is built to lower.\n\n"
+                "Reach without a marketing budget. The people Vybe serves best — shift "
+                "workers, people on fixed incomes, people managing a condition — are not "
+                "reached by consumer-wearable advertising, and we will not reach them by "
+                "outspending the companies that own that channel. Solve's network is made "
+                "of organisations that already stand next to them.\n\n"
+                "Honest evaluation. Vybe's claim is that an answer plus an outcome record "
+                "changes what people do. We want to test that with partners who will "
+                "publish the result either way, and Solve's community includes them.\n\n"
+                "The no-subscription model is a business-model argument as much as a "
+                "product one. Solve's mentors have taken impact products to sustainability "
+                "without a monthly fee attached to the beneficiary, and that is the question "
+                "we most need help with.\n\n"
+                "[If there is a specific Solve partner, prize or past Solver whose work you "
+                "have actually read, name them in one sentence. If not, do not.]"},
+            {"q": "What makes your solution innovative? (300 words)", "a":
+                "Everyone else stops at the score. The innovation is the step after it, "
+                "and three choices make that step possible.\n\n"
+                "First, context. A reading can move for reasons no sensor can see — a flight, "
+                "a hard week, a heat wave, a late dinner. Vybe reads the body's signals "
+                "alongside that context, from the person's calendar, the weather and their "
+                "own notes, and says which of them the change is most likely about. Other "
+                "products cannot do this because they do not ask.\n\n"
+                "Second, the baseline is the person, never a population. Every signal is "
+                "read against the wearer's own thirty-day range. A resting heart rate of 60 "
+                "is high for one person and low for the next; Vybe only ever says where "
+                "today sits in your band.\n\n"
+                "Third, the loop closes. Vybe suggests one thing, not six, and then reports "
+                "whether it worked — including the suggestions that missed. The outcome "
+                "record is the product's claim to be trusted, and it is the part competitors "
+                "do not ship.\n\n"
+                "Underneath those is the model that makes them reachable: no required "
+                "subscription. The interpretation comes with the Band. That inverts the "
+                "category's economics, in which the intelligence is the monthly fee, and it "
+                "is the reason the product can serve a fixed income at all.\n\n"
+                "An open SDK lets other builders put the same overnight signals inside their "
+                "own products, so the approach can spread without every team rebuilding the "
+                "hardware.\n\n"
+                "[If you can state what is defensible — a method, a dataset, a result from "
+                "the beta — do so in one sentence, truthfully. Do not use the word "
+                "'proprietary' unless something is.]"},
+            {"q": "Describe your solution's tech stack and how you know that it works (300 words)", "a":
+                "[Founders only. The reviewers want to know it is real: the sensors on the "
+                "Band and what they record; where the data is stored and how it is "
+                "protected; which signals the baselines are computed from and over what "
+                "window; how the question-answering works and what it is grounded in; and "
+                "the evidence — from the beta, from internal testing — that the answers "
+                "hold up. Give the evidence as what was measured, on how many people, over "
+                "how long. Say what has not been tested yet. Then tick the technologies on "
+                "the form's picklist: artificial intelligence and machine learning, "
+                "internet of things and sensors, software and mobile applications, and "
+                "whichever others are true.]"},
+            {"q": "What is your business model? (300 words)", "a":
+                "Customers and beneficiaries are the same people: adults who buy the Vybe "
+                "Band once and get the interpretation with it. No required subscription, "
+                "no paywall on their own history.\n\n"
+                "What they get: the Band, the app, Vybe Intelligence, their data in an "
+                "exportable form, and an honest account of what the product could not see.\n\n"
+                "How we deliver it: direct to the person, with the first distribution "
+                "through communities that already gather the people we serve — clubs, "
+                "leagues, member bodies and employer and first-responder programmes — on "
+                "no-cost member offers rather than paid advertising.\n\n"
+                "A second customer: builders. The Vybe SDK puts overnight heart, sleep and "
+                "recovery signals inside other products — training apps, research "
+                "platforms, performance programmes — [state the terms you intend: free "
+                "access with a paid tier, revenue share, or licence; whichever is true, "
+                "and if undecided say so].\n\n"
+                "Why they want it: the person gets an answer instead of a score and keeps "
+                "their money; the builder gets a validated overnight data source without "
+                "building hardware.\n\n"
+                "[Give the price point if it is set, and say if it is not. A reviewer "
+                "would rather read 'the consumer launch is planned for {{STAGE}} and the "
+                "price is not yet fixed' than a number that will change.]"},
+            {"q": "What is your plan for becoming financially sustainable, and what evidence do you have that it has been successful? (300 words)", "a":
+                "The plan has three parts, and the honest evidence for each is different.\n\n"
+                "Product revenue: the Band is sold once, at a margin that carries the "
+                "interpretation with it. Evidence today: {{TRACTION}} and {{REVENUE}}. The "
+                "waitlist is intent, not revenue, and we say so.\n\n"
+                "Builder revenue: the SDK gives other products a validated overnight data "
+                "source. Evidence today: [name the integration conversations that are real "
+                "and what stage each is at — a reply, a technical exchange, a pilot. Do not "
+                "list companies that have not answered.]\n\n"
+                "Non-dilutive funding to reach the consumer launch: Vybe is veteran-, woman- "
+                "and minority-owned and is pursuing the prizes and programmes that fit a "
+                "pre-revenue hardware company, of which Solve is one. [State what has been "
+                "won or applied for, truthfully; an empty list is better than an invented "
+                "one.]\n\n"
+                "What would make us say the plan has worked: a consumer launch with the "
+                "no-subscription promise kept, and the first builder paying for the SDK. "
+                "Neither has happened yet. [Add the planned dates.]"},
+            {"q": "Practicalities", "a":
+                "Organisation: {{LEGAL_NAME}}, a for-profit company formed in {{STATE}} in "
+                "{{FORMED}}, headquartered in {{CITY}}, United States. Website {{WEBSITE}}. "
+                "Team lead: {{CEO}}, {{EMAIL}}. [Phone with country code; the form requires "
+                "it and keeps it private.]\n\n"
+                "Dates to hold: submit before 12:00pm NOON Eastern on Monday 2 November "
+                "2026. Finalists are notified in February 2027 for a virtual live pitch; "
+                "Solver orientation is at MIT in April 2027.\n\n"
+                "[Record the 2-minute pitch video before you start the form, upload it to "
+                "YouTube or Vimeo as unlisted, and paste the link. Then submit early and "
+                "keep editing; Solve lets you edit a submitted application until the "
+                "deadline, but a saved-and-unsubmitted one is not reviewed.]"},
+        ],
+    },
+    {
         "id": "credits",
         "name": "Cloud and AI credits — five programs, one description",
         "funder": "NVIDIA, Microsoft, AWS, Google, Anthropic",

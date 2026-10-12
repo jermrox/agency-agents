@@ -14,15 +14,17 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import ExportScreen from './src/screens/ExportScreen';
+import VitalsScreen from './src/screens/VitalsScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are thirteen
+ * One piece of state instead of a navigation library. There are fifteen
  * screens now, and they are still a flat set: Nourish links across to the
  * pattern history, the pattern history links on to the year-on-year view,
- * Restore and Connect link across to the outcome record, Ask links across to
+ * Restore, Connect and Vitals link across to the outcome record, Vitals also
+ * links on to the data screen for the export, Ask links across to
  * the follow-up, onboarding links across to the history import, and the data
  * screen links on to the export. The last two are the only places a screen
  * returns to where it came from rather than to Home, which one remembered
@@ -94,18 +96,25 @@ export default function App() {
         />
       ) : screen === 'export' ? (
         <ExportScreen onBack={() => setScreen('data')} />
+      ) : screen === 'vitals' ? (
+        <VitalsScreen
+          onBack={() => setScreen('home')}
+          onOpenData={() => setScreen('data')}
+          onOpenOutcomes={() => setScreen('outcomes')}
+        />
       ) : (
         <HomeScreen
           isSample
           onOpenData={() => setScreen('data')}
           onAsk={() => setScreen('ask')}
           onOpenDimension={(key) => {
-            // Four of the five dimensions have detail screens now; Vitals
-            // falls through rather than opening an empty shell.
+            // All five dimensions have detail screens now. Move opens its
+            // trend screen until a Move detail exists.
             if (key === 'restore') setScreen('restore');
             if (key === 'move') setScreen('move');
             if (key === 'nourish') setScreen('nourish');
             if (key === 'connect') setScreen('connect');
+            if (key === 'vitals') setScreen('vitals');
           }}
         />
       )}
