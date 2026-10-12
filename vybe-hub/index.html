@@ -7,67 +7,114 @@
 <title>Vybe Operations</title>
 <style>
 :root{--bg:#f6f8f7;--surface:#fff;--surface-2:#eef3f1;--line:#dbe3e0;--ink:#12201c;--ink-2:#44554f;--ink-3:#6b7a75;
---brand:#1f8e78;--brand-ink:#0f5e4f;--good:#1d7a3a;--good-bg:#e3f3e7;--crit:#a3262a;--crit-bg:#fbe3e3;--warn:#8a5a00;--warn-bg:#fbefd5;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;color-scheme:dark}
+--brand:#1f8e78;--brand-ink:#0f5e4f;--good:#1d7a3a;--good-bg:#e3f3e7;--crit:#a3262a;--crit-bg:#fbe3e3;--warn:#8a5a00;--warn-bg:#fbefd5;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--grid:#e3e9e6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--grid:#243631;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1513;--surface:#151f1c;--surface-2:#1b2824;--line:#2a3a35;--ink:#e7efec;--ink-2:#b4c4be;--ink-3:#8a9c96;--brand:#4cc3a8;--brand-ink:#8fe0cd;--good:#7ad596;--good-bg:#173322;--crit:#f19a9a;--crit-bg:#3a1a1b;--warn:#f0c46b;--warn-bg:#352a12;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--grid:#243631;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--brand-ink);text-decoration:none}
-.wrap{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:16px 16px 60px}
 header.top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
 h1{font-size:21px;margin:0;letter-spacing:-.01em}h1 span{color:var(--brand)}
 .goal{margin:0;color:var(--ink-2);font-size:14.5px;flex:1 1 100%}
 .strip{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;font-size:13.5px}
 .pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 11px;display:inline-flex;align-items:center;gap:7px}
-.pill .d{width:9px;height:9px;border-radius:50%;background:var(--ink-3)}.pill.ok .d{background:var(--good)}.pill.bad .d{background:var(--crit)}
+.pill .d{width:9px;height:9px;border-radius:50%;background:var(--ink-3)}.pill.ok .d{background:var(--good)}.pill.bad .d{background:var(--crit)}.pill.warn .d{background:var(--warn)}
 .pill.meta{color:var(--ink-3);margin-left:auto}
 .pill button{all:unset;color:var(--brand-ink);cursor:pointer;border-bottom:1px solid var(--line)}
-nav.tabs{display:flex;gap:4px;overflow-x:auto;margin:16px 0 0;border-bottom:1px solid var(--line);scrollbar-width:none}
-nav.tabs button{all:unset;cursor:pointer;padding:10px 14px;font-weight:600;font-size:14.5px;color:var(--ink-2);border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin:14px 0 0;border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.tabs button{all:unset;cursor:pointer;padding:10px 13px;font-weight:600;font-size:14.5px;color:var(--ink-2);border-bottom:3px solid transparent;white-space:nowrap}
 nav.tabs button[aria-selected="true"]{color:var(--brand-ink);border-bottom-color:var(--brand)}
 nav.tabs button .n{font-weight:400;color:var(--ink-3);margin-left:5px;font-size:12.5px}
-.panel{display:none;margin-top:16px}.panel.on{display:block}
+nav.tabs.sub{margin-top:0;border-bottom:0}nav.tabs.sub button{font-size:13.5px;padding:8px 12px;font-weight:500}
+.tabhead{display:block;margin:12px 0 0;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.panel{display:none;margin-top:14px}.panel.on{display:block}
 .viewbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
 .viewbar .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .viewbar .seg button{all:unset;cursor:pointer;padding:7px 13px;font-size:13.5px;color:var(--ink-2)}
 .viewbar .seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
 .viewbar .open{margin-left:auto;font-size:13.5px;border-bottom:1px solid var(--line)}
 .purpose{margin:0 0 10px;color:var(--ink-2);font-size:15px}
+.bluf{margin:0 0 14px;font-size:16px;background:var(--surface-2);border-left:4px solid var(--brand);border-radius:0 10px 10px 0;padding:10px 14px}
+.bluf .lbl{margin-bottom:4px}
 .pulling{margin:0 0 14px;font-size:14.5px;background:var(--surface-2);border-radius:10px;padding:10px 12px}
 .lbl{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:2px}
-h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin:18px 0 6px;font-weight:600}
+h2{font-size:18px;margin:0 0 4px;letter-spacing:-.01em}
+h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin:20px 0 8px;font-weight:600;display:flex;align-items:baseline;gap:10px}
+h3 .sub{text-transform:none;letter-spacing:0;font-weight:400;font-size:13px}
 .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.01em}.kpi .v.na{font-size:15px;color:var(--ink-3);font-weight:500}
+.kpi .v{font-size:24px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.kpi .v.na{font-size:15px;color:var(--ink-3);font-weight:500}
 .kpi .l{font-size:13px;color:var(--ink-2);margin-top:2px}.kpi .a{font-size:12px;color:var(--ink-3);margin-top:4px}
+.delta{font-size:13px;font-weight:600;padding:1px 7px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
+.delta.up{color:var(--good);background:var(--good-bg)}.delta.down{color:var(--crit);background:var(--crit-bg)}
 .card{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
 .card .k{flex:0 0 26px;height:26px;border-radius:8px;background:var(--surface-2);color:var(--brand-ink);font-weight:700;text-align:center;line-height:26px;font-size:14px}
 .card .body{min-width:0;flex:1}.card .head{margin:0;font-size:15.5px}.card .head b{color:var(--crit)}
-.card .row{margin:7px 0 0;font-size:14px;line-height:1.45}.card ol{margin:2px 0 4px;padding-left:20px;font-size:14px}.card li{margin:2px 0}
+.card .row{margin:7px 0 0;font-size:14px;line-height:1.45}.card ol,.card ul{margin:2px 0 4px;padding-left:20px;font-size:14px}.card li{margin:2px 0}
 .card .links{display:block;font-size:13px;color:var(--ink-3);margin-top:5px}.card .links a{border-bottom:1px solid var(--line)}.card .links .src{margin-left:6px}
+.score{flex:0 0 46px;text-align:center;border-radius:10px;padding:6px 0 4px;background:var(--surface-2)}
+.score b{display:block;font-size:20px;line-height:1.1}.score i{font-style:normal;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.score.go{background:var(--good-bg);color:var(--good)}.score.hold{background:var(--warn-bg);color:var(--warn)}.score.no{background:var(--crit-bg);color:var(--crit)}
+.verdict{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
+.verdict.go{background:var(--good-bg);color:var(--good)}.verdict.hold{background:var(--warn-bg);color:var(--warn)}.verdict.no{background:var(--crit-bg);color:var(--crit)}
+.why{margin:6px 0 0;font-size:13px;color:var(--ink-2)}.why li{margin:1px 0}
 .empty{color:var(--ink-3);font-size:14px;margin:6px 0}
 .frame{width:100%;height:78vh;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .rows .r{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
 .rows .r:first-child{border-top:0}.rows .d{flex:0 0 10px;height:10px;border-radius:50%;margin-top:6px;background:var(--ink-3)}
-.rows .ok .d{background:var(--good)}.rows .bad .d{background:var(--crit)}.rows b{display:block}.rows .s{color:var(--ink-2);font-size:13.5px}.rows .t{color:var(--ink-3);font-size:12.5px;margin-left:auto;white-space:nowrap}
+.rows .ok .d{background:var(--good)}.rows .bad .d{background:var(--crit)}.rows .warn .d{background:var(--warn)}.rows b{display:block}.rows .s{color:var(--ink-2);font-size:13.5px}.rows .t{color:var(--ink-3);font-size:12.5px;margin-left:auto;white-space:nowrap}
+.viz{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.viz .t{font-size:14px;font-weight:600;margin:0 0 2px}.viz .st{font-size:12.5px;color:var(--ink-3);margin:0 0 8px}
+.viz svg{width:100%;height:auto;display:block;overflow:visible}
+.viz .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2);margin-top:6px}.viz .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.viz text{fill:var(--ink-3);font-size:11px;font-family:inherit}
+.viz .axis line{stroke:var(--grid);stroke-width:1}.viz .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.viz .pt{fill:var(--surface);stroke-width:2}.viz .hit{fill:transparent;cursor:pointer}
+.bars .b{display:grid;grid-template-columns:minmax(90px,36%) 1fr auto;gap:10px;align-items:center;font-size:13.5px;padding:3px 0}
+.bars .b .lab{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bars .b .bar{height:10px;background:var(--surface-2);border-radius:4px;overflow:hidden}.bars .b .bar i{display:block;height:100%;background:var(--s1);border-radius:4px}
+.bars .b .v{font-variant-numeric:tabular-nums;color:var(--ink)}
+.bars.funnel .bar i{background:var(--brand)}
+table.sb{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.sb th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--line)}
+table.sb td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}table.sb tr:last-child td{border-bottom:0}
+table.sb td.num{font-weight:700;font-size:17px;white-space:nowrap}table.sb .s{display:block;color:var(--ink-3);font-size:12.5px;font-weight:400}
+table.sb a.pl{font-weight:600}
+.sbwrap{overflow-x:auto}
+.tl .lane{display:grid;grid-template-columns:minmax(80px,14%) 1fr;gap:8px;align-items:center;border-top:1px solid var(--line);padding:6px 0}
+.tl .lane:first-of-type{border-top:0}.tl .lane .n{font-size:13px;color:var(--ink-2)}
+.tl .lane .n a{font-weight:600}
+details{margin:12px 0;font-size:14px}summary{cursor:pointer;color:var(--brand-ink);font-weight:600}
+details .in{margin:8px 0 0;color:var(--ink-2);line-height:1.6}
+.excl{color:var(--ink-3);font-size:13.5px;margin:8px 0 0}
 .foot{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3);line-height:1.8}.foot a{border-bottom:1px solid var(--line)}
+#tip{position:fixed;z-index:9;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;line-height:1.4;padding:6px 9px;border-radius:8px;max-width:280px;display:none}
+.mono{font-variant-numeric:tabular-nums}
+@media (max-width:520px){.kpi .v{font-size:21px}.bars .b{grid-template-columns:minmax(80px,40%) 1fr auto}table.sb{font-size:13px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
     <h1><span>Vybe</span> Operations</h1>
-    <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
+    <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company. This page scores every live lead 1–10 and shows its reasoning, so you can decide.</p>
   </header>
   <div class="strip" id="strip"><span class="pill"><span class="d"></span>loading…</span></div>
 
+  <span class="tabhead">Decide by pillar</span>
   <nav class="tabs" role="tablist" id="tabs"></nav>
+  <span class="tabhead">Agent dashboards</span>
+  <nav class="tabs sub" role="tablist" id="tabs2"></nav>
   <div id="panels"></div>
 
   <p class="foot">Live: this page reads each agent's own dashboard when you open it and every 5 minutes after. The agents keep publishing where they always have; nothing here is a copy.
-  Every card is the same shape — what it is · why it matters · what you do.<br>
+  Scores are computed here from the agents' own fields with the rubric shown on the Decide tab. Where an agent has not published a fact, the page says "unavailable" — it never shows 0 for a missing number.<br>
   <a href="https://agentrevup.netlify.app/vybe-agent-board.html">Four-hourly health check</a> · <a href="https://agentrevup.netlify.app/vybe-fleet-map.html">How the system fits together</a> · <a href="https://github.com/jermrox/agency-agents/blob/main/VYBE-AGENT-STANDARDS.md">The rules</a></p>
 </div>
+<div id="tip" role="tooltip"></div>
 
 <script>
 // ------------------------------------------------------------------ config ---
@@ -83,131 +130,413 @@ const AGENTS = [
   {id:"worker",   name:"Daily worker", purpose:"The product itself: one new app screen every weekday, funding rows, packets, Monday decks.",
    site:null, feed:null, maxAgeH:null},
 ];
+// The five ways Vybe makes money. Every lead on this page belongs to exactly one.
+const PILLARS = [
+  {id:"money",        name:"Money, no equity",  agents:["revsom"],
+   purpose:"Grants, prizes, credits and free programmes. Revsom finds and drafts; a person applies."},
+  {id:"investors",    name:"Investors",         agents:["growsom"],
+   purpose:"Angel groups, funds and accelerators that take pitches online. Growsom finds them and drafts the opener; John approves every send."},
+  {id:"integrations", name:"Integrations",      agents:["growsom","marketsom"],
+   purpose:"Apps, builders and research labs that put Vybe's SDK or overnight data inside their product, at no cost to either side."},
+  {id:"partners",     name:"Partners with reach",agents:["marketsom"],
+   purpose:"Leagues, clubs and member bodies: a no-cost member offer in exchange for their reach. No tables, no booths."},
+  {id:"awareness",    name:"Awareness & demand", agents:["instasom","marketsom"],
+   purpose:"Followers, reach, visits and the real waitlist. Real numbers only — the agents flag what they cannot verify."},
+];
 const REFRESH_MS = 5*60*1000;
+// Founder, 11 Oct: suppliers, manufacturers, engineering shops and anyone who wants paying are not partners (rule 7).
+// Anything matching this is kept out of every card and score on this page, and counted once under "out of scope".
+const OUT_OF_SCOPE = /\b(vendor|supplier|engineering firm|manufactur\w*|battery|batteries|product development|devkit (build|requirements)|contract build|paid per milestone|booth|expo|exhibit\w*|trade show|annual meeting|sponsorship|sponsor (package|tier|deck)|vendor (form|slot))\b/i;
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const DAY = 864e5;
+
+// ----------------------------------------------------------------- helpers ---
 const esc = s => String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const cut = (s,n)=>{s=String(s??"").replace(/\s+/g," ").trim(); if(s.length<=n) return s; const h=s.slice(0,n).replace(/\s+\S*$/,""); return h.replace(/[\s,;:·-]+$/,"")+"…";};
 const sentences=(s,n)=>{s=String(s??"").replace(/\s+/g," ").trim(); if(s.length<=n) return s; let out=""; for(const t of s.split(/(?<=[.!?])\s+/)){ if((out+" "+t).trim().length>n) break; out=(out+" "+t).trim(); } return out||cut(s,n);};
 const na = v => (v===null||v===undefined||v==="") ? null : v;
-const fmt = v => v===null ? '<span class="na">unavailable</span>' : (typeof v==="number" ? v.toLocaleString() : esc(v));
+const fmt = v => v===null||v===undefined ? '<span class="na">unavailable</span>' : (typeof v==="number" ? v.toLocaleString() : esc(v));
+const norm = s => String(s??"").toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g," ").trim();
+const MON = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,sept:8,oct:9,nov:10,dec:11};
 function parseStamp(raw){ if(!raw) return null; let s=String(raw).trim().replace(/\s+(UTC|GMT)$/,"").replace(/\.\d+/,"");
   if(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(:\d{2})?$/.test(s)) s=s.replace(" ","T")+"Z";
   if(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/.test(s)) s+="Z";
   if(/^\d{4}-\d{2}-\d{2}$/.test(s)) s+="T00:00:00Z";
   const d=new Date(s); return isNaN(d)?null:d; }
+// "16 Oct", "Oct 16", "By Oct 16", "Mon 12 Oct", "2026-11-01", "Tue 13 Oct" → a local midnight Date, or null.
+function parseDay(raw){ if(!raw) return null; const s=String(raw);
+  let m=s.match(/(\d{4})-(\d{2})-(\d{2})/); if(m) return new Date(+m[1],+m[2]-1,+m[3]);
+  m=s.match(/\b(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\b/i) || s.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\.?\s+(\d{1,2})\b/i);
+  if(!m) return null; const dayFirst=/^\d/.test(m[1]); const d=+(dayFirst?m[1]:m[2]); const mo=MON[(dayFirst?m[2]:m[1]).toLowerCase().slice(0,4).replace(/\.$/,"")]??MON[(dayFirst?m[2]:m[1]).toLowerCase().slice(0,3)];
+  if(mo===undefined||!d) return null; let y=TODAY.getFullYear(); let dt=new Date(y,mo,d); if(dt.getTime()<TODAY.getTime()-120*DAY) dt=new Date(y+1,mo,d); return dt; }
+const daysTo = d => d ? Math.round((d.getTime()-TODAY.getTime())/DAY) : null;
+function nextDate(raw){ if(!raw) return null; const s=String(raw); const found=[]; const re=/\b(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\b|\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\.?\s+(\d{1,2})\b|\b\d{4}-\d{2}-\d{2}\b/gi;
+  for(const m of s.matchAll(re)){ const d=parseDay(m[0]); if(d) found.push(d); } if(!found.length) return null; const fut=found.filter(d=>daysTo(d)>=0).sort((a,b)=>a-b); return fut[0]||found.sort((a,b)=>b-a)[0]; }
+const dayText = d => d ? d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}) : "";
+const inDays = n => n===null?"":n<0?`${-n}d ago`:n===0?"today":n===1?"tomorrow":`in ${n}d`;
 const ageH = d => d ? (Date.now()-d.getTime())/36e5 : null;
 const ago = h => h===null ? "no timestamp" : h<1 ? `${Math.round(h*60)} min ago` : h<48 ? `${Math.round(h)}h ago` : `${Math.round(h/24)} days ago`;
+const money = s => { // largest dollar figure in a text, as a number, or null
+  const t=String(s??"").replace(/,/g,""); let best=null; for(const m of t.matchAll(/\$\s?(\d+(?:\.\d+)?)\s*(k|m|million|thousand)?\b/gi)){ let v=parseFloat(m[1]); const u=(m[2]||"").toLowerCase(); if(u==="k"||u==="thousand") v*=1e3; if(u==="m"||u==="million") v*=1e6; if(best===null||v>best) best=v; } return best; };
+const moneyText = v => v===null?null: v>=1e6?`$${(v/1e6).toFixed(v%1e6?1:0)}M`: v>=1e3?`$${Math.round(v/1e3)}K`:`$${v}`;
+const outOfScope = (...parts) => OUT_OF_SCOPE.test(parts.filter(Boolean).join(" "));
+
+// ----------------------------------------------------------------- scoring ---
+// One rubric for every lead on the page. Each part is 0..1 with a weight; the
+// score is the weighted mean ×10, rounded, clamped to 1..10. The parts are
+// printed under every score so the number is never a black box.
+//   8–10 Go: worth your time this week.  5–7 Hold: one fact missing, ask for it.  1–4 No: skip.
+// `gate` is true, or the one-line reason this lead cannot be a Go yet whatever its number.
+function score(parts, gate=true){ const ps=parts.filter(p=>p&&typeof p.v==="number"); const W=ps.reduce((s,p)=>s+p.w,0)||1;
+  const n=Math.max(1,Math.min(10,Math.round(10*ps.reduce((s,p)=>s+p.w*p.v,0)/W)));
+  let verdict=n>=8?"go":n>=5?"hold":"no"; const why=ps.map(p=>p.why).filter(Boolean);
+  if(verdict==="go"&&gate!==true){ verdict="hold"; why.push("held at Hold: "+(typeof gate==="string"?gate:"a Go needs a reply from them, or an open application window")); }
+  return {n, why, verdict}; }
+const VERDICT = {go:"Go", hold:"Hold", no:"No"};
+const warmth = st => ({booked:1, replied:0.85, "replied-yes":1, passed:0.6, waiting:0.3, "no reply":0.25, drafted:0.2, declined:0, closed:0})[st] ?? 0.3;
 
 // ------------------------------------------------------------- extraction ---
-// Same card shape for everything: {when?, what, who_is, why, do[], url, url_label, url2?, url2_label?, kind, agent}
+// Every lead becomes one record: {pillar, agent, org, what_is, offer, we_need, they_need, size, cost, status, when, when_text, url, url_label, score}
 function fromRevsom(j){
   const opps=(j.opportunities||[]).filter(o=>o&&typeof o==="object");
-  const soon=opps.filter(o=>Number.isInteger(o.days_left)&&o.days_left>=0&&o.days_left<=14).sort((a,b)=>a.days_left-b.days_left);
-  const card=o=>({when:o.days_left===0?"today":o.days_left===1?"tomorrow":`${o.days_left} days`, what:o.name||"",
-    detail:cut(o.amount,60)+(/veteran/i.test((o.eligibility||"")+(o.name||""))?" · veteran-owned fits":""),
-    who_is:cut(o.eligibility||o.agency||"",130), why:sentences(o.summary,260),
-    do:(o.documents||[]).map(d=>cut(d,110)).slice(0,4), url:o.url||"https://agentrevup.netlify.app/apply", url_label:"application page",
+  const live=opps.filter(o=>["open","soon","rolling","forecast"].includes(String(o.status||"").toLowerCase()));
+  const dated=live.filter(o=>Number.isInteger(o.days_left)&&o.days_left>=0&&o.days_left<=90).sort((a,b)=>a.days_left-b.days_left);
+  const leads=dated.map(o=>{
+    const amt=money(o.amount); const sam=String(o.sam||"").toLowerCase(); const docs=(o.documents||[]).filter(Boolean); const txt=`${o.name} ${o.amount} ${o.summary} ${o.eligibility}`;
+    const travel=/\b(in[- ]person|on[- ]site|las vegas|travel|pitch live|fly)\b/i.test(txt); const fee=/\b(application fee|entry fee|\$\d+ fee)\b/i.test(txt);
+    const vet=/veteran/i.test(txt);
+    const sc=score([
+      {w:.1,v:1,why:`${o.kind||"funding"}: money or visibility with no equity, inside rule 7`},
+      {w:.15,v:fee?0.3:1,why:fee?"an application fee is mentioned":"no fee on the page"},
+      {w:.2,v:sam==="none"?1:sam==="later"?0.6:sam==="required"?0.3:0.5,why:sam==="none"?"no SAM/registration needed":sam==="later"?"registration needed later, not to apply":sam==="required"?"needs SAM registration first (weeks)":"registration requirement not checked"},
+      {w:.25,v:amt===null?0.2:amt>=1e5?1:amt>=25e3?.85:amt>=1e4?.65:amt>=5e3?.5:.3,why:amt===null?"no cash amount stated":`${moneyText(amt)} stated`},
+      {w:.15,v:travel?0.3:docs.length<=2?1:docs.length<=4?.6:.3,why:travel?"needs travel or an in-person pitch":`${docs.length||"no"} document${docs.length===1?"":"s"} to prepare`},
+      {w:.15,v:o.days_left>=3&&o.days_left<=30?1:o.days_left>30&&o.days_left<=60?.7:o.days_left>60?.5:o.days_left>=1?.4:.2,why:o.days_left>60?`${o.days_left} days away: not this week's work`:o.days_left>=3?`${o.days_left} days to apply`:o.days_left>=1?`only ${o.days_left} day${o.days_left===1?"":"s"} left: tight`:"closes today"},
+      vet?{w:.05,v:1,why:"veteran-owned fits"}:null], travel?"needs travel; not this quarter":fee?"it costs money to enter":o.days_left<2?"not enough time to do it well":amt===null?"no cash amount stated; ask Revsom what it is worth":amt<1e4?"under $10K; only worth it if it takes an hour":true);
+    return {pillar:"money", agent:"Revsom", org:o.name||"", what_is:cut(o.agency||"",90)+(o.kind?` · ${o.kind}`:""), offer:cut(o.amount||"amount not stated",140),
+      we_need:"Cash or visibility with no equity given up", they_need:cut((docs.length?docs.join("; "):"an application")+(o.eligibility?` · eligible: ${o.eligibility}`:""),220),
+      size:amt, cost:fee?"fee mentioned":"$0", status:o.status, when:new Date(TODAY.getTime()+o.days_left*DAY), when_text:`closes ${inDays(o.days_left)}`, why_text:sentences(o.summary,220),
+      url:o.url||"https://agentrevup.netlify.app/apply", url_label:"application page", url2:"https://agentrevup.netlify.app/apply", url2_label:"drafted answers", score:sc};
+  });
+  const count=(f)=>{const c={}; for(const o of live){const k=String(o[f]||"unknown"); c[k]=(c[k]||0)+1;} return Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v}));};
+  const soon=dated.filter(o=>o.days_left<=14);
+  const card=o=>({when:o.days_left===0?"today":o.days_left===1?"tomorrow":`${o.days_left} days`, what:o.name||"", detail:cut(o.amount,60)+(/veteran/i.test((o.eligibility||"")+(o.name||""))?" · veteran-owned fits":""),
+    who_is:cut(o.eligibility||o.agency||"",130), why:sentences(o.summary,260), do:(o.documents||[]).map(d=>cut(d,110)).slice(0,4), url:o.url||"https://agentrevup.netlify.app/apply", url_label:"application page",
     url2:"https://agentrevup.netlify.app/apply", url2_label:"drafted answers", kind:"$", agent:"Revsom", sort:o.days_left});
-  return {stamp:parseStamp(j.generated), total:opps.length||null, noSam:opps.filter(o=>String(o.sam||"").toLowerCase()==="none").length||null,
-    closing14:soon.length, needs:soon.slice(0,6).map(card), top:soon.slice(6,10).map(card),
-    pulling:p=>`${fmt(p.total)} opportunities · ${fmt(p.noSam)} need no registration · ${fmt(p.closing14)} close inside 14 days`};
+  return {stamp:parseStamp(j.generated), total:opps.length||null, live:live.length, noSam:live.filter(o=>String(o.sam||"").toLowerCase()==="none").length,
+    closing14:soon.length, closing30:dated.filter(o=>o.days_left<=30).length, closing90:dated.length, byKind:count("kind"), byStatus:count("status"), bySam:count("sam"),
+    leads, needs:soon.slice(0,6).map(card), top:soon.slice(6,10).map(card),
+    pulling:p=>`${fmt(p.live)} live opportunities · ${fmt(p.noSam)} need no registration · ${fmt(p.closing14)} close inside 14 days`};
 }
 function fromGrowsom(j){
   const sm=j.summary||{}; const tg=(j.targets||[]).filter(x=>x&&typeof x==="object");
+  const threads=((j.followups||{}).threads||[]).filter(t=>t&&typeof t==="object");
+  const thr=o=>threads.find(t=>norm(t.org)===norm(o)||norm(t.org).startsWith(norm(o))||norm(o).startsWith(norm(t.org)));
+  const approvals=Object.values(((j.approvals||{}).items)||{});
+  const pillarOf=x=>{const h=String(x.hunt||"").toLowerCase(); const t=String(x.type||"").toLowerCase(); if(h==="investor"||/vc|angel|accelerator/.test(t)) return "investors"; if(h==="social"||t==="amplifier") return "awareness"; if(t==="signal") return null; return "integrations";};
+  const leads=[]; for(const x of tg){ const p=pillarOf(x); if(!p) continue; const t=thr(x.org||x.name); if(outOfScope(x.name,x.org,x.type,x.ask,x.why,t&&t.next)) continue; const st=t?(t.state==="replied"?"replied":t.state==="no reply"?"no reply":"waiting"):(x.sendable?"drafted":"researching");
+    const dl=parseDay(x.deadline); const when=dl||(t?parseDay(t.due):null); const chk=money(x.check_size); const fit=Number(x.fit)||null; const ice=x.ice||{};
+    const windowOpen=!!dl&&daysTo(dl)>=1; const gate=st==="replied"||windowOpen;
+    const sc=score([
+      {w:.2,v:1,why:`${x.type||x.hunt}: ${p==="investors"?"investment":"collaboration"} ask, inside rule 7`},
+      {w:.15,v:1,why:"no money asked of Vybe (paid routes are parked by Growsom)"},
+      {w:.3,v:windowOpen&&st!=="replied"?.8:warmth(st),why:st==="replied"?"they replied":windowOpen?`application window open until ${dayText(dl)}`:st==="no reply"?"emailed, no reply yet":st==="waiting"?"email sent, waiting":st==="drafted"?"opener drafted, waits on John's approval":"still being researched"},
+      {w:.2,v:fit?fit/10:.5,why:fit?`Growsom fit ${fit}/10${ice.i?` · impact ${ice.i}, confidence ${ice.c}, ease ${ice.e}`:""}`:"fit not scored by Growsom"},
+      {w:.1,v:x.warm_path?1:x.channel==="email"?.8:.6,why:x.warm_path?`warm path: ${cut(x.warm_path,60)}`:`cold via ${x.channel||"unknown channel"}`},
+      {w:.05,v:when?(daysTo(when)>=7?1:daysTo(when)>=1?.5:.1):0.8,why:when?`deadline ${dayText(when)} (${inDays(daysTo(when))})`:"no deadline"}], gate?true:"a Go needs a reply from them, or an open application window");
+    leads.push({pillar:p, agent:"Growsom", org:(x.org&&norm(x.org)!==norm(x.name)?`${x.org}${x.name?" ("+x.name+")":""}`:(x.name||x.org||"")), what_is:cut(`${x.type||""}${x.geo?" · "+x.geo:""}${x.role?" · "+x.role:""}`,110), offer:cut(x.opportunity||x.check_size||(p==="investors"?"a cheque, size not stated":"a place for Vybe data in their product"),140),
+      we_need:cut(x.ask||"",160), they_need:cut(x.why_now||x.why||"",200), size:chk, cost:"$0", status:st, when, when_text:when?`${t?"follow-up due":"deadline"} ${dayText(when)}`:(x.when||""), why_text:sentences(x.why,200),
+      url:x.contact_url||"https://agentgrowthscout.netlify.app/", url_label:"open", score:sc, _fit:fit, _priority:x.priority, _state:x.geo}); }
+  const count=(f,rows)=>{const c={}; for(const x of rows){const k=String(x[f]||"unknown"); c[k]=(c[k]||0)+1;} return Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v}));};
+  const inv=tg.filter(x=>pillarOf(x)==="investors"), integ=tg.filter(x=>pillarOf(x)==="integrations");
   const hi=tg.filter(x=>String(x.priority||"").toLowerCase()==="high").sort((a,b)=>(b.score||0)-(a.score||0));
-  return {stamp:parseStamp(j.generated), total:na(sm.total), high:na(sm.high), ready:na(sm.ready_to_send), deadlines:na(sm.deadlines_30d), needs:[],
+  return {stamp:parseStamp(j.generated), total:na(sm.total), high:na(sm.high), ready:na(sm.ready_to_send), deadlines:na(sm.deadlines_30d), queue:na(sm.outreach_queue), parked:na(j.parked_count), rejected:na(j.rejected_count),
+    investors:inv.length, integrations:integ.length, byType:count("type",tg), byState:(j.by_state||[]).slice(0,10).map(s=>({label:s.state,v:s.count})), byStage:count("stage",inv).filter(r=>r.label!=="unknown"),
+    threads:threads.length, replied:threads.filter(t=>t.state==="replied").length, noReply:threads.filter(t=>t.state==="no reply").length,
+    approvalsOnHold:approvals.filter(a=>/hold/i.test(a.status||"")).length, approvalsPending:approvals.length, leads, needs:[],
     top:hi.slice(0,4).map(x=>({what:x.name||x.org||"", who_is:cut(`${x.type||x.lane||""}${x.geo?" · "+x.geo:""}`,90), why:sentences(x.why_now||x.why,200),
       do:[cut(x.move||x.ask||"Approve the drafted opener so Growsom can send it",110)], url:x.contact_url||"https://agentgrowthscout.netlify.app/", url_label:"open", kind:"→", agent:"Growsom"})),
-    pulling:p=>`${fmt(p.total)} targets · ${fmt(p.high)} high priority · ${fmt(p.ready)} ready to send on John's approval`};
+    pulling:p=>`${fmt(p.total)} targets · ${fmt(p.high)} high priority · ${fmt(p.ready)} openers ready on John's approval · ${fmt(p.parked)} paid routes parked`};
 }
-function fromMarketsom(html){
+function fromMarketsom(html, growsomLeads){
   const m=html.match(/<script id="live-data" type="application\/json">([\s\S]*?)<\/script>/); let d=null; try{ d=m?JSON.parse(m[1]):null; }catch(e){}
-  if(!d) return {stamp:null, headline:null, needs:[], top:[], pulling:()=>'<span class="na">briefing unavailable</span>'};
-  const needs=[]; for(const u of (d.upcoming||[]).slice(0,6)){ if(!u||typeof u!=="object") continue; const call=u.kind==="call"; const lines=(u.lines||[]).map(String);
+  if(!d) return {stamp:null, headline:null, needs:[], top:[], leads:[], excluded:[], pulling:()=>'<span class="na">briefing unavailable</span>'};
+  const gl=growsomLeads||[]; const profile=o=>gl.find(l=>norm(l.org)===norm(o)||norm(l.org).startsWith(norm(o).split(" ")[0]+" ")&&norm(o).split(" ")[0].length>4);
+  const rows=(d.outreach||[]).filter(x=>x&&typeof x==="object"); const excluded=[]; const leads=[];
+  for(const x of rows){ const blob=`${x.org} ${x.reply} ${x.next}`;
+    if(outOfScope(x.org,x.reply,x.next)&&!/\b(member offer|newsletter|club offer)\b/i.test(x.next||"")){ excluded.push({org:x.org, why:"vendor, supplier or paid slot (rule 7)"}); continue; }
+    if(/\bbooth|table\b/i.test(x.reply||"")&&!/\b(member offer|newsletter|club offer|no-cost)\b/i.test(blob)){ excluded.push({org:x.org, why:"asked for a paid table or booth (rule 7)"}); continue; }
+    const app=/\b(api|oauth|integration|apple health|hrv|app\b|platform|sdk|data)\b/i.test(blob); const p=app?"integrations":"partners";
+    let st=String(x.status||"").toLowerCase(); if(String(x.reply||"").trim().length>12&&["drafted","waiting"].includes(st)) st="replied";
+    if(st==="replied"&&/\b(passed|forward)/i.test(x.reply||"")) st="passed"; if(st==="replied"&&/\b(yes|offered|wants|asked for a call|would like|asked whether)\b/i.test(x.reply||"")) st="replied-yes";
+    const askedMoney=/\$\d|\bfee\b|\bpaid\b|\bvendor booth\b/i.test(x.reply||""); const prof=profile(x.org); const when=nextDate(x.next)||parseDay(x.sent);
+    const techQ=/\b(technical|prototype|requirements|documentation|api details|app details)\b/i.test(blob);
+    const sc=score([
+      {w:.2,v:1,why:`${p==="integrations"?"data integration":"community partner"}: collaboration ask, inside rule 7`},
+      {w:.2,v:askedMoney?0.4:1,why:askedMoney?"their first answer involved money; our draft keeps only the free part":"no money on either side"},
+      {w:.3,v:st==="passed"?.5:warmth(st),why:st==="replied-yes"?"they said yes or asked for a call":st==="replied"?"they replied":st==="passed"?"passed to another team inside their organisation, no answer yet":st==="waiting"?"emailed, no reply yet":st==="drafted"?"draft written, not sent":st==="declined"?"they declined":"status unknown"},
+      {w:.15,v:prof&&prof._fit?prof._fit/10:0.5,why:prof&&prof._fit?`Growsom rates the fit ${prof._fit}/10`:"audience size not published by Marketsom (asked for it)"},
+      {w:.1,v:techQ?0.6:1,why:techQ?"they need a technical answer from Jeremy before anything moves":"one email closes the next step"},
+      {w:.05,v:when?(daysTo(when)>=0?1:0.5):0.8,why:when?`next step ${dayText(when)}`:"no date on the next step"}], /replied/.test(st)?true:st==="passed"?"passed on inside their organisation; a Go needs their answer":"a Go needs a reply from them");
+    leads.push({pillar:p, agent:"Marketsom", org:String(x.org||""), what_is:prof?prof.what_is+(prof.why_text?" — "+cut(prof.why_text,120):""):(p==="integrations"?"app or data company (profile not yet published by Marketsom)":"community organisation (profile not yet published by Marketsom)"),
+      offer:cut(x.reply||(st==="drafted"?"nothing yet — our draft is waiting to be sent":"no reply yet"),200), we_need:p==="integrations"?"Vybe's overnight HRV, sleep and resting heart rate inside their product; their users become Vybe's":"A no-cost member offer to their members and a mention in their channels",
+      they_need:cut(x.next||"",200), size:null, cost:askedMoney?"they asked for money; declined":"$0", status:st, when, when_text:when?`next ${dayText(when)}`:"", url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", url2:"https://agentmarksom.netlify.app/briefing.html", url2_label:"briefing", score:sc}); }
+  // Needs-you cards: due dates (calls with vendors are out of scope and never shown) and the drafts waiting.
+  const needs=[]; for(const u of (d.upcoming||[]).slice(0,6)){ if(!u||typeof u!=="object") continue; const lines=(u.lines||[]).map(String); if(outOfScope(u.what,lines.join(" "))) continue; const call=u.kind==="call";
     needs.push({when:[u.day,u.time].filter(Boolean).join(" ")||"soon", what:String(u.what||""), who_is:lines[0]?cut(lines[0],160):"", why:lines.length>1?cut(lines.slice(1,3).join(" "),220):"",
       do:call?[u.prep?"Read the prep brief first":"No prep brief yet — ask for one before joining","Join the call at the time shown","Decide on the call: no-cost route, or a short polite no"]:(lines.slice(0,3).map(l=>cut(l,110))),
-      url:u.prep||"https://agentmarksom.netlify.app/briefing.html", url_label:u.prep?"prep brief":"briefing", url2:u.prep?"https://agentmarksom.netlify.app/briefing.html":null, url2_label:"briefing", kind:call?"☎":"!", agent:"Marketsom", sort:call?0:3}); }
-  const nDrafts=Number.isInteger(d.drafts)?d.drafts:(parseInt(String(d.drafts||"").trim(),10)||null);
-  if(nDrafts>0) needs.push({when:"waiting", what:`${nDrafts} partner drafts waiting for you to send`, who_is:"Community partners Marketsom researched this week — leagues, clubs, member bodies",
-    why:"Nothing reaches a partner until you send it.", do:["Open Gmail drafts from jeremy@vybe.health","Read each one; send the ones you approve, delete the rest","Nothing goes out until you press send"],
+      url:u.prep||"https://agentmarksom.netlify.app/briefing.html", url_label:u.prep?"prep brief":"briefing", kind:call?"☎":"!", agent:"Marketsom", sort:call?0:3}); }
+  const nDrafts=Number.isInteger(d.drafts_count)?d.drafts_count:Number.isInteger(d.drafts)?d.drafts:(parseInt(String(d.drafts||"").trim(),10)||null);
+  if(nDrafts>0) needs.push({when:"waiting", what:`${nDrafts} partner drafts waiting for you to send`, who_is:"Community partners and apps Marketsom researched this week",
+    why:"Nothing reaches a partner until you send it. Every draft has John on CC and asks only for a no-cost exchange.", do:["Open Gmail drafts from jeremy@vybe.health","Read each one; send the ones you approve, delete the rest"],
     url:"https://agentmarksom.netlify.app/partner-board.html", url_label:"partner board", kind:"✉", agent:"Marketsom", sort:2});
-  const top=(Array.isArray(d.problems)?d.problems:[]).slice(0,4).map(pr=>typeof pr==="string"?{what:cut(pr,90),who_is:"",why:"",do:["Read it on the briefing"]}:
-    {what:cut(pr.title||pr.what||"",90), who_is:"", why:sentences(pr.why||pr.detail||"",200), do:[cut(pr.fix||pr.do||pr.action||"Read it on the briefing",110)]})
+  const probs=(Array.isArray(d.problems)?d.problems:[]).filter(pr=>!(pr&&typeof pr==="object"&&outOfScope(pr.title,pr.body)));
+  const top=probs.slice(0,4).map(pr=>typeof pr==="string"?{what:cut(pr,90),who_is:"",why:"",do:["Read it on the briefing"]}:
+    {what:cut(pr.title||pr.what||"",90), who_is:"", why:sentences(pr.why||pr.body||"",200), do:[cut(pr.fix||pr.do||pr.action||"Read it on the briefing",110)]})
     .map(c=>({...c,url:"https://agentmarksom.netlify.app/briefing.html",url_label:"briefing",kind:"!",agent:"Marketsom"}));
-  return {stamp:parseStamp(d.asof), headline:d.headline||null, drafts:na(nDrafts), needs, top, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
+  const kpi=l=>(d.kpis||[]).find(k=>new RegExp(l,"i").test(k.label||""))||null; const num=k=>k?(parseInt(String(k.big).replace(/,/g,""),10)):null; const was=k=>k?(String(k.was||"").match(/(\d[\d,]*)/)||[])[1]:null;
+  const funnel=["drafted","waiting","replied","passed","replied-yes","declined"].map(s=>({label:s==="replied-yes"?"said yes":s==="passed"?"passed on internally":s, v:leads.filter(l=>l.status===s).length})).filter(r=>r.v);
+  return {stamp:parseStamp(d.asof), headline:d.headline||null, drafts:na(nDrafts), leads, excluded, needs, top, funnel,
+    waitlist:num(kpi("real waitlist")), waitlistNote:kpi("real waitlist")?.was||null, usVisits:num(kpi("US visits")), usVisitsWas:was(kpi("US visits"))?+was(kpi("US visits")).replace(/,/g,""):null,
+    signups:num(kpi("^waitlist signups")), daily:(d.daily||[]).map(([l,v])=>({label:l,v:+v})), sources:(d.sources||[]).map(([l,v])=>({label:l,v:+v})), countries:(d.countries||[]).map(([l,v])=>({label:l,v:+v})),
+    ads:((d.ads||{}).rows||[]).map(r=>({name:r.name,spend:r.spend,clicks:r.clicks,conv:r.conv})), igFollowers:na((d.instagram||{}).followers), problems:probs.length,
+    contacted:rows.length, pulling:p=>esc(cut(p.headline||"briefing unavailable",160))};
 }
 function fromInstasom(j){
   const col=j.collections||{}; const ppl=col.people; const items=(Array.isArray(ppl)?ppl:Object.values(ppl||{})).filter(x=>x&&typeof x==="object");
-  const fol=col.followers||{}; const keys=Object.keys(fol).sort(); const latest=keys.length?fol[keys[keys.length-1]]:{};
+  const fol=col.followers||{}; const fkeys=Object.keys(fol).sort(); const latest=fkeys.length?fol[fkeys[fkeys.length-1]]:{};
+  const numk=v=>{const t=String(v??"").toLowerCase().replace(/[,~]/g,""); const m=t.match(/([\d.]+)\s*k/); return m?parseFloat(m[1])*1e3:(parseFloat(t)||null);};
+  const trusted=numk(latest.igTrusted); const flag=latest.flag||null;
+  const igSeries=fkeys.map(k=>({x:new Date(k+"T12:00:00Z"), y:Number.isFinite(+fol[k].ig)?+fol[k].ig:null})).filter(p=>p.y!==null);
+  const fbSeries=fkeys.map(k=>({x:new Date(k+"T12:00:00Z"), y:Number.isFinite(+fol[k].fb)?+fol[k].fb:null})).filter(p=>p.y!==null);
+  const igd=col.igdaily||{}; const dkeys=Object.keys(igd).sort();
+  const reach=dkeys.map(k=>({x:new Date(k+"T12:00:00Z"), y:Number.isFinite(+igd[k].reach)&&igd[k].reach!==null?+igd[k].reach:null}));
+  const views=dkeys.map(k=>({x:new Date(k+"T12:00:00Z"), y:Number.isFinite(+igd[k].views)&&igd[k].views!==null&&igd[k].views!==undefined?+igd[k].views:null}));
+  const profile=dkeys.map(k=>({x:new Date(k+"T12:00:00Z"), y:igd[k].profileViews!==undefined?+igd[k].profileViews:null}));
+  const posts=Object.values(col.igposts||{}).filter(p=>p&&typeof p==="object").sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp)));
+  const byStatus=s=>items.filter(x=>x.status===s).length; const keep=items.filter(x=>x.auditVerdict==="keep").length;
+  const cats=(((col.research||{}).categories||{}).items)||[]; const segs=(((col.research||{}).audience||{}).segments)||[];
+  const plan=(col.plan||{}).targets||{}; const target=plan.followerTarget||{};
+  const ny=col.needsYou||{}; const decisions=(ny.items||[]).filter(x=>x&&typeof x==="object").map(x=>({pillar:"awareness", agent:"Instasom", kind:x.kind||"decision", when:parseDay(x.when), when_text:x.when||"", what:x.what||"", who_is:x.who_is||"", why:x.why||"", do:x.do||[], url:x.url||"https://instasum.netlify.app/", url_label:x.url_label||"open", url2:x.url2||null, url2_label:x.url2_label||null}));
   const num=v=>{const t=String(v??"").toLowerCase().replace(/,/g,""); const m=t.match(/([\d.]+)\s*k/); return m?parseFloat(m[1])*1e3:(parseFloat(t)||0);};
-  const pick=items.filter(x=>x.status==="Not started"&&!x.followOnly).sort((a,b)=>num(b.followers)-num(a.followers));
-  return {stamp:parseStamp(j.generatedAt), ig:na(latest.ig), fb:na(latest.fb), toFollow:items.filter(x=>x.status==="Not started").length||null, people:items.length||null, needs:[],
+  const pick=items.filter(x=>x.status==="Not started"&&!x.followOnly&&x.auditVerdict!=="drop").sort((a,b)=>num(b.followers)-num(a.followers));
+  const catCount={}; for(const x of items){ if(x.auditVerdict==="drop") continue; catCount[x.category||"other"]=(catCount[x.category||"other"]||0)+1; }
+  return {stamp:parseStamp(j.generatedAt), ig:na(latest.ig), igTrusted:trusted, flag, fb:na(latest.fb), igSeries, fbSeries, reach, views, profile, posts,
+    people:items.length||null, keep, toFollow:byStatus("Not started")||null, followed:byStatus("Followed"), passed:byStatus("Pass"),
+    byCategory:Object.entries(catCount).sort((a,b)=>b[1]-a[1]).map(([label,v])=>({label,v})), cats, segs, target, planEnd:parseDay(plan.end), planLabel:plan.label||"", bluf:ny.bluf||[], decisions, needs:[],
     top:pick.slice(0,4).map(x=>({what:`@${String(x.handle||"").replace(/^@/,"")}${x.name?" — "+x.name:""}`, who_is:cut(`${x.category||""} · ${x.followers||"?"} followers`,90), why:sentences(x.why,200),
       do:[cut(x.action||"Follow, then tick the box on the social dashboard",110)], url:x.url||`https://www.instagram.com/${String(x.handle||"").replace(/^@/,"")}/`, url_label:"open", kind:"@", agent:"Instasom"})),
-    pulling:p=>`Instagram ${fmt(p.ig)} raw followers · ${fmt(p.toFollow)} verified people still to follow · Facebook ${fmt(p.fb)}`};
+    pulling:p=>`Instagram ${fmt(p.ig)} raw (trusted ${p.igTrusted!==null?"~"+fmt(p.igTrusted):"not stated"}) · Facebook ${fmt(p.fb)} · ${fmt(p.toFollow)} verified people still to follow`};
 }
 
-// ----------------------------------------------------------------- render ---
-const state={data:{}, view:{}, tab:"all", updated:null};
+// ------------------------------------------------------------------ charts ---
+const CH={}; let chartSeq=0;
+function lineChart({title, sub, series, fmtY, note}){
+  const id="c"+(++chartSeq); const W=640,H=200,L=44,R=12,T=14,B=28; const all=series.flatMap(s=>s.pts.filter(p=>p.y!==null));
+  if(!all.length) return `<div class="viz"><p class="t">${esc(title)}</p><p class="st">${esc(sub||"")}</p><p class="empty">unavailable — the agent has not published this series</p></div>`;
+  const xs=all.map(p=>p.x.getTime()), ys=all.map(p=>p.y); const x0=Math.min(...xs), x1=Math.max(...xs)||x0+DAY; const yMax=Math.max(...ys,1), yMin=0;
+  const X=x=>L+(x1===x0?0.5:(x-x0)/(x1-x0))*(W-L-R), Y=y=>T+(1-(y-yMin)/(yMax-yMin||1))*(H-T-B);
+  const ticks=4; let g=""; for(let i=0;i<=ticks;i++){ const v=yMin+(yMax-yMin)*i/ticks; g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text x="${L-6}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end">${(fmtY||(n=>Math.round(n).toLocaleString()))(v)}</text>`; }
+  const days=(x1-x0)/DAY; const step=days>40?14:days>14?7:days>6?2:1; let xl=""; for(let t=x0;t<=x1+1;t+=step*DAY){ const d=new Date(t); xl+=`<text x="${X(t).toFixed(1)}" y="${H-8}" text-anchor="middle">${dayText(d)}</text>`; }
+  const colors=["var(--s1)","var(--s2)","var(--s3)"]; let paths="";
+  series.forEach((s,i)=>{ let d="",pen=false; for(const p of s.pts){ if(p.y===null){pen=false;continue;} d+=(pen?"L":"M")+X(p.x.getTime()).toFixed(1)+" "+Y(p.y).toFixed(1); pen=true; } paths+=`<path class="ln" d="${d}" stroke="${colors[i%3]}"/>`;
+    if(s.pts.filter(p=>p.y!==null).length===1){ const p=s.pts.find(p=>p.y!==null); paths+=`<circle cx="${X(p.x.getTime())}" cy="${Y(p.y)}" r="4" fill="${colors[i%3]}"/>`; } });
+  CH[id]={series,x0,x1,W,H,L,R,T,B,X,Y,colors,fmtY};
+  const legend=series.length>1?`<div class="legend">${series.map((s,i)=>`<span><i style="background:${colors[i%3]}"></i>${esc(s.name)}</span>`).join("")}</div>`:"";
+  return `<div class="viz"><p class="t">${esc(title)}</p><p class="st">${esc(sub||"")}</p><svg viewBox="0 0 ${W} ${H}" data-chart="${id}" onmousemove="chartHover(event,'${id}')" onmouseleave="hideTip()" ontouchstart="chartHover(event,'${id}')"><g class="axis">${g}</g>${xl}${paths}<g id="${id}-hl"></g><rect class="hit" x="0" y="0" width="${W}" height="${H}"/></svg>${legend}${note?`<p class="st" style="margin:8px 0 0">${esc(note)}</p>`:""}</div>`;
+}
+function chartHover(ev,id){ const c=CH[id]; if(!c) return; const svg=ev.currentTarget; const r=svg.getBoundingClientRect(); const cx=(ev.touches?ev.touches[0].clientX:ev.clientX); const px=(cx-r.left)/r.width*c.W;
+  const t=c.x0+((px-c.L)/(c.W-c.L-c.R))*(c.x1-c.x0); let best=null; for(const s of c.series){ for(const p of s.pts){ if(p.y===null) continue; const d=Math.abs(p.x.getTime()-t); if(!best||d<best.d) best={d,p,s}; } } if(!best) return;
+  const x=c.X(best.p.x.getTime()); const hl=svg.querySelector(`#${id}-hl`); let h=`<line x1="${x}" x2="${x}" y1="${c.T}" y2="${c.H-c.B}" stroke="var(--ink-3)" stroke-dasharray="3 3"/>`; const lines=[`<b>${dayText(best.p.x)}</b>`];
+  c.series.forEach((s,i)=>{ const p=s.pts.find(q=>q.x.getTime()===best.p.x.getTime()); if(p&&p.y!==null){ h+=`<circle class="pt" cx="${x}" cy="${c.Y(p.y)}" r="5" stroke="${c.colors[i%3]}"/>`; lines.push(`${esc(s.name)}: ${(c.fmtY||(n=>n.toLocaleString()))(p.y)}${p.note?" · "+esc(p.note):""}`); } });
+  hl.innerHTML=h; showTip(cx, (ev.touches?ev.touches[0].clientY:ev.clientY), lines.join("<br>")); }
+function showTip(x,y,html){ const t=document.getElementById("tip"); t.innerHTML=html; t.style.display="block"; const w=t.offsetWidth; t.style.left=Math.max(8,Math.min(window.innerWidth-w-8,x-w/2))+"px"; t.style.top=(y-t.offsetHeight-14)+"px"; }
+function hideTip(){ const t=document.getElementById("tip"); t.style.display="none"; document.querySelectorAll("svg[data-chart] g[id$='-hl']").forEach(g=>g.innerHTML=""); }
+function bars(rows,{title,sub,cls,max,fmtV}={}){ rows=(rows||[]).filter(r=>r&&typeof r.v==="number"); if(!rows.length) return `<div class="viz"><p class="t">${esc(title||"")}</p><p class="empty">unavailable</p></div>`;
+  const mx=max||Math.max(...rows.map(r=>r.v),1); return `<div class="viz bars ${cls||""}">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}${rows.map(r=>`<div class="b"><span class="lab" title="${esc(r.label)}">${esc(r.label)}</span><span class="bar"><i style="width:${Math.max(1,100*r.v/mx).toFixed(1)}%"></i></span><span class="v">${(fmtV||(n=>n.toLocaleString()))(r.v)}${r.note?` <span class="s" style="color:var(--ink-3);font-size:12px">${esc(r.note)}</span>`:""}</span></div>`).join("")}</div>`; }
+// Swimlane timeline: one row per pillar (or per agent), dots at dated items for the next N days. Hover for the name and score.
+const TL={};
+function timeline(lanes,{days=90,title,sub}={}){ const id="t"+(++chartSeq); const W=640,L=110,R=10,rowH=30,T=22; const H=T+lanes.length*rowH+8;
+  const X=d=>L+Math.max(0,Math.min(days,(d.getTime()-TODAY.getTime())/DAY))/days*(W-L-R);
+  let grid=""; for(let w=0;w<=days;w+=7){ const x=L+w/days*(W-L-R); grid+=`<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${T-6}" y2="${H-6}"/>`; if(w%14===0) grid+=`<text x="${x.toFixed(1)}" y="11" text-anchor="middle">${w===0?"today":dayText(new Date(TODAY.getTime()+w*DAY))}</text>`; }
+  let body=""; const pts=[]; lanes.forEach((ln,i)=>{ const y=T+i*rowH+rowH/2; body+=`<text x="${L-8}" y="${y+4}" text-anchor="end" style="fill:var(--ink-2);font-weight:600">${esc(cut(ln.name,16))}</text><line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
+    const sorted=ln.items.filter(it=>it.when).sort((a,b)=>a.when-b.when); let lastX=-99; sorted.forEach(it=>{ let x=X(it.when); const stack=Math.abs(x-lastX)<9; lastX=x; const yy=stack?y-9:y; const col=it.verdict==="go"?"var(--good)":it.verdict==="no"?"var(--crit)":it.verdict==="hold"?"var(--warn)":"var(--brand)";
+      const k=pts.length; pts.push({x,y:yy,it,lane:ln.name}); body+=`<circle cx="${x.toFixed(1)}" cy="${yy}" r="5" fill="${col}" stroke="var(--surface)" stroke-width="1.5"/><circle class="hit" cx="${x.toFixed(1)}" cy="${yy}" r="10" onmousemove="tlHover(event,'${id}',${k})" onmouseleave="hideTip()" ontouchstart="tlHover(event,'${id}',${k})"/>`; }); });
+  TL[id]=pts; const legend=`<div class="legend"><span><i style="background:var(--good)"></i>Go</span><span><i style="background:var(--warn)"></i>Hold</span><span><i style="background:var(--crit)"></i>No</span><span><i style="background:var(--brand)"></i>Milestone or decision (not scored)</span></div>`;
+  return `<div class="viz">${title?`<p class="t">${esc(title)}</p>`:""}${sub?`<p class="st">${esc(sub)}</p>`:""}<svg viewBox="0 0 ${W} ${H}"><g class="axis">${grid}</g>${body}</svg>${legend}</div>`; }
+function tlHover(ev,id,k){ const p=(TL[id]||[])[k]; if(!p) return; const it=p.it; const cx=ev.touches?ev.touches[0].clientX:ev.clientX, cy=ev.touches?ev.touches[0].clientY:ev.clientY;
+  showTip(cx,cy,`<b>${esc(dayText(it.when))} · ${esc(it.what||it.org||"")}</b><br>${esc(it.when_text||"")}${it.score?`<br>score ${it.score.n}/10 · ${VERDICT[it.score.verdict]}`:""}${it.agent?`<br><span style="opacity:.75">from ${esc(it.agent)}</span>`:""}`); }
+function sparkline(pts){ pts=(pts||[]).filter(p=>typeof p.y==="number"); if(pts.length<2) return `<span class="s">trend starts ${pts.length?dayText(pts[0].x):"when the next snapshot lands"}</span>`;
+  const W=90,H=24; const xs=pts.map(p=>p.x.getTime()), ys=pts.map(p=>p.y); const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  const d=pts.map((p,i)=>(i?"L":"M")+(((p.x.getTime()-x0)/(x1-x0||1))*(W-4)+2).toFixed(1)+" "+((1-(p.y-y0)/(y1-y0||1))*(H-6)+3).toFixed(1)).join("");
+  const last=ys[ys.length-1], first=ys[0]; const dl=last-first; return `<svg viewBox="0 0 ${W} ${H}" style="width:${W}px;height:${H}px;vertical-align:middle"><path d="${d}" fill="none" stroke="var(--s1)" stroke-width="2"/></svg> <span class="delta ${dl>0?"up":dl<0?"down":""}">${dl>0?"+":""}${dl.toLocaleString()}</span>`; }
+
+// ------------------------------------------------------------------ render ---
+const state={data:{}, view:{}, tab:"decide", updated:null, history:[]};
+const allLeads=()=>[].concat(...["revsom","growsom","marketsom"].map(a=>(state.data[a]&&state.data[a].leads)||[]));
+const leadsFor=p=>allLeads().filter(l=>l.pillar===p).sort((a,b)=>(b.score.n-a.score.n)||((a.when?daysTo(a.when):999)-(b.when?daysTo(b.when):999)));
+const decisionsFor=p=>((state.data.instasom&&state.data.instasom.decisions)||[]).filter(d=>d.pillar===p);
+const delta=(now,was,{invert=false}={})=>{ if(!Number.isFinite(now)||!Number.isFinite(was)) return ""; const d=now-was; const pct=was?Math.round(100*d/was):null; const good=invert?d<0:d>0; return `<span class="delta ${d===0?"":good?"up":"down"}">${d>0?"+":""}${d.toLocaleString()}${pct!==null?` (${pct>0?"+":""}${pct}%)`:""}</span>`; };
+function kpi(v,l,a,extra){ return `<div class="kpi"><div class="v ${v===null||v===undefined?"na":""}">${fmt(v)}${extra||""}</div><div class="l">${esc(l)}</div>${a?`<div class="a">${esc(a)}</div>`:""}</div>`; }
+function leadCard(l){ const s=l.score; const org=esc(l.org); const when=l.when?`<b>${esc(dayText(l.when))}</b> — `:"";
+  return `<div class="card"><div class="score ${s.verdict}"><b>${s.n}</b><i>${VERDICT[s.verdict]}</i></div><div class="body"><p class="head">${when}${org}</p>
+  <p class="row"><span class="lbl">What they are</span>${esc(l.what_is||"not published")}</p>
+  <p class="row"><span class="lbl">${l.pillar==="money"?"What it pays":"What they offered"}</span>${esc(l.offer||"—")}</p>
+  <p class="row"><span class="lbl">Why we need them</span>${esc(l.we_need||"—")}</p>
+  <p class="row"><span class="lbl">${l.pillar==="money"?"What it takes":"What they need from us / next step"}</span>${esc(l.they_need||"—")}</p>
+  ${l.why_text&&l.pillar==="money"?`<p class="row"><span class="lbl">Revsom's read</span>${esc(l.why_text)}</p>`:""}
+  <p class="row"><span class="lbl">Why ${s.n}/10</span></p><ul class="why">${s.why.map(w=>`<li>${esc(w)}</li>`).join("")}</ul>
+  <span class="links"><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.url_label||"open")}</a>${l.url2?` · <a href="${esc(l.url2)}" target="_blank" rel="noopener">${esc(l.url2_label||"more")}</a>`:""}<span class="src">· ${esc(l.status||"")} · from ${esc(l.agent)}</span></span></div></div>`; }
 function cardHTML(c){
   const who=c.who_is?`<p class="row"><span class="lbl">What it is</span>${esc(c.who_is)}</p>`:"";
   const why=c.why?`<p class="row"><span class="lbl">Why it matters</span>${esc(c.why)}</p>`:"";
   const steps=(c.do||[]).map(x=>`<li>${esc(x)}</li>`).join("");
-  const head=(c.when?`<b>${esc(c.when)}</b> — `:"")+esc(cut(c.what,90))+(c.detail?`<br><span style="color:var(--ink-2);font-size:13.5px">${esc(c.detail)}</span>`:"");
+  const whenTxt=c.when_text||(c.when instanceof Date?dayText(c.when):(c.when||""));
+  const head=(whenTxt?`<b>${esc(whenTxt)}</b> — `:"")+esc(cut(c.what,90))+(c.detail?`<br><span style="color:var(--ink-2);font-size:13.5px">${esc(c.detail)}</span>`:"");
   let links=`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url_label||"open")}</a>`; if(c.url2) links+=` · <a href="${esc(c.url2)}" target="_blank" rel="noopener">${esc(c.url2_label||"more")}</a>`;
-  return `<div class="card"><span class="k">${esc(c.kind||"•")}</span><div class="body"><p class="head">${head}</p>${who}${why}<p class="row"><span class="lbl">What you do</span></p><ol>${steps}</ol><span class="links">${links}<span class="src">· from ${esc(c.agent)}</span></span></div></div>`;
+  return `<div class="card"><span class="k">${esc(c.kind==="decision"?"?":c.kind||"•")}</span><div class="body"><p class="head">${head}</p>${who}${why}${steps?`<p class="row"><span class="lbl">What you do</span></p><ol>${steps}</ol>`:""}<span class="links">${links}<span class="src">· from ${esc(c.agent)}</span></span></div></div>`;
 }
 function health(a){ const d=state.data[a.id]; if(!a.feed) return {cls:"unk",txt:"no live page"}; if(!d||d.error) return {cls:"bad",txt:d&&d.error?d.error:"not loaded"};
   const h=ageH(d.stamp); if(h===null) return {cls:"bad",txt:"no timestamp on its page"}; if(a.maxAgeH&&h>a.maxAgeH) return {cls:"bad",txt:`stale: ${ago(h)} — cadence allows ${a.maxAgeH}h`}; return {cls:"ok",txt:ago(h)}; }
 function allNeeds(){ return AGENTS.flatMap(a=>(state.data[a.id]&&state.data[a.id].needs)||[]).sort((x,y)=>(x.sort??1)-(y.sort??1)); }
+function excludedAll(){ return (state.data.marketsom&&state.data.marketsom.excluded)||[]; }
+function histSeries(path){ return state.history.map(h=>{ let v=h; for(const k of path.split(".")) v=v&&v[k]; return {x:new Date(h.at), y:typeof v==="number"?v:null}; }).filter(p=>p.y!==null); }
+
 function renderStrip(){
-  const bad=AGENTS.filter(a=>a.feed&&health(a).cls==="bad"); const needs=allNeeds().length;
+  const bad=AGENTS.filter(a=>a.feed&&health(a).cls==="bad"); const go=allLeads().filter(l=>l.score.verdict==="go").length; const dec=((state.data.instasom||{}).decisions||[]).length;
   const pills=AGENTS.filter(a=>a.feed).map(a=>{const h=health(a); return `<span class="pill ${h.cls}" title="${esc(h.txt)}"><span class="d"></span>${esc(a.name)}</span>`;}).join("");
-  const stat=`<span class="pill ${bad.length?"bad":"ok"}"><span class="d"></span><b>${bad.length?`${bad.length} agent${bad.length>1?"s":""} need attention`:"All agents running"}</b> · ${needs} thing${needs===1?"":"s"} need you</span>`;
+  const stat=`<span class="pill ${bad.length?"bad":"ok"}"><span class="d"></span><b>${bad.length?`${bad.length} agent${bad.length>1?"s":""} need attention`:"All agents running"}</b> · ${go} Go lead${go===1?"":"s"} · ${dec} decision${dec===1?"":"s"} asked of you</span>`;
   const meta=`<span class="pill meta">updated ${state.updated?ago(ageH(state.updated)).replace("0 min ago","just now"):"…"} · <button onclick="load()">refresh now</button></span>`;
   document.getElementById("strip").innerHTML=stat+pills+meta;
 }
 function renderTabs(){
-  const needs=allNeeds().length; const t=[{id:"all",name:"All",n:needs?`${needs} need you`:""}].concat(AGENTS.map(a=>({id:a.id,name:a.name,n:(state.data[a.id]&&state.data[a.id].needs&&state.data[a.id].needs.length)?`${state.data[a.id].needs.length}`:""})));
+  const t=[{id:"decide",name:"Decide",n:""}].concat(PILLARS.map(p=>{const go=leadsFor(p.id).filter(l=>l.score.verdict==="go").length+decisionsFor(p.id).length; return {id:p.id,name:p.name,n:go?`${go}`:""};}));
   document.getElementById("tabs").innerHTML=t.map(x=>`<button role="tab" aria-selected="${state.tab===x.id}" onclick="setTab('${x.id}')">${esc(x.name)}${x.n?`<span class="n">${esc(x.n)}</span>`:""}</button>`).join("");
+  const t2=AGENTS.map(a=>({id:a.id,name:a.name,n:(state.data[a.id]&&state.data[a.id].needs&&state.data[a.id].needs.length)?`${state.data[a.id].needs.length}`:""}));
+  document.getElementById("tabs2").innerHTML=t2.map(x=>`<button role="tab" aria-selected="${state.tab===x.id}" onclick="setTab('${x.id}')">${esc(x.name)}${x.n?`<span class="n">${esc(x.n)}</span>`:""}</button>`).join("");
 }
-function kpi(v,l,a){ return `<div class="kpi"><div class="v ${v===null?"na":""}">${fmt(v)}</div><div class="l">${esc(l)}</div>${a?`<div class="a">${esc(a)}</div>`:""}</div>`; }
-function renderAll(){
-  const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
-  const kpis=`<div class="grid">${kpi(na(r.closing14),"funding deadlines inside 14 days","Revsom")}${kpi(na(r.total),"open funding opportunities",`${fmt(na(r.noSam))} need no registration`)}${kpi(na(g.ready),"outreach drafts ready on John's approval",`${fmt(na(g.total))} targets · ${fmt(na(g.high))} high priority`)}${kpi(na(m.drafts),"partner drafts waiting for you to send","Marketsom")}${kpi(na(i.ig),"Instagram followers (raw)",`${fmt(na(i.toFollow))} verified people still to follow`)}</div>`;
-  const needs=allNeeds(); const cards=needs.length?`<div class="grid">${needs.map(cardHTML).join("")}</div>`:`<p class="empty">Nothing is waiting on you right now.</p>`;
-  const rows=`<div class="rows">${AGENTS.map(a=>{const h=health(a); const p=state.data[a.id]; const line=a.feed?(p&&!p.error&&p.pulling?p.pulling(p):"unavailable"):"14 screens · 17 funding packets · 111 drafted answers — its work is code, no live page yet";
-    return `<div class="r ${h.cls}"><span class="d"></span><div><b>${esc(a.name)}</b><span class="s">${esc(a.purpose)}</span><span class="s">${line}</span></div><span class="t">${esc(h.txt)}</span></div>`;}).join("")}</div>`;
-  return `<h3>Across the suite</h3>${kpis}<h3>Needs you — everything, every agent</h3>${cards}<h3>The agents</h3>${rows}`;
+function pillarStats(p){ const L=leadsFor(p.id); const go=L.filter(l=>l.score.verdict==="go"), hold=L.filter(l=>l.score.verdict==="hold"), no=L.filter(l=>l.score.verdict==="no");
+  const dated=L.filter(l=>l.when&&daysTo(l.when)>=0).sort((a,b)=>a.when-b.when); const dec=decisionsFor(p.id); const nextDec=dec.filter(d=>d.when&&daysTo(d.when)>=0).sort((a,b)=>a.when-b.when)[0];
+  const next=dated[0]; return {L,go,hold,no,next,dec,nextDec,best:L[0]}; }
+function pillarHeadline(p){ const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
+  switch(p.id){
+    case "money": return {v:na(r.closing30), l:"close inside 30 days", a:`${fmt(na(r.live))} live · ${fmt(na(r.noSam))} need no registration`, trend:histSeries("revsom.closing30")};
+    case "investors": return {v:na(g.investors), l:"investor targets", a:`${fmt(na(g.ready))} openers wait on John · ${fmt(na(g.replied))} replied so far`, trend:histSeries("growsom.investors")};
+    case "integrations": { const L=leadsFor("integrations"); const rep=L.filter(l=>/replied|passed|booked/.test(l.status)).length; return {v:rep||null, l:"teams have answered", a:`${fmt(na(g.integrations))} builder, app and lab targets from Growsom`, trend:histSeries("integrations.replied")}; }
+    case "partners": { const L=leadsFor("partners"); return {v:na(m.contacted), l:"organisations contacted", a:`${L.filter(l=>/replied|passed/.test(l.status)).length} answered · ${L.filter(l=>l.status==="waiting").length} waiting · ${L.filter(l=>l.status==="drafted").length} drafted, unsent`, trend:histSeries("marketsom.contacted")}; }
+    case "awareness": return {v:na(m.waitlist), l:"real waitlist sign-ups", a:`Instagram ${fmt(na(i.ig))} raw, trusted ~${fmt(na(i.igTrusted))} · US visits ${fmt(na(m.usVisits))} (was ${fmt(na(m.usVisitsWas))})`, trend:histSeries("marketsom.waitlist")};
+  } return {v:null,l:"",a:"",trend:[]}; }
+
+function renderDecide(){
+  const leads=allLeads(); const go=leads.filter(l=>l.score.verdict==="go").slice(0,8); const dec=((state.data.instasom||{}).decisions||[]);
+  const rows=PILLARS.map(p=>{ const s=pillarStats(p); const h=pillarHeadline(p); const nx=s.next?`${dayText(s.next.when)} · ${cut(s.next.org,34)} <span class="s">${esc(s.next.when_text)} · ${s.next.score.n}/10</span>`:(s.nextDec?`${dayText(s.nextDec.when)} · ${esc(cut(s.nextDec.what,34))} <span class="s">decision</span>`:'<span class="s">nothing dated inside 90 days</span>');
+    const hc=p.agents.map(aid=>health(AGENTS.find(a=>a.id===aid))); const cls=hc.some(x=>x.cls==="bad")?"bad":"ok";
+    return `<tr><td><a class="pl" href="#" onclick="setTab('${p.id}');return false">${esc(p.name)}</a><span class="s">${esc(p.agents.map(a=>AGENTS.find(x=>x.id===a).name).join(" + "))} · <span class="verdict ${cls==="ok"?"go":"no"}">${cls==="ok"?"live":"stale"}</span></span></td>
+      <td class="num">${fmt(h.v)}<span class="s">${esc(h.l)}</span><span class="s">${esc(h.a)}</span></td><td>${sparkline(h.trend)}</td><td>${nx}</td>
+      <td><span class="verdict go">${s.go.length} Go</span> <span class="verdict hold">${s.hold.length} Hold</span> <span class="verdict no">${s.no.length} No</span>${s.dec.length?` <span class="verdict">${s.dec.length} decision${s.dec.length===1?"":"s"}</span>`:""}</td></tr>`; }).join("");
+  const lanes=PILLARS.map(p=>({name:p.name, items:leadsFor(p.id).filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).map(l=>({when:l.when,what:l.org,when_text:l.when_text,score:l.score,verdict:l.score.verdict,agent:l.agent}))
+    .concat(decisionsFor(p.id).filter(d=>d.when&&daysTo(d.when)>=0).map(d=>({when:d.when,what:d.what,when_text:"decision asked of you",agent:d.agent})))}));
+  const ex=excludedAll(); const i=state.data.instasom||{}, m=state.data.marketsom||{};
+  const bluf=`${go.length?`${go.length} lead${go.length===1?" is":"s are"} a Go right now`:"No lead scores a Go right now"}${go[0]?`; the best is ${esc(go[0].org)} (${go[0].score.n}/10, ${esc(go[0].when_text||go[0].status)})`:""}. ${dec.length?`${dec.length} decision${dec.length===1?"":"s"} ${dec.length===1?"is":"are"} waiting on you. `:""}${m.waitlist!==null&&m.waitlist!==undefined?`Real demand so far: ${m.waitlist} waitlist sign-ups. `:""}${i.igTrusted?`Trusted Instagram audience ~${i.igTrusted.toLocaleString()} of ${fmt(i.ig)} raw.`:""}`;
+  return `<p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
+  <h3>Pillar scoreboard <span class="sub">one row per way Vybe makes money · click a pillar for the full breakdown</span></h3>
+  <div class="sbwrap"><table class="sb"><thead><tr><th>Pillar</th><th>Headline number</th><th>Trend</th><th>Next milestone</th><th>Leads scored</th></tr></thead><tbody>${rows}</tbody></table></div>
+  <h3>Next 90 days <span class="sub">every dated lead and decision, by pillar · hover a dot</span></h3>${timeline(lanes)}
+  <h3>Decide now <span class="sub">top Go leads across every pillar, best first</span></h3>${go.length?`<div class="grid">${go.map(leadCard).join("")}</div>`:`<p class="empty">Nothing scores 8 or more right now. The Hold list on each pillar says what fact is missing.</p>`}
+  ${dec.length?`<h3>Decisions the agents asked of you</h3><div class="grid">${dec.map(cardHTML).join("")}</div>`:""}
+  <h3>Trends <span class="sub">what is actually moving</span></h3><div class="grid two">
+  ${lineChart({title:"Instagram followers",sub:"raw count from the API, daily",series:[{name:"raw followers",pts:(i.igSeries||[]).map(p=>({...p,note:p.y>1000?"includes an unverified bulk add on 30 Sep":undefined}))}],note:i.flag?cut(i.flag,220):""})}
+  ${lineChart({title:"Website visits per day",sub:"GA4, all countries, last two weeks",series:[{name:"visits",pts:(m.daily||[]).map(d=>({x:parseDay(/[A-Za-z]/.test(d.label)?d.label:d.label+" "+((m.daily.find(q=>/[A-Za-z]/.test(q.label))||{}).label||"").replace(/^\d+\s*/,"")),y:d.v})).filter(p=>p.x)}]})}
+  </div>
+  <p class="excl">${ex.length} thread${ex.length===1?"":"s"} kept out of every score above because they are vendors, suppliers or paid slots (rule 7)${ex.length?`: ${esc(ex.map(e=>e.org).join(", "))}`:""}.</p>
+  <details><summary>How the 1–10 score works</summary><div class="in">Every lead is scored here, on this page, from the agents' own published fields — never by an agent's opinion alone. Six parts, each 0–1, weighted and averaged, then ×10:<br>
+  <b>Purpose</b> (does it bring collaboration, investment or revenue — rule 7) · <b>Cost</b> (is any money asked of Vybe) · <b>Warmth</b> (booked or said yes → replied → waiting → drafted → declined) · <b>Reach or size</b> (money stated, Growsom's fit score, or audience size) · <b>Effort</b> (one email, or an application with documents, travel, registration) · <b>Timing</b> (a feasible deadline, or none).<br>
+  <b>8–10 Go</b>: worth your time this week. <b>5–7 Hold</b>: one fact is missing — the "why" list says which. <b>1–4 No</b>: skip. Vendors, suppliers and anything that costs money never get a score; they are listed once above and nowhere else.</div></details>`;
+}
+function renderPillar(p){
+  const s=pillarStats(p); const h=pillarHeadline(p); const d=state.data; const r=d.revsom||{}, g=d.growsom||{}, m=d.marketsom||{}, i=d.instasom||{};
+  const lanes=p.agents.map(aid=>{const an=AGENTS.find(a=>a.id===aid).name; return {name:an,items:s.L.filter(l=>l.agent===an&&l.when&&daysTo(l.when)>=0).map(l=>({when:l.when,what:l.org,when_text:l.when_text,score:l.score,verdict:l.score.verdict,agent:l.agent}))};});
+  if(s.dec.length) lanes.push({name:"Decisions",items:s.dec.filter(x=>x.when).map(x=>({when:x.when,what:x.what,when_text:"decision asked of you",agent:x.agent}))});
+  const milestones=s.L.filter(l=>l.when&&daysTo(l.when)>=0&&daysTo(l.when)<=90).sort((a,b)=>a.when-b.when).slice(0,14);
+  let kpis="", charts="", population="", bluf="";
+  if(p.id==="money"){
+    bluf=`${fmt(na(r.closing30))} opportunities close inside 30 days and ${s.go.length} of them score a Go. ${s.best?`Best right now: ${esc(s.best.org)} — ${esc(s.best.offer)}, ${esc(s.best.when_text)}.`:""} ${fmt(na(r.noSam))} of the ${fmt(na(r.live))} live rows need no registration, so a person can apply the same day.`;
+    kpis=kpi(na(r.closing14),"close inside 14 days","Revsom · the ones that cannot wait")+kpi(na(r.closing30),"close inside 30 days","")+kpi(na(r.closing90),"dated inside 90 days",`${fmt(na(r.live))} live rows in total`)+kpi(na(r.noSam),"need no SAM registration","apply today; the rest need weeks of registration first");
+    charts=`<div class="grid two">${bars(r.byKind,{title:"What kind of money",sub:"live rows by type"})}${bars(r.bySam,{title:"Registration needed",sub:"'none' means a person can apply today"})}</div>`;
+  } else if(p.id==="investors"){
+    bluf=`${fmt(na(g.investors))} investor targets: ${esc((g.byType||[]).filter(t=>/vc|angel|accel/.test(t.label)).map(t=>`${t.v} ${t.label}`).join(", "))}. ${fmt(na(g.ready))} openers are drafted and wait on John's approval; none is sent without it. ${s.next?`Next hard deadline: ${esc(s.next.org)} on ${dayText(s.next.when)}.`:""} ${fmt(na(g.replied))} of ${fmt(na(g.threads))} real threads have a reply.`;
+    kpis=kpi(na(g.investors),"investor targets",`of ${fmt(na(g.total))} Growsom targets`)+kpi(na(g.ready),"openers ready",`wait on John's approval · ${fmt(na(g.approvalsOnHold))} on hold for team discussion`)+kpi(na(g.deadlines),"deadlines inside 30 days","")+kpi(na(g.replied),"replies on real threads",`${fmt(na(g.threads))} sent · ${fmt(na(g.noReply))} no reply`);
+    charts=`<div class="grid two">${bars(g.byStage,{title:"Stage they invest at",sub:"investor targets with a stated stage"})}${bars(g.byState,{title:"Where targets are",sub:"all Growsom targets by state · National means no single state"})}</div>`;
+  } else if(p.id==="integrations"){
+    const rep=s.L.filter(l=>/replied|passed|booked/.test(l.status));
+    bluf=`${rep.length} app or builder team${rep.length===1?" has":"s have"} answered${rep.length?`: ${esc(rep.map(l=>l.org).join(", "))}`:""}. ${fmt(na(g.integrations))} builder, app and research-lab targets are in Growsom's list. ${s.L.filter(l=>/technical answer/.test(l.score.why.join(" "))).length} of the live threads are blocked on a technical answer only Jeremy can give.`;
+    kpis=kpi(rep.length||null,"teams answered","from Marketsom's outreach and Growsom's threads")+kpi(na(g.integrations),"integration targets","builders, app partners, research labs, channel partners")+kpi(na(g.approvalsPending),"openers awaiting John","Growsom sends nothing without an APPROVE")+kpi(s.go.length,"score a Go now","");
+    charts=`<div class="grid two">${bars((g.byType||[]).filter(t=>/builder|app|research|channel|community/.test(t.label)),{title:"Target types",sub:"Growsom integration targets"})}${bars(m.funnel,{title:"Where Marketsom's threads stand",sub:"all contacted organisations, both pillars",cls:"funnel"})}</div>`;
+  } else if(p.id==="partners"){
+    const rep=s.L.filter(l=>/replied|passed/.test(l.status)), wait=s.L.filter(l=>l.status==="waiting"), dr=s.L.filter(l=>l.status==="drafted");
+    const nextFU=wait.map(l=>l.when).filter(Boolean).sort((a,b)=>a-b)[0];
+    bluf=`${fmt(na(m.contacted))} organisations contacted. ${rep.length} answered, ${wait.length} are waiting on a reply, ${dr.length} drafts are written but not sent. ${nextFU?`Follow-ups fall due ${dayText(nextFU)}.`:""} ${excludedAll().length} threads were about tables or booths and are out (rule 7).`;
+    kpis=kpi(na(m.contacted),"organisations contacted","Marketsom, since 6 Oct")+kpi(rep.length,"answered","")+kpi(wait.length,"waiting on a reply",nextFU?`follow-ups due ${dayText(nextFU)}`:"")+kpi(na(m.drafts),"drafts waiting for you to send","John on CC of every one");
+    charts=`<div class="grid two">${bars(m.funnel,{title:"Outreach funnel",sub:"every organisation Marketsom has contacted",cls:"funnel"})}</div>`;
+  } else if(p.id==="awareness"){
+    bluf=`Real waitlist: ${fmt(na(m.waitlist))} people${m.waitlistNote?` (${esc(m.waitlistNote)})`:""}. US visits ${fmt(na(m.usVisits))} this week against ${fmt(na(m.usVisitsWas))} the week before. Instagram ${fmt(na(i.ig))} raw, but the trusted count is ~${fmt(na(i.igTrusted))}; Facebook ${fmt(na(i.fb))}. ${i.target&&i.target.ig?`Target was ${i.target.ig.toLocaleString()} Instagram and ${(i.target.fb||0).toLocaleString()} Facebook by ${dayText(i.planEnd)}.`:""}`;
+    const lastReach=(i.reach||[]).filter(p=>p.y!==null).slice(-7); const reach7=lastReach.length?Math.round(lastReach.reduce((s,p)=>s+p.y,0)/lastReach.length):null;
+    kpis=kpi(na(m.waitlist),"real waitlist sign-ups",m.waitlistNote||"")+kpi(na(m.usVisits),"US visits this week","",delta(m.usVisits,m.usVisitsWas))+kpi(na(i.igTrusted),"trusted Instagram followers",`${fmt(na(i.ig))} raw · target ${fmt(na(i.target&&i.target.ig))} by ${dayText(i.planEnd)}`)+kpi(na(i.fb),"Facebook followers",`target ${fmt(na(i.target&&i.target.fb))}`)+kpi(reach7,"Instagram reach, 7-day average","accounts reached per day");
+    charts=`<div class="grid two">${lineChart({title:"Instagram followers",sub:"raw API count · the 30 Sep jump is unverified and excluded from the trusted count",series:[{name:"raw followers",pts:i.igSeries||[]}],note:i.flag?cut(i.flag,260):""})}
+      ${lineChart({title:"Instagram reach per day",sub:"accounts reached · gaps are days Meta has not published",series:[{name:"reach",pts:i.reach||[]}]})}
+      ${lineChart({title:"Website visits per day",sub:"GA4, all countries",series:[{name:"visits",pts:(m.daily||[]).map(d=>({x:parseDay(/[A-Za-z]/.test(d.label)?d.label:d.label+" "+((m.daily.find(q=>/[A-Za-z]/.test(q.label))||{}).label||"").replace(/^\d+\s*/,"")),y:d.v})).filter(p=>p.x)}]})}
+      ${bars(m.countries,{title:"Where visitors are",sub:"this week · paid clicks brought most of the non-US traffic"})}
+      ${bars(m.sources,{title:"Where visits came from",sub:"this week"})}
+      ${bars((i.posts||[]).map(p=>({label:`${dayText(new Date(p.timestamp))} ${p.product==="REELS"?"Reel":"Image"} · ${cut(p.caption,28)}`,v:+p.reach||0,note:`${p.likes||0} likes · ${p.saved||0} saved`})),{title:"Reach per post",sub:"Reels reach roughly ten times more non-followers than images"})}</div>`;
+    population=`<h3>Population targets <span class="sub">who Instasom is building the audience from, with its own share targets</span></h3>
+      <div class="grid two">${bars((i.cats||[]).map(c=>({label:c.name,v:+c.shareOfFollows||0,note:`${c.followTarget||"?"} follows/day`})),{title:"Share of follows by lane",sub:"Instasom's plan · % of daily follows",fmtV:n=>n+"%"})}
+      ${bars(i.byCategory,{title:"Verified people on the list",sub:`${fmt(na(i.people))} researched · ${fmt(na(i.keep))} kept after audit · ${fmt(na(i.followed))} followed so far`})}</div>
+      ${(i.segs||[]).length?`<div class="sbwrap" style="margin-top:10px"><table class="sb"><thead><tr><th>Segment</th><th>Who</th><th>Why they'd want Vybe</th></tr></thead><tbody>${i.segs.map(sg=>`<tr><td><b>${esc(sg.name)}</b><span class="s">${esc(sg.kind||"")}${sg.share?` · ${esc(sg.share)}`:""}</span></td><td>${esc(cut(sg.who||"",160))}</td><td>${esc(cut(sg.why||(sg.pains||[]).join("; "),200))}</td></tr>`).join("")}</tbody></table></div>`:""}
+      ${(m.ads||[]).length?`<h3>Paid spend <span class="sub">what is still costing money</span></h3><div class="sbwrap"><table class="sb"><thead><tr><th>Campaign</th><th>Spend</th><th>Clicks</th><th>Result</th></tr></thead><tbody>${m.ads.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.spend)}</td><td>${esc(a.clicks)}</td><td>${esc(a.conv)}</td></tr>`).join("")}</tbody></table></div>`:""}`;
+  }
+  const answered=s.L.filter(l=>/replied|passed|booked/.test(l.status)); const rest=s.L.filter(l=>!/replied|passed|booked/.test(l.status));
+  return `<h2>${esc(p.name)}</h2><p class="purpose">${esc(p.purpose)}</p><p class="bluf"><span class="lbl">Bottom line</span>${bluf}</p>
+  <div class="grid">${kpis}</div>
+  <h3>Milestones — next 90 days <span class="sub">dated leads by verdict · hover a dot</span></h3>${timeline(lanes)}
+  ${milestones.length?`<div class="rows">${milestones.map(l=>`<div class="r"><span class="d" style="background:${l.score.verdict==="go"?"var(--good)":l.score.verdict==="hold"?"var(--warn)":"var(--crit)"}"></span><div><b>${esc(dayText(l.when))} · ${esc(l.org)}</b><span class="s">${esc(l.when_text)} · ${esc(cut(l.offer,90))}</span></div><span class="t">${l.score.n}/10 ${VERDICT[l.score.verdict]}</span></div>`).join("")}</div>`:`<p class="empty">Nothing in this pillar carries a date inside 90 days.</p>`}
+  ${s.dec.length?`<h3>Decisions asked of you</h3><div class="grid">${s.dec.map(cardHTML).join("")}</div>`:""}
+  ${answered.length?`<h3>Who answered <span class="sub">what they are, what they offered, what we need, scored</span></h3><div class="grid">${answered.map(leadCard).join("")}</div>`:""}
+  ${rest.length?`<h3>${p.id==="money"?"Everything dated, scored":"In the pipe, scored"} <span class="sub">${rest.length} lead${rest.length===1?"":"s"} · best first</span></h3><div class="grid">${rest.slice(0,12).map(leadCard).join("")}</div>${rest.length>12?`<p class="excl">${rest.length-12} more on the agent's own dashboard.</p>`:""}`:""}
+  ${s.L.length||s.dec.length?"":`<p class="empty">No scored leads in this pillar yet.</p>`}
+  <h3>Numbers <span class="sub">trends and distributions</span></h3>${charts}${population}`;
 }
 function renderAgent(a){
   const p=state.data[a.id]; const h=health(a); const view=state.view[a.id]||"summary";
   const bar=`<div class="viewbar">${a.site?`<span class="seg"><button aria-pressed="${view==="summary"}" onclick="setView('${a.id}','summary')">Summary</button><button aria-pressed="${view==="live"}" onclick="setView('${a.id}','live')">Their dashboard</button></span>`:""}<span style="color:var(--ink-3);font-size:13px">${esc(h.txt)}</span>${a.site?`<a class="open" href="${esc(a.site)}" target="_blank" rel="noopener">open in its own tab →</a>`:""}</div>`;
   if(view==="live"&&a.site) return bar+`<iframe class="frame" src="${esc(a.site)}" title="${esc(a.name)} dashboard" loading="lazy"></iframe>`;
   const pulling=a.feed?(p&&!p.error&&p.pulling?p.pulling(p):`<span class="na">unavailable${p&&p.error?" — "+esc(p.error):""}</span>`):"14 screens · 17 funding packets · 111 drafted answers. No live page yet — its work is code.";
-  const needs=(p&&p.needs)||[], top=(p&&p.top)||[];
-  return bar+`<p class="purpose">${esc(a.purpose)}</p><p class="pulling"><span class="lbl">What it is pulling</span>${pulling}</p>`+
+  const needs=(p&&p.needs)||[], top=(p&&p.top)||[]; const mine=allLeads().filter(l=>l.agent===a.name);
+  const pill=PILLARS.filter(x=>x.agents.includes(a.id)).map(x=>`<a href="#" onclick="setTab('${x.id}');return false">${esc(x.name)}</a>`).join(" · ");
+  return bar+`<p class="purpose">${esc(a.purpose)}${pill?` <span style="color:var(--ink-3)">· feeds: ${pill}</span>`:""}</p><p class="pulling"><span class="lbl">What it is pulling</span>${pulling}</p>`+
     (needs.length?`<h3>Needs you</h3><div class="grid">${needs.map(cardHTML).join("")}</div>`:"")+
-    (top.length?`<h3>Top of its list</h3><div class="grid">${top.map(cardHTML).join("")}</div>`:(a.feed?`<p class="empty">No items to show.</p>`:""));
+    (mine.length?`<h3>Its leads, scored <span class="sub">${mine.filter(l=>l.score.verdict==="go").length} Go · ${mine.filter(l=>l.score.verdict==="hold").length} Hold · ${mine.filter(l=>l.score.verdict==="no").length} No</span></h3><div class="grid">${mine.sort((x,y)=>y.score.n-x.score.n).slice(0,6).map(leadCard).join("")}</div>`:"")+
+    (top.length?`<h3>Top of its list</h3><div class="grid">${top.map(cardHTML).join("")}</div>`:(a.feed&&!mine.length?`<p class="empty">No items to show.</p>`:""));
 }
 function renderPanels(){
   const el=document.getElementById("panels");
-  el.innerHTML=`<section class="panel ${state.tab==="all"?"on":""}" id="p-all">${renderAll()}</section>`+AGENTS.map(a=>`<section class="panel ${state.tab===a.id?"on":""}" id="p-${a.id}">${renderAgent(a)}</section>`).join("");
+  el.innerHTML=`<section class="panel ${state.tab==="decide"?"on":""}">${renderDecide()}</section>`+PILLARS.map(p=>`<section class="panel ${state.tab===p.id?"on":""}">${renderPillar(p)}</section>`).join("")+AGENTS.map(a=>`<section class="panel ${state.tab===a.id?"on":""}">${renderAgent(a)}</section>`).join("");
 }
 function render(){ renderStrip(); renderTabs(); renderPanels(); }
-function setTab(id){ state.tab=id; try{localStorage.setItem("vybe-ops-tab",id);}catch(e){} render(); }
+function setTab(id){ state.tab=id; try{localStorage.setItem("vybe-ops-tab",id);}catch(e){} render(); window.scrollTo({top:0}); }
 function setView(id,v){ state.view[id]=v; render(); }
 
 // ------------------------------------------------------------------- load ---
 async function getText(url){ const r=await fetch(url+(url.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error("HTTP "+r.status); return r.text(); }
 async function load(){
-  const jobs=[["revsom",fromRevsom,true],["growsom",fromGrowsom,true],["marketsom",fromMarketsom,false],["instasom",fromInstasom,true]];
-  await Promise.all(jobs.map(async([id,fn,isJson])=>{ const a=AGENTS.find(x=>x.id===id);
-    try{ const t=await getText(a.feed); state.data[id]=fn(isJson?JSON.parse(t):t); }
-    catch(e){ state.data[id]={error:String(e.message||e), needs:[], top:[]}; } }));
+  const A=id=>AGENTS.find(x=>x.id===id);
+  const got={}; await Promise.all(["revsom","growsom","marketsom","instasom"].map(async id=>{ try{ got[id]=await getText(A(id).feed); }catch(e){ got[id]={error:String(e.message||e)}; } }));
+  const parse=(id,fn,isJson,extra)=>{ const t=got[id]; if(!t||t.error){ state.data[id]={error:(t&&t.error)||"not loaded", needs:[], top:[], leads:[]}; return; } try{ state.data[id]=fn(isJson?JSON.parse(t):t, extra); }catch(e){ state.data[id]={error:"could not read its page: "+String(e.message||e), needs:[], top:[], leads:[]}; } };
+  parse("revsom",fromRevsom,true); parse("growsom",fromGrowsom,true); parse("marketsom",fromMarketsom,false,(state.data.growsom||{}).leads||[]); parse("instasom",fromInstasom,true);
+  try{ const h=JSON.parse(await getText("/history/vybe-history.json")); state.history=Array.isArray(h)?h:(h.points||[]); }catch(e){ state.history=[]; }
   state.updated=new Date(); render();
 }
-try{ state.tab=localStorage.getItem("vybe-ops-tab")||"all"; }catch(e){}
-load(); setInterval(load, REFRESH_MS);
+try{ state.tab=localStorage.getItem("vybe-ops-tab")||"decide"; }catch(e){}
+if(typeof document!=="undefined"&&document.getElementById("panels")){ load(); setInterval(load, REFRESH_MS); }
 </script>
 </body>
 </html>
