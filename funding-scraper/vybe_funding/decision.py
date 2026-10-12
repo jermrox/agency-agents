@@ -43,6 +43,28 @@ _FEE = re.compile(
 )
 _NO_FEE = re.compile(r"\bno (?:application |entry )?fees?\b|\bfree to (?:apply|enter)\b|\bno cost\b", re.I)
 _BIG_MONEY = re.compile(r"\$\s?(\d[\d,]*)(?:\s*(k|m|million))?", re.I)
+# A residency gate for a state other than Ohio (Vybe is in Akron) -- the commonest
+# reason a well-matched row is still unfileable. Ohio rows are not penalised.
+_OTHER_STATE_NAME = re.compile(
+    r"\b(?:upstate ny|new york|ny state|ny-registered|michigan|connecticut|massachusetts|california|texas|"
+    r"washington[- ](?:state|only)|pennsylvania|new jersey|illinois|colorado|georgia|florida|virginia|maryland|"
+    r"minnesota|wisconsin|indiana|kentucky|tennessee|north carolina|arizona|oregon|utah|rochester|ithaca|buffalo)\b",
+    re.I,
+)
+_OTHER_STATE_CODE = re.compile(
+    r"\b(?:NY|CA|MA|TX|MI|CT|PA|NJ|IL|WA)\b(?:[- ](?:based|state|only|registered)|\s+(?:manufacturer|for-profit|nonprofit|operations|employer))",
+)
+# ...unless the row itself says the state is only a venue, not a gate.
+_NO_GEO_GATE = re.compile(
+    r"no geographic|(?:do|does) not restrict|from anywhere|anywhere in the u|nationwide|open to founders anywhere|worldwide",
+    re.I,
+)
+# Money that only reaches a company through a university or nonprofit applicant.
+_ACADEMIC = re.compile(
+    r"faculty (?:pi|member)|(?:university|nonprofit)(?: or (?:university|nonprofit))? applies|"
+    r"routed through a university|^academic researchers|cornell|\bpi must apply",
+    re.I,
+)
 _HEAVY = re.compile(r"proposal|white paper|narrative|research plan|budget justification|letters? of support", re.I)
 
 
@@ -111,6 +133,14 @@ def _heuristic_fit(row: dict[str, Any], cost: int, travel: bool) -> tuple[int, s
     if gate:
         score -= 1.5
         reasons.append(gate.group(1).strip().rstrip(",;:").capitalize())
+    gate_text = " ".join([elig, note, " ".join(row.get("documents") or [])])
+    state = _OTHER_STATE_NAME.search(gate_text) or _OTHER_STATE_CODE.search(gate_text)
+    if state and not gate and not _NO_GEO_GATE.search(gate_text):
+        score -= 3
+        reasons.append(f"Residency gate ({state.group(0).strip()}); Vybe is in Ohio")
+    if _ACADEMIC.search(gate_text):
+        score -= 2.5
+        reasons.append("A university or nonprofit must be the applicant")
     if row.get("kind") == "credit":
         score -= 0.5
     fit = int(max(1, min(10, round(score))))
