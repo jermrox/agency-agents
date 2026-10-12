@@ -2482,3 +2482,7 @@ Conclusion for the local lane: **there is no open Akron or Summit County grant
 a pre-revenue startup can enter today.** The two routes worth a phone call are
 the Greater Akron Chamber and the Akron Small Business Administrator's office,
 since past local rounds ran through the Chamber rather than being advertised.
+
+## 12 Oct 2026: rule 9.7 audit
+
+- **Launch NY Seed Fund**: REMOVED from the board. launchny.org says it is an investor ("Invest with Launch NY", "seed funding programs dedicated to investing exclusively in Upstate NY startups"), so the money is equity, not a grant, and only Upstate NY companies qualify. Vybe (Akron, OH) is ineligible on both counts. The rule-9.7 estimate had given it 9/10 because the gate sat in the eligibility text; the estimate now penalises residency gates for other states and university-only applicants.
