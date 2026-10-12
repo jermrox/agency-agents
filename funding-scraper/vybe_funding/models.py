@@ -183,7 +183,7 @@ class Opportunity:
         return days if days > 0 else None
 
     def to_dict(self, today: date) -> dict[str, Any]:
-        return {
+        row = {
             "id": self.id,
             "source": self.source,
             "name": self.name,
@@ -202,3 +202,8 @@ class Opportunity:
             "documents": self.documents,
             "sam": self.sam_status(),
         }
+        # Rule 9.7 decision fields (fit, fit_why, cost, effort_hours, travel,
+        # next_date). Added alongside the existing keys, never in place of them.
+        from .decision import decision_fields  # local import: no cycle at load time
+        row.update(decision_fields(row, (self.raw or {}).get("decision", {})))
+        return row
