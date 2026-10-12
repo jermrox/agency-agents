@@ -14,4 +14,5 @@ differently. Repeats are a pattern to fix at the source; fixes are progress.
 | 2026-10-12 | Growsom | 7 / 9.8 | An engineering vendor and a DevKit build shop still sat in `followups.threads` as partners after the founder closed them | Closed by the founder means `status: closed, why: rule 7` on the next run, not a reminder to follow up. |
 | 2026-10-12 | Revsom | 9.7 | Rows have the money and the documents but no fit statement a scorer can use | Add `fit` (1–10) with one sentence of `fit_why` per row: which door Vybe enters by, and what disqualifies it. |
 | 2026-10-12 | Instasom | 9 | `needsYou.items` already carry when/what/why/do and parse cleanly | Keep it. This is the shape every other agent is being asked for. |
+| 2026-10-12 | Hub | 5 / 10 | Deployed the console zip to Growsom's Netlify site id; agentgrowthscout.netlify.app served the console and lost data.json for seven minutes, and the four-hourly board went red | A zip deploy replaces the whole site. Keep each site id written next to its page, check the `name` the deploy returns, and verify the agent's own feed after any deploy you did not own. The hub holds itself to the rules it enforces. |
 
