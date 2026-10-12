@@ -72,7 +72,15 @@ class CuratedSource(Source):
                 eligibility=entry.get("eligibility", ""),
                 documents=list(entry.get("documents", [])),
                 sam=sam,
-                raw={"verified": verified.isoformat()},
+                raw={
+                    "verified": verified.isoformat(),
+                    # Hand-reviewed rule-9.7 values, when the curator set them.
+                    "decision": {
+                        k: entry[k]
+                        for k in ("fit", "fit_why", "cost", "effort_hours", "travel")
+                        if k in entry
+                    },
+                },
             )
 
 
