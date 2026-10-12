@@ -1,10 +1,17 @@
 {
-  "generated": "2026-10-12T16:01:55+00:00",
+  "generated": "2026-10-12T17:35:52+00:00",
   "as_of": "2026-10-12",
   "count": 238,
   "source_errors": [],
   "stale_sources": [],
   "rule_9_7": true,
+  "problems": [
+    {
+      "title": "Rule 12 done",
+      "sev": "ok",
+      "why": "Every row carries big_name and big_name_why; hand-reviewed rows are marked big_name_source=reviewed, the rest are scored from the funder's name (big_name_source=rule)."
+    }
+  ],
   "opportunities": [
     {
       "id": "curated-agetech-after-dark-ces-2027-aarp-pitch",
@@ -33,7 +40,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": true,
-      "next_date": "2026-10-12"
+      "next_date": "2026-10-12",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: AARP; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-marshalls-good-stuff-accelerator-program-year-3-2027-cohort",
@@ -63,7 +73,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": "2026-10-13"
+      "next_date": "2026-10-13",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Marshalls / TJX; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-veteran-shark-tank-2026-13th-annual",
@@ -94,7 +107,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": "2026-10-13"
+      "next_date": "2026-10-13",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-intuit-ideas-virtual-military-veteran-military-spouse-cohort-2026-27",
@@ -125,7 +141,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": "2026-10-15"
+      "next_date": "2026-10-15",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Intuit; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-blake-family-military-veterans-pitch-competition-clemson-2nd-annual",
@@ -155,7 +174,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": "2026-10-16"
+      "next_date": "2026-10-16",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nba-launchpad-2027-cohort-sixth-cohort",
@@ -186,7 +208,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-10-16"
+      "next_date": "2026-10-16",
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the NBA; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nsf-i-corps-hub-great-lakes-region-regional-virtual-i-corps-cohorts-fall",
@@ -216,7 +241,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": "2026-10-16"
+      "next_date": "2026-10-16",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Science Foundation; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-pave-her-way-disruptor-award-2026-inaugural",
@@ -247,7 +275,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": "2026-10-16"
+      "next_date": "2026-10-16",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-amd-developer-hackathon-act-iii-lablab-ai-health-and-wellbeing-track",
@@ -278,7 +309,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": "2026-10-18"
+      "next_date": "2026-10-18",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-army-xtech-search-10",
@@ -309,7 +343,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": "2026-10-19"
+      "next_date": "2026-10-19",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dow-sbir-sttr-specific-topics-release-6-26-bx-26-bz-26-tx-26-tz",
@@ -341,7 +378,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": "2026-10-21"
+      "next_date": "2026-10-21",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-build-ship-shape-amazon-developer-hackathon-bee-wearable-ai-track-fire-t",
@@ -374,7 +414,10 @@
       "cost": 0,
       "effort_hours": 9.5,
       "travel": false,
-      "next_date": "2026-10-23"
+      "next_date": "2026-10-23",
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Amazon / AWS; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-eeg-emg-foundation-challenge-2026-neurips-track-3-sleep-onset-on-wearabl",
@@ -405,7 +448,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-10-24"
+      "next_date": "2026-10-24",
+      "big_name": 3,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: no known name matched, so an unknown name: worth the money only, not the credential.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cornell-cat-grant",
@@ -436,7 +482,10 @@
       "cost": 0,
       "effort_hours": 11.0,
       "travel": false,
-      "next_date": "2026-10-30"
+      "next_date": "2026-10-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-digikey-w-rth-elektronik-proteus-iv-eval-board-design-contest",
@@ -466,7 +515,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-10-30"
+      "next_date": "2026-10-30",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nebius-x-nvidia-global-ai-hackathon-personal-ai-physical-ai-tracks",
@@ -499,7 +551,10 @@
       "cost": 0,
       "effort_hours": 9.5,
       "travel": true,
-      "next_date": "2026-10-30"
+      "next_date": "2026-10-30",
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: NVIDIA; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-techcred",
@@ -531,7 +586,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": false,
-      "next_date": "2026-10-30"
+      "next_date": "2026-10-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-qloo-agentic-hackathon-devpost",
@@ -563,7 +621,10 @@
       "cost": 0,
       "effort_hours": 8.5,
       "travel": false,
-      "next_date": "2026-10-30"
+      "next_date": "2026-10-30",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-breva-thrive-grant-q4-2026",
@@ -593,7 +654,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-10-31"
+      "next_date": "2026-10-31",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-secretsos-small-business-grant",
@@ -622,7 +686,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-10-31"
+      "next_date": "2026-10-31",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-break-the-barrier-national-ai-healthcare-competition-inventacare-x-redes",
@@ -651,7 +718,10 @@
       "cost": 0,
       "effort_hours": 6.5,
       "travel": false,
-      "next_date": "2026-11-01"
+      "next_date": "2026-11-01",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-charmhealth-innovation-challenge-and-pitch-competition-2026",
@@ -680,7 +750,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": true,
-      "next_date": "2026-11-01"
+      "next_date": "2026-11-01",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-mit-solve-2027-global-health-challenge",
@@ -712,7 +785,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": "2026-11-02"
+      "next_date": "2026-11-02",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: MIT; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-darpa-documentation-and-decision-support-d2-sprint",
@@ -746,7 +822,10 @@
       "cost": 0,
       "effort_hours": 18.5,
       "travel": false,
-      "next_date": "2026-11-04"
+      "next_date": "2026-11-04",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: DARPA; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-xcelerate-startup-competition",
@@ -776,7 +855,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": true,
-      "next_date": "2026-11-04"
+      "next_date": "2026-11-04",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-founders-live-pitch-video-challenge-2026-prime-time",
@@ -805,7 +887,10 @@
       "cost": 0,
       "effort_hours": 4.5,
       "travel": false,
-      "next_date": "2026-11-09"
+      "next_date": "2026-11-09",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-jumpstart-trailblazer-software-accelerator-winter-2027-cohort-jan-12-apr",
@@ -837,7 +922,10 @@
       "cost": 0,
       "effort_hours": 18.5,
       "travel": true,
-      "next_date": "2026-11-10"
+      "next_date": "2026-11-10",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-paypal-ai-hackathon-devpost",
@@ -868,7 +956,10 @@
       "cost": 0,
       "effort_hours": 7.5,
       "travel": false,
-      "next_date": "2026-11-12"
+      "next_date": "2026-11-12",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: PayPal; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-washington-l-i-safety-health-investment-projects-ship-grant-safety-healt",
@@ -900,7 +991,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": "2026-11-13"
+      "next_date": "2026-11-13",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-dow-joint-warfighter-medical-military-medical-research-and-developmen",
@@ -926,7 +1020,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2026-11-16"
+      "next_date": "2026-11-16",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Defense Health Agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-global-deep-tech-battle-ces-2027-healthtech-consumer-electronics-battles",
@@ -955,7 +1052,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": "2026-11-16"
+      "next_date": "2026-11-16",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-global-health-accelerator-2026-27-cohort",
@@ -985,7 +1085,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": "2026-11-16"
+      "next_date": "2026-11-16",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-tory-burch-foundation-fellows-2027-program",
@@ -1015,7 +1118,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": "2026-11-17"
+      "next_date": "2026-11-17",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a nationally known foundation; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-dow-combat-readiness-medical-research-program-translational-research-",
@@ -1041,7 +1147,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2026-11-18"
+      "next_date": "2026-11-18",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Defense Health Agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-nih-strokenet-clinical-trials-and-biomarker-studies-for-stroke-treatm",
@@ -1058,16 +1167,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2026-11-19"
+      "next_date": "2026-11-19",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-vetcon-2026-business-plan-competition",
@@ -1099,7 +1211,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": "2026-11-20"
+      "next_date": "2026-11-20",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nimhd-schare-advance-whole-person-data-integration-and-reimagine-data-sc",
@@ -1129,7 +1244,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-11-23"
+      "next_date": "2026-11-23",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-shophand-5k-small-business-boost-grant-current-cycle",
@@ -1161,7 +1279,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": false,
-      "next_date": "2026-11-30"
+      "next_date": "2026-11-30",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nimhd-schare-smart-devices-and-sensing-technologies-to-mitigate-chronic-",
@@ -1191,7 +1312,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": "2026-12-18"
+      "next_date": "2026-12-18",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-sushi-tech-challenge-2027-tokyo-metropolitan-government-pitch-contest-su",
@@ -1221,7 +1345,10 @@
       "cost": 0,
       "effort_hours": 8.5,
       "travel": true,
-      "next_date": "2026-12-18"
+      "next_date": "2026-12-18",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-business-freedom-grant-darcy-s-business-nov-15-dec-31-2026-review-rounds",
@@ -1250,7 +1377,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-12-31"
+      "next_date": "2026-12-31",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-jlc-hardware-accelerator-jlcpcb-jlc3dp-jlcmc-jlccnc",
@@ -1282,7 +1412,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-12-31"
+      "next_date": "2026-12-31",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nfl-big-data-bowl-2027-kaggle-combine-sensor-tracking-to-nfl-performance",
@@ -1313,7 +1446,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": "2027-01-06"
+      "next_date": "2027-01-06",
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the NFL; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-personal-health-informatics-for-delivering-actionable-insights-to-ind",
@@ -1330,16 +1466,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-01-07"
+      "next_date": "2027-01-07",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nih-nourish-autoimmunity-digital-health-challenge-phase-1",
@@ -1370,7 +1509,10 @@
       "cost": 0,
       "effort_hours": 15.5,
       "travel": false,
-      "next_date": "2027-01-08"
+      "next_date": "2027-01-08",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nih-odss-it-s-about-time-temporal-reasoning-in-biomedical-knowledge-grap",
@@ -1399,7 +1541,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2027-01-15"
+      "next_date": "2027-01-15",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-pcbway-9th-project-design-contest-edge-ai-iot-category",
@@ -1430,7 +1575,10 @@
       "cost": 0,
       "effort_hours": 7.5,
       "travel": false,
-      "next_date": "2027-01-24"
+      "next_date": "2027-01-24",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-heal-initiative-integrative-management-of-chronic-pain-and-oud-for-wh",
@@ -1447,16 +1595,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-01-26"
+      "next_date": "2027-01-26",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-national-braille-press-touch-of-genius-prize-for-innovation-2027",
@@ -1489,7 +1640,10 @@
       "cost": 0,
       "effort_hours": 8.0,
       "travel": false,
-      "next_date": "2027-02-05"
+      "next_date": "2027-02-05",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-a-science-of-science-approach-to-analyzing-and-innovating-the-biomedi",
@@ -1515,7 +1669,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-02-09"
+      "next_date": "2027-02-09",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Science Foundation; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-18th-innovation-world-cup-iot-wt-top-12-wearable-techpreneurs-pitch-at-w",
@@ -1546,7 +1703,10 @@
       "cost": 0,
       "effort_hours": 8.5,
       "travel": false,
-      "next_date": "2027-02-11"
+      "next_date": "2027-02-11",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nsf-pathways-to-enable-secure-open-source-ecosystems-pesose-nsf-26-506",
@@ -1580,7 +1740,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-03-02"
+      "next_date": "2027-03-02",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Science Foundation; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-deployed-warfighter-protection-fy27-afpmb-baa-27-01",
@@ -1606,7 +1769,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": true,
-      "next_date": "2027-03-17"
+      "next_date": "2027-03-17",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ncats-real-world-evidence-rwe-innovation-challenge-phase-1",
@@ -1635,7 +1801,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2027-03-26"
+      "next_date": "2027-03-26",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nih-sbir-sttr-april-2027-cycle",
@@ -1665,7 +1834,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-04-05"
+      "next_date": "2027-04-05",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-computational-approaches-to-curation-at-scale-for-biomedical-research",
@@ -1691,7 +1863,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-04-15"
+      "next_date": "2027-04-15",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-entrepreneurship-world-cup-ewc-2026-cycle-early-stage-track",
@@ -1722,7 +1897,10 @@
       "cost": 0,
       "effort_hours": 8.0,
       "travel": true,
-      "next_date": "2027-05-31"
+      "next_date": "2027-05-31",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-brain-initiative-brain-behavior-quantification-and-synchronization-ne",
@@ -1739,16 +1917,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-06-15"
+      "next_date": "2027-06-15",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-future-of-health-grant",
@@ -1777,7 +1958,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2027-07-31"
+      "next_date": "2027-07-31",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-interventions-to-reduce-sleep-health-disparities-r01-clinical-trials-",
@@ -1794,16 +1978,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
+      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-09-07"
+      "next_date": "2027-09-07",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-16th-medica-start-up-competition-medica-2027-dusseldorf",
@@ -1832,7 +2019,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": true,
-      "next_date": "2027-09-09"
+      "next_date": "2027-09-09",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-19th-healthcare-innovation-world-cup",
@@ -1862,7 +2052,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": true,
-      "next_date": "2027-09-09"
+      "next_date": "2027-09-09",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-2-fa2384-24-s-2",
@@ -1892,7 +2085,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": "2027-09-30"
+      "next_date": "2027-09-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-cheers-open-period-1-all-technical-areas-fa238424s2334",
@@ -1918,7 +2114,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-09-30"
+      "next_date": "2027-09-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-cheers-open-period-2-all-technical-areas-fa238424s2335",
@@ -1944,7 +2143,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-09-30"
+      "next_date": "2027-09-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dha-usamrdc-fy23-fy27-broad-agency-announcement-for-extramural-medical-r",
@@ -1974,7 +2176,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": "2027-09-30"
+      "next_date": "2027-09-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Defense Health Agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-design-testing-a",
@@ -1991,16 +2196,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 2,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-12-23"
+      "next_date": "2027-12-23",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-catalyze-product-definition-medical-device-prototype-optimization-r33",
@@ -2026,7 +2234,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2027-12-23"
+      "next_date": "2027-12-23",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-broad-agency-announcement-baa-for-extramural-biomedical-and-human-per",
@@ -2052,7 +2263,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2028-07-31"
+      "next_date": "2028-07-31",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Defense Health Agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ussocom-baa-for-extramural-biomedical-and-human-performance-r-d-ht9425-2",
@@ -2084,7 +2298,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": "2028-07-31"
+      "next_date": "2028-07-31",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-afrl-711th-human-performance-wing-cheers-maa-open-period-3-commercial-so",
@@ -2116,7 +2333,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": "2028-09-30"
+      "next_date": "2028-09-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-heal-initiative-translating-addiction-epidemiology-prevention-treatme",
@@ -2133,16 +2353,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 4,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2029-02-09"
+      "next_date": "2029-02-09",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-arpa-h-proactive-health-office-pho-mission-office-iso-arpa-h-sol-24-106",
@@ -2173,7 +2396,10 @@
       "cost": 0,
       "effort_hours": 14.0,
       "travel": false,
-      "next_date": "2029-03-05"
+      "next_date": "2029-03-05",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: ARPA-H; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-sbir-sttr-commercialization-readiness-pilot-crp-program-parent-sb1-cl",
@@ -2190,16 +2416,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Small businesses; For profit organizations other than small businesses (+13 other applicant types)",
+      "eligibility": "For profit organizations other than small businesses; Small businesses (+13 other applicant types)",
       "documents": [],
       "sam": "required",
       "fit": 2,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Small businesses. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: For profit organizations other than small businesses. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2029-04-05"
+      "next_date": "2029-04-05",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-expansi",
@@ -2225,7 +2454,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2029-05-25"
+      "next_date": "2029-05-25",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-limited-competition-centers-of-biomedical-research-excellence-develop",
@@ -2242,16 +2474,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Public and State controlled institutions of higher education; Nonprofits having a 501(c)(3) status with the IRS, other than institutions of higher education; Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Nonprofits that do not have a 501(c)(3) status wit",
+      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); Public and State controlled institutions of higher education; Nonprofits that do not have a 501(c)(3) status with the IRS, other than institutions of higher education; Nonprofits having a 501(c)(3) status wit",
       "documents": [],
       "sam": "required",
       "fit": 2,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Public and State controlled institutions of higher education. Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Others (see text field entitled \"Additional Information on Eligibility\" for clarification). Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2029-05-26"
+      "next_date": "2029-05-26",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-readiness-and-recreation-initiative-rari-recurring-5-year-notice-p26a",
@@ -2268,16 +2503,19 @@
       "days_until_open": null,
       "pillar": 2,
       "kind": "grant",
-      "eligibility": "Others (see text field entitled \"Additional Information on Eligibility\" for clarification); State governments",
+      "eligibility": "State governments; Others (see text field entitled \"Additional Information on Eligibility\" for clarification)",
       "documents": [],
       "sam": "required",
       "fit": 3,
-      "fit_why": "Rule-based estimate, not hand-reviewed. Door: Others (see text field entitled \"Additional Information on Eligibility\" for clarification). Watch: SAM.gov registration first.",
+      "fit_why": "Rule-based estimate, not hand-reviewed. Door: State governments. Watch: SAM.gov registration first.",
       "fit_source": "heuristic",
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2030-11-30"
+      "next_date": "2030-11-30",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-continuing-human-enabling-enhancing-restoring-and-sustaining-fa238424",
@@ -2303,7 +2541,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2044-08-22"
+      "next_date": "2044-08-22",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-500-global",
@@ -2332,7 +2573,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-aarp-agetech-collaborative-startup-accelerator",
@@ -2361,7 +2605,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: AARP; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ai-for-good-innovation-factory-itu-un-monthly-online-pitching-sessions-2",
@@ -2393,7 +2640,10 @@
       "cost": 0,
       "effort_hours": 9.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-arpa-h-open-broad-agency-announcement-mission-office-isos",
@@ -2423,7 +2673,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: ARPA-H; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-aws-activate",
@@ -2452,7 +2705,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Amazon / AWS; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-activate-fellowship",
@@ -2482,7 +2738,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-african-medical-devices-regulatory-harmonization-program-for-fd-23-01",
@@ -2508,7 +2767,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the FDA; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-air-force-apex-free-sbir-sttr-navigation-and-consulting-parallax-advance",
@@ -2538,7 +2800,10 @@
       "cost": 0,
       "effort_hours": 10.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-alabama-sbir-sttr-match",
@@ -2567,7 +2832,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-alfred-p-sloan-foundation-exploratory-grantmaking-in-technology",
@@ -2596,7 +2864,10 @@
       "cost": 0,
       "effort_hours": 12.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a nationally known foundation; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-algolia-startup-program",
@@ -2624,7 +2895,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-america-s-seed-fund-nsf-project-pitch",
@@ -2654,7 +2928,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Science Foundation; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-amplitude-startup-scholarship",
@@ -2683,7 +2960,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-analog-devices-free-sample-program",
@@ -2712,7 +2992,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-anthropic-claude-startup-program",
@@ -2740,7 +3023,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Anthropic; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-antler",
@@ -2769,7 +3055,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-aptible-startup-program-hipaa-capable-hosting",
@@ -2798,7 +3087,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-arkansas-sbir-matching-grant",
@@ -2827,7 +3119,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-arm-flexible-access-for-startups",
@@ -2858,7 +3153,10 @@
       "cost": 0,
       "effort_hours": 2.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-army-open-solicitation-aos-w9128z-25-s-a002-active-capability-gap-submis",
@@ -2890,7 +3188,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-berkeley-skydeck",
@@ -2920,7 +3221,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-brinc",
@@ -2950,7 +3254,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-building-communities-of-recovery-ti-27-004",
@@ -2976,7 +3283,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cdmrp-combat-readiness-medical-research-program-crrp",
@@ -3007,7 +3317,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cdmrp-peer-reviewed-medical-research-program-prmrp",
@@ -3037,7 +3350,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ces-2027-eureka-park",
@@ -3066,7 +3382,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: CES (Consumer Technology Association); a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cms-blue-button-2-0-api-production-access",
@@ -3096,7 +3415,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: CMS; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cms-health-tech-ecosystem-pledge-patient-facing-app-friend-of-the-ecosys",
@@ -3126,7 +3448,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: CMS; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-caelestinus-digital-health-interoperability-and-fhir-incubator-2027-batc",
@@ -3156,7 +3481,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-carta-launch-free-cap-table",
@@ -3186,7 +3514,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-case-western-reserve-university-law-school-ip-clinic-uspto-law-school-cl",
@@ -3216,7 +3547,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-cloudflare-for-startups",
@@ -3247,7 +3581,10 @@
       "cost": 0,
       "effort_hours": 2.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-controlled-clinical-trials-on-long-term-effects-of-nutritional-interv",
@@ -3273,7 +3610,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-corti-for-startups-healthcare-ai-api-credits",
@@ -3301,7 +3641,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-costco-supplier-inclusion-program-supplier-intake-form",
@@ -3330,7 +3673,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Costco; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-creative-destruction-lab-cdl-manufacturing",
@@ -3359,7 +3705,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dav-patriot-boot-camp",
@@ -3390,7 +3739,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-digital-health-technology-and-reciprocal-innovation-to-improve-clinic",
@@ -3416,7 +3768,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-digitalocean-startups-formerly-hatch",
@@ -3445,7 +3800,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dow-dod-mentor-prot-g-program-prot-g-application",
@@ -3477,7 +3835,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-elevenlabs-grants-startup-voice-ai-credits",
@@ -3506,7 +3867,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-emergent-ventures-mercatus-center-george-mason-university",
@@ -3535,7 +3899,10 @@
       "cost": 0,
       "effort_hours": 12.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-extreme-tech-challenge-xtc",
@@ -3565,7 +3932,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-fiscal-year-2027-regional-nutrition-hubs-hrsa-27-019",
@@ -3591,7 +3961,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-freed-fellowship-grant",
@@ -3620,7 +3993,10 @@
       "cost": 0,
       "effort_hours": 12.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-fuzehub-jeff-lawrence-manufacturing-grants",
@@ -3650,7 +4026,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-galaxy-grants",
@@ -3679,7 +4058,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-garmin-connect-developer-program-health-activity-and-women-s-health-apis",
@@ -3709,7 +4091,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Garmin; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-google-for-startups-cloud-program",
@@ -3739,7 +4124,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Google; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-heal-initiative-optimization-of-therapeutic-medical-devices-through-t",
@@ -3765,7 +4153,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-hlth-usa-startup-pitch-competition",
@@ -3795,7 +4186,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-halcyon-fellowships-year-round-eligibility-form-us-health-accelerator-tr",
@@ -3825,7 +4219,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-hello-alice-rolling-grant-cycles",
@@ -3854,7 +4251,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-hello-tomorrow-global-challenge",
@@ -3884,7 +4284,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ifw-by-honeycomb-universal-funding-grant-application",
@@ -3913,7 +4316,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ivmf-military-founders-lab",
@@ -3944,7 +4350,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-illinois-sbir-sttr-matching-program",
@@ -3973,7 +4382,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-indiana-sbir-sttr-match",
@@ -4002,7 +4414,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-innovation-fund-northeast-ohio",
@@ -4033,7 +4448,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-integrating-machine-learning-with-computational-fluid-dynamics-models",
@@ -4059,7 +4477,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the FDA; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-intercom-early-stage-startup-program",
@@ -4087,7 +4508,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-interdisciplinary-research-networks-to-advance-biomedical-research-on",
@@ -4113,7 +4537,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-iowa-sbir-sttr-support",
@@ -4142,7 +4569,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-kentucky-sbir-sttr-matching-funds",
@@ -4171,7 +4601,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-kickstarter-x-google-next-wave-fund-kickstarter-forward-funds",
@@ -4201,7 +4634,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-kinetic-health-care-innovation-in-motion",
@@ -4230,7 +4666,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-lightship-bootcamp-akron-nov-16-18-2026-backed-by-jobsohio",
@@ -4260,7 +4699,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-luminate-ny-accelerator",
@@ -4290,7 +4732,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-masschallenge-bae-systems-deep-tech-accelerator",
@@ -4320,7 +4765,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-maternal-and-child-health-mch-nutrition-training-program-hrsa-27-036",
@@ -4346,7 +4794,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-mayo-clinic-platform-accelerate",
@@ -4377,7 +4828,10 @@
       "cost": 0,
       "effort_hours": 14.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Mayo Clinic; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-microsoft-for-startups-founders-hub",
@@ -4406,7 +4860,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Microsoft; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-mixpanel-for-startups",
@@ -4435,7 +4892,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-mongodb-for-startups",
@@ -4466,7 +4926,10 @@
       "cost": 0,
       "effort_hours": 2.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-murata-free-sample-request-my-murata",
@@ -4495,7 +4958,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nist-mep-manufacturing-voucher",
@@ -4524,7 +4990,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nvidia-inception",
@@ -4555,7 +5024,10 @@
       "cost": 0,
       "effort_hours": 4.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: NVIDIA; a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ny-ventures-pre-seed-seed-matching-fund",
@@ -4586,7 +5058,10 @@
       "cost": 0,
       "effort_hours": 8.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nys-ssbci-technical-assistance",
@@ -4616,7 +5091,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-national-biomedical-research-centers-p50-clinical-trial-optional-par-",
@@ -4642,7 +5120,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-new-mexico-sbir-match",
@@ -4671,7 +5152,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nextpcb-accelerator-tuya-t5-ai-open-source-hardware-innovation-campaign-",
@@ -4700,7 +5184,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-notion-for-startups-direct-track",
@@ -4730,7 +5217,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-centers-of-excellence-jumpstart-backed-by-ohio-third-frontier",
@@ -4759,7 +5249,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-fast-program-sbir-sttr-assistance-ohio-aerospace-institute",
@@ -4789,7 +5282,10 @@
       "cost": 0,
       "effort_hours": 10.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-mbda-business-center",
@@ -4819,7 +5315,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-minority-business-assistance-centers-mbac",
@@ -4849,7 +5348,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-patent-pro-bono-program-uspto-patent-pro-bono-network",
@@ -4880,7 +5382,10 @@
       "cost": 0,
       "effort_hours": 2.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohio-third-frontier-tvsf-phase-2-start-up-fund",
@@ -4912,7 +5417,10 @@
       "cost": 0,
       "effort_hours": 15.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ohiohealth-new-ventures-and-business-incubation-nvbi-external-new-ventur",
@@ -4941,7 +5449,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major Ohio health system; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-onshape-startup-program",
@@ -4969,7 +5480,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ptc-for-startups-creo-codebeamer-and-arena-plm",
@@ -4997,7 +5511,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-penfed-foundation-veteran-entrepreneur-program-accelerator-incubator",
@@ -5028,7 +5545,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-pitchmi",
@@ -5058,7 +5578,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-posthog-for-startups",
@@ -5088,7 +5611,10 @@
       "cost": 0,
       "effort_hours": 1.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-rwjf-pioneering-ideas-exploring-the-future-to-build-a-culture-of-health",
@@ -5118,7 +5644,10 @@
       "cost": 0,
       "effort_hours": 13.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a nationally known foundation; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-renesas-free-sample-request",
@@ -5147,7 +5676,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-retool-for-startups",
@@ -5176,7 +5708,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-rev-ithaca-prototyping-hardware-accelerator",
@@ -5205,7 +5740,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-sbir-sttr-reauthorized-through-2031-program-status",
@@ -5235,7 +5773,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-solidworks-for-startups-program",
@@ -5264,7 +5805,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-stmicroelectronics-free-sample-request",
@@ -5293,7 +5837,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-schmidt-sciences",
@@ -5321,7 +5868,10 @@
       "cost": 0,
       "effort_hours": 12.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a nationally known foundation; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-seeed-studio-fusion-crowdfunding-sponsorship-pcb-pcba-coupon",
@@ -5349,7 +5899,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-sengo-monthly-pitch-competition",
@@ -5379,7 +5932,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-sentry-for-startups",
@@ -5408,7 +5964,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-single-source-for-the-continuation-of-the-physiology-of-the-weight-re",
@@ -5434,7 +5993,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-sky-s-the-limit-friends-family-fund-monthly-2-500-startup-grant",
@@ -5467,7 +6029,10 @@
       "cost": 0,
       "effort_hours": 9.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-small-business-translator-medtech-and-digital-health-technologies-for",
@@ -5493,7 +6058,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-small-instruments-and-modern-equipment-for-shared-use-biomedical-rese",
@@ -5519,7 +6087,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-solid-edge-for-startups-siemens",
@@ -5548,7 +6119,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-south-park-commons",
@@ -5577,7 +6151,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major accelerator; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-startup-prize-health",
@@ -5607,7 +6184,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-trish-catalyst-grants-program-nasa-funded-translational-research-institu",
@@ -5638,7 +6218,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a university or institute; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-target-accelerators-supplier-intake-form-route-into-target-takeoff",
@@ -5667,7 +6250,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Target; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-telehealth-nutrition-services-network-grant-program-hrsa-27-044",
@@ -5693,7 +6279,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-terra-startup-accelerator-wearable-health-data-api-credits",
@@ -5724,7 +6313,10 @@
       "cost": 0,
       "effort_hours": 2.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-the-medtech-conference-start-up-pitch-pitch-pour",
@@ -5755,7 +6347,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-the-rosie-network-service2ceo",
@@ -5784,7 +6379,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-together-ai-startup-accelerator",
@@ -5812,7 +6410,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-translational-centers-using-microphysiologic-systems-for-infectious-d",
@@ -5838,7 +6439,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-uc-berkeley-citris-foundry",
@@ -5867,7 +6471,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-usopc-performance-innovation-industry-partner-intake-team-usa",
@@ -5897,7 +6504,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 10,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Team USA (USOPC); a win is a headline on its own and opens investor, retail and press doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-university-hospitals-ventures-uh-partner-pilot-and-collaboration-submiss",
@@ -5925,7 +6535,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major Ohio health system; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-university-of-akron-research-foundation-uarf-i-corps-community-teams-nex",
@@ -5955,7 +6568,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-university-of-akron-school-of-law-trademark-clinic-uspto-law-school-clin",
@@ -5984,7 +6600,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "grants.gov-utilizing-real-world-data-and-algorithmic-analyses-to-assess-post-mar",
@@ -6010,7 +6629,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the FDA; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-va-lighthouse-api-program-patient-health-api-fhir-sandbox-and-production",
@@ -6041,7 +6663,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Veterans Affairs; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-va-pathfinder-vha-innovation-ecosystem-external-innovator-submission",
@@ -6072,7 +6697,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Veterans Affairs; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-verizon-small-business-digital-ready",
@@ -6101,7 +6729,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: Verizon; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-veterans-business-battle-rice-university",
@@ -6132,7 +6763,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-vive-2027-startup-pitch-competition",
@@ -6163,7 +6797,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-w-m-keck-foundation-science-engineering-research-program",
@@ -6193,7 +6830,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a nationally known foundation; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-whoop-developer-platform-api-access-to-whoop-members-sleep-recovery-and-",
@@ -6223,7 +6863,10 @@
       "cost": 0,
       "effort_hours": 2.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: WHOOP; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-warrior-rising-vetrepreneur-grants",
@@ -6253,7 +6896,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-wisconsin-sbir-advance",
@@ -6283,7 +6929,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-withings-public-api-start-for-free-plan-sleep-stages-heart-rate-ecg-spo2",
@@ -6313,7 +6962,10 @@
       "cost": 0,
       "effort_hours": 10.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major technology brand; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-women-veterans-giving-small-business-award",
@@ -6342,7 +6994,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-women-s-business-development-council-grants",
@@ -6372,7 +7027,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-wurth-elektronik-start-up-management-free-components-engineering-support",
@@ -6400,7 +7058,10 @@
       "cost": 0,
       "effort_hours": 1.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-yale-ventures-healthtech-works",
@@ -6429,7 +7090,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-zendesk-for-startups",
@@ -6458,7 +7122,10 @@
       "cost": 0,
       "effort_hours": 0.5,
       "travel": false,
-      "next_date": null
+      "next_date": null,
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nystar-innovation-matching-grants",
@@ -6489,7 +7156,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2026-10-20"
+      "next_date": "2026-10-20",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a state economic-development agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-vultr-agent-rush-hackathon-lablab-ai",
@@ -6520,7 +7190,10 @@
       "cost": 0,
       "effort_hours": 20.0,
       "travel": false,
-      "next_date": "2026-11-08"
+      "next_date": "2026-11-08",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a known developer or hardware brand; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dow-sbir-sttr-fy2027-release-1",
@@ -6551,7 +7224,10 @@
       "cost": 0,
       "effort_hours": 40.0,
       "travel": false,
-      "next_date": "2026-11-25"
+      "next_date": "2026-11-25",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the Department of Defense; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-next-era-founders-fellowship-nika-lawrie-2026-cycle",
@@ -6580,7 +7256,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-12-04"
+      "next_date": "2026-12-04",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-2027-nia-start-up-challenge-and-accelerator",
@@ -6612,7 +7291,10 @@
       "cost": 0,
       "effort_hours": 16.5,
       "travel": true,
-      "next_date": "2027-01-15"
+      "next_date": "2027-01-15",
+      "big_name": 9,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: the National Institutes of Health; a win is national-level credibility that investors and partners recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-dmea-nova-award-2027-digital-health-startup-pitch-munich",
@@ -6641,7 +7323,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": true,
-      "next_date": "2027-01-31"
+      "next_date": "2027-01-31",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a major health-tech or industry stage; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ahrq-clinical-evidence-synthesis-transformation-challenge-super-intellig",
@@ -6675,7 +7360,10 @@
       "cost": 0,
       "effort_hours": 9.0,
       "travel": false,
-      "next_date": "2027-03-12"
+      "next_date": "2027-03-12",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-ahrq-si-tech-sprint-for-healthcare-research-and-implementation-quality-a",
@@ -6707,7 +7395,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": false,
-      "next_date": "2027-09-09"
+      "next_date": "2027-09-09",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a federal HHS agency; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-fund-her-future-h-r-block-block-advisors",
@@ -6737,7 +7428,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-09-22"
+      "next_date": "2026-09-22",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-buckeye-state-credit-union-small-business-recovery-grant",
@@ -6768,7 +7462,10 @@
       "cost": 0,
       "effort_hours": 6.0,
       "travel": false,
-      "next_date": "2026-09-30"
+      "next_date": "2026-09-30",
+      "big_name": 4,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a small or local funder; a win is a contact and some cash, not a name that opens doors.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-nextcorps-manufacturing-accelerator-fall-2026",
@@ -6798,7 +7495,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-09-30"
+      "next_date": "2026-09-30",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a regional innovation body; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-texas-woman-s-university-veteran-grant",
@@ -6827,7 +7527,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": false,
-      "next_date": "2026-09-30"
+      "next_date": "2026-09-30",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a university or institute; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-pm-r-pitch-tank-2026-aapm-r-x-matter",
@@ -6856,7 +7559,10 @@
       "cost": 0,
       "effort_hours": 3.0,
       "travel": true,
-      "next_date": "2026-10-02"
+      "next_date": "2026-10-02",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-spie-startup-challenge-2027-healthcare-track-at-photonics-west",
@@ -6887,7 +7593,10 @@
       "cost": 0,
       "effort_hours": 7.5,
       "travel": true,
-      "next_date": "2026-10-06"
+      "next_date": "2026-10-06",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-insurtech-america-innovation-challenge-2026-the-hartford-travelers-prize",
@@ -6917,7 +7626,10 @@
       "cost": 0,
       "effort_hours": 7.0,
       "travel": true,
-      "next_date": "2026-10-07"
+      "next_date": "2026-10-07",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised national sector organisation; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-rutgers-health-hack-2026",
@@ -6946,7 +7658,10 @@
       "cost": 0,
       "effort_hours": 4.0,
       "travel": true,
-      "next_date": "2026-10-09"
+      "next_date": "2026-10-09",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-latinos-x-ai-hackathon-nyc-healthcare-track",
@@ -6979,7 +7694,10 @@
       "cost": 0,
       "effort_hours": 9.5,
       "travel": true,
-      "next_date": "2026-10-10"
+      "next_date": "2026-10-10",
+      "big_name": 8,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a flagship university; a win is a credential investors, partners and later federal or state reviewers recognise.",
+      "big_name_source": "rule"
     },
     {
       "id": "curated-emerge-americas-natsec-veteran-pitch-competition-nov-2026-cycle",
@@ -7008,7 +7726,10 @@
       "cost": 0,
       "effort_hours": 5.0,
       "travel": false,
-      "next_date": "2026-10-10"
+      "next_date": "2026-10-10",
+      "big_name": 6,
+      "big_name_why": "Scored from the funder's name, not hand-reviewed: a recognised startup programme; a win is a regional or sector credential and a warm introduction, not a headline.",
+      "big_name_source": "rule"
     }
   ]
 }
