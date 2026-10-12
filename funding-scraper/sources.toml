@@ -4490,6 +4490,11 @@ sam = "none"
 eligibility = "Open online hackathon on lablab.ai; register on lablab.ai and its Discord; teams allowed; online build 3-8 Nov 2026, optional on-site finale in Salt Lake City 8 Nov (travel not covered). Detailed entrant rules are not stated on the event page beyond lablab.ai terms."
 note = "NOT HEALTH-THEMED; SUBMISSIONS MUST BE 'ORIGINAL AND MIT-COMPLIANT' (so submit a stand-alone demo, never DevKit firmware or SDK code); SMALL PRIZE. Low-priority filler. Where it fits: 'Pattern A: sandboxed code execution' (for example a CSV analyst that runs code on an uploaded file) maps directly to a 'biometric data analyst agent': upload a Vybe or HealthKit HRV/sleep export, the agent writes and runs the analysis in a sandbox and returns charts. That would be a public demo of the 'AI agents on wearable data' story for the developer platform. Requires a public web app plus a GitHub repo."
 documents = ["lablab.ai account + Discord registration", "public GitHub repository with setup instructions", "deployed web app running on Vultr", "demo video/pitch per lablab submission form"]
+fit = 3
+fit_why = "Door: a stand-alone biometric-data analyst agent demo in the sandboxed-code track; disqualifier: not health-themed, small prizes, and the code must be MIT-licensed, so no DevKit or SDK code can go in."
+cost = 0
+effort_hours = 20
+travel = false
 verified = "2026-10-12"
 
 [[sources.curated.entry]]
@@ -4503,6 +4508,11 @@ sam = "none"
 eligibility = "Open to businesses and hobbyists; the application form offers 'Enterprise project' as a type and NextPCB says it prioritizes business projects. The design must be built on the campaign's featured chip/module (here the Tuya T5-E1, Wi-Fi 6 + BLE 5.4). Track 3 'AIoT Innovative Applications' explicitly lists 'AI Health Monitors' and 'Wearables'. One sponsorship per month; orders must be placed within 6 months of approval."
 note = "MUST DESIGN AROUND THE FEATURED MODULE (Tuya T5), NOT VYBE'S OWN RADIO/MCU, AND NO DEADLINE IS STATED. Best use is a quick DevKit accessory or bench/charging-hub prototype rather than the band itself. Last round this program was rejected because the accelerator URL redirected; it is live again now with a working Google Form, and the form says enterprise project content stays confidential. Free, no equity, no fee."
 documents = ["Google Form application (name, email, project type, project description)", "Design files (Gerber/BOM) when ordering the free PCBA after approval"]
+fit = 4
+fit_why = "Door: free boards for a DevKit accessory or bench prototype; disqualifier: the design must be built on the Tuya T5 module, not Vybe's own radio and MCU, so it cannot fund the band itself."
+cost = 0
+effort_hours = 3
+travel = false
 verified = "2026-10-12"
 
 [[sources.curated.entry]]
