@@ -407,3 +407,50 @@ the name as one of its seven parts and guesses from the organisation's name
 until the agent publishes the field. Rule 7 still outranks a name: a booth at
 a famous event is still a booth.
 
+
+## 13. One standing order, and who may say yes
+
+Founder, 13 October 2026: "fix the agents' conflicts; you are supposed to be
+helping me manage these things."
+
+What went wrong. Each agent runs on a routine prompt written on one day and on
+hub orders written on later days. On 11 October Marketsom's routine was told
+"research, not drafts, until the founder explicitly says drafting may resume".
+On 12 October the founder said every email is written as John and the approved
+ones go today (rule 11). The routine was never rewritten, so Marketsom held two
+standing orders that contradicted each other, obeyed the older one, ended every
+run "waiting on you", and its briefing went stale; the agent board was red for
+two days. Growsom's routine said only its approval page can approve, while
+rule 11 says John's reply is the verdict. Instasom's routine said "Instagram
+and Facebook only" while its charter now covers LinkedIn, X, Reddit and the
+press line. No agent was wrong. The orders were.
+
+**One standing order per agent.** An agent's routine prompt is its standing
+order and the hub owns it. Every routine that fires into a Vybe agent is
+created from the hub session so the hub can rewrite it, and when the founder
+changes a rule the hub rewrites the routine the same day. A routine the hub
+cannot edit is disabled and replaced, never left to contradict this document.
+
+**The newest dated founder order wins.** When a routine and a hub order
+disagree, the agent follows the one carrying the later founder date, names the
+conflict in one line of its report ("Conflict: routine says X, 11 Oct; rule 11
+says Y, 12 Oct; followed Y"), and the hub fixes the routine. The agent never
+stops to ask which applies.
+
+**Who may say yes.**
+
+| The action | Whose yes | What the hub may order |
+|---|---|---|
+| Research, scoring, drafting, signing a draft as John (rule 11), deleting a duplicate draft, publishing a dashboard, closing a row John said no to, reading John's replies | nobody's; the standards already allow it | all of it, any day |
+| Sending one specific email | John's reply on that thread (rule 11), or the founder's approve on Growsom's page | nothing of its own; the hub relays John's words, dated and verbatim |
+| Posting in public, following, pitching a journalist, a DM, any spend, a new account, anything rule 7 does not clearly allow | the founder, in his own words | nothing; the hub puts it on the console as a Decide row |
+
+**Never end a run waiting.** Publishing the dashboard needs nobody's yes, so a
+run always publishes, with today's `asof`, whatever else is open. An open
+question becomes a `problems[]` entry or a Decide row on the console: "waiting
+on you" is a card, not a stopped agent. A surface that goes stale because an
+agent stopped to ask is a rule-5 failure, and the agent board turns red for it.
+
+**The hub checks.** On every run of its own the hub reads each live routine
+against rules 1–13, and records in `VYBE-LESSONS.md` the day a conflict was
+found and the day it was fixed.
