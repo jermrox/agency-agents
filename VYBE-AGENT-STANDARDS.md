@@ -454,3 +454,39 @@ agent stopped to ask is a rule-5 failure, and the agent board turns red for it.
 **The hub checks.** On every run of its own the hub reads each live routine
 against rules 1–13, and records in `VYBE-LESSONS.md` the day a conflict was
 found and the day it was fixed.
+
+## 14. How an email persuades
+
+Founder, 13 October 2026: make sure the principles of email writing also
+contain Cialdini's six principles of persuasion, as applied to email content
+(Bumper Leads, "Mastering Email Content Using Cialdini's 6 Principles of
+Persuasion", 20 July 2023). Rules 7, 11 and 12 and the Claim Register outrank
+every line below: a persuasive email that invents a number, a limit or a
+partner is a rule-4 failure, not a good email.
+
+Every outreach email, opener, reply and follow-up is written so that at least
+three of the six are plainly at work, and the agent can name which. The
+console flags a draft that uses none.
+
+| Principle | What the article says | How Vybe writes it, in John's voice |
+|---|---|---|
+| **Reciprocity** | Give something of value before you ask. | The first paragraph gives, the last one asks. The gift is real and free: a no-cost member offer, a pilot batch for one team, a data feed or integration, a finding about their own members with the source. Never "we'd love to partner" with nothing attached. |
+| **Scarcity** | Real limits and dates move people. "Be sure to not mislead, be honest." | Only limits that exist: the size of the founding batch, the number of pilot slots this quarter, a dated checkpoint (rule 12's 20 openers, 13 Nov). No countdown, no "last chance", no limit the Claim Register cannot source. |
+| **Authority** | Credentials, data, recognition and third parties make the writer credible. | John signs as Director of Growth, Vybe Health (rule 11). Facts that can be checked: veteran-, woman- and minority-owned, the hardware is built, the named organisations that said yes (with their written permission, Instasom standard), a source and date on every number. No clinical, FDA or accuracy claim. |
+| **Consistency** | Remind people of what they already did and said; keep one message. | Quote their own public programme, post or reply back to them. A follow-up continues the same thread with the same ask and refers to their last words; it never opens a new pitch. Across Marketsom, Growsom and Instasom the organisation hears one Vybe, one ask (rule 7). |
+| **Liking** | Be friendly, find common ground, show real interest, be a person. | Open with one specific thing they did, not a compliment template. Common ground where it is true: veteran, athlete, shift worker, the same town. One human line about John or Vybe at most. Plain, warm, short, no hype, no exclamation marks. End with a question. |
+| **Social proof** | People follow what others like them have done. | Name the organisations that already said yes, big names first (rule 12), only with written permission. Counts only when real and sourced: "five of the nine organisations we wrote to replied" is allowed when the board shows it; a testimonial that nobody said is never allowed. |
+
+**The shape that carries them.** Under 120 words. The subject line names
+them, not Vybe. The first line is about them (liking, consistency). The second
+paragraph is the gift (reciprocity) with the proof behind it (authority,
+social proof). The last line is one ask with one link, the Vybe calendar, and
+a real date if there is one (scarcity). Signed "John, Director of Growth, Vybe
+Health". One organisation, one ask, one owning agent (rule 7).
+
+**Published with the draft.** Each unsent draft on the console carries
+`persuasion`: the principles it uses, as a short list (for example
+`["reciprocity","liking","social proof"]`). Fewer than three is a flag, not a
+block; John still decides (rule 11). The weekly scoreboard reports reply rate
+by the principles used, so the agents learn which ones earn replies here
+rather than in a textbook.
