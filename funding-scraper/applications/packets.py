@@ -1716,7 +1716,7 @@ PACKETS = [
                 "product, not a monthly fee. Vybe is not a medical device and makes no "
                 "diagnostic claim; asked a clinical question it declines and says to see a "
                 "clinician.\n\n"
-                "Builders get the same data through an open SDK, so Vybe's overnight signals "
+                "Builders get the same data through a licensed SDK and API, so Vybe's overnight signals "
                 "can sit inside other products."},
             {"q": "Who does your solution serve, and in what ways will it impact their lives? (200 words)", "a":
                 "Adults who already wear, or would wear, a tracker and get nothing they can "
@@ -1810,7 +1810,7 @@ PACKETS = [
                 "subscription. The interpretation comes with the Band. That inverts the "
                 "category's economics, in which the intelligence is the monthly fee, and it "
                 "is the reason the product can serve a fixed income at all.\n\n"
-                "An open SDK lets other builders put the same overnight signals inside their "
+                "A licensed SDK lets other builders put the same overnight signals inside their "
                 "own products, so the approach can spread without every team rebuilding the "
                 "hardware.\n\n"
                 "[If you can state what is defensible — a method, a dataset, a result from "
@@ -1874,7 +1874,7 @@ PACKETS = [
                 "2026. Finalists are notified in February 2027 for a virtual live pitch; "
                 "Solver orientation is at MIT in April 2027.\n\n"
                 "[Record the 2-minute pitch video before you start the form, upload it to "
-                "YouTube or Vimeo as unlisted, and paste the link. Then submit early and "
+                "YouTube or Vimeo set to PUBLIC (Solve's PDF requires public, not unlisted), and paste the link. Then submit early and "
                 "keep editing; Solve lets you edit a submitted application until the "
                 "deadline, but a saved-and-unsubmitted one is not reviewed.]"},
         ],
