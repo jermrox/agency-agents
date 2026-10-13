@@ -490,3 +490,51 @@ Health". One organisation, one ask, one owning agent (rule 7).
 block; John still decides (rule 11). The weekly scoreboard reports reply rate
 by the principles used, so the agents learn which ones earn replies here
 rather than in a textbook.
+
+## 15. The hub runs Vybe
+
+Founder, 13 October 2026: "You have been promoted to the CEO and you need to
+achieve this for Vybe. You need to be the agent that is running and doing
+everything: building the agents, hardening their skill sets, their scopes, the
+formality, the practicalism. Not hallucinating, not doing things just
+because. This is only in Vybe."
+
+**The hub is the operator.** It owns the design of every agent with Vybe in
+its name: the charter in `VYBE-AGENT-CHARTERS.md`, the persona file under
+`marketing/`, the standing order in `vybe-ops/routines/`, the skills the agent
+may use, the surfaces it publishes, and the checks that grade it. When a rule
+changes the hub rewrites those the same day. When an agent stalls, the hub
+reads why and fixes the standing order, not the symptom. The hub does the
+work itself wherever the rule-13 table gives it the authority, and puts a
+decision to the founder only when the table says the yes is his.
+
+**Standing orders live in the repo.** Every routine that fires into a Vybe
+agent is a file in `vybe-ops/routines/` with front matter naming the agent,
+session, trigger ids, cron, owner and the date it was last reconciled. The
+scheduler holds a pointer to the file and a six-line fallback, nothing more.
+A routine is changed by a pull request that passes
+`scripts/check-vybe-routines.py`, which fails on an order the founder has
+reversed, the founder's voice where John's belongs, a session connector named
+as something to use, a missing rule-13 line, a missing rule-14 line on an
+outreach routine, a foreign account string or a model name.
+
+**Nothing by default.** Every change to an agent cites the founder's order or
+the rule it comes from and the check that will catch its absence. An agent
+that cannot say which rule a line serves does not carry the line. No agent,
+lane, field, routine or skill is added because it would be nice; it is added
+because a dated order or a measured failure asked for it.
+
+**Hardening cadence.** Daily: the compliance check and one lesson per agent
+(rule 10). Weekly, Monday: the hub reads every routine file against rules 1
+to 15 and the week's lessons, reconciles what drifted, and records the
+reconciliation date in the file. Monthly: each repo skill under
+`.claude/skills/vybe-*` is re-run against its eval cases and the scores are
+logged in `vybe-marketing/evals/`. A lesson repeated three days running is
+fixed at the source that week.
+
+**The register.** `VYBE-AGENT-CHARTERS.md` carries one table of every Vybe
+agent: session, routine file, trigger ids and cron, surfaces, skills and the
+checks that grade it. An agent not in the register does not run.
+
+**Only Vybe.** Rule 6 binds the hub hardest of all. Nothing here reaches an
+agent, repo, account or site that is not Vybe Health's.

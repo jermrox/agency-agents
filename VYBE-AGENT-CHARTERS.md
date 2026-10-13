@@ -323,6 +323,21 @@ back under its own charter.
 
 ---
 
+## The register
+
+One row per Vybe agent (rule 15). An agent not in this table does not run.
+
+| Agent | Session | Routine file | Triggers, cron | Surfaces | Skills and playbooks | Checks that grade it |
+|---|---|---|---|---|---|---|
+| Hub | session_013HHJWeDrTdszmAhpng4tZh | `vybe-ops/routines/hub-daily-lesson.md`, `hub-compliance-daily.md` | trig_01BS1LbPyaNwYhgt7n9D6VE6 (10 17 * * *); compliance one-shot re-armed daily | vybe-ops.netlify.app, dashboards/vybe-agents.json | all `.claude/agents/` playbooks on demand; `vybe-audience-targeting`, `vybe-search-content` | check-vybe-standards.sh, check-vybe-routines.py, Vybe agent board workflow |
+| Daily worker | runs inside the hub session | `vybe-ops/routines/vybe-daily-worker.md` | trig_01DoSjEdMyKjVQrxiJv8tRAK (0 12 * * 1-5) | agentrevup.netlify.app/apply, vybe-app screens, funding rows | grant-writer playbook | check-divisions.sh, funding dry run, Verify rev site |
+| Revsom | session_013cWZ8bAwri5ewFcGtvZnCm | funding research round (text still in the scheduler; to move) | trig_019Pvh4Km7EbfzTmQPe8NVwf (47 15 * * 1-5) | agentrevup.netlify.app, funding.json | funding-sweep skill | Verify rev site, funding-sweep.yml |
+| Marketsom | session_01RT8AgsUSEeKx3uzQ1QBYcU | `vybe-ops/routines/marketsom-daily.md` | trig_01XujwmTSdHwV9XG3ZZNwwdo (23 6 ET daily); weekly brief trig_01AC4fNzAWRG8V13KVgusp8F (47 6 ET Mon); scoreboard trig_01JXTP1tGRrHXcQiucGzFxoX (59 8 ET Mon) | agentmarksom.netlify.app briefing, scoreboard, reports, partner board | Marketing Director persona, `vybe-search-content`, `vybe-audience-targeting` | check_marketing.py, check-vybe-outreach.py, check-vybe-standards.sh |
+| Growsom | session_013MXjUjR9F9cRyprKSZdrUi | `vybe-ops/routines/growsom-2h.md` | trig_012jng3vBRi8SFohjQFmSdLV (22 6-22/2 ET) | agentgrowthscout.netlify.app, data.json, approval page | Growth Scout persona | growth-scout tests, build.py --check, check-vybe-outreach.py |
+| Instasom | session_01NdJPDj7shKEpQA4scTx2Bh | `vybe-ops/routines/instasom-daily.md` | trig_01HHXH48HNgd9NJjExVs1G6b (53 6 ET daily); data pull trig_018GS6gCGFFrK8w9krA4oniv (38 6 ET daily); weekly team brief trig_01UixjL4EA2aZsXFeAabZoWM (48 7 ET Mon, fresh session); weekly analytics trig_01Ty5KMuvKcVSF2JrTZ7Tjrb (53 7 ET Mon, fresh session) | instasum.netlify.app, all.json | Vybe Awareness Lead, Reels Strategist, LinkedIn Content Creator, PR and Communications Manager, Reddit Community Builder, Twitter Engager, Social Media Strategist | check_marketing.py on awareness files, check-vybe-standards.sh |
+
+Routines whose text still lives only in the scheduler (Revsom's research round, the Monday briefs, the data pull) move into `vybe-ops/routines/` as the hub reconciles each one; until then the trigger id above is the record.
+
 ## Decisions no agent makes
 
 | Decision | Who makes it |
