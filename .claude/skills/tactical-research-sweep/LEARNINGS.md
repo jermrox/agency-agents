@@ -22,7 +22,7 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   disturbance in Nigerian police), MIL 2 (blast TBI nearly doubles PTSD odds versus blunt TBI; PTSD
   predicts later eating-disorder symptoms in veteran women). Board 81, archive 66. EMS: nothing again
   (hits are patient care or education). Exa still 402 (tenth day); policy unverified.
-- Hot-note `cites` checked before merging: none stale. Next to expire: nothing within three days.
+- Hot-note `cites` checked before merging: none stale. Expiring within three days (14-16 Sep items): Behavioral health, Brain health, Women's health. Rewrite them first thing tomorrow.
 - Still held back: PFAS and epigenetic age in airport firefighters (only "Oct 2026").
 - PR #77 still unmerged, so stacked again; the live site is four sweeps behind.
 
