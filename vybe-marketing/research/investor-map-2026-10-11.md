@@ -4,7 +4,7 @@
 
 **Sources.** Each fact comes from a funding announcement, the investor's own page or reputable press. Anything else is marked "unverified".
 
-**Re-checked 12 Oct 2026:** Supermoon's online form (Fundraising option, deck upload), NextView, Courtside, Khosla, Muse, Village Global, IDEA Fund and Primetime pages all load.
+**Re-checked 13 Oct 2026:** Supermoon's online form (Fundraising option, deck upload), NextView, Courtside, Khosla, Muse, Village Global, IDEA Fund and Primetime pages all load.
 
 **Already checked by hand:**
 - J2 Ventures and Lumia

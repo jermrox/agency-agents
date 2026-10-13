@@ -1,6 +1,6 @@
 # Money in, at no cost: funding research (11 Oct 2026)
 
-Research only. Nothing has been applied for, drafted or sent. **Re-checked 12 Oct 2026** against each funder's page or, where the page blocks automated reads (NIA, NC IDEA), against search results citing it. Every opportunity costs $0 to apply. Facts come from each funder's own page. "Unverified" means the fact came from a search summary or a third party.
+Research only. Nothing has been applied for, drafted or sent. **Re-checked 13 Oct 2026** against each funder's page or, where the page blocks automated reads (NIA, NC IDEA), against search results citing it. Every opportunity costs $0 to apply. Facts come from each funder's own page. "Unverified" means the fact came from a search summary or a third party.
 
 ## Two facts decide most of this list
 
@@ -32,7 +32,7 @@ No travel and nothing in person: no residencies, pitch events, demo days or conf
 | When | Opportunity | Money | How it works | Catch | Source |
 |---|---|---|---|---|---|
 | 1 Dec 2026 – 15 Jan 2027 | NIA Start-Up Challenge | $24K to each of up to 21 finalists; $70K to each of 7 winners | Online submission (healthy-aging pitch; drafted in the private Drive). Online information webinar 3 Dec 2026, 1 pm ET | Must form an SBIR-eligible US small business. The accelerator mentions "virtual and in-person networking"; confirm in-person parts are optional before relying on it. Re-checked 12 Oct: portal opens 1 Dec, deadline 15 Jan 2027, 11:59 pm ET | https://www.nia.nih.gov/research/sbir/start-challenge |
-| Rolling (Project Pitch; re-checked 12 Oct) | NSF SBIR Phase I, Digital Health | Up to $305K | Online pitch, then an invited proposal (next full deadline 4 Mar 2027) | Topic covers "AI in healthcare or general wellness". Needs real R&D risk. Money arrives about 6 months after submitting | https://seedfund.nsf.gov/topics/digital-health/ |
+| Rolling (Project Pitch; re-checked 13 Oct) | NSF SBIR Phase I, Digital Health | Up to $305K | Online pitch, then an invited proposal (next full deadline 4 Mar 2027) | Topic covers "AI in healthcare or general wellness". Needs real R&D risk. Money arrives about 6 months after submitting | https://seedfund.nsf.gov/topics/digital-health/ |
 | Next cycle not yet posted (spring 2027 expected; unverified) | NC IDEA MICRO ($10K), NC only | $10K grant, no equity | Online application | The fall 2026 cycle closed 24 Aug 2026 and its awards are due about 23 Oct. MICRO only: SEED finalists pitch in person, so SEED is excluded | https://ncidea.org/nc-idea-micro/ |
 | Open now to 30 Jun 2027, or until funds run out | One NC Small Business Program, NC only | Pays back up to $12K of SBIR proposal costs | Online (CyberGrants) | FY2027 round announced 8 Oct 2026 with $2 million in total; it closes early if the money runs out. Only after an NSF proposal is submitted | https://www.commerce.nc.gov/news/press-releases/2026/10/08/north-carolina-makes-2-million-funding-available-support-innovative-small-businesses |
 | Ongoing | IVMF Military Founders Lab (veteran) | Training and network, no cash | Virtual, 10 weeks | Needs revenue under $250K or "confirmed capital", plus 6 months of activity | https://ivmf.syracuse.edu |
