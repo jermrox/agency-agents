@@ -2653,3 +2653,68 @@ minority-owned programmes. Every page read on 13 Oct 2026.
 - **Hey Helen Grant** — requires 100% women-owned businesses; Vybe is 51%+. Not eligible.
 - **BioTools Innovator 2027** — life-science tools, not wearables.
 - **NIMHD "Innovations for Healthy Living" SBIR (R43/R44)** — RFA listed as expired; the parent NIH SBIR April 2027 cycle is already on the board.
+
+## Tuesday sweep — 13 Oct 2026 (round 13, rule 12 big-name lanes)
+
+Lanes: watch-list re-check, flagship universities (Ohio State first), big-name corporate health programmes, national sports and military-performance bodies. Added 2 rows, both hand-scored: Innovate Forward (Nestle Health Science x Tufts, opens 18 Oct) and Burnley FC Innovation Hub (closes 16 Oct).
+
+Held, not added: MIT.nano START.nano (big_name 9, rolling, no equity) because companies pay discounted lab rates, so it is a discount rather than free money; Siemens Xcelerator Electronics because the page still never says the licence is $0.
+
+Ohio State: nothing open to outside companies (President's Buckeye Award is student-only; Techstars Columbus takes equity). Ohio State Athletics' Project SCARLET with Google is worth a direct DevKit pitch, not an application.
+
+Re-check: Innovate Forward on 18 Oct for rules and close date; grants.gov 363971 (missed est. 12 Oct posting; est. close 14 Dec) and 363966 (est. posting 16 Oct, close 16 Dec); Samsung Mobile Advance spring 2027; CMU Swartz Forge to Field 2027; Rice/Collectiv sports-health accelerator; AO StartUps 9th intake (Nov); What's Next Longevity Jan 2027.
+
+### Rejected or not open
+- **NIDILRR Field Initiated Projects Program (Development), HHS-2027-ACL-NIDILRR-IFDV-0304 (grants.gov 363971)** — still not open: the grants.gov API on 13 Oct 2026 shows docType 'forecast' with no synopsis posted. The estimated posting date of Oct 12, 2026 has passed without a posting. Estimated close is Dec 14, 2026 and the award ceiling is $250,000. The dates are only an estimate. SAM: required (federal grant). Re-check daily.
+- **NIDILRR SBIR Phase I, HHS-2027-ACL-NIDILRR-BISA-0308 (grants.gov 363966)** — still not open: grants.gov still shows it as a 'forecast'. The estimated synopsis posting is Oct 16, 2026, the estimated close is Dec 16, 2026, and the award ceiling is $100,000. These are estimates, not confirmed dates. SAM: required (start SAM.gov registration now, as it can take weeks).
+- **ViVE 2027 Startup Pitch Competition** — still not open: the official page still shows the 2026 rules (under 5 years old, under $8M raised) and the 2026 winner (Rovex). It gives no 2027 submission window, only the ViVE 2027 dates of Mar 14-17 in Nashville. The past pattern was an early-November opening, but nothing is confirmed.
+- **NFLPA Pitch Day 2027** — still not open: the page says 'Stay Tuned for Pitch Day 2027 Announcements' and shows the 2026 winner Somnee. There is no application link or date.
+- **Hiring Our Heroes Small Business Grant (FedEx Founder's Fund), 2027 cycle** — still not open: the landing page has an 'APPLY NOW' button, but the application page says 'The application period for the 2026 Small Business Grant Program has closed. Check back soon.'
+- **What's Next Longevity Venture Summit Business Plan Competition 2027** — still not open: the page says 'We will begin accepting submissions in January 2027. Please check back here for more information.' The summit is Jun 8-10, 2027 at UC Berkeley. No exact day is given.
+- **JumpStart Trailblazer HealthTech Accelerator, Spring 2027** — still not open: the page offers only 'Complete the form below to be updated first when the next round of Trailblazer HealthTech applications open.' It gives no dates for the next cohort.
+- **Plug and Play Health** — still not open / unverifiable: the official page renders only a cookie banner through both fetchers. No application window, dates or terms are visible, and a web search found no current US health intake.
+- **Arm + ExecuTorch Edge AI Challenge, next edition** — still not open: no next edition has been announced. The current Devpost page is still the Oct 17-18, 2026 in-person SF State hackathon. It shows 'Submissions open soon' for that event, but places were set by an earlier proposal review, and it offers only 4 non-cash prizes (Ray-Ban Meta glasses). Already in the rejected list.
+- **The UPS Store Small Biz Challenge 2027** — still not open: the page shows only the 2026 winner (Hyacinth Tucker, $25,000) and the finalists, with no 2027 window. The 2026 entry period was Jan 12 - Feb 22, which suggests January 2027, but nothing is confirmed.
+- **FedEx Small Business Grant Contest 2027** — still not open: the official contest URL now resolves to the generic 'FedEx Small Business Resources' page, with no contest, dates or entry form.
+- **Ohio State President's Buckeye Award (PBA) 2027, Keenan Center** — Student-only: 'Any student-led venture can opt in'. Applications rolling Oct 2026-Feb 2027, finale 9 Mar 2027, but Vybe is not an OSU student venture.
+- **Ohio State Keenan Center LaunchpadOSU / BOSS / BuildX** — Student-only Ohio State programmes (BOSS = Best of Student Startups; BuildX open to OSU students).
+- **Techstars Columbus Powered by The Ohio State University** — Equity (Techstars $220K convertible investment) and the 2026 window closed (final deadline 10 Jun 2026, program started 8 Sep 2026). Focus is aerospace/defense/advanced manufacturing.
+- **Ohio State Wexner Medical Center IDEA Studio 'Big IDEAs for Health' / College of Nursing Innovation Studio** — No live call found for outside startups; Innovation Studio is limited to current OSU students, faculty and staff.
+- **Ohio State Athletics Project SCARLET (with Google) / Athletics Performance Innovation Team** — In-house platform built with Google; no open startup pilot or application route published. Possible cold-outreach target for a DevKit design partnership, not a programme.
+- **Ohio State CCTS/ERIK RAPTIC Pitch Competition** — Faculty-only (OSU faculty) and the event (31 Aug 2026) has passed.
+- **University of Michigan Zell Lurie Institute Student Startup Grants** — U-M Ann Arbor students only.
+- **U-M Athletics / HPSSC Athlete Innovation Initiative; U-M ESSI and U-M x ASICS sport innovation centre** — Student experiential programme and bilateral corporate research partnerships; no open application for outside startups.
+- **Carnegie Mellon Swartz Center Forge to Field AI Pitch Competition ($1.75M prize pool)** — Held 22 Apr 2026 (NFL Draft week in Pittsburgh); no 2027 edition announced. Watch only.
+- **Penn State Happy Valley LaunchBox FastTrack Accelerator / Idea TestLab** — Open to the public and equity-free, but the fall windows closed (FastTrack 11 Sep, Idea TestLab 18 Sep) and the apply page says 'Applications are closed'; next dates not posted; in-person in State College, PA.
+- **Penn State Inc.U Competition** — Penn State undergraduate-owned (51%+) startups only.
+- **Case Western Morgenthaler-Pavey Startup Competition** — Requires a current CWRU student or alum within 5 years on the team; 2026 window closed 13 Feb.
+- **Notre Dame IDEA Center programmes / Notre Dame Innovation Challenge** — Serves Notre Dame innovations and students only; Innovation Challenge is for ND students.
+- **Vanderbilt Wond'ry Pre-Flight / IMPACT** — Vanderbilt community / undergraduates only.
+- **Arizona State SPORTx (Sun Devil Athletics testbeds)** — Page invites student-athletes, mentors and sponsors; no application route or open call for outside startups.
+- **Rice University x The Collectiv AI-Native Sports, Health & Wellness Accelerator (Ion District)** — No application timeline published ('will be announced in the coming weeks'); terms include investment capital, equity terms not stated. Watch only.
+- **Stanford Wu Tsai Human Performance Alliance Agility Project grants** — Academic-researcher seed grants; 2026 LOI deadline (7 Jul 2026) passed.
+- **Georgia Tech Athletic Association sports-focused venture fund** — Equity investment vehicle.
+- **Indiana University Athletics / IU Ventures Sports Innovation Initiative** — For IU alumni- and student-founded startups; angel-network (equity) vehicle.
+- **Purdue Foundry** — Serves startups based on Purdue innovations / Purdue founders; no open external call verified (site blocked automated reads).
+- **J&J Innovation: Reimagining Human Model Systems QuickFire Challenge** — Only J&J QuickFire Challenge open on 2026-10-13 (listing shows '10 days' remaining, up to $100,000). Scope is organoids, lab-on-a-chip, 3D cell culture and microphysiological systems for drug discovery: no fit for a consumer wellness wearable.
+- **J&J Innovation: Expanding Access to Immunology Clinical Trials QuickFire Challenge** — Listing shows Closed; also clinical-trial focused.
+- **J&J Innovation: Deep Tissue Healing / Oral Peptide Delivery / Intratumoral Treatments Korea QuickFire Challenges** — All shown as Closed on the official listing (Deep Tissue Healing closed 2026-09-18); therapeutics scope.
+- **J&J Polyphonic AI Fund for Surgery QuickFire Challenge** — Official listing now shows Closed; surgical OR/robotics scope does not fit.
+- **Walmart Growth Summits (successor to Walmart Open Call)** — Official page lists only Canada (23 Jun 2026), India, Mexico, Chile, Central America and Africa events; no US summit with an open RangeMe window. Old Open Call URL now returns 404.
+- **Apple Entrepreneur Camp** — Program URL now redirects to the Apple Developer home page; no live application. Already on rejected list.
+- **Google for Startups Accelerator (AI First North America / Cloud AI NA / AI for Energy) and Founders Academy US** — No North America cohort with an open window found; AI First NA and Cloud AI NA pages say applications closed; AI for Energy closed 30 Jun; Founders Academy US last ran 2022. Seed-to-Series A with traction also expected.
+- **Samsung Mobile Advance 2027** — 2026 US/Canada window (up to $100K grant, F6S) closed 30 June 2026; 2027 call not announced. Watch for spring 2027 reopening (incubation@samsung.com).
+- **Qualcomm AI Program for Innovators / Snapdragon START** — AIPI tracks are APAC (JP/SG/KR) and LatAm (MX/BR) only and closed; Snapdragon START (AWE 2026) is a smart-glasses hardware/manufacturing toolkit with no application or award.
+- **AWS Generative AI Accelerator 2027** — 2026 window ran June-July; no 2027 dates published. Already rejected in prior rounds.
+- **PepsiCo Greenhouse Accelerator** — Only APAC sustainability edition found (opened Jan 2025); no US 2026/27 window; site behind bot wall.
+- **Microsoft, Meta, Intel, CVS Health, Humana, Pfizer, Novartis, Cleveland Clinic, Kaiser, UnitedHealth, Walgreens, Nike, adidas, Under Armour, Peloton, Oura, Strava, Best Buy, Target** — Searches turned up no new open, free, US-eligible startup call from these companies as of 2026-10-13. Their known programs are already in existing.txt or rejected.txt (CVS Health Ventures and Kaiser Permanente Ventures take equity; Techstars x Permanente closed 10 Jun 2026).
+- **MIT Sloan Sports Analytics Conference (SSAC) Startup Competition & Trade Show** — Pay-to-pitch: finalists pay a $1,500 entry fee; 2026 applications closed and no 2027 window posted.
+- **AO StartUps (Tennis Australia / Australian Open), 9th intake** — Mid-year 2026 intake closed 11 May 2026; the 9th intake is listed only as 'Open: Late 2026 / Close: Late 2026' (no confirmed date). The programme also mentions investment terms and its focus streams (robotics, padel, live-event, community sport) are a weak fit. Re-check in Nov 2026.
+- **ThinkSport (IOC) Sport Innovation Challenge — The Future of Play 2026 / AI & Robotics 2026** — Expired: finals were 5 May 2026 and the AI & Robotics deadline was 1 Mar 2026. No 2027 call is posted yet (ThinkSport is already on the rejected list).
+- **MLS Innovation Lab** — No open application window on the official page; the latest press listed is from 2024–25 and only a contact email is given.
+- **HYPE Sports Innovation (SPIN accelerator / Global Pitch)** — Now a paid consultancy and network ('Discuss Your Growth Goals'); no open, free competition or accelerator call. Historically it took equity.
+- **Georgia Tech Athletics Sports Innovation Challenge** — Expired: this was a one-off 2018 hackathon (Nov 3–4, 2018) and no new edition is posted.
+- **ISPO BrandNew 2026 (presented by YKK)** — The official page returns 404 and the ISPO event runs 3–5 Nov 2026, so the 2026 application window has almost certainly closed; I could not verify an open window.
+- **PGA TOUR / USTA / US Soccer / USATF / USA Hockey startup programmes** — No open public startup call was found. Their wearable relationships are exclusive sponsorships (Oura is the official wearable of Team USA/LA28 and US Soccer), and USOPC's Performance Innovation Fund is internal to the governing bodies.
+- **SOFWERX human-performance / wearables events** — None of the current SOFWERX events is human-performance related (the current list is PEO-FW, USV, micro-sensors, SBIR 26.BZ); the last wearables industry day was Apr 2024.
+- **USA.gov active federal challenges (successor to Challenge.gov) — military/human performance** — No Navy, Marine, Air Force, Space Force or H2F human-performance prize is active. The DARPA 'Documentation and Decision Support Sprint' is combat-casualty medical documentation, which is off-profile (medical). xTech is already on the lists.
