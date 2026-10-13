@@ -16,6 +16,46 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-13 — daily run
+
+- +4 items, all PubMed: FIRE 1 (metals and PAHs in firefighters' saliva after a fire), LE 1 (sleep
+  disturbance in Nigerian police), MIL 2 (blast TBI nearly doubles PTSD odds versus blunt TBI; PTSD
+  predicts later eating-disorder symptoms in veteran women). Board 81, archive 66. EMS: nothing again
+  (hits are patient care or education). Exa still 402 (tenth day); policy unverified.
+- Hot-note `cites` checked before merging: none stale. Expiring within three days (14-16 Sep items): Behavioral health, Brain health, Women's health. Rewrite them first thing tomorrow.
+- Still held back: PFAS and epigenetic age in airport firefighters (only "Oct 2026").
+- PR #77 still unmerged, so stacked again; the live site is four sweeps behind.
+
+## 2026-10-12 — daily run (Monday)
+
+- +3 items, all PubMed: MIL 2 (brief cold exposure hurts hard shoot/no-shoot calls; cadet sport history
+  and ACFT scores), FIRE 1 (TRiM peer-support training in the fire service). Board 77, archive 66.
+  LE, EMS: nothing. Exa still 402 (ninth day), so the Monday link re-check could not run and policy
+  is unverified. WebSearch found no new October service fitness policy (only coverage of DoWI 1308.03).
+- Checked `cites` dates before merging, as noted last run: nothing stale today. Expiring soon: the
+  14 Sep LIFE Study and firefighter depression/PTSD items (Behavioral health, Women's health).
+- PFAS and epigenetic age in airport firefighters still has only "Oct 2026"; still held back.
+- PR #77 was still unmerged, so the run stacked on it again; the live site is behind by every day
+  the owner leaves a sweep PR open.
+
+## 2026-10-11 — daily run
+
+- +4 items, all PubMed: MIL 3 (Air Force Wingman Guardian Connect scaling to 72 installations; brief CBT
+  for suicidal thinking; blast exposure and brain metabolism), LE 1 (Swedish police work-life balance
+  scale). Board 74, archive 66. FIRE, EMS: nothing new. Exa still 402 (eighth day); policy unverified.
+- Hot notes went stale again (Programs and funding, Load and PPE): fourth run in a row. Do the `cites`
+  date check before merging. At risk in 3 days: the 14 Sep items (NREMT LIFE Study, firefighter
+  depression/PTSD), which Behavioral health and Women's health cite.
+- Lead held back: PFAS and epigenetic age in airport firefighters (DOI 10.1002/em.70085) has only
+  "Oct 2026"; add it once a day-level date exists.
+- Owner rule applied: the report ends with rendered screenshots (scripts/screenshot-board.js).
+
+## 2026-10-10 — owner rule hardened
+
+- The owner asked "show me the latest" and got a file path and a text list. Wrong. Rule added to
+  SKILL.md ("Showing the board"): always send rendered screenshots (scripts/screenshot-board.js),
+  then a few lines of text. The daily report ends with the screenshots too.
+
 ## 2026-10-10 — daily run
 
 - +3 items, all PubMed: FIRE 1 (only 10% of California firefighters have had a lung-cancer CT screen),

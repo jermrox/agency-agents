@@ -14,6 +14,17 @@ description: >
 
 # Tactical Human Performance Research Sweep
 
+## Showing the board — owner rule, never skip
+
+When the owner asks to see the board, the latest, the report, the dashboard or "what you
+updated", **show the rendered dashboard itself**: screenshot `h2f-scout-board.html` with
+`scripts/screenshot-board.js` (desktop top, full page, phone width) and send the images with
+SendUserFile. Never answer with a file path, an HTML attachment, a JSON dump or a text list as
+the main answer; those mean nothing to the owner. Text goes after the pictures, short:
+what is new, what could not be checked. The daily report ends with the same screenshots.
+Say plainly what the screenshot is (the file on `main` or the branch), and never claim the live
+site shows it unless it was actually checked.
+
 The research sibling of `tactical-job-sweep`. Same brand, same board conventions, same
 non-negotiable: **the board's credibility rests on the links working and the sourcing being
 honest**. A confident summary of a document nobody opened is worse than no entry at all.
