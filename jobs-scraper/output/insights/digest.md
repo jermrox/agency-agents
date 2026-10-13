@@ -5,15 +5,15 @@
 ## Headline
 
 - **802 open jobs** from **44 employers**.
-- Posted between **2025-12-03** and **2026-10-12**.
+- Posted between **2025-12-03** and **2026-10-13**.
 - **$83,796 median** annualized pay across the 254 postings that publish one -- $62,100 to $112,611 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 634 of 1,436 archived records are cross-board copies or re-posts, not separate jobs.
+- 649 of 1,451 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 759, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **down -388** in 2026-10 (495 to 107), 78% against 2026-09.
+Postings are **down -364** in 2026-10 (483 to 119), 75% against 2026-09.
 
 ```
 2025-12     1  #
@@ -25,22 +25,22 @@ Postings are **down -388** in 2026-10 (495 to 107), 78% against 2026-09.
 2026-06     9  #
 2026-07    19  #
 2026-08    94  #####
-2026-09   495  ############################
-2026-10   107  ######
+2026-09   483  ############################
+2026-10   119  #######
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
 - Loyal Source: 0 to 316
 - Serco USA: 0 to 46
-- LMR Technical Group: 10 to 44
 - Commander, Navy Installations Command: 0 to 33
+- LMR Technical Group: 11 to 43
 - KBR: 5 to 34
 
 **Credentials appearing more often:**
 
 - CSCS: 3 to 278
-- ATC: 5 to 185
+- ATC: 6 to 184
 - RD: 3 to 59
 - PhD: 0 to 48
 - DPT: 4 to 9
