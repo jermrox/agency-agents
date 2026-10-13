@@ -265,7 +265,7 @@ jobs:
       # every check stays green: on 12-13 Oct production sat on the 12 Oct 17:41
       # feed for a day while main moved on (two sweeps, three merges). A stale
       # check alone cannot see it until 30h, and re-running the sweep cannot fix
-      # it. Compare the live feed with the one on main and open an issue when the
+      # it (the cause that day: Netlify account credits exceeded). Compare the live feed with the one on main and open an issue when the
       # site is more than 6 hours behind a commit at least 45 minutes old, which
       # is long past any normal deploy.
       - name: Raise an issue if Netlify stopped publishing main
@@ -300,7 +300,7 @@ jobs:
           title="Funding tracker is not publishing on Netlify"
           body="The live funding tracker ($SITE) is serving an older feed than main: $verdict (checked $(date -u '+%Y-%m-%d %H:%M UTC')). The daily sweeps and merges are landing on main, but Netlify is not publishing them, so the founder and the console see stale rows.
 
-          Deploy previews still build, so the content is fine. Check app.netlify.com > agentrevup > Deploys: look for production deploys that are failed, skipped, or waiting because 'Stop builds' or 'Lock publishing' (auto publishing) is on, or because the account hit a build or credit limit. Once fixed, trigger a deploy of main (Deploys > Trigger deploy > Deploy site).
+          Read the failed production deploy's error message first (app.netlify.com > agentrevup > Deploys > the latest production deploy) and act on what it says. On 13 Oct it was \"Skipped due to account credit usage exceeded\": the fix was adding Netlify credits or upgrading the plan, and pressing Trigger deploy before that would have been skipped too. Other causes: Stop builds or Lock publishing switched on, or a failed build. Until the site publishes again, funding.json on main is the record: https://github.com/$REPO/blob/main/funding-scraper/output/funding.json
 
           This issue was opened by the Verify rev site workflow and will be commented on each time the check sees the site behind again."
           existing=$(gh issue list --repo "$REPO" --state open --search "\"$title\" in:title" --json number --jq '.[0].number' || true)
