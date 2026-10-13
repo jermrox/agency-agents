@@ -26,6 +26,7 @@ VYBE_CALENDLY="https://calendly.com/jeremy-vybe/30min"
 # Paths that belong to Vybe Health. Anything here is held to the standard.
 VYBE_PATHS=(
   vybe-app
+  vybe-ops
   vybe-marketing
   growth-scout
   funding-scraper
@@ -100,6 +101,14 @@ for slug in "${OTHER_AGENTS[@]}"; do
     fail=1
   fi
 done
+
+
+# --- 5. every hub-owned routine passes the rule-15 lint ---------------------
+if [ -d vybe-ops/routines ]; then
+  if ! python3 scripts/check-vybe-routines.py; then
+    fail=1
+  fi
+fi
 
 if [ "$fail" -eq 0 ]; then
   n=$(ls marketing/marketing-vybe-*.md 2>/dev/null | wc -l | tr -d ' ')
