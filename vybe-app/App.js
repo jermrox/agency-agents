@@ -15,6 +15,7 @@ import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import ExportScreen from './src/screens/ExportScreen';
 import VitalsScreen from './src/screens/VitalsScreen';
+import ReceiptsScreen from './src/screens/ReceiptsScreen';
 import { colors } from './src/theme';
 
 /**
@@ -86,6 +87,12 @@ export default function App() {
         <AskScreen
           onBack={() => setScreen('home')}
           onFollowUp={() => setScreen('followup')}
+          onOpenReceipts={() => setScreen('receipts')}
+        />
+      ) : screen === 'receipts' ? (
+        <ReceiptsScreen
+          onBack={() => setScreen('ask')}
+          onChallenge={() => setScreen('followup')}
         />
       ) : screen === 'followup' ? (
         <FollowUpScreen onBack={() => setScreen('home')} />

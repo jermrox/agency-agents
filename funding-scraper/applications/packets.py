@@ -66,6 +66,12 @@ GATES = [
     # not the duplicate-proposal rule above: you can have applied, you just
     # cannot be running one.
     ("nonihsbir", "Not the PI on an NIH SBIR/STTR award active at the close date"),
+    # MedTech Innovator's stage test is not years or revenue: it wants clinical
+    # validation "underway or in sight". For a wellness product that means a
+    # named validation study with a date, not a trial. Only the founders know
+    # whether one is planned, so it is a gate they answer, not a sentence an
+    # agent writes for them.
+    ("validation", "A validation study (even a small one) underway or planned within 12 months"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -1942,6 +1948,127 @@ PACKETS = [
             {"q": "Why a veteran is building this", "a":
                 "[In your own words: what service taught you about sleep, recovery or "
                 "readiness, and why a product that explains your body matters to you.]"},
+        ],
+    },
+    {
+        "id": "mti",
+        "name": "MedTech Innovator 2027 Accelerator",
+        "funder": "MedTech Innovator (MTI)",
+        "amount": "No equity and no fee. A five-month accelerator with strategics, investors, health systems and regulatory and reimbursement experts; mid-stage companies compete for $250,000 at the Grand Finals at The MedTech Conference, plus vision, execution and best-video awards",
+        "deadline": "2026-12-01",
+        "fee": None,
+        "url": "https://medtechinnovator.org/apply/",
+        "submit": "Create a company profile on the MTI application portal (linked from medtechinnovator.org/apply), complete the application, save and return as often as needed, and submit before applications close on 1 December 2026. Applications then go through Radar, MTI's multi-stage review; selected companies pitch. Info sessions are offered on the apply page.",
+        "gates": ["incorp", "validation"],
+        "confirmed": [
+            "Digital health is an eligible technology category alongside medical devices and diagnostics",
+            "Companies anywhere in the world with the US as a target market",
+            "No fee to apply; MTI takes no equity",
+        ],
+        "why": "The best-known medtech accelerator in the US, free, with no equity and real prize capital, and its 2027 window is open now with seven weeks to run. The catch is stage: MTI wants clinical validation 'underway or in sight'. Vybe is a wellness product and the application says so plainly; what it can show is a named validation study with a date. Without one, this cohort will read Vybe as early, so the gate above decides whether to spend the eight hours.",
+        "docs": [
+            "Company profile on the MTI portal (company, website, stage, contacts)",
+            "The application: technology, team, clinical and regulatory status, and where the company is headed",
+            "A short pitch video if entering the best-video award",
+            "A one-page description of the planned validation study, with the partner and the date, if one exists",
+        ],
+        "note": (
+            "THE FORM ITSELF WAS NOT READABLE FROM HERE: MTI's apply page says it asks about "
+            "'your technology, your team, your clinical and regulatory status, and where you're "
+            "headed' and 'what we need to evaluate your company, not more'. The sections below "
+            "follow that order. The regulatory answer is the one to get exactly right: Vybe is a "
+            "consumer wellness product, not a medical device, and the application should say so "
+            "in the first sentence rather than let a medtech reviewer assume a 510(k) path. "
+            "Validation is written as a plan, never as a result."
+        ),
+        "fields": [
+            {"q": "Company and technology overview", "a": LONG},
+            {"q": "One-line summary", "a": ONE_LINER},
+            {"q": "Clinical need and the problem you solve", "a":
+                "People own their health data and not its meaning. Wearables report that "
+                "heart-rate variability fell or that sleep was 'fair', and stop. The person is "
+                "left to guess whether it was the late dinner, the flight, the heat or the week "
+                "they have had, and most stop opening the app.\n\n"
+                "Vybe answers the question the number raises. It reads overnight ECG, HRV, "
+                "sleep and activity next to the context around them and replies in a sentence, "
+                "with the evidence it used, what it could not see, and one thing to do next. "
+                "There is no required subscription: the interpretation comes with the band.\n\n"
+                "The need MTI's reviewers will recognise is adherence and interpretation, not "
+                "sensing: the measurement problem in consumer wearables is solved, the "
+                "understanding problem is not."},
+            {"q": "Regulatory status and pathway", "a":
+                "Vybe is a consumer wellness product. It is not a medical device, makes no "
+                "diagnostic claim, and does not screen, triage or treat. Under FDA's general "
+                "wellness policy it ships without clearance, and keeping it on that side of the "
+                "line is a product rule, not a marketing preference: every answer uses the "
+                "language ladder observed, associated, personally supported, hypothesis, and "
+                "sleep stages are always called estimates.\n\n"
+                "We are not planning a 510(k) or De Novo submission in the next 12 months. If a "
+                "future feature crosses into device territory, it will be built and cleared as a "
+                "separate product. [If you have had any regulatory counsel or an FDA "
+                "pre-submission conversation, say so here; otherwise leave this as it is.]"},
+            {"q": "Clinical validation: underway or in sight", "a":
+                "[This is the answer that decides the application, and only you can write it. "
+                "MTI's stage test is 'clinical validation underway or in sight'. For a wellness "
+                "product the honest form is a named validation study with a partner and a date: "
+                "for example, running Vybe bands through an independent nocturnal HRV validation "
+                "protocol against a chest-strap reference at a university human-performance lab. "
+                "State: the partner (or that one is being approached), the measure (overnight "
+                "HRV and resting heart rate against reference), the sample size you expect, and "
+                "the month it starts. If nothing is planned, say 'none planned' and skip this "
+                "cycle rather than imply a study that does not exist.]"},
+            {"q": "Technology: what is proprietary", "a":
+                "The band hardware is built and its supplier is contracted; the product is past "
+                "the engineering-risk stage. What is Vybe's own is the signal pipeline (overnight "
+                "ECG and HRV on a screenless band), the personal-baseline model, and the Connect "
+                "layer that reads schedule, travel, heat and workload as context for a signal. "
+                "The platform exposes a licensed SDK and API so other teams build applications "
+                "on the same signal.\n\n"
+                "[Name your IP position in one line: filed, provisional, or trade secret, and "
+                "what it covers. Do not overstate it; MTI's reviewers include people who will "
+                "read the filing.]"},
+            {"q": "Market and commercial strategy", "a":
+                "Wearables are a roughly $103 billion market in 2026, and the category has split: "
+                "Oura and Whoop deepened their intelligence behind a subscription; Ultrahuman, "
+                "RingConn, Amazfit, and now Fitbit Air, Garmin CIRQA and Polar Loop dropped the "
+                "subscription and the intelligence with it. No one offers deep interpretation "
+                "without a required subscription. That is Vybe's position.\n\n"
+                "Three routes, in order: direct to people who already own a wearable and resent "
+                "paying monthly for their own numbers; no-cost member offers through leagues, "
+                "clubs and member bodies with reach; and licensing the interpretation layer to "
+                "partners who have sensors and nothing to say with the readings. Enterprise and "
+                "research channels take aggregated readiness and sensor-level data under "
+                "consent.\n\n"
+                "[Your numbers: what a band costs to make and what it sells for, the first "
+                "channel you will open and when. A price you have not decided does not go here.]"},
+            {"q": "Team", "a":
+                "{{CEO}} leads the company. Ownership: {{OWNERSHIP}}. The company is at least 51% "
+                "veteran-, woman- and minority-owned. We have {{EMPLOYEES}} people on the team.\n\n"
+                "[Two or three lines per founder: what each has built before, and who owns "
+                "hardware, signal, software and go-to-market. Name advisors only if they have "
+                "agreed to be named.]"},
+            {"q": "Stage, traction and funding to date", "a":
+                "Stage: {{STAGE}}. Traction: {{TRACTION}}. Revenue over the last 12 months: "
+                "{{REVENUE}}.\n\n"
+                "[Funding raised to date, by source, including any grants or credits. If the "
+                "answer is friends-and-family or none, say so; MTI's early-stage track exists "
+                "for exactly that.]"},
+            {"q": "Where you are headed: the next 12 months", "a":
+                "Three milestones. First, the validation study named above, started and "
+                "reported. Second, the first batch of bands with named community partners, "
+                "small on purpose: ten to twenty-five bands with a big-name partner beats a "
+                "thousand with nobody. Third, the SDK in the hands of five to ten DevKit design "
+                "partners, with at least one integration live.\n\n"
+                "[Dates for each, and the one number you will report at the end of the "
+                "programme.]"},
+            {"q": "What you want from MedTech Innovator", "a":
+                "Three things. Regulatory and reimbursement counsel on keeping a consumer "
+                "wellness product cleanly on the wellness side of the line while enterprise and "
+                "research customers ask clinical-sounding questions. Introductions to health "
+                "systems and strategics who already buy wearable data. And peers twelve to "
+                "twenty-four months ahead who have taken a band from a first batch to retail."},
+            {"q": "Contact", "a":
+                "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
         ],
     },
 ]

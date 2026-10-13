@@ -166,7 +166,7 @@ function Exchange({ entry }) {
   );
 }
 
-export default function AskScreen({ onBack, onFollowUp }) {
+export default function AskScreen({ onBack, onFollowUp, onOpenReceipts }) {
   const [entries, setEntries] = useState([]);
   const [draft, setDraft] = useState('');
   const scroller = useRef(null);
@@ -235,6 +235,21 @@ export default function AskScreen({ onBack, onFollowUp }) {
             style={({ pressed }) => [styles.followUp, pressed && styles.pressed]}
           >
             <Text style={styles.followUpText}>That&rsquo;s not right &mdash; tell Vybe what it missed</Text>
+          </Pressable>
+        ) : null}
+
+        {/* The receipt is the page behind the four basis lines: every night,
+            the baseline, the ladder rung. It only earns a place once an answer
+            is on screen, like the follow-up above it. */}
+        {entries.length && onOpenReceipts ? (
+          <Pressable
+            onPress={onOpenReceipts}
+            accessibilityRole="button"
+            accessibilityLabel="See the receipts behind this answer"
+            accessibilityHint="Opens every night this answer rests on, the baseline, and how sure Vybe is"
+            style={({ pressed }) => [styles.followUp, pressed && styles.pressed]}
+          >
+            <Text style={styles.followUpText}>See the receipts behind this answer</Text>
           </Pressable>
         ) : null}
 
