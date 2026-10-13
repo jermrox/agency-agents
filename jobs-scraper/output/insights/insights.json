@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-12T19:31:38.100300+00:00",
+  "generated_at": "2026-10-13T07:36:07.750304+00:00",
   "totals": {
-    "postings": 1435,
+    "postings": 1436,
     "employers": 44,
-    "unique_jobs": 801,
-    "with_salary": 253,
+    "unique_jobs": 802,
+    "with_salary": 254,
     "date_span": {
       "earliest": "2025-12-03T00:00:00+00:00",
-      "latest": "2026-10-11T00:00:00+00:00"
+      "latest": "2026-10-12T00:00:00+00:00"
     }
   },
   "by_employer": [
@@ -190,62 +190,62 @@
   "by_discipline": [
     {
       "name": "strength-conditioning",
-      "count": 425,
-      "share": 0.6714,
+      "count": 426,
+      "share": 0.6719,
       "median_salary": 71500.0
     },
     {
       "name": "sports-medicine",
       "count": 364,
-      "share": 0.575,
+      "share": 0.5741,
       "median_salary": 74485.0
     },
     {
       "name": "cognitive",
       "count": 177,
-      "share": 0.2796,
+      "share": 0.2792,
       "median_salary": 85738.0
     },
     {
       "name": "research",
       "count": 126,
-      "share": 0.1991,
+      "share": 0.1987,
       "median_salary": 77015.0
     },
     {
       "name": "nutrition",
       "count": 101,
-      "share": 0.1596,
+      "share": 0.1593,
       "median_salary": 90300.0
     },
     {
       "name": "leadership",
       "count": 35,
-      "share": 0.0553,
+      "share": 0.0552,
       "median_salary": 63282.0
     },
     {
       "name": "sport-science",
-      "count": 11,
-      "share": 0.0174,
-      "median_salary": 102550.0
+      "count": 12,
+      "share": 0.0189,
+      "median_salary": 103741.86
     }
   ],
   "by_domain": [
     {
       "name": "military",
-      "count": 758,
+      "count": 759,
       "share": 0.9583
     },
     {
       "name": "sof",
       "count": 375,
-      "share": 0.4741
+      "share": 0.4735
     },
     {
       "name": "first-responder",
       "count": 55,
-      "share": 0.0695
+      "share": 0.0694
     },
     {
       "name": "training-pipeline",
@@ -272,7 +272,7 @@
     },
     {
       "name": "Marine Corps",
-      "count": 27
+      "count": 28
     },
     {
       "name": "Space Force",
@@ -368,7 +368,7 @@
     },
     {
       "code": "VA",
-      "count": 37
+      "count": 38
     },
     {
       "code": "NM",
@@ -410,28 +410,28 @@
   "certifications": [
     {
       "name": "CSCS",
-      "count": 305,
-      "share": 0.6076
+      "count": 306,
+      "share": 0.6083
     },
     {
       "name": "ATC",
       "count": 208,
-      "share": 0.4143
+      "share": 0.4135
     },
     {
       "name": "RD",
       "count": 64,
-      "share": 0.1275
+      "share": 0.1272
     },
     {
       "name": "PhD",
       "count": 49,
-      "share": 0.0976
+      "share": 0.0974
     },
     {
       "name": "DPT",
       "count": 16,
-      "share": 0.0319
+      "share": 0.0318
     },
     {
       "name": "LAT",
@@ -447,7 +447,7 @@
   "clearances": [
     {
       "name": "Secret",
-      "count": 59
+      "count": 60
     },
     {
       "name": "TS/SCI",
@@ -463,20 +463,20 @@
     }
   ],
   "salary": {
-    "count": 253,
+    "count": 254,
     "min": 10000.0,
     "max": 1000000.0,
-    "median": 83592.5,
-    "p25": 62000.5,
-    "p75": 110160.0,
+    "median": 83796.25,
+    "p25": 62100.38,
+    "p75": 112610.62,
     "by_discipline": {
       "strength-conditioning": {
-        "count": 67,
+        "count": 68,
         "min": 34320.0,
         "max": 1000000.0,
         "median": 71500.0,
-        "p25": 58244.8,
-        "p75": 91215.0
+        "p25": 58367.2,
+        "p75": 91950.0
       },
       "sports-medicine": {
         "count": 130,
@@ -503,12 +503,12 @@
         "p75": 109271.86
       },
       "sport-science": {
-        "count": 7,
+        "count": 8,
         "min": 72644.01,
         "max": 142400.0,
-        "median": 102550.0,
-        "p25": 92238.0,
-        "p75": 109316.86
+        "median": 103741.86,
+        "p25": 95488.0,
+        "p75": 120875.0
       },
       "research": {
         "count": 38,
@@ -575,12 +575,12 @@
     },
     {
       "month": "2026-10",
-      "count": 106
+      "count": 107
     }
   ],
   "trends": {
     "window_days": 90,
-    "pivot": "2026-07-13T00:00:00+00:00",
+    "pivot": "2026-07-14T00:00:00+00:00",
     "fastest_growing_employers": [
       {
         "name": "Loyal Source",
@@ -638,9 +638,9 @@
       },
       {
         "name": "Resolution Think",
-        "recent": 25,
-        "previous": 0,
-        "change": 25
+        "recent": 24,
+        "previous": 1,
+        "change": 23
       },
       {
         "name": "U.S. Marine Corps",
@@ -676,15 +676,15 @@
     "emerging_certifications": [
       {
         "name": "CSCS",
-        "recent": 277,
+        "recent": 278,
         "previous": 3,
-        "change": 274
+        "change": 275
       },
       {
         "name": "ATC",
-        "recent": 186,
-        "previous": 4,
-        "change": 182
+        "recent": 185,
+        "previous": 5,
+        "change": 180
       },
       {
         "name": "RD",

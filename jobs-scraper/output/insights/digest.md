@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-12.*
+*Briefing generated 2026-10-13.*
 
 ## Headline
 
-- **801 open jobs** from **44 employers**.
-- Posted between **2025-12-03** and **2026-10-11**.
-- **$83,592 median** annualized pay across the 253 postings that publish one -- $62,000 to $110,160 covers the middle half.
+- **802 open jobs** from **44 employers**.
+- Posted between **2025-12-03** and **2026-10-12**.
+- **$83,796 median** annualized pay across the 254 postings that publish one -- $62,100 to $112,611 covers the middle half.
 - **0% remote-friendly** (3 jobs).
-- 634 of 1,435 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 758, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
+- 634 of 1,436 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 759, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **down -389** in 2026-10 (495 to 106), 79% against 2026-09.
+Postings are **down -388** in 2026-10 (495 to 107), 78% against 2026-09.
 
 ```
 2025-12     1  #
@@ -26,7 +26,7 @@ Postings are **down -389** in 2026-10 (495 to 106), 79% against 2026-09.
 2026-07    19  #
 2026-08    94  #####
 2026-09   495  ############################
-2026-10   106  ######
+2026-10   107  ######
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -39,8 +39,8 @@ Postings are **down -389** in 2026-10 (495 to 106), 79% against 2026-09.
 
 **Credentials appearing more often:**
 
-- CSCS: 3 to 277
-- ATC: 4 to 186
+- CSCS: 3 to 278
+- ATC: 5 to 185
 - RD: 3 to 59
 - PhD: 0 to 48
 - DPT: 4 to 9
@@ -64,13 +64,13 @@ Postings are **down -389** in 2026-10 (495 to 106), 79% against 2026-09.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 425 | 67% |
+| Strength & Conditioning | 426 | 67% |
 | Sports Medicine | 364 | 57% |
 | Cognitive Performance | 177 | 28% |
 | Research & Analytics | 126 | 20% |
 | Performance Nutrition | 101 | 16% |
 | Program Leadership | 35 | 6% |
-| Sport Science | 11 | 2% |
+| Sport Science | 12 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
 more than one, so these do not sum to 100%.
@@ -79,7 +79,7 @@ more than one, so these do not sum to 100%.
 
 | Certification | Jobs | Share |
 |---|---|---|
-| CSCS | 305 | 61% |
+| CSCS | 306 | 61% |
 | ATC | 208 | 41% |
 | RD | 64 | 13% |
 | PhD | 49 | 10% |
@@ -89,21 +89,21 @@ more than one, so these do not sum to 100%.
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (59), TS/SCI (25), Top Secret (22), Public Trust (3)
+**Clearances requested:** Secret (60), TS/SCI (25), Top Secret (22), Public Trust (3)
 
 ## What it pays
 
-- Median **$83,592**, middle half $62,000 to $110,160.
+- Median **$83,796**, middle half $62,100 to $112,611.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
 |---|---|---|---|---|
-| Sport Science | 7 | $92,238 | $102,550 | $109,317 |
+| Sport Science | 8 | $95,488 | $103,742 | $120,875 |
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
 | Research & Analytics | 38 | $63,203 | $77,015 | $98,560 |
 | Sports Medicine | 130 | $59,812 | $74,485 | $102,935 |
-| Strength & Conditioning | 67 | $58,245 | $71,500 | $91,215 |
+| Strength & Conditioning | 68 | $58,367 | $71,500 | $91,950 |
 | Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
 
 Every figure is annualized before comparison -- hourly federal rates and
@@ -111,7 +111,7 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (75), NC (68), CA (62), GA (47), TX (43), VA (37), NM (36), CO (23), KY (23), HI (22)
+**States:** FL (75), NC (68), CA (62), GA (47), TX (43), VA (38), NM (36), CO (23), KY (23), HI (22)
 
 | Installation | Jobs |
 |---|---|
@@ -126,7 +126,7 @@ annual contractor bands are not otherwise comparable.
 | Schofield Barracks | 9 |
 | Cannon AFB | 8 |
 
-**Branches and services:** Joint (270), Army (200), Air Force (104), Navy (39), Marine Corps (27), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (200), Air Force (104), Navy (39), Marine Corps (28), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 
