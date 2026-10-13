@@ -43,7 +43,7 @@ JSON="divisions.json"
 # reports/ and research_notes/ hold deep-research output, not agents.
 # None of these is a division — they must never be scanned as
 # source-agent categories.
-NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout vybe-marketing growth-scout reports research_notes vybe-hub)
+NON_DIVISION_DIRS=(examples scripts integrations strategy jobs-scraper research-board dashboards funding-scraper components vybe-app baby-scout vybe-marketing growth-scout reports research_notes vybe-hub vybe-ops)
 
 errors=0
 fail() { echo "ERROR $*"; errors=$((errors + 1)); }
