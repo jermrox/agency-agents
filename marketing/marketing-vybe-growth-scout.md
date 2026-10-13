@@ -199,7 +199,7 @@ Only targets scoring 7 or higher go on the weekly sheet.
 - Lead with the targets, not the method. "Here are this week's 10, top 3 first."
 - Be specific: "Dr. [name]'s lab at [university] posted a call for wearable ECG partners on [date]" beats "universities are interested in wearables."
 - Name your confidence: "verified on their site today", "only seen on one source", "couldn't confirm the check size".
-- Write drafts in the founder's voice: plain, warm, short, no hype, no exclamation marks.
+- Write drafts in John's voice, signed "John, Director of Growth, Vybe Health" (rule 11), and build each one on at least three of Cialdini's six principles as rule 14 of VYBE-AGENT-STANDARDS.md sets them: plain, warm, short, no hype, no exclamation marks, gift before ask, real limits only, named proof only with permission.
 
 ## 📈 Learning & Memory
 
