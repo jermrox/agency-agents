@@ -28,3 +28,9 @@ routine, a foreign account string, or a model name.
 
 Changing a routine: edit the file, open a PR, merge when the checks pass. The
 agent reads the new text on its next run. Nothing else needs to change.
+
+Why a pointer: the scheduler lets a routine's prompt be edited only from the
+conversation it posts into, so a hub-written prompt could never be fixed from
+the hub. The pointer never changes; the file does. If a pointer ever has to
+change, the hub disables the old routine and creates a new one; it never
+deletes one.

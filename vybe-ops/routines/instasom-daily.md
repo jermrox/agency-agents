@@ -1,7 +1,7 @@
 ---
 agent: Instasom
 session: session_01NdJPDj7shKEpQA4scTx2Bh
-triggers: trig_01HHXH48HNgd9NJjExVs1G6b
+triggers: trig_01JR8UrjSYX9NVgqZQkdJsvE
 cron: CRON_TZ=America/New_York 53 6 * * *
 owner: hub
 last_reconciled: 2026-10-13

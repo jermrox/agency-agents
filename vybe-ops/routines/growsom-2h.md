@@ -1,7 +1,7 @@
 ---
 agent: Growsom
 session: session_013MXjUjR9F9cRyprKSZdrUi
-triggers: trig_012jng3vBRi8SFohjQFmSdLV
+triggers: trig_014cDYveGUT48FKA3sD4unoA
 cron: CRON_TZ=America/New_York 22 6-22/2 * * *
 owner: hub
 last_reconciled: 2026-10-13

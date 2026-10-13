@@ -1,7 +1,7 @@
 ---
 agent: Marketsom
 session: session_01RT8AgsUSEeKx3uzQ1QBYcU
-triggers: trig_01XujwmTSdHwV9XG3ZZNwwdo
+triggers: trig_01RTQQsvDorJARjp29GcMnqF
 cron: CRON_TZ=America/New_York 23 6 * * *
 owner: hub
 last_reconciled: 2026-10-13
