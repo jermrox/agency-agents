@@ -21,7 +21,7 @@ Work backwards. Solve says most applicants spend several hours on the form, and 
 - [ ] Decide: apply as an individual or as a team. If a team, create it on the platform, invite members by email, and designate the Team Lead from the Teams tab.
 - [ ] Confirm the Team Lead (the CEO) can do all three: a Zoom pitch and judges' interview in **February 2027**; **Solver Orientation in Cambridge, MA, 14–15 April 2027** (travel assistance provided); **Solve Challenge Finals in New York City, September 2027**. All in English. Expect ~25 hours of programme time over nine months if selected.
 - [ ] Confirm the website at `{{WEBSITE}}` loads reliably. Solve: "Websites that are consistently unavailable may result in a less competitive application."
-- [ ] Before clicking SUBMIT SOLUTION, search every answer for `i-grow` and `jeremylahn`. If either appears, stop (Standards, rule 4). This draft was checked and contains neither.
+- [ ] Before clicking SUBMIT SOLUTION, search every answer for the other company's name and the founder's other email address (the two strings named in Standards, rule 4). If either appears, stop. This draft was checked and contains neither.
 - [ ] Submit early. Then edit as often as needed via the Dashboard, and click Save & Exit each time. Deadline is noon, not midnight.
 
 ### B. Facts only you hold (the `{{PLACEHOLDERS}}` from the fact sheet)
