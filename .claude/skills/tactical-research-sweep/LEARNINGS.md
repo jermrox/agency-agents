@@ -16,6 +16,16 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-13 — daily run
+
+- +4 items, all PubMed: FIRE 1 (metals and PAHs in firefighters' saliva after a fire), LE 1 (sleep
+  disturbance in Nigerian police), MIL 2 (blast TBI nearly doubles PTSD odds versus blunt TBI; PTSD
+  predicts later eating-disorder symptoms in veteran women). Board 81, archive 66. EMS: nothing again
+  (hits are patient care or education). Exa still 402 (tenth day); policy unverified.
+- Hot-note `cites` checked before merging: none stale. Next to expire: nothing within three days.
+- Still held back: PFAS and epigenetic age in airport firefighters (only "Oct 2026").
+- PR #77 still unmerged, so stacked again; the live site is four sweeps behind.
+
 ## 2026-10-12 — daily run (Monday)
 
 - +3 items, all PubMed: MIL 2 (brief cold exposure hurts hard shoot/no-shoot calls; cadet sport history
