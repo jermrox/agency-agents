@@ -25,3 +25,6 @@ differently. Repeats are a pattern to fix at the source; fixes are progress.
 | 2026-10-12 | Instasom | 5 | Session stuck at "Waiting on permission: ArtifactData" since 10:54 UTC; nothing reached the live feed today | Publish to Netlify first, then attempt the store write; a blocked prompt becomes one needsYou line, not a lost day. |
 | 2026-10-12 | Growsom | 7 | 56 targets in "oem_partners" and "builders" lanes and seven open supplier threads, built on the assumption that the DevKit needs manufacturing help; Nocturnal PD was scored 7/10 fit for a design-for-manufacture review | The hardware is built and supplied (founder). Nothing in the brief said so, so the agent invented the need. Facts about what Vybe already has belong in the standard, not in an agent's guess. |
 
+
+| 2026-10-12 | Instasom | 9 | Awareness was split: Reels on Instagram and Facebook with Instasom, LinkedIn, Reddit, X and PR with nobody | Founder: one awareness agent. Instasom absorbs social and PR; every big-name win gets a press line and a LinkedIn post in John's name inside 48 hours. |
+\n

@@ -182,46 +182,57 @@ drop is the standard working, not the agent failing.
 
 ---
 
-## Instasom — Instagram and Facebook
+## Instasom — awareness: social and PR
+
+Founder, 12 October 2026: "make awareness in social, and merge it with
+Instasom, and PR and communications." Instasom is the one awareness agent. Its
+spec is [marketing/marketing-vybe-awareness-lead.md](marketing/marketing-vybe-awareness-lead.md);
+the Reels playbook it still runs is
+[marketing/marketing-vybe-reels-strategist.md](marketing/marketing-vybe-reels-strategist.md).
 
 ### Task
-Pull the real social numbers every morning, state honestly whether they are
-moving, and hand the founder the day's captions, Reel script and a verified
-list of people to follow.
+Pull the real numbers for every public channel each morning and state honestly
+whether they are moving; hand the founder the day's posts for Instagram,
+Facebook, LinkedIn (in John's name and on the company page), Reddit and X; keep
+a verified media list; and draft the press line and the LinkedIn post for every
+big-name win inside 48 hours.
 
 ### Purpose
-The account is the cheapest signal Vybe has about whether the message lands. It
-is only useful if the numbers are not flattered — which is the entire reason
-this agent reports a trusted count instead of the raw one.
+The channels are the cheapest signal Vybe has about whether the message lands,
+and a big-name yes is worth nothing in public until someone says it well. One
+desk, so every channel says the same true thing in its own voice.
 
 ### Conditions
 Given a data pull at 10:38 UTC and a brief at 10:53 UTC; Instagram
-`@vybehealthinc` and Facebook Page `1235241226349802` through Composio;
-publishing to `instasum.netlify.app` with the ArtifactData store as backend
-only; rebuilt in a fresh session on 11 Oct after the previous one stopped
-acting on its wakes; **no ability to follow accounts for the founder** — he
-follows in the app and ticks the boxes.
+`@vybehealthinc`, the Facebook Page, the Vybe LinkedIn company page and the
+Vybe accounts on Reddit and X through Composio, Vybe accounts only; publishing
+to `instasum.netlify.app` with the ArtifactData store as backend only; Netlify
+first, the store second, so a permission prompt never costs the day; **no
+ability to follow accounts for the founder**; **nothing sent, posted in John's
+name, pitched or boosted without John's or the founder's yes**.
 
 ### Standards
 | # | Standard | Scored |
 |---|---|---|
-| 1 | **Every** follower figure reports the trusted count beside the raw. Zero celebration of the raw number | [read] |
-| 2 | Following is reported **verbatim** as "Meta API says N following (unconfirmed)". Zero claims to have checked or verified following; zero attribution of a following change to outreach | [read] |
+| 1 | **Every** follower figure reports the trusted count beside the raw, on every channel. Zero celebration of the raw number | [read] |
+| 2 | Following is reported **verbatim** as "Meta API says N following (unconfirmed)". Zero claims to have checked or verified following | [read] |
 | 3 | A person counts as followed **only** if `people.followedAt` is set or an export lists them | [read] |
-| 4 | **100%** of handles are clickable links. Zero bare handles | [read] |
-| 5 | **100%** of candidates verified via Meta `business_discovery` before listing, with the real `followers_count` and newest post date. Zero estimates | [read] |
-| 6 | **100%** of candidates sponsor-checked by reading the full bio and last 12 captions. Zero "none noted" without that read | [read] |
+| 4 | **100%** of handles and media-list links are clickable and verified. Zero bare handles, zero unverified journalists | [read] |
+| 5 | **100%** of follow candidates verified via Meta `business_discovery` before listing, with `big_name` and `big_name_why`, ranked by name first | [read] |
+| 6 | **100%** of candidates sponsor-checked by reading the full bio and last 12 captions | [read] |
 | 7 | **Zero** example comments mentioning devices, data or metrics on a follow-only account | [read] |
-| 8 | **≥12** categories attempted per run, each reported as checked / passed including the zeroes. Up to 15 people, padding to the number **prohibited** | [read] |
+| 8 | **≥12** categories attempted per run, reported checked / passed including the zeroes; padding **prohibited** | [read] |
 | 9 | A missing metric is reported unavailable, **never 0** | [read] |
 | 10 | Live `all.json` is **under 30 hours** old | **[board]** |
-| 11 | **Zero** DMs. Zero spend, boosts or audiences without an explicit go-ahead | [read] |
+| 11 | **Zero** DMs, spend, boosts or audiences without an explicit go-ahead; **zero** journalists contacted or partners named in public without the founder's yes | [read] |
+| 12 | Every reply-yes with `big_name` ≥ 7 on Marketsom's or Growsom's feed has a press line and a LinkedIn post in John's name drafted **within 48 hours**, on the console with `send_today`, `john_verdict`, `john_said`, `john_at` | [read] |
+| 13 | **Zero** posts in John's name published without his yes (rule 11); **zero** health-claim corrections after publishing | [read] |
+| 14 | Three dated holding statements (data question, health-claim challenge, shipping delay) on the feed at all times | [read] |
 
 **Live, 2026-10-11 10:39:59 UTC:** **275 verified follow targets** · 22 days of
 account metrics · 15 days of follower totals · 8 posts tracked · 7 past briefs ·
-8 research docs. `igaudience` and `insights` are **empty by design** — Meta
-returns no breakdown under 100 followers per cut; `igexport` fills only when the
-founder uploads his following list.
+8 research docs. LinkedIn, Reddit, X and the press feed start with the first run
+under this charter.
 
 Standard 2 is absolute because the data does not exist. The API returns a count
 and never a list, so "I checked who you follow" is not a true sentence, however
@@ -269,6 +280,46 @@ packets with 111 drafted answers, and the curated layer of the funding board.
 Standard 3 is the one worth keeping: on 9 Oct it caught a page about to show
 "100%" directly above a caption reading "the remaining 0.04%". A figure derived
 at render against a printed rule cannot drift from the data behind it.
+
+---
+
+## The Vybe workforce: divisions and playbooks
+
+Founder, 12 October 2026: "can we use all of these to build the entire
+workforce?" Yes, in one specific way. The library holds 230 personas. A persona
+is a playbook, not a session: it has a voice, deliverables and a workflow, and
+it is loaded by an agent for a task. Vybe runs **one standing agent per
+division**, each with a charter above, a live feed and a session that costs
+money every run, and each standing agent **calls the library's playbooks** when
+a task needs one. The hub orchestrates the divisions (rule 10); the divisions
+implement; the playbooks are how they implement well.
+
+| Division | Standing agent | Playbooks it loads | Playbooks to add next |
+|---|---|---|---|
+| Money | Revsom | non-dilutive funding scout | grant writer, FP&A analyst |
+| Investors and integrations | Growsom | Vybe growth scout | sales deal strategist, sales engineer, API platform engineer, developer advocate, investment researcher |
+| Partners with reach | Marketsom | Vybe marketing director | sales outbound strategist, proposal strategist |
+| Awareness: social and PR | Instasom | Vybe awareness lead, Vybe Reels strategist, LinkedIn content creator, Reddit community builder, X engager, PR and communications manager, social media strategist | AI citation strategist, app store optimizer (at launch) |
+| Product and app | daily and weekly worker | the Vitals rotation | product manager, UX researcher, mobile app builder, mobile release engineer, test automation engineer, accessibility auditor |
+| The hub | this session | multi-agent systems architect, project shepherd, executive summary generator | paid media auditor (one audit, then Marketsom owns it), product trend researcher (standing competitor watch) |
+
+Rules for the workforce:
+1. A playbook never gets its own session, feed or account. It runs inside a
+   standing agent's session, under that agent's charter and these standards.
+2. A new division needs a charter here first: task, purpose, conditions,
+   standards with a number, a live surface the board can score, and a
+   console link. No charter, no session.
+3. Divisions the library has that Vybe does not run and will not: China
+   market, GIS, game development, Drupal and WordPress, hospitality, legal
+   billing, real estate, and the engineering stacks Vybe does not use.
+4. Every playbook loaded for Vybe reads the standards first. A playbook that
+   contradicts them (a sponsorship push, a booth plan, a supplier search)
+   loses to the standard.
+
+The mechanism: the playbooks a division uses are installed as project
+sub-agents under `.claude/agents/`, so any Vybe session on this repository can
+delegate a task to one with the Agent tool and get the finished deliverable
+back under its own charter.
 
 ---
 

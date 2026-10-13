@@ -324,7 +324,7 @@ raises each one against its own standard.
 | Revsom | funding, apply page | agentrevup.netlify.app, `/apply` |
 | Marketsom | marketing | agentmarksom.netlify.app (hub, briefing, reports, scoreboard, partner board) |
 | Growsom | investors, sponsors, outreach | agentgrowthscout.netlify.app, its data feed, its private artifact |
-| Instasom | Instagram and Facebook | instasum.netlify.app/all.json |
+| Instasom | awareness: Instagram, Facebook, LinkedIn, Reddit, X, PR and communications | instasum.netlify.app/all.json |
 | Vybe daily/weekly worker | product screens, funding rows, packets, decks | merges to `main`; the Apply artifact |
 
 Agents without Vybe in the name (Leadsom for i-Grow, Researchsom and Crawlsom
