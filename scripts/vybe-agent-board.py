@@ -151,6 +151,15 @@ def parse_stamp(raw):
     cleaned = re.sub(r"([+-]\d{2}):(\d{2})$", r"\1\2", cleaned)
     # Drop fractional seconds, which no format above expects.
     cleaned = re.sub(r"\.\d+", "", cleaned)
+    # A date-only stamp identifies a calendar day, not midnight. Use its
+    # midpoint so limited timestamp precision does not create a false stale alarm.
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", cleaned):
+        try:
+            return dt.datetime.strptime(cleaned, "%Y-%m-%d").replace(
+                hour=12, tzinfo=dt.timezone.utc
+            )
+        except ValueError:
+            return None
     for fmt in STAMP_FORMATS:
         try:
             d = dt.datetime.strptime(cleaned, fmt)
