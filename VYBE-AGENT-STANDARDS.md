@@ -120,6 +120,17 @@ procurement, it belongs to the founders, and it is not an outreach lane. Growsom
 had emailed a battery maker, an ECG-patch PCBA supplier and three engineering
 firms as "partners", and one of them has a call booked.
 
+**The hardware is done.** Founder, 12 October 2026: "The device is built and
+the supplier for the device is completed." Asked whether suppliers are a thing
+at all: "No, that's not a thing." Vybe needs no design firm, OEM, contract
+manufacturer, PCBA or battery supplier, design-for-manufacture review,
+certification lab or firmware shop. No agent researches, scores, lists or
+contacts one, and no outreach lane, target list or prompt assumes the DevKit
+needs building. Growsom's "oem_partners" and "builders" lanes are retired; the
+threads they opened (Nocturnal, ANZER, Kyros, MAGNET, SugaMed, Zufek, LiPol)
+are closed with one courtesy note where someone had replied. A reply from a
+vendor, however warm, is a sales reply and never reopens the thread.
+
 **Never an individual.** Outreach goes to organisations and role inboxes.
 
 **One organisation, one owning agent, one ask.** Ownership follows what the
@@ -313,10 +324,86 @@ raises each one against its own standard.
 | Revsom | funding, apply page | agentrevup.netlify.app, `/apply` |
 | Marketsom | marketing | agentmarksom.netlify.app (hub, briefing, reports, scoreboard, partner board) |
 | Growsom | investors, sponsors, outreach | agentgrowthscout.netlify.app, its data feed, its private artifact |
-| Instasom | Instagram and Facebook | instasum.netlify.app/all.json |
+| Instasom | awareness: Instagram, Facebook, LinkedIn, Reddit, X, PR and communications | instasum.netlify.app/all.json |
 | Vybe daily/weekly worker | product screens, funding rows, packets, decks | merges to `main`; the Apply artifact |
 
 Agents without Vybe in the name (Leadsom for i-Grow, Researchsom and Crawlsom
 for MOPs and MOEs, Babysom) are outside this document and keep their own
 accounts. Their own domains belong in their own files, and by rule 6 no Vybe
 agent reads or changes anything of theirs.
+
+## 11. John's reply is the verdict
+
+Every outreach draft goes to John (john@vybe.health) on CC, and the founder's
+rule, 12 October 2026: "he will respond whether or not it's good." His reply is
+the decision on that draft, and an agent that drafted it reads the reply on its
+next run and acts the same run:
+
+| John says | The agent does |
+|---|---|
+| yes, send, approve, go ahead | sends the draft as written, John on CC |
+| change it, say X instead | redrafts in his words; the new draft goes back with John on CC |
+| no, cancel, no shot, not doing this | closes the row with his sentence as the reason; no further follow-up |
+| "needs a technical answer from you" | marks the row waiting on Jeremy with the exact question; nothing is sent |
+| nothing, five days after the draft reached him | one reminder email to John listing the rows by number; never a nudge to the partner |
+
+Mechanics: `GMAIL_FETCH_EMAILS` through Composio on the Vybe account, query
+`from:john@vybe.health newer_than:2d`, matched to the thread by thread id or
+subject. Growsom's approval page (APPROVE / NO / CHANGE by number) is the same
+verdict in a second place; an email reply counts even when the page is blank.
+
+Every published outreach row, target and follow-up thread carries three
+fields: `john_verdict` (approve / change / no / waiting / none), `john_said`
+(his sentence, verbatim, at most 200 characters) and `john_at` (ISO). The
+console shows them on the card, so the founder can see at a glance what John
+decided and what is still waiting on him. A reply from John never reopens a
+vendor, supplier or booth thread: rule 7 outranks a reply.
+
+The drafts themselves are on the console's first page. Every unsent draft
+(status drafted, or John said approve or change and it has not gone) is
+published with `draft_to` (recipient name and role), `draft_subject`,
+`draft_body` (the full text, verbatim, as it sits in Gmail) and `send_today`
+(true when it is ready to go today: John approved it, or it is a first email
+inside rule 7 that has waited five days for him). The founders read the draft
+on the console before it goes; a row with no body cannot be a send-today.
+
+Who signs. Founder, 12 October 2026: "have the emails written as John is
+sending them, as the Director of Growth." Every outreach email, opener, reply
+and follow-up is written in John's voice and in his name: first person is
+John, the signature is "John, Director of Growth, Vybe Health" with the Vybe
+calendar link under it, and nothing in the body reads as Jeremy or as an
+agent. It still goes out through the Vybe account the agent holds, with John
+on CC (rule 3), so the thread sits in his inbox and his reply stays the
+verdict. A draft without that signature is not a send-today; the console
+flags it.
+
+## 12. Big name, small batch
+
+Founder, 12 October 2026: "We are looking for big-name, small-batch wins. A
+turkey trot is not a win. Ohio State is a big win."
+
+The name on the door is worth more than the headcount. A yes from a flagship
+university, a national governing body, a pro or college league, a federal
+agency, a major accelerator or a brand people already know is a win even when
+the first batch is 10 to 25 bands, one pilot team or one data feed. A yes from
+a local 5K, a turkey trot or a club nobody outside its town has heard of is a
+contact, however many runners it has.
+
+Every published row (outreach, target, funding row, account to follow) carries
+`big_name` (1–10) and `big_name_why` (one sentence: what makes the name known,
+and the small first batch you would propose):
+
+| big_name | What it is |
+|---|---|
+| 9–10 | a household or national name (Garmin, WHOOP, Strava, NIH, Costco, NCAA, Team USA) |
+| 7–8 | a flagship university, a state-wide or national body, a federal agency, a major fund or accelerator |
+| 5–6 | a regional body, a well-known club, a seed fund |
+| 1–4 | a local event or club, an unknown funder |
+
+Agents rank their next targets by `big_name` first, then fit. A "win" in any
+headline, KPI or summary is a reply-yes (or an award) with `big_name` 7 or
+more; everything else is a "contact" and is labelled so. The console scores
+the name as one of its seven parts and guesses from the organisation's name
+until the agent publishes the field. Rule 7 still outranks a name: a booth at
+a famous event is still a booth.
+

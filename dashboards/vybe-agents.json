@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-12T09:05:00+00:00",
+  "checked": "2026-10-13T08:55:01+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,8 +11,8 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12T01:06:01+00:00",
-      "age_h": 8.0,
+      "stamp": "2026-10-12T17:41:29+00:00",
+      "age_h": 15.2,
       "foreign": [],
       "state": "ok"
     },
@@ -41,12 +41,14 @@
       "stamp_re": "\"asof\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 10:23Z",
-      "problems": [],
+      "problems": [
+        "stale: 32.9h old, cadence allows 30h"
+      ],
       "warnings": [],
       "stamp": "2026-10-12",
-      "age_h": 9.1,
+      "age_h": 32.9,
       "foreign": [],
-      "state": "ok"
+      "state": "bad"
     },
     {
       "agent": "Growsom",
@@ -59,8 +61,8 @@
       "cadence": "3x daily",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12 00:48",
-      "age_h": 8.3,
+      "stamp": "2026-10-13 00:23",
+      "age_h": 8.5,
       "foreign": [],
       "state": "ok"
     },
@@ -74,8 +76,8 @@
       "cadence": "3x daily",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12 00:48 UTC",
-      "age_h": 8.3,
+      "stamp": "2026-10-13 00:23 UTC",
+      "age_h": 8.5,
       "foreign": [],
       "state": "ok"
     },
@@ -89,8 +91,8 @@
       "cadence": "daily 10:38Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12T00:49:43Z",
-      "age_h": 8.3,
+      "stamp": "2026-10-13T00:56:39Z",
+      "age_h": 8.0,
       "foreign": [],
       "state": "ok"
     }
@@ -176,13 +178,31 @@
     {
       "who": "Marketsom",
       "kind": "deadline",
-      "when": "Fri 16 Oct follow-ups",
-      "what": "Partners quiet since the 9 Oct follow-ups",
+      "when": "Fri 16 Oct follow-up date",
+      "what": "12 partners quiet since the 9 Oct follow-ups",
       "detail": "",
-      "who_is": "No drafting until research is done. Their status is on the outreach list.",
+      "who_is": "No drafting until you say so. Their status and size are on the outreach list.",
       "why": "",
       "do": [
-        "No drafting until research is done. Their status is on the outreach list."
+        "No drafting until you say so. Their status and size are on the outreach list."
+      ],
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "url_label": "briefing",
+      "url2": null,
+      "url2_label": "briefing",
+      "sort": 3
+    },
+    {
+      "who": "Marketsom",
+      "kind": "deadline",
+      "when": "Tue 1 Dec opens (online)",
+      "what": "NIA Start-Up Challenge 2027: applications open",
+      "detail": "",
+      "who_is": "Deadline 15 Jan 2027, 11:59 pm ET. Online information webinar 3 Dec, 1 pm ET.",
+      "why": "Outside the 3-week window; listed so it isn't missed.",
+      "do": [
+        "Deadline 15 Jan 2027, 11:59 pm ET. Online information webinar 3 Dec, 1 pm ET.",
+        "Outside the 3-week window; listed so it isn't missed."
       ],
       "url": "https://agentmarksom.netlify.app/briefing.html",
       "url_label": "briefing",

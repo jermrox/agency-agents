@@ -206,4 +206,7 @@ class Opportunity:
         # next_date). Added alongside the existing keys, never in place of them.
         from .decision import decision_fields  # local import: no cycle at load time
         row.update(decision_fields(row, (self.raw or {}).get("decision", {})))
+        # Rule 12 big-name fields (big_name, big_name_why), same contract.
+        from .bigname import big_name_fields
+        row.update(big_name_fields(row, (self.raw or {}).get("decision", {})))
         return row
