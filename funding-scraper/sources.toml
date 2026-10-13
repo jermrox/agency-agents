@@ -4540,3 +4540,104 @@ eligibility = "Startups worldwide that develop their own product lines (service 
 note = "NEEDS A FUNCTIONING WEBSITE; FUNDING/REVENUE CAPS NOT PUBLISHED. Onshape, from the same PTC program, is already on the existing list. The new value here is Arena PLM, for BOM, supplier and change control ahead of DVT/PVT and retail, and Codebeamer+, for requirements traceability on firmware and the SDK. Rolling, free, no equity."
 documents = ["Online application per product (company info, website, funding/revenue, incubator/investor association)"]
 verified = "2026-10-12"
+
+[[sources.curated.entry]]
+name = "MedTech Innovator 2027 Accelerator (applications open, close 1 Dec 2026)"
+url = "https://medtechinnovator.org/apply/"
+agency = "MedTech Innovator"
+amount = "No equity, no fee. Five-month accelerator; prize capital: mid-stage companies compete for $250,000 at the Grand Finals at The MedTech Conference, with additional vision, execution and best-video awards"
+pillar = 2
+kind = "accelerator"
+sam = "none"
+close_date = "2026-12-01"
+eligibility = "Medical device, diagnostic OR digital health companies anywhere in the world with the US as a target market; early through mid-stage 'with clinical validation underway or in sight'; founders or C-suite able to engage for the full five months. Applications open now; close 1 December 2026; multi-stage 'Radar' review, then selected companies pitch."
+note = "DIGITAL HEALTH QUALIFIES, BUT THE PROGRAMME EXPECTS CLINICAL VALIDATION 'UNDERWAY OR IN SIGHT'. Vybe is a wellness product and stays one; the honest answer is a planned validation study (the Ohio State HPC nocturnal HRV protocol is the obvious one), not a clinical trial. Read from the programme's own apply page 13 Oct 2026: no fee to apply, save-and-return application, closes 1 December. Optional 2027 specialty tracks (AHA cardiovascular, ASPS, Vantage diagnostics) are not required."
+documents = ["Company profile on the MTI application portal", "Application: technology, team, clinical and regulatory status, where the company is headed", "A pitch video for the best-video award (optional)"]
+fit = 5
+fit_why = "Door: digital-health eligibility and a no-equity, no-fee programme with real prize capital; disqualifier risk: the cohort expects clinical validation in sight, and a wellness positioning with only a planned validation study may read as early."
+big_name = 7
+big_name_why = "The best-known medtech accelerator in the US; alumni status opens strategic, investor and health-system doors."
+cost = 0
+effort_hours = 8
+travel = false
+verified = "2026-10-13"
+
+[[sources.curated.entry]]
+name = "Nashville Entrepreneur Center — Project Healthcare, Spring 2027 cohort"
+url = "https://ec.co/project-healthcare/"
+agency = "Nashville Entrepreneur Center"
+amount = "No equity, ever. 12-week healthcare accelerator; six founders from each cohort share $40,000 in non-dilutive Impact Grants at Nashville Entrepreneur Day"
+pillar = 2
+kind = "accelerator"
+sam = "none"
+eligibility = "Health tech entrepreneurs and startups from anywhere ('Where you live: anywhere'); seven on-site days in Nashville across three immersion visits inside HCA Healthcare, Ascension Saint Thomas, Ardent Health, LifePoint Health, Vanderbilt University Medical Center and AMSurg. Applications for Spring 2027 are open; programmes begin in February 2027."
+note = "APPLICATION DEADLINE NOT PUBLISHED on the page as of 13 Oct 2026 (the site's own notes say it is still awaited); treat it as rolling until February and apply early. Seven in-person days in Nashville at the founder's own cost. EC membership is promoted alongside the application but is not stated as a requirement. Health-system buyers are the audience, which fits Vybe's enterprise and research channels more than the consumer launch."
+documents = ["Online application (form on the EC site, opened 27 August 2026)", "Availability for seven on-site days in Nashville across three immersion visits"]
+fit = 5
+fit_why = "Door: no-equity health accelerator with six health-system buyers in the room and $40,000 in impact grants; disqualifier: seven travel days at the founders' cost and an audience of hospital buyers rather than consumers."
+big_name = 6
+big_name_why = "Nashville's flagship entrepreneur centre with HCA, Ascension and Vanderbilt in the room; regional name, national buyers."
+cost = 0
+effort_hours = 4
+travel = true
+verified = "2026-10-13"
+
+[[sources.curated.entry]]
+name = "Strava API (V3) — public developer access to athlete activity data"
+url = "https://developers.strava.com/"
+agency = "Strava"
+amount = "Free public API: create an app, OAuth access to athletes' activities; no fee stated"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Any developer who registers an app and complies with the Strava API Agreement, API Policy and Brand Guidelines (mandatory logos, linking and attribution). Strava may revoke tokens for prohibited uses, including virtual races or competitions and replicating Strava's own products."
+note = "AN INTEGRATION, NOT MONEY. Lets Vybe read a person's workouts from the app most endurance athletes already use, so Move context arrives without Vybe building its own activity logger. Read from developers.strava.com 13 Oct 2026. Rate limits and app-approval steps for wider release are in the getting-started guide."
+documents = ["Register an app at developers.strava.com (Create & Manage Your App)", "Comply with the API Agreement, API Policy and Brand Guidelines"]
+fit = 7
+fit_why = "Door: the biggest activity graph in endurance sport, free, self-serve; disqualifier: none, but attribution rules and Strava's revocation rights apply."
+big_name = 9
+big_name_why = "A household name among runners and cyclists; 'works with Strava' is a line partners and buyers recognise."
+cost = 0
+effort_hours = 6
+travel = false
+verified = "2026-10-13"
+
+[[sources.curated.entry]]
+name = "Oura API V2 — OAuth app access to Oura Ring data (sleep, readiness, HRV)"
+url = "https://cloud.ouraring.com/docs/"
+agency = "Ōura Health Oy"
+amount = "Free: register an OAuth2 application; a 10-user limit until the app is reviewed and approved for wider release"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Needs an Oura account and a registered API application; multi-user access requires an OAuth2 app and, beyond ten users, Oura's approval after review. V1 was removed 22 January 2024; V2 is current."
+note = "AN INTEGRATION, NOT MONEY. Oura owners are the subscription-quitter segment Vybe's audience research names: the Oura API lets a person bring their ring history into Vybe's baseline on day one. Ten users without review, then submit the app for approval. Read from cloud.ouraring.com 13 Oct 2026."
+documents = ["Oura account", "Registered OAuth2 API application (Client ID and Secret)", "Submit the app for review to lift the 10-user limit"]
+fit = 7
+fit_why = "Door: direct access to the ring data of the exact people most likely to switch; disqualifier: the 10-user cap until Oura approves the app."
+big_name = 9
+big_name_why = "Oura is the name the ring category is known by; an approved Oura integration is a credential."
+cost = 0
+effort_hours = 8
+travel = false
+verified = "2026-10-13"
+
+[[sources.curated.entry]]
+name = "Polar AccessLink API v3 — sleep, Nightly Recharge, continuous heart rate, wrist ECG and skin-temperature data"
+url = "https://www.polar.com/accesslink-api/"
+agency = "Polar Electro"
+amount = "Free developer API with OAuth2 and webhooks; no fee stated"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Developers who register for AccessLink and authorise users through OAuth2. Endpoints include sleep, Nightly Recharge, continuous heart rate, cardio load, SleepWise alertness and circadian data, and Elixir biosensing (wrist ECG test results, SpO2, body and skin temperature)."
+note = "AN INTEGRATION, NOT MONEY. The one big-name API that already exposes wrist ECG test results and skin temperature, so Vybe can compare its own overnight signal with a Polar user's history. Read from polar.com/accesslink-api 13 Oct 2026. Registration path and rate limits are on the same page."
+documents = ["AccessLink developer registration", "OAuth2 user authorisation flow", "Webhook setup for new-data notifications"]
+fit = 7
+fit_why = "Door: free, documented, and the richest overlap with Vybe's own signals (ECG, HRV, sleep, temperature); disqualifier: none found, but Polar's user base is smaller than Garmin's."
+big_name = 8
+big_name_why = "Polar invented the consumer heart-rate monitor; a Polar integration reads as credible to sports scientists and coaches."
+cost = 0
+effort_hours = 8
+travel = false
+verified = "2026-10-13"

@@ -2620,3 +2620,36 @@ Re-check: Innovate Forward after 18 Oct; grants.gov 363971 (est. due 14 Dec) and
 - **Microchip / TI free samples** — Could not verify terms on the official pages (Microchip access denied, TI samples page 404). Low value, and ADI/Renesas/ST sample programs are already listed.
 - **UL Solutions / TUV SUD / Intertek / Element startup certification programs** — No startup certification credit or fee-waiver program found from any of these labs.
 - **Compliance Testing LLC $250 FCC/CE testing credit** — A month-by-month sales promotion (credit against paid testing), not a startup program. It is a discount on spend, not free.
+
+## Tuesday sweep — 13 Oct 2026
+
+Searched in the order the brief asks: wearable and digital-health prizes and
+challenges first, then DoD topic releases, then veteran-, woman- and
+minority-owned programmes. Every page read on 13 Oct 2026.
+
+### Promoted to the board
+
+- **MedTech Innovator 2027 Accelerator** — open now, closes 1 Dec 2026, no fee, no equity, $250,000 at the Grand Finals for mid-stage. Digital health qualifies; the programme expects clinical validation "underway or in sight", so the application names a planned validation study, never a trial. Packet `mti` drafted.
+- **Nashville Entrepreneur Center, Project Healthcare Spring 2027** — open now, no equity, $40,000 in impact grants per cohort, deadline not yet published, seven in-person days in Nashville at own cost.
+- **Strava API**, **Oura API V2**, **Polar AccessLink API v3** — three big-name integrations (rule 12), free, self-serve, read from each developer page.
+
+### Rejected on inspection
+
+- **National Sleep Foundation SleepTech Award 2026** — closed 25 Sep 2026; $500–600 fee for non-members. Fee programme; flag only.
+- **Hiring Our Heroes Small Business Grant** — last cycle closed 15 Dec 2025, 2027 window unpublished; also needs 3–20 employees and an "economically vulnerable community" test. Re-check in November.
+- **Stanford eWEAR Health Prize ($50K)** — undated listing from 2025, founders must be 18–35, no application link. Not verifiable.
+- **JobsOhio Inclusion Grant (now "Small Business Grant")** — JobsOhio's own pages return 404; third-party summaries say revenue $100K–$25M and one year in business, reimbursement-based for equipment and real estate. Vybe fails the revenue floor today. Re-check with the regional partner (Team NEO) when revenue exists.
+- **Healthcare Innovation World Cup 2026** — closed 10 Sep 2026 (already on the board as the 19th edition for 2027).
+- **HHS Digital Stockpile challenge** — Phase 1 closed 28 Aug 2026.
+- **Digital Health Hub awards** — closed 9 Aug 2026.
+- **NIST SBIR** — "no active NOFOs" on the NIST SBIR page; next Phase I NOFO date unpublished.
+- **DIU open solicitations** — no CSO open; the one Bridge item is maritime counter-UAS. Nothing for wearables.
+- **DoW SBIR/STTR 27.1** — no pre-release found on any service page or the DSIP site (the DSIP page returned 403 from here). Re-check weekly from November; 26.x releases are closed.
+- **DHS SBIR FY27** — no pre-solicitation published; the DHS SBIR portal did not resolve from the sandbox. Re-check in November.
+- **Army xTech|Search 10** — already on the board and packeted; white paper due 19 Oct 2026, 5 pm ET.
+- **Bounce Innovation Hub (Akron)** — no open application: Synthe6 closed 30 Jun, I-Pitch 21 May, PNC Startup Showcase 24 Sep. Re-check for Spring 2027.
+- **Northwestern Medicine x Techstars Healthcare Accelerator** — Techstars terms take equity. Out by rule.
+- **MassChallenge HealthTech 2027** — page unreadable from here and no 2027 window confirmed; re-check.
+- **Hey Helen Grant** — requires 100% women-owned businesses; Vybe is 51%+. Not eligible.
+- **BioTools Innovator 2027** — life-science tools, not wearables.
+- **NIMHD "Innovations for Healthy Living" SBIR (R43/R44)** — RFA listed as expired; the parent NIH SBIR April 2027 cycle is already on the board.
