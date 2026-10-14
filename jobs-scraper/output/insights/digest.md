@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-13.*
+*Briefing generated 2026-10-14.*
 
 ## Headline
 
-- **802 open jobs** from **44 employers**.
-- Posted between **2025-12-03** and **2026-10-13**.
-- **$83,796 median** annualized pay across the 254 postings that publish one -- $62,100 to $112,611 covers the middle half.
-- **0% remote-friendly** (3 jobs).
-- 649 of 1,451 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 759, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
+- **803 open jobs** from **44 employers**.
+- Posted between **2025-12-03** and **2026-10-14**.
+- **$84,000 median** annualized pay across the 255 postings that publish one -- $62,200 to $113,519 covers the middle half.
+- **0% remote-friendly** (4 jobs).
+- 1,036 of 1,839 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 760, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **down -364** in 2026-10 (483 to 119), 75% against 2026-09.
+Postings are **up +201** in 2026-10 (201 to 402), 100% against 2026-09.
 
 ```
 2025-12     1  #
@@ -24,9 +24,9 @@ Postings are **down -364** in 2026-10 (483 to 119), 75% against 2026-09.
 2026-05     5  #
 2026-06     9  #
 2026-07    19  #
-2026-08    94  #####
-2026-09   483  ############################
-2026-10   119  #######
+2026-08    94  #######
+2026-09   201  ##############
+2026-10   402  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -67,7 +67,7 @@ Postings are **down -364** in 2026-10 (483 to 119), 75% against 2026-09.
 | Strength & Conditioning | 426 | 67% |
 | Sports Medicine | 364 | 57% |
 | Cognitive Performance | 177 | 28% |
-| Research & Analytics | 126 | 20% |
+| Research & Analytics | 127 | 20% |
 | Performance Nutrition | 101 | 16% |
 | Program Leadership | 35 | 6% |
 | Sport Science | 12 | 2% |
@@ -93,7 +93,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$83,796**, middle half $62,100 to $112,611.
+- Median **$84,000**, middle half $62,200 to $113,519.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -101,7 +101,7 @@ Share is out of jobs that name any certification at all.
 | Sport Science | 8 | $95,488 | $103,742 | $120,875 |
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
-| Research & Analytics | 38 | $63,203 | $77,015 | $98,560 |
+| Research & Analytics | 39 | $63,282 | $78,110 | $98,738 |
 | Sports Medicine | 130 | $59,812 | $74,485 | $102,935 |
 | Strength & Conditioning | 68 | $58,367 | $71,500 | $91,950 |
 | Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
@@ -134,9 +134,9 @@ annual contractor bands are not otherwise comparable.
 |---|---|
 | Physical Therapist | 60 |
 | Cognitive Performance Specialist | 39 |
+| Human Performance Advisor | 37 |
 | Athletic Trainer | 36 |
 | Certified Athletic Trainer | 36 |
-| Human Performance Advisor | 36 |
 | Strength and Conditioning Specialist | 36 |
 | Licensed Clinical Social Worker | 35 |
 | Operational Psychologist | 35 |

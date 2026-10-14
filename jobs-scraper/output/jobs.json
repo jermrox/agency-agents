@@ -1,8 +1,67 @@
 {
   "version": 2,
-  "generated_at": "2026-10-13T19:28:32.478050+00:00",
-  "count": 695,
+  "generated_at": "2026-10-14T07:27:13.232410+00:00",
+  "count": 691,
   "jobs": [
+    {
+      "id": "34f00ea3d2980dbe5a9c",
+      "fingerprint": "19316401ca7fc1f6ac71",
+      "source": "workday:geneva",
+      "url": "https://genevausa.wd5.myworkdayjobs.com/CareersAtGeneva/job/Tacoma-WA/Human-Performance-Advisor_JR100727",
+      "title": "Human Performance Advisor",
+      "employer": "The Geneva Foundation",
+      "location": "Tacoma, WA",
+      "remote": true,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "from $124,800",
+      "posted_at": null,
+      "description": "About The Position The Human Performance Advisor serves as a subject matter expert and strategic resource supporting business development, capture management, proposal development, and program growth activities across Geneva. The advisor provides technical expertise in human performance, readiness, resilience, and performance optimization to support customer engagement, solution development, and\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 60.0,
+        "salary_max": 68.0,
+        "salary_period": "hour",
+        "education": "Bachelor",
+        "years_experience_min": 10,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": null,
+        "program": null
+      },
+      "facets": {
+        "discipline": "human-performance",
+        "discipline_label": "Human Performance (generalist)",
+        "lead": false,
+        "branches": [],
+        "branch_labels": [],
+        "location_classes": [
+          "conus",
+          "remote"
+        ],
+        "location_regions": {
+          "conus": [
+            "Washington"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 124800.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-14T07:27:13.232410+00:00"
+    },
     {
       "id": "13fec36753f9be65f3de",
       "fingerprint": "716ef7030e1999b3286e",
@@ -1696,135 +1755,6 @@
         },
         "contingency": "unknown",
         "salary_floor_annual": 33280.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-07T07:31:25.854741+00:00"
-    },
-    {
-      "id": "f923e49aa85d3431c870",
-      "fingerprint": "9f68256f45456258b179",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887827500",
-      "title": "Physical Therapist, SLD 30",
-      "employer": "Space Systems Command",
-      "location": "Vandenberg AFB, California",
-      "remote": false,
-      "telework": true,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$104,349 - $161,313 /yr",
-      "posted_at": null,
-      "description": "The 0633 series has an individual occupational requirement that must be met and can be viewed here. In addition to the above requirements, you can view the experience level requirements here. Please scroll down to the 4th section titled Professional and Scientific Positions. Do not email applications. To submit your resume for this Direct Hire opportunity click here. For additional information on\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS",
-          "DPT"
-        ],
-        "clearance": null,
-        "salary_min": 104349.0,
-        "salary_max": 161313.0,
-        "salary_period": "year",
-        "education": "Doctorate",
-        "years_experience_min": 3,
-        "employment_type": null,
-        "installation": "Vandenberg SFB",
-        "service_branch": "Space Force",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "space-force"
-        ],
-        "branch_labels": [
-          "Space Force"
-        ],
-        "location_classes": [
-          "conus",
-          "telework"
-        ],
-        "location_regions": {
-          "conus": [
-            "California"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 104349.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-07T07:31:25.854741+00:00"
-    },
-    {
-      "id": "6117ca913cc0aa634466",
-      "fingerprint": "a74abe87272114d159fd",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887714800",
-      "title": "HEALTH AID AND TECHNICIAN",
-      "employer": "Space Training and Readiness Command",
-      "location": "Lackland AFB, Texas",
-      "remote": false,
-      "telework": true,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$41,334 - $73,711 /yr",
-      "posted_at": null,
-      "description": "Conditions of Employment Continued: Must maintain credentials as required by local Military Treatment Facility (MTF) guidance. Employee must be able to receive/maintain privileges/medical staff appointment as a physical therapist assistant by the MTF credentials office, to include participation in ongoing peer review. Must possess and maintain current certification in Basic life Support (BLS) In\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 41334.0,
-        "salary_max": 73711.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Joint",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus",
-          "telework"
-        ],
-        "location_regions": {
-          "conus": [
-            "Texas"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 41334.0,
         "mwr": false
       },
       "matched": {
@@ -18330,7 +18260,7 @@
       "location": "Yomitan, International",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -18367,7 +18297,7 @@
           "unspecified"
         ],
         "location_regions": {},
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -18911,7 +18841,7 @@
       "location": "Stuttgart, International",
       "remote": false,
       "telework": false,
-      "contingency": "unknown",
+      "contingency": "contingent",
       "department": null,
       "compensation": "Salary Unavailable: Click View posting for more information",
       "posted_at": null,
@@ -18952,7 +18882,7 @@
             "Germany"
           ]
         },
-        "contingency": "unknown",
+        "contingency": "contingent",
         "salary_floor_annual": null,
         "mwr": false
       },
@@ -35917,68 +35847,6 @@
       "listed_at": "2026-09-29T19:31:30.190938+00:00"
     },
     {
-      "id": "1dcc2907d8b79188a9ab",
-      "fingerprint": "06795cf0df0656e6f9ab",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/886806200",
-      "title": "Sports Specialist (Fitness Instructor)",
-      "employer": "Commander, Navy Installations Command",
-      "location": "Great Lakes, Illinois",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$20.07 - $22.00 /hr",
-      "posted_at": null,
-      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs.A qualified candidate must possess: Ability to competently and independently carry out fitness programs through the proper application of principles, concepts and\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 20.07,
-        "salary_max": 22.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": null,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "navy"
-        ],
-        "branch_labels": [
-          "Navy"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Illinois"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 41745.6,
-        "mwr": true
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-29T19:31:30.190938+00:00"
-    },
-    {
       "id": "918e8a12b031060496b4",
       "fingerprint": "62733ac83c0a0ef9f239",
       "source": "bamboohr:lmr",
@@ -41453,68 +41321,6 @@
       "listed_at": "2026-09-22T10:45:04.722464+00:00"
     },
     {
-      "id": "0923061b2e30be0be8b6",
-      "fingerprint": "16ff527a24d8c00fb464",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/884890900",
-      "title": "Occupational Therapy Assistant",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Bethesda, Maryland",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$57,736 - $75,059 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 57736.0,
-        "salary_max": 75059.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Maryland"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 57736.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-22T10:45:04.722464+00:00"
-    },
-    {
       "id": "3218c6947d14e53fb725",
       "fingerprint": "aaa0476cdae02e130b2f",
       "source": "jsonld:serco",
@@ -41773,68 +41579,6 @@
       "listed_at": "2026-09-14T19:09:44.275307+00:00"
     },
     {
-      "id": "1826273be27150b336cd",
-      "fingerprint": "1016ad90ed52cac2cb16",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/884195500",
-      "title": "Physical Therapy Assistant",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Quantico, Virginia",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$51,957 - $67,543 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 51957.0,
-        "salary_max": 67543.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": "Quantico",
-        "service_branch": "Navy",
-        "program": null
-      },
-      "facets": {
-        "discipline": "physical-therapy",
-        "discipline_label": "Physical Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Virginia"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 51957.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-09-11T07:04:24.616728+00:00"
-    },
-    {
       "id": "a4e7e8152b294d99898d",
       "fingerprint": "99a802329e0fc285b8a2",
       "source": "jsonld:nsca",
@@ -41896,7 +41640,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-13T19:28:17+00:00"
+        "checked_at": "2026-10-14T07:26:59+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
