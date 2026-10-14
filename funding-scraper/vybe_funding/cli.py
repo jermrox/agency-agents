@@ -205,6 +205,9 @@ def publish(
                 if "big_name" not in row:
                     from .bigname import big_name_fields
                     row.update(big_name_fields(row, {}))
+                from .models import _stated_amount
+                if not _stated_amount(row.get("amount")):
+                    row["amount"] = f"amount not stated on the page (checked {today.isoformat()})"
                 row["next_date"] = row.get("close_date")
                 rows.append(row)
                 carried.append(row.get("source", "?"))
@@ -298,7 +301,8 @@ def summarize(opportunities: list[Opportunity], today: date, stale_days: int) ->
     # Lesson 14 Oct: flag every row with no amount before it publishes. The
     # feed fills the gap with "amount not stated on the page (checked ...)",
     # which is honest, but a curator should still go and read the page.
-    blank = [o.name for o in opportunities if not (o.amount or "").strip()]
+    from .models import _stated_amount
+    blank = [o.name for o in opportunities if not _stated_amount(o.amount)]
     if blank:
         log.warning("-" * 58)
         log.warning("Rows with no amount (published as 'amount not stated on the page'):")
