@@ -63,7 +63,7 @@ const PAIR_STATUS = {
   paired: 'Paired',
 };
 
-export default function OnboardingScreen({ onFinish, onSkip, onImport }) {
+export default function OnboardingScreen({ onFinish, onSkip, onImport, onFitCheck }) {
   const [step, setStep] = useState(0);
   const [pair, setPair] = useState('idle');
   const [sources, setSources] = useState(sampleSources);
@@ -179,6 +179,23 @@ export default function OnboardingScreen({ onFinish, onSkip, onImport }) {
                   </Text>
                 ))}
               </View>
+            ) : null}
+
+            {/* Pairing says the phone can hear the Band. It says nothing about
+                whether the Band can read a wrist, and the only useful moment
+                for that question is before the first night, not after it. */}
+            {pair === 'paired' && onFitCheck ? (
+              <Pressable
+                onPress={onFitCheck}
+                accessibilityRole="button"
+                accessibilityLabel="Check the fit before tonight"
+                accessibilityHint="Opens the fit check, which reports in words what the sensor can see"
+                style={({ pressed }) => [styles.importLink, pressed && styles.pressed]}
+              >
+                <Text style={styles.importLinkText}>
+                  Paired. Check the fit before tonight
+                </Text>
+              </Pressable>
             ) : null}
 
             <Text style={styles.aside}>{band.privacyLine}</Text>

@@ -11,6 +11,7 @@ import PatternHistoryScreen from './src/screens/PatternHistoryScreen';
 import SeasonScreen from './src/screens/SeasonScreen';
 import OutcomeScreen from './src/screens/OutcomeScreen';
 import OnboardingScreen from './src/screens/OnboardingScreen';
+import FitCheckScreen from './src/screens/FitCheckScreen';
 import ImportScreen from './src/screens/ImportScreen';
 import DataSettingsScreen from './src/screens/DataSettingsScreen';
 import ExportScreen from './src/screens/ExportScreen';
@@ -21,15 +22,15 @@ import { colors } from './src/theme';
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are fifteen
+ * One piece of state instead of a navigation library. There are sixteen
  * screens now, and they are still a flat set: Nourish links across to the
  * pattern history, the pattern history links on to the year-on-year view,
  * Restore, Connect and Vitals link across to the outcome record, Vitals also
  * links on to the data screen for the export, Ask links across to
- * the follow-up, onboarding links across to the history import, and the data
- * screen links on to the export. The last two are the only places a screen
- * returns to where it came from rather than to Home, which one remembered
- * string still covers. Pulling in
+ * the follow-up, onboarding links across to the history import and to the
+ * fit check, and the data screen links on to the export. The last three are
+ * the only places a screen returns to where it came from rather than to Home,
+ * which one remembered string still covers. Pulling in
  * react-navigation would add a dependency, a gesture handler and a reanimated
  * peer to switch a string. Swap this the day a screen has to open on top of
  * another one and return to it.
@@ -51,6 +52,13 @@ export default function App() {
           onFinish={() => setScreen('home')}
           onSkip={() => setScreen('home')}
           onImport={() => setScreen('import')}
+          onFitCheck={() => setScreen('fit')}
+        />
+      ) : screen === 'fit' ? (
+        <FitCheckScreen
+          onBack={() => setScreen('onboarding')}
+          onDone={() => setScreen('onboarding')}
+          onSkip={() => setScreen('onboarding')}
         />
       ) : screen === 'import' ? (
         <ImportScreen
