@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-13T20:45:03+00:00",
+  "checked": "2026-10-14T01:08:17+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -9,12 +9,14 @@
       "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 13:40Z",
-      "problems": [],
+      "problems": [
+        "stale: 31.4h old, cadence allows 30h"
+      ],
       "warnings": [],
       "stamp": "2026-10-12T17:41:29+00:00",
-      "age_h": 27.1,
+      "age_h": 31.4,
       "foreign": [],
-      "state": "ok"
+      "state": "bad"
     },
     {
       "agent": "Revsom",
@@ -42,11 +44,11 @@
       "max_age_h": 30,
       "cadence": "daily 10:23Z",
       "problems": [
-        "stale: 32.8h old, cadence allows 30h"
+        "stale: 37.1h old, cadence allows 30h"
       ],
       "warnings": [],
       "stamp": "2026-10-12",
-      "age_h": 32.8,
+      "age_h": 37.1,
       "foreign": [],
       "state": "bad"
     },
@@ -60,11 +62,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 20.4h old, cadence allows 14h"
+        "stale: 24.8h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23",
-      "age_h": 20.4,
+      "age_h": 24.8,
       "foreign": [],
       "state": "bad"
     },
@@ -77,11 +79,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 20.4h old, cadence allows 14h"
+        "stale: 24.8h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23 UTC",
-      "age_h": 20.4,
+      "age_h": 24.8,
       "foreign": [],
       "state": "bad"
     },
@@ -96,7 +98,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-13T00:56:39Z",
-      "age_h": 19.8,
+      "age_h": 24.2,
       "foreign": [],
       "state": "ok"
     }
