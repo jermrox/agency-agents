@@ -16,6 +16,21 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-14 — daily run
+
+- +9 items, all PubMed: FIRE 4 (LA firefighters' coronary plaque; movement screen and fireground
+  tasks; HRV in expert vs novice firefighters; lifestyle as a men's health problem), CROSS 1 (Irish
+  first responders and suspected-suicide scenes), MIL 4 (special operators' hormones after deployment;
+  limb loss, PTSD and sympathetic activity; blast-exposed occupations in MSMR; veterans' alcohol
+  use disorder). Board 90, archive 65. EMS and LE: nothing again. Exa still 402 (eleventh day).
+- Best haul in a week: widening to full-abstract reading of cardiovascular and endocrine queries,
+  and searching "emergency medical technician" instead of "EMT".
+- PR #77 merged on 13 Oct, so the branch was reset to main (0 commits ahead) before the run.
+- Refreshed Behavioral health, Brain health and Women's health ahead of expiry. Eight more cites
+  (all 17 Sep items: Programs and funding, MSK injury, Sleep and fatigue, Load and PPE, Environment,
+  Nutrition) expire by 17 Oct: rewrite those next run, before merging.
+- The tag list has no cardiovascular tag; FIRE heart items had to use Standards and tests.
+
 ## 2026-10-13 — daily run
 
 - +4 items, all PubMed: FIRE 1 (metals and PAHs in firefighters' saliva after a fire), LE 1 (sleep
