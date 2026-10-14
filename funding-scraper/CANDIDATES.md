@@ -471,6 +471,65 @@ Phase 1 Vybe did not enter.
 - **AWS Health Equity Initiative (credits)** — Dead page (404).
 - **Bob Evans Heroes to CEOs ($30,000 veteran grant)** — Programme page returns 404 on 12 Oct 2026; its past cycles opened in spring. Re-check in April 2027.
 
+## Promoted to the board — 14 Oct 2026 (scheduled daily run)
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **Nasdaq Entrepreneurial Center — Milestone Makers, Winter 2027 HealthTech** | free 12-week programme, no cash, no equity | closes 26 Oct 2026 |
+| **AgeTech Collaborative from AARP — January Open Mic Pitch Challenge** (consumer health & wellness admitted) | no cash; a door to the equity-free AARP accelerator | opened 1 Oct, closes 31 Oct 2026 11:59 pm; pitch online 28 Jan 2027 |
+| **Entrepreneurship Bootcamp for Veterans (EBV), Syracuse IVMF** | free training and residency, travel and lodging covered | rolling |
+
+Corrected: **Galaxy Grant** now points at galaxyofstars.org (the old hiddenstarters.com
+address redirects there) with the stated 31 Oct 2026 deadline and the free 30-second
+form. **Verizon Small Business Digital Ready** now points at Verizon's own grants page:
+two free courses unlock the application, ten $10,000 grants a month are reviewed June
+to December 2026, and every applicant hears by 12 Jan 2027.
+
+Every cash programme read today was closed, fee-charging, student-only, revenue-gated
+or unverifiable (lists below), so three of today's five changes pay in a name rather
+than a cheque: Nasdaq and AARP are big names under rule 12, and EBV feeds the veteran
+pitch circuit. Drafted the **Burnley FC Innovation Hub** packet (closes 16 Oct) the
+same day; its Pitchtape form renders only in a browser, so the packet is written to
+the three tests the programme page states.
+
+**DSIP read, 14 Oct:** the public topic API shows FY27 Release 1 (27.BX / 27.BZ / 27.TX /
+27.TZ; pre-release 7 Oct, opens 28 Oct, closes 25 Nov 2026 12:00 pm ET, already on the
+board) with 16 Air Force topics, 4 Navy (one CSO open topic), 2 OSW and the Army xTech
+topic. Searches for "wearable", "sleep", "physiological" and "human performance" across
+open and pre-release topics return only xTech|Search 10. Any Vybe entry would ride an
+open-topic lane, and the Air Force open topics usually want a named end user.
+
+**Watch list, 14 Oct:**
+- **Rice Veterans Business Battle 2027:** the page says applications open 11 Nov 2026; event 31 Mar to 1 Apr 2027. Re-check after 11 Nov for the close date.
+- **Boundless Futures Foundation EmpowHer:** opens 1 Nov 2026, but requires revenue and a poverty, hunger or environment focus, so Vybe is ineligible as it stands.
+- **Hello Alice, IFundWomen, Plug and Play Health, MassChallenge HealthTech 2027, JLABS QuickFire:** pages behind JavaScript or bot checks on 14 Oct; nothing confirmed open. Re-check from a browser.
+- **ACL Caregiver AI Prize ($2.5M total, ends 6 Feb 2029):** Phase 1 closed 31 Jul 2026; Phase 2 rules unpublished.
+
+## Rejected on inspection — 14 Oct 2026 (scheduled daily run)
+
+- **SXSW Pitch 2027** — Fee programme, flagged: "A non-refundable $225 entry fee is required of all applicants"; applications open through 13 Nov 2026 (the FAQ says 11 Nov; confirm). The Life Sciences, Healthcare & AssistiveTech category names wearable health devices, the product must not have launched before 1 Jan 2024, and funding raised must be $10M or less. Not added under the no-fee rule; the founders can decide whether $225 is worth a wearable-named stage.
+- **V-WISE (IVMF women veterans and spouses)** — $75 registration fee and no cohort dates posted.
+- **NASE Growth Grant (up to $4,000)** — Needs paid NASE membership; a fee by another name.
+- **National Sleep Foundation SleepTech Award** — 2026 closed 25 Sep; non-member entry fee; 2027 unpublished.
+- **DoW SBIR/STTR FY27 Release 1** — Already on the board; see the DSIP read above.
+- **Cedars-Sinai Accelerator** — Seed+ and late-seed companies; stage mismatch and no dates.
+- **Texas Medical Center Innovation Accelerator** — No dates on the page; wants proof of concept at least; unknown window.
+- **HLTH USA 2026 and ViVE 2027 startup pitches** — 2026 closed (apply-by 26 Jun); 2027 deadline, prize and fee unpublished.
+- **American Heart Association Health Tech Competition 2026** — Closed 18 Sep 2026 and wants clinical or pilot data or paying customers.
+- **Garmin Health Awards** — 2026 closed 8 May; entries must use Garmin devices.
+- **Stanford eWEAR Health Prize** — Founders must be 18 to 35; no current deadline posted.
+- **Cartier Women's Initiative, TechCrunch Startup Battlefield 200, Hiring Our Heroes grant, Comcast RISE, FedEx Small Business Grant, Fast Break for Small Business** — All closed for 2026 with 2027 unpublished; Hiring Our Heroes also wants 3 to 20 employees.
+- **Patriot Boot Camp (DAV)** — 2026 cohorts done; events and register pages return 404 on 14 Oct. The Winter '27 Cincinnati note from 11 Oct stands only if DAV reposts it.
+- **Bunker Labs CEOcircle** — 2026 closed 12 Jun and wants $1M+ revenue or $5M+ raised.
+- **Warrior Rising Business Showers** — Invitation-only after Warrior Academy; no dates. The board's Warrior Rising row already says training first.
+- **Bob Evans Heroes to CEOs** — Programme page 404; last confirmed cycle 2021.
+- **Apple Entrepreneur Camp** — Needs a live App Store app or TestFlight beta; no 2027 dates.
+- **Google for Startups Accelerator (US)** — No US window open.
+- **UCSF Rosenman Innovators, Mayo Clinic Platform_Accelerate** — Sites returned 503 and 403; unknown.
+- **Visa She's Next (US)** — Only closed Irish and Norwegian editions found; no US window.
+- **Devpost health hackathons (UnivaBio, CodeTheCure, DSH Hacks V2)** — Student or beginner events with non-cash prizes.
+- **DIU CSO, Army xTech other than Search 10** — Nothing in wearables or human performance.
+
 ## Promoted to the board — 11 Oct 2026 (round 11)
 
 Four lanes: a watch-list re-check; tactical, military and first-responder; global prizes open to US startups;
