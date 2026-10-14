@@ -265,9 +265,10 @@ jobs:
       # every check stays green: on 12-13 Oct production sat on the 12 Oct 17:41
       # feed for a day while main moved on (two sweeps, three merges). A stale
       # check alone cannot see it until 30h, and re-running the sweep cannot fix
-      # it (the cause that day: Netlify account credits exceeded). Compare the live feed with the one on main and open an issue when the
-      # site is more than 6 hours behind a commit at least 45 minutes old, which
-      # is long past any normal deploy.
+      # it (the cause that day: Netlify account credits exceeded). Compare the
+      # live feed with the one on main and open an issue when the site is more
+      # than 6 hours behind main, once main's commit has had 45 minutes to
+      # deploy or the live feed is over 30 hours old.
       - name: Raise an issue if Netlify stopped publishing main
         if: always()
         env:
@@ -291,8 +292,16 @@ jobs:
               print(f"unknown ({type(exc).__name__})")
               raise SystemExit
           lag = (main - live).total_seconds() / 3600
-          settled = (datetime.now(timezone.utc) - main).total_seconds() / 60 >= 45
-          print(f"behind {lag:.1f}h live={live.isoformat()} main={main.isoformat()}" if lag > 6 and settled else f"ok lag={lag:.1f}h")
+          # Judge the LIVE feed's age, not main's: the 14:20 run lands minutes after
+          # the daily sweep commits, so "main must be 45 minutes old" skipped the
+          # alert on 14 Oct with the site 44 hours behind.
+          # Fire when main's commit has had 45 minutes to deploy, or when the live
+          # feed is older than any daily cycle (30h) whatever main's age.
+          now = datetime.now(timezone.utc)
+          live_age = (now - live).total_seconds() / 3600
+          main_settled = (now - main).total_seconds() / 60 >= 45
+          behind = lag > 6 and (main_settled or live_age > 30)
+          print(f"behind {lag:.1f}h live={live.isoformat()} main={main.isoformat()}" if behind else f"ok lag={lag:.1f}h live_age={live_age:.1f}h")
           PY
           )
           echo "publish check: $verdict"
