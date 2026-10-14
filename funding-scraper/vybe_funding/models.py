@@ -189,7 +189,13 @@ class Opportunity:
             "name": self.name,
             "url": self.url,
             "agency": self.agency,
-            "amount": self.amount,
+            # Lesson 14 Oct: a blank amount reads as "unknown" to the founder and
+            # as zero to a sort. Say what the page says, or say it says nothing.
+            "amount": (self.amount or "").strip() or (
+                "amount not stated on the page (checked "
+                + str((self.raw or {}).get("verified") or today.isoformat())
+                + ")"
+            ),
             "summary": self.summary,
             "open_date": self.open_date.isoformat() if self.open_date else None,
             "close_date": self.close_date.isoformat() if self.close_date else None,

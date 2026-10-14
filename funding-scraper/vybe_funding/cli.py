@@ -295,6 +295,16 @@ def summarize(opportunities: list[Opportunity], today: date, stale_days: int) ->
         for name, age in stale:
             log.warning("  %3dd  %s", age, name[:70])
 
+    # Lesson 14 Oct: flag every row with no amount before it publishes. The
+    # feed fills the gap with "amount not stated on the page (checked ...)",
+    # which is honest, but a curator should still go and read the page.
+    blank = [o.name for o in opportunities if not (o.amount or "").strip()]
+    if blank:
+        log.warning("-" * 58)
+        log.warning("Rows with no amount (published as 'amount not stated on the page'):")
+        for name in blank:
+            log.warning("  %s", name[:70])
+
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="vybe_funding")

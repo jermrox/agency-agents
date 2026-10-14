@@ -2838,3 +2838,7 @@ Foundation lane is exhausted: big-name foundations fund nonprofits or academics,
 - **Black Women Talk Tech Roadmap to Billions pitch** — No 2026-27 pitch competition is posted (the site still shows the Oct 2025 Toronto event). The $100K prize dates from 2019.
 - **Slush 2026 / Slush 100 (Helsinki, Nov 18-19 2026)** — Already on the existing list and outside the US. The page shows paid tickets (startup ticket EUR 395, sold out) and no new open Slush 100 window.
 - **AFROTECH Conference 2026 pitch (Houston, Nov 2-6 2026)** — No 2026 startup pitch competition or founder application is posted on the official site; the Founders Circle window from earlier cycles closed in July.
+
+## 14 Oct 2026: amount audit (lesson 14 Oct)
+
+- **CDMRP Combat Readiness-Medical Research Program (CRRP)** — REMOVED from the board. It was the only row with no amount, and its own page (cdmrp.health.mil/funding/crrp, read 14 Oct) says "The pre-application submission deadline for the following CRRP funding opportunities has passed"; full applications are by invitation only. The row had no close date, so it was showing as live. Watch for the FY27 CRRP announcement (SAM required, eBRAP pre-application). The sweep now publishes "amount not stated on the page (checked <date>)" for any empty amount and warns about it in the run log.
