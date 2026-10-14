@@ -4764,3 +4764,48 @@ travel = true
 big_name = 5
 big_name_why = "Syracuse's veterans institute is the best-known name in veteran entrepreneurship and moderate outside it."
 verified = "2026-10-14"
+
+
+[[sources.curated.entry]]
+name = "NIMHD SCHARE Digital Twins and/or Synthetic Data Population Modeling for Whole-Person Health to Mitigate Chronic Disease Disparities Grand Challenge"
+url = "https://www.nih.gov/challenges/digital-twins-andor-synthetic-data-population-modeling-whole-person-health-mitigate-chronic-disease-disparities-grand-challenge"
+agency = "NIH / National Institute on Minority Health and Health Disparities (NIMHD), SCHARE"
+amount = "$1,000,000 total purse. Phase I: 4 awards ($140K, $130K, $120K, $110K). Phase II (Phase I winners only): $300K and $200K"
+open_date = "2026-09-25"
+close_date = "2027-02-19"
+pillar = 2
+kind = "grant"
+sam = "later"
+eligibility = "US-incorporated private entity with primary place of business in the US, or US-citizen individuals/teams; 18+; not a federal entity. Register by 2027-02-19 via the challenge's Microsoft Form; Phase I proposal (PDF) due 2027-04-19 via a Box folder issued after eligibility check."
+note = "NEEDS SCIENTIFIC/CHRONIC-DISEASE PARTNER; NO GENERATIVE AI ALLOWED IN WRITING THE SUBMISSION; registration deadline 2027-02-19 is the real gate. This is the third SCHARE grand challenge (the other two, Smart Devices and Whole-Person Data Integration, are already on the board) and it is a separate $1M pot. It asks for individual or population digital twins built from biological, behavioral, mental-health, environmental and community data, and names wearable technologies as an under-integrated data source. Vybe's angle: an individual-level whole-person digital twin fed by continuous ECG/HRV/sleep from the DevKit, built with a university partner, framed as wellness and prevention (no diagnostic claim needed). Judging gives 15 points to team qualifications, so pair with an academic data-science group. Proof-of-concept only in Phase I; no clinical trial required. Registration closes 2027-02-19 (the board's date); the Phase I proposal is due 2027-04-19."
+documents = ["Registration form (individual/team/entity, team lead or point of contact)", "Phase I proposal PDF (proof of concept for digital twin/synthetic population model)", "Team qualifications", "Winner verification and EFT payment documents within 10 business days of notice"]
+fit = 4
+fit_why = "Door: Vybe's HRV, sleep and stress data as one input to a whole-person digital-twin model built with a university data-science partner; disqualifier: needs a modelling and chronic-disease team Vybe does not have, and the rules ban generative AI in the submission."
+cost = 0
+effort_hours = 40
+travel = false
+big_name = 9
+big_name_why = "NIH (NIMHD SCHARE): a federal research flagship, and a prize from it is a credential investors and later SBIR reviewers recognise."
+verified = "2026-10-14"
+
+[[sources.curated.entry]]
+name = "NIDDK Early Research Partnership Engagement Challenge"
+url = "https://www.nih.gov/challenges/niddk-early-research-partnership-engagement-challenge"
+agency = "NIH / National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), co-funded by NIMHD"
+amount = "Up to $1,000,000 total. Phase 1: up to 15 winners at $25,000 each. Phase 2 (Phase 1 winners only): $300K grand prize, $150K, $100K, $75K"
+open_date = "2026-10-01"
+close_date = "2026-11-30"
+pillar = 2
+kind = "grant"
+sam = "later"
+eligibility = "Teams or entities; a private entity must be incorporated in and have its primary place of business in the US; team leader must be a US citizen or permanent resident. For-profit organizations are named as possible partners. Must register by 2026-11-30 on the NIDDK Central Repository Data Challenge Platform; Phase 1 submissions run 2026-12-08 to May 2027."
+note = "MUST BE A COMMUNITY-ENGAGEMENT PARTNERSHIP PLAN, NOT A PRODUCT PITCH; topic must sit within NIDDK's mission (diabetes, obesity/metabolism, kidney, digestive); REGISTRATION CLOSES 2026-11-30. Fit is moderate: Vybe could lead or join a team with an Akron/Summit County community health center, a faith-based or veterans organization and a university (e.g. University of Akron or NEOMED) to co-plan research on wearable-tracked sleep, activity and stress in metabolic health in an underserved community. Phase 1 is a plan, not a prototype, and $25K needs no SAM registration up front. No clinical trial required."
+documents = ["Registration on NIDDK CR Data Challenge Platform (team or entity, team leader or point of contact)", "Phase 1 submission describing the community need, the condition addressed, the partners and roles, and the engagement approach", "Winner verification and payment documents within 20 business days"]
+fit = 3
+fit_why = "Door: join a community-engagement team with an Akron health centre and university on a metabolism or diabetes study plan; disqualifier: it is a partnership plan inside NIDDK's diabetes, kidney and digestive mission, not a product pitch."
+cost = 0
+effort_hours = 20
+travel = false
+big_name = 9
+big_name_why = "NIH (NIDDK, co-funded by NIMHD): a federal research flagship whose prize opens doors to NIH partners and reviewers."
+verified = "2026-10-14"
