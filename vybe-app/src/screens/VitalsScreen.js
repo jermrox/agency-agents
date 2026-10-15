@@ -32,7 +32,7 @@ const D = dimensions.vitals;
  * notes for context, the one dark block for the action, and a ruled pair for
  * the restraint and the outcome.
  */
-export default function VitalsScreen({ onBack, onOpenData, onOpenOutcomes }) {
+export default function VitalsScreen({ onBack, onOpenData, onOpenOutcomes, onOpenHistory }) {
   const watching = vitalsDay.vitals.filter((v) => v.watch);
 
   return (
@@ -82,6 +82,19 @@ export default function VitalsScreen({ onBack, onOpenData, onOpenOutcomes }) {
             <BaselineStrip key={item.id} item={item} first={i === 0} />
           ))}
         </View>
+        {/* A 30-day band is drawn here as if it were fixed. It is not, and the
+            six-month view is where that shows. */}
+        {onOpenHistory ? (
+          <Pressable
+            onPress={onOpenHistory}
+            accessibilityRole="button"
+            accessibilityLabel="See how your bands moved over six months"
+            accessibilityHint="Opens the six-month history of resting heart rate and breathing rate"
+            style={({ pressed }) => [styles.historyLink, pressed && styles.pressed]}
+          >
+            <Text style={styles.historyLinkText}>See how your bands moved over six months</Text>
+          </Pressable>
+        ) : null}
         {watching.length ? (
           <Text style={styles.watchNote} accessibilityRole="text">
             {watching.length === 1
@@ -184,6 +197,8 @@ const styles = StyleSheet.create({
 
   section: { gap: space(1) },
   sectionTitle: { ...type.title, color: colors.ink },
+  historyLink: { alignSelf: 'flex-start', paddingVertical: space(1) },
+  historyLinkText: { ...type.body, color: colors.brand, fontWeight: '600' },
   sectionLede: { ...type.small, color: colors.muted, marginBottom: space(1) },
   watchNote: { ...type.small, color: colors.muted, marginTop: space(1) },
 
