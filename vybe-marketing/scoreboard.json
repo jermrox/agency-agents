@@ -1,47 +1,43 @@
 {
   "schema": 1,
-  "pulled_at": "2026-10-14T10:35:00Z",
+  "pulled_at": "2026-10-15T11:00:00Z",
   "scoreboard_file": "vybe-marketing/scoreboard-2026-10-12.md",
   "windows": {
-    "ga4": "7 days, 7 to 13 Oct 2026 (week before: 30 Sep to 6 Oct)",
-    "search_console": "5 to 11 Oct 2026 (week before: 28 Sep to 4 Oct)",
-    "google_ads": "7 to 13 Oct 2026",
-    "instagram_account": "read 14 Oct 2026 through the Meta connection",
-    "instagram_posts": "lifetime per post, read 14 Oct 2026 through the Meta connection"
+    "ga4": "7 days, 8 to 14 Oct 2026 (week before: 1 to 7 Oct)",
+    "search_console": "6 to 12 Oct 2026 (week before: 29 Sep to 5 Oct)",
+    "google_ads": "8 to 14 Oct 2026",
+    "instagram_account": "read 15 Oct 2026 through the Meta connection",
+    "instagram_posts": "lifetime per post, read 15 Oct 2026 through the Meta connection"
   },
   "kpis": {
     "waitlist_signups": 1,
     "form_submits": 2,
-    "sessions": 99,
-    "users": 71,
-    "us_sessions": 50,
-    "waitlist_page_users": 12,
-    "organic_search_clicks": 6,
-    "search_impressions": 70,
-    "ig_followers": 1101,
+    "sessions": 92,
+    "users": 69,
+    "us_sessions": 49,
+    "waitlist_page_users": 9,
+    "organic_search_clicks": 7,
+    "search_impressions": 53,
+    "ig_followers": 1102,
     "ig_following": 269,
     "ig_posts": 9,
     "ig_account_reach_28d": null,
-    "cost_per_signup": 158.93,
-    "ad_spend": 35.93
+    "cost_per_signup": 192.53,
+    "ad_spend": 27.53
   },
   "last_week": {
     "waitlist_signups": 4,
     "form_submits": 14,
-    "sessions": 282,
-    "users": 238,
-    "us_sessions": 123,
-    "waitlist_page_users": 27,
+    "sessions": 215,
+    "users": 166,
+    "us_sessions": 98,
+    "waitlist_page_users": null,
     "organic_search_clicks": 5,
-    "search_impressions": 116,
-    "ad_spend": 164.67,
-    "cost_per_signup": 41.17
+    "search_impressions": 131,
+    "ad_spend": 168.96,
+    "cost_per_signup": 42.24
   },
   "daily_sessions": [
-    [
-      "2026-10-07",
-      21
-    ],
     [
       "2026-10-08",
       11
@@ -65,55 +61,64 @@
     [
       "2026-10-13",
       13
+    ],
+    [
+      "2026-10-14",
+      12
     ]
   ],
   "channels": [
     {
       "name": "Organic Social",
-      "sessions": 34,
-      "engaged": 34
-    },
-    {
-      "name": "Paid Search",
-      "sessions": 23,
-      "engaged": 10
-    },
-    {
-      "name": "Display",
-      "sessions": 19,
-      "engaged": 15
+      "sessions": 29,
+      "engaged": 29
     },
     {
       "name": "Direct",
-      "sessions": 15,
-      "engaged": 15
+      "sessions": 18,
+      "engaged": 18
+    },
+    {
+      "name": "Display",
+      "sessions": 18,
+      "engaged": 13
+    },
+    {
+      "name": "Paid Search",
+      "sessions": 17,
+      "engaged": 8
     },
     {
       "name": "Paid Social",
-      "sessions": 5,
-      "engaged": 5
+      "sessions": 6,
+      "engaged": 6
     },
     {
       "name": "Organic Search",
-      "sessions": 3,
-      "engaged": 3
+      "sessions": 2,
+      "engaged": 2
+    },
+    {
+      "name": "Unassigned",
+      "sessions": 2,
+      "engaged": 0
     }
   ],
   "countries": [
     {
       "name": "United States",
-      "sessions": 50,
-      "engaged": 50,
+      "sessions": 49,
+      "engaged": 49,
       "target": true
     },
     {
       "name": "India",
-      "sessions": 28,
-      "engaged": 18
+      "sessions": 24,
+      "engaged": 15
     },
     {
       "name": "Bangladesh",
-      "sessions": 6,
+      "sessions": 5,
       "engaged": 1
     },
     {
@@ -123,7 +128,7 @@
     },
     {
       "name": "Other",
-      "sessions": 12,
+      "sessions": 11,
       "engaged": null
     }
   ],
@@ -157,70 +162,70 @@
   "search_pages": [
     {
       "page": "/",
-      "clicks": 5,
-      "impressions": 26,
-      "position": 6.5
+      "clicks": 6,
+      "impressions": 23,
+      "position": 9.4
     },
     {
       "page": "/learn/whoop-recovery-score-meaning/",
       "clicks": 0,
-      "impressions": 15,
-      "position": 18.9
-    },
-    {
-      "page": "/learn/garmin-fenix-7-solar-charging",
-      "clicks": 0,
-      "impressions": 12,
-      "position": 9.3
+      "impressions": 8,
+      "position": 7.9
     },
     {
       "page": "/band",
       "clicks": 0,
-      "impressions": 8,
-      "position": 4.8
+      "impressions": 7,
+      "position": 4.7
     },
     {
-      "page": "/waitlist/",
+      "page": "/learn/garmin-fenix-7-solar-charging",
       "clicks": 0,
       "impressions": 7,
-      "position": 13.6
+      "position": 9.4
     },
     {
       "page": "/compare/whoop-alternative",
       "clicks": 0,
-      "impressions": 6,
-      "position": 8
-    },
-    {
-      "page": "/contact",
-      "clicks": 0,
-      "impressions": 5,
-      "position": 4.4
+      "impressions": 4,
+      "position": 7
     },
     {
       "page": "/privacy",
       "clicks": 0,
-      "impressions": 5,
-      "position": 6.2
+      "impressions": 4,
+      "position": 5
     },
     {
-      "page": "/terms",
+      "page": "/waitlist/",
       "clicks": 0,
-      "impressions": 5,
-      "position": 4.8
+      "impressions": 4,
+      "position": 18.2
     },
     {
       "page": "/ecosystem",
       "clicks": 1,
-      "impressions": 4,
-      "position": 2.5
+      "impressions": 3,
+      "position": 2.7
+    },
+    {
+      "page": "/contact",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 2.7
+    },
+    {
+      "page": "/terms",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 4.3
     }
   ],
   "ig_posts": [
     {
       "date": "2026-10-11",
       "title": "Limits are for subscriptions",
-      "reach": 24,
+      "reach": 26,
       "likes": 4,
       "comments": 1,
       "saves": 0,
@@ -230,7 +235,7 @@
     {
       "date": "2026-10-08",
       "title": "Catch the Vybe (Reel)",
-      "reach": 84,
+      "reach": 86,
       "likes": 1,
       "comments": 0,
       "saves": 1,
@@ -240,8 +245,8 @@
     {
       "date": "2026-10-07",
       "title": "Works the night shift",
-      "reach": 38,
-      "likes": 0,
+      "reach": 41,
+      "likes": 1,
       "comments": 0,
       "saves": 1,
       "shares": 0,
@@ -250,7 +255,7 @@
     {
       "date": "2026-10-04",
       "title": "No subscription hits different",
-      "reach": 44,
+      "reach": 49,
       "likes": 3,
       "comments": 0,
       "saves": 0,
@@ -260,7 +265,7 @@
     {
       "date": "2026-10-01",
       "title": "Your health has five dimensions (Reel)",
-      "reach": 459,
+      "reach": 460,
       "likes": 5,
       "comments": 3,
       "saves": 2,
@@ -270,7 +275,7 @@
     {
       "date": "2026-09-29",
       "title": "Why rent access to your own health data?",
-      "reach": 75,
+      "reach": 76,
       "likes": 5,
       "comments": 0,
       "saves": 1,
@@ -280,7 +285,7 @@
     {
       "date": "2026-09-26",
       "title": "A band you forget you're wearing",
-      "reach": 84,
+      "reach": 85,
       "likes": 5,
       "comments": 0,
       "saves": 0,
@@ -290,8 +295,8 @@
     {
       "date": "2026-09-25",
       "title": "30 days of battery",
-      "reach": 71,
-      "likes": 2,
+      "reach": 73,
+      "likes": 3,
       "comments": 0,
       "saves": 1,
       "shares": 0,
@@ -302,10 +307,10 @@
     {
       "campaign": "Website traffic-Search-1",
       "status": "Paused",
-      "spend": 35.93,
-      "clicks": 45,
-      "impressions": 1478,
-      "note": "$0 on 13 Oct; the account is paused pending verification."
+      "spend": 27.53,
+      "clicks": 27,
+      "impressions": 749,
+      "note": "$0 on 14 Oct; the account is paused pending verification."
     },
     {
       "campaign": "Vybe | USA | Early Access | Search",
@@ -321,15 +326,15 @@
       "spend": 0.0,
       "clicks": 0,
       "impressions": 0,
-      "note": "$117.44 the week before."
+      "note": "$113.33 the week before."
     },
     {
       "campaign": "Instagram boosts (second Meta account)",
       "status": "Billing",
-      "spend": 123.0,
+      "spend": 165.0,
       "clicks": null,
       "impressions": null,
-      "note": "From Meta receipts, 10 to 13 Oct."
+      "note": "From Meta receipts, 11 to 15 Oct; the 15 Oct receipt was paid through PayPal."
     }
   ],
   "actions": [
@@ -385,7 +390,7 @@
     {
       "id": "pause-paid",
       "title": "Pause the Instagram boosts and the new Early Access Google campaign",
-      "why": "The Instagram boosts billed $123.00 in 7 days; Google is paused but a new campaign is enabled. This week's one sign-up came from Instagram, so decide with that in mind.",
+      "why": "The Instagram boosts billed $165.00 in 7 days and are still running; Google is paused but a new campaign is enabled.",
       "owner": "Founder",
       "status": "open"
     },
@@ -496,12 +501,12 @@
       "state": "missing"
     }
   ],
-  "next_pull": "2026-10-15",
+  "next_pull": "2026-10-16",
   "updates": [
     {
       "area": "Money out",
       "cls": "bad",
-      "text": "$25.00 in the last 24 hours, all Instagram boosts, and $158.93 in 7 days. Google spent $0 (paused). Stop the boosts in the Instagram app: Professional dashboard, Ad tools, Pause."
+      "text": "$42.00 in the last 24 hours, all Instagram boosts, and $192.53 in 7 days. Google spent $0 (paused). The newest receipt was paid through PayPal. Stop the boosts in the Instagram app: Professional dashboard, Ad tools, Pause."
     },
     {
       "area": "Workspace",
@@ -511,7 +516,7 @@
     {
       "area": "Partners",
       "cls": "plain",
-      "text": "John hasn't replied since 12 Oct, so nothing was sent. 9 open drafts rewritten in John's voice under rule 14. Big-name wins stay at 2."
+      "text": "John hasn't replied since 12 Oct, so nothing was sent. One rule-11 reminder goes to him on 15 Oct with the 9 open drafts by number. Big-name wins stay at 2."
     },
     {
       "area": "Calls",
@@ -521,27 +526,27 @@
     {
       "area": "Research",
       "cls": "plain",
-      "text": "All investor and collaboration routes re-opened on 14 Oct except VA PathFinder (third day failing). One NC open to 30 Jun 2027; NIA opens 1 Dec."
+      "text": "One NC is still open to 30 Jun 2027 or until its $2 million runs out. NIA's events page lists no webinar yet, so the 3 Dec date is unverified. NC IDEA MICRO's next cycle isn't posted. VA PathFinder failed for a fourth day."
     },
     {
       "area": "Competitors",
       "cls": "warn",
-      "text": "Reported, not yet confirmed: WHOOP with UAE Team Emirates and Al Nassr, Samsung with an ultra race, Ultrahuman with Abu Dhabi. Garmin launched a new MARQ line."
+      "text": "WHOOP launched in Arabic (13 Oct); Ultrahuman signed a research agreement with Abu Dhabi's public health centre (12 Oct); Samsung became watch partner of an ultra race (8 Oct). Not yet confirmed on their own pages."
     },
     {
       "area": "Website",
-      "cls": "good",
-      "text": "99 sessions (282 the week before), 50 from the US. 1 waitlist sign-up, from the US via Instagram. The real waitlist is 7."
+      "cls": "plain",
+      "text": "92 sessions (215 the week before), 49 from the US. 1 waitlist sign-up in GA4. The real waitlist is 7."
     },
     {
       "area": "Search",
-      "cls": "plain",
-      "text": "6 Google clicks from 70 impressions, 5 to 11 Oct (5 from 116 the week before). The homepage earned 5."
+      "cls": "good",
+      "text": "7 Google clicks from 53 impressions, 6 to 12 Oct (5 from 131 the week before). The homepage earned 6."
     },
     {
       "area": "Instagram",
       "cls": "plain",
-      "text": "1,101 followers (up 3) and 9 posts. The 1 Oct Reel has reached 459 accounts."
+      "text": "1,102 followers (up 1) and 9 posts. The 1 Oct Reel has reached 460 accounts."
     }
   ]
 }
