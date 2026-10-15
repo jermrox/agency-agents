@@ -1,8 +1,72 @@
 {
   "version": 2,
-  "generated_at": "2026-10-14T19:29:43.400737+00:00",
-  "count": 685,
+  "generated_at": "2026-10-15T07:24:52.587718+00:00",
+  "count": 683,
   "jobs": [
+    {
+      "id": "914957a63abd9d46b641",
+      "fingerprint": "bfa58239351122e575b7",
+      "source": "icims:psi",
+      "url": "https://careers-plansys.icims.com/jobs/11819/athletic-trainer/job",
+      "title": "Athletic Trainer",
+      "employer": "Planned Systems International",
+      "location": "Fort Riley, KS",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "Salary Unavailable: Click View posting for more information",
+      "posted_at": null,
+      "description": "Overview Cognito Systems, a joint venture with Planned Systems International (PSI), is looking for a dedicated and skilled Athletic Trainer to join the U.S. Army\u2019s rapidly expanding Holistic Health and Fitness (H2F) program at Ft. Riley between Junction City and Manhattan, KS. This is more than just an athletic training role, it\u2019s an opportunity to be part of the Army\u2019s largest human performance\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "ATC"
+        ],
+        "clearance": null,
+        "salary_min": null,
+        "salary_max": null,
+        "salary_period": null,
+        "education": "Bachelor",
+        "years_experience_min": 2,
+        "employment_type": "Full-time",
+        "installation": "Fort Riley",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "athletic-training",
+        "discipline_label": "Athletic Training",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Kansas"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": null,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-15T07:24:52.587718+00:00"
+    },
     {
       "id": "34f00ea3d2980dbe5a9c",
       "fingerprint": "19316401ca7fc1f6ac71",
@@ -1012,69 +1076,6 @@
       "program": "H2F",
       "notes": "",
       "listed_at": "2026-10-08T19:39:14.690150+00:00"
-    },
-    {
-      "id": "6988daee4df0e06376de",
-      "fingerprint": "5e704f978c40dae09fb2",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/888039500",
-      "title": "TRAINING COORDINATOR",
-      "employer": "Air Education and Training Command",
-      "location": "Lackland AFB, Texas",
-      "remote": false,
-      "telework": true,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$127,624 - $165,917 /yr",
-      "posted_at": null,
-      "description": "In order to qualify, you must meet the basic requirement and specialized experience requirements described in the Office of Personnel Management (OPM) Qualification Standards for General Schedule Positions, Professional and Scientific Positions, to include the Individual Occupational Requirements (IOR) for the GS-1701, General Education and Training series. BASIC REQUIREMENT OR INDIVIDUAL\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 127624.0,
-        "salary_max": 165917.0,
-        "salary_period": "year",
-        "education": "Bachelor",
-        "years_experience_min": 1,
-        "employment_type": "Part-time",
-        "installation": null,
-        "service_branch": "Air Force",
-        "program": "POTFF"
-      },
-      "facets": {
-        "discipline": "other",
-        "discipline_label": "Other",
-        "lead": true,
-        "branches": [
-          "air-force"
-        ],
-        "branch_labels": [
-          "Air Force"
-        ],
-        "location_classes": [
-          "conus",
-          "telework"
-        ],
-        "location_regions": {
-          "conus": [
-            "Texas"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 127624.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "POTFF",
-      "notes": "",
-      "listed_at": "2026-10-08T07:31:36.081811+00:00"
     },
     {
       "id": "c7ad2eb72536f19a9fb7",
@@ -2964,70 +2965,6 @@
       "program": null,
       "notes": "",
       "listed_at": "2026-10-01T19:31:08.629938+00:00"
-    },
-    {
-      "id": "6f35149d26e07f48e325",
-      "fingerprint": "69bec43c5b2571275bfa",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887079400",
-      "title": "PERFORMANCE DIETITIAN NF4",
-      "employer": "U.S. Marine Corps",
-      "location": "Oceanside, California",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$85,300 - $95,300 /yr",
-      "posted_at": null,
-      "description": "Maintains liaison with various organizations to include but not limited to the Navy Medical Center, dining facilities, Marine Corps Exchanges (MCX), the Uniformed Services University-Consortium for Health and Military Performance, the Academy of Nutrition and Dietetics, and the American Sports and Performance Dietitians Association. Maintains working relationships with an interdisciplinary team\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "RD"
-        ],
-        "clearance": null,
-        "salary_min": 85300.0,
-        "salary_max": 95300.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "nutrition",
-        "discipline_label": "Performance Nutrition",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "California"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 85300.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-01T07:31:36.988479+00:00"
     },
     {
       "id": "f1665a200d0bb4994ea9",
@@ -6076,70 +6013,6 @@
         "location_regions": {
           "conus": [
             "Arizona"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": null,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-29T19:31:30.190938+00:00"
-    },
-    {
-      "id": "8ac733b3dbd57defd005",
-      "fingerprint": "bfa58239351122e575b7",
-      "source": "icims:psi",
-      "url": "https://careers-plansys.icims.com/jobs/11823/athletic-trainer/job",
-      "title": "Athletic Trainer",
-      "employer": "Planned Systems International",
-      "location": "Fort Riley, KS",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "Salary Unavailable: Click View posting for more information",
-      "posted_at": null,
-      "description": "Overview Cognito Systems, a joint venture with Planned Systems International (PSI), is looking for a dedicated and skilled Athletic Trainer to join the U.S. Army\u2019s rapidly expanding Holistic Health and Fitness (H2F) program at Ft. Riley between Junction City and Manhattan, KS. This is more than just an athletic training role, it\u2019s an opportunity to be part of the Army\u2019s largest human performance\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "ATC"
-        ],
-        "clearance": null,
-        "salary_min": null,
-        "salary_max": null,
-        "salary_period": null,
-        "education": "Bachelor",
-        "years_experience_min": 2,
-        "employment_type": "Full-time",
-        "installation": "Fort Riley",
-        "service_branch": "Army",
-        "program": "H2F"
-      },
-      "facets": {
-        "discipline": "athletic-training",
-        "discipline_label": "Athletic Training",
-        "lead": false,
-        "branches": [
-          "army"
-        ],
-        "branch_labels": [
-          "Army"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Kansas"
           ]
         },
         "contingency": "unknown",
@@ -41253,7 +41126,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-14T19:29:26+00:00"
+        "checked_at": "2026-10-15T07:24:38+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },
