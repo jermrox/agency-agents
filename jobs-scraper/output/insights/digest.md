@@ -1,6 +1,6 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-14.*
+*Briefing generated 2026-10-15.*
 
 ## Headline
 
@@ -8,12 +8,12 @@
 - Posted between **2025-12-03** and **2026-10-14**.
 - **$84,000 median** annualized pay across the 255 postings that publish one -- $62,200 to $113,519 covers the middle half.
 - **0% remote-friendly** (4 jobs).
-- 1,036 of 1,839 archived records are cross-board copies or re-posts, not separate jobs.
+- 1,428 of 2,231 archived records are cross-board copies or re-posts, not separate jobs.
 - Populations served: Military 760, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **up +201** in 2026-10 (201 to 402), 100% against 2026-09.
+Postings are **up +203** in 2026-10 (200 to 403), 101% against 2026-09.
 
 ```
 2025-12     1  #
@@ -25,8 +25,8 @@ Postings are **up +201** in 2026-10 (201 to 402), 100% against 2026-09.
 2026-06     9  #
 2026-07    19  #
 2026-08    94  #######
-2026-09   201  ##############
-2026-10   402  ############################
+2026-09   200  ##############
+2026-10   403  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):

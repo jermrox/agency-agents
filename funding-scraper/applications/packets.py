@@ -72,6 +72,11 @@ GATES = [
     # whether one is planned, so it is a gate they answer, not a sentence an
     # agent writes for them.
     ("validation", "A validation study (even a small one) underway or planned within 12 months"),
+    # Burnley FC's test is not years, revenue or paperwork: "a working product,
+    # a clear use case, and a readiness to test in a live club environment".
+    # The product exists; readiness means bands that can be spared and supported
+    # for six months in another country, and only the founders know that.
+    ("pilotbatch", "Able to supply and support a pilot batch of Bands for a six-month pilot"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -2067,6 +2072,126 @@ PACKETS = [
                 "research customers ask clinical-sounding questions. Introductions to health "
                 "systems and strategics who already buy wearable data. And peers twelve to "
                 "twenty-four months ahead who have taken a band from a first batch to retail."},
+            {"q": "Contact", "a":
+                "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
+        ],
+    },
+    {
+        "id": "burnley",
+        "name": "Burnley FC Innovation Hub, second cohort (Women's Health & Performance track)",
+        "funder": "Burnley Football Club and ALK Capital",
+        "amount": "No cash prize. A six-month live pilot inside a professional football club (December 2026 to May 2027) with access to the men's and women's squads, staff, training facilities and the club's data set; 'no upfront investment' in the club's words. Two or three start-ups are chosen",
+        "deadline": "2026-10-16",
+        "fee": None,
+        "url": "https://innovation.burnleyfootballclub.com/",
+        "submit": "Apply through the hub's Pitchtape portal (bfcinnovationhub.pitchtape.com, linked from the Apply Now button). Applications close 16 October 2026. Selected applicants pitch to a panel from ALK Capital and Burnley FC in November 2026; the pilot runs December 2026 to May 2027 with a review in June 2027.",
+        "gates": ["incorp", "pilotbatch", "travelself"],
+        "confirmed": [
+            "Open to early-stage companies; the page does not restrict by country",
+            "No fee and no equity stated anywhere on the programme page",
+            "A working product exists: the Band hardware is built and its supplier is contracted",
+            "The Women's Health & Performance track names Health Monitoring & Wearables and Recovery & Wellbeing",
+        ],
+        "why": "The nearest deadline on the board that a wearable company can actually meet, and the track is written for this product: health monitoring, wearables, recovery and wellbeing for a professional men's and women's squad. It pays in a reference, not cash: six months of bands on elite athletes under club staff, a chairman who ran an MLS club, and investors who are US sports names. Under rule 12 that reference is worth more than a cheque of the same effort. The two things that decide it are whether Vybe can spare and support a pilot batch of bands for six months in England, and whether the pilot is written as a wellness read, never a medical one.",
+        "docs": [
+            "Pitchtape founder profile (company, website, stage, contacts)",
+            "A short pitch video, which is what a Pitchtape portal exists to collect",
+            "A short deck or product description with the Band and the app",
+            "A one-page pilot use case for the men's and women's squads",
+        ],
+        "note": (
+            "THE FORM ITSELF WAS NOT READABLE FROM HERE: the Pitchtape portal renders only in a "
+            "browser, so the exact questions are unknown. The programme page says what it is "
+            "looking for ('a working product, a clear use case, and a readiness to test in a "
+            "live club environment') and what it offers (validation, visibility, access), and "
+            "the sections below are written to those three tests in that order. Pitchtape is a "
+            "video pitch portal: expect a short video, and the last section is a script outline "
+            "for it. Every performance claim here is a wellness read for staff to interpret, "
+            "never a medical or injury call; keep it that way on the form."
+        ),
+        "fields": [
+            {"q": "Company and product in one line", "a": ONE_LINER},
+            {"q": "Which area are you applying under", "a":
+                "Women's Health & Performance: Health Monitoring & Wearables, and Recovery & "
+                "Wellbeing. One product covers both, because the Band reads the same signals for "
+                "every player and the app explains them in plain language."},
+            {"q": "Your working product", "a":
+                "The Vybe Band is a screenless wearable that records overnight ECG, heart-rate "
+                "variability, sleep and activity. The hardware is built and its manufacturing "
+                "supplier is contracted, so the pilot is a product question, not an engineering "
+                "one. The app reads each person's own baseline and answers plain questions, "
+                "such as \"Why am I flat this morning?\", with the evidence it used, what it "
+                "could not see, and one thing to do next. A licensed SDK and API let a club's "
+                "own performance staff pull the same signal into the tools they already use.\n\n"
+                "Stage today: {{STAGE}}. Vybe is a consumer wellness product, not a medical "
+                "device, and makes no diagnostic claim. [Add the one line that says how many "
+                "bands exist today and how many can be built by December.]"},
+            {"q": "The clear use case for Burnley FC", "a":
+                "Overnight recovery and readiness for the men's and women's squads, read from "
+                "the players' own baselines rather than a league-wide norm, and explained in a "
+                "sentence a player and a coach both understand.\n\n"
+                "Three things a club gets that a score does not give it. First, the reason: a "
+                "drop in overnight HRV after a Tuesday night away fixture is read next to the "
+                "travel, the kick-off time and the week's load, so staff see cause, not just "
+                "effect. Second, the women's squad specifically: cycle-aware context is read as "
+                "context, logged by the player and never inferred, which is where most "
+                "wearables either guess or go silent. Third, a screenless band: nothing to look "
+                "at, nothing to rank players against each other, which is what makes players "
+                "keep wearing one.\n\n"
+                "What it is not: an injury predictor, a medical screen or a selection tool. "
+                "Staff interpret; the Band informs."},
+            {"q": "How you would run the six-month pilot", "a":
+                "A suggestion to replace with your own plan. Month one: fit, pair and onboard a "
+                "small group from each squad, with the players' consent and the club's data "
+                "agreement in place first. Months two to five: nightly wear, a weekly readiness "
+                "read to the performance staff through the app and, if they want it, the API. "
+                "Month six: a written review of what the signal explained that the club's "
+                "existing data did not, and what it got wrong.\n\n"
+                "Suggested size: ten to twenty bands across both squads plus two or three staff, "
+                "small enough to support properly from a distance. [Replace with the number you "
+                "can spare and support, and name who on your side owns the pilot week to week.] "
+                "Data stays with the club and the players; Vybe takes only what the agreement "
+                "names, and nothing is published without the club's written yes."},
+            {"q": "What you need from the club", "a":
+                "A named performance-staff contact, two sessions with the squads at the start "
+                "for fit and consent, and honest feedback at the midpoint. Remote support is the "
+                "default; [say whether a founder can be at Turf Moor for onboarding and the June "
+                "review, and whether that travel is at your cost]."},
+            {"q": "What Burnley FC and ALK Capital get", "a":
+                "A recovery and readiness read for both squads that explains itself, built on a "
+                "band players will actually wear. A first look at the SDK, so the club's own "
+                "analysts can work with the raw signal. And a pilot partner that reports what "
+                "missed as plainly as what worked: the six-month review will list both."},
+            {"q": "Team", "a":
+                "{{CEO}} leads the company. Ownership: {{OWNERSHIP}}. The company is at least 51% "
+                "veteran-, woman- and minority-owned, and the team is {{EMPLOYEES}} people.\n\n"
+                "[Two or three lines per founder: what each has built before, and who owns "
+                "hardware, signal, software and the pilot relationship. A club will want to "
+                "know who answers the phone.]"},
+            {"q": "Stage and traction", "a":
+                "Stage: {{STAGE}}. Traction: {{TRACTION}}. Revenue over the last 12 months: "
+                "{{REVENUE}}.\n\n"
+                "[Any sports or research partner already using a Band, named only if they have "
+                "agreed to be named. If none, say so; the programme is for early-stage "
+                "companies.]"},
+            {"q": "Why Burnley, and why now", "a":
+                "Because the track names exactly what the Band does, and because a six-month "
+                "read on elite men's and women's athletes under club staff is the reference a "
+                "young wearable company cannot buy. The category has split into subscription "
+                "intelligence and no-subscription hardware with nothing to say; Vybe is the "
+                "interpretation without the monthly fee, and a professional club is the hardest "
+                "place to prove that the explanation is worth having. " + WHY_NOW},
+            {"q": "Pitch video: a three-minute outline", "a":
+                "[Record this yourself; a founder on camera beats a voiced deck.] "
+                "0:00 to 0:20, the problem in one breath: every wearable in the dressing room "
+                "reports a score and nobody knows why it moved. 0:20 to 1:00, the Band in hand "
+                "and the app on screen: one real overnight read, explained in a sentence, with "
+                "the evidence and what it could not see. 1:00 to 1:40, the club use case: both "
+                "squads, own baselines, cause next to effect, nothing to rank players by. 1:40 "
+                "to 2:20, the pilot: how many bands, how long, what staff see each week, what "
+                "the June review will say. 2:20 to 3:00, who you are and why you can support "
+                "a pilot in England from {{CITY}}. Say plainly, once, that Vybe is not a "
+                "medical device."},
             {"q": "Contact", "a":
                 "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
         ],

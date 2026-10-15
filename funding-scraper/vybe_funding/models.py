@@ -189,7 +189,15 @@ class Opportunity:
             "name": self.name,
             "url": self.url,
             "agency": self.agency,
-            "amount": self.amount,
+            # Lesson 14 Oct: a blank amount reads as "unknown" to the founder and
+            # as zero to a sort. Say what the page says, or say it says nothing.
+            # "see solicitation" is the API sources' placeholder, not the funder's
+            # words, so it gets the same honest line as a blank.
+            "amount": _stated_amount(self.amount) or (
+                "amount not stated on the page (checked "
+                + str((self.raw or {}).get("verified") or today.isoformat())
+                + ")"
+            ),
             "summary": self.summary,
             "open_date": self.open_date.isoformat() if self.open_date else None,
             "close_date": self.close_date.isoformat() if self.close_date else None,
@@ -210,3 +218,12 @@ class Opportunity:
         from .bigname import big_name_fields
         row.update(big_name_fields(row, (self.raw or {}).get("decision", {})))
         return row
+
+
+_PLACEHOLDER_AMOUNTS = {"", "see solicitation"}
+
+
+def _stated_amount(amount: str | None) -> str:
+    """The amount as the funder states it, or "" when we only hold a placeholder."""
+    text = (amount or "").strip()
+    return "" if text.lower() in _PLACEHOLDER_AMOUNTS else text

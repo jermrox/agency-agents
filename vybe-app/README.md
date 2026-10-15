@@ -48,9 +48,14 @@ npx expo start
 - **SeasonScreen** *(8 Oct)* — the same months a year apart, and the five
   it has only seen once. Reached from "what would make this stronger" on
   PatternHistoryScreen.
-- **ExportScreen** *(new, 9 Oct)* — what actually leaves with you, what another
+- **ExportScreen** *(9 Oct)* — what actually leaves with you, what another
   product can use, and what Vybe keeps after a delete. Reached from "Export
   everything" on DataSettingsScreen.
+- **FitCheckScreen** *(new, 14 Oct)* — first run, between pairing and the first
+  night: whether the Band can actually read a wrist, in words, with the fix
+  next to each fault and a plain statement that the check keeps nothing.
+  Reached from "Check the fit before tonight" once the Band is paired on
+  OnboardingScreen.
 
 ## The three decisions worth keeping
 
