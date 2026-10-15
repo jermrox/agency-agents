@@ -51,7 +51,12 @@ npx expo start
 - **ExportScreen** *(9 Oct)* — what actually leaves with you, what another
   product can use, and what Vybe keeps after a delete. Reached from "Export
   everything" on DataSettingsScreen.
-- **FitCheckScreen** *(new, 14 Oct)* — first run, between pairing and the first
+- **VitalsDriftScreen** *(new, 15 Oct)* — six months of one slow vital, drawn
+  as the band itself month by month on one shared scale, so a drift reads as a
+  bar sliding sideways and a bad night does not. Resting heart rate and
+  breathing rate, then-against-now in a sentence, what moved the bands, and
+  what a drift is not. Reached from "See how your bands moved" on VitalsScreen.
+- **FitCheckScreen** *(14 Oct)* — first run, between pairing and the first
   night: whether the Band can actually read a wrist, in words, with the fix
   next to each fault and a plain statement that the check keeps nothing.
   Reached from "Check the fit before tonight" once the Band is paired on
