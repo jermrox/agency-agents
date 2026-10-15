@@ -2949,3 +2949,7 @@ Watch: grants.gov 363966 (est. posting 16 Oct, close 16 Dec) and 363971 (missed 
 - **Summa Health / HATCo (General Catalyst) technology partners** — Partners are selected by General Catalyst's HATCo; there is no public startup intake and the vendor content needs a login.
 - **Cleveland Clinic x IBM quantum innovation programme** — The quantum-computing cycle had an Oct 31 window for a March 2026 start, which has passed. It is off-profile, and Cleveland Clinic Innovations is already rejected.
 - **Mayo Clinic Platform_Accelerate multiyear pathway (2026 cohort)** — Already listed in existing.txt. The new pathway targets mature, clinical-stage AI companies and the official page blocked our fetch, so no new window could be verified.
+
+## 15 Oct 2026: fee audit
+
+- **MedTech Innovator 2027 Accelerator** — REMOVED from the board. The row said "No equity, no fee", but the programme's own apply page (medtechinnovator.org/apply, read 15 Oct) says "There is no fee to apply" and then "Yes. The program fee is $15,000 ... You can pay it in cash ... or through a $50K SAFE note". Fee-charging (or equity via the SAFE) breaks the board rules. Scholarships exist but are applied only at acceptance, so the cost is not $0 when filing. Its /apply packet stays in the file but no longer drives the board's "Next to file" line.

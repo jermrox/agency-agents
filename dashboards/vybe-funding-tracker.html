@@ -34,6 +34,8 @@
     --shadow:0 1px 2px rgba(0,0,0,.4);
   }
   *{box-sizing:border-box}
+  .bluf{margin:10px 0 4px;padding:10px 14px;border-left:4px solid var(--accent);background:var(--accent-soft);color:var(--ink);font-size:15px;line-height:1.45}
+  .bluf a{color:var(--accent-ink)}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;padding:0 18px;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1080px;margin:0 auto;padding-block:28px 60px}
   h1,h2{font-family:'Newsreader',Georgia,serif;font-weight:600;text-wrap:balance;color:var(--ink);margin:0}
@@ -140,6 +142,7 @@
   <header class="top">
     <div class="kicker">Live status · organized by the three growth pillars · <a class="ops-link" href="https://vybe-ops.netlify.app" target="_blank" rel="noopener">Vybe Operations</a></div>
     <h1>Vybe funding tracker</h1>
+    <p class="bluf" id="bluf"></p>
     <div class="updated" id="stamp"></div>
     <p class="lede">The table below is <b>Pillar 2</b>, the standing grant cadence. <b>Pillar 1</b> (cost offset) and <b>Pillar 3</b> (university trade) follow it, then the ranked <a href="#platforms">investor and revenue platforms</a>. Set your progress on any row — it saves in this browser. Rows marked <b>NY only</b> need New York State residency or registration, so confirm Vybe qualifies before spending time on them.</p>
   </header>
@@ -497,6 +500,26 @@
     {id:'curated-marshalls-good-stuff-accelerator-program-year-3-2027-cohort', name:'Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)', type:'grant', amount:'$5,000 one-time grant per participant (40 participants), plus Luminary Collective PLUS membership and peer coaching; total stated retail value of the prize is $8,588', url:'https://www.mpoweredbymarshalls.com/accelerator-program.html', deadline:'2026-10-13', note:'THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program \'is designed to invest in individuals—not businesses\', and benefits are \'reserved for the individual selected\'. Cash arrives late: it is paid \'midway through the program year (summer 2027)\', and only after the participant meets the attendance and engagement requirements. The participant must commit to 12 months of virtual sessions, January to December 2027, mostly \'during standard business hours on weekdays\'. It fits because the woman co-founder can apply in about 20 minutes, with no fee, no SAM.gov and no revenue or stage gate. Its theme is helping women reach their ambitions, so frame Vybe as building women\'s health and wellness tech. Closes 13 Oct 2026 at 11:59 p.m. ET, so apply this week. Selection emails go out 18 Nov to 10 Dec 2026. Page read through the r.jina.ai renderer because the site returns 403 to a direct fetch; the PR Newswire release of 9 Sep 2026 states the same dates.', sam:'none', documents:['Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant\'s personal and professional ambition (the exact questions are not stated on the overview page)','Confirmation that the applicant can commit to 12 months of virtual programming in 2027','An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)']},
     {id:'curated-veteran-shark-tank-2026-13th-annual', name:'Veteran Shark Tank 2026 (13th annual)', type:'visibility', amount:'$50,000 to the winner; five veteran entrepreneurs pitch live', url:'https://veteransharktank.com/apply/', deadline:'2026-10-13', note:'CLOSES 13 OCT — the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else\'s. Buckeye wants two years and Tadlock wants one; this one wants under three. Entry is a form plus a 2-minute narrated pitch video and a deck of no more than 10 slides covering market, product, go-to-market, customers, financials and key risks. No application fee is named anywhere on the application page. The 2016 winner was NeuroFlow, now a behavioural-health platform, so the judges have backed a health-tech company before.', sam:'none', documents:['Proof of veteran status (DD-214 or equivalent)','A 2-minute narrated pitch video — a pitch, not a promo','A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks','Evidence the business is under three years old as of 7 Dec 2026']},
   ];
+  var PACKETS = [
+    {id:'buckeye', name:'Buckeye State CU Small Business Recovery Grant', deadline:'2026-09-30', fee:'', sam:'none', big_name:4},
+    {id:'sharktank', name:'Veteran Shark Tank 2026 (13th annual)', deadline:'2026-10-13', fee:'', sam:'none', big_name:4},
+    {id:'toryburch', name:'Tory Burch Foundation Fellows — 2027', deadline:'2026-11-17', fee:'', sam:'none', big_name:8},
+    {id:'penfed', name:'Veteran Entrepreneur Program — Accelerator', deadline:'rolling', fee:'', sam:'none', big_name:6},
+    {id:'xtech', name:'Army xTech|Search 10', deadline:'2026-10-19', fee:'', sam:'later', big_name:8},
+    {id:'freed', name:'Freed Fellowship Grant — monthly', deadline:'rolling', fee:'', sam:'none', big_name:4},
+    {id:'agetech', name:'AgeTech After Dark @ CES 2027 — AARP pitch', deadline:'2026-10-12', fee:'', sam:'none', big_name:9},
+    {id:'blake', name:'Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)', deadline:'2026-10-16', fee:'', sam:'none', big_name:8},
+    {id:'charmhealth', name:'CharmHealth Innovation Challenge and Pitch Competition (2026)', deadline:'2026-11-01', fee:'', sam:'none', big_name:4},
+    {id:'proteus', name:'DigiKey & Würth Elektronik Proteus-IV Design Contest', deadline:'2026-10-30', fee:'', sam:'none', big_name:4},
+    {id:'vetcon', name:'VETCON 2026 Business Plan Competition', deadline:'2026-11-20', fee:'', sam:'none', big_name:4},
+    {id:'nia', name:'2027 NIA Start-Up Challenge and Accelerator', deadline:'2027-01-15', fee:'', sam:'none', big_name:9},
+    {id:'mitsolve', name:'MIT Solve 2027 Global Health Challenge', deadline:'2026-11-02', fee:'', sam:'none', big_name:9},
+    {id:'credits', name:'Cloud and AI credits — five programs, one description', deadline:'rolling', fee:'', sam:'none', big_name:10},
+    {id:'veterans', name:'Veteran pitch circuit — Warrior Rising and the regional events', deadline:'rolling', fee:'', sam:'none', big_name:4},
+    {id:'mti', name:'MedTech Innovator 2027 Accelerator', deadline:'2026-12-01', fee:'', sam:'none', big_name:7},
+    {id:'burnley', name:'Burnley FC Innovation Hub, second cohort (Women\'s Health & Performance track)', deadline:'2026-10-16', fee:'', sam:'none', big_name:6},
+    {id:'agetech-openmic', name:'AgeTech Collaborative from AARP, January Open Mic Pitch Challenge', deadline:'2026-10-31', fee:'', sam:'none', big_name:8},
+  ];
   // <<< END GENERATED
 
   var INVESTORS = [
@@ -620,6 +643,25 @@
   // answers what a person must do before any counts. Built from the same rows as
   // the table, so the two can never disagree.
   function firstSentence(t){ t=String(t||''); var m=t.match(/^[^.!?]*[.!?]/); return (m?m[0]:t).slice(0,220); }
+  // BLUF (rule 8, lesson 15 Oct): the first line names the next application
+  // to file, its close date, the packet and who files it. Packets are already
+  // eligibility-checked; among those still open, with no fee and no SAM.gov
+  // needed to enter, the nearest deadline wins, then the bigger name (rule 12).
+  // Computed at view time so a page served days after the sweep stays right.
+  function renderBluf(){
+    var el=document.getElementById('bluf'); if(!el || typeof PACKETS==='undefined') return;
+    var today=new Date(); today.setHours(0,0,0,0);
+    var iso=function(d){ return d.toISOString().slice(0,10); };
+    var open=PACKETS.filter(function(p){ return !p.fee && (p.sam==='none'||p.sam==='later'); });
+    var dated=open.filter(function(p){ return p.deadline!=='rolling' && p.deadline>=iso(today); })
+      .sort(function(a,b){ return a.deadline<b.deadline?-1:a.deadline>b.deadline?1:b.big_name-a.big_name; });
+    var pick=dated[0] || open.filter(function(p){ return p.deadline==='rolling'; }).sort(function(a,b){ return b.big_name-a.big_name; })[0];
+    if(!pick){ el.textContent='Next to file: nothing drafted is open right now. The table below lists every live window.'; return; }
+    var when = pick.deadline==='rolling' ? 'rolling, no deadline' :
+      ('closes '+fmtDate(pick.deadline)+' ('+(function(){ var n=Math.round((new Date(pick.deadline+'T00:00:00')-today)/864e5); return n===0?'today':n===1?'tomorrow':n+' days'; })()+')');
+    el.innerHTML='<b>Next to file:</b> '+esc(pick.name)+' — '+esc(when)+'. Packet: <a href="https://agentrevup.netlify.app/apply#'+encodeURIComponent(pick.id)+'">/apply#'+esc(pick.id)+'</a>. Files it: Jeremy (founder); submitting is the founder\'s yes under rule 13.';
+  }
+
   function renderNeeds(data){
     var el=document.getElementById('needs'); if(!el) return;
     var live=data.filter(function(g){ return (g.cls==='soon'||g.cls==='open') && g.days!=null && g.days>=0 && (g.sam==='none'||g.sam==='later'); })
@@ -662,6 +704,7 @@
       (counts.forecast ? '<div class="stat forecast"><div class="n">'+counts.forecast+'</div><div class="l">Window not open yet</div></div>' : '') +
       '<div class="stat"><div class="n">'+(counts.soon+counts.open+counts.rolling)+'</div><div class="l">Total live opportunities</div></div>';
     stamp(counts);
+    renderBluf();
     renderNeeds(data);
 
     var filtered = data.filter(function(g){
