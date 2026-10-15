@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-14T20:44:11+00:00",
+  "checked": "2026-10-15T01:06:18+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -9,14 +9,12 @@
       "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 13:40Z",
-      "problems": [
-        "stale: 51.0h old, cadence allows 30h"
-      ],
+      "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12T17:41:29+00:00",
-      "age_h": 51.0,
+      "stamp": "2026-10-15T00:04:55+00:00",
+      "age_h": 1.0,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Revsom",
@@ -43,14 +41,12 @@
       "stamp_re": "\"asof\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 10:23Z",
-      "problems": [
-        "stale: 56.7h old, cadence allows 30h"
-      ],
+      "problems": [],
       "warnings": [],
-      "stamp": "2026-10-12",
-      "age_h": 56.7,
+      "stamp": "2026-10-14T06:40:00-04:00",
+      "age_h": 14.4,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Growsom",
@@ -62,11 +58,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 44.4h old, cadence allows 14h"
+        "stale: 48.7h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23",
-      "age_h": 44.4,
+      "age_h": 48.7,
       "foreign": [],
       "state": "bad"
     },
@@ -79,11 +75,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 44.4h old, cadence allows 14h"
+        "stale: 48.7h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23 UTC",
-      "age_h": 44.4,
+      "age_h": 48.7,
       "foreign": [],
       "state": "bad"
     },
@@ -96,11 +92,11 @@
       "max_age_h": 30,
       "cadence": "daily 10:38Z",
       "problems": [
-        "stale: 43.8h old, cadence allows 30h"
+        "stale: 48.2h old, cadence allows 30h"
       ],
       "warnings": [],
       "stamp": "2026-10-13T00:56:39Z",
-      "age_h": 43.8,
+      "age_h": 48.2,
       "foreign": [],
       "state": "bad"
     }
@@ -110,63 +106,6 @@
       "who": "Revsom",
       "kind": "money",
       "when": "today",
-      "what": "AgeTech After Dark @ CES 2027 \u2014 AARP pitch",
-      "detail": "$10,000 grand prize; every finalist gets a complimentary\u2026",
-      "who_is": "AgeTech startups, and explicitly healthspan and wellness products that help people 'stay in the game' as they age. Prototypes\u2026",
-      "why": "Eleven days out and the cheapest $10K on the board to try for: an online application, then a 3-minute pitch in Las Vegas on 7 Jan 2027.",
-      "do": [
-        "Online application: how the product makes ageing easier, and its stage",
-        "A 3-minute pitch, ready by early January"
-      ],
-      "url": "https://agetechcollaborative.org/custom_events/agetech-after-dark-ces-2027/",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 0
-    },
-    {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "tomorrow",
-      "what": "Marshalls Good Stuff Accelerator Program (Year 3, 2027 cohort)",
-      "detail": "$5,000 one-time grant per participant (40 participants)\u2026",
-      "who_is": "Legal residents of the 50 US states, DC and Puerto Rico, aged 18 or older. You do not need to own a business. The program invests\u2026",
-      "why": "THE GRANT GOES TO THE INDIVIDUAL FOUNDER, NOT TO VYBE THE COMPANY. The page says the program 'is designed to invest in individuals\u2014not businesses', and benefits are 'reserved for the individual selected'.",
-      "do": [
-        "Online application form on mpoweredbymarshalls.com: personal details plus short answers about the applicant's\u2026",
-        "Confirmation that the applicant can commit to 12 months of virtual programming in 2027",
-        "An email address that is checked regularly (selection notices go out 18 Nov to 10 Dec)"
-      ],
-      "url": "https://www.mpoweredbymarshalls.com/accelerator-program.html",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 1
-    },
-    {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "tomorrow",
-      "what": "Veteran Shark Tank 2026 (13th annual)",
-      "detail": "$50,000 to the winner; five veteran entrepreneurs pitch live \u00b7 veteran-owned fits",
-      "who_is": "US military veteran-owned. The business must be NO OLDER THAN THREE YEARS on the day of the competition, 7 December 2026 \u2014 an age\u2026",
-      "why": "CLOSES 13 OCT \u2014 the best-fitting live item on the board for a company under a year old, because its age test runs the opposite way to everyone else's. Buckeye wants two years and Tadlock wants one; this one wants under three.",
-      "do": [
-        "Proof of veteran status (DD-214 or equivalent)",
-        "A 2-minute narrated pitch video \u2014 a pitch, not a promo",
-        "A deck of 10 slides or fewer: market, product/service, go-to-market, customers, financials, key risks",
-        "Evidence the business is under three years old as of 7 Dec 2026"
-      ],
-      "url": "https://veteransharktank.com/apply/",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 1
-    },
-    {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "3 days",
       "what": "Intuit IDEAS \u2014 Virtual Military Veteran & Military-Spouse Cohort (2026-27)",
       "detail": "$5,000 cash grant paid at completion of the 12-month\u2026 \u00b7 veteran-owned fits",
       "who_is": "Registered US small business. The city cohorts are limited to Atlanta, Charlotte, Chicago, DFW, LA, NYC, Philadelphia, San Diego\u2026",
@@ -181,13 +120,110 @@
       "url_label": "application page",
       "url2": "https://agentrevup.netlify.app/apply",
       "url2_label": "drafted answers",
-      "sort": 3
+      "sort": 0
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
+      "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
+      "who_is": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve\u2026",
+      "why": "IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered).",
+      "do": [
+        "Idea/business description",
+        "Pitch deck",
+        "Short video"
+      ],
+      "url": "https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "Burnley FC Innovation Hub \u2014 second cohort (Women's Health & Performance track)",
+      "detail": "No cash prize stated; free 6-month live pilot inside club\u2026",
+      "who_is": "Early-stage companies with a working product, a clear use case and readiness to test in a live club environment; open to UK and\u2026",
+      "why": "CLOSES FRI 16 OCT 2026 (3 days). REQUIRES A 'WORKING PRODUCT' \u2014 Vybe should apply with the DevKit/band prototype. UK-BASED PILOT (Dec 2026\u2013May 2027), likely needs travel or remote support. No equity or fee stated.",
+      "do": [
+        "Pitchtape founder profile and application (bfcinnovationhub.pitchtape.com)",
+        "Short pitch deck / product description",
+        "Pilot use case for women's/men's squads"
+      ],
+      "url": "https://innovation.burnleyfootballclub.com/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
+      "detail": "No cash amount stated. Selected companies run a six-month\u2026",
+      "who_is": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies\u2026",
+      "why": "CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to 'a sports-science lab that runs your device pilot'.",
+      "do": [
+        "Online application form (launchpad.nba.com)",
+        "Company/product overview and pitch deck",
+        "Description of proposed R&D pilot within the NBA ecosystem",
+        "Team info"
+      ],
+      "url": "https://www.launchpad.nba.com/apply",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "NSF I-Corps Hub: Great Lakes Region, regional virtual I-Corps cohorts (Fall 2026: University of Michigan, Iowa State, University of Iowa)",
+      "detail": "No cash. Free training. Graduates can become eligible for\u2026",
+      "who_is": "The University of Michigan cohort is free and virtual and is 'open to all Midwest innovators and researchers'. Its course page\u2026",
+      "why": "NO CASH, AND THE MICHIGAN DEADLINE IS 8 DAYS AWAY (OCT 16). This is free customer-discovery training aimed at research commercialization, which matches the DevKit's first milestone of 5-10 university and research design partners.",
+      "do": [
+        "Online application form (Great Lakes I-Corps Zoho form, ProgramName=F26 UM I-Corps)",
+        "Team member names and roles",
+        "Short description of the innovation (the DevKit / sensing platform)"
+      ],
+      "url": "https://greatlakesicorps.org/event/umich-i-corps-fall26/",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
+    },
+    {
+      "who": "Revsom",
+      "kind": "money",
+      "when": "tomorrow",
+      "what": "Pave HER Way \u2014 Disruptor Award 2026 (inaugural)",
+      "detail": "Up to $90,000 per award, up to 5 awards; the amount is set\u2026",
+      "who_is": "The applicant is an individual who identifies as a woman, is 18 or older, and is a US citizen or permanent resident. The project\u2026",
+      "why": "THIS IS AN INDIVIDUAL / CHARITABLE-PURPOSE AWARD, NOT A GRANT TO THE COMPANY, AND IT IS ABOVE THE $25K BAND. It fits only if a woman founder frames a public-benefit project for women and girls.",
+      "do": [
+        "Submittable application (Disruptor Award form)",
+        "Project description and public-benefit case",
+        "Proof of citizenship or residency if a semifinalist (passport, birth certificate, naturalization certificate\u2026",
+        "Availability for a virtual interview 16\u201320 Nov"
+      ],
+      "url": "https://paveherway.org/apply",
+      "url_label": "application page",
+      "url2": "https://agentrevup.netlify.app/apply",
+      "url2_label": "drafted answers",
+      "sort": 1
     },
     {
       "who": "Marketsom",
       "kind": "deadline",
       "when": "Fri 16 Oct follow-up date",
-      "what": "12 partners quiet since the 9 Oct follow-ups",
+      "what": "Partners quiet since the 9 Oct follow-ups",
       "detail": "",
       "who_is": "No drafting until you say so. Their status and size are on the outreach list.",
       "why": "",
@@ -203,14 +239,13 @@
     {
       "who": "Marketsom",
       "kind": "deadline",
-      "when": "Tue 1 Dec opens (online)",
-      "what": "NIA Start-Up Challenge 2027: applications open",
+      "when": "Mon 19 Oct deadline",
+      "what": "Google Workspace: fix the payment method or vybe.health email is suspended",
       "detail": "",
-      "who_is": "Deadline 15 Jan 2027, 11:59 pm ET. Online information webinar 3 Dec, 1 pm ET.",
-      "why": "Outside the 3-week window; listed so it isn't missed.",
+      "who_is": "Google Admin console, Billing: retry or update the card. Every Vybe inbox stops working on 19 Oct otherwise.",
+      "why": "",
       "do": [
-        "Deadline 15 Jan 2027, 11:59 pm ET. Online information webinar 3 Dec, 1 pm ET.",
-        "Outside the 3-week window; listed so it isn't missed."
+        "Google Admin console, Billing: retry or update the card. Every Vybe inbox stops working on 19 Oct otherwise."
       ],
       "url": "https://agentmarksom.netlify.app/briefing.html",
       "url_label": "briefing",
@@ -219,43 +254,21 @@
       "sort": 3
     },
     {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "4 days",
-      "what": "Blake Family Military & Veterans Pitch Competition (Clemson, 2nd annual)",
-      "detail": "$25,000 total: $10,000 / $7,500 / $5,000 / $2,500 \u00b7 veteran-owned fits",
-      "who_is": "Open nationwide. The business must be a C Corp, S Corp or LLC with at least one founder who is active duty, active ROTC, Reserve\u2026",
-      "why": "IN-PERSON FINAL AT CLEMSON, SC ON 6 NOV (the page does not say whether travel is covered).",
+      "who": "Marketsom",
+      "kind": "deadline",
+      "when": "Tue 1 Dec opens (online)",
+      "what": "NIA Start-Up Challenge 2027: applications open",
+      "detail": "",
+      "who_is": "Deadline 15 Jan 2027. Online information webinar 3 Dec, 1 pm ET.",
+      "why": "",
       "do": [
-        "Idea/business description",
-        "Pitch deck",
-        "Short video"
+        "Deadline 15 Jan 2027. Online information webinar 3 Dec, 1 pm ET."
       ],
-      "url": "https://news.clemson.edu/military-connected-entrepreneurs-invited-to-pitch-business-ideas-for-25k-in-prizes/",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 4
-    },
-    {
-      "who": "Revsom",
-      "kind": "money",
-      "when": "4 days",
-      "what": "NBA Launchpad: 2027 cohort (sixth cohort)",
-      "detail": "No cash amount stated. Selected companies run a six-month\u2026",
-      "who_is": "Companies and entrepreneurs in the stated priority areas, or the open category. The Asia track is limited to companies\u2026",
-      "why": "CLOSES 16 OCT 2026. NO CASH IS STATED; THE PRIZE IS A FUNDED-BY-THE-LEAGUE SPORTS-SCIENCE PILOT. This is the closest live match to 'a sports-science lab that runs your device pilot'.",
-      "do": [
-        "Online application form (launchpad.nba.com)",
-        "Company/product overview and pitch deck",
-        "Description of proposed R&D pilot within the NBA ecosystem",
-        "Team info"
-      ],
-      "url": "https://www.launchpad.nba.com/apply",
-      "url_label": "application page",
-      "url2": "https://agentrevup.netlify.app/apply",
-      "url2_label": "drafted answers",
-      "sort": 4
+      "url": "https://agentmarksom.netlify.app/briefing.html",
+      "url_label": "briefing",
+      "url2": null,
+      "url2_label": "briefing",
+      "sort": 3
     }
   ]
 }
