@@ -77,6 +77,10 @@ GATES = [
     # The product exists; readiness means bands that can be spared and supported
     # for six months in another country, and only the founders know that.
     ("pilotbatch", "Able to supply and support a pilot batch of Bands for a six-month pilot"),
+    # AARP's AgeTech Collaborative asks it as a yes/no before anything else:
+    # "At least one founder or team member works on the company full-time."
+    # Only the founders know whether that is true today.
+    ("fulltime", "At least one founder or team member works on the company full-time"),
 ]
 
 # Confirmed by Jeremy 2026-09-24. The page opens with these answers, and the
@@ -2192,6 +2196,131 @@ PACKETS = [
                 "the June review will say. 2:20 to 3:00, who you are and why you can support "
                 "a pilot in England from {{CITY}}. Say plainly, once, that Vybe is not a "
                 "medical device."},
+            {"q": "Contact", "a":
+                "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
+        ],
+    },
+    {
+        "id": "agetech-openmic",
+        "name": "AgeTech Collaborative from AARP, January Open Mic Pitch Challenge",
+        "funder": "AgeTech Collaborative from AARP",
+        "amount": "No cash prize. A four-minute pitch to AARP's panel of investors and corporate partners on 28 January 2027, online; startups that pitch are considered for the AgeTech Collaborative accelerator, which takes no equity",
+        "deadline": "2026-10-31",
+        "fee": None,
+        "url": "https://agetechcollaborative.org/custom_events/january-open-mic-pitch-challenge-2/",
+        "submit": "The application is a monday.com form embedded under 'Apply To Pitch' on the event page. Applications close 31 October 2026 at 11:59 pm; every applicant hears on or around 3 December 2026. The pitch is a closed virtual event on 28 January 2027, 3 to 5 pm: four minutes, then five minutes of questions.",
+        "gates": ["incorp", "fulltime"],
+        "confirmed": [
+            "Consumer health and wellness is admitted by name: 'If your company isn't focused on AgeTech, you may still apply if your solution is in consumer health and wellness'",
+            "Serving the US market: Vybe is a US company selling in the US",
+            "Product readiness: the Band hardware is built and its supplier is contracted, which clears 'Ideas, concepts, and prototypes are not eligible'",
+            "No fee and no equity stated anywhere on the page",
+        ],
+        "why": "The nearest free deadline on the board with a household name behind it. AARP's panel is investors and corporate partners who buy in consumer health, and the door into its equity-free accelerator opens from this stage. The challenge question, how a product helps people choose how they live as they age, is one Vybe answers without a single clinical claim: your own baseline, read over months, and the reasons it moved. The form's hard line is traction: it asks for users and tells you not to count the waitlist, so the honest number goes in and the deck makes the case on the product and the team.",
+        "docs": [
+            "Pitch deck, no more than 10 slides, covering the eight sections the form names in order",
+            "Proof of product: a link to a demo, product video or the live product",
+            "Two-sentence company description",
+            "Company details and a primary contact at Vybe Health",
+        ],
+        "note": (
+            "THE FORM WAS READ FROM ITS OWN DATA (the monday.com embed on the event page), so the "
+            "sections below are the form's questions in the form's order. Four are status "
+            "pickers whose option names were not readable: product stage, company category, "
+            "revenue status and whether you sell in the US. The answer to give for each is written "
+            "out; pick the option that says the same thing. The deck is the application: the form "
+            "says failing to cover the eight sections 'may impact your eligibility to pitch'. Users "
+            "means people using or testing the product; the form says in its own words not to count "
+            "waitlist members or prospective customers, so the waitlist stays out of that box and "
+            "goes in the traction slide as what it is."
+        ),
+        "fields": [
+            {"q": "Company name, website, corporate address, primary contact (name, title, email)", "a":
+                "{{LEGAL_NAME}} · {{WEBSITE}} · {{CITY}}. Primary contact: {{CEO}}, {{EMAIL}}. "
+                "[Add the street address and a phone number; every detail here is a Vybe Health one.]"},
+            {"q": "Please provide a two sentence description of your company", "a":
+                "Vybe is a personal health intelligence platform: a screenless band that records "
+                "ECG, heart-rate variability, sleep and activity, and an app that explains those "
+                "signals against the wearer's own baseline, in plain words, with no required "
+                "subscription. It is built for the step after the number, and it is not a medical "
+                "device."},
+            {"q": "Pitch deck, no more than 10 slides: the eight sections the form requires, in its order", "a":
+                "Open with the challenge question in one line: Vybe helps people choose how they "
+                "live as they age by showing them their own baseline, how it moves over months, and "
+                "why.\n\n"
+                "1. Problem. Wearables report that a number fell and stop. Nobody tells a 55-year-old "
+                "whether the drop was the heat, the late dinner or the week, so most stop opening the "
+                "app. The measurement problem is solved; the understanding problem is not.\n\n"
+                "2. Solution, and what sets it apart. " + SHORT + " Two things no competitor offers "
+                "together: interpretation without a monthly fee, and the Connect layer that reads "
+                "schedule, travel, heat and workload as the reasons a reading moved.\n\n"
+                "3. Market. " + WHY_NOW + "\n\n"
+                "4. Target customer. People who already own a wearable, have stopped opening it, and "
+                "resent paying monthly for their own numbers; the 50-plus owner first, because a "
+                "slow drift in a resting number matters more with age and is what no daily score "
+                "shows. Second, the clubs, member bodies and research partners who want the "
+                "interpretation layer on their own sensors.\n\n"
+                "5. Traction. {{TRACTION}}. [State the count of people actually wearing or testing "
+                "a Band, by name of programme if one exists; the waitlist is listed here as a "
+                "waitlist, never as users. One sentence on what you heard from them that made you "
+                "confident people will buy.]\n\n"
+                "6. Revenue model. Revenue over the last 12 months: {{REVENUE}}. The Band is bought "
+                "once with the interpretation included; no required subscription. Then licensing of "
+                "the interpretation layer and SDK to partners with sensors and nothing to say. "
+                "[Your price and unit cost, if decided; do not publish a price you have not set.]\n\n"
+                "7. Fundraising history. [How much raised, from whom in kind (friends and family, "
+                "grants, credits), whether you are raising now, and runway in months. If the answer "
+                "is none and not raising, say so plainly.]\n\n"
+                "8. Team and advisors. {{CEO}} leads. Ownership: {{OWNERSHIP}}; the company is at "
+                "least 51% veteran-, woman- and minority-owned, {{EMPLOYEES}} people. [Say whether "
+                "you are a first-time founder, who owns hardware, signal, software and go-to-market, "
+                "and name advisors only if they have agreed to be named.]"},
+            {"q": "Proof of product: a demo, product video or live product", "a":
+                "[Link to a short video of the Band on a wrist and the app answering one plain "
+                "question from a real overnight read, or to the live app. The fit check and the "
+                "six-month vitals view are the two screens that show the thesis fastest. Do not "
+                "send a prototype render; the form wants proof.]"},
+            {"q": "Product stage: which best describes your product today", "a":
+                "{{STAGE}}. Pick the option that means customer-ready: the hardware is built and "
+                "its supplier is contracted, the app is in use, and early-adopter customers can be "
+                "taken. Do not pick an idea, concept or prototype option; those are ineligible by the "
+                "page's own rule."},
+            {"q": "How would you categorize your company (select all that apply)", "a":
+                "Consumer health and wellness, and any option for wearables, health monitoring or "
+                "digital health. Not medical devices, not diagnostics."},
+            {"q": "How many users are currently using or testing your solution", "a":
+                "[The number of people wearing or testing a Band today, including beta testers, pilot "
+                "participants and design partners. The form says not to count waitlist members or "
+                "prospective customers. If the honest number is small, give the small number.]"},
+            {"q": "Who is using or evaluating your solution today", "a":
+                "[Describe them in a sentence each: beta testers, pilot participants, research or "
+                "design partners, organisations evaluating the Band. Name an organisation only if it "
+                "has agreed to be named. If external testing has not begun, say so and give the date "
+                "it starts; the form invites exactly that.]"},
+            {"q": "What is your revenue status", "a":
+                "{{REVENUE}}. Pick the pre-revenue option. The model is in slide 6."},
+            {"q": "Are you currently selling in the US; if not, your plans for entering the US market", "a":
+                "Yes. Vybe Health is a US company and the Band sells in the US first. [If sales have "
+                "not started, pick the option that fits and write one line on when they start.]"},
+            {"q": "Is your company a registered, for-profit, incorporated entity", "a":
+                "Yes. {{LEGAL_NAME}}, formed in {{STATE}} in {{FORMED}}."},
+            {"q": "Have you previously submitted an application or been considered for the accelerator; any updates", "a":
+                "[If the AgeTech After Dark at CES 2027 application was submitted on 12 October, say "
+                "so here and give the update since: rule-14 drafts out to partners, the fit check and "
+                "the six-month vitals view shipped in the app, the Burnley FC pilot application. If "
+                "it was not submitted, answer no.]"},
+            {"q": "How did you hear about us", "a":
+                "[Pick the honest option. If a person referred you, give their name and their "
+                "relationship to AARP or the Collaborative as the form asks.]"},
+            {"q": "Four-minute pitch, for 28 January if selected", "a":
+                "[Record it yourself, Band in hand.] 0:00 to 0:30, the question and the gap: every "
+                "wearable hands a 58-year-old a score and leaves the why to them. 0:30 to 1:30, the "
+                "Band and the app: one real morning explained in a sentence, then the six-month view "
+                "showing a band that moved in August and came back. 1:30 to 2:30, why this is "
+                "ageing well: your own baseline, read over months, with the reasons attached, and no "
+                "monthly fee to keep it. 2:30 to 3:30, traction and the ask: who wears it today, what "
+                "the accelerator would open. 3:30 to 4:00, the team, and one sentence that Vybe is "
+                "not a medical device and does not need to be one to be useful."},
             {"q": "Contact", "a":
                 "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
         ],
