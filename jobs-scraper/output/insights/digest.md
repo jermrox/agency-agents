@@ -4,16 +4,16 @@
 
 ## Headline
 
-- **803 open jobs** from **44 employers**.
-- Posted between **2025-12-03** and **2026-10-14**.
-- **$84,000 median** annualized pay across the 255 postings that publish one -- $62,200 to $113,519 covers the middle half.
+- **805 open jobs** from **44 employers**.
+- Posted between **2025-12-03** and **2026-10-15**.
+- **$84,500 median** annualized pay across the 256 postings that publish one -- $62,300 to $113,610 covers the middle half.
 - **0% remote-friendly** (4 jobs).
-- 1,428 of 2,231 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 760, Special Operations 375, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
+- 1,486 of 2,291 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 762, Special Operations 376, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
 
 ## Month over month
 
-Postings are **up +203** in 2026-10 (200 to 403), 101% against 2026-09.
+Postings are **up +209** in 2026-10 (198 to 407), 106% against 2026-09.
 
 ```
 2025-12     1  #
@@ -24,23 +24,23 @@ Postings are **up +203** in 2026-10 (200 to 403), 101% against 2026-09.
 2026-05     5  #
 2026-06     9  #
 2026-07    19  #
-2026-08    94  #######
-2026-09   200  ##############
-2026-10   403  ############################
+2026-08    94  ######
+2026-09   198  ##############
+2026-10   407  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
 
 - Loyal Source: 0 to 316
 - Serco USA: 0 to 46
+- LMR Technical Group: 11 to 44
 - Commander, Navy Installations Command: 0 to 33
-- LMR Technical Group: 11 to 43
-- KBR: 5 to 34
+- General Dynamics Information Technology: 0 to 30
 
 **Credentials appearing more often:**
 
 - CSCS: 3 to 278
-- ATC: 6 to 184
+- ATC: 6 to 185
 - RD: 3 to 59
 - PhD: 0 to 48
 - DPT: 4 to 9
@@ -51,13 +51,13 @@ Postings are **up +203** in 2026-10 (200 to 403), 101% against 2026-09.
 |---|---|---|---|
 | Loyal Source | 316 | $68,016 | Strength & Conditioning, Sports Medicine |
 | KBR | 61 | $91,950 | Strength & Conditioning, Sports Medicine |
-| LMR Technical Group | 57 | $60,750 | Strength & Conditioning, Sports Medicine |
+| LMR Technical Group | 58 | $60,750 | Sports Medicine, Strength & Conditioning |
 | Serco USA | 46 | - | Strength & Conditioning, Sports Medicine |
 | Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Planned Systems International | 35 | $66,345 | Sports Medicine, Strength & Conditioning |
 | Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
+| General Dynamics Information Technology | 31 | $104,369 | Cognitive Performance, Sports Medicine |
 | Military Treatment Facilities under DHA | 31 | $102,935 | Sports Medicine, Research & Analytics |
-| General Dynamics Information Technology | 30 | $98,738 | Cognitive Performance, Sports Medicine |
 | Customs and Border Protection | 25 | $139,436 | - |
 
 ## Discipline mix
@@ -65,11 +65,11 @@ Postings are **up +203** in 2026-10 (200 to 403), 101% against 2026-09.
 | Discipline | Jobs | Share |
 |---|---|---|
 | Strength & Conditioning | 426 | 67% |
-| Sports Medicine | 364 | 57% |
+| Sports Medicine | 366 | 57% |
 | Cognitive Performance | 177 | 28% |
 | Research & Analytics | 127 | 20% |
 | Performance Nutrition | 101 | 16% |
-| Program Leadership | 35 | 6% |
+| Program Leadership | 35 | 5% |
 | Sport Science | 12 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
@@ -80,7 +80,7 @@ more than one, so these do not sum to 100%.
 | Certification | Jobs | Share |
 |---|---|---|
 | CSCS | 306 | 61% |
-| ATC | 208 | 41% |
+| ATC | 209 | 41% |
 | RD | 64 | 13% |
 | PhD | 49 | 10% |
 | DPT | 16 | 3% |
@@ -89,11 +89,11 @@ more than one, so these do not sum to 100%.
 
 Share is out of jobs that name any certification at all.
 
-**Clearances requested:** Secret (60), TS/SCI (25), Top Secret (22), Public Trust (3)
+**Clearances requested:** Secret (61), TS/SCI (26), Top Secret (22), Public Trust (3)
 
 ## What it pays
 
-- Median **$84,000**, middle half $62,200 to $113,519.
+- Median **$84,500**, middle half $62,300 to $113,610.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -102,7 +102,7 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
 | Research & Analytics | 39 | $63,282 | $78,110 | $98,738 |
-| Sports Medicine | 130 | $59,812 | $74,485 | $102,935 |
+| Sports Medicine | 131 | $59,875 | $74,485 | $102,935 |
 | Strength & Conditioning | 68 | $58,367 | $71,500 | $91,950 |
 | Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
 
@@ -111,11 +111,11 @@ annual contractor bands are not otherwise comparable.
 
 ## Where the work is
 
-**States:** FL (75), NC (68), CA (62), GA (47), TX (43), VA (38), NM (36), CO (23), KY (23), HI (22)
+**States:** FL (76), NC (68), CA (62), GA (47), TX (43), VA (38), NM (36), CO (23), KY (23), HI (22)
 
 | Installation | Jobs |
 |---|---|
-| Fort Bragg | 51 |
+| Fort Bragg | 52 |
 | Coronado | 13 |
 | Fort Stewart | 13 |
 | Hurlburt Field | 11 |
@@ -126,13 +126,13 @@ annual contractor bands are not otherwise comparable.
 | Schofield Barracks | 9 |
 | Cannon AFB | 8 |
 
-**Branches and services:** Joint (270), Army (200), Air Force (104), Navy (39), Marine Corps (28), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (200), Air Force (106), Navy (39), Marine Corps (28), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 60 |
+| Physical Therapist | 61 |
 | Cognitive Performance Specialist | 39 |
 | Human Performance Advisor | 37 |
 | Athletic Trainer | 36 |
