@@ -1,7 +1,7 @@
 ---
 agent: Marketsom
 session: session_01RT8AgsUSEeKx3uzQ1QBYcU
-triggers: trig_01XLeqMbmzVWuSFEraFTeBwS  # replaces trig_01AC4fNzAWRG8V13KVgusp8F (disabled 15 Oct)
+triggers: trig_01AC4fNzAWRG8V13KVgusp8F  # still the original prompt; disabling it was refused on 15 Oct, so its pointer trig_01XLeqMbmzVWuSFEraFTeBwS is disabled to avoid a double email
 cron: CRON_TZ=America/New_York 47 6 * * 1
 owner: hub
 last_reconciled: 2026-10-15
