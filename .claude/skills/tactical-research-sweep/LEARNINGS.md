@@ -16,6 +16,20 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-15 — daily run
+
+- +9 items: PubMed 8 (MIL 5: Caring Letters did not cut suicide deaths, insomnia drugs for veterans,
+  Australian veteran research gaps, Spanish field-exercise injuries, Army infantry supplement use;
+  LE 1: UK police PTSD and post-concussion groups; FIRE 1: sleep and injuries in Indian firefighters;
+  MIL: Air Force cancer-cluster process in MSMR) plus 1 policy read in full: Coast Guard ALCOAST
+  272/26 (body composition screening, boat-crew PFT dropped, waist-to-height not used). Board 93,
+  archive 71 (ALCOAST is dated 1 Sep, so it sits in the archive). EMS: nothing again.
+- **WebFetch read a govdelivery page today** even though Exa is still 402 (twelfth day). Try WebFetch
+  on .mil/.gov/govdelivery URLs first from now on; it may have been unblocked. Retest every day.
+- Rewrote eight expiring hot notes before merging (all 17-18 Sep cites), so nothing is stale for
+  at least three days. The tag list has no cancer or cardiovascular tag.
+- Next: use WebFetch for the COPS LEMHWA and Fairmont WV AFG leads, and for NAVADMIN/MARADMIN pages.
+
 ## 2026-10-14 — daily run
 
 - +9 items, all PubMed: FIRE 4 (LA firefighters' coronary plaque; movement screen and fireground
