@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-15T08:50:03+00:00",
+  "checked": "2026-10-15T12:54:28+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,8 +11,8 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-15T00:04:55+00:00",
-      "age_h": 8.8,
+      "stamp": "2026-10-15T12:29:59+00:00",
+      "age_h": 0.4,
       "foreign": [],
       "state": "ok"
     },
@@ -43,8 +43,8 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-14T06:40:00-04:00",
-      "age_h": 22.2,
+      "stamp": "2026-10-15T06:40:00-04:00",
+      "age_h": 2.2,
       "foreign": [],
       "state": "ok"
     },
@@ -58,11 +58,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 56.5h old, cadence allows 14h"
+        "stale: 60.5h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23",
-      "age_h": 56.5,
+      "age_h": 60.5,
       "foreign": [],
       "state": "bad"
     },
@@ -75,11 +75,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 56.5h old, cadence allows 14h"
+        "stale: 60.5h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-13 00:23 UTC",
-      "age_h": 56.5,
+      "age_h": 60.5,
       "foreign": [],
       "state": "bad"
     },
@@ -91,14 +91,12 @@
       "stamp_re": "\"generatedAt\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 30,
       "cadence": "daily 10:38Z",
-      "problems": [
-        "stale: 55.9h old, cadence allows 30h"
-      ],
+      "problems": [],
       "warnings": [],
-      "stamp": "2026-10-13T00:56:39Z",
-      "age_h": 55.9,
+      "stamp": "2026-10-15T10:39:23Z",
+      "age_h": 2.3,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     }
   ],
   "needs_you": [
@@ -223,12 +221,12 @@
       "who": "Marketsom",
       "kind": "deadline",
       "when": "Fri 16 Oct follow-up date",
-      "what": "Partners quiet since the 9 Oct follow-ups",
+      "what": "15 partners quiet since the 9 Oct follow-ups",
       "detail": "",
-      "who_is": "No drafting until you say so. Their status and size are on the outreach list.",
+      "who_is": "The top five by size (New York Road Runners, Travis Manion Foundation, Ohio State Triathlon Club, Senior Softball-USA, Black Girls RUN!) are named in today's\u2026",
       "why": "",
       "do": [
-        "No drafting until you say so. Their status and size are on the outreach list."
+        "The top five by size (New York Road Runners, Travis Manion Foundation, Ohio State Triathlon Club, Senior\u2026"
       ],
       "url": "https://agentmarksom.netlify.app/briefing.html",
       "url_label": "briefing",
@@ -259,10 +257,10 @@
       "when": "Tue 1 Dec opens (online)",
       "what": "NIA Start-Up Challenge 2027: applications open",
       "detail": "",
-      "who_is": "Deadline 15 Jan 2027. Online information webinar 3 Dec, 1 pm ET.",
+      "who_is": "Deadline 15 Jan 2027. NIA's events page lists no webinar yet (checked 15 Oct).",
       "why": "",
       "do": [
-        "Deadline 15 Jan 2027. Online information webinar 3 Dec, 1 pm ET."
+        "Deadline 15 Jan 2027. NIA's events page lists no webinar yet (checked 15 Oct)."
       ],
       "url": "https://agentmarksom.netlify.app/briefing.html",
       "url_label": "briefing",
