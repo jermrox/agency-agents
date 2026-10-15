@@ -530,6 +530,52 @@ open-topic lane, and the Air Force open topics usually want a named end user.
 - **Devpost health hackathons (UnivaBio, CodeTheCure, DSH Hacks V2)** — Student or beginner events with non-cash prizes.
 - **DIU CSO, Army xTech other than Search 10** — Nothing in wearables or human performance.
 
+## Promoted to the board — 15 Oct 2026 (scheduled daily run)
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **FIFA Innovation Programme — Next-generation Sports Wearables challenge** | no cash; a co-development project of up to two years with FIFA's research partners and the 'Member of the FIFA Innovation Programme' mark | opened 29 Sep 2026; rolling intake through the portal |
+| **T-Mobile Accelerator — Healthcare programme (non-equity)** | no cash; facilities, mentors, visibility, 5G access | rolling; 'Our Programs are open' |
+
+Corrected: **Hello Tomorrow Global Challenge** now carries the 12th edition's dates
+(opened 23 Sep, closes 30 Nov 2026), the Digital Health & MedTech track, and the fact
+that its top prize is a EUR 200,000 investment, not a grant. **America's Seed Fund (NSF
+Project Pitch)** now carries the dated proposal windows that follow the rolling pitch
+(4 Nov 2026, 4 Mar 2027, first Wednesday in July) and the four-box pitch format.
+
+Drafted the **AgeTech Collaborative January Open Mic** packet (closes 31 Oct) from the
+monday.com form's own question list, read from the embed data on the event page;
+yesterday's lesson applied, and the headless browser was not needed for it.
+
+**DSIP read, 15 Oct:** 71 topics open or pre-released; none on wearables, sleep, fatigue,
+physiological monitoring, human performance or readiness. Nothing new since the 7 Oct
+pre-release of FY27 Release 1 (already on the board) apart from an Army spectrum-warfare
+topic (ARM27BX01-DP001, opens 19 Apr 2027) that does not fit. DIU's open solicitations
+are mobile electric power and CLASS ACT. The DARPA Documentation and Decision Support
+Sprint ($1M, to 1 Mar 2027) is combat-casualty documentation, not a fit.
+
+**Watch list, 15 Oct:**
+- **Rice Veterans Business Battle 2027:** applications open 11 Nov 2026.
+- **Rev1 Ventures (Columbus):** free bootcamp and accelerator, Columbus Region only, no Spring 2027 dates yet.
+- **South Summit Madrid 2027 startup competition (closes 31 Jan 2027, all industries and countries):** the call page renders only in a browser and the headless browser hit the proxy's certificate page, so the 2027 fee could not be confirmed; no cash prize is stated. Not added until the fee is read.
+- **Slush 100 2027, Arch Grants 2027 (St. Louis, relocation required), SFIA Start-Up Challenge 2026, Chicago Sports Tech Week 2027, Longevity Show 2027, Startup World Cup regionals, SEA Change 2027, Main Street Ventures Launch Funding (site under construction):** all closed or unpublished on 15 Oct; re-check in the new year.
+
+## Rejected on inspection — 15 Oct 2026 (scheduled daily run)
+
+- **4YFN Awards 2027, Health Tech (MWC Barcelona)** — Free, EUR 20,000 top prize, closes 26 Oct 2026, but two gates fail: entrants must have 'already achieved market launch and are commercially available', and every Top 20 place is a four-day exhibition pod in Barcelona with a founder on the stand, which is a booth under rule 7.
+- **MIT Sloan Sports Analytics Conference startup competition** — $1,500 entry fee; 2027 unpublished.
+- **Women Founders Network Fast Pitch** — $50 application fee; 2027 unpublished.
+- **WBENC pitch competitions** — Require paid WBENC certification.
+- **UW Hollomon Health Innovation Challenge** — Student teams only; opens 1 Dec 2026.
+- **ACL Cultivating Connected Communities Challenge ($600,000, closes 16 Jul 2027)** — Community programmes, not a wearable fit.
+- **LG NOVA, Target Forward Founders, REI Path Ahead, Optum Startup Studio, Accenture HealthTech Challenge, Bayer G4A, Comcast LIFT Labs, ASICS Tenkan-Ten, Black Ambition Prize, Verizon Forward for Good** — Closed, dormant, dead domains, or no 2026-27 call on their own pages.
+- **Black Girl Ventures** — Revenue-gated (two years operating) and city-limited.
+- **PitchMI, NBA Foundation All-Star Pitch** — Michigan-only and Arizona-only.
+- **gener8tor gBETA (Indiana, Prosper Healthtech)** — 'not currently accepting applications'; Prosper is Alabama-only.
+- **Bounce Innovation Hub (Akron), Cintrifuse (Cincinnati), Ohio Third Frontier TVSF** — Membership-priced, dateless, or university-technology-only.
+- **Hackster.io contests (Autodesk/Arduino, Infineon, Nordic)** — Open, but none wearable or health.
+- **Corporate wearable and fitness brands, health insurers, university human-performance labs** — Searched on 15 Oct; no open innovation call with a date.
+
 ## Promoted to the board — 11 Oct 2026 (round 11)
 
 Four lanes: a watch-list re-check; tactical, military and first-responder; global prizes open to US startups;

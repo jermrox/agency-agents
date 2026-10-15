@@ -1204,21 +1204,27 @@ documents = [
 verified = "2026-09-12"
 
 [[sources.curated.entry]]
-name = "America's Seed Fund -- NSF Project Pitch"
+name = "America's Seed Fund -- NSF SBIR/STTR Project Pitch (gateway to the Phase I windows)"
 sam = "later"
-url = "https://seedfund.nsf.gov/project-pitch/"
+url = "https://seedfund.nsf.gov/apply/get-started/"
 agency = "National Science Foundation"
-amount = "gateway to $305K Phase I, up to $2M across phases"
+amount = "'We invest up to $2 million in seed funding. And take zero equity.' The Project Pitch is the free gateway; an invited Phase I proposal follows (the Phase I ceiling is in the solicitation, not on the pages read)"
 pillar = 2
 kind = "grant"
-eligibility = "US small business; no clinical claim required"
-note = "Rolling, ~2 pages. Mandatory gate before any NSF full proposal -- the actual first step."
+eligibility = "A US small business (fewer than 500 employees), at least 50% owned by US citizens or permanent residents, all funded work in the US; the PI employed by the company at least 20 hours a week. Two Project Pitches per company per 12 months."
+note = "ROLLING PITCH, DATED PROPOSAL WINDOWS: 'Submit your Project Pitch anytime. Hear back in about 1-2 months.' Full proposals are due the first Wednesday in November (4 Nov 2026), the first Thursday in March (4 Mar 2027) and the first Wednesday in July, 5 pm submitter's time, and only after an invitation. Re-read 15 Oct: the pitch is four boxes (technology innovation and technical objectives, 3,500 characters each; market opportunity and company and team, 1,750 each). NSF funds technical risk, not a consumer product: the pitch has to be the sensing pipeline and the personal-baseline model, with the wellness band as the vehicle."
 documents = [
-  "Project Pitch (~2 pages): technical innovation, technical risk, commercial potential, team",
-  "SAM.gov UEI registration (start early — weeks of lead time)",
-  "SBIR.gov company registration (SBC control number)",
+  "Project Pitch: four text boxes on the NSF site",
+  "If invited: full proposal via Research.gov, SAM.gov UEI (weeks of lead time) and the SBIR company registry SBC ID",
 ]
-verified = "2026-09-12"
+fit = 4
+fit_why = "Door: equity-free federal seed money open to a company under a year old with no clinical posture; disqualifier: a pitch that reads as a consumer product rather than an R&D risk is declined at the gate."
+cost = 0
+effort_hours = 6
+travel = false
+big_name = 8
+big_name_why = "The National Science Foundation: instantly credible to any US investor, and a Phase I is a line that opens doors on its own."
+verified = "2026-10-15"
 
 [[sources.curated.entry]]
 name = "NY Ventures Pre-Seed & Seed Matching Fund"
@@ -1708,20 +1714,26 @@ documents = [
 verified = "2026-10-01"
 
 [[sources.curated.entry]]
-name = "Hello Tomorrow Global Challenge"
+name = "Hello Tomorrow Global Challenge, 12th edition (2026-27), Digital Health & MedTech track"
 url = "https://hello-tomorrow.org/global-challenge/"
-agency = "Hello Tomorrow"
-amount = "EUR 100,000 grand prize (EUR 20K / EUR 10K also awarded)"
+agency = "Hello Tomorrow (Paris) with DeepBright Ventures"
+amount = "Overall winner: a EUR 200,000 investment from DeepBright Ventures (dilutive). Thirteen track winners get in-kind prizes (coaching, introductions); about 800 Deep Tech Pioneers get Summit access, Investor Day and the network. 'Hello Tomorrow does not claim any kind of decision, power or take any equity on projects or startups applying'"
+open_date = "2026-09-23"
+close_date = "2026-11-30"
 pillar = 2
 kind = "visibility"
-eligibility = "Deep tech founders, 120+ countries; free to enter"
-note = "Free entry, no equity. Finalists get access to 1,300+ VC/CVC investors. Watch for the next cycle's January deadline."
-documents = [
-  "Free application",
-  "Technical description of the deep-tech core",
-  "Team information",
-]
-verified = "2026-09-12"
+sam = "none"
+eligibility = "Early stage through Series B; a team of at least two; built on a new technology, scientific discovery or complex engineering process; not a spin-off or subsidiary; incorporation not required; no geography stated."
+note = "CLOSES 30 NOV 2026 ('Applications are entirely free and open until the November 30th, 2026'). Corrected 15 Oct from a dateless row. The headline prize is an investment, not a grant, so the value for Vybe is the track and the investor room, not the cheque. Hello Tomorrow is a deep-tech screen: the application has to lead with the sensing and the personal-baseline model, not the consumer story. First-time Pioneers pay a EUR 99 summit deposit that is refunded on attendance; no application fee."
+documents = ["Online application (free)", "For Pioneers: the rest of the form; finalists are judged on a one-page summary, a deck and a live pitch at the Grand Finals in Amsterdam in 2027"]
+fit = 3
+fit_why = "Door: a Digital Health & MedTech track with no fee and no incorporation gate; disqualifier: a deep-tech jury and a top prize that is equity, not a grant."
+cost = 0
+effort_hours = 5
+travel = true
+big_name = 4
+big_name_why = "Well known in European deep-tech circles, little recognition with a US consumer or investor."
+verified = "2026-10-15"
 
 [[sources.curated.entry]]
 name = "PitchMI"
@@ -4792,3 +4804,44 @@ travel = false
 big_name = 9
 big_name_why = "NIH (NIDDK, co-funded by NIMHD): a federal research flagship whose prize opens doors to NIH partners and reviewers."
 verified = "2026-10-14"
+
+[[sources.curated.entry]]
+name = "FIFA Innovation Programme -- Next-generation Sports Wearables challenge"
+url = "https://inside.fifa.com/innovation/innovation-programme/next-generation-sports-wearables"
+agency = "FIFA (Football Technology and Innovation)"
+amount = "No cash stated. Promising solutions are 'further developed, tested and validated with the support of FIFA's network of research partners' in a project of up to two years; successful applicants may use the mark 'Member of the FIFA Innovation Programme', and outcomes include adoption across FIFA tournaments or a new FIFA Quality Programme"
+open_date = "2026-09-29"
+pillar = 2
+kind = "partnership"
+sam = "none"
+eligibility = "Any organisation; the proposed product 'must have reached at least the working prototype stage'; the challenge seeks 'cutting-edge wearable devices that are capable of providing new insights into player health and performance'. No geography stated."
+note = "ROLLING: the 29 Sep 2026 launch notice gives a deadline only for the separate Women's World Cup fan-journey challenge (1 Nov 2026); the wearables challenge states none and the process page describes continuous intake through the FIFA Innovation Programme portal. The challenge page body itself renders only in a browser and could not be read, so anything beyond the launch notice and the process page is unverified. Not money: a co-development project with IP and data-sharing agreements to read closely. The fit is exact: a working-prototype wearable for player health and performance, and a developer platform FIFA's research partners can build on."
+documents = ["Application through the FIFA Innovation Programme portal", "Video explanations or demonstrations and supporting documentation", "Details of project sponsors and of intellectual property protection", "Company information for due diligence"]
+fit = 5
+fit_why = "Door: the challenge asks for exactly what the Band is, at exactly the stage it is at; disqualifier: no cash, football-specific, and the IP terms are unread."
+cost = 0
+effort_hours = 8
+travel = false
+big_name = 9
+big_name_why = "FIFA: a name every consumer and investor on earth recognises, and 'Member of the FIFA Innovation Programme' is a reference no cheque buys."
+verified = "2026-10-15"
+
+[[sources.curated.entry]]
+name = "T-Mobile Accelerator -- Healthcare programme (non-equity)"
+url = "https://www.accelerator.t-mobile.com/current-programs"
+agency = "T-Mobile US (Kansas City accelerator)"
+amount = "No cash stated. 'Companies should expect support with facilities, mentors, visibility' and 5G network access; 'Programs average 3 months of activity with varying start dates.' Non-equity: 'No, we are a non-equity accelerator.'"
+pillar = 2
+kind = "accelerator"
+sam = "none"
+eligibility = "'Companies of any stage will be considered'; startups and scaling companies from anywhere. The Healthcare programme names remote patient monitoring and connected devices among its themes."
+note = "ROLLING, NO DATE PUBLISHED: the home page says 'Our Programs are open and we're excited to meet you all!' and no deadline appears on any page read on 15 Oct. The Healthcare framing leans clinical (telemedicine, AI-driven diagnostics), so Vybe applies as a connected consumer device with an API, not as a medical device. Re-read 15 Oct; the earlier T-Mobile notes on the candidates list were the Deutsche Telekom T Challenge (closed, telco theme) and small-business cash grants (none found), which this is not."
+documents = ["Online application on the accelerator site (contents not listed)"]
+fit = 3
+fit_why = "Door: a household-name, non-equity programme open to any stage with a connected-device theme; disqualifier: no cash, no date, and a programme written for clinical monitoring."
+cost = 0
+effort_hours = 3
+travel = false
+big_name = 9
+big_name_why = "T-Mobile: a household US brand; an accelerator place reads as vetting to any investor."
+verified = "2026-10-15"
