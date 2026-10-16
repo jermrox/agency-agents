@@ -530,6 +530,52 @@ open-topic lane, and the Air Force open topics usually want a named end user.
 - **Devpost health hackathons (UnivaBio, CodeTheCure, DSH Hacks V2)** — Student or beginner events with non-cash prizes.
 - **DIU CSO, Army xTech other than Search 10** — Nothing in wearables or human performance.
 
+## Promoted to the board — 15 Oct 2026 (scheduled daily run)
+
+| Now on the board | Award | Window |
+|---|---|---|
+| **FIFA Innovation Programme — Next-generation Sports Wearables challenge** | no cash; a co-development project of up to two years with FIFA's research partners and the 'Member of the FIFA Innovation Programme' mark | opened 29 Sep 2026; rolling intake through the portal |
+| **T-Mobile Accelerator — Healthcare programme (non-equity)** | no cash; facilities, mentors, visibility, 5G access | rolling; 'Our Programs are open' |
+
+Corrected: **Hello Tomorrow Global Challenge** now carries the 12th edition's dates
+(opened 23 Sep, closes 30 Nov 2026), the Digital Health & MedTech track, and the fact
+that its top prize is a EUR 200,000 investment, not a grant. **America's Seed Fund (NSF
+Project Pitch)** now carries the dated proposal windows that follow the rolling pitch
+(4 Nov 2026, 4 Mar 2027, first Wednesday in July) and the four-box pitch format.
+
+Drafted the **AgeTech Collaborative January Open Mic** packet (closes 31 Oct) from the
+monday.com form's own question list, read from the embed data on the event page;
+yesterday's lesson applied, and the headless browser was not needed for it.
+
+**DSIP read, 15 Oct:** 71 topics open or pre-released; none on wearables, sleep, fatigue,
+physiological monitoring, human performance or readiness. Nothing new since the 7 Oct
+pre-release of FY27 Release 1 (already on the board) apart from an Army spectrum-warfare
+topic (ARM27BX01-DP001, opens 19 Apr 2027) that does not fit. DIU's open solicitations
+are mobile electric power and CLASS ACT. The DARPA Documentation and Decision Support
+Sprint ($1M, to 1 Mar 2027) is combat-casualty documentation, not a fit.
+
+**Watch list, 15 Oct:**
+- **Rice Veterans Business Battle 2027:** applications open 11 Nov 2026.
+- **Rev1 Ventures (Columbus):** free bootcamp and accelerator, Columbus Region only, no Spring 2027 dates yet.
+- **South Summit Madrid 2027 startup competition (closes 31 Jan 2027, all industries and countries):** the call page renders only in a browser and the headless browser hit the proxy's certificate page, so the 2027 fee could not be confirmed; no cash prize is stated. Not added until the fee is read.
+- **Slush 100 2027, Arch Grants 2027 (St. Louis, relocation required), SFIA Start-Up Challenge 2026, Chicago Sports Tech Week 2027, Longevity Show 2027, Startup World Cup regionals, SEA Change 2027, Main Street Ventures Launch Funding (site under construction):** all closed or unpublished on 15 Oct; re-check in the new year.
+
+## Rejected on inspection — 15 Oct 2026 (scheduled daily run)
+
+- **4YFN Awards 2027, Health Tech (MWC Barcelona)** — Free, EUR 20,000 top prize, closes 26 Oct 2026, but two gates fail: entrants must have 'already achieved market launch and are commercially available', and every Top 20 place is a four-day exhibition pod in Barcelona with a founder on the stand, which is a booth under rule 7.
+- **MIT Sloan Sports Analytics Conference startup competition** — $1,500 entry fee; 2027 unpublished.
+- **Women Founders Network Fast Pitch** — $50 application fee; 2027 unpublished.
+- **WBENC pitch competitions** — Require paid WBENC certification.
+- **UW Hollomon Health Innovation Challenge** — Student teams only; opens 1 Dec 2026.
+- **ACL Cultivating Connected Communities Challenge ($600,000, closes 16 Jul 2027)** — Community programmes, not a wearable fit.
+- **LG NOVA, Target Forward Founders, REI Path Ahead, Optum Startup Studio, Accenture HealthTech Challenge, Bayer G4A, Comcast LIFT Labs, ASICS Tenkan-Ten, Black Ambition Prize, Verizon Forward for Good** — Closed, dormant, dead domains, or no 2026-27 call on their own pages.
+- **Black Girl Ventures** — Revenue-gated (two years operating) and city-limited.
+- **PitchMI, NBA Foundation All-Star Pitch** — Michigan-only and Arizona-only.
+- **gener8tor gBETA (Indiana, Prosper Healthtech)** — 'not currently accepting applications'; Prosper is Alabama-only.
+- **Bounce Innovation Hub (Akron), Cintrifuse (Cincinnati), Ohio Third Frontier TVSF** — Membership-priced, dateless, or university-technology-only.
+- **Hackster.io contests (Autodesk/Arduino, Infineon, Nordic)** — Open, but none wearable or health.
+- **Corporate wearable and fitness brands, health insurers, university human-performance labs** — Searched on 15 Oct; no open innovation call with a date.
+
 ## Promoted to the board — 11 Oct 2026 (round 11)
 
 Four lanes: a watch-list re-check; tactical, military and first-responder; global prizes open to US startups;
@@ -2842,3 +2888,68 @@ Foundation lane is exhausted: big-name foundations fund nonprofits or academics,
 ## 14 Oct 2026: amount audit (lesson 14 Oct)
 
 - **CDMRP Combat Readiness-Medical Research Program (CRRP)** — REMOVED from the board. It was the only row with no amount, and its own page (cdmrp.health.mil/funding/crrp, read 14 Oct) says "The pre-application submission deadline for the following CRRP funding opportunities has passed"; full applications are by invitation only. The row had no close date, so it was showing as live. Watch for the FY27 CRRP announcement (SAM required, eBRAP pre-application). The sweep now publishes "amount not stated on the page (checked <date>)" for any empty amount and warns about it in the run log.
+
+## Thursday sweep — 15 Oct 2026 (round 15, hub routine vybe-ops/routines/revsom-research-round.md)
+
+Lanes: watch-list re-check, state economic-development agencies (Ohio first), big-name cloud/AI/health-data platforms, national health systems and payers. Added 3 rows: Databricks for Startups (up to $200K credits, rolling), Sutter Health Innovation Collaboration Request (partner intake, rolling), Ohio Export Internship Program 2027 (50% intern-wage reimbursement). Removed Innovate Forward (see below).
+
+Watch: grants.gov 363966 (est. posting 16 Oct, close 16 Dec) and 363971 (missed 12 Oct estimate); Ohio College Tech Internship (next round opens January 2027); Siemens Xcelerator Electronics ($0 still unconfirmed); ViVE 2027; AO StartUps 9th intake; Built-On Databricks Startup Challenge (~Mar 2027).
+
+### Held, removed or dropped
+- **Innovate Forward (Nestle Health Science x Tufts)** — REMOVED from the board. Its own page contradicts itself: "Apply to Innovate Forward 2026 — Applications open October 18, 2026" sits beside "Applications must be submitted between October 18, 2025 and February 6, 2026", so the 18 Oct 2026 date is most likely stale copy for the cycle that already ran. No 2027 rules or close date. Re-check after 18 Oct.
+- **Providence ADVANCE Program for Startups** — Held: rolling, big_name 8, but the page does not say whether the stages cost anything; confirm before adding.
+- **Advocate Health "Share your ideas with us"** — Held: the intake form sits behind a CAPTCHA, so its fields and terms could not be verified.
+- **VA HAP non-monetary partnership portal** — Rejected: explicitly not funding and must cost VA nothing, so Vybe would donate devices (rule 7 / cost).
+- **FedEx Small Business Grant Contest** — Dropped from the watch list for good: the programme is retired ("continuing through 2024 ... the program is retired").
+
+### Rejected or not open
+- **NIDILRR SBIR Phase I FY2027, HHS-2027-ACL-NIDILRR-BISA-0308 (grants.gov opp 363966)** — still not open: grants.gov API (checked 2026-10-15) still shows docType 'forecast', last updated 25 Sep 2026. Estimated posting date 16 Oct 2026 and estimated due date 16 Dec 2026 are estimates, not confirmed. Award floor $95,000, ceiling $100,000; estimated total programme funding $1,100,000. SAM is required. Re-check on 17 Oct; it is the only watch item that could open within days.
+- **NIDILRR Field Initiated Projects (Development) FY2027, HHS-2027-ACL-NIDILRR-IFDV-0304 (grants.gov opp 363971)** — still not open: still a 'forecast' (last updated 25 Sep 2026). It missed its estimated 12 Oct 2026 posting date, and the estimated due date is 14 Dec 2026. Award floor $245,000, ceiling $250,000; estimated total $2,000,000. SAM required. No confirmed date.
+- **Innovate Forward: Women's Health Innovation Challenge (Nestle Health Science x Tufts FNII), next cycle** — still not open: the site still shows the past cycle, 'Applications must be submitted by February 6, 2026 at 11:59 PM EST', with workshops in Dec 2025. The 'Start Your Application' Google Form (forms.gle/njVcQg2vcCvc5yfK9) is titled 'Innovate Forward 2025' and says it is no longer accepting responses. No new rules, no 18 Oct open date and no close date are posted.
+- **Siemens Xcelerator for Startups: Electronics (Xpedition)** — $0 still not confirmed. The page says only 'No application fee!' and that the programme 'includes: One year of advanced PCB and integrated simulation software'. It never says the licence is free. Siemens' general startup page says 'significantly reduced prices - or even free of charge'. Gates (5 years or less, under $25M funding, under $5M revenue, max 10 seats) are ones Vybe passes, and intake is rolling. The price can only be confirmed on the intake call. It is also software help rather than money (rule 7).
+- **ViVE 2027 Startup Pitch Competition** — still not open: the page still shows 2026 content (Wednesday 25 Feb session, '2026 Winner: Rovex', eligibility under 5 years old and under $8M raised). It has no application link and no 2027 deadline.
+- **AO StartUps (Tennis Australia), 9th intake** — still not open: the page says 'Applications for the 9th intake for AO Startups Open: Late 2026 Close: Late 2026', with no confirmed date. It also says 'Our aim is to develop an ongoing commercial relationship and investment via AO Ventures' (equity path) and is Australia-centred.
+- **AHA EmPOWERED to Serve Business Accelerator 2027** — still not open: no 2027 call is posted. The 2026 MATTER Submittable link now opens MATTER's general listing; the EmPOWERED form is gone. The 2026 cycle ran 3 Mar to 27 Apr 2026, so the next likely window is spring 2027, with no confirmed date.
+- **ADA Innovation Challenge 2027** — still not open: the page reads 'Meet the 2026 Innovation Challenge Winners!' and gives only the save-the-date for the 2027 Scientific Sessions (Washington DC, June 18-21, 2027). No 2027 challenge call or deadline. It is also diabetes-specific and in-person.
+- **Samsung Mobile Advance 2027** — still not open: the page says 'Applications for SMA 2026 are now CLOSED.' There is no 2027 call. The 2026 cycle closed 30 June, with the programme starting Jan 2027.
+- **The UPS Store Small Biz Challenge 2027** — still not open: the official page returned 503 (also through a reader). No 2027 announcement was found. The 2026 entry phase ran 12 Jan to 22 Feb 2026, finalists must pitch live in Nashville, and it is open to independent (non-franchised) US small businesses.
+- **FedEx Small Business Grant Contest 2027** — retired, not just closed: the page says 'Starting in 2012 and continuing through 2024, the FedEx Small Business Grants Program helped entrepreneurs ... While the program is retired, you can still learn from their journeys.' Drop it from the watch list.
+- **CDMRP Combat Readiness-Medical Research Program (CRRP) FY27** — still not open: the page is still titled 'Funding Opportunities-FY26 Combat Readiness-Medical Research Program' and says 'The pre-application submission deadline for the following CRRP funding opportunities has passed.' No FY27 announcement. It is also an academic/clinical research mechanism (SAM, eRA, Grants.gov).
+- **Ohio College Technology Internship Program (CTIP), Ohio Department of Development / Third Frontier** — CLOSED. The winter round's company window ran 'Aug. 3, 2026 — Sept. 25, 2026'. The next (summer) round opens in 'January', with no exact date, so it fails rule 1. WATCH LIST, STRONG FIT: Ohio reimburses '2/3 of eligible wages paid to the intern, up to $7,500' per intern, for up to 10 interns. It is open to 'a technology company or simply a company with a technological need', with no age or revenue gate, though it does need non-residential or professional remote workspace and W-2 interns. Each window stays open only about four weeks, so re-check in early January 2027.
+- **Ohio IMAGE export grant / Export Training grant (SBA STEP-funded)** — Years-in-business gate: 'Company has been in business for no less than one year at time of application.' Most eligible activities are trade-show exhibiting or trade missions (rule 7). It is also a 50% reimbursement of up to $10,000. Revisit after Vybe's first anniversary.
+- **Ohio Procurement Internship Program (OPIP)** — Requires 'Operating for at least one year' and government-contracting or commercial sales experience. Company applications open in January, with no exact date. It reimburses up to $5,000 of intern wages.
+- **Ohio CyberSECURE Program** — Requires 'Independently owned and operated for at least one year'. It is also free consulting hours (up to 15) rather than money (rule 7).
+- **JobsOhio Small Business Grant (re-checked for a new window)** — Unchanged: listed under 'GROW: For businesses over $100K in revenue'. Vybe is pre-revenue. The 'BUILD' tier for startups under $100K is only the Lightship Bootcamps (already on the board) and Launchpad (already rejected). JobsOhio's other grants are negotiated incentive packages tied to job creation and fixed-asset investment, not open calls.
+- **Arizona Innovation Challenge, Fall 2026 (Arizona Commerce Authority)** — Closed: 'Applications for the Fall 2026 Arizona Innovation Challenge (AIC), SaaS-focused, are CLOSED' (they closed 28 Sep 2026; awardees are announced 4 Nov 2026). No spring 2027 date is posted. The award is '$100,000 of non-dilutive funding' for companies 'Incorporated less than 3 years ago'. It is a watch-list item for a spring round, but Vybe would need to commit to Arizona.
+- **parallel18 P18 Gen 15 (Puerto Rico Science, Technology and Research Trust)** — Equity: '#P18ners will receive a $100k investment via SAFE (Simple Agreement for Future Equity).' It also requires a 16-week relocation to Puerto Rico. Gen 15 is only a waitlist.
+- **BioLeap Gen 4 (Puerto Rico Science Trust / parallel18 life-sciences incubator)** — Open until 1 Nov 2026, but there is no cash: it offers a 12-week curriculum, 14 weeks of technical assistance and lab access. Applicants must be 'a U.S. citizen or a permanent resident who anticipates sustaining an ongoing research & development effort in Puerto Rico', which means a Puerto Rico R&D presence. The scope is life-sciences commercialisation.
+- **Alabama Launchpad (Innovate Alabama), 2026 cycles** — Cycle 2 2026 closed 13 Aug 2026 (per third-party trackers; the official site would not resolve via the fetcher). No 2027 date is published. It is for Alabama-based startups.
+- **Small Business Development Centers of Ohio (SBDC) / Ohio Office of Supplier Development / Ohio APEX Accelerators** — Rule 7: these offer free counselling and technical assistance, not money or a credential. No SBDC cash programme exists on the Department of Development pages.
+- **Ohio Third Frontier Entrepreneurial Services Provider, Pre-Seed/Seed Plus Fund, Ohio Venture Fund, Early Stage Focus Fund, InvestOhio** — Each one either funds intermediaries (ESPs and funds) or is equity, or an investor tax credit, rather than a grant to the company.
+- **NSF NEO-SMART Regional Innovation Engine (Case Western-led, Northeast Ohio)** — No startup funding call has been published. The scope is polymers, materials, feedstocks and reprocessing, not wearables. Watch the Engine's own site in case it posts translation or seed calls later.
+- **Built-On Databricks Startup Challenge 2026** — Closed: 'Application Deadline: May 22, 2026'. It also requires a customer-facing B2B product already built on Databricks. No 2027 dates. Re-check in March 2027 (2026 opened March 23).
+- **Databricks AI Accelerator Program** — Invitation only, and it pairs credits with Databricks Ventures equity investment.
+- **OpenAI for Startups (API credits) — re-check** — No change. The FAQ says: 'Please reach out to your VC to learn how to unlock OpenAI API credits', and applying needs 'A unique referral code from your VC'. Vybe has no partner VC.
+- **Meta Llama Impact Grants / Llama Impact Accelerator** — No open call. The page lists only past rounds (the 2024 grants and the Sub-Saharan Africa tracks, which closed June 27, 2025). The regional calls were not open to US companies.
+- **Google.org Impact Challenge: AI for Science (AI for Health & Life Sciences track)** — Closed in April/May 2026, and limited to nonprofits, academic institutions and social enterprises. Google's own page was not re-read; this comes from secondary coverage.
+- **AWS x CrowdStrike x NVIDIA Cybersecurity Accelerator (4th edition)** — Off-theme: for startups building security products. A secondary report gives a Nov 2, 2026 close, but it was not confirmed on AWS's page. Finalists pitch at RSAC (event presence).
+- **IBM startup credits (Startup with IBM / Partner Plus Build)** — No live startup credit program: ibm.com/startups returns 'page cannot be displayed', and the startups URL now redirects to general IBM Partner Plus partner registration, with no credit amount or startup tier stated. The '$120K' figure appears only on aggregators.
+- **Microsoft AI for Health (grants)** — No live program. It was a five-year initiative from 2020, and no 2026 call was found. Microsoft for Startups ('up to $150,000 in credits') is already on the board, with no new tier.
+- **Google for Startups Cloud Program AI-first tier / AWS Activate tiers / Anthropic Claude for Startups — re-check** — No new tier. Google still shows '$2,000 to build your MVP' and up to $350,000 for Seed to Series A AI-first startups. AWS shows Activate Founders 'Start with $1,000 ... up to $5,000' and Portfolio up to $200,000 with a provider Org ID. Anthropic's page is now a newsletter and resources hub. All are already in existing.txt.
+- **Google Gemini Startup Forum** — An in-person curated event for seed to Series A founders. It offers no money or credential, needs travel, and Vybe has not raised a seed round.
+- **Oracle Health (Cerner) developer / partner track** — Oracle PartnerNetwork enablement for ISVs, not a startup funding or credit program (RULE 7: supplier/engineering help). oracle.com/startup returns an empty page.
+- **Epic Showroom / open.epic, Apple HealthKit/ResearchKit, Samsung Health Stack** — Developer access, sandboxes and open-source frameworks only. No money, credits or startup intake (RULE 7).
+- **Salesforce for Startups (Launchpad)** — Already rejected: the Launchpad discount needs venture backing and is a discount, not credits or cash. Aggregators claim $3K to $25K, but this could not be confirmed on Salesforce's page.
+- **CommonSpirit Ventures** — Equity: the investment arm of CommonSpirit Health, investing from a $250M venture fund.
+- **Intermountain Ventures innovation idea submission** — The external submission page now redirects to the generic About page; there is no live intake to verify.
+- **Mass General Brigham Innovation (For Industry)** — Licenses and partners on technologies developed by MGB staff; it has no external startup pilot or cash call. The Kraft Prize is already rejected and its 2026 window closed 30 Apr 2026.
+- **Humana Foundation 2026 grants (Bold Goal / loneliness / health equity slate)** — Grants go to nonprofits and academic research teams; the research fund is by invitation only. There is no Humana startup challenge page.
+- **Kaiser Permanente Ventures / Techstars x Permanente Medicine** — KPV is an equity investor. The Techstars programme (already rejected) closed 10 Jun 2026 and takes equity.
+- **Optum Startup Studio** — India-only programme with IIIT Hyderabad; no US call.
+- **Summa Health / HATCo (General Catalyst) technology partners** — Partners are selected by General Catalyst's HATCo; there is no public startup intake and the vendor content needs a login.
+- **Cleveland Clinic x IBM quantum innovation programme** — The quantum-computing cycle had an Oct 31 window for a March 2026 start, which has passed. It is off-profile, and Cleveland Clinic Innovations is already rejected.
+- **Mayo Clinic Platform_Accelerate multiyear pathway (2026 cohort)** — Already listed in existing.txt. The new pathway targets mature, clinical-stage AI companies and the official page blocked our fetch, so no new window could be verified.
+
+## 15 Oct 2026: fee audit
+
+- **MedTech Innovator 2027 Accelerator** — REMOVED from the board. The row said "No equity, no fee", but the programme's own apply page (medtechinnovator.org/apply, read 15 Oct) says "There is no fee to apply" and then "Yes. The program fee is $15,000 ... You can pay it in cash ... or through a $50K SAFE note". Fee-charging (or equity via the SAFE) breaks the board rules. Scholarships exist but are applied only at acceptance, so the cost is not $0 when filing. Its /apply packet stays in the file but no longer drives the board's "Next to file" line.

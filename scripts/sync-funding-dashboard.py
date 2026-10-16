@@ -21,6 +21,7 @@ with a silently empty table.
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import re
 import sys
@@ -29,6 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FEED = ROOT / "funding-scraper" / "output" / "funding.json"
 PAGE = ROOT / "dashboards" / "vybe-funding-tracker.html"
+PACKETS = ROOT / "funding-scraper" / "applications" / "packets.py"
 
 BEGIN = "  // >>> GENERATED: built-in opportunity list (scripts/sync-funding-dashboard.py)"
 END = "  // <<< END GENERATED"
@@ -47,6 +49,39 @@ KIND_TO_TYPE = {
 def js_string(value: str) -> str:
     """Emit a single-quoted JS string literal, escaped."""
     return "'" + str(value or "").replace("\\", "\\\\").replace("'", "\\'").replace("\n", " ") + "'"
+
+
+def _packets(rows: list[dict]) -> list[dict]:
+    """The drafted application packets that match a row on the board.
+
+    The board's first line names the next one to file (lesson 15 Oct, rule 8).
+    A packet counts only while its programme is still a board row: one that was
+    removed (expired, fee-charging, rejected) must never be the line a founder
+    acts on.
+    """
+    if not PACKETS.exists():
+        return []
+    spec = importlib.util.spec_from_file_location("vybe_packets", PACKETS)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    by_url = {r.get("url"): r for r in rows}
+    out = []
+    for pk in getattr(mod, "PACKETS", []):
+        row = by_url.get(pk.get("url"))
+        if row is None:
+            key = str(pk.get("name", "")).lower()[:18]
+            row = next((r for r in rows if r.get("name", "").lower().startswith(key)), None)
+        if row is None:
+            continue
+        out.append({
+            "id": pk["id"],
+            "name": pk["name"],
+            "deadline": str(pk.get("deadline") or "rolling"),
+            "fee": pk.get("fee") or "",
+            "sam": row.get("sam") or "",
+            "big_name": row.get("big_name") or 0,
+        })
+    return out
 
 
 def main() -> int:
@@ -86,6 +121,19 @@ def main() -> int:
         if docs:
             parts.append("documents:[" + ",".join(js_string(d) for d in docs) + "]")
         lines.append("    {" + ", ".join(parts) + "},")
+    lines.append("  ];")
+    lines.append("  var PACKETS = [")
+    for pk in _packets(rows):
+        lines.append(
+            "    {" + ", ".join([
+                f"id:{js_string(pk['id'])}",
+                f"name:{js_string(pk['name'])}",
+                f"deadline:{js_string(pk['deadline'])}",
+                f"fee:{js_string(pk['fee'])}",
+                f"sam:{js_string(pk['sam'])}",
+                f"big_name:{int(pk['big_name'])}",
+            ]) + "},"
+        )
     lines.append("  ];")
     lines.append(END)
 

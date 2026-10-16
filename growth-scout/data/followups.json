@@ -1,15 +1,15 @@
 {
   "note": "Real outreach sent from jeremy@vybe.health, checked against the Gmail Sent folder and inbox. One follow-up per contact (params.toml max_follow_ups = 1), due 5 to 7 days after the first email. Update this file when mail is sent or a reply lands.",
-  "checked": "2026-10-10",
+  "checked": "2026-10-15",
   "threads": [
     {
       "org": "Head of the Schuylkill Regatta",
       "to": "jenwesson@hosr.org",
       "first_sent": "2026-10-06",
       "followed_up": "2026-10-08",
-      "state": "replied",
-      "due": "2026-10-12",
-      "next": "Reply to Jen sent 9 Oct. Still to do: submit the vendor form and send a COI that names Head of the Schuylkill Regatta as additionally insured. Event 24-25 Oct."
+      "state": "cancel",
+      "due": null,
+      "next": "John, 11 Oct: cancel. Do not submit the vendor form or the COI. A decline asking them to release the table was drafted 13 Oct and waits for John's yes. The event is 24-25 Oct, so it should go soon."
     },
     {
       "org": "MSBL",
@@ -17,26 +17,26 @@
       "first_sent": "2026-10-06",
       "followed_up": "2026-10-08",
       "state": "replied",
-      "due": "2026-10-13",
-      "next": "Steve said yes; the one-page overview went out 8 Oct. If he hasn't answered by Tue 13 Oct, reply on the same thread and ask for the next step on the member offer and World Series table."
+      "due": null,
+      "next": "John, 11 Oct: send back a one-pager on what Vybe offers so they can take the founding batch, and cancel the World Series table. The 14 Oct draft releases the table but points to the 8 Oct email instead of attaching the one-pager. Attach the one-pager, then get John's yes."
     },
     {
       "org": "WNBF Naturalmania Pro Am Nationals",
       "to": "wnbf@worldnaturalbb.com",
       "first_sent": "2026-10-06",
       "followed_up": "2026-10-08",
-      "state": "replied",
-      "due": "2026-10-13",
-      "next": "They replied; pictures and social links went out 8 Oct. The event is 31 Oct, so if there's no answer by Tue 13 Oct, ask them to confirm the table."
+      "state": "cancel",
+      "due": null,
+      "next": "John, 11 Oct: cancel the vendor table. Do not ask them to confirm it. A decline was drafted 13 Oct and waits for John's yes. The event is 31 Oct."
     },
     {
       "org": "RRCA 2027 Convention",
       "to": "execdir@rrca.org",
       "first_sent": "2026-10-06",
       "followed_up": "2026-10-08",
-      "state": "replied",
-      "due": "2026-10-15",
-      "next": "Jean Knaack will send the 2027 expo information early next week. If it hasn't arrived by Thu 15 Oct, reply on the same thread."
+      "state": "cancel",
+      "due": null,
+      "next": "John, 11 Oct: doubtful about a $1,200 table in Austin, and rule 7 rules it out. Do not chase the expo details. A decline was drafted 13 Oct and waits for John's yes."
     },
     {
       "org": "Senior Softball-USA Winter Nationals",
@@ -61,8 +61,8 @@
       "to": "ranking@concept2.com",
       "first_sent": "2026-10-08",
       "state": "replied",
-      "due": "2026-10-12",
-      "next": "Drew Eberts (Concept2 support) replied 9 Oct: Logbook API keys are self-serve. Log in at log.concept2.com, go to log.concept2.com/developers/keys, fill in the Request API Keys form (multi-user read access) and click Create. No partnership call is on offer through support.",
+      "due": null,
+      "next": "John, 11 Oct: no partnership and no email. Just fill out the self-serve API key request at log.concept2.com/developers/keys. Not done yet. It needs Jeremy logged in to the Logbook account.",
       "followed_up": "2026-10-09"
     },
     {
@@ -123,9 +123,9 @@
       "org": "Roy Hobbs World Series",
       "to": "teammatesupport@royhobbs.com",
       "first_sent": "2026-10-08",
-      "state": "no reply",
-      "due": "2026-10-16",
-      "next": "Follow-up sent 9 Oct with the Calendly link. This was the one follow-up; if there is still no reply by Fri 16 Oct, mark it Dead.",
+      "state": "dead",
+      "due": null,
+      "next": "Ellen replied 10 Oct: perhaps in the future. Jeremy thanked her the same day. John, 11 Oct: no go. Closed, no follow-up.",
       "followed_up": "2026-10-09"
     },
     {
@@ -158,249 +158,249 @@
       "org": "WAKA Kickball",
       "to": "info@clubwaka.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "follow-up sent",
+      "due": "2026-10-22",
+      "next": "John approved this on 12 Oct. The hub sent the one follow-up on 15 Oct as a thread reply, signed John with John on CC. If there is no reply by Thu 22 Oct, mark it Dead."
     },
     {
       "org": "Running 4 Heroes",
       "to": "info@running4heroes.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "ANZER USA",
       "to": "JayM@anzer-usa.com",
       "first_sent": "2026-10-09",
-      "state": "replied",
-      "due": "2026-10-14",
-      "next": "Jay Mendpara wants to discuss DevKit requirements. Working Calendly link sent 9 Oct. If no booking by Wed 14 Oct, email him the DevKit requirements directly."
+      "state": "founder only",
+      "due": null,
+      "next": "Supplier or engineering contact. Founders handle this directly (OUTREACH-OWNERS: nobody). No agent email, follow-up or booking."
     },
     {
       "org": "Kyros Engineering",
       "to": "peter@kyrosengineering.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "Peter replied 12 Oct offering times. John, 12 Oct: no, engineering support is not customer growth. A polite close was drafted 15 Oct, signed John, and waits for John's yes. Do not book the call."
     },
     {
       "org": "IAFC Technology Council (fire service vendor engagement)",
       "to": "techcouncil@iafc.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Adaptive and wheelchair sports (Ohio)",
       "to": "info@adaptivesportsohio.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Akron City FC",
       "to": "info@akroncityfc.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "replied",
+      "due": null,
+      "next": "Nick replied 12 Oct and said he would book a call. Jeremy wrote him on 15 Oct after a delayed flight, and Nick offered next Thursday, 22 Oct. A reply with the booking link is in Drafts for Jeremy to send. John's condition for the call: ask for fan-facing promotion and audience numbers, since bands for players alone don't reach buyers."
     },
     {
       "org": "Arnold Sports Festival & Arnold Expo 2027",
       "to": "exhibitors@arnoldsports.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "held",
+      "due": null,
+      "next": "John approved this on 12 Oct, but the ask is an expo contribution. Rule 7 and the founder's online-only order of 11 Oct rule it out, so it is held and nothing was sent. The founder decides whether to decline."
     },
     {
       "org": "GT Brazilian Jiu-Jitsu",
       "to": "todd@gtbjjohio.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Kent State Esports",
       "to": "esports@kent.edu",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "MAGNET (Manufacturing Advocacy & Growth Network)",
       "to": "info@manufacturingsuccess.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "Ohio State Crew (club rowing)",
       "to": "osucrewrar@gmail.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "OhioHealth Capital City Half & Quarter Marathon 2027",
       "to": "info@m3ssports.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "follow-up sent",
+      "due": "2026-10-22",
+      "next": "John approved this on 12 Oct. The hub sent the one follow-up on 15 Oct as a thread reply, signed John with John on CC. If there is no reply by Thu 22 Oct, mark it Dead."
     },
     {
       "org": "REACH Fitness",
       "to": "marianne@reachfitnessohio.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Youth and adult bouldering (Akron)",
       "to": "info@rockmillclimbing.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Aaron Handy",
       "to": "office@legacy-ohio.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Chris Kriebel",
       "to": "chris@tkobjj.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "replied",
+      "due": null,
+      "next": "Chris replied 12 Oct that he is interested in hearing more. John put him in reserve on 12 Oct and said to start with a small sample arrangement tied to feedback and referrals. Nothing has been sent back yet. John decides whether to answer now."
     },
     {
       "org": "Joules",
       "to": "hello@joules.cc",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "Leyen Zulueta",
       "to": "travis@matlabbjj.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "PlateLens",
       "to": "support@platelens.app",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "Cincinnati Cycle Club",
       "to": "membership@cincinnaticycleclub.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "follow-up sent",
+      "due": "2026-10-22",
+      "next": "John approved this on 12 Oct. The hub sent the one follow-up on 15 Oct as a thread reply, signed John with John on CC. If there is no reply by Thu 22 Oct, mark it Dead."
     },
     {
       "org": "LiPol Battery North America",
       "to": "info@lipolbatteries.com",
       "first_sent": "2026-10-09",
-      "state": "bounced",
+      "state": "founder only",
       "due": null,
-      "next": "Address bounced (550, not found). Use the contact form on lipolbatteries.com instead."
+      "next": "Supplier or engineering contact. Founders handle this directly (OUTREACH-OWNERS: nobody). No agent email, follow-up or booking."
     },
     {
       "org": "Ohio State Triathlon Club",
       "to": "tosutriathlon@gmail.com",
       "first_sent": "2026-10-09",
       "state": "replied",
-      "due": "2026-10-14",
-      "next": "Ohio State Triathlon wants to collaborate and asked for a call. Working Calendly link sent 9 Oct."
+      "due": null,
+      "next": "John, 11 Oct: resend the booking link; a phone call is fine. Done 11 Oct, though two copies went out. No reply since. No further email unless John says."
     },
     {
       "org": "Chagrin Falls Booster Club 5K Turkey Trot 2026",
       "to": "info@cfboosterclub.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "reserve",
+      "due": null,
+      "next": "John, 12 Oct: reserve. No email now. Use only if the approved follow-ups don't work."
     },
     {
       "org": "Columbus Weightlifting Club",
       "to": "info@columbusweightlifting.org",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "follow-up sent",
+      "due": "2026-10-22",
+      "next": "John approved this on 12 Oct. The hub sent the one follow-up on 15 Oct as a thread reply, signed John with John on CC. If there is no reply by Thu 22 Oct, mark it Dead. John's condition: confirm current Arnold event access before any full batch."
     },
     {
       "org": "Nocturnal Product Development",
       "to": "eyal@nocturnalpd.com",
       "first_sent": "2026-10-09",
-      "state": "replied",
-      "due": "2026-10-14",
-      "next": "Eyal Dayan says Vybe looks like a perfect fit and wants a call. Working Calendly link sent 9 Oct. Book it if he hasn't by Wed 14 Oct."
+      "state": "founder only",
+      "due": null,
+      "next": "Supplier or engineering contact. Founders handle this directly (OUTREACH-OWNERS: nobody). No agent email, follow-up or booking."
     },
     {
       "org": "Stress Platform - Health & HRV",
       "to": "help@stress-platform.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "replied",
+      "due": null,
+      "next": "Maksim replied 10 Oct. He wants technical details by email before any partnership talk, and asked whether a working prototype reliably writes HRV and resting heart rate to Apple Health. John, 11 Oct: this needs Jeremy's technical answer first, before any call. The 14 Oct draft does not answer his question and adds a booking link. Replace it with Jeremy's answer and no link."
     },
     {
       "org": "SugaMed (ECG Patch PCBA)",
       "to": "info@sugaintl.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "closed",
+      "due": null,
+      "next": "John, 12 Oct: no for this buyer-growth outreach. No follow-up."
     },
     {
       "org": "Zufek",
       "to": "info@zufek.com",
       "first_sent": "2026-10-09",
-      "state": "no reply",
-      "due": "2026-10-14",
-      "next": "First email sent 9 Oct with the Calendly link. If there's no reply by Wed 14 Oct, send the one follow-up."
+      "state": "founder only",
+      "due": null,
+      "next": "Supplier or engineering contact. Founders handle this directly (OUTREACH-OWNERS: nobody). No agent email, follow-up or booking."
     },
     {
       "org": "Open Wearables (Momentum)",
       "to": "piotr.ratkowski@themomentum.ai",
       "first_sent": "2026-10-09",
       "state": "replied",
-      "due": "2026-10-14",
-      "next": "Piotr Ratkowski says new integrations are welcome and wants a call. Working Calendly link sent 9 Oct."
+      "due": null,
+      "next": "John's wording went out 11 Oct with the working booking link, though two copies went out. No reply since. No further email unless John says."
     },
     {
       "org": "Tredict",
       "to": "info@tredict.com",
       "first_sent": "2026-10-09",
       "state": "replied",
-      "due": "2026-10-14",
-      "next": "Felix Gertz offered OAuth2 access to the Tredict API. Send him the app details his API documentation asks for; that needs you or the dev lead."
+      "due": null,
+      "next": "Felix replied 12 Oct. bodyvaluesWrite covers it, Tredict knows the source by clientId, and he does not want a call. John, 11 Oct: apply through the Tredict API application. Next step is submitting that application, which needs Jeremy or the dev lead. No more email unless the docs are unclear."
     },
     {
       "org": "Junction (formerly Vital)",
@@ -417,6 +417,22 @@
       "state": "auto-reply only",
       "due": "2026-10-14",
       "next": "Auto-reply from a two-person team. If no human reply by Wed 14 Oct, send the one follow-up."
+    },
+    {
+      "org": "AI Endurance",
+      "to": "markus@aiendurance.com",
+      "first_sent": "2026-10-09",
+      "state": "replied",
+      "due": null,
+      "next": "Markus replied 11 Oct and booked a meeting for the following week. No email needed. Prepare for the call."
+    },
+    {
+      "org": "Lighthouse 4PS (Baseline 4PS)",
+      "to": "joe@lighthousehw.org",
+      "first_sent": "2026-10-09",
+      "state": "replied",
+      "due": "2026-10-16",
+      "next": "Joe Ramirez replied 12 Oct. He is building a band too and is happy to connect. He asks for an invite any day after 8am Pacific from the week of 9 Nov, except Thursday. No reply sent yet. Draft a reply for John's yes."
     }
   ],
   "forwarded": [
