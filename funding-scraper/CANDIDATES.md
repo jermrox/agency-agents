@@ -3034,3 +3034,72 @@ Watch: grants.gov 363966/363971 still forecasts (est. due 16 Dec / 14 Dec); Inno
 - **Wellhub (Gympass) / Personify Health (Virgin Pulse) startup or innovation challenges** — No startup challenge, accelerator or prize exists. 'Wellhub Challenges' is an in-app employee fitness feature, and partner listings are distribution deals, not funding.
 - **Global Center on Healthy Aging innovation challenge** — No programme page or open call could be found, so it is unverifiable.
 - **NAM Healthy Longevity Catalyst Awards (US)** — NAM called the 2025 round the 'Last Annual Call', and the 2026 Grand Prize is open only to prior Catalyst awardees. There is no new window.
+
+## Friday sweep 2 — 16 Oct 2026 (round 17, hub order 16 Oct: 5 new rows a day, 2 at big_name 7+)
+
+Widened lanes: corporate health-tech challenges, federal prizes on usa.gov/find-active-challenge and agency pages, SBIR/STTR help an Ohio company can use without a prior award, no-fee pitch stages with cash. Added 3 rows: Future Health Digital Innovation Challenge 2026, Dexcom Developer Program (Digital Health Partner), Wells Fargo Pitch to the Pack 2027. With the Aging2.0 row from round 16 that is 4 new rows today, 2 at big_name 7+; the bar of 5 was not met without relaxing the rules.
+
+The federal-prize lane is exhausted for now: all 15 usa.gov challenges and 32 NIH listings are on the board, rejected, student-only or off-topic.
+
+### Preparation resources (free, no money — not board rows)
+- **NSF America's Seed Fund: Office Hours, Intro to America's Seed Fund at NSF (Nov 10 and Dec 2, 2026)** — 2026-11-10; NO MONEY: A FREE ONE-HOUR VIRTUAL Q&A, NOT A GRANT. Its only value is to sharpen Vybe's NSF Project Pitch (already on the board) before the March 4, 2027 full-proposal deadline. Nov 10 is the first date and Dec 2 the fal
+- **Commercializing Biomedical Technologies with the NIH Small Business Programs (NIH program staff online session, MCW and Universities of Wisconsin, Nov 5, 2026)** — 2026-11-05; NO MONEY: A FREE 90-MINUTE NIH SBIR ROAD-SHOW STYLE SESSION, NOT A GRANT. The useful attendees are NHLBI (heart and HRV), NIBIB (sensors and bioengineering) and NIMHD (Vybe's ownership profile), which are the likely home
+
+### Watch
+- **NIH Small Business Transition Grant for New Entrepreneurs (PAR-27-039 SBIR / PAR-27-040 STTR)** — forecast only: grants.gov estimates posting 5 Nov 2026, due 5 Jan 2027; SAM required. Strongest money lead in the SBIR lane; re-check on 5 Nov.
+- **Hudson Library Pitch Night (Hudson, OH)** — no 2026 page yet (2024 edition: ~22 Oct deadline, $5,000 top prize); re-check.
+- **Startup302** — re-check in December.
+
+### Rejected or not open
+- **Upstart Impacts Women's Health Innovation Program, 2027 cohort (Ben Franklin Technology Partners / Life Sciences Greenhouse)** — Pennsylvania-only. The page says 'The 2027 cohort will include 10 Pennsylvania-based early-stage life sciences and MedTech companies.' It is otherwise free and equity-free, with a 15 Dec 2026 deadline; Vybe is in Akron, OH.
+- **PharmStars Fall 2026 Accelerator (Lilly, Novo Nordisk, Takeda, Boehringer founding members)** — Expired. Applications closed 12 Jul 2026 and the cohort launched 9 Sep 2026. The theme is single-area (immunology), and no Spring 2027 call is posted.
+- **MATTER Healthcare Challenges (Chicago)** — Nothing open. The page says 'There are no challenges open for submission at this time.'
+- **HeroX challenge hub (open challenges list, 681 entries checked through the public search API)** — No open health, wearable, sleep or aging challenge Vybe could enter. The open ones are energy, space, kidney-imaging AI (pre-registration) and student contests.
+- **Devpost open/upcoming Health-theme hackathons (Oct 2026 API pull)** — All are student or campus events, tiny or no prizes, or already in the skip list (UnivaBio, CodeTheCure).
+- **Merck Digital Sciences Studio (MDSS) 2026 cohort** — The cohort started March 2026 and no new window is posted. It funds startups through the Merck Global Health Innovation Fund (investment, not a prize) and targets biopharma digital tools.
+- **Roche Startup Creasphere** — The programme site now redirects (302) to roche.com and no 2026-27 call exists.
+- **GE HealthCare Precision Care Challenge 2026** — India-focused (Bangalore finale, INR 1,50,000 prize) and open to students. It was found only on a third-party blog and is not a US startup call.
+- **Medtronic APAC Innovation Challenge** — APAC-only, and the last round ran in 2021-22. No 2026 Medtronic open call was found.
+- **Siemens Healthineers D&A Summer Challenge (Erlangen)** — Student-only in-person mini-hackathon held 7 Oct 2026 (expired).
+- **AAPM Innovation Challenge (presented by Abbott)** — There is no 2027 call. The only edition shown was in 2022, and its prize was in-kind.
+- **IEEE SA Telehealth Pitch Competition** — There is no 2026-27 edition posted. The last call closed 11 Apr 2025, and the prize was a $2,000 travel stipend.
+- **Prime Health Innovation Challenge 2026 (Colorado)** — Closed. The page says 'Applications for both companies and judges have now closed'. Pilots are Colorado Medicaid/underserved-focused.
+- **AgeTech Collaborative from AARP: current pitch-event list** — The only open item is the January Open Mic Challenge (closes 31 Oct 2026), which is already in existing.txt. No new window.
+- **AstraZeneca A.Catalyst Network open challenges** — No 2026 call was found. The last open challenge was in Mexico, non-US and disease-specific (oncology, cardiorenal, rare).
+- **Takeda / Abbott / ResMed / Masimo / Headspace / Calm / Noom / WW / Teladoc / Hims & Hers startup challenges** — Searched; none of these sponsors has a public open startup challenge or prize page for 2026-27.
+- **USA.gov active challenge list (16 Oct 2026 re-check)** — All 15 listed challenges are already on the board or were rejected earlier: DARPA Surgical, D2 Sprint, NOURISH, Ready Set ID, ACL Caregiver AI, ACL Connected Communities, 1CDP, NIH NAMs and xTech Search 10. The rest are student-only (TechRise, Human Lander, Careers in Your Community), workforce (Connecting Talent), invasive species or NASA infrastructure (Gateways to Blue Skies). Nothing new since the 14 Oct check.
+- **NIH Challenges page (16 Oct 2026 re-check, 32 listings)** — Every listing is already on existing.txt or rejected.txt, or is out of domain. Out-of-domain items: NIH Quantum Computing Challenge (Stage 2 delivery only), 2026 NIA Mentorship Prize (academic, closed 15 Oct), ARISE-HIV LAUNCH (single disease), Kidney AI Discovery (single disease), SPARK dbGaP and SPARK PubMed/PMC (literature and genomics search, rejected before).
+- **HHS Presidential Fitness School Innovation Challenge ($10M)** — ELIGIBILITY GATE: per HHS, it is 'open to eligible schools, school districts, state and local education agencies, and youth-serving organizations', and entrants must administer the Presidential Fitness Test with students (entries due 5 Feb 2027). Vybe is none of these.
+- **NASA HRP RFI: Monitor Astronaut Body Temperature in Low Earth Orbit** — Good wearable fit (24-hour core-temperature monitoring), but it is 'not a funding solicitation' and the deadline was 14 Oct 2026, 2:00 p.m. CT, which has passed.
+- **NSF Grand Research Challenges (Quantum+X and Synthetic Multicellularity prize competitions)** — Out of domain: quantum applications and engineered multicellular biology. Vybe has no route in. The $33M figure comes only from a secondary blog and was not confirmed on NSF's page.
+- **ARPA-H Emerging Health Innovators (EHI) 2026** — Not a prize, and SAM.gov is required. Track 1 is for early-career academic investigators and Track 2 for community health workers and nonprofits, which makes it academic- or nonprofit-only. The 2026 cycle details come only from secondary sources.
+- **NASA Space Apps Challenge 2026 (14-15 Nov)** — General space-data hackathon. Its pages show no cash prize, and it has no health or wearable track.
+- **NASA ORBIT Student Challenge / 2027 Human Lander Challenge** — Student-only.
+- **VA / VHA Innovation Ecosystem prize competitions (Oct 2026 check)** — No open VA prize competition was found. The 2026 All-Employee Innovation Program is for VA staff only and is already selected, and the suicide-prevention BAA is not a prize and was rejected before.
+- **SAMHSA / CDC / HRSA / CMS / ASPR / DOE / NIST prize pages (Oct 2026 check)** — No open prize competition was found on these agencies' official channels. SAMHSA had only FY26 grant NOFOs, which have closed. HRSA MCHB challenges are 2017-2022 archives, and the CMS search found nothing. NIST PSCR lists no 2026 challenge, and the ASPR Health Security prize was rejected before. The Federal Register (May-Oct 2026) shows only EHIgnite (rejected), an EPA pesticide challenge and a DOT memorial design contest.
+- **NIH Small Business Transition Grant for New Entrepreneurs (PAR-27-039 SBIR R43/R44; PAR-27-040 STTR R41/R42)** — RULE 1 (watch, do not drop): grants.gov shows both NOFOs only as FORECASTED (posted 27 May 2026), with an estimated posting of 5 Nov 2026 and an estimated due date of 5 Jan 2027, and the 'Close date' is TBD. Neither date is confirmed. This is a strong fit once it posts: an SBIR Phase I for a PI who has 'never been an independent PD/PI' plus a required mentor. SAM would be required. Re-check grants.gov on 5 Nov 2026.
+- **I-Corps at NIH (2027 cohorts 1-3)** — Requires a prior federal award: eligibility is an active NIH, CDC, FDA or ACL Phase I SBIR/STTR (first request deadline 18 Dec 2026). Vybe has no award.
+- **NIH Applicant Assistance Program (AAP), cross-NIH** — No live cohort. The NIH SEED page now lists only the NIA, NIAID and NCI programmes, and the only 2026 trace is a contractor solicitation to run the AAP, not an application window.
+- **NIAID SBIR Applicant Assistance Program** — Single-disease scope (allergy and infectious disease topics only), which does not fit a wellness wearable.
+- **NCI SBIR/STTR Training and Entrepreneurship Program (STEP)** — Expired: the submission deadline was 12 Oct 2026. It is also limited to cancer topics.
+- **NIA Start-Up Challenge and Accelerator 2027** — Already on the board (existing.txt). Submissions run 1 Dec 2026 to 15 Jan 2027.
+- **DOE SBIR/STTR Phase 0 Assistance Program (Dawnbreaker)** — No dated 2026 window: the programme pages show stale schedules and topic lists (for example a 'Tuesday, November 29th' webinar) and no current intake. DOE energy and physics topics also do not fit a wellness wearable.
+- **TechConnect World 2027 Innovation Awards / pitch (Boston, Mar 23-25, 2027; includes the SBIR/STTR Innovation Conference)** — Pay-to-pitch: 'Submission is free. If selected, there is a fee which includes one full registration, pitch slot...'. It also requires event presence.
+- **Missouri SBDC SBIR Bootcamp** — Has a fee ($79-$149) and the Oct 13-14, 2026 session has passed.
+- **CU Anschutz / BBCetc Intensive NIH SBIR/STTR Proposal Prep workshop** — Has a fee ('For companies $110'), it is in person, and the listed date has passed.
+- **BBCetc training series (From the Sources' Mouth, DoW SBIR overview, Technical Objectives webinars) and BBCetc MI-TABA** — Consultant webinars, with no money, credential or scholarship stated on the page. The assistance programme (MI-TABA) is Michigan-only.
+- **Arkansas SBTDC Lab2Launch Accelerator** — In-state only ('for Arkansas innovators'), and the Summer 2026 cohort is closed.
+- **SBA FAST state awardees outside Ohio (FL FAST, Illinois FAST Center, NM FAST, CT SBIR/STTR Accelerator)** — Each awardee serves its own state ('free to eligible Florida small businesses', CT-based only, and so on). Ohio's FAST awardee (Ohio Aerospace Institute) is already on the board.
+- **Youngstown Innovation Hub / OAI NSF SBIR cohort, 2027 round** — Already rejected (rejected.txt), and no new 2027 call was found.
+- **NSF SBIR 'Beat-the-Odds' Boot Camp** — Requires a prior federal award: it is limited to NSF Phase I awardees.
+- **NSF 'Next Steps for Your Phase I Proposal' and Fast-Track Q&As (Oct 16 and 21, 2026)** — Invite-only: the sessions are for 'Invited Project Pitch Applicants' only.
+- **SBIR/STTR national Road Tour 2026-27** — No 2026-27 schedule exists. The SBIR.gov events listing returned 'No results found', and past stops required in-person attendance (Delaware charged $50).
+- **Pitch Black 2027 (MAC Chamber, Omaha)** — Business must be established in NE, IA, MO, MN or KS and 51% of owners resident there, so an Ohio company is ineligible (deadline 2 Nov 2026).
+- **Hudson Library & Historical Society Pitch Night (Hudson, OH; Burton D. Morgan Foundation-backed)** — No 2026 edition can be verified. The newest official pages are for 2023 and 2024 (deadline 22 Oct 2024, $5,000 grand prize), and the Hudson Library site has no 2026 Pitch Night page. Re-check in early October for a GEW 2026 call; the usual deadline is ~22 Oct.
+- **Visionary Pitch Competition (The Enterprise Center, Philadelphia)** — Requires a business at least 1 year old (Vybe is under 1), the official page now returns 404, and no 2026-27 cycle has been announced.
+- **Open Pitch (The Opportunity Fund x Earn Your Leisure)** — Prize is a $125,000 'investment' with no terms stated (likely equity), and the deadline was 20 Apr 2026.
+- **StartUp Westport PITCH '26** — Requires a Connecticut-based founder; applications closed 12 Jun 2026.
+- **BioChallenge 2026 (New Orleans BioInnovation Center)** — 2026 finalists already announced (brain-health theme, finals 29 Oct); window closed.
+- **Future of Health Innovation Prize (Startup Yale)** — Student-driven ventures only; 2026 theme is LMIC global health.
+- **Startup302 (Delaware Prosperity Partnership)** — No 2027 cycle has been announced on an official page. Past windows ran early winter to mid-February; re-check in December.
+- **AnitaB.org PitcHER (Grace Hopper Celebration 2026)** — GHC 26 is 27-30 Oct 2026 and has no open pitch call or prize on the official page.
