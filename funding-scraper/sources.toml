@@ -2268,7 +2268,7 @@ documents = [
   "EIN and website (preferred, not required)",
   "Availability for three consecutive days in person",
 ]
-verified = "2026-10-11"
+verified = "2026-10-16"
 
 # --- Added 1 Oct 2026 ------------------------------------------------------
 # Two live windows and two standing front doors, all read from their own pages.
@@ -4927,4 +4927,24 @@ effort_hours = 3
 travel = false
 big_name = 8
 big_name_why = "U.S. Chamber of Commerce Foundation: a national business name, and a Heroes award is a press line for a veteran-owned company."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Aging2.0 x Health Innovation Alliance: 2026-27 Patient Safety & Engagement innovation pipeline (Risk Reduction & Predictive Analytics; Behavioral & Mental Health Safety)"
+url = "https://www.aging2.com/InnovatorNetwork"
+agency = "Aging2.0 (with the Health Innovation Alliance)"
+amount = "amount not stated on the page (checked 2026-10-16)"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Innovators with products, services or technologies for older adults or care delivery; submitted through the Aging2.0 Innovator Intake. The page states no geography, revenue or stage gate."
+note = "NO CASH STATED: this is a pipeline that routes submissions to providers, payors and investors in the Health Innovation Alliance, not a prize. The Medication Safety & Adherence track closed on 21 September. The page does not mention fees or equity. Applications to the two relevant tracks are open now and stay open until the problem statements are refined; no closing date is published. The predictive-analytics track for care settings could slide toward clinical-risk claims, so position Vybe as wellness pattern data and DevKit access only."
+documents = ["Aging2.0 Innovator Intake form", "short product description framed for older adults or caregivers", "one-pager / deck"]
+fit = 3
+fit_why = "Vybe enters as an HRV/sleep/stress data platform for the Risk Reduction or Behavioral & Mental Health Safety tracks; it is disqualified if a buyer requires clinical risk prediction or FDA-cleared monitoring."
+cost = 0
+effort_hours = 2
+travel = false
+big_name = 5
+big_name_why = "Aging2.0 is a well-known global AgeTech network with chapters, and its HIA partner gives a path to provider and payor pilots rather than cash."
 verified = "2026-10-16"
