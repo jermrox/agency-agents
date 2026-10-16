@@ -16,6 +16,25 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-16 — daily run (two parallel agents)
+
+- +7 items: PubMed 5 (EMS 1: burnout, anxiety and depression track with suicide risk in EMS workers;
+  MIL 3: photobiomodulation did not speed bone stress injury recovery, Air Force trainee pilots avoid
+  mental healthcare, Army dental emergencies in deployable soldiers; FIRE 1: RNA profiling in firefighter
+  blood) plus policy/news read via WebFetch 2 (IAFF center names a former DoD mental health policy chief
+  medical director; Norwich Township FD peer support) and the Army "full measure" WHtR article added as
+  coverage of Army Directive 2026-13. Board 99, archive 72. Exa still 402 (thirteenth day).
+- **Running a WebFetch policy agent beside the PubMed agent works.** WebFetch read cops.usdoj.gov,
+  simpler.grants.gov, fema.gov, army.mil, dvidshub, iaff.org, nremt.org, ems1.com and govdelivery.
+  It got 403 from marines.mil, mynavyhr.navy.mil and esd.whs.mil, and unreadable binary for PDFs.
+- **Correction to earlier leads:** the COPS LEMHWA grant is not due 22 Oct. It opened 9 Jun and
+  closed 30 Jul / 5 Aug 2026 (about $9M, up to $250K per award), so it is out of window. Army Directive
+  2026-13 was already on the board and has no 5 Oct deadline; the 30 Sep requirements date and a hold
+  on WHtR separations come from the army.mil article. Do not repeat the old dates.
+- Still unverified: the Fairmont WV AFG award (not in the first page of the FEMA award table), MARADMIN
+  073/26, and any new NAVADMIN/MARADMIN. Next: filter the FEMA awards table to WV.
+- Environment and Wearables rewritten ahead of expiry; nothing else expires within three days.
+
 ## 2026-10-15 — daily run
 
 - +9 items: PubMed 8 (MIL 5: Caring Letters did not cut suicide deaths, insomnia drugs for veterans,
