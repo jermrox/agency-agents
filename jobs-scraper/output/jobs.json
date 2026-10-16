@@ -1,8 +1,196 @@
 {
   "version": 2,
-  "generated_at": "2026-10-15T19:32:05.577716+00:00",
-  "count": 680,
+  "generated_at": "2026-10-16T07:30:16.531851+00:00",
+  "count": 679,
   "jobs": [
+    {
+      "id": "c37ddb145d0e1a0f7670",
+      "fingerprint": "e5289346b8815d5c32e9",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888992600",
+      "title": "Dietitian (Holistic Health and Fitness)",
+      "employer": "U.S. Army Training and Doctrine Command",
+      "location": "Fort Leonard Wood, Missouri",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [
+          "RD"
+        ],
+        "clearance": null,
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": "Bachelor",
+        "years_experience_min": 1,
+        "employment_type": null,
+        "installation": "Fort Leonard Wood",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "nutrition",
+        "discipline_label": "Performance Nutrition",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Missouri"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-16T07:30:16.531851+00:00"
+    },
+    {
+      "id": "8d27817d5fbd4177f67b",
+      "fingerprint": "ffceb242800257933773",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888983700",
+      "title": "Occupational Therapist (Holistic Health and Fitness)",
+      "employer": "U.S. Army Training and Doctrine Command",
+      "location": "Fort Leonard Wood, Missouri",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$89,508 - $116,362 /yr",
+      "posted_at": null,
+      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 89508.0,
+        "salary_max": 116362.0,
+        "salary_period": "year",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": "Fort Leonard Wood",
+        "service_branch": "Army",
+        "program": "H2F"
+      },
+      "facets": {
+        "discipline": "occupational-therapy",
+        "discipline_label": "Occupational Therapy",
+        "lead": false,
+        "branches": [
+          "army"
+        ],
+        "branch_labels": [
+          "Army"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Missouri"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 89508.0,
+        "mwr": false
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": "H2F",
+      "notes": "",
+      "listed_at": "2026-10-16T07:30:16.531851+00:00"
+    },
+    {
+      "id": "bd4dbcd76430938adf61",
+      "fingerprint": "85d05816e0d0fcc322f1",
+      "source": "usajobs:federal",
+      "url": "https://www.usajobs.gov:443/job/888931200",
+      "title": "Fitness Specialist",
+      "employer": "Commander, Navy Installations Command",
+      "location": "Norfolk, Virginia",
+      "remote": false,
+      "telework": false,
+      "contingency": "unknown",
+      "department": null,
+      "compensation": "$19.50 /hr",
+      "posted_at": null,
+      "description": "Resumes must include information which demonstrates experience and knowledge, skills, and ability (KSAs) as they relate to this position. Applicants are encouraged to be clear and specific when describing their experience level and KSAs.A qualified candidate must possess: Knowledge of exercise principles and health promotion sufficient to design, deliver, and evaluate safe, effective fitness\u2026",
+      "score": 0.0,
+      "tags": [],
+      "enrichment": {
+        "certifications": [],
+        "clearance": null,
+        "salary_min": 19.5,
+        "salary_max": 19.5,
+        "salary_period": "hour",
+        "education": null,
+        "years_experience_min": null,
+        "employment_type": null,
+        "installation": null,
+        "service_branch": "Navy",
+        "program": null
+      },
+      "facets": {
+        "discipline": "fitness",
+        "discipline_label": "Fitness & Health Promotion",
+        "lead": false,
+        "branches": [
+          "navy"
+        ],
+        "branch_labels": [
+          "Navy"
+        ],
+        "location_classes": [
+          "conus"
+        ],
+        "location_regions": {
+          "conus": [
+            "Virginia"
+          ]
+        },
+        "contingency": "unknown",
+        "salary_floor_annual": 40560.0,
+        "mwr": true
+      },
+      "matched": {
+        "domain": [],
+        "discipline": [],
+        "excluded_by": []
+      },
+      "confidence": "listed",
+      "program": null,
+      "notes": "",
+      "listed_at": "2026-10-16T07:30:16.531851+00:00"
+    },
     {
       "id": "5d2cc1f684b6d0dd732a",
       "fingerprint": "5c161e84cc74bccc85f4",
@@ -1195,68 +1383,6 @@
         },
         "contingency": "unknown",
         "salary_floor_annual": 101956.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-09T07:34:33.652334+00:00"
-    },
-    {
-      "id": "42072e4d03ddbbf9937e",
-      "fingerprint": "82fa74dbcb4f34f6398c",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887988800",
-      "title": "Occupational Therapist",
-      "employer": "Military Treatment Facilities under DHA",
-      "location": "Bethesda, Maryland",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$102,415 - $133,142 /yr",
-      "posted_at": null,
-      "description": "Who May Apply: US Citizens In order to qualify, you must meet the education and/or experience requirements described below. Experience refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student; social). You will receive\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [],
-        "clearance": null,
-        "salary_min": 102415.0,
-        "salary_max": 133142.0,
-        "salary_period": "year",
-        "education": null,
-        "years_experience_min": 1,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": null,
-        "program": null
-      },
-      "facets": {
-        "discipline": "occupational-therapy",
-        "discipline_label": "Occupational Therapy",
-        "lead": false,
-        "branches": [
-          "joint"
-        ],
-        "branch_labels": [
-          "Joint / DoD-wide"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "Maryland"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 102415.0,
         "mwr": false
       },
       "matched": {
@@ -3148,134 +3274,6 @@
         },
         "contingency": "unknown",
         "salary_floor_annual": 63793.600000000006,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-01T07:31:36.988479+00:00"
-    },
-    {
-      "id": "403a5b0622bd77f3b14b",
-      "fingerprint": "9e246694ce034a5abcf4",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887098800",
-      "title": "WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP HANSEN",
-      "employer": "U.S. Marine Corps",
-      "location": "Camp Foster, Japan",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$16.00 - $18.00 /hr",
-      "posted_at": null,
-      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "TSAC-F"
-        ],
-        "clearance": null,
-        "salary_min": 16.0,
-        "salary_max": 18.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": 2,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Japan"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 33280.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
-      "notes": "",
-      "listed_at": "2026-10-01T07:31:36.988479+00:00"
-    },
-    {
-      "id": "059a1efbeb9c97feeb2a",
-      "fingerprint": "0b5cee445eef48227c13",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/887098500",
-      "title": "WARR TECHNICIAN, NF-02/03/RFT, HEALTH PROMOTION, CAMP SCHWAB",
-      "employer": "U.S. Marine Corps",
-      "location": "Camp Foster, Japan",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$16.00 - $17.00 /hr",
-      "posted_at": null,
-      "description": "MINIMUM QUALIFICATIONS: High school diploma or GED required. Two years of experience within the health/fitness industry preferred. Possess and maintain a basic-level personal training certification from a nationally accredited certifying organization. Must be eligible to obtain one of the following certifications within six months of hire: USA Weightlifting Level 1 (USAW-1) or Tactical Strength\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "TSAC-F"
-        ],
-        "clearance": null,
-        "salary_min": 16.0,
-        "salary_max": 17.0,
-        "salary_period": "hour",
-        "education": "High School",
-        "years_experience_min": 2,
-        "employment_type": null,
-        "installation": null,
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "fitness",
-        "discipline_label": "Fitness & Health Promotion",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "oconus"
-        ],
-        "location_regions": {
-          "oconus": [
-            "Japan"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 33280.0,
         "mwr": false
       },
       "matched": {
@@ -8518,70 +8516,6 @@
       },
       "confidence": "listed",
       "program": "H2F",
-      "notes": "",
-      "listed_at": "2026-09-29T19:31:30.190938+00:00"
-    },
-    {
-      "id": "4f29fbdb0e18793eb735",
-      "fingerprint": "124f505481fd740737ad",
-      "source": "usajobs:federal",
-      "url": "https://www.usajobs.gov:443/job/879684900",
-      "title": "SUPERVISORY PERFORMANCE EDUCATION SPECIALIST NF4 (Updated Resume Requirement as of 8/14/2026)",
-      "employer": "U.S. Marine Corps",
-      "location": "Twentynine Palms, California",
-      "remote": false,
-      "telework": false,
-      "contingency": "unknown",
-      "department": null,
-      "compensation": "$42.00 - $45.00 /hr",
-      "posted_at": null,
-      "description": "MINIMUM QUALIFICATIONS: A bachelor's degree (master's degree preferred) in exercise science, physiology, sports, physical education, human performance with a focus on health behaviors and theory of behavior change is required AND at least one year supervisory experience with demonstrated ability to manage staff and budget to achieve established goals and objectives AND at least three years'\u2026",
-      "score": 0.0,
-      "tags": [],
-      "enrichment": {
-        "certifications": [
-          "CSCS"
-        ],
-        "clearance": null,
-        "salary_min": 42.0,
-        "salary_max": 45.0,
-        "salary_period": "hour",
-        "education": "Bachelor",
-        "years_experience_min": 1,
-        "employment_type": "Full-time",
-        "installation": "Twentynine Palms",
-        "service_branch": "Marine Corps",
-        "program": null
-      },
-      "facets": {
-        "discipline": "human-performance",
-        "discipline_label": "Human Performance (generalist)",
-        "lead": false,
-        "branches": [
-          "marine-corps"
-        ],
-        "branch_labels": [
-          "Marine Corps"
-        ],
-        "location_classes": [
-          "conus"
-        ],
-        "location_regions": {
-          "conus": [
-            "California"
-          ]
-        },
-        "contingency": "unknown",
-        "salary_floor_annual": 87360.0,
-        "mwr": false
-      },
-      "matched": {
-        "domain": [],
-        "discipline": [],
-        "excluded_by": []
-      },
-      "confidence": "listed",
-      "program": null,
       "notes": "",
       "listed_at": "2026-09-29T19:31:30.190938+00:00"
     },
@@ -40936,7 +40870,7 @@
         "state": "unknown",
         "reason": "HTTP 403 (not a removal signal)",
         "http_status": 403,
-        "checked_at": "2026-10-15T19:31:55+00:00"
+        "checked_at": "2026-10-16T07:30:04+00:00"
       },
       "listed_at": "2026-09-10T07:06:20.246383+00:00"
     },

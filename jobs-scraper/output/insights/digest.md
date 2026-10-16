@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-15.*
+*Briefing generated 2026-10-16.*
 
 ## Headline
 
 - **805 open jobs** from **44 employers**.
-- Posted between **2025-12-03** and **2026-10-15**.
+- Posted between **2025-12-03** and **2026-10-16**.
 - **$84,500 median** annualized pay across the 256 postings that publish one -- $62,300 to $113,610 covers the middle half.
 - **0% remote-friendly** (4 jobs).
-- 1,486 of 2,291 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 762, Special Operations 376, Fire / EMS / Law Enforcement 55, Training Pipeline 49.
+- 1,528 of 2,333 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 762, Special Operations 376, Fire / EMS / Law Enforcement 55, Training Pipeline 48.
 
 ## Month over month
 
-Postings are **up +209** in 2026-10 (198 to 407), 106% against 2026-09.
+Postings are **up +214** in 2026-10 (196 to 410), 109% against 2026-09.
 
 ```
 2025-12     1  #
@@ -23,10 +23,10 @@ Postings are **up +209** in 2026-10 (198 to 407), 106% against 2026-09.
 2026-04     7  #
 2026-05     5  #
 2026-06     9  #
-2026-07    19  #
+2026-07    18  #
 2026-08    94  ######
-2026-09   198  ##############
-2026-10   407  ############################
+2026-09   196  #############
+2026-10   410  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -55,7 +55,7 @@ Postings are **up +209** in 2026-10 (198 to 407), 106% against 2026-09.
 | Serco USA | 46 | - | Strength & Conditioning, Sports Medicine |
 | Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Planned Systems International | 35 | $66,345 | Sports Medicine, Strength & Conditioning |
-| Commander, Navy Installations Command | 33 | $47,840 | Sports Medicine, Program Leadership |
+| Commander, Navy Installations Command | 33 | $47,840 | Program Leadership, Research & Analytics |
 | General Dynamics Information Technology | 31 | $104,369 | Cognitive Performance, Sports Medicine |
 | Military Treatment Facilities under DHA | 31 | $102,935 | Sports Medicine, Research & Analytics |
 | Customs and Border Protection | 25 | $139,436 | - |
@@ -64,12 +64,12 @@ Postings are **up +209** in 2026-10 (198 to 407), 106% against 2026-09.
 
 | Discipline | Jobs | Share |
 |---|---|---|
-| Strength & Conditioning | 426 | 67% |
-| Sports Medicine | 366 | 57% |
+| Strength & Conditioning | 425 | 67% |
+| Sports Medicine | 365 | 57% |
 | Cognitive Performance | 177 | 28% |
 | Research & Analytics | 127 | 20% |
 | Performance Nutrition | 101 | 16% |
-| Program Leadership | 35 | 5% |
+| Program Leadership | 36 | 6% |
 | Sport Science | 12 | 2% |
 
 Share is out of jobs carrying any discipline tag, and a job can carry
@@ -102,9 +102,9 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
 | Research & Analytics | 39 | $63,282 | $78,110 | $98,738 |
-| Sports Medicine | 131 | $59,875 | $74,485 | $102,935 |
-| Strength & Conditioning | 68 | $58,367 | $71,500 | $91,950 |
-| Program Leadership | 22 | $57,592 | $63,282 | $74,552 |
+| Sports Medicine | 130 | $60,000 | $74,742 | $102,935 |
+| Strength & Conditioning | 67 | $59,245 | $71,500 | $91,950 |
+| Program Leadership | 23 | $50,081 | $63,124 | $73,902 |
 
 Every figure is annualized before comparison -- hourly federal rates and
 annual contractor bands are not otherwise comparable.
