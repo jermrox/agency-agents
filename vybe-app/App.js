@@ -18,18 +18,19 @@ import ExportScreen from './src/screens/ExportScreen';
 import VitalsScreen from './src/screens/VitalsScreen';
 import VitalsDriftScreen from './src/screens/VitalsDriftScreen';
 import ReceiptsScreen from './src/screens/ReceiptsScreen';
+import SharingScreen from './src/screens/SharingScreen';
 import { colors } from './src/theme';
 
 /**
  * Vybe Health — entry point.
  *
- * One piece of state instead of a navigation library. There are seventeen
+ * One piece of state instead of a navigation library. There are eighteen
  * screens now, and they are still a flat set: Nourish links across to the
  * pattern history, the pattern history links on to the year-on-year view,
  * Restore, Connect and Vitals link across to the outcome record, Vitals also
  * links on to the data screen for the export, Ask links across to
  * the follow-up, onboarding links across to the history import and to the
- * fit check, the data screen links on to the export, and Vitals links on to
+ * fit check, the data screen links on to the export and to sharing, and Vitals links on to
  * its six-month drift. Those four are the only places a screen returns to
  * where it came from rather than to Home,
  * which one remembered string still covers. Pulling in
@@ -110,9 +111,12 @@ export default function App() {
         <DataSettingsScreen
           onBack={() => setScreen('home')}
           onExport={() => setScreen('export')}
+          onShare={() => setScreen('sharing')}
         />
       ) : screen === 'export' ? (
         <ExportScreen onBack={() => setScreen('data')} />
+      ) : screen === 'sharing' ? (
+        <SharingScreen onBack={() => setScreen('data')} />
       ) : screen === 'vitals' ? (
         <VitalsScreen
           onBack={() => setScreen('home')}
