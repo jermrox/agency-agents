@@ -1,6 +1,6 @@
 # Money in, at no cost: funding research (11 Oct 2026)
 
-Research only. Nothing has been applied for, drafted or sent. **Re-checked 15 Oct 2026** against each funder's page or, where the page blocks automated reads (NIA, NC IDEA), against search results citing it. Every opportunity costs $0 to apply. Facts come from each funder's own page. "Unverified" means the fact came from a search summary or a third party.
+Research only. Nothing has been applied for, drafted or sent. **Re-checked 16 Oct 2026** against each funder's page or, where the page blocks automated reads (NIA, NC IDEA), against search results citing it. Every opportunity costs $0 to apply. Facts come from each funder's own page. "Unverified" means the fact came from a search summary or a third party.
 
 ## Two facts decide most of this list
 
