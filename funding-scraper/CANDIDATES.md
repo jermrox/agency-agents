@@ -2953,3 +2953,20 @@ Watch: grants.gov 363966 (est. posting 16 Oct, close 16 Dec) and 363971 (missed 
 ## 15 Oct 2026: fee audit
 
 - **MedTech Innovator 2027 Accelerator** — REMOVED from the board. The row said "No equity, no fee", but the programme's own apply page (medtechinnovator.org/apply, read 15 Oct) says "There is no fee to apply" and then "Yes. The program fee is $15,000 ... You can pay it in cash ... or through a $50K SAFE note". Fee-charging (or equity via the SAFE) breaks the board rules. Scholarships exist but are applied only at acceptance, so the cost is not $0 when filing. Its /apply packet stays in the file but no longer drives the board's "Next to file" line.
+
+## Friday sweep — 16 Oct 2026 (daily worker)
+
+Added 3 rows: DEVCOM Soldier Center BAA (body-worn soldier sensors, open to 27 Feb 2030), DEVCOM ARL Foundational Research BAA (open to 20 Nov 2027; human-performance topic unconfirmed), Heroes Small Business Grant (veteran-owned, closes 15 Dec 2026). Exa was out of credits today; searches ran through the standard web search and the grants.gov API.
+
+- **NIDILRR SBIR Phase I FY2027 (grants.gov 363966)** and **NIDILRR Field Initiated Projects (363971)** — still forecasts on 16 Oct (est. posting 16 Oct and 12 Oct; est. due 16 Dec and 14 Dec). Re-check next week.
+- **SXSW Pitch 2027** — fee programme: the regular entry fee is $225 (deadline listed as both 11 and 13 Nov 2026). Flagged, not added.
+- **AHA Health Tech Competition 2026** — closed 18 Sep 2026; cardiovascular/brain scope and no cash prize.
+- **Cartier Women's Initiative 2027** — closed 16 Jun 2026; next call expected spring 2027.
+- **Visa She's Next 2026** — all regional windows closed (US not found); watch for 2027.
+- **HeartX (HTA / MedAxiom)** — 2026 cohort closed 30 Apr 2026; 2027 likely Feb to Apr. Cardiovascular scope.
+- **Hey Helen Grant (WomensNet)** — official page 404s; aggregator dates conflict. Not verifiable today.
+- **Comcast RISE, Bunker Labs Veterans in Residence** — no 2026-27 window found on any current page.
+- **ViVE 2027 pitch** — official page still shows the 2026 event; the 2025 pattern opened in November. Re-check mid-November.
+- **AO StartUps 9th intake** — 'Open: Late 2026 / Close: Late 2026', no dates.
+- **DIU open solicitations** — three open calls (mobile power, USV payloads, CLASS ACT); none human-performance.
+- **USA.gov active challenges** (Challenge.gov's successor) — re-swept; ACL Connected Communities and Caregiver AI already rejected, nothing new for wearables.

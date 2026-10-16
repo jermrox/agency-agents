@@ -51,7 +51,12 @@ npx expo start
 - **ExportScreen** *(9 Oct)* — what actually leaves with you, what another
   product can use, and what Vybe keeps after a delete. Reached from "Export
   everything" on DataSettingsScreen.
-- **VitalsDriftScreen** *(new, 15 Oct)* — six months of one slow vital, drawn
+- **SharingScreen** *(new, 16 Oct)* — showing one person a slice of your
+  data, read-only, for at most ninety days. Each area says what they will see
+  and what they will not, side by side; every running share shows its time
+  left drawn and in words, and whether it has been opened; ending one asks
+  once more. Reached from "Show someone a slice of this" on DataSettingsScreen.
+- **VitalsDriftScreen** *(15 Oct)* — six months of one slow vital, drawn
   as the band itself month by month on one shared scale, so a drift reads as a
   bar sliding sideways and a bad night does not. Resting heart rate and
   breathing rate, then-against-now in a sentence, what moved the bands, and
