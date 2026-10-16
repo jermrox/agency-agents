@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-16T12:53:44+00:00",
+  "checked": "2026-10-16T16:44:18+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -11,8 +11,8 @@
       "cadence": "daily 13:40Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-16T12:17:46+00:00",
-      "age_h": 0.6,
+      "stamp": "2026-10-16T16:36:57+00:00",
+      "age_h": 0.1,
       "foreign": [],
       "state": "ok"
     },
@@ -43,8 +43,8 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-16T06:45:00-04:00",
-      "age_h": 2.1,
+      "stamp": "2026-10-16T11:15:00-04:00",
+      "age_h": 1.5,
       "foreign": [],
       "state": "ok"
     },
@@ -57,14 +57,12 @@
       "stamp_re": "Updated (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}) UTC",
       "max_age_h": 14,
       "cadence": "3x daily",
-      "problems": [
-        "stale: 84.5h old, cadence allows 14h"
-      ],
+      "problems": [],
       "warnings": [],
-      "stamp": "2026-10-13 00:23",
-      "age_h": 84.5,
+      "stamp": "2026-10-16 16:09",
+      "age_h": 0.6,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Growsom",
@@ -74,14 +72,12 @@
       "stamp_re": "\"generated\"\\s*:\\s*\"([^\"]+)\"",
       "max_age_h": 14,
       "cadence": "3x daily",
-      "problems": [
-        "stale: 84.5h old, cadence allows 14h"
-      ],
+      "problems": [],
       "warnings": [],
-      "stamp": "2026-10-13 00:23 UTC",
-      "age_h": 84.5,
+      "stamp": "2026-10-16 16:09 UTC",
+      "age_h": 0.6,
       "foreign": [],
-      "state": "bad"
+      "state": "ok"
     },
     {
       "agent": "Instasom",
@@ -94,7 +90,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-16T11:47:34Z",
-      "age_h": 1.1,
+      "age_h": 4.9,
       "foreign": [],
       "state": "ok"
     }
