@@ -37,7 +37,7 @@ a { color:var(--brand-ink); text-decoration:none }
 .wrap { max-width:640px; margin:0 auto; padding:20px 16px 60px }
 h1 { font-size:22px; margin:0; letter-spacing:-.01em } h1 span { color:var(--brand) }
 .goal { margin:6px 0 0; color:var(--ink-2); font-size:15px }
-.status { display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:var(--good) }
+.status { display:flex; gap:8px; margin:10px 0 0; font-weight:600; color:var(--crit) }
 .status .meta { font-weight:400; color:var(--ink-3); font-size:13px; margin-left:auto; text-align:right }
 .jump { margin:14px 0 0; font-size:13.5px; color:var(--ink-3); line-height:1.9 }
 .jump a { border-bottom:1px solid var(--line); margin-right:8px }
@@ -70,11 +70,11 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
 <div class="wrap">
   <h1><span>Vybe</span> hub</h1>
   <p class="goal">Five agents, one job: bring Vybe money — collaboration, investors, opportunity. No booths. No suppliers. Nothing from any other company.</p>
-  <p class="status"><span>All agents running · 9 things need you</span><span class="meta">checked 04:44 UTC<br>refreshes every 4h</span></p>
+  <p class="status"><span>1 agent need attention · 9 things need you</span><span class="meta">checked 08:44 UTC<br>refreshes every 4h</span></p>
   <p class="jump"><a href="#revsom">Revsom</a> <a href="#growsom">Growsom</a> <a href="#marketsom">Marketsom</a> <a href="#instasom">Instasom</a> <a href="#daily-worker">Daily worker</a></p>
 
 <section id="revsom" class="agent ok">
-  <header><span class="dot"></span><h2>Revsom</h2><span class="when">11h ago</span></header>
+  <header><span class="dot"></span><h2>Revsom</h2><span class="when">15h ago</span></header>
   <p class="purpose">Money that costs no equity: grants, prizes, credits.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>262 opportunities · 192 need no registration · 17 close inside 14 days</p>
   <h3>Needs you</h3><div class="card"><span class="k">$</span><div class="body">
@@ -105,8 +105,8 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <span class="links2"><a href="https://amazonappdev2026.devpost.com/">open</a></span></div></div>
   <a class="more" href="https://agentrevup.netlify.app/">funding board →</a>
 </section>
-<section id="growsom" class="agent ok">
-  <header><span class="dot"></span><h2>Growsom</h2><span class="when">10h ago</span></header>
+<section id="growsom" class="agent bad">
+  <header><span class="dot"></span><h2>Growsom</h2><span class="when">14h ago · stale: 14.4h old, cadence allows 14h; stale: 14.4h old, cadence allows 14h</span></header>
   <p class="purpose">Investors, and free integrations that put Vybe&#x27;s SDK in other people&#x27;s products.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>249 targets · 165 high priority · 188 ready to send on John&#x27;s approval</p>
   
@@ -126,7 +126,7 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <a class="more" href="https://agentgrowthscout.netlify.app/">target board →</a>
 </section>
 <section id="marketsom" class="agent ok">
-  <header><span class="dot"></span><h2>Marketsom</h2><span class="when">14h ago</span></header>
+  <header><span class="dot"></span><h2>Marketsom</h2><span class="when">18h ago</span></header>
   <p class="purpose">No-cost partners with reach — leagues, clubs, member bodies — and honest marketing numbers.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>Money out in the last 24 hours: $0.00. No new Instagram boost receipt and Google spent $0. A new US waitlist sign-up came in overnight, so…</p>
   <h3>Needs you</h3><div class="card"><span class="k">☎</span><div class="body">
@@ -155,7 +155,7 @@ h3 { font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(-
   <a class="more" href="https://agentmarksom.netlify.app/briefing.html">daily briefing →</a>
 </section>
 <section id="instasom" class="agent ok">
-  <header><span class="dot"></span><h2>Instasom</h2><span class="when">17h ago</span></header>
+  <header><span class="dot"></span><h2>Instasom</h2><span class="when">21h ago</span></header>
   <p class="purpose">An audience that follows before launch, built one real person at a time.</p>
   <p class="pulling"><span class="lbl">What it is pulling</span>Instagram 1,119 raw followers · 168 verified people still to follow · Facebook 4</p>
   
