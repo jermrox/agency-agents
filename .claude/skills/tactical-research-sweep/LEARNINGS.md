@@ -16,6 +16,70 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-17 — daily run (Saturday, two parallel agents)
+
+- +3 items: PubMed 2 (MIL: drone attacks mostly leave U.S. troops with head injuries, about half with TBI;
+  MIL: three in four Army soldiers use supplements and safety surveillance is missing) plus 1 policy/news
+  read in full: Fairmont WV's $246,117 FEMA AFG award for the CATCH FiRe firefighter health program
+  (City of Fairmont page; the award is not in FEMA's table, so the amount is the city's figure). Board 101,
+  archive 73. FIRE (other), EMS, LE: nothing. Exa still 402 (fourteenth day).
+- Fairmont lead confirmed by the city's own page; found it by searching for the city's news flash, not
+  the FEMA award table. Marine waist-to-height is MARADMIN 073/26 (Change 2 to 066/26, 27 Feb, 0.52 or
+  less regardless of sex): before the window. marines.mil still 403.
+- PubMed: put the date range inside the query (`AND 2026/10/15:2026/10/17[dp]`); `date_from` is unreliable.
+- Not covered yet: NFPA 1500/1583, NIOSH, USFA, IACP, CDMRP/DHA solicitations, IAFF news after page 1.
+  Next run's policy agent should start there. Leads: Navy PRP Guides 1/4/5B (June 2026, PDFs unreadable),
+  JAMA testosterone screening thresholds (no abstract), PFAS in airport firefighters (month only).
+- Nothing expires from hot notes within three days.
+
+## 2026-10-16 — daily run (two parallel agents)
+
+- +7 items: PubMed 5 (EMS 1: burnout, anxiety and depression track with suicide risk in EMS workers;
+  MIL 3: photobiomodulation did not speed bone stress injury recovery, Air Force trainee pilots avoid
+  mental healthcare, Army dental emergencies in deployable soldiers; FIRE 1: RNA profiling in firefighter
+  blood) plus policy/news read via WebFetch 2 (IAFF center names a former DoD mental health policy chief
+  medical director; Norwich Township FD peer support) and the Army "full measure" WHtR article added as
+  coverage of Army Directive 2026-13. Board 99, archive 72. Exa still 402 (thirteenth day).
+- **Running a WebFetch policy agent beside the PubMed agent works.** WebFetch read cops.usdoj.gov,
+  simpler.grants.gov, fema.gov, army.mil, dvidshub, iaff.org, nremt.org, ems1.com and govdelivery.
+  It got 403 from marines.mil, mynavyhr.navy.mil and esd.whs.mil, and unreadable binary for PDFs.
+- **Correction to earlier leads:** the COPS LEMHWA grant is not due 22 Oct. It opened 9 Jun and
+  closed 30 Jul / 5 Aug 2026 (about $9M, up to $250K per award), so it is out of window. Army Directive
+  2026-13 was already on the board and has no 5 Oct deadline; the 30 Sep requirements date and a hold
+  on WHtR separations come from the army.mil article. Do not repeat the old dates.
+- Still unverified: the Fairmont WV AFG award (not in the first page of the FEMA award table), MARADMIN
+  073/26, and any new NAVADMIN/MARADMIN. Next: filter the FEMA awards table to WV.
+- Environment and Wearables rewritten ahead of expiry; nothing else expires within three days.
+
+## 2026-10-15 — daily run
+
+- +9 items: PubMed 8 (MIL 5: Caring Letters did not cut suicide deaths, insomnia drugs for veterans,
+  Australian veteran research gaps, Spanish field-exercise injuries, Army infantry supplement use;
+  LE 1: UK police PTSD and post-concussion groups; FIRE 1: sleep and injuries in Indian firefighters;
+  MIL: Air Force cancer-cluster process in MSMR) plus 1 policy read in full: Coast Guard ALCOAST
+  272/26 (body composition screening, boat-crew PFT dropped, waist-to-height not used). Board 93,
+  archive 71 (ALCOAST is dated 1 Sep, so it sits in the archive). EMS: nothing again.
+- **WebFetch read a govdelivery page today** even though Exa is still 402 (twelfth day). Try WebFetch
+  on .mil/.gov/govdelivery URLs first from now on; it may have been unblocked. Retest every day.
+- Rewrote eight expiring hot notes before merging (all 17-18 Sep cites), so nothing is stale for
+  at least three days. The tag list has no cancer or cardiovascular tag.
+- Next: use WebFetch for the COPS LEMHWA and Fairmont WV AFG leads, and for NAVADMIN/MARADMIN pages.
+
+## 2026-10-14 — daily run
+
+- +9 items, all PubMed: FIRE 4 (LA firefighters' coronary plaque; movement screen and fireground
+  tasks; HRV in expert vs novice firefighters; lifestyle as a men's health problem), CROSS 1 (Irish
+  first responders and suspected-suicide scenes), MIL 4 (special operators' hormones after deployment;
+  limb loss, PTSD and sympathetic activity; blast-exposed occupations in MSMR; veterans' alcohol
+  use disorder). Board 90, archive 65. EMS and LE: nothing again. Exa still 402 (eleventh day).
+- Best haul in a week: widening to full-abstract reading of cardiovascular and endocrine queries,
+  and searching "emergency medical technician" instead of "EMT".
+- PR #77 merged on 13 Oct, so the branch was reset to main (0 commits ahead) before the run.
+- Refreshed Behavioral health, Brain health and Women's health ahead of expiry. Eight more cites
+  (all 17 Sep items: Programs and funding, MSK injury, Sleep and fatigue, Load and PPE, Environment,
+  Nutrition) expire by 17 Oct: rewrite those next run, before merging.
+- The tag list has no cardiovascular tag; FIRE heart items had to use Standards and tests.
+
 ## 2026-10-13 — daily run
 
 - +4 items, all PubMed: FIRE 1 (metals and PAHs in firefighters' saliva after a fire), LE 1 (sleep
