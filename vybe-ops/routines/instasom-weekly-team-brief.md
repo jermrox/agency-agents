@@ -22,7 +22,7 @@ standards win and the hub fixes the line the same day.
 - Dashboard is Netlify only: https://instasum.netlify.app. Never put a claude.ai link in the email or anywhere the team sees it.
 - Never invent a number; if one is unavailable (demographics need 100+ followers per breakdown), say so in one line. Flag anomalies honestly instead of celebrating.
 - Never imply a HYROX affiliation (Amazfit is HYROX's exclusive wearable partner). Core message: "We build the wearable. They build what's possible with it." The waitlist is not the message.
-- Boosts appear only as "needs go-ahead" suggestions (rule 13: spend is the founder's yes).
+- No boost suggestions and no spend, receipts or bills (founder, 16 Oct: "stop looking at my bills"). Recipients are vybe.health addresses only, never jeremy@socialsips.io.
 - Never end a run waiting (rule 13). If the send fails, write the report doc and deploy anyway, and say exactly what failed.
 
 ## Steps
