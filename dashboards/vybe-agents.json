@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-17T08:44:31+00:00",
+  "checked": "2026-10-17T12:47:27+00:00",
   "surfaces": [
     {
       "agent": "Revsom",
@@ -12,7 +12,7 @@
       "problems": [],
       "warnings": [],
       "stamp": "2026-10-16T17:29:17+00:00",
-      "age_h": 15.3,
+      "age_h": 19.3,
       "foreign": [],
       "state": "ok"
     },
@@ -43,8 +43,8 @@
       "cadence": "daily 10:23Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-16T11:15:00-04:00",
-      "age_h": 17.5,
+      "stamp": "2026-10-17T06:50:00-04:00",
+      "age_h": 2.0,
       "foreign": [],
       "state": "ok"
     },
@@ -58,11 +58,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 14.4h old, cadence allows 14h"
+        "stale: 18.4h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-16 18:23",
-      "age_h": 14.4,
+      "age_h": 18.4,
       "foreign": [],
       "state": "bad"
     },
@@ -75,11 +75,11 @@
       "max_age_h": 14,
       "cadence": "3x daily",
       "problems": [
-        "stale: 14.4h old, cadence allows 14h"
+        "stale: 18.4h old, cadence allows 14h"
       ],
       "warnings": [],
       "stamp": "2026-10-16 18:23 UTC",
-      "age_h": 14.4,
+      "age_h": 18.4,
       "foreign": [],
       "state": "bad"
     },
@@ -93,8 +93,8 @@
       "cadence": "daily 10:38Z",
       "problems": [],
       "warnings": [],
-      "stamp": "2026-10-16T11:47:34Z",
-      "age_h": 20.9,
+      "stamp": "2026-10-17T10:39:53Z",
+      "age_h": 2.1,
       "foreign": [],
       "state": "ok"
     }
@@ -239,27 +239,10 @@
     {
       "who": "Marketsom",
       "kind": "deadline",
-      "when": "Mon 19 Oct deadline",
-      "what": "Google Workspace: fix the payment method or vybe.health email is suspended",
-      "detail": "",
-      "who_is": "Google Admin console, Billing: retry or update the card. Every Vybe inbox stops working on 19 Oct otherwise.",
-      "why": "",
-      "do": [
-        "Google Admin console, Billing: retry or update the card. Every Vybe inbox stops working on 19 Oct otherwise."
-      ],
-      "url": "https://agentmarksom.netlify.app/briefing.html",
-      "url_label": "briefing",
-      "url2": null,
-      "url2_label": "briefing",
-      "sort": 3
-    },
-    {
-      "who": "Marketsom",
-      "kind": "deadline",
       "when": "Tue 1 Dec opens (online)",
       "what": "NIA Start-Up Challenge 2027: applications open",
       "detail": "",
-      "who_is": "Deadline 15 Jan 2027. Online webinar 3 Dec, 1 pm ET, per search results (NIA's page blocks automated reads; checked 16 Oct).",
+      "who_is": "Deadline 15 Jan 2027. Online webinar 3 Dec, 1 pm ET, per search results (NIA's page blocks automated reads; checked 17 Oct).",
       "why": "",
       "do": [
         "Deadline 15 Jan 2027. Online webinar 3 Dec, 1 pm ET, per search results (NIA's page blocks automated reads\u2026"
