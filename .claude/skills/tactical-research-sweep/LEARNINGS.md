@@ -16,6 +16,22 @@ three blocks, fold it into SKILL.md as a rule and note "promoted" here.
   WebFetch/curl are blocked in the cloud sandbox.
 - **Dedupe by document:** normalised URL *and* identifier (DOI, PMID, issuance number).
 
+## 2026-10-17 — daily run (Saturday, two parallel agents)
+
+- +3 items: PubMed 2 (MIL: drone attacks mostly leave U.S. troops with head injuries, about half with TBI;
+  MIL: three in four Army soldiers use supplements and safety surveillance is missing) plus 1 policy/news
+  read in full: Fairmont WV's $246,117 FEMA AFG award for the CATCH FiRe firefighter health program
+  (City of Fairmont page; the award is not in FEMA's table, so the amount is the city's figure). Board 101,
+  archive 73. FIRE (other), EMS, LE: nothing. Exa still 402 (fourteenth day).
+- Fairmont lead confirmed by the city's own page; found it by searching for the city's news flash, not
+  the FEMA award table. Marine waist-to-height is MARADMIN 073/26 (Change 2 to 066/26, 27 Feb, 0.52 or
+  less regardless of sex): before the window. marines.mil still 403.
+- PubMed: put the date range inside the query (`AND 2026/10/15:2026/10/17[dp]`); `date_from` is unreliable.
+- Not covered yet: NFPA 1500/1583, NIOSH, USFA, IACP, CDMRP/DHA solicitations, IAFF news after page 1.
+  Next run's policy agent should start there. Leads: Navy PRP Guides 1/4/5B (June 2026, PDFs unreadable),
+  JAMA testosterone screening thresholds (no abstract), PFAS in airport firefighters (month only).
+- Nothing expires from hot notes within three days.
+
 ## 2026-10-16 — daily run (two parallel agents)
 
 - +7 items: PubMed 5 (EMS 1: burnout, anxiety and depression track with suicide risk in EMS workers;
