@@ -1,19 +1,19 @@
 # Tactical Human Performance Job Market
 
-*Briefing generated 2026-10-16.*
+*Briefing generated 2026-10-17.*
 
 ## Headline
 
-- **808 open jobs** from **45 employers**.
-- Posted between **2025-12-03** and **2026-10-16**.
-- **$84,500 median** annualized pay across the 258 postings that publish one -- $62,100 to $113,610 covers the middle half.
+- **809 open jobs** from **45 employers**.
+- Posted between **2025-12-03** and **2026-10-17**.
+- **$85,000 median** annualized pay across the 259 postings that publish one -- $62,200 to $113,610 covers the middle half.
 - **0% remote-friendly** (4 jobs).
-- 1,544 of 2,352 archived records are cross-board copies or re-posts, not separate jobs.
-- Populations served: Military 764, Special Operations 376, Fire / EMS / Law Enforcement 56, Training Pipeline 48.
+- 1,555 of 2,364 archived records are cross-board copies or re-posts, not separate jobs.
+- Populations served: Military 765, Special Operations 376, Fire / EMS / Law Enforcement 56, Training Pipeline 48.
 
 ## Month over month
 
-Postings are **up +223** in 2026-10 (193 to 416), 116% against 2026-09.
+Postings are **up +224** in 2026-10 (193 to 417), 116% against 2026-09.
 
 ```
 2025-12     1  #
@@ -26,7 +26,7 @@ Postings are **up +223** in 2026-10 (193 to 416), 116% against 2026-09.
 2026-07    18  #
 2026-08    94  ######
 2026-09   193  #############
-2026-10   416  ############################
+2026-10   417  ############################
 ```
 
 **Hiring faster** (last 90 days against the 90 before):
@@ -56,8 +56,8 @@ Postings are **up +223** in 2026-10 (193 to 416), 116% against 2026-09.
 | Reef Systems | 37 | $535,360 | Sports Medicine, Strength & Conditioning |
 | Planned Systems International | 36 | $66,345 | Sports Medicine, Strength & Conditioning |
 | Commander, Navy Installations Command | 33 | $47,840 | Program Leadership, Research & Analytics |
+| Military Treatment Facilities under DHA | 32 | $102,935 | Sports Medicine, Research & Analytics |
 | General Dynamics Information Technology | 31 | $104,369 | Cognitive Performance, Sports Medicine |
-| Military Treatment Facilities under DHA | 31 | $102,935 | Sports Medicine, Research & Analytics |
 | Customs and Border Protection | 25 | $139,436 | - |
 
 ## Discipline mix
@@ -65,7 +65,7 @@ Postings are **up +223** in 2026-10 (193 to 416), 116% against 2026-09.
 | Discipline | Jobs | Share |
 |---|---|---|
 | Strength & Conditioning | 428 | 67% |
-| Sports Medicine | 368 | 57% |
+| Sports Medicine | 369 | 58% |
 | Cognitive Performance | 177 | 28% |
 | Research & Analytics | 128 | 20% |
 | Performance Nutrition | 101 | 16% |
@@ -93,7 +93,7 @@ Share is out of jobs that name any certification at all.
 
 ## What it pays
 
-- Median **$84,500**, middle half $62,100 to $113,610.
+- Median **$85,000**, middle half $62,200 to $113,610.
 - Full range $10,000 to $1,000,000.
 
 | Discipline | n | 25th | Median | 75th |
@@ -102,7 +102,7 @@ Share is out of jobs that name any certification at all.
 | Performance Nutrition | 17 | $77,350 | $90,300 | $102,935 |
 | Cognitive Performance | 43 | $63,725 | $85,738 | $109,272 |
 | Research & Analytics | 39 | $63,282 | $78,110 | $98,738 |
-| Sports Medicine | 132 | $59,938 | $74,742 | $102,935 |
+| Sports Medicine | 133 | $60,000 | $75,000 | $102,935 |
 | Strength & Conditioning | 69 | $58,490 | $71,500 | $91,950 |
 | Program Leadership | 23 | $50,081 | $63,124 | $73,902 |
 
@@ -126,13 +126,13 @@ annual contractor bands are not otherwise comparable.
 | Schofield Barracks | 9 |
 | Cannon AFB | 8 |
 
-**Branches and services:** Joint (270), Army (200), Air Force (106), Navy (39), Marine Corps (30), Space Force (5), Coast Guard (3)
+**Branches and services:** Joint (270), Army (201), Air Force (106), Navy (39), Marine Corps (30), Space Force (5), Coast Guard (3)
 
 ## Most common titles
 
 | Title | Jobs |
 |---|---|
-| Physical Therapist | 61 |
+| Physical Therapist | 62 |
 | Cognitive Performance Specialist | 39 |
 | Human Performance Advisor | 37 |
 | Strength and Conditioning Specialist | 37 |
