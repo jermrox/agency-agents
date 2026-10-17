@@ -2268,7 +2268,7 @@ documents = [
   "EIN and website (preferred, not required)",
   "Availability for three consecutive days in person",
 ]
-verified = "2026-10-11"
+verified = "2026-10-16"
 
 # --- Added 1 Oct 2026 ------------------------------------------------------
 # Two live windows and two standing front doors, all read from their own pages.
@@ -4863,3 +4863,216 @@ travel = false
 big_name = 7
 big_name_why = "A State of Ohio Department of Development programme run with six Ohio flagship business schools, including Ohio State Fisher, so a placement starts a working relationship with the state export office and its local export advisor."
 verified = "2026-10-15"
+
+[[sources.curated.entry]]
+name = "DEVCOM Soldier Center Broad Agency Announcement (W911QY25R0023) -- Human Performance & Biomechanics: body-worn systems and soldier-centric sensors"
+url = "https://sam.gov/opp/e8c7609f0f154df4afda846595bca888/view"
+agency = "U.S. Army Combat Capabilities Development Command (DEVCOM) Soldier Center"
+amount = "amount not stated on the page (checked 2026-10-16); 'The Government may award purchase orders, contracts, grants, cooperative agreements, or other transactions against this BAA'"
+open_date = "2025-07-14"
+close_date = "2030-02-27"
+pillar = 3
+kind = "contract"
+sam = "required"
+eligibility = "grants.gov lists the applicant type as 'Others (see text field)'; a BAA under FAR 35 is open to industry, including small businesses. Research and exploratory development only: 'This BAA DOES NOT focus on specific systems or hardware solutions.'"
+note = "OPEN UNTIL 27 FEB 2030 (grants.gov opportunity 360012, read 16 Oct 2026). One of the Soldier Center's named areas is 'Human Performance & Biomechanics -- Body-worn systems, hand-held devices, soldier-centric sensors', which is the Band's lane: overnight HRV, resting heart rate and sleep timing as readiness signals. Pitch it as research on what a screenless body-worn sensor tells a unit about recovery, not as selling a device. The full BAA and submission guidelines live on SAM.gov and were not read here, so the white-paper step and evaluation factors are unconfirmed. Needs a SAM registration before any award."
+documents = ["SAM.gov registration (UEI and CAGE)", "White paper or proposal per the full BAA on SAM.gov", "Technical approach tied to the Human Performance & Biomechanics area"]
+fit = 6
+fit_why = "Door: a standing Army call that names body-worn soldier sensors outright; disqualifier: research framing only, SAM required, and the full BAA's evaluation factors are unread."
+cost = 0
+effort_hours = 20
+travel = false
+big_name = 8
+big_name_why = "U.S. Army DEVCOM Soldier Center: the Army's own soldier-equipment lab, a defence reference any human-performance buyer recognises."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "DEVCOM Army Research Laboratory BAA for Foundational Research (W911NF-23-S-0001)"
+url = "https://www.arl.devcom.army.mil/opportunities/arl-baa/"
+agency = "U.S. Army DEVCOM Army Research Laboratory (ARL), including the Army Research Office"
+amount = "amount not stated on the page (checked 2026-10-16)"
+open_date = "2022-11-21"
+close_date = "2027-11-20"
+pillar = 3
+kind = "contract"
+sam = "required"
+eligibility = "'Eligible applicants under this BAA include institutions of higher education, nonprofit organizations, state and local governments, foreign organizations, foreign public entities, and for-profit organizations (i.e. large and small businesses).' ARO Targeted Opportunities carry their own eligibility."
+note = "OPEN UNTIL 20 NOV 2027 (grants.gov opportunity 344592, last updated 11 Aug 2026, read 16 Oct 2026). ARL's combined BAA spans basic (6.1) and applied (6.2) research and may reach 6.3/6.4 prototypes. The grants.gov synopsis does not list topic areas, and the full BAA's research areas were not read here, so whether a human-performance sensing topic is open is UNCONFIRMED; read the ARL BAA page before writing anything. Ranked below the Soldier Center row for that reason."
+documents = ["SAM.gov registration (UEI and CAGE)", "White paper or proposal per the ARL BAA", "A research question ARL's areas actually name"]
+fit = 4
+fit_why = "Door: a five-year, small-business-eligible Army research call with prototype authority; disqualifier: no human-performance topic confirmed from what was read, and it is research, not product money."
+cost = 0
+effort_hours = 20
+travel = false
+big_name = 8
+big_name_why = "Army Research Laboratory: the Army's corporate research lab; an ARL award is a credential defence and university partners take seriously."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Heroes Small Business Grant Program (Hiring Our Heroes, U.S. Chamber of Commerce Foundation)"
+url = "https://www.hiringourheroes.org/small-business-grant/"
+agency = "Hiring Our Heroes, U.S. Chamber of Commerce Foundation"
+amount = "Five winners: four receive a $10,000 cash prize and the grand prize winner receives $25,000"
+close_date = "2026-12-15"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Applicant owns at least 51% of a for-profit business owned by a veteran or military spouse (honourably discharged veterans, current Guard or Reserve, or a current service member's spouse); lives in the 50 states; under $5 million annual revenue; 3 to 20 employees counting the owner, part-timers and 1099 contractors; AND either a zip code with a Distressed Communities Index score of 40 or more, or financial need from hardship beyond the owner's control."
+note = "CLOSES 15 DEC 2026, 11:59pm EDT (rules page read 16 Oct 2026: 'Entries must be submitted before 11:59 pm EDT on December 15, 2026'; winners notified 'on or before March 29, 2027'). The rules call it the '2027 Heroes Small Business Grant Program'; the main page shows an Apply Now button. Vybe is 51%+ veteran-owned, so the ownership gate is met. Two gates to check first: headcount of 3 to 20 including the owner and 1099 contractors, and the Distressed Communities Index score for the business zip code (or a documented hardship). No application fee stated."
+documents = ["Online application", "Proof of veteran status of the 51%+ owner (e.g. DD-214)", "Headcount of 3-20 including contractors", "Business zip code DCI score of 40+ or a hardship statement"]
+fit = 6
+fit_why = "Door: Vybe's veteran ownership is the first gate; disqualifier: the 3-20 headcount and the distressed-zip-or-hardship test, either of which can rule it out."
+cost = 0
+effort_hours = 3
+travel = false
+big_name = 8
+big_name_why = "U.S. Chamber of Commerce Foundation: a national business name, and a Heroes award is a press line for a veteran-owned company."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Aging2.0 x Health Innovation Alliance: 2026-27 Patient Safety & Engagement innovation pipeline (Risk Reduction & Predictive Analytics; Behavioral & Mental Health Safety)"
+url = "https://www.aging2.com/InnovatorNetwork"
+agency = "Aging2.0 (with the Health Innovation Alliance)"
+amount = "amount not stated on the page (checked 2026-10-16)"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Innovators with products, services or technologies for older adults or care delivery; submitted through the Aging2.0 Innovator Intake. The page states no geography, revenue or stage gate."
+note = "NO CASH STATED: this is a pipeline that routes submissions to providers, payors and investors in the Health Innovation Alliance, not a prize. The Medication Safety & Adherence track closed on 21 September. The page does not mention fees or equity. Applications to the two relevant tracks are open now and stay open until the problem statements are refined; no closing date is published. The predictive-analytics track for care settings could slide toward clinical-risk claims, so position Vybe as wellness pattern data and DevKit access only."
+documents = ["Aging2.0 Innovator Intake form", "short product description framed for older adults or caregivers", "one-pager / deck"]
+fit = 3
+fit_why = "Vybe enters as an HRV/sleep/stress data platform for the Risk Reduction or Behavioral & Mental Health Safety tracks; it is disqualified if a buyer requires clinical risk prediction or FDA-cleared monitoring."
+cost = 0
+effort_hours = 2
+travel = false
+big_name = 5
+big_name_why = "Aging2.0 is a well-known global AgeTech network with chapters, and its HIA partner gives a path to provider and payor pilots rather than cash."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Future Health Digital Innovation Challenge 2026 (Abu Dhabi DoH, co-created with Microsoft, MBZUAI and Inception42), Wellbeing focus area"
+url = "https://hack2skill.com/event/futurehealthchallenge/"
+agency = "Future Health – A Global Initiative by Abu Dhabi (Department of Health – Abu Dhabi); co-creators MBZUAI, Inception42, Microsoft; run on Hack2skill"
+amount = "USD 105,000 Across the top three teams. USD 50,000 First place USD 35,000 Second place USD 20,000 Third place"
+open_date = "2026-10-15"
+close_date = "2026-11-10"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Open worldwide: individuals, students, researchers, startups, developers, clinicians, engineers; teams of up to five; team lead 18+. Technology-neutral, and the page names 'sensing, wearables, and connected devices' and says 'Hardware welcome'. Three focus areas: fertility, population health, wellbeing."
+note = "RIGHT OF FIRST REFUSAL: the rules give the organiser a 6-month right of first refusal on any EXCLUSIVE licence of submitted materials (it is not an equity stake, but read it before submitting core firmware or SDK code; submit an app or demo layer instead). A WORKING PROTOTYPE IS DUE 20 NOV. The top 3 present at GITEX 2026 in Dubai, 7-11 Dec 2026; the page does not say whether travel is covered. The FAQ answers on cost and UAE presence are collapsed and could not be read; no fee is stated anywhere on the page or in the rules. The text of the Wellbeing challenge statements did not render; only the Fertility statements could be read. Not a medical-device pathway, but scoring includes 'Health impact and clinical relevance' and 'Responsible AI, safety and data governance'. Programme launched 15 Oct 2026."
+documents = ["Hack2skill team registration (by 10 Nov)", "working prototype (by 20 Nov)", "technical documentation, assumptions and limitations", "demo of the solution"]
+fit = 6
+fit_why = "Vybe would enter the Wellbeing focus area with a band-plus-SDK prototype that turns HRV and sleep signals into wellbeing guidance, which matches the page's 'sensing, wearables, and connected devices' and 'Hardware welcome'. The IP right of first refusal, or a Wellbeing statement that turns out to be clinical, would rule it out."
+cost = 0
+effort_hours = 40
+travel = true
+big_name = 6
+big_name_why = "It is a government health initiative from Abu Dhabi with Microsoft and MBZUAI as named co-creators; winners present on the GITEX stage and get a 'readiness assessment and a potential pathway beyond the Challenge'."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Dexcom Developer Program: authorised Digital Health Partner (Dexcom API, CGM data)"
+url = "https://developer.dexcom.com/docs"
+agency = "Dexcom, Inc. (Strategic Partnerships team)"
+amount = "amount not stated on the page (checked 2026-10-16)"
+pillar = 3
+kind = "partnership"
+sam = "none"
+eligibility = "Any registered developer can use the sandbox. Commercial app developers must submit the Partnership Interest Questionnaire to get production data. Limited Access allows up to 5 real users. Full Access needs a technical and commercial review and a non-negotiable Data Licensing Agreement."
+note = "NO CASH; this is a data credential. Dexcom 'reserves the right to decline Limited or Full Access requests for apps that do not meet certain commercial and technical standards.' The data is HIPAA-authorised CGM data, so Vybe's Health Intelligence layer would need to stay in wellness framing (no glucose-treatment claims). Dexcom API v2 endpoints retire in October 2026, so build on v3. Not a competitor wearable, so it does not conflict with Vybe's no-competitor-data rule."
+documents = ["free developer registration", "app description", "Partnership Interest Questionnaire (dexcom.com/b2b)", "Full Access Questionnaire", "signed Data Licensing Agreement"]
+fit = 4
+fit_why = "Vybe would come in as a commercial app developer adding glucose context to its HRV and sleep timeline (Nourish and Vitals). Approval is at Dexcom's discretion, and it brings no money."
+cost = 0
+effort_hours = 12
+travel = false
+big_name = 7
+big_name_why = "Dexcom is the best-known US CGM brand, and Full Access partners can 'market as an official Dexcom Digital Health Partner' and appear in the Dexcom Partnerships Gallery."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "Wells Fargo Pitch to the Pack 2027 (NC State Wilson College of Textiles)"
+url = "https://pitchtothepack.textiles.ncsu.edu/registration/"
+agency = "NC State University, Wilson College of Textiles; premier sponsor Wells Fargo"
+amount = "2027 Awards: First Place $10,000 Cash Prize; Second Place $8,000; Third Place $6,000; Fourth Place $5,000; Fifth Place $4,000; Audience Choice Awards ($1,000 Prize Each); Entrepreneur of the Year $1,000 (Undergraduate Students Only); Andrews Launch Accelerator Award (two spots, each $10,000 value) for NC State-affiliated teams only"
+close_date = "2026-11-09"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "\"The program is open to all entrepreneurs working on a textile-based business.\" Rules: \"All business concepts/products must be textile-related.\" No student, state, age or revenue gate on the main cash awards. Only the Andrews Launch Accelerator award needs an NC State student or recent-graduate co-founder, and only Entrepreneur of the Year is for undergraduates."
+note = "TEXTILE-RELATED PRODUCT REQUIRED: Vybe has to pitch the Vybe Band's textile strap or wearable-textile layer as the product (screenless band, ECG/HRV in a fabric band), and the profile doesn't confirm the band is textile-based. FINALISTS MUST ATTEND IN-PERSON: workshops at the Flex Factory (Raleigh, Jan-Feb 2027) and the live pitch on 9 Feb 2027. No entry fee is mentioned anywhere on the site (stated as 0 below, since nothing on the page sets a fee). No equity is mentioned. Cash 'can be used for general expenses, as well as for materials, supplies and work within the Wilson College of Textiles fabrication and testing facilities.' Two deadlines: register by 9 Nov, then the video application by 19 Nov."
+documents = ["2027 Registration Form (by 9 Nov 2026)", "Online video pitch application (by 19 Nov 2026)", "Finalists: signed Finalist Contest Rules and Agreement (pre-pitch activities, lab conduct, IP)"]
+fit = 4
+fit_why = "Vybe gets in only if the judges accept the band's strap or garment layer as a textile-related product. It is out if they see a pure electronics or ring play, and finalist travel to Raleigh is required."
+cost = 0
+effort_hours = 8
+travel = true
+big_name = 7
+big_name_why = "NC State has the top-ranked US textiles college and Wells Fargo is the named sponsor. A win puts Vybe in front of textile-industry judges and angel investors and opens the Flex Factory prototyping lab."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "MIT Solve 2027 Global Climate Challenge (extreme-heat / climate-hazard protection track)"
+url = "https://solve.mit.edu/challenges/2027-global-climate-challenge"
+agency = "MIT Solve (Massachusetts Institute of Technology)"
+amount = "All Solver teams selected for Solve's Global Challenges and the Indigenous Communities Fellowship will receive a $10,000 grant funded by Solve. Solver teams receive an average of $40k each following selection; access to a pool of +$1M in prize funding at selection (e.g. AI for Humanity Prize up to $150,000; Morgridge Family Foundation Innovation Prize up to $50,000 for US-based teams, which names 'health and wellness' and 'support for veterans')"
+open_date = "2026-09-22"
+close_date = "2026-11-06"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "Open to anyone, anywhere; for-profits welcome. Global Challenges review Prototype, Pilot, Growth and Scale stages only; concept-stage ideas are reviewed only under the Indigenous Communities Fellowship. A team can apply to several Global Challenges but must pick one if it advances in more than one."
+note = "MUST HAVE A FUNCTIONING PROTOTYPE: concept-stage entries are not reviewed in this challenge. IF SELECTED, SOLVERS ATTEND A 4-DAY ORIENTATION IN CAMBRIDGE, MA (APRIL) AND 4-DAY CHALLENGE FINALS IN NYC (SEPTEMBER), plus about 25 hours over 9 months. This is a sibling of the MIT Solve 2027 Global Health Challenge already on the board: same application platform, so Vybe can file both but will have to pick one if it advances in both. The fit is the 2027 priority to 'protect people, livelihoods, and essential services from extreme heat... or other climate hazards'. Pitch Vybe as heat-strain early warning for outdoor workers and heat-vulnerable people (HRV and heart-rate load on a screenless band, plus an SDK for public-health and employer partners), with no diagnostic claims. Judges score human-centred design 'with and for underserved communities', so name the community and the partner. Finalists are told in February 2027 and pitch live online. Free to enter. US-only extras on the same application: the Citizens Workforce prize (up to $100K, per the Solve page read by the worker-safety lane) and the Morgridge prize for US teams."
+documents = ["Online Solve application (reference PDF of the questions on the challenge page)", "Solution description, stage, team and underserved population served", "Evidence the prototype works (technical feasibility)", "Optional pitch video"]
+fit = 5
+fit_why = "Vybe enters through the extreme-heat protection priority as a wearable heat-strain early-warning tool for outdoor and heat-vulnerable workers. It would be disqualified if it has no working prototype, and it is a weaker fit than a cooling or infrastructure solution because the challenge leans toward cities, food systems and LMIC communities."
+cost = 0
+effort_hours = 8
+travel = true
+big_name = 8
+big_name_why = "MIT Solve is an MIT initiative with 110+ challenges and 30,000+ submissions. Becoming a Solver brings an MIT-branded credential, an average of $40k in funding and an introduction to its corporate and foundation prize sponsors."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "2027 Wilkes Climate Innovation Prize (University of Utah Wilkes Center)"
+url = "https://wilkescenter.utah.edu/prize/2027-climate-innovation-prize/"
+agency = "Wilkes Center for Climate Science & Policy, University of Utah"
+amount = "\"One Grand Prize award of $250,000 USD in non-dilutive funding to support validation, pilots, or readiness for scale\""
+open_date = "2026-09-23"
+close_date = "2026-11-20"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "\"Organizations at all stages, both for-profits and nonprofits, anywhere in the world are eligible ... This includes seed, pre-seed, venture-funded, publicly traded stage companies, or nonprofits.\""
+note = "ONE GRAND PRIZE ONLY (winner-take-all). CLIMATE PRIZE: Vybe must pitch under the adaptation branch ('reducing exposure, vulnerability, or systemic risk associated with climate-related stresses'), i.e. workplace heat-strain monitoring for outdoor and industrial workers, and show a plausible execution path (pilot partner, timeline). No equity ('An equity investment nor does Wilkes take a percentage ownership' is listed under what the prize is not); no application fee is stated on the page. Finalists present in person at the Wilkes Climate Summit on 13 May 2027 (Salt Lake City). Overhead is capped at 15%."
+documents = ["WizeHive online application", "Climate-system impact statement", "Execution path and next milestones", "Team and capability", "'Why Wilkes, why now' answer; optional early-warning signal (what would show the approach is not viable within 6-18 months)"]
+fit = 4
+fit_why = "Vybe gets in by framing the band as heat-exposure risk reduction for workers, and would lose if judges rate the climate-system impact as marginal or the pre-launch execution path as weak."
+cost = 0
+effort_hours = 10
+travel = true
+big_name = 7
+big_name_why = "The University of Utah is a flagship research university, and a $250K non-dilutive grand prize with summit recognition gives Vybe credibility with climate-adaptation and occupational-heat buyers."
+verified = "2026-10-16"
+
+[[sources.curated.entry]]
+name = "BIRD Foundation General Program, Call for Proposals (Board of Governors March 2027)"
+url = "https://www.birdf.com/bird_programs/bird-general-program/"
+agency = "BIRD Foundation (Israel-U.S. Binational Industrial Research and Development Foundation, set up by the U.S. and Israeli governments)"
+amount = "BIRD funds up to 50% of the R&D costs associated with the joint project. The maximum conditional grant per project is US $1.5 million."
+close_date = "2026-11-23"
+pillar = 2
+kind = "grant"
+sam = "none"
+eligibility = "A joint application by two unrelated companies, one registered in the U.S. and one in Israel, for a jointly developed innovative product with significant commercial potential. All hi-tech sectors (the list names Healthcare IT, Electronics, Software, Life Sciences). Startups may apply. No equity."
+note = "AN ISRAELI COMPANY PARTNER IS REQUIRED, AND VYBE HAS NONE. BIRD says it will help find one ('We can help you find your strategic partner'). The grant is CONDITIONAL: all funding is repaid as royalties, but only out of revenue the project earns ('request for repayment only on the basis of actual revenues generated'). BIRD COVERS ONLY UP TO 50%, so Vybe must fund the other half of its R&D share. Each company uploads its certificate of incorporation, latest financial reports and a shareholder list, and BIRD may weigh 'track record, sales status'. Travel: none required to apply. The executive summary is a short template and can say a partner is 'being sought'. Contact for East Coast/Midwest: Andrea Yonah, andreay@birdf.com. A realistic Israeli partner would be a sensor/ECG signal-processing or digital-health software company co-developing on the DevKit/SDK."
+documents = ["BIRD executive summary template (both companies, partner status, project idea, roadmap)", "Full proposal with task-based budget and risk analysis (if invited, by 2027-01-21)", "Certificate of incorporation (each company)", "Latest financial reports", "Shareholder list (BIRD Excel template)"]
+fit = 4
+fit_why = "Vybe would enter as the U.S. hardware/SDK partner in a joint U.S.-Israel wearable product, and it is disqualified unless it signs an Israeli co-developer and can fund its 50% share by January 2027."
+cost = 0
+effort_hours = 20
+travel = false
+big_name = 7
+big_name_why = "A binational fund created by the U.S. and Israeli governments that has backed 1,000 projects since 1977 (ADM, Applied Materials, Texas Instruments and others), so an award gives a federal-grade credential plus a funded Israeli R&D partner."
+verified = "2026-10-16"

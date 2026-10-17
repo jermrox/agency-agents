@@ -2325,6 +2325,61 @@ PACKETS = [
                 "{{LEGAL_NAME}}, {{CITY}}. {{EMAIL}} · {{WEBSITE}}. Booking link: calendly.com/jeremy-vybe."},
         ],
     },
+    {
+        "id": "nasdaq-milestone",
+        "name": "Nasdaq Entrepreneurial Center, Milestone Makers: Winter 2027 HealthTech cohort",
+        "funder": "Nasdaq Entrepreneurial Center (the non-profit of Nasdaq)",
+        "amount": "No cash. A free 12-week virtual programme: individualised business mentoring, executive coaching, customised training and expert access, media and PR, and a graduation hosted at Nasdaq's MarketSite Tower in Times Square",
+        "deadline": "2026-10-26",
+        "fee": None,
+        "url": "https://nasdaqcenter.org/milestone-makers/",
+        "submit": "Two steps. First the expression-of-interest form linked from 'Apply to Join Milestone Makers' on the programme page (a HubSpot form). The Center then invites you to the full application for the Winter 2027 cohort. The page says 'Applications close October 26.' You re-apply for each cohort.",
+        "gates": [
+            "incorp",
+            "fulltime",
+        ],
+        "confirmed": [
+            "HealthTech scope names Vybe's lane: 'digital health', 'patient engagement' and 'health data' are listed among the ventures the cohort is for",
+            "Stage: the cohort is for 'early- to growth-stage founders and operators'",
+            "Free: 'all at no cost', no fee and no equity anywhere on the page",
+            "Virtual: onboarding sessions are virtual; the only in-person moment is the graduation celebration",
+        ],
+        "why": "The nearest free deadline on the board that Vybe has not drafted, with a name every US investor knows. It pays in coaching on one milestone the founders choose and a Nasdaq badge on the company story, not cash, so the whole application turns on picking the right 12-week milestone. The cohort's language leans to care delivery and access, so the case is consumer health data a person owns and understands, not a clinical tool.",
+        "docs": [
+            "Expression-of-interest form (contact details and a short company summary)",
+            "The full application the Center sends after the interest form",
+            "One 12-week milestone, stated so it can be checked at week 12",
+        ],
+        "note": "THE INTEREST FORM COULD NOT BE READ FROM HERE. It is a newer HubSpot form that renders only in a browser, and the session browser failed the proxy's certificate check, so its questions are unknown. The full application only appears after the interest form is accepted. The sections below are what the programme page says it selects on: the founder's passion for the problem, a non-competing offering inside the cohort theme, and a milestone achievable in 12 weeks. Paste them into whatever the forms ask. Milestones are the programme's own word: 'a significant goal you aim to achieve in the next 12 weeks', for example launching a product or securing funding.",
+        "fields": [
+            {"q": "Contact and company details (interest form)", "a":
+                "{{LEGAL_NAME}} \u00b7 {{WEBSITE}} \u00b7 {{CITY}}. Contact: {{CEO}}, {{EMAIL}}. Every detail here is a Vybe Health one."},
+            {"q": "What the company does", "a": SHORT},
+            {"q": "How it fits the Winter 2027 HealthTech theme ('innovation in human wellbeing')", "a":
+                "The cohort names digital health, patient engagement and health data. Vybe sits where the three meet, on the consumer side. "
+                "Most people with a wearable already have the data and still cannot say why they feel the way they do. "
+                "Vybe reads a person's own signals against their own baseline over months and explains what moved, in plain words. "
+                "It is not a clinical tool and not a medical device. Its job is to make health data a person already owns usable by that person, "
+                "and easy to share with a clinician or coach on their terms."},
+            {"q": "Why we care about this problem", "a":
+                "[Founder to write, two or three sentences in your own voice: the moment you saw the gap between a wearable's number and "
+                "knowing what to do about it. Keep it personal and true; this is the line the programme says it selects on.]"},
+            {"q": "Stage today", "a":
+                "{{STAGE}}. The Band hardware is built and its supplier is contracted. [Add what is live in the app today and who is using it; "
+                "use {{TRACTION}} and do not count the waitlist as users.]"},
+            {"q": "The 12-week milestone", "a":
+                "[Choose ONE and make it checkable at week 12. Suggestions to replace, not facts: (a) the first test bands on wrists with a "
+                "named number of testers recording for 30 nights; (b) a signed pilot or data partnership with one named organisation; "
+                "(c) a closed pre-seed round of a stated size. Write what done looks like in one sentence, then the three steps to get there.]"},
+            {"q": "What we want from the mentors and coaches", "a":
+                "Two things. First, a hard read on the go-to-market for a consumer band with no required subscription, from people who have "
+                "sold to consumers at scale. Second, help shaping the raise that follows the milestone, so the round is sized to the next "
+                "proof point and not to a guess. [Founder: add one named gap of your own, for example pricing or retail.]"},
+            {"q": "Why now", "a": WHY_NOW},
+            {"q": "Ownership (if asked)", "a":
+                "{{OWNERSHIP}}. The company is 51% or more veteran-owned, woman-owned and minority-owned."},
+        ],
+    },
 ]
 
 COMPANY = (

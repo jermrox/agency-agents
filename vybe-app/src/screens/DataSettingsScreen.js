@@ -25,7 +25,7 @@ const DANGER = dimensions.vitals.hue;
  * bare paper, a hairline list with switches, one proportional bar, the single
  * dark block, and two buttons that look like what they do.
  */
-export default function DataSettingsScreen({ onBack, onExport }) {
+export default function DataSettingsScreen({ onBack, onExport, onShare }) {
   const [sources, setSources] = useState(dataSettings.sources);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
 
@@ -192,6 +192,21 @@ export default function DataSettingsScreen({ onBack, onExport }) {
         </Pressable>
         <Text style={styles.controlDetail}>{dataSettings.controls.exportDetail}</Text>
 
+        {/* Sharing sits beside export because both are "this leaves the
+            phone"; it is a text link, not a third big button, so export and
+            delete stay the two controls that carry the argument. */}
+        {onShare ? (
+          <Pressable
+            onPress={onShare}
+            accessibilityRole="button"
+            accessibilityLabel="Show someone a slice of this"
+            accessibilityHint="Opens sharing, where you pick a person, what they see and for how long"
+            style={({ pressed }) => [styles.shareLink, pressed && styles.pressed]}
+          >
+            <Text style={styles.shareLinkText}>Show someone a slice of this, for a while</Text>
+          </Pressable>
+        ) : null}
+
         {/* Delete asks twice. The second press is the one that means it, and
             the button says which state it is in rather than relying on colour. */}
         <Pressable
@@ -324,6 +339,9 @@ const styles = StyleSheet.create({
   deleteText: { ...type.body, color: DANGER, fontWeight: '600' },
 
   controlDetail: { ...type.small, color: colors.muted, lineHeight: 19 },
+
+  shareLink: { alignSelf: 'flex-start', paddingVertical: space(1) },
+  shareLinkText: { ...type.small, color: colors.brand, fontWeight: '600' },
 
   cancel: { alignSelf: 'center', paddingVertical: space(1), paddingHorizontal: space(2) },
   cancelText: { ...type.body, color: colors.brand, fontWeight: '600' },
